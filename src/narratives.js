@@ -120,9 +120,15 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
    if(edge&&['suppressed','dormant'].includes(n.void.effective))text+='，'+roleEffect(edge.type);
    voidNotes.push({role:n.role,state:n.void.state,text:text+'。',sourceIds:['user-void-extension','user-void-timing',domain.sourceSectionId]});
   }
+  if(domainId!=='domain-01'&&reading.nodes.find(n=>n.isBody).void.state==='true_void'){
+   const referenceOnly=['domain-06','domain-16'].includes(domainId);
+   paragraphs=[order.opening+'。本卦是“'+reading.stages.primary.name+'”，眼前的结构关系为'+first.label+'。但本例另外给定了体卦衰极受侵害的证据，已判为真空；这一前提应先于一般有利象意阅读。'+(referenceOnly?'这里仅是传统盘面条件的说明，不等同于现实健康结论。':'放在'+domain.label+'上，先核实自身是否具备承接这件事的真实条件，不把相合或可掌握的结构直接当成事情能成。'),
+    '事情行到“'+reading.stages.mutual.name+'”的中间阶段，仍可辨清其中相助、牵制与消耗的方向。但体卦真空的限制仍在，不能仅因互卦有比和或生扶方向，就认定原来的根基已恢复；尚逢静空的部分，也不当作已经落实的帮助。',
+    '末段来到“'+reading.stages.changed.name+'”，其对原体的关系为'+last.label+'。这只是末段的生克方向，不能越过体卦真空而许诺'+domain.subject+'能够落实。即使后来遇到填实或冲实，也不自动把本例改判为恢复，现实承接条件仍应先行核实。'];
+  }
   if(voidNotes.length)paragraphs.push('再看这件事尚未落定的部分：'+voidNotes.map(n=>n.text).join(''));
   const timing=buildTimingPlan(reading,{timingScale,castContext});paragraphs.push(timing.text);
-  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',monthOrder:order,domainId,reading,
+  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:'1.0.1',monthOrder:order,domainId,reading,
    baseStory:base.story,paragraphs,story:paragraphs.join('\n\n'),voidNotes,timing,sourceIds:[...base.sourceIds,domain.sourceSectionId,...timing.sourceIds],
    scope:'prospective-symbolic-reading;no invented retrospective events',reportedOutcome:null,baseGradesUnchanged:true});
  }

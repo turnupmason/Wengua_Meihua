@@ -27,6 +27,7 @@ test('specific domain rules preserve the food exception and all 18 domains resol
 test('true void cannot be revived by later fills; moving empty use retains influence',async()=>{
  const opts={primaryId:1,movingLine:1,monthOrder:'summer-fire',domainId:'domain-10',voidContext:{ganzhi:'甲子',roleEvidence:{body:{severelyWeak:true,dayMonthAttacked:true}},filledBranches:['戌','亥']},timingScale:'day'};
  const s=await stories.getStory(opts);assert.equal(s.reading.nodes.find(n=>n.isBody).void.state,'true_void');assert.equal(s.timing.voidWindows.length,0);assert.ok(s.story.includes('不自动恢复'));
+ assert.ok(s.paragraphs[0].includes('已判为真空'));assert.ok(!s.story.includes('有争取财利的空间'));assert.equal(s.compositionVersion,'1.0.1');
  const moving=await stories.getStory({...opts,voidContext:{ganzhi:'甲子'}});assert.equal(moving.voidNotes.find(n=>n.role==='use').state,'moving_exempt');assert.ok(moving.story.includes('账面收益、预期金额和实际到账'));
  const monthly=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'earth'},voidContext:{ganzhi:'甲子'}});assert.equal(monthly.nodes.find(n=>n.isBody).void.state,'supported');assert.ok(monthly.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='month-qi'));
  const daily=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'summer'},voidContext:{ganzhi:'甲辰'}});assert.ok(daily.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='day-branch'));
