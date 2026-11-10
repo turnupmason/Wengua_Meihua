@@ -1,16 +1,32 @@
-import {loadLibrary,getVoidReleaseTargets} from '../src/index.js';
+import {loadLibrary,getVoidReleaseTargets,createDetailsRepository} from '../src/index.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const lib=await loadLibrary();let reading;
+const lib=await loadLibrary(),details=createDetailsRepository({library:lib});let reading,detailRequest=0;
 $('#primary').innerHTML=lib.listHexagrams().map(h=>`<option value="${h.id}">${h.id} · ${esc(h.name)}</option>`).join('');$('#primary').value='49';
 $('#domain').innerHTML=lib.listDomains().map(d=>`<option value="${d.id}">${esc(d.title)}</option>`).join('');$('#domain').value='domain-02';
 $('#month').insertAdjacentHTML('beforeend',[...'子丑寅卯辰巳午未申酉戌亥'].map(b=>`<option>${b}</option>`).join(''));
 function passage(p){return `<p class="classical">${esc(p.text)}</p><p>${esc(p.vernacular)}</p><h4>象传</h4><p class="classical">${esc(p.image)}</p><p>${esc(p.imageVernacular)}</p>`;}
-function showDetail(stage,line=null){
+async function showDetail(stage,line=null){
+ const request=++detailRequest;
  const panel=reading.stages[stage],h=panel.detail;
  $('#detail-title').textContent=h.name+(line?' · '+h.lines[line-1].label:' · 卦意');
  const record=line?lib.getLineReading(h.id,line):h.reading;
- $('#detail').innerHTML=passage(record)+(stage==='primary'&&line===reading.movingLine?'<p class="badge">本次动爻 · 与发光爻对应</p>':'')+`<a href="${esc(h.referenceUrl)}" target="_blank" rel="noopener noreferrer">核对古典参考本</a>`;
+ $('#detail').innerHTML=passage(record)+(stage==='primary'&&line===reading.movingLine?'<p class="badge">本次动爻 · 与发光爻对应</p>':'')+`<a href="${esc(h.referenceUrl)}" target="_blank" rel="noopener noreferrer">核对古典参考本</a><div id="extended-detail">载入详解…</div>`;
+ try{
+  const d=line?await details.getLine(h.id,line):await details.getHexagram(h.id);
+  if(request!==detailRequest)return;
+  const structural=line?`<h4>爻位与变化</h4><p>${esc(d.label)} · ${d.structure.polarity==='yang'?'阳爻':'阴爻'} · ${d.structure.correctPosition?'得位':'失位'}${d.structure.central?' · 居中':''}<br>本爻变化 → ${esc(d.changedHexagram.name)}</p>`:'';
+  const notes=line?d.editorialNotes.map(n=>`<h4>经义整理</h4><p>${esc(n.text)}</p>`).join(''):'';
+  $('#extended-detail').innerHTML=structural+notes+`<button data-commentary-id="${h.id}" data-commentary-line="${line||0}">阅读整理注解</button><div id="source-commentary"></div>`;
+ }catch{if(request===detailRequest)$('#extended-detail').textContent='详解暂不可用，以上经文仍可阅读。';}
 }
+$('#detail').addEventListener('click',async e=>{
+ const button=e.target.closest('[data-commentary-id]');if(!button)return;const request=detailRequest;
+ button.disabled=true;
+ try{const d=await details.getReferenceCommentary(Number(button.dataset.commentaryId),{position:Number(button.dataset.commentaryLine)||null});if(request!==detailRequest)return;
+  $('#source-commentary').innerHTML='<p class="reference-note">传统注解供参考；作者署名沿用整理稿。新编经义另行标示。</p>'+d.groups.flatMap(g=>g.sections).map(s=>`<h4>${esc(s.title)}</h4>${s.paragraphs.map(p=>`<p>${esc(p.text)}</p>`).join('')}`).join('');
+ }catch{if(request===detailRequest)$('#source-commentary').textContent='整理注解暂不可用。';}
+ finally{if(request===detailRequest)button.disabled=false;}
+});
 function update(){try{
  reading=lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:$('#domain').value,calendar:$('#month').value?{monthBranch:$('#month').value}:{},voidContext:$('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{}});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;

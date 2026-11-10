@@ -2,7 +2,9 @@
 
 为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
 
-**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [完整开发 prompt](docs/CLAUDE_BUILD_PROMPT.md)。**
+**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V2.md)。
+
+已加入新上传的《周易六十四卦详解》：8,770段、315,194字，128条本轮编辑记录，64段串贴/错误片段隔离；正式详解与384条变卦映射已接通。见[本轮审校报告](docs/DETAILS_AUDIT.md)和[数据库及接口](docs/DATABASE_AND_DETAILS.md)。长篇注解作为显式参考阅读，未认证的正文不写入正式数据库事实表。**
 
 ## 已接通的资料
 
@@ -24,6 +26,7 @@
 
 ```bash
 npm run validate
+npm run validate:details
 npm test
 npm run example
 npm run demo
@@ -59,6 +62,8 @@ const svg = lib.renderHexagramSVG(49, { movingLine: 1, svgId: 'primary' });
 - [数据主表](data/catalog.json)、[领域条目](data/domains.json)、[全文章节](data/meihua-sections.json)。
 - [修改记录](data/editorial-patches.json)、[保留异文](data/reference-differences.json)、[问题清单](data/issues.json)。
 - [源文件及哈希](data/source-manifest.json)、[机器统计](data/import-report.json)、[规则配置说明](data/rule-profile.json)。
+
+可重复导入的数据库文件为 [data/knowledge.sql](data/knowledge.sql)。执行 `npm run build:data` 同时生成本地 `dist/wengua.sqlite`，无需外部数据库账号。
 
 ## 验证与维护
 

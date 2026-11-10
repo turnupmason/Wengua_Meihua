@@ -8,7 +8,7 @@
 
 ## 已完成的修正
 
-逐条前后文见 `data/editorial-patches.json`，不只给一个“已修复”结论。当前38条修改包含等级订正、古文错漏、段落错标与译文补齐；具体数量以 `data/import-report.json` 为准。
+逐条前后文见 `data/editorial-patches.json`，不只给一个“已修复”结论。当前52条修改包含等级订正、古文错漏、段落错标与译文补齐；具体数量以 `data/import-report.json` 为准。
 
 代表性修正：
 
@@ -25,7 +25,7 @@
 
 网上见证本也可能有问题。例如上传资料“君子得舆”，所选网上页出现“君子德车”；不能因为网页更新就自动把前者改成后者。遯/遁、祐/佑、薰/熏等也不适合做无语境全局替换。
 
-`data/reference-differences.json` 保留对照差异94处，包括异体、通假、不同传本措辞和对照本自身可能的录入问题；不是94个“未修错字”的清单。程序仅修正明确复核的错漏。古文标点、异体混用没有全部重排为所谓唯一标准版本。
+`data/reference-differences.json` 保留对照差异87处，包括异体、通假、不同传本措辞和对照本自身可能的录入问题；不是87个“未修错字”的清单。程序仅修正明确复核的错漏。古文标点、异体混用没有全部重排为所谓唯一标准版本。
 
 ## 尚须作为文献问题保留的两处
 
@@ -42,3 +42,5 @@
 - 梅花交叉校对：[卷一](https://www.diancangwang.cn/xuanxuewushu/8d9cde0f755a/1bc4bd477d7d.html)、[卷三](https://www.diancangwang.cn/xuanxuewushu/8d9cde0f755a/f8ca0c3d3ef4.html)、[卷二文字见证](https://www.211cn.ca/book/plum-blossom-yi-numbers-gugong-edition/?c=3)。最后一项搜索索引可见相关文字，页面直读403；不声称已读取被拒绝的完整页面。
 
 用户给出的搜狐页为奇门语境，不能拿它证明全部梅花空亡解释来自原典；百度资料页未成功取回，知乎页403。采用这套空亡规则的依据是**用户指定**，不是伪造三个网页都验证通过。引用与检索状态见 `data/rule-profile.json`。
+
+本轮DOCX另有128条编辑记录及64个隔离片段，见 [详解审校报告](DETAILS_AUDIT.md)。

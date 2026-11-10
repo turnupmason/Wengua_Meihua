@@ -1,4 +1,6 @@
 /** Deterministic knowledge layer. No LLM, network requests, or calendar guesses in createReading. */
+import {readRepositoryJSON} from './io.js';
+export {createDetailsRepository} from './details.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];
 const GENERATES = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };
@@ -136,7 +138,7 @@ export function createLibrary({catalog,sections,domains}) {
   return Object.freeze({contentVersion:catalog.contentVersion,getHexagram:hex,getLineReading,castByTrigramNumbers,castByTimeParts,getChangedHexagram:changed,getMutualHexagram:mutual,getHexagramByBits:bitsHex,createReading,renderHexagramSVG,listHexagrams:()=>catalog.hexagrams,listDomains:()=>domains,listSections:()=>sections.sections,getSection:id=>sections.sections.find(s=>s.id===id),findSections:query=>sections.sections.filter(s=>s.kind==='section'&&(s.title.includes(query)||s.text.includes(query)))});
 }
 export async function loadLibrary({readJSON}={}) {
-  if(!readJSON)readJSON=async path=>{const url=new URL('../'+path,import.meta.url);if(url.protocol==='file:'){const fs=await import(/* @vite-ignore */ 'node:fs/promises');return JSON.parse(await fs.readFile(url,'utf8'));}const r=await fetch(url);if(!r.ok)throw new Error(`Cannot load ${path}: ${r.status}`);return r.json();};
+  if(!readJSON)readJSON=readRepositoryJSON;
   const [catalog,sections,domains]=await Promise.all(['data/catalog.json','data/meihua-sections.json','data/domains.json'].map(readJSON));
   return createLibrary({catalog,sections,domains});
 }

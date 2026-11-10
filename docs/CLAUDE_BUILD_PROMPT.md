@@ -1,3 +1,5 @@
+> 本文件保留完整产品规格；最新交接请先阅读 [Claude prompt V2](CLAUDE_BUILD_PROMPT_V2.md)，其中包含已接好的详解接口、数据库及新验收要求。
+
 # 给 Claude 的完整开发 prompt：问卦 Wengua
 
 请直接在 `turnupmason/Wengua_Meihua` 开发一款面向美国手机用户的梅花易数应用。创始人只有一个人，采用 vibe coding，没有美术和工程团队。你的目标是把仓库现有资料与排盘模块接入一个能运行、能体验、便于持续迭代的手机产品。请先读完本文件与 `CLAUDE.md`，执行现有校验，再持续实施，不要只回复一份规划。

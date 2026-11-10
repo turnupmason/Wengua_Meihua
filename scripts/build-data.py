@@ -3,7 +3,7 @@ from pathlib import Path
 import re, json, hashlib, collections, difflib
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='2026.11.10.1'
+VERSION='2026.11.10.2'
 PATCHES=[]
 ISSUES=[]
 DIFFERENCES=[]
@@ -106,6 +106,24 @@ REPAIRS={
  ('hex-63-line-6','text'):[('濡其道','濡其首')],
  ('hex-63-line-6','image'):[('濡其道','濡其首')],
 }
+# Follow-up collation against the detailed DOCX and fixed online classical witnesses.
+REPAIRS.update({
+ ('hex-05-line-2','image'):[('虽有小言','虽小有言')],
+ ('hex-10','image'):[('以辩上下','以辨上下')],
+ ('hex-15-line-4','text'):[('挥谦','撝谦')],
+ ('hex-15-line-4','image'):[('挥谦','撝谦')],
+ ('hex-22-line-4','image'):[('非寇婚媾','匪寇婚媾')],
+ ('hex-27','image'):[('山下有雷，君子','山下有雷，颐；君子')],
+ ('hex-29-line-6','text'):[('徵纆','徽纆')],
+ ('hex-30','image'):[('照于四方','照四方')],
+ ('hex-30-line-6','text'):[('用嘉折首','有嘉折首')],
+ ('hex-34-line-1','image'):[('孚穷也','其孚穷也')],
+ ('hex-35-line-1','image'):[('未受命','未受命也')],
+ ('hex-39-line-4','image'):[('位当实','当位实')],
+ ('hex-49-line-2','image'):[('行有佳','行有嘉')],
+ ('hex-60-line-5','image'):[('位居中','居位中')],
+})
+
 def align_field(rec,key,value,refvalue,ref,edits):
     value=value.strip();refvalue=refvalue.strip();before=value
     repairs=REPAIRS.get((rec,key),[])

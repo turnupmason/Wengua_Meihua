@@ -86,3 +86,7 @@ const lib = createLibrary({ catalog, sections, domains });
 ## 接入 AI
 
 模型只接收当前 reading、所选领域原文和相关源章节，负责白话表达。排卦、动爻、基础等级、月令状态、空支由代码产出。模型不得覆盖这些字段；模型输出采用独立结构并保存引用的规则 ID。没有网络或模型服务时仍能完成仪式和基础资料查询。
+
+## 新增长篇详解
+
+详解接口、SQLite导入、正式资料与参考阅读分层见 [DATABASE_AND_DETAILS.md](DATABASE_AND_DETAILS.md)。本轮DOCX审校范围见 [DETAILS_AUDIT.md](DETAILS_AUDIT.md)。

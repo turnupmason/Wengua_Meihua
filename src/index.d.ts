@@ -47,3 +47,19 @@ export function seasonalStrength(element:Element,context?:CalendarContext):Stren
 export function assessVoid(trigram:Trigram,options?:VoidOptions):VoidAssessment;
 export function createLibrary(data:{catalog:unknown;sections:unknown;domains:unknown}):Library;
 export function loadLibrary(options?:{readJSON?:(path:string)=>Promise<unknown>}):Promise<Library>;
+
+export interface DetailedLine extends LineReading {
+ position:number;hexagramId:number;canonicalLineId:string;commentaryPath:string;
+ structure:{polarity:'yin'|'yang';positionType:'yin'|'yang';correctPosition:boolean;central:boolean;respondingPosition:number;oppositeResponse:boolean};
+ changedHexagram:{id:number;name:string;bitsBottomUp:number[]};
+ editorialNotes:{text:string;kind:string;evidence:Record<string,unknown>}[];
+}
+export interface DetailedHexagram extends Omit<Hexagram,'lines'> {lines:readonly DetailedLine[];detail:{hexagramId:number;name:string;baseGrade:DisplayGrade;evidenceScope:string;commentaryPath:string}}
+export interface ReferenceCommentary {schemaVersion:string;contentVersion:string;hexagramId:number;name:string;trustScope:string;attributions:string;groups:{key:string;position?:number;label:string;sections:{title:string;paragraphs:{id:string;text:string;sourceRef:{sourceId:string;part:string;paragraphId:string;bodyParagraph:number};patchIds:string[];contentKind:string}[]}[]}[]}
+export interface DetailsRepository {
+ getHexagram(id:number):Promise<DetailedHexagram>;getLine(id:number,position:number):Promise<DetailedLine>;
+ getReadingDetails(reading:Reading):Promise<{contentVersion:string;primary:DetailedHexagram;mutual:DetailedHexagram;changed:DetailedHexagram;selectedMovingLine:DetailedLine;selectionPolicy:string}>;
+ getReferenceCommentary(id:number,options?:{position?:number|null}):Promise<ReferenceCommentary>;
+ getIndex():Promise<unknown>;clearCache():void;
+}
+export function createDetailsRepository(options:{library:Library;readJSON?:(path:string)=>Promise<unknown>}):DetailsRepository;

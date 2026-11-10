@@ -9,3 +9,5 @@
 - 外部交叉校对网站只记录链接与必要古典字词证据，没有搬运其整篇现代解读。
 
 统一 source ID、文件 SHA-256 与页修订号见 `data/source-manifest.json`。每次文字订正见 `data/editorial-patches.json`。这些记录支持追溯，不等于完成了所有来源的出版授权核验。
+
+新增 `sources/original/zhouyi64-detailed.docx` 为用户新上传原件，未改写。`sources/extracted` 保留全文提取，`sources/commentary` 是带来源的整理参考，`sources/review` 保存隔离与处置记录；沿用用户资料原有权利状态，不整体改授MIT。`data/details` 与SQLite导入的结构映射为本项目生成，所引用文本仍保留原来源。新写经义说明明确标注，不署名为原稿列出的作者。

@@ -4,13 +4,22 @@
   "private": true,
   "type": "module",
   "description": "Source-traceable Meihua and 64-hexagram knowledge layer for the Wengua temple application",
-  "engines": { "node": ">=22" },
-  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.js" } },
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate.mjs",
-    "build:data": "python3 scripts/build-data.py",
+    "build:data": "python3 scripts/build-all.py",
     "example": "node examples/read.mjs",
-    "demo": "node scripts/serve.mjs"
+    "demo": "node scripts/serve.mjs",
+    "build:sqlite": "python3 scripts/export-sqlite.py",
+    "validate:details": "python3 scripts/validate-details.py"
   }
 }
