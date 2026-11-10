@@ -28,7 +28,7 @@ test('specific domain rules preserve the food exception and all 18 domains resol
 test('true void cannot be revived by later fills; moving empty use retains influence',async()=>{
  const opts={primaryId:1,movingLine:1,monthOrder:'summer-fire',domainId:'domain-10',voidContext:{ganzhi:'甲子',roleEvidence:{body:{severelyWeak:true,dayMonthAttacked:true}},filledBranches:['戌','亥']},timingScale:'day'};
  const s=await stories.getStory(opts);assert.equal(s.reading.nodes.find(n=>n.isBody).void.state,'true_void');assert.equal(s.timing.voidWindows.length,0);assert.ok(s.story.includes('不自动恢复'));
- assert.ok(s.paragraphs[0].includes('体卦真空'));assert.ok(!s.story.includes('有争取财利的空间'));assert.equal(s.compositionVersion,'1.1.0');
+ assert.ok(s.paragraphs[0].includes('体卦真空'));assert.ok(!s.story.includes('有争取财利的空间'));assert.equal(s.compositionVersion,'1.2.0');
  const moving=await stories.getStory({...opts,voidContext:{ganzhi:'甲子'}});assert.equal(moving.voidNotes.find(n=>n.role==='use').state,'moving_exempt');assert.ok(moving.story.includes('正在发动，仍按有作用论'));
  const monthly=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'earth'},voidContext:{ganzhi:'甲子'}});assert.equal(monthly.nodes.find(n=>n.isBody).void.state,'supported');assert.ok(monthly.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='month-qi'));
  const daily=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'summer'},voidContext:{ganzhi:'甲辰'}});assert.ok(daily.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='day-branch'));
@@ -94,9 +94,9 @@ test('direct result and timing respect true void, true-void pressure, weak suppo
  assert.equal(weak.verdict.code,'gain');assert.ok(weak.verdict.summary.includes('所得不多'));
  assert.ok(weak.timingDecision.windows.every(w=>w.role==='changed_use')); // Empty mutual support is not a mandatory final wait.
  const root=await stories.getStory({primaryId:1,movingLine:1,monthOrder:'summer-fire',domainId:'domain-10',voidContext:{ganzhi:'甲子',roleEvidence:{body:{severelyWeak:true,dayMonthAttacked:true}}},timingScale:'day'});
- assert.equal(root.verdict.code,'failure');assert.equal(root.timingDecision.kind,'blocked');assert.equal(root.timingDecision.windows.length,0);
+ assert.equal(root.verdict.code,'failure');assert.equal(root.timingDecision.kind,'requires-context');assert.equal(root.timingDecision.windows.length,0);
  const strong=await stories.getStory({primaryId:22,movingLine:5,monthOrder:'summer-fire',domainId:'domain-14',voidContext:{ganzhi:'甲申'},timingScale:'day'});
- assert.equal(strong.reading.nodes.find(n=>n.isBody).void.state,'strong_exempt');assert.equal(strong.timingDecision.kind,'qi');
+ assert.equal(strong.reading.nodes.find(n=>n.isBody).void.state,'strong_exempt');assert.equal(strong.timingDecision.kind,'requires-context');assert.ok(strong.timing.events.some(e=>e.eligible&&e.role==='changed_use'));
  assert.ok(strong.movingLine.text.includes('终吉'));assert.ok(strong.verdict.summary.includes('能见到'));
  const dynamic=await stories.getStory({primaryId:28,movingLine:2,monthOrder:'summer-fire',domainId:'domain-03',voidContext:{ganzhi:'甲午'},timingScale:'day'});
  assert.equal(dynamic.reading.nodes.find(n=>n.role==='use').void.state,'moving_exempt');assert.notEqual(dynamic.timingDecision.kind,'fill');

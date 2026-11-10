@@ -1,5 +1,6 @@
+import {selectAuditedTiming} from './timing-audit.js';
 // Product wording, not additional classical quotations. See docs/DIRECT_STORIES.md.
-export const COMPOSITION_VERSION='1.1.0';
+export const COMPOSITION_VERSION='1.2.0';
 const GOOD=new Set(['success','gain','stable']);
 const EMPTY=new Set(['true_void','dormant']);
 const ROLE_NAMES={body:'体卦',use:'用卦',body_mutual:'体互',use_mutual:'用互',changed_use:'变用'};
@@ -100,43 +101,6 @@ function monthly(body,order){
  if(body.strength.monthRelation.type==='use_generates_body')return head+'月令生'+body.trigram+body.element+'，你这一方得助。';
  return head+'体为'+body.trigram+body.element+'，用为当下所问之事。';
 }
-function uniqueWindows(windows){
- const seen=new Set();return windows.filter(w=>{if(seen.has(w.branch))return false;seen.add(w.branch);return true;})
- .sort((a,b)=>(a.afterDays??99)-(b.afterDays??99));
-}
-function selectedTiming(r,timing,verdict){
- const body=find(r,'body'),last=find(r,'changed_use');
- if(body.void.state==='true_void')return {kind:'blocked',windows:[],text:'不取成事日期。体卦真空，等到填实或冲实，也不能把这次求成。'};
- if(['failure','loss'].includes(verdict.code)){
-  const windows=uniqueWindows(timing.qiWindows.filter(w=>w.role==='changed_use'&&w.kind==='pressure'&&w.active));
-  if(windows.length)return timed('pressure',windows,'不顺的应期取',timing);
-  return {kind:'no-fulfilment-date',windows:[],text:'此盘不取成事日期。'+(verdict.code==='loss'?'所断的是耗损，不报一个得利日期。':'所断的是难成，不报一个成功日期。')};
- }
- // Only genuinely waiting states force fill timing. Moving/strong emptiness is not a wait condition.
- const waitRoles=['body','changed_use'];
- for(const role of waitRoles){
-  const n=find(r,role);if(!['dormant','supported'].includes(n.void.state))continue;
-  const e=edge(r,role);if(role!=='body'&&e&&['use_controls_body','body_generates_use'].includes(e.type))continue;
-  const fill=uniqueWindows(timing.voidWindows.filter(w=>w.role===role&&w.mechanism==='fill'));
-  if(fill.length){
-   const result=timed('fill',fill,'成事应期先取',timing);
-   result.secondary=uniqueWindows(timing.voidWindows.filter(w=>w.role===role&&w.mechanism==='clash'));
-   return result;
-  }
- }
- if(timing.numericalWindow?.status==='conditional-numerical-candidate')return {kind:'number',windows:[],text:'按本次原数和动静，应在起卦后约'+timing.numericalWindow.count+'日。'};
- const windows=uniqueWindows(timing.qiWindows.filter(w=>w.role==='changed_use'&&w.active&&['support','equal'].includes(w.kind)));
- if(windows.length)return timed('qi',windows,'成事应期取',timing);
- return {kind:'unavailable',windows:[],text:'这盘没有足够的定期依据，不报具体日期。'};
-}
-function timed(kind,windows,prefix,timing){
- const chosen=windows.slice(0,2),unit={day:'日',month:'月',year:'年',hour:'时'}[timing.scale]||'支';
- const dates=chosen.map(w=>w.branch+unit+(w.afterDays?'（起卦后第'+w.afterDays+'日）':'')).join('、');
- let text=prefix+dates+(kind==='fill'?'填实。':'。');
- if(!timing.scale)text+='本次没有指定取日、月、年还是时，只列地支，不报日期。';
- if(timing.scale==='day'&&!timing.dayGanzhi)text+='未给日干支，不算起卦后第几日。';
- return {kind,windows:chosen,text};
-}
 export function composeDirectStory({reading:r,domain,order,timing}){
  const body=find(r,'body'),last=find(r,'changed_use'),first=edge(r,'use'),end=edge(r,'changed_use');
  const line=r.selectedMovingLine;
@@ -173,6 +137,6 @@ export function composeDirectStory({reading:r,domain,order,timing}){
  const start='起初是'+r.stages.primary.name+'。'+monthly(body,order)+step(r,'use',domain)+voidSentence(body,r);
  const mid=middle(r,domain);
  const finish='最后变为'+r.stages.changed.name+'。'+change+(EMPTY.has(last.void.state)?voidSentence(last,r):'')+(body.void.state==='true_void'?'体卦真空，这些生克不能把结果改成有成；后遇填冲也不自动恢复。':'')+'所以这卦断：'+verdict.summary;
- const timingDecision=selectedTiming(r,timing,verdict);
+ const timingDecision=selectAuditedTiming(r,timing,verdict);
  return {verdict,movingLine,timingDecision,paragraphs:['卦断：'+verdict.summary,start,turn,mid,finish,timingDecision.text]};
 }

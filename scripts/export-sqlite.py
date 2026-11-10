@@ -54,7 +54,12 @@ def main():
     out=ROOT/'dist';out.mkdir(exist_ok=True)
     target=out/'wengua.sqlite'
     if target.exists():target.unlink()
-    with sqlite3.connect(target) as disk:db.backup(disk)
+    # The new audit is a separate small SQL supplement; do not rewrite historical story rows.
+    supplement=ROOT/'data/timing-audit.sql'
+    with sqlite3.connect(target) as disk:
+        db.backup(disk)
+        if supplement.exists():disk.executescript(supplement.read_text())
+        assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     check=sqlite3.connect(':memory:');check.executescript(sql)
     assert check.execute('PRAGMA integrity_check').fetchone()[0]=='ok';assert not check.execute('PRAGMA foreign_key_check').fetchall()
     assert check.execute('SELECT count(*) FROM moving_line_details').fetchone()[0]==384

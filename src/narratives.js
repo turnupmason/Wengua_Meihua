@@ -1,5 +1,6 @@
 import {readRepositoryJSON} from './io.js';
 import {composeDirectStory,COMPOSITION_VERSION} from './story-language.js';
+import {auditTimingCandidates} from './timing-audit.js';
 import {monthOrder,MONTH_ORDERS} from './narrative-rules.js';
 export {MONTH_ORDERS};
 const BRANCHES=[...'子丑寅卯辰巳午未申酉戌亥'];
@@ -19,14 +20,14 @@ function freeze(x){if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze
 function integer(x,min,max,label){if(!Number.isSafeInteger(x)||x<min||x>max)throw new RangeError(`${label} must be ${min}..${max}`);}
 function roleEffect(type){return type==='use_controls_body'?'这会减轻该项克体压力':type==='use_generates_body'?'这使该项助益的落实更需观察':type==='body_generates_use'?'该项投入及消耗的实际程度仍需核对':type==='body_controls_use'?'原有可掌握的条件仍需落实':'原有相合条件仍需落实';}
 /** Time windows are conditional branch candidates, not invented Gregorian dates or observed feedback. */
-export function buildTimingPlan(reading,{timingScale=null,castContext=null}={}){
+export function buildTimingPlan(reading,{timingScale=null,castContext=null,timingContext={}}={}){
  if(timingScale!==null&&!['day','month','year','hour'].includes(timingScale))throw new RangeError('Unknown timingScale');
  const ganzhis=[...new Set(reading.nodes.filter(n=>n.void.xun).map(n=>n.void.xun.ganzhi))];
  if(ganzhis.length>1)throw new Error('Mixed void ganzhi across chart roles; one casting basis required');
  const voidBasis=reading.profile?.voidBasis||'day-explicit-input',voidGanzhi=ganzhis[0]||null;
  const dayGanzhi=voidBasis==='day-explicit-input'?voidGanzhi:null;
  const currentBranch=dayGanzhi?[...dayGanzhi][1]:null;
- const decorate=branch=>({branch,...(timingScale==='day'&&currentBranch?{afterDays:(BRANCHES.indexOf(branch)-BRANCHES.indexOf(currentBranch)+12)%12||12}:{})});
+ const decorate=branch=>({branch,...(timingScale==='day'&&currentBranch?{afterDays:(BRANCHES.indexOf(branch)-BRANCHES.indexOf(currentBranch)+12)%12||12,calendarOnly:true,selectedAsEventDate:false}:{})});
  const body=reading.nodes.find(n=>n.isBody),voidWindows=[],qiWindows=[],blocked=[];
  for(const n of reading.nodes.filter(n=>['body','use','body_mutual','use_mutual','changed_use'].includes(n.role))){
   if(n.void.hit!==true)continue;
@@ -44,16 +45,10 @@ export function buildTimingPlan(reading,{timingScale=null,castContext=null}={}){
   const node=reading.nodes.find(n=>n.role===e.targetRole);
   const kind=e.type==='use_generates_body'?'support':e.type==='equal'?'equal':e.type==='use_controls_body'?'pressure':null;
   if(!kind)continue;
-  const active=!['suppressed','dormant','unknown'].includes(node.void.effective)&&body.void.state!=='true_void';
+  const active=!['suppressed','dormant','unknown'].includes(node.void.effective)&&(kind==='pressure'||body.void.state!=='true_void');
   for(const branch of QI_BRANCHES[node.element])qiWindows.push({role:node.role,kind,element:node.element,...decorate(branch),active,condition:active?'按卦气择候，仍须结合所问事情及实际进展':'本项空亡/资料状态未允许直接作为落实应期'});
  }
  voidWindows.sort((a,b)=>a.priority-b.priority||(a.afterDays||0)-(b.afterDays||0));
- const unique=a=>[...new Set(a)];const unit=timingScale?{day:'日',month:'月',year:'年',hour:'时'}[timingScale]:'';
- const format=w=>w.branch+unit+(w.afterDays?'（起卦后第'+w.afterDays+'日）':'');
- const fill=unique(voidWindows.filter(w=>w.mechanism==='fill').map(format)),clash=unique(voidWindows.filter(w=>w.mechanism==='clash').map(format));
- const eligible=w=>w.active||(body.void.state!=='true_void'&&reading.nodes.find(n=>n.role===w.role).void.state==='unresolved');
- const support=unique(qiWindows.filter(w=>eligible(w)&&['support','equal'].includes(w.kind)).map(format));
- const pressure=unique(qiWindows.filter(w=>eligible(w)&&w.kind==='pressure').map(format));
  let numericalWindow=null;
  if(castContext){
   if(castContext.method!=='object-direction-hour')throw new RangeError('Numerical motion timing requires explicit object-direction-hour input');
@@ -64,19 +59,12 @@ export function buildTimingPlan(reading,{timingScale=null,castContext=null}={}){
   const h=reading.stages.primary.detail;
   if(names[castContext.objectTrigramNumber-1]!==h.upperTrigram||names[castContext.directionTrigramNumber-1]!==h.lowerTrigram||(total-1)%6+1!==reading.movingLine)throw new Error('Timing input does not reproduce the original chart');
   const count=total*(castContext.motion==='walking'?0.5:castContext.motion==='sitting'?2:1);
-  numericalWindow={rawTotal:total,motion:castContext.motion,count,unit:'day',status:timingScale!=='day'?'requires-explicit-day-scale':!Number.isInteger(count)?'fractional-needs-interpretation':body.void.state==='true_void'?'blocked-by-body-true-void':'conditional-numerical-candidate',sourceIds:['mh-039','mh-122']};
+  numericalWindow={rawTotal:total,motion:castContext.motion,count,unit:'day',status:timingScale!=='day'?'requires-explicit-day-scale':!Number.isInteger(count)?'fractional-needs-interpretation':'conditional-numerical-candidate',sourceIds:['mh-039','mh-122']};
  }
- const phrases=[];
- if(body.void.state==='true_void')phrases.push('你一侧的根基已按输入证据判为真空，本次不以未来填冲直接许诺转成');
- else if(blocked.length)phrases.push('其中判作真空的部分不因未来填冲自动恢复，须与仍有作用的条件分开看');
- if(fill.length)phrases.push('空象的落实先观察'+fill.join('、')+'的填实，再看'+clash.join('、')+'的冲实');
- if(support.length)phrases.push('生体或比和的'+support.join('、')+'可作观察助益的候选');
- if(pressure.length)phrases.push('克体的'+pressure.join('、')+'则需留意原有阻力是否显现');
- if(numericalWindow?.status==='conditional-numerical-candidate')phrases.push('依已提供的取象原数与动静，数应候选为起卦后约'+numericalWindow.count+'日，这一取法只适用于当前明确选择的原数与动静条件');
- if(!phrases.length)phrases.push('当前证据还没有给出可直接采用的具体落实节点，先核实旬空、生扶与所问事情的时距');
- return freeze({basis:'conditional-traditional-timing',scale:timingScale,voidBasis,voidGanzhi,dayGanzhi:dayGanzhi||null,voidWindows,qiWindows,blocked,numericalWindow,
-  text:'应期上，'+phrases.join('；')+'。'+(!voidGanzhi?'旬空尚待复核。':'')+(timingScale==='day'&&!dayGanzhi?'日干支未明确，本次不计算支候选的相对日数。':'')+(timingScale?'这些是需要与实际进展印证的择候节点。':'应按事情的远近确定取日、月还是年，当前不擅自指定公历日期。'),
-  sourceIds:['mh-012','mh-052','mh-122','user-void-timing'],priority:['fill','clash','conditional-combine'],gregorianDates:[],reportedOutcome:null});
+ const legacy={basis:'conditional-traditional-timing',scale:timingScale,voidBasis,voidGanzhi,dayGanzhi:dayGanzhi||null,voidWindows,qiWindows,blocked,numericalWindow,
+  text:'',
+  sourceIds:['mh-012','mh-052','mh-122','user-void-timing'],priority:['fill','clash','conditional-combine'],gregorianDates:[],reportedOutcome:null};
+ return freeze(auditTimingCandidates(reading,legacy,{timingContext}));
 }
 export function createNarrativeRepository({library,readJSON=readRepositoryJSON}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');const cache=new Map();
@@ -93,7 +81,7 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
   if(stageIds.some((id,i)=>row.stageIds[i]!==id||row.baseGrades[i]!==library.getHexagram(id).grade.rawGrade))throw new Error('Prewritten story chart or grade mismatch');
   return freeze({...row,story:row.paragraphs.join('\n\n')});
  }
- async function getStory({primaryId,movingLine,monthOrder:orderId,domainId='domain-02',voidContext={},timingScale=null,castContext=null,question='',mutualPolicy='inner-lines'}){
+ async function getStory({primaryId,movingLine,monthOrder:orderId,domainId='domain-02',voidContext={},timingScale=null,castContext=null,timingContext={},question='',mutualPolicy='inner-lines'}){
   const order=monthOrder(orderId),base=await getBase({primaryId,movingLine,monthOrder:orderId,mutualPolicy});
   const reading=library.createReading({primaryId,movingLine,domainId,calendar:{season:order.season},voidContext,question,mutualPolicy});
   const rules=await read('data/stories/domain-rules.json'),domain=rules.domains.find(d=>d.id===domainId);if(!domain)throw new RangeError('Unknown narrative domain');
@@ -106,7 +94,7 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
    if(edge&&['suppressed','dormant'].includes(n.void.effective))text+='，'+roleEffect(edge.type);
    voidNotes.push({role:n.role,state:n.void.state,text:text+'。',sourceIds:['user-void-extension','user-void-timing',domain.sourceSectionId]});
   }
-  const timing=buildTimingPlan(reading,{timingScale,castContext});
+  const timing=buildTimingPlan(reading,{timingScale,castContext,timingContext});
   const composed=composeDirectStory({reading,domain,order,timing});
   return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:COMPOSITION_VERSION,monthOrder:order,domainId,reading,
    baseStory:base.story,...composed,story:composed.paragraphs.join('\n\n'),voidNotes,timing,sourceIds:[...new Set([...base.sourceIds,domain.sourceSectionId,...timing.sourceIds])],

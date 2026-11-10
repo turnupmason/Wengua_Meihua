@@ -2,6 +2,8 @@
 import {readRepositoryJSON} from './io.js';
 export {createDetailsRepository} from './details.js';
 export {createNarrativeRepository,buildTimingPlan,MONTH_ORDERS} from './narratives.js';
+export {TIMING_AUDIT_VERSION,DOMAIN_TIMING_SPECS,GLOBAL_TIMING_RULES,TRIGRAM_PERIOD_SPECS} from './timing-rules.js';
+export {selectAuditedTiming} from './timing-audit.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];
 const GENERATES = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };

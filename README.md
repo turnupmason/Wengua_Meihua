@@ -2,7 +2,7 @@
 
 为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
 
-**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V4.md)。
+**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。
 
 已加入新上传的《周易六十四卦详解》：8,770段、315,194字，128条本轮编辑记录，64段串贴/错误片段隔离；正式详解与384条变卦映射已接通。见[本轮审校报告](docs/DETAILS_AUDIT.md)和[数据库及接口](docs/DATABASE_AND_DETAILS.md)。长篇注解作为显式参考阅读，未认证的正文不写入正式数据库事实表。**
 
@@ -82,4 +82,6 @@ const svg = lib.renderHexagramSVG(49, { movingLine: 1, svgId: 'primary' });
 
 已加入1,920篇月令基础故事（384种单动爻盘×春木/夏火/秋金/冬水/季月土）、18门类专用句、空亡与应期候选，以及10个古籍案例/11张复算盘。故事按目前→经过→结果展开，无需每次调用AI。用 `npm run example:story` 查看完整输出，接入见 [故事与应期说明](docs/STORIES_AND_TIMING.md)。
 
-最终故事组合版本1.1.0已改为直接总断，接入真实动爻原文、爻意、经卦及生克变化，并输出本次采用的少量应期。产品使用 `getStory().story`；不直接展示旧基础文字。见 [断语口径](docs/DIRECT_STORIES.md)、[十篇程序试读](docs/TEN_STORY_PREVIEWS.md) 和 [最新Claude prompt](docs/CLAUDE_BUILD_PROMPT_V4.md)。
+最终故事组合版本1.1.0已改为直接总断，接入真实动爻原文、爻意、经卦及生克变化，并输出本次采用的少量应期。产品使用 `getStory().story`；不直接展示旧基础文字。见 [断语口径](docs/DIRECT_STORIES.md)、[十篇程序试读](docs/TEN_STORY_PREVIEWS.md) 和 [最新Claude prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。
+
+应期专项现已覆盖18门、27条核过原文及8经卦时序，另有独立SQL补充包。原文、应事、吉凶和日期轮次分别保存；下一次支日不自动当应验日。详见 [十八门应期校核](docs/TIMING_AUDIT.md)。旧样稿确定天数已撤回，1,920篇等待用户确认文风后再统一改写。
