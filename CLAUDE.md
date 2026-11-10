@@ -3,7 +3,7 @@
 本仓库是用户“问卦 / Wengua”手机应用的知识与排盘基础。继续开发前按顺序阅读：
 
 1. `README.md`
-2. `docs/CLAUDE_BUILD_PROMPT_V3.md`（最新完整产品任务）
+2. `docs/CLAUDE_BUILD_PROMPT_V4.md`（最新完整产品任务）
 3. `docs/RULES.md`、`docs/DATA_AND_API.md`、`docs/DATABASE_AND_DETAILS.md`
 4. `docs/EDITORIAL.md`、`docs/DETAILS_AUDIT.md`、`data/issues.json`
 
@@ -26,3 +26,5 @@
 新增详解接口为 `createDetailsRepository`；数据库导入为 `data/knowledge.sql`。`sources/commentary` 只供显式参考阅读，`sources/review` 隔离稿不进入正式运行时或事实表。点击爻时用原卦ID及自下至上的1–6爻位，不将参考注解反向改写结构。
 
 月令故事接口 `createNarrativeRepository` 已接通：1,920篇基础故事、18门类、空亡及应期；使用五类月令，不以12个月支为故事索引。古籍案例的原断与反馈分开，不把案例反馈写成新用户未来。详见 docs/STORIES_AND_TIMING.md。
+
+最新故事输出组合版本1.1.0，必须读取 `getStory` 的 `verdict`、`movingLine`、`timingDecision` 和最终 `story`。不要直接展示旧版 `getBase().story`、`baseStory`、SQL基础段落或旧 `timing.text`。故事必须给具体结果，并解释本卦真实动爻怎么改变事情；正文不以“需要一起看”“可以观察”等套话代替结论。详见 docs/DIRECT_STORIES.md。直接下卦断不等于编造金额、人物、日期或声称现实必然应验。

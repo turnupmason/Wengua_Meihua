@@ -20,15 +20,16 @@ test('specific domain rules preserve the food exception and all 18 domains resol
  for(let id=1;id<=64&&!example;id++)for(let p=1;p<=6;p++){
   const r=lib.createReading({primaryId:id,movingLine:p});if(r.edges.find(e=>e.targetRole==='use').type==='body_controls_use'){example={primaryId:id,movingLine:p};break;}
  }
- const food=await stories.getStory({...example,monthOrder:'spring-wood',domainId:'domain-07'});assert.ok(food.story.includes('饮食一事原典提示有阻'));
+ const food=await stories.getStory({...example,monthOrder:'spring-wood',domainId:'domain-07'});assert.ok(food.story.includes('饮食有阻'));
+ const foodMiddle=await stories.getStory({primaryId:42,movingLine:4,monthOrder:'spring-wood',domainId:'domain-07'});assert.ok(foodMiddle.story.includes('都有饮食受阻之意'));
  for(const d of lib.listDomains()){const s=await stories.getStory({...example,monthOrder:'summer-fire',domainId:d.id});assert.equal(s.domainId,d.id);assert.ok(s.sourceIds.includes(d.sectionId));assert.equal(s.reportedOutcome,null);}
- const sky=await stories.getStory({...example,monthOrder:'spring-wood',domainId:'domain-01'});assert.ok(sky.story.includes('原典要求不分体用'));assert.ok(!sky.story.includes('你与事情之间有可供掌握'));
+ const sky=await stories.getStory({...example,monthOrder:'spring-wood',domainId:'domain-01'});assert.ok(sky.story.includes('天时占不分体用'));assert.ok(!sky.story.includes('你与事情之间有可供掌握'));
 });
 test('true void cannot be revived by later fills; moving empty use retains influence',async()=>{
  const opts={primaryId:1,movingLine:1,monthOrder:'summer-fire',domainId:'domain-10',voidContext:{ganzhi:'甲子',roleEvidence:{body:{severelyWeak:true,dayMonthAttacked:true}},filledBranches:['戌','亥']},timingScale:'day'};
  const s=await stories.getStory(opts);assert.equal(s.reading.nodes.find(n=>n.isBody).void.state,'true_void');assert.equal(s.timing.voidWindows.length,0);assert.ok(s.story.includes('不自动恢复'));
- assert.ok(s.paragraphs[0].includes('已判为真空'));assert.ok(!s.story.includes('有争取财利的空间'));assert.equal(s.compositionVersion,'1.0.1');
- const moving=await stories.getStory({...opts,voidContext:{ganzhi:'甲子'}});assert.equal(moving.voidNotes.find(n=>n.role==='use').state,'moving_exempt');assert.ok(moving.story.includes('账面收益、预期金额和实际到账'));
+ assert.ok(s.paragraphs[0].includes('体卦真空'));assert.ok(!s.story.includes('有争取财利的空间'));assert.equal(s.compositionVersion,'1.1.0');
+ const moving=await stories.getStory({...opts,voidContext:{ganzhi:'甲子'}});assert.equal(moving.voidNotes.find(n=>n.role==='use').state,'moving_exempt');assert.ok(moving.story.includes('正在发动，仍按有作用论'));
  const monthly=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'earth'},voidContext:{ganzhi:'甲子'}});assert.equal(monthly.nodes.find(n=>n.isBody).void.state,'supported');assert.ok(monthly.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='month-qi'));
  const daily=lib.createReading({primaryId:1,movingLine:1,calendar:{season:'summer'},voidContext:{ganzhi:'甲辰'}});assert.ok(daily.nodes.find(n=>n.isBody).supportEvidence.some(e=>e.basis==='day-branch'));
 });
@@ -66,4 +67,37 @@ test('unsupported month keys, alternative mutual policies and invalid timing sca
  await assert.rejects(stories.getBase({primaryId:1,movingLine:1,monthOrder:'spring-wood',mutualPolicy:'pure-use-changed'}),/inner-lines/);
  assert.throws(()=>buildTimingPlan(lib.createReading({primaryId:1,movingLine:1}),{timingScale:'guessed'}));
  assert.throws(()=>{MONTH_ORDERS[0].label='bad';});
+});
+
+test('all public stories end in a domain verdict, include the exact moving line, and expose four relation checks without hedge boilerplate',async()=>{
+ const domains=lib.listDomains().filter(d=>!['domain-01','domain-06','domain-16'].includes(d.id));
+ let count=0;
+ for(let id=1;id<=64;id++)for(let line=1;line<=6;line++)for(const order of MONTH_ORDERS){
+  for(const d of domains){
+   const s=await stories.getStory({primaryId:id,movingLine:line,monthOrder:order.id,domainId:d.id,voidContext:{ganzhi:'甲子'},timingScale:'day'});
+   assert.ok(s.verdict.summary.length>4);assert.notEqual(s.verdict.code,'reference-only');
+   assert.ok(s.story.includes('所以这卦断：'+s.verdict.summary));
+   assert.equal(s.movingLine.hexagramId,id);assert.equal(s.movingLine.position,line);
+   assert.equal(s.movingLine.text,lib.getLineReading(id,line).text);assert.ok(s.story.includes(s.movingLine.text));
+   assert.equal(s.movingLine.toTrigram,s.reading.nodes.find(n=>n.role==='changed_use').trigram);
+   assert.equal(s.verdict.relationEvidence.length,4);assert.equal(s.verdict.finalRelation,s.reading.edges.find(e=>e.targetRole==='changed_use').type);
+   assert.ok(!/可以观察|需要一起看|需要结合|画面转为|承接条件|势头正盛/.test(s.story),s.id+' '+d.id);
+   assert.ok(s.timingDecision.windows.length<=2);assert.equal(s.reportedOutcome,null);
+   for(const w of s.timingDecision.windows){assert.ok([...s.timing.voidWindows,...s.timing.qiWindows].some(x=>x.branch===w.branch&&x.role===w.role));}
+   count++;
+  }
+ }
+ assert.equal(count,28800);
+});
+test('direct result and timing respect true void, true-void pressure, weak support, and moving/strong empty exemptions',async()=>{
+ const weak=await stories.getStory({primaryId:49,movingLine:1,monthOrder:'spring-wood',domainId:'domain-10',voidContext:{ganzhi:'甲子'},timingScale:'day'});
+ assert.equal(weak.verdict.code,'gain');assert.ok(weak.verdict.summary.includes('所得不多'));
+ assert.ok(weak.timingDecision.windows.every(w=>w.role==='changed_use')); // Empty mutual support is not a mandatory final wait.
+ const root=await stories.getStory({primaryId:1,movingLine:1,monthOrder:'summer-fire',domainId:'domain-10',voidContext:{ganzhi:'甲子',roleEvidence:{body:{severelyWeak:true,dayMonthAttacked:true}}},timingScale:'day'});
+ assert.equal(root.verdict.code,'failure');assert.equal(root.timingDecision.kind,'blocked');assert.equal(root.timingDecision.windows.length,0);
+ const strong=await stories.getStory({primaryId:22,movingLine:5,monthOrder:'summer-fire',domainId:'domain-14',voidContext:{ganzhi:'甲申'},timingScale:'day'});
+ assert.equal(strong.reading.nodes.find(n=>n.isBody).void.state,'strong_exempt');assert.equal(strong.timingDecision.kind,'qi');
+ assert.ok(strong.movingLine.text.includes('终吉'));assert.ok(strong.verdict.summary.includes('能见到'));
+ const dynamic=await stories.getStory({primaryId:28,movingLine:2,monthOrder:'summer-fire',domainId:'domain-03',voidContext:{ganzhi:'甲午'},timingScale:'day'});
+ assert.equal(dynamic.reading.nodes.find(n=>n.role==='use').void.state,'moving_exempt');assert.notEqual(dynamic.timingDecision.kind,'fill');
 });

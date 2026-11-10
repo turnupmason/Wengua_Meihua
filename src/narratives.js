@@ -1,4 +1,5 @@
 import {readRepositoryJSON} from './io.js';
+import {composeDirectStory,COMPOSITION_VERSION} from './story-language.js';
 import {monthOrder,MONTH_ORDERS} from './narrative-rules.js';
 export {MONTH_ORDERS};
 const BRANCHES=[...'子丑寅卯辰巳午未申酉戌亥'];
@@ -96,21 +97,6 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
   const order=monthOrder(orderId),base=await getBase({primaryId,movingLine,monthOrder:orderId,mutualPolicy});
   const reading=library.createReading({primaryId,movingLine,domainId,calendar:{season:order.season},voidContext,question,mutualPolicy});
   const rules=await read('data/stories/domain-rules.json'),domain=rules.domains.find(d=>d.id===domainId);if(!domain)throw new RangeError('Unknown narrative domain');
-  const first=reading.edges.find(e=>e.targetRole==='use'),last=reading.edges.find(e=>e.targetRole==='changed_use');
-  let paragraphs=[...base.paragraphs];
-  if(domainId==='domain-01'){
-   const counts={};for(const n of reading.nodes)counts[n.trigram]=(counts[n.trigram]||0)+1;
-   paragraphs=[order.opening+'。这次看天时，原典要求不分体用，合看三卦中的晴雨、风雷等象意。',
-    '本、互、变依次为'+Object.values(reading.stages).map(s=>s.name).join('、')+'。其中出现'+Object.entries(counts).map(([k,v])=>k+'象'+v+'处').join('、')+'，需结合时令与实际天象观察。',
-    '离、坎等象在原典分别与晴雨联系，这里保留为传统观象，不据人事生克给出确定天气结论。'];
-  }else if(['domain-06','domain-16'].includes(domainId)){
-   paragraphs=[order.opening+'。本次涉及'+domain.subject+'，以下采用该门类的传统象意与原文参照。',
-    '眼前的关系是'+first.label+'。'+domain.relationshipText[first.type]+'。',
-    '经过'+reading.stages.mutual.name+'的中间阶段，末段来到'+reading.stages.changed.name+'，其对原体的关系为'+last.label+'。'+domain.relationshipText[last.type]+'。'];
-  }else{
-   paragraphs[0]+='放在'+domain.label+'上看，'+domain.relationshipText[first.type]+'。';
-   paragraphs[2]+='至于'+domain.subject+'的后续，'+domain.relationshipText[last.type]+'。';
-  }
   const voidNotes=[];
   for(const n of reading.nodes.filter(n=>['body','use','body_mutual','use_mutual','changed_use'].includes(n.role))){
    const action=VOID_ACTIONS[n.void.state];if(!action)continue;
@@ -120,16 +106,10 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
    if(edge&&['suppressed','dormant'].includes(n.void.effective))text+='，'+roleEffect(edge.type);
    voidNotes.push({role:n.role,state:n.void.state,text:text+'。',sourceIds:['user-void-extension','user-void-timing',domain.sourceSectionId]});
   }
-  if(domainId!=='domain-01'&&reading.nodes.find(n=>n.isBody).void.state==='true_void'){
-   const referenceOnly=['domain-06','domain-16'].includes(domainId);
-   paragraphs=[order.opening+'。本卦是“'+reading.stages.primary.name+'”，眼前的结构关系为'+first.label+'。但本例另外给定了体卦衰极受侵害的证据，已判为真空；这一前提应先于一般有利象意阅读。'+(referenceOnly?'这里仅是传统盘面条件的说明，不等同于现实健康结论。':'放在'+domain.label+'上，先核实自身是否具备承接这件事的真实条件，不把相合或可掌握的结构直接当成事情能成。'),
-    '事情行到“'+reading.stages.mutual.name+'”的中间阶段，仍可辨清其中相助、牵制与消耗的方向。但体卦真空的限制仍在，不能仅因互卦有比和或生扶方向，就认定原来的根基已恢复；尚逢静空的部分，也不当作已经落实的帮助。',
-    '末段来到“'+reading.stages.changed.name+'”，其对原体的关系为'+last.label+'。这只是末段的生克方向，不能越过体卦真空而许诺'+domain.subject+'能够落实。即使后来遇到填实或冲实，也不自动把本例改判为恢复，现实承接条件仍应先行核实。'];
-  }
-  if(voidNotes.length)paragraphs.push('再看这件事尚未落定的部分：'+voidNotes.map(n=>n.text).join(''));
-  const timing=buildTimingPlan(reading,{timingScale,castContext});paragraphs.push(timing.text);
-  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:'1.0.1',monthOrder:order,domainId,reading,
-   baseStory:base.story,paragraphs,story:paragraphs.join('\n\n'),voidNotes,timing,sourceIds:[...base.sourceIds,domain.sourceSectionId,...timing.sourceIds],
+  const timing=buildTimingPlan(reading,{timingScale,castContext});
+  const composed=composeDirectStory({reading,domain,order,timing});
+  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:COMPOSITION_VERSION,monthOrder:order,domainId,reading,
+   baseStory:base.story,...composed,story:composed.paragraphs.join('\n\n'),voidNotes,timing,sourceIds:[...new Set([...base.sourceIds,domain.sourceSectionId,...timing.sourceIds])],
    scope:'prospective-symbolic-reading;no invented retrospective events',reportedOutcome:null,baseGradesUnchanged:true});
  }
  async function getClassicalCases({primaryId,movingLine}={}){
