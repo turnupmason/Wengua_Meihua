@@ -1,6 +1,7 @@
 import {readRepositoryJSON} from './io.js';
 import {composeDirectStory,COMPOSITION_VERSION} from './story-language.js';
 import {auditTimingCandidates} from './timing-audit.js';
+import {buildFullChartRelations} from './full-chart.js';
 import {monthOrder,MONTH_ORDERS} from './narrative-rules.js';
 export {MONTH_ORDERS};
 const BRANCHES=[...'子丑寅卯辰巳午未申酉戌亥'];
@@ -96,7 +97,7 @@ export function createNarrativeRepository({library,readJSON=readRepositoryJSON})
   }
   const timing=buildTimingPlan(reading,{timingScale,castContext,timingContext});
   const composed=composeDirectStory({reading,domain,order,timing});
-  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:COMPOSITION_VERSION,monthOrder:order,domainId,reading,
+  return freeze({id:base.id,contentVersion:library.contentVersion,narrativeVersion:'1.0.0',compositionVersion:COMPOSITION_VERSION,monthOrder:order,domainId,reading,fullChart:buildFullChartRelations(reading),
    baseStory:base.story,...composed,story:composed.paragraphs.join('\n\n'),voidNotes,timing,sourceIds:[...new Set([...base.sourceIds,domain.sourceSectionId,...timing.sourceIds])],
    scope:'prospective-symbolic-reading;no invented retrospective events',reportedOutcome:null,baseGradesUnchanged:true});
  }
