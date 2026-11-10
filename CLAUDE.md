@@ -3,11 +3,11 @@
 本仓库是用户“问卦 / Wengua”手机应用的知识与排盘基础。继续开发前按顺序阅读：
 
 1. `README.md`
-2. `docs/CLAUDE_BUILD_PROMPT_V2.md`（最新完整产品任务）
+2. `docs/CLAUDE_BUILD_PROMPT_V3.md`（最新完整产品任务）
 3. `docs/RULES.md`、`docs/DATA_AND_API.md`、`docs/DATABASE_AND_DETAILS.md`
 4. `docs/EDITORIAL.md`、`docs/DETAILS_AUDIT.md`、`data/issues.json`
 
-先执行 `npm run validate`、`npm run validate:details`、`npm test`；需要观察文字和动爻联动时执行 `npm run demo`。
+先执行 `npm run validate`、`npm run validate:details`、`npm run validate:stories`、`npm test`；需要观察文字和动爻联动时执行 `npm run demo`。
 
 ## 必须保持
 
@@ -24,3 +24,5 @@
 当前已具备资料包、排盘与二维联调演示；还没有完整 3D 应用。按完整 prompt 从可运行的移动竖屏道观体验继续落实。用户要求行动时直接实施，不停留在规划说明。
 
 新增详解接口为 `createDetailsRepository`；数据库导入为 `data/knowledge.sql`。`sources/commentary` 只供显式参考阅读，`sources/review` 隔离稿不进入正式运行时或事实表。点击爻时用原卦ID及自下至上的1–6爻位，不将参考注解反向改写结构。
+
+月令故事接口 `createNarrativeRepository` 已接通：1,920篇基础故事、18门类、空亡及应期；使用五类月令，不以12个月支为故事索引。古籍案例的原断与反馈分开，不把案例反馈写成新用户未来。详见 docs/STORIES_AND_TIMING.md。

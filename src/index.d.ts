@@ -17,14 +17,14 @@ export interface VoidOptions {ganzhi?:string;moving?:boolean;strength?:string;fi
 export interface VoidAssessment {state:string;label:string;hit:boolean|null;effective:'active'|'conditional'|'suppressed'|'dormant'|'unknown';matchedBranches:Branch[];castingState?:string;releaseEvidence?:{branch:Branch;fill:boolean;clash:boolean;combine:boolean}[];releaseTargets?:ReleaseTarget[];combineEligible?:boolean;hitKind?:'none'|'partial'|'full'}
 export interface ReleaseTarget {emptyBranch:Branch;fill:Branch;clash:Branch;combine:Branch}
 export interface Relation {type:RelationType;label:string;phrase:string;bodyElement:Element;useElement:Element}
-export interface Strength {state:'strong'|'weak'|'not_explicit'|'unresolved';label:string;element:Element;season?:string;monthBranch?:Branch|null;sourceSectionTitles:string[];note?:string}
+export interface Strength {state:'strong'|'weak'|'not_explicit'|'unresolved';label:string;element:Element;season?:string;monthBranch?:Branch|null;sourceSectionTitles:string[];note?:string;monthElement?:Element;monthRelation?:Relation}
 export interface ReadingOptions {primaryId:number;movingLine:number;domainId?:string;calendar?:CalendarContext;voidContext?:VoidOptions;mutualPolicy?:'inner-lines'|'pure-use-changed';question?:string;castId?:string|null}
 export interface Reading {
  schemaVersion:string;contentVersion:string;primaryId:number;movingLine:number;mutualPolicy:string;castId:string|null;question:string;
  body:{trigram:Trigram;element:Element;side:'lower'|'upper'};use:{trigram:Trigram;element:Element;side:'lower'|'upper'};
  stages:Record<Stage,{stage:Stage;id:number;name:string;symbol:string;bitsBottomUp:number[];baseGrade:DisplayGrade;theme:string;caption:string;glowLine:number|null;correspondingChangedLine:number|null;detail:Hexagram}>;
  selectedMovingLine:LineReading&{hexagramId:number;position:number};
- nodes:ReadonlyArray<{id:string;stage:Stage;side:string;trigram:Trigram;element:Element;role:string;isBody:boolean;strength:Strength;void:VoidAssessment}>;
+ nodes:ReadonlyArray<{id:string;stage:Stage;side:string;trigram:Trigram;element:Element;role:string;isBody:boolean;strength:Strength;supportEvidence:{basis:string;element:Element;kind:string;sourceIds:string[]}[];void:VoidAssessment}>;
  edges:ReadonlyArray<Relation&{from:string;to:string;targetRole:string;voidEffect:string;bodyVoidEffect:string;qualitativeNote:string;sourceSectionTitles:string[]}>;
  domain:Domain;domainPassage:DomainPassage|null;contextualAssessment:{status:string;summary:string;missing:string[];baseGradesUnchanged:boolean};selectionPolicy:Record<string,unknown>;profile:Record<string,unknown>;
 }
@@ -63,3 +63,17 @@ export interface DetailsRepository {
  getIndex():Promise<unknown>;clearCache():void;
 }
 export function createDetailsRepository(options:{library:Library;readJSON?:(path:string)=>Promise<unknown>}):DetailsRepository;
+
+export type MonthOrderId='spring-wood'|'summer-fire'|'autumn-metal'|'winter-water'|'seasonal-earth';
+export interface MonthOrder {id:MonthOrderId;label:string;season:'spring'|'summer'|'autumn'|'winter'|'earth';strong:Element;weak:Element;opening:string}
+export const MONTH_ORDERS:readonly Readonly<MonthOrder>[];
+export interface NumericalCastContext {method:'object-direction-hour';objectTrigramNumber:number;directionTrigramNumber:number;hourBranchNumber:number;motion:'walking'|'standing'|'sitting'}
+export interface TimingWindow {role:string;branch:Branch;afterDays?:number;condition:string;mechanism?:'fill'|'clash'|'combine';priority?:number;kind?:'support'|'equal'|'pressure';active?:boolean}
+export interface TimingPlan {basis:string;scale:'day'|'month'|'year'|'hour'|null;dayGanzhi:string|null;voidBasis:string;voidGanzhi:string|null;voidWindows:readonly TimingWindow[];qiWindows:readonly TimingWindow[];blocked:readonly {role:string;state:string;reason:string}[];text:string;sourceIds:string[];priority:string[];gregorianDates:readonly [];reportedOutcome:null;numericalWindow:{rawTotal:number;motion:string;count:number;unit:string;status:string;sourceIds:string[]}|null}
+export interface StoryOptions {primaryId:number;movingLine:number;monthOrder:MonthOrderId;domainId?:string;voidContext?:VoidOptions;timingScale?:'day'|'month'|'year'|'hour'|null;castContext?:NumericalCastContext|null;question?:string;mutualPolicy?:'inner-lines'}
+export interface BaseStory {id:string;primaryId:number;movingLine:number;monthOrder:MonthOrderId;stageIds:number[];baseGrades:DisplayGrade[];paragraphs:string[];story:string;scope:string;sourceIds:string[]}
+export interface StoryReading {id:string;contentVersion:string;narrativeVersion:string;monthOrder:Readonly<MonthOrder>;domainId:string;reading:Reading;baseStory:string;paragraphs:string[];story:string;voidNotes:{role:string;state:string;text:string;sourceIds:string[]}[];timing:TimingPlan;scope:string;reportedOutcome:null;baseGradesUnchanged:boolean}
+export interface ClassicalCase {id:string;title:string;sourceSectionId:string;sourceText:string;sourceRef:SourceRef;prediction:{text:string;status:string};feedback:{text:string;status:string}|null;charts:{primaryId:number;movingLine:number;mutualId:number;changedId:number;input:Record<string,unknown>}[];timing:Record<string,unknown>;auditNotes:string[];reusePolicy:string}
+export interface NarrativeRepository {getBase(options:Pick<StoryOptions,'primaryId'|'movingLine'|'monthOrder'|'mutualPolicy'>):Promise<BaseStory>;getStory(options:StoryOptions):Promise<StoryReading>;getClassicalCases(filter?:{primaryId?:number;movingLine?:number}):Promise<readonly ClassicalCase[]>;getIndex():Promise<unknown>;clearCache():void}
+export function createNarrativeRepository(options:{library:Library;readJSON?:(path:string)=>Promise<unknown>}):NarrativeRepository;
+export function buildTimingPlan(reading:Reading,options?:{timingScale?:'day'|'month'|'year'|'hour'|null;castContext?:NumericalCastContext|null}):TimingPlan;

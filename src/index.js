@@ -1,11 +1,13 @@
 /** Deterministic knowledge layer. No LLM, network requests, or calendar guesses in createReading. */
 import {readRepositoryJSON} from './io.js';
 export {createDetailsRepository} from './details.js';
+export {createNarrativeRepository,buildTimingPlan,MONTH_ORDERS} from './narratives.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];
 const GENERATES = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };
 const CONTROLS = { 木: '土', 土: '水', 水: '火', 火: '金', 金: '木' };
 const ELEMENTS = Object.keys(GENERATES);
+const BRANCH_ELEMENTS={子:'水',丑:'土',寅:'木',卯:'木',辰:'土',巳:'火',午:'火',未:'土',申:'金',酉:'金',戌:'土',亥:'水'};
 export const TRIGRAM_BRANCHES = deepFreeze({ 乾: ['戌','亥'], 兑: ['酉'], 离: ['午'], 震: ['卯'], 巽: ['辰','巳'], 坎: ['子'], 艮: ['丑','寅'], 坤: ['未','申'] });
 const COMBINES = {子:'丑',丑:'子',寅:'亥',亥:'寅',卯:'戌',戌:'卯',辰:'酉',酉:'辰',巳:'申',申:'巳',午:'未',未:'午'};
 const LABELS = { body_controls_use: '体克用', use_controls_body: '用克体', body_generates_use: '体生用', use_generates_body: '用生体', equal: '比和' };
@@ -40,7 +42,7 @@ export function seasonalStrength(element,context={}) {
   if(!season)return {state:'unresolved',label:'时令待提供',element,sourceSectionTitles:['卦气旺','卦气衰']};
   const strong={spring:'木',summer:'火',autumn:'金',winter:'水',earth:'土'}[season];
   const weak={spring:'土',summer:'金',autumn:'木',winter:'火',earth:'水'}[season];
-  return {state:element===strong?'strong':element===weak?'weak':'not_explicit',label:element===strong?'旺':element===weak?'衰':'原条目未明示',element,season,monthBranch:monthBranch||null,sourceSectionTitles:['卦气旺','卦气衰'],note:'月支由调用方按选定历法提供；不将其他五行自动解释为平或空亡真空。'};
+  return {state:element===strong?'strong':element===weak?'weak':'not_explicit',label:element===strong?'旺':element===weak?'衰':'原条目未明示',element,season,monthBranch:monthBranch||null,monthElement:strong,monthRelation:relation(element,strong),sourceSectionTitles:['卦气旺','卦气衰'],note:'月支由调用方按选定历法提供；不将其他五行自动解释为平或空亡真空。'};
 }
 /** User-specified extension. Partial branch hits are visible but do not silently nullify a whole trigram. */
 export function assessVoid(trigram,options={}) {
@@ -108,8 +110,15 @@ export function createLibrary({catalog,sections,domains}) {
       const role=stage==='primary'?(isBody?'body':'use'):stage==='mutual'?(side===bodySide?'body_mutual':'use_mutual'):(side===bodySide?'body_inherited':'changed_use');
       const strength=seasonalStrength(t.element,calendar);
       const explicit=voidContext.roleEvidence?.[role]||{};
-      const v=assessVoid(t.id,{...voidContext,...explicit,moving:role==='use'||role==='changed_use',strength:explicit.strength||strength.state});
-      nodes.push({id:stage+'-'+side,stage,side,trigram:t.id,element:t.element,role,isBody,strength,void:v});
+      const supportEvidence=[];
+      if(strength.monthRelation?.type==='use_generates_body')supportEvidence.push({basis:'month-qi',element:strength.monthElement,kind:'generates',sourceIds:['mh-007','mh-009','user-void-timing']});
+      const basis=voidContext.basis||'day-explicit-input',ganzhi=explicit.ganzhi||voidContext.ganzhi;
+      if(basis==='day-explicit-input'&&typeof ganzhi==='string'){
+        const dayElement=BRANCH_ELEMENTS[[...ganzhi][1]];
+        if(dayElement&&(dayElement===t.element||GENERATES[dayElement]===t.element))supportEvidence.push({basis:'day-branch',element:dayElement,kind:dayElement===t.element?'equal':'generates',sourceIds:['mh-007','mh-012','user-void-timing']});
+      }
+      const v=assessVoid(t.id,{...voidContext,...explicit,supported:Boolean(explicit.supported||voidContext.supported||supportEvidence.length),moving:role==='use'||role==='changed_use',strength:explicit.strength||strength.state});
+      nodes.push({id:stage+'-'+side,stage,side,trigram:t.id,element:t.element,role,isBody,strength,supportEvidence,void:v});
     }
     const edges=nodes.filter(n=>!['body','body_inherited'].includes(n.role)).map(n=>{
       const r=relation(body.element,n.element);const bodyActs=['body_controls_use','body_generates_use'].includes(r.type);
@@ -121,7 +130,7 @@ export function createLibrary({catalog,sections,domains}) {
     for(const [stage,k,caption] of [['primary',h,'目前'],['mutual',m,'经过'],['changed',c,'结果']])panels[stage]={stage,id:k.id,name:k.name,symbol:k.symbol,bitsBottomUp:[...k.bitsBottomUp],baseGrade:k.grade.rawGrade,theme:k.grade.theme,caption,glowLine:stage==='primary'?movingLine:null,correspondingChangedLine:stage==='changed'?movingLine:null,detail:k};
     return deepFreeze({schemaVersion:'1.0.0',contentVersion:catalog.contentVersion,castId,question,primaryId,movingLine,mutualPolicy,body:{trigram:body.id,element:body.element,side:bodySide},use:{trigram:use.id,element:use.element,side:useSide},stages:panels,selectedMovingLine:{hexagramId:primaryId,position:movingLine,...selected},nodes,edges,domain,domainPassage:domain.relationPassages?.[relation(body.element,use.element).type]||null,
       contextualAssessment:{status:'qualitative-reference',summary:'基础等级、动爻资料与生克事实已接通；综合占断不由固定权重代替。',missing:[...(!calendar.season&&!calendar.monthBranch?['calendar-context']:[]),...(!voidContext.ganzhi?['void-ganzhi']:[])],sourceSectionTitles:['体用总诀','体用互变之诀','体用衰旺之诀'],baseGradesUnchanged:true},
-      selectionPolicy:{movingLineScope:'primary-only',mutualHasIndependentMovingLine:false,specialUseNineSixAreOrdinaryLines:false},profile:{id:'user-classical-plus-void',version:'1.0.0',voidBasis:voidContext.basis||'day-explicit-input',partialPolicy:voidContext.partialPolicy||'mark-only',monthBoundary:'caller-supplied; no implicit timezone conversion'}});
+      selectionPolicy:{movingLineScope:'primary-only',mutualHasIndependentMovingLine:false,specialUseNineSixAreOrdinaryLines:false},profile:{id:'user-classical-plus-void',version:'1.1.0',voidBasis:voidContext.basis||'day-explicit-input',partialPolicy:voidContext.partialPolicy||'mark-only',monthBoundary:'caller-supplied; no implicit timezone conversion'}});
   }
   function renderHexagramSVG(id,{movingLine=null,selectedLine=null,stage='primary',svgId='hexagram'}={}) {
     const h=hex(id);if(movingLine!==null)integer(movingLine,1,6,'movingLine');if(selectedLine!==null)integer(selectedLine,1,6,'selectedLine');

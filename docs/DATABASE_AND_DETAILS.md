@@ -77,3 +77,7 @@ WHERE hexagram_id = 55 AND position = 1;
 `source_documents`记录的是文件来源，不将来源中的每句话认证为现实事实。所有规则仍由 `src/index.js` 计算；SQL 视图不替代历法、体用、月令和空亡函数。
 
 入库在一个事务中完成，包含主键、外键、卦号范围、爻位范围、五档分类与用九/用六限制。脚本独立运行完整性检查、外键检查以及384条连接的逐条对照。`data/details/variants.json`、隔离段和署名未确认的长篇解释均不混进事实表。
+
+## 月令故事与案例
+
+数据库新增 `month_orders` 五类月令、`monthly_narratives` 的1,920篇预写故事、18条 `domain_narrative_rules`、`void_narrative_rules` 与10个 `classical_cases`。完整接入和应期边界见 [STORIES_AND_TIMING.md](STORIES_AND_TIMING.md)。

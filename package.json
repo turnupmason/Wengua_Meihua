@@ -20,6 +20,9 @@
     "example": "node examples/read.mjs",
     "demo": "node scripts/serve.mjs",
     "build:sqlite": "python3 scripts/export-sqlite.py",
-    "validate:details": "python3 scripts/validate-details.py"
+    "validate:details": "python3 scripts/validate-details.py",
+    "validate:stories": "python3 scripts/validate-stories.py",
+    "build:stories": "node scripts/build-narratives.mjs",
+    "example:story": "node examples/story.mjs"
   }
 }

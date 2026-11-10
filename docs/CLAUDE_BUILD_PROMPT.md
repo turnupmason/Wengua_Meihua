@@ -1,3 +1,5 @@
+> 最新版本为 [V3](CLAUDE_BUILD_PROMPT_V3.md)。
+
 > 本文件保留完整产品规格；最新交接请先阅读 [Claude prompt V2](CLAUDE_BUILD_PROMPT_V2.md)，其中包含已接好的详解接口、数据库及新验收要求。
 
 # 给 Claude 的完整开发 prompt：问卦 Wengua
