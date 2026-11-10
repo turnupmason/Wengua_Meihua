@@ -1,0 +1,536 @@
+{
+  "version": "2026.11.10.1",
+  "sources": [
+    {
+      "id": "user-meihua",
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "originalFilename": "梅花易数_卷一至卷三_整理完整版.txt",
+      "bytes": 116389,
+      "sha256": "90a9b3592fa95b91cec39efe0afb6d4854a9c6f667e35436bfb10c474dc53c09",
+      "characters": 39737,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    },
+    {
+      "id": "user-yijing64",
+      "path": "sources/original/yijing64.txt",
+      "originalFilename": "YiJing64_Reissued_20261110.txt",
+      "bytes": 201244,
+      "sha256": "cb3f5b347970a49a46ced459e34928797187fa23e86e42e0da80850b9caf38f6",
+      "characters": 68987,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    },
+    {
+      "id": "user-grade-table",
+      "path": "sources/original/grades64.txt",
+      "originalFilename": "Pasted text.txt",
+      "bytes": 24805,
+      "sha256": "f6f0367a392e377d5602df80506128462a63216113529b155644e164686123fd",
+      "characters": 8595,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    },
+    {
+      "id": "user-void-extension",
+      "path": "sources/original/void-rules.txt",
+      "originalFilename": "用户在对话中补充的空亡规则",
+      "bytes": 1451,
+      "sha256": "7c7b826b498ebe5caec8cd2a9b50bfc56f4e5a7c921c1fc7e4fe30e2125b0f09",
+      "characters": 633,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    },
+    {
+      "id": "user-void-timing",
+      "path": "sources/original/void-time-nodes.txt",
+      "originalFilename": "用户补充的六旬出空时间节点及真空优先规则",
+      "bytes": 1940,
+      "sha256": "6147ac52a53ed67c5825d9d3dce979a2c8843351e0fffcb0cb28a4390f7aadbb",
+      "characters": 740,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    },
+    {
+      "id": "user-grade-correction",
+      "path": "sources/original/grade-correction.txt",
+      "originalFilename": "用户最新明确订正天风姤为中卦",
+      "bytes": 719,
+      "sha256": "b0edaa2e8fa1a50e05c76e46bdf15fcdf39d0f9b5103e1f993eef575a5b28fce",
+      "characters": 283,
+      "provenance": "user-supplied",
+      "status": "source snapshot; not an independently authenticated critical edition"
+    }
+  ],
+  "references": [
+    {
+      "id": "meihua-1",
+      "title": "梅花易數/卷一",
+      "revisionId": 2690596,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%80&oldid=2690596&variant=zh-hans",
+      "path": "sources/references/meihua-1.json"
+    },
+    {
+      "id": "meihua-2",
+      "title": "梅花易數/卷二",
+      "revisionId": 1441921,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%BA%8C&oldid=1441921&variant=zh-hans",
+      "path": "sources/references/meihua-2.json"
+    },
+    {
+      "id": "meihua-3",
+      "title": "梅花易數/卷三",
+      "revisionId": 1441927,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%89&oldid=1441927&variant=zh-hans",
+      "path": "sources/references/meihua-3.json"
+    },
+    {
+      "id": "zhouyi-01",
+      "title": "周易/乾",
+      "revisionId": 2404991,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E4%B9%BE&oldid=2404991&variant=zh-hans",
+      "path": "sources/references/zhouyi-01.json"
+    },
+    {
+      "id": "zhouyi-02",
+      "title": "周易/坤",
+      "revisionId": 2404999,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%9D%A4&oldid=2404999&variant=zh-hans",
+      "path": "sources/references/zhouyi-02.json"
+    },
+    {
+      "id": "zhouyi-03",
+      "title": "周易/屯",
+      "revisionId": 10643482,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B1%AF&oldid=10643482&variant=zh-hans",
+      "path": "sources/references/zhouyi-03.json"
+    },
+    {
+      "id": "zhouyi-04",
+      "title": "周易/蒙",
+      "revisionId": 10645379,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%92%99&oldid=10645379&variant=zh-hans",
+      "path": "sources/references/zhouyi-04.json"
+    },
+    {
+      "id": "zhouyi-05",
+      "title": "周易/需",
+      "revisionId": 10643261,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%9C%80&oldid=10643261&variant=zh-hans",
+      "path": "sources/references/zhouyi-05.json"
+    },
+    {
+      "id": "zhouyi-06",
+      "title": "周易/訟",
+      "revisionId": 10645409,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%A8%9F&oldid=10645409&variant=zh-hans",
+      "path": "sources/references/zhouyi-06.json"
+    },
+    {
+      "id": "zhouyi-07",
+      "title": "周易/師",
+      "revisionId": 2405011,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B8%AB&oldid=2405011&variant=zh-hans",
+      "path": "sources/references/zhouyi-07.json"
+    },
+    {
+      "id": "zhouyi-08",
+      "title": "周易/比",
+      "revisionId": 10645543,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%AF%94&oldid=10645543&variant=zh-hans",
+      "path": "sources/references/zhouyi-08.json"
+    },
+    {
+      "id": "zhouyi-09",
+      "title": "周易/小畜",
+      "revisionId": 10645530,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B0%8F%E7%95%9C&oldid=10645530&variant=zh-hans",
+      "path": "sources/references/zhouyi-09.json"
+    },
+    {
+      "id": "zhouyi-10",
+      "title": "周易/履",
+      "revisionId": 10647513,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B1%A5&oldid=10647513&variant=zh-hans",
+      "path": "sources/references/zhouyi-10.json"
+    },
+    {
+      "id": "zhouyi-11",
+      "title": "周易/泰",
+      "revisionId": 2106138,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%B3%B0&oldid=2106138&variant=zh-hans",
+      "path": "sources/references/zhouyi-11.json"
+    },
+    {
+      "id": "zhouyi-12",
+      "title": "周易/否",
+      "revisionId": 10645603,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%90%A6&oldid=10645603&variant=zh-hans",
+      "path": "sources/references/zhouyi-12.json"
+    },
+    {
+      "id": "zhouyi-13",
+      "title": "周易/同人",
+      "revisionId": 10645635,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%90%8C%E4%BA%BA&oldid=10645635&variant=zh-hans",
+      "path": "sources/references/zhouyi-13.json"
+    },
+    {
+      "id": "zhouyi-14",
+      "title": "周易/大有",
+      "revisionId": 10645712,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A4%A7%E6%9C%89&oldid=10645712&variant=zh-hans",
+      "path": "sources/references/zhouyi-14.json"
+    },
+    {
+      "id": "zhouyi-15",
+      "title": "周易/謙",
+      "revisionId": 2106142,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%AC%99&oldid=2106142&variant=zh-hans",
+      "path": "sources/references/zhouyi-15.json"
+    },
+    {
+      "id": "zhouyi-16",
+      "title": "周易/豫",
+      "revisionId": 10645735,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%B1%AB&oldid=10645735&variant=zh-hans",
+      "path": "sources/references/zhouyi-16.json"
+    },
+    {
+      "id": "zhouyi-17",
+      "title": "周易/隨",
+      "revisionId": 10645020,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%9A%A8&oldid=10645020&variant=zh-hans",
+      "path": "sources/references/zhouyi-17.json"
+    },
+    {
+      "id": "zhouyi-18",
+      "title": "周易/蠱",
+      "revisionId": 2106145,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%A0%B1&oldid=2106145&variant=zh-hans",
+      "path": "sources/references/zhouyi-18.json"
+    },
+    {
+      "id": "zhouyi-19",
+      "title": "周易/臨",
+      "revisionId": 2106146,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%87%A8&oldid=2106146&variant=zh-hans",
+      "path": "sources/references/zhouyi-19.json"
+    },
+    {
+      "id": "zhouyi-20",
+      "title": "周易/觀",
+      "revisionId": 10645159,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%A7%80&oldid=10645159&variant=zh-hans",
+      "path": "sources/references/zhouyi-20.json"
+    },
+    {
+      "id": "zhouyi-21",
+      "title": "周易/噬嗑",
+      "revisionId": 10645753,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%99%AC%E5%97%91&oldid=10645753&variant=zh-hans",
+      "path": "sources/references/zhouyi-21.json"
+    },
+    {
+      "id": "zhouyi-22",
+      "title": "周易/賁",
+      "revisionId": 2405035,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%B3%81&oldid=2405035&variant=zh-hans",
+      "path": "sources/references/zhouyi-22.json"
+    },
+    {
+      "id": "zhouyi-23",
+      "title": "周易/剝",
+      "revisionId": 10645800,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%89%9D&oldid=10645800&variant=zh-hans",
+      "path": "sources/references/zhouyi-23.json"
+    },
+    {
+      "id": "zhouyi-24",
+      "title": "周易/復",
+      "revisionId": 10643037,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%BE%A9&oldid=10643037&variant=zh-hans",
+      "path": "sources/references/zhouyi-24.json"
+    },
+    {
+      "id": "zhouyi-25",
+      "title": "周易/无妄",
+      "revisionId": 10645038,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%97%A0%E5%A6%84&oldid=10645038&variant=zh-hans",
+      "path": "sources/references/zhouyi-25.json"
+    },
+    {
+      "id": "zhouyi-26",
+      "title": "周易/大畜",
+      "revisionId": 10646304,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A4%A7%E7%95%9C&oldid=10646304&variant=zh-hans",
+      "path": "sources/references/zhouyi-26.json"
+    },
+    {
+      "id": "zhouyi-27",
+      "title": "周易/頤",
+      "revisionId": 10643091,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%A0%A4&oldid=10643091&variant=zh-hans",
+      "path": "sources/references/zhouyi-27.json"
+    },
+    {
+      "id": "zhouyi-28",
+      "title": "周易/大過",
+      "revisionId": 10645184,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A4%A7%E9%81%8E&oldid=10645184&variant=zh-hans",
+      "path": "sources/references/zhouyi-28.json"
+    },
+    {
+      "id": "zhouyi-29",
+      "title": "周易/坎",
+      "revisionId": 10646381,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%9D%8E&oldid=10646381&variant=zh-hans",
+      "path": "sources/references/zhouyi-29.json"
+    },
+    {
+      "id": "zhouyi-30",
+      "title": "周易/離",
+      "revisionId": 10646424,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%9B%A2&oldid=10646424&variant=zh-hans",
+      "path": "sources/references/zhouyi-30.json"
+    },
+    {
+      "id": "zhouyi-31",
+      "title": "周易/咸",
+      "revisionId": 10646450,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%92%B8&oldid=10646450&variant=zh-hans",
+      "path": "sources/references/zhouyi-31.json"
+    },
+    {
+      "id": "zhouyi-32",
+      "title": "周易/恒",
+      "revisionId": 10646486,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%81%92&oldid=10646486&variant=zh-hans",
+      "path": "sources/references/zhouyi-32.json"
+    },
+    {
+      "id": "zhouyi-33",
+      "title": "周易/遯",
+      "revisionId": 10645108,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%81%AF&oldid=10645108&variant=zh-hans",
+      "path": "sources/references/zhouyi-33.json"
+    },
+    {
+      "id": "zhouyi-34",
+      "title": "周易/大壯",
+      "revisionId": 10646529,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A4%A7%E5%A3%AF&oldid=10646529&variant=zh-hans",
+      "path": "sources/references/zhouyi-34.json"
+    },
+    {
+      "id": "zhouyi-35",
+      "title": "周易/晉",
+      "revisionId": 10646579,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%99%89&oldid=10646579&variant=zh-hans",
+      "path": "sources/references/zhouyi-35.json"
+    },
+    {
+      "id": "zhouyi-36",
+      "title": "周易/明夷",
+      "revisionId": 10644507,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%98%8E%E5%A4%B7&oldid=10644507&variant=zh-hans",
+      "path": "sources/references/zhouyi-36.json"
+    },
+    {
+      "id": "zhouyi-37",
+      "title": "周易/家人",
+      "revisionId": 2405005,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%AE%B6%E4%BA%BA&oldid=2405005&variant=zh-hans",
+      "path": "sources/references/zhouyi-37.json"
+    },
+    {
+      "id": "zhouyi-38",
+      "title": "周易/睽",
+      "revisionId": 10646622,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E7%9D%BD&oldid=10646622&variant=zh-hans",
+      "path": "sources/references/zhouyi-38.json"
+    },
+    {
+      "id": "zhouyi-39",
+      "title": "周易/蹇",
+      "revisionId": 2405036,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%B9%87&oldid=2405036&variant=zh-hans",
+      "path": "sources/references/zhouyi-39.json"
+    },
+    {
+      "id": "zhouyi-40",
+      "title": "周易/解",
+      "revisionId": 10646666,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%A7%A3&oldid=10646666&variant=zh-hans",
+      "path": "sources/references/zhouyi-40.json"
+    },
+    {
+      "id": "zhouyi-41",
+      "title": "周易/損",
+      "revisionId": 10646704,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%90%8D&oldid=10646704&variant=zh-hans",
+      "path": "sources/references/zhouyi-41.json"
+    },
+    {
+      "id": "zhouyi-42",
+      "title": "周易/益",
+      "revisionId": 10646726,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E7%9B%8A&oldid=10646726&variant=zh-hans",
+      "path": "sources/references/zhouyi-42.json"
+    },
+    {
+      "id": "zhouyi-43",
+      "title": "周易/夬",
+      "revisionId": 2405003,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A4%AC&oldid=2405003&variant=zh-hans",
+      "path": "sources/references/zhouyi-43.json"
+    },
+    {
+      "id": "zhouyi-44",
+      "title": "周易/姤",
+      "revisionId": 10646826,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%A7%A4&oldid=10646826&variant=zh-hans",
+      "path": "sources/references/zhouyi-44.json"
+    },
+    {
+      "id": "zhouyi-45",
+      "title": "周易/萃",
+      "revisionId": 10647546,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%90%83&oldid=10647546&variant=zh-hans",
+      "path": "sources/references/zhouyi-45.json"
+    },
+    {
+      "id": "zhouyi-46",
+      "title": "周易/升",
+      "revisionId": 10646879,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%8D%87&oldid=10646879&variant=zh-hans",
+      "path": "sources/references/zhouyi-46.json"
+    },
+    {
+      "id": "zhouyi-47",
+      "title": "周易/困",
+      "revisionId": 10647032,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%9B%B0&oldid=10647032&variant=zh-hans",
+      "path": "sources/references/zhouyi-47.json"
+    },
+    {
+      "id": "zhouyi-48",
+      "title": "周易/井",
+      "revisionId": 10645240,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E4%BA%95&oldid=10645240&variant=zh-hans",
+      "path": "sources/references/zhouyi-48.json"
+    },
+    {
+      "id": "zhouyi-49",
+      "title": "周易/革",
+      "revisionId": 10643173,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%9D%A9&oldid=10643173&variant=zh-hans",
+      "path": "sources/references/zhouyi-49.json"
+    },
+    {
+      "id": "zhouyi-50",
+      "title": "周易/鼎",
+      "revisionId": 10647086,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%BC%8E&oldid=10647086&variant=zh-hans",
+      "path": "sources/references/zhouyi-50.json"
+    },
+    {
+      "id": "zhouyi-51",
+      "title": "周易/震",
+      "revisionId": 10644930,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E9%9C%87&oldid=10644930&variant=zh-hans",
+      "path": "sources/references/zhouyi-51.json"
+    },
+    {
+      "id": "zhouyi-52",
+      "title": "周易/艮",
+      "revisionId": 10647135,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%89%AE&oldid=10647135&variant=zh-hans",
+      "path": "sources/references/zhouyi-52.json"
+    },
+    {
+      "id": "zhouyi-53",
+      "title": "周易/漸",
+      "revisionId": 2560535,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%BC%B8&oldid=2560535&variant=zh-hans",
+      "path": "sources/references/zhouyi-53.json"
+    },
+    {
+      "id": "zhouyi-54",
+      "title": "周易/歸妹",
+      "revisionId": 10647182,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%AD%B8%E5%A6%B9&oldid=10647182&variant=zh-hans",
+      "path": "sources/references/zhouyi-54.json"
+    },
+    {
+      "id": "zhouyi-55",
+      "title": "周易/豐",
+      "revisionId": 10645290,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E8%B1%90&oldid=10645290&variant=zh-hans",
+      "path": "sources/references/zhouyi-55.json"
+    },
+    {
+      "id": "zhouyi-56",
+      "title": "周易/旅",
+      "revisionId": 10647234,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%97%85&oldid=10647234&variant=zh-hans",
+      "path": "sources/references/zhouyi-56.json"
+    },
+    {
+      "id": "zhouyi-57",
+      "title": "周易/巽",
+      "revisionId": 10644966,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B7%BD&oldid=10644966&variant=zh-hans",
+      "path": "sources/references/zhouyi-57.json"
+    },
+    {
+      "id": "zhouyi-58",
+      "title": "周易/兌",
+      "revisionId": 2404993,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%85%8C&oldid=2404993&variant=zh-hans",
+      "path": "sources/references/zhouyi-58.json"
+    },
+    {
+      "id": "zhouyi-59",
+      "title": "周易/渙",
+      "revisionId": 10647580,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%B8%99&oldid=10647580&variant=zh-hans",
+      "path": "sources/references/zhouyi-59.json"
+    },
+    {
+      "id": "zhouyi-60",
+      "title": "周易/節",
+      "revisionId": 2405027,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E7%AF%80&oldid=2405027&variant=zh-hans",
+      "path": "sources/references/zhouyi-60.json"
+    },
+    {
+      "id": "zhouyi-61",
+      "title": "周易/中孚",
+      "revisionId": 10647425,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E4%B8%AD%E5%AD%9A&oldid=10647425&variant=zh-hans",
+      "path": "sources/references/zhouyi-61.json"
+    },
+    {
+      "id": "zhouyi-62",
+      "title": "周易/小過",
+      "revisionId": 10643238,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E5%B0%8F%E9%81%8E&oldid=10643238&variant=zh-hans",
+      "path": "sources/references/zhouyi-62.json"
+    },
+    {
+      "id": "zhouyi-63",
+      "title": "周易/既濟",
+      "revisionId": 2572417,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%97%A2%E6%BF%9F&oldid=2572417&variant=zh-hans",
+      "path": "sources/references/zhouyi-63.json"
+    },
+    {
+      "id": "zhouyi-64",
+      "title": "周易/未濟",
+      "revisionId": 10647450,
+      "url": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans",
+      "path": "sources/references/zhouyi-64.json"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>问卦 · 梅花资料联调</title><link rel="stylesheet" href="/web/style.css"></head>
+<body><main><header><p class="eyebrow">WENGUA / MEIHUA</p><h1>静心观象</h1><p>卦象、动爻与古籍资料联调演示</p></header>
+<form id="controls"><label>本卦<select id="primary"></select></label><label>动爻<select id="moving"><option value="1">初爻 · 最下方</option><option value="2">二爻</option><option value="3">三爻</option><option value="4">四爻</option><option value="5">五爻</option><option value="6">上爻 · 最上方</option></select></label><label>事项<select id="domain"></select></label><label>月支<select id="month"><option value="">待提供</option></select></label><label>日干支<input id="ganzhi" maxlength="2" placeholder="如甲子" value="甲子"></label><button>查看卦象</button></form>
+<p id="error" role="alert"></p><section class="stone" aria-label="本卦互卦变卦"><div id="roles"></div><div id="panels"></div><p id="relation"></p></section>
+<section class="detail"><h2 id="detail-title">卦意</h2><div id="detail"></div></section>
+<details><summary>月令、旬空与全盘生克</summary><div id="context"></div></details>
+<details><summary>所选领域古籍条目</summary><div id="domain-text" class="prose"></div></details>
+<footer>本页用于验证资料接通与动爻位置。完整道观仪式体验按仓库 Claude prompt 开发。卦象解读供传统文化体验。</footer>
+</main><script type="module" src="/web/app.js"></script></body></html>

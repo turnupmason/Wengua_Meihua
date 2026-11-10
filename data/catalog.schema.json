@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/turnupmason/Wengua_Meihua/data/catalog.schema.json",
+  "title": "Wengua hexagram catalog 1.0.0",
+  "type": "object",
+  "required": ["schemaVersion", "contentVersion", "lineOrder", "hexagrams", "trigrams"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "contentVersion": {"type": "string"},
+    "lineOrder": {"const": "bottom-up"},
+    "hexagrams": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"$ref": "#/$defs/hexagram"}},
+    "trigrams": {"type": "array", "minItems": 8, "maxItems": 8}
+  },
+  "$defs": {
+    "passage": {
+      "type": "object",
+      "required": ["text", "vernacular", "image", "imageVernacular"],
+      "properties": {"text": {"type": "string", "minLength": 1}, "vernacular": {"type": "string", "minLength": 1}, "image": {"type": "string", "minLength": 1}, "imageVernacular": {"type": "string", "minLength": 1}}
+    },
+    "hexagram": {
+      "type": "object",
+      "required": ["id", "name", "bitsBottomUp", "upperTrigram", "lowerTrigram", "grade", "reading", "lines", "specialLines", "sourceRef"],
+      "properties": {
+        "id": {"type": "integer", "minimum": 1, "maximum": 64},
+        "name": {"type": "string", "minLength": 1},
+        "bitsBottomUp": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"enum": [0, 1]}},
+        "upperTrigram": {"enum": ["乾", "兑", "离", "震", "巽", "坎", "艮", "坤"]},
+        "lowerTrigram": {"enum": ["乾", "兑", "离", "震", "巽", "坎", "艮", "坤"]},
+        "grade": {"type": "object", "required": ["rawGrade", "canonicalGrade"], "properties": {"rawGrade": {"enum": ["上上卦", "中上卦", "中中卦", "中下卦", "下下卦", "中卦"]}, "canonicalGrade": {"enum": ["上上卦", "中上卦", "中中卦", "中下卦", "下下卦"]}}},
+        "reading": {"$ref": "#/$defs/passage"},
+        "lines": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"allOf": [{"$ref": "#/$defs/passage"}, {"type": "object", "required": ["position", "label", "sourceRef"], "properties": {"position": {"type": "integer", "minimum": 1, "maximum": 6}, "label": {"type": "string"}}}]}},
+        "specialLines": {"type": "array", "maxItems": 1, "items": {"allOf": [{"$ref": "#/$defs/passage"}, {"type": "object", "properties": {"position": {"type": "null"}, "label": {"enum": ["用九", "用六"]}}}]}}
+      }
+    }
+  }
+}

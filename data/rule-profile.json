@@ -1,0 +1,116 @@
+{
+  "id": "user-classical-plus-void",
+  "version": "1.0.0",
+  "contentVersion": "2026.11.10.1",
+  "purpose": "Inspectable policy metadata; implemented by src/index.js, not a numeric scoring model",
+  "authorityOrder": [
+    "latest-user-correction",
+    "user-grade-table-and-void-rules",
+    "unambiguous-classical-definitions",
+    "explicit-software-conventions"
+  ],
+  "movingLine": {
+    "numbering": "bottom-up-1-to-6",
+    "scope": "primary-only",
+    "use": "trigram-containing-moving-line",
+    "body": "other-static-trigram",
+    "specialUseNineSix": "separate-not-seventh-line"
+  },
+  "mutual": {
+    "default": "inner-lines",
+    "lower": [
+      2,
+      3,
+      4
+    ],
+    "upper": [
+      3,
+      4,
+      5
+    ],
+    "alternative": "pure-use-changed for 乾坤, explicit only"
+  },
+  "grades": {
+    "classification": [
+      "上上卦",
+      "中上卦",
+      "中中卦",
+      "中下卦",
+      "下下卦"
+    ],
+    "displayField": "rawGrade",
+    "classificationField": "canonicalGrade",
+    "latestOverrides": {
+      "44": {
+        "display": "中卦",
+        "classification": "中中卦",
+        "sourceId": "user-grade-correction"
+      }
+    },
+    "contextNeverOverwritesBase": true
+  },
+  "season": {
+    "sourceTitles": [
+      "卦气旺",
+      "卦气衰",
+      "体用衰旺之诀"
+    ],
+    "unknownOtherElements": "not_explicit",
+    "monthBranchOrigin": "caller-supplied calendar adapter",
+    "timeCastingLunarMonthSeparateFromMonthBranch": true
+  },
+  "void": {
+    "sources": [
+      "user-void-extension",
+      "user-void-timing"
+    ],
+    "basisDefault": "explicit day ganzhi",
+    "mapping": "later-heaven-trigram-branch",
+    "partialDefault": "mark-only",
+    "trueVoidNeeds": [
+      "casting-time severely weak",
+      "casting-time day/month attacked",
+      "no moving/strong/supported exemption"
+    ],
+    "futureNodeRevivesTrueVoid": false,
+    "releasePriority": [
+      "fill",
+      "clash"
+    ],
+    "combine": {
+      "defaultEnabled": false,
+      "explicitOptIn": true,
+      "events": [
+        "marriage",
+        "cooperation"
+      ],
+      "requires": "moving or strong or supported false-void evidence; static void alone does not qualify"
+    },
+    "dateGeneration": "calendar provider required; no implicit Gregorian dates"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.sohu.com/a/380599503_120600845",
+      "status": "retrieved; Qimen context; not evidence of the entire Meihua void extension"
+    },
+    {
+      "url": "http://ziliao.baidu.com/view/caf37c030129bd64783e0912a216147917117e93.html",
+      "status": "not successfully retrieved"
+    },
+    {
+      "url": "https://zhuanlan.zhihu.com/p/2065758702464923007",
+      "status": "403 on direct retrieval"
+    },
+    {
+      "url": "https://www.211cn.ca/book/plum-blossom-yi-numbers-gugong-edition/?c=3",
+      "status": "relevant classical wording visible in search index; direct retrieval 403"
+    }
+  ],
+  "notInvented": [
+    "numeric-energy-weights",
+    "contextual-five-grade-verdict",
+    "success-probabilities",
+    "unique-Gregorian-response-date",
+    "line-level-NaJia-without-a-defined-profile"
+  ]
+}
