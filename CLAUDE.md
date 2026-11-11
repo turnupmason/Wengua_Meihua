@@ -1,5 +1,7 @@
 # Claude repository instructions
 
+最新用户确认：最近十篇完整断语的口吻已经认可。先读 [已确认文风与未来日期](docs/APPROVED_STORY_STYLE.md)，1,920篇已具备重写授权；这次仅新增日期约束，基础故事尚未逐篇改写。新盘所有预测日期必须不早于起卦日，近期先筛本月剩余日期、没有合格候选再查下月；调用 `findUpcomingCivilDayMatches` / `formatUpcomingCivilDay`。正文要完整预写，日期自然融入事情发展。
+
 本仓库是用户“问卦 / Wengua”手机应用的知识与排盘基础。继续开发前按顺序阅读：
 
 1. `README.md`
@@ -29,6 +31,6 @@
 
 最新故事输出组合版本1.1.0，必须读取 `getStory` 的 `verdict`、`movingLine`、`timingDecision` 和最终 `story`。不要直接展示旧版 `getBase().story`、`baseStory`、SQL基础段落或旧 `timing.text`。故事必须给具体结果，并解释本卦真实动爻怎么改变事情；正文不以“需要一起看”“可以观察”等套话代替结论。详见 docs/DIRECT_STORIES.md。直接下卦断不等于编造金额、人物、日期或声称现实必然应验。
 
-应期专项已核到审核版本1.0.0、故事组合版本1.2.0，优先阅读 docs/TIMING_AUDIT.md。使用 `timingDecision.event`（应事和吉凶）与 `period`（方法、单位、支期、轮次）；`calendarOccurrences`不是确定应验日。按18门各自条文处理，不统一套最近支日或全部不成便不取期。先导入 knowledge.sql 再导入 timing-audit.sql。用户尚未说样稿合格，禁止批量改写1,920篇。
+应期专项已核到审核版本1.0.0、故事组合版本1.2.0，优先阅读 docs/TIMING_AUDIT.md。使用 `timingDecision.event`（应事和吉凶）与 `period`（方法、单位、支期、轮次）；`calendarOccurrences`不是确定应验日。按18门各自条文处理，不统一套最近支日或全部不成便不取期。先导入 knowledge.sql 再导入 timing-audit.sql。文风现已确认，按最新口吻逐篇重写，不把句式批量替换冒充完整成稿。
 
-日期与全盘补充：已预存未来两年731天的公历—干支日表，按完整日期查表无需用户输入时分或城市；`getCivilDay`、`findCivilDayMatches`提供日期换算。`getStory().fullChart` / `buildFullChartRelations`提供六个可见经卦、15组五行关系及制克体者/连续生扶路径，始终以原体为主。行动候选日与事件应验日期必须分开，不能编造成功率。参见 [日期与全盘说明](docs/DAY_CALENDAR_AND_FULL_CHART.md)。1,920篇仍等待用户确认后改写。
+日期与全盘补充：已预存未来两年731天的公历—干支日表，按完整日期查表无需用户输入时分或城市；`getCivilDay`、`findCivilDayMatches`提供日期换算。`getStory().fullChart` / `buildFullChartRelations`提供六个可见经卦、15组五行关系及制克体者/连续生扶路径，始终以原体为主。行动候选日与事件应验日期必须分开，不能编造成功率。参见 [日期与全盘说明](docs/DAY_CALENDAR_AND_FULL_CHART.md)。1,920篇现已获文风确认，存量行仍待逐篇重写。

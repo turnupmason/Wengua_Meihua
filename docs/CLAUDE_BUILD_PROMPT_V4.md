@@ -1,6 +1,6 @@
 # Claude 开发交接 V4：真人断语、具体结果、动爻与应期
 
-> 应期口径已由 [十八门校核](TIMING_AUDIT.md) 与 [Claude V5](CLAUDE_BUILD_PROMPT_V5.md) 覆盖。旧版将最近支日写成确定应验日的做法已撤回；本文保留作历史材料，不作为应期定稿。1,920篇尚未获用户文风确认。
+> 应期口径已由 [十八门校核](TIMING_AUDIT.md) 与 [Claude V5](CLAUDE_BUILD_PROMPT_V5.md) 覆盖。旧版将最近支日写成确定应验日的做法已撤回；本文保留作历史材料，不作为应期定稿。最新一轮口吻已获准，继续工作须读 [已确认文风与未来日期](APPROVED_STORY_STYLE.md)。
 
 请继续开发问卦 App。先读本文件、`CLAUDE.md`、`docs/DIRECT_STORIES.md`。本节是用户最新要求，覆盖V3及后文中只写趋势、不下结论的旧说明。保留完整道观仪式和移动端工程目标，直接实施。
 

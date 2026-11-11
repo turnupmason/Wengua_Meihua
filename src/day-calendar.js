@@ -27,3 +27,32 @@ export function formatCivilDay(date){
  const day=getCivilDay(date),[y,m,d]=date.split('-').map(Number);
  return `${y}年${m}月${d}日（${day.dayGanzhi}日）`;
 }
+
+/** Display a future candidate relative to the frozen casting date, never to a new cast. */
+export function formatUpcomingCivilDay(date,{castingDate,viewDate=castingDate}={}){
+ const target=ordinal(date),cast=ordinal(castingDate);ordinal(viewDate);
+ if(target<cast)throw new RangeError('A forecast date cannot precede its casting date');
+ const [y,m,d]=date.split('-').map(Number),[cy,cm]=castingDate.split('-').map(Number),[vy,vm]=viewDate.split('-').map(Number);
+ const offset=(y-cy)*12+m-cm;
+ if(vy===cy&&vm===cm&&offset<=1)return `${offset===0?'本月':'下月'}${d}号`;
+ return `${y===vy?'':y+'年'}${m}月${d}号`;
+}
+
+/** Calendar candidates only: current month first, next month only if none survive review. */
+export function findUpcomingCivilDayMatches({castingDate,branches,isEligible}={}){
+ ordinal(castingDate);
+ if(isEligible!==undefined&&typeof isEligible!=='function')throw new TypeError('isEligible must be a synchronous boolean predicate');
+ const [year,month]=castingDate.split('-').map(Number);
+ for(let offset=0;offset<=1;offset++){
+  const start=offset===0?castingDate:new Date(Date.UTC(year,month,1)).toISOString().slice(0,10);
+  const end=new Date(Date.UTC(year,month+offset,0)).toISOString().slice(0,10);
+  const matches=findCivilDayMatches({startDate:start,endDate:end,branches}).filter(row=>{
+   if(!isEligible)return true;
+   const eligible=isEligible(row);
+   if(typeof eligible!=='boolean')throw new TypeError('isEligible must return a boolean, not a Promise or another value');
+   return eligible;
+  }).map(row=>Object.freeze({...row,monthOffset:offset,storyDisplay:formatUpcomingCivilDay(row.date,{castingDate})}));
+  if(matches.length)return Object.freeze({castingDate,monthOffset:offset,matches:Object.freeze(matches),selectedCycle:null,scope:'calendar-candidates-only'});
+ }
+ return Object.freeze({castingDate,monthOffset:null,matches:Object.freeze([]),selectedCycle:null,scope:'calendar-candidates-only'});
+}

@@ -84,6 +84,6 @@ const svg = lib.renderHexagramSVG(49, { movingLine: 1, svgId: 'primary' });
 
 最终故事组合版本1.1.0已改为直接总断，接入真实动爻原文、爻意、经卦及生克变化，并输出本次采用的少量应期。产品使用 `getStory().story`；不直接展示旧基础文字。见 [断语口径](docs/DIRECT_STORIES.md)、[十篇程序试读](docs/TEN_STORY_PREVIEWS.md) 和 [最新Claude prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。
 
-应期专项现已覆盖18门、27条核过原文及8经卦时序，另有独立SQL补充包。原文、应事、吉凶和日期轮次分别保存；下一次支日不自动当应验日。详见 [十八门应期校核](docs/TIMING_AUDIT.md)。旧样稿确定天数已撤回，1,920篇等待用户确认文风后再统一改写。
+应期专项现已覆盖18门、27条核过原文及8经卦时序，另有独立SQL补充包。原文、应事、吉凶和日期轮次分别保存；下一次支日不自动当应验日。详见 [十八门应期校核](docs/TIMING_AUDIT.md)。旧样稿确定天数已撤回，最近十篇口吻已获用户确认，1,920篇基础正文仍待按该标准逐篇重写。
 
-日期与全盘补充：已预存未来两年731天的公历—干支日表，按完整日期查表无需用户输入时分或城市；`getCivilDay`、`findCivilDayMatches`提供日期换算。`getStory().fullChart` / `buildFullChartRelations`提供六个可见经卦、15组五行关系及制克体者/连续生扶路径，始终以原体为主。行动候选日与事件应验日期必须分开，不能编造成功率。参见 [日期与全盘说明](docs/DAY_CALENDAR_AND_FULL_CHART.md)。1,920篇仍等待用户确认后改写。
+日期与全盘补充：已预存未来两年731天的公历—干支日表，按完整日期查表无需用户输入时分或城市；`getCivilDay`、`findCivilDayMatches`提供日期换算。`getStory().fullChart` / `buildFullChartRelations`提供六个可见经卦、15组五行关系及制克体者/连续生扶路径，始终以原体为主。行动候选日与事件应验日期必须分开，不能编造成功率。参见 [日期与全盘说明](docs/DAY_CALENDAR_AND_FULL_CHART.md)。新增 `findUpcomingCivilDayMatches` / `formatUpcomingCivilDay`，排除起卦日前的日期，先查本月剩余日期、无合格候选再查下月，历史不滚动改期；见 [已确认文风与日期约束](docs/APPROVED_STORY_STYLE.md)。

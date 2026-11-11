@@ -95,5 +95,9 @@ export interface CivilDay {date:string;dayGanzhi:string;dayBranch:Branch}
 export function getCivilDay(date:string):Readonly<CivilDay>;
 export function formatCivilDay(date:string):string;
 export function findCivilDayMatches(options:{startDate:string;endDate:string;branches:readonly Branch[]}):readonly Readonly<CivilDay&{display:string;kind:'calendar-match';selectedAsEventDate:false}>[];
+export function formatUpcomingCivilDay(date:string,options:{castingDate:string;viewDate?:string}):string;
+export interface UpcomingCivilDay extends CivilDay {display:string;kind:'calendar-match';selectedAsEventDate:false;monthOffset:0|1;storyDisplay:string}
+export interface UpcomingCivilDayMatches {castingDate:string;monthOffset:0|1|null;matches:readonly Readonly<UpcomingCivilDay>[];selectedCycle:null;scope:'calendar-candidates-only'}
+export function findUpcomingCivilDayMatches(options:{castingDate:string;branches:readonly Branch[];isEligible?:(day:Readonly<CivilDay&{display:string;kind:'calendar-match';selectedAsEventDate:false}>)=>boolean}):Readonly<UpcomingCivilDayMatches>;
 export interface FullChartRelations {rootBodyId:string;rootTrigram:Trigram;rootElement:Element;visiblePositions:6;rootBodyCount:1;independentNodeIdentities:number;nodes:ReadonlyArray<Reading['nodes'][number]&{label:string;entityId:string;rootBodyId:string;isInheritedBody:boolean}>;pairs:readonly {a:string;b:string;aRole:string;bRole:string;aTrigram:Trigram;bTrigram:Trigram;type:RelationType;kind:'equal'|'generates'|'controls';from:string|null;to:string|null;sameEntity:boolean;assessments:readonly unknown[];usage:string;sourceIds:string[]}[];chains:readonly {kind:string;nodes:string[];sourceIds:string[];usage:string}[];sourceIds:readonly string[];numericEnergyScore:null}
 export function buildFullChartRelations(reading:Reading):Readonly<FullChartRelations>;
