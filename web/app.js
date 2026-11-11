@@ -1,7 +1,9 @@
-import {loadLibrary,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createQuestionRepository,MONTH_ORDERS} from '../src/index.js';
+import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createQuestionRepository,MONTH_ORDERS} from '../src/index.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createQuestionRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
 const questionCatalog=await questions.getCatalog();
+const now=new Date(),localDate=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+$('#casting-date').value=localDate;$('#ganzhi').value=getCivilDay(localDate).dayGanzhi;
 $('#primary').innerHTML=lib.listHexagrams().map(h=>`<option value="${h.id}">${h.id} · ${esc(h.name)}</option>`).join('');$('#primary').value='49';
 $('#domain').innerHTML=questionCatalog.domains.map(d=>`<option value="${d.id}">${esc(d.label)}</option>`).join('');$('#domain').value='domain-02';
 function refreshQuestions(){
@@ -17,9 +19,9 @@ async function showStory(current){
  try{
   const selected=await questions.getQuestion(current.questionId);if(ticket!==storyRequest)return;
   if(!order&&selected.mode!=='reference'){$('#story').textContent='选择月令后，可查看本次事项。';$('#case-links').textContent='';return;}
-  const story=await questions.getContent({questionId:current.questionId,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,domainId:current.domain.id,voidContext:current.selectedVoidContext});
+  const story=await questions.getContent({questionId:current.questionId,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,domainId:current.domain.id,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
-  $('#story').innerHTML=story.status==='reference'?story.paragraphs.map(p=>`<p>${esc(p)}</p>`).join(''):story.status==='pending-authoring'?'<p>这项解读正在整理。你仍可查看本次卦象、动爻和对应古籍。</p>':'<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
+  $('#story').innerHTML=['reference','ready'].includes(story.status)?story.paragraphs.map(p=>`<p>${esc(p)}</p>`).join(''):story.status==='pending-authoring'?'<p>这项解读正在整理。你仍可查看本次卦象、动爻和对应古籍。</p>':'<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
   const cases=await narratives.getClassicalCases({primaryId:current.primaryId,movingLine:current.movingLine});if(ticket!==storyRequest)return;
   $('#case-links').innerHTML=cases.length?cases.map(c=>`<details><summary>古籍案例 · ${esc(c.title)}</summary><p>原断：${esc(c.prediction.text)}</p><p>书中反馈：${c.feedback?esc(c.feedback.text):'本节未另述事后反馈。'}</p>${c.auditNotes.map(n=>`<p>${esc(n)}</p>`).join('')}<details><summary>核对本节原文</summary><p class="prose">${esc(c.sourceText)}</p></details></details>`).join(''):'<p>本次完整盘位暂无已拆解的同盘案例，不用近似盘的反馈代替。</p>';
  }catch(e){if(ticket===storyRequest)$('#story').textContent='故事暂不可用：'+e.message;}
@@ -51,7 +53,8 @@ function update(){try{
  const selected=questionCatalog.domains.find(d=>d.id===$('#domain').value)?.items.find(q=>q.id===$('#question-item').value);
  if(!selected)throw new Error('请选择具体事项。');
  const selectedMonthOrder=$('#month').value,selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
- reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:selected.domainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,selectedMonthOrder,selectedVoidContext});
+ const castingDate=$('#casting-date').value,timingContext=Object.freeze({castingMethod:$('#timing-method').value==='pre-heaven-demo'?'pre-heaven':'manual',periodMethod:'element-qi'});
+ reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:selected.domainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
  const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`${edge.label} → ${edge.phrase}`;
@@ -64,6 +67,7 @@ function update(){try{
 $('#controls').addEventListener('submit',e=>{e.preventDefault();update();});
 $('#domain').addEventListener('change',()=>{refreshQuestions();update();});
 $('#question-item').addEventListener('change',update);
+$('#casting-date').addEventListener('change',()=>{if($('#casting-date').value)$('#ganzhi').value=getCivilDay($('#casting-date').value).dayGanzhi;update();});
 $('#panels').addEventListener('click',e=>{const article=e.target.closest('article');if(!article)return;const line=e.target.closest('[data-line-position]');if(line)showDetail(article.dataset.stage,Number(line.dataset.linePosition));else if(e.target.closest('.panel-detail'))showDetail(article.dataset.stage);});
 $('#panels').addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&e.target.matches('[data-line-position]')){e.preventDefault();showDetail(e.target.closest('article').dataset.stage,Number(e.target.dataset.linePosition));}});
 update();

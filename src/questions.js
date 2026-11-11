@@ -1,5 +1,7 @@
 import {readRepositoryJSON} from './io.js';
 import {MONTH_ORDERS} from './narrative-rules.js';
+import {getCivilDay} from './day-calendar.js';
+import {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 /** Identity of the reviewed casting conditions; a superficially similar chart cannot substitute. */
 export function questionStoryContextKey(reading){
@@ -54,8 +56,14 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
    story:q.referenceParagraphs.join('\n\n'),sourceSections:q.sourceIds.map(id=>library.getSection(id)),reportedOutcome:null});
   const order=MONTH_ORDERS.find(o=>o.id===options.monthOrder);
   if(!order)throw new RangeError('Explicit month qi order required');
+  const voidContext=structuredClone(options.voidContext||{});
+  if(options.castingDate){
+   const day=getCivilDay(options.castingDate);
+   if(voidContext.ganzhi&&voidContext.ganzhi!==day.dayGanzhi)throw new RangeError('Casting date and saved day ganzhi disagree');
+   voidContext.ganzhi=day.dayGanzhi;
+  }
   const reading=library.createReading({primaryId:options.primaryId,movingLine:options.movingLine,domainId:q.domainId,
-   question:q.question,calendar:{season:order.season},voidContext:options.voidContext||{},mutualPolicy:'inner-lines'});
+   question:q.question,calendar:{season:order.season},voidContext,mutualPolicy:'inner-lines'});
   const key=`${q.id}/${reading.primaryId}/${reading.movingLine}/${order.id}`,contextKey=questionStoryContextKey(reading);
   const pending=()=>freeze({status:'pending-authoring',selection,reading,key,contextKey,paragraphs:[],story:null,
    reason:'No reviewed complete story for this exact question, chart, month qi and casting context',reportedOutcome:null});
@@ -65,6 +73,29 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
   if(entries.length>1)throw new Error('Duplicate question story file');
   if(!entries.length)return pending();
   const entry=entries[0];
+  if(entry.kind==='sharded-complete-manuscripts'){
+   if(entry.path!==`data/question-stories/${q.id}/index.json`)throw new Error('Question manuscript manifest path mismatch');
+   if(voidContext.basis&&voidContext.basis!=='day-explicit-input')return pending();
+   const manifest=await read(entry.path);
+   if(manifest.questionId!==q.id||manifest.catalogVersion!==index.catalogVersion||manifest.baseStoryCount!==1920)throw new Error('Question manuscript manifest mismatch');
+   const shard=manifest.files.find(f=>f.hexagramId===reading.primaryId);
+   if(!shard||shard.path!==`data/question-stories/${q.id}/${String(reading.primaryId).padStart(2,'0')}.json`)throw new Error('Question manuscript shard mismatch');
+   const file=await read(shard.path);
+   if(file.questionId!==q.id||file.hexagramId!==reading.primaryId||file.catalogVersion!==index.catalogVersion)throw new Error('Question manuscript shard identity mismatch');
+   const rows=file.rows.filter(r=>r.primaryId===reading.primaryId&&r.movingLine===reading.movingLine&&r.monthOrder===order.id);
+   if(rows.length!==1||rows[0].reviewStatus!=='reviewed')return pending();
+   const row=rows[0],stageIds=Object.values(reading.stages).map(s=>s.id);
+   if(row.stageIds.some((id,i)=>id!==stageIds[i])||row.baseGrades.some((grade,i)=>grade!==Object.values(reading.stages)[i].baseGrade))throw new Error('Question manuscript chart or grade mismatch');
+   const unresolved=reading.nodes.some(n=>n.void.state==='unresolved');
+   const variants=row.variants.filter(v=>v.profileKey===getVoidProfileKey(reading));
+   if(!unresolved&&variants.length!==1)return pending();
+   const record=unresolved?row.base:variants[0],material=unpackManuscript(file,record);
+   const dates=resolveManuscriptDates({...material,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
+   return freeze({status:dates.status==='resolved'?'ready':'authored-base',selection,reading,key,contextKey,
+    profileKey:unresolved?null:variants[0].profileKey,paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),
+    verdict:material.verdict,sourceIds:material.sourceIds,dateResolution:dates,requiresDateResolution:dates.status!=='resolved',
+    manuscriptVersion:manifest.manuscriptVersion,reportedOutcome:null});
+  }
   if(entry.path!==`data/question-stories/${q.id}.json`)throw new Error('Question story path mismatch');
   const file=await read(entry.path);
   if(file.questionId!==q.id||file.catalogVersion!==index.catalogVersion||!Array.isArray(file.rows))throw new Error('Question story file identity mismatch');

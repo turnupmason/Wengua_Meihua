@@ -1,4 +1,4 @@
-import {writeFile,mkdir} from 'node:fs/promises';
+import {writeFile,mkdir,readFile} from 'node:fs/promises';
 import {loadLibrary} from '../src/index.js';
 const library=await loadLibrary();
 // Editorial product questions, not additional quotations or independently surveyed rankings.
@@ -148,6 +148,9 @@ const referenceTexts={
  'domain-16-timing-terms':['原文写“若究和平之日，主卦决之。若详危厄之期，克体之卦定之”。其中“主卦”的指向在现有条文中仍有校核疑点，资料保留原字，没有擅改为唯一生体公式。这些术语不转成现实康复或危险日期。'],
  'domain-16-case-audit':['疾病章后段以乾上坤下的不同动爻举例。部分“俱生”“俱克”等概括与按爻位复算的结构存在核对问题，原文与问题记录应分别保留。不能为了写出确定结局，先改卦形再把病案原断移植给新读者。']
 };
+let existingIndex={files:[],writtenBaseStoryCount:0};
+try{existingIndex=JSON.parse(await readFile(new URL('../data/question-stories/index.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+const writtenCounts=new Map(existingIndex.files.map(f=>[f.questionId,f.baseStoryCount||0]));
 const domains=groups.map(([domainId,label,rows])=>{
  const original=library.listDomains().find(d=>d.id===domainId);if(!original||rows.length!==5)throw new Error('Question domain coverage mismatch');
  return {id:domainId,label,sourceSectionId:original.sectionId,mode:original.mode==='reference-only'?'reference':'narrative',items:rows.map(([suffix,question,answerBrief,positiveEvent,adverseEvent],index)=>{
@@ -157,7 +160,7 @@ const domains=groups.map(([domainId,label,rows])=>{
    sourceIds:[original.sectionId,...(domainId==='domain-05'||domainId==='domain-13'||domainId==='domain-18'?['mh-122']:[])],
    sourceApplication:mode==='reference'?'editorial-reference-explanation':'editorial-specific-question;not-a-new-classical-rule',
    ruleReview:domainId==='domain-05'&&['start-relationship','reconcile'].includes(suffix)||domainId==='domain-17'&&['settlement','mediation','dispute-end'].includes(suffix)?'specific-event-rules-required':'domain-rule-with-specific-event-review',
-   contentStatus:mode==='reference'?'reference-written':'full-story-pending',
+   contentStatus:mode==='reference'?'reference-written':writtenCounts.get(id)===1920?'base-written':'full-story-pending',
    ...(mode==='reference'?{referenceParagraphs:referenceTexts[id]}:{})};
  })};
 });
@@ -175,6 +178,6 @@ try{await writeFile(indexPath,JSON.stringify({schemaVersion:'1.0.0',catalogVersi
  minimumBaseStoryCount:catalog.narrativeCount*1920,writtenBaseStoryCount:0,files:[],scope:'item-specific-complete-stories;void-and-event-context-require-reviewed-coverage'},null,2)+'\n',{flag:'wx'});}catch(e){if(e.code!=='EEXIST')throw e;}
 let doc='# 每个领域五个固定事项\n\n正式占问只用领域与事项选择，无自由输入或AI分类。以下是编写的常见问法，不是用户搜索量统计。\n\n共18领域、90项：75项占问，15项古籍查阅。每项有固定ID、回答范围、正反应事与取期政策；完整正文覆盖单独计数。\n\n';
 for(const domain of domains){doc+='## '+domain.label+'\n\n';for(const item of domain.items)doc+='- **'+item.question+'** `'+item.id+'`\n  '+item.answerBrief+'\n';doc+='\n';}
-doc+='## 正文与调用状态\n\n原1,920篇是384盘×5月令的通用基础量。75个占问事项若各自完整覆盖，至少需要144,000篇事项基础稿；旬空与应事条件还须另行核对。15项古籍查阅已有专门说明，不乘盘数。当前新增的是90项选择、15项参考说明与精确路由；事项完整稿尚未写入新库，不能把旧领域通用输出冒充事项成稿。\n\n使用 `createQuestionRepository` 按稳定ID调用。不存在的事项、领域不匹配及自由输入报错；尚缺稿件返回 `pending-authoring`，不回退为其他事项。完整稿必须同时匹配事项、盘、月令及起卦上下文。\n';
+doc+='## 正文与调用状态\n\n原1,920篇是384盘×5月令的通用基础量。75个占问事项若各自完整覆盖，至少需要144,000篇事项基础稿；旬空与应事条件另行核对。15项古籍查阅已有专门说明，不乘盘数。目前事项基础全文完成'+existingIndex.writtenBaseStoryCount+'篇，具体批次与空亡全文数量以 `data/question-stories/index.json` 为准。不能把旧领域通用输出冒充事项成稿。\n\n使用 `createQuestionRepository` 按稳定ID调用。不存在的事项、领域不匹配及自由输入报错；尚缺稿件返回 `pending-authoring`，不回退为其他事项。完整稿必须同时匹配事项、盘、月令及起卦上下文。\n';
 await writeFile(new URL('../docs/QUESTION_CHOICES.md',import.meta.url),doc);
 console.log(`Question choices: ${domains.length} domains × 5 = ${items.length}; ${catalog.narrativeCount} narrative scopes, ${catalog.referenceCount} written references.`);

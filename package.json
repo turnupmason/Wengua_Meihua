@@ -28,6 +28,8 @@
     "validate:timing": "python3 scripts/validate-timing-audit.py",
     "build:calendar": "node scripts/build-day-calendar.mjs",
     "build:questions": "node scripts/build-question-catalog.mjs && python3 scripts/export-questions.py",
-    "validate:questions": "python3 scripts/validate-questions.py"
+    "validate:questions": "python3 scripts/validate-questions.py",
+    "build:receivable": "node scripts/build-receivable-batch.mjs && npm run build:questions",
+    "validate:receivable": "node scripts/validate-receivable-batch.mjs"
   }
 }

@@ -21,8 +21,9 @@ test('all 75 narrative choices route to their exact domain and canonical questio
  for(const q of c.domains.flatMap(d=>d.items).filter(q=>q.mode==='narrative')){
   const result=await questions.getContent({questionId:q.id,primaryId:48,movingLine:5,monthOrder:'winter-water',voidContext:{ganzhi:'己丑'}});
   assert.equal(result.selection.domainId,q.domainId);assert.equal(result.reading.domain.id,q.domainId);
-  assert.equal(result.reading.question,q.question);assert.equal(result.status,'pending-authoring');
-  assert.equal(result.story,null);assert.deepEqual(result.paragraphs,[]);
+  assert.equal(result.reading.question,q.question);
+  if(q.id==='domain-10-receivable'){assert.equal(result.status,'authored-base');assert.ok(result.story.includes('尾款'));}
+  else{assert.equal(result.status,'pending-authoring');assert.equal(result.story,null);assert.deepEqual(result.paragraphs,[]);}
  }
 });
 

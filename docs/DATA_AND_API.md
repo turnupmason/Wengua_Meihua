@@ -11,13 +11,16 @@ const questions=createQuestionRepository({library});
 const items=await questions.listQuestions('domain-10'); // 恰好五项
 const result=await questions.getContent({
  questionId:'domain-10-receivable',primaryId:48,movingLine:5,
- monthOrder:'winter-water',voidContext:{ganzhi:'己丑'}
+ monthOrder:'winter-water',castingDate:'2026-11-12',timingScale:'day',
+ timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}
 });
-// 当前 status='pending-authoring'、story=null：客户尾款专稿尚未写入新库。
-// 不得以旧 getStory 的求财通用输出顶替。
+// status='ready'，日期不早于起卦日，正文中的日期标记已全部替换。
+// 这是明确指定盘、日期和取期法的演示输入，不冒充同一时间算法复现的真实起卦。
 ```
 
 领域从固定ID确定；传入不匹配的领域、未知ID或自由文本会报错。完整稿要求事项、盘、月令与起卦上下文精确一致；`authored-base`仍须经过日期校核，不能立即当作已渲染的最终故事。`reference`返回已经写好的古籍说明。实际完整稿覆盖记录在 `data/question-stories/index.json`。
+
+第1批采用段落字典压缩：一篇文章的段落内容、顺序、总断及日期插入句都已在构建时决定，客户端只按保存的索引还原全文。`getVoidProfileKey`按五个独立角色的实际空亡状态精确选稿；相同图形不意味着可以忽略真空或静空。未给日干支时，`castingDate`可自动提供日基准；已给且不一致则报错。日期取法未记录时不偷偷假定先天法，返回 `authored-base`。
 
 ## 稳定的标识与编号
 

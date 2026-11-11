@@ -19,6 +19,9 @@ for d in c['domains']:
 assert index['minimumBaseStoryCount']==75*1920==144000
 assert index['catalogVersion']==c['catalogVersion']
 db=sqlite3.connect(':memory:');db.executescript((root/'data/knowledge.sql').read_text());db.executescript((root/'data/question-items.sql').read_text())
+story_sql=root/'dist/question-stories.sql'
+assert story_sql.exists(),'Run npm run build:questions before validating the complete story database'
+db.executescript(story_sql.read_text())
 assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
 assert not db.execute('PRAGMA foreign_key_check').fetchall()
 for q in items:
@@ -26,5 +29,18 @@ for q in items:
  assert record and json.loads(record[0])==q
 assert db.execute('SELECT count(*) FROM fixed_question_items').fetchone()[0]==90
 assert db.execute('SELECT count(*) FROM monthly_narratives').fetchone()[0]==1920
-assert db.execute('SELECT count(*) FROM fixed_question_stories').fetchone()[0]==sum(1 for e in index['files'] for r in load(e['path'])['rows'] if r['reviewStatus']=='reviewed')
-print('Fixed-question gate: 18 × 5 = 90 exact JSON/SQL bindings, 15 written references; source foreign keys and legacy 1,920 rows intact.')
+assert db.execute('SELECT count(*) FROM fixed_question_stories').fetchone()[0]==index['writtenBaseStoryCount']
+assert db.execute('SELECT count(*) FROM fixed_question_story_profiles').fetchone()[0]==index.get('writtenProfileStoryCount',0)
+for entry in index['files']:
+ if entry.get('kind')!='sharded-complete-manuscripts':continue
+ manifest=load(entry['path'])
+ for shard in manifest['files']:
+  f=load(shard['path'])
+  for row in f['rows']:
+   record=db.execute('SELECT paragraphs_json FROM fixed_question_stories WHERE question_id=? AND hexagram_id=? AND moving_line=? AND month_order_id=?',(entry['questionId'],row['primaryId'],row['movingLine'],row['monthOrder'])).fetchone()
+   assert record and json.loads(record[0])==[f['textPool'][i] for i in row['base']['paragraphIds']]
+  for kind,pool in [('text',f['textPool']),('timing',f['timingPool']),('verdict',f['verdictPool'])]:
+   for rid,value in enumerate(pool):
+    record=db.execute('SELECT value_json FROM fixed_question_story_resources WHERE question_id=? AND hexagram_id=? AND kind=? AND resource_id=?',(entry['questionId'],f['hexagramId'],kind,rid)).fetchone()
+    assert record and json.loads(record[0])==value
+print(f"Fixed-question gate: 90 exact choices, {index['writtenBaseStoryCount']} full bases, {index.get('writtenProfileStoryCount',0)} void profiles; SQL/JSON text, resource and foreign-key checks passed.")

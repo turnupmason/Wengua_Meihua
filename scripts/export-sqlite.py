@@ -61,6 +61,8 @@ def main():
         if supplement.exists():disk.executescript(supplement.read_text())
         questions=ROOT/'data/question-items.sql'
         if questions.exists():disk.executescript(questions.read_text())
+        full_stories=ROOT/'dist/question-stories.sql'
+        if full_stories.exists():disk.executescript(full_stories.read_text())
         assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     check=sqlite3.connect(':memory:');check.executescript(sql)
     assert check.execute('PRAGMA integrity_check').fetchone()[0]=='ok';assert not check.execute('PRAGMA foreign_key_check').fetchall()

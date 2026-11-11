@@ -1,14 +1,19 @@
 # 详解、动爻与数据库接入
 
-固定事项新增独立补充包 `data/question-items.sql`，按 `knowledge.sql` → `timing-audit.sql` → `question-items.sql` 顺序导入新的数据库。`npm run build:questions` 重建90项JSON、清单与SQL；`npm run validate:questions`逐项校验JSON/SQL及外键。完整 `npm run build:data` 也会把补充表写入本地SQLite。
+固定事项新增独立补充包 `data/question-items.sql`。先执行 `npm run build:questions`，再按 `knowledge.sql` → `timing-audit.sql` → `question-items.sql` → `dist/question-stories.sql` 顺序导入新的数据库。最后一份由提交的全文分片离线生成，避免把重复的大型SQL与JSON同时提交。`npm run validate:questions`逐项校验JSON/SQL及外键。完整 `npm run build:data` 也会把所有表写入本地SQLite。
 
-新增 `fixed_question_items`（90项）、`fixed_question_stories`（仅收录真正完成并核过的事项完整稿）、`fixed_question_metadata`。当前事项完整稿表为空，原1,920条通用基础行仍保留在原表。正式入口按固定事项ID调用，不把两张表视为同一内容。
+新增 `fixed_question_items`（90项）、`fixed_question_stories`（1,920篇尾款基础稿）、`fixed_question_metadata`、`fixed_question_story_resources`（全文段落、总断与日期句字典）、`fixed_question_story_profiles`（16,617个精确空亡版本）。原1,920条通用基础行仍保留在原表。正式入口按固定事项ID调用，不把两张表视为同一内容。
 
 ```sql
 SELECT definition_json FROM fixed_question_items WHERE id = ?;
 SELECT paragraphs_json, source_ids_json FROM fixed_question_stories
 WHERE question_id = ? AND hexagram_id = ? AND moving_line = ?
   AND month_order_id = ? AND context_key = ? AND review_status = 'reviewed';
+SELECT paragraph_ids_json, verdict_id, timing_id FROM fixed_question_story_profiles
+WHERE question_id = ? AND hexagram_id = ? AND moving_line = ?
+  AND month_order_id = ? AND profile_key = ?;
+SELECT value_json FROM fixed_question_story_resources
+WHERE question_id = ? AND hexagram_id = ? AND kind = ? AND resource_id = ?;
 ```
 
 ## JavaScript / TypeScript

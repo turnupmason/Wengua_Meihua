@@ -7,6 +7,7 @@ export {selectAuditedTiming} from './timing-audit.js';
 export {getCivilDay,formatCivilDay,findCivilDayMatches,formatUpcomingCivilDay,findUpcomingCivilDayMatches} from './day-calendar.js';
 export {buildFullChartRelations} from './full-chart.js';
 export {createQuestionRepository,questionStoryContextKey} from './questions.js';
+export {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];
 const GENERATES = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };
@@ -125,6 +126,10 @@ export function createLibrary({catalog,sections,domains}) {
       const v=assessVoid(t.id,{...voidContext,...explicit,supported:Boolean(explicit.supported||voidContext.supported||supportEvidence.length),moving:role==='use'||role==='changed_use',strength:explicit.strength||strength.state});
       nodes.push({id:stage+'-'+side,stage,side,trigram:t.id,element:t.element,role,isBody,strength,supportEvidence,void:v});
     }
+    // The unchanged trigram is the same body, including explicit true-void or release evidence.
+    // It must not acquire a second, independently assessed state in the changed hexagram.
+    const originalBody=nodes.find(n=>n.isBody),inheritedBody=nodes.find(n=>n.role==='body_inherited');
+    inheritedBody.void=originalBody.void;inheritedBody.strength=originalBody.strength;inheritedBody.supportEvidence=originalBody.supportEvidence;
     const edges=nodes.filter(n=>!['body','body_inherited'].includes(n.role)).map(n=>{
       const r=relation(body.element,n.element);const bodyActs=['body_controls_use','body_generates_use'].includes(r.type);
       const effect=['suppressed','dormant'].includes(n.void.effective)?(['use_controls_body','body_generates_use'].includes(r.type)?'耗克作用暂减，仍核对体卦状态':'助益或可控条件暂难落实'):n.void.effective==='unknown'?'空亡资料待定，不作强弱结论':'保留本项生克作用';

@@ -6,6 +6,8 @@
 
 最新事项入口：[每领域五项，共90项](docs/QUESTION_CHOICES.md)。正式占问只选择领域与事项，不提供自由提问或AI识别。已接通固定ID路由、JSON/SQL和联调页；75项占问完整稿尚未写齐，15项古籍查阅已有说明，缺稿不回退为别的事项。
 
+第1批已落库：[客户尾款的1,920篇基础全文及16,617个空亡情境版本](docs/RECEIVABLE_BATCH_01.md)。384条动爻应用和64条求款说明另写，全文在构建阶段生成并保存，运行时按精确条件取稿并填写日期。完整进度见 `data/question-stories/batch-progress.json`，其余74项尚未完成。
+
 已加入新上传的《周易六十四卦详解》：8,770段、315,194字，128条本轮编辑记录，64段串贴/错误片段隔离；正式详解与384条变卦映射已接通。见[本轮审校报告](docs/DETAILS_AUDIT.md)和[数据库及接口](docs/DATABASE_AND_DETAILS.md)。长篇注解作为显式参考阅读，未认证的正文不写入正式数据库事实表。
 
 ## 已接通的资料
@@ -31,6 +33,7 @@ npm run validate
 npm run validate:details
 npm run validate:stories
 npm run validate:questions
+npm run validate:receivable
 npm test
 npm run example
 npm run demo

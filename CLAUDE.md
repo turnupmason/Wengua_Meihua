@@ -1,6 +1,8 @@
 # Claude repository instructions
 
-最新入口决定：正式占问只允许“选择领域 → 选择具体事项”，取消自由提问和AI分类。18领域各5项，共90项，见 [事项清单](docs/QUESTION_CHOICES.md)。`data/question-items.json`保存固定ID、问法、回答范围、应事和取期政策；用 `createQuestionRepository().getContent` 精确调用，不直接用旧 `getStory` 作为具体事项成稿。75项占问的完整库目前尚无成稿，15项古籍查阅说明已写；缺稿返回 `pending-authoring`，禁止回退到领域通用稿或其他事项。75项若各覆盖1,920种盘与月令，至少144,000篇基础稿，实际覆盖需如实记录。
+最新批次：客户尾款 `domain-10-receivable` 已写入1,920篇基础全文，另有16,617个预写空亡情境版本，见 [第1批成稿与说明](docs/RECEIVABLE_BATCH_01.md)。384条动爻应用与64条求款说明另写，全文在构建时预生成；运行时只读取排定的段落及填日期，不调用模型。不是逐篇手写1,920次，审阅方法和限制在批次说明中公开。普通60日干支已穷举，未知自定义释放状态仍返回缺稿。进度保存在 `data/question-stories/batch-progress.json`，下一项为借款收回；没有后台写作任务。
+
+正式占问只允许“选择领域 → 选择具体事项”，取消自由提问和AI分类。18领域各5项，共90项，见 [事项清单](docs/QUESTION_CHOICES.md)。`data/question-items.json`保存固定ID、问法、回答范围、应事和取期政策；用 `createQuestionRepository().getContent` 精确调用，不直接用旧 `getStory` 作为具体事项成稿。75项占问已完成1项基础批次，另有15项古籍查阅说明；缺稿返回 `pending-authoring`，禁止回退到领域通用稿或其他事项。75项若各覆盖1,920种盘与月令，至少144,000篇基础稿，实际覆盖需如实记录。
 
 最新用户确认：最近十篇完整断语的口吻已经认可。先读 [已确认文风与未来日期](docs/APPROVED_STORY_STYLE.md)，1,920篇已具备重写授权；这次仅新增日期约束，基础故事尚未逐篇改写。新盘所有预测日期必须不早于起卦日，近期先筛本月剩余日期、没有合格候选再查下月；调用 `findUpcomingCivilDayMatches` / `formatUpcomingCivilDay`。正文要完整预写，日期自然融入事情发展。
 
@@ -11,7 +13,7 @@
 3. `docs/RULES.md`、`docs/DATA_AND_API.md`、`docs/DATABASE_AND_DETAILS.md`
 4. `docs/EDITORIAL.md`、`docs/DETAILS_AUDIT.md`、`data/issues.json`
 
-先执行 `npm run validate`、`npm run validate:details`、`npm run validate:stories`、`npm run validate:questions`、`npm test`；需要观察文字和动爻联动时执行 `npm run demo`。
+先执行 `npm run build:questions` 生成完整故事SQL，再执行 `npm run validate`、`npm run validate:details`、`npm run validate:stories`、`npm run validate:questions`、`npm run validate:receivable`、`npm test`；需要观察文字和动爻联动时执行 `npm run demo`。
 
 ## 必须保持
 
