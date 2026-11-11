@@ -21,6 +21,8 @@
 - 无规则支持的数字能量、综合等级、成功率、确定日期不得杜撰。
 - 古籍内部矛盾不直接导入结构算法。不要把民间吉凶诗当《周易》象传。
 
-当前已具备资料包、排盘与二维联调演示；还没有完整 3D 应用。按完整 prompt 从可运行的移动竖屏道观体验继续落实。用户要求行动时直接实施，不停留在规划说明。
+手机应用在 `apps/mobile`（说明见其 README）：三维道观、仪式状态机、石桌刻卦、详情面板、历法适配、本地历史、二维降级、Capacitor 原生壳。改动应用后运行 `npm run app:test` 与 `npm run app:build`。应用通过 `@knowledge` 别名直接导入 `src/index.js`，不得在 UI 里复制排盘算法。用户要求行动时直接实施，不停留在规划说明。
+
+Windows 注意：仓库用 `.gitattributes` 固定 LF，原文件哈希才能通过；Python 脚本经 `scripts/run-python.mjs` 以 UTF-8 模式运行。
 
 新增详解接口为 `createDetailsRepository`；数据库导入为 `data/knowledge.sql`。`sources/commentary` 只供显式参考阅读，`sources/review` 隔离稿不进入正式运行时或事实表。点击爻时用原卦ID及自下至上的1–6爻位，不将参考注解反向改写结构。

@@ -1,0 +1,201 @@
+{
+  "catalog_version": "2026.11.11.1",
+  "rule_profile_id": "user-classical-plus-void",
+  "domains": [
+    {
+      "domain_id": "career",
+      "label": { "zh": "事业工作", "en": "Career" },
+      "subtypes": [
+        { "subtype_id": "career.job_interview", "label": { "zh": "求职面试", "en": "Job interview" }, "questions": [
+          { "question_id": "career.job_interview.pass", "question_text": { "zh": "这次面试能通过吗？", "en": "Will I pass this interview?" }, "outcome": { "zh": "通过这次面试", "en": "pass this interview" }, "classical_domain_id": "domain-09", "enabled": true },
+          { "question_id": "career.job_interview.offer", "question_text": { "zh": "这次求职能拿到录用吗？", "en": "Will this application end in an offer?" }, "outcome": { "zh": "拿到这次录用", "en": "get this offer" }, "classical_domain_id": "domain-09", "enabled": false }
+        ] },
+        { "subtype_id": "career.promotion", "label": { "zh": "升职加薪", "en": "Promotion & raise" }, "questions": [
+          { "question_id": "career.promotion.this_round", "question_text": { "zh": "这次能升职加薪吗？", "en": "Will I be promoted or get a raise this time?" }, "outcome": { "zh": "这次升职加薪", "en": "be promoted this time" }, "classical_domain_id": "domain-09", "enabled": true }
+        ] },
+        { "subtype_id": "career.job_change", "label": { "zh": "跳槽去留", "en": "Stay or move" }, "questions": [
+          { "question_id": "career.job_change.move", "question_text": { "zh": "现在换工作是否有利？", "en": "Is it favourable to change jobs now?" }, "outcome": { "zh": "换到更好的工作", "en": "move to a better job" }, "classical_domain_id": "domain-08", "enabled": true }
+        ] },
+        { "subtype_id": "career.job_stability", "label": { "zh": "工作稳定", "en": "Job stability" }, "questions": [
+          { "question_id": "career.job_stability.keep", "question_text": { "zh": "目前这份工作能否稳定？", "en": "Will my current job stay stable?" }, "outcome": { "zh": "保住这份工作", "en": "keep this job" }, "classical_domain_id": "domain-08", "enabled": true }
+        ] },
+        { "subtype_id": "career.workplace_relations", "label": { "zh": "职场人际", "en": "People at work" }, "questions": [
+          { "question_id": "career.workplace_relations.harmony", "question_text": { "zh": "与同事上司能否相处顺利？", "en": "Will things go well with colleagues and managers?" }, "outcome": { "zh": "与同事上司相处顺利", "en": "get on well at work" }, "classical_domain_id": "domain-02", "enabled": true }
+        ] },
+        { "subtype_id": "career.exam", "label": { "zh": "考试考核", "en": "Exam & review" }, "questions": [
+          { "question_id": "career.exam.pass", "question_text": { "zh": "这次考试考核能通过吗？", "en": "Will I pass this exam or review?" }, "outcome": { "zh": "通过这次考试考核", "en": "pass this exam" }, "classical_domain_id": "domain-09", "enabled": true }
+        ] },
+        { "subtype_id": "career.project", "label": { "zh": "项目事业", "en": "Project & venture" }, "questions": [
+          { "question_id": "career.project.success", "question_text": { "zh": "这个项目能做成吗？", "en": "Will this project succeed?" }, "outcome": { "zh": "把这个项目做成", "en": "make this project succeed" }, "classical_domain_id": "domain-08", "enabled": true }
+        ] },
+        { "subtype_id": "career.selection", "label": { "zh": "竞聘选拔", "en": "Selection" }, "questions": [
+          { "question_id": "career.selection.win", "question_text": { "zh": "这次竞聘选拔能入选吗？", "en": "Will I be selected this time?" }, "outcome": { "zh": "在这次竞聘中入选", "en": "be selected" }, "classical_domain_id": "domain-09", "enabled": true }
+        ] }
+      ]
+    },
+    {
+      "domain_id": "wealth",
+      "label": { "zh": "财富财运", "en": "Wealth" },
+      "subtypes": [
+        { "subtype_id": "wealth.recent_fortune", "label": { "zh": "近期财运", "en": "Near-term fortune" }, "questions": [
+          { "question_id": "wealth.recent_fortune.overall", "question_text": { "zh": "近期财运如何？", "en": "How are my finances in the near term?" }, "outcome": { "zh": "近期得财", "en": "gain financially soon" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.income", "label": { "zh": "正财收入", "en": "Regular income" }, "questions": [
+          { "question_id": "wealth.income.steady", "question_text": { "zh": "近期正财收入能否稳定增长？", "en": "Will my regular income hold and grow?" }, "outcome": { "zh": "正财稳定增长", "en": "see income hold and grow" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.investment", "label": { "zh": "投资理财", "en": "Investment" }, "questions": [
+          { "question_id": "wealth.investment.profit", "question_text": { "zh": "这笔投资能否获利？", "en": "Will this investment pay off?" }, "outcome": { "zh": "从这笔投资获利", "en": "profit from this investment" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.business", "label": { "zh": "生意经营", "en": "Running a business" }, "questions": [
+          { "question_id": "wealth.business.prosper", "question_text": { "zh": "这门生意经营能否顺利？", "en": "Will this business do well?" }, "outcome": { "zh": "生意经营顺利", "en": "see the business do well" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.contract", "label": { "zh": "交易合同", "en": "Deal & contract" }, "questions": [
+          { "question_id": "wealth.contract.close", "question_text": { "zh": "这笔交易合同能否顺利签成？", "en": "Will this deal be signed smoothly?" }, "outcome": { "zh": "签成这笔交易", "en": "close this deal" }, "classical_domain_id": "domain-11", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.partnership", "label": { "zh": "合伙合作", "en": "Partnership" }, "questions": [
+          { "question_id": "wealth.partnership.work", "question_text": { "zh": "这次合伙合作能否顺利？", "en": "Will this partnership go well?" }, "outcome": { "zh": "合作顺利", "en": "see the partnership go well" }, "classical_domain_id": "domain-11", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.debt_collection", "label": { "zh": "债务催收", "en": "Debt collection" }, "questions": [
+          { "question_id": "wealth.debt_collection.recover", "question_text": { "zh": "这笔欠款能否收回？", "en": "Will this debt be repaid?" }, "outcome": { "zh": "收回这笔欠款", "en": "get the money back" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.trading", "label": { "zh": "买卖求财", "en": "Buying & selling" }, "questions": [
+          { "question_id": "wealth.trading.gain", "question_text": { "zh": "这次买卖能否得利？", "en": "Will this trade bring a gain?" }, "outcome": { "zh": "从这次买卖得利", "en": "gain from this trade" }, "classical_domain_id": "domain-11", "enabled": true }
+        ] },
+        { "subtype_id": "wealth.project_profit", "label": { "zh": "项目盈利", "en": "Project profit" }, "questions": [
+          { "question_id": "wealth.project_profit.profit", "question_text": { "zh": "这个项目能否盈利？", "en": "Will this project turn a profit?" }, "outcome": { "zh": "让这个项目盈利", "en": "turn a profit" }, "classical_domain_id": "domain-10", "enabled": true }
+        ] }
+      ]
+    },
+    {
+      "domain_id": "love",
+      "label": { "zh": "感情姻缘", "en": "Love" },
+      "caution": { "zh": "涉及他人心意，卦象只作参考，不能当作对方的真实想法。", "en": "Another person’s feelings cannot be known from a reading; take it as reflection only." },
+      "subtypes": [
+        { "subtype_id": "love.secret_crush", "label": { "zh": "暗恋心意", "en": "Secret feelings" }, "questions": [
+          { "question_id": "love.secret_crush.feeling", "question_text": { "zh": "我暗恋的人对我有意吗？", "en": "Does the one I secretly like care for me?" }, "outcome": { "zh": "得到对方的心意", "en": "win their affection" }, "classical_domain_id": "domain-02", "enabled": true }
+        ] },
+        { "subtype_id": "love.ambiguous_relation", "label": { "zh": "暧昧发展", "en": "Where it’s heading" }, "questions": [
+          { "question_id": "love.ambiguous_relation.develop", "question_text": { "zh": "这段暧昧能否发展成恋爱？", "en": "Will this become a relationship?" }, "outcome": { "zh": "由暧昧走到恋爱", "en": "become a couple" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.confession", "label": { "zh": "表白追求", "en": "Confessing" }, "questions": [
+          { "question_id": "love.confession.accept", "question_text": { "zh": "这次表白追求能成功吗？", "en": "Will my confession be accepted?" }, "outcome": { "zh": "表白追求成功", "en": "be accepted" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.relationship", "label": { "zh": "恋爱关系", "en": "Relationship" }, "questions": [
+          { "question_id": "love.relationship.last", "question_text": { "zh": "这段恋爱关系能否长久？", "en": "Will this relationship last?" }, "outcome": { "zh": "这段关系长久", "en": "see it last" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.conflict", "label": { "zh": "冷战矛盾", "en": "Quarrel" }, "questions": [
+          { "question_id": "love.conflict.resolve", "question_text": { "zh": "这次冷战矛盾能否化解？", "en": "Will this quarrel be resolved?" }, "outcome": { "zh": "化解这次矛盾", "en": "resolve the quarrel" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.reconciliation", "label": { "zh": "分手复合", "en": "Getting back" }, "questions": [
+          { "question_id": "love.reconciliation.reunite", "question_text": { "zh": "分手后还能复合吗？", "en": "Can we get back together?" }, "outcome": { "zh": "复合", "en": "get back together" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.destined_partner", "label": { "zh": "桃花正缘", "en": "The right person" }, "questions": [
+          { "question_id": "love.destined_partner.arrive", "question_text": { "zh": "近期能遇到正缘吗？", "en": "Will I meet the right person soon?" }, "outcome": { "zh": "近期遇到正缘", "en": "meet the right person soon" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.marriage_discussion", "label": { "zh": "谈婚论嫁", "en": "Marriage talks" }, "questions": [
+          { "question_id": "love.marriage_discussion.agree", "question_text": { "zh": "这段婚事能谈成吗？", "en": "Will this marriage be agreed?" }, "outcome": { "zh": "谈成这段婚事", "en": "see the marriage agreed" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.married_life", "label": { "zh": "婚姻家庭", "en": "Married life" }, "questions": [
+          { "question_id": "love.married_life.harmony", "question_text": { "zh": "婚姻家庭能否和顺？", "en": "Will my marriage be harmonious?" }, "outcome": { "zh": "婚姻和顺", "en": "keep the marriage in harmony" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] },
+        { "subtype_id": "love.long_distance", "label": { "zh": "异地恋情", "en": "Long distance" }, "questions": [
+          { "question_id": "love.long_distance.last", "question_text": { "zh": "这段异地恋能否走下去？", "en": "Will this long-distance relationship last?" }, "outcome": { "zh": "让异地恋走下去", "en": "keep it going" }, "classical_domain_id": "domain-05", "enabled": true }
+        ] }
+      ]
+    },
+    {
+      "domain_id": "health",
+      "label": { "zh": "健康疾病", "en": "Health" },
+      "caution": { "zh": "健康类只展示传统卦象解释，不是医疗诊断，不能用来判断病情轻重或决定治疗。请以医生诊断为准，身体不适请及时就医。", "en": "Health readings show traditional imagery only. They are not a diagnosis and cannot judge severity or guide treatment. Follow your doctor, and seek care promptly when unwell." },
+      "subtypes": [
+        { "subtype_id": "health.general", "label": { "zh": "身体状况", "en": "General health" }, "questions": [
+          { "question_id": "health.general.overall", "question_text": { "zh": "近期身体状况卦象如何？", "en": "What does the reading show for my health lately?" }, "outcome": { "zh": "身体安康", "en": "stay well" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.body_location", "label": { "zh": "不适部位", "en": "Where it hurts" }, "questions": [
+          { "question_id": "health.body_location.image", "question_text": { "zh": "不适之处在卦象中应在何处？", "en": "Where does the reading place the discomfort?" }, "outcome": { "zh": "不适减轻", "en": "ease the discomfort" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.severity_symbolism", "label": { "zh": "病情轻重", "en": "How serious" }, "questions": [
+          { "question_id": "health.severity_symbolism.image", "question_text": { "zh": "卦象所示病情轻重如何？", "en": "What does the reading show about how serious it is?" }, "outcome": { "zh": "病情轻浅", "en": "find it mild" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.progress_symbolism", "label": { "zh": "病情发展", "en": "Course of illness" }, "questions": [
+          { "question_id": "health.progress_symbolism.image", "question_text": { "zh": "病情发展卦象如何？", "en": "Which way does the reading show the illness going?" }, "outcome": { "zh": "病情好转", "en": "improve" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.treatment", "label": { "zh": "治疗过程", "en": "Treatment" }, "questions": [
+          { "question_id": "health.treatment.smooth", "question_text": { "zh": "这次治疗过程是否顺利？", "en": "Will this treatment go smoothly?" }, "outcome": { "zh": "治疗顺利", "en": "see treatment go smoothly" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.surgery", "label": { "zh": "手术事项", "en": "Surgery" }, "questions": [
+          { "question_id": "health.surgery.smooth", "question_text": { "zh": "这次手术事项是否顺利？", "en": "Will this surgery go smoothly?" }, "outcome": { "zh": "手术顺利", "en": "see the surgery go smoothly" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.recovery", "label": { "zh": "康复调养", "en": "Recovery" }, "questions": [
+          { "question_id": "health.recovery.recover", "question_text": { "zh": "康复调养能否顺利？", "en": "Will recovery go well?" }, "outcome": { "zh": "顺利康复", "en": "recover well" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] },
+        { "subtype_id": "health.family_health", "label": { "zh": "家人健康", "en": "Family’s health" }, "questions": [
+          { "question_id": "health.family_health.improve", "question_text": { "zh": "家人身体能否好转？", "en": "Will my family member’s health improve?" }, "outcome": { "zh": "家人好转", "en": "see your family member improve" }, "classical_domain_id": "domain-16", "enabled": true }
+        ] }
+      ]
+    },
+    {
+      "domain_id": "home",
+      "label": { "zh": "家庭家宅", "en": "Home & family" },
+      "subtypes": [
+        { "subtype_id": "home.buy_property", "label": { "zh": "买房置业", "en": "Buying a home" }, "questions": [
+          { "question_id": "home.buy_property.buy", "question_text": { "zh": "这套房子能否顺利买成？", "en": "Will I buy this home smoothly?" }, "outcome": { "zh": "顺利买下这套房子", "en": "buy this home well" }, "classical_domain_id": "domain-04", "enabled": true }
+        ] },
+        { "subtype_id": "home.sell_property", "label": { "zh": "卖房出售", "en": "Selling a home" }, "questions": [
+          { "question_id": "home.sell_property.sell", "question_text": { "zh": "这套房子能否顺利卖出？", "en": "Will this property sell smoothly?" }, "outcome": { "zh": "顺利卖出这套房子", "en": "sell it well" }, "classical_domain_id": "domain-11", "enabled": true }
+        ] },
+        { "subtype_id": "home.rental", "label": { "zh": "租赁住房", "en": "Renting" }, "questions": [
+          { "question_id": "home.rental.settle", "question_text": { "zh": "这次租房能否顺利称心？", "en": "Will this rental work out well?" }, "outcome": { "zh": "租到称心的住处", "en": "find a good place" }, "classical_domain_id": "domain-04", "enabled": true }
+        ] },
+        { "subtype_id": "home.moving", "label": { "zh": "搬家迁居", "en": "Moving" }, "questions": [
+          { "question_id": "home.moving.smooth", "question_text": { "zh": "这次搬家迁居是否顺利？", "en": "Will this move go smoothly?" }, "outcome": { "zh": "搬家顺利", "en": "move smoothly" }, "classical_domain_id": "domain-04", "enabled": true }
+        ] },
+        { "subtype_id": "home.renovation", "label": { "zh": "装修建造", "en": "Renovation" }, "questions": [
+          { "question_id": "home.renovation.smooth", "question_text": { "zh": "这次装修建造能否顺利？", "en": "Will the renovation go smoothly?" }, "outcome": { "zh": "装修顺利", "en": "see the work go smoothly" }, "classical_domain_id": "domain-04", "enabled": true }
+        ] },
+        { "subtype_id": "home.family_relations", "label": { "zh": "家庭关系", "en": "Family ties" }, "questions": [
+          { "question_id": "home.family_relations.harmony", "question_text": { "zh": "家人关系能否和睦？", "en": "Will my family get along?" }, "outcome": { "zh": "家人和睦", "en": "keep the family in harmony" }, "classical_domain_id": "domain-03", "enabled": true }
+        ] },
+        { "subtype_id": "home.parents", "label": { "zh": "父母长辈", "en": "Parents & elders" }, "questions": [
+          { "question_id": "home.parents.wellbeing", "question_text": { "zh": "父母长辈近来是否安好？", "en": "Are my parents and elders doing well?" }, "outcome": { "zh": "父母长辈安好", "en": "see them well" }, "classical_domain_id": "domain-03", "enabled": true }
+        ] },
+        { "subtype_id": "home.children", "label": { "zh": "子女事务", "en": "Children" }, "questions": [
+          { "question_id": "home.children.smooth", "question_text": { "zh": "子女之事能否顺利？", "en": "Will things go well for my children?" }, "outcome": { "zh": "子女之事顺利", "en": "see things go well for them" }, "classical_domain_id": "domain-03", "enabled": true }
+        ] },
+        { "subtype_id": "home.living_environment", "label": { "zh": "家宅环境", "en": "The home itself" }, "questions": [
+          { "question_id": "home.living_environment.peace", "question_text": { "zh": "家宅环境是否安宁？", "en": "Is my home peaceful and settled?" }, "outcome": { "zh": "家宅安宁", "en": "keep the home at peace" }, "classical_domain_id": "domain-03", "enabled": true }
+        ] }
+      ]
+    },
+    {
+      "domain_id": "search",
+      "label": { "zh": "寻人失物", "en": "Lost & missing" },
+      "subtypes": [
+        { "subtype_id": "search.lost_item", "label": { "zh": "失物寻找", "en": "Lost item" }, "questions": [
+          { "question_id": "search.lost_item.find", "question_text": { "zh": "丢的东西能找回吗？", "en": "Will I find what I lost?" }, "outcome": { "zh": "找回失物", "en": "find what was lost" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.direction", "label": { "zh": "位置方向", "en": "Which direction" }, "questions": [
+          { "question_id": "search.direction.where", "question_text": { "zh": "失物大致在什么方位？", "en": "Which way does the reading point for the lost item?" }, "outcome": { "zh": "寻得失物", "en": "find it" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.valuables", "label": { "zh": "贵重物品", "en": "Valuables" }, "questions": [
+          { "question_id": "search.valuables.find", "question_text": { "zh": "丢失的贵重物品能找回吗？", "en": "Will I recover the lost valuables?" }, "outcome": { "zh": "找回贵重物品", "en": "recover them" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.documents", "label": { "zh": "证件文件", "en": "Papers & IDs" }, "questions": [
+          { "question_id": "search.documents.find", "question_text": { "zh": "丢失的证件文件能找回吗？", "en": "Will I find the lost papers?" }, "outcome": { "zh": "找回证件文件", "en": "find the papers" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.loss_cause", "label": { "zh": "失物原因", "en": "How it was lost" }, "questions": [
+          { "question_id": "search.loss_cause.cause", "question_text": { "zh": "东西是遗落还是被人拿走？", "en": "Was it mislaid or taken?" }, "outcome": { "zh": "查明失物缘由", "en": "learn what happened" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.pet", "label": { "zh": "宠物走失", "en": "Lost pet" }, "questions": [
+          { "question_id": "search.pet.return", "question_text": { "zh": "走失的宠物能找回吗？", "en": "Will my lost pet be found?" }, "outcome": { "zh": "找回宠物", "en": "find your pet" }, "classical_domain_id": "domain-15", "enabled": true }
+        ] },
+        { "subtype_id": "search.missing_person", "label": { "zh": "人员失联", "en": "Missing person" }, "safety": "missing-person", "questions": [
+          { "question_id": "search.missing_person.contact", "question_text": { "zh": "失联的人能联系上吗？", "en": "Will I reach the person I lost touch with?" }, "outcome": { "zh": "联系上对方", "en": "reach them" }, "classical_domain_id": "domain-13", "enabled": true }
+        ] },
+        { "subtype_id": "search.person_clues", "label": { "zh": "寻人线索", "en": "Leads on a person" }, "safety": "missing-person", "questions": [
+          { "question_id": "search.person_clues.lead", "question_text": { "zh": "寻人近期能否得到线索？", "en": "Will I get a lead on the person soon?" }, "outcome": { "zh": "得到线索", "en": "get a lead" }, "classical_domain_id": "domain-13", "enabled": true }
+        ] }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,12 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
-为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
+为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块**，以及基于它的**手机应用** [`apps/mobile`](apps/mobile/README.md)（React + Three.js + Capacitor）：入观、三炷香、叩首、石桌刻卦显出本卦/互卦/变卦，点爻查看经文与依据，离线可用。
+
+```bash
+npm run app:install
+npm run app:dev     # http://127.0.0.1:5173（浏览器竖屏手机模式）
+npm run app:test
+```
 
 **给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V2.md)。
 

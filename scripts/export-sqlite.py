@@ -36,7 +36,7 @@ def main():
     # Create every parent table first, then defer row checks until the atomic import commits.
     ordered=[x for x in statements if x.startswith('CREATE TABLE')]+[x for x in statements if x.startswith('INSERT INTO')]+[x for x in statements if x.startswith('CREATE VIEW')]
     sql='PRAGMA foreign_keys=ON;\nBEGIN TRANSACTION;\nPRAGMA defer_foreign_keys=ON;\n'+'\n'.join(ordered)+'\nCOMMIT;\n'
-    (ROOT/'data/knowledge.sql').write_text(sql)
+    (ROOT/'data/knowledge.sql').write_text(sql,encoding='utf-8',newline='\n')
     out=ROOT/'dist';out.mkdir(exist_ok=True)
     target=out/'wengua.sqlite'
     if target.exists():target.unlink()

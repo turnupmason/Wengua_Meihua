@@ -1,0 +1,14 @@
+# Keep exact bytes: source hashes and generated data are verified byte-for-byte.
+* text=auto eol=lf
+*.docx binary
+*.sqlite binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.glb binary
+*.ogg binary
+*.mp3 binary
+sources/original/** -text
+*.woff2 binary
+*.bat text eol=crlf
+*.cmd text eol=crlf
