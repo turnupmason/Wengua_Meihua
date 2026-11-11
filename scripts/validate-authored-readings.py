@@ -18,6 +18,10 @@ for f in index['files']:
   assert row['copy']['short']['decisionId']==row['copy']['long']['decisionId']==row['decision']['id']
   assert row['timingSlots'] and all(s['event'] and s['valence'] in ['吉','凶'] and s['sourceIds'] and s['branches'] for s in row['timingSlots'])
   assert not row['voidTimingSlots']
+  assert row['ruleVersions']['void']=='trigram-void-2.1.0'
+  assert row['review']['independentReview']['timingInterpretation']=='pending'
+  assert not row['review']['independentReview']['userAcceptedThisVersion']
+  assert all(s['calculationBasis']['independentInterpretationReview']=='pending' and s['eventScope'] for s in row['timingSlots'])
   assert '批准的扩展规则' not in json.dumps(row['copy'],ensure_ascii=False)
   texts.add(row['copy']['short']['text']);count+=1
  for key,i in batch['monthSlots'].items():

@@ -4,6 +4,8 @@ import {getVoidProfileKey} from '../src/prewritten-manuscripts.js';
 import {inspectMovingLine,validateStoryCopy} from '../src/story-editorial.js';
 import {createInterviewReading,interviewTimingSlots,createInterviewManuscriptRepository,INTERVIEW_MANUSCRIPT_VERSION,INTERVIEW_QUESTION_ID} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS,MONTH_SLOT_POLICY} from '../src/month-slots.js';
+import {VOID_RULESET} from '../src/void-policy.js';
+import {checkInterviewDecision,INTERVIEW_DECISION_POLICY_VERSION} from '../src/interview-decision-checks.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 import {INTERVIEW_PASS_BATCH_001} from '../sources/editorial/interview-pass-batch-001.mjs';
 import {INTERVIEW_PASS_OTHER_MONTHS} from '../sources/editorial/interview-pass-all-months.mjs';
@@ -25,6 +27,7 @@ for(const [index,a] of authored.entries()){
  const decision={id:decisionId,outcomeCode:a.outcome,question_type:question.question_type,questionScope:'one-interview-stage',
   method:'project-application-of-fame-chapter;not-a-verbatim-classical-interview-rule',sourceIds,
   counterevidence:a.counterevidence,lineApplication:{...a.lineApplication,allDetectedTerms:facts.movingLine.terms},
+  consistency:checkInterviewDecision(reading,a),
   indirectEffectsApplied:[],interpretationProvenance:'assistant-authored;not-observed-feedback;not-scientifically-verified-prediction'};
  const copy={title:a.title,short:{decisionId,text:a.short},long:{decisionId,opening:a.opening,process:a.process,ending:a.ending,summary:a.summary}};
  const checks=validateStoryCopy({decision,copy,lineApplication:a.lineApplication,counterevidence:a.counterevidence});
@@ -49,10 +52,11 @@ for(const [index,a] of authored.entries()){
  };
  const review={status:'author-checked',actor:'assistant-author',version:INTERVIEW_MANUSCRIPT_VERSION,
   scope:'base-prose-and-recorded-void-profile;equivalent-qi-month-slots-share-written-text;exempt-core-void-does-not-change-verdict',verification:'computed-facts-plus-authored-judgment;not-independent-human-expert-certification',
-  checks:Object.fromEntries(AUDIT_CHECKS.map(id=>[id,{status:'pass',evidence:[{sourceId:'project-interview-authoring',locator:evidence[id][1],reason:evidence[id][0]}]}]))};
+  independentReview:{status:'pending',timingInterpretation:'pending',calendarConversion:'separate-technical-check',userAcceptedThisVersion:false},
+  checks:Object.fromEntries(AUDIT_CHECKS.map(id=>[id,{status:'pass',scope:'author-check-only;not-independent-approval',evidence:[{sourceId:'project-interview-authoring',locator:evidence[id][1],reason:evidence[id][0]}]}]))};
  const row={number:index+1,primaryId:a.primaryId,movingLine:a.movingLine,monthOrder:a.monthOrder,monthBranches,voidProfileKey:getVoidProfileKey(reading),
   stageIds:Object.values(reading.stages).map(s=>s.id),movingLineText:reading.selectedMovingLine.text,facts,decision,copy,timingSlots,
-  baseProse:true,coreVoidNotes,voidReleaseSpecs:[],voidTimingSlots:[],voidTimingText:'',
+  baseProse:true,coreVoidNotes,ruleVersions:{void:VOID_RULESET.id,decision:INTERVIEW_DECISION_POLICY_VERSION},voidReleaseSpecs:[],voidTimingSlots:[],voidTimingText:'',
   lineApplication:a.lineApplication,counterevidence:a.counterevidence,sourceIds,review,copyChecks:checks};
  row.artifactDigest=await interpretationArtifactDigest(row);rows.push(row);
 }
@@ -87,7 +91,7 @@ for(const original of INTERVIEW_PASS_BATCH_001){
   const r=rows.find(r=>r.primaryId===original.primaryId&&r.movingLine===original.movingLine&&r.monthOrder===monthOrder);
   const rendered=await runtime.getContent(question,{questionId:question.id,primaryId:r.primaryId,movingLine:r.movingLine,monthBranch:r.monthBranches[0],castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}});
   if(rendered.status!=='ready')throw new Error('Authored case does not render: '+r.decision.id);
-  const text=`### ${r.monthBranches.map(b=>b+'月').join('、')}：${r.copy.title}\n\n${r.facts.stages.map(s=>s.name).join(' → ')}，${r.facts.movingLine.label}动。\n\n简断\n\n${rendered.short}\n\n详断\n\n${rendered.paragraphs.join('\n\n')}\n\n依据：《梅花易数·求名占》《衰旺论》《占卦诀》《体用互变之诀》《日应》。\n\n动爻完整原文：${r.movingLineText}\n\n`;
+  const text=`### ${r.monthBranches.map(b=>b+'月').join('、')}：${r.copy.title}\n\n${r.facts.stages.map(s=>s.name).join(' → ')}，${r.facts.movingLine.label}动。\n\n简断\n\n${rendered.short}\n\n详断\n\n${rendered.paragraphs.join('\n\n')}\n\n依据：《梅花易数·求名占》《衰旺论》《占卦诀》《体用互变之诀》《日应》。\n\n动爻完整原文：${r.movingLineText}\n\n<details>\n<summary>计算说明</summary>\n\n${rendered.calculationExplanation.paragraphs.join('\n\n')}\n\n</details>\n\n`;
   all+=text;if(monthOrder==='winter-water')winter+=text;
  }
 }

@@ -1,5 +1,11 @@
 # Claude repository instructions
 
+本轮复核见docs/INTERVIEW_REVIEW_20261111.md。山雷颐六二、山风蛊九三的夏令与土令共4份稿已由倾向通过改为难以通过。checkInterviewDecision拦截本用克体、无直接生体且仅凭旺体或互卦比和翻吉的稿件；该检查属于本项目面试问项的来源一致性门槛，不是跨领域通用预测公式。
+
+当前稿版本interview-pass-1.2.0。半空等专业信息只在calculationExplanation里，短断与story/paragraphs不混入。页面将“计算说明”单独折叠；空亡规则独立版本trigram-void-2.1.0，不能说成古籍统一计分。
+
+每条日期窗口的dateResolution.dateMatches分别保存slotId、event、valence、eventScope、targetBranches、calculationBasis与实际公历日期；不把过程凶应和最终有利候选合并。日期动态换算，不存死日号。review.independentReview及dateResolution.independentInterpretationReview均保留pending，userAcceptedThisVersion:false；代码检查与作者复核不冒充用户或独立断法审核。
+
 当前首问为“这次面试能通过吗”。已写60篇完整正文，12种盘的十二月令全部接齐，共144/4,608个基础槽位。正文按实际旺衰分别写；同气类且同结论的月份明确共用全文。实际进度在data/authored-readings/progress.json；不宣称全问完成，不虚报后台任务。全文见docs/INTERVIEW_PASS_ALL_MONTHS.md。
 
 当前检索口径为64卦×6动爻×12月令，不再以1,920作为新稿完整数量。寅卯木、巳午火、申酉金、亥子水、辰未戌丑土；采用显式月令输入，未自动推算节气或每季末十八日。monthBranch是产品月令键，monthOrder仅为五态计算与旧接口兼容字段。

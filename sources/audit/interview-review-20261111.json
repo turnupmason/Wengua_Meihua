@@ -1,0 +1,22 @@
+{
+  "id": "interview-review-20261111",
+  "scope": "source-check-and-editorial-correction;not-observed-outcomes-or-user-acceptance",
+  "independentInterpretationReview": "pending",
+  "primarySources": [
+    {"sectionId":"mh-071","url":"https://zh.wikisource.org/zh-hans/梅花易數/卷二#求名占第九","locator":"求名占第九","excerpts":["用克体，名不可成。","体生用，名不可就，或因名有丧。"],"application":"现代面试单轮问题为项目类比应用，非声称古书直接记载面试规则。"},
+    {"sectionId":"mh-116","url":"https://zh.wikisource.org/zh-hans/梅花易數/卷三#占卦诀","locator":"占卦诀","excerpts":["如占吉事，无生体之卦，有克体之卦，则事不谐矣。"],"application":"用于拦截仅凭旺体或互卦比和把无生体、用克体的基础稿翻为通过。"},
+    {"sectionId":"mh-119","url":"https://zh.wikisource.org/zh-hans/梅花易數/卷三#体用衰旺之诀","locator":"体用衰旺之诀","excerpts":["乘旺之气，虽有他卦克之，亦无大害。"],"application":"减害、承接力与事情成就分开；未自动等同通过。"},
+    {"hexagramId":27,"movingLine":2,"url":"https://zh.wikisource.org/zh/周易/頤","locator":"六二","text":"顛頤，拂經，于丘頤，征凶。"}
+  ],
+  "correctedVerdicts": [
+    {"primaryId":27,"movingLine":2,"monthOrder":"summer-fire","before":"pass-if-grounded","after":"not-pass-this-round"},
+    {"primaryId":27,"movingLine":2,"monthOrder":"seasonal-earth","before":"pass-if-grounded","after":"not-pass-this-round"},
+    {"primaryId":18,"movingLine":3,"monthOrder":"summer-fire","before":"pass-after-correction","after":"not-pass-this-round"},
+    {"primaryId":18,"movingLine":3,"monthOrder":"seasonal-earth","before":"pass-after-correction","after":"not-pass-this-round"}
+  ],
+  "calendarAnchors": [
+    {"date":"2000-01-07","dayGanzhi":"甲子","url":"https://www.chinesecalendaronline.com/zh/2000/1/7.htm","additionalUrl":"https://pillarwise.io/bazi-chart/2000/01/07","purpose":"cross-check civil-day reference;not a timing prediction"},
+    {"date":"2026-11-18","dayGanzhi":"丙申","url":"https://www.rili.com.cn/wannianli/2026/1118.html","additionalUrl":"https://www.calc-site.com/search_dates/11/18/2026","purpose":"cross-check demonstration day branch independently of runtime function"}
+  ],
+  "calendarAudit": {"method":"integer-Gregorian-JDN-versus-production-UTC-anchor;separate-algorithm-check","range":"1900-01-01..2099-12-31","notAnIndependentHumanInterpretationReview":true}
+}

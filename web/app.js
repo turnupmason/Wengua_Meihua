@@ -37,7 +37,10 @@ async function showStory(current){
   const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
   let body;
-  if(content.status==='ready'&&content.short)body=`<h3>${esc(content.title)}</h3><p class="short-reading">${esc(content.short)}</p><details><summary>详断与应期</summary>${content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`;
+  if(content.status==='ready'&&content.short){
+   const explanation=content.calculationExplanation?`<details class="calculation-explanation"><summary>计算说明</summary>${content.calculationExplanation.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`:'';
+   body=`<h3>${esc(content.title)}</h3><p class="short-reading">${esc(content.short)}</p><details class="long-reading"><summary>详断与应期</summary>${content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>${explanation}`;
+  }
   else if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');
   else if(content.status==='requires-context')body='<p>请先补充'+content.missingContext.map(k=>esc(selected.contextFields[k]?.label||{castingDate:'起卦日期',monthOrder:'月令',monthBranch:'月令',timingScale:'按日取期尺度',timingMethod:'本次取期依据'}[k]||k)).join('、')+'。</p>';
   else if(content.status==='pending-review')body='<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>';

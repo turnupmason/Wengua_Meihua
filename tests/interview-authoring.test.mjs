@@ -4,6 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {loadLibrary,createProductRepository,getCivilDay,AUDIT_CHECKS,interpretationArtifactDigest} from '../src/index.js';
 import {createInterviewReading,interviewTimingSlots} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS,assessVoid} from '../src/index.js';
+import {checkInterviewDecision} from '../src/interview-decision-checks.js';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const library=await loadLibrary(),product=createProductRepository({library});
 const question=await product.getQuestion('career.interview.interview-pass');
@@ -96,8 +97,51 @@ test('all twelve branch slots resolve each authored chart, with month-dependent 
  assert.match((await interview(48,5,'亥')).decision.outcomeCode,/^pass/);
  assert.equal((await interview(48,5,'申')).decision.outcomeCode,'not-pass-this-round');
  assert.equal((await interview(16,2,'辰')).decision.outcomeCode,'not-pass-this-round');
- assert.match((await interview(18,3,'未')).decision.outcomeCode,/^pass/);
+ assert.equal((await interview(18,3,'未')).decision.outcomeCode,'not-pass-this-round');
  await assert.rejects(product.getContent({questionId:question.id,...context,monthBranch:'卯',primaryId:5,movingLine:2}),/disagree/);
+});
+
+test('strong body or mutual equality cannot reverse unassisted use-control into passing an interview',async()=>{
+ for(const [primaryId,movingLine] of [[27,2],[18,3]])for(const monthOrder of ['summer-fire','seasonal-earth']){
+  const result=await product.getContent({questionId:question.id,...context,monthOrder,primaryId,movingLine});
+  assert.equal(result.status,'ready');assert.equal(result.decision.outcomeCode,'not-pass-this-round');
+  assert.equal(result.decision.consistency.noGenerationWithUseControl,true);
+  assert.deepEqual(result.decision.consistency.generatingRoles,[]);
+  assert.throws(()=>checkInterviewDecision(result.reading,{outcome:'pass-because-body-is-strong',counterevidence:[]}),/Unsupported favourable reversal/);
+ }
+ for(const monthBranch of MONTH_SLOTS.map(m=>m.branch)){
+  const result=await product.getContent({questionId:question.id,...context,monthOrder:undefined,monthBranch,primaryId:27,movingLine:2});
+  assert.equal(result.decision.outcomeCode,'not-pass-this-round');assert.match(result.long.ending,/征凶/);assert.match(result.long.ending,/不利于成就/);
+ }
+});
+
+test('half-void belongs to separately versioned calculation details, without altering month identity or entering prose',async()=>{
+ const winter=await product.getContent({questionId:question.id,...context,primaryId:16,movingLine:2});
+ const summer=await product.getContent({questionId:question.id,...context,monthOrder:'summer-fire',primaryId:16,movingLine:2});
+ for(const result of [winter,summer]){
+  assert.ok(!/半空|按半空减力|卦中提示/.test(result.short+result.story));
+  assert.match(result.calculationExplanation.paragraphs.join('\n'),/半空减力/);
+  assert.equal(result.calculationExplanation.void.id,'trigram-void-2.1.0');
+  assert.equal(result.calculationExplanation.void.classicalUniformScoring,false);
+  assert.equal(result.calculationExplanation.void.numericMultiplier,null);
+ }
+ assert.equal(winter.calculationExplanation.void.dayGanzhi,summer.calculationExplanation.void.dayGanzhi);
+ assert.deepEqual(winter.calculationExplanation.void.emptyBranches,summer.calculationExplanation.void.emptyBranches);
+ assert.notEqual(winter.calculationExplanation.month.qiCategory,summer.calculationExplanation.month.qiCategory);
+});
+
+test('opposite timing windows keep separate events and calculation bases and do not claim independent interpretation approval',async()=>{
+ const result=await product.getContent({questionId:question.id,...context,primaryId:48,movingLine:5});
+ const [adverse,positive]=result.dateResolution.dateMatches;
+ assert.equal(adverse.eventScope,'process-obstruction');assert.equal(adverse.valence,'凶');
+ assert.equal(adverse.calculationBasis.role,'body_mutual');assert.equal(adverse.calculationBasis.element,'金');assert.deepEqual(adverse.targetBranches,['申','酉']);
+ assert.equal(positive.eventScope,'positive-result-candidate');assert.equal(positive.valence,'吉');
+ assert.equal(positive.calculationBasis.role,'use');assert.equal(positive.calculationBasis.element,'水');assert.deepEqual(positive.targetBranches,['亥','子']);
+ assert.notEqual(adverse.slotId,positive.slotId);assert.notEqual(adverse.event,positive.event);
+ assert.equal(result.dateResolution.interpretationReviewed,false);
+ assert.equal(result.dateResolution.independentInterpretationReview,'pending');
+ assert.equal(result.review.independentReview.userAcceptedThisVersion,false);
+ assert.equal(result.review.independentReview.timingInterpretation,'pending');
 });
 
 test('lookup reads one hexagram shard and shared prose does not duplicate twelve full articles in memory',async()=>{

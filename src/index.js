@@ -166,3 +166,4 @@ export async function loadLibrary({readJSON}={}) {
   return createLibrary({catalog,sections,domains});
 }
 export {MONTH_SLOTS,MONTH_SLOT_POLICY,resolveMonthSlot} from './month-slots.js';
+export {VOID_RULESET} from './void-policy.js';

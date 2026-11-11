@@ -1,3 +1,9 @@
+本轮修订：interview-pass-1.2.0，详见INTERVIEW_REVIEW_20261111.md。颐六二与蛊九三的夏、土月共4份结论已修正。不得把体旺、互卦比和独立当作推翻用克体且无生体的通过依据。
+
+简断与paragraphs只显示断语及应期；calculationExplanation由独立的“计算说明”折叠框展示。半空只在后者出现，规则版本trigram-void-2.1.0，来源层为补充规则。
+
+每个日期窗口都有独立event、valence、eventScope、targetBranches、calculationBasis与displayedDates。水风井九五的过程受阻和有利候选仍分开。日期算法的技术对照不替代应期断法独立审核；independentInterpretationReview保持pending，不擅自标成用户验收。
+
 当前首问已有60篇完整正文，覆盖12种盘的全部十二月令，共144/4,608个槽位；未写的4,464个槽位仍显示待写。全文见INTERVIEW_PASS_ALL_MONTHS.md，实际统计见data/authored-readings/progress.json。
 
 开发直接调用已写断语，不在客户端或服务器临时让AI补写。简断、详断、动爻、判断依据与应期共用同一decisionId；无未换算日期标记。
