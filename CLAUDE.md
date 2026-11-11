@@ -1,40 +1,41 @@
 # Claude repository instructions
 
-最新批次：客户尾款 `domain-10-receivable` 已写入1,920篇基础全文，另有16,617个预写空亡情境版本，见 [第1批成稿与说明](docs/RECEIVABLE_BATCH_01.md)。384条动爻应用与64条求款说明另写，全文在构建时预生成；运行时只读取排定的段落及填日期，不调用模型。不是逐篇手写1,920次，审阅方法和限制在批次说明中公开。普通60日干支已穷举，未知自定义释放状态仍返回缺稿。进度保存在 `data/question-stories/batch-progress.json`，下一项为借款收回；没有后台写作任务。
+最新入口：[开发交接 V6](docs/CLAUDE_BUILD_PROMPT_V6.md)，先读 [断语审核 V2](docs/INTERPRETATION_AUDIT_V2.md)。用户最新明确：每个领域细分具体问题，每篇按九项审查。V6覆盖旧版大领域套稿、任意传递关系和旧稿可发布的口径。
 
-正式占问只允许“选择领域 → 选择具体事项”，取消自由提问和AI分类。18领域各5项，共90项，见 [事项清单](docs/QUESTION_CHOICES.md)。`data/question-items.json`保存固定ID、问法、回答范围、应事和取期政策；用 `createQuestionRepository().getContent` 精确调用，不直接用旧 `getStory` 作为具体事项成稿。75项占问已完成1项基础批次，另有15项古籍查阅说明；缺稿返回 `pending-authoring`，禁止回退到领域通用稿或其他事项。75项若各覆盖1,920种盘与月令，至少144,000篇基础稿，实际覆盖需如实记录。
+当前真实状态：客户尾款已生成1,920篇基础稿、16,617个空亡版本，九项断法审核通过和可发布数为0。旧 reviewStatus=reviewed 仅代表结构标记。旧稿存在月令适用不完整、间接关系缺条件审核、部分空亡和应期依据不足；保留供修订，不作为正式结果。进度在 data/question-stories/batch-progress.json，无后台写作任务。不将旧编写器换名继续扩批。
 
-最新用户确认：最近十篇完整断语的口吻已经认可。先读 [已确认文风与未来日期](docs/APPROVED_STORY_STYLE.md)，1,920篇已具备重写授权；这次仅新增日期约束，基础故事尚未逐篇改写。新盘所有预测日期必须不早于起卦日，近期先筛本月剩余日期、没有合格候选再查下月；调用 `findUpcomingCivilDayMatches` / `formatUpcomingCivilDay`。正文要完整预写，日期自然融入事情发展。
+## 继续开发
 
-本仓库是用户“问卦 / Wengua”手机应用的知识与排盘基础。继续开发前按顺序阅读：
-
-1. `README.md`
-2. `docs/CLAUDE_BUILD_PROMPT_V5.md`（最新完整产品任务）
-3. `docs/RULES.md`、`docs/DATA_AND_API.md`、`docs/DATABASE_AND_DETAILS.md`
-4. `docs/EDITORIAL.md`、`docs/DETAILS_AUDIT.md`、`data/issues.json`
-
-先执行 `npm run build:questions` 生成完整故事SQL，再执行 `npm run validate`、`npm run validate:details`、`npm run validate:stories`、`npm run validate:questions`、`npm run validate:receivable`、`npm test`；需要观察文字和动爻联动时执行 `npm run demo`。
+1. 阅读 README.md、docs/CLAUDE_BUILD_PROMPT_V6.md、docs/INTERPRETATION_AUDIT_V2.md。
+2. 阅读 docs/RULES.md、docs/DATA_AND_API.md、docs/DATABASE_AND_DETAILS.md、docs/EDITORIAL.md、docs/DETAILS_AUDIT.md 和 data/issues.json；冲突按V6和用户最新要求处理。
+3. 先构建测试。排盘、资料阅读、3D仪式可继续开发；正式断语遵循审核状态。
+4. 先修订十篇具体事项样稿并逐项复核，再扩展批次。当前未完成全稿逐字重写，不宣称百分之百预测正确。
 
 ## 必须保持
 
-- 最新用户等级订正：44 天风姤展示“中卦”，不是上上卦；中档别名分类见 `grade.canonicalGrade`。
-- `sources/original` 的三份上传文件不改写。新订正添加记录并修改生成脚本。
-- 六爻从下向上编号；本卦动爻发光，取本卦对应爻辞。动者为用、静者为体。
-- 互卦不能凭空多出独立动爻，用九/用六不能当第七爻。
-- 卦的固定基础等级与结合月令、空亡的情境解读分开，不能让模型改写基础等级。
-- 真空判断使用起卦时证据，后续填冲不自动复活真空。应期优先填实、次选冲实。合空默认禁用，须显式开启且满足事件和假空条件。
-- 用户新提供的规则优先于旧消息与当前实现；更新来源、规则、测试、文档，禁止只改 UI 文案。
-- 无规则支持的数字能量、综合等级、成功率、确定日期不得杜撰。
-- 古籍内部矛盾不直接导入结构算法。不要把民间吉凶诗当《周易》象传。
+- sources/original 和上传原文不改写；订正有记录和出处。参考解释不能反向修改六爻结构，隔离片段不能进入事实表。
+- 44天风姤展示中卦，分类中中；固定卦等与情境总断分开。
+- 六爻自下向上1–6，本卦真实动爻发光，点击取本卦该爻资料；动侧为用、静侧为体。互卦无独立动爻，用九/用六不是第七爻。
+- 一个原体贯穿。用最紧、互次之、变又次之；体互先于用互。解释开局、过程、结局和反例，不靠一个克字或变卦包办整盘。
+- 完整五态用 assessSeasonalQi / buildInterpretationEvidence，所有经卦同表。旧 createReading.strength 保留兼容语义，不能混用。金休仍克木，火死不等于零作用或真空，不加自创倍率。
+- 月令气类不是月支或公历月份。节气和四季土边界尚未定，演示明确选择气类；自动选择须另补历法与测试。
+- 直接关系先看。两段候选路径不是生效的解围规则，approvedIndirectRules 当前为空。不得自行串联或重复累计原体。
+- 旬空是用户扩展；后天方位配支不是纳甲。部分命中只标记，不判整卦空、不推半数力量。真空需起卦当时独立证据，后续填冲不自动复活；填优先、冲次之，合空默认不用作通用出空。
+- 应期先审核具体事件、吉凶、尺度、方法、轮次，再换日期。近期按日先本月余日、无候选再查下月实际干支；新盘不取过去日期，旧盘不滚动改期。按日可不填时分，按时或自动节气月令另需时间上下文。
+- 正文开局、过程、结局、总断，像正常说话，不用星号。专业依据放详情，允许有依据的条件与倾向。不得编心理、金额、人物、概率、确定日期或古案反馈。
 
-当前已具备资料包、排盘与二维联调演示；还没有完整 3D 应用。按完整 prompt 从可运行的移动竖屏道观体验继续落实。用户要求行动时直接实施，不停留在规划说明。
+## 事项与正式接口
 
-新增详解接口为 `createDetailsRepository`；数据库导入为 `data/knowledge.sql`。`sources/commentary` 只供显式参考阅读，`sources/review` 隔离稿不进入正式运行时或事实表。点击爻时用原卦ID及自下至上的1–6爻位，不将参考注解反向改写结构。
+现有18个原典门类、各5项、共90项；75项占问、15项查阅。读取 data/question-items.json 中 question_type、questionId、回答范围和应期政策。复合与成婚不同；婚可成不能证明喜欢自己；失物不能代替失联人员。前端可另分导航大类，但保留原门类绑定。备注如保留，仅个人记录，不参与AI分类，不声称已回答备注里的其他问题。
 
-月令故事接口 `createNarrativeRepository` 已接通：1,920篇基础故事、18门类、空亡及应期；使用五类月令，不以12个月支为故事索引。古籍案例的原断与反馈分开，不把案例反馈写成新用户未来。详见 docs/STORIES_AND_TIMING.md。
+createQuestionRepository({library}).getContent 精确匹配。未写稿为 pending-authoring；已有未过九项为 pending-review，story:null、空段落、productionAllowed:false，不输出占期。15项查阅为 reference。正式产品不得回退其他事项或旧领域通用稿。
 
-最新故事输出组合版本1.1.0，必须读取 `getStory` 的 `verdict`、`movingLine`、`timingDecision` 和最终 `story`。不要直接展示旧版 `getBase().story`、`baseStory`、SQL基础段落或旧 `timing.text`。故事必须给具体结果，并解释本卦真实动爻怎么改变事情；正文不以“需要一起看”“可以观察”等套话代替结论。详见 docs/DIRECT_STORIES.md。直接下卦断不等于编造金额、人物、日期或声称现实必然应验。
+editorialPreview:true 仅内部审阅，返回 review-preview；未审稿永不 ready。其日期 resolved 只代表旧规则下日历转换成功，interpretationReviewed:false。data/interpretation-reviews.json 目前无批准记录，九项须绑定精确内容、上下文、版本及证据定位、理由、审核签名。填满字段不代表实质审核成立。
 
-应期专项已核到审核版本1.0.0、故事组合版本1.2.0，优先阅读 docs/TIMING_AUDIT.md。使用 `timingDecision.event`（应事和吉凶）与 `period`（方法、单位、支期、轮次）；`calendarOccurrences`不是确定应验日。按18门各自条文处理，不统一套最近支日或全部不成便不取期。先导入 knowledge.sql 再导入 timing-audit.sql。文风现已确认，按最新口吻逐篇重写，不把句式批量替换冒充完整成稿。
+SQL全文为 structural-only 内部稿，生产只查 approved_fixed_question_stories，目前0行。旧导出器拒绝非零批准数；未来实现精确回执导出后再启用，不靠改计数放行。旧 getStory、基础SQL和资源字典不绕过新门槛展示正式结果。
 
-日期与全盘补充：已预存未来两年731天的公历—干支日表，按完整日期查表无需用户输入时分或城市；`getCivilDay`、`findCivilDayMatches`提供日期换算。`getStory().fullChart` / `buildFullChartRelations`提供六个可见经卦、15组五行关系及制克体者/连续生扶路径，始终以原体为主。行动候选日与事件应验日期必须分开，不能编造成功率。参见 [日期与全盘说明](docs/DAY_CALENDAR_AND_FULL_CHART.md)。1,920篇现已获文风确认，存量行仍待逐篇重写。
+## 验证与交付
+
+npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm test。结构校验与断法审核分别报告。
+
+当前已有知识层、排盘和二维联调，尚无完整3D手机应用。按V6继续实现可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。

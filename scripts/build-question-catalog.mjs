@@ -1,5 +1,6 @@
 import {writeFile,mkdir,readFile} from 'node:fs/promises';
 import {loadLibrary} from '../src/index.js';
+import {questionTypeFor} from '../src/question-types.js';
 const library=await loadLibrary();
 // Editorial product questions, not additional quotations or independently surveyed rankings.
 // [stable suffix, selectable question, exact answer focus, favourable event, adverse event]
@@ -155,7 +156,8 @@ const domains=groups.map(([domainId,label,rows])=>{
  const original=library.listDomains().find(d=>d.id===domainId);if(!original||rows.length!==5)throw new Error('Question domain coverage mismatch');
  return {id:domainId,label,sourceSectionId:original.sectionId,mode:original.mode==='reference-only'?'reference':'narrative',items:rows.map(([suffix,question,answerBrief,positiveEvent,adverseEvent],index)=>{
   const id=domainId+'-'+suffix,mode=original.mode==='reference-only'?'reference':'narrative';
-  return {id,domainId,position:index+1,question,answerBrief,positiveEvent,adverseEvent,mode,
+  return {id,domainId,question_type:questionTypeFor({id,domainId,mode}),position:index+1,question,answerBrief,positiveEvent,adverseEvent,mode,
+   interpretationReview:mode==='reference'?'historical-reference-only':'pending-nine-check-review',
    timingPolicy:mode==='reference'?'reference-only':domainId==='domain-05'?'quality-years-months':domainId==='domain-18'?'no-completion-date':domainId==='domain-12'?'journey-event-not-departure-date':'event-specific',
    sourceIds:[original.sectionId,...(domainId==='domain-05'||domainId==='domain-13'||domainId==='domain-18'?['mh-122']:[])],
    sourceApplication:mode==='reference'?'editorial-reference-explanation':'editorial-specific-question;not-a-new-classical-rule',
@@ -176,8 +178,9 @@ const indexPath=new URL('../data/question-stories/index.json',import.meta.url);
 try{await writeFile(indexPath,JSON.stringify({schemaVersion:'1.0.0',catalogVersion:catalog.catalogVersion,contentVersion:library.contentVersion,
  baseChartsPerQuestion:1920,narrativeQuestionCount:catalog.narrativeCount,referenceQuestionCount:catalog.referenceCount,
  minimumBaseStoryCount:catalog.narrativeCount*1920,writtenBaseStoryCount:0,files:[],scope:'item-specific-complete-stories;void-and-event-context-require-reviewed-coverage'},null,2)+'\n',{flag:'wx'});}catch(e){if(e.code!=='EEXIST')throw e;}
-let doc='# 每个领域五个固定事项\n\n正式占问只用领域与事项选择，无自由输入或AI分类。以下是编写的常见问法，不是用户搜索量统计。\n\n共18领域、90项：75项占问，15项古籍查阅。每项有固定ID、回答范围、正反应事与取期政策；完整正文覆盖单独计数。\n\n';
-for(const domain of domains){doc+='## '+domain.label+'\n\n';for(const item of domain.items)doc+='- **'+item.question+'** `'+item.id+'`\n  '+item.answerBrief+'\n';doc+='\n';}
-doc+='## 正文与调用状态\n\n原1,920篇是384盘×5月令的通用基础量。75个占问事项若各自完整覆盖，至少需要144,000篇事项基础稿；旬空与应事条件另行核对。15项古籍查阅已有专门说明，不乘盘数。目前事项基础全文完成'+existingIndex.writtenBaseStoryCount+'篇，具体批次与空亡全文数量以 `data/question-stories/index.json` 为准。不能把旧领域通用输出冒充事项成稿。\n\n使用 `createQuestionRepository` 按稳定ID调用。不存在的事项、领域不匹配及自由输入报错；尚缺稿件返回 `pending-authoring`，不回退为其他事项。完整稿必须同时匹配事项、盘、月令及起卦上下文。\n';
+let doc='# 每个领域五个固定事项\n\n每项新增 question_type：按所问的结果选择占法，不按大领域套稿。同一类型的手机、钱包可以共享失物找回规则；不得扩展到失联人员，行人归期也不等于定位失联者。是否喜欢自己不以成婚规则代答。现代细分仍须单独审核适用性。\n\n正式占问只用领域与事项选择，无自由输入或AI分类。以下是编写的常见问法，不是用户搜索量统计。\n\n共18领域、90项：75项占问，15项古籍查阅。每项有固定ID、回答范围、正反应事与取期政策；完整正文覆盖单独计数。\n\n';
+for(const domain of domains){doc+='## '+domain.label+'\n\n';for(const item of domain.items)doc+='- '+item.question+' `'+item.id+'`；`question_type: '+item.question_type+'`\n  '+item.answerBrief+'\n';doc+='\n';}
+doc+='## 正文与调用状态\n\n原1,920篇是384盘×5月令的通用基础量。75个占问事项若各自完整覆盖，对应144,000个事项基础匹配槽位；经审核的同类型内容可显式共享引用，不等于必须写144,000篇不同文章；旬空与应事条件另行核对。15项古籍查阅已有专门说明，不乘盘数。目前事项基础全文完成'+existingIndex.writtenBaseStoryCount+'篇，具体批次与空亡全文数量以 `data/question-stories/index.json` 为准。不能把旧领域通用输出冒充事项成稿。\n\n使用 `createQuestionRepository` 按稳定ID调用。不存在的事项、领域不匹配及自由输入报错；尚缺稿件返回 `pending-authoring`，不回退为其他事项。完整稿必须同时匹配事项、盘、月令及起卦上下文。base-written仅指已生成，不代表已通过断法审核。\n';
+doc+='\n已生成不等于已通过断法审核。现有客户尾款稿返回 pending-review；editorialPreview 仅供内部审阅，永不把未通过稿标为 ready。九项要求见 INTERPRETATION_AUDIT_V2.md。\n';
 await writeFile(new URL('../docs/QUESTION_CHOICES.md',import.meta.url),doc);
 console.log(`Question choices: ${domains.length} domains × 5 = ${items.length}; ${catalog.narrativeCount} narrative scopes, ${catalog.referenceCount} written references.`);

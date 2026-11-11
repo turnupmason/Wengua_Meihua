@@ -22,7 +22,7 @@ test('all 75 narrative choices route to their exact domain and canonical questio
   const result=await questions.getContent({questionId:q.id,primaryId:48,movingLine:5,monthOrder:'winter-water',voidContext:{ganzhi:'己丑'}});
   assert.equal(result.selection.domainId,q.domainId);assert.equal(result.reading.domain.id,q.domainId);
   assert.equal(result.reading.question,q.question);
-  if(q.id==='domain-10-receivable'){assert.equal(result.status,'authored-base');assert.ok(result.story.includes('尾款'));}
+  if(q.id==='domain-10-receivable'){assert.equal(result.status,'pending-review');assert.equal(result.productionAllowed,false);assert.equal(result.story,null);}
   else{assert.equal(result.status,'pending-authoring');assert.equal(result.story,null);assert.deepEqual(result.paragraphs,[]);}
  }
 });
@@ -51,8 +51,8 @@ test('authored lookup requires exact question, dependent charts, month qi and ca
   primaryId:48,movingLine:5,monthOrder:'winter-water',contextKey:pending.contextKey,stageIds:[48,38,46],reviewStatus:'reviewed',
   paragraphs:['用于验证精确绑定的测试稿，不作为产品正文。'],sourceIds:['mh-072']
  }]};
- const repo=createQuestionRepository({library,readJSON:async path=>path==='data/question-stories/index.json'?{...index,files:[{questionId,path:`data/question-stories/${questionId}.json`}]}:path===`data/question-stories/${questionId}.json`?file:read(path)});
- const content=await repo.getContent(options);assert.equal(content.status,'authored-base');assert.equal(content.requiresDateResolution,true);
+ const repo=createQuestionRepository({library,editorialPreview:true,readJSON:async path=>path==='data/question-stories/index.json'?{...index,files:[{questionId,path:`data/question-stories/${questionId}.json`}]}:path===`data/question-stories/${questionId}.json`?file:read(path)});
+ const content=await repo.getContent(options);assert.equal(content.status,'review-preview');assert.equal(content.requiresDateResolution,true);
  assert.equal((await repo.getContent({...options,questionId:'domain-10-refund'})).status,'pending-authoring');
  assert.equal((await repo.getContent({...options,movingLine:4})).status,'pending-authoring');
  assert.equal((await repo.getContent({...options,monthOrder:'spring-wood'})).status,'pending-authoring');
@@ -65,6 +65,6 @@ test('tampered catalog and wrong story-file identity cannot be served',async()=>
  const wrong=createQuestionRepository({library,readJSON:async path=>path==='data/question-items.json'?{...catalog,count:89}:read(path)});
  await assert.rejects(wrong.getCatalog(),/catalog/);
  const index=await read('data/question-stories/index.json');
- const repo=createQuestionRepository({library,readJSON:async path=>path==='data/question-stories/index.json'?{...index,files:[{questionId:'domain-10-receivable',path:'data/question-stories/domain-10-refund.json'}]}:read(path)});
+ const repo=createQuestionRepository({library,editorialPreview:true,readJSON:async path=>path==='data/question-stories/index.json'?{...index,files:[{questionId:'domain-10-receivable',path:'data/question-stories/domain-10-refund.json'}]}:read(path)});
  await assert.rejects(repo.getContent({questionId:'domain-10-receivable',primaryId:48,movingLine:5,monthOrder:'winter-water'}),/path mismatch/);
 });

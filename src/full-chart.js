@@ -26,5 +26,6 @@ export function buildFullChartRelations(reading){
  }
  return freeze({rootBodyId:root.id,rootTrigram:root.trigram,rootElement:root.element,
   visiblePositions:6,rootBodyCount:1,independentNodeIdentities:entities.length,nodes,pairs,chains,
+  chainPolicy:{status:'unreviewed-candidates-only',maxHops:2,appliedRuleIds:[],automaticConclusionOverride:false},
   sourceIds:['mh-061','mh-117','mh-118','mh-119'],numericEnergyScore:null});
 }

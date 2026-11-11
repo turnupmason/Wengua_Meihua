@@ -1,3 +1,5 @@
+当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
+
 # 详解、动爻与数据库接入
 
 固定事项新增独立补充包 `data/question-items.sql`。先执行 `npm run build:questions`，再按 `knowledge.sql` → `timing-audit.sql` → `question-items.sql` → `dist/question-stories.sql` 顺序导入新的数据库。最后一份由提交的全文分片离线生成，避免把重复的大型SQL与JSON同时提交。`npm run validate:questions`逐项校验JSON/SQL及外键。完整 `npm run build:data` 也会把所有表写入本地SQLite。

@@ -1,3 +1,5 @@
+当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
+
 # Claude 开发交接 V5：已确认故事口吻，日期必须从起卦当日向后取
 
 > 第1批已完成：客户尾款1,920篇基础全文及16,617个空亡情境版本，阅 [成稿与编写方法](RECEIVABLE_BATCH_01.md)。数据按卦分64片，用 `getContent` 精确读取；`castingDate`、`timingScale:'day'`、记录的先天卦气取期条件齐全时返回 `ready` 并填好日期，缺前提返回 `authored-base`。未覆盖状态仍返回 `pending-authoring`。其余74项尚待编写，不把当前编译器换名直接用于其他事项。

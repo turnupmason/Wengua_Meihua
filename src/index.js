@@ -6,6 +6,7 @@ export {TIMING_AUDIT_VERSION,DOMAIN_TIMING_SPECS,GLOBAL_TIMING_RULES,TRIGRAM_PER
 export {selectAuditedTiming} from './timing-audit.js';
 export {getCivilDay,formatCivilDay,findCivilDayMatches,formatUpcomingCivilDay,findUpcomingCivilDayMatches} from './day-calendar.js';
 export {buildFullChartRelations} from './full-chart.js';
+export {INTERPRETATION_POLICY_VERSION,AUDIT_CHECKS,assessSeasonalQi,buildInterpretationEvidence,interpretationArtifactDigest,evaluateInterpretationReview} from './interpretation-audit.js';
 export {createQuestionRepository,questionStoryContextKey} from './questions.js';
 export {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];

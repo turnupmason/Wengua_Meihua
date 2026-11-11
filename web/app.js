@@ -1,4 +1,4 @@
-import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createQuestionRepository,MONTH_ORDERS} from '../src/index.js';
+import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createQuestionRepository,buildInterpretationEvidence,MONTH_ORDERS} from '../src/index.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createQuestionRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
 const questionCatalog=await questions.getCatalog();
@@ -21,7 +21,7 @@ async function showStory(current){
   if(!order&&selected.mode!=='reference'){$('#story').textContent='选择月令后，可查看本次事项。';$('#case-links').textContent='';return;}
   const story=await questions.getContent({questionId:current.questionId,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,domainId:current.domain.id,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
-  $('#story').innerHTML=['reference','ready'].includes(story.status)?story.paragraphs.map(p=>`<p>${esc(p)}</p>`).join(''):story.status==='pending-authoring'?'<p>这项解读正在整理。你仍可查看本次卦象、动爻和对应古籍。</p>':'<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
+  $('#story').innerHTML=['reference','ready'].includes(story.status)?story.paragraphs.map(p=>`<p>${esc(p)}</p>`).join(''):story.status==='pending-review'?'<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>':story.status==='pending-authoring'?'<p>这项解读正在整理。你仍可查看本次卦象、动爻和对应古籍。</p>':'<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
   const cases=await narratives.getClassicalCases({primaryId:current.primaryId,movingLine:current.movingLine});if(ticket!==storyRequest)return;
   $('#case-links').innerHTML=cases.length?cases.map(c=>`<details><summary>古籍案例 · ${esc(c.title)}</summary><p>原断：${esc(c.prediction.text)}</p><p>书中反馈：${c.feedback?esc(c.feedback.text):'本节未另述事后反馈。'}</p>${c.auditNotes.map(n=>`<p>${esc(n)}</p>`).join('')}<details><summary>核对本节原文</summary><p class="prose">${esc(c.sourceText)}</p></details></details>`).join(''):'<p>本次完整盘位暂无已拆解的同盘案例，不用近似盘的反馈代替。</p>';
  }catch(e){if(ticket===storyRequest)$('#story').textContent='故事暂不可用：'+e.message;}
@@ -57,10 +57,11 @@ function update(){try{
  reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:selected.domainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
- const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`${edge.label} → ${edge.phrase}`;
- const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(n.strength.label)}</td><td>${esc(n.void.label)}</td></tr>`).join('');
+ const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`体用关系：${edge.label}`;
+ const evidence=selectedMonthOrder?buildInterpretationEvidence(reading,{monthOrder:selectedMonthOrder}):null;
+ const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(evidence?evidence.nodes.find(x=>x.role===n.role).strength.state:'月令未选')}</td><td>${esc(n.void.hitKind==='partial'?'部分命中：'+(n.void.matchedBranches||[]).join('、')+'（仅标记）':n.void.label)}</td></tr>`).join('');
  const targets=$('#ganzhi').value?getVoidReleaseTargets($('#ganzhi').value).targets.map(t=>`${t.emptyBranch}空：填${t.fill}，冲${t.clash}`).join('；'):'旬空待提供';
- $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th><th>旬空</th></tr></thead><tbody>${rows}</tbody></table><p>${esc(targets)}</p><p>先辨起卦时真空／假空；真空不因后遇填冲自动恢复。合空默认关闭。</p>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · ${esc(e.qualitativeNote)}</p>`).join('');
+ $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th><th>旬空</th></tr></thead><tbody>${rows}</tbody></table><p>${esc(targets)}</p><p>旬空为扩展参考；部分命中不等于整卦空亡。填冲支只作对应关系，不代表已核定应验日期。</p>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · 直接关系</p>`).join('');
  $('#domain-text').textContent=reading.domain.text;showDetail('primary',reading.movingLine);showStory(reading);
  }catch(e){$('#error').textContent=e.message;}
 }

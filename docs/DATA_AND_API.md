@@ -1,3 +1,5 @@
+当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
+
 # 数据与 API
 
 ## 固定事项入口

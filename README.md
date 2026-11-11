@@ -1,8 +1,10 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
+最新技术审查：[断语审核 V2](docs/INTERPRETATION_AUDIT_V2.md)。每个具体事项新增 question_type；旧尾款稿1,920篇及16,617个空亡版本保留为待修订稿，九项断法审核通过数为0。正式接口返回 pending-review，未审核全文不作为正式解读。结构测试通过不代表断法或现实结果正确。
+
 为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
 
-**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。**
+**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V6.md)。**
 
 最新事项入口：[每领域五项，共90项](docs/QUESTION_CHOICES.md)。正式占问只选择领域与事项，不提供自由提问或AI识别。已接通固定ID路由、JSON/SQL和联调页；75项占问完整稿尚未写齐，15项古籍查阅已有说明，缺稿不回退为别的事项。
 
@@ -88,7 +90,7 @@ const svg = lib.renderHexagramSVG(49, { movingLine: 1, svgId: 'primary' });
 
 已加入1,920篇月令基础故事（384种单动爻盘×春木/夏火/秋金/冬水/季月土）、18门类专用句、空亡与应期候选，以及10个古籍案例/11张复算盘。故事按目前→经过→结果展开，无需每次调用AI。用 `npm run example:story` 查看完整输出，接入见 [故事与应期说明](docs/STORIES_AND_TIMING.md)。
 
-最终故事组合版本1.1.0已改为直接总断，接入真实动爻原文、爻意、经卦及生克变化，并输出本次采用的少量应期。产品使用 `getStory().story`；不直接展示旧基础文字。见 [断语口径](docs/DIRECT_STORIES.md)、[十篇程序试读](docs/TEN_STORY_PREVIEWS.md) 和 [最新Claude prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。
+最终故事组合版本1.1.0已改为直接总断，接入真实动爻原文、爻意、经卦及生克变化，并输出本次采用的少量应期。产品使用 `getStory().story`；不直接展示旧基础文字。见 [断语口径](docs/DIRECT_STORIES.md)、[十篇程序试读](docs/TEN_STORY_PREVIEWS.md) 和 [最新Claude prompt](docs/CLAUDE_BUILD_PROMPT_V6.md)。
 
 应期专项现已覆盖18门、27条核过原文及8经卦时序，另有独立SQL补充包。原文、应事、吉凶和日期轮次分别保存；下一次支日不自动当应验日。详见 [十八门应期校核](docs/TIMING_AUDIT.md)。旧样稿确定天数已撤回，最近十篇口吻已获用户确认，1,920篇基础正文仍待按该标准逐篇重写。
 

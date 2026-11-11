@@ -2,6 +2,8 @@ import {readRepositoryJSON} from './io.js';
 import {MONTH_ORDERS} from './narrative-rules.js';
 import {getCivilDay} from './day-calendar.js';
 import {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
+import {questionTypeFor} from './question-types.js';
+import {INTERPRETATION_POLICY_VERSION,buildInterpretationEvidence,interpretationArtifactDigest,evaluateInterpretationReview} from './interpretation-audit.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 /** Identity of the reviewed casting conditions; a superficially similar chart cannot substitute. */
 export function questionStoryContextKey(reading){
@@ -10,7 +12,7 @@ export function questionStoryContextKey(reading){
   strength:n.strength.state,void:n.void,support:n.supportEvidence
  })));
 }
-export function createQuestionRepository({library,readJSON=readRepositoryJSON}={}){
+export function createQuestionRepository({library,readJSON=readRepositoryJSON,editorialPreview=false}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
  const cache=new Map();
  const read=path=>{
@@ -31,6 +33,7 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
    const expectedMode=original.mode==='reference-only'?'reference':'narrative';
    for(const [i,q] of d.items.entries()){
     if(ids.has(q.id)||!q.id.startsWith(d.id+'-')||q.domainId!==d.id||q.position!==i+1||q.mode!==expectedMode||!q.question||!q.answerBrief||!q.sourceIds.includes(original.sectionId))throw new Error('Question identity mismatch');
+    if(q.question_type!==questionTypeFor(q))throw new Error('Question type mismatch');
     if(q.mode==='reference'&&(!q.referenceParagraphs?.length||q.referenceParagraphs.some(p=>typeof p!=='string'||!p.trim())))throw new Error('Reference explanation missing');
     ids.add(q.id);
    }
@@ -50,7 +53,8 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
   if('question' in options||'text' in options||'prompt' in options)throw new TypeError('Formal questions use a fixed questionId, not free text');
   const q=await getQuestion(options.questionId);
   if(options.domainId!==undefined&&options.domainId!==q.domainId)throw new RangeError('Selected question does not belong to the selected domain');
-  const selection={questionId:q.id,domainId:q.domainId,question:q.question,answerBrief:q.answerBrief,
+  if(options.question_type!==undefined&&options.question_type!==q.question_type)throw new RangeError('Selected question_type does not match the fixed question');
+  const selection={questionId:q.id,domainId:q.domainId,question_type:q.question_type,question:q.question,answerBrief:q.answerBrief,
    positiveEvent:q.positiveEvent,adverseEvent:q.adverseEvent,timingPolicy:q.timingPolicy,ruleReview:q.ruleReview};
   if(q.mode==='reference')return freeze({status:'reference',selection,paragraphs:q.referenceParagraphs,
    story:q.referenceParagraphs.join('\n\n'),sourceSections:q.sourceIds.map(id=>library.getSection(id)),reportedOutcome:null});
@@ -65,6 +69,16 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
   const reading=library.createReading({primaryId:options.primaryId,movingLine:options.movingLine,domainId:q.domainId,
    question:q.question,calendar:{season:order.season},voidContext,mutualPolicy:'inner-lines'});
   const key=`${q.id}/${reading.primaryId}/${reading.movingLine}/${order.id}`,contextKey=questionStoryContextKey(reading);
+  const evidence=buildInterpretationEvidence(reading,{monthOrder:order.id});
+  const review=async(material,profileKey)=>{
+   const binding={questionId:q.id,question_type:q.question_type,key,contextKey,profileKey,
+    artifactDigest:await interpretationArtifactDigest(material),contentVersion:library.contentVersion,policyVersion:INTERPRETATION_POLICY_VERSION,
+    timingKey:JSON.stringify({castingDate:options.castingDate??null,timingScale:options.timingScale??null,timingContext:options.timingContext??null})};
+   const audit=evaluateInterpretationReview(await read('data/interpretation-reviews.json'),binding);
+   return {audit,binding,evidence,productionAllowed:audit.status==='approved'};
+  };
+  const withheld=assessment=>freeze({status:'pending-review',selection,reading,key,contextKey,paragraphs:[],story:null,
+   ...assessment,reason:'Generated draft requires nine evidence-bearing interpretive checks; structural review is insufficient',reportedOutcome:null});
   const pending=()=>freeze({status:'pending-authoring',selection,reading,key,contextKey,paragraphs:[],story:null,
    reason:'No reviewed complete story for this exact question, chart, month qi and casting context',reportedOutcome:null});
   const index=await read('data/question-stories/index.json');
@@ -90,10 +104,12 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
    const variants=row.variants.filter(v=>v.profileKey===getVoidProfileKey(reading));
    if(!unresolved&&variants.length!==1)return pending();
    const record=unresolved?row.base:variants[0],material=unpackManuscript(file,record);
+   const profileKey=unresolved?null:variants[0].profileKey,assessment=await review(material,profileKey);
+   if(!assessment.productionAllowed&&!editorialPreview)return withheld(assessment);
    const dates=resolveManuscriptDates({...material,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
-   return freeze({status:dates.status==='resolved'?'ready':'authored-base',selection,reading,key,contextKey,
+   return freeze({status:assessment.productionAllowed?(dates.status==='resolved'?'ready':'authored-base'):'review-preview',selection,reading,key,contextKey,...assessment,
     profileKey:unresolved?null:variants[0].profileKey,paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),
-    verdict:material.verdict,sourceIds:material.sourceIds,dateResolution:dates,requiresDateResolution:dates.status!=='resolved',
+    verdict:material.verdict,sourceIds:material.sourceIds,dateResolution:{...dates,interpretationReviewed:assessment.productionAllowed},requiresDateResolution:dates.status!=='resolved',
     manuscriptVersion:manifest.manuscriptVersion,reportedOutcome:null});
   }
   if(entry.path!==`data/question-stories/${q.id}.json`)throw new Error('Question story path mismatch');
@@ -104,8 +120,10 @@ export function createQuestionRepository({library,readJSON=readRepositoryJSON}={
   if(!rows.length||rows[0].reviewStatus!=='reviewed')return pending();
   const row=rows[0],stageIds=Object.values(reading.stages).map(s=>s.id);
   if(!Array.isArray(row.stageIds)||row.stageIds.length!==3||stageIds.some((id,i)=>row.stageIds[i]!==id)||!row.paragraphs?.length||row.paragraphs.some(p=>typeof p!=='string'||!p.trim())||!row.sourceIds?.length)throw new Error('Authored story bindings invalid');
+  const assessment=await review({paragraphs:row.paragraphs,sourceIds:row.sourceIds},null);
+  if(!assessment.productionAllowed&&!editorialPreview)return withheld(assessment);
   // This is a complete authored base. Date resolution remains a separate verified step.
-  return freeze({status:'authored-base',selection,reading,key,contextKey,paragraphs:row.paragraphs,
+  return freeze({status:assessment.productionAllowed?'authored-base':'review-preview',selection,reading,key,contextKey,...assessment,paragraphs:row.paragraphs,
    story:row.paragraphs.join('\n\n'),sourceIds:row.sourceIds,requiresDateResolution:true,reportedOutcome:null});
  }
  return Object.freeze({getCatalog,getQuestion,listQuestions,getContent,clearCache:()=>cache.clear()});

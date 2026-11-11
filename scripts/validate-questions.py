@@ -14,6 +14,7 @@ for d in c['domains']:
  assert len(d['items'])==5 and d['sourceSectionId']==domains[d['id']]['sectionId']
  for position,q in enumerate(d['items'],1):
   assert q['domainId']==d['id'] and q['position']==position and q['question'] and q['answerBrief']
+  assert q['question_type'] and q['interpretationReview'] in ('historical-reference-only','pending-nine-check-review')
   assert d['sourceSectionId'] in q['sourceIds']
   if q['mode']=='reference':assert q['referenceParagraphs'] and q['contentStatus']=='reference-written'
 assert index['minimumBaseStoryCount']==75*1920==144000
@@ -28,6 +29,8 @@ for q in items:
  record=db.execute('SELECT definition_json FROM fixed_question_items WHERE id=?',(q['id'],)).fetchone()
  assert record and json.loads(record[0])==q
 assert db.execute('SELECT count(*) FROM fixed_question_items').fetchone()[0]==90
+assert db.execute('SELECT count(*) FROM approved_fixed_question_stories').fetchone()[0]==index['approvedBaseStoryCount']==0
+assert db.execute("SELECT count(*) FROM fixed_question_stories WHERE review_status!='structural-only'").fetchone()[0]==0
 assert db.execute('SELECT count(*) FROM monthly_narratives').fetchone()[0]==1920
 assert db.execute('SELECT count(*) FROM fixed_question_stories').fetchone()[0]==index['writtenBaseStoryCount']
 assert db.execute('SELECT count(*) FROM fixed_question_story_profiles').fetchone()[0]==index.get('writtenProfileStoryCount',0)
@@ -43,4 +46,4 @@ for entry in index['files']:
    for rid,value in enumerate(pool):
     record=db.execute('SELECT value_json FROM fixed_question_story_resources WHERE question_id=? AND hexagram_id=? AND kind=? AND resource_id=?',(entry['questionId'],f['hexagramId'],kind,rid)).fetchone()
     assert record and json.loads(record[0])==value
-print(f"Fixed-question gate: 90 exact choices, {index['writtenBaseStoryCount']} full bases, {index.get('writtenProfileStoryCount',0)} void profiles; SQL/JSON text, resource and foreign-key checks passed.")
+print(f"Fixed-question gate: 90 exact choices, {index['writtenBaseStoryCount']} structural-only bases, {index.get('writtenProfileStoryCount',0)} void profiles; SQL/JSON structure and foreign keys passed; approved production view is empty.")

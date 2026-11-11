@@ -5,6 +5,8 @@ import {writeReceivableManuscript,profileKey} from './receivable-prose.mjs';
 import {RECEIVABLE_NOTES} from '../sources/editorial/receivable-notes.mjs';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 const root=new URL('../',import.meta.url),questionId='domain-10-receivable',lib=await loadLibrary();
+const technicalReview=JSON.parse(await readFile(new URL('data/interpretation-reviews.json',root),'utf8'));
+if(technicalReview.approvedBaseStoryCount!==0||technicalReview.approvedProfileStoryCount!==0)throw new Error('Legacy builder cannot certify interpretive approval; implement exact reviewed export first');
 const path=`data/question-stories/${questionId}/`,save=async(p,value)=>writeFile(new URL(p,root),JSON.stringify(value)+'\n');
 await mkdir(new URL(path,root),{recursive:true});
 const stems=[...'甲乙丙丁戊己庚辛壬癸'],branches=[...'子丑寅卯辰巳午未申酉戌亥'];
@@ -45,13 +47,17 @@ const manifest={schemaVersion:'1.0.0',catalogVersion:'1.0.0',contentVersion:lib.
  review:{lineApplications:384,hexagramFinanceNotes:64,structureAndSources:'all rows checked by validator',prose:'build-time whole manuscripts from authored line-specific applications and explicit editorial rules;not separately hand-written 1920 times',
   cases:'new prospective symbolic prose;no historical feedback invented',dates:'resolved from frozen casting date;not stored as fixed day numbers',unknownContexts:'pending-no-fallback'},
  sourceIds:['mh-007','mh-009','user-yijing64','mh-061','mh-072','mh-116','mh-117','mh-118','mh-119','mh-122','mh-143','user-void-extension','user-void-timing']};
+manifest.technicalReview={status:'requires-revision',policyVersion:technicalReview.policyVersion,approvedBaseStories:0,approvedProfileStories:0,
+ registry:'data/interpretation-reviews.json',legacyReviewStatusMeaning:'structural-only;not-nine-check-approval'};
 await save(path+'index.json',manifest);
 const indexPath=new URL('data/question-stories/index.json',root),index=JSON.parse(await readFile(indexPath,'utf8'));
 index.files=index.files.filter(f=>f.questionId!==questionId);index.files.push({questionId,path:path+'index.json',kind:manifest.kind,baseStoryCount:bases,profileStoryCount:profiles});
 index.writtenBaseStoryCount=index.files.reduce((n,f)=>n+(f.baseStoryCount||0),0);index.writtenProfileStoryCount=index.files.reduce((n,f)=>n+(f.profileStoryCount||0),0);
+index.files=index.files.map(f=>({...f,technicalReviewStatus:'requires-revision'}));
+index.approvedBaseStoryCount=0;index.approvedProfileStoryCount=0;index.interpretationPolicyVersion=technicalReview.policyVersion;
 await save('data/question-stories/index.json',index);
 await save('data/question-stories/receivable-review-samples.json',{schemaVersion:'1.0.0',catalogVersion:'1.0.0',contentVersion:lib.contentVersion,questionId,examples});
-let doc='# 第1批：客户尾款\n\n本批1,920篇盘与月令基础稿，另有'+profiles+'篇预写空亡情境全文。所有文章在构建时写入，运行时按编号取已经排定的完整段落，只替换日期。采用段落字典减少重复存储，字典引用不增加新的现场写作步骤。\n\n384条动爻应用逐爻另写，并与原爻绑定；64条求款背景说明另写。完整稿由显式编者规则在构建阶段成文，不声称1,920篇分别逐字人工创作。旬空正常日基准穷举60干支，额外真空分支必须有调用方明确证据。未覆盖的释放或自定义条件仍返回缺稿，不近似匹配。\n\n';
+let doc='# 第1批：客户尾款（待修订稿）\n\n最新审查：本批九项断法审核尚未通过，可发布数为0。以下原稿和日期保留供内部逐项核对，不是审核通过的解读。已发现旺衰适用不完整、间接生克应用未经逐条批准、部分空亡解释和应期依据不足；须依据 INTERPRETATION_AUDIT_V2.md 修订。结构测试通过不代表预测或断法正确。\n\n本批1,920篇盘与月令基础稿，另有'+profiles+'篇预写空亡情境全文。所有文章在构建时写入，运行时按编号取已经排定的完整段落，只替换日期。采用段落字典减少重复存储，字典引用不增加新的现场写作步骤。\n\n384条动爻应用逐爻另写，并与原爻绑定；64条求款背景说明另写。完整稿由显式编者规则在构建阶段成文，不声称1,920篇分别逐字人工创作。旬空正常日基准穷举60干支，额外真空分支必须有调用方明确证据。未覆盖的释放或自定义条件仍返回缺稿，不近似匹配。\n\n';
 doc+='以下为指定演示盘，统一按2026-11-11己丑日、冬水当令，演示先天卦气按日取期；不是同一时刻用同一算法自动起出的十张盘，也不冒充古籍真实案例。日期是相应事项的候选窗口。\n\n';
 for(const e of examples){
  const reading=lib.createReading({primaryId:e.primaryId,movingLine:e.movingLine,domainId:'domain-10',calendar:{season:'winter'},voidContext:e.voidContext});
@@ -66,7 +72,8 @@ const allItems=catalog.domains.flatMap(d=>d.items).filter(q=>q.mode==='narrative
 const preferred=['domain-10-receivable','domain-10-loan-return','domain-10-refund','domain-10-profit-share','domain-10-business-income'];
 const queue=[...preferred,...allItems.filter(id=>!preferred.includes(id))],completed=new Map(index.files.map(f=>[f.questionId,f]));
 await save('data/question-stories/batch-progress.json',{schemaVersion:'1.0.0',contentVersion:lib.contentVersion,targetQuestions:75,
- completedQuestions:index.files.filter(f=>f.baseStoryCount===1920).length,writtenBaseStoryCount:index.writtenBaseStoryCount,writtenProfileStoryCount:index.writtenProfileStoryCount,
- queue:queue.map(id=>({questionId:id,status:completed.get(id)?.baseStoryCount===1920?'base-batch-complete':'queued',baseStories:completed.get(id)?.baseStoryCount||0})),
- nextQuestionId:queue.find(id=>!completed.has(id))||null,backgroundExecution:false});
+ completedQuestions:0,generatedQuestions:index.files.filter(f=>f.baseStoryCount===1920).length,writtenBaseStoryCount:index.writtenBaseStoryCount,writtenProfileStoryCount:index.writtenProfileStoryCount,
+ approvedBaseStoryCount:0,approvedProfileStoryCount:0,interpretationPolicyVersion:technicalReview.policyVersion,
+ queue:queue.map(id=>({questionId:id,status:completed.get(id)?.baseStoryCount===1920?'generated-awaiting-technical-revision':'queued',baseStories:completed.get(id)?.baseStoryCount||0})),
+ nextQuestionId:null,pausedReason:'Repair and review interpretation rules before expanding generated manuscripts',backgroundExecution:false});
 console.log({questionId,baseStories:bases,profileStories:profiles,normalProfiles,shards:files.length});
