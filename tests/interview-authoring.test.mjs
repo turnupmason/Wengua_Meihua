@@ -10,7 +10,7 @@ const library=await loadLibrary(),product=createProductRepository({library});
 const question=await product.getQuestion('career.interview.interview-pass');
 const index=await read('data/authored-readings/interview-pass/index.json');
 const all=await Promise.all(index.files.map(f=>read(f.path)));
-const batch={rows:all.flatMap(f=>f.rows)};
+const batch={rows:all.flatMap(f=>f.rows).filter(r=>r.authorship.method==='individually-authored-reference-case')};
 const context={castingDate:'2026-11-11',monthOrder:'winter-water',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
 test('sixty separately authored qi versions retain full sources, all qi states, nine scoped checks and shared short/long decisions',async()=>{
@@ -57,8 +57,8 @@ test('complete qi governs void exemptions; stationary empty fire, moving empty f
  assert.throws(wronglyChosen,/active direct/);
 });
 
-test('unknown chart/month/void profiles remain pending, while no supplied timing method yields a clear context requirement',async()=>{
- assert.equal((await product.getContent({questionId:question.id,...context,primaryId:1,movingLine:1})).status,'pending-authoring');
+test('complete base coverage retains pending status for uncovered core-void profiles, while no supplied timing method yields a clear context requirement',async()=>{
+ assert.equal((await product.getContent({questionId:question.id,...context,primaryId:1,movingLine:1})).status,'ready');
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire'})).status,'ready');
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire',castingDate:'2026-12-06'})).status,'pending-authoring');
  const changed=await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,voidContext:{roleEvidence:{body_mutual:{severelyWeak:true,dayMonthAttacked:true}}}});
@@ -78,9 +78,9 @@ test('other cast dates re-evaluate the profile and render future-only dates or w
  assert.ok(ready);assert.ok(pending);
 });
 
-test('progress stays on the first interview question and does not claim all 4608 slots or final-offer coverage',async()=>{
+test('progress stays on the first interview question and records all 4608 base slots without claiming final-offer coverage',async()=>{
  const progress=await read('data/authored-readings/progress.json');
- assert.equal(progress.activeQuestionId,question.id);assert.equal(progress.baseCasesWritten,144);assert.equal(progress.totalBaseCases,4608);assert.equal(progress.backgroundExecution,false);
+ assert.equal(progress.activeQuestionId,question.id);assert.equal(progress.baseCasesWritten,4608);assert.equal(progress.totalBaseCases,4608);assert.equal(progress.backgroundExecution,false);
  const offer=await product.getContent({questionId:'career.interview.job-offer',...context,primaryId:5,movingLine:2});
  assert.equal(offer.status,'pending-authoring');assert.equal(offer.story,null);
 });
@@ -187,7 +187,7 @@ test('lookup reads one hexagram shard and shared prose does not duplicate twelve
  const paths=[];const p=createProductRepository({library,readJSON:async path=>{paths.push(path);return read(path);}});
  for(const monthBranch of ['寅','卯','辰'])await p.getContent({questionId:question.id,...context,monthOrder:undefined,monthBranch,primaryId:5,movingLine:2});
  assert.deepEqual(paths.filter(p=>/\/hex-/.test(p)),['data/authored-readings/interview-pass/hex-005.json']);
- const file=all.find(f=>f.primaryId===5);assert.equal(file.rows.length,5);assert.equal(Object.keys(file.monthSlots).length,12);
+ const file=all.find(f=>f.primaryId===5);assert.equal(file.rows.length,30);assert.equal(Object.keys(file.monthSlots).length,72);
 });
 
 test('whole-trigram branch matching distinguishes full and half hits, without inventing a percentage',()=>{

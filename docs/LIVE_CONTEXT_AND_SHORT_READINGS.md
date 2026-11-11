@@ -1,6 +1,10 @@
+当前基础覆盖：1,920份全文、4,608个月令键、384种卦爻组合，见[完整目录](INTERVIEW_PASS_ALL_BASES.md)与[接入V9](CLAUDE_BUILD_PROMPT_V9.md)。原60份稿保留；新增稿为逐爻解释与明确判据的预编译成文，人工全文复核与独立审核范围另有标记。JSON按卦惰性加载，实际日期与月令仍从本次资料计算。
+
+SQL注意：data/authored-readings.sql只保留结构；完整数据由npm run build:interview生成到dist/authored-readings.sql，再随npm run build:sqlite导入。以下关于60行、144键等为历史首组说明，不代表当前计数。
+
 # 实时上下文、简断与应期显示
 
-当前稿件版本interview-pass-1.3.0，仍为60份完整正文、144/4,608个基础槽位。本次调整显示与文案，不增加覆盖数量，不改变已修正的成败结论。
+当前稿件版本interview-pass-2.0.0，仍为60份完整正文、144/4,608个基础槽位。本次调整显示与文案，不增加覆盖数量，不改变已修正的成败结论。
 
 ## 实际调用
 

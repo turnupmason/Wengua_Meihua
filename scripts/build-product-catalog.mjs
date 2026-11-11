@@ -39,12 +39,12 @@ const catalog={...base,categoryCount:6,subcategoryCount:52,questionCount:questio
 await writeFile(new URL('data/product-categories.json',root),JSON.stringify(catalog,null,2)+'\n');
 await writeFile(new URL('data/editorial-acceptance.json',root),JSON.stringify({...base,...accepted,scopeStillMatches:true},null,2)+'\n');
 const plan={...base,acceptedSampleCount:accepted.samples.length,style:'user-accepted-story-editorial-3.0.0',
- activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:4608,uniqueAuthoredVersions:authoredProgress.uniqueAuthoredVersions,contextProfilesWritten:authoredProgress.contextProfilesWritten,progressPath:'data/authored-readings/progress.json'}:null,
+ activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:4608,uniqueAuthoredVersions:authoredProgress.uniqueAuthoredVersions,contextProfilesWritten:authoredProgress.contextProfilesWritten,baseCoverageComplete:authoredProgress.baseCoverageComplete===true,progressPath:'data/authored-readings/progress.json'}:null,
  noFurtherStyleApprovalRequired:true,authorship:'assistant-authors;application-developers-integrate',backgroundExecution:false,
  categoryCount:6,subcategoryCount:52,questionCount:82,questionTypeCount:new Set(questions.map(q=>q.question_type)).size,
  sharedTypePolicy:'Explicit equivalent-scope references may share prose; question count is not independent-article count.',
  items:questions.map(q=>({questionId:q.id,question_type:q.question_type,categoryId:q.categoryId,subcategoryId:q.subcategoryId,
-  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?'writing-in-progress':'exact-coverage-pending'):'reference-or-guidance-written',
+  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?(authoredProgress.baseCoverageComplete?'base-coverage-complete;core-changing-void-separate':'writing-in-progress'):'exact-coverage-pending'):'reference-or-guidance-written',
   legacyQuestionId:q.legacyQuestionId||null,legacyBindings:q.legacyBindings||null}))};
 await writeFile(new URL('data/product-authoring-plan.json',root),JSON.stringify(plan,null,2)+'\n');
 let doc='# 正式产品分类 V1\n\n采用用户选定的6大类、52个细分项，名称与顺序保持原方案。常见问法归并同义项、拆开不同结果后，得到82个固定单事项入口。原18个古籍门类保留为后台来源，不再作为产品一级菜单。\n\n十篇V3简断与详断已获用户通过，内容及文风按原版本保留；无需重复请求文风确认。验收记录绑定原稿摘要，见 data/editorial-acceptance.json。\n\n';

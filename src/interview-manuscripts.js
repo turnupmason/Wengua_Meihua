@@ -7,7 +7,7 @@ import {ELEMENT_DAY_BRANCHES} from './timing-rules.js';
 import {resolveMonthSlot} from './month-slots.js';
 import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
-export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-1.3.0';
+export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
 const GENERATES={木:'火',火:'土',土:'金',金:'水',水:'木'};
@@ -69,11 +69,13 @@ export function interviewVoidReleaseSlots(reading,specs=[]){
 export function interviewTimingSlots(reading,specs){
  return specs.map(s=>{
   const node=reading.nodes.find(n=>n.role===s.role),edge=reading.edges.find(e=>e.targetRole===s.role);
-  const expected=s.kind==='support'?'use_generates_body':s.kind==='control'?'use_controls_body':null;
-  if(!node||!expected||edge?.type!==expected||node.void.effective!=='active')throw new Error('Timing source must be an active direct support/controller');
+  const bodyPeriod=s.kind==='body-period'&&s.role==='body';
+  const expected=s.kind==='support'?'use_generates_body':s.kind==='control'?'use_controls_body':s.kind==='drain'?'body_generates_use':null;
+  if(!node||node.void.effective!=='active'||(bodyPeriod?reading.edges.some(e=>e.type==='use_controls_body'):!expected||edge?.type!==expected))throw new Error('Timing source must be an active direct support/controller, sourced drain or no-controller body period');
   if(s.kind==='support'&&!s.sourceIds.includes('mh-071')||s.kind==='control'&&!s.sourceIds.includes('mh-116'))throw new Error('Timing event lacks its scoped source');
+  if(s.kind==='drain'&&!s.sourceIds.includes('mh-143')||bodyPeriod&&!s.sourceIds.includes('mh-071'))throw new Error('Timing fallback lacks its scoped source');
   const eventScope=s.eventScope||(s.id==='obstruction'?'process-obstruction':s.id==='repair'?'process-repair':s.kind==='support'?'positive-result-candidate':'obstruction-or-adverse-result');
-  const calculationBasis={role:s.role,trigram:node.trigram,element:node.element,directRelation:edge.type,
+  const calculationBasis={role:s.role,trigram:node.trigram,element:node.element,directRelation:bodyPeriod?'equal':edge.type,
    method:'pre-heaven-element-qi',scale:'day',ruleIds:[...s.ruleIds],sourceIds:[...s.sourceIds],
    interpretationReview:'author-source-checked',independentInterpretationReview:'pending'};
   return {...s,eventScope,calculationBasis,token:`{{date:${s.id}}}`,branches:[...ELEMENT_DAY_BRANCHES[node.element]],displayLimit:2,

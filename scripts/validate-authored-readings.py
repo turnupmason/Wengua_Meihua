@@ -4,7 +4,7 @@ root=Path(__file__).resolve().parents[1]
 load=lambda p:json.loads((root/p).read_text())
 index=load('data/authored-readings/interview-pass/index.json');progress=load('data/authored-readings/progress.json')
 db=sqlite3.connect(':memory:')
-for p in ['data/knowledge.sql','data/question-items.sql','data/product-categories.sql','data/authored-readings.sql']:db.executescript((root/p).read_text())
+for p in ['data/knowledge.sql','data/question-items.sql','data/product-categories.sql','dist/authored-readings.sql']:db.executescript((root/p).read_text())
 assert not db.execute('PRAGMA foreign_key_check').fetchall()
 count=0;slots=0;per_chart={};texts=set()
 for f in index['files']:
@@ -32,9 +32,9 @@ for f in index['files']:
   per_chart.setdefault((batch['primaryId'],int(line)),set()).add(branch)
   stored=db.execute('SELECT month_order_id FROM authored_product_month_slots WHERE question_id=? AND hexagram_id=? AND moving_line=? AND month_branch=? AND void_profile_key=?',(batch['questionId'],batch['primaryId'],int(line),branch,row['voidProfileKey'])).fetchone()
   assert stored and stored[0]==row['monthOrder'];slots+=1
-assert count==index['authoredVersionCount']==progress['uniqueAuthoredVersions']==60
-assert slots==index['baseCaseCount']==progress['baseCasesWritten']==144
-assert len(texts)==60 and len(per_chart)==12 and all(len(v)==12 for v in per_chart.values())
-assert index['totalBaseCases']==progress['totalBaseCases']==4608 and progress['remainingBaseSlots']==4464
+assert count==index['authoredVersionCount']==progress['uniqueAuthoredVersions']==1920
+assert slots==index['baseCaseCount']==progress['baseCasesWritten']==4608
+assert len(texts)==1920 and len(per_chart)==384 and all(len(v)==12 for v in per_chart.values())
+assert index['totalBaseCases']==progress['totalBaseCases']==4608 and progress['remainingBaseSlots']==0
 assert progress['activeQuestionId']=='career.interview.interview-pass'
-print('Authored gate: 60 distinct complete copies, 144 month slots, all 12 months per chart, event/valence timing, 9 checks, SQL references and truthful progress passed.')
+print('Authored gate: 1920 complete copies, 4608 month slots, all 384 charts and 12 months per chart, event/valence timing, 9 checks, SQL references and truthful progress passed.')

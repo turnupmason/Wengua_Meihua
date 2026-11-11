@@ -1,3 +1,5 @@
+本版已由[开发交接 V9](CLAUDE_BUILD_PROMPT_V9.md)替代；完整基础库及SQL构建以V9为准。
+
 当前显示规则：简断只讲事情，不出现应期或计算提示。应期由timingSection单独展示，显示referenceNote及每个windows条目的event、valence、text，日期已经按本次起卦日填好。详断使用narrativeParagraphs四段，计算说明继续折叠。paragraphs/story为保留应期的完整导出格式，勿与独立日期栏重复呈现。
 
 实际月令显示输入的monthBranch，包括共用全文的卯月等；只有五类气时显示具体月令未提供，不能替换成代表月份。不得把JSON中的facts.referenceContext当作用户当下资料，displayInUserResult:false。2027、2028年等真实起卦的日干支、旬空、日期由程序重算；具体接入见LIVE_CONTEXT_AND_SHORT_READINGS.md。

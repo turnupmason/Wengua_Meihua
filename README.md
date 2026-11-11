@@ -1,6 +1,6 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
-当前首问“这次面试能通过吗”已写60篇完整正文，覆盖12种基础盘的全部十二月令，共144/4,608个基础槽位。[阅读全部新稿](docs/INTERVIEW_PASS_ALL_MONTHS.md)。JSON按卦分片，月令索引指向全文，日期运行时换算；[最新接入说明 V8](docs/CLAUDE_BUILD_PROMPT_V8.md)。
+当前首问“这次面试能通过吗”的基础卦象已覆盖64卦×6动爻×12月令＝4,608个槽位，去重1,920份全文。[全部卦象目录](docs/INTERVIEW_PASS_ALL_BASES.md)。JSON按64卦分片，客户端只取本盘；[开发接入 V9](docs/CLAUDE_BUILD_PROMPT_V9.md)。原60份逐篇稿保留，新增1,860份为逐爻解释与明确规则的预编译稿，已做结构与规则检查，未冒称逐篇人工全文复核或独立专家验收。
 
 显示已分为自然简断、独立应期参考和折叠计算说明；实际月令、干支、旬空及日期使用本次资料。[接入约定](docs/LIVE_CONTEXT_AND_SHORT_READINGS.md)。
 

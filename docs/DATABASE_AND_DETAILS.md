@@ -1,3 +1,7 @@
+当前基础覆盖：1,920份全文、4,608个月令键、384种卦爻组合，见[完整目录](INTERVIEW_PASS_ALL_BASES.md)与[接入V9](CLAUDE_BUILD_PROMPT_V9.md)。原60份稿保留；新增稿为逐爻解释与明确判据的预编译成文，人工全文复核与独立审核范围另有标记。JSON按卦惰性加载，实际日期与月令仍从本次资料计算。
+
+SQL注意：data/authored-readings.sql只保留结构；完整数据由npm run build:interview生成到dist/authored-readings.sql，再随npm run build:sqlite导入。以下关于60行、144键等为历史首组说明，不代表当前计数。
+
 当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
 
 产品分类SQL补充为 data/product-categories.sql，含product_categories、product_subcategories、product_questions及元数据；在knowledge.sql、question-items.sql之后导入。6大类、52细分、82单事项与原18门来源分开保存；SQLite构建自动合并。十篇用户验收另存data/editorial-acceptance.json。

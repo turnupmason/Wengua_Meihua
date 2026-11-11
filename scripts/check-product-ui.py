@@ -59,6 +59,12 @@ with sync_playwright() as p:
   expect(calc).to_contain_text('月令：卯月');expect(calc).not_to_contain_text('月令：寅月')
   expect(calc).to_contain_text(date+'，'+ganzhi+'日');expect(calc).to_contain_text('旬空：'+empty)
  page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.select_option('#month','亥');page.click('#view-button');settled()
+ page.select_option('#primary','1');page.select_option('#moving','5');page.select_option('#month','酉');page.click('#view-button');settled()
+ expect(page.locator('#story .short-reading')).to_have_count(1);expect(page.locator('#story h3')).to_contain_text('有望通过')
+ page.select_option('#month','午');page.click('#view-button');settled()
+ expect(page.locator('#story h3')).to_contain_text('通过偏难')
+ page.select_option('#primary','64');page.select_option('#moving','6');page.select_option('#month','亥');page.click('#view-button');settled()
+ expect(page.locator('#story .short-reading')).to_have_count(1);expect(page.locator('#story .timing-section')).to_be_visible()
  page.select_option('#primary','40');page.select_option('#moving','5');page.click('#view-button');settled()
  expect(page.locator('#context tbody tr').filter(has_text='体互')).to_contain_text('假空')
  page.select_option('#question-item','career.interview.job-offer');settled()
@@ -76,5 +82,5 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/wengua-product-career.png',full_page=True)
  assert not errors,errors
  assert checked==82
- print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'twelveMonthOptions':12,'halfVoidCollapsed':True,'castDateRecalculated':True,'actualMaoMonthAndFutureYears':True,'separateTimingSection':True,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
+ print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'twelveMonthOptions':12,'halfVoidCollapsed':True,'castDateRecalculated':True,'actualMaoMonthAndFutureYears':True,'separateTimingSection':True,'fullBaseNewCases':True,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
  browser.close()

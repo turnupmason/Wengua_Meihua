@@ -18,5 +18,8 @@ for entry in index['files']:
 assert count==index['authoredVersionCount'] and slots==index['baseCaseCount']
 db.commit();assert not db.execute('PRAGMA foreign_key_check').fetchall()
 dump=[s for s in db.iterdump() if s.startswith('CREATE TABLE authored_product_') or s.startswith('INSERT INTO "authored_product_')]
-(root/'data/authored-readings.sql').write_text('PRAGMA foreign_keys=ON;\nBEGIN TRANSACTION;\nPRAGMA defer_foreign_keys=ON;\n'+'\n'.join(dump)+'\nCOMMIT;\n')
+schema=[s for s in dump if s.startswith('CREATE TABLE')]
+(root/'data/authored-readings.sql').write_text('-- Schema only. Full data is generated from JSON into dist/authored-readings.sql by npm run build:interview.\nPRAGMA foreign_keys=ON;\n'+'\n'.join(schema)+'\n')
+(root/'dist').mkdir(exist_ok=True)
+(root/'dist/authored-readings.sql').write_text('PRAGMA foreign_keys=ON;\nBEGIN TRANSACTION;\nPRAGMA defer_foreign_keys=ON;\n'+'\n'.join(dump)+'\nCOMMIT;\n')
 print(f'Authored SQL: {count} complete written versions, {slots} explicit twelve-month slots, shared prose without duplication.')
