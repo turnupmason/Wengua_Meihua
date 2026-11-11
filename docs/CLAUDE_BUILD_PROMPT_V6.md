@@ -1,3 +1,5 @@
+正式产品分类已更新至 [V7开发任务](CLAUDE_BUILD_PROMPT_V7.md)，旧版18门产品菜单已由6大类52细分取代。十篇V3内容与文风已通过，不再请求文风确认。
+
 最新断语标准：[V3规范](STORY_GENERATION_STANDARD_V3.md)。断语由本助手撰写，Claude负责软件搭建和数据接入；读取 [十篇双层新样稿](TEN_READINGS_V3.md)及 data/ten-readings-v3.json。不得让运行时模型自行化解冲突或改判。④、⑦已有两个精确项目判例，其余范围仍须独立处理。
 
 # 给 Claude 的开发任务 V6

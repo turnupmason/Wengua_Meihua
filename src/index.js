@@ -9,6 +9,7 @@ export {buildFullChartRelations} from './full-chart.js';
 export {INTERPRETATION_POLICY_VERSION,AUDIT_CHECKS,assessSeasonalQi,buildInterpretationEvidence,interpretationArtifactDigest,evaluateInterpretationReview} from './interpretation-audit.js';
 export {STORY_EDITORIAL_VERSION,inspectMovingLine,collectStoryFacts,CONFLICT_CASE_POLICIES,resolveConflictCase,countHan,validateStoryCopy,getStoryCopy} from './story-editorial.js';
 export {createQuestionRepository,questionStoryContextKey} from './questions.js';
+export {createProductRepository} from './product.js';
 export {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];

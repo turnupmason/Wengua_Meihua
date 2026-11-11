@@ -1,30 +1,51 @@
-import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createQuestionRepository,buildInterpretationEvidence,MONTH_ORDERS} from '../src/index.js';
+import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_ORDERS} from '../src/index.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createQuestionRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
+const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createProductRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
 const questionCatalog=await questions.getCatalog();
 const now=new Date(),localDate=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
 $('#casting-date').value=localDate;$('#ganzhi').value=getCivilDay(localDate).dayGanzhi;
 $('#primary').innerHTML=lib.listHexagrams().map(h=>`<option value="${h.id}">${h.id} · ${esc(h.name)}</option>`).join('');$('#primary').value='49';
-$('#domain').innerHTML=questionCatalog.domains.map(d=>`<option value="${d.id}">${esc(d.label)}</option>`).join('');$('#domain').value='domain-02';
-function refreshQuestions(){
- const domain=questionCatalog.domains.find(d=>d.id===$('#domain').value);
- $('#question-item').innerHTML=domain.items.map(q=>`<option value="${q.id}">${esc(q.question)}</option>`).join('');
- $('#question-note').textContent=domain.mode==='reference'?'本领域提供古籍原文与说明。':'选择一个具体事项，一次只问一件事。';
+$('#domain').innerHTML=questionCatalog.categories.map(c=>`<option value="${c.id}">${c.number} · ${esc(c.label)}</option>`).join('');
+function selectedQuestion(){return questionCatalog.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions).find(q=>q.id===$('#question-item').value);}
+const contextLabels={keys:'钥匙',wallet:'钱包',phone:'手机',documents:'证件或文件',jewellery:'首饰',other:'其他物品','self-use':'自住',investment:'投资'};
+function refreshContext(){
+ const q=selectedQuestion();
+ $('#context-fields').innerHTML=Object.entries(q.contextFields).map(([key,f])=>`<label>${esc(f.label)}${f.type==='year'?`<input data-product-context="${key}" type="number" min="1900" max="2200" value="${Number($('#casting-date').value.slice(0,4))||now.getFullYear()}" required>`:`<select data-product-context="${key}" required><option value="">请选择</option>${f.options.map(v=>`<option value="${esc(v)}">${esc(contextLabels[v]||v)}</option>`).join('')}</select>`}</label>`).join('');
+ const info=q.mode!=='narrative';document.querySelectorAll('[data-chart-control],.stone,.detail,#context-panel,#source-panel').forEach(el=>el.hidden=info);
+ $('#view-button').textContent=info?'查看说明':'查看卦象';$('#story-label').textContent=q.mode==='reference'?'查看传统象意说明':q.mode==='guidance'?'查看现实查找建议':'展开本次解读';
+ $('#question-note').textContent=q.categoryId==='health'?'健康类提供古籍术语与传统象意查阅。':'选择一个具体问题，一次只问一件事。';
+ if(info)$('#story-panel').open=true;
 }
-refreshQuestions();
+function refreshQuestions(){
+ const sub=questionCatalog.categories.flatMap(c=>c.subcategories).find(s=>s.id===$('#subcategory').value);
+ $('#question-item').innerHTML=sub.questions.map(q=>`<option value="${q.id}">${esc(q.question)}</option>`).join('');refreshContext();
+}
+function refreshSubcategories(){
+ const c=questionCatalog.categories.find(c=>c.id===$('#domain').value);
+ $('#subcategory').innerHTML=c.subcategories.map(s=>`<option value="${s.id}">${esc(s.label)}</option>`).join('');refreshQuestions();
+}
+refreshSubcategories();
 $('#month').insertAdjacentHTML('beforeend',MONTH_ORDERS.map(o=>`<option value="${o.id}">${o.label}</option>`).join(''));
 async function showStory(current){
- const ticket=++storyRequest,order=current.selectedMonthOrder;
- $('#story').textContent='正在读取故事…';
+ const ticket=++storyRequest,order=current.selectedMonthOrder;$('#story').textContent='正在读取…';$('#case-links').textContent='';
  try{
   const selected=await questions.getQuestion(current.questionId);if(ticket!==storyRequest)return;
-  if(!order&&selected.mode!=='reference'){$('#story').textContent='选择月令后，可查看本次事项。';$('#case-links').textContent='';return;}
-  const story=await questions.getContent({questionId:current.questionId,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,domainId:current.domain.id,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
+  const advice=[...selected.practicalAdvice,...(current.productContext.objectKind?questionCatalog.objectPracticalAdvice[current.productContext.objectKind]||[]:[])];
+  const adviceHTML=[...new Set(advice)].map(p=>`<p>${esc(p)}</p>`).join('');
+  if(!order&&selected.mode==='narrative'){$('#story').innerHTML=adviceHTML+'<p>选择月令后，可查看本次事项。</p>';return;}
+  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
-  $('#story').innerHTML=['reference','ready'].includes(story.status)?story.paragraphs.map(p=>`<p>${esc(p)}</p>`).join(''):story.status==='pending-review'?'<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>':story.status==='pending-authoring'?'<p>这项解读正在整理。你仍可查看本次卦象、动爻和对应古籍。</p>':'<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
+  let body;
+  if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');
+  else if(content.status==='requires-context')body='<p>请先选择'+content.missingContext.map(k=>esc(selected.contextFields[k].label)).join('、')+'。</p>';
+  else if(content.status==='pending-review')body='<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>';
+  else if(content.status==='pending-authoring')body='<p>这项解读正在整理，你可以先查看本次卦象和古籍原文。</p>';
+  else body='<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
+  $('#story').innerHTML=[...new Set(content.practicalAdvice)].map(p=>`<p>${esc(p)}</p>`).join('')+body;
+  if(selected.mode!=='narrative')return;
   const cases=await narratives.getClassicalCases({primaryId:current.primaryId,movingLine:current.movingLine});if(ticket!==storyRequest)return;
-  $('#case-links').innerHTML=cases.length?cases.map(c=>`<details><summary>古籍案例 · ${esc(c.title)}</summary><p>原断：${esc(c.prediction.text)}</p><p>书中反馈：${c.feedback?esc(c.feedback.text):'本节未另述事后反馈。'}</p>${c.auditNotes.map(n=>`<p>${esc(n)}</p>`).join('')}<details><summary>核对本节原文</summary><p class="prose">${esc(c.sourceText)}</p></details></details>`).join(''):'<p>本次完整盘位暂无已拆解的同盘案例，不用近似盘的反馈代替。</p>';
- }catch(e){if(ticket===storyRequest)$('#story').textContent='故事暂不可用：'+e.message;}
+  $('#case-links').innerHTML=cases.length?cases.map(c=>`<details><summary>古籍原例 · ${esc(c.title)}</summary><p>原断：${esc(c.prediction.text)}</p><p>书中反馈：${c.feedback?esc(c.feedback.text):'本节未另述事后反馈。'}</p>${c.auditNotes.map(n=>`<p>${esc(n)}</p>`).join('')}<details><summary>核对本节原文</summary><p class="prose">${esc(c.sourceText)}</p></details></details>`).join(''):'';
+ }catch(e){if(ticket===storyRequest)$('#story').textContent='暂不可用：'+e.message;}
 }
 function passage(p){return `<p class="classical">${esc(p.text)}</p><p>${esc(p.vernacular)}</p><h4>象传</h4><p class="classical">${esc(p.image)}</p><p>${esc(p.imageVernacular)}</p>`;}
 async function showDetail(stage,line=null){
@@ -50,11 +71,16 @@ $('#detail').addEventListener('click',async e=>{
  finally{if(request===detailRequest)button.disabled=false;}
 });
 function update(){try{
- const selected=questionCatalog.domains.find(d=>d.id===$('#domain').value)?.items.find(q=>q.id===$('#question-item').value);
- if(!selected)throw new Error('请选择具体事项。');
+ const selected=selectedQuestion();if(!selected)throw new Error('请选择具体问题。');
+ const productContext=Object.freeze(Object.fromEntries([...document.querySelectorAll('[data-product-context]')].filter(el=>el.value!=='').map(el=>[el.dataset.productContext,el.type==='number'?Number(el.value):el.value])));
+ const sourceDomainId=selected.chartSourceDomainId;
+ if(selected.mode!=='narrative'){
+  reading=null;detailRequest++;$('#error').textContent='';
+  showStory({questionId:selected.id,productContext,selectedMonthOrder:null});return;
+ }
  const selectedMonthOrder=$('#month').value,selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
  const castingDate=$('#casting-date').value,timingContext=Object.freeze({castingMethod:$('#timing-method').value==='pre-heaven-demo'?'pre-heaven':'manual',periodMethod:'element-qi'});
- reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:selected.domainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
+ reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,productContext,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
  const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`体用关系：${edge.label}`;
@@ -66,8 +92,10 @@ function update(){try{
  }catch(e){$('#error').textContent=e.message;}
 }
 $('#controls').addEventListener('submit',e=>{e.preventDefault();update();});
-$('#domain').addEventListener('change',()=>{refreshQuestions();update();});
-$('#question-item').addEventListener('change',update);
+$('#domain').addEventListener('change',()=>{refreshSubcategories();update();});
+$('#subcategory').addEventListener('change',()=>{refreshQuestions();update();});
+$('#question-item').addEventListener('change',()=>{refreshContext();update();});
+$('#context-fields').addEventListener('change',update);
 $('#casting-date').addEventListener('change',()=>{if($('#casting-date').value)$('#ganzhi').value=getCivilDay($('#casting-date').value).dayGanzhi;update();});
 $('#panels').addEventListener('click',e=>{const article=e.target.closest('article');if(!article)return;const line=e.target.closest('[data-line-position]');if(line)showDetail(article.dataset.stage,Number(line.dataset.linePosition));else if(e.target.closest('.panel-detail'))showDetail(article.dataset.stage);});
 $('#panels').addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&e.target.matches('[data-line-position]')){e.preventDefault();showDetail(e.target.closest('article').dataset.stage,Number(e.target.dataset.linePosition));}});

@@ -31,6 +31,8 @@
     "validate:questions": "python3 scripts/validate-questions.py",
     "build:receivable": "node scripts/build-receivable-batch.mjs && npm run build:questions",
     "validate:receivable": "node scripts/validate-receivable-batch.mjs",
-    "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs"
+    "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs",
+    "build:product": "node scripts/build-product-catalog.mjs && python3 scripts/export-product.py",
+    "validate:product": "python3 scripts/validate-product.py"
   }
 }

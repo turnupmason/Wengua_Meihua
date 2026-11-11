@@ -63,7 +63,14 @@ def main():
         if questions.exists():disk.executescript(questions.read_text())
         full_stories=ROOT/'dist/question-stories.sql'
         if full_stories.exists():disk.executescript(full_stories.read_text())
+        product=ROOT/'data/product-categories.sql'
+        if product.exists():
+            disk.executescript(product.read_text())
+            assert disk.execute('SELECT count(*) FROM product_categories').fetchone()[0]==6
+            assert disk.execute('SELECT count(*) FROM product_subcategories').fetchone()[0]==52
+            assert disk.execute('SELECT count(*) FROM product_questions').fetchone()[0]==81
         assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+        assert not disk.execute('PRAGMA foreign_key_check').fetchall()
     check=sqlite3.connect(':memory:');check.executescript(sql)
     assert check.execute('PRAGMA integrity_check').fetchone()[0]=='ok';assert not check.execute('PRAGMA foreign_key_check').fetchall()
     assert check.execute('SELECT count(*) FROM moving_line_details').fetchone()[0]==384
