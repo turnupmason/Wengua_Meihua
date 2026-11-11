@@ -1,4 +1,4 @@
-新增首问正式稿：career.interview.interview-pass。已写12个冬水当令基盘/空亡情境，调用getContent传primaryId、movingLine、monthOrder、castingDate及timingScale:day、timingContext:{castingMethod:pre-heaven,periodMethod:element-qi}，精确匹配时返回ready与简断、详断、含事件吉凶的具体应期。数据在data/authored-readings/interview-pass，SQL在data/authored-readings.sql。
+当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
 
 最新产品API：createProductRepository({library})。data/product-categories.json包含6大类52细分82单事项；用listSubcategories、listQuestions及getContent({questionId,context,...})接入。categoryId与古籍domainId分开。健康返回reference，现实线索返回guidance，缺辅助字段返回requires-context；其余精确连接继续遵守待写与审核状态。见 docs/CLAUDE_BUILD_PROMPT_V7.md。
 

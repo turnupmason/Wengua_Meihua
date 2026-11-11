@@ -1,4 +1,4 @@
-新增成文产品稿表authored_product_manuscripts，补充SQL为data/authored-readings.sql，在product-categories.sql之后导入。首批12行按产品问题、卦、爻、月令、空亡情境键存放；record_json含简详同结论、完整动爻、反例、作者复核和应期规则，日期在读取时换算。旧兼容稿表和旧批准视图保持独立。
+当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
 
 产品分类SQL补充为 data/product-categories.sql，含product_categories、product_subcategories、product_questions及元数据；在knowledge.sql、question-items.sql之后导入。6大类、52细分、82单事项与原18门来源分开保存；SQLite构建自动合并。十篇用户验收另存data/editorial-acceptance.json。
 

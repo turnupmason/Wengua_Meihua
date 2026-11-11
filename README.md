@@ -1,6 +1,6 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
-断语正在按顺序编写：[事业工作→求职面试→面试是否通过，第1批12篇](docs/INTERVIEW_PASS_BATCH_001.md)。已包含具体事件、吉凶与动态应期，JSON/SQL及产品接口已接通；第一问12/1,920个基盘槽位有稿，空亡情境精确匹配，未写范围继续登记。
+当前首问“这次面试能通过吗”已写60篇完整正文，覆盖12种基础盘的全部十二月令，共144/4,608个基础槽位。[阅读全部新稿](docs/INTERVIEW_PASS_ALL_MONTHS.md)。JSON按卦分片，月令索引指向全文，日期运行时换算；[最新接入说明 V8](docs/CLAUDE_BUILD_PROMPT_V8.md)。
 
 正式产品采用 [6大类、52细分、82单事项](docs/PRODUCT_CATEGORIES_V1.md)，页面与 createProductRepository 已接通。十篇V3内容与文风已获用户通过，验收绑定原稿；健康仅传统象意查阅，失物、宠物、失联人员分别处理。
 

@@ -1,4 +1,4 @@
-import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_ORDERS} from '../src/index.js';
+import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_SLOTS} from '../src/index.js';
 import {createContextualReading} from '../src/interview-manuscripts.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createProductRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
@@ -26,7 +26,7 @@ function refreshSubcategories(){
  $('#subcategory').innerHTML=c.subcategories.map(s=>`<option value="${s.id}">${esc(s.label)}</option>`).join('');refreshQuestions();
 }
 refreshSubcategories();
-$('#month').insertAdjacentHTML('beforeend',MONTH_ORDERS.map(o=>`<option value="${o.id}">${o.label}</option>`).join(''));
+$('#month').insertAdjacentHTML('beforeend',MONTH_SLOTS.map(o=>`<option value="${o.branch}">${o.label}</option>`).join(''));
 async function showStory(current){
  const ticket=++storyRequest,order=current.selectedMonthOrder;$('#story').textContent='正在读取…';$('#case-links').textContent='';
  try{
@@ -34,12 +34,12 @@ async function showStory(current){
   const advice=[...selected.practicalAdvice,...(current.productContext.objectKind?questionCatalog.objectPracticalAdvice[current.productContext.objectKind]||[]:[])];
   const adviceHTML=[...new Set(advice)].map(p=>`<p>${esc(p)}</p>`).join('');
   if(!order&&selected.mode==='narrative'){$('#story').innerHTML=adviceHTML+'<p>选择月令后，可查看本次事项。</p>';return;}
-  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
+  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
   let body;
   if(content.status==='ready'&&content.short)body=`<h3>${esc(content.title)}</h3><p class="short-reading">${esc(content.short)}</p><details><summary>详断与应期</summary>${content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`;
   else if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');
-  else if(content.status==='requires-context')body='<p>请先补充'+content.missingContext.map(k=>esc(selected.contextFields[k]?.label||{castingDate:'起卦日期',monthOrder:'月令',timingScale:'按日取期尺度',timingMethod:'本次取期依据'}[k]||k)).join('、')+'。</p>';
+  else if(content.status==='requires-context')body='<p>请先补充'+content.missingContext.map(k=>esc(selected.contextFields[k]?.label||{castingDate:'起卦日期',monthOrder:'月令',monthBranch:'月令',timingScale:'按日取期尺度',timingMethod:'本次取期依据'}[k]||k)).join('、')+'。</p>';
   else if(content.status==='pending-review')body='<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>';
   else if(content.status==='pending-authoring')body='<p>这项解读正在整理，你可以先查看本次卦象和古籍原文。</p>';
   else body='<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
@@ -80,17 +80,17 @@ function update(){try{
   reading=null;detailRequest++;$('#error').textContent='';
   showStory({questionId:selected.id,productContext,selectedMonthOrder:null});return;
  }
- const selectedMonthOrder=$('#month').value,selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
+ const selectedMonthBranch=$('#month').value,selectedMonthOrder=MONTH_SLOTS.find(m=>m.branch===selectedMonthBranch)?.qi||'',selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
  const castingDate=$('#casting-date').value,timingContext=Object.freeze({castingMethod:$('#timing-method').value==='pre-heaven-demo'?'pre-heaven':'manual',periodMethod:'element-qi'});
- const chart=selectedMonthOrder?createContextualReading({library:lib,question:selected,primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),monthOrder:selectedMonthOrder,castingDate,voidContext:selectedVoidContext}):lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:{},voidContext:selectedVoidContext});
- reading=Object.freeze({...chart,questionId:selected.id,productContext,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
+ const chart=selectedMonthOrder?createContextualReading({library:lib,question:selected,primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),monthOrder:selectedMonthOrder,monthBranch:selectedMonthBranch,castingDate,voidContext:selectedVoidContext}):lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:{},voidContext:selectedVoidContext});
+ reading=Object.freeze({...chart,questionId:selected.id,productContext,selectedMonthOrder,selectedMonthBranch,selectedVoidContext,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
  const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`体用关系：${edge.label}`;
  const evidence=selectedMonthOrder?buildInterpretationEvidence(reading,{monthOrder:selectedMonthOrder}):null;
- const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(evidence?evidence.nodes.find(x=>x.role===n.role).strength.state:'月令未选')}</td><td>${esc(n.void.hitKind==='partial'?'部分命中：'+(n.void.matchedBranches||[]).join('、')+'（仅标记）':n.void.label)}</td></tr>`).join('');
+ const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(evidence?evidence.nodes.find(x=>x.role===n.role).strength.state:'月令未选')}</td><td>${esc(n.void.hitKind==='partial'?'半空：'+(n.void.matchedBranches||[]).join('、')+'（减力，仍有作用）':n.void.label)}</td></tr>`).join('');
  const targets=$('#ganzhi').value?getVoidReleaseTargets($('#ganzhi').value).targets.map(t=>`${t.emptyBranch}空：填${t.fill}，冲${t.clash}`).join('；'):'旬空待提供';
- $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th><th>旬空</th></tr></thead><tbody>${rows}</tbody></table><p>${esc(targets)}</p><p>旬空为扩展参考；部分命中不等于整卦空亡。填冲支只作对应关系，不代表已核定应验日期。</p>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · 直接关系</p>`).join('');
+ $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th><th>旬空</th></tr></thead><tbody>${rows}</tbody></table><p>${esc(targets)}</p><p>全空与半空按八卦配支记录。填冲支只作对应关系，不代表已核定应验日期。</p>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · 直接关系</p>`).join('');
  $('#domain-text').textContent=reading.domain.text;showDetail('primary',reading.movingLine);showStory(reading);
  }catch(e){$('#error').textContent=e.message;}
 }

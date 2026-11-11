@@ -39,7 +39,7 @@ const catalog={...base,categoryCount:6,subcategoryCount:52,questionCount:questio
 await writeFile(new URL('data/product-categories.json',root),JSON.stringify(catalog,null,2)+'\n');
 await writeFile(new URL('data/editorial-acceptance.json',root),JSON.stringify({...base,...accepted,scopeStillMatches:true},null,2)+'\n');
 const plan={...base,acceptedSampleCount:accepted.samples.length,style:'user-accepted-story-editorial-3.0.0',
- activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:1920,contextProfilesWritten:authoredProgress.contextProfilesWritten,progressPath:'data/authored-readings/progress.json'}:null,
+ activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:4608,uniqueAuthoredVersions:authoredProgress.uniqueAuthoredVersions,contextProfilesWritten:authoredProgress.contextProfilesWritten,progressPath:'data/authored-readings/progress.json'}:null,
  noFurtherStyleApprovalRequired:true,authorship:'assistant-authors;application-developers-integrate',backgroundExecution:false,
  categoryCount:6,subcategoryCount:52,questionCount:82,questionTypeCount:new Set(questions.map(q=>q.question_type)).size,
  sharedTypePolicy:'Explicit equivalent-scope references may share prose; question count is not independent-article count.',

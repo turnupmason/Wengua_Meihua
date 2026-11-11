@@ -1,3 +1,5 @@
+本版已由[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)替代。新稿按十二月令、每问4,608槽位读取；以下为旧版记录。
+
 首批12篇已包含主结果应期；涉及静空/假空的6篇另有填实、冲空的阶段节点，标明各自所应与吉凶，和最终通过窗口分开。前台读取paragraphs或dateResolution，不显示未换算的日期标记。
 
 写作进度：本助手已开始第1问“这次面试能通过吗”，首批12篇及对应应期见 INTERVIEW_PASS_BATCH_001.md，进度见 data/authored-readings/progress.json。产品API对这些精确情境返回ready、short、long、dateResolution；不同盘/月令/空亡情境返回待写。新增表authored_product_manuscripts在产品表之后导入。既定文风和应期方案已获用户批准，不重复提确认。

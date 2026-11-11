@@ -4,19 +4,21 @@ import {assessSeasonalQi,interpretationArtifactDigest,AUDIT_CHECKS} from './inte
 import {getCivilDay} from './day-calendar.js';
 import {getVoidProfileKey,resolveManuscriptDates} from './prewritten-manuscripts.js';
 import {ELEMENT_DAY_BRANCHES} from './timing-rules.js';
-export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-1.0.0';
+import {resolveMonthSlot} from './month-slots.js';
+export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-1.1.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 const GENERATES={木:'火',火:'土',土:'金',金:'水',水:'木'};
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 
 /** Full five-state qi also governs the extension's strong/weak exemptions. */
-export function createContextualReading({library,question,primaryId,movingLine,monthOrder,castingDate,voidContext={}}){
+export function createContextualReading({library,question,primaryId,movingLine,monthOrder,monthBranch,castingDate,voidContext={}}){
  if(!question?.id||question.mode!=='narrative')throw new Error('Typed narrative question required');
+ const slot=resolveMonthSlot({monthBranch,monthOrder});monthOrder=slot?.qi;
  const order=MONTH_ORDERS.find(x=>x.id===monthOrder);if(!order)throw new RangeError('Explicit month qi required');
  const day=getCivilDay(castingDate);
  if(voidContext.ganzhi&&voidContext.ganzhi!==day.dayGanzhi)throw new RangeError('Casting date and day ganzhi disagree');
  if(voidContext.basis&&voidContext.basis!=='day-explicit-input')throw new RangeError('This batch uses casting-day void basis');
- const context={...voidContext,ganzhi:day.dayGanzhi,basis:'day-explicit-input'};
+ const context={partialPolicy:'qualitative-reduction',...voidContext,ganzhi:day.dayGanzhi,basis:'day-explicit-input'};
  const raw=library.createReading({primaryId,movingLine,domainId:question.chartSourceDomainId||question.sourceDomainIds?.[0]||'domain-09',question:question.question,calendar:{season:order.season},voidContext:context});
  const movingUse=raw.nodes.find(n=>n.role==='use');
  const nodes=raw.nodes.map(n=>{
@@ -25,14 +27,14 @@ export function createContextualReading({library,question,primaryId,movingLine,m
   if(n.stage!=='changed'&&n.role!=='use'&&GENERATES[movingUse.element]===n.element)
    supportEvidence.push({basis:'internal-moving-direct-generation',actorRole:'use',scope:'void-falsehood-assessment-only;not-an-extra-root-energy-score',sourceIds:['user-void-timing']});
   if(explicit.ganzhi&&explicit.ganzhi!==day.dayGanzhi)throw new RangeError('Role evidence day does not match the cast');
-  return {...n,supportEvidence,strength:{...qi,label:qi.state,season:order.season,monthBranch:null},
+  return {...n,supportEvidence,strength:{...qi,label:qi.state,season:order.season,monthBranch:slot.branch},
    void:assessVoid(n.trigram,{...context,...explicit,strength:qi.state,moving:['use','changed_use'].includes(n.role),
-    supported:Boolean(context.supported||explicit.supported||supportEvidence.length),partialPolicy:context.partialPolicy||'mark-only'})};
+    supported:Boolean(context.supported||explicit.supported||supportEvidence.length),partialPolicy:context.partialPolicy})};
  });
  const body=nodes.find(n=>n.role==='body'),inherited=nodes.find(n=>n.role==='body_inherited');
  inherited.void=body.void;inherited.strength=body.strength;inherited.supportEvidence=body.supportEvidence;
  const edges=raw.edges.map(e=>({...e,voidEffect:nodes.find(n=>n.role===e.targetRole).void.effective,bodyVoidEffect:body.void.effective,qualitativeNote:'直接关系与各节点旺衰、空亡分别记录'}));
- return freeze({...raw,nodes,edges,castingDate,dayGanzhi:day.dayGanzhi,monthOrder,
+ return freeze({...raw,nodes,edges,castingDate,dayGanzhi:day.dayGanzhi,monthOrder,monthBranch:slot.branch,
   profile:{...raw.profile,id:'product-full-qi-void-1.0.0',monthStrength:'full-five-state',application:'typed-question;factual-assessment-only'}});
 }
 
@@ -74,26 +76,33 @@ export function createInterviewManuscriptRepository({library,readJSON}){
  const cache=new Map();
  const read=path=>{if(!cache.has(path))cache.set(path,Promise.resolve(readJSON(path)).then(v=>{
   if(v.schemaVersion!=='1.0.0'||v.contentVersion!==library.contentVersion||v.manuscriptVersion!==INTERVIEW_MANUSCRIPT_VERSION)throw new Error('Authored interview version mismatch');return freeze(v);
- }).catch(e=>{cache.delete(path);throw e;}));return cache.get(path);};
+ }).catch(e=>{cache.delete(path);throw e;}));
+ while(cache.size>3){const victim=[...cache.keys()].find(k=>!k.endsWith('/index.json')&&k!==path);if(!victim)break;cache.delete(victim);}
+ return cache.get(path);};
  async function getContent(question,options){
   if(question.id!==INTERVIEW_QUESTION_ID||question.manuscriptIndexPath!=='data/authored-readings/interview-pass/index.json')throw new Error('Invalid interview manuscript binding');
-  const missing=['castingDate','monthOrder'].filter(k=>!options[k]);
+  const missing=!options.castingDate?['castingDate']:[];if(!options.monthBranch&&!options.monthOrder)missing.push('monthBranch');
   if(missing.length)return {status:'requires-context',missingContext:missing,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
   const reading=createInterviewReading({library,question,...options});
   const index=await read(question.manuscriptIndexPath),key=getVoidProfileKey(reading);
   if(index.questionId!==question.id)throw new Error('Authored interview question mismatch');
-  let row;
-  for(const entry of index.files){
-   if(entry.path!==`data/authored-readings/interview-pass/${entry.batchId}.json`)throw new Error('Invalid authored batch path');
-   const file=await read(entry.path);if(file.questionId!==question.id)throw new Error('Authored batch question mismatch');
-   const matches=file.rows.filter(r=>r.primaryId===reading.primaryId&&r.movingLine===reading.movingLine&&r.monthOrder===options.monthOrder&&r.voidProfileKey===key);
-   if(matches.length>1||matches.length&&row)throw new Error('Duplicate exact authored profile');if(matches.length)row=matches[0];
-  }
-  if(!row)return {status:'pending-authoring',reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false,
-   coverage:{baseCases:index.baseCaseCount,contextProfiles:index.contextProfileCount,totalBaseCases:1920}};
+  const pending=()=>({status:'pending-authoring',reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false,
+   coverage:{baseCases:index.baseCaseCount,authoredVersions:index.authoredVersionCount,contextProfiles:index.contextProfileCount,totalBaseCases:4608}});
+  const entry=index.files.find(f=>f.primaryId===reading.primaryId);if(!entry)return pending();
+  if(entry.path!==`data/authored-readings/interview-pass/hex-${String(reading.primaryId).padStart(3,'0')}.json`)throw new Error('Invalid authored shard path');
+  const file=await read(entry.path);if(file.questionId!==question.id||file.primaryId!==reading.primaryId)throw new Error('Authored shard identity mismatch');
+  const position=file.monthSlots[reading.movingLine+':'+reading.monthBranch];
+  if(position===undefined)return pending();
+  if(!Number.isInteger(position)||!file.rows[position])throw new Error('Invalid month slot reference');
+  const row=file.rows[position];
+  if(row.primaryId!==reading.primaryId||row.movingLine!==reading.movingLine||row.monthOrder!==reading.monthOrder||!row.monthBranches.includes(reading.monthBranch))throw new Error('Authored month slot mismatch');
+  const exactProfile=row.voidProfileKey===key;
+  const baseEligible=row.baseProse===true&&reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)).every(n=>n.void.hitKind==='none'||n.void.effective==='active');
+  if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
+  if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
   const actualSlots=interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
   const missingTiming=[];
@@ -102,13 +111,13 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   if(missingTiming.length)return {status:'requires-context',missingContext:missingTiming,reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+row.timingSlots.map(s=>s.token).join(' '),...(row.voidTimingText?['空亡节点：'+row.voidTimingText]:[]),'总断：'+c.summary];
+  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+row.timingSlots.map(s=>s.token).join(' '),...(exactProfile&&row.coreVoidNotes.length?['卦中提示：'+row.coreVoidNotes.join(' ')]:[]),'总断：'+c.summary];
   const allSlots=[...row.timingSlots,...row.voidTimingSlots];
   const dates=resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
   if(dates.status!=='resolved')throw new Error('Complete interview context failed to resolve dates');
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),dateResolution:dates,timingDecision:allSlots,
-   review:row.review,sourceIds:row.sourceIds,manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,productionAllowed:true,predictionAllowed:true,
+   review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});
  }
  return Object.freeze({getContent,clearCache:()=>cache.clear()});

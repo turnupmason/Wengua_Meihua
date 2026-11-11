@@ -57,7 +57,7 @@ export function seasonalStrength(element,context={}) {
 export function assessVoid(trigram,options={}) {
   if(!TRIGRAM_BRANCHES[trigram])throw new RangeError('Unknown trigram');
   const {ganzhi,moving=false,strength,filledBranches=[],releaseClashBranches=[],combineBranches=[],supported=false,severelyWeak=false,dayMonthAttacked=false,partialPolicy='mark-only',allowCombine=false,eventType='general'}=options;
-  if(!['mark-only','any-hit','all-hit'].includes(partialPolicy))throw new RangeError('Unknown partialPolicy');
+  if(!['mark-only','any-hit','all-hit','qualitative-reduction'].includes(partialPolicy))throw new RangeError('Unknown partialPolicy');
   for(const b of [...filledBranches,...releaseClashBranches,...combineBranches])if(!BRANCHES.includes(b))throw new RangeError('Invalid fill/release branch');
   if(severelyWeak&&(['strong','旺','相'].includes(strength)||supported))throw new RangeError('Conflicting casting-time evidence: severely weak versus strong/supported');
   if(!ganzhi)return {state:'unresolved',label:'旬空待提供',hit:null,matchedBranches:[],effective:'unknown',sourceId:'user-void-extension'};
@@ -70,6 +70,7 @@ export function assessVoid(trigram,options={}) {
   const combineEligible=allowCombine&&['marriage','cooperation'].includes(eventType)&&falseVoid;
   const releaseMatched=releaseEvidence.every(e=>e.fill||e.clash||(combineEligible&&e.combine));
   const withEvidence={...base,castingState:trueVoid?'true_void':falseVoid?'false_void':'static_unclassified',releaseEvidence,releaseTargets:getVoidReleaseTargets(ganzhi).targets.filter(t=>matched.includes(t.emptyBranch)),combineEligible};
+  if(base.hitKind==='partial'&&partialPolicy==='qualitative-reduction')return {...withEvidence,state:'partial_reduced',label:'半空 · 减力，仍有作用',effective:'reduced',strengthReduction:'qualitative',numericMultiplier:null};
   // User's latest correction: casting-time true void cannot be revived by a later fill/clash/combine.
   if(base.hitKind==='partial'&&partialPolicy==='mark-only')return {...withEvidence,state:'partial_pending',label:'部分地支逢空',effective:'unknown'};
   if(base.hitKind==='partial'&&partialPolicy==='all-hit')return {...withEvidence,state:'partial_not_applied',label:'部分命中，按全支策略不作整卦空',effective:'active'};
@@ -164,3 +165,4 @@ export async function loadLibrary({readJSON}={}) {
   const [catalog,sections,domains]=await Promise.all(['data/catalog.json','data/meihua-sections.json','data/domains.json'].map(readJSON));
   return createLibrary({catalog,sections,domains});
 }
+export {MONTH_SLOTS,MONTH_SLOT_POLICY,resolveMonthSlot} from './month-slots.js';

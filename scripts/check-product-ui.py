@@ -10,6 +10,7 @@ with sync_playwright() as p:
  errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto('http://127.0.0.1:'+os.environ.get('WENGUA_PORT','4173'),wait_until='networkidle')
  expect(page.locator('#domain option')).to_have_count(6)
+ expect(page.locator('#month option')).to_have_count(13)
  def settled():
   page.wait_for_function("!document.querySelector('#story').textContent.includes('正在读取')")
   expect(page.locator('#error')).to_have_text('')
@@ -28,14 +29,19 @@ with sync_playwright() as p:
      expect(page.locator('#context-panel')).not_to_be_visible()
      expect(page.locator('#story')).to_contain_text('医疗专业人员')
  page.select_option('#domain','career');page.select_option('#subcategory','career.interview');page.select_option('#question-item','career.interview.interview-pass')
- page.select_option('#primary','48');page.select_option('#moving','5');page.select_option('#month','winter-water');page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
+ page.select_option('#primary','48');page.select_option('#moving','5');page.select_option('#month','亥');page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
  expect(page.locator('#story')).to_contain_text('本月21、22号');expect(page.locator('#story .short-reading')).to_have_count(1)
+ for branch in '寅卯辰巳午未申酉戌亥子丑':
+  page.select_option('#month',branch);page.click('#view-button');settled()
+  expect(page.locator('#story .short-reading')).to_have_count(1)
+  expect(page.locator('#story')).not_to_contain_text('批准的扩展规则')
+ page.select_option('#month','亥');page.click('#view-button');settled()
  page.select_option('#primary','40');page.select_option('#moving','5');page.click('#view-button');settled()
  expect(page.locator('#context tbody tr').filter(has_text='体互')).to_contain_text('假空')
  page.select_option('#question-item','career.interview.job-offer');settled()
  expect(page.locator('#context tbody tr').filter(has_text='体互')).to_contain_text('假空')
  page.select_option('#domain','wealth');page.select_option('#subcategory','wealth.debt');page.select_option('#question-item','wealth.debt.receivable')
- page.select_option('#primary','48');page.select_option('#moving','5');page.select_option('#month','winter-water');page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
+ page.select_option('#primary','48');page.select_option('#moving','5');page.select_option('#month','亥');page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
  expect(page.locator('#story')).to_contain_text('还在核对')
  page.select_option('#domain','search');page.select_option('#subcategory','search.valuables')
  page.select_option('[data-product-context="objectKind"]','phone');settled();expect(page.locator('#story')).to_contain_text('远程锁定')
@@ -47,5 +53,5 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/wengua-product-career.png',full_page=True)
  assert not errors,errors
  assert checked==82
- print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
+ print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'twelveMonthOptions':12,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
  browser.close()

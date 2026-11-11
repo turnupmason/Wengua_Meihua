@@ -1,17 +1,162 @@
 {
   "schemaVersion": "1.0.0",
   "contentVersion": "2026.11.10.2",
-  "manuscriptVersion": "interview-pass-1.0.0",
+  "manuscriptVersion": "interview-pass-1.1.0",
   "questionId": "career.interview.interview-pass",
-  "baseCaseCount": 12,
-  "contextProfileCount": 12,
-  "totalBaseCases": 1920,
-  "coverage": "twelve-winter-water-cases;exact-void-profiles;other-months-and-void-profiles-not-implied",
+  "baseCaseCount": 144,
+  "authoredVersionCount": 60,
+  "contextProfileCount": 60,
+  "totalBaseCases": 4608,
+  "monthSlotPolicy": {
+    "id": "twelve-month-slots-v1",
+    "baseSlotsPerQuestion": 4608,
+    "qiGrouping": "寅卯木;巳午火;申酉金;亥子水;辰未戌丑土",
+    "sourceIds": [
+      "mh-101",
+      "mh-119"
+    ],
+    "earthConvention": "four-earth-month-branches;explicit-input;no-unwritten-18-day-calendar-inference",
+    "sharing": "identical-written-qi-assessments-share-complete-prose;month-slots-remain-distinct",
+    "monthlyBranchClashRules": "not-added-without-an-authored-rule"
+  },
+  "monthSlots": [
+    {
+      "branch": "寅",
+      "qi": "spring-wood",
+      "position": 1,
+      "label": "寅月"
+    },
+    {
+      "branch": "卯",
+      "qi": "spring-wood",
+      "position": 2,
+      "label": "卯月"
+    },
+    {
+      "branch": "辰",
+      "qi": "seasonal-earth",
+      "position": 3,
+      "label": "辰月"
+    },
+    {
+      "branch": "巳",
+      "qi": "summer-fire",
+      "position": 4,
+      "label": "巳月"
+    },
+    {
+      "branch": "午",
+      "qi": "summer-fire",
+      "position": 5,
+      "label": "午月"
+    },
+    {
+      "branch": "未",
+      "qi": "seasonal-earth",
+      "position": 6,
+      "label": "未月"
+    },
+    {
+      "branch": "申",
+      "qi": "autumn-metal",
+      "position": 7,
+      "label": "申月"
+    },
+    {
+      "branch": "酉",
+      "qi": "autumn-metal",
+      "position": 8,
+      "label": "酉月"
+    },
+    {
+      "branch": "戌",
+      "qi": "seasonal-earth",
+      "position": 9,
+      "label": "戌月"
+    },
+    {
+      "branch": "亥",
+      "qi": "winter-water",
+      "position": 10,
+      "label": "亥月"
+    },
+    {
+      "branch": "子",
+      "qi": "winter-water",
+      "position": 11,
+      "label": "子月"
+    },
+    {
+      "branch": "丑",
+      "qi": "seasonal-earth",
+      "position": 12,
+      "label": "丑月"
+    }
+  ],
+  "allTwelveMonthsCoveredForCharts": 12,
+  "remainingBaseSlots": 4464,
+  "coverage": "twelve-core-charts;all-twelve-month-slots;sixty-written-qi-versions;missing-charts-and-changing-core-void-contexts-not-implied",
+  "storage": "hexagram-shards;month-slot-to-row-pool-index;no-runtime-prose-generation",
   "files": [
     {
-      "batchId": "batch-001",
-      "path": "data/authored-readings/interview-pass/batch-001.json",
-      "count": 12
+      "primaryId": 5,
+      "path": "data/authored-readings/interview-pass/hex-005.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 6,
+      "path": "data/authored-readings/interview-pass/hex-006.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 16,
+      "path": "data/authored-readings/interview-pass/hex-016.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 18,
+      "path": "data/authored-readings/interview-pass/hex-018.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 21,
+      "path": "data/authored-readings/interview-pass/hex-021.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 27,
+      "path": "data/authored-readings/interview-pass/hex-027.json",
+      "count": 10,
+      "monthSlotCount": 24
+    },
+    {
+      "primaryId": 40,
+      "path": "data/authored-readings/interview-pass/hex-040.json",
+      "count": 10,
+      "monthSlotCount": 24
+    },
+    {
+      "primaryId": 47,
+      "path": "data/authored-readings/interview-pass/hex-047.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 48,
+      "path": "data/authored-readings/interview-pass/hex-048.json",
+      "count": 5,
+      "monthSlotCount": 12
+    },
+    {
+      "primaryId": 62,
+      "path": "data/authored-readings/interview-pass/hex-062.json",
+      "count": 5,
+      "monthSlotCount": 12
     }
   ]
 }
