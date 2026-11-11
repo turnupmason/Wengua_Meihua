@@ -39,6 +39,6 @@ with sync_playwright() as p:
  page.select_option('#domain','career');page.select_option('#subcategory','career.interview');page.select_option('#question-item','career.interview.job-offer');settled()
  page.screenshot(path='/tmp/wengua-product-career.png',full_page=True)
  assert not errors,errors
- assert checked==81
+ assert checked==82
  print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
  browser.close()

@@ -13,14 +13,14 @@ test('user-selected six categories and all 52 named subcategories retain their o
  assert.deepEqual(c.categories[0].subcategories.map(s=>s.label),['求职面试','升职加薪','跳槽去留','工作稳定','职场人际','考试考核','项目事业','竞聘选拔']);
  assert.deepEqual(c.categories[2].subcategories.map(s=>s.label),['暗恋心意','暧昧发展','表白追求','恋爱关系','冷战矛盾','分手复合','桃花正缘','谈婚论嫁','婚姻家庭','异地恋情']);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
- assert.equal(questions.length,81);assert.equal(new Set(questions.map(q=>q.id)).size,81);
+ assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
  for(const category of c.categories)for(const sub of await repo.listSubcategories(category.id))assert.deepEqual(await repo.listQuestions(sub.id),sub.questions);
 });
 
 test('distinct outcomes stay distinct; same lost-object goal may share a type through explicit object context',async()=>{
- for(const [a,b] of [['career.interview.interview-pass','career.interview.job-offer'],['career.promotion-pay.promotion','career.promotion-pay.pay-rise'],['wealth.selling.sale','wealth.selling.price'],['relationships.reconciliation.reconcile','relationships.reconciliation.stability']])
+ for(const [a,b] of [['career.interview.interview-pass','career.interview.job-offer'],['career.promotion-pay.promotion','career.promotion-pay.pay-rise'],['wealth.selling.sale','wealth.selling.price'],['relationships.reconciliation.reconcile','relationships.reconciliation.stability'],['relationships.conflict.reunite','relationships.conflict.improvement']])
   assert.notEqual((await repo.getQuestion(a)).question_type,(await repo.getQuestion(b)).question_type);
  assert.equal((await repo.getQuestion('search.lost-object.recovery')).question_type,(await repo.getQuestion('search.valuables.recovery')).question_type);
  assert.notEqual((await repo.getQuestion('search.pets.recovery')).question_type,'lost_object_recovery');

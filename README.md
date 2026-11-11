@@ -1,6 +1,6 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
-正式产品采用 [6大类、52细分、81单事项](docs/PRODUCT_CATEGORIES_V1.md)，页面与 createProductRepository 已接通。十篇V3内容与文风已获用户通过，验收绑定原稿；健康仅传统象意查阅，失物、宠物、失联人员分别处理。
+正式产品采用 [6大类、52细分、82单事项](docs/PRODUCT_CATEGORIES_V1.md)，页面与 createProductRepository 已接通。十篇V3内容与文风已获用户通过，验收绑定原稿；健康仅传统象意查阅，失物、宠物、失联人员分别处理。
 
 新写断语见 [十篇简断与详断 V3](docs/TEN_READINGS_V3.md)；三层数据、动爻完整性及④⑦冲突处理见 [生成与审核规范](docs/STORY_GENERATION_STANDARD_V3.md)。十篇文字已获用户验收，原稿摘要单独保存；新增盘面、旬空和精确应期仍按各自范围补齐。
 

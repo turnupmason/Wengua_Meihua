@@ -4,7 +4,7 @@
   "productCatalogVersion": "1.0.0",
   "categoryCount": 6,
   "subcategoryCount": 52,
-  "questionCount": 81,
+  "questionCount": 82,
   "selectionPolicy": {
     "input": "category-subcategory-fixed-question",
     "aiClassification": false,
@@ -1656,20 +1656,51 @@
           ],
           "questions": [
             {
-              "id": "relationships.conflict.resolution",
-              "question": "这次冷战或矛盾能缓和、和好吗？",
-              "question_type": "relationship_conflict_resolution",
+              "id": "relationships.conflict.reunite",
+              "question": "这次冷战能结束、恢复正常相处吗？",
+              "question_type": "relationship_cold_war_resolution",
               "sourceDomainIds": [
                 "domain-02",
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "两个问法共用本次关系修复目标；不等同于分手后的复合或是否成婚。",
-              "aliases": [
-                "我们能和好吗？",
-                "关系会改善吗？"
-              ],
+              "answerScope": "回答这次冷战是否结束并和好，不以局部缓和代答；也不等同于分手后的复合。",
               "position": 1,
+              "categoryId": "relationships",
+              "subcategoryId": "relationships.conflict",
+              "chartSourceDomainId": "domain-02",
+              "sourceSections": [
+                {
+                  "domainId": "domain-02",
+                  "sectionId": "mh-064"
+                },
+                {
+                  "domainId": "domain-05",
+                  "sectionId": "mh-067"
+                }
+              ],
+              "ruleStatus": "specific-method-review-required",
+              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
+              "outputPolicy": {
+                "oneQuestionOnly": true,
+                "unverifiedDates": false,
+                "mentalStateIsFact": false,
+                "symbolicLocationIsFact": false
+              },
+              "practicalAdvice": [],
+              "contextFields": {}
+            },
+            {
+              "id": "relationships.conflict.improvement",
+              "question": "当前的关系矛盾能有所改善吗？",
+              "question_type": "relationship_conflict_improvement",
+              "sourceDomainIds": [
+                "domain-02",
+                "domain-05"
+              ],
+              "mode": "narrative",
+              "answerScope": "回答当前矛盾能否缓和，保留部分改善的结果，不自动推为已经和好或成婚。",
+              "position": 2,
               "categoryId": "relationships",
               "subcategoryId": "relationships.conflict",
               "chartSourceDomainId": "domain-02",

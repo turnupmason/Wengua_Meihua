@@ -1,6 +1,6 @@
 # 正式产品分类 V1
 
-采用用户选定的6大类、52个细分项，名称与顺序保持原方案。常见问法归并同义项、拆开不同结果后，得到81个固定单事项入口。原18个古籍门类保留为后台来源，不再作为产品一级菜单。
+采用用户选定的6大类、52个细分项，名称与顺序保持原方案。常见问法归并同义项、拆开不同结果后，得到82个固定单事项入口。原18个古籍门类保留为后台来源，不再作为产品一级菜单。
 
 十篇V3简断与详断已获用户通过，内容及文风按原版本保留；无需重复请求文风确认。验收记录绑定原稿摘要，见 data/editorial-acceptance.json。
 
@@ -242,9 +242,12 @@
 
 用户常见问法：我们能和好吗？；关系会改善吗？
 
-- 这次冷战或矛盾能缓和、和好吗？
-  - ID：relationships.conflict.resolution；类型：relationship_conflict_resolution
-  - 回答范围：两个问法共用本次关系修复目标；不等同于分手后的复合或是否成婚。
+- 这次冷战能结束、恢复正常相处吗？
+  - ID：relationships.conflict.reunite；类型：relationship_cold_war_resolution
+  - 回答范围：回答这次冷战是否结束并和好，不以局部缓和代答；也不等同于分手后的复合。
+- 当前的关系矛盾能有所改善吗？
+  - ID：relationships.conflict.improvement；类型：relationship_conflict_improvement
+  - 回答范围：回答当前矛盾能否缓和，保留部分改善的结果，不自动推为已经和好或成婚。
 
 ### 分手复合
 

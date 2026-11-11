@@ -1,4 +1,4 @@
-产品分类SQL补充为 data/product-categories.sql，含product_categories、product_subcategories、product_questions及元数据；在knowledge.sql、question-items.sql之后导入。6大类、52细分、81单事项与原18门来源分开保存；SQLite构建自动合并。十篇用户验收另存data/editorial-acceptance.json。
+产品分类SQL补充为 data/product-categories.sql，含product_categories、product_subcategories、product_questions及元数据；在knowledge.sql、question-items.sql之后导入。6大类、52细分、82单事项与原18门来源分开保存；SQLite构建自动合并。十篇用户验收另存data/editorial-acceptance.json。
 
 当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
 

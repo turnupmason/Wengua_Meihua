@@ -68,7 +68,7 @@ def main():
             disk.executescript(product.read_text())
             assert disk.execute('SELECT count(*) FROM product_categories').fetchone()[0]==6
             assert disk.execute('SELECT count(*) FROM product_subcategories').fetchone()[0]==52
-            assert disk.execute('SELECT count(*) FROM product_questions').fetchone()[0]==81
+            assert disk.execute('SELECT count(*) FROM product_questions').fetchone()[0]==82
         assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
         assert not disk.execute('PRAGMA foreign_key_check').fetchall()
     check=sqlite3.connect(':memory:');check.executescript(sql)

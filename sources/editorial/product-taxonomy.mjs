@@ -78,7 +78,8 @@ export const PRODUCT_TAXONOMY=[
    q('stability','这段恋爱关系能稳定维持吗？','dating_stability',['domain-05'],o('回答既有恋爱关系的稳定，不直接套婚姻已成或成婚规则。')),
    q('outlook','这段恋爱关系接下来如何发展？','dating_outlook',['domain-05'],o('回答已明确范围的关系变化，不无期限概括一生。'))]),
   s('conflict','冷战矛盾','我们能和好吗？|关系会改善吗？',[
-   q('resolution','这次冷战或矛盾能缓和、和好吗？','relationship_conflict_resolution',['domain-02','domain-05'],o('两个问法共用本次关系修复目标；不等同于分手后的复合或是否成婚。',{aliases:['我们能和好吗？','关系会改善吗？']}))]),
+   q('reunite','这次冷战能结束、恢复正常相处吗？','relationship_cold_war_resolution',['domain-02','domain-05'],o('回答这次冷战是否结束并和好，不以局部缓和代答；也不等同于分手后的复合。')),
+   q('improvement','当前的关系矛盾能有所改善吗？','relationship_conflict_improvement',['domain-02','domain-05'],o('回答当前矛盾能否缓和，保留部分改善的结果，不自动推为已经和好或成婚。'))]),
   s('reconciliation','分手复合','还能复合吗？|复合后能稳定吗？',[
    q('reconcile','这段已经结束的感情能复合吗？','relationship_reconciliation',['domain-05'],o('回答复合，不自动保证复合后稳定。',{legacyQuestionId:'domain-05-reconcile'})),
    q('stability','如果复合，这段关系能稳定维持吗？','post_reconciliation_stability',['domain-05'],o('以已经或拟复合为前提，回答后续稳定，不再回答能否复合。'))]),
