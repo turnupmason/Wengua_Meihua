@@ -30,6 +30,7 @@
     "build:questions": "node scripts/build-question-catalog.mjs && python3 scripts/export-questions.py",
     "validate:questions": "python3 scripts/validate-questions.py",
     "build:receivable": "node scripts/build-receivable-batch.mjs && npm run build:questions",
-    "validate:receivable": "node scripts/validate-receivable-batch.mjs"
+    "validate:receivable": "node scripts/validate-receivable-batch.mjs",
+    "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs"
   }
 }

@@ -7,6 +7,7 @@ export {selectAuditedTiming} from './timing-audit.js';
 export {getCivilDay,formatCivilDay,findCivilDayMatches,formatUpcomingCivilDay,findUpcomingCivilDayMatches} from './day-calendar.js';
 export {buildFullChartRelations} from './full-chart.js';
 export {INTERPRETATION_POLICY_VERSION,AUDIT_CHECKS,assessSeasonalQi,buildInterpretationEvidence,interpretationArtifactDigest,evaluateInterpretationReview} from './interpretation-audit.js';
+export {STORY_EDITORIAL_VERSION,inspectMovingLine,collectStoryFacts,CONFLICT_CASE_POLICIES,resolveConflictCase,countHan,validateStoryCopy,getStoryCopy} from './story-editorial.js';
 export {createQuestionRepository,questionStoryContextKey} from './questions.js';
 export {getVoidProfileKey,unpackManuscript,resolveManuscriptDates} from './prewritten-manuscripts.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];

@@ -1,3 +1,5 @@
+最新断语标准：[V3规范](STORY_GENERATION_STANDARD_V3.md)。断语由本助手撰写，Claude负责软件搭建和数据接入；读取 [十篇双层新样稿](TEN_READINGS_V3.md)及 data/ten-readings-v3.json。不得让运行时模型自行化解冲突或改判。④、⑦已有两个精确项目判例，其余范围仍须独立处理。
+
 # 给 Claude 的开发任务 V6
 
 请在 https://github.com/turnupmason/Wengua_Meihua 中继续开发“问卦 / Wengua”。先读 CLAUDE.md 和 docs/INTERPRETATION_AUDIT_V2.md。V6覆盖旧版关于仅按大领域套稿、旧稿可发布、任意传递生克和已核准精确应期的表述。先检查真实文件再实施，不从零杜撰知识库。

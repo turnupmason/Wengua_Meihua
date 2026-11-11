@@ -125,3 +125,14 @@ export function assessSeasonalQi(element:Element,monthOrder:MonthOrderId):Readon
 export function buildInterpretationEvidence(reading:Reading,options:{monthOrder:MonthOrderId}):Readonly<InterpretationEvidence>;
 export function interpretationArtifactDigest(material:unknown):Promise<string>;
 export function evaluateInterpretationReview(registry:unknown,binding:Readonly<Record<string,unknown>>):Readonly<InterpretationReview>;
+export const STORY_EDITORIAL_VERSION:'story-editorial-3.0.0';
+export interface MovingLineObservation {fullText:string;terms:readonly {term:string;start:number;end:number;requiresContextualInterpretation:true}[];automaticPolarityScore:null;applicationMustBeCurated:true}
+export interface EditorialStoryFacts {version:string;contentVersion:string;questionId:string;question_type:string;domainId:string;primaryId:number;movingLine:number;monthOrder:MonthOrderId;stages:Readonly<Record<Stage,{id:number;name:string;baseGrade:DisplayGrade}>>;nodes:readonly {role:string;trigram:Trigram;element:Element;qi:SeasonalQi['state'];independent:boolean}[];relations:readonly {role:string;type:RelationType}[];line:MovingLineObservation & {label:string;image:string;sourceRef:SourceRef;referenceUrl:string};scope:{monthSelection:string;void:string;timing:string;realWorldOutcome:string}}
+export interface EditorialStorySample {decision:{id:string;outcomeCode:string};copy:{title:string;short:{decisionId:string;text:string};long:{decisionId:string;opening:string;process:string;ending:string;summary:string}};lineApplication:{evidence:readonly string[];conditions:readonly string[]};counterevidence:readonly {fact:string;resolution:string}[]}
+export function inspectMovingLine(text:string):Readonly<MovingLineObservation>;
+export function collectStoryFacts(options:{library:Library;question:Readonly<FixedQuestion>;primaryId:number;movingLine:number;monthOrder:MonthOrderId}):Readonly<EditorialStoryFacts>;
+export const CONFLICT_CASE_POLICIES:readonly Readonly<Record<string,unknown>>[];
+export function resolveConflictCase(facts:EditorialStoryFacts):Readonly<{status:'unresolved'|'case-policy-matched';productionAllowed:false;policyVersion?:string;policyId?:string;outcomeCode?:string;conditions?:readonly string[];counterevidence?:string;reason?:string;numericWeights?:null}>;
+export function countHan(text:string):number;
+export function validateStoryCopy(sample:EditorialStorySample):Readonly<{shortHanCount:number;structuralCopyChecks:'passed';semanticConsistency:string}>;
+export function getStoryCopy(sample:EditorialStorySample):Readonly<{decisionId:string;title:string;short:string;long:{opening:string;process:string;ending:string;summary:string};productionAllowed:false;status:'editorial-preview'}>;
