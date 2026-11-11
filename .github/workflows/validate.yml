@@ -17,6 +17,12 @@ jobs:
       - run: git diff --exit-code -- data sources/revised sources/extracted sources/commentary sources/review
       - run: npm run validate
       - run: npm run validate:details
+      - run: npm run validate:stories
+      - run: npm run validate:timing
+      - run: npm run validate:questions
+      - run: npm run validate:receivable
+      - run: npm run validate:product
+      - run: npm run validate:authored
       - run: npm test
   mobile-app:
     runs-on: ubuntu-latest

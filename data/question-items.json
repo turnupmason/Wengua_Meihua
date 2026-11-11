@@ -1,0 +1,1936 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogVersion": "1.0.0",
+  "contentVersion": "2026.11.10.2",
+  "selectionPolicy": {
+    "input": "domain-and-fixed-question-only",
+    "freeText": false,
+    "aiClassification": false,
+    "questionsPerDomain": 5,
+    "multiQuestion": false,
+    "unknownQuestion": "reject",
+    "missingStory": "pending-no-domain-fallback"
+  },
+  "editorialBasis": "Curated common-use question choices; not measured demand rankings. Modern wording is an editorial application, not additional classical quotations.",
+  "count": 90,
+  "domainCount": 18,
+  "narrativeCount": 75,
+  "referenceCount": 15,
+  "domains": [
+    {
+      "id": "domain-01",
+      "label": "天时·古籍查阅",
+      "sourceSectionId": "mh-063",
+      "mode": "reference",
+      "items": [
+        {
+          "id": "domain-01-daily-weather",
+          "domainId": "domain-01",
+          "question_type": "reference_domain_01_daily_weather",
+          "position": 1,
+          "question": "古籍怎样看一天的晴雨？",
+          "answerBrief": "说明离、坎等卦与晴雨取象的原文，以及不分体用的专门口径。",
+          "positiveEvent": "晴雨取象说明",
+          "adverseEvent": "不作现实天气预报",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-063"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "天时章开头说“凡占天时，不分体用，全观诸卦，详推五行”。这里要合看本、互、变及四时，离取晴、坎取雨，另有乾、坤、震、巽、艮、兑的专门取象。它并不沿用人事中体为自己、用为事情的同一套总断。",
+            "这些内容供阅读古籍的象数方法；本资料包尚未建立完整现实晴雨预测规则。"
+          ]
+        },
+        {
+          "id": "domain-01-rain-clearing",
+          "domainId": "domain-01",
+          "question_type": "reference_domain_01_rain_clearing",
+          "position": 2,
+          "question": "古籍怎样看久雨转晴？",
+          "answerBrief": "解释久雨逢艮取止的上下文，保留久雨这个前提。",
+          "positiveEvent": "久雨转晴原文",
+          "adverseEvent": "不指定现实停雨时刻",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-063"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "“久雨不晴，逢艮必止”以久雨为前提。艮取止，原文同时用土克水解释雨止的取象。读这一条时，要保留久雨、时令及诸卦同看的条件，不能见艮便断任何时候都放晴。"
+          ]
+        },
+        {
+          "id": "domain-01-sun-rain",
+          "domainId": "domain-01",
+          "question_type": "reference_domain_01_sun_rain",
+          "position": 3,
+          "question": "古籍怎样看久晴转雨？",
+          "answerBrief": "解释久晴与老阴等取象，不能把所有坤卦直接说成即将下雨。",
+          "positiveEvent": "久晴转雨原文",
+          "adverseEvent": "不指定现实降雨日期",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-063"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "原文以坤为老阴、乾为老阳，配合久晴与久雨讨论变化。问久晴转雨，应先保留“久晴”的背景，再合看诸卦与四时。这里没有一个看到某卦便固定几天后下雨的通用天数。"
+          ]
+        },
+        {
+          "id": "domain-01-wind-thunder",
+          "domainId": "domain-01",
+          "question_type": "reference_domain_01_wind_thunder",
+          "position": 4,
+          "question": "古籍怎样看风雷？",
+          "answerBrief": "说明震、巽与风雷及四时条件，不将秋冬与春夏混用。",
+          "positiveEvent": "风雷取象说明",
+          "adverseEvent": "不发布气象风险结论",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-063"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "震取雷，巽取风。原文又分别讨论春夏雷轰、秋冬震多无制以及巽来相佐的情况。风雷取象带有四时与组合前提，不能把两卦的名称直接当作现实气象预警。"
+          ]
+        },
+        {
+          "id": "domain-01-morning-evening",
+          "domainId": "domain-01",
+          "question_type": "reference_domain_01_morning_evening",
+          "position": 5,
+          "question": "古籍怎样分朝暮晴雨？",
+          "answerBrief": "解释离在艮上、离互艮宫的两条专门时序，不套一般生体日。",
+          "positiveEvent": "朝暮时序说明",
+          "adverseEvent": "不转换为现实逐小时预报",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-063"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "原文并列“离在艮上，暮雨朝晴”和“离互艮宫，暮晴朝雨”。两条结构不同，朝暮次序也不同，应照原句分别阅读。这里的朝暮是天时专门时序，不是一般人事占中生体日的替换写法。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-02",
+      "label": "人事",
+      "sourceSectionId": "mh-064",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-02-request-help",
+          "domainId": "domain-02",
+          "question_type": "request_help",
+          "position": 1,
+          "question": "这次请人帮忙能得到帮助吗？",
+          "answerBrief": "回答能否获得这一次帮助，写清帮助能否落实、何处受阻。",
+          "positiveEvent": "帮助落实",
+          "adverseEvent": "求助未成或受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-064"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-02-request-approval",
+          "domainId": "domain-02",
+          "question_type": "request_approval",
+          "position": 2,
+          "question": "这次向对方提出的请求能获准吗？",
+          "answerBrief": "回答这一个请求是否获准，不扩大成对方始终支持或反对自己。",
+          "positiveEvent": "请求获准",
+          "adverseEvent": "请求受阻或未获准",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-064"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-02-reach-agreement",
+          "domainId": "domain-02",
+          "question_type": "reach_agreement",
+          "position": 3,
+          "question": "这次沟通能达成共识吗？",
+          "answerBrief": "回答能否就本次议题达成共识，不预测对方未说出口的想法。",
+          "positiveEvent": "共识达成",
+          "adverseEvent": "意见分歧或未达成共识",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-064"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-02-ease-conflict",
+          "domainId": "domain-02",
+          "question_type": "ease_conflict",
+          "position": 4,
+          "question": "这次人际矛盾能缓和吗？",
+          "answerBrief": "回答本次冲突能否缓和，区别暂时收住争执与彻底和解。",
+          "positiveEvent": "矛盾缓和",
+          "adverseEvent": "冲突反复或难解",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-064"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-02-entrusted-task",
+          "domainId": "domain-02",
+          "question_type": "entrusted_task",
+          "position": 5,
+          "question": "这次托人办的事能办妥吗？",
+          "answerBrief": "回答所托事项能否办妥，不将一句答应直接当作事情办完。",
+          "positiveEvent": "所托之事办妥",
+          "adverseEvent": "所托之事受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-064"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-03",
+      "label": "家庭",
+      "sourceSectionId": "mh-065",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-03-family-dispute",
+          "domainId": "domain-03",
+          "question_type": "family_dispute",
+          "position": 1,
+          "question": "家里的这场争执能平息吗？",
+          "answerBrief": "回答家庭争执能否平息，写出中途反复与最后能否安定。",
+          "positiveEvent": "争执平息",
+          "adverseEvent": "争执反复",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-065"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-03-family-arrangement",
+          "domainId": "domain-03",
+          "question_type": "family_arrangement",
+          "position": 2,
+          "question": "这项家庭安排能落实吗？",
+          "answerBrief": "回答这一项共同安排能否落定，不把其他家庭事情混进来。",
+          "positiveEvent": "家庭安排落实",
+          "adverseEvent": "安排悬置或难落实",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-065"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-03-family-duties",
+          "domainId": "domain-03",
+          "question_type": "family_duties",
+          "position": 3,
+          "question": "家里的分工能商定并落实吗？",
+          "answerBrief": "回答责任分担能否议定并执行，不替任何家人编写动机。",
+          "positiveEvent": "分工落实",
+          "adverseEvent": "分工不定或执行受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-065"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-03-family-spending",
+          "domainId": "domain-03",
+          "question_type": "family_spending",
+          "position": 4,
+          "question": "家里这段开销能稳定下来吗？",
+          "answerBrief": "围绕家宅耗散与进益，回答眼前家庭开销能否稳定，不给金额预测。",
+          "positiveEvent": "家庭开销渐稳",
+          "adverseEvent": "家庭耗费延续",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-065"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-03-family-stability",
+          "domainId": "domain-03",
+          "question_type": "family_stability",
+          "position": 5,
+          "question": "近期家中的事情能安定下来吗？",
+          "answerBrief": "回答当前家中事务的安定与否，不借卦名断结构安全、盗窃或灾害。",
+          "positiveEvent": "家中事务安定",
+          "adverseEvent": "家事反复难安",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-065"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-04",
+      "label": "房屋与居住",
+      "sourceSectionId": "mh-066",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-04-rent-home",
+          "domainId": "domain-04",
+          "question_type": "dwelling_compatibility",
+          "position": 1,
+          "question": "这处准备租的房子适合居住吗？",
+          "answerBrief": "只论所选房屋的居住象意，不回答租约能否成交、房价或结构安全。",
+          "positiveEvent": "居住相合",
+          "adverseEvent": "居住不利或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-066"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-04-buy-to-live",
+          "domainId": "domain-04",
+          "question_type": "dwelling_compatibility",
+          "position": 2,
+          "question": "这处准备买来自住的房子适合居住吗？",
+          "answerBrief": "回答自住安排的吉凶，不预测购房成交、升值或投资收益。",
+          "positiveEvent": "自住安排相合",
+          "adverseEvent": "自住安排不利或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-066"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-04-renew-home",
+          "domainId": "domain-04",
+          "question_type": "dwelling_compatibility",
+          "position": 3,
+          "question": "继续续租住在这里合适吗？",
+          "answerBrief": "回答继续居住的象意，不冒充房东会同意续约的判断。",
+          "positiveEvent": "继续居住相合",
+          "adverseEvent": "继续居住不利或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-066"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-04-move-home",
+          "domainId": "domain-04",
+          "question_type": "dwelling_compatibility",
+          "position": 4,
+          "question": "搬到已经选好的新住处合适吗？",
+          "answerBrief": "回答拟入住地点的居住吉凶，不将行程应期当作搬家成功日。",
+          "positiveEvent": "新居安排相合",
+          "adverseEvent": "新居安排不利或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-066"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-04-stay-home",
+          "domainId": "domain-04",
+          "question_type": "dwelling_compatibility",
+          "position": 5,
+          "question": "继续住在现在的住处合适吗？",
+          "answerBrief": "回答现有居住安排是否相合，不自动转成买房或搬家的建议。",
+          "positiveEvent": "现有住居相合",
+          "adverseEvent": "现有住居不利或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-066"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-05",
+      "label": "感情与婚姻",
+      "sourceSectionId": "mh-067",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-05-start-relationship",
+          "domainId": "domain-05",
+          "question_type": "relationship_establishment",
+          "position": 1,
+          "question": "我们能确定恋爱关系吗？",
+          "answerBrief": "只回答关系能否正式建立；属于现代细分，需独立断法审核，不能输出婚事已成。",
+          "positiveEvent": "恋爱关系确定",
+          "adverseEvent": "关系未能确定",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "quality-years-months",
+          "sourceIds": [
+            "mh-067",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "specific-event-rules-required",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-05-reconcile",
+          "domainId": "domain-05",
+          "question_type": "relationship_reconciliation",
+          "position": 2,
+          "question": "这段已经结束的感情能复合吗？",
+          "answerBrief": "只回答是否复合；须独立审核，不能把婚可成直接替换成必复合，也不臆测对方内心。",
+          "positiveEvent": "关系复合",
+          "adverseEvent": "复合未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "quality-years-months",
+          "sourceIds": [
+            "mh-067",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "specific-event-rules-required",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-05-marry",
+          "domainId": "domain-05",
+          "question_type": "marriage_completion",
+          "position": 3,
+          "question": "这段感情能走到结婚吗？",
+          "answerBrief": "回答能否成婚与迟速，按吉凶年月提示推进窗口，不指定必婚日。",
+          "positiveEvent": "婚事推进",
+          "adverseEvent": "婚事受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "quality-years-months",
+          "sourceIds": [
+            "mh-067",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-05-marriage-negotiation",
+          "domainId": "domain-05",
+          "question_type": "marriage_negotiation",
+          "position": 4,
+          "question": "这次谈婚事能谈妥吗？",
+          "answerBrief": "回答本次婚事协商能否谈妥，区别达成约定与已经举办婚礼。",
+          "positiveEvent": "婚事约定落实",
+          "adverseEvent": "婚事协商受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "quality-years-months",
+          "sourceIds": [
+            "mh-067",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-05-married-life",
+          "domainId": "domain-05",
+          "question_type": "marriage_stability",
+          "position": 5,
+          "question": "这段婚姻能相处安稳吗？",
+          "answerBrief": "回答婚姻相处的安定与耗失，不凭卦象指认出轨、欺骗或人格。",
+          "positiveEvent": "婚姻相处趋稳",
+          "adverseEvent": "婚姻相处受阻或耗失",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "quality-years-months",
+          "sourceIds": [
+            "mh-067",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-06",
+      "label": "生产·古籍查阅",
+      "sourceSectionId": "mh-068",
+      "mode": "reference",
+      "items": [
+        {
+          "id": "domain-06-body-use",
+          "domainId": "domain-06",
+          "question_type": "reference_domain_06_body_use",
+          "position": 1,
+          "question": "生产占的体和用怎样区分？",
+          "answerBrief": "解释原典以体为母、用为生的术语，不作真实母婴安危判断。",
+          "positiveEvent": "原典体用说明",
+          "adverseEvent": "不输出母婴安危结论",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-068"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "生产章说“以体为母，用为生”。这说明本章采用的历史角色映射，不能把普通人事的角色说明原样套入。阅读时先认清本卦动爻所在一侧为用，再看原文怎样讨论体用关系；这些术语不构成真实母婴状况的判断。"
+          ]
+        },
+        {
+          "id": "domain-06-strength",
+          "domainId": "domain-06",
+          "question_type": "reference_domain_06_strength",
+          "position": 2,
+          "question": "生产占为什么强调旺衰？",
+          "answerBrief": "解释体用俱宜乘旺的原意，不把旺衰等同于医学健康状态。",
+          "positiveEvent": "原典旺衰说明",
+          "adverseEvent": "不作临床风险分级",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-068"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "原文强调“体用俱宜乘旺，不宜乘衰”，说明本章论断很重视体用各自的时令状态。旺衰是书中象数条件，不是医学检查结果。现有规则也不把单一失令直接等同于衰极或真空。"
+          ]
+        },
+        {
+          "id": "domain-06-relations",
+          "domainId": "domain-06",
+          "question_type": "reference_domain_06_relations",
+          "position": 3,
+          "question": "生产占的相生相克怎样理解？",
+          "answerBrief": "整理原典生克语义，保留为历史阅读，不导出治疗或分娩方式建议。",
+          "positiveEvent": "原典生克说明",
+          "adverseEvent": "不提供临床决策",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-068"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "生产章对体克用、用克体、体生用、用生体分别赋予本章语义，不能与求财、饮食等门类互换。这里保留的是传统文本如何组织判断，不据这些生克关系选择分娩方式、药物或治疗。"
+          ]
+        },
+        {
+          "id": "domain-06-use-qi",
+          "domainId": "domain-06",
+          "question_type": "reference_domain_06_use_qi",
+          "position": 4,
+          "question": "生产占为什么取用卦气数？",
+          "answerBrief": "说明原文取用卦气数参八卦时序的路径，不套普通生体日期。",
+          "positiveEvent": "原典气数说明",
+          "adverseEvent": "不预测现实分娩日期",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-068"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "“如欲决其日辰，则以用卦之气数参决之”，后文又要求参八卦时序。它明确指向用卦气数，并未给出所有生产占统一取生体日的规则。气数与时序中的未定解释应保留，不擅自化成现实产期。"
+          ]
+        },
+        {
+          "id": "domain-06-timing",
+          "domainId": "domain-06",
+          "question_type": "reference_domain_06_timing",
+          "position": 5,
+          "question": "生产占的日辰原文怎样读？",
+          "answerBrief": "展示取日辰条文和应期尺度边界，不输出胎儿性别或现实产期。",
+          "positiveEvent": "原典应期说明",
+          "adverseEvent": "不输出产期或胎儿性别",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-068"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "本章取日辰须参用卦气数与八卦时序，日期单位和解释仍要符合原文前提。查表找到某个地支日，只证明该日的历法对应，不证明真实分娩发生在那一天。这里只作条文查阅，不输出产期或胎儿性别。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-07",
+      "label": "聚餐与宴饮",
+      "sourceSectionId": "mh-069",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-07-gathering",
+          "domainId": "domain-07",
+          "question_type": "gathering",
+          "position": 1,
+          "question": "这顿聚餐能约成吗？",
+          "answerBrief": "回答本次聚餐能否约成，饮食体克用按有阻处理，不套求财得利。",
+          "positiveEvent": "聚餐约成",
+          "adverseEvent": "聚餐未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-069"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-07-hosting",
+          "domainId": "domain-07",
+          "question_type": "hosting",
+          "position": 2,
+          "question": "这次请客能办成吗？",
+          "answerBrief": "回答这次由自己安排的请客能否办成及耗费，不捏造赴宴人物。",
+          "positiveEvent": "请客办成",
+          "adverseEvent": "请客受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-069"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-07-invited-meal",
+          "domainId": "domain-07",
+          "question_type": "invited_meal",
+          "position": 3,
+          "question": "受邀的这顿饭能吃成吗？",
+          "answerBrief": "回答所问的受邀宴饮能否成席，不把今日饭局改为多日后的宴席。",
+          "positiveEvent": "受邀宴饮成席",
+          "adverseEvent": "受邀宴饮未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-069"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-07-banquet",
+          "domainId": "domain-07",
+          "question_type": "banquet",
+          "position": 4,
+          "question": "这场宴席能按计划办成吗？",
+          "answerBrief": "回答已筹备宴席能否成席，保留所问范围，不预测食品卫生安全。",
+          "positiveEvent": "宴席办成",
+          "adverseEvent": "宴席受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-069"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-07-hospitality",
+          "domainId": "domain-07",
+          "question_type": "hospitality",
+          "position": 5,
+          "question": "这次聚餐的招待是否丰足？",
+          "answerBrief": "回答宴饮丰足或难就的象意，不预测具体菜品、金额或食品安全。",
+          "positiveEvent": "宴饮丰足",
+          "adverseEvent": "宴饮难就或不足",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-069"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-08",
+      "label": "计划与办事",
+      "sourceSectionId": "mh-070",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-08-start-plan",
+          "domainId": "domain-08",
+          "question_type": "start_plan",
+          "position": 1,
+          "question": "这个新计划能启动并做成吗？",
+          "answerBrief": "回答新计划能否启动并成事，区分开始有进展与最终做成。",
+          "positiveEvent": "新计划成事",
+          "adverseEvent": "新计划受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-070"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-08-advance-plan",
+          "domainId": "domain-08",
+          "question_type": "advance_plan",
+          "position": 2,
+          "question": "正在做的这个计划能完成吗？",
+          "answerBrief": "回答既有计划能否完成，结合中段生扶克制说明主要阻碍。",
+          "positiveEvent": "计划完成",
+          "adverseEvent": "计划停滞或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-070"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-08-restart-plan",
+          "domainId": "domain-08",
+          "question_type": "restart_plan",
+          "position": 3,
+          "question": "已经停下的这件事能重新做起来吗？",
+          "answerBrief": "回答停下事项能否重启并推进，不把一次恢复联系当作已做成。",
+          "positiveEvent": "事项重启并推进",
+          "adverseEvent": "重启受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-070"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-08-application",
+          "domainId": "domain-08",
+          "question_type": "application",
+          "position": 4,
+          "question": "这次办事申请能获批吗？",
+          "answerBrief": "回答这一项申请能否获批，不预测现实行政机关的确定决定日。",
+          "positiveEvent": "申请获批",
+          "adverseEvent": "申请受阻或未获批",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-070"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-08-revised-plan",
+          "domainId": "domain-08",
+          "question_type": "revised_plan",
+          "position": 5,
+          "question": "改用这个方案能把事情办成吗？",
+          "answerBrief": "只判断当前选定方案，不同时替用户比较未提供的其他方案。",
+          "positiveEvent": "改用方案后成事",
+          "adverseEvent": "方案仍受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-070"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-09",
+      "label": "工作与求名",
+      "sourceSectionId": "mh-071",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-09-job-offer",
+          "domainId": "domain-09",
+          "question_type": "job_application",
+          "position": 1,
+          "question": "这次求职能拿到录用吗？",
+          "answerBrief": "回答能否获得本次职位，应期对应录用落实，不混为面试出发日。",
+          "positiveEvent": "职位录用落实",
+          "adverseEvent": "求职未成或受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-071"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-09-promotion",
+          "domainId": "domain-09",
+          "question_type": "promotion",
+          "position": 2,
+          "question": "这次晋升能争取到吗？",
+          "answerBrief": "回答本次晋升名分能否落实，不把在任受责条文套为必失业。",
+          "positiveEvent": "晋升落实",
+          "adverseEvent": "晋升受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-071"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-09-transfer",
+          "domainId": "domain-09",
+          "question_type": "job_transfer",
+          "position": 3,
+          "question": "这次申请转岗能成功吗？",
+          "answerBrief": "回答申请的目标职位能否取得，不预测没有实际给定的职任方位。",
+          "positiveEvent": "目标岗位落实",
+          "adverseEvent": "转岗受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-071"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-09-examination",
+          "domainId": "domain-09",
+          "question_type": "examination_result",
+          "position": 4,
+          "question": "这次考试能通过吗？",
+          "answerBrief": "以求名功名作现代类推，回答考试所求能否取得，不预测分数或排名。",
+          "positiveEvent": "考试所求取得",
+          "adverseEvent": "考试所求未得",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-071"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-09-qualification",
+          "domainId": "domain-09",
+          "question_type": "qualification_result",
+          "position": 5,
+          "question": "这次资格申请能通过吗？",
+          "answerBrief": "回答资格或评定名分能否取得，不将医疗资格等专业要求改写为卦象事实。",
+          "positiveEvent": "资格评定取得",
+          "adverseEvent": "资格申请受阻或未得",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-071"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-10",
+      "label": "钱款与收益",
+      "sourceSectionId": "mh-072",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-10-business-income",
+          "domainId": "domain-10",
+          "question_type": "business_income",
+          "position": 1,
+          "question": "这次经营能得到收益吗？",
+          "answerBrief": "围绕收益有无、付出与耗失写成完整故事，不与是否签约混为一件事。",
+          "positiveEvent": "经营收益取得",
+          "adverseEvent": "无收益或经营耗失",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-072"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-10-receivable",
+          "domainId": "domain-10",
+          "question_type": "receivable_collection",
+          "position": 2,
+          "question": "客户欠的这笔尾款能收到吗？",
+          "answerBrief": "回答已经应收的客户款能否收到，应期对应实际收款而非承诺付款。",
+          "positiveEvent": "客户尾款收到",
+          "adverseEvent": "尾款未收或催收受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-072"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "base-written"
+        },
+        {
+          "id": "domain-10-loan-return",
+          "domainId": "domain-10",
+          "question_type": "loan_repayment",
+          "position": 3,
+          "question": "借出去的这笔钱能收回来吗？",
+          "answerBrief": "回答借出款能否收回，不凭受克直接指认借款人欺骗。",
+          "positiveEvent": "借出款收回",
+          "adverseEvent": "借出款未收回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-072"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-10-refund",
+          "domainId": "domain-10",
+          "question_type": "refund_receipt",
+          "position": 4,
+          "question": "申请的这笔退款能退回来吗？",
+          "answerBrief": "回答款项能否退回，应期对应退款落实，不把申请提交当到账。",
+          "positiveEvent": "退款收到",
+          "adverseEvent": "退款受阻或未收到",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-072"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-10-profit-share",
+          "domainId": "domain-10",
+          "question_type": "profit_distribution",
+          "position": 5,
+          "question": "约定的这笔分成能拿到吗？",
+          "answerBrief": "回答已约定分成能否取得及可能的争议，不凭卦象编写金额比例。",
+          "positiveEvent": "约定分成取得",
+          "adverseEvent": "分成未得或分配争议",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-072"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-11",
+      "label": "交易与合作",
+      "sourceSectionId": "mh-073",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-11-sign-contract",
+          "domainId": "domain-11",
+          "question_type": "sign_contract",
+          "position": 1,
+          "question": "这份合同能签下来吗？",
+          "answerBrief": "回答合同能否达成并签订，不将未签成直接扩大为被骗或本金损失。",
+          "positiveEvent": "合同签订落实",
+          "adverseEvent": "签约受阻或未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-073"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-11-purchase",
+          "domainId": "domain-11",
+          "question_type": "purchase",
+          "position": 2,
+          "question": "这次购买能成交吗？",
+          "answerBrief": "回答这一笔购买是否成交，不同时评价房屋居住吉凶或未来升值。",
+          "positiveEvent": "购买成交",
+          "adverseEvent": "购买未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-073"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-11-sale",
+          "domainId": "domain-11",
+          "question_type": "sale",
+          "position": 3,
+          "question": "这件东西能卖出去吗？",
+          "answerBrief": "回答已选标的能否出售成交，不预测未经输入的售价。",
+          "positiveEvent": "出售成交",
+          "adverseEvent": "出售未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-073"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-11-customer-order",
+          "domainId": "domain-11",
+          "question_type": "customer_order",
+          "position": 4,
+          "question": "这笔客户订单能谈成吗？",
+          "answerBrief": "回答客户订单是否达成，不把谈成订单当作后续尾款已经到账。",
+          "positiveEvent": "订单达成",
+          "adverseEvent": "订单未成",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-073"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-11-business-partnership",
+          "domainId": "domain-11",
+          "question_type": "business_partnership",
+          "position": 5,
+          "question": "这次合作项目能谈成吗？",
+          "answerBrief": "回答合作是否达成，不编造合伙人动机，也不替代履约的独立判断。",
+          "positiveEvent": "合作达成",
+          "adverseEvent": "合作未成或谈判受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-073"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-12",
+      "label": "出行",
+      "sourceSectionId": "mh-074",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-12-business-trip",
+          "domainId": "domain-12",
+          "question_type": "own_journey_completion",
+          "position": 1,
+          "question": "这次出差是否顺利、有所得？",
+          "answerBrief": "回答本人出差的总体得失，出行应事与出发日、归来日分别处理。",
+          "positiveEvent": "出差有得",
+          "adverseEvent": "出差受阻或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "journey-event-not-departure-date",
+          "sourceIds": [
+            "mh-074"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-12-errand",
+          "domainId": "domain-12",
+          "question_type": "own_journey_completion",
+          "position": 2,
+          "question": "为这件事跑一趟是否值得？",
+          "answerBrief": "回答本人办事这一趟的得失，不把见面成功和全部事务办成混同。",
+          "positiveEvent": "此行办事有得",
+          "adverseEvent": "此行受阻或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "journey-event-not-departure-date",
+          "sourceIds": [
+            "mh-074"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-12-travel",
+          "domainId": "domain-12",
+          "question_type": "own_journey_completion",
+          "position": 3,
+          "question": "这次旅行安排是否顺利？",
+          "answerBrief": "回答本人旅行安排的传统象意，不提供现实交通安全保证。",
+          "positiveEvent": "旅程安排顺遂",
+          "adverseEvent": "旅程安排受阻或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "journey-event-not-departure-date",
+          "sourceIds": [
+            "mh-074"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-12-family-visit",
+          "domainId": "domain-12",
+          "question_type": "own_journey_completion",
+          "position": 4,
+          "question": "这次回去探亲是否顺利？",
+          "answerBrief": "回答本人探亲行程的得失，不替家人编写态度或健康情况。",
+          "positiveEvent": "探亲行程顺遂",
+          "adverseEvent": "探亲行程受阻或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "journey-event-not-departure-date",
+          "sourceIds": [
+            "mh-074"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-12-return-trip",
+          "domainId": "domain-12",
+          "question_type": "own_journey_completion",
+          "position": 5,
+          "question": "我这趟返程是否顺利？",
+          "answerBrief": "只问本人返程，不套他人在外的行人归期条文来指定到达日。",
+          "positiveEvent": "本人返程顺遂",
+          "adverseEvent": "本人返程受阻或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "journey-event-not-departure-date",
+          "sourceIds": [
+            "mh-074"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-13",
+      "label": "等人归来",
+      "sourceSectionId": "mh-075",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-13-family-return",
+          "domainId": "domain-13",
+          "question_type": "traveller_return",
+          "position": 1,
+          "question": "在外的家人近期能回来吗？",
+          "answerBrief": "回答所问家人是否归来及迟速，不将临时改期等同永久不归。",
+          "positiveEvent": "家人归来",
+          "adverseEvent": "家人归迟或未归",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-075",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-13-partner-return",
+          "domainId": "domain-13",
+          "question_type": "traveller_return",
+          "position": 2,
+          "question": "在外的伴侣能按约回来吗？",
+          "answerBrief": "回答伴侣实际归来，不由归迟推断感情变化或出轨。",
+          "positiveEvent": "伴侣归来",
+          "adverseEvent": "伴侣归迟或未归",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-075",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-13-work-return",
+          "domainId": "domain-13",
+          "question_type": "traveller_return",
+          "position": 3,
+          "question": "出差的人近期能回来吗？",
+          "answerBrief": "回答对方出差后的归来，所取应期对应实际回程结束。",
+          "positiveEvent": "出差之人归来",
+          "adverseEvent": "出差之人归迟或未归",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-075",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-13-long-absence",
+          "domainId": "domain-13",
+          "question_type": "traveller_return",
+          "position": 4,
+          "question": "久未归来的人近期会回来吗？",
+          "answerBrief": "回答所问范围内能否归来，不生成某日确定失联或遇险的结论。",
+          "positiveEvent": "久未归者归来",
+          "adverseEvent": "所问范围内仍未归",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-075",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-13-promised-return",
+          "domainId": "domain-13",
+          "question_type": "traveller_return",
+          "position": 5,
+          "question": "已经约定归期的人能回来吗？",
+          "answerBrief": "回答约定中的归来能否落实，区分来信告知与人真正回来。",
+          "positiveEvent": "约定归来落实",
+          "adverseEvent": "归期延后或未落实",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-075",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-14",
+      "label": "见面与拜访",
+      "sourceSectionId": "mh-076",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-14-meet-leader",
+          "domainId": "domain-14",
+          "question_type": "meet_leader",
+          "position": 1,
+          "question": "这次能见到领导并有所获吗？",
+          "answerBrief": "分别回答能否见到与见后有无帮助，不把见面当作请求已经获批。",
+          "positiveEvent": "会面有得",
+          "adverseEvent": "难见或见而无益",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-076"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-14-meet-client",
+          "domainId": "domain-14",
+          "question_type": "meet_client",
+          "position": 2,
+          "question": "这次能见到客户并谈得顺吗？",
+          "answerBrief": "回答客户会面及交流得失，不越过交易条文保证合同成交。",
+          "positiveEvent": "客户会面有得",
+          "adverseEvent": "客户会面受阻或无益",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-076"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-14-meet-friend",
+          "domainId": "domain-14",
+          "question_type": "meet_friend",
+          "position": 3,
+          "question": "这次约朋友能见成吗？",
+          "answerBrief": "回答约见能否落实及相见是否融洽，不扩写朋友的隐藏想法。",
+          "positiveEvent": "朋友相见",
+          "adverseEvent": "约见未成或不融洽",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-076"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-14-meet-mentor",
+          "domainId": "domain-14",
+          "question_type": "meet_mentor",
+          "position": 4,
+          "question": "这次拜访前辈能得到帮助吗？",
+          "answerBrief": "回答拜访能否成行与见后有无所得，礼数和准备写进过程。",
+          "positiveEvent": "拜访有得",
+          "adverseEvent": "难见或拜访无益",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-076"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-14-meet-official",
+          "domainId": "domain-14",
+          "question_type": "meet_official",
+          "position": 5,
+          "question": "这次能见到办事负责人吗？",
+          "answerBrief": "回答是否见到相关负责人及有无所得，不将见面日当作审批决定日。",
+          "positiveEvent": "负责人会面有得",
+          "adverseEvent": "会面受阻或无益",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-076"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-15",
+      "label": "寻找失物",
+      "sourceSectionId": "mh-077",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-15-keys",
+          "domainId": "domain-15",
+          "question_type": "lost_object_recovery",
+          "position": 1,
+          "question": "遗失的钥匙能找回来吗？",
+          "answerBrief": "回答这串钥匙能否寻回，按变卦给查找线索，不冒充精确定位。",
+          "positiveEvent": "钥匙寻回",
+          "adverseEvent": "钥匙难寻或未寻回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-077"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-15-wallet",
+          "domainId": "domain-15",
+          "question_type": "lost_object_recovery",
+          "position": 2,
+          "question": "遗失的钱包能找回来吗？",
+          "answerBrief": "回答钱包能否寻回，不由失物之象指认盗窃者或保证钱物完整。",
+          "positiveEvent": "钱包寻回",
+          "adverseEvent": "钱包难寻或未寻回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-077"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-15-documents",
+          "domainId": "domain-15",
+          "question_type": "lost_object_recovery",
+          "position": 3,
+          "question": "遗失的证件能找回来吗？",
+          "answerBrief": "回答所问证件能否寻回，日期对应找到证件，不等同补办完成日。",
+          "positiveEvent": "证件寻回",
+          "adverseEvent": "证件难寻或未寻回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-077"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-15-phone",
+          "domainId": "domain-15",
+          "question_type": "lost_object_recovery",
+          "position": 4,
+          "question": "遗失的手机能找回来吗？",
+          "answerBrief": "回答手机能否寻回，方位作查找线索，不充当设备定位或窃贼身份判断。",
+          "positiveEvent": "手机寻回",
+          "adverseEvent": "手机难寻或未寻回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-077"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-15-jewellery",
+          "domainId": "domain-15",
+          "question_type": "lost_object_recovery",
+          "position": 5,
+          "question": "遗失的首饰能找回来吗？",
+          "answerBrief": "回答所问首饰能否寻回，不凭卦象给价值金额或断谁拿走。",
+          "positiveEvent": "首饰寻回",
+          "adverseEvent": "首饰难寻或未寻回",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-077"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-16",
+      "label": "疾病·古籍查阅",
+      "sourceSectionId": "mh-078",
+      "mode": "reference",
+      "items": [
+        {
+          "id": "domain-16-body-use",
+          "domainId": "domain-16",
+          "question_type": "reference_domain_16_body_use",
+          "position": 1,
+          "question": "疾病占的体和用怎样区分？",
+          "answerBrief": "解释原典的病人、病症与体用术语，不作现实诊断。",
+          "positiveEvent": "原典体用说明",
+          "adverseEvent": "不输出诊断",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-078"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "疾病章以体为病人、用为病症，并继续讨论体用生克。这里是原典的符号角色，不能从一个经卦反推出现实疾病名称。现有资料保留原句与解释，医学诊断不由这套角色映射产生。"
+          ]
+        },
+        {
+          "id": "domain-16-strength",
+          "domainId": "domain-16",
+          "question_type": "reference_domain_16_strength",
+          "position": 2,
+          "question": "疾病章为什么强调体卦旺衰？",
+          "answerBrief": "说明原典怎样区分受克而旺与受克而衰，不据此预测生死。",
+          "positiveEvent": "原典旺衰说明",
+          "adverseEvent": "不输出安危预测",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-078"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "原文区分体旺受克与体衰受克，也要求查看生体之卦。阅读重点是同一生克关系仍须带入旺衰条件，不能删掉这些条件只留下吉凶字样。这些历史表述不用于现实生死、安危或疗效预测。"
+          ]
+        },
+        {
+          "id": "domain-16-support-control",
+          "domainId": "domain-16",
+          "question_type": "reference_domain_16_support_control",
+          "position": 3,
+          "question": "疾病章的逢生、受克怎样读？",
+          "answerBrief": "解释象数关系在本章中的历史语义，不改写成疗效或停药建议。",
+          "positiveEvent": "原典生克说明",
+          "adverseEvent": "不提供治疗结论",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-078"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "逢生、受克在本章中是五行关系及其时令条件。原文的古代医药、鬼神等解释作为历史资料保留，不据此给出现实病因、药性选择或停药决定。其他门类的得财、成婚等结果也不能混进本章。"
+          ]
+        },
+        {
+          "id": "domain-16-timing-terms",
+          "domainId": "domain-16",
+          "question_type": "reference_domain_16_timing_terms",
+          "position": 4,
+          "question": "原文的和平之日、危厄之期是什么意思？",
+          "answerBrief": "保留主卦一词的校核疑点，不伪定唯一公式或现实康复日期。",
+          "positiveEvent": "原典应期术语说明",
+          "adverseEvent": "不输出康复或危厄日期",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-078"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "原文写“若究和平之日，主卦决之。若详危厄之期，克体之卦定之”。其中“主卦”的指向在现有条文中仍有校核疑点，资料保留原字，没有擅改为唯一生体公式。这些术语不转成现实康复或危险日期。"
+          ]
+        },
+        {
+          "id": "domain-16-case-audit",
+          "domainId": "domain-16",
+          "question_type": "reference_domain_16_case_audit",
+          "position": 5,
+          "question": "疾病章的案例有哪些需要核对的地方？",
+          "answerBrief": "区分原文叙述与结构复算，展示已标记问题，不把原断当现实证据。",
+          "positiveEvent": "原典案例校核说明",
+          "adverseEvent": "不移植历史病案结局",
+          "mode": "reference",
+          "interpretationReview": "historical-reference-only",
+          "timingPolicy": "reference-only",
+          "sourceIds": [
+            "mh-078"
+          ],
+          "sourceApplication": "editorial-reference-explanation",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "reference-written",
+          "referenceParagraphs": [
+            "疾病章后段以乾上坤下的不同动爻举例。部分“俱生”“俱克”等概括与按爻位复算的结构存在核对问题，原文与问题记录应分别保留。不能为了写出确定结局，先改卦形再把病案原断移植给新读者。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-17",
+      "label": "纠纷与争讼",
+      "sourceSectionId": "mh-079",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-17-lawsuit",
+          "domainId": "domain-17",
+          "question_type": "lawsuit",
+          "position": 1,
+          "question": "这场诉讼我方的形势如何？",
+          "answerBrief": "回答原典意义上的我方得助、受制或耗失，不预测法院确定裁判和日期。",
+          "positiveEvent": "争讼形势有利",
+          "adverseEvent": "争讼形势受制或耗失",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-079"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-17-settlement",
+          "domainId": "domain-17",
+          "question_type": "settlement",
+          "position": 2,
+          "question": "这次纠纷能协商和解吗？",
+          "answerBrief": "回答和解能否推进；比和主和与诉讼胜负分别表述，不混为同一结果。",
+          "positiveEvent": "纠纷和解",
+          "adverseEvent": "和解受阻",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-079"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "specific-event-rules-required",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-17-arbitration",
+          "domainId": "domain-17",
+          "question_type": "arbitration",
+          "position": 3,
+          "question": "这次仲裁我方的形势如何？",
+          "answerBrief": "以争讼作现代类推，回答双方相对形势，不提供法律胜率或裁决保证。",
+          "positiveEvent": "仲裁中我方得助",
+          "adverseEvent": "仲裁中我方受制或耗失",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-079"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-17-mediation",
+          "domainId": "domain-17",
+          "question_type": "mediation",
+          "position": 4,
+          "question": "这次调解能达成一致吗？",
+          "answerBrief": "围绕主和之义判断调解，不把一方占优机械改为必达成协议。",
+          "positiveEvent": "调解达成一致",
+          "adverseEvent": "调解未达成一致",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-079"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "specific-event-rules-required",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-17-dispute-end",
+          "domainId": "domain-17",
+          "question_type": "dispute_end",
+          "position": 5,
+          "question": "这场争议能结束吗？",
+          "answerBrief": "回答争议能否收束及所需耗费，不将暂时停争直接当作法律关系终结。",
+          "positiveEvent": "争议收束",
+          "adverseEvent": "争议延续或耗费",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "event-specific",
+          "sourceIds": [
+            "mh-079"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "specific-event-rules-required",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    },
+    {
+      "id": "domain-18",
+      "label": "安葬选址",
+      "sourceSectionId": "mh-080",
+      "mode": "narrative",
+      "items": [
+        {
+          "id": "domain-18-cemetery-site",
+          "domainId": "domain-18",
+          "question_type": "burial_site_compatibility",
+          "position": 1,
+          "question": "这处拟选的墓地按古籍如何论吉凶？",
+          "answerBrief": "仅论拟选墓地的传统吉凶，不预测后人财富、寿命或现实地质安全。",
+          "positiveEvent": "选址传统吉象",
+          "adverseEvent": "选址传统不利之象",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "no-completion-date",
+          "sourceIds": [
+            "mh-080",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-18-burial-site",
+          "domainId": "domain-18",
+          "question_type": "burial_site_compatibility",
+          "position": 2,
+          "question": "此次安葬拟定的地点按古籍是否合宜？",
+          "answerBrief": "只论地点吉凶，不指定安葬成功日，也不将选址等同工程勘察。",
+          "positiveEvent": "安葬地点相合",
+          "adverseEvent": "安葬地点不利",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "no-completion-date",
+          "sourceIds": [
+            "mh-080",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-18-reburial-site",
+          "domainId": "domain-18",
+          "question_type": "burial_site_compatibility",
+          "position": 3,
+          "question": "迁葬拟选的新地点按古籍是否合宜？",
+          "answerBrief": "只看已选新地点的吉凶，迁葬程序与日期不由本条自动决定。",
+          "positiveEvent": "新选地点相合",
+          "adverseEvent": "新选地点不利",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "no-completion-date",
+          "sourceIds": [
+            "mh-080",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-18-family-site",
+          "domainId": "domain-18",
+          "question_type": "burial_site_compatibility",
+          "position": 4,
+          "question": "为家人拟选的墓地按古籍是否合宜？",
+          "answerBrief": "回答这一处墓地的传统吉凶，不由家人身份生成额外命运推断。",
+          "positiveEvent": "拟选墓地相合",
+          "adverseEvent": "拟选墓地不利",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "no-completion-date",
+          "sourceIds": [
+            "mh-080",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        },
+        {
+          "id": "domain-18-joint-site",
+          "domainId": "domain-18",
+          "question_type": "burial_site_compatibility",
+          "position": 5,
+          "question": "拟定的合葬地点按古籍是否合宜？",
+          "answerBrief": "仅以已选地点作传统吉凶参照，不增设来源未给的合葬算法。",
+          "positiveEvent": "合葬地点相合",
+          "adverseEvent": "合葬地点不利",
+          "mode": "narrative",
+          "interpretationReview": "pending-nine-check-review",
+          "timingPolicy": "no-completion-date",
+          "sourceIds": [
+            "mh-080",
+            "mh-122"
+          ],
+          "sourceApplication": "editorial-specific-question;not-a-new-classical-rule",
+          "ruleReview": "domain-rule-with-specific-event-review",
+          "contentStatus": "full-story-pending"
+        }
+      ]
+    }
+  ]
+}

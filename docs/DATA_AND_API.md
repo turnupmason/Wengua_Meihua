@@ -1,4 +1,40 @@
+当前基础覆盖：1,920份全文、4,608个月令键、384种卦爻组合，见[完整目录](INTERVIEW_PASS_ALL_BASES.md)与[接入V9](CLAUDE_BUILD_PROMPT_V9.md)。原60份稿保留；新增稿为逐爻解释与明确判据的预编译成文，人工全文复核与独立审核范围另有标记。JSON按卦惰性加载，实际日期与月令仍从本次资料计算。
+
+SQL注意：data/authored-readings.sql只保留结构；完整数据由npm run build:interview生成到dist/authored-readings.sql，再随npm run build:sqlite导入。以下关于60行、144键等为历史首组说明，不代表当前计数。
+
+当前界面分别读取short自然简断、narrativeParagraphs四段、timingSection独立应期和calculationExplanation计算说明。后两者使用本次起卦日和真实monthBranch；不能将facts.referenceContext演示资料显示为当下信息。旧气类输入没有具体月令时，branch=null并明确提示。详见[实时上下文与简断](LIVE_CONTEXT_AND_SHORT_READINGS.md)。
+
+当前稿版本interview-pass-2.0.0。新增calculationExplanation用于单独折叠的计算说明，半空不在short、story或paragraphs中。dateResolution.dateMatches逐窗口保留事件、吉凶、作用范围、目标地支、取期来源及具体日期；独立应期断法审核状态为pending。见[本轮复核](INTERVIEW_REVIEW_20261111.md)。
+
+当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
+
+最新产品API：createProductRepository({library})。data/product-categories.json包含6大类52细分82单事项；用listSubcategories、listQuestions及getContent({questionId,context,...})接入。categoryId与古籍domainId分开。健康返回reference，现实线索返回guidance，缺辅助字段返回requires-context；其余精确连接继续遵守待写与审核状态。见 docs/CLAUDE_BUILD_PROMPT_V7.md。
+
+当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
+
 # 数据与 API
+
+## 固定事项入口
+
+正式占问采用领域与具体事项两级选择，每领域5项、共90项；不提供自由问句或AI分类。清单与回答范围见 [QUESTION_CHOICES.md](QUESTION_CHOICES.md)。
+
+```js
+import {loadLibrary,createQuestionRepository} from '../src/index.js';
+const library=await loadLibrary();
+const questions=createQuestionRepository({library});
+const items=await questions.listQuestions('domain-10'); // 恰好五项
+const result=await questions.getContent({
+ questionId:'domain-10-receivable',primaryId:48,movingLine:5,
+ monthOrder:'winter-water',castingDate:'2026-11-12',timingScale:'day',
+ timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}
+});
+// status='ready'，日期不早于起卦日，正文中的日期标记已全部替换。
+// 这是明确指定盘、日期和取期法的演示输入，不冒充同一时间算法复现的真实起卦。
+```
+
+领域从固定ID确定；传入不匹配的领域、未知ID或自由文本会报错。完整稿要求事项、盘、月令与起卦上下文精确一致；`authored-base`仍须经过日期校核，不能立即当作已渲染的最终故事。`reference`返回已经写好的古籍说明。实际完整稿覆盖记录在 `data/question-stories/index.json`。
+
+第1批采用段落字典压缩：一篇文章的段落内容、顺序、总断及日期插入句都已在构建时决定，客户端只按保存的索引还原全文。`getVoidProfileKey`按五个独立角色的实际空亡状态精确选稿；相同图形不意味着可以忽略真空或静空。未给日干支时，`castingDate`可自动提供日基准；已给且不一致则报错。日期取法未记录时不偷偷假定先天法，返回 `authored-base`。
 
 ## 稳定的标识与编号
 

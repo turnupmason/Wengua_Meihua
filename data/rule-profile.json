@@ -1,6 +1,6 @@
 {
   "id": "user-classical-plus-void",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "contentVersion": "2026.11.10.2",
   "purpose": "Inspectable policy metadata; implemented by src/index.js, not a numeric scoring model",
   "authorityOrder": [
@@ -86,7 +86,13 @@
       ],
       "requires": "moving or strong or supported false-void evidence; static void alone does not qualify"
     },
-    "dateGeneration": "calendar provider required; no implicit Gregorian dates"
+    "dateGeneration": "calendar provider required; no implicit Gregorian dates",
+    "derivedSupport": {
+      "month": "明确月令五行生该卦",
+      "day": "仅day-explicit-input基准下，日支五行生或比扶该卦",
+      "evidenceField": "reading.nodes[].supportEvidence",
+      "doesNotInferSevereWeakness": true
+    }
   },
   "sourceChecks": [
     {
@@ -155,5 +161,19 @@
     "notApplicable": {
       "domain-01": "天时占不分体用"
     }
+  },
+  "narratives": {
+    "version": "1.0.0",
+    "count": 1920,
+    "axes": [
+      "primary64",
+      "movingLine6",
+      "five-month-qi-orders"
+    ],
+    "mutualPolicy": "inner-lines",
+    "scope": "editorial prospective symbolic stories;no invented reported outcomes",
+    "index": "data/stories/index.json",
+    "timing": "branch candidates plus explicit object/direction/hour/motion numerical rule;no guessed Gregorian date",
+    "caseData": "data/classical-cases.json"
   }
 }
