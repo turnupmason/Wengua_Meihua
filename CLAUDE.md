@@ -1,6 +1,6 @@
 当前任务完成范围：career.interview.interview-pass基础库，64卦×6动爻×12月令＝4,608槽位，实际正文1,920份；全部目录docs/INTERVIEW_PASS_ALL_BASES.md，覆盖与作者方式见data/authored-readings/interview-pass/index.json。拿到最终录用是另一问，未由本库覆盖。核心空亡改变判断的版本仍另匹配。
 
-原60份逐篇稿保留；新增1,860份由sources/editorial/interview-lines中384条单独撰写的动爻解释、五态事实和interview-base-authoring.mjs的明确判据离线编译成全文。authorship.manualWholeArticleReview:false表示新增稿未逐篇人工通读，不得把自动结构/规则检查说成独立专业验收。独立审核仍pending。客户端不编句、不让AI临时补写，直接读已存字段。
+保留原60份逐篇稿。原离线编译的1,860份正在逐篇重写，进度和下一篇精确键见data/authored-readings/progress.json。重写作者源位于sources/editorial/interview-rewrites/，构建时按盘、爻、月令气类优先读取。乾为天首批30篇的作者全文复核见docs/INTERVIEW_REWRITE_001.md，稿件版本interview-pass-2.1.0。未重写稿的authorship.manualWholeArticleReview仍为false。独立专业审核仍为pending。客户端直接读已存字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。
 

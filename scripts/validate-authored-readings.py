@@ -6,7 +6,7 @@ index=load('data/authored-readings/interview-pass/index.json');progress=load('da
 db=sqlite3.connect(':memory:')
 for p in ['data/knowledge.sql','data/question-items.sql','data/product-categories.sql','dist/authored-readings.sql']:db.executescript((root/p).read_text())
 assert not db.execute('PRAGMA foreign_key_check').fetchall()
-count=0;slots=0;per_chart={};texts=set()
+count=0;slots=0;per_chart={};texts=set();rewritten=0;rewritten_slots=0
 for f in index['files']:
  batch=load(f['path'])
  assert batch['primaryId']==f['primaryId']
@@ -16,7 +16,14 @@ for f in index['files']:
   assert row['review']['status']=='author-checked' and len(row['review']['checks'])==9
   assert all(c['status']=='pass' and c['evidence'] for c in row['review']['checks'].values())
   assert row['copy']['short']['decisionId']==row['copy']['long']['decisionId']==row['decision']['id']
-  assert row['timingSlots'] and all(s['event'] and s['valence'] in ['吉','凶'] and s['sourceIds'] and s['branches'] for s in row['timingSlots'])
+  assert bool(row['timingSlots']) != bool(row.get('timingOmission'))
+  assert all(s['event'] and s['valence'] in ['吉','凶'] and s['sourceIds'] and s['branches'] for s in row['timingSlots'])
+  if row.get('timingOmission'):
+   assert row['timingOmission']['status']=='not-derived' and row['timingOmission']['reason'] and row['timingOmission']['sourceIds']
+  if row['authorship']['method']=='individually-rewritten-and-reviewed':
+   assert row['authorship']['manualWholeArticleReview'] and row['authorship']['version']==row['review']['version']
+   assert row['decision']['sourceEvidence']
+   rewritten+=1;rewritten_slots+=len(row['monthBranches'])
   assert row['copyChecks']['shortSeparation']['status']=='passed'
   assert not any(w in row['copy']['short']['text'] for w in ['应期','窗口','吉应','凶应','计算说明','干支'])
   assert not row['voidTimingSlots']
@@ -37,4 +44,8 @@ assert slots==index['baseCaseCount']==progress['baseCasesWritten']==4608
 assert len(texts)==1920 and len(per_chart)==384 and all(len(v)==12 for v in per_chart.values())
 assert index['totalBaseCases']==progress['totalBaseCases']==4608 and progress['remainingBaseSlots']==0
 assert progress['activeQuestionId']=='career.interview.interview-pass'
+assert index['authorship']==progress['authorship']
+assert rewritten==index['authorship']['rewrittenAndWholeArticleReviewed']==index['authorship']['individuallyRewritten']
+assert rewritten_slots==index['authorship']['rewrittenMonthSlots']
+assert rewritten+index['authorship']['retainedIndividuallyAuthored']+index['authorship']['remainingRuleCompiled']==count
 print('Authored gate: 1920 complete copies, 4608 month slots, all 384 charts and 12 months per chart, event/valence timing, 9 checks, SQL references and truthful progress passed.')

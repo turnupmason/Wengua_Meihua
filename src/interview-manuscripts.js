@@ -10,7 +10,9 @@ import {checkInterviewDecision,checkInterviewShort} from './interview-decision-c
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
+const NO_WINDOW_NOTE='此盘暂无有据的日期可列。';
 const GENERATES={木:'火',火:'土',土:'金',金:'水',水:'木'};
+const relationLabels={equal:'与体比和',body_controls_use:'受体所克',use_controls_body:'克体',use_generates_body:'生体',body_generates_use:'受体所生'};
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 
 /** Full five-state qi also governs the extension's strong/weak exemptions. */
@@ -77,6 +79,7 @@ export function interviewTimingSlots(reading,specs){
   const eventScope=s.eventScope||(s.id==='obstruction'?'process-obstruction':s.id==='repair'?'process-repair':s.kind==='support'?'positive-result-candidate':'obstruction-or-adverse-result');
   const calculationBasis={role:s.role,trigram:node.trigram,element:node.element,directRelation:bodyPeriod?'equal':edge.type,
    method:'pre-heaven-element-qi',scale:'day',ruleIds:[...s.ruleIds],sourceIds:[...s.sourceIds],
+   ...(s.reason?{reason:s.reason,stage:s.stage,selectionOrder:['casting-month-remaining-days','next-month-if-no-match']}:{}),
    interpretationReview:'author-source-checked',independentInterpretationReview:'pending'};
   return {...s,eventScope,calculationBasis,token:`{{date:${s.id}}}`,branches:[...ELEMENT_DAY_BRANCHES[node.element]],displayLimit:2,
    method:'element-qi',scale:'day',emptyText:'本次可显示范围内暂无相应候选日期。'};
@@ -119,37 +122,56 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
   const actualSlots=interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
+  const hasTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
   const missingTiming=[];
-  if(options.timingScale!=='day')missingTiming.push('timingScale');
-  if(options.timingContext?.castingMethod!=='pre-heaven'||options.timingContext?.periodMethod!=='element-qi')missingTiming.push('timingMethod');
+  if(hasTiming&&options.timingScale!=='day')missingTiming.push('timingScale');
+  if(hasTiming&&(options.timingContext?.castingMethod!=='pre-heaven'||options.timingContext?.periodMethod!=='element-qi'))missingTiming.push('timingMethod');
   if(missingTiming.length)return {status:'requires-context',missingContext:missingTiming,reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+REFERENCE_WINDOW_NOTE+'\n'+row.timingSlots.map(s=>s.token).join(' '),'总断：'+c.summary];
+  const timingNote=hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE;
+  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+timingNote+(hasTiming?'\n'+row.timingSlots.map(s=>s.token).join(' '):''),'总断：'+c.summary];
   const allSlots=[...row.timingSlots,...row.voidTimingSlots];
-  const dates=resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
+  const dates=hasTiming?resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext}):
+   {status:'resolved',paragraphs,dateMatches:[],castingDate:reading.castingDate,dayGanzhi:reading.dayGanzhi};
   if(dates.status!=='resolved')throw new Error('Complete interview context failed to resolve dates');
   const dateResolution={...dates,interpretationReviewed:false,independentInterpretationReview:'pending',dateMatches:dates.dateMatches.map(d=>{
    const slot=allSlots.find(s=>s.id===d.slotId);
    const rendered=resolveManuscriptDates({paragraphs:[slot.token],dateSlots:[slot],reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
    return {...d,text:rendered.paragraphs[0],eventScope:slot.eventScope,targetBranches:[...slot.branches],calculationBasis:slot.calculationBasis};
   })};
-  const timingSection={title:'应期参考',referenceNote:REFERENCE_WINDOW_NOTE,castingDate:reading.castingDate,
+  const timingSection={title:'应期参考',referenceNote:timingNote,castingDate:reading.castingDate,
    windows:dateResolution.dateMatches};
   const narrativeParagraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'总断：'+c.summary];
-  const labels={body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用'};
+  const labels={body:'原体',use:'本用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用',body_inherited:'变卦沿用原体'};
+  const detailLines=row.decision.sourceEvidence?[
+   `本互变：${Object.values(reading.stages).map(stage=>stage.name).join(' → ')}，本卦${reading.selectedMovingLine.label}动。`,
+   reading.nodes.map(n=>`${labels[n.role]}${n.trigram}${n.element}${n.strength.state}`).join('，')+'。',
+   reading.edges.map(e=>labels[e.targetRole]+relationLabels[e.type]).join('，')+'。',
+   ...reading.nodes.filter(n=>n.role!=='body_inherited'&&n.void.hit).map(n=>
+    `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
+   ...row.counterevidence.map(c=>c.resolution),
+   `判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
+  ]:[];
   const calculationExplanation={
    month:{branch:reading.monthBranch,input:reading.monthBranch?'explicit-branch':'qi-category-only',qiCategory:reading.monthOrder,states:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state}))},
    void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
     nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]},
-   timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches},
+   timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(row.timingOmission?{omission:row.timingOmission}:{})},
    paragraphs:[reading.monthBranch?`月令：${reading.monthBranch}月。旺衰与旬空分别计算。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}；具体月令未提供。旺衰与旬空分别计算。`,`起卦日：${reading.castingDate}，${reading.dayGanzhi}日；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
+    ...detailLines,
     ...(exactProfile?row.coreVoidNotes:[]),
     `空亡依据：八卦配支补充法，版本${VOID_RULESET.id}。`,
-    ...dateResolution.dateMatches.map(d=>`${d.valence}应 · ${d.event}：取${labels[d.calculationBasis.role]||d.calculationBasis.role}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}。`)]};
+    ...(row.timingOmission?[row.timingOmission.reason]:[]),
+    ...dateResolution.dateMatches.map(d=>{
+     const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
+     const role=d.calculationBasis.role;
+     const label=(!row.decision.sourceEvidence&&{body:'体',use:'用'}[role])||labels[role]||role;
+     return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。`;
+    })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
-   review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,productionAllowed:true,predictionAllowed:true,
+   review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:row.review.version,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});
  }
  return Object.freeze({getContent,clearCache:()=>cache.clear()});

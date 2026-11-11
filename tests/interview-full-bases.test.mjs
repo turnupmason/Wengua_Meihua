@@ -38,7 +38,15 @@ test('every full-base record independently binds canonical geometry, all five-st
   const material=structuredClone(row);delete material.artifactDigest;assert.equal(await interpretationArtifactDigest(material),row.artifactDigest);
   assert.equal(row.copy.short.decisionId,row.copy.long.decisionId);assert.equal(row.review.independentReview.status,'pending');
   checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence});
-  if(row.baseNoVoid){assert.equal(row.voidProfileKey,'base-no-void');assert.equal(row.authorship.manualWholeArticleReview,false);assert.ok(row.lineApplication.sourcePath);}
+  if(row.baseNoVoid){
+   assert.equal(row.voidProfileKey,'base-no-void');assert.ok(row.lineApplication.sourcePath);
+   const rewritten=row.authorship.method==='individually-rewritten-and-reviewed';
+   assert.equal(row.authorship.manualWholeArticleReview,rewritten);
+   if(rewritten){
+    assert.equal(row.authorship.version,row.review.version);
+    for(const source of row.decision.sourceEvidence)assert.ok(library.getSection(source.id).text.includes(source.quote));
+   }
+  }
  }
 });
 
@@ -53,6 +61,31 @@ test('all stored timing forms have sourced events and convert a future casting d
   for(const slot of slots)if(slot.kind==='body-period')assert.ok(!reading.edges.some(e=>e.type==='use_controls_body'));
  }
  assert.ok(kinds.has('body-period'));assert.ok(kinds.has('drain'));assert.ok(kinds.has('support'));assert.ok(kinds.has('control'));
+});
+
+test('authored Qian rewrites return a dated stage event only where supported',async()=>{
+ const options={questionId:question.id,primaryId:1,castingDate:'2026-11-11'};
+ const result=await product.getContent({...options,movingLine:1,monthBranch:'卯'});
+ assert.equal(result.status,'ready');
+ assert.equal(result.manuscriptVersion,'interview-pass-2.1.0');
+ assert.equal(result.monthBranch,'卯');
+ assert.equal(result.timingSection.windows.length,0);
+ assert.ok(result.calculationExplanation.timing.omission.reason);
+ assert.ok(result.review.compilation.manualWholeArticleReview);
+
+ const held=await product.getContent({...cast,...options,movingLine:3,monthBranch:'子'});
+ assert.equal(held.status,'ready');
+ assert.equal(held.decision.outcomeCode,'pass-with-conditions');
+ assert.equal(held.timingSection.windows[0].eventScope,'positive-result-candidate');
+ assert.deepEqual(held.timingSection.windows[0].targetBranches,['申','酉']);
+ assert.deepEqual(held.timingSection.windows[0].displayedDates,['2026-11-18','2026-11-19']);
+
+ const pressure=await product.getContent({...cast,...options,castingDate:'2026-11-21',movingLine:2,monthBranch:'酉'});
+ assert.equal(pressure.status,'ready');
+ assert.equal(pressure.decision.outcomeCode,'pass-with-conditions');
+ assert.equal(pressure.timingSection.windows[0].eventScope,'closing-obstruction');
+ assert.equal(pressure.timingSection.windows[0].valence,'凶');
+ assert.deepEqual(pressure.timingSection.windows[0].targetBranches,['巳','午']);
 });
 
 test('different seasonal strength can change a verdict without ignoring weak end control or confusing mixed line clauses',()=>{
