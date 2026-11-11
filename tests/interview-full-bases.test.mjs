@@ -88,6 +88,28 @@ test('authored Qian rewrites return a dated stage event only where supported',as
  assert.deepEqual(pressure.timingSection.windows[0].targetBranches,['巳','午']);
 });
 
+test('authored Tun separates opening support, process obstruction, and closing confirmation',async()=>{
+ const input={...cast,castingDate:'2026-12-21',questionId:question.id,primaryId:3};
+ const early=await product.getContent({...input,movingLine:5,monthBranch:'午'});
+ assert.equal(early.status,'ready');
+ assert.equal(early.decision.outcomeCode,'not-pass-this-round');
+ assert.equal(early.timingSection.windows[0].eventScope,'process-repair');
+ assert.equal(early.timingSection.windows[0].calculationBasis.stage,'opening');
+ assert.deepEqual(early.timingSection.windows[0].targetBranches,['亥','子']);
+
+ const mid=await product.getContent({...input,movingLine:3,monthBranch:'卯'});
+ assert.equal(mid.status,'ready');
+ assert.equal(mid.timingSection.windows[0].eventScope,'process-obstruction');
+ assert.equal(mid.timingSection.windows[0].calculationBasis.role,'body_mutual');
+ assert.equal(mid.timingSection.windows[0].calculationBasis.stage,'process');
+
+ const late=await product.getContent({...input,movingLine:4,monthBranch:'子'});
+ assert.equal(late.status,'ready');
+ assert.equal(late.decision.outcomeCode,'pass-with-conditions');
+ assert.equal(late.timingSection.windows[0].eventScope,'closing-obstruction');
+ assert.equal(late.timingSection.windows[0].calculationBasis.stage,'closing');
+});
+
 test('different seasonal strength can change a verdict without ignoring weak end control or confusing mixed line clauses',()=>{
  const r=monthOrder=>createBaseInterviewReading({library,question,...cast,primaryId:1,movingLine:5,monthOrder});
  assert.match(decideBaseInterview(r('autumn-metal'),ledger.get('1/5')).outcome,/^pass/);

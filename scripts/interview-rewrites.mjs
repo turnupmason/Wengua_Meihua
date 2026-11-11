@@ -34,7 +34,7 @@ export async function loadInterviewRewrites() {
           !['not-pass-this-round', 'pass-with-conditions'].includes(row.outcome) ||
           prose.some(p => typeof p !== 'string' || !p.trim() || p.includes('*')) || !row.counterevidence ||
           (row.timing ? !row.timing.reason || !row.timing.event || !row.timing.suffix ||
-            !['control', 'body-period'].includes(row.timing.kind) || row.timingOmission : !row.timingOmission)) {
+            !['control', 'support', 'body-period'].includes(row.timing.kind) || row.timingOmission : !row.timingOmission)) {
         throw new Error(`Invalid or duplicate interview rewrite: ${key}`);
       }
       rewrites.set(key, {...row, primaryId, lineApplication, sourcePath: `${sourceDirectory}${filename}`});
@@ -66,6 +66,9 @@ export function bindInterviewRewrite(library, reading, draft) {
   if (end === 'use_controls_body') {
     uses.push(excerpt('mh-117', '变卦克体，事于末后，必有不吉。', '收尾确有牵制。结合原体承接和前中段支持，分别判定对本轮结果的影响。'));
   }
+  if (end === 'use_generates_body') {
+    uses.push(excerpt('mh-117', '变生体及比和，则事事临终有吉利。', '末后直接生体，可支持转机。实际能否改变结果依生体旺衰与前中段条件。'));
+  }
   const timing = draft.timing ? [bindTiming(draft.timing, excerpt, uses)] : [];
   const timingOmission = draft.timingOmission ? {
     status: 'not-derived',
@@ -96,20 +99,22 @@ export function bindInterviewRewrite(library, reading, draft) {
 
 function bindTiming(spec, excerpt, uses) {
   const control = spec.kind === 'control';
+  const support = spec.kind === 'support';
+  const stage = {use: 'opening', body_mutual: 'process', use_mutual: 'process'}[spec.role] || 'closing';
   const basis = control
     ? excerpt('mh-116', '有克体之卦，则事败于克体卦气之日。', spec.reason)
-    : excerpt('mh-071', '止看卦体时序之类，以定日期。', spec.reason);
+    : excerpt('mh-071', support ? '欲知名成之日，生体之卦气详之。' : '止看卦体时序之类，以定日期。', spec.reason);
   const method = excerpt('mh-058', '又先天之卦，定事应之期，则取之卦气', '只在先天卦气取期的实际上下文中匹配日支。');
   const scale = excerpt('mh-122', '应之期远，则以年，近则以月，又近则以日也。', '限近期单轮面试，实际调用须具备先天卦气法、日级和当地起卦日期。');
   const branches = excerpt('mh-143', '本日所属卦气如寅卯木、巳午火、申酉金、亥子水、辰戌丑未土也。', '用所选经卦的五行匹配实际干支日支。');
   uses.push(basis, method, scale, branches);
   return {
     ...spec,
-    id: control ? 'closing-obstruction' : 'interview-result',
+    id: control ? `${stage}-obstruction` : support ? `${stage}-support` : 'interview-result',
     valence: control ? '凶' : '吉',
-    stage: 'closing',
+    stage,
     prefix: '可留意',
     sourceIds: [basis.id, method.id, scale.id, branches.id],
-    ruleIds: [control ? 'adverse-event' : 'fame-body-fallback'],
+    ruleIds: [control ? 'adverse-event' : support ? 'fame-good-event' : 'fame-body-fallback'],
   };
 }
