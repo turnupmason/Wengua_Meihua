@@ -5,7 +5,7 @@ import {inspectMovingLine,validateStoryCopy} from '../src/story-editorial.js';
 import {createInterviewReading,interviewTimingSlots,createInterviewManuscriptRepository,INTERVIEW_MANUSCRIPT_VERSION,INTERVIEW_QUESTION_ID} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS,MONTH_SLOT_POLICY} from '../src/month-slots.js';
 import {VOID_RULESET} from '../src/void-policy.js';
-import {checkInterviewDecision,INTERVIEW_DECISION_POLICY_VERSION} from '../src/interview-decision-checks.js';
+import {checkInterviewDecision,checkInterviewShort,INTERVIEW_DECISION_POLICY_VERSION} from '../src/interview-decision-checks.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 import {INTERVIEW_PASS_BATCH_001} from '../sources/editorial/interview-pass-batch-001.mjs';
 import {INTERVIEW_PASS_OTHER_MONTHS} from '../sources/editorial/interview-pass-all-months.mjs';
@@ -22,7 +22,7 @@ for(const [index,a] of authored.entries()){
  const facts={stages:Object.values(reading.stages).map(s=>({id:s.id,name:s.name,baseGrade:s.baseGrade})),
   nodes:reading.nodes.map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state,void:n.void,supportEvidence:n.supportEvidence})),
   directRelations:reading.edges.map(e=>({role:e.targetRole,type:e.type})),movingLine:{...inspectMovingLine(reading.selectedMovingLine.text),label:reading.selectedMovingLine.label,sourceRef:reading.selectedMovingLine.sourceRef},
-  referenceContext:{castingDate:'2026-11-11',dayGanzhi:reading.dayGanzhi,monthOrder:a.monthOrder,monthBranches,purpose:'explicit-qi-comparison-and-date-render-test;not-real-simultaneous-seasonal-casts'}};
+  referenceContext:{displayInUserResult:false,castingDate:'2026-11-11',dayGanzhi:reading.dayGanzhi,monthOrder:a.monthOrder,monthBranches,purpose:'explicit-qi-comparison-and-date-render-test;not-real-simultaneous-seasonal-casts'}};
  const decisionId=`${question.id}/${a.primaryId}/${a.movingLine}/${a.monthOrder}/${a.outcome}`;
  const decision={id:decisionId,outcomeCode:a.outcome,question_type:question.question_type,questionScope:'one-interview-stage',
   method:'project-application-of-fame-chapter;not-a-verbatim-classical-interview-rule',sourceIds,
@@ -30,7 +30,7 @@ for(const [index,a] of authored.entries()){
   consistency:checkInterviewDecision(reading,a),
   indirectEffectsApplied:[],interpretationProvenance:'assistant-authored;not-observed-feedback;not-scientifically-verified-prediction'};
  const copy={title:a.title,short:{decisionId,text:a.short},long:{decisionId,opening:a.opening,process:a.process,ending:a.ending,summary:a.summary}};
- const checks=validateStoryCopy({decision,copy,lineApplication:a.lineApplication,counterevidence:a.counterevidence});
+ const checks={...validateStoryCopy({decision,copy,lineApplication:a.lineApplication,counterevidence:a.counterevidence}),shortSeparation:checkInterviewShort(copy.short.text)};
  if([copy.short.text,...Object.values(copy.long)].some(s=>/逢空|午空|空亡|动空|未支|申支/.test(s)))throw new Error('Base prose still contains a fixed void profile: '+decisionId);
  const timingSlots=interviewTimingSlots(reading,a.timing);
  const coreVoidNotes=reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)&&n.void.hit).map(n=>{
@@ -83,7 +83,7 @@ await writeFile(new URL('data/authored-readings/progress.json',root),JSON.string
  fullTwelveMonthCharts:12,remainingBaseSlots:4608-monthSlotCount,backgroundExecution:false,files,
  nextWork:'Continue missing core charts in twelve-month order; core-changing void cases separately authored.'},null,2)+'\n');
 const runtime=createInterviewManuscriptRepository({library,readJSON:async p=>JSON.parse(await readFile(new URL(p,root),'utf8'))});
-const intro='本问按64卦×6动爻×12月令，共4,608个基础槽位。当前12种基础盘已接齐十二个月令，共144个槽位，完整正文60篇；同旺衰、同结论的月份明确共用全文，未作逐月差异的虚构。辰未戌丑按本项目四季土月口径，未自动推算每季末十八日。\n\n正文事先写定；日期以保存的起卦日换算。下列统一以2026-11-11演示日序，月令为显式比较维度，不把这一天声称为不同的实际节令。无关静空不单独写情节或应期，核心空情境另行匹配。\n\n';
+const intro='本问按64卦×6动爻×12月令，共4,608个基础槽位。当前12种基础盘已接齐十二个月令，共144个槽位，完整正文60篇；同旺衰、同结论的月份明确共用全文，未作逐月差异的虚构。辰未戌丑按本项目四季土月口径，未自动推算每季末十八日。\n\n正文事先写定；日期以保存的起卦日换算。下列统一以2026-11-11演示日序，计算说明中的月令只作各组对照代表，实际软件显示传入的月令，不套用代表月份；本日干支、旬空和日期均从实际起卦日重算。月令为显式比较维度，不把这一天声称为不同的实际节令。无关静空不单独写情节或应期，核心空情境另行匹配。\n\n';
 let all='# 求职面试：十二月令首组完整稿\n\n'+intro,winter='# 求职面试：冬令首批（已更新空亡处理与十二月令口径）\n\n'+intro;
 for(const original of INTERVIEW_PASS_BATCH_001){
  all+=`## ${original.primaryId}卦 · ${original.movingLine}爻动\n\n`;
@@ -91,7 +91,9 @@ for(const original of INTERVIEW_PASS_BATCH_001){
   const r=rows.find(r=>r.primaryId===original.primaryId&&r.movingLine===original.movingLine&&r.monthOrder===monthOrder);
   const rendered=await runtime.getContent(question,{questionId:question.id,primaryId:r.primaryId,movingLine:r.movingLine,monthBranch:r.monthBranches[0],castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}});
   if(rendered.status!=='ready')throw new Error('Authored case does not render: '+r.decision.id);
-  const text=`### ${r.monthBranches.map(b=>b+'月').join('、')}：${r.copy.title}\n\n${r.facts.stages.map(s=>s.name).join(' → ')}，${r.facts.movingLine.label}动。\n\n简断\n\n${rendered.short}\n\n详断\n\n${rendered.paragraphs.join('\n\n')}\n\n依据：《梅花易数·求名占》《衰旺论》《占卦诀》《体用互变之诀》《日应》。\n\n动爻完整原文：${r.movingLineText}\n\n<details>\n<summary>计算说明</summary>\n\n${rendered.calculationExplanation.paragraphs.join('\n\n')}\n\n</details>\n\n`;
+  const comparedExplanation=rendered.calculationExplanation.paragraphs.map((p,i)=>i===0?`对照示例月令：${r.monthBranches[0]}月。本组正文适用于${r.monthBranches.map(b=>b+'月').join('、')}；实际调用显示本盘月令。`:p);
+  const prose=rendered.paragraphs.map(p=>p.startsWith('应期：')?`应期：${rendered.timingSection.referenceNote}\n\n${rendered.timingSection.windows.map(w=>w.text).join('\n\n')}`:p);
+  const text=`### ${r.monthBranches.map(b=>b+'月').join('、')}：${r.copy.title}\n\n${r.facts.stages.map(s=>s.name).join(' → ')}，${r.facts.movingLine.label}动。\n\n简断\n\n${rendered.short}\n\n详断\n\n${prose.join('\n\n')}\n\n依据：《梅花易数·求名占》《衰旺论》《占卦诀》《体用互变之诀》《日应》。\n\n动爻完整原文：${r.movingLineText}\n\n<details>\n<summary>计算说明</summary>\n\n${comparedExplanation.join('\n\n')}\n\n</details>\n\n`;
   all+=text;if(monthOrder==='winter-water')winter+=text;
  }
 }

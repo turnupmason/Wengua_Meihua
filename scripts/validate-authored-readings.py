@@ -17,6 +17,8 @@ for f in index['files']:
   assert all(c['status']=='pass' and c['evidence'] for c in row['review']['checks'].values())
   assert row['copy']['short']['decisionId']==row['copy']['long']['decisionId']==row['decision']['id']
   assert row['timingSlots'] and all(s['event'] and s['valence'] in ['吉','凶'] and s['sourceIds'] and s['branches'] for s in row['timingSlots'])
+  assert row['copyChecks']['shortSeparation']['status']=='passed'
+  assert not any(w in row['copy']['short']['text'] for w in ['应期','窗口','吉应','凶应','计算说明','干支'])
   assert not row['voidTimingSlots']
   assert row['ruleVersions']['void']=='trigram-void-2.1.0'
   assert row['review']['independentReview']['timingInterpretation']=='pending'

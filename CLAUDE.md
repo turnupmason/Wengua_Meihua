@@ -1,8 +1,14 @@
 # Claude repository instructions
 
+本轮显示规则见docs/LIVE_CONTEXT_AND_SHORT_READINGS.md。60篇简断只写自然解释，不出现应期、窗口、吉应凶应或计算提示；构建和读取都以checkInterviewShort拦截。当前正文版本interview-pass-1.3.0。
+
+实际界面读short、narrativeParagraphs、timingSection及calculationExplanation。应期单独显示timingSection，附“传统推算的参考窗口”，每窗仍保留自己的事件、吉凶和日期。paragraphs/story保留完整格式供导出或兼容，采用独立应期栏后不要再把完整paragraphs中的应期重复显示。
+
+monthBranch是实际月令。只传旧monthOrder气类时monthBranch为null，显示“具体月令未提供”，不得把查稿代表月当作实际月令。静态facts.referenceContext只用于对照，displayInUserResult:false；用户显示只读实时calculationExplanation与timingSection，不复制2026-11-11演示日、演示干支或旬空。保存历史时日期基准固定为原起卦日，不因查看日而滚动。
+
 本轮复核见docs/INTERVIEW_REVIEW_20261111.md。山雷颐六二、山风蛊九三的夏令与土令共4份稿已由倾向通过改为难以通过。checkInterviewDecision拦截本用克体、无直接生体且仅凭旺体或互卦比和翻吉的稿件；该检查属于本项目面试问项的来源一致性门槛，不是跨领域通用预测公式。
 
-当前稿版本interview-pass-1.2.0。半空等专业信息只在calculationExplanation里，短断与story/paragraphs不混入。页面将“计算说明”单独折叠；空亡规则独立版本trigram-void-2.1.0，不能说成古籍统一计分。
+当前稿版本interview-pass-1.3.0。半空等专业信息只在calculationExplanation里，短断与story/paragraphs不混入。页面将“计算说明”单独折叠；空亡规则独立版本trigram-void-2.1.0，不能说成古籍统一计分。
 
 每条日期窗口的dateResolution.dateMatches分别保存slotId、event、valence、eventScope、targetBranches、calculationBasis与实际公历日期；不把过程凶应和最终有利候选合并。日期动态换算，不存死日号。review.independentReview及dateResolution.independentInterpretationReview均保留pending，userAcceptedThisVersion:false；代码检查与作者复核不冒充用户或独立断法审核。
 

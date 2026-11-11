@@ -1,4 +1,6 @@
-当前稿版本interview-pass-1.2.0。新增calculationExplanation用于单独折叠的计算说明，半空不在short、story或paragraphs中。dateResolution.dateMatches逐窗口保留事件、吉凶、作用范围、目标地支、取期来源及具体日期；独立应期断法审核状态为pending。见[本轮复核](INTERVIEW_REVIEW_20261111.md)。
+当前界面分别读取short自然简断、narrativeParagraphs四段、timingSection独立应期和calculationExplanation计算说明。后两者使用本次起卦日和真实monthBranch；不能将facts.referenceContext演示资料显示为当下信息。旧气类输入没有具体月令时，branch=null并明确提示。详见[实时上下文与简断](LIVE_CONTEXT_AND_SHORT_READINGS.md)。
+
+当前稿版本interview-pass-1.3.0。新增calculationExplanation用于单独折叠的计算说明，半空不在short、story或paragraphs中。dateResolution.dateMatches逐窗口保留事件、吉凶、作用范围、目标地支、取期来源及具体日期；独立应期断法审核状态为pending。见[本轮复核](INTERVIEW_REVIEW_20261111.md)。
 
 当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
 

@@ -1,4 +1,9 @@
 export const INTERVIEW_DECISION_POLICY_VERSION='interview-evidence-1.0.0';
+export function checkInterviewShort(text){
+ if(typeof text!=='string'||!text.trim()||/应期|吉应|凶应|窗口|候选日期|起卦|换算|计算说明|计算依据|卦气|月令|旬空|半空|干支/.test(text))
+  throw new Error('Interview short reading must use natural prose; timing and calculation belong in separate fields.');
+ return {status:'passed',scope:'no-timing-or-calculation-directions-in-short-prose'};
+}
 // A consistency gate for this project's application of 求名占 to one interview stage.
 // It rejects unsupported favourable reversals; it is not a universal outcome calculator.
 export function checkInterviewDecision(reading,authored){

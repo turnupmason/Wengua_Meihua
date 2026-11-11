@@ -2,6 +2,8 @@
 
 当前首问“这次面试能通过吗”已写60篇完整正文，覆盖12种基础盘的全部十二月令，共144/4,608个基础槽位。[阅读全部新稿](docs/INTERVIEW_PASS_ALL_MONTHS.md)。JSON按卦分片，月令索引指向全文，日期运行时换算；[最新接入说明 V8](docs/CLAUDE_BUILD_PROMPT_V8.md)。
 
+显示已分为自然简断、独立应期参考和折叠计算说明；实际月令、干支、旬空及日期使用本次资料。[接入约定](docs/LIVE_CONTEXT_AND_SHORT_READINGS.md)。
+
 本轮已修正颐六二、蛊九三夏令与土令的4份翻吉稿，专业空亡说明单独折叠，日期窗口分别记录事件与依据。[复核记录](docs/INTERVIEW_REVIEW_20261111.md)。技术检查通过与独立断法审核分别记录。
 
 正式产品采用 [6大类、52细分、82单事项](docs/PRODUCT_CATEGORIES_V1.md)，页面与 createProductRepository 已接通。十篇V3内容与文风已获用户通过，验收绑定原稿；健康仅传统象意查阅，失物、宠物、失联人员分别处理。

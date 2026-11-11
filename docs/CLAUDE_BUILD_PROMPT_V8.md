@@ -1,4 +1,8 @@
-本轮修订：interview-pass-1.2.0，详见INTERVIEW_REVIEW_20261111.md。颐六二与蛊九三的夏、土月共4份结论已修正。不得把体旺、互卦比和独立当作推翻用克体且无生体的通过依据。
+当前显示规则：简断只讲事情，不出现应期或计算提示。应期由timingSection单独展示，显示referenceNote及每个windows条目的event、valence、text，日期已经按本次起卦日填好。详断使用narrativeParagraphs四段，计算说明继续折叠。paragraphs/story为保留应期的完整导出格式，勿与独立日期栏重复呈现。
+
+实际月令显示输入的monthBranch，包括共用全文的卯月等；只有五类气时显示具体月令未提供，不能替换成代表月份。不得把JSON中的facts.referenceContext当作用户当下资料，displayInUserResult:false。2027、2028年等真实起卦的日干支、旬空、日期由程序重算；具体接入见LIVE_CONTEXT_AND_SHORT_READINGS.md。
+
+本轮修订：interview-pass-1.3.0，详见INTERVIEW_REVIEW_20261111.md。颐六二与蛊九三的夏、土月共4份结论已修正。不得把体旺、互卦比和独立当作推翻用克体且无生体的通过依据。
 
 简断与paragraphs只显示断语及应期；calculationExplanation由独立的“计算说明”折叠框展示。半空只在后者出现，规则版本trigram-void-2.1.0，来源层为补充规则。
 

@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {loadLibrary,createProductRepository,getCivilDay,AUDIT_CHECKS,interpretationArtifactDigest} from '../src/index.js';
 import {createInterviewReading,interviewTimingSlots} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS,assessVoid} from '../src/index.js';
-import {checkInterviewDecision} from '../src/interview-decision-checks.js';
+import {checkInterviewDecision,checkInterviewShort} from '../src/interview-decision-checks.js';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const library=await loadLibrary(),product=createProductRepository({library});
 const question=await product.getQuestion('career.interview.interview-pass');
@@ -142,6 +142,45 @@ test('opposite timing windows keep separate events and calculation bases and do 
  assert.equal(result.dateResolution.independentInterpretationReview,'pending');
  assert.equal(result.review.independentReview.userAcceptedThisVersion,false);
  assert.equal(result.review.independentReview.timingInterpretation,'pending');
+});
+
+test('all short readings stay date-free while the reference timing field supplies independently labelled concrete windows',async()=>{
+ for(const row of batch.rows){
+  assert.equal(checkInterviewShort(row.copy.short.text).status,'passed');
+  const out=await product.getContent({questionId:question.id,...context,primaryId:row.primaryId,movingLine:row.movingLine,monthOrder:row.monthOrder,monthBranch:row.monthBranches[0]});
+  assert.equal(out.narrativeParagraphs.length,4);assert.ok(out.narrativeParagraphs.every(p=>!p.startsWith('应期：')));
+  assert.equal(out.timingSection.referenceNote,'以下为传统推算的参考窗口。');
+  assert.equal(out.timingSection.windows.length,out.dateResolution.dateMatches.length);
+  for(const w of out.timingSection.windows){
+   assert.ok(w.event&&['吉','凶'].includes(w.valence)&&w.calculationBasis.sourceIds.length);
+   assert.ok(w.displayedDates.length);assert.match(w.text,/号/);assert.ok(!w.text.includes('{{date:'));
+  }
+ }
+ for(const forbidden of ['应期留意收到反馈的时段','留意有利窗口','计算说明里再看',''])assert.throws(()=>checkInterviewShort(forbidden),/natural prose/);
+});
+
+test('shared wood prose retains an explicit 卯 month and recalculates actual 2027 and 2028 day, void and date context',async()=>{
+ const examples=[
+  {date:'2027-03-20',day:'戊戌',empty:['辰','巳'],dates:['2027-03-30','2027-03-31']},
+  {date:'2028-03-20',day:'甲辰',empty:['寅','卯'],dates:['2028-03-24','2028-03-25']}
+ ];const contents=[];
+ for(const example of examples){
+  const out=await product.getContent({questionId:question.id,...context,monthOrder:undefined,monthBranch:'卯',castingDate:example.date,primaryId:5,movingLine:2});
+  assert.equal(out.status,'ready');assert.equal(out.monthBranch,'卯');assert.equal(out.calculationExplanation.month.branch,'卯');
+  assert.match(out.calculationExplanation.paragraphs[0],/^月令：卯月/);assert.ok(!out.calculationExplanation.paragraphs[0].includes('寅月'));
+  assert.equal(out.calculationExplanation.void.dayGanzhi,example.day);assert.deepEqual(out.calculationExplanation.void.emptyBranches,example.empty);
+  assert.equal(out.timingSection.castingDate,example.date);assert.deepEqual(out.timingSection.windows[0].displayedDates,example.dates);
+  assert.ok(!JSON.stringify(out.calculationExplanation).includes('2026-11-11'));contents.push(out);
+ }
+ assert.equal(contents[0].short,contents[1].short);assert.notEqual(contents[0].timingSection.windows[0].text,contents[1].timingSection.windows[0].text);
+});
+
+test('legacy qi-only input never claims its representative lookup slot was the actual month',async()=>{
+ const out=await product.getContent({questionId:question.id,...context,monthOrder:'spring-wood',primaryId:5,movingLine:2});
+ assert.equal(out.status,'ready');assert.equal(out.monthBranch,null);assert.equal(out.calculationExplanation.month.branch,null);
+ assert.equal(out.calculationExplanation.month.input,'qi-category-only');
+ assert.match(out.calculationExplanation.paragraphs[0],/春木当令.*具体月令未提供/);
+ assert.ok(!/月令：寅月/.test(out.calculationExplanation.paragraphs[0]));
 });
 
 test('lookup reads one hexagram shard and shared prose does not duplicate twelve full articles in memory',async()=>{

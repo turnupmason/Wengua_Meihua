@@ -31,6 +31,11 @@ with sync_playwright() as p:
  page.select_option('#domain','career');page.select_option('#subcategory','career.interview');page.select_option('#question-item','career.interview.interview-pass')
  page.select_option('#primary','48');page.select_option('#moving','5');page.select_option('#month','亥');page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
  expect(page.locator('#story')).to_contain_text('本月21、22号');expect(page.locator('#story .short-reading')).to_have_count(1)
+ expect(page.locator('#story .short-reading')).not_to_contain_text('应期')
+ expect(page.locator('#story .timing-section')).to_be_visible()
+ expect(page.locator('#story .timing-section')).to_contain_text('传统推算的参考窗口')
+ expect(page.locator('#story .timing-window')).to_have_count(2)
+ expect(page.locator('#story .long-reading')).not_to_contain_text('本月21、22号')
  for branch in '寅卯辰巳午未申酉戌亥子丑':
   page.select_option('#month',branch);page.click('#view-button');settled()
   expect(page.locator('#story .short-reading')).to_have_count(1)
@@ -43,8 +48,16 @@ with sync_playwright() as p:
  expect(half).not_to_be_visible()
  page.locator('#story .calculation-explanation summary').click();expect(half).to_be_visible()
  page.select_option('#primary','5');page.select_option('#moving','2');page.select_option('#month','子');page.locator('#casting-date').fill('2026-12-10');page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
- expect(page.locator('#story .long-reading')).to_contain_text('本月12、13号')
- expect(page.locator('#story .long-reading')).not_to_contain_text('本月18、19号')
+ expect(page.locator('#story .timing-section')).to_contain_text('本月12、13号')
+ expect(page.locator('#story .timing-section')).not_to_contain_text('本月18、19号')
+ page.select_option('#month','卯')
+ for date,days,ganzhi,empty in [('2027-03-20','本月30、31号','戊戌','辰、巳'),('2028-03-20','本月24、25号','甲辰','寅、卯')]:
+  page.locator('#casting-date').fill(date);page.locator('#casting-date').dispatch_event('change');page.click('#view-button');settled()
+  expect(page.locator('#story .timing-section')).to_contain_text(days)
+  expect(page.locator('#story .short-reading')).not_to_contain_text('应期')
+  calc=page.locator('#story .calculation-explanation')
+  expect(calc).to_contain_text('月令：卯月');expect(calc).not_to_contain_text('月令：寅月')
+  expect(calc).to_contain_text(date+'，'+ganzhi+'日');expect(calc).to_contain_text('旬空：'+empty)
  page.locator('#casting-date').fill('2026-11-11');page.locator('#casting-date').dispatch_event('change');page.select_option('#month','亥');page.click('#view-button');settled()
  page.select_option('#primary','40');page.select_option('#moving','5');page.click('#view-button');settled()
  expect(page.locator('#context tbody tr').filter(has_text='体互')).to_contain_text('假空')
@@ -63,5 +76,5 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/wengua-product-career.png',full_page=True)
  assert not errors,errors
  assert checked==82
- print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'twelveMonthOptions':12,'halfVoidCollapsed':True,'castDateRecalculated':True,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
+ print(json.dumps({'categories':6,'subcategories':52,'questions':checked,'twelveMonthOptions':12,'halfVoidCollapsed':True,'castDateRecalculated':True,'actualMaoMonthAndFutureYears':True,'separateTimingSection':True,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
  browser.close()

@@ -6,9 +6,10 @@ import {getVoidProfileKey,resolveManuscriptDates} from './prewritten-manuscripts
 import {ELEMENT_DAY_BRANCHES} from './timing-rules.js';
 import {resolveMonthSlot} from './month-slots.js';
 import {VOID_RULESET} from './void-policy.js';
-import {checkInterviewDecision} from './interview-decision-checks.js';
-export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-1.2.0';
+import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
+export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-1.3.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
+const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
 const GENERATES={木:'火',火:'土',土:'金',金:'水',水:'木'};
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 
@@ -29,14 +30,14 @@ export function createContextualReading({library,question,primaryId,movingLine,m
   if(n.stage!=='changed'&&n.role!=='use'&&GENERATES[movingUse.element]===n.element)
    supportEvidence.push({basis:'internal-moving-direct-generation',actorRole:'use',scope:'void-falsehood-assessment-only;not-an-extra-root-energy-score',sourceIds:['user-void-timing']});
   if(explicit.ganzhi&&explicit.ganzhi!==day.dayGanzhi)throw new RangeError('Role evidence day does not match the cast');
-  return {...n,supportEvidence,strength:{...qi,label:qi.state,season:order.season,monthBranch:slot.branch},
+  return {...n,supportEvidence,strength:{...qi,label:qi.state,season:order.season,monthBranch:monthBranch||null},
    void:assessVoid(n.trigram,{...context,...explicit,strength:qi.state,moving:['use','changed_use'].includes(n.role),
     supported:Boolean(context.supported||explicit.supported||supportEvidence.length),partialPolicy:context.partialPolicy})};
  });
  const body=nodes.find(n=>n.role==='body'),inherited=nodes.find(n=>n.role==='body_inherited');
  inherited.void=body.void;inherited.strength=body.strength;inherited.supportEvidence=body.supportEvidence;
  const edges=raw.edges.map(e=>({...e,voidEffect:nodes.find(n=>n.role===e.targetRole).void.effective,bodyVoidEffect:body.void.effective,qualitativeNote:'直接关系与各节点旺衰、空亡分别记录'}));
- return freeze({...raw,nodes,edges,castingDate,dayGanzhi:day.dayGanzhi,monthOrder,monthBranch:slot.branch,
+ return freeze({...raw,nodes,edges,castingDate,dayGanzhi:day.dayGanzhi,monthOrder,monthBranch:monthBranch||null,monthSlotForLookup:slot.branch,
   profile:{...raw.profile,id:'product-full-qi-void-1.0.0',voidRuleSetId:VOID_RULESET.id,monthStrength:'full-five-state',application:'typed-question;factual-assessment-only'}});
 }
 
@@ -99,17 +100,18 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   const entry=index.files.find(f=>f.primaryId===reading.primaryId);if(!entry)return pending();
   if(entry.path!==`data/authored-readings/interview-pass/hex-${String(reading.primaryId).padStart(3,'0')}.json`)throw new Error('Invalid authored shard path');
   const file=await read(entry.path);if(file.questionId!==question.id||file.primaryId!==reading.primaryId)throw new Error('Authored shard identity mismatch');
-  const position=file.monthSlots[reading.movingLine+':'+reading.monthBranch];
+  const position=file.monthSlots[reading.movingLine+':'+reading.monthSlotForLookup];
   if(position===undefined)return pending();
   if(!Number.isInteger(position)||!file.rows[position])throw new Error('Invalid month slot reference');
   const row=file.rows[position];
-  if(row.primaryId!==reading.primaryId||row.movingLine!==reading.movingLine||row.monthOrder!==reading.monthOrder||!row.monthBranches.includes(reading.monthBranch))throw new Error('Authored month slot mismatch');
+  if(row.primaryId!==reading.primaryId||row.movingLine!==reading.movingLine||row.monthOrder!==reading.monthOrder||!row.monthBranches.includes(reading.monthSlotForLookup))throw new Error('Authored month slot mismatch');
   const exactProfile=row.voidProfileKey===key;
   const baseEligible=row.baseProse===true&&reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)).every(n=>n.void.hitKind==='none'||n.void.effective==='active');
   if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
   checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence});
+  checkInterviewShort(row.copy.short.text);
   if(row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
@@ -121,26 +123,30 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   if(missingTiming.length)return {status:'requires-context',missingContext:missingTiming,reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+row.timingSlots.map(s=>s.token).join(' '),'总断：'+c.summary];
+  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+REFERENCE_WINDOW_NOTE+'\n'+row.timingSlots.map(s=>s.token).join(' '),'总断：'+c.summary];
   const allSlots=[...row.timingSlots,...row.voidTimingSlots];
   const dates=resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
   if(dates.status!=='resolved')throw new Error('Complete interview context failed to resolve dates');
   const dateResolution={...dates,interpretationReviewed:false,independentInterpretationReview:'pending',dateMatches:dates.dateMatches.map(d=>{
    const slot=allSlots.find(s=>s.id===d.slotId);
-   return {...d,eventScope:slot.eventScope,targetBranches:[...slot.branches],calculationBasis:slot.calculationBasis};
+   const rendered=resolveManuscriptDates({paragraphs:[slot.token],dateSlots:[slot],reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
+   return {...d,text:rendered.paragraphs[0],eventScope:slot.eventScope,targetBranches:[...slot.branches],calculationBasis:slot.calculationBasis};
   })};
+  const timingSection={title:'应期参考',referenceNote:REFERENCE_WINDOW_NOTE,castingDate:reading.castingDate,
+   windows:dateResolution.dateMatches};
+  const narrativeParagraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'总断：'+c.summary];
   const labels={body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用'};
   const calculationExplanation={
-   month:{branch:reading.monthBranch,qiCategory:reading.monthOrder,states:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state}))},
+   month:{branch:reading.monthBranch,input:reading.monthBranch?'explicit-branch':'qi-category-only',qiCategory:reading.monthOrder,states:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state}))},
    void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
     nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]},
    timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches},
-   paragraphs:[`月令：${reading.monthBranch}月。旺衰与旬空分别计算。`,`起卦日：${reading.castingDate}，${reading.dayGanzhi}日；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
+   paragraphs:[reading.monthBranch?`月令：${reading.monthBranch}月。旺衰与旬空分别计算。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}；具体月令未提供。旺衰与旬空分别计算。`,`起卦日：${reading.castingDate}，${reading.dayGanzhi}日；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
     ...(exactProfile?row.coreVoidNotes:[]),
     `空亡依据：八卦配支补充法，版本${VOID_RULESET.id}。`,
     ...dateResolution.dateMatches.map(d=>`${d.valence}应 · ${d.event}：取${labels[d.calculationBasis.role]||d.calculationBasis.role}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}。`)]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
-   paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),dateResolution,calculationExplanation,timingDecision:allSlots,
+   paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
    review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});
  }
