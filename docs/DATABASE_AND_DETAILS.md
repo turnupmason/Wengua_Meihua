@@ -1,5 +1,16 @@
 # 详解、动爻与数据库接入
 
+固定事项新增独立补充包 `data/question-items.sql`，按 `knowledge.sql` → `timing-audit.sql` → `question-items.sql` 顺序导入新的数据库。`npm run build:questions` 重建90项JSON、清单与SQL；`npm run validate:questions`逐项校验JSON/SQL及外键。完整 `npm run build:data` 也会把补充表写入本地SQLite。
+
+新增 `fixed_question_items`（90项）、`fixed_question_stories`（仅收录真正完成并核过的事项完整稿）、`fixed_question_metadata`。当前事项完整稿表为空，原1,920条通用基础行仍保留在原表。正式入口按固定事项ID调用，不把两张表视为同一内容。
+
+```sql
+SELECT definition_json FROM fixed_question_items WHERE id = ?;
+SELECT paragraphs_json, source_ids_json FROM fixed_question_stories
+WHERE question_id = ? AND hexagram_id = ? AND moving_line = ?
+  AND month_order_id = ? AND context_key = ? AND review_status = 'reviewed';
+```
+
 ## JavaScript / TypeScript
 
 ```js

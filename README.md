@@ -2,9 +2,11 @@
 
 为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
 
-**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。
+**给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V5.md)。**
 
-已加入新上传的《周易六十四卦详解》：8,770段、315,194字，128条本轮编辑记录，64段串贴/错误片段隔离；正式详解与384条变卦映射已接通。见[本轮审校报告](docs/DETAILS_AUDIT.md)和[数据库及接口](docs/DATABASE_AND_DETAILS.md)。长篇注解作为显式参考阅读，未认证的正文不写入正式数据库事实表。**
+最新事项入口：[每领域五项，共90项](docs/QUESTION_CHOICES.md)。正式占问只选择领域与事项，不提供自由提问或AI识别。已接通固定ID路由、JSON/SQL和联调页；75项占问完整稿尚未写齐，15项古籍查阅已有说明，缺稿不回退为别的事项。
+
+已加入新上传的《周易六十四卦详解》：8,770段、315,194字，128条本轮编辑记录，64段串贴/错误片段隔离；正式详解与384条变卦映射已接通。见[本轮审校报告](docs/DETAILS_AUDIT.md)和[数据库及接口](docs/DATABASE_AND_DETAILS.md)。长篇注解作为显式参考阅读，未认证的正文不写入正式数据库事实表。
 
 ## 已接通的资料
 
@@ -28,6 +30,7 @@
 npm run validate
 npm run validate:details
 npm run validate:stories
+npm run validate:questions
 npm test
 npm run example
 npm run demo

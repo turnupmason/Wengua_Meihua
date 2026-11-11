@@ -26,6 +26,8 @@
     "example:story": "node examples/story.mjs",
     "build:timing": "node scripts/build-timing-audit.mjs",
     "validate:timing": "python3 scripts/validate-timing-audit.py",
-    "build:calendar": "node scripts/build-day-calendar.mjs"
+    "build:calendar": "node scripts/build-day-calendar.mjs",
+    "build:questions": "node scripts/build-question-catalog.mjs && python3 scripts/export-questions.py",
+    "validate:questions": "python3 scripts/validate-questions.py"
   }
 }

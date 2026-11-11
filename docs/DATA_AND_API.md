@@ -1,5 +1,24 @@
 # 数据与 API
 
+## 固定事项入口
+
+正式占问采用领域与具体事项两级选择，每领域5项、共90项；不提供自由问句或AI分类。清单与回答范围见 [QUESTION_CHOICES.md](QUESTION_CHOICES.md)。
+
+```js
+import {loadLibrary,createQuestionRepository} from '../src/index.js';
+const library=await loadLibrary();
+const questions=createQuestionRepository({library});
+const items=await questions.listQuestions('domain-10'); // 恰好五项
+const result=await questions.getContent({
+ questionId:'domain-10-receivable',primaryId:48,movingLine:5,
+ monthOrder:'winter-water',voidContext:{ganzhi:'己丑'}
+});
+// 当前 status='pending-authoring'、story=null：客户尾款专稿尚未写入新库。
+// 不得以旧 getStory 的求财通用输出顶替。
+```
+
+领域从固定ID确定；传入不匹配的领域、未知ID或自由文本会报错。完整稿要求事项、盘、月令与起卦上下文精确一致；`authored-base`仍须经过日期校核，不能立即当作已渲染的最终故事。`reference`返回已经写好的古籍说明。实际完整稿覆盖记录在 `data/question-stories/index.json`。
+
 ## 稳定的标识与编号
 
 卦 ID 为文王卦序 1–64。`bitsBottomUp[0]` 是初爻，`bitsBottomUp[5]` 是上爻，阳=1、阴=0。下三位为下卦，上三位为上卦。64 个结构唯一，Unicode 卦符仅用于显示，不从卦符图片反推阴阳。

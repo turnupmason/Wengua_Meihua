@@ -6,6 +6,7 @@ export {TIMING_AUDIT_VERSION,DOMAIN_TIMING_SPECS,GLOBAL_TIMING_RULES,TRIGRAM_PER
 export {selectAuditedTiming} from './timing-audit.js';
 export {getCivilDay,formatCivilDay,findCivilDayMatches,formatUpcomingCivilDay,findUpcomingCivilDayMatches} from './day-calendar.js';
 export {buildFullChartRelations} from './full-chart.js';
+export {createQuestionRepository,questionStoryContextKey} from './questions.js';
 const BRANCHES = [...'子丑寅卯辰巳午未申酉戌亥'];
 const STEMS = [...'甲乙丙丁戊己庚辛壬癸'];
 const GENERATES = { 木: '火', 火: '土', 土: '金', 金: '水', 水: '木' };

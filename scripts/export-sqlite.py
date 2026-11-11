@@ -59,6 +59,8 @@ def main():
     with sqlite3.connect(target) as disk:
         db.backup(disk)
         if supplement.exists():disk.executescript(supplement.read_text())
+        questions=ROOT/'data/question-items.sql'
+        if questions.exists():disk.executescript(questions.read_text())
         assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
     check=sqlite3.connect(':memory:');check.executescript(sql)
     assert check.execute('PRAGMA integrity_check').fetchone()[0]=='ok';assert not check.execute('PRAGMA foreign_key_check').fetchall()
