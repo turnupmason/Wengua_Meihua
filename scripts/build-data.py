@@ -10,7 +10,7 @@ DIFFERENCES=[]
 def load(path):return json.loads((ROOT/path).read_text())
 def save(path,data):
     p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True)
-    p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def sha(s):return hashlib.sha256(s.encode('utf-8')).hexdigest()
 def normalized(s):
     s=s.translate(str.maketrans({'陽':'阳','陰':'阴','乾':'干','馀':'余'}))
@@ -185,7 +185,7 @@ def parse_yijing(grades):
         rb=[h[0],'',intro['text'],'【白话】'+intro['vernacular'],'','《象》曰：'+intro['image'],'【白话】'+intro['imageVernacular'],'']
         for item in lines+special:rb += [item['label']+'，'+item['text'],'【白话】'+item['vernacular'],'《象》曰：'+item['image'],'【白话】'+item['imageVernacular'],'']
         revised.append('\n'.join(rb))
-    (ROOT/'sources/revised/yijing64.txt').write_text('白话易经 · 可追溯修订版\n古典字段据网上参考本对校；现代白话除修改记录外沿用用户资料。\n\n'+'\n\n'.join(revised))
+    (ROOT/'sources/revised/yijing64.txt').write_text('白话易经 · 可追溯修订版\n古典字段据网上参考本对校；现代白话除修改记录外沿用用户资料。\n\n'+'\n\n'.join(revised),encoding='utf-8',newline='\n')
     return result
 
 def parse_meihua():
@@ -225,7 +225,7 @@ def parse_meihua():
         out.append({'id':sid,'kind':kind,'volume':volume,'part':part,'title':title,'text':text,'sourceRef':section_ref('user-meihua',s,start,end)})
     assert ''.join(s[x['sourceRef']['startChar']:x['sourceRef']['endChar']] for x in out)==s
     assert sum(x['kind']=='section' for x in out)==132
-    (ROOT/'sources/revised/meihua-volumes-1-3.txt').write_text(''.join(x['text'] for x in out))
+    (ROOT/'sources/revised/meihua-volumes-1-3.txt').write_text(''.join(x['text'] for x in out),encoding='utf-8',newline='\n')
     for x in out:
         if x['title']=='变卦式八则':issue('SOURCE_STRUCTURAL_INCONSISTENCY',x['id'],'本节部分体用、五行、变卦叙述互不相合；作为历史资料保留，不直接生成结构算法或黄金测试。',severity='review')
         if x['title']=='体用互变之诀':issue('SOURCE_CASE_WORDING',x['id'],'观梅恒卦及相关互卦表述与卷一起例不完全相合；程序结构以可复算起例为准，文献表述保留供核对。',severity='review')
@@ -256,7 +256,7 @@ def main():
     sources=[]
     for sid,filename,original in source_specs:
         p=ROOT/'sources/original'/filename;b=p.read_bytes()
-        sources.append({'id':sid,'path':str(p.relative_to(ROOT)),'originalFilename':original,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'characters':len(b.decode()),'provenance':'user-supplied','status':'source snapshot; not an independently authenticated critical edition'})
+        sources.append({'id':sid,'path':p.relative_to(ROOT).as_posix(),'originalFilename':original,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'characters':len(b.decode()),'provenance':'user-supplied','status':'source snapshot; not an independently authenticated critical edition'})
     catalog={'schemaVersion':'1.0.0','contentVersion':VERSION,'lineOrder':'bottom-up','hexagrams':hexagrams,'trigrams':trigram_data}
     save('data/catalog.json',catalog);save('data/meihua-sections.json',{'schemaVersion':'1.0.0','sections':sections});save('data/domains.json',domains)
     save('data/grades.json',grades);save('data/editorial-patches.json',PATCHES);save('data/issues.json',ISSUES);save('data/reference-differences.json',DIFFERENCES)

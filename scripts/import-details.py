@@ -14,7 +14,7 @@ PATCHES=[];QUARANTINE=[];VARIANTS=[]
 
 def save(path,x):
     p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True)
-    p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+    p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 
 def text_of(p):
     return ''.join((n.text or '') if n.tag==W+'t' else '\t' if n.tag==W+'tab' else '\n' if n.tag in (W+'br',W+'cr') else '' for n in p.iter())
@@ -51,9 +51,9 @@ def source_paragraphs():
                          'style':st.get(W+'val') if st is not None else 'Normal','text':text_of(p),
                          'location':'body' if id(p) in tops else 'table'})
     out=ROOT/'sources/extracted/zhouyi64-detailed.jsonl';out.parent.mkdir(parents=True,exist_ok=True)
-    out.write_text(''.join(json.dumps(p,ensure_ascii=False,separators=(',',':'))+'\n' for p in rows))
-    return rows,{'id':SOURCE,'path':str(path.relative_to(ROOT)),'originalFilename':'周易六十四卦详解.docx','bytes':path.stat().st_size,
-                 'sha256':sha(path.read_bytes()),'extractedPath':str(out.relative_to(ROOT)),'extractedSha256':sha(out.read_bytes()),
+    out.write_text(''.join(json.dumps(p,ensure_ascii=False,separators=(',',':'))+'\n' for p in rows),encoding='utf-8',newline='\n')
+    return rows,{'id':SOURCE,'path':path.relative_to(ROOT).as_posix(),'originalFilename':'周易六十四卦详解.docx','bytes':path.stat().st_size,
+                 'sha256':sha(path.read_bytes()),'extractedPath':out.relative_to(ROOT).as_posix(),'extractedSha256':sha(out.read_bytes()),
                  'paragraphs':len(rows),'bodyParagraphs':len(tops),'tableParagraphs':len(rows)-len(tops),
                  'textCharacters':sum(len(p['text']) for p in rows),'wordCharacterClaim':'all extracted characters accounted for; not a claim that all interpretations are provable facts'}
 

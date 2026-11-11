@@ -26,6 +26,7 @@ export interface Reading {
  selectedMovingLine:LineReading&{hexagramId:number;position:number};
  nodes:ReadonlyArray<{id:string;stage:Stage;side:string;trigram:Trigram;element:Element;role:string;isBody:boolean;strength:Strength;supportEvidence:{basis:string;element:Element;kind:string;sourceIds:string[]}[];void:VoidAssessment}>;
  edges:ReadonlyArray<Relation&{from:string;to:string;targetRole:string;voidEffect:string;bodyVoidEffect:string;qualitativeNote:string;sourceSectionTitles:string[]}>;
+ synthesis:Synthesis;
  domain:Domain;domainPassage:DomainPassage|null;contextualAssessment:{status:string;summary:string;missing:string[];baseGradesUnchanged:boolean};selectionPolicy:Record<string,unknown>;profile:Record<string,unknown>;
 }
 export interface Cast {primaryId:number;movingLine:number;upperNumber:number;lowerNumber:number;sourceSectionTitles:string[]}
@@ -63,6 +64,15 @@ export interface DetailsRepository {
  getIndex():Promise<unknown>;clearCache():void;
 }
 export function createDetailsRepository(options:{library:Library;readJSON?:(path:string)=>Promise<unknown>}):DetailsRepository;
+export type SynthesisTone='favorable'|'draining'|'adverse';
+export interface SynthesisRelation {role:'use'|'body_mutual'|'use_mutual'|'changed_use';title:string;trigram:string;element:string;type:RelationType;label:string;stageLabel:string;tone:SynthesisTone;voidEffect:string}
+export interface SynthesisStage {stage:'use'|'mutual'|'changed';hexagramStage:'primary'|'mutual'|'changed';word:string;scope:string;evidence:string;tone:SynthesisTone;main:SynthesisRelation;secondary:SynthesisRelation|null;phrase:string}
+/** 用 → 互 → 变 synthesis against the fixed 体卦 (用 weighs most, then 互, then 变). */
+export interface WeatherReading {headline:string;summary:string;counts:Record<string,number>;top:readonly string[];stoneLine:string;notes:ReadonlyArray<{kind:string;text:string}>;stages:ReadonlyArray<{stage:'use'|'mutual'|'changed';hexagramStage:'primary'|'mutual'|'changed';trigrams:readonly string[];images:readonly string[];phrase:string}>}
+export type Synthesis = {ruleId:string;applicable:false;reason:string;weather:WeatherReading;stages:readonly [];notes:readonly [];sourceSectionTitles:readonly string[]}
+  | {ruleId:string;applicable:true;order:readonly string[];lead:SynthesisTone;leadText:string;headline:string;stoneLine:string;verdict:SynthesisVerdict;evidenceSummary:string;compact:readonly [string,string,string];classical:string|null;summary:string;stages:readonly SynthesisStage[];notes:ReadonlyArray<{kind:string;text:string}>;sourceSectionTitles:readonly string[]};
+/** Overall answer; `template` contains {outcome}. */
+export interface SynthesisVerdict {code:string;conflict:boolean;template:string;caveat:string|null;conditions:readonly string[]}
 
 export type MonthOrderId='spring-wood'|'summer-fire'|'autumn-metal'|'winter-water'|'seasonal-earth';
 export interface MonthOrder {id:MonthOrderId;label:string;season:'spring'|'summer'|'autumn'|'winter'|'earth';strong:Element;weak:Element;opening:string}

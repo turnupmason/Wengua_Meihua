@@ -1,0 +1,45 @@
+{
+  "name": "wengua-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "问卦 Wengua — first-person temple casting app (web + Capacitor)",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:lan": "vite --host 0.0.0.0 --port 5174 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "cap:sync": "npm run build && cap sync",
+    "cap:android": "cap open android",
+    "cap:ios": "cap open ios",
+    "scripts:import": "vite-node scripts/import-scripts.ts --",
+    "font:subset": "npm i --no-save @expo-google-fonts/noto-serif-sc@0.4.4 @expo-google-fonts/ma-shan-zheng@0.4.3 subset-font@2.9.0 && node scripts/subset-font.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "7.6.10",
+    "@capacitor/core": "7.6.10",
+    "@capacitor/ios": "7.6.10",
+    "@react-three/fiber": "9.8.2",
+    "lunar-javascript": "1.7.7",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "7.6.10",
+    "@testing-library/react": "16.3.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "4.7.0",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.5",
+    "vitest": "3.2.7"
+  }
+}

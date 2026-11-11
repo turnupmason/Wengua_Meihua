@@ -81,6 +81,132 @@ export function assessVoid(trigram,options={}) {
   if(supported)return {...withEvidence,state:'supported',label:'假空 · 得生扶待落实',effective:'conditional'};
   return {...withEvidence,state:'dormant',label:'静空待填／待冲',effective:'dormant'};
 }
+/**
+ * 用 → 互 → 变 synthesis (user rule 2026-11-11, matching 《体用互变之诀》「卦用最紧，互次之，变卦又次之」):
+ * 用卦 is the start (即应), 互卦 the process (中间之应; 体互 weighs more than 用互), 变卦 the end
+ * (终应). Each is read against the one fixed 体卦. The 用 relation leads the overall verdict:
+ * when 用克体 the matter is mainly 不顺 even if the end eases. No numeric weights or scores.
+ */
+const TONE={use_generates_body:'favorable',equal:'favorable',body_controls_use:'favorable',body_generates_use:'draining',use_controls_body:'adverse'};
+const STAGE_WORD={use:'开局',mutual:'过程',changed:'结局'};
+const STAGE_PHRASE={use_generates_body:'得助',equal:'顺和',body_controls_use:'可掌控',body_generates_use:'有耗费',use_controls_body:'受制'};
+const MUTUAL_PHRASE={...STAGE_PHRASE,use_controls_body:'受阻'};
+const CHANGED_PHRASE={...STAGE_PHRASE,use_controls_body:'不尽如意'};
+// Stage wording of a relation: 用克体 at the start reads 互克体 in the process and 变克体 at the end.
+const stageLabel=(type,ch)=>type==='equal'?(ch==='用'?'体用比和':ch+'比和'):LABELS[type].replace('用',ch);
+const LEAD_TEXT={favorable:'以顺为主',draining:'以耗费为主',adverse:'以不顺为主'};
+// (用 tone → 变 tone) → headline, in plain words; the classical wording is kept in `classical`.
+const HEADLINE={
+  favorable:{favorable:['始终顺遂','体用比和，则百事顺遂'],draining:['先顺后耗',''],adverse:['先易后难','用吉变凶者，先吉后凶']},
+  draining:{favorable:['先耗后得',''],draining:['多有耗费','体生用，有耗失之患'],adverse:['先耗后难','']},
+  adverse:{favorable:['先难后易','用凶变吉者，先凶后吉'],draining:['先难后耗',''],adverse:['始终受制','用克体，诸事凶']},
+};
+const STAGE_ROLE_TITLE={use:'用卦',body_mutual:'体互',use_mutual:'用互',changed_use:'变卦'};
+// What each stage is evidence for, in plain words (用 → 当前, 互 → 过程, 变 → 后势).
+const SCOPE={use:'当前',mutual:'过程',changed:'后势'};
+const EVIDENCE={
+  use:{favorable:'当前有利',draining:'当前多有耗费',adverse:'当前不利，存在明显阻碍'},
+  mutual:{favorable:'中间可能获得帮助',draining:'过程中有所耗费',adverse:'过程仍有阻碍'},
+  changed:{favorable:'后续存在改善条件',draining:'后续多有耗费',adverse:'后势不利，末后须防变数'},
+};
+/**
+ * The overall answer for (用 tone → 变 tone). `{outcome}` is filled by the caller with what was
+ * asked about (e.g. 拿到这份工作). Conflicts say what the late evidence can and cannot settle:
+ * 用 weighs most, so a favourable end never by itself turns an adverse start into 事成.
+ */
+const VERDICT={
+  favorable:{
+    favorable:{code:'smooth',conflict:false,text:'整体顺遂，{outcome}的可能较大。'},
+    draining:{code:'smooth-then-costly',conflict:false,text:'开局顺利，但后段多有耗费，{outcome}需付出较多代价。'},
+    adverse:{code:'good-start-bad-end',conflict:true,text:'起初顺利，但后势受克，{outcome}之前须防变数，不宜过早定论。',caveat:'变卦克体主末后不吉：开局虽顺，不能只凭开局断定事成。'},
+  },
+  draining:{
+    favorable:{code:'costly-then-gain',conflict:false,text:'前期多有耗费，后续有所收获，{outcome}需要先付出。'},
+    draining:{code:'costly',conflict:false,text:'过程多耗，{outcome}代价较大。'},
+    adverse:{code:'costly-then-bad',conflict:false,text:'前有耗费、后势受克，{outcome}较难。'},
+  },
+  adverse:{
+    favorable:{code:'bad-start-better-end',conflict:true,text:'前期阻力较大，后续有缓和机会，但目前不足以断定一定能{outcome}。',caveat:'用卦对体卦影响最大：结局比和或生体只说明末后有转机，不能单凭此断定事成。'},
+    draining:{code:'bad-then-costly',conflict:false,text:'前期受阻、后续多耗，{outcome}较难。'},
+    adverse:{code:'pressed-throughout',conflict:false,text:'阻力贯穿始终，从卦象看不易{outcome}。'},
+  },
+};
+// One sentence of hexagram evidence (前期… 中间… 末后…), and compact stage labels such as 互克兼比
+// when 体互 and 用互 point different ways.
+const SHORT={use_controls_body:'克',equal:'比',use_generates_body:'生',body_controls_use:'制',body_generates_use:'泄'};
+const START_WORD={use_generates_body:'前期得助',equal:'前期顺和',body_controls_use:'前期可以掌控',body_generates_use:'前期耗费',use_controls_body:'前期受制'};
+const MID_WORD={favorable:'配合',draining:'耗费',adverse:'牵制'};
+const END_WORD={use_generates_body:'末后得生扶之象',equal:'末后出现比和之象',body_controls_use:'末后可以掌控',body_generates_use:'末后仍有耗费',use_controls_body:'末后受克，须防变数'};
+function evidenceSentence(u,bm,um,c){
+  const mid=bm.tone===um.tone?`中间多有${MID_WORD[bm.tone]}`:`中间有${MID_WORD[bm.tone]}也有${MID_WORD[um.tone]}`;
+  return `${START_WORD[u.type]}，${mid}，${END_WORD[c.type]}。`;
+}
+const mutualCompact=(bm,um)=>bm.type===um.type?bm.stageLabel:`互${SHORT[bm.type]}兼${SHORT[um.type]}`;
+// What could change an adverse reading, per 《体用衰旺之诀》 and 卷三《体用》.
+const CONDITIONS=['体卦得令乘旺，虽有克体亦无大害','克体之卦气衰或逢空，阻力可减','另有生体之卦相助，可解其困'];
+/**
+ * 天时占第一: 「凡占天时，不分体用，全观诸卦」 — all six trigrams of 本、互、变 are counted and
+ * the most frequent decides the weather image (离多主晴，坎多主雨，坤乃阴晦，乾主晴明，震多则
+ * 雷，巽多则风，艮多则久雨必晴，兑多则不雨亦阴). Only the source's own wording is used.
+ */
+const WEATHER={乾:{image:'天',reads:'晴明',source:'乾主晴明'},兑:{image:'泽',reads:'不雨亦阴',source:'兑多则不雨亦阴'},离:{image:'火',reads:'晴',source:'离多主晴'},震:{image:'雷',reads:'雷动',source:'震多则春夏雷轰'},巽:{image:'风',reads:'风起',source:'巽多则四时风烈'},坎:{image:'水',reads:'雨',source:'坎多主雨'},艮:{image:'山',reads:'久雨必晴',source:'艮多则久雨必晴'},坤:{image:'地',reads:'阴晦',source:'坤乃阴晦'}};
+const CN_NUM=['零','一','二','三','四','五','六'];
+function weatherReading(nodes){
+  const stageOf={primary:'use',mutual:'mutual',changed:'changed'};
+  const stages=['primary','mutual','changed'].map(st=>{
+    const ts=['upper','lower'].map(side=>nodes.find(n=>n.stage===st&&n.side===side).trigram);
+    return {stage:stageOf[st],hexagramStage:st,trigrams:ts,images:ts.map(t=>WEATHER[t].image),phrase:ts.map(t=>`${t}${WEATHER[t].image}`).join('、')};
+  });
+  const counts={};
+  for(const s of stages)for(const t of s.trigrams)counts[t]=(counts[t]||0)+1;
+  const max=Math.max(...Object.values(counts));
+  const top=Object.keys(counts).filter(t=>counts[t]===max);
+  // 「若逢重坎重离，亦日时晴时雨」: 坎 and 离 equally many.
+  const both=counts.坎&&counts.离&&counts.坎===counts.离&&top.includes('坎');
+  const headline=both?'时晴时雨':top.map(t=>WEATHER[t].reads).join('，');
+  const order=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  const summary=`全观本、互、变六卦：${order.map(t=>t+CN_NUM[counts[t]]).join('、')}；${top.join('、')}${max>1?'多':'各一'}。`;
+  const notes=both?[{kind:'weather-source',text:'坎离同见：若逢重坎重离，亦日时晴时雨。'}]:top.map(t=>({kind:'weather-source',text:`《天时占》：${WEATHER[t].source}。`}));
+  return {headline,summary,counts,top,stages,notes,stoneLine:`天时 · ${top.join('')}${max>1?'多':''} · ${headline.replace(/，/g,'、')}`};
+}
+export function synthesizeReading({edges,nodes,body,use,domain}) {
+  const src=['体用互变之诀','体用总诀','体用'];
+  if(domain&&domain.id==='domain-01')return deepFreeze({ruleId:'use-mutual-changed-v2',applicable:false,reason:'天时占不分体用，全观本、互、变诸卦，以卦象论。',weather:weatherReading(nodes),stages:[],notes:[],sourceSectionTitles:['天时占第一']});
+  const edge=role=>edges.find(e=>e.targetRole===role);
+  const node=role=>nodes.find(n=>n.role===role);
+  const CH={use:'用',body_mutual:'互',use_mutual:'互',changed_use:'变'};
+  const view=role=>{const e=edge(role),n=node(role);return {role,title:STAGE_ROLE_TITLE[role],trigram:n.trigram,element:n.element,type:e.type,label:e.label,stageLabel:stageLabel(e.type,CH[role]),tone:TONE[e.type],voidEffect:e.voidEffect};};
+  const u=view('use'),bm=view('body_mutual'),um=view('use_mutual'),c=view('changed_use');
+  const stages=[
+    {stage:'use',hexagramStage:'primary',word:STAGE_WORD.use,scope:SCOPE.use,evidence:EVIDENCE.use[u.tone],tone:u.tone,main:u,secondary:null,phrase:STAGE_WORD.use+STAGE_PHRASE[u.type]},
+    // 体互最紧: the process takes its tone from 体互; 用互 is shown beside it.
+    {stage:'mutual',hexagramStage:'mutual',word:STAGE_WORD.mutual,scope:SCOPE.mutual,evidence:EVIDENCE.mutual[bm.tone],tone:bm.tone,main:bm,secondary:um,phrase:STAGE_WORD.mutual+MUTUAL_PHRASE[bm.type]+(um.tone==='adverse'&&bm.tone!=='adverse'?'，仍有牵制':um.tone==='favorable'&&bm.tone==='adverse'?'，亦有助力':'')},
+    {stage:'changed',hexagramStage:'changed',word:STAGE_WORD.changed,scope:SCOPE.changed,evidence:EVIDENCE.changed[c.tone],tone:c.tone,main:c,secondary:null,phrase:STAGE_WORD.changed+CHANGED_PHRASE[c.type]},
+  ];
+  const [headline,classical]=HEADLINE[u.tone][c.tone];
+  const notes=[];
+  const all=[u,bm,um,c];
+  const harm=all.filter(x=>x.tone==='adverse'),help=all.filter(x=>x.type==='use_generates_body'||x.type==='equal');
+  if(u.tone==='adverse'&&c.tone!=='adverse')notes.push({kind:'use-leads',text:'用卦克体影响最大：结局虽转和，整件事仍以不顺为主，不可只看结局。'});
+  if(harm.length>=3)notes.push({kind:'harm-many',text:`克体之卦多（${harm.map(x=>x.title).join('、')}），阻力更重。`});
+  if(help.length>=3)notes.push({kind:'help-many',text:`生扶体卦者多（${help.map(x=>x.title).join('、')}），更为顺利。`});
+  // 体党 / 用党: trigrams of the same element as 体 or 用 among 互 and 变.
+  const later=nodes.filter(n=>['body_mutual','use_mutual','changed_use'].includes(n.role));
+  const bodyParty=later.filter(n=>n.element===body.element).length,useParty=later.filter(n=>n.element===use.element&&use.element!==body.element).length;
+  if(bodyParty>=2)notes.push({kind:'body-party',text:`互、变之中与体同为${body.element}者多，体党多而体势盛。`});
+  if(useParty>=2)notes.push({kind:'use-party',text:`互、变之中与用同为${use.element}者多，用党多则体势衰。`});
+  const bodyNode=nodes.find(n=>n.role==='body');
+  if(bodyNode.strength.state==='strong'&&harm.length)notes.push({kind:'body-strong',text:`体卦${body.element}得令乘旺，虽有克体，亦无大害。`});
+  if(bodyNode.strength.state==='weak'&&harm.length)notes.push({kind:'body-weak',text:`体卦${body.element}失令气衰，又逢克体，尤须谨慎。`});
+  for(const x of all)if(['suppressed','dormant'].includes(x.voidEffect))notes.push({kind:'void',text:x.tone==='adverse'?`${x.title}逢空，克体之力或减。`:`${x.title}逢空，所得助益或难落实。`});
+  const summary=`${stages[0].phrase}，${stages[1].phrase}；${stages[2].phrase}。`;
+  const stoneLine=[u.stageLabel,bm.stageLabel,c.stageLabel].join(' · ');
+  const v=VERDICT[u.tone][c.tone];
+  const evidenceSummary=evidenceSentence(u,bm,um,c);
+  const compact=[u.stageLabel,mutualCompact(bm,um),c.stageLabel];
+  const verdict={code:v.code,conflict:v.conflict,template:v.text,caveat:v.caveat||null,conditions:(u.tone==='adverse'||c.tone==='adverse')?[...CONDITIONS]:[]};
+  return deepFreeze({ruleId:'use-mutual-changed-v2',applicable:true,order:['use','mutual','changed'],lead:u.tone,leadText:LEAD_TEXT[u.tone],headline,stoneLine,verdict,evidenceSummary,compact,classical:classical||null,summary,stages,notes,sourceSectionTitles:src});
+}
 function escapeXML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));}
 export function createLibrary({catalog,sections,domains}) {
   if(catalog?.schemaVersion!=='1.0.0'||catalog.hexagrams?.length!==64)throw new TypeError('Expected validated catalog schema 1.0.0');
@@ -143,6 +269,7 @@ export function createLibrary({catalog,sections,domains}) {
     const panels={};
     for(const [stage,k,caption] of [['primary',h,'目前'],['mutual',m,'经过'],['changed',c,'结果']])panels[stage]={stage,id:k.id,name:k.name,symbol:k.symbol,bitsBottomUp:[...k.bitsBottomUp],baseGrade:k.grade.rawGrade,theme:k.grade.theme,caption,glowLine:stage==='primary'?movingLine:null,correspondingChangedLine:stage==='changed'?movingLine:null,detail:k};
     return deepFreeze({schemaVersion:'1.0.0',contentVersion:catalog.contentVersion,castId,question,primaryId,movingLine,mutualPolicy,body:{trigram:body.id,element:body.element,side:bodySide},use:{trigram:use.id,element:use.element,side:useSide},stages:panels,selectedMovingLine:{hexagramId:primaryId,position:movingLine,...selected},nodes,edges,domain,domainPassage:domain.relationPassages?.[relation(body.element,use.element).type]||null,
+      synthesis:synthesizeReading({edges,nodes,body,use,domain}),
       contextualAssessment:{status:'qualitative-reference',summary:'基础等级、动爻资料与生克事实已接通；综合占断不由固定权重代替。',missing:[...(!calendar.season&&!calendar.monthBranch?['calendar-context']:[]),...(!voidContext.ganzhi?['void-ganzhi']:[])],sourceSectionTitles:['体用总诀','体用互变之诀','体用衰旺之诀'],baseGradesUnchanged:true},
       selectionPolicy:{movingLineScope:'primary-only',mutualHasIndependentMovingLine:false,specialUseNineSixAreOrdinaryLines:false},profile:{id:'user-classical-plus-void',version:'1.1.0',voidBasis:voidContext.basis||'day-explicit-input',partialPolicy:voidContext.partialPolicy||'mark-only',monthBoundary:'caller-supplied; no implicit timezone conversion'}});
   }

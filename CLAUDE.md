@@ -60,6 +60,10 @@ JSON按本卦分片，monthSlots以动爻:月令指向行池；每次只读一�
 - 应期先审核具体事件、吉凶、尺度、方法、轮次，再换日期。近期按日先本月余日、无候选再查下月实际干支；新盘不取过去日期，旧盘不滚动改期。按日可不填时分，按时或自动节气月令另需时间上下文。
 - 正文开局、过程、结局、总断，像正常说话，不用星号。专业依据放详情，允许有依据的条件与倾向。不得编心理、金额、人物、概率、确定日期或古案反馈。
 
+手机应用在 `apps/mobile`（说明见其 README）：三维道观、仪式状态机、石桌刻卦、详情面板、历法适配、本地历史、二维降级、Capacitor 原生壳。改动应用后运行 `npm run app:test` 与 `npm run app:build`。应用通过 `@knowledge` 别名直接导入 `src/index.js`，不得在 UI 里复制排盘算法。用户要求行动时直接实施，不停留在规划说明。
+
+Windows 注意：仓库用 `.gitattributes` 固定 LF，原文件哈希才能通过；Python 脚本经 `scripts/run-python.mjs` 以 UTF-8 模式运行。
+
 ## 事项与正式接口
 
 产品层读取 data/product-categories.json：6大类52细分，82个单事项。18个原典门类和旧90问是内部兼容来源，不是产品一级菜单。读取 question_type、回答范围、来源和辅助字段；辅助字段不由AI分类。复合与成婚不同；婚可成不能证明喜欢自己；失物不能代替失联人员。前端可另分导航大类，但保留原门类绑定。备注如保留，仅个人记录，不参与AI分类，不声称已回答备注里的其他问题。
@@ -74,4 +78,4 @@ SQL全文为 structural-only 内部稿，生产只查 approved_fixed_question_st
 
 npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm run validate:product；npm run validate:authored；npm test。结构校验与断法审核分别报告。
 
-当前已有知识层、排盘和二维联调，尚无完整3D手机应用。按V7继续实现可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。
+当前已有知识层、排盘和二维联调；3D手机应用在 apps/mobile，继续完善可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。

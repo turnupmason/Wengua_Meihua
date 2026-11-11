@@ -12,7 +12,13 @@
 
 最新技术审查：[断语审核 V2](docs/INTERPRETATION_AUDIT_V2.md)。每个具体事项新增 question_type；旧尾款稿1,920篇及16,617个空亡版本保留为待修订稿，九项断法审核通过数为0。正式接口返回 pending-review，未审核全文不作为正式解读。结构测试通过不代表断法或现实结果正确。
 
-为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块和 Claude 开发交接包**。本仓库已可读取卦象、点亮本卦动爻、查询对应爻辞与白话；完整 3D 道观应用按下方 prompt 继续开发。
+为第一视角道观占卦手机应用准备的**古籍知识库、确定性排盘模块**，以及基于它的**手机应用** [`apps/mobile`](apps/mobile/README.md)（React + Three.js + Capacitor）：入观、三炷香、叩首、石桌刻卦显出本卦/互卦/变卦，点爻查看经文与依据，离线可用。
+
+```bash
+npm run app:install
+npm run app:dev     # http://127.0.0.1:5173（浏览器竖屏手机模式）
+npm run app:test
+```
 
 **给 Claude 的入口：[CLAUDE.md](CLAUDE.md) → [新版完整开发 prompt](docs/CLAUDE_BUILD_PROMPT_V7.md)。**
 
