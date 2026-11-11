@@ -1,3 +1,7 @@
+首批12篇已包含主结果应期；涉及静空/假空的6篇另有填实、冲空的阶段节点，标明各自所应与吉凶，和最终通过窗口分开。前台读取paragraphs或dateResolution，不显示未换算的日期标记。
+
+写作进度：本助手已开始第1问“这次面试能通过吗”，首批12篇及对应应期见 INTERVIEW_PASS_BATCH_001.md，进度见 data/authored-readings/progress.json。产品API对这些精确情境返回ready、short、long、dateResolution；不同盘/月令/空亡情境返回待写。新增表authored_product_manuscripts在产品表之后导入。既定文风和应期方案已获用户批准，不重复提确认。
+
 # 问卦 / 三清问道：软件开发任务 V7
 
 仓库：https://github.com/turnupmason/Wengua_Meihua

@@ -1,5 +1,6 @@
 import {readRepositoryJSON} from './io.js';
 import {createQuestionRepository} from './questions.js';
+import {createInterviewManuscriptRepository} from './interview-manuscripts.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
@@ -7,7 +8,7 @@ const SUBCATEGORY_COUNTS=[8,9,10,8,9,8];
 /** Product navigation is independent of the eighteen classical source domains. */
 export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
- const legacy=questionRepository||createQuestionRepository({library,readJSON});let cache;
+ const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON});let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
    if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='1.0.0'||c.categoryCount!==6||c.subcategoryCount!==52||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
@@ -55,11 +56,15 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
    const paragraphs=q.mode==='reference'?q.referenceParagraphs:q.guidanceParagraphs;
    return freeze({...base,status:q.mode,paragraphs,story:paragraphs.join('\n\n'),predictionAllowed:false,provesLocation:false});
   }
+  if(q.manuscriptIndexPath){
+   const result=await authored.getContent(q,options);
+   return freeze({...result,...base,predictionAllowed:result.productionAllowed===true});
+  }
   const legacyId=q.legacyQuestionId||q.legacyBindings?.values?.[context[q.legacyBindings?.contextKey]];
   if(!legacyId)return freeze({...base,status:'pending-authoring',paragraphs:[],story:null,predictionAllowed:false,reason:'No exact product-question manuscript or reviewed method; no domain fallback'});
   const result=await legacy.getContent({questionId:legacyId,question_type:q.question_type,primaryId:options.primaryId,movingLine:options.movingLine,monthOrder:options.monthOrder,
    voidContext:options.voidContext,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
   return freeze({...result,...base,legacySelection:result.selection,predictionAllowed:result.productionAllowed===true});
  }
- return Object.freeze({getCatalog,getQuestion,listSubcategories,listQuestions,getContent,clearCache:()=>{cache=undefined;legacy.clearCache?.();}});
+ return Object.freeze({getCatalog,getQuestion,listSubcategories,listQuestions,getContent,clearCache:()=>{cache=undefined;legacy.clearCache?.();authored.clearCache();}});
 }

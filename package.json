@@ -33,6 +33,8 @@
     "validate:receivable": "node scripts/validate-receivable-batch.mjs",
     "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs",
     "build:product": "node scripts/build-product-catalog.mjs && python3 scripts/export-product.py",
-    "validate:product": "python3 scripts/validate-product.py"
+    "validate:product": "python3 scripts/validate-product.py",
+    "build:interview": "node scripts/build-interview-batch.mjs && npm run build:product && python3 scripts/export-authored-readings.py",
+    "validate:authored": "python3 scripts/validate-authored-readings.py"
   }
 }

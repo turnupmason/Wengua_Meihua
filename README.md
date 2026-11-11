@@ -1,5 +1,7 @@
 # 问卦 · 梅花易数 Wengua Meihua
 
+断语正在按顺序编写：[事业工作→求职面试→面试是否通过，第1批12篇](docs/INTERVIEW_PASS_BATCH_001.md)。已包含具体事件、吉凶与动态应期，JSON/SQL及产品接口已接通；第一问12/1,920个基盘槽位有稿，空亡情境精确匹配，未写范围继续登记。
+
 正式产品采用 [6大类、52细分、82单事项](docs/PRODUCT_CATEGORIES_V1.md)，页面与 createProductRepository 已接通。十篇V3内容与文风已获用户通过，验收绑定原稿；健康仅传统象意查阅，失物、宠物、失联人员分别处理。
 
 新写断语见 [十篇简断与详断 V3](docs/TEN_READINGS_V3.md)；三层数据、动爻完整性及④⑦冲突处理见 [生成与审核规范](docs/STORY_GENERATION_STANDARD_V3.md)。十篇文字已获用户验收，原稿摘要单独保存；新增盘面、旬空和精确应期仍按各自范围补齐。

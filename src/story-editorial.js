@@ -66,7 +66,7 @@ export function resolveConflictCase(facts){
   productionAllowed:false,releaseReview:'separate-nine-check-review-required',numericWeights:null});
 }
 
-const INTERNAL_LANGUAGE=[/不能把.{0,32}(写|叠加|单独当|判成|当作)/u,/不宜写|写得过重|写成.{0,10}结论|模型|审核|规则权重|算法|生成流程|需要一起看/u];
+const INTERNAL_LANGUAGE=[/不能把.{0,32}(写|叠加|单独当|判成|当作)/u,/不由.{0,45}(推成|推为)|不据此限定/u,/不宜写|写得过重|写成.{0,10}结论|模型|审核|规则权重|算法|生成流程|需要一起看/u];
 export function countHan(text){return [...text.matchAll(/\p{Script=Han}/gu)].length;}
 export function validateStoryCopy(sample){
  const {decision,copy}=sample;

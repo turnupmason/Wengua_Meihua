@@ -31,7 +31,7 @@ test('only explicit exact question links delegate; interview and unrecorded obje
  const real=createQuestionRepository({library}),calls=[];
  const fake={getQuestion:id=>real.getQuestion(id),getContent:async options=>{calls.push(options);return {status:'pending-review',selection:{questionId:options.questionId},story:null,paragraphs:[],productionAllowed:false};}};
  const product=createProductRepository({library,questionRepository:fake});
- assert.equal((await product.getContent({questionId:'career.interview.interview-pass',...dated})).status,'pending-authoring');assert.equal(calls.length,0);
+ assert.equal((await product.getContent({questionId:'career.interview.interview-pass',...dated})).status,'ready');assert.equal(calls.length,0);
  const offer=await product.getContent({questionId:'career.interview.job-offer',...dated});
  assert.equal(calls.at(-1).questionId,'domain-09-job-offer');assert.equal(offer.selection.questionId,'career.interview.job-offer');assert.equal(offer.legacySelection.questionId,'domain-09-job-offer');
  const needed=await product.getContent({questionId:'search.valuables.recovery',...dated});assert.equal(needed.status,'requires-context');assert.deepEqual(needed.missingContext,['objectKind']);

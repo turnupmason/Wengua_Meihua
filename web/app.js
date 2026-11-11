@@ -1,4 +1,5 @@
 import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_ORDERS} from '../src/index.js';
+import {createContextualReading} from '../src/interview-manuscripts.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createProductRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
 const questionCatalog=await questions.getCatalog();
@@ -36,8 +37,9 @@ async function showStory(current){
   const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
   let body;
-  if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');
-  else if(content.status==='requires-context')body='<p>请先选择'+content.missingContext.map(k=>esc(selected.contextFields[k].label)).join('、')+'。</p>';
+  if(content.status==='ready'&&content.short)body=`<h3>${esc(content.title)}</h3><p class="short-reading">${esc(content.short)}</p><details><summary>详断与应期</summary>${content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`;
+  else if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');
+  else if(content.status==='requires-context')body='<p>请先补充'+content.missingContext.map(k=>esc(selected.contextFields[k]?.label||{castingDate:'起卦日期',monthOrder:'月令',timingScale:'按日取期尺度',timingMethod:'本次取期依据'}[k]||k)).join('、')+'。</p>';
   else if(content.status==='pending-review')body='<p>这项解读还在核对。你可以先查看卦象、动爻和古籍原文。</p>';
   else if(content.status==='pending-authoring')body='<p>这项解读正在整理，你可以先查看本次卦象和古籍原文。</p>';
   else body='<p>这项解读的日期尚未核定，先查看卦象与原文。</p>';
@@ -80,7 +82,8 @@ function update(){try{
  }
  const selectedMonthOrder=$('#month').value,selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
  const castingDate=$('#casting-date').value,timingContext=Object.freeze({castingMethod:$('#timing-method').value==='pre-heaven-demo'?'pre-heaven':'manual',periodMethod:'element-qi'});
- reading=Object.freeze({...lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:selectedMonthOrder?{season:MONTH_ORDERS.find(o=>o.id===selectedMonthOrder).season}:{},voidContext:selectedVoidContext}),questionId:selected.id,productContext,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
+ const chart=selectedMonthOrder?createContextualReading({library:lib,question:selected,primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),monthOrder:selectedMonthOrder,castingDate,voidContext:selectedVoidContext}):lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:{},voidContext:selectedVoidContext});
+ reading=Object.freeze({...chart,questionId:selected.id,productContext,selectedMonthOrder,selectedVoidContext,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
  const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`体用关系：${edge.label}`;

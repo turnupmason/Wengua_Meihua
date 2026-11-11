@@ -1,5 +1,11 @@
 # Claude repository instructions
 
+当前断语已正式按产品顺序编写：事业工作→求职面试→这次面试能通过吗。首批12个冬水当令基盘及其明确空亡情境已写入，见 docs/INTERVIEW_PASS_BATCH_001.md。当前12/1,920个基盘槽位有稿，尚未切换到录用问题；其他月令、空亡情境不能近似复用。进度在data/authored-readings/progress.json，无后台写作任务。
+
+用户重申“那些需要应期的还要加上”“我批准了之前的”。沿用已有古籍依据、用户旬空规则和本月余日/下月候选显示办法，不重复请求文风或既定应期方案的批准。每篇记清事件、吉凶、尺度、取期来源；静空/假空需要填冲时另记阶段事件，不把它们替成最终通过日；动空不另等出空。日期按实际起卦日运行时换算。资料缺失与审批是两回事，不把缺原起卦方法、未知空亡情境用一句已批准代替。
+
+新12篇使用独立产品稿表authored_product_manuscripts，完成代码事实校验和本助手逐篇解释检查后标author-checked；只允许精确问题/盘/月令/空亡情境/取期法返回ready。空亡真假判定纳入本用动卦对当前体/互的直接生扶，仅用于假空条件，不作额外的原体能量或生克传递加分。审核者真实标assistant-author，不声称用户逐篇批准或独立真人专家认证。旧1,920篇批量稿及其旧审核状态仍单列，不阻塞已核对的新稿。
+
 正式产品入口已定为6大类、52细分、82个单事项，见 [正式分类](docs/PRODUCT_CATEGORIES_V1.md)。使用 createProductRepository，原18门古籍来源和旧90问保留在内部。
 
 最新断语标准为 [V3规范](docs/STORY_GENERATION_STANDARD_V3.md)，[十篇简断与详断](docs/TEN_READINGS_V3.md)由本助手负责撰写，开发侧接入已写稿件。第一层卦象事实、第二层专业结论、第三层自然文字分开；简详绑定同一结论。十篇V3内容与文风已获用户通过，验收记录见 data/editorial-acceptance.json，绑定原稿摘要；不重复请求文风确认。接受范围不自动扩展到其他盘、旬空或精确应期。
@@ -40,6 +46,6 @@ SQL全文为 structural-only 内部稿，生产只查 approved_fixed_question_st
 
 ## 验证与交付
 
-npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm run validate:product；npm test。结构校验与断法审核分别报告。
+npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm run validate:product；npm run validate:authored；npm test。结构校验与断法审核分别报告。
 
 当前已有知识层、排盘和二维联调，尚无完整3D手机应用。按V7继续实现可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。

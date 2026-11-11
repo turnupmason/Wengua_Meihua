@@ -4,6 +4,8 @@ import {PRODUCT_TAXONOMY,OBJECT_PRACTICAL_ADVICE} from '../sources/editorial/pro
 const root=new URL('../',import.meta.url),library=await loadLibrary(),legacy=createQuestionRepository({library});
 const classical=new Map(library.listDomains().map(d=>[d.id,d]));
 const accepted=JSON.parse(await readFile(new URL('sources/editorial/accepted-samples-v3.json',root),'utf8'));
+let authoredProgress=null;
+try{authoredProgress=JSON.parse(await readFile(new URL('data/authored-readings/progress.json',root),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}
 const categories=[];
@@ -19,7 +21,7 @@ for(const c of PRODUCT_TAXONOMY){
    questions.push({...raw,id,position:position+1,categoryId:c.id,subcategoryId,
     chartSourceDomainId:raw.sourceDomainIds[0]||null,
     sourceSections:raw.sourceDomainIds.map(id=>({domainId:id,sectionId:classical.get(id).sectionId})),
-    ruleStatus:raw.mode==='reference'?'reference-only':raw.mode==='guidance'?'practical-guidance-only':possibleBindings.length?'exact-question-link;release-review-separate':'specific-method-review-required',
+    ruleStatus:raw.mode==='reference'?'reference-only':raw.mode==='guidance'?'practical-guidance-only':raw.manuscriptIndexPath?'author-checked-exact-cases;other-contexts-pending':possibleBindings.length?'exact-question-link;release-review-separate':'specific-method-review-required',
     sourceMappingMeaning:'scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval',
     outputPolicy:{oneQuestionOnly:true,unverifiedDates:false,mentalStateIsFact:false,symbolicLocationIsFact:false},
     practicalAdvice:raw.practicalAdvice||[],contextFields:raw.contextFields||{}});
@@ -37,11 +39,12 @@ const catalog={...base,categoryCount:6,subcategoryCount:52,questionCount:questio
 await writeFile(new URL('data/product-categories.json',root),JSON.stringify(catalog,null,2)+'\n');
 await writeFile(new URL('data/editorial-acceptance.json',root),JSON.stringify({...base,...accepted,scopeStillMatches:true},null,2)+'\n');
 const plan={...base,acceptedSampleCount:accepted.samples.length,style:'user-accepted-story-editorial-3.0.0',
+ activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:1920,contextProfilesWritten:authoredProgress.contextProfilesWritten,progressPath:'data/authored-readings/progress.json'}:null,
  noFurtherStyleApprovalRequired:true,authorship:'assistant-authors;application-developers-integrate',backgroundExecution:false,
  categoryCount:6,subcategoryCount:52,questionCount:82,questionTypeCount:new Set(questions.map(q=>q.question_type)).size,
  sharedTypePolicy:'Explicit equivalent-scope references may share prose; question count is not independent-article count.',
  items:questions.map(q=>({questionId:q.id,question_type:q.question_type,categoryId:q.categoryId,subcategoryId:q.subcategoryId,
-  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.mode==='narrative'?'exact-coverage-pending':'reference-or-guidance-written',
+  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?'writing-in-progress':'exact-coverage-pending'):'reference-or-guidance-written',
   legacyQuestionId:q.legacyQuestionId||null,legacyBindings:q.legacyBindings||null}))};
 await writeFile(new URL('data/product-authoring-plan.json',root),JSON.stringify(plan,null,2)+'\n');
 let doc='# 正式产品分类 V1\n\n采用用户选定的6大类、52个细分项，名称与顺序保持原方案。常见问法归并同义项、拆开不同结果后，得到82个固定单事项入口。原18个古籍门类保留为后台来源，不再作为产品一级菜单。\n\n十篇V3简断与详断已获用户通过，内容及文风按原版本保留；无需重复请求文风确认。验收记录绑定原稿摘要，见 data/editorial-acceptance.json。\n\n';

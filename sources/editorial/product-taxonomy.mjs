@@ -12,7 +12,7 @@ const health=(id,question,paragraph)=>q(id,question,'health_symbolic_'+id,['doma
 export const PRODUCT_TAXONOMY=[
  {id:'career',number:'01',label:'事业工作',subcategories:[
   s('interview','求职面试','面试能通过吗？|能拿到 Offer 吗？',[
-   q('interview-pass','这次面试能通过吗？','interview_pass',['domain-09'],o('只回答这一轮面试是否通过，不把通过面试等同于获得最终录用。')),
+   q('interview-pass','这次面试能通过吗？','interview_pass',['domain-09'],o('只回答这一轮面试是否通过，不把通过面试等同于获得最终录用。',{manuscriptIndexPath:'data/authored-readings/interview-pass/index.json'})),
    q('job-offer','这次求职能拿到录用吗？','job_application',['domain-09'],o('回答本次录用是否落实，不只回答面试表现。',{legacyQuestionId:'domain-09-job-offer'}))]),
   s('promotion-pay','升职加薪','能升职吗？|今年能加薪吗？',[
    q('promotion','这次晋升能争取到吗？','promotion',['domain-09'],o('回答本次晋升，不由在任见克条文推成必遭处分或失业。',{legacyQuestionId:'domain-09-promotion'})),
