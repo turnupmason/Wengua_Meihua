@@ -1,11 +1,14 @@
-import {readdir} from 'node:fs/promises';
+import {readdir,readFile} from 'node:fs/promises';
 import {INTERVIEW_QUESTION_ID} from '../src/interview-manuscripts.js';
 import {MONTH_ORDERS} from '../src/narrative-rules.js';
+import {GLOBAL_TIMING_RULES} from '../src/timing-rules.js';
 
 export const REWRITE_VERSION = 'interview-pass-2.1.0';
 export const REWRITE_METHOD = 'individually-rewritten-and-reviewed';
 const directory = new URL('../sources/editorial/interview-rewrites/', import.meta.url);
 const sourceDirectory = 'sources/editorial/interview-rewrites/';
+const collatedSourceId = 'collated-yijing64';
+const timingRules = new Map(GLOBAL_TIMING_RULES.map(rule => [rule.id, rule]));
 const draftKey = ({primaryId, movingLine, monthOrder}) => `${primaryId}/${movingLine}/${monthOrder}`;
 const fameClauses = {
   equal: '体用比和，功名称意。',
@@ -15,12 +18,17 @@ const fameClauses = {
   body_generates_use: '体生用，名不可就，或因名有丧。',
 };
 
-export async function loadInterviewRewrites() {
+export async function loadInterviewRewrites(library) {
   const rewrites = new Map();
+  const [collatedText, patches] = await Promise.all([
+    readFile(new URL('../sources/revised/yijing64.txt', import.meta.url), 'utf8'),
+    readFile(new URL('../data/editorial-patches.json', import.meta.url), 'utf8').then(JSON.parse),
+  ]);
+  const textRepairs = new Map(patches.filter(p => p.field === 'text').map(p => [p.recordId, p]));
   for (const filename of (await readdir(directory)).sort()) {
     if (!/^hex-\d{3}\.mjs$/.test(filename)) continue;
     const {default: batch} = await import(new URL(filename, directory).href);
-    const {questionId, primaryId, rows, lineApplications} = batch;
+    const {questionId, primaryId, rows, lineApplications, strictControl} = batch;
     if (questionId !== INTERVIEW_QUESTION_ID || primaryId < 1 || primaryId > 64 ||
         filename !== `hex-${String(primaryId).padStart(3, '0')}.mjs`) {
       throw new Error(`Invalid interview rewrite batch: ${filename}`);
@@ -37,10 +45,29 @@ export async function loadInterviewRewrites() {
             !['control', 'support', 'drain', 'body-period'].includes(row.timing.kind) || row.timingOmission : !row.timingOmission)) {
         throw new Error(`Invalid or duplicate interview rewrite: ${key}`);
       }
-      rewrites.set(key, {...row, primaryId, lineApplication, sourcePath: `${sourceDirectory}${filename}`});
+      const selected = library.getLineReading(primaryId, row.movingLine);
+      const repair = strictControl && textRepairs.get(selected.id);
+      const collatedLine = repair ? collatedLineSource(selected, collatedText, repair.id) : undefined;
+      rewrites.set(key, {...row, primaryId, lineApplication, sourcePath: `${sourceDirectory}${filename}`, strictControl, collatedLine});
     }
   }
   return rewrites;
+}
+
+function collatedLineSource(line, text, patchId) {
+  const quotedLine = `${line.label}，${line.text}`;
+  const start = text.indexOf(`\n${quotedLine}\n`) + 1;
+  if (!start || text.indexOf(`\n${quotedLine}\n`, start) !== -1) {
+    throw new Error(`Missing or ambiguous collated moving line: ${line.id}`);
+  }
+  const lineNumber = text.slice(0, start).split('\n').length;
+  return {
+    sourceRef: {
+      sourceId: collatedSourceId, startChar: [...text.slice(0, start)].length,
+      endChar: [...text.slice(0, start + quotedLine.length)].length, startLine: lineNumber, endLine: lineNumber,
+    },
+    originalSourceRef: line.sourceRef, referenceUrl: line.referenceUrl, patchId,
+  };
 }
 
 // Only provenance and storage fields are assembled here. The verdict, prose, rebuttal,
@@ -72,6 +99,10 @@ export function bindInterviewRewrite(library, reading, draft) {
   if (end === 'body_generates_use' && draft.timing?.kind === 'drain') {
     uses.push(excerpt('mh-071', fameClauses[end], '末后仍需投入，依月令盛衰判断耗费能否承接。'));
   }
+  if (draft.strictControl && reading.edges.some(edge => edge.type === 'use_controls_body') &&
+      !reading.edges.some(edge => edge.type === 'use_generates_body')) {
+    uses.push(excerpt('mh-116', '如占吉事，无生体之卦，有克体之卦，则事不谐矣。', '本轮求通过属占吉事。有克体而无直接生体时，按本库从严口径判通过偏难。'));
+  }
   const timing = draft.timing ? [bindTiming(draft.timing, excerpt, uses)] : [];
   const timingOmission = draft.timingOmission ? {
     status: 'not-derived',
@@ -84,13 +115,14 @@ export function bindInterviewRewrite(library, reading, draft) {
   const sourceIds = [...new Set(uses.map(source => source.id))];
   return {
     ...draft,
-    sourceIds: [...sourceIds, selected.sourceRef.sourceId, 'user-void-extension', 'user-void-timing'],
+    sourceIds: [...sourceIds, draft.collatedLine?.sourceRef.sourceId ?? selected.sourceRef.sourceId, 'user-void-extension', 'user-void-timing'],
     sourceEvidence: uses,
     lineApplication: {evidence: [selected.text], conditions: [draft.lineApplication], sourcePath: draft.sourcePath},
     counterevidence: [{fact: 'facts.directRelations; facts.nodes; facts.movingLine', resolution: draft.counterevidence}],
     decisionPolicy: {
       id: 'individual-interview-rewrite', sourceIds,
       scope: 'project-interview-stage-application;case-specific',
+      ...(draft.strictControl ? {strictControl: true} : {}),
     },
     timing,
     timingOmission,
@@ -102,12 +134,13 @@ export function bindInterviewRewrite(library, reading, draft) {
 
 function bindTiming(spec, excerpt, uses) {
   const control = spec.kind === 'control';
-  const support = spec.kind === 'support';
+  const phaseSupport = spec.kind === 'support' && spec.eventScope !== 'positive-result-candidate';
+  const supportRule = timingRules.get(phaseSupport ? 'good-event' : 'fame-date');
   const drain = spec.kind === 'drain';
   const stage = {use: 'opening', body_mutual: 'process', use_mutual: 'process'}[spec.role] || 'closing';
   const [sourceId, quote, rule, event] = {
     control: ['mh-116', '有克体之卦，则事败于克体卦气之日。', 'adverse-event', `${stage}-obstruction`],
-    support: ['mh-071', '欲知名成之日，生体之卦气详之。', 'fame-good-event', `${stage}-support`],
+    support: [supportRule.sectionId, supportRule.quote, supportRule.id, `${stage}-support`],
     drain: ['mh-143', '亦不宜体卦生之也。', 'daily-qi-body-drain', `${stage}-drain`],
     'body-period': ['mh-071', '止看卦体时序之类，以定日期。', 'fame-body-fallback', 'interview-result'],
   }[spec.kind];
@@ -115,6 +148,8 @@ function bindTiming(spec, excerpt, uses) {
   const method = excerpt('mh-058', '又先天之卦，定事应之期，则取之卦气', '只在先天卦气取期的实际上下文中匹配日支。');
   const scale = excerpt('mh-122', '应之期远，则以年，近则以月，又近则以日也。', '限近期单轮面试，实际调用须具备先天卦气法、日级和当地起卦日期。');
   const branches = excerpt('mh-143', '本日所属卦气如寅卯木、巳午火、申酉金、亥子水、辰戌丑未土也。', '用所选经卦的五行匹配实际干支日支。');
+  // The stage clause from mh-117 is already bound in bindInterviewRewrite.
+  const phaseSourceIds = phaseSupport ? ['mh-117'] : [];
   uses.push(basis, method, scale, branches);
   return {
     ...spec,
@@ -122,7 +157,7 @@ function bindTiming(spec, excerpt, uses) {
     valence: control || drain ? '凶' : '吉',
     stage,
     prefix: '可留意',
-    sourceIds: [...new Set([basis.id, method.id, scale.id, branches.id])],
+    sourceIds: [...new Set([basis.id, ...phaseSourceIds, method.id, scale.id, branches.id])],
     ruleIds: [rule],
   };
 }

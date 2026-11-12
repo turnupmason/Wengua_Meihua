@@ -12,6 +12,7 @@ import {INTERVIEW_PASS_OTHER_MONTHS} from '../sources/editorial/interview-pass-a
 import {MONTH_ORDERS} from '../src/narrative-rules.js';
 import {loadInterviewLineLedger,createBaseInterviewReading,authorBaseInterview,BASE_AUTHORING_VERSION} from '../sources/editorial/interview-base-authoring.mjs';
 import {loadInterviewRewrites,bindInterviewRewrite,REWRITE_METHOD,REWRITE_VERSION} from './interview-rewrites.mjs';
+import {authorInterviewVoidContexts} from '../sources/editorial/interview-void-contexts.mjs';
 const root=new URL('../',import.meta.url),library=await loadLibrary(),base='data/authored-readings/interview-pass/';
 const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview-pass');
 const question={...raw,id:INTERVIEW_QUESTION_ID,manuscriptIndexPath:base+'index.json'};
@@ -19,7 +20,7 @@ const common={schemaVersion:'1.0.0',contentVersion:library.contentVersion,manusc
 const baselineSourceIds=['mh-056','mh-058','mh-071','mh-101','mh-116','mh-117','mh-119','mh-143','user-void-extension','user-void-timing'];
 const authored=[...INTERVIEW_PASS_BATCH_001.map(a=>({...a,monthOrder:'winter-water'})),...INTERVIEW_PASS_OTHER_MONTHS];
 const ledger=await loadInterviewLineLedger(library),known=new Set(authored.map(a=>`${a.primaryId}/${a.movingLine}/${a.monthOrder}`));
-const rewrites=await loadInterviewRewrites();
+const rewrites=await loadInterviewRewrites(library);
 for(const key of rewrites.keys())if(known.has(key))throw new Error('Rewrite would replace an original reference case: '+key);
 for(let primaryId=1;primaryId<=64;primaryId++)for(let movingLine=1;movingLine<=6;movingLine++)for(const order of MONTH_ORDERS){
  const key=`${primaryId}/${movingLine}/${order.id}`;
@@ -28,17 +29,20 @@ for(let primaryId=1;primaryId<=64;primaryId++)for(let movingLine=1;movingLine<=6
  const rewrite=rewrites.get(key);
  authored.push(rewrite?bindInterviewRewrite(library,r,rewrite):authorBaseInterview(r,ledger.get(`${primaryId}/${movingLine}`)));
 }
+authored.push(...authorInterviewVoidContexts({library,question,ledger}));
 const rows=[];
 for(const [index,a] of authored.entries()){
  const sourceIds=a.sourceIds||baselineSourceIds;
  const rewritten=a.authorship?.method===REWRITE_METHOD;
+ const scenario=a.voidScenario;
+ const castingDate=a.castingDate??'2026-11-11';
  const monthBranches=MONTH_SLOTS.filter(m=>m.qi===a.monthOrder).map(m=>m.branch);
- const reading=(a.baseNoVoid?createBaseInterviewReading:createInterviewReading)({library,question,primaryId:a.primaryId,movingLine:a.movingLine,monthBranch:monthBranches[0],castingDate:'2026-11-11'});
+ const reading=(a.baseNoVoid?createBaseInterviewReading:createInterviewReading)({library,question,primaryId:a.primaryId,movingLine:a.movingLine,monthBranch:monthBranches[0],castingDate});
  const facts={stages:Object.values(reading.stages).map(s=>({id:s.id,name:s.name,baseGrade:s.baseGrade})),
   nodes:reading.nodes.map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state,void:n.void,supportEvidence:n.supportEvidence})),
-  directRelations:reading.edges.map(e=>({role:e.targetRole,type:e.type})),movingLine:{...inspectMovingLine(reading.selectedMovingLine.text),label:reading.selectedMovingLine.label,sourceRef:reading.selectedMovingLine.sourceRef},
-  referenceContext:{voidApplied:!a.baseNoVoid,displayInUserResult:false,castingDate:'2026-11-11',dayGanzhi:reading.dayGanzhi,monthOrder:a.monthOrder,monthBranches,purpose:'explicit-qi-comparison-and-date-render-test;not-real-simultaneous-seasonal-casts'}};
- const decisionId=`${question.id}/${a.primaryId}/${a.movingLine}/${a.monthOrder}/${a.outcome}`;
+  directRelations:reading.edges.map(e=>({role:e.targetRole,type:e.type})),movingLine:{...inspectMovingLine(reading.selectedMovingLine.text),label:reading.selectedMovingLine.label,...(a.collatedLine||{sourceRef:reading.selectedMovingLine.sourceRef})},
+  referenceContext:{voidApplied:!a.baseNoVoid,displayInUserResult:false,castingDate,dayGanzhi:reading.dayGanzhi,monthOrder:a.monthOrder,monthBranches,purpose:scenario?'representative-day-for-exact-void-profile':'explicit-qi-comparison-and-date-render-test;not-real-simultaneous-seasonal-casts'}};
+ const decisionId=`${question.id}/${a.primaryId}/${a.movingLine}/${a.monthOrder}/${a.outcome}`+(scenario?`/void/${castingDate}`:'');
  const decision={id:decisionId,outcomeCode:a.outcome,question_type:question.question_type,questionScope:'one-interview-stage',
   method:'project-application-of-fame-chapter;not-a-verbatim-classical-interview-rule',sourceIds,
   counterevidence:a.counterevidence,lineApplication:{...a.lineApplication,allDetectedTerms:facts.movingLine.terms},
@@ -47,9 +51,9 @@ for(const [index,a] of authored.entries()){
   indirectEffectsApplied:[],interpretationProvenance:'assistant-authored;not-observed-feedback;not-scientifically-verified-prediction'};
  const copy={title:a.title,short:{decisionId,text:a.short},long:{decisionId,opening:a.opening,process:a.process,ending:a.ending,summary:a.summary}};
  const checks={...validateStoryCopy({decision,copy,lineApplication:a.lineApplication,counterevidence:a.counterevidence}),shortSeparation:checkInterviewShort(copy.short.text)};
- if([copy.short.text,...Object.values(copy.long)].some(s=>/逢空|午空|空亡|动空|未支|申支/.test(s)))throw new Error('Base prose still contains a fixed void profile: '+decisionId);
+ if(!scenario&&[copy.short.text,...Object.values(copy.long)].some(s=>/逢空|午空|空亡|动空|未支|申支/.test(s)))throw new Error('Base prose still contains a fixed void profile: '+decisionId);
  const timingSlots=interviewTimingSlots(reading,a.timing);
- const coreVoidNotes=reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)&&n.void.hit).map(n=>{
+ const coreVoidNotes=a.coreVoidNotes??reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)&&n.void.hit).map(n=>{
   const role={body:'体',use:'本用',changed_use:'变用'}[n.role];
   if(n.void.hitKind==='partial')return `${role}${n.trigram}卦${n.void.matchedBranches.join('、')}位逢空，${n.void.branches.filter(b=>!n.void.matchedBranches.includes(b)).join('、')}位未空，按半空减力，仍参与体用判断。`;
   if(n.void.state==='moving_exempt')return `${role}${n.trigram}卦逢空，但本身发动，仍有作用。`;
@@ -61,38 +65,41 @@ for(const [index,a] of authored.entries()){
   'question-method-match':['Fame chapter applied to this interview stage, separate from offer','mh-071;project-interview-stage-application-v1'],
   'relation-directions':['Four direct relations independently recalculated','facts.directRelations'],
   'uniform-seasonal-strength':['All six visible positions use the same five-state qi table',`facts.nodes;${a.monthOrder}`],
-  'extension-provenance':['Base prose independent of void; whole-trigram mapping; partial means qualitative reduction; ordinary mutual static void has no separate timing','user-void-extension;core-priority;qualitative-reduction'],
+  'extension-provenance':scenario?[coreVoidNotes.join(' '),'user-void-extension;user-void-timing;exact-void-profile']:
+   ['Base prose independent of void; whole-trigram mapping; partial means qualitative reduction; ordinary mutual static void has no separate timing','user-void-extension;core-priority;qualitative-reduction'],
   'bounded-indirect-relations':['No indirect effect reverses a direct relation','decision.indirectEffectsApplied'],
   'reproducible-event-timing':a.timingOmission?[a.timingOmission.reason,'timingOmission;mh-071;mh-116;mh-122;mh-143']:
    [a.timing[0]?.reason||'Stored support/control event distinguishes overall result from phase obstruction or repair; dates use saved casting day','timingSlots;mh-071;mh-116;mh-143'],
   'conclusion-and-counterevidence':[a.counterevidence.map(c=>c.resolution).join('；'),'decision.counterevidence;complete-moving-line']
  };
- const review={status:'author-checked',actor:'assistant-author',version:rewritten?REWRITE_VERSION:INTERVIEW_MANUSCRIPT_VERSION,
-  scope:rewritten?'exact-base-qi-text;core-changing-void-variants-separate':'base-prose-and-recorded-void-profile;equivalent-qi-month-slots-share-written-text;exempt-core-void-does-not-change-verdict',
-  verification:rewritten?'individual-rewrite-and-whole-article-author-review':a.authorship?'canonical-facts-and-rule-conformance;curated-line-ledger;compiled-prose-not-manual-whole-article-review':'computed-facts-plus-authored-judgment;not-independent-human-expert-certification',
+ const review={status:'author-checked',actor:'assistant-author',version:scenario?a.authorship.version:rewritten?REWRITE_VERSION:INTERVIEW_MANUSCRIPT_VERSION,
+  scope:scenario?'exact-void-profile-and-applicable-month-branches':rewritten?'exact-base-qi-text;core-changing-void-variants-separate':'base-prose-and-recorded-void-profile;equivalent-qi-month-slots-share-written-text;exempt-core-void-does-not-change-verdict',
+  verification:scenario?'individually-authored-exact-void-context':rewritten?'individual-rewrite-and-whole-article-author-review':a.authorship?'canonical-facts-and-rule-conformance;curated-line-ledger;compiled-prose-not-manual-whole-article-review':'computed-facts-plus-authored-judgment;not-independent-human-expert-certification',
   compilation:a.authorship||{method:'individually-authored-reference-case',manualWholeArticleReview:true},
   independentReview:{status:'pending',timingInterpretation:'pending',calendarConversion:'separate-technical-check',userAcceptedThisVersion:false},
   checks:Object.fromEntries(AUDIT_CHECKS.map(id=>[id,{status:'pass',scope:'author-check-only;not-independent-approval',evidence:[{sourceId:'project-interview-authoring',locator:evidence[id][1],reason:evidence[id][0]}]}]))};
  const row={number:index+1,primaryId:a.primaryId,movingLine:a.movingLine,monthOrder:a.monthOrder,monthBranches,voidProfileKey:a.baseNoVoid?'base-no-void':getVoidProfileKey(reading),
   stageIds:Object.values(reading.stages).map(s=>s.id),movingLineText:reading.selectedMovingLine.text,facts,decision,copy,timingSlots,
-  ...(a.timingOmission?{timingOmission:a.timingOmission}:{}),
-  baseProse:true,baseNoVoid:Boolean(a.baseNoVoid),authorship:a.authorship||{method:'individually-authored-reference-case',manualWholeArticleReview:true},coreVoidNotes,ruleVersions:{void:VOID_RULESET.id,decision:INTERVIEW_DECISION_POLICY_VERSION},voidReleaseSpecs:[],voidTimingSlots:[],voidTimingText:'',
+  ...(a.timingOmission?{timingOmission:a.timingOmission}:{}),...(scenario?{voidScenario:scenario}:{}),
+  baseProse:!scenario,baseNoVoid:Boolean(a.baseNoVoid),authorship:a.authorship||{method:'individually-authored-reference-case',manualWholeArticleReview:true},coreVoidNotes,ruleVersions:{void:VOID_RULESET.id,decision:INTERVIEW_DECISION_POLICY_VERSION},voidReleaseSpecs:[],voidTimingSlots:[],voidTimingText:'',
   lineApplication:a.lineApplication,counterevidence:a.counterevidence,sourceIds,review,copyChecks:checks};
  row.artifactDigest=await interpretationArtifactDigest(row);rows.push(row);
 }
-if(rows.length!==1920||new Set(rows.map(r=>r.primaryId+'/'+r.movingLine+'/'+r.monthOrder)).size!==1920)throw new Error('Expected all 1920 base-qi versions');
+const baseRows=rows.filter(r=>r.baseProse),scenarioCount=rows.length-baseRows.length;
+if(baseRows.length!==1920||new Set(baseRows.map(r=>r.primaryId+'/'+r.movingLine+'/'+r.monthOrder)).size!==1920)throw new Error('Expected all 1920 base-qi versions');
+if(new Set(rows.map(r=>JSON.stringify([r.primaryId,r.movingLine,r.monthOrder,r.voidProfileKey]))).size!==rows.length)throw new Error('Duplicate authored interview profile');
 await mkdir(new URL(base,root),{recursive:true});
 const files=[];let monthSlotCount=0;
 for(const primaryId of Array.from({length:64},(_,i)=>i+1)){
  const pool=rows.filter(r=>r.primaryId===primaryId),monthSlots={};
- for(const [i,r] of pool.entries())for(const b of r.monthBranches){const k=r.movingLine+':'+b;if(k in monthSlots)throw new Error('Duplicate month slot');monthSlots[k]=i;monthSlotCount++;}
+ for(const [i,r] of pool.entries())if(r.baseProse)for(const b of r.monthBranches){const k=r.movingLine+':'+b;if(k in monthSlots)throw new Error('Duplicate month slot');monthSlots[k]=i;monthSlotCount++;}
  const path=base+`hex-${String(primaryId).padStart(3,'0')}.json`;
  await writeFile(new URL(path,root),JSON.stringify({...common,primaryId,monthSlots,rows:pool})+'\n');
  files.push({primaryId,path,count:pool.length,monthSlotCount:Object.keys(monthSlots).length});
 }
 // Retained original winter file for stable external links; not loaded by the application.
 await writeFile(new URL(base+'batch-001.json',root),JSON.stringify({...common,batchId:'batch-001',rows:rows.slice(0,12)})+'\n');
-const index={...common,baseCaseCount:monthSlotCount,authoredVersionCount:rows.length,contextProfileCount:rows.length,totalBaseCases:4608,
+const index={...common,baseCaseCount:monthSlotCount,baseVersionCount:baseRows.length,authoredVersionCount:rows.length,contextProfileCount:rows.length,voidScenarioCount:scenarioCount,totalBaseCases:4608,
  monthSlotPolicy:MONTH_SLOT_POLICY,monthSlots:MONTH_SLOTS,allTwelveMonthsCoveredForCharts:384,remainingBaseSlots:4608-monthSlotCount,
  coverage:'all-384-core-charts-and-4608-month-slots;core-changing-void-variants-separate',
  authorship:editorialProgress(),
@@ -100,27 +107,27 @@ const index={...common,baseCaseCount:monthSlotCount,authoredVersionCount:rows.le
 await writeFile(new URL(base+'index.json',root),JSON.stringify(index,null,2)+'\n');
 await writeFile(new URL('data/authored-readings/progress.json',root),JSON.stringify({...common,
  activeQuestionId:question.id,activeQuestion:'这次面试能通过吗？',order:'chart-and-moving-line/all-twelve-month-slots;finish-question-before-offer',
- baseCasesWritten:monthSlotCount,totalBaseCases:4608,uniqueAuthoredVersions:rows.length,contextProfilesWritten:rows.length,
+ baseCasesWritten:monthSlotCount,totalBaseCases:4608,baseVersionsWritten:baseRows.length,uniqueAuthoredVersions:rows.length,contextProfilesWritten:rows.length,
  fullTwelveMonthCharts:384,remainingBaseSlots:4608-monthSlotCount,backgroundExecution:false,files,
  baseCoverageComplete:true,authorship:index.authorship,
- coreChangingVoidVariants:{status:'pending-authoring',completedInCurrentRevision:0},
+ coreChangingVoidVariants:{status:'partially-authored',completedInCurrentRevision:scenarioCount},
  nextBaseRewrite:nextBaseRewrite()},null,2)+'\n');
 
 function editorialProgress(){
- const retainedIndividuallyAuthored=rows.filter(r=>r.authorship.method==='individually-authored-reference-case').length;
- const revised=rows.filter(r=>r.authorship.method===REWRITE_METHOD);
+ const retainedIndividuallyAuthored=baseRows.filter(r=>r.authorship.method==='individually-authored-reference-case').length;
+ const revised=baseRows.filter(r=>r.authorship.method===REWRITE_METHOD);
  if(revised.length!==rewrites.size)throw new Error('Some interview rewrites were not built');
  return {
   editorialRevision:REWRITE_VERSION,retainedIndividuallyAuthored,
   individuallyRewritten:revised.length,rewrittenAndWholeArticleReviewed:revised.filter(r=>r.authorship.manualWholeArticleReview).length,
   rewrittenMonthSlots:revised.reduce((count,r)=>count+r.monthBranches.length,0),
-  remainingRuleCompiled:rows.length-retainedIndividuallyAuthored-revised.length,
+  remainingRuleCompiled:baseRows.length-retainedIndividuallyAuthored-revised.length,
   lineLedgerEntries:ledger.size,compilationVersion:BASE_AUTHORING_VERSION,independentReview:'pending',userAcceptedRewrites:0,
  };
 }
 
 function nextBaseRewrite(){
- const next=rows.find(r=>!r.authorship.manualWholeArticleReview);
+ const next=baseRows.find(r=>!r.authorship.manualWholeArticleReview);
  return next?{questionId:question.id,primaryId:next.primaryId,movingLine:next.movingLine,monthOrder:next.monthOrder,monthBranches:next.monthBranches}:null;
 }
 const runtime=createInterviewManuscriptRepository({library,readJSON:async p=>JSON.parse(await readFile(new URL(p,root),'utf8'))});
@@ -148,7 +155,7 @@ let directory='# 求职面试：全部基础卦象\n\n目标问项为“这次�
  `保留原${index.authorship.retainedIndividuallyAuthored}篇逐篇稿。已逐篇重写并由作者全文复核${index.authorship.rewrittenAndWholeArticleReviewed}篇，覆盖${index.authorship.rewrittenMonthSlots}个月令位置。仍有${index.authorship.remainingRuleCompiled}篇为离线编译稿。独立专业审核仍待完成。\n\n`+
  '普通场景按实际起卦日换算日干支、旬空与日期。改变核心判断而缺少专稿的空亡情境返回待写。\n\n寅卯木、巳午火、申酉金、亥子水、辰未戌丑土，十二月令各自有键，同气且同结论时共用全文。文档日期为2026-11-11起卦的对照演示。\n\n';
 for(const file of files){
- const pool=rows.filter(r=>r.primaryId===file.primaryId).sort((a,b)=>a.movingLine-b.movingLine||MONTH_ORDERS.findIndex(m=>m.id===a.monthOrder)-MONTH_ORDERS.findIndex(m=>m.id===b.monthOrder));
+ const pool=baseRows.filter(r=>r.primaryId===file.primaryId).sort((a,b)=>a.movingLine-b.movingLine||MONTH_ORDERS.findIndex(m=>m.id===a.monthOrder)-MONTH_ORDERS.findIndex(m=>m.id===b.monthOrder));
  const hexId=String(file.primaryId).padStart(3,'0');
  const name=library.getHexagram(file.primaryId).name,path=`docs/interview-pass/hex-${hexId}.md`;
  let doc=`# ${file.primaryId} · ${name}：六动爻与十二月令\n\n本页30份完整正文对应72个月令槽位。此处为不应用旬空的基础对照；实际页面另行计算旬空。全部日期为2026-11-11起卦的日序展示，不声称不同月令是同一天的实际节令。\n\n`;

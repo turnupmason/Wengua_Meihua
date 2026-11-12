@@ -1,6 +1,7 @@
 export default {
   questionId: 'career.interview.interview-pass',
   primaryId: 3,
+  strictControl: true,
   lineApplications: {
     1: '磐桓取起步未顺，利居贞与利建侯都落在先立根基。用于本轮面试，先把已经具备的经历和岗位要求对齐，再求推进。',
     2: '屯邅、班如和贞不字写迟疑与暂缓，匪寇婚媾和十年乃字保留从疑到合的余地。面试中只取先有疑碍、后可重新确认，不取婚嫁应事或固定期限。',

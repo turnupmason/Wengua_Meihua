@@ -6,7 +6,7 @@ index=load('data/authored-readings/interview-pass/index.json');progress=load('da
 db=sqlite3.connect(':memory:')
 for p in ['data/knowledge.sql','data/question-items.sql','data/product-categories.sql','dist/authored-readings.sql']:db.executescript((root/p).read_text())
 assert not db.execute('PRAGMA foreign_key_check').fetchall()
-count=0;slots=0;per_chart={};texts=set();rewritten=0;rewritten_slots=0
+count=0;slots=0;scenarios=0;scenario_slots=0;per_chart={};texts=set();rewritten=0;rewritten_slots=0
 for f in index['files']:
  batch=load(f['path'])
  assert batch['primaryId']==f['primaryId']
@@ -32,14 +32,26 @@ for f in index['files']:
   assert not row['review']['independentReview']['userAcceptedThisVersion']
   assert all(s['calculationBasis']['independentInterpretationReview']=='pending' and s['eventScope'] for s in row['timingSlots'])
   assert '批准的扩展规则' not in json.dumps(row['copy'],ensure_ascii=False)
-  texts.add(row['copy']['short']['text']);count+=1
+  count+=1
+  if row['baseProse']:
+   texts.add(row['copy']['short']['text'])
+  else:
+   assert row['voidScenario'] and row['voidProfileKey']!='base-no-void'
+   assert row['facts']['referenceContext']['voidApplied'] and row['authorship']['manualWholeArticleReview']
+   scenarios+=1
+   for branch in row['monthBranches']:
+    stored=db.execute('SELECT month_order_id FROM authored_product_month_slots WHERE question_id=? AND hexagram_id=? AND moving_line=? AND month_branch=? AND void_profile_key=?',(batch['questionId'],row['primaryId'],row['movingLine'],branch,row['voidProfileKey'])).fetchone()
+    assert stored and stored[0]==row['monthOrder'];scenario_slots+=1
  for key,i in batch['monthSlots'].items():
   line,branch=key.split(':');row=batch['rows'][i]
-  assert row['movingLine']==int(line) and branch in row['monthBranches']
+  assert row['baseProse'] and row['movingLine']==int(line) and branch in row['monthBranches']
   per_chart.setdefault((batch['primaryId'],int(line)),set()).add(branch)
   stored=db.execute('SELECT month_order_id FROM authored_product_month_slots WHERE question_id=? AND hexagram_id=? AND moving_line=? AND month_branch=? AND void_profile_key=?',(batch['questionId'],batch['primaryId'],int(line),branch,row['voidProfileKey'])).fetchone()
   assert stored and stored[0]==row['monthOrder'];slots+=1
-assert count==index['authoredVersionCount']==progress['uniqueAuthoredVersions']==1920
+assert count==index['authoredVersionCount']==progress['uniqueAuthoredVersions']
+assert count-scenarios==index['baseVersionCount']==progress['baseVersionsWritten']==1920
+assert scenarios==index['voidScenarioCount']==progress['coreChangingVoidVariants']['completedInCurrentRevision']
+assert db.execute('SELECT count(*) FROM authored_product_month_slots').fetchone()[0]==slots+scenario_slots
 assert slots==index['baseCaseCount']==progress['baseCasesWritten']==4608
 assert len(texts)==1920 and len(per_chart)==384 and all(len(v)==12 for v in per_chart.values())
 assert index['totalBaseCases']==progress['totalBaseCases']==4608 and progress['remainingBaseSlots']==0
@@ -47,5 +59,5 @@ assert progress['activeQuestionId']=='career.interview.interview-pass'
 assert index['authorship']==progress['authorship']
 assert rewritten==index['authorship']['rewrittenAndWholeArticleReviewed']==index['authorship']['individuallyRewritten']
 assert rewritten_slots==index['authorship']['rewrittenMonthSlots']
-assert rewritten+index['authorship']['retainedIndividuallyAuthored']+index['authorship']['remainingRuleCompiled']==count
-print('Authored gate: 1920 complete copies, 4608 month slots, all 384 charts and 12 months per chart, event/valence timing, 9 checks, SQL references and truthful progress passed.')
+assert rewritten+index['authorship']['retainedIndividuallyAuthored']+index['authorship']['remainingRuleCompiled']==count-scenarios
+print(f'Authored gate: 1920 base copies, {scenarios} exact void manuscripts, 4608 base month slots, all 384 charts, sourced timing, 9 checks and SQL references passed.')

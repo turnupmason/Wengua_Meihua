@@ -74,9 +74,14 @@ export function interviewTimingSlots(reading,specs){
   const bodyPeriod=s.kind==='body-period'&&s.role==='body';
   const expected=s.kind==='support'?'use_generates_body':s.kind==='control'?'use_controls_body':s.kind==='drain'?'body_generates_use':null;
   if(!node||node.void.effective!=='active'||(bodyPeriod?reading.edges.some(e=>e.type==='use_controls_body'):!expected||edge?.type!==expected))throw new Error('Timing source must be an active direct support/controller, sourced drain or no-controller body period');
-  if(s.kind==='support'&&!s.sourceIds.includes('mh-071')||s.kind==='control'&&!s.sourceIds.includes('mh-116'))throw new Error('Timing event lacks its scoped source');
-  if(s.kind==='drain'&&!s.sourceIds.includes('mh-143')||bodyPeriod&&!s.sourceIds.includes('mh-071'))throw new Error('Timing fallback lacks its scoped source');
   const eventScope=s.eventScope||(s.id==='obstruction'?'process-obstruction':s.id==='repair'?'process-repair':s.kind==='support'?'positive-result-candidate':'obstruction-or-adverse-result');
+  if(s.kind==='support'){
+   const phase=s.stage?eventScope!=='positive-result-candidate':s.ruleIds.includes('good-event');
+   if(!s.sourceIds.includes(phase?'mh-116':'mh-071')||!s.ruleIds.includes(phase?'good-event':'fame-date'))
+    throw new Error('Interview support timing needs a rule and source for its event scope');
+  }
+  if(s.kind==='control'&&!s.sourceIds.includes('mh-116'))throw new Error('Timing event lacks its scoped source');
+  if(s.kind==='drain'&&!s.sourceIds.includes('mh-143')||bodyPeriod&&!s.sourceIds.includes('mh-071'))throw new Error('Timing fallback lacks its scoped source');
   const calculationBasis={role:s.role,trigram:node.trigram,element:node.element,directRelation:bodyPeriod?'equal':edge.type,
    method:'pre-heaven-element-qi',scale:'day',ruleIds:[...s.ruleIds],sourceIds:[...s.sourceIds],
    ...(s.reason?{reason:s.reason,stage:s.stage,selectionOrder:['casting-month-remaining-days','next-month-if-no-match']}:{}),
@@ -108,14 +113,20 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   const position=file.monthSlots[reading.movingLine+':'+reading.monthSlotForLookup];
   if(position===undefined)return pending();
   if(!Number.isInteger(position)||!file.rows[position])throw new Error('Invalid month slot reference');
-  const row=file.rows[position];
-  if(row.primaryId!==reading.primaryId||row.movingLine!==reading.movingLine||row.monthOrder!==reading.monthOrder||!row.monthBranches.includes(reading.monthSlotForLookup))throw new Error('Authored month slot mismatch');
-  const exactProfile=row.voidProfileKey===key;
-  const baseEligible=row.baseProse===true&&reading.nodes.filter(n=>['body','use','changed_use'].includes(n.role)).every(n=>n.void.hitKind==='none'||n.void.effective==='active');
+  const matchesMonth=row=>row.primaryId===reading.primaryId&&row.movingLine===reading.movingLine&&
+   row.monthOrder===reading.monthOrder&&row.monthBranches.includes(reading.monthSlotForLookup);
+  const baseRow=file.rows[position];
+  if(!matchesMonth(baseRow))throw new Error('Authored month slot mismatch');
+  const matchingContexts=file.rows.filter(row=>row.voidProfileKey===key&&matchesMonth(row));
+  if(matchingContexts.length>1)throw new Error('Duplicate authored interview void profile');
+  const exactProfile=matchingContexts.length===1;
+  const row=matchingContexts[0]??baseRow;
+  // The prose relies on both mutual trigrams for the middle stage.
+  const baseEligible=baseRow.baseProse===true&&reading.nodes.every(n=>n.role==='body_inherited'||n.void.effective==='active');
   if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
-  checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence});
+  checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
   checkInterviewShort(row.copy.short.text);
   if(row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');

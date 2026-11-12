@@ -62,7 +62,8 @@ test('complete base coverage retains pending status for uncovered core-void prof
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire'})).status,'ready');
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire',castingDate:'2026-12-06'})).status,'pending-authoring');
  const changed=await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,voidContext:{roleEvidence:{body_mutual:{severelyWeak:true,dayMonthAttacked:true}}}});
- assert.equal(changed.status,'ready');assert.ok(!changed.story.includes('空亡节点'));
+ assert.equal(changed.status,'pending-authoring');assert.equal(changed.story,null);
+ assert.equal(changed.reading.nodes.find(n=>n.role==='body_mutual').void.state,'true_void');
  const manual=await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,timingContext:{castingMethod:'manual',periodMethod:'element-qi'}});
  assert.equal(manual.status,'requires-context');assert.ok(manual.missingContext.includes('timingMethod'));
  await assert.rejects(product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,voidContext:{ganzhi:'甲子'}}),/disagree/);
