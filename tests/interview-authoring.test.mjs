@@ -41,6 +41,14 @@ test('positive and adverse windows independently match support/control branches 
   assert.equal(timing.eventScope,'process-drain');assert.equal(timing.role,'use_mutual');assert.deepEqual(timing.branches,['申','酉']);
   assert.ok(gu.dateResolution.dateMatches[0].matches.every(d=>timing.branches.includes(getCivilDay(d.date).dayBranch)));
  }
+ for(const monthOrder of ['spring-wood','summer-fire','autumn-metal','winter-water']){
+  const shiHe=await product.getContent({questionId:question.id,...context,primaryId:21,movingLine:4,monthOrder});
+  assert.equal(shiHe.timingDecision[0].eventScope,'process-support');
+  assert.equal(shiHe.timingDecision[0].role,'use_mutual');
+ }
+ const earthShiHe=await product.getContent({questionId:question.id,...context,primaryId:21,movingLine:4,monthOrder:'seasonal-earth'});
+ assert.equal(earthShiHe.timingDecision[0].eventScope,'opening-drain');
+ assert.equal(earthShiHe.timingDecision[0].role,'use');
  for(const r of [positive,adverse])for(const event of r.dateResolution.dateMatches)for(const d of event.matches)
   assert.ok(r.timingDecision.find(s=>s.id===event.slotId).branches.includes(getCivilDay(d.date).dayBranch));
  assert.ok(![...positive.timingDecision,...adverse.timingDecision].some(s=>s.ruleIds.includes('fame-office-risk')));
