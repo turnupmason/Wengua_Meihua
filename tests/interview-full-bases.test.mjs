@@ -9,21 +9,23 @@ import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const library=await loadLibrary(),product=createProductRepository({library}),question=await product.getQuestion('career.interview.interview-pass');
 const index=await read('data/authored-readings/interview-pass/index.json'),files=await Promise.all(index.files.map(f=>read(f.path)));
-const ledger=await loadInterviewLineLedger(library),rows=files.flatMap(f=>f.rows);
+const ledger=await loadInterviewLineLedger(library),allRows=files.flatMap(f=>f.rows),rows=allRows.filter(r=>r.baseProse);
 const cast={castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
 test('all 64 hexagrams, 384 ordinary moving lines and 4608 month slots have complete prewritten base records',()=>{
- assert.equal(index.baseCaseCount,4608);assert.equal(index.authoredVersionCount,1920);assert.equal(index.remainingBaseSlots,0);
+ assert.equal(index.baseCaseCount,4608);assert.equal(index.baseVersionCount,1920);assert.equal(index.remainingBaseSlots,0);
+ assert.equal(index.authoredVersionCount,allRows.length);
+ assert.equal(index.voidScenarioCount,allRows.length-rows.length);
  assert.equal(files.length,64);assert.equal(rows.length,1920);assert.equal(ledger.size,384);
  const seen=new Set(),texts=new Set();
  for(const f of files){
-  assert.equal(f.rows.length,30);assert.equal(Object.keys(f.monthSlots).length,72);
+  assert.equal(f.rows.filter(r=>r.baseProse).length,30);assert.equal(Object.keys(f.monthSlots).length,72);
   for(let line=1;line<=6;line++)for(const m of MONTH_SLOTS){
    const r=f.rows[f.monthSlots[`${line}:${m.branch}`]],key=`${f.primaryId}/${line}/${m.branch}`;
    assert.ok(r);assert.equal(r.primaryId,f.primaryId);assert.equal(r.movingLine,line);assert.equal(r.monthOrder,m.qi);
    assert.ok(!seen.has(key));seen.add(key);
   }
-  for(const r of f.rows){checkInterviewShort(r.copy.short.text);texts.add(r.copy.short.text);assert.ok(r.copy.long.opening&&r.copy.long.process&&r.copy.long.ending&&r.copy.long.summary);}
+  for(const r of f.rows.filter(r=>r.baseProse)){checkInterviewShort(r.copy.short.text);texts.add(r.copy.short.text);assert.ok(r.copy.long.opening&&r.copy.long.process&&r.copy.long.ending&&r.copy.long.summary);}
  }
  assert.equal(seen.size,4608);assert.equal(texts.size,1920);
 });
@@ -37,7 +39,7 @@ test('every full-base record independently binds canonical geometry, all five-st
   assert.deepEqual(row.facts.directRelations,reading.edges.map(e=>({role:e.targetRole,type:e.type})));
   const material=structuredClone(row);delete material.artifactDigest;assert.equal(await interpretationArtifactDigest(material),row.artifactDigest);
   assert.equal(row.copy.short.decisionId,row.copy.long.decisionId);assert.equal(row.review.independentReview.status,'pending');
-  checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence});
+  checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
   if(row.baseNoVoid){
    assert.equal(row.voidProfileKey,'base-no-void');assert.ok(row.lineApplication.sourcePath);
    const rewritten=row.authorship.method==='individually-rewritten-and-reviewed';
@@ -82,7 +84,11 @@ test('authored Qian rewrites return a dated stage event only where supported',as
 
  const pressure=await product.getContent({...cast,...options,castingDate:'2026-11-21',movingLine:2,monthBranch:'酉'});
  assert.equal(pressure.status,'ready');
- assert.equal(pressure.decision.outcomeCode,'pass-with-conditions');
+ assert.equal(pressure.decision.outcomeCode,'not-pass-this-round');
+ assert.deepEqual(pressure.decision.consistency.controllingRoles,['changed_use']);
+ assert.throws(()=>checkInterviewDecision(pressure.reading,{
+  outcome:'pass-with-conditions',decisionPolicy:pressure.decision.decisionPolicy,
+ }),/无生体而有克体/);
  assert.equal(pressure.timingSection.windows[0].eventScope,'closing-obstruction');
  assert.equal(pressure.timingSection.windows[0].valence,'凶');
  assert.deepEqual(pressure.timingSection.windows[0].targetBranches,['巳','午']);
@@ -95,6 +101,8 @@ test('authored Tun separates opening support, process obstruction, and closing c
  assert.equal(early.decision.outcomeCode,'not-pass-this-round');
  assert.equal(early.timingSection.windows[0].eventScope,'process-repair');
  assert.equal(early.timingSection.windows[0].calculationBasis.stage,'opening');
+ assert.deepEqual(early.timingSection.windows[0].calculationBasis.ruleIds,['good-event']);
+ assert.ok(!early.timingSection.windows[0].sourceIds.includes('mh-071'));
  assert.deepEqual(early.timingSection.windows[0].targetBranches,['亥','子']);
 
  const mid=await product.getContent({...input,movingLine:3,monthBranch:'卯'});
@@ -121,7 +129,7 @@ test('different seasonal strength can change a verdict without ignoring weak end
  }
 });
 
-test('every base record can be fetched through the product API in at least one non-changing casting-day profile',async()=>{
+test('every base key has at least one eligible manuscript, preferring exact matches',async()=>{
  const dates=['2026-11-11','2026-11-21','2026-12-01','2026-12-11','2026-12-21','2026-12-31'];
  const missing=[];let ready=0;
  for(const row of rows){
@@ -129,7 +137,10 @@ test('every base record can be fetched through the product API in at least one n
   for(const castingDate of dates){
    const out=await product.getContent({questionId:question.id,...cast,castingDate,primaryId:row.primaryId,movingLine:row.movingLine,monthBranch:row.monthBranches[0]});
    if(out.status==='ready'){
-    assert.equal(out.short,row.copy.short.text);assert.equal(out.decision.outcomeCode,row.decision.outcomeCode);
+    const matched=out.voidMatch==='recorded-context'
+     ?allRows.find(r=>r.decision.id===out.decision.id)
+     :row;
+    assert.ok(matched);assert.equal(out.short,matched.copy.short.text);assert.equal(out.decision.outcomeCode,matched.decision.outcomeCode);
     assert.ok(out.timingSection.windows.every(w=>w.displayedDates.every(d=>d>=castingDate)));found=true;ready++;break;
    }
    assert.equal(out.status,'pending-authoring');
@@ -137,4 +148,29 @@ test('every base record can be fetched through the product API in at least one n
   if(!found)missing.push(`${row.primaryId}/${row.movingLine}/${row.monthOrder}`);
  }
  assert.deepEqual(missing,[]);assert.equal(ready,1920);
+});
+
+test('a reduced mutual trigram with no exact manuscript withholds story and timing',async()=>{
+ const out=await product.getContent({...cast,questionId:question.id,primaryId:3,movingLine:1,monthBranch:'亥',castingDate:'2026-11-26'});
+ assert.equal(out.reading.nodes.find(n=>n.role==='body_mutual').void.effective,'reduced');
+ assert.equal(out.status,'pending-authoring');
+ assert.equal(out.story,null);
+ assert.deepEqual(out.paragraphs,[]);
+ assert.equal(out.timingSection,undefined);
+});
+
+test('the ten corrected Tun line quotations point to the collated text and retain the upload reference',async()=>{
+ const source=await readFile(new URL('../sources/revised/yijing64.txt',import.meta.url),'utf8');
+ const patches=await read('data/editorial-patches.json');
+ const corrected=rows.filter(r=>r.primaryId===3&&[2,3].includes(r.movingLine));
+ assert.equal(corrected.length,10);
+ for(const row of corrected){
+  const line=row.facts.movingLine;
+  const ref=line.sourceRef;
+  assert.equal(ref.sourceId,'collated-yijing64');
+  assert.equal([...source].slice(ref.startChar,ref.endChar).join(''),`${line.label}，${row.movingLineText}`);
+  assert.equal(source.split('\n')[ref.startLine-1],`${line.label}，${row.movingLineText}`);
+  assert.equal(line.originalSourceRef.sourceId,'user-yijing64');
+  assert.ok(patches.some(p=>p.id===line.patchId&&p.recordId===`hex-03-line-${row.movingLine}`));
+ }
 });

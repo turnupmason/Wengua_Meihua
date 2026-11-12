@@ -62,7 +62,7 @@ export const INTERVIEW_PASS_BATCH_001=[
   counterevidence:[{fact:'本用受体生，开局有耗；末后体克用有迟',resolution:'承认费力与迟缓，体木相、互用旺水生体、爻吉支持通过。'}],
   timing:[{...good('use_mutual'),id:'process-support',stage:'process',eventScope:'process-support',
    event:'本轮面试中段较有机会把最难的做法说明白',
-   sourceIds:['mh-058','mh-071','mh-122','mh-143'],
+   sourceIds:['mh-058','mh-116','mh-117','mh-122','mh-143'],ruleIds:['good-event'],
    suffix:'前后，若中段核对较难的工作，较有机会把做法和理由讲清，属过程吉应。',
    reason:'冬旺用互坎直接生相震，取中段可落实的补答帮助，末后相艮仍需处理。',
    revision:'interview-pass-reference-timing-2.1.0'}]

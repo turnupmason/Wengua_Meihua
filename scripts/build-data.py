@@ -257,6 +257,12 @@ def main():
     for sid,filename,original in source_specs:
         p=ROOT/'sources/original'/filename;b=p.read_bytes()
         sources.append({'id':sid,'path':p.relative_to(ROOT).as_posix(),'originalFilename':original,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'characters':len(b.decode()),'provenance':'user-supplied','status':'source snapshot; not an independently authenticated critical edition'})
+    revised_path=ROOT/'sources/revised/yijing64.txt'
+    revised_bytes=revised_path.read_bytes()
+    sources.append({'id':'collated-yijing64','path':revised_path.relative_to(ROOT).as_posix(),
+                    'bytes':len(revised_bytes),'sha256':hashlib.sha256(revised_bytes).hexdigest(),
+                    'characters':len(revised_bytes.decode()),'provenance':'collation-of-user-yijing64',
+                    'status':'repository-collated-text; original and correction records retained'})
     catalog={'schemaVersion':'1.0.0','contentVersion':VERSION,'lineOrder':'bottom-up','hexagrams':hexagrams,'trigrams':trigram_data}
     save('data/catalog.json',catalog);save('data/meihua-sections.json',{'schemaVersion':'1.0.0','sections':sections});save('data/domains.json',domains)
     save('data/grades.json',grades);save('data/editorial-patches.json',PATCHES);save('data/issues.json',ISSUES);save('data/reference-differences.json',DIFFERENCES)
