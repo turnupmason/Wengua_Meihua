@@ -171,7 +171,7 @@ export function createInterviewManuscriptRepository({library,readJSON}){
    timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(row.timingOmission?{omission:row.timingOmission}:{})},
    paragraphs:[reading.monthBranch?`月令：${reading.monthBranch}月。旺衰与旬空分别计算。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}；具体月令未提供。旺衰与旬空分别计算。`,`起卦日：${reading.castingDate}，${reading.dayGanzhi}日；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
     ...detailLines,
-    ...(exactProfile?row.coreVoidNotes:[]),
+    ...(exactProfile&&row.voidScenario?.origin!=='individual-void-manuscript'?row.coreVoidNotes:[]),
     `空亡依据：八卦配支补充法，版本${VOID_RULESET.id}。`,
     ...(row.timingOmission?[row.timingOmission.reason]:[]),
     ...dateResolution.dateMatches.map(d=>{

@@ -15,6 +15,7 @@ import {loadInterviewRewrites,bindInterviewRewrite,REWRITE_METHOD,REWRITE_VERSIO
 import {authorInterviewVoidContexts} from '../sources/editorial/interview-void-contexts.mjs';
 import {authorFirstThreeVoidContexts,renderFirstThreeVoidReview} from './interview-first-three-contexts.mjs';
 import {writeFirstThreeVoidFullText} from './interview-void-full-text.mjs';
+import {authorInterviewVoidRewrites,scanInterviewVoidProfiles,writeInterviewVoidRewrites} from './interview-void-rewrites.mjs';
 const root=new URL('../',import.meta.url),library=await loadLibrary(),base='data/authored-readings/interview-pass/';
 const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview-pass');
 const question={...raw,id:INTERVIEW_QUESTION_ID,manuscriptIndexPath:base+'index.json'};
@@ -33,6 +34,9 @@ for(let primaryId=1;primaryId<=64;primaryId++)for(let movingLine=1;movingLine<=6
 }
 authored.push(...authorInterviewVoidContexts({library,question,ledger}));
 authored.push(...authorFirstThreeVoidContexts({library,question,baseManuscripts:authored}));
+const voidProfiles=scanInterviewVoidProfiles({library,question,primaryIds:Array.from({length:64},(_,i)=>i+1)});
+const voidRevision=await authorInterviewVoidRewrites({root,library,question,existing:authored,profiles:voidProfiles});
+authored.push(...voidRevision.authored);
 const rows=[];
 for(const [index,a] of authored.entries()){
  const sourceIds=a.sourceIds||baselineSourceIds;
@@ -113,7 +117,7 @@ await writeFile(new URL('data/authored-readings/progress.json',root),JSON.string
  baseCasesWritten:monthSlotCount,totalBaseCases:4608,baseVersionsWritten:baseRows.length,uniqueAuthoredVersions:rows.length,contextProfilesWritten:rows.length,
  fullTwelveMonthCharts:384,remainingBaseSlots:4608-monthSlotCount,backgroundExecution:false,files,
  baseCoverageComplete:true,authorship:index.authorship,
- coreChangingVoidVariants:{status:'partially-authored',completedInCurrentRevision:scenarioCount},
+ coreChangingVoidVariants:{...voidRevision.progress,completedInCurrentRevision:scenarioCount},
  nextBaseRewrite:nextBaseRewrite()},null,2)+'\n');
 
 function editorialProgress(){
@@ -134,7 +138,7 @@ function nextBaseRewrite(){
  return next?{questionId:question.id,primaryId:next.primaryId,movingLine:next.movingLine,monthOrder:next.monthOrder,monthBranches:next.monthBranches}:null;
 }
 const runtime=createInterviewManuscriptRepository({library,readJSON:async p=>JSON.parse(await readFile(new URL(p,root),'utf8'))});
-const intro='本问64卦×6动爻×12月令，共4,608个基础槽位已全部覆盖，完整正文1,920份。同旺衰、同结论的月份明确共用全文。当前页保留首组60份对照稿；全部卦象见INTERVIEW_PASS_ALL_BASES.md。新增稿由384条动爻专门解释与公开基础判据离线编译成文，具体写作与复核范围见完整目录。辰未戌丑按本项目四季土月口径，未自动推算每季末十八日。\n\n正文事先写定；日期以保存的起卦日换算。下列统一以2026-11-11演示日序，计算说明中的月令只作各组对照代表，实际软件显示传入的月令，不套用代表月份；本日干支、旬空和日期均从实际起卦日重算。月令为显式比较维度，不把这一天声称为不同的实际节令。无关静空不单独写情节或应期，核心空情境另行匹配。\n\n';
+const intro='本问64卦×6动爻×12月令，共4,608个基础槽位已全部覆盖，完整正文1,920份。同旺衰、同结论的月份明确共用全文。当前页保留首组60份对照稿；全部卦象见INTERVIEW_PASS_ALL_BASES.md。其余基础稿已逐篇重写并完成作者全文复核，详见完整目录。辰未戌丑按本项目四季土月口径，未自动推算每季末十八日。\n\n正文事先写定；日期以保存的起卦日换算。下列统一以2026-11-11演示日序，计算说明中的月令只作各组对照代表，实际软件显示传入的月令，不套用代表月份；本日干支、旬空和日期均从实际起卦日重算。月令为显式比较维度，不把这一天声称为不同的实际节令。无关静空不单独写情节或应期，核心空情境另行匹配。\n\n';
 let all='# 求职面试：十二月令首组完整稿\n\n'+intro,winter='# 求职面试：冬令首批（已更新空亡处理与十二月令口径）\n\n'+intro;
 for(const original of INTERVIEW_PASS_BATCH_001){
  all+=`## ${original.primaryId}卦 · ${original.movingLine}爻动\n\n`;
@@ -187,3 +191,4 @@ for(const file of files){
 await writeFile(new URL('docs/INTERVIEW_PASS_ALL_BASES.md',root),directory);
 await writeFile(new URL('docs/INTERVIEW_VOID_FIRST_THREE.md',root),renderFirstThreeVoidReview(rows));
 await writeFirstThreeVoidFullText({root,library,question,rows});
+await writeInterviewVoidRewrites({root,library,question,runtime,rows,progress:voidRevision.progress});

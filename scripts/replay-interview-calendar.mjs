@@ -9,6 +9,8 @@ import {getVoidProfileKey} from '../src/prewritten-manuscripts.js';
 const require = createRequire(new URL('../apps/mobile/package.json', import.meta.url));
 const {Solar} = require('lunar-javascript');
 assert.equal(require('lunar-javascript/package.json').version, '1.7.7');
+const requestedIds = process.argv.slice(2).map(Number);
+assert.ok(requestedIds.every(id => Number.isInteger(id) && id >= 1 && id <= 64), 'Provide hexagram ids 1 through 64');
 const dayMs = 86400000;
 const start = Date.UTC(2027, 0, 1);
 const end = Date.UTC(2029, 0, 1);
@@ -26,8 +28,8 @@ for (let stamp = start; stamp < Date.UTC(2029, 1, 1); stamp += dayMs) {
   assert.equal(getCivilDay(date).dayGanzhi, ganzhi, date);
   calendar.push({date, ganzhi, xun: lunar.getDayXun(), empty: lunar.getDayXunKong()});
 }
-const castingDays = calendar.slice(0, (end - start) / dayMs);
-assert.equal(castingDays.length, 731);
+const castingDays = calendar.slice(0, requestedIds.length ? 60 : (end - start) / dayMs);
+assert.equal(castingDays.length, requestedIds.length ? 60 : 731);
 assert.equal(new Set(castingDays.map(d => d.ganzhi)).size, 60);
 
 function expectedDates(dayIndex, wanted) {
@@ -60,9 +62,9 @@ const index = await readJSON('data/authored-readings/interview-pass/index.json')
 const product = createProductRepository({library:await loadLibrary(), readJSON});
 const options = {questionId:index.questionId, timingScale:'day', timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 const totals = {};
-for (const id of [1, 2, 3, 12, 25, 31, 33]) {
+for (const id of requestedIds.length ? requestedIds : [1, 2, 3, 12, 25, 31, 33]) {
   const file = await readJSON(index.files.find(f => f.primaryId === id).path);
-  const testedKeys = Object.entries(file.monthSlots).filter(([key, position]) => id <= 3 ||
+  const testedKeys = Object.entries(file.monthSlots).filter(([key, position]) => requestedIds.length || id <= 3 ||
     file.rows.some(r => !r.baseProse && r.movingLine === file.rows[position].movingLine && r.monthBranches.includes(key.split(':')[1])));
   const stats = {monthSlots:testedKeys.length, ready:0, exact:0, windows:0, nextMonthWindows:0, noDate:0};
   const seenContexts = new Set();
@@ -111,7 +113,7 @@ for (const id of [1, 2, 3, 12, 25, 31, 33]) {
       stats.ready++;
       if (exact) {
         stats.exact++;
-        seenContexts.add(manuscript.number);
+        if (!manuscript.baseProse) seenContexts.add(manuscript.number);
       }
       for (const [slotIndex, window] of out.timingSection.windows.entries()) {
         const slot = manuscript.timingSlots[slotIndex];

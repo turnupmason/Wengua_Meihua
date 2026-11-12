@@ -8,7 +8,7 @@
 
 动爻资料在sources/editorial/interview-lines四个文件中。每条写清取义、建议与适用性质，原文和来源由64卦资料逐条绑定。C表示有条件或需分情形，G表示有积极取义，F表示具有明确后势改善或较强有利取义，A、D表示当前明显不利或宜止。类别由逐条阅读完整爻义确定，不是程序数“吉”“凶”字。它不直接等于整盘吉凶。
 
-每份记录保存authorship、lineApplication、decisionPolicy、counterevidence、完整动爻和摘要。新增稿的manualWholeArticleReview为false：自动校验与规则审查不冒称逐篇人工全文核读。review的独立审核继续pending，未编造实际面试反馈、成功率或历史案例。
+每份记录保存authorship、lineApplication、decisionPolicy、counterevidence、完整动爻和摘要。交接时的离线编译稿标记为 manualWholeArticleReview=false。当前逐篇重写已完成，重写稿保存完整作者源和作者全文复核标记。review的独立审核继续pending，未编造实际面试反馈、成功率或历史案例。
 
 ## 一致的基础判断
 
@@ -32,7 +32,7 @@
 
 ## 基础与空亡
 
-新增记录使用base-no-void标识，表示这份基础稿没有应用旬空。实际调用按起卦日日干支和八卦配支计算旬空。原体、本用、体互、用互或变用的实际作用有变化时，优先取同卦爻、月令和旬空状态的情境稿，缺稿则待写。乾、坤、屯的默认历法情境及巳午月原本全程待写的六个卦爻均有对应稿件。[乾坤屯逐案复核](INTERVIEW_VOID_FIRST_THREE.md)
+新增记录使用base-no-void标识，表示这份基础稿没有应用旬空。实际调用按起卦日日干支和八卦配支计算旬空。原体、本用、体互、用互或变用的实际作用有变化时，优先取同卦爻、月令和旬空状态的情境稿，缺稿则待写。乾、坤、屯的默认历法情境及巳午月原本全程待写的六个卦爻均有对应稿件。[乾坤屯逐案复核](INTERVIEW_VOID_FIRST_THREE.md) · [后续逐篇专稿](INTERVIEW_VOID_REWRITES.md)
 
 普通静空不自动另编情节，半空等详情只在计算说明中出现。原60份指定参考情境保留各自核对资料。基础覆盖完成不等于所有空亡变体完成。
 
