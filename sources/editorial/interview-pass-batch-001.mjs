@@ -44,7 +44,12 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮偏向不通过。发现问题后及时修正，重点是弄清哪里不匹配、哪里没说明白，避免带到下一次面试。',
   lineApplication:{evidence:['小有悔','无大咎'],conditions:['承认可以修正，不把无大咎直接当成考察已经通过']},
   counterevidence:[{fact:'爻辞无大咎，变用受体克',resolution:'保留可修正与末后处理余地；体弱、用及体互相木克体、无生体，未改断本轮通过。'}],
-  timing:[bad('use')]
+  timing:[{...bad('use'),id:'opening-obstruction',stage:'opening',eventScope:'opening-obstruction',
+   event:'本轮面试开场可能追问实际改法能否解决旧问题',
+   sourceIds:['mh-058','mh-116','mh-122','mh-143'],
+   suffix:'前后，若开场核实改法能否解决旧问题，可能遇到较难承接的追问，属开局凶应。',
+   reason:'冬相巽从本用克囚艮，木日取初期实际核查。该节点无最终通知的单独取期依据。',
+   revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:21,movingLine:4,outcome:'pass-after-difficult-questions',title:'问答可能费力，认真应对仍有望通过',
