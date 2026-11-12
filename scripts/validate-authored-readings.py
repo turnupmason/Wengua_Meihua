@@ -37,7 +37,8 @@ for f in index['files']:
    texts.add(row['copy']['short']['text'])
   else:
    assert row['voidScenario'] and row['voidProfileKey']!='base-no-void'
-   assert row['facts']['referenceContext']['voidApplied'] and row['authorship']['manualWholeArticleReview']
+   assert row['facts']['referenceContext']['voidApplied']
+   assert row['authorship']['manualWholeArticleReview'] or row['authorship'].get('reviewedJudgment')
    scenarios+=1
    for branch in row['monthBranches']:
     stored=db.execute('SELECT month_order_id FROM authored_product_month_slots WHERE question_id=? AND hexagram_id=? AND moving_line=? AND month_branch=? AND void_profile_key=?',(batch['questionId'],row['primaryId'],row['movingLine'],branch,row['voidProfileKey'])).fetchone()

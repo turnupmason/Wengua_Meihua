@@ -150,13 +150,44 @@ test('every base key has at least one eligible manuscript, preferring exact matc
  assert.deepEqual(missing,[]);assert.equal(ready,1920);
 });
 
-test('a reduced mutual trigram with no exact manuscript withholds story and timing',async()=>{
+test('a reduced Tun mutual trigram matches its own authored context',async()=>{
  const out=await product.getContent({...cast,questionId:question.id,primaryId:3,movingLine:1,monthBranch:'亥',castingDate:'2026-11-26'});
  assert.equal(out.reading.nodes.find(n=>n.role==='body_mutual').void.effective,'reduced');
- assert.equal(out.status,'pending-authoring');
- assert.equal(out.story,null);
- assert.deepEqual(out.paragraphs,[]);
- assert.equal(out.timingSection,undefined);
+ assert.equal(out.status,'ready');
+ assert.equal(out.voidMatch,'recorded-context');
+ assert.equal(out.decision.outcomeCode,'not-pass-this-round');
+ assert.match(out.long.process,/体互艮土.+作用有所减弱/);
+ assert.ok(out.timingSection.windows.every(w=>w.calculationBasis.role!=='body_mutual'));
+});
+
+test('Qian distinguishes dormant and supported body states within one xun',async()=>{
+ const options={...cast,questionId:question.id,primaryId:1,movingLine:3,monthBranch:'子'};
+ const dormant=await product.getContent({...options,castingDate:'2027-02-14'});
+ const supported=await product.getContent({...options,castingDate:'2027-02-15'});
+ for(const out of [dormant,supported]){
+  assert.equal(out.status,'ready');
+  assert.equal(out.voidMatch,'recorded-context');
+  assert.equal(out.decision.outcomeCode,'not-pass-this-round');
+  assert.deepEqual(out.timingSection.windows,[]);
+  assert.ok(out.calculationExplanation.timing.omission.reason);
+ }
+ assert.match(dormant.long.opening,/原体作用暂时难以发挥/);
+ assert.match(supported.long.opening,/原体虽有生扶，实际作用仍待落实/);
+ assert.notEqual(dormant.decision.id,supported.decision.id);
+});
+
+test('an active supporting node does not retain a positive result date after the body weakens',async()=>{
+ const options={...cast,questionId:question.id,primaryId:3,movingLine:2,monthBranch:'寅'};
+ const onlyMutual=await product.getContent({...options,castingDate:'2027-01-25'});
+ const affectedBody=await product.getContent({...options,castingDate:'2027-02-10'});
+ assert.equal(onlyMutual.status,'ready');
+ assert.equal(onlyMutual.decision.outcomeCode,'pass-with-conditions');
+ assert.equal(onlyMutual.timingSection.windows[0].eventScope,'positive-result-candidate');
+ assert.equal(affectedBody.status,'ready');
+ assert.equal(affectedBody.decision.outcomeCode,'not-pass-this-round');
+ assert.equal(affectedBody.reading.nodes.find(n=>n.role==='changed_use').void.effective,'active');
+ assert.deepEqual(affectedBody.timingSection.windows,[]);
+ assert.match(affectedBody.calculationExplanation.timing.omission.reason,/承接条件不足/);
 });
 
 test('the ten corrected Tun line quotations point to the collated text and retain the upload reference',async()=>{

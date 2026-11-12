@@ -14,6 +14,9 @@ const start = Date.UTC(2027, 0, 1);
 const end = Date.UTC(2029, 0, 1);
 const branchesByTrigram = {乾:'戌亥',坎:'子',艮:'丑寅',震:'卯',巽:'辰巳',离:'午',坤:'未申',兑:'酉'};
 const branchesByElement = {木:'寅卯',火:'巳午',土:'辰戌丑未',金:'申酉',水:'亥子'};
+const elementByBranch = Object.fromEntries(Object.entries(branchesByElement).flatMap(([element, branches]) =>
+  [...branches].map(branch => [branch,element])));
+const generatingElement = {木:'火',火:'土',土:'金',金:'水',水:'木'};
 const calendar = [];
 // January 2029 supplies candidates for casts at the end of December 2028.
 for (let stamp = start; stamp < Date.UTC(2029, 1, 1); stamp += dayMs) {
@@ -37,6 +40,21 @@ function expectedDates(dayIndex, wanted) {
   return (current.length ? current : nextTwoMonths.filter(d => d.date.startsWith(nextMonth))).map(d => d.date);
 }
 
+function expectedVoid(node, day, monthElement, useElement) {
+  const mapped = [...branchesByTrigram[node.trigram]];
+  const matched = mapped.filter(b => day.empty.includes(b));
+  const kind = matched.length === 0 ? 'none' : matched.length === mapped.length ? 'full' : 'partial';
+  if (kind === 'none') return {matched,kind,state:'not_void',effective:'active'};
+  if (kind === 'partial') return {matched,kind,state:'partial_reduced',effective:'reduced'};
+  if (['use','changed_use'].includes(node.role)) return {matched,kind,state:'moving_exempt',effective:'active'};
+  if (['旺','相'].includes(node.strength.state)) return {matched,kind,state:'strong_exempt',effective:'active'};
+  const dayElement = elementByBranch[day.ganzhi[1]];
+  const supported = generatingElement[monthElement] === node.element || dayElement === node.element ||
+    generatingElement[dayElement] === node.element ||
+    (node.role !== 'body_inherited' && generatingElement[useElement] === node.element);
+  return {matched,kind,state:supported?'supported':'dormant',effective:supported?'conditional':'dormant'};
+}
+
 const readJSON = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const index = await readJSON('data/authored-readings/interview-pass/index.json');
 const product = createProductRepository({library:await loadLibrary(), readJSON});
@@ -46,7 +64,7 @@ for (const id of [1, 2, 3, 12, 25, 31, 33]) {
   const file = await readJSON(index.files.find(f => f.primaryId === id).path);
   const testedKeys = Object.entries(file.monthSlots).filter(([key, position]) => id <= 3 ||
     file.rows.some(r => !r.baseProse && r.movingLine === file.rows[position].movingLine && r.monthBranches.includes(key.split(':')[1])));
-  const stats = {monthSlots:testedKeys.length, ready:0, pending:0, exact:0, mutualEffectPending:0, windows:0, nextMonthWindows:0};
+  const stats = {monthSlots:testedKeys.length, ready:0, exact:0, windows:0, nextMonthWindows:0, noDate:0};
   const seenContexts = new Set();
   for (const [key, position] of testedKeys) {
     const base = file.rows[position];
@@ -61,33 +79,34 @@ for (const id of [1, 2, 3, 12, 25, 31, 33]) {
       assert.equal(reading.dayGanzhi, day.ganzhi, trace);
       assert.equal(reading.monthBranch, monthBranch, trace);
       assert.equal(reading.monthOrder, base.monthOrder, trace);
-      for (const node of reading.nodes) {
-        const mapped = [...branchesByTrigram[node.trigram]];
-        const matched = mapped.filter(b => day.empty.includes(b));
+      const originalBody = reading.nodes.find(n => n.role === 'body');
+      const use = reading.nodes.find(n => n.role === 'use');
+      const inherited = reading.nodes.find(n => n.role === 'body_inherited');
+      assert.deepEqual(inherited.void, originalBody.void, trace);
+      for (const node of reading.nodes.filter(n => n.role !== 'body_inherited')) {
+        const expected = expectedVoid(node,day,elementByBranch[monthBranch],use.element);
         assert.equal(node.void.xun.xunHead, day.xun, trace);
         assert.equal(node.void.xun.branches.join(''), day.empty, trace);
-        assert.deepEqual(node.void.matchedBranches, matched, trace);
-        assert.equal(node.void.hitKind, matched.length === 0 ? 'none' : matched.length === mapped.length ? 'full' : 'partial', trace);
-        if (node.void.hitKind === 'partial') assert.equal(node.void.effective, 'reduced', trace);
+        assert.deepEqual(node.void.matchedBranches, expected.matched, trace);
+        assert.equal(node.void.hitKind, expected.kind, trace);
+        assert.equal(node.void.state, expected.state, trace);
+        assert.equal(node.void.effective, expected.effective, trace);
       }
       const exact = exactRows.get(getVoidProfileKey(reading));
       const affected = reading.nodes.filter(n => n.role !== 'body_inherited' && n.void.effective !== 'active');
-      if (!exact && affected.length) {
-        assert.equal(out.status, 'pending-authoring', trace);
-        assert.equal(out.story, null, trace);
-        assert.deepEqual(out.paragraphs, [], trace);
-        assert.equal(out.timingSection, undefined, trace);
-        assert.equal(out.predictionAllowed, false, trace);
-        stats.pending++;
-        if (affected.every(n => n.role.endsWith('_mutual'))) stats.mutualEffectPending++;
-        continue;
-      }
+      assert.ok(exact || affected.length === 0, `Missing exact void manuscript: ${trace}`);
       const manuscript = exact ?? base;
       assert.equal(out.status, 'ready', trace);
+      assert.equal(out.productionAllowed, true, trace);
       assert.equal(out.voidMatch, exact ? 'recorded-context' : 'base-with-no-core-change', trace);
       assert.equal(out.short, manuscript.copy.short.text, trace);
       assert.equal(out.decision.id, manuscript.decision.id, trace);
+      assert.deepEqual(out.long, manuscript.copy.long, trace);
       assert.equal(out.timingSection.windows.length, manuscript.timingSlots.length, trace);
+      if (manuscript.timingSlots.length === 0) {
+        assert.ok(out.calculationExplanation.timing.omission?.reason, trace);
+        stats.noDate++;
+      }
       readyForKey++;
       stats.ready++;
       if (exact) {
@@ -105,11 +124,11 @@ for (const id of [1, 2, 3, 12, 25, 31, 33]) {
         assert.deepEqual(window.matches.map(d => d.date), expected, trace);
         assert.deepEqual(window.displayedDates, expected.slice(0, 2), trace);
         stats.windows++;
+        assert.ok(expected.length, trace);
         if (expected[0].slice(0, 7) !== day.date.slice(0, 7)) stats.nextMonthWindows++;
       }
     }
-    assert.ok(readyForKey, `No eligible text over two years for ${id}/${key}`);
-    if (id > 3) assert.equal(readyForKey, castingDays.length, `Incomplete summer contexts for ${id}/${key}`);
+    assert.equal(readyForKey, castingDays.length, `Incomplete two-year coverage for ${id}/${key}`);
   }
   assert.equal(seenContexts.size, file.rows.filter(r => !r.baseProse).length);
   totals[id] = stats;

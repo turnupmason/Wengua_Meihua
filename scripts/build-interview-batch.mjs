@@ -13,6 +13,7 @@ import {MONTH_ORDERS} from '../src/narrative-rules.js';
 import {loadInterviewLineLedger,createBaseInterviewReading,authorBaseInterview,BASE_AUTHORING_VERSION} from '../sources/editorial/interview-base-authoring.mjs';
 import {loadInterviewRewrites,bindInterviewRewrite,REWRITE_METHOD,REWRITE_VERSION} from './interview-rewrites.mjs';
 import {authorInterviewVoidContexts} from '../sources/editorial/interview-void-contexts.mjs';
+import {authorFirstThreeVoidContexts,renderFirstThreeVoidReview} from './interview-first-three-contexts.mjs';
 const root=new URL('../',import.meta.url),library=await loadLibrary(),base='data/authored-readings/interview-pass/';
 const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview-pass');
 const question={...raw,id:INTERVIEW_QUESTION_ID,manuscriptIndexPath:base+'index.json'};
@@ -30,6 +31,7 @@ for(let primaryId=1;primaryId<=64;primaryId++)for(let movingLine=1;movingLine<=6
  authored.push(rewrite?bindInterviewRewrite(library,r,rewrite):authorBaseInterview(r,ledger.get(`${primaryId}/${movingLine}`)));
 }
 authored.push(...authorInterviewVoidContexts({library,question,ledger}));
+authored.push(...authorFirstThreeVoidContexts({library,question,baseManuscripts:authored}));
 const rows=[];
 for(const [index,a] of authored.entries()){
  const sourceIds=a.sourceIds||baselineSourceIds;
@@ -74,7 +76,7 @@ for(const [index,a] of authored.entries()){
  };
  const review={status:'author-checked',actor:'assistant-author',version:scenario?a.authorship.version:rewritten?REWRITE_VERSION:INTERVIEW_MANUSCRIPT_VERSION,
   scope:scenario?'exact-void-profile-and-applicable-month-branches':rewritten?'exact-base-qi-text;core-changing-void-variants-separate':'base-prose-and-recorded-void-profile;equivalent-qi-month-slots-share-written-text;exempt-core-void-does-not-change-verdict',
-  verification:scenario?'individually-authored-exact-void-context':rewritten?'individual-rewrite-and-whole-article-author-review':a.authorship?'canonical-facts-and-rule-conformance;curated-line-ledger;compiled-prose-not-manual-whole-article-review':'computed-facts-plus-authored-judgment;not-independent-human-expert-certification',
+  verification:scenario?(a.authorship.reviewedJudgment?'scenario-specific-authored-judgment-and-computed-stage-facts':'individually-authored-exact-void-context'):rewritten?'individual-rewrite-and-whole-article-author-review':a.authorship?'canonical-facts-and-rule-conformance;curated-line-ledger;compiled-prose-not-manual-whole-article-review':'computed-facts-plus-authored-judgment;not-independent-human-expert-certification',
   compilation:a.authorship||{method:'individually-authored-reference-case',manualWholeArticleReview:true},
   independentReview:{status:'pending',timingInterpretation:'pending',calendarConversion:'separate-technical-check',userAcceptedThisVersion:false},
   checks:Object.fromEntries(AUDIT_CHECKS.map(id=>[id,{status:'pass',scope:'author-check-only;not-independent-approval',evidence:[{sourceId:'project-interview-authoring',locator:evidence[id][1],reason:evidence[id][0]}]}]))};
@@ -181,3 +183,4 @@ for(const file of files){
  directory+=`- [${file.primaryId} ${name}](interview-pass/hex-${hexId}.md)：六动爻、十二月令，72槽位。${reviewLink}\n`;
 }
 await writeFile(new URL('docs/INTERVIEW_PASS_ALL_BASES.md',root),directory);
+await writeFile(new URL('docs/INTERVIEW_VOID_FIRST_THREE.md',root),renderFirstThreeVoidReview(rows));
