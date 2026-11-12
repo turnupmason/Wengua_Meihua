@@ -76,7 +76,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮偏向不通过。能做与尚未做过的部分分清说，别为显得匹配而勉强承诺，先守住事实。',
   lineApplication:{evidence:['颠颐','拂经','征凶'],conditions:['不指认求职者实际撒谎；将爻意用于回答宜真实、避免勉强迎合的建议']},
   counterevidence:[{fact:'互卦同土比和',resolution:'承认中段缓和，但同气土皆弱，末后体生用继续耗，未形成通过支撑。'}],
-  timing:[bad('use')]
+  timing:[{...bad('use'),id:'opening-obstruction',stage:'opening',eventScope:'opening-obstruction',
+   event:'本轮面试开头核实能承担的职责时，已做过的事可能不够对应',sourceIds:['mh-058','mh-116','mh-122','mh-143'],
+   suffix:'前后，留意初期对能力界限的较难追问，属开局阻力。',
+   reason:'冬相本用震克囚艮，取初期所问超出现有承接范围。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:27,movingLine:3,outcome:'not-pass-this-round',title:'末后有一点帮助，这轮仍偏难通过',
@@ -87,7 +90,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮倾向不通过，末后帮助有限。眼下先停下来调整方法，别只靠增加投入继续推同一件事。',
   lineApplication:{evidence:['贞凶','十年勿用','无攸利'],conditions:['保留完整不利原文，不将十年勿用直接换算为十年失业或禁考']},
   counterevidence:[{fact:'互卦比和，变用生体',resolution:'承认缓和与末后帮助；土弱、火弱，前段相木克体及爻辞不利仍占主要依据。'}],
-  timing:[bad('use')]
+  timing:[{...bad('use'),id:'opening-obstruction',stage:'opening',eventScope:'opening-obstruction',
+   event:'本轮面试开场的实际要求可能较难用原先准备回答',sourceIds:['mh-058','mh-116','mh-122','mh-143'],
+   suffix:'前后，留意开头暴露准备缺口的追问，属开局阻力。',
+   reason:'冬相本用震克囚艮，末死离助微，取开头实质牵制。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:40,movingLine:2,outcome:'pass-after-resolving-doubts',title:'疑点有望解开，这轮偏向能过',

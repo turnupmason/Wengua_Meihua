@@ -132,6 +132,19 @@ test('strong body or mutual equality cannot reverse unassisted use-control into 
   const result=await product.getContent({questionId:question.id,...context,monthOrder:undefined,monthBranch,primaryId:27,movingLine:2});
   assert.equal(result.decision.outcomeCode,'not-pass-this-round');assert.match(result.long.ending,/征凶/);assert.match(result.long.ending,/不利于成就/);
  }
+ for(const [movingLine,monthOrder,scope,role] of [
+  [2,'summer-fire','opening-obstruction','use'],
+  [2,'autumn-metal','closing-drain','changed_use'],
+  [2,'seasonal-earth','closing-drain','changed_use'],
+  [3,'spring-wood','opening-obstruction','use'],
+  [3,'summer-fire','closing-repair','changed_use'],
+  [3,'seasonal-earth','closing-repair','changed_use'],
+ ]){
+  const result=await product.getContent({questionId:question.id,...context,monthOrder,primaryId:27,movingLine});
+  assert.match(result.decision.outcomeCode,/^not-pass/);
+  const [window]=result.timingSection.windows;
+  assert.equal(window.eventScope,scope);assert.equal(window.calculationBasis.role,role);
+ }
 });
 
 test('half-void belongs to separately versioned calculation details, without altering month identity or entering prose',async()=>{
