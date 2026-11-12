@@ -140,13 +140,20 @@ export const INTERVIEW_PASS_BATCH_001=[
  {
   primaryId:48,movingLine:5,outcome:'pass-after-detail-checks',title:'有望通过，细节确认时要答得完整',
   short:'这轮面试有望通过，中间可能在具体经历或做法上多问几句。前面的帮助较有力，后面也有可以落实的条件。把细节说完整，遇到追问耐心澄清，用真实的做法与结果说明自己怎样胜任，别只停在笼统的优势介绍。',
-  opening:'这轮有较好的推进条件。巽木体冬令属相，坎水用当旺而生体，考察中有继续接续的基础，事情并非只是在消耗。',
+  opening:'这轮有较好的推进条件。巽木体冬令属相，坎水用当旺而生体，开头的支持较实，也有能力把经历说到可核。',
   process:'体互兑金来克体，细节处可能有需要解释的地方；金冬休，牵制有限。用互离火受体木所生，冬令属死，相关耗费较轻。把经历和做法说明白，有助于把沟通接下去。',
   ending:'九五“井洌，寒泉食”，重在具备可以实际受用的内容。变用坤土属囚，受体木所克，末后有可推动的部分。这轮仍偏向通过，仍需把细节确认完整。',
   summary:'本轮倾向能过。用完整的经历与做法说明自己能怎样胜任，细节处耐心澄清，让回答确实可用。',
   lineApplication:{evidence:['井洌，寒泉食'],conditions:['取可供受用之意，不声称已知个人能力评分或面试官心理']},
   counterevidence:[{fact:'体互兑金克体',resolution:'保留细节牵制；金休对木相影响有限，本用旺水生体，末后体克用仍可推进。'}],
-  timing:[{...bad('body_mutual'),id:'obstruction',event:'本轮面试细节沟通受阻',prefix:'另可留意',suffix:'前后，细节沟通容易受阻，属本轮需要留意的不利窗口。'},good('use')]
+  timing:[{...bad('body_mutual'),id:'process-obstruction',stage:'process',eventScope:'process-obstruction',
+   event:'本轮面试中段可能复核一项做法或责任范围',
+   suffix:'前后，留意可以用具体记录回答的追问，属中段阻力。',
+   reason:'冬休兑体互仍克相巽，原体能承，取实际细问。',revision:'interview-pass-reference-timing-2.1.0'},
+   {...good('use'),id:'opening-support',stage:'opening',eventScope:'opening-support',
+    event:'本轮面试开头可能得到实在帮助以对准实际要求',ruleIds:['good-event'],sourceIds:['mh-058','mh-116','mh-117','mh-122','mh-143'],
+    suffix:'前后，留意有助于对准要求的开局信息，属前段助力。',
+    reason:'冬旺坎本用直接生相巽，初助较实，仍需处理过程核验。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:62,movingLine:6,outcome:'not-pass-this-round',title:'后面的补救偏弱，这轮通过较难',

@@ -167,7 +167,7 @@ test('opposite timing windows keep separate events and calculation bases and do 
  const [adverse,positive]=result.dateResolution.dateMatches;
  assert.equal(adverse.eventScope,'process-obstruction');assert.equal(adverse.valence,'凶');
  assert.equal(adverse.calculationBasis.role,'body_mutual');assert.equal(adverse.calculationBasis.element,'金');assert.deepEqual(adverse.targetBranches,['申','酉']);
- assert.equal(positive.eventScope,'positive-result-candidate');assert.equal(positive.valence,'吉');
+ assert.equal(positive.eventScope,'opening-support');assert.equal(positive.valence,'吉');
  assert.equal(positive.calculationBasis.role,'use');assert.equal(positive.calculationBasis.element,'水');assert.deepEqual(positive.targetBranches,['亥','子']);
  assert.notEqual(adverse.slotId,positive.slotId);assert.notEqual(adverse.event,positive.event);
  assert.equal(result.dateResolution.interpretationReviewed,false);
