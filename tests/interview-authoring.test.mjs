@@ -75,10 +75,13 @@ test('complete qi governs void exemptions; stationary empty fire, moving empty f
  assert.throws(wronglyChosen,/active direct/);
 });
 
-test('complete base coverage retains pending status for uncovered core-void profiles, while no supplied timing method yields a clear context requirement',async()=>{
+test('recorded date-based void profiles serve their own manuscripts, while missing evidence and timing method retain separate statuses',async()=>{
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:1,movingLine:1})).status,'ready');
  assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire'})).status,'ready');
- assert.equal((await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire',castingDate:'2026-12-06'})).status,'pending-authoring');
+ const exact=await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,monthOrder:'summer-fire',castingDate:'2026-12-06'});
+ assert.equal(exact.status,'ready');assert.equal(exact.voidMatch,'recorded-context');
+ assert.equal(exact.decision.outcomeCode,'not-pass-this-round');
+ assert.equal(exact.review.verification,'individually-authored-exact-void-context');
  const changed=await product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,voidContext:{roleEvidence:{body_mutual:{severelyWeak:true,dayMonthAttacked:true}}}});
  assert.equal(changed.status,'pending-authoring');assert.equal(changed.story,null);
  assert.equal(changed.reading.nodes.find(n=>n.role==='body_mutual').void.state,'true_void');
@@ -87,14 +90,15 @@ test('complete base coverage retains pending status for uncovered core-void prof
  await assert.rejects(product.getContent({questionId:question.id,...context,primaryId:5,movingLine:2,voidContext:{ganzhi:'甲子'}}),/disagree/);
 });
 
-test('other cast dates re-evaluate the profile and render future-only dates or withhold unrecorded profiles',async()=>{
- let ready=0,pending=0;
+test('other cast dates re-evaluate base and exact void profiles and only render dates on or after the cast',async()=>{
+ const modes=new Set();
  for(const date of ['2026-11-12','2026-11-15','2026-11-30','2026-12-06','2026-12-31','2027-01-10']){
   const r=await product.getContent({questionId:question.id,...context,monthOrder:'summer-fire',castingDate:date,primaryId:5,movingLine:2});
-  if(r.status==='ready'){ready++;for(const e of r.dateResolution.dateMatches)for(const d of e.matches)assert.ok(d.date>=date);}
-  else{pending++;assert.equal(r.status,'pending-authoring');assert.equal(r.story,null);}
+  assert.equal(r.status,'ready');
+  modes.add(r.voidMatch);
+  for(const e of r.dateResolution.dateMatches)for(const d of e.matches)assert.ok(d.date>=date);
  }
- assert.ok(ready);assert.ok(pending);
+ assert.deepEqual(modes,new Set(['base-with-no-core-change','recorded-context']));
 });
 
 test('progress stays on the first interview question and records all 4608 base slots without claiming final-offer coverage',async()=>{
@@ -227,7 +231,7 @@ test('lookup reads one hexagram shard and shared prose does not duplicate twelve
  const paths=[];const p=createProductRepository({library,readJSON:async path=>{paths.push(path);return read(path);}});
  for(const monthBranch of ['寅','卯','辰'])await p.getContent({questionId:question.id,...context,monthOrder:undefined,monthBranch,primaryId:5,movingLine:2});
  assert.deepEqual(paths.filter(p=>/\/hex-/.test(p)),['data/authored-readings/interview-pass/hex-005.json']);
- const file=all.find(f=>f.primaryId===5);assert.equal(file.rows.length,30);assert.equal(Object.keys(file.monthSlots).length,72);
+ const file=all.find(f=>f.primaryId===5);assert.equal(file.rows.filter(r=>r.baseProse).length,30);assert.equal(Object.keys(file.monthSlots).length,72);
 });
 
 test('whole-trigram branch matching distinguishes full and half hits, without inventing a percentage',()=>{
