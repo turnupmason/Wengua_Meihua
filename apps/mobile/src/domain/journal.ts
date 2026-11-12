@@ -24,7 +24,7 @@ function isEntry(x: unknown): x is JournalEntry {
   return !!e && typeof e.castId === 'string' && typeof e.savedAt === 'string' && Array.isArray(e.notes);
 }
 
-export function createJournal(store: KeyValueStore = safeStore('local'), now: () => Date = () => new Date()) {
+export function createJournal(store: KeyValueStore = safeStore('local', true), now: () => Date = () => new Date()) {
   function all(): Record<string, JournalEntry> {
     try {
       const raw = JSON.parse(store.getItem(KEY) || '{}');

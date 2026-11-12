@@ -34,7 +34,7 @@ describe('conclusion first', () => {
     fireEvent.click(screen.getByRole('button', { name: /经过 水 · 火/ }));
     expect(onStage).toHaveBeenCalledWith('mutual');
     cleanup();
-    render(<ReadingView reading={reading} question="" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} hexagramName={(id) => library.getHexagram(id).name} lineName={(id, l) => library.getHexagram(id).lines[l - 1].label} onClose={() => {}} />);
+    render(<ReadingView reading={reading} question="" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} onClose={() => {}} />);
     expect(document.querySelectorAll('.read-stage g.yao[role="button"]')).toHaveLength(18);
     expect(screen.getByText(STRINGS.zh.weatherRule)).toBeTruthy();
     expect(screen.getByText(/^凡占天时，不分体用，全观诸卦/)).toBeTruthy();
@@ -46,7 +46,7 @@ describe('conclusion first', () => {
     const reading = library.createReading({ primaryId: 34, movingLine: 1 });
     const onPick = vi.fn();
     render(
-      <ReadingView reading={reading} question="这份工作能拿到吗" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={onPick} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} hexagramName={(id) => library.getHexagram(id).name} lineName={(id, l) => library.getHexagram(id).lines[l - 1].label} onClose={() => {}} />,
+      <ReadingView reading={reading} question="这份工作能拿到吗" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={onPick} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} onClose={() => {}} />,
     );
     expect(screen.getByText('“这份工作能拿到吗”')).toBeTruthy();
     expect(screen.getByText(/初九动，动在下卦，下卦乾金为用；另一卦震木为体/)).toBeTruthy();
@@ -94,7 +94,7 @@ describe('专业依据 relation layer', () => {
     const reading = library.createReading({ primaryId: 55, movingLine: 3, domainId: 'domain-04' });
     const opened: string[] = [];
     render(
-      <ReadingView reading={reading} question="这次搬家合适吗？" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} hexagramName={(id) => library.getHexagram(id).name} lineName={(id, l) => library.getHexagram(id).lines[l - 1].label} onClose={() => {}} onOpenBook={() => {}} onOpenSection={(title) => opened.push(title)} />,
+      <ReadingView reading={reading} question="这次搬家合适吗？" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} onClose={() => {}} onOpenBook={() => {}} onOpenSection={(title) => opened.push(title)} />,
     );
     expect(screen.getByText('从卦象证据直接对应断语')).toBeTruthy();
     expect(screen.getByText('互克兼比')).toBeTruthy();

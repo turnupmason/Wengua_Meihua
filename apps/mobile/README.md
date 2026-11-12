@@ -70,7 +70,13 @@ npm run cap:ios       # 仅 macOS：先 `cd ios/App && pod install`，再用 Xco
 - 观卦 / 读卦分工（2026-11-11）：观卦时石桌完整无遮挡——相机按顶栏（安全区 + 返回、问题、音效）与底栏（「查看断语」）的实测高度取景，`readingPose(aspect, fov, top, bottom)` 求解使石桌四角都落在两栏之间（`tests/framing.test.ts` 覆盖 iPhone SE / 13 mini / 15 / 15 Pro Max）。观卦底部只留「查看断语」入口（附标题与基调）；← 在读卦阶段即「礼毕 · 回殿」。顶部问题单行省略，点开看全文。点某一爻：该爻发光，石桌下方空白处浮出小提示（爻名、所属卦、前几字），点「看爻辞」才打开完整爻辞；点空处关闭。点石桌上的体用刻字直接进入读卦的体用依据。读卦为覆盖石桌的阅读面板，返回观卦时相机不动。
 - 石桌光影（2026-11-11）：首次观卦时，底栏上方浮出一次「↑ 卦象自下而上，观其始终」，约 4 秒后淡出，之后不再出现（本机记 `wengua.hint.bottomUp.v1`）。石面着色器分层打光：卦爻一列有柔和暖金光，四角与边缘渐暗；石纹向局部均色收拢、法线减弱，噪点与麻点更少。动爻改为约 3 秒一次的轻微呼吸，不再闪烁（减少动态时恒亮）。未增加粒子或大面积辉光。
 - 全点击式问事 V2.0（2026-11-11）：取消一切自由输入。首页六大领域两行三列（各带图标，选中金色描边）→ 底部抽屉列出该领域细分（两列，共 52 项，见 `src/data/question-catalog.json`）→ 固定问题（一细分有多问、需先读安全提示或需补充固定选项时才多一步，可逐级返回）。每问有永久 `question_id`；同一细分的第二问须有自己的断语或显式 `shares_scripts_of` 才能开放（如 `career.job_interview.offer` 目前关闭）。起卦法里的数字改用应用内数字键盘，字占因需自书文字而不再提供，全程不弹系统键盘。断语库（`src/domain/scripts.ts`）按 question_id + 本卦 + 动爻 + 起卦时令（+ 固定选项）精确查对，只读 `approved`；冬令稿不用于夏令，全年通用须作者注明；查不到即「本题断语尚在整理」，不以任何其他断语或通用文字代替，且不计入当日次数。断语在起卦时冻结进记录（含版本与时令）；完整仪式与简洁问事走同一 `castRequest` → `freezeCast`。读卦：简断、详断（开局/过程/结局/总断、本断所引古籍可跳藏经阁）均出自同一条断语；体用推演移入专业依据并注明「不是作者断语」。问事录保存 question_id、当时所示问题、时区、起卦法与断语版本；旧的自由提问记录保留原文、标为旧版类型，不强配新问题。重复问事改为：同一 question_id 七日内先问「是同一件事吗？」，不再比较文字。人员失联、寻人线索先显示报警与求助渠道；健康类注明非医疗诊断。登录页与会员页的“断语何以可信”改为作者人工撰写与审定（原文写的是自研 AI 模型，与本版要求不符）。导入：`npm run scripts:import -- 文件.csv|json [--check]`，格式见 `content/scripts/README.md`。
-- 断语（`src/domain/judgments.ts`）：按本卦、互卦、变卦、动爻与问事领域查询作者的断语库；接入前显示“整理中”。
+- 正式产品目录（2026-11-11）：问事菜单改读仓库的正式目录 `data/product-categories.json`（6 大类、52 细分、82 单事项，见 `docs/PRODUCT_CATEGORIES_V1.md`、`docs/CLAUDE_BUILD_PROMPT_V9.md`），原样使用其编号、措辞与顺序；目录本身不带的英文名、固定选项名称（物品类型、购买用途）与提示写在 `src/data/product-catalog.labels.json`，测试核对两者一一对应。三类问题：
+  - **预测**（narrative）：起卦后，`src/domain/judgment.ts` 以「产品问题 + 本卦 + 动爻 + 实际月令（节气月建）+ 起卦日」调用 `createProductRepository().getContent`，所得断语（标题、简断、开局/过程/结局/总断、应期参考、计算说明、所据篇目）与卦一起冻结进记录（`withJudgment`），之后不改写。接口返回待撰写（pending-authoring）、待审核（pending-review）、缺条件（requires-context，例如物象方位这类后天起卦，其应期方法尚未写定）或读取失败时，各自如实说明，不以任何其他断语、旧领域通用稿或体用推演代替，也不计入当日次数。目前只有「这次面试能通过吗」有写定断语（1,920 份全文、4,608 个月令槽位；核心空亡改变判断而未另写的盘仍为待撰写）。
+  - **查阅 / 指引**（reference / guidance，健康 8 项、方位取象、梳理遗忘地点、寻人线索）：选中后按钮为「查看说明」，直接打开说明面板（`src/ui/ReferenceSheet.tsx`），不起卦、不作预测、不计次数，也不需仪式或付费。
+  - 需要先定范围的问题（物品类型、购买用途、所问年份）在抽屉里多一步点选，年份只给今年与明年两个按钮；选项按目录的 context 传给接口。
+- 读卦（2026-11-11）：简断下注「本卦断语 · 按某月月令写定」；详断里应期参考单独成栏，每个窗口标吉/凶并写明日期，不与详断正文混排；计算说明默认折叠，显示时去掉接口的内部版本号与「判断口径」记账行，古籍编号换成篇名（记录里仍保存接口原文）。正式目录的问题不再用体用推演替所问作答（不填「{结果}」句、不显示「就某问而言……」）；体用推演只在专业依据里作结构参考，旧的自由提问记录照旧。
+- 应用原有的作者断语库（`scripts.ts`、CSV 导入工具 `scripts:import`、`content/scripts/`）已由正式产品接口取代并移除；旧问题编号（如 `career.job_interview.pass`）的记录仍可在问事录查看，但不能再用来起卦。
+- 断语校验需要 `crypto.subtle`；手机经局域网 http 打开开发服务器时浏览器不提供，`src/knowledge/digest.ts` 补上同样的 SHA-256，校验照常进行。
 - 断语来源说明（登录页、会员页）写在 `src/domain/i18n.ts` 的 `modelStory`。模型名称与训练描述由产品方提供，上线前请核实，并避免“最准”“100%”等绝对用语。
 
 ## 结构
@@ -80,7 +86,9 @@ npm run cap:ios       # 仅 macOS：先 `cd ios/App && pod install`，再用 Xco
 | `src/knowledge/` | 以 Vite 资源方式打包 `data/` 与 `sources/commentary/`，注入 `readJSON`，离线读取；不进入 `sources/review` 隔离稿 |
 | `src/domain/calendar.ts` | `CalendarProvider`：明确时刻 + IANA 时区 → 农历月日、年支、月建、日干支、时支；边界政策随每次起卦保存 |
 | `src/domain/methods.ts` | 七种古法起卦：各法只把输入换成引擎的上卦数、下卦数、动爻总数，并记下所据篇目（见下表） |
-| `src/domain/cast.ts` | 起卦冻结：调用 `methods.ts`，或 `castByTimeParts`；记录原始数值、起卦时刻（可指定）、历法结果、规则版本、内容版本、三卦与等级快照 |
+| `src/domain/cast.ts` | 起卦冻结：调用 `methods.ts`，或 `castByTimeParts`；记录原始数值、起卦时刻（可指定）、历法结果、规则版本、内容版本、三卦与等级快照；`withJudgment` 把起卦时所得断语一并冻结 |
+| `src/domain/questionCatalog.ts` | 由正式产品目录生成问事菜单（大类 → 细分 → 问题 → 固定选项），附英文名与提示 |
+| `src/domain/judgment.ts` | 起卦后按产品问题、本卦、动爻、月令与起卦日向 `createProductRepository` 取断语；查不到时说明原因，不代替 |
 | `src/domain/ritual.ts` | 仪式状态机 `idle → entering → revealing → reading`，所有事件幂等；旧版本保存的上香中途状态恢复时直接进入赐卦 |
 | `src/domain/history.ts` | 本地历史：保存、删除、全部删除、导出 JSON；进行中的仪式可在刷新后以同一卦继续 |
 | `src/domain/journal.ts` | 卦册（收卦入册）：标记要保留的卦，按时间记后续进展；只存本机，删历史时一并删除，导出 JSON 时一并导出 |

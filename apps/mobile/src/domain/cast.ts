@@ -5,8 +5,7 @@
 import type { Library, Reading } from '../knowledge/knowledge';
 import { outcomeFor } from './topics';
 import { CATALOG_VERSION, questionById } from './questionCatalog';
-import { seasonOf, type ScriptRecord, type ScriptRepository, type Season } from './scripts';
-import { scriptRepository as bundledScripts } from './scriptBundle';
+import { seasonOf, type CastJudgment, type JudgmentInput, type Season } from './judgment';
 import { createCalendarProvider, type CalendarPolicy, type CalendarProvider, type CalendarResult } from './calendar';
 import { methodNumbers, type ClassicalMethod, type MethodInputs } from './methods';
 
@@ -44,13 +43,7 @@ export interface CastRequest {
   manual?: { primaryId: number; movingLine: number; monthBranch?: string; dayGanzhi?: string };
 }
 
-/**
- * The 断语 outcome at casting time, frozen with the cast: the approved record exactly as matched
- * (with its id and version), or "missing" — never a substitute.
- */
-export type CastJudgment =
-  | { state: 'ready'; season: Season | null; matchedBy: 'season' | 'all-year'; script: Omit<ScriptRecord, 'status'> }
-  | { state: 'missing'; season: Season | null; reason: 'unknown-question' | 'no-script' };
+export type { CastJudgment };
 
 export interface StageSnapshot { id: number; name: string; displayGrade: string; canonicalGrade: string }
 
@@ -70,7 +63,7 @@ export interface ReadingSnapshot {
   stoneLine: string;
   stages: { stage: string; scope: string; label: string; evidence: string }[];
   evidence: string[];
-  /** 断语 version once the author's database is connected (none yet). */
+  /** Version of the written 断语 given at casting (null when none was given). */
   judgmentVersion: string | null;
 }
 
@@ -93,7 +86,7 @@ export interface CastRecord {
   conditions?: Record<string, string>;
   /** 时令 of the casting month (from the actual casting time). */
   season?: Season | null;
-  /** The 断语 given at casting time (catalog questions only). */
+  /** The 断语 given at casting time, frozen as given (catalog questions only; see withJudgment). */
   judgment?: CastJudgment;
   /** Six-domain choice at casting time (absent on older records). */
   topicId?: string;
@@ -167,11 +160,13 @@ export function snapshotDrift(record: CastRecord, reading: Reading): string[] {
 export function freezeCast(
   library: Library,
   request: CastRequest,
-  { calendarProvider = createCalendarProvider(), castId = newCastId(), now = new Date(), scripts = bundledScripts }: { calendarProvider?: CalendarProvider; castId?: string; now?: Date; scripts?: ScriptRepository } = {},
+  { calendarProvider = createCalendarProvider(), castId = newCastId(), now = new Date() }: { calendarProvider?: CalendarProvider; castId?: string; now?: Date } = {},
 ): Readonly<CastRecord> {
   const cq = questionById(request.questionId);
   if (request.questionId && !cq) throw new RangeError(`Unknown question: ${request.questionId}`);
   if (cq && !cq.enabled) throw new RangeError(`Question not open: ${cq.question_id}`);
+  // Reference and guidance questions are read, not cast.
+  if (cq && cq.mode !== 'narrative') throw new RangeError(`Question is read, not cast: ${cq.question_id}`);
   // A catalog question decides its own classical category and domain.
   const domainId = cq?.classical_domain_id || request.domainId || 'domain-02';
   const topicId = cq?.domain_id ?? request.topicId;
@@ -231,19 +226,8 @@ export function freezeCast(
   });
   const profile = reading.profile as { id?: string; version?: string };
   const question = (request.question || cq?.question_text.zh || '').slice(0, 500);
-  // The 断语: question_id + 本卦 + 动爻 + 时令 (+ fixed conditions), approved records only.
   const season = seasonOf(context.monthBranch);
-  let judgment: CastJudgment | undefined;
-  if (cq) {
-    const found = scripts.find({ questionId: cq.question_id, hexagramId: primaryId, movingLine, monthBranch: context.monthBranch, conditions: request.conditions });
-    if (found.state === 'ready') {
-      const { status: _approved, ...script } = found.script;
-      void _approved;
-      judgment = { state: 'ready', season: found.season, matchedBy: found.matchedBy, script };
-    } else judgment = { state: 'missing', season: found.season, reason: found.reason };
-  }
   const snapshot = snapshotOf(reading, question, topicId, domainId, cq?.question_id);
-  if (judgment?.state === 'ready') snapshot.judgmentVersion = `${judgment.script.script_id}@${judgment.script.version}`;
 
   return deepFreeze({
     schema: CAST_SCHEMA,
@@ -260,7 +244,6 @@ export function freezeCast(
           subtypeId: cq.subtype_id,
           catalogVersion: CATALOG_VERSION,
           ...(request.conditions && Object.keys(request.conditions).length ? { conditions: { ...request.conditions } } : {}),
-          judgment,
         }
       : {}),
     season,
@@ -285,6 +268,26 @@ export function freezeCast(
   } satisfies CastRecord);
 }
 
+/** What a frozen cast tells the 断语 lookup (judgmentFor). */
+export const judgmentInput = (r: CastRecord): JudgmentInput | null =>
+  r.questionId
+    ? { questionId: r.questionId, primaryId: r.primaryId, movingLine: r.movingLine, method: r.method, monthBranch: r.context.monthBranch, dayGanzhi: r.context.dayGanzhi, localWallClock: r.localWallClock, conditions: r.conditions }
+    : null;
+
+/**
+ * The cast with the 断语 it was given, frozen together. Called once, right after casting and
+ * before the record is saved; a record that already has its 断语 is never given another.
+ */
+export function withJudgment(record: Readonly<CastRecord>, judgment: CastJudgment): Readonly<CastRecord> {
+  if (!record.questionId) throw new TypeError('Only a catalog question is given a 断语');
+  if (record.judgment) throw new Error('This cast already has its 断语');
+  if (judgment.state === 'ready' && (judgment.questionId !== record.questionId || judgment.primaryId !== record.primaryId || judgment.movingLine !== record.movingLine))
+    throw new Error('This 断语 was written for another question or chart');
+  const judgmentVersion = judgment.state === 'ready' ? `${judgment.manuscriptVersion ?? '-'}#${judgment.decisionId ?? '-'}` : null;
+  const snapshot = record.snapshot ? { ...record.snapshot, judgmentVersion } : undefined;
+  return deepFreeze({ ...structuredClone(record), judgment: structuredClone(judgment), ...(snapshot ? { snapshot } : {}) } as CastRecord);
+}
+
 /** Freezes what the reading says now, in Chinese (the language of the record). */
 export function snapshotOf(reading: Reading, question: string, topicId: string | undefined, domainId: string, questionId?: string): ReadingSnapshot {
   const y = reading.synthesis;
@@ -298,13 +301,22 @@ export function snapshotOf(reading: Reading, question: string, topicId: string |
     headline: y.headline,
     leadText: y.leadText,
     summary: y.summary,
-    conclusion: y.verdict.template.replace('{outcome}', outcomeFor(question, topicId, domainId, 'zh', questionId)),
+    conclusion: conclusionOf(y, question, topicId, domainId, questionId),
     verdictCode: y.verdict.code,
     stoneLine: y.stoneLine,
     stages: y.stages.map((s) => ({ stage: s.stage, scope: s.scope, label: s.main.stageLabel, evidence: s.evidence })),
     evidence,
     judgmentVersion: null,
   };
+}
+
+/**
+ * The 体用 sentence. For a question of the formal catalog it is the structure alone (开局…，过程…；
+ * 结局…), never an answer to the question: only the written 断语 answers it.
+ */
+function conclusionOf(y: Extract<Reading['synthesis'], { applicable: true }>, question: string, topicId: string | undefined, domainId: string, questionId?: string) {
+  const outcome = outcomeFor(question, topicId, domainId, 'zh', questionId);
+  return outcome ? y.verdict.template.replace('{outcome}', outcome) : y.summary;
 }
 
 /** A record made from a fixed question, or an older one whose question was written freely. */

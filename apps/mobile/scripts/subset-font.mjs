@@ -37,6 +37,18 @@ for (const d of domains) {
   add(chars.body, d.title + d.text + Object.values(d.relationPassages || {}).map((p) => p.quote).join(''));
 }
 
+// The formal product catalog (menus, reference texts) and its written 断语 (titles are headings).
+const productText = readFileSync(join(repo, 'data/product-categories.json'), 'utf8');
+add(chars.body, productText);
+for (const c of JSON.parse(productText).categories)
+  for (const s of c.subcategories) add(chars.heading, c.label + s.label + s.questions.map((q) => q.question).join(''));
+const authored = join(repo, 'data/authored-readings');
+for (const f of walk(authored).filter((x) => /hex-\d{3}\.json$/.test(x))) {
+  const text = readFileSync(f, 'utf8');
+  add(chars.body, text);
+  for (const row of JSON.parse(text).rows ?? []) add(chars.heading, row.copy?.title);
+}
+
 for (const [name, weight, set] of [['heading', '600SemiBold', chars.heading], ['body', '400Regular', chars.body]]) {
   const ttf = readFileSync(join(src, weight, `NotoSerifSC_${weight}.ttf`));
   const text = [...set].join('') + ascii;

@@ -79,6 +79,8 @@ export function conclusionText(reading: Reading, question: string, topicId: stri
   const y = reading.synthesis;
   if (!y.applicable) return weatherText(reading, lang)?.headline ?? null;
   const outcome = outcomeFor(question, topicId, reading.domain.id, lang, questionId);
+  // A question of the formal catalog is answered only by its written 断语: the structure alone here.
+  if (outcome === null) return synthText(reading, lang)?.summary ?? null;
   const tpl = lang === 'en' ? SYNTH_EN.verdict[y.verdict.code] ?? '' : y.verdict.template;
   return tpl.replace('{outcome}', outcome);
 }

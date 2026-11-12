@@ -3,7 +3,7 @@
  * locked 断语, or browsing), yearly and monthly plans, a single unlock for the current reading,
  * restore purchases, and the auto-renew disclosure the stores require.
  */
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { Strings } from '../domain/i18n';
 import type { Lang } from '../domain/settings';
 import { PRODUCTS, type Membership, type ProductId, type PurchaseProvider } from '../domain/membership';
@@ -24,6 +24,7 @@ interface Props {
 
 export function MembershipSheet({ t, lang, membership, store, reason, castId = null, onClose, onChanged }: Props) {
   const [busy, setBusy] = useState(false);
+  const processing = useRef(false);
   const [note, setNote] = useState<string | null>(null);
   // Re-read after test-store actions change membership or today's count.
   const [, setRev] = useState(0);
@@ -33,28 +34,34 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
   const until = ent.expiresAt ? new Date(ent.expiresAt).toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US') : '';
   const price = (id: ProductId) => PRODUCTS[id].price[lang];
 
-  const buy = async (id: ProductId) => {
-    if (!store.available) {
-      setNote(t.memberStorePending);
-      return;
-    }
+  const perform = async (action: () => Promise<string>) => {
+    if (!store.available || processing.current) return;
+    processing.current = true;
     setBusy(true);
-    const r = await store.buy(id);
-    setBusy(false);
-    if (r.ok) {
-      membership.grant(id, castId);
-      setNote(t.memberThanks);
-      onChanged();
+    setNote(null);
+    try {
+      setNote(await action());
+    } catch {
+      setNote(t.memberFailed);
+    } finally {
+      processing.current = false;
+      setBusy(false);
     }
   };
-  const restore = async () => {
-    const s = await store.restore();
-    if (s) {
-      membership.restore(s);
-      onChanged();
-    }
-    setNote(s ? t.memberThanks : store.available ? '—' : t.memberStorePending);
-  };
+  const buy = (id: ProductId) => perform(async () => {
+    const result = await store.buy(id);
+    if (!result.ok) return t.memberFailed;
+    membership.grant(id, castId);
+    onChanged();
+    return t.memberThanks;
+  });
+  const restore = () => perform(async () => {
+    const restored = await store.restore();
+    if (!restored) return t.memberNothingToRestore;
+    membership.restore(restored);
+    onChanged();
+    return t.memberThanks;
+  });
 
   return (
     <div className="sheet-backdrop" onClick={onClose}>
@@ -91,6 +98,7 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
               <p key={i}>{line}</p>
             ))}
           </div>
+          {!store.available && <p className="member-note" role="status">{t.memberStorePending}</p>}
           {store.isTest && <p className="member-test">{t.memberTestStore}</p>}
           {store.isTest && (
             <div className="btn-row member-dev">
@@ -125,12 +133,12 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
             <>
               <p className="member-benefits">{t.memberBenefits}</p>
               <div className="plans">
-                <button type="button" className="plan is-best" disabled={busy} onClick={() => buy('wengua.member.yearly')}>
+                <button type="button" className="plan is-best" disabled={busy || !store.available} onClick={() => buy('wengua.member.yearly')}>
                   <span className="plan-name">{t.memberYearly}</span>
                   <span className="plan-price">{price('wengua.member.yearly')}</span>
                   <span className="plan-tag">{t.memberSave}</span>
                 </button>
-                <button type="button" className="plan" disabled={busy} onClick={() => buy('wengua.member.monthly')}>
+                <button type="button" className="plan" disabled={busy || !store.available} onClick={() => buy('wengua.member.monthly')}>
                   <span className="plan-name">{t.memberMonthly}</span>
                   <span className="plan-price">{price('wengua.member.monthly')}</span>
                 </button>
@@ -138,15 +146,15 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
             </>
           )}
           {!member && castId && reason === 'judgment' && (
-            <button type="button" className="single-unlock" disabled={busy} onClick={() => buy('wengua.reading.single')}>
+            <button type="button" className="single-unlock" disabled={busy || !store.available} onClick={() => buy('wengua.reading.single')}>
               {t.memberSingle} · {price('wengua.reading.single')}
             </button>
           )}
-          {note && <p className="member-note">{note}</p>}
-          <button type="button" className="text-btn member-restore" onClick={restore}>
+          {note && <p className="member-note" role="status">{note}</p>}
+          <button type="button" className="text-btn member-restore" disabled={busy || !store.available} onClick={restore}>
             {t.memberRestore}
           </button>
-          <p className="member-fine">{t.memberRenew}</p>
+          {store.available && <p className="member-fine">{t.memberRenew}</p>}
         </div>
       </section>
     </div>

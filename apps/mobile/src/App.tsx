@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { getKnowledge, type Knowledge } from './knowledge/knowledge';
-import { chargesToday, freezeCast, type CastRecord } from './domain/cast';
+import { chargesToday, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
+import { judgmentFor } from './domain/judgment';
+import { questionById, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
 import { createJournal } from './domain/journal';
 import { placeStore } from './ui/placeStore';
@@ -21,13 +23,13 @@ import { Splash } from './ui/Splash';
 import { hasWebGL } from './domain/quality';
 import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
 import { createMembership, purchaseProvider } from './domain/membership';
-import { scriptRepository } from './domain/scriptBundle';
 import { clearProfile, loadProfile, localAuth, type Profile, type SignInMethod } from './domain/profile';
 import { castRequest, entryProblem } from './ui/entry';
 import { TempleView } from './ui/TempleView';
 import { LibraryScreen } from './ui/LibraryScreen';
 import { HistoryScreen } from './ui/HistoryScreen';
 import { DebugScreen, type ManualCast } from './ui/DebugScreen';
+import { ReferenceSheet } from './ui/ReferenceSheet';
 
 type Screen = 'temple' | 'library' | 'history' | 'debug';
 
@@ -53,6 +55,8 @@ export function App() {
   const [splash, setSplash] = useState<'shown' | 'leaving' | 'gone'>('shown');
   const [splashMode, setSplashMode] = useState<'title' | 'login'>('title');
   const [welcoming, setWelcoming] = useState(false);
+  const signInPending = useRef(false);
+  const [signInError, setSignInError] = useState<string | null>(null);
   const [profile, setProfile] = useState<Profile | null>(() => loadProfile());
   const history = useMemo(() => createHistory(), []);
   const journal = useMemo(() => createJournal(), []);
@@ -61,6 +65,10 @@ export function App() {
   const [memberSheet, setMemberSheet] = useState<{ reason: MembershipReason; castId: string | null } | null>(null);
   // An earlier cast that may be about the same matter (the visitor decides).
   const [repeatOf, setRepeatOf] = useState<CastRecord | null>(null);
+  // A reference or guidance question being read (no cast).
+  const [reference, setReference] = useState<{ question: ResolvedQuestion; conditions: Record<string, string> } | null>(null);
+  // The 断语 of a cast just made is being looked up.
+  const [busy, setBusy] = useState(false);
 
   const setSettings = useCallback((s: Settings) => {
     setSettingsState(s);
@@ -107,20 +115,34 @@ export function App() {
     if (screen === 'temple' && ritual.castId) history.setActive(ritual.castId, ritual.phase);
   }, [screen, ritual.castId, ritual.phase, history]);
 
-  /** Freezes the cast exactly once per visit; later calls return the same record. */
-  const ensureCast = useCallback((): CastRecord | null => {
-    if (recordRef.current) return recordRef.current;
+  /**
+   * Casts once: the hexagram is frozen, its 断语 is looked up (product question + 本卦 + 动爻 +
+   * 月令 + casting day) and frozen with it, and only then is the record saved. The full ritual and
+   * 简洁问事 both come through here: one cast, one 断语 lookup.
+   */
+  const castNow = async (): Promise<CastRecord | null> => {
     if (!knowledge) return null;
     const f = formRef.current;
     try {
-      // The full ritual and 简洁问事 both come through here: one cast, one 断语 lookup.
-      const rec = freezeCast(
+      const base = freezeCast(
         knowledge.library,
         castRequest(f, { lang: settings.lang, timeZone: deviceTimeZone(), calendarPolicy: { ziHour: settings.ziHour, clock: settings.calendarClock } }),
-        { scripts: scriptRepository },
       );
-      history.save(rec);
-      // Only a cast that was given an approved 断语 counts toward today's readings.
+      const input = judgmentInput(base);
+      const question = questionById(base.questionId);
+      const rec = input && question ? withJudgment(base, await judgmentFor(knowledge.product, question, input)) : base;
+      // A cast that would be charged beyond today's readings is not kept (the visitor is asked first).
+      if (chargesToday(rec) && !membership.canCast()) {
+        setMemberSheet({ reason: 'limit', castId: null });
+        return null;
+      }
+      try {
+        history.save(rec);
+      } catch {
+        setEntryError(t.storageWriteFailed);
+        return null;
+      }
+      // Only a cast that was given a written 断语 counts toward today's readings.
       if (chargesToday(rec) && rec.questionId) membership.recordCast(rec.questionId);
       setMemberRev((n) => n + 1);
       recordRef.current = rec;
@@ -131,19 +153,20 @@ export function App() {
       leaveTemple();
       return null;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [knowledge, settings.ziHour, settings.calendarClock, settings.lang, history]);
+  };
 
   const leaveTemple = () => {
     history.clearActive();
+    setRepeatOf(null);
     recordRef.current = null;
     setRecord(null);
     dispatch({ type: 'RESET' });
     setScreen('temple'); // home is the hall itself
   };
 
-  const enter = (confirmedRepeat = false) => {
-    if (!knowledge) return;
+  const enter = async (confirmedRepeat = false) => {
+    // One cast per visit: a second tap (or a second submit) while one is made or shown does nothing.
+    if (!knowledge || busy || recordRef.current) return;
     // A reading answers a question, chosen by tapping: it comes first.
     const problem = entryProblem(form);
     if (problem) {
@@ -151,6 +174,12 @@ export function App() {
       return;
     }
     setEntryError(null);
+    // Reference and guidance questions are read at once: no cast, no ritual, nothing counted.
+    const question = questionById(form.questionId);
+    if (question && question.mode !== 'narrative') {
+      setReference({ question, conditions: form.conditions });
+      return;
+    }
     // Same matter within seven days? Offer the original reading first (no new cast is used).
     if (!confirmedRepeat) {
       const earlier = sameMatterCandidate(history.list(), form.questionId);
@@ -159,19 +188,13 @@ export function App() {
         return;
       }
     }
-    // One reading a day free, three for members. A question with no approved 断语 at all can
-    // never be charged, so it is not held back by the count.
-    const chargeable = !!form.questionId && scriptRepository.availability(form.questionId).state !== 'none';
-    if (chargeable && !membership.canCast()) {
-      setMemberSheet({ reason: 'limit', castId: null });
-      return;
-    }
     templeAudio.setEnabled(settings.sound); // within the user's gesture
     haptic(settings.haptics);
-    recordRef.current = null;
-    setRecord(null);
-    // The cast is frozen now; the visitor walks straight up the hall to the bestowal.
-    const rec = ensureCast();
+    // The cast is frozen now (with its 断语); the visitor walks straight up the hall to the bestowal.
+    // Whether it counts toward today is decided once its 断语 is known (castNow).
+    setBusy(true);
+    const rec = await castNow();
+    setBusy(false);
     if (!rec) return;
     dispatch({ type: 'BEGIN', castId: rec.castId });
     // 简洁问事: the same cast, straight to the reading (no walk, no bestowal).
@@ -200,7 +223,13 @@ export function App() {
       timeZone: deviceTimeZone(),
       manual: { primaryId: m.primaryId, movingLine: m.movingLine, monthBranch: m.monthBranch, dayGanzhi: m.dayGanzhi },
     });
-    history.save(rec);
+    try {
+      history.save(rec);
+    } catch {
+      setEntryError(t.storageWriteFailed);
+      setScreen('temple');
+      return;
+    }
     if (m.withRitual) templeAudio.setEnabled(settings.sound);
     openRecord(rec, m.withRitual);
   };
@@ -236,13 +265,17 @@ export function App() {
     window.setTimeout(() => {
       setSplash('gone');
       setWelcoming(false);
-    }, 1500);
+      signInPending.current = false;
+    }, settings.reducedMotion ? 150 : 1500);
     // Returning visitors on 简洁问事 go straight to the hall; the walk-in is for the full ritual.
     setIntro(inHall.current || pace === 'quick' ? 'done' : 'gliding');
   };
   // First visit: sign in (a 道号 or as a guest) before walking in.
   const onSplashEnter = () => (profile ? walkIn() : setSplashMode('login'));
   const onSignIn = (method: SignInMethod, name: string) => {
+    if (signInPending.current) return;
+    signInPending.current = true;
+    setSignInError(null);
     templeAudio.setEnabled(settings.sound);
     localAuth
       .signIn(method, { name })
@@ -252,11 +285,15 @@ export function App() {
         setWelcoming(true);
         window.setTimeout(walkIn, settings.reducedMotion ? 600 : 2200);
       })
-      .catch(() => {});
+      .catch(() => {
+        signInPending.current = false;
+        setSignInError(t.loginFailed);
+      });
   };
   const onSwitchAccount = () => {
     clearProfile();
     setProfile(null);
+    setSignInError(null);
     setSplashMode('login');
   };
   // Home's ←: back to the title screen; 「轻触 · 入殿」 walks in again.
@@ -279,7 +316,7 @@ export function App() {
   };
   const splashLayer =
     splash !== 'gone' && knowledge ? (
-      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} live={settings.quality !== '2d' && hasWebGL()} welcoming={welcoming} />
+      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={settings.quality !== '2d' && hasWebGL()} welcoming={welcoming} />
     ) : null;
 
   if (!knowledge) {
@@ -312,7 +349,8 @@ export function App() {
               setForm(f);
             },
             onSettings: setSettings,
-            onEnter: () => enter(),
+            onEnter: () => void enter(),
+            busy,
             onMembership: () => setMemberSheet({ reason: 'browse', castId: null }),
             memberLine: memberLine,
             onLibrary: () => setPlace('library'),
@@ -326,6 +364,7 @@ export function App() {
           onIntroDone={() => setIntro('done')}
           membership={membership}
           memberRev={memberRev}
+          memberOpen={!!memberSheet}
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
         />
         {memberSheet && (
@@ -338,6 +377,22 @@ export function App() {
             castId={memberSheet.castId}
             onClose={() => setMemberSheet(null)}
             onChanged={() => setMemberRev((n) => n + 1)}
+          />
+        )}
+        {reference && (
+          <ReferenceSheet
+            t={t}
+            lang={settings.lang}
+            question={reference.question}
+            conditions={reference.conditions}
+            sectionTitle={(id) => {
+              try {
+                return knowledge.library.getSection(id)?.title ?? null;
+              } catch {
+                return null;
+              }
+            }}
+            onClose={() => setReference(null)}
           />
         )}
         {repeatOf && (
@@ -364,7 +419,7 @@ export function App() {
                   className="text-btn member-restore"
                   onClick={() => {
                     setRepeatOf(null);
-                    enter(true);
+                    void enter(true);
                   }}
                 >
                   {t.sameMatterNo}

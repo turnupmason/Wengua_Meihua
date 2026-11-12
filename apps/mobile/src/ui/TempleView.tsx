@@ -1,4 +1,4 @@
-import { Component, Suspense, cloneElement, lazy, useCallback, useEffect, useMemo, useRef, useState, type ComponentProps, type ReactElement, type ReactNode } from 'react';
+import { Component, Suspense, cloneElement, lazy, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ComponentProps, type ReactElement, type ReactNode } from 'react';
 import type { Knowledge } from '../knowledge/knowledge';
 import { readingFromCast, snapshotDrift, type CastRecord } from '../domain/cast';
 import { isRitualPhase, type RitualEvent, type RitualState } from '../domain/ritual';
@@ -25,11 +25,13 @@ import { sceneInsets } from '../scene/insets';
 import { LineTip } from './LineTip';
 import { placeStore, usePlace } from './placeStore';
 import type { Membership } from '../domain/membership';
-import { SEASON_LABEL } from '../domain/scripts';
+import { missingText } from './judgmentText';
 import type { MembershipReason } from './MembershipSheet';
 import { Board2D } from './Board2D';
 import { Ritual2D } from './Ritual2D';
 import { relationAria } from './text';
+
+const STAGE_LABEL = { primary: 'stage_primary', mutual: 'stage_mutual', changed: 'stage_changed' } as const;
 import { castTimeShort } from './timeText';
 
 const TempleScene = lazy(() => import('../scene/TempleScene').then((m) => ({ default: m.TempleScene })));
@@ -64,6 +66,7 @@ interface Props {
   membership: Membership;
   /** Bumped whenever a purchase changes what the visitor may read. */
   memberRev: number;
+  memberOpen?: boolean;
   onOpenMembership: (reason: MembershipReason, castId: string | null) => void;
   journal: Journal;
   /** 殿中三处: the pages shown at 藏经阁 and 问事录 (the place itself is in placeStore). */
@@ -71,7 +74,7 @@ interface Props {
   recordsPanel: ReactElement<{ active?: boolean }>;
 }
 
-export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, onOpenMembership, journal, libraryPanel, recordsPanel }: Props) {
+export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel }: Props) {
   const place = usePlace();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
@@ -92,13 +95,24 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const relation = useMemo(() => (reading ? primaryRelation(reading) : null), [reading]);
   // 读卦: the reading laid out to read (null = 观卦, the stone table). 'top' opens at the conclusion.
   const [readMode, setReadMode] = useState<SynthStage | 'top' | null>(null);
+  const readButton = useRef<HTMLButtonElement>(null);
+  const restoreReadButton = useRef(false);
+  useLayoutEffect(() => {
+    if (!readMode && restoreReadButton.current) {
+      restoreReadButton.current = false;
+      readButton.current?.focus({ preventScroll: true });
+    }
+  }, [readMode]);
   const [showBook, setShowBook] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
   // The first time the visitor reads a stone: 「卦象自下而上，观其始终」, briefly, then never again.
   const [orderHint, setOrderHint] = useState(false);
   useEffect(() => {
     // Only once the visitor is actually looking at the stone (not behind the title screen).
-    if (ritual.phase !== 'reading' || intro !== 'done') return;
+    if (ritual.phase !== 'reading' || intro !== 'done') {
+      setOrderHint(false);
+      return;
+    }
     let seen = true;
     try {
       seen = localStorage.getItem('wengua.hint.bottomUp.v1') === '1';
@@ -113,13 +127,17 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   }, [ritual.phase, intro]);
   // The camera keeps the stone clear of the top bar: tell it where the bar ends.
   const headerRef = useRef<HTMLElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = headerRef.current;
-    if (!el || typeof ResizeObserver === 'undefined') return;
-    const ro = new ResizeObserver(() => {
-      sceneInsets.headerPx = el.getBoundingClientRect().bottom;
-    });
-    ro.observe(el);
+    if (!el) return;
+    const update = () => {
+      sceneInsets.headerPx = el.getBoundingClientRect().height;
+      el.closest<HTMLElement>('.temple')?.style.setProperty('--board-header', `${sceneInsets.headerPx}px`);
+    };
+    update();
+    if (typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(update);
+    ro.observe(el, { box: 'border-box' });
     return () => ro.disconnect();
   }, [ritual.phase]);
   // A 藏经阁 page opened from the reading's evidence.
@@ -146,34 +164,45 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const bookEntry = useMemo(() => (record ? journal.get(record.castId) : null), [record, journal, bookRev]);
   // The camera frames the stone above the result footer: tell it how tall the footer is.
   const footerRef = useRef<HTMLElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = footerRef.current;
-    if (!el || ritual.phase !== 'reading' || typeof ResizeObserver === 'undefined') return;
-    const ro = new ResizeObserver(() => {
+    if (!el || ritual.phase !== 'reading') return;
+    const update = () => {
       const h = el.getBoundingClientRect().height;
-      if (h > 40) sceneInsets.footerPx = h + 8;
-    });
-    ro.observe(el);
+      if (h > 40) {
+        sceneInsets.footerPx = h + 8;
+        el.closest<HTMLElement>('.temple')?.style.setProperty('--board-footer', `${h}px`);
+      }
+    };
+    update();
+    if (typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(update);
+    ro.observe(el, { box: 'border-box' });
     return () => ro.disconnect();
   }, [ritual.phase]);
   useEffect(() => {
     setReadMode(null);
     setShowBook(false);
+    setShowQuestion(false);
+    setSelection(null);
+    setTip(null);
+    setBookPage(null);
+    setSectionPage(null);
   }, [record?.castId]);
-  // The 断语 was matched once, at casting (question_id + 本卦 + 动爻 + 时令), and frozen with the cast.
+  // The 断语 was looked up once, at casting (question + 本卦 + 动爻 + 月令 + day), and frozen with the cast.
   const judgmentView = useMemo<JudgmentView | null>(() => {
     if (!record) return null;
     const j = record.judgment;
     if (!record.questionId || !j) return { state: 'legacy' };
-    if (j.state !== 'ready') return { state: 'missing' };
-    return { state: 'ready', script: j.script, seasonLabel: SEASON_LABEL[j.script.season_variant_id][settings.lang], full: membership.canReadFull(record.castId) };
+    if (j.state !== 'ready') return { state: 'missing', reason: j.reason };
+    return { state: 'ready', judgment: j, full: membership.canReadFull(record.castId) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [record, membership, memberRev, settings.lang]);
-  // Under 「查看断语」: the 断语's own title, or that it is still being written (never a stand-in).
+  }, [record, membership, memberRev]);
+  // Under 「查看断语」: the 断语's own title, or why there is none (never a stand-in).
   const headline = useMemo(() => {
     if (!reading || !judgmentView) return '';
-    if (judgmentView.state === 'ready') return judgmentView.script.title;
-    if (judgmentView.state === 'missing') return t.scriptPending;
+    if (judgmentView.state === 'ready') return judgmentView.judgment.title || judgmentView.judgment.short;
+    if (judgmentView.state === 'missing') return missingText(t, judgmentView.reason).title;
     // Older free-written records keep what they showed then.
     if (record?.snapshot && settings.lang !== 'en') return [record.snapshot.headline, record.snapshot.leadText].filter(Boolean).join(' · ');
     const y = reading.synthesis;
@@ -292,6 +321,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
 
   const phase = ritual.phase;
   const inRitual = isRitualPhase(phase);
+  const boardBlocked = !!(readMode || selection || showQuestion || memberOpen);
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
     revealing: t.revealing,
@@ -299,7 +329,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
 
   return (
     <div className={`temple phase-${phase}`}>
-      <div className="stage-layer">
+      <div className="stage-layer" inert={boardBlocked}>
         {tier ? (
           <SceneBoundary key={sceneKey} onError={onSceneLost}>
             <Suspense fallback={<div className="scene-loading">{t.loading}</div>}>
@@ -309,6 +339,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
                 castTime={castTimeLabel}
                 clock={clock}
                 phase={phase}
+                covered={!!readMode}
                 reduced={reduced}
                 tier={tier}
                 selection={tip?.sel ?? selection}
@@ -363,7 +394,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
 
       {phase !== 'idle' && (
       <>
-      <header className="temple-top" ref={headerRef}>
+      <header className="temple-top" ref={headerRef} inert={boardBlocked}>
         {/* At the reading, ← is 「礼毕 · 回殿」. */}
         <button className="icon-btn" onClick={phase === 'reading' ? onNewCast : onExit} aria-label={phase === 'reading' ? t.finish : t.home}>
           ←
@@ -381,6 +412,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       </header>
       {showQuestion && record?.question && (
         <div className="question-full" role="dialog" aria-label={t.askedMatter} onClick={() => setShowQuestion(false)}>
+          <button type="button" className="icon-btn" aria-label={t.close} onClick={() => setShowQuestion(false)}>✕</button>
           <p className="read-kicker">{t.askedMatter}</p>
           <p>“{record.question}”</p>
         </div>
@@ -389,7 +421,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       )}
 
       {tier && phase === 'reading' && reading && (
-        <nav className="sr-only" aria-label={t.details}>
+        <nav className="sr-only stone-access" aria-label={t.details} inert={boardBlocked}>
           {(['primary', 'mutual', 'changed'] as const).map((s) => (
             <button key={s} onClick={() => onOpenStage(s)}>
               {t[`stage_${s}`]} {reading.stages[s].name} {reading.stages[s].baseGrade}
@@ -433,7 +465,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         </p>
       )}
 
-      <footer className="temple-bottom" ref={footerRef}>
+      <footer className="temple-bottom" ref={footerRef} inert={boardBlocked}>
         {phase === 'reading' && reading && (
           <>
             {versionChanged && <p className="note">{t.snapshotNotice}</p>}
@@ -441,7 +473,10 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             {/* The relation is carved on the table; screen readers still get it here. */}
             {tier && relation && <p className="sr-only">{relationAria(relation, settings.lang)}</p>}
             {/* 观卦: the stone stays fully in view; one entry leads to the 断语 (读卦). */}
-            <button type="button" className="view-judgment" onClick={() => setReadMode('top')}>
+            {orderHint && !readMode && !tip && (
+              <p className="order-hint" role="status"><span aria-hidden="true">↑</span> {t.orderHint}</p>
+            )}
+            <button type="button" className="view-judgment" ref={readButton} onClick={() => setReadMode('top')}>
               <span className="view-judgment-label">{t.viewJudgment}</span>
               {headline && <span className="view-judgment-head">{headline}</span>}
               <span aria-hidden="true">›</span>
@@ -453,16 +488,20 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       {readMode && reading && phase === 'reading' && (
         <ReadingView
           reading={reading}
+          blocked={!!(showBook || bookPage || sectionPage || selection || memberOpen)}
           question={record?.question ?? ''}
           questionId={record?.questionId}
+          conditions={record?.conditions}
           topicId={record?.topicId}
           snapshot={record?.snapshot}
           judgment={judgmentView ?? { state: 'legacy' }}
           onUnlock={() => onOpenMembership('judgment', record?.castId ?? null)}
-          hexagramName={(id) => knowledge.library.getHexagram(id).name}
-          lineName={(id, line) => {
-            const h = knowledge.library.getHexagram(id);
-            return (line <= 6 ? h.lines[line - 1]?.label : h.specialLines[0]?.label) ?? String(line);
+          sectionTitle={(id) => {
+            try {
+              return knowledge.library.getSection(id)?.title ?? null;
+            } catch {
+              return null;
+            }
           }}
           onOpenSection={(title, quote) => {
             if (!reading) return;
@@ -470,20 +509,24 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             const text = title === reading.domain.title ? reading.domain.text : knowledge.library.listSections().find((x) => x.title === title)?.text ?? knowledge.library.listDomains().find((d) => d.title === title)?.text;
             if (text) setSectionPage({ title, text, quote });
           }}
-          onOpenBook={(id, line) => {
+          onOpenBook={(id, line, stage) => {
             if (!reading) return;
+            if (!stage) {
+              setBookPage({ hexagramId: id, line });
+              return;
+            }
             const y = reading.synthesis;
-            const stage = id === reading.stages.primary.id ? 'primary' : id === reading.stages.mutual.id ? 'mutual' : 'changed';
             const st = y.applicable ? y.stages.find((s) => s.hexagramStage === stage) : undefined;
             const evidence = [
               ...(stage === 'primary' ? [t.bookEvidenceLine(reading.selectedMovingLine.label)] : []),
-              ...(st ? [`${st.main.stageLabel}：${st.evidence}`] : []),
-              ...(stage === 'primary' && reading.domainPassage ? [`《${reading.domain.title.replace(/第.+$/, '')}》：${reading.domainPassage.quote}`] : []),
+              ...(st ? [st.main.stageLabel + '：' + st.evidence] : []),
+              ...(stage === 'primary' && reading.domainPassage ? ['《' + reading.domain.title.replace(/第.+$/, '') + '》：' + reading.domainPassage.quote] : []),
             ];
+            const lineLabel = line && stage === 'primary' ? reading.selectedMovingLine.label + (settings.lang === 'en' ? ' moves' : '动') : '';
             setBookPage({
               hexagramId: id,
               line,
-              context: t.bookContextLine(t[`stage_${stage}`], reading.stages[stage].name, line ? reading.selectedMovingLine.label + (settings.lang === 'en' ? ' moves' : '动') : ''),
+              context: t.bookContextLine(t[STAGE_LABEL[stage]], reading.stages[stage].name, lineLabel),
               evidence,
             });
           }}
@@ -494,7 +537,10 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           saved={!!bookEntry}
           onPick={onPick}
           onSave={() => setShowBook(true)}
-          onClose={() => setReadMode(null)}
+          onClose={() => {
+            restoreReadButton.current = true;
+            setReadMode(null);
+          }}
         />
       )}
       {sectionPage && readMode && (
@@ -523,11 +569,6 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           }}
           onClose={() => setShowBook(false)}
         />
-      )}
-      {orderHint && phase === 'reading' && !readMode && !tip && (
-        <p className="order-hint" style={{ bottom: sceneInsets.footerPx + 10 }} role="status">
-          <span aria-hidden="true">↑</span> {t.orderHint}
-        </p>
       )}
       {tip && reading && phase === 'reading' && !readMode && (
         <LineTip tip={tip} knowledge={knowledge} reading={reading} t={t} onOpen={() => {

@@ -1,9 +1,10 @@
 /**
  * Home, inside the hall: the visitor stands before the 三清 and, on a lacquered tray at the
- * bottom of the view, taps one of six domains; a drawer offers that domain's subtypes and their
- * fixed questions. Nothing is typed: there is no question box and no system keyboard (the few
- * numbers some casting methods take are entered on an in-app pad). Then the method, the hour of
- * casting, the pace, and 诚心起卦. Library, history and settings are small icons at the top.
+ * bottom of the view, taps one of the six categories of the formal product catalog; a drawer
+ * offers its subcategories and their fixed questions. Nothing is typed: there is no question box
+ * and no system keyboard (the few numbers some casting methods take are entered on an in-app pad).
+ * Then the method, the hour of casting, the pace, and 诚心起卦 — or, for a reference or guidance
+ * question, 查看说明 at once (no cast). Library, history and settings are small icons at the top.
  */
 import { memo, useEffect, useMemo, useState } from 'react';
 import type { Settings } from '../domain/settings';
@@ -11,8 +12,7 @@ import type { Strings } from '../domain/i18n';
 import { createCalendarProvider } from '../domain/calendar';
 import { DIRECTIONS, METHODS, TRIGRAM_EXAMPLES, TRIGRAMS, type ClassicalMethod, type TrigramId } from '../domain/methods';
 import { castTimeText, deviceTimeZone } from './timeText';
-import { DOMAINS, SAFETY, enabledQuestions, questionById, subtypeById, type CatalogDomain, type CatalogQuestion, type CatalogSubtype, type DomainId } from '../domain/questionCatalog';
-import { scriptRepository } from '../domain/scriptBundle';
+import { DOMAINS, SAFETY, enabledQuestions, questionById, questionWording, readinessOf, subtypeById, type CatalogDomain, type CatalogQuestion, type CatalogSubtype, type DomainId, type Readiness } from '../domain/questionCatalog';
 
 export interface EntryForm {
   /** The fixed question chosen by tapping (null until one is chosen). */
@@ -76,6 +76,8 @@ interface Props {
   profileName?: string;
   /** Effective pace of the next cast: the full ritual or straight to the reading. */
   pace: 'full' | 'quick';
+  /** The 断语 is being looked up for a cast just made (the button waits). */
+  busy?: boolean;
 }
 
 /** 人事占第二 → 人事 */
@@ -88,7 +90,7 @@ export const UI_METHODS = METHODS.filter((m) => m !== 'text');
 const DOMAIN_ICON: Record<DomainId, string> = {
   career: 'M4.5 8.5h15v10h-15zM9 8.5V6.3c0-.7.5-1.3 1.2-1.3h3.6c.7 0 1.2.6 1.2 1.3v2.2M4.5 13h15M11 13v1.6h2V13',
   wealth: 'M12 4a8 8 0 1 0 0 16 8 8 0 1 0 0-16zM9.6 9.6h4.8v4.8H9.6z',
-  love: 'M9 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10zM15 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10z',
+  relationships: 'M9 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10zM15 7a5 5 0 1 0 0 10 5 5 0 1 0 0-10z',
   health: 'M12 3.5v2.2M12 5.7a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 1 0 0-5.6zM9.7 11c-3 1.3-3.7 3.7-3.2 5.4.7 2.4 2.9 3.6 5.5 3.6s4.8-1.2 5.5-3.6c.5-1.7-.2-4.1-3.2-5.4',
   home: 'M3.5 11 12 4.5l8.5 6.5M6 9.6V19h12V9.6M10 19v-4.6h4V19',
   search: 'M12 4a8 8 0 1 0 0 16 8 8 0 1 0 0-16zM14.6 9.4l-1.9 4.3-4.3 1.9 1.9-4.3zM12 2.5v1.5M12 20v1.5',
@@ -102,11 +104,12 @@ function DomainIcon({ id }: { id: DomainId }) {
   );
 }
 
-/** How much of a question's 断语 is written (approved records only). */
-const readiness = (q: CatalogQuestion) => scriptRepository.availability(q.question_id).state;
-const subtypeReadiness = (s: CatalogSubtype) => {
-  const states = enabledQuestions(s).map(readiness);
-  return states.every((x) => x === 'complete') ? 'complete' : states.every((x) => x === 'none') ? 'none' : 'partial';
+/** A subtype's tag: written if any of its questions has a written 断语 library. */
+const subtypeReadiness = (s: CatalogSubtype): Readiness => {
+  const states = enabledQuestions(s).map(readinessOf);
+  if (states.includes('written')) return 'written';
+  if (states.includes('pending')) return 'pending';
+  return states.every((x) => x === 'guidance') ? 'guidance' : 'reference';
 };
 const subtypeOf = (q: CatalogQuestion) => subtypeById(q.question_id.split('.').slice(0, 2).join('.'));
 
@@ -121,7 +124,8 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
   const [subtype, setSubtype] = useState<CatalogSubtype | null>(() => (mine && (enabledQuestions(subtypeOf(mine)!).length > 1 || subtypeOf(mine)!.safety) ? subtypeOf(mine) : null));
   const [question, setQuestion] = useState<CatalogQuestion | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>(() => (mine ? form.conditions : {}));
-  const tag = (state: string) => (state === 'complete' ? null : <small className={`ready-tag is-${state}`}>{state === 'none' ? t.scriptPendingTag : t.scriptPartialTag}</small>);
+  const tag = (state: Readiness) =>
+    state === 'written' ? null : <small className={`ready-tag is-${state}`}>{state === 'pending' ? t.scriptPendingTag : state === 'reference' ? t.referenceTag : t.guidanceTag}</small>;
   const choose = (q: CatalogQuestion) => {
     if (q.conditions?.length) {
       setQuestion(q);
@@ -130,8 +134,8 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
   };
   const openSubtype = (s: CatalogSubtype) => {
     const qs = enabledQuestions(s);
-    // One fixed question and nothing to read or choose first: chosen at once.
-    if (qs.length === 1 && !s.safety && !qs[0].conditions?.length) onPick(qs[0], {});
+    // One fixed question and no safety note to read first: chosen at once (or straight to its options).
+    if (qs.length === 1 && !s.safety) choose(qs[0]);
     else setSubtype(s);
   };
   const level = question ? 'conditions' : subtype ? 'questions' : 'subtypes';
@@ -186,7 +190,7 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
                   return (
                     <button type="button" key={q.question_id} className={on ? 'is-on' : ''} aria-current={on ? 'true' : undefined} onClick={() => choose(q)}>
                       <span>{q.question_text[lang]}</span>
-                      {tag(readiness(q))}
+                      {tag(readinessOf(q))}
                     </button>
                   );
                 })}
@@ -270,7 +274,7 @@ function DigitPad({ t, value, max, onChange, onDone }: { t: Strings; value: stri
   );
 }
 
-export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace }: Props) {
+export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false }: Props) {
   const [showSettings, setShowSettings] = useState(false);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => onSettings({ ...settings, [k]: v });
   const f = <K extends keyof EntryForm>(k: K, v: EntryForm[K]) => onForm({ ...form, [k]: v });
@@ -304,7 +308,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const chosen = questionById(form.questionId);
   const chosenSubtype = chosen ? subtypeOf(chosen) : null;
   const lang = settings.lang;
-  const ready = chosen ? readiness(chosen) : null;
+  const ready = chosen ? readinessOf(chosen) : null;
+  // Reference and guidance questions are read at once: no method, time or pace to choose.
+  const readOnly = ready === 'reference' || ready === 'guidance';
   const litDomain = drawer?.domain_id ?? chosen?.domain_id ?? null;
   const numberField = (key: 'surname' | 'count' | 'major' | 'minor', label: string, max: number) => (
     <NumberField label={label} value={form[key]} active={pad?.key === key} onFocus={() => setPad({ key, max })} />
@@ -355,29 +361,33 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
               </span>
               <em>{t.changeQuestion} ›</em>
             </span>
-            <b>{chosen.question_text[lang]}</b>
-            {ready !== 'complete' && <small className="chosen-note">{ready === 'none' ? t.scriptPendingNote : t.scriptPartialNote}</small>}
+            <b>{questionWording(chosen, form.conditions, lang)}</b>
+            {ready !== 'written' && <small className="chosen-note">{ready === 'pending' ? t.scriptPendingNote : ready === 'reference' ? t.referenceNote : t.guidanceNote}</small>}
           </button>
         )}
         {chosenSubtype?.safety && <p className="ask-safety compact">{SAFETY[chosenSubtype.safety][lang]}</p>}
-        <div className="cast-row">
-          <button type="button" className="method-line" onClick={() => setShowMethods(true)}>
-            <span>{t[mk] as string}</span>
-            <i aria-hidden="true">·</i>
-            <span className="method-time">{timeText}</span>
-            <em>{t.moreMethods}</em>
-          </button>
-        </div>
-        <div className="pace-switch" role="radiogroup" aria-label={t.paceLabel}>
-          {(['full', 'quick'] as const).map((p) => (
-            <button type="button" key={p} role="radio" aria-checked={pace === p} className={pace === p ? 'is-on' : ''} onClick={() => set('ritualMode', p)}>
-              {p === 'full' ? t.paceFull : t.paceQuick}
-            </button>
-          ))}
-        </div>
-        {error && <p className="error">{error}</p>}
-        <button type="submit" className="enter-seal">
-          {t.enter}
+        {!readOnly && (
+          <>
+            <div className="cast-row">
+              <button type="button" className="method-line" onClick={() => setShowMethods(true)}>
+                <span>{t[mk] as string}</span>
+                <i aria-hidden="true">·</i>
+                <span className="method-time">{timeText}</span>
+                <em>{t.moreMethods}</em>
+              </button>
+            </div>
+            <div className="pace-switch" role="radiogroup" aria-label={t.paceLabel}>
+              {(['full', 'quick'] as const).map((p) => (
+                <button type="button" key={p} role="radio" aria-checked={pace === p} className={pace === p ? 'is-on' : ''} onClick={() => set('ritualMode', p)}>
+                  {p === 'full' ? t.paceFull : t.paceQuick}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+        {error && <p className="error" role="alert">{error}</p>}
+        <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
+          {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
         </button>
         <p className="privacy">{t.privacy}</p>
       </form>
@@ -390,7 +400,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           form={form}
           onClose={() => setDrawer(null)}
           onPick={(q, conditions) => {
-            onForm({ ...form, questionId: q.question_id, conditions, topicId: drawer.domain_id, domainId: q.classical_domain_id });
+            onForm({ ...form, questionId: q.question_id, conditions, topicId: drawer.domain_id, domainId: q.classical_domain_id ?? form.domainId });
             setDrawer(null);
           }}
         />
@@ -529,7 +539,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 </select>
               </label>
               {onMembership && (
-                <button className="ghost-btn settings-member" onClick={onMembership}>
+                <button className="ghost-btn settings-member" onClick={() => { setShowSettings(false); onMembership?.(); }}>
                   {t.memberTitle}
                   {memberLine ? ` · ${memberLine}` : ''}
                 </button>

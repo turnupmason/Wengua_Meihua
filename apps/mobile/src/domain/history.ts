@@ -6,7 +6,6 @@ import { safeStore, type KeyValueStore } from './storage';
 
 const KEY = 'wengua.history.v1';
 const ACTIVE_KEY = 'wengua.activeCast.v1';
-const MAX = 500;
 
 function isCastRecord(x: unknown): x is CastRecord {
   const r = x as CastRecord;
@@ -14,17 +13,21 @@ function isCastRecord(x: unknown): x is CastRecord {
     && r.movingLine >= 1 && r.movingLine <= 6 && !!r.stages?.primary && !!r.stages?.mutual && !!r.stages?.changed;
 }
 
-export function createHistory(store: KeyValueStore = safeStore('local'), session: KeyValueStore = safeStore('session')) {
+export function createHistory(store: KeyValueStore = safeStore('local', true), session: KeyValueStore = safeStore('session')) {
+  function read(): unknown[] {
+    const raw: unknown = JSON.parse(store.getItem(KEY) || '[]');
+    if (!Array.isArray(raw)) throw new Error('Invalid history data');
+    return raw;
+  }
   function list(): CastRecord[] {
     try {
-      const raw = JSON.parse(store.getItem(KEY) || '[]');
-      return Array.isArray(raw) ? raw.filter(isCastRecord) : [];
+      return read().filter(isCastRecord);
     } catch {
       return [];
     }
   }
-  function write(items: CastRecord[]) {
-    store.setItem(KEY, JSON.stringify(items.slice(0, MAX)));
+  function write(items: unknown[]) {
+    store.setItem(KEY, JSON.stringify(items));
   }
   return {
     list,
@@ -33,12 +36,12 @@ export function createHistory(store: KeyValueStore = safeStore('local'), session
     },
     /** Saving the same cast twice keeps the original (records are immutable once frozen). */
     save(record: CastRecord) {
-      const items = list();
-      if (items.some((r) => r.castId === record.castId)) return;
+      const items = read();
+      if (items.some((r) => isCastRecord(r) && r.castId === record.castId)) return;
       write([record, ...items]);
     },
     remove(castId: string) {
-      write(list().filter((r) => r.castId !== castId));
+      write(read().filter((r) => !isCastRecord(r) || r.castId !== castId));
       if (this.getActive()?.castId === castId) this.clearActive();
     },
     clear() {

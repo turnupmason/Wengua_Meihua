@@ -54,14 +54,14 @@ describe('frozen reading', () => {
 describe('same matter', () => {
   it('is decided by the fixed question and seven days, never by comparing wording', async () => {
     const now = new Date('2026-11-11T10:00:00Z');
-    const a = await cast('这次面试能通过吗？', { questionId: 'career.job_interview.pass' }, new Date('2026-11-09T10:00:00Z'));
-    const old = await cast('这次面试能通过吗？', { questionId: 'career.job_interview.pass' }, new Date('2026-10-01T10:00:00Z'));
+    const a = await cast('这次面试能通过吗？', { questionId: 'career.interview.interview-pass' }, new Date('2026-11-09T10:00:00Z'));
+    const old = await cast('这次面试能通过吗？', { questionId: 'career.interview.interview-pass' }, new Date('2026-10-01T10:00:00Z'));
     const legacy = await cast('这次面试能通过吗？', {}, new Date('2026-11-10T10:00:00Z'));
-    expect(sameMatterCandidate([legacy, a, old], 'career.job_interview.pass', now)?.castId).toBe(a.castId);
-    expect(sameMatterCandidate([old], 'career.job_interview.pass', now)).toBeNull(); // older than 7 days
-    expect(sameMatterCandidate([a], 'career.exam.pass', now)).toBeNull(); // another question
+    expect(sameMatterCandidate([legacy, a, old], 'career.interview.interview-pass', now)?.castId).toBe(a.castId);
+    expect(sameMatterCandidate([old], 'career.interview.interview-pass', now)).toBeNull(); // older than 7 days
+    expect(sameMatterCandidate([a], 'career.exams.exam', now)).toBeNull(); // another question
     // An older free-written record with the same words is never matched to a fixed question.
-    expect(sameMatterCandidate([legacy], 'career.job_interview.pass', now)).toBeNull();
+    expect(sameMatterCandidate([legacy], 'career.interview.interview-pass', now)).toBeNull();
     expect(sameMatterCandidate([a], null, now)).toBeNull();
   });
 });

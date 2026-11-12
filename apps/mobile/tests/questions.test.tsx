@@ -1,13 +1,16 @@
 /**
- * 全点击式问事: the QuestionCatalog, the click-only home entry, the 断语 lookup and import checks,
- * and how a cast carries its question_id and 断语 version into 问事录.
+ * 全点击式问事 on the formal product catalog: the six categories, 52 subcategories and 82
+ * questions of data/product-categories.json, the click-only home entry, the 断语 lookup through
+ * createProductRepository, and how a cast carries its question and 断语 into 问事录.
  */
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { useState } from 'react';
-import { DOMAINS, allQuestions, allSubtypes, catalogProblems, enabledQuestions, questionById, type CatalogQuestion } from '../src/domain/questionCatalog';
-import { createScriptRepository, parseCsv, scriptKey, seasonOf, validateScripts, type ScriptRecord } from '../src/domain/scripts';
-import { chargesToday, freezeCast, recordKind } from '../src/domain/cast';
+import productFile from '../../../data/product-categories.json';
+import labelsFile from '../src/data/product-catalog.labels.json';
+import { DOMAINS, allQuestions, allSubtypes, catalogProblems, enabledQuestions, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
+import { castingDateOf, judgmentFor, readableCalculation, seasonOf, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
+import { chargesToday, freezeCast, judgmentInput, recordKind, withJudgment } from '../src/domain/cast';
 import { createHistory } from '../src/domain/history';
 import { createJournal } from '../src/domain/journal';
 import { sameMatterCandidate } from '../src/domain/sameMatter';
@@ -18,40 +21,15 @@ import { EMPTY_FORM, HomeOverlay, UI_METHODS, type EntryForm } from '../src/ui/H
 import { castRequest, entryProblem } from '../src/ui/entry';
 import { ReadingView } from '../src/ui/ReadingView';
 import { RecordDetail } from '../src/ui/RecordDetail';
+import { ReferenceSheet } from '../src/ui/ReferenceSheet';
 import { memoryStore, testKnowledge } from './helpers';
 
 afterEach(cleanup);
 
-/** The 52 subtypes exactly as specified (id → name), in order. */
-const SPEC: Record<string, [string, string][]> = {
-  career: [['career.job_interview', '求职面试'], ['career.promotion', '升职加薪'], ['career.job_change', '跳槽去留'], ['career.job_stability', '工作稳定'], ['career.workplace_relations', '职场人际'], ['career.exam', '考试考核'], ['career.project', '项目事业'], ['career.selection', '竞聘选拔']],
-  wealth: [['wealth.recent_fortune', '近期财运'], ['wealth.income', '正财收入'], ['wealth.investment', '投资理财'], ['wealth.business', '生意经营'], ['wealth.contract', '交易合同'], ['wealth.partnership', '合伙合作'], ['wealth.debt_collection', '债务催收'], ['wealth.trading', '买卖求财'], ['wealth.project_profit', '项目盈利']],
-  love: [['love.secret_crush', '暗恋心意'], ['love.ambiguous_relation', '暧昧发展'], ['love.confession', '表白追求'], ['love.relationship', '恋爱关系'], ['love.conflict', '冷战矛盾'], ['love.reconciliation', '分手复合'], ['love.destined_partner', '桃花正缘'], ['love.marriage_discussion', '谈婚论嫁'], ['love.married_life', '婚姻家庭'], ['love.long_distance', '异地恋情']],
-  health: [['health.general', '身体状况'], ['health.body_location', '不适部位'], ['health.severity_symbolism', '病情轻重'], ['health.progress_symbolism', '病情发展'], ['health.treatment', '治疗过程'], ['health.surgery', '手术事项'], ['health.recovery', '康复调养'], ['health.family_health', '家人健康']],
-  home: [['home.buy_property', '买房置业'], ['home.sell_property', '卖房出售'], ['home.rental', '租赁住房'], ['home.moving', '搬家迁居'], ['home.renovation', '装修建造'], ['home.family_relations', '家庭关系'], ['home.parents', '父母长辈'], ['home.children', '子女事务'], ['home.living_environment', '家宅环境']],
-  search: [['search.lost_item', '失物寻找'], ['search.direction', '位置方向'], ['search.valuables', '贵重物品'], ['search.documents', '证件文件'], ['search.loss_cause', '失物原因'], ['search.pet', '宠物走失'], ['search.missing_person', '人员失联'], ['search.person_clues', '寻人线索']],
-};
+type File = typeof productFile;
+const INTERVIEW = 'career.interview.interview-pass';
 
-/** An approved 断语 for tests (every field filled). */
-const mk = (o: Partial<ScriptRecord> = {}): ScriptRecord => ({
-  script_id: `t.${Math.random().toString(36).slice(2)}`,
-  question_id: 'career.job_interview.pass',
-  hexagram_id: 55,
-  moving_line: 3,
-  season_variant_id: 'winter',
-  title: '冬令雷火丰九三',
-  brief_text: '简断文字',
-  opening_text: '开局文字',
-  process_text: '过程文字',
-  ending_text: '结局文字',
-  conclusion_text: '总断文字',
-  classical_sources: [{ kind: 'line', hexagram_id: 55, line: 3 }],
-  status: 'approved',
-  version: '1',
-  ...o,
-});
-
-function Home({ onChange, onTitle = () => {} }: { onChange?: (f: EntryForm) => void; onTitle?: () => void }) {
+function Home({ onChange, onTitle = () => {}, busy = false }: { onChange?: (f: EntryForm) => void; onTitle?: () => void; busy?: boolean }) {
   const [form, setForm] = useState<EntryForm>(EMPTY_FORM);
   return (
     <HomeOverlay
@@ -70,6 +48,7 @@ function Home({ onChange, onTitle = () => {} }: { onChange?: (f: EntryForm) => v
       onTitle={onTitle}
       onDebug={() => {}}
       pace="full"
+      busy={busy}
     />
   );
 }
@@ -77,62 +56,85 @@ function Home({ onChange, onTitle = () => {} }: { onChange?: (f: EntryForm) => v
 /** Fields that would bring up the system keyboard. */
 const keyboardFields = () => [...document.querySelectorAll('textarea, input, [contenteditable="true"]')].filter((el) => !['checkbox', 'datetime-local'].includes((el as HTMLInputElement).type));
 
-describe('QuestionCatalog', () => {
-  it('has the six domains (two rows of three) and exactly the 52 specified subtypes', () => {
+/** A cast of 水风井 九五 in 亥月 on 2026-11-11 (己丑日): its 断语 is written. */
+const WELL: JudgmentInput = { questionId: INTERVIEW, primaryId: 48, movingLine: 5, method: 'classical-time', monthBranch: '亥', dayGanzhi: '己丑', localWallClock: '2026-11-11T09:00' };
+
+describe('QuestionCatalog = the formal product catalog', () => {
+  it('has its six categories, 52 subcategories and 82 questions, in its order and wording', () => {
+    const file = productFile as File;
     expect(DOMAINS.map((d) => [d.domain_id, d.label.zh])).toEqual([
       ['career', '事业工作'],
       ['wealth', '财富财运'],
-      ['love', '感情姻缘'],
+      ['relationships', '感情姻缘'],
       ['health', '健康疾病'],
       ['home', '家庭家宅'],
       ['search', '寻人失物'],
     ]);
-    for (const d of DOMAINS) expect(d.subtypes.map((s) => [s.subtype_id, s.label.zh])).toEqual(SPEC[d.domain_id]);
+    for (const [i, d] of DOMAINS.entries()) {
+      expect(d.subtypes.map((s) => [s.subtype_id, s.label.zh])).toEqual(file.categories[i].subcategories.map((s) => [s.id, s.label]));
+      for (const [j, s] of d.subtypes.entries()) expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual(file.categories[i].subcategories[j].questions.map((q) => [q.id, q.question]));
+    }
     expect(allSubtypes()).toHaveLength(52);
+    expect(allQuestions()).toHaveLength(82);
     expect(catalogProblems()).toEqual([]);
   });
 
-  it('gives every question a stable id under its subtype, with all the fields', async () => {
+  it('gives every question a classical category, an English wording and its mode', async () => {
     const { library } = await testKnowledge();
     const categories = new Set(library.listDomains().map((d) => d.id));
-    const ids = allQuestions().map((q) => q.question_id);
-    expect(new Set(ids).size).toBe(ids.length);
     for (const q of allQuestions()) {
       expect(q.question_id.startsWith(`${q.subtype_id}.`)).toBe(true);
-      expect(q.subtype_id.startsWith(`${q.domain_id}.`)).toBe(true);
-      expect(q.rule_profile_id).toBe('user-classical-plus-void');
-      expect(categories.has(q.classical_domain_id)).toBe(true);
-      expect(typeof q.enabled).toBe('boolean');
+      if (q.mode === 'narrative') expect(categories.has(q.classical_domain_id!)).toBe(true);
+      expect(q.question_text.en).not.toBe(q.question_text.zh);
+      if (q.mode !== 'narrative') expect(q.paragraphs.length).toBeGreaterThan(0);
     }
-    expect(questionById('career.job_interview.pass')?.question_text.zh).toBe('这次面试能通过吗？');
-    // The second interview question exists with its own id, but stays closed until it has its own 断语.
-    expect(questionById('career.job_interview.offer')?.enabled).toBe(false);
+    // Health is traditional reference only; finding someone and retracing steps are guidance.
+    expect(allQuestions().filter((q) => q.domain_id === 'health').every((q) => q.mode === 'reference')).toBe(true);
+    expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
+    // Only the interview question has a written 断语 library so far.
+    expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => q.question_id)).toEqual([INTERVIEW]);
     for (const s of allSubtypes()) expect(enabledQuestions(s).length).toBeGreaterThanOrEqual(1);
   });
 
-  it('rejects a second open question that neither has its own 断语 nor names explicit sharing', () => {
-    const d = structuredClone(DOMAINS[0]);
-    d.subtypes[0].questions[1].shares_scripts_of = 'career.nope';
-    expect(catalogProblems({ catalog_version: 'x', rule_profile_id: 'r', domains: [d] }).join()).toMatch(/shares_scripts_of/);
+  it('finds a missing English label or an option without a name', () => {
+    const labels = structuredClone(labelsFile) as unknown as { questions: Record<string, string>; contextFields: { objectKind: { options: Record<string, unknown> } } };
+    delete labels.questions[INTERVIEW];
+    delete labels.contextFields.objectKind.options.phone;
+    const problems = catalogProblems(productFile as never, labels as never).join('\n');
+    expect(problems).toMatch(/career\.interview\.interview-pass: no English wording/);
+    expect(problems).toMatch(/objectKind=phone/);
+  });
+
+  it('turns chosen options into the catalog’s context (years as numbers) and words the question', () => {
+    const pay = questionById('career.promotion-pay.pay-rise')!;
+    const year = String(new Date().getFullYear());
+    expect(pay.conditions?.[0]).toMatchObject({ condition_id: 'targetYear', kind: 'year' });
+    expect(pay.conditions?.[0].options.map((o) => o.option_id)).toEqual([year, String(Number(year) + 1)]);
+    expect(productContext(pay, { targetYear: year })).toEqual({ targetYear: Number(year) });
+    expect(questionWording(pay, { targetYear: year }, 'zh')).toBe(`${year}年能获得加薪吗？`);
+    const lost = questionById('search.lost-object.recovery')!;
+    expect(lost.conditions?.[0].options.map((o) => o.label.zh)).toEqual(['钥匙', '钱包', '手机', '证件文件', '首饰', '其他物品']);
   });
 });
 
 describe('click-only home', () => {
-  it('opens each of the six domains to its own subtypes, in a drawer below the 三清', () => {
+  it('opens each of the six categories to its own subcategories, tagged by what they offer', () => {
     render(<Home />);
     const grid = screen.getByRole('radiogroup', { name: STRINGS.zh.domainLabel });
     expect(within(grid).getAllByRole('radio')).toHaveLength(6);
     for (const d of DOMAINS) {
       fireEvent.click(within(grid).getByRole('radio', { name: d.label.zh }));
       const drawer = screen.getByRole('dialog', { name: d.label.zh });
-      expect([...drawer.querySelectorAll('.subtype-grid button span')].map((b) => b.textContent)).toEqual(SPEC[d.domain_id].map(([, n]) => n));
-      // Selected domain glows while its drawer is open.
+      expect([...drawer.querySelectorAll('.subtype-grid button span')].map((b) => b.textContent)).toEqual(d.subtypes.map((s) => s.label.zh));
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // Every subtype in the drawer is still in preparation (no approved 断语 shipped yet).
+    // 求职面试 has written 断语; the other seven career subcategories are still being written.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(8);
+    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(7);
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
+    fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
+    expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(8);
   });
 
   it('chooses a question by taps alone and never offers a keyboard', () => {
@@ -141,18 +143,51 @@ describe('click-only home', () => {
     expect(keyboardFields()).toHaveLength(0);
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
     fireEvent.click(screen.getByRole('button', { name: /求职面试/ }));
-    // One open question: chosen at once.
-    expect(last.questionId).toBe('career.job_interview.pass');
-    expect(last.domainId).toBe('domain-09');
+    // Two questions: a second step lists them; the written one has no tag.
+    fireEvent.click(screen.getByRole('button', { name: '这次面试能通过吗？' }));
+    expect(last).toMatchObject({ questionId: INTERVIEW, domainId: 'domain-09', topicId: 'career' });
     expect(screen.queryByRole('dialog')).toBeNull();
-    expect(screen.getByText('这次面试能通过吗？')).toBeTruthy();
-    expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
+    expect(screen.queryByText(STRINGS.zh.scriptPendingNote)).toBeNull();
     expect(entryProblem(last)).toBeNull();
-    expect(keyboardFields()).toHaveLength(0);
-    // Change: back into the drawer, one level back, another subtype.
+    // Change: back into the drawer, another subcategory, a question still being written.
     fireEvent.click(screen.getByRole('button', { name: /所问之事 · 求职面试/ }));
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
     fireEvent.click(screen.getByRole('button', { name: /考试考核/ }));
-    expect(last.questionId).toBe('career.exam.pass');
+    fireEvent.click(screen.getByRole('button', { name: /这次考试能通过吗/ }));
+    expect(last.questionId).toBe('career.exams.exam');
+    expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
+    expect(keyboardFields()).toHaveLength(0);
+  });
+
+  it('asks a fixed option first when the question needs one (the kind of item lost)', () => {
+    let last: EntryForm = EMPTY_FORM;
+    render(<Home onChange={(f) => (last = f)} />);
+    fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
+    fireEvent.click(screen.getByRole('button', { name: /失物寻找/ }));
+    expect(screen.getByRole('radiogroup', { name: '物品类型' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: STRINGS.zh.done }).hasAttribute('disabled')).toBe(true);
+    fireEvent.click(screen.getByRole('radio', { name: '手机' }));
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.done }));
+    expect(last).toMatchObject({ questionId: 'search.lost-object.recovery', conditions: { objectKind: 'phone' }, domainId: 'domain-15' });
+    expect(entryProblem({ ...last, conditions: {} })).toBe('conditions');
+  });
+
+  it('offers a reference question to read at once: no method, no pace, 查看说明', () => {
+    let last: EntryForm = EMPTY_FORM;
+    render(<Home onChange={(f) => (last = f)} />);
+    fireEvent.click(screen.getByRole('radio', { name: '健康疾病' }));
+    fireEvent.click(screen.getByRole('button', { name: /身体状况/ }));
+    expect(last.questionId).toBe('health.condition.condition');
+    expect(screen.getByText(STRINGS.zh.referenceNote)).toBeTruthy();
+    expect(screen.queryByRole('radiogroup', { name: STRINGS.zh.paceLabel })).toBeNull();
+    expect(screen.getByRole('button', { name: STRINGS.zh.readReference })).toBeTruthy();
+    expect(entryProblem(last)).toBeNull();
+  });
+
+  it('holds the button while the 断语 is looked up', () => {
+    render(<Home busy />);
+    const b = screen.getByRole('button', { name: STRINGS.zh.castingNow });
+    expect(b.hasAttribute('disabled')).toBe(true);
   });
 
   it('has a ← on the home that goes back to the title screen', () => {
@@ -172,8 +207,8 @@ describe('click-only home', () => {
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
     expect(document.querySelectorAll('.subtype-grid button')).toHaveLength(8);
     fireEvent.click(screen.getByRole('button', { name: /人员失联/ }));
-    fireEvent.click(screen.getByRole('button', { name: /失联的人能联系上吗/ }));
-    expect(last.questionId).toBe('search.missing_person.contact');
+    fireEvent.click(screen.getByRole('button', { name: /与这位失联者还能恢复联系吗/ }));
+    expect(last.questionId).toBe('search.missing-contact.contact');
     expect(screen.getByText(/卦象不能说明真实位置或安全状况/)).toBeTruthy();
   });
 
@@ -194,117 +229,102 @@ describe('click-only home', () => {
   });
 });
 
-describe('断语 lookup', () => {
-  const winter = '子'; // 子月 → 冬令
-  const summer = '午';
-
-  it('only matches its own question_id', () => {
-    const repo = createScriptRepository([mk({ question_id: 'career.exam.pass' })]);
-    expect(repo.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: winter }).state).toBe('missing');
-    expect(repo.find({ questionId: 'career.exam.pass', hexagramId: 55, movingLine: 3, monthBranch: winter }).state).toBe('ready');
+describe('reference and guidance', () => {
+  it('shows the explanation, the steps to take and the source, with nothing cast', async () => {
+    const { library } = await testKnowledge();
+    const q = questionById('search.person-leads.guidance')!;
+    render(<ReferenceSheet t={STRINGS.zh} lang="zh" question={q} conditions={{}} sectionTitle={(id) => library.getSection(id)?.title ?? null} onClose={() => {}} />);
+    const sheet = screen.getByRole('dialog', { name: q.question_text.zh });
+    expect(within(sheet).getAllByRole('note')[0].textContent).toMatch(/911/);
+    for (const p of q.paragraphs) expect(within(sheet).getByText(p)).toBeTruthy();
+    expect(within(sheet).getByText(q.practical_advice[0])).toBeTruthy();
+    // Pure guidance with no classical source names none.
+    expect(within(sheet).queryByText(/出处/)).toBeNull();
+    expect(within(sheet).getByText(STRINGS.zh.referenceNoCast)).toBeTruthy();
+    cleanup();
+    const review = questionById('search.last-location.review')!;
+    render(<ReferenceSheet t={STRINGS.zh} lang="zh" question={review} conditions={{}} sectionTitle={(id) => library.getSection(id)?.title ?? null} onClose={() => {}} />);
+    expect(screen.getByText('出处：《梅花易数·失物占第十五》')).toBeTruthy();
   });
 
-  it('only matches its own 本卦 and 动爻', () => {
-    const repo = createScriptRepository([mk()]);
-    expect(repo.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 4, monthBranch: winter }).state).toBe('missing');
-    expect(repo.find({ questionId: 'career.job_interview.pass', hexagramId: 34, movingLine: 3, monthBranch: winter }).state).toBe('missing');
-  });
-
-  it('never uses a winter 断语 in summer; a year-round one only when the author marked it', () => {
-    expect(seasonOf(winter)).toBe('winter');
-    expect(seasonOf('辰')).toBe('earth');
-    const onlyWinter = createScriptRepository([mk()]);
-    expect(onlyWinter.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: summer })).toMatchObject({ state: 'missing', season: 'summer' });
-    // No casting month at all: only a year-round 断语 could apply.
-    expect(onlyWinter.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: null }).state).toBe('missing');
-    const withAll = createScriptRepository([mk({ title: '冬' }), mk({ title: '全年', season_variant_id: 'all', season_note: '此断不随时令' })]);
-    const s = withAll.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: summer });
-    expect(s).toMatchObject({ state: 'ready', matchedBy: 'all-year' });
-    // In its own season the season-specific one wins.
-    const w = withAll.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: winter });
-    expect(w.state === 'ready' && w.script.title).toBe('冬');
-  });
-
-  it('never shows a draft or a 断语 under review', () => {
-    const repo = createScriptRepository([mk({ status: 'draft' }), mk({ status: 'reviewing', season_variant_id: 'all', season_note: 'x' })]);
-    expect(repo.find({ questionId: 'career.job_interview.pass', hexagramId: 55, movingLine: 3, monthBranch: winter }).state).toBe('missing');
-    expect(repo.availability('career.job_interview.pass').state).toBe('none');
-  });
-
-  it('matches fixed-option conditions by field, most specific first', () => {
-    const q = questionById('search.lost_item.find')!;
-    const withCond = { ...q, conditions: [{ condition_id: 'where', label: { zh: '在何处丢失', en: 'Where' }, options: [{ option_id: 'home', label: { zh: '家中', en: 'Home' } }, { option_id: 'out', label: { zh: '外出', en: 'Out' } }] }] };
-    const { errors } = validateScripts([{ ...mk({ question_id: q.question_id }), conditions: 'where=attic' }], () => withCond);
-    expect(errors.map((e) => e.message).join()).toMatch(/no option "attic"/);
-    const repo = createScriptRepository([mk({ question_id: q.question_id, title: '通' }), mk({ question_id: q.question_id, title: '家中', conditions: { where: 'home' } })]);
-    const home = repo.find({ questionId: q.question_id, hexagramId: 55, movingLine: 3, monthBranch: winter, conditions: { where: 'home' } });
-    const out = repo.find({ questionId: q.question_id, hexagramId: 55, movingLine: 3, monthBranch: winter, conditions: { where: 'out' } });
-    expect(home.state === 'ready' && home.script.title).toBe('家中');
-    expect(out.state === 'ready' && out.script.title).toBe('通');
-  });
-
-  it('reports coverage per question: complete only when all 384 hold in every season', () => {
-    const all: ScriptRecord[] = [];
-    for (let h = 1; h <= 64; h++) for (let l = 1; l <= 6; l++) all.push(mk({ hexagram_id: h, moving_line: l, season_variant_id: 'all', season_note: '全年' }));
-    expect(createScriptRepository(all).availability('career.job_interview.pass')).toMatchObject({ state: 'complete', covered: 384 });
-    expect(createScriptRepository(all.slice(1)).availability('career.job_interview.pass')).toMatchObject({ state: 'partial', covered: 383 });
-    expect(createScriptRepository(all).availability('career.exam.pass').state).toBe('none');
+  it('is refused by the cast itself', async () => {
+    const { library } = await testKnowledge();
+    const f = { ...EMPTY_FORM, questionId: 'health.condition.condition', topicId: 'health' as const, domainId: 'domain-16' };
+    expect(() => freezeCast(library, castRequest(f, { lang: 'zh', timeZone: 'UTC', calendarPolicy: {} }))).toThrow(/read, not cast/);
   });
 });
 
-describe('断语 import (JSON or Excel→CSV)', () => {
-  it('reads a CSV saved from Excel, with line breaks inside a cell', () => {
-    const csv = '﻿script_id,question_id,hexagram_id,moving_line,season_variant_id,season_note,conditions,title,brief_text,opening_text,process_text,ending_text,conclusion_text,classical_sources,status,version\r\n'
-      + 'a01,career.job_interview.pass,55,3,winter,,,题,"简断，有逗号",开,过,结,总,"爻:55:3|宜日中\n篇:求名占第九",approved,2\r\n';
-    const rows = parseCsv(csv);
-    const { records, errors } = validateScripts(rows);
-    expect(errors).toEqual([]);
-    expect(records[0]).toMatchObject({ script_id: 'a01', hexagram_id: 55, moving_line: 3, brief_text: '简断，有逗号', version: '2' });
-    expect(records[0].classical_sources).toEqual([{ kind: 'line', hexagram_id: 55, line: 3, quote: '宜日中' }, { kind: 'section', title: '求名占第九' }]);
+describe('断语 lookup (createProductRepository)', () => {
+  it('gives the written 断语 for this exact question, chart, month and day', async () => {
+    const { product } = await testKnowledge();
+    const j = (await judgmentFor(product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
+    expect(j).toMatchObject({ state: 'ready', source: 'product', questionId: INTERVIEW, primaryId: 48, movingLine: 5, castingDate: '2026-11-11', dayGanzhi: '己丑', monthBranch: '亥' });
+    expect(j.title).toBeTruthy();
+    expect(j.short.length).toBeGreaterThan(20);
+    expect(j.paragraphs.map((p) => p.slice(0, 3))).toEqual(['开局：', '过程：', '结局：', '总断：']);
+    // 应期 stands apart, each window with its own event, 吉凶 and dates (worked out from the casting day).
+    expect(j.timing?.windows.length).toBeGreaterThan(0);
+    for (const w of j.timing!.windows) {
+      expect(['吉', '凶']).toContain(w.valence);
+      expect(w.dates.every((d) => d >= '2026-11-11')).toBe(true);
+    }
+    expect(j.paragraphs.join()).not.toMatch(/应期/);
+    expect(j.calculation.join()).toMatch(/月令：亥月/);
+    expect(j.sources).toEqual(['求名占第九']);
   });
 
-  it('reports every problem with its row and keeps drafts loose but approved ones complete', () => {
-    const { errors } = validateScripts([
-      { ...mk(), script_id: 'row1', hexagram_id: 65 },
-      { ...mk(), script_id: 'row2', moving_line: 7 },
-      { ...mk(), script_id: 'row3', question_id: 'career.nope' },
-      { ...mk(), script_id: 'row4', opening_text: '' },
-      { ...mk(), script_id: 'row5', season_variant_id: 'all' },
-      { ...mk(), script_id: 'row6', status: 'published' },
-      { script_id: 'row7', question_id: 'career.exam.pass', hexagram_id: 1, moving_line: 1, season_variant_id: 'spring', status: 'draft', version: '1' },
-      { ...mk(), script_id: 'row8' },
-      { ...mk(), script_id: 'row9' },
-    ]);
-    const byRow = (r: number) => errors.filter((e) => e.row === r).map((e) => e.field).join();
-    expect(byRow(1)).toMatch(/hexagram_id/);
-    expect(byRow(2)).toMatch(/moving_line/);
-    expect(byRow(3)).toMatch(/question_id/);
-    expect(byRow(4)).toMatch(/opening_text/);
-    expect(byRow(5)).toMatch(/season_note/);
-    expect(byRow(6)).toMatch(/status/);
-    expect(byRow(7)).toBe(''); // an incomplete draft is fine
-    expect(byRow(8)).toBe('');
-    expect(errors.find((e) => e.row === 9)?.message).toMatch(/two approved/);
-    expect(scriptKey(mk())).toBe('career.job_interview.pass|55|3|winter|');
+  it('never stands in another question’s, review draft or unwritten text', async () => {
+    const { product } = await testKnowledge();
+    const at = (id: string, extra: Partial<JudgmentInput> = {}) => judgmentFor(product, questionById(id)!, { ...WELL, questionId: id, ...extra });
+    expect(await at('career.interview.job-offer')).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
+    expect(await at('wealth.debt.receivable')).toMatchObject({ state: 'missing', reason: 'pending-review' });
+    expect(await at('search.lost-object.recovery', { conditions: { objectKind: 'phone' } })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
+    // This 断语's dates are reckoned for number-based (先天) casts only.
+    expect(await at(INTERVIEW, { method: 'object-direction' })).toMatchObject({ state: 'missing', reason: 'requires-context' });
+    // No month or day: nothing to look up by.
+    expect(await at(INTERVIEW, { monthBranch: null })).toMatchObject({ state: 'missing', reason: 'requires-context' });
+  });
+
+  it('shows the 计算说明 without bookkeeping ids, naming sources by title', () => {
+    const lines = ['月令：亥月。旺衰与旬空分别计算。', '空亡依据：八卦配支补充法，版本trigram-void-2.1.0。', '变用离囚仍克体，依mh-117保留末后牵制。', '判断口径：interview-evidence-1.0.0。稿件版本：interview-pass-2.1.0。'];
+    expect(readableCalculation(lines, (id) => (id === 'mh-117' ? '体用总诀' : null))).toEqual(['月令：亥月。旺衰与旬空分别计算。', '空亡依据：八卦配支补充法。', '变用离囚仍克体，依《体用总诀》保留末后牵制。']);
+  });
+
+  it('reports a library it cannot read as unavailable, not as a 断语', async () => {
+    const broken = { getContent: async () => Promise.reject(new Error('offline')) };
+    const errors = console.error;
+    console.error = () => {};
+    try {
+      expect(await judgmentFor(broken as never, questionById(INTERVIEW)!, WELL)).toEqual({ state: 'missing', season: 'winter', reason: 'unavailable' });
+    } finally {
+      console.error = errors;
+    }
+  });
+
+  it('reckons from the civil day whose 干支 is the cast’s (子时 may start the next day)', () => {
+    expect(castingDateOf('2026-11-11T09:00', '己丑')).toBe('2026-11-11');
+    expect(castingDateOf('2026-11-10T23:30', '己丑')).toBe('2026-11-11');
+    expect(castingDateOf('2026-11-11T09:00', '甲子')).toBeNull();
+    expect(seasonOf('亥')).toBe('winter');
+    expect(seasonOf('辰')).toBe('earth');
   });
 });
 
 describe('cast, reading and 问事录', () => {
-  const form = (o: Partial<EntryForm> = {}): EntryForm => ({ ...EMPTY_FORM, questionId: 'career.job_interview.pass', topicId: 'career', domainId: 'domain-09', ...o });
+  const form = (o: Partial<EntryForm> = {}): EntryForm => ({ ...EMPTY_FORM, questionId: INTERVIEW, topicId: 'career', domainId: 'domain-09', ...o });
   const opts = (now: Date) => ({ lang: 'zh' as const, timeZone: 'Asia/Shanghai', calendarPolicy: {}, now });
 
-  it('full ritual and 简洁问事 cast the same request through the same lookup', async () => {
-    const { library } = await testKnowledge();
-    const now = new Date('2026-12-20T09:00:00+08:00'); // 子月 → 冬令
-    const req = castRequest(form(), opts(now));
-    const probe = freezeCast(library, req, { castId: 'probe', now });
-    const repo = createScriptRepository([mk({ hexagram_id: probe.primaryId, moving_line: probe.movingLine })]);
-    const a = freezeCast(library, castRequest(form(), opts(now)), { castId: 'a', now, scripts: repo });
-    const b = freezeCast(library, castRequest(form(), opts(now)), { castId: 'b', now, scripts: repo });
+  it('full ritual and 简洁问事 cast the same request and look up the same 断语', async () => {
+    const { library, product } = await testKnowledge();
+    const now = new Date('2026-12-20T09:00:00+08:00'); // 子月
+    const cast = async (castId: string) => {
+      const base = freezeCast(library, castRequest(form(), opts(now)), { castId, now });
+      return withJudgment(base, await judgmentFor(product, questionById(INTERVIEW)!, judgmentInput(base)!));
+    };
+    const a = await cast('a');
+    const b = await cast('b');
     expect([a.primaryId, a.movingLine, a.judgment]).toEqual([b.primaryId, b.movingLine, b.judgment]);
     expect(a.season).toBe('winter');
-    expect(a.judgment?.state).toBe('ready');
-    // Full: BEGIN → entering → revealing → reading. Quick: BEGIN then SKIP. Same cast either way.
     let full = ritualReducer(INITIAL_RITUAL, { type: 'BEGIN', castId: a.castId });
     full = ritualReducer(full, { type: 'PHASE_DONE', phase: 'entering' });
     full = ritualReducer(full, { type: 'PHASE_DONE', phase: 'revealing' });
@@ -313,57 +333,92 @@ describe('cast, reading and 问事录', () => {
     expect([quick.phase, quick.castId]).toEqual(['reading', a.castId]);
   });
 
-  it('saves question_id, the wording shown, time zone, method and the 断语 version with the record', async () => {
-    const { library } = await testKnowledge();
-    const now = new Date('2026-12-20T09:00:00+08:00');
-    const probe = freezeCast(library, castRequest(form(), opts(now)), { now });
-    const repo = createScriptRepository([mk({ script_id: 'interview.55.3.w', hexagram_id: probe.primaryId, moving_line: probe.movingLine, version: '3' })]);
-    const rec = freezeCast(library, castRequest(form(), opts(now)), { now, scripts: repo });
+  it('saves the question, the wording shown, time zone, method and the 断语 as given', async () => {
+    const { library, product } = await testKnowledge();
+    const base = freezeCast(library, { method: 'manual', manual: { primaryId: 48, movingLine: 5, monthBranch: '亥', dayGanzhi: '己丑' }, questionId: INTERVIEW, question: '这次面试能通过吗？', instant: new Date('2026-11-11T09:00:00+08:00'), timeZone: 'Asia/Shanghai' });
+    // A manual (debug) cast has no wall clock: the 断语 is asked with the real day of the cast.
+    const j = await judgmentFor(product, questionById(INTERVIEW)!, WELL);
+    const rec = withJudgment(base, j);
+    expect(() => withJudgment(rec, j)).toThrow(/already has/);
+    expect(() => withJudgment({ ...base, primaryId: 1 }, j)).toThrow(/another question or chart/);
     const history = createHistory(memoryStore(), memoryStore());
     history.save(rec);
     const back = history.get(rec.castId)!;
-    expect(back).toMatchObject({ questionId: 'career.job_interview.pass', subtypeId: 'career.job_interview', question: '这次面试能通过吗？', timeZone: 'Asia/Shanghai', method: 'classical-time', topicId: 'career', domainId: 'domain-09' });
-    expect(back.catalogVersion).toBeTruthy();
-    expect(back.judgment).toMatchObject({ state: 'ready', script: { script_id: 'interview.55.3.w', version: '3' } });
-    expect(back.snapshot?.judgmentVersion).toBe('interview.55.3.w@3');
+    expect(back).toMatchObject({ questionId: INTERVIEW, subtypeId: 'career.interview', question: '这次面试能通过吗？', timeZone: 'Asia/Shanghai', topicId: 'career', domainId: 'domain-09' });
+    expect(back.catalogVersion).toMatch(/^product-/);
+    expect(back.judgment).toEqual(j);
+    expect(back.snapshot?.judgmentVersion).toMatch(/^interview-pass-.+#career\.interview\.interview-pass\/48\/5\//);
     expect(chargesToday(back)).toBe(true);
-    // The record says what was given then.
+    // For a catalog question the 体用 sentence is the structure alone, never an answer.
+    expect(back.snapshot?.conclusion).not.toMatch(/面试/);
     render(<RecordDetail record={back} journal={createJournal(memoryStore())} t={STRINGS.zh} onOpen={() => {}} onBack={() => {}} onChanged={() => {}} />);
-    expect(screen.getByText(/作者断语第 3 版 · 冬令/)).toBeTruthy();
-    expect(screen.getByText('简断文字')).toBeTruthy();
+    expect(screen.getByText('按亥月月令写定 · 起卦时所得，原样保存')).toBeTruthy();
+    // Internal ids and versions stay in the record, never on screen.
+    expect(document.body.textContent).not.toMatch(/interview-pass|career\./);
+    expect(screen.getByText((j as ProductJudgment).short)).toBeTruthy();
   });
 
-  it('with no approved 断语: says so plainly, substitutes nothing, and is not charged', async () => {
+  it('with no 断语: says so plainly, substitutes nothing, and is not charged', async () => {
     const knowledge = await testKnowledge();
-    const now = new Date('2026-12-20T09:00:00+08:00');
-    const rec = freezeCast(knowledge.library, castRequest(form(), opts(now)), { now, scripts: createScriptRepository([mk({ question_id: 'career.exam.pass', season_variant_id: 'all', season_note: 'x' })]) });
-    expect(rec.judgment).toEqual({ state: 'missing', season: 'winter', reason: 'no-script' });
+    const base = freezeCast(knowledge.library, castRequest(form({ questionId: 'career.exams.exam' }), opts(new Date('2026-12-20T09:00:00+08:00'))));
+    const rec = withJudgment(base, await judgmentFor(knowledge.product, questionById('career.exams.exam')!, judgmentInput(base)!));
+    expect(rec.judgment).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
     expect(chargesToday(rec)).toBe(false);
     const reading = knowledge.library.createReading({ primaryId: rec.primaryId, movingLine: rec.movingLine, domainId: rec.domainId });
     render(
-      <ReadingView reading={reading} question={rec.question} questionId={rec.questionId} topicId={rec.topicId} snapshot={rec.snapshot} judgment={{ state: 'missing' }} onUnlock={() => {}} hexagramName={(id) => knowledge.library.getHexagram(id).name} lineName={(id, l) => knowledge.library.getHexagram(id).lines[l - 1].label} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />,
+      <ReadingView reading={reading} question={rec.question} questionId={rec.questionId} topicId={rec.topicId} snapshot={rec.snapshot} judgment={{ state: 'missing', reason: 'pending-authoring' }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />,
     );
     const brief = document.querySelector('.read-verdict')!;
     expect(within(brief as HTMLElement).getByRole('heading', { name: STRINGS.zh.scriptPending })).toBeTruthy();
-    // The 体用 structure is not presented as the 断语: it sits in 专业依据, labelled.
     expect(brief.textContent).not.toContain(rec.snapshot!.headline);
     expect(screen.getByText(STRINGS.zh.structuralNote)).toBeTruthy();
+    // Nor does the structure answer the question in its place.
+    expect(document.body.textContent).not.toMatch(/就“这次考试能通过吗？”而言/);
   });
 
-  it('reads the full 断语 from one record: brief, 开局/过程/结局/总断 and its sources', async () => {
+  it('says why when a draft is under review or the method has no dating yet', async () => {
     const knowledge = await testKnowledge();
-    const reading = knowledge.library.createReading({ primaryId: 55, movingLine: 3, domainId: 'domain-09' });
-    const { status: _s, ...script } = mk({ classical_sources: [{ kind: 'line', hexagram_id: 55, line: 3, quote: '丰其沛' }, { kind: 'section', title: '求名占第九' }] });
-    void _s;
+    const reading = knowledge.library.createReading({ primaryId: 48, movingLine: 5, domainId: 'domain-09' });
+    const view = (reason: 'pending-review' | 'requires-context') =>
+      render(<ReadingView reading={reading} question="" judgment={{ state: 'missing', reason }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />);
+    view('pending-review');
+    expect(screen.getByRole('heading', { name: STRINGS.zh.reviewPending })).toBeTruthy();
+    cleanup();
+    view('requires-context');
+    expect(screen.getByRole('heading', { name: STRINGS.zh.contextPending })).toBeTruthy();
+  });
+
+  it('reads the full 断语: 简断, 开局/过程/结局/总断, 应期参考 apart, 计算说明 folded, its source', async () => {
+    const knowledge = await testKnowledge();
+    const j = (await judgmentFor(knowledge.product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
+    const reading = knowledge.library.createReading({ primaryId: 48, movingLine: 5, domainId: 'domain-09' });
     const opened: string[] = [];
     render(
-      <ReadingView reading={reading} question="这次面试能通过吗？" questionId="career.job_interview.pass" judgment={{ state: 'ready', script, seasonLabel: '冬令（亥子月）', full: true }} onUnlock={() => {}} hexagramName={(id) => knowledge.library.getHexagram(id).name} lineName={(id, l) => knowledge.library.getHexagram(id).lines[l - 1].label} onOpenBook={(id, line) => opened.push(`${id}:${line}`)} onOpenSection={(t) => opened.push(t)} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />,
+      <ReadingView reading={reading} question="这次面试能通过吗？" questionId={INTERVIEW} judgment={{ state: 'ready', judgment: j, full: true }} onUnlock={() => {}} onOpenSection={(t) => opened.push(t)} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />,
     );
-    expect(screen.getByText('简断文字')).toBeTruthy();
-    for (const x of ['开局文字', '过程文字', '结局文字', '总断文字']) expect(screen.getByText(x)).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: '《雷火丰·九三》 ↗' }));
-    fireEvent.click(screen.getByRole('button', { name: '《求名占第九》 ↗' }));
-    expect(opened).toEqual(['55:3', '求名占第九']);
+    expect(screen.getByRole('heading', { name: j.title })).toBeTruthy();
+    expect(screen.getByText(j.short)).toBeTruthy();
+    for (const label of ['开局', '过程', '结局', '总断']) expect(screen.getByRole('heading', { name: label })).toBeTruthy();
+    const timing = document.querySelector('.script-timing')!;
+    expect(within(timing as HTMLElement).getByRole('heading', { name: STRINGS.zh.timingTitle })).toBeTruthy();
+    expect(timing.querySelectorAll('.timing-list li')).toHaveLength(j.timing!.windows.length);
+    expect(timing.textContent).toMatch(/吉|凶/);
+    const calc = document.querySelector('details.script-calc') as HTMLDetailsElement;
+    expect(calc.open).toBe(false);
+    expect(calc.textContent).toMatch(/旬空/);
+    expect(document.body.textContent).not.toMatch(/interview-pass|trigram-void|mh-\d/);
+    fireEvent.click(screen.getByRole('button', { name: '《梅花易数·求名占第九》 ↗' }));
+    expect(opened).toEqual(['求名占第九']);
+  });
+
+  it('locks the 详断 for a free reader, but shows the 简断', async () => {
+    const knowledge = await testKnowledge();
+    const j = (await judgmentFor(knowledge.product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
+    const reading = knowledge.library.createReading({ primaryId: 48, movingLine: 5, domainId: 'domain-09' });
+    render(<ReadingView reading={reading} question="" questionId={INTERVIEW} judgment={{ state: 'ready', judgment: j, full: false }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />);
+    expect(screen.getByText(j.short)).toBeTruthy();
+    expect(document.querySelector('.script-full')).toBeNull();
+    expect(screen.getByText(STRINGS.zh.judgmentLocked)).toBeTruthy();
   });
 
   it('keeps older free-written records as their own kind, never matched to a fixed question', async () => {
@@ -372,19 +427,18 @@ describe('cast, reading and 问事录', () => {
     expect(recordKind(old)).toBe('legacy-free-text');
     expect(old.questionId).toBeUndefined();
     expect(old.judgment).toBeUndefined();
-    expect(sameMatterCandidate([old], 'career.job_interview.pass')).toBeNull();
+    expect(judgmentInput(old)).toBeNull();
+    expect(sameMatterCandidate([old], INTERVIEW)).toBeNull();
     render(<RecordDetail record={old} journal={createJournal(memoryStore())} t={STRINGS.zh} onOpen={() => {}} onBack={() => {}} onChanged={() => {}} />);
     expect(screen.getByText('“我能拿到 Amazon 的工作吗？”')).toBeTruthy();
     expect(screen.getByText(STRINGS.zh.legacyRecord)).toBeTruthy();
   });
 
-  it('refuses an unknown or closed question instead of guessing', async () => {
+  it('refuses an unknown question instead of guessing', async () => {
     const { library } = await testKnowledge();
     expect(() => freezeCast(library, castRequest(form({ questionId: 'career.made_up' }), opts(new Date())))).toThrow(/Unknown question/);
-    expect(() => freezeCast(library, castRequest(form({ questionId: 'career.job_interview.offer' }), opts(new Date())))).toThrow(/not open/);
+    // Ids from before the formal catalog are not cast any more.
+    expect(() => freezeCast(library, castRequest(form({ questionId: 'career.job_interview.pass' }), opts(new Date())))).toThrow(/Unknown question/);
     expect(entryProblem(form({ questionId: null }))).toBe('question');
   });
 });
-
-// A type-level reminder: the catalog question type is what the import checks against.
-export type _Q = CatalogQuestion;

@@ -1195,3 +1195,96 @@ input, textarea, select { font-size: max(16px, 1em); }
 .splash-enter-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; transition: opacity 0.8s ease; }
 .splash-enter-wrap.is-waiting { opacity: 0; pointer-events: none; }
 .splash-waiting { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; white-space: nowrap; font: 13px var(--serif); letter-spacing: 0.3em; color: rgba(216, 196, 154, 0.75); text-shadow: 0 1px 2px #000; animation: enterBreath 2.8s ease-in-out infinite; }
+
+/* Keep the flat chart in the measured space between its controls. */
+.flat-table {
+  inset: var(--board-header, calc(var(--safe-t) + 56px)) 0 var(--board-footer, calc(var(--safe-b) + 80px));
+  align-items: flex-start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px max(10px, var(--safe-r)) 8px max(10px, var(--safe-l));
+}
+.board-2d { flex: 0 1 420px; min-width: 0; margin: auto; }
+.band { grid-template-columns: 30px minmax(38px, 52px) minmax(0, 1fr) minmax(36px, 52px) 20px; min-height: 102px; }
+.band .hexagram-svg { max-width: 100%; height: auto; }
+.band-caption span { padding: 5px 2px; font-size: 14px; letter-spacing: 2px; }
+.band-name { min-width: 36px; min-height: 44px; justify-content: center; }
+.band-name small { letter-spacing: 0; }
+.band-name b { font-size: 18px; letter-spacing: 1px; }
+.band-grade { font-size: 13px; letter-spacing: 1px; }
+.band-tags { min-height: 88px; }
+.board-relation { font-size: 14px; overflow-wrap: anywhere; }
+.board-relation svg { flex-shrink: 0; }
+
+.home-top { flex-shrink: 0; padding-inline: max(10px, var(--safe-l)) max(10px, var(--safe-r)); }
+.home-panel.v3 { min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.home-panel.v3 .method-line, .pace-switch button, .place-tabs button, .home-top .line-icon { min-height: 44px; }
+.temple-top { padding-inline: max(12px, var(--safe-l)) max(12px, var(--safe-r)); }
+.question-full { max-height: 40%; overflow: auto; overflow-wrap: anywhere; }
+.question-full > .icon-btn { float: right; }
+.read-question, .read-verdict, .script-part { overflow-wrap: anywhere; }
+.splash-enter, .splash-switch { min-height: 44px; }
+.splash .login-note { color: var(--ink-2); }
+.stone-access:focus-within {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px;
+  left: max(12px, var(--safe-l));
+  right: max(12px, var(--safe-r));
+  top: calc(var(--board-header, 56px) + 8px);
+  overflow: visible;
+  clip: auto;
+  display: grid;
+  gap: 4px;
+  z-index: 35;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.stone-access:focus-within button { min-height: 44px; color: var(--ink); background: var(--bg-2); border: 1px solid var(--line); }
+
+.temple-bottom .order-hint {
+  position: static;
+  transform: none;
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  animation: none;
+  padding: 4px 12px;
+  background: transparent;
+  border: 0;
+}
+@media (max-width: 360px) {
+  .board-2d { padding-inline: 8px; }
+  .band .hexagram-svg { width: 96px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash, .splash-enter-wrap { transition-duration: 0.01s; }
+  .splash-enter, .splash-waiting { animation: none; }
+}
+
+/* ——— Formal product catalog (2026-11-11): tags, 应期参考, 计算说明, reference sheet ——— */
+.ready-tag.is-reference,
+.ready-tag.is-guidance { color: rgba(170, 196, 210, 0.78); }
+.read-advice { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: rgba(216, 174, 94, 0.07); border: 1px solid rgba(216, 174, 94, 0.18); }
+.read-advice b { display: block; margin-bottom: 4px; font: 600 13px var(--sans); letter-spacing: 0.12em; color: #e2c98e; }
+.read-advice ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #eadcc0; }
+.script-timing .read-meta { margin: 0 0 8px; }
+.timing-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.timing-list li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 10px 12px; border-radius: 10px; background: rgba(255, 240, 210, 0.04); border: 1px solid rgba(216, 174, 94, 0.16); font: 15.5px/1.7 var(--serif-body); color: #f3e6cc; }
+.timing-tag { min-width: 2.4em; padding: 1px 8px; border-radius: 999px; font: 600 12.5px/1.7 var(--sans); text-align: center; letter-spacing: 0.08em; background: rgba(216, 174, 94, 0.14); color: #e9cf95; }
+.timing-list li.is-good .timing-tag { background: rgba(120, 170, 110, 0.2); color: #cfe6b8; }
+.timing-list li.is-bad .timing-tag { background: rgba(190, 90, 60, 0.22); color: #f2c2a8; }
+.script-calc { margin: 14px 0 4px; border-top: 1px solid rgba(216, 174, 94, 0.16); padding-top: 8px; }
+.script-calc summary { cursor: pointer; font: 600 14px var(--sans); letter-spacing: 0.14em; color: #d8c39a; padding: 6px 0; }
+.script-calc p { margin: 4px 0; font: 14px/1.7 var(--serif-body); color: #d9cbb0; }
+.reference-sheet .sheet-head { align-items: flex-start; }
+.reference-sheet .ask-sheet-title { text-align: left; }
+.reference-sheet .ask-sheet-title h2 { font-size: 19px; line-height: 1.5; letter-spacing: 0.04em; white-space: normal; overflow: visible; }
+.reference-body { display: grid; gap: 10px; }
+.reference-body h3 { margin: 6px 0 0; font: 600 15px var(--serif); letter-spacing: 0.18em; color: #e2c98e; }
+.reference-text p { margin: 0 0 10px; font: 17px/1.85 var(--serif-body); color: #f3e6cc; }
+.reference-advice { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.7; color: #eadcc0; }
+.reference-body .enter-seal { margin-top: 6px; }
+.enter-seal[disabled] { opacity: 0.6; cursor: progress; }

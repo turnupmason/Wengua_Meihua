@@ -5,7 +5,14 @@ export interface KeyValueStore {
   removeItem(key: string): void;
 }
 
-export function safeStore(kind: 'local' | 'session' = 'local'): KeyValueStore {
+export class PersistenceError extends Error {
+  constructor(cause?: unknown) {
+    super('Could not write to device storage', { cause });
+  }
+}
+
+/** Durable records require a successful write before the UI acknowledges them. */
+export function safeStore(kind: 'local' | 'session' = 'local', requirePersistence = false): KeyValueStore {
   let backing: Storage | null = null;
   try {
     backing = kind === 'local' ? globalThis.localStorage : globalThis.sessionStorage;
@@ -17,25 +24,28 @@ export function safeStore(kind: 'local' | 'session' = 'local'): KeyValueStore {
     getItem(key) {
       try {
         return backing ? backing.getItem(key) : memory.get(key) ?? null;
-      } catch {
+      } catch (error) {
+        if (requirePersistence) throw new PersistenceError(error);
         return memory.get(key) ?? null;
       }
     },
     setItem(key, value) {
-      memory.set(key, value);
       try {
+        if (!backing && requirePersistence) throw new PersistenceError();
         backing?.setItem(key, value);
-      } catch {
-        /* keep the in-memory copy */
+      } catch (error) {
+        if (requirePersistence) throw new PersistenceError(error);
       }
+      memory.set(key, value);
     },
     removeItem(key) {
-      memory.delete(key);
       try {
+        if (!backing && requirePersistence) throw new PersistenceError();
         backing?.removeItem(key);
-      } catch {
-        /* ignore */
+      } catch (error) {
+        if (requirePersistence) throw new PersistenceError(error);
       }
+      memory.delete(key);
     },
   };
 }

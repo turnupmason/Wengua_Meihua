@@ -27,12 +27,22 @@ async function shareOrDownload(json: string) {
 }
 
 export function HistoryScreen({ history, journal, t, onOpen, onBack, active = true }: { history: History; journal: Journal; t: Strings; onOpen: (r: CastRecord) => void; onBack: () => void; active?: boolean }) {
+  const [writeError, setWriteError] = useState(false);
   const [all, setAll] = useState(() => history.list());
   const [book, setBook] = useState(() => journal.all());
   const [onlySaved, setOnlySaved] = useState(() => Object.keys(journal.all()).length > 0);
   const refresh = () => {
     setAll(history.list());
     setBook(journal.all());
+  };
+  const changeRecords = (change: () => void) => {
+    try {
+      change();
+      setWriteError(false);
+    } catch {
+      setWriteError(true);
+    }
+    refresh();
   };
   // Kept mounted in the hall: re-read when the visitor comes back to 问事录.
   useEffect(() => {
@@ -66,7 +76,8 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
         </button>
       </div>
       <p className="history-explain">{onlySaved ? t.historyExplainSaved : t.historyExplainAll}</p>
-      <p className="privacy">{t.privacy}</p>
+      <p className="privacy">{t.privacy} {t.localHistoryRisk}</p>
+      {writeError && <p className="error" role="alert">{t.storageWriteFailed}</p>}
       {items.length === 0 ? (
         <p className="muted center">{onlySaved ? t.bookEmpty : t.emptyHistory}</p>
       ) : (
@@ -93,9 +104,10 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
                   className="text-btn danger"
                   onClick={() => {
                     if (confirm(t.confirmDelete)) {
-                      history.remove(r.castId);
-                      journal.remove(r.castId);
-                      refresh();
+                      changeRecords(() => {
+                        history.remove(r.castId);
+                        journal.remove(r.castId);
+                      });
                     }
                   }}
                 >
@@ -112,9 +124,10 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
               className="ghost-btn danger"
               onClick={() => {
                 if (confirm(t.confirmDeleteAll)) {
-                  history.clear();
-                  journal.clear();
-                  refresh();
+                  changeRecords(() => {
+                    history.clear();
+                    journal.clear();
+                  });
                 }
               }}
             >

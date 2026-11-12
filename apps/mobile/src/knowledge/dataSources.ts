@@ -12,9 +12,24 @@ const core = import.meta.glob(
 const details = import.meta.glob(['../../../../data/details/[0-9][0-9].json', '../../../../data/details/index.json'], { query: '?url', import: 'default', eager: true }) as Record<string, string>;
 // Long commentary is only loaded when a reader expands it.
 const commentary = import.meta.glob('../../../../sources/commentary/*.json', { query: '?url', import: 'default', eager: true }) as Record<string, string>;
+// The formal product catalog and its written 断语 (createProductRepository): one hexagram's file is
+// read per cast, never the whole library.
+const product = import.meta.glob(
+  [
+    '../../../../data/product-categories.json',
+    '../../../../data/authored-readings/*/index.json',
+    '../../../../data/authored-readings/*/hex-[0-9][0-9][0-9].json',
+    '../../../../data/question-items.json',
+    '../../../../data/interpretation-reviews.json',
+    '../../../../data/question-stories/index.json',
+    '../../../../data/question-stories/*/index.json',
+    '../../../../data/question-stories/*/[0-9][0-9].json',
+  ],
+  { query: '?url', import: 'default', eager: true },
+) as Record<string, string>;
 
 export const DATA_URLS: ReadonlyMap<string, string> = new Map(
-  Object.entries({ ...core, ...details, ...commentary }).map(([k, v]) => [k.slice(PREFIX.length), v]),
+  Object.entries({ ...core, ...details, ...commentary, ...product }).map(([k, v]) => [k.slice(PREFIX.length), v]),
 );
 
 export const CORE_PATHS = ['data/catalog.json', 'data/meihua-sections.json', 'data/domains.json'] as const;

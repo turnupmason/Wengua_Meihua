@@ -9,6 +9,7 @@ import type { Knowledge, Reading, DetailedLine, DetailedHexagram, ReferenceComme
 import { getVoidReleaseTargets } from '../knowledge/knowledge';
 import type { Selection } from '../scene/StoneTable';
 import type { CastRecord } from '../domain/cast';
+import type { MissingReason, ProductJudgment } from '../domain/judgment';
 import { createRequestGate } from '../domain/requestGate';
 import { ROLE_LABEL } from '../domain/relation';
 import { lineSlots } from '../domain/layout';
@@ -40,13 +41,13 @@ interface Props {
 }
 
 /**
- * The 断语 of a cast as shown: the approved record matched at casting time (full text for members
- * or a single unlock), "missing" while the author is still writing it, or "legacy" for an older
+ * The 断语 of a cast as shown: the written record given at casting time (full text for members
+ * or a single unlock), "missing" (with why) when there was none to give, or "legacy" for an older
  * record whose question was written freely and so has no fixed question to match.
  */
 export type JudgmentView =
-  | { state: 'ready'; script: Extract<NonNullable<CastRecord['judgment']>, { state: 'ready' }>['script']; seasonLabel: string; full: boolean }
-  | { state: 'missing' }
+  | { state: 'ready'; judgment: ProductJudgment; full: boolean }
+  | { state: 'missing'; reason: MissingReason }
   | { state: 'legacy' };
 
 type Extended =

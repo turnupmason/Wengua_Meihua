@@ -1,8 +1,8 @@
 /**
  * The six 问事 domains, as the rest of the app reads them. The questions themselves live in the
  * QuestionCatalog (questionCatalog.ts); this file only keeps what older records need: their
- * domain ids ('family' and 'seek' are now 'home' and 'search') and the outcome words used by the
- * 体用 structural sentence for questions written freely before the catalog existed.
+ * domain ids ('love', 'family' and 'seek' are now 'relationships', 'home' and 'search') and the
+ * outcome words used by the 体用 structural sentence for questions written before the catalog.
  */
 import { DOMAINS, domainById, questionById, type DomainId } from './questionCatalog';
 
@@ -71,9 +71,12 @@ const DOMAIN_OUTCOME: Record<string, { zh: string; en: string }> = {
   'domain-18': { zh: '安葬顺遂', en: 'see the burial go well' },
 };
 
-/** What the asked matter coming out well means, for the 体用 structural sentence. */
-export function outcomeFor(question: string, _topicId: string | undefined, domainId: string, lang: 'zh' | 'en', questionId?: string) {
-  const q = questionById(questionId);
-  if (q) return q.outcome[lang];
+/**
+ * What the asked matter coming out well means, for the 体用 structural sentence of an older
+ * free-written record. A question of the formal catalog gets none (null): it is answered only by
+ * its written 断语, never by a sentence filled in from the structure.
+ */
+export function outcomeFor(question: string, _topicId: string | undefined, domainId: string, lang: 'zh' | 'en', questionId?: string): string | null {
+  if (questionById(questionId)) return null;
   return (LEGACY_PRESETS[question.trim()] ?? DOMAIN_OUTCOME[domainId] ?? { zh: '事成', en: 'succeed' })[lang];
 }

@@ -1,6 +1,6 @@
 /** Turns the home form into casting inputs, and says what is missing before entering. */
 import type { MethodInputs } from '../domain/methods';
-import { questionById } from '../domain/questionCatalog';
+import { questionById, questionWording } from '../domain/questionCatalog';
 import type { CastRequest } from '../domain/cast';
 import type { CalendarPolicy } from '../domain/calendar';
 import type { EntryForm } from './HomeOverlay';
@@ -27,11 +27,13 @@ export function entryInputs(f: EntryForm): MethodInputs {
 
 const pos = (v: string) => /^\d+$/.test(v) && Number(v) >= 1;
 
-/** null when the form can be cast; otherwise what is missing. */
+/** null when the form can be cast (or, for a reference question, read); otherwise what is missing. */
 export function entryProblem(f: EntryForm): 'question' | 'conditions' | 'numbers' | 'method' | 'time' | null {
   const q = questionById(f.questionId);
   if (!q || !q.enabled) return 'question';
   if (q.conditions?.some((c) => !c.options.some((o) => o.option_id === f.conditions[c.condition_id]))) return 'conditions';
+  // Reference and guidance questions are read at once: no method, numbers or time.
+  if (q.mode !== 'narrative') return null;
   if (f.customTime && (!f.customAt || Number.isNaN(new Date(f.customAt).getTime()))) return 'time';
   switch (f.method) {
     case 'classical-time':
@@ -60,7 +62,7 @@ export function castRequest(f: EntryForm, o: { lang: 'zh' | 'en'; timeZone: stri
     method: f.method,
     questionId: f.questionId ?? undefined,
     // The wording as shown when it was chosen (kept with the record).
-    question: q ? q.question_text[o.lang] : '',
+    question: q ? questionWording(q, f.conditions, o.lang) : '',
     conditions: f.conditions,
     inputs: entryInputs(f),
     instant: custom ?? o.now ?? new Date(),

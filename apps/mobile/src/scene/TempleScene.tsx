@@ -64,15 +64,16 @@ function CameraRig({ clock, reduced, intro }: { clock: MutableRefObject<RitualCl
     const H = Math.max(1, size.height);
     // At the stone table the top bar and the bottom bar both keep their strips clear: the table is
     // framed in the band between them (never hidden under them).
-    const want = atTable ? Math.min(0.4, (sceneInsets.footerPx + 8) / H) : away ? PLACE_PANEL : 0;
-    const wantTop = atTable ? Math.min(0.25, (sceneInsets.headerPx + 6) / H) : 0;
-    reserve.current += (want - reserve.current) * 0.08;
-    reserveTop.current += (wantTop - reserveTop.current) * 0.08;
+    const want = atTable ? (sceneInsets.footerPx + 8) / H : away ? PLACE_PANEL : 0;
+    const wantTop = atTable ? (sceneInsets.headerPx + 6) / H : 0;
+    const approach = c.phase === 'reading' || reduced ? 1 : 0.08;
+    reserve.current += (want - reserve.current) * approach;
+    reserveTop.current += (wantTop - reserveTop.current) * approach;
     const r = reserve.current;
     const rt = reserveTop.current;
     const shift = ((r - rt) * size.height) / 2;
     if (Math.abs(shift) > 0.5) cam.setViewOffset(size.width, size.height, 0, shift, size.width, size.height);
-    else if (cam.view) cam.clearViewOffset();
+    else if (cam.view?.enabled) cam.clearViewOffset();
     let pose = cameraPose(c.phase, c.t, reduced, readingPose(aspect, fov, rt, r));
     const it = intro?.current;
     if (it && !it.done && c.phase === 'idle') {
@@ -285,8 +286,19 @@ function DivineLight({ clock, reduced }: { clock: MutableRefObject<RitualClock>;
  * the background where the GPU driver allows it, and only then does the render loop start. The
  * scene is marked ready once the generated textures have arrived too.
  */
-function WarmUp() {
+function WarmUp({ covered }: { covered: boolean }) {
   const { gl, scene, camera, setFrameloop } = useThree();
+  const compiled = useRef(false);
+  const coveredRef = useRef(covered);
+  coveredRef.current = covered;
+  const syncFrameloop = useCallback(() => {
+    setFrameloop(compiled.current && !document.hidden && !coveredRef.current ? 'always' : 'never');
+  }, [setFrameloop]);
+  useEffect(() => {
+    syncFrameloop();
+    document.addEventListener('visibilitychange', syncFrameloop);
+    return () => document.removeEventListener('visibilitychange', syncFrameloop);
+  }, [covered, syncFrameloop]);
   useEffect(() => {
     let alive = true;
     // Hidden effects are shown for the compile so their shaders are ready too; lights keep their
@@ -334,7 +346,8 @@ function WarmUp() {
               }
             }
       });
-      if (!document.hidden) setFrameloop('always');
+      compiled.current = true;
+      syncFrameloop();
       await settle(texturesIdle(), 15000);
       await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       if (alive) markSceneReady();
@@ -348,22 +361,13 @@ function WarmUp() {
   return null;
 }
 
-function VisibilityPause() {
-  const { setFrameloop } = useThree();
-  useEffect(() => {
-    const onChange = () => setFrameloop(document.hidden ? 'never' : 'always');
-    document.addEventListener('visibilitychange', onChange);
-    return () => document.removeEventListener('visibilitychange', onChange);
-  }, [setFrameloop]);
-  return null;
-}
-
 export interface TempleSceneProps {
   reading: Reading | null;
   relation: RelationView | null;
   castTime?: string;
   clock: MutableRefObject<RitualClock>;
   phase: string;
+  covered: boolean;
   reduced: boolean;
   tier: QualityTier;
   selection: Selection | null;
@@ -383,7 +387,7 @@ export interface TempleSceneProps {
 }
 
 export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
-  const { reading, relation, castTime, clock, phase, reduced, tier, selection, t, lang, onPick, onOpenStage, onOpenRelation, onMiss, onContextLost, intro, onPlace } = props;
+  const { reading, relation, castTime, clock, phase, covered, reduced, tier, selection, t, lang, onPick, onOpenStage, onOpenRelation, onMiss, onContextLost, intro, onPlace } = props;
   // Stable across phases (so the memoised places never re-render); taps count only while idle.
   const placeRef = useRef(onPlace);
   placeRef.current = onPlace;
@@ -421,8 +425,7 @@ export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
         <hemisphereLight args={['#5a4a3a', '#120c08', 0.3]} />
         <directionalLight position={[3, 8, 6]} intensity={0.4} color="#ffd9a8" castShadow={tier.shadows} shadow-mapSize={[1024, 1024]} />
         <TempleEnvironment />
-        <WarmUp />
-        <VisibilityPause />
+        <WarmUp covered={covered} />
         <LightZones phase={phase} />
         <AdaptiveResolution max={Math.min(tier.maxDpr, globalThis.devicePixelRatio || 1)} phase={phase} />
         <CameraRig clock={clock} reduced={reduced} intro={intro} />

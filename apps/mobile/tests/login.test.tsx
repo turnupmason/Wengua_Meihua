@@ -21,11 +21,25 @@ describe('Sign-in screen', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  it('offers the four sign-in buttons as one set, then a name or guest entry', () => {
+  it('offers the four sign-in buttons as one set; one not connected says so and asks for nothing', () => {
     const { container } = login();
     expect([...container.querySelectorAll('.login-providers .provider-btn')].map((b) => b.textContent)).toEqual([t.loginWechat, t.loginApple, t.loginGoogle, t.loginPhone]);
+    expect(screen.queryByText(t.loginPending)).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: t.loginPhone }));
+    expect(screen.getByText(t.loginPending)).toBeTruthy();
+    // No phone number or code is asked for a service that is not connected.
+    expect(container.querySelector('input[inputmode="tel"], input[autocomplete="one-time-code"]')).toBeNull();
     expect(screen.getByRole('button', { name: t.loginEnter }).textContent).toBe(`${t.loginEnterShort} →`);
     expect(screen.getByRole('button', { name: t.loginGuest })).toBeTruthy();
+  });
+
+  it('enters from the title by a tap anywhere or by the 「轻触 · 入殿」 button, once each', () => {
+    let entered = 0;
+    const { container } = render(<Splash t={t} progress={null} leaving={false} onEnter={() => (entered += 1)} />);
+    fireEvent.click(screen.getByRole('button', { name: t.splashEnter }));
+    expect(entered).toBe(1);
+    fireEvent.click(container.querySelector('.splash')!);
+    expect(entered).toBe(2);
   });
 
   it('shows 「欢迎入殿」 after signing in', () => {

@@ -27,6 +27,7 @@ interface Props {
   onSwitch?: () => void;
   /** Just signed in: the 三清 dim, 「欢迎入殿」 shows, then the screen gives way to the hall. */
   welcoming?: boolean;
+  signInError?: string | null;
 }
 
 /**
@@ -47,7 +48,7 @@ function useSceneShown(live: boolean) {
   return shown;
 }
 
-export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch, mode = 'title', profile, auth, onSignIn, live = false, welcoming = false }: Props) {
+export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch, mode = 'title', profile, auth, onSignIn, live = false, welcoming = false, signInError }: Props) {
   const sceneShown = useSceneShown(live && progress === null);
   // Over the live gate, 「轻触 · 入殿」 waits until the gate is drawn.
   const titleReady = progress === null && !error && mode === 'title';
@@ -56,12 +57,26 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
   const [phone, setPhone] = useState('');
   const [code, setCode] = useState('');
   const [showPhone, setShowPhone] = useState(false);
-  const [notice, setNotice] = useState<string | null>(null);
   const [showAbout, setShowAbout] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   const can = (m: SignInMethod) => !!auth?.methods.includes(m);
-  const remote = (m: SignInMethod) => (can(m) ? onSignIn?.(m, '') : setNotice(t.loginPending));
+  // The four ways in, always shown as one set. One not connected yet says so when tapped and opens
+  // nothing to fill in (no phone number or code is asked for a service that is not there).
+  const providers = [
+    { method: 'wechat', label: t.loginWechat },
+    { method: 'apple', label: t.loginApple },
+    { method: 'google', label: t.loginGoogle },
+    { method: 'phone', label: t.loginPhone },
+  ] as const;
+  const provider = (method: (typeof providers)[number]['method']) => {
+    if (!can(method)) return setNotice(t.loginPending);
+    setNotice(null);
+    if (method === 'phone') setShowPhone((shown) => !shown);
+    else onSignIn?.(method, '');
+  };
   return (
-    <div className={`splash ${leaving ? 'is-leaving' : ''} ${mode === 'login' && progress === null ? 'is-login' : ''} ${live && progress === null ? 'is-live' : ''} ${sceneShown ? 'scene-shown' : ''} ${welcoming ? 'is-welcome' : ''}`} onClick={ready && !leaving ? onEnter : undefined} role={ready ? 'button' : undefined} aria-label={ready ? t.splashEnter : undefined}>
+    // Tapping anywhere on the title enters (the 「轻触 · 入殿」 button is there for keyboards and readers).
+    <div className={`splash ${leaving ? 'is-leaving' : ''} ${mode === 'login' && progress === null ? 'is-login' : ''} ${live && progress === null ? 'is-live' : ''} ${sceneShown ? 'scene-shown' : ''} ${welcoming ? 'is-welcome' : ''}`} onClick={ready && !leaving ? onEnter : undefined}>
       <svg className="splash-art" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <radialGradient id="sp-moon" cx="45%" cy="40%" r="60%">
@@ -135,8 +150,8 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
       <div className="splash-foot">
         {error ? (
           <>
-            <p className="error">
-              {t.loadFailed}: {error}
+            <p className="error" role="alert">
+              {t.loadFailed}
             </p>
             <button className="ghost-btn" onClick={onRetry}>
               {t.retry}
@@ -152,31 +167,29 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
             }}
           >
             <div className="login-providers v2">
-              <button type="button" className="provider-btn" onClick={() => remote('wechat')}>
-                {t.loginWechat}
-              </button>
-              <button type="button" className="provider-btn" onClick={() => remote('apple')}>
-                {t.loginApple}
-              </button>
-              <button type="button" className="provider-btn" onClick={() => remote('google')}>
-                {t.loginGoogle}
-              </button>
-              <button type="button" className={`provider-btn ${showPhone ? 'is-on' : ''}`} onClick={() => setShowPhone((x) => !x)}>
-                {t.loginPhone}
-              </button>
+              {providers.map(({ method, label }) => (
+                <button type="button" className={`provider-btn ${method === 'phone' && showPhone ? 'is-on' : ''}`} key={method} onClick={() => provider(method)}>
+                  {label}
+                </button>
+              ))}
             </div>
-            {showPhone && (
+            {showPhone && can('phone') && (
               <div className="phone-row">
-                <input inputMode="tel" autoComplete="tel" placeholder={t.loginPhonePlaceholder} value={phone} onChange={(e) => setPhone(e.target.value.replace(/[^\d+]/g, '').slice(0, 16))} />
+                <input inputMode="tel" autoComplete="tel" aria-label={t.loginPhonePlaceholder} placeholder={t.loginPhonePlaceholder} value={phone} onChange={(e) => setPhone(e.target.value.replace(/[^\d+]/g, '').slice(0, 16))} />
                 <div className="code-row">
-                  <input inputMode="numeric" autoComplete="one-time-code" placeholder={t.loginCodePlaceholder} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))} />
-                  <button type="button" className="ghost-btn" disabled={phone.length < 6} onClick={() => remote('phone')}>
+                  <input inputMode="numeric" autoComplete="one-time-code" aria-label={t.loginCodePlaceholder} placeholder={t.loginCodePlaceholder} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))} />
+                  <button type="button" className="ghost-btn" disabled={phone.length < 6} onClick={() => onSignIn?.('phone', '')}>
                     {t.loginSendCode}
                   </button>
                 </div>
               </div>
             )}
-            {notice && <p className="login-notice">{notice}</p>}
+            {notice && (
+              <p className="login-notice" role="status">
+                {notice}
+              </p>
+            )}
+            {signInError && <p className="login-notice" role="alert">{signInError}</p>}
             <p className="login-or">{t.loginOr}</p>
             {auth?.methods.includes('local') && (
               <div className="name-line">
@@ -198,7 +211,17 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
           {!ready && <p className="splash-waiting" role="status">{t.lightingHall}</p>}
           <div className={`splash-enter-wrap ${ready ? '' : 'is-waiting'}`} aria-hidden={!ready}>
             {profile && <p className="splash-welcome">{profile.name ? t.welcomeBack.replace('{name}', profile.name) : t.welcomeGuest}</p>}
-            <p className="splash-enter">{t.splashEnter}</p>
+            <button
+              type="button"
+              className="splash-enter"
+              disabled={!ready || leaving}
+              onClick={(e) => {
+                e.stopPropagation();
+                onEnter();
+              }}
+            >
+              {t.splashEnter}
+            </button>
             {profile && onSwitch && (
               <button
                 type="button"

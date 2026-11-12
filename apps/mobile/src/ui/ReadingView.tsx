@@ -1,8 +1,9 @@
 /**
  * 读卦: the same reading as the stone table, set out to be read.
- * - 简断: the author's approved 断语 (its brief), or plainly that it is still being written.
- * - 详断: the same record's 开局 / 过程 / 结局 / 总断 and the classics it cites (members or a
- *   single unlock read it in full).
+ * - 简断: the written 断语 given at casting (its title and 简断), or plainly why there is none.
+ * - 详断: the same record's 开局 / 过程 / 结局 / 总断, its 应期参考 (each window with its event,
+ *   吉凶 and dates, shown apart), the 计算说明 (collapsed) and the classics it draws on (members
+ *   or a single unlock read it in full).
  * - 专业依据: the three stages with their hexagrams (every line tappable), the 体用 structure
  *   worked out by the rules (labelled as such, never as a 断语), the basis, the moving line's text
  *   and the category passage. Older free-written records keep their structural reading.
@@ -18,8 +19,9 @@ import type { StageKey } from '../domain/layout';
 import type { LinePick } from '../scene/StoneTable';
 import { HexagramSVG } from './HexagramSVG';
 import { topicById } from '../domain/topics';
-import { cautionsFor } from '../domain/questionCatalog';
-import type { ClassicalSource } from '../domain/scripts';
+import { cautionsFor, practicalAdviceFor, questionById } from '../domain/questionCatalog';
+import { labelled, missingText } from './judgmentText';
+import { readableCalculation } from '../domain/judgment';
 import { answerText, conclusionText, synthText, weatherText, type SynthStage } from './Verdict';
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
@@ -55,23 +57,25 @@ function weatherRuleText(text: string) {
 
 interface Props {
   reading: Reading;
+  blocked?: boolean;
   question: string;
   /** The fixed question (absent on older free-written records). */
   questionId?: string;
+  /** Its fixed options, as chosen (e.g. the kind of item lost). */
+  conditions?: Record<string, string>;
   topicId?: string;
   /** The reading as given at casting time (old records may not have one). */
   snapshot?: ReadingSnapshot;
-  /** The author's 断语 for this cast, as matched at casting time. */
+  /** The 断语 for this cast, as given at casting time. */
   judgment: JudgmentView;
   /** Opens membership / single unlock for the full 断语. */
   onUnlock: () => void;
-  /** Hexagram name by King Wen number, and a line's own name (九四, 用六 …), for cited sources. */
-  hexagramName: (id: number) => string;
-  lineName: (id: number, line: number) => string;
+  /** Title of a 《梅花易数》 section by id (for sources named by id in the 计算说明). */
+  sectionTitle?: (id: string) => string | null;
   /** Open a 《梅花易数》 section (by title) in the 藏经阁, highlighting the quoted sentence. */
   onOpenSection?: (title: string, quote?: string) => void;
   /** Open a hexagram (and line) in the 藏经阁. */
-  onOpenBook?: (hexagramId: number, line: number | null) => void;
+  onOpenBook?: (hexagramId: number, line: number | null, stage?: StageKey) => void;
   castTime: string;
   t: Strings;
   lang: Lang;
@@ -82,15 +86,19 @@ interface Props {
   onClose: () => void;
 }
 
-export function ReadingView({ reading, question, questionId, topicId, snapshot, judgment, onUnlock, hexagramName, lineName, onOpenBook, onOpenSection, castTime, t, lang, focus, saved, onPick, onSave, onClose }: Props) {
+export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, saved, onPick, onSave, onClose }: Props) {
   const y = reading.synthesis;
   const txt = synthText(reading, lang);
   const wtxt = weatherText(reading, lang);
-  const answer = answerText(reading, question, t, lang);
+  // A question of the formal catalog is answered only by its written 断语, never by a sentence
+  // applying a classical line to it; older free-written records keep theirs.
+  const answer = questionById(questionId) ? null : answerText(reading, question, t, lang);
   const conclusion = conclusionText(reading, question, topicId, lang, snapshot, questionId);
   const stale = !!snapshot && snapshot.ruleId !== y.ruleId;
   const authored = judgment.state === 'ready' ? judgment : null;
+  const miss = judgment.state === 'missing' ? missingText(t, judgment.reason) : null;
   const legacy = judgment.state === 'legacy';
+  const advice = practicalAdviceFor(questionId, conditions);
   // Layers: 简断 always; 详断 and 专业依据 open on demand (专业依据 opens itself for a stage chip).
   const [openDetail, setOpenDetail] = useState(false);
   const [openPro, setOpenPro] = useState(focus !== null);
@@ -102,6 +110,10 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
   const topicLabel = tp ? (lang === 'en' ? tp.en : tp.zh) : null;
   const refs = useRef<Partial<Record<SynthStage, HTMLElement | null>>>({});
   const body = useRef<HTMLDivElement>(null);
+  const backButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    backButton.current?.focus({ preventScroll: true });
+  }, []);
   useEffect(() => {
     const el = focus ? refs.current[focus] : null;
     if (el) el.scrollIntoView?.({ block: 'start' });
@@ -120,25 +132,20 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
     setOpenDetail(true);
     window.setTimeout(() => detailRef.current?.scrollIntoView?.({ block: 'start', behavior: 'smooth' }), 30);
   };
-  // A cited source, linked into the 藏经阁 where it can be.
-  const sourceItem = (src: ClassicalSource, i: number) => {
-    if (src.kind === 'text') return <li key={i}>{src.text}</li>;
-    const label =
-      src.kind === 'section'
-        ? `《${src.title}》`
-        : src.kind === 'line'
-          ? `《${hexagramName(src.hexagram_id)}·${lineName(src.hexagram_id, src.line)}》`
-          : `《${hexagramName(src.hexagram_id)}》`;
-    const open = () => (src.kind === 'section' ? onOpenSection?.(src.title, src.quote) : onOpenBook?.(src.hexagram_id, src.kind === 'line' ? src.line : null));
-    return (
-      <li key={i}>
-        <button type="button" className="read-link" onClick={open}>
-          {label} ↗
+  // A 《梅花易数》 section the 断语 draws on, linked into the 藏经阁.
+  const sourceItem = (title: string) => (
+    <li key={title}>
+      {onOpenSection ? (
+        <button type="button" className="read-link" onClick={() => onOpenSection(title)}>
+          《梅花易数·{title}》 ↗
         </button>
-        {src.quote && <span className="script-quote">「{src.quote}」</span>}
-      </li>
-    );
-  };
+      ) : (
+        `《梅花易数·${title}》`
+      )}
+    </li>
+  );
+  const j = authored?.judgment;
+  const valence = (v: string) => (v === '吉' ? t.valenceGood : v === '凶' ? t.valenceBad : v);
   // 体用 structure by the rules: in 详断 for older records (as they were shown), else in 专业依据.
   const structural = y.applicable ? (
     <section className="read-judge" aria-labelledby="rj-title">
@@ -194,7 +201,7 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
           </h3>
           <DisplayGradeText grade={st.detail.grade} lang={lang} t={t} />
           {onOpenBook && (
-            <button type="button" className="read-link" onClick={() => onOpenBook(st.id, hs === 'primary' ? reading.movingLine : null)}>
+            <button type="button" className="read-link" onClick={() => onOpenBook(st.id, hs === 'primary' ? reading.movingLine : null, hs)}>
               {t.openOriginal(st.name, hs === 'primary' ? moving.label : null)}
             </button>
           )}
@@ -238,9 +245,12 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
   };
 
   return (
-    <div className="read-view" role="dialog" aria-label={t.readMode}>
+    <div className="read-view" role="dialog" aria-modal={!blocked} aria-label={t.readMode} inert={blocked}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') onClose();
+      }}>
       <header className="read-head">
-        <button className="icon-btn" onClick={onClose} aria-label={t.viewMode}>
+        <button ref={backButton} className="icon-btn" onClick={onClose} aria-label={t.viewMode}>
           ←
         </button>
         <div className="mode-switch" role="tablist">
@@ -266,16 +276,21 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
 
         <section className="read-verdict">
           <p className="read-kicker">{t.briefTitle}</p>
-          {authored ? (
+          {j ? (
             <>
-              <h2>{authored.script.title}</h2>
-              <p className="read-answer authored">{authored.script.brief_text}</p>
-              <p className="read-meta">{t.scriptMeta(authored.script.version, authored.seasonLabel)}</p>
+              {j.title && <h2 lang="zh">{j.title}</h2>}
+              <p className="read-answer authored" lang="zh">
+                {j.short}
+              </p>
+              <p className="read-meta">
+                {t.scriptMeta(j.monthBranch)}
+                {lang === 'en' && ` · ${t.zhOnly}`}
+              </p>
             </>
-          ) : judgment.state === 'missing' ? (
+          ) : miss ? (
             <>
-              <h2>{t.scriptPending}</h2>
-              <p className="read-summary">{t.scriptPendingText}</p>
+              <h2>{miss.title}</h2>
+              <p className="read-summary">{miss.text}</p>
             </>
           ) : txt && y.applicable ? (
             <>
@@ -299,6 +314,16 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
               {c}
             </p>
           ))}
+          {advice.length > 0 && (
+            <div className="read-advice">
+              <b>{t.practicalTitle}</b>
+              <ul lang="zh">
+                {advice.map((a) => (
+                  <li key={a}>{a}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="btn-row">
             {authored && (
               <button className="primary-btn" onClick={openDetailLayer}>
@@ -316,25 +341,49 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
             <b>{t.detailTitle}</b>
             <small>{t.detailHint}</small>
           </summary>
-          {authored && authored.full && (
+          {j && authored?.full && (
             <section className="script-full">
-              {(
-                [
-                  ['scriptOpening', authored.script.opening_text],
-                  ['scriptProcess', authored.script.process_text],
-                  ['scriptEnding', authored.script.ending_text],
-                  ['scriptConclusion', authored.script.conclusion_text],
-                ] as const
-              ).map(([k, text]) => (
-                <div key={k} className="script-part">
-                  <h3>{t[k]}</h3>
-                  <p>{text}</p>
+              {j.paragraphs.map((para) => {
+                const [label, text] = labelled(para);
+                return (
+                  <div key={para} className="script-part">
+                    {label && <h3 lang="zh">{label}</h3>}
+                    <p lang="zh">{text}</p>
+                  </div>
+                );
+              })}
+              {j.timing && (
+                <div className="script-part script-timing">
+                  <h3>{t.timingTitle}</h3>
+                  <p className="read-meta" lang="zh">
+                    {j.timing.referenceNote}
+                  </p>
+                  {j.timing.windows.length > 0 && (
+                    <ul className="timing-list">
+                      {j.timing.windows.map((w) => (
+                        <li key={w.event + w.text} className={w.valence === '吉' ? 'is-good' : w.valence === '凶' ? 'is-bad' : ''}>
+                          <span className="timing-tag">{valence(w.valence)}</span>
+                          <span lang="zh">{w.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-              ))}
-              {authored.script.classical_sources.length > 0 && (
+              )}
+              {j.calculation.length > 0 && (
+                <details className="script-calc">
+                  <summary>{t.calcTitle}</summary>
+                  {readableCalculation(j.calculation, sectionTitle).map((c) => (
+                    <p key={c} lang="zh">
+                      {c}
+                    </p>
+                  ))}
+                </details>
+              )}
+              {j.sources.length > 0 && (
                 <div className="script-part">
                   <h3>{t.scriptSources}</h3>
-                  <ul className="script-sources">{authored.script.classical_sources.map(sourceItem)}</ul>
+                  <ul className="script-sources">{j.sources.map(sourceItem)}</ul>
                 </div>
               )}
             </section>
@@ -347,7 +396,7 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
               </button>
             </div>
           )}
-          {judgment.state === 'missing' && <p className="read-summary">{t.judgmentPending}</p>}
+          {miss && <p className="read-summary">{miss.title}</p>}
           {legacy && structural}
           {legacy && !y.applicable && weather && <p className="read-summary">{weather.summary}</p>}
         </details>
@@ -431,7 +480,7 @@ export function ReadingView({ reading, question, questionId, topicId, snapshot, 
           <p className="read-line-label">
             {reading.stages.primary.name} · {moving.label}
             {onOpenBook && (
-              <button type="button" className="read-link" onClick={() => onOpenBook(reading.primaryId, reading.movingLine)}>
+              <button type="button" className="read-link" onClick={() => onOpenBook(reading.primaryId, reading.movingLine, 'primary')}>
                 {t.openOriginal(reading.stages.primary.name, moving.label)}
               </button>
             )}

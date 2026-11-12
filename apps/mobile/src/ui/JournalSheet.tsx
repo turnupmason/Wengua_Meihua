@@ -24,6 +24,7 @@ const when = (iso: string) => {
 
 export function JournalSheet({ t, title, entry, onSave, onRemove, onClose }: Props) {
   const [note, setNote] = useState('');
+  const [saveError, setSaveError] = useState(false);
   return (
     <div className="sheet-backdrop" onClick={onClose}>
       <section className="sheet journal-sheet" role="dialog" aria-label={t.saveToBook} onClick={(e) => e.stopPropagation()}>
@@ -56,19 +57,31 @@ export function JournalSheet({ t, title, entry, onSave, onRemove, onClose }: Pro
             {t.bookNoteLabel}
             <textarea value={note} maxLength={2000} rows={3} placeholder={t.bookNotePlaceholder} onChange={(e) => setNote(e.target.value)} />
           </label>
+          {saveError && <p className="error" role="alert">{t.storageWriteFailed}</p>}
           <div className="btn-row">
             <button
               className="primary-btn"
               disabled={!!entry && !note.trim()}
               onClick={() => {
-                onSave(note);
-                setNote('');
+                try {
+                  onSave(note);
+                  setNote('');
+                  setSaveError(false);
+                } catch {
+                  setSaveError(true);
+                }
               }}
             >
               {entry ? t.bookUpdate : t.bookSave}
             </button>
             {entry && (
-              <button className="ghost-btn danger" onClick={onRemove}>
+              <button className="ghost-btn danger" onClick={() => {
+                try {
+                  onRemove();
+                } catch {
+                  setSaveError(true);
+                }
+              }}>
                 {t.bookRemove}
               </button>
             )}

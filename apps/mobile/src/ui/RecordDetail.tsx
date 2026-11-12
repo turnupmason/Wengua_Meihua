@@ -9,7 +9,6 @@ import type { Journal } from '../domain/journal';
 import type { Strings } from '../domain/i18n';
 import { topicById } from '../domain/topics';
 import { recordKind } from '../domain/cast';
-import { SEASON_LABEL } from '../domain/scripts';
 import { subtypeById } from '../domain/questionCatalog';
 
 const when = (iso: string) => {
@@ -29,6 +28,7 @@ interface Props {
 
 export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged }: Props) {
   const [note, setNote] = useState('');
+  const [saveError, setSaveError] = useState(false);
   const [entry, setEntry] = useState(() => journal.get(r.castId));
   const tp = topicById(r.topicId);
   const s = r.snapshot;
@@ -78,11 +78,13 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
         </h3>
         {j?.state === 'ready' && (
           <>
-            <p className="rd-head">
-              <b>{j.script.title}</b>
-            </p>
-            <p className="rd-conclusion">{j.script.brief_text}</p>
-            <p className="rd-meta">{t.rdJudgmentAtCast(j.script.version, SEASON_LABEL[j.script.season_variant_id].zh)}</p>
+            {j.title && (
+              <p className="rd-head">
+                <b>{j.title}</b>
+              </p>
+            )}
+            <p className="rd-conclusion">{j.short}</p>
+            <p className="rd-meta">{t.rdJudgmentAtCast(j.monthBranch)}</p>
           </>
         )}
         {j?.state === 'missing' && <p className="rd-meta">{t.rdJudgmentMissingAtCast}</p>}
@@ -129,14 +131,20 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
           {t.bookNoteLabel}
           <textarea value={note} maxLength={2000} rows={2} placeholder={t.bookNotePlaceholder} onChange={(e) => setNote(e.target.value)} />
         </label>
+        {saveError && <p className="error" role="alert">{t.storageWriteFailed}</p>}
         <div className="btn-row">
           <button
             className="primary-btn"
             disabled={!note.trim()}
             onClick={() => {
-              setEntry(journal.save(r.castId, note));
-              setNote('');
-              onChanged();
+              try {
+                setEntry(journal.save(r.castId, note));
+                setNote('');
+                setSaveError(false);
+                onChanged();
+              } catch {
+                setSaveError(true);
+              }
             }}
           >
             {t.rdAddNote}

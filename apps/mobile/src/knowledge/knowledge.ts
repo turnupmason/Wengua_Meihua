@@ -1,8 +1,9 @@
-import { createLibrary, createDetailsRepository } from '@knowledge';
-import type { Library, DetailsRepository } from '@knowledge';
+import { createLibrary, createDetailsRepository, createProductRepository } from '@knowledge';
+import type { Library, DetailsRepository, ProductRepository } from '@knowledge';
 import { CORE_PATHS, readBundledJSON, type ReadJSON } from './dataSources';
+import { ensureDigest } from './digest';
 
-export type { Library, DetailsRepository };
+export type { Library, DetailsRepository, ProductRepository };
 export type {
   Reading, Stage, Hexagram, LineReading, DetailedLine, DetailedHexagram, ReferenceCommentary, Domain, Branch,
   RelationType, DisplayGrade, Grade,
@@ -12,6 +13,8 @@ export { getVoidReleaseTargets, getXunVoid } from '@knowledge';
 export interface Knowledge {
   library: Library;
   details: DetailsRepository;
+  /** The formal product catalog and its written 断语 (read one hexagram's file at a time). */
+  product: ProductRepository;
   contentVersion: string;
 }
 
@@ -33,7 +36,9 @@ export async function loadKnowledge(
   );
   const library = createLibrary({ catalog, sections, domains });
   const details = createDetailsRepository({ library, readJSON });
-  return { library, details, contentVersion: library.contentVersion };
+  ensureDigest();
+  const product = createProductRepository({ library, readJSON });
+  return { library, details, product, contentVersion: library.contentVersion };
 }
 
 let shared: Promise<Knowledge> | null = null;
