@@ -132,7 +132,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮倾向能过，进展较慢。等候期间把补充要求处理好，保持正常回应，别让一时为难打乱节奏。',
   lineApplication:{evidence:['来徐徐','吝','有终'],conditions:['金车只作受困取象，不编造乘车迟到、交通事故或实际交通安排']},
   counterevidence:[{fact:'用互受体生，兑金冬休，爻有吝与困',resolution:'承认迟缓费力；体水旺、末后同气得令、爻有终，保留有望通过。'}],
-  timing:[good('use')]
+  timing:[{kind:'drain',role:'use_mutual',valence:'凶',prefix:'可留意',id:'process-drain',stage:'process',eventScope:'process-drain',
+   event:'本轮面试中段可能需要花时间核对还没说明白的一项做法',ruleIds:['daily-qi-body-drain'],sourceIds:['mh-058','mh-122','mh-143'],
+   suffix:'前后，留意过程中需要补清的工作细节，属中段耗费。',
+   reason:'冬相巽用互受旺坎所生，原体能承但中耗实在，爻来徐徐。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:48,movingLine:5,outcome:'pass-after-detail-checks',title:'有望通过，细节确认时要答得完整',
