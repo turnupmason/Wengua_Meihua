@@ -16,31 +16,34 @@ const relationLabels={equal:'与体比和',body_controls_use:'受体所克',use_
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 
 /** Full five-state qi also governs the extension's strong/weak exemptions. */
-export function createContextualReading({library,question,primaryId,movingLine,monthOrder,monthBranch,castingDate,voidContext={}}){
+export function createContextualReading({library,question,primaryId,movingLine,monthOrder,monthBranch,castingDate,voidContext={},applyVoid=true}){
  if(!question?.id||question.mode!=='narrative')throw new Error('Typed narrative question required');
  const slot=resolveMonthSlot({monthBranch,monthOrder});monthOrder=slot?.qi;
  const order=MONTH_ORDERS.find(x=>x.id===monthOrder);if(!order)throw new RangeError('Explicit month qi required');
  const day=getCivilDay(castingDate);
- if(voidContext.ganzhi&&voidContext.ganzhi!==day.dayGanzhi)throw new RangeError('Casting date and day ganzhi disagree');
- if(voidContext.basis&&voidContext.basis!=='day-explicit-input')throw new RangeError('This batch uses casting-day void basis');
- const context={partialPolicy:'qualitative-reduction',...voidContext,ganzhi:day.dayGanzhi,basis:'day-explicit-input'};
- const raw=library.createReading({primaryId,movingLine,domainId:question.chartSourceDomainId||question.sourceDomainIds?.[0]||'domain-09',question:question.question,calendar:{season:order.season},voidContext:context});
+ if(applyVoid&&voidContext.ganzhi&&voidContext.ganzhi!==day.dayGanzhi)throw new RangeError('Casting date and day ganzhi disagree');
+ if(applyVoid&&voidContext.basis&&voidContext.basis!=='day-explicit-input')throw new RangeError('This batch uses casting-day void basis');
+ const context=applyVoid?{partialPolicy:'qualitative-reduction',...voidContext,ganzhi:day.dayGanzhi,basis:'day-explicit-input'}:{};
+ const raw=library.createReading({primaryId,movingLine,domainId:question.chartSourceDomainId||question.sourceDomainIds?.[0]||'domain-09',question:question.question,calendar:{season:order.season},voidContext:context,applyVoid});
  const movingUse=raw.nodes.find(n=>n.role==='use');
  const nodes=raw.nodes.map(n=>{
-  const qi=assessSeasonalQi(n.element,monthOrder),explicit=context.roleEvidence?.[n.role]||{};
+  const qi=assessSeasonalQi(n.element,monthOrder);
+  const strength={...qi,label:qi.state,season:order.season,monthBranch:monthBranch||null};
+  if(!applyVoid)return {...n,strength};
+  const explicit=context.roleEvidence?.[n.role]||{};
   const supportEvidence=[...n.supportEvidence];
   if(n.stage!=='changed'&&n.role!=='use'&&GENERATES[movingUse.element]===n.element)
    supportEvidence.push({basis:'internal-moving-direct-generation',actorRole:'use',scope:'void-falsehood-assessment-only;not-an-extra-root-energy-score',sourceIds:['user-void-timing']});
   if(explicit.ganzhi&&explicit.ganzhi!==day.dayGanzhi)throw new RangeError('Role evidence day does not match the cast');
-  return {...n,supportEvidence,strength:{...qi,label:qi.state,season:order.season,monthBranch:monthBranch||null},
+  return {...n,supportEvidence,strength,
    void:assessVoid(n.trigram,{...context,...explicit,strength:qi.state,moving:['use','changed_use'].includes(n.role),
     supported:Boolean(context.supported||explicit.supported||supportEvidence.length),partialPolicy:context.partialPolicy})};
  });
  const body=nodes.find(n=>n.role==='body'),inherited=nodes.find(n=>n.role==='body_inherited');
  inherited.void=body.void;inherited.strength=body.strength;inherited.supportEvidence=body.supportEvidence;
- const edges=raw.edges.map(e=>({...e,voidEffect:nodes.find(n=>n.role===e.targetRole).void.effective,bodyVoidEffect:body.void.effective,qualitativeNote:'直接关系与各节点旺衰、空亡分别记录'}));
+ const edges=raw.edges.map(e=>({...e,voidEffect:nodes.find(n=>n.role===e.targetRole).void.effective,bodyVoidEffect:body.void.effective,qualitativeNote:applyVoid?'直接关系与各节点旺衰、空亡分别记录':'直接关系与各节点旺衰分别记录'}));
  return freeze({...raw,nodes,edges,castingDate,dayGanzhi:day.dayGanzhi,monthOrder,monthBranch:monthBranch||null,monthSlotForLookup:slot.branch,
-  profile:{...raw.profile,id:'product-full-qi-void-1.0.0',voidRuleSetId:VOID_RULESET.id,monthStrength:'full-five-state',application:'typed-question;factual-assessment-only'}});
+  profile:{...raw.profile,...(applyVoid?{id:'product-full-qi-void-1.0.0',voidRuleSetId:VOID_RULESET.id}:{id:'product-full-qi-1.0.0',voidApplied:false}),monthStrength:'full-five-state',application:'typed-question;factual-assessment-only'}});
 }
 
 export function createInterviewReading(options){
@@ -91,7 +94,7 @@ export function interviewTimingSlots(reading,specs){
  });
 }
 
-export function createInterviewManuscriptRepository({library,readJSON}){
+export function createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid=false}){
  const cache=new Map();
  const read=path=>{if(!cache.has(path))cache.set(path,Promise.resolve(readJSON(path)).then(v=>{
   if(v.schemaVersion!=='1.0.0'||v.contentVersion!==library.contentVersion||v.manuscriptVersion!==INTERVIEW_MANUSCRIPT_VERSION)throw new Error('Authored interview version mismatch');return freeze(v);
@@ -102,8 +105,8 @@ export function createInterviewManuscriptRepository({library,readJSON}){
   if(question.id!==INTERVIEW_QUESTION_ID||question.manuscriptIndexPath!=='data/authored-readings/interview-pass/index.json')throw new Error('Invalid interview manuscript binding');
   const missing=!options.castingDate?['castingDate']:[];if(!options.monthBranch&&!options.monthOrder)missing.push('monthBranch');
   if(missing.length)return {status:'requires-context',missingContext:missing,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
-  const reading=createInterviewReading({library,question,...options});
-  const index=await read(question.manuscriptIndexPath),key=getVoidProfileKey(reading);
+  const reading=createInterviewReading({library,question,...options,applyVoid:includeHistoricalVoid});
+  const index=await read(question.manuscriptIndexPath);
   if(index.questionId!==question.id)throw new Error('Authored interview question mismatch');
   const pending=()=>({status:'pending-authoring',reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false,
    coverage:{baseCases:index.baseCaseCount,authoredVersions:index.authoredVersionCount,contextProfiles:index.contextProfileCount,totalBaseCases:4608}});
@@ -117,32 +120,35 @@ export function createInterviewManuscriptRepository({library,readJSON}){
    row.monthOrder===reading.monthOrder&&row.monthBranches.includes(reading.monthSlotForLookup);
   const baseRow=file.rows[position];
   if(!matchesMonth(baseRow))throw new Error('Authored month slot mismatch');
-  const matchingContexts=file.rows.filter(row=>row.voidProfileKey===key&&matchesMonth(row));
+  const key=includeHistoricalVoid?getVoidProfileKey(reading):null;
+  const matchingContexts=includeHistoricalVoid?file.rows.filter(row=>row.voidProfileKey===key&&matchesMonth(row)):[];
   if(matchingContexts.length>1)throw new Error('Duplicate authored interview void profile');
   const exactProfile=matchingContexts.length===1;
   const row=matchingContexts[0]??baseRow;
   // The prose relies on both mutual trigrams for the middle stage.
-  const baseEligible=baseRow.baseProse===true&&reading.nodes.every(n=>n.role==='body_inherited'||n.void.effective==='active');
+  const baseEligible=baseRow.baseProse===true&&(!includeHistoricalVoid||reading.nodes.every(n=>n.role==='body_inherited'||n.void.effective==='active'));
   if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
   checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
   checkInterviewShort(row.copy.short.text);
-  if(row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
+  if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
   const actualSlots=interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
-  const hasTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
+  const storedTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
   const missingTiming=[];
-  if(hasTiming&&options.timingScale!=='day')missingTiming.push('timingScale');
-  if(hasTiming&&(options.timingContext?.castingMethod!=='pre-heaven'||options.timingContext?.periodMethod!=='element-qi'))missingTiming.push('timingMethod');
-  if(missingTiming.length)return {status:'requires-context',missingContext:missingTiming,reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
+  if(storedTiming&&options.timingScale!=='day')missingTiming.push('timingScale');
+  if(storedTiming&&(options.timingContext?.castingMethod!=='pre-heaven'||options.timingContext?.periodMethod!=='element-qi'))missingTiming.push('timingMethod');
+  if(includeHistoricalVoid&&missingTiming.length)return {status:'requires-context',missingContext:missingTiming,reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
+  const hasTiming=storedTiming&&!missingTiming.length;
+  const timingOmission=missingTiming.length?{status:'not-derived',reason:'此起卦方式或时间尺度无法按先天卦气取日。',sourceIds:['mh-058','mh-122']}:row.timingOmission;
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
   const timingNote=hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE;
   const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+timingNote+(hasTiming?'\n'+row.timingSlots.map(s=>s.token).join(' '):''),'总断：'+c.summary];
-  const allSlots=[...row.timingSlots,...row.voidTimingSlots];
+  const allSlots=hasTiming?[...row.timingSlots,...row.voidTimingSlots]:[];
   const dates=hasTiming?resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext}):
    {status:'resolved',paragraphs,dateMatches:[],castingDate:reading.castingDate,dayGanzhi:reading.dayGanzhi};
   if(dates.status!=='resolved')throw new Error('Complete interview context failed to resolve dates');
@@ -164,16 +170,22 @@ export function createInterviewManuscriptRepository({library,readJSON}){
    ...row.counterevidence.map(c=>c.resolution),
    `判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
   ]:[];
+  const monthNote=reading.monthBranch?`月令：${reading.monthBranch}月。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}。具体月令未提供。`;
+  const dayNote=`起卦日：${reading.castingDate}，${reading.dayGanzhi}日`;
+  const dateAndMonthNotes=includeHistoricalVoid?[
+   (reading.monthBranch?monthNote:monthNote.replace('。具体月令','；具体月令'))+'旺衰与旬空分别计算。',
+   dayNote+`；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
+  ]:[monthNote,dayNote+'。'];
   const calculationExplanation={
    month:{branch:reading.monthBranch,input:reading.monthBranch?'explicit-branch':'qi-category-only',qiCategory:reading.monthOrder,states:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state}))},
-   void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
-    nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]},
-   timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(row.timingOmission?{omission:row.timingOmission}:{})},
-   paragraphs:[reading.monthBranch?`月令：${reading.monthBranch}月。旺衰与旬空分别计算。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}；具体月令未提供。旺衰与旬空分别计算。`,`起卦日：${reading.castingDate}，${reading.dayGanzhi}日；旬空：${reading.nodes.find(n=>n.role==='body').void.xun.branches.join('、')}。`,
+   ...(includeHistoricalVoid?{void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
+    nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]}}:{}),
+   timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(timingOmission?{omission:timingOmission}:{})},
+   paragraphs:[...dateAndMonthNotes,
     ...detailLines,
     ...(exactProfile&&row.voidScenario?.origin!=='individual-void-manuscript'?row.coreVoidNotes:[]),
-    `空亡依据：八卦配支补充法，版本${VOID_RULESET.id}。`,
-    ...(row.timingOmission?[row.timingOmission.reason]:[]),
+    ...(includeHistoricalVoid?[`空亡依据：八卦配支补充法，版本${VOID_RULESET.id}。`]:[]),
+    ...(timingOmission?[timingOmission.reason]:[]),
     ...dateResolution.dateMatches.map(d=>{
      const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
      const role=d.calculationBasis.role;
@@ -182,7 +194,7 @@ export function createInterviewManuscriptRepository({library,readJSON}){
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
-   review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:row.review.version,productionAllowed:true,predictionAllowed:true,
+   review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:!includeHistoricalVoid?'not-applied':exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:row.review.version,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});
  }
  return Object.freeze({getContent,clearCache:()=>cache.clear()});

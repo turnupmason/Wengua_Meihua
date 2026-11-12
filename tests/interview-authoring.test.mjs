@@ -6,7 +6,7 @@ import {createInterviewReading,interviewTimingSlots} from '../src/interview-manu
 import {MONTH_SLOTS,assessVoid} from '../src/index.js';
 import {checkInterviewDecision,checkInterviewShort} from '../src/interview-decision-checks.js';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
-const library=await loadLibrary(),product=createProductRepository({library});
+const library=await loadLibrary(),product=createProductRepository({library,includeHistoricalInterviewVoid:true});
 const question=await product.getQuestion('career.interview.interview-pass');
 const index=await read('data/authored-readings/interview-pass/index.json');
 const all=await Promise.all(index.files.map(f=>read(f.path)));

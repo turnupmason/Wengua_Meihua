@@ -38,7 +38,8 @@ describe('casting and freezing', () => {
     // Manual casts without explicit context leave it missing instead of guessing.
     expect(rec.context).toEqual({ monthBranch: null, dayGanzhi: null, voidBasis: null });
     const reading = readingFromCast(library, rec);
-    expect(reading.contextualAssessment.missing).toEqual(['calendar-context', 'void-ganzhi']);
+    expect(reading.contextualAssessment.missing).toEqual(['calendar-context']);
+    expect(reading.nodes.every((node) => node.void.state === 'not_applied')).toBe(true);
   });
 
   it('frozen records are immutable and reproduce the same reading', async () => {

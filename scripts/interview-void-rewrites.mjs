@@ -119,7 +119,8 @@ export async function authorInterviewVoidRewrites({root,library,question,existin
 
 export async function writeInterviewVoidRewrites({root,library,question,runtime,rows,progress}) {
   const catalogue = [
-    '# 本轮面试空亡专稿', '',
+    '# 本轮面试空亡专稿归档', '',
+    '旧稿仅供历史查阅。现行面试结果见 [基础正文](INTERVIEW_PASS_ALL_BASES.md)。', '',
     `当前历法可达的需查稿状态共 ${progress.requiredExactStates} 个，已覆盖 ${progress.coveredExactStates} 个，待写 ${progress.remainingExactStates} 个。`,
     `本次逐篇撰写及作者全文复核 ${progress.newManuscriptsWrittenAndReviewed} 篇，对应 ${progress.newExactStates} 个精确状态。独立专业审核待进行。`, '',
     `原逐篇参考稿已有 ${progress.retainedReferenceStates} 个可精确匹配的状态，沿用原稿。`, '',

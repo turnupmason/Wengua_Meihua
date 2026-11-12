@@ -9,7 +9,9 @@ import {getVoidProfileKey} from '../src/prewritten-manuscripts.js';
 const require = createRequire(new URL('../apps/mobile/package.json', import.meta.url));
 const {Solar} = require('lunar-javascript');
 assert.equal(require('lunar-javascript/package.json').version, '1.7.7');
-const requestedIds = process.argv.slice(2).map(Number);
+const args = process.argv.slice(2);
+const baseOnly = args.includes('--base');
+const requestedIds = args.filter(arg => arg !== '--base').map(Number);
 assert.ok(requestedIds.every(id => Number.isInteger(id) && id >= 1 && id <= 64), 'Provide hexagram ids 1 through 64');
 const dayMs = 86400000;
 const start = Date.UTC(2027, 0, 1);
@@ -59,12 +61,13 @@ function expectedVoid(node, day, monthElement, useElement) {
 
 const readJSON = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const index = await readJSON('data/authored-readings/interview-pass/index.json');
-const product = createProductRepository({library:await loadLibrary(), readJSON});
+const product = createProductRepository({library:await loadLibrary(), readJSON,includeHistoricalInterviewVoid:!baseOnly});
 const options = {questionId:index.questionId, timingScale:'day', timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 const totals = {};
-for (const id of requestedIds.length ? requestedIds : [1, 2, 3, 12, 25, 31, 33]) {
+const selectedIds = requestedIds.length ? requestedIds : baseOnly ? index.files.map(f => f.primaryId) : [1, 2, 3, 12, 25, 31, 33];
+for (const id of selectedIds) {
   const file = await readJSON(index.files.find(f => f.primaryId === id).path);
-  const testedKeys = Object.entries(file.monthSlots).filter(([key, position]) => requestedIds.length || id <= 3 ||
+  const testedKeys = Object.entries(file.monthSlots).filter(([key, position]) => baseOnly || requestedIds.length || id <= 3 ||
     file.rows.some(r => !r.baseProse && r.movingLine === file.rows[position].movingLine && r.monthBranches.includes(key.split(':')[1])));
   const stats = {monthSlots:testedKeys.length, ready:0, exact:0, windows:0, nextMonthWindows:0, noDate:0};
   const seenContexts = new Set();
@@ -85,7 +88,11 @@ for (const id of requestedIds.length ? requestedIds : [1, 2, 3, 12, 25, 31, 33])
       const use = reading.nodes.find(n => n.role === 'use');
       const inherited = reading.nodes.find(n => n.role === 'body_inherited');
       assert.deepEqual(inherited.void, originalBody.void, trace);
-      for (const node of reading.nodes.filter(n => n.role !== 'body_inherited')) {
+      if(baseOnly){
+        assert.ok(reading.nodes.every(n => n.void.state === 'not_applied'), trace);
+        assert.equal(out.calculationExplanation.void, undefined, trace);
+      }
+      for (const node of baseOnly ? [] : reading.nodes.filter(n => n.role !== 'body_inherited')) {
         const expected = expectedVoid(node,day,elementByBranch[monthBranch],use.element);
         assert.equal(node.void.xun.xunHead, day.xun, trace);
         assert.equal(node.void.xun.branches.join(''), day.empty, trace);
@@ -94,13 +101,13 @@ for (const id of requestedIds.length ? requestedIds : [1, 2, 3, 12, 25, 31, 33])
         assert.equal(node.void.state, expected.state, trace);
         assert.equal(node.void.effective, expected.effective, trace);
       }
-      const exact = exactRows.get(getVoidProfileKey(reading));
+      const exact = baseOnly ? undefined : exactRows.get(getVoidProfileKey(reading));
       const affected = reading.nodes.filter(n => n.role !== 'body_inherited' && n.void.effective !== 'active');
       assert.ok(exact || affected.length === 0, `Missing exact void manuscript: ${trace}`);
       const manuscript = exact ?? base;
       assert.equal(out.status, 'ready', trace);
       assert.equal(out.productionAllowed, true, trace);
-      assert.equal(out.voidMatch, exact ? 'recorded-context' : 'base-with-no-core-change', trace);
+      assert.equal(out.voidMatch, baseOnly ? 'not-applied' : exact ? 'recorded-context' : 'base-with-no-core-change', trace);
       assert.equal(out.short, manuscript.copy.short.text, trace);
       assert.equal(out.decision.id, manuscript.decision.id, trace);
       assert.deepEqual(out.long, manuscript.copy.long, trace);
@@ -132,7 +139,7 @@ for (const id of requestedIds.length ? requestedIds : [1, 2, 3, 12, 25, 31, 33])
     }
     assert.equal(readyForKey, castingDays.length, `Incomplete two-year coverage for ${id}/${key}`);
   }
-  assert.equal(seenContexts.size, file.rows.filter(r => !r.baseProse).length);
+  if(!baseOnly)assert.equal(seenContexts.size, file.rows.filter(r => !r.baseProse).length);
   totals[id] = stats;
   console.log(JSON.stringify({primaryId:id,...stats}));
 }

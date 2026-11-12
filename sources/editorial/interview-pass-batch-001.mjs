@@ -1,28 +1,34 @@
 // Individually authored first batch for one fixed product question; no runtime language generation.
-const good=(role)=>({id:'result',kind:'support',role,event:'本轮面试通过结果明朗',valence:'吉',ruleIds:['fame-date'],sourceIds:['mh-071','mh-116','mh-143'],prefix:'可重点留意',suffix:'，这是本轮面试通过结果较易明朗的有利窗口，属吉应。'});
+const good=(role,details={})=>({id:'result',kind:'support',role,valence:'吉',ruleIds:['fame-date'],sourceIds:['mh-058','mh-071','mh-116','mh-122','mh-143'],prefix:'可留意',...details});
 const bad=(role)=>({id:'result',kind:'control',role,event:'本轮面试受阻或出现不利结果',valence:'凶',ruleIds:['adverse-event'],sourceIds:['mh-116','mh-143'],prefix:'留意',suffix:'前后的面试进展，容易出现推进受阻或不利反馈，属凶应。回应问题时回到具体经历与岗位要求。'});
 export const INTERVIEW_PASS_BATCH_001=[
  {
   primaryId:5,movingLine:2,outcome:'pass-with-delay',title:'有望通过，等待中仍要把问题说清楚',
-  short:'这一轮面试有望通过，但可能要多等些时间，中间还会有需要解释的地方。把经历里容易引起疑问的部分讲清，等待时照常做好准备，不必急着反复催问。前面的配合仍在，后面有望逐渐落实。',
+  short:'这一轮面试有望通过，但可能要多等些时间，中间还会有需要解释的地方。把经历里容易引起疑问的部分讲清，补答时给一项可复核的结果。等对方核对这项结果，再按明确的要求准备下一步。',
   opening:'这轮面试有推进基础。坎水体得冬令而旺，乾金用属休而生体。对方的考察仍有接续的条件，你这边也有承接机会的余地。',
   process:'中间可能需要再说明一些细节。体互离火冬令属死，受体水所克，相关问题仍有处理余地；用互兑金生体，虽属休，仍保留支持。等待之中，适合把需要回应的问题回答完整。',
   ending:'九二“需于沙，小有言，终吉”，把中间的不同意见与后面的转好连在一起。变用离火受体水所克；火弱、水旺，末后的问题有处理空间。这轮偏向可以通过，但落实稍慢。',
   summary:'本轮倾向能过，先慢后成。等待中把疑问答清，按已经明确的要求准备，等对方给出下一步安排。',
   lineApplication:{evidence:['需于沙','小有言','终吉'],conditions:['等待与终吉一起解释，不把小有言写成考官刻意刁难']},
   counterevidence:[{fact:'体互离火弱，变用虽受体克仍有迟成之意',resolution:'承认中段停顿与末后需要处理事项，保留通过而非立即通过。'}],
-  timing:[good('use')]
+  timing:[good('use',{stage:'opening',eventScope:'positive-result-candidate',
+   event:'本轮面试中的不同意见澄清后，通过较易明朗',
+   suffix:'前后，若补充说明已经核实，可留意本轮通过结果。等待仍可能持续。',
+   reason:'冬休乾从本用直接生旺坎，休兑中生可承接，末死离所示要求可处理。以需九二终吉为支持，取疑点已经澄清后的结果。'})]
  },
  {
   primaryId:6,movingLine:5,outcome:'pass-after-clarification',title:'有望通过，说明疑点比争辩更有用',
   short:'这一轮面试偏向能够通过，但中间可能有需要解释的地方。把问题说具体，把前后经历讲一致，事情更容易往下走。后段仍有处理分歧的余地，遇到追问就回到事实，别让反复争辩盖过真正需要说明的内容。',
   opening:'这轮面试有继续谈下去的基础。乾金用生坎水体，金虽冬休，坎水自身得令，能够承接这份支持。开头不必急着把所有优势一次讲完，先对准所问。',
   process:'中间可能有观点或表述需要澄清。体互离火冬令属死，受体水所克，疑点仍有处理余地；用互巽木属相，受体水所生，解释和补充也会花些精力。把事实讲清楚，比反复强调立场更有帮助。',
-  ending:'九五“讼，元吉”，有在争议中得到恰当裁断的积极意味。变用离火仍受旺水体所克，离火冬令属死，力量较弱，末后的疑点仍有处理余地。结合初期生体，这轮偏向能通过。',
+  ending:'九五“讼，元吉”，问答中有分歧时，按实际经过说清楚，有机会得到公允的判断。变用离火仍受旺水体所克，离火冬令属死，力量较弱，末后的疑点仍有处理余地。结合初期生体，这轮偏向能通过。',
   summary:'本轮通过倾向较好。遇到追问就回到具体经历，让事实把疑点说清，比反复强调自己的立场更有用。',
-  lineApplication:{evidence:['讼，元吉'],conditions:['元吉用于本次考察的澄清与判断，不扩展成真实诉讼或保证裁判']},
+  lineApplication:{evidence:['讼，元吉'],conditions:['《小象》以中正释元吉，本轮取以可核实的事实澄清分歧，判断能否落实仍依体用和实际承接。']},
   counterevidence:[{fact:'用互巽木受体生，中段有耗费',resolution:'体水当旺可承接消耗；末后受体克的问题弱，未压过本用生体与元吉。'}],
-  timing:[good('use')]
+  timing:[good('use',{stage:'opening',eventScope:'positive-result-candidate',
+   event:'本轮面试中的实际分歧说清并核实后，通过较易明朗',
+   suffix:'前后，若实际分歧已经厘清，可留意本轮通过结果。',
+   reason:'冬休乾初生旺坎，原体能承相巽中耗及末死离实作，符合讼九五以中正解争后的结果。'})]
  },
  {
   primaryId:16,movingLine:2,outcome:'pass-after-early-caution',title:'起初要谨慎，后面有望通过',
@@ -33,7 +39,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮倾向能过，后势较好。看清要求后及时回应，守住准确和分寸，不必为了表现积极而勉强作答。',
   lineApplication:{evidence:['介于石','不终日','贞吉'],conditions:['不终日取及时辨别之意，不折算为当天公布结果']},
   counterevidence:[{fact:'开局体克用有迟成义',resolution:'中后段旺水生体支持通过，仍不保证立即通过。'}],
-  timing:[good('changed_use')]
+  timing:[good('changed_use',{stage:'closing',eventScope:'positive-result-candidate',
+   event:'本轮面试的关键答复核对后，通过较易明确',
+   suffix:'前后，若已把关键要求答实，可留意本轮通过结果。',
+   reason:'旺坎从变用直接生冬相震，中段另有旺水实助，先按介于石、不终日的取义及时辨明，再取结果候选。'})]
  },
  {
   primaryId:18,movingLine:3,outcome:'not-pass-this-round',title:'这轮通过偏难，后面仍有修正余地',

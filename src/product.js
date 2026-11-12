@@ -6,9 +6,9 @@ const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
 const SUBCATEGORY_COUNTS=[8,9,10,8,9,8];
 /** Product navigation is independent of the eighteen classical source domains. */
-export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository}={}){
+export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository,includeHistoricalInterviewVoid=false}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
- const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON});let cache;
+ const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid:includeHistoricalInterviewVoid});let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
    if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='1.0.0'||c.categoryCount!==6||c.subcategoryCount!==52||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');

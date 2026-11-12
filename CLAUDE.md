@@ -1,6 +1,6 @@
-当前任务完成范围：career.interview.interview-pass基础库，64卦×6动爻×12月令＝4,608槽位，实际正文1,920份；全部目录docs/INTERVIEW_PASS_ALL_BASES.md，覆盖与作者方式见data/authored-readings/interview-pass/index.json。拿到最终录用是另一问，未由本库覆盖。核心空亡改变判断的版本仍另匹配。
+`career.interview.interview-pass` 基础库覆盖 384 种卦爻组合与 4,608 个月令键，保存 1,920 篇正文。问项只涉及本轮面试。全文见 [基础目录](docs/INTERVIEW_PASS_ALL_BASES.md)，逐条核对结果见 [终校记录](docs/INTERVIEW_FINAL_REVIEW_20261112.md)。
 
-保留原60份逐篇稿。原离线编译的1,860份正在逐篇重写，进度和下一篇精确键见data/authored-readings/progress.json。重写作者源位于sources/editorial/interview-rewrites/，构建时按盘、爻、月令气类优先读取。乾为天、坤为地两批作者全文复核分别见docs/INTERVIEW_REWRITE_001.md和docs/INTERVIEW_REWRITE_002.md，稿件版本interview-pass-2.1.0。未重写稿的authorship.manualWholeArticleReview仍为false。独立专业审核仍为pending。客户端直接读已存字段。
+原 60 篇及已逐篇重写的 1,860 篇均有持久作者源。构建按卦、爻、月令读取 `sources/editorial/interview-rewrites/` 和原对照稿。当前进度见 [progress.json](data/authored-readings/progress.json)。独立专业审核仍为 pending。客户端读取预写字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。
 
@@ -16,7 +16,7 @@ monthBranch是实际月令。只传旧monthOrder气类时monthBranch为null，�
 
 本轮复核见docs/INTERVIEW_REVIEW_20261111.md。山雷颐六二、山风蛊九三的夏令与土令共4份稿已由倾向通过改为难以通过。checkInterviewDecision拦截本用克体、无直接生体且仅凭旺体或互卦比和翻吉的稿件；该检查属于本项目面试问项的来源一致性门槛，不是跨领域通用预测公式。
 
-当前稿版本interview-pass-2.0.0。半空等专业信息只在calculationExplanation里，短断与story/paragraphs不混入。页面将“计算说明”单独折叠；空亡规则独立版本trigram-void-2.1.0，不能说成古籍统一计分。
+稿件库版本为 `interview-pass-2.0.0`，终校修订为 `interview-pass-final-review-20261112`。页面将“计算说明”单独折叠。
 
 每条日期窗口的dateResolution.dateMatches分别保存slotId、event、valence、eventScope、targetBranches、calculationBasis与实际公历日期；不把过程凶应和最终有利候选合并。日期动态换算，不存死日号。review.independentReview及dateResolution.independentInterpretationReview均保留pending，userAcceptedThisVersion:false；代码检查与作者复核不冒充用户或独立断法审核。
 
@@ -26,9 +26,9 @@ monthBranch是实际月令。只传旧monthOrder气类时monthBranch为null，�
 
 JSON按本卦分片，monthSlots以动爻:月令指向行池；每次只读一个卦的分片，缓存保留索引和最近两个分片。SQL分开存authored_product_manuscripts全文与authored_product_month_slots月令映射。重复正文不重复下载。
 
-旬空按八卦配支，不采用六爻纳甲。全中记全空，部分命中记半空并定性减力，不擅设50%或整卦消失。命中形态与旺不为空、动不为空、生扶、衰极的作用状态分开。基础正文不预设旬空，无空或核心作用不变时使用基础稿；会改变核心判断而未另写的情境返回待写。普通互卦静空不自动改结论或另排填冲日期。详见docs/VOID_POLICY_V2.md。
+当前和后续问项按经典体用法推进，旬空补充规则及专稿归档。面试通过按本卦、真实动爻、月令查正文，起卦日用于符合条件的应期换算。
 
-用户已确认文风和应期，继续逐篇写作，无需重复求批。不要在用户可见结果里加“空亡采用你批准的扩展规则”或其同义尾注。内部来源、事实和作者复核照常保留。应期必须说明事件、吉凶；过程受阻不等于失败公布日，修正窗口不等于通过日。日期按保存的起卦日换算，本月无合适候选才找下月，历史不随阅读日滚动。
+用户已确认文风和应期，继续逐篇写作，无需重复求批。内部来源、事实和作者复核照常保留。应期必须说明事件、吉凶；过程受阻不等于失败公布日，修正窗口不等于通过日。日期按保存的起卦日换算，本月无合适候选才找下月，历史不随阅读日滚动。
 
 本助手是实际写作者与逐篇复核者，状态为author-checked，不声称独立人类专家或用户逐篇认证。旧1,920篇批次与旧审核视图单列。
 

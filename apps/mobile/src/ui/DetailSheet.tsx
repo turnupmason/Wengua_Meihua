@@ -348,7 +348,9 @@ function castNumbers(raw: Record<string, unknown>, lang: Lang): string {
 function ReadingBasis({ reading, record, t, lang }: { reading: Reading; record: CastRecord | null; t: Strings; lang: Lang }) {
   const el = (e: string) => (lang === 'en' ? `${e} ${ELEMENT_EN[e] ?? ''}` : e);
   const ganzhi = record?.context.dayGanzhi ?? null;
-  const targets = ganzhi ? getVoidReleaseTargets(ganzhi) : null;
+  const showHistoricalVoid = reading.nodes.some((node) => node.void.state !== 'not_applied');
+  const targets = showHistoricalVoid && ganzhi ? getVoidReleaseTargets(ganzhi) : null;
+  const gradeNote = showHistoricalVoid ? t.fixedGrade : lang === 'en' ? 'The base grade is fixed.' : '卦的基础等级固定。';
   const missing = reading.contextualAssessment.missing;
   return (
     <section className="basis">
@@ -374,7 +376,7 @@ function ReadingBasis({ reading, record, t, lang }: { reading: Reading; record: 
           <tr>
             <th />
             <th>{t.strength}</th>
-            <th>{t.voidLabel}</th>
+            {showHistoricalVoid && <th>{t.voidLabel}</th>}
           </tr>
         </thead>
         <tbody>
@@ -385,7 +387,7 @@ function ReadingBasis({ reading, record, t, lang }: { reading: Reading; record: 
                 {n.element}
               </td>
               <td>{strengthText(n.strength.state, n.strength.label)}</td>
-              <td>{n.void.label}</td>
+              {showHistoricalVoid && <td>{n.void.label}</td>}
             </tr>
           ))}
         </tbody>
@@ -411,7 +413,7 @@ function ReadingBasis({ reading, record, t, lang }: { reading: Reading; record: 
         <p className="classical small">{reading.domain.text}</p>
       </details>
       <p className="note">
-        {t.fixedGrade} {t.noScore}
+        {gradeNote} {t.noScore}
       </p>
       {record && (
         <details className="fold">

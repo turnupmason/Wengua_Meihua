@@ -7,7 +7,8 @@ import {checkInterviewDecision,checkInterviewShort} from '../src/interview-decis
 import {interviewTimingSlots} from '../src/interview-manuscripts.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
-const library=await loadLibrary(),product=createProductRepository({library}),question=await product.getQuestion('career.interview.interview-pass');
+const library=await loadLibrary(),product=createProductRepository({library,includeHistoricalInterviewVoid:true}),question=await product.getQuestion('career.interview.interview-pass');
+const currentProduct=createProductRepository({library});
 const index=await read('data/authored-readings/interview-pass/index.json'),files=await Promise.all(index.files.map(f=>read(f.path)));
 const ledger=await loadInterviewLineLedger(library),allRows=files.flatMap(f=>f.rows),rows=allRows.filter(r=>r.baseProse);
 const cast={castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
@@ -44,10 +45,14 @@ test('every full-base record independently binds canonical geometry, all five-st
    assert.equal(row.voidProfileKey,'base-no-void');assert.ok(row.lineApplication.sourcePath);
    const rewritten=row.authorship.method==='individually-rewritten-and-reviewed';
    assert.equal(row.authorship.manualWholeArticleReview,rewritten);
-   if(rewritten){
-    assert.equal(row.authorship.version,row.review.version);
-    for(const source of row.decision.sourceEvidence)assert.ok(library.getSection(source.id).text.includes(source.quote));
-   }
+  }
+  assert.equal(row.authorship.version,row.review.version);
+  assert.equal(row.lineApplication.evidence[0],row.movingLineText);
+  assert.ok(row.decision.sourceEvidence.length);
+  for(const source of row.decision.sourceEvidence){
+   const section=library.getSection(source.id);
+   assert.ok(section.text.includes(source.quote));
+   assert.deepEqual(source.locator,section.sourceRef);
   }
  }
 });
@@ -57,6 +62,13 @@ test('all stored timing forms have sourced events and convert a future casting d
  for(const row of rows){
   const reading=createBaseInterviewReading({library,question,...cast,castingDate:'2028-03-20',primaryId:row.primaryId,movingLine:row.movingLine,monthOrder:row.monthOrder});
   const slots=interviewTimingSlots(reading,row.timingSlots);slots.forEach(s=>kinds.add(s.kind));
+  for(const slot of slots){
+   const stage={use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing',body:'closing'}[slot.role];
+   assert.ok(slot.reason);
+   assert.equal(slot.stage,stage);
+   if(slot.eventScope==='positive-result-candidate')assert.match(row.decision.outcomeCode,/^pass/);
+   else assert.ok(slot.eventScope.startsWith(stage+'-'));
+  }
   const rendered=resolveManuscriptDates({paragraphs:slots.map(s=>s.token),dateSlots:slots,reading,...cast,castingDate:'2028-03-20'});
   assert.equal(rendered.status,'resolved');assert.ok(rendered.paragraphs.every(p=>!p.includes('{{date:')));
   for(const window of rendered.dateMatches){assert.ok(window.event&&window.valence&&window.sourceIds.length);assert.ok(window.matches.every(d=>d.date>='2028-03-20'));}
@@ -99,7 +111,7 @@ test('authored Tun separates opening support, process obstruction, and closing c
  const early=await product.getContent({...input,movingLine:5,monthBranch:'午'});
  assert.equal(early.status,'ready');
  assert.equal(early.decision.outcomeCode,'not-pass-this-round');
- assert.equal(early.timingSection.windows[0].eventScope,'process-repair');
+ assert.equal(early.timingSection.windows[0].eventScope,'opening-repair');
  assert.equal(early.timingSection.windows[0].calculationBasis.stage,'opening');
  assert.deepEqual(early.timingSection.windows[0].calculationBasis.ruleIds,['good-event']);
  assert.ok(!early.timingSection.windows[0].sourceIds.includes('mh-071'));
@@ -127,6 +139,32 @@ test('different seasonal strength can change a verdict without ignoring weak end
   const reading=createBaseInterviewReading({library,question,...cast,primaryId:27,movingLine:2,monthOrder});
   assert.equal(decideBaseInterview(reading,ledger.get('27/2')).outcome,'not-pass-this-round');
  }
+});
+
+test('current interview production uses every base month key, including formerly missing void contexts',async()=>{
+ for(const file of files)for(const [key,position] of Object.entries(file.monthSlots)){
+  const row=file.rows[position],monthBranch=key.split(':')[1];
+  const out=await currentProduct.getContent({...cast,castingDate:'2027-01-31',questionId:question.id,
+   primaryId:row.primaryId,movingLine:row.movingLine,monthBranch});
+  assert.equal(out.status,'ready');
+  assert.equal(out.monthBranch,monthBranch);
+  assert.equal(out.voidMatch,'not-applied');
+  assert.equal(out.decision.id,row.decision.id);
+  assert.equal(out.short,row.copy.short.text);
+  assert.deepEqual(out.long,row.copy.long);
+  assert.ok(out.reading.nodes.every(node=>node.void.state==='not_applied'));
+  assert.equal(out.calculationExplanation.void,undefined);
+  assert.doesNotMatch(out.calculationExplanation.paragraphs.join('\n'),/旬空|半空|空亡/);
+ }
+});
+
+test('a cast without the appropriate timing method still receives the authored interview prose',async()=>{
+ const out=await currentProduct.getContent({...cast,questionId:question.id,primaryId:5,movingLine:2,
+  monthBranch:'酉',timingContext:{castingMethod:'post-heaven',periodMethod:'element-qi'}});
+ assert.equal(out.status,'ready');
+ assert.match(out.decision.outcomeCode,/^pass/);
+ assert.deepEqual(out.timingSection.windows,[]);
+ assert.match(out.calculationExplanation.timing.omission.reason,/起卦方式/);
 });
 
 test('every base key has at least one eligible manuscript, preferring exact matches',async()=>{
@@ -176,18 +214,18 @@ test('Qian distinguishes dormant and supported body states within one xun',async
  assert.notEqual(dormant.decision.id,supported.decision.id);
 });
 
-test('an active supporting node does not retain a positive result date after the body weakens',async()=>{
+test('historical Tun contexts distinguish a closing repair window from unavailable timing',async()=>{
  const options={...cast,questionId:question.id,primaryId:3,movingLine:2,monthBranch:'寅'};
  const onlyMutual=await product.getContent({...options,castingDate:'2027-01-25'});
  const affectedBody=await product.getContent({...options,castingDate:'2027-02-10'});
  assert.equal(onlyMutual.status,'ready');
  assert.equal(onlyMutual.decision.outcomeCode,'pass-with-conditions');
- assert.equal(onlyMutual.timingSection.windows[0].eventScope,'positive-result-candidate');
+ assert.equal(onlyMutual.timingSection.windows[0].eventScope,'closing-repair');
  assert.equal(affectedBody.status,'ready');
  assert.equal(affectedBody.decision.outcomeCode,'not-pass-this-round');
  assert.equal(affectedBody.reading.nodes.find(n=>n.role==='changed_use').void.effective,'active');
- assert.deepEqual(affectedBody.timingSection.windows,[]);
- assert.match(affectedBody.calculationExplanation.timing.omission.reason,/承接条件不足/);
+ assert.ok(affectedBody.timingSection.windows.every(window=>window.eventScope==='closing-repair'));
+ assert.doesNotMatch(affectedBody.story,/通过结果.{0,8}(明朗|明确)/);
 });
 
 test('the ten corrected Tun line quotations point to the collated text and retain the upload reference',async()=>{

@@ -139,6 +139,7 @@ export function readingFromCast(library: Library, record: CastRecord): Readonly<
     movingLine: record.movingLine,
     domainId: record.domainId,
     calendar: record.context.monthBranch ? { monthBranch: record.context.monthBranch as never } : {},
+    applyVoid: record.ruleProfile.id !== 'classical-body-use',
     voidContext: record.context.dayGanzhi ? { ganzhi: record.context.dayGanzhi } : {},
     mutualPolicy: record.mutualPolicy,
     question: record.question,
@@ -213,10 +214,10 @@ export function freezeCast(
     }
   }
 
+  context = { ...context, voidBasis: null };
   const reading = library.createReading({
-    primaryId, movingLine, domainId, mutualPolicy,
+    primaryId, movingLine, domainId, mutualPolicy, applyVoid: false,
     calendar: context.monthBranch ? { monthBranch: context.monthBranch as never } : {},
-    voidContext: context.dayGanzhi ? { ganzhi: context.dayGanzhi } : {},
   });
   const snap = (s: 'primary' | 'mutual' | 'changed'): StageSnapshot => ({
     id: reading.stages[s].id,

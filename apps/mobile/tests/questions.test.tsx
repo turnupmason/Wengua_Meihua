@@ -279,8 +279,8 @@ describe('断语 lookup (createProductRepository)', () => {
     expect(await at('career.interview.job-offer')).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
     expect(await at('wealth.debt.receivable')).toMatchObject({ state: 'missing', reason: 'pending-review' });
     expect(await at('search.lost-object.recovery', { conditions: { objectKind: 'phone' } })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
-    // This 断语's dates are reckoned for number-based (先天) casts only.
-    expect(await at(INTERVIEW, { method: 'object-direction' })).toMatchObject({ state: 'missing', reason: 'requires-context' });
+    // The stored dates use the number-based (先天) method. A 后天 cast still receives the prose.
+    expect(await at(INTERVIEW, { method: 'object-direction' })).toMatchObject({ state: 'ready', timing: { windows: [] } });
     // No month or day: nothing to look up by.
     expect(await at(INTERVIEW, { monthBranch: null })).toMatchObject({ state: 'missing', reason: 'requires-context' });
   });
@@ -405,7 +405,8 @@ describe('cast, reading and 问事录', () => {
     expect(timing.textContent).toMatch(/吉|凶/);
     const calc = document.querySelector('details.script-calc') as HTMLDetailsElement;
     expect(calc.open).toBe(false);
-    expect(calc.textContent).toMatch(/旬空/);
+    expect(calc.textContent).not.toMatch(/旬空|空亡/);
+    expect(calc.textContent).toMatch(/亥月/);
     expect(document.body.textContent).not.toMatch(/interview-pass|trigram-void|mh-\d/);
     fireEvent.click(screen.getByRole('button', { name: '《梅花易数·求名占第九》 ↗' }));
     expect(opened).toEqual(['求名占第九']);

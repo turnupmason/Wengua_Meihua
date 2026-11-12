@@ -19,7 +19,7 @@ export default {
       summary: '本轮偏难通过，可能在等待中继续补答。按明确要求把相关经历说清，收到反馈再判断是否还需补充。',
       counterevidence: '原稿见乾兑生体即取有望。春金均囚，休坎中段制相离费力，末后又生旺巽，无咎限守常少失，改为偏难。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾整理材料或补充说明可能较耗精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾整理材料或补充说明可能较耗精力', eventScope: 'closing-drain',
         suffix: '前后，若收尾还需补材料，整理和说明可能比较费心，属阶段性凶应。',
         reason: '变巽旺而受休体生，木日作收尾投入参考，取自《日应》。',
       },
@@ -34,7 +34,7 @@ export default {
       summary: '本轮偏难通过，进展会慢在实际核验。先照明确要求准备，答到不熟悉的工作就说明条件。',
       counterevidence: '两金仍生体，巽休耗费不重，初九守常可少失。夏金死助弱，囚坎难制旺离，等待有用但难促成结果，修订原稿。',
       timing: {
-        kind: 'support', role: 'use', event: '早段可能收到针对准备内容的提示', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '早段可能收到针对准备内容的提示', eventScope: 'opening-support',
         suffix: '前后，若有进一步要求，较可能得到针对准备内容的提示，属阶段性吉应。整体通过仍偏难。',
         reason: '死乾生体仍有作用但较弱，金日只作早段准备提示参考。',
       },
@@ -49,7 +49,7 @@ export default {
       summary: '本轮倾向能过，确认可能稍慢。按已明确的范围把补答做好，暂时没消息就给确认留些时间。',
       counterevidence: '初九无咎不单独许成，变用仍泄。乾兑旺金前中相继生相水，体互囚离可制，末后死木耗轻，支持守常后通过。',
       timing: {
-        kind: 'support', role: 'use', event: '早段容易收到明确的考察安排或要求', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '早段容易收到明确的考察安排或要求', eventScope: 'opening-support',
         suffix: '前后，若需继续准备，较容易得到明确安排或要求，属阶段性吉应。最终确认仍需完成。',
         reason: '旺乾生相坎，金日取开局实际支持。末后泄体，早段积极回应不作最终通知。',
       },
@@ -64,7 +64,7 @@ export default {
       summary: '本轮有望通过，后面可能还要补说。问到具体问题就按事实答清，给已有答复留些核对时间。',
       counterevidence: '变巽相泄体，末后耗费并不轻。旺水可承接，前中乾兑休金生体不断在相应阶段发挥，体互死离可制，爻意守常相合。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '末后补答可能比预想费些精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '末后补答可能比预想费些精力', eventScope: 'closing-drain',
         suffix: '前后，收尾若要补清材料，投入可能增加，属阶段性凶应。本轮仍有通过机会。',
         reason: '变巽相受旺水所生，取木日为末后补答投入，旺体仍能承接。',
       },
@@ -76,10 +76,10 @@ export default {
       opening: '土令坎水体属死，本用乾金属相而生水，起初有实际助力，回应要求仍需花力气。',
       process: '体互离火土休，受死水所克，具体核验较吃力。用互兑金属相，直接生体，可以借助明确的反馈把问题逐项答清。',
       ending: '初九“需于郊，利用恒，无咎”，按要求把已有准备做完，等待中少冒进。变用巽木土囚，仍受体水所生，收尾有投入但分量较轻。前中段相金的生助能接上，这轮有望通过，落实偏慢。',
-      summary: '本轮有望慢成。把前面收到的要求逐项落实，尤其先答最关键的一处，不急于催确认。',
+      summary: '本轮有望通过，确认不会太快。先答开场已经明确的首要要求，末后只补确实需要核对的材料。',
       counterevidence: '死水制休离吃力、末后仍泄。前中相金直接生体较实，巽囚耗较轻，守常下仍有成就机会。',
       timing: {
-        kind: 'support', role: 'use', event: '较易在早段收到可落实的准备要求', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '较易在早段收到可落实的准备要求', eventScope: 'opening-support',
         suffix: '前后，较有机会得到可以照着准备的要求，属阶段性吉应。落实结果仍可能偏慢。',
         reason: '相乾生死坎，金日落在开局可用的帮助，不把实际压力转写为最终确认。',
       },
@@ -94,7 +94,7 @@ export default {
       summary: '本轮偏难通过，容易卡在尚未答清的要求。先核准疑点，再补实际做法，别用催促代替核对。',
       counterevidence: '本用、用互及变用皆直接生体，仍有回复与补救，但春金同囚，体互相离难制。九三致寇与敬慎不败保减害，成就不足。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '收尾可能得到澄清一处疑点的机会', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '收尾可能得到澄清一处疑点的机会', eventScope: 'closing-repair',
         suffix: '前后，若收尾收到追问，较有机会补清一处疑点，属阶段性吉应。本轮通过仍偏难。',
         reason: '囚兑末后生休坎，金日仅用于阶段性补答。',
       },
@@ -109,7 +109,7 @@ export default {
       summary: '本轮偏难通过，实际要求会花较多时间。补答聚焦最欠依据的一项，避免勉强答全。',
       counterevidence: '各生体关系仍有效，九三小象敬慎不败可减损。夏死金力弱，囚体难制旺离，末后改善有限。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '后段可能有机会补说一个关键步骤', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '后段可能有机会补说一个关键步骤', eventScope: 'closing-repair',
         suffix: '前后，若有补答机会，可着重核对最难说明的步骤，属阶段性吉应。',
         reason: '死兑仍直接生体，金日只作末后局部补答参考。',
       },
@@ -139,7 +139,7 @@ export default {
       summary: '本轮偏难通过，后面有修正余地。补答围绕真正需要核实的内容，避免把正常澄清变成催促。',
       counterevidence: '旺坎能制死离、可承接前后休金生扶，确能减轻困难。九三致寇属此盘风险，休金推动较温和，保留补正而未取通过。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '末后可就待核的内容获得进一步回应', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '末后可就待核的内容获得进一步回应', eventScope: 'closing-repair',
         suffix: '前后，较有机会对仍待核实的内容作进一步说明，属阶段性吉应。',
         reason: '休兑生旺坎，按金日取末后补正的机会。',
       },
@@ -154,7 +154,7 @@ export default {
       summary: '本轮偏难通过。已有帮助适合用于核清最难答的问题，切忌在没有新依据时反复推进。',
       counterevidence: '相金直接生体确有持续阶段作用，末后也有修复。死水制休火较费力，九三的戒慎条件未到稳定成就，保留偏难。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '后段有机会补上缺少的一项依据', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '后段有机会补上缺少的一项依据', eventScope: 'closing-repair',
         suffix: '前后，若面试后段需要补材料，较有机会补清一项实际依据，属阶段性吉应。',
         reason: '相兑生死体，金日对应后段较实修正，未形成确定通过日期。',
       },
@@ -214,7 +214,7 @@ export default {
       summary: '本轮偏难通过，后段仍有澄清余地。把精力集中在尚未回答的具体问题。',
       counterevidence: '死离克轻，休兑比和可继续沟通，出穴支持脱离紧张。旺水泄休金在开头较实，收尾同休无生扶，难成。',
       timing: {
-        kind: 'drain', role: 'use', event: '开头准备和解释可能较耗精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '开头准备和解释可能较耗精力', eventScope: 'opening-drain',
         suffix: '前后，若需要预先整理实例或准备说明，投入可能增加，属阶段性凶应。',
         reason: '本用旺坎受休乾所生，水日取开局耗费，保留后段协调。',
       },
@@ -289,7 +289,7 @@ export default {
       summary: '本轮偏难通过，确认可能偏慢。只补已经明确要求的内容，少花力气重复解释。',
       counterevidence: '贞吉及变坤生体保留后援，但旺水泄休金在开局较重，囚坤助力偏弱，原稿将后援推成成就，改判偏难。',
       timing: {
-        kind: 'drain', role: 'use', event: '早段准备或解释可能需要较多投入', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '早段准备或解释可能需要较多投入', eventScope: 'opening-drain',
         suffix: '前后，若开头还有准备或材料说明，可能多花一些心力，属阶段性凶应。',
         reason: '旺坎受休金所生，按水日取起初投入，不指定结果。',
       },
@@ -364,7 +364,7 @@ export default {
       summary: '本轮偏难通过，容易拖在临时要求上。按所问讲实已有能力，超出经历的地方把条件说清。',
       counterevidence: '死离克轻、休兑比和可协调，终吉保留敬慎应对的条件。旺水初泄休金较实，末后相巽难制，条件尚未落实。',
       timing: {
-        kind: 'drain', role: 'use', event: '前段为临时考察准备说明时可能较耗精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '前段为临时考察准备说明时可能较耗精力', eventScope: 'opening-drain',
         suffix: '前后，若需要额外整理说明或准备材料，投入可能增加，属阶段性凶应。',
         reason: '本用旺坎受休乾所生，开局耗费较实，水日对应准备投入。',
       },

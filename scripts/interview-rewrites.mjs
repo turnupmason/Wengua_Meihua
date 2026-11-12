@@ -5,6 +5,7 @@ import {GLOBAL_TIMING_RULES} from '../src/timing-rules.js';
 
 export const REWRITE_VERSION = 'interview-pass-2.1.0';
 export const REWRITE_METHOD = 'individually-rewritten-and-reviewed';
+export const INTERVIEW_FINAL_REVIEW_REVISION = 'interview-pass-final-review-20261112';
 const directory = new URL('../sources/editorial/interview-rewrites/', import.meta.url);
 const sourceDirectory = 'sources/editorial/interview-rewrites/';
 const collatedSourceId = 'collated-yijing64';
@@ -72,13 +73,12 @@ function collatedLineSource(line, text, patchId) {
 
 // Only provenance and storage fields are assembled here. The verdict, prose, rebuttal,
 // event wording, and decision to omit a date come from the complete author source.
-export function bindInterviewRewrite(library, reading, draft) {
+function collectInterviewEvidence(library, reading, draft) {
   const excerpt = (id, quote, reason) => {
     const section = library.getSection(id);
     if (!section.text.includes(quote)) throw new Error(`Interview source excerpt mismatch: ${id}`);
     return {id, title: section.title, quote, locator: section.sourceRef, reason};
   };
-  const selected = reading.selectedMovingLine;
   const relation = role => reading.edges.find(edge => edge.targetRole === role).type;
   const end = relation('changed_use');
   const uses = [
@@ -103,6 +103,40 @@ export function bindInterviewRewrite(library, reading, draft) {
       !reading.edges.some(edge => edge.type === 'use_generates_body')) {
     uses.push(excerpt('mh-116', '如占吉事，无生体之卦，有克体之卦，则事不谐矣。', '本轮求通过属占吉事。有克体而无直接生体时，按本库从严口径判通过偏难。'));
   }
+  return {excerpt, uses};
+}
+
+export function bindInterviewReference(library, reading, draft, sourcePath) {
+  const selected = reading.selectedMovingLine;
+  const {excerpt, uses} = collectInterviewEvidence(library, reading, {
+    ...draft,
+    lineApplication: draft.lineApplication.conditions.join('。'),
+    counterevidence: draft.counterevidence.map(item => item.resolution).join('。'),
+    timing: draft.timing[0],
+  });
+  for (const slot of draft.timing) bindTiming(slot, excerpt, uses);
+  if (draft.timingOmission) {
+    uses.push(excerpt('mh-071', '欲知名成之日，生体之卦气详之。', draft.timingOmission.reason));
+  }
+  const sourceIds = [...new Set([...uses.map(source => source.id), selected.sourceRef.sourceId])];
+  return {
+    ...draft,
+    sourceIds,
+    sourceEvidence: uses,
+    lineApplication: {...draft.lineApplication, evidence: [selected.text], sourcePath},
+    authorship: {
+      method: 'individually-authored-reference-case',
+      version: REWRITE_VERSION,
+      revision: INTERVIEW_FINAL_REVIEW_REVISION,
+      sourcePath,
+      manualWholeArticleReview: true,
+    },
+  };
+}
+
+export function bindInterviewRewrite(library, reading, draft) {
+  const selected = reading.selectedMovingLine;
+  const {excerpt, uses} = collectInterviewEvidence(library, reading, draft);
   const timing = draft.timing ? [bindTiming(draft.timing, excerpt, uses)] : [];
   const timingOmission = draft.timingOmission ? {
     status: 'not-derived',

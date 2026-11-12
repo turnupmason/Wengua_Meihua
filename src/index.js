@@ -234,7 +234,7 @@ export function createLibrary({catalog,sections,domains}) {
     const upper=yearBranchNumber+lunarMonth+lunarDay,total=upper+hourBranchNumber;
     return {...castByTrigramNumbers({upperNumber:upper,lowerNumber:total,movingTotal:total}),method:'classical-time-parts',input:{yearBranchNumber,lunarMonth,lunarDay,hourBranchNumber},sourceSectionTitles:['年月日时起例']};
   }
-  function createReading({primaryId,movingLine,domainId='domain-02',calendar={},voidContext={},mutualPolicy='inner-lines',question='',castId=null}) {
+  function createReading({primaryId,movingLine,domainId='domain-02',calendar={},voidContext={},applyVoid=true,mutualPolicy='inner-lines',question='',castId=null}) {
     integer(movingLine,1,6,'movingLine');
     const h=hex(primaryId),m=mutual(primaryId,movingLine,mutualPolicy),c=changed(primaryId,movingLine);
     const useSide=movingLine<=3?'lower':'upper',bodySide=useSide==='lower'?'upper':'lower';
@@ -245,6 +245,11 @@ export function createLibrary({catalog,sections,domains}) {
       const t=trigrams.get(k[side+'Trigram']);const isBody=stage==='primary'&&side===bodySide;
       const role=stage==='primary'?(isBody?'body':'use'):stage==='mutual'?(side===bodySide?'body_mutual':'use_mutual'):(side===bodySide?'body_inherited':'changed_use');
       const strength=seasonalStrength(t.element,calendar);
+      if(!applyVoid){
+        nodes.push({id:stage+'-'+side,stage,side,trigram:t.id,element:t.element,role,isBody,strength,supportEvidence:[],
+          void:{state:'not_applied',label:'未应用旬空',effective:'active',hit:false,hitKind:'none',matchedBranches:[],branches:[]}});
+        continue;
+      }
       const explicit=voidContext.roleEvidence?.[role]||{};
       const supportEvidence=[];
       if(strength.monthRelation?.type==='use_generates_body')supportEvidence.push({basis:'month-qi',element:strength.monthElement,kind:'generates',sourceIds:['mh-007','mh-009','user-void-timing']});
@@ -270,8 +275,8 @@ export function createLibrary({catalog,sections,domains}) {
     for(const [stage,k,caption] of [['primary',h,'目前'],['mutual',m,'经过'],['changed',c,'结果']])panels[stage]={stage,id:k.id,name:k.name,symbol:k.symbol,bitsBottomUp:[...k.bitsBottomUp],baseGrade:k.grade.rawGrade,theme:k.grade.theme,caption,glowLine:stage==='primary'?movingLine:null,correspondingChangedLine:stage==='changed'?movingLine:null,detail:k};
     return deepFreeze({schemaVersion:'1.0.0',contentVersion:catalog.contentVersion,castId,question,primaryId,movingLine,mutualPolicy,body:{trigram:body.id,element:body.element,side:bodySide},use:{trigram:use.id,element:use.element,side:useSide},stages:panels,selectedMovingLine:{hexagramId:primaryId,position:movingLine,...selected},nodes,edges,domain,domainPassage:domain.relationPassages?.[relation(body.element,use.element).type]||null,
       synthesis:synthesizeReading({edges,nodes,body,use,domain}),
-      contextualAssessment:{status:'qualitative-reference',summary:'基础等级、动爻资料与生克事实已接通；综合占断不由固定权重代替。',missing:[...(!calendar.season&&!calendar.monthBranch?['calendar-context']:[]),...(!voidContext.ganzhi?['void-ganzhi']:[])],sourceSectionTitles:['体用总诀','体用互变之诀','体用衰旺之诀'],baseGradesUnchanged:true},
-      selectionPolicy:{movingLineScope:'primary-only',mutualHasIndependentMovingLine:false,specialUseNineSixAreOrdinaryLines:false},profile:{id:'user-classical-plus-void',version:'1.1.0',voidBasis:voidContext.basis||'day-explicit-input',partialPolicy:voidContext.partialPolicy||'mark-only',monthBoundary:'caller-supplied; no implicit timezone conversion'}});
+      contextualAssessment:{status:'qualitative-reference',summary:'基础等级、动爻资料与生克事实已接通；综合占断不由固定权重代替。',missing:[...(!calendar.season&&!calendar.monthBranch?['calendar-context']:[]),...(applyVoid&&!voidContext.ganzhi?['void-ganzhi']:[])],sourceSectionTitles:['体用总诀','体用互变之诀','体用衰旺之诀'],baseGradesUnchanged:true},
+      selectionPolicy:{movingLineScope:'primary-only',mutualHasIndependentMovingLine:false,specialUseNineSixAreOrdinaryLines:false},profile:{id:applyVoid?'user-classical-plus-void':'classical-body-use',version:'1.1.0',...(applyVoid?{voidBasis:voidContext.basis||'day-explicit-input',partialPolicy:voidContext.partialPolicy||'mark-only'}:{voidApplied:false}),monthBoundary:'caller-supplied; no implicit timezone conversion'}});
   }
   function renderHexagramSVG(id,{movingLine=null,selectedLine=null,stage='primary',svgId='hexagram'}={}) {
     const h=hex(id);if(movingLine!==null)integer(movingLine,1,6,'movingLine');if(selectedLine!==null)integer(selectedLine,1,6,'selectedLine');

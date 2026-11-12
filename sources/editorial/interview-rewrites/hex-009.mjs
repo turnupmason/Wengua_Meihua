@@ -79,7 +79,7 @@ export default {
       ending: '九二“牵复，吉”，借反馈回到合宜的做法而不失其本。变用离火仍相，继续受巽木所生，收尾还要耗费。旺体有能力改答，眼下仍缺把这一轮落实为通过的帮助。',
       summary: '本轮偏难通过，改答有用，最后可能还需补说。把新反馈落实到一项具体的修正上。',
       counterevidence: '旺巽可承囚金弱克，牵复有吉。中末相火受体生，本用受克又无生体，改答及承压难转为通过。',
-      timing: {kind:'drain',role:'changed_use',event:'末后按反馈补证时投入可能增加',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'末后按反馈补证时投入可能增加',eventScope:'closing-drain',
         suffix:'前后，若收尾需要按反馈补证，准备和解释可能较耗心力，属阶段性凶应。',reason:'变相离受旺巽生，火日指向末后投入。'},
     },
     {
@@ -91,7 +91,7 @@ export default {
       ending: '九二“牵复，吉”，在提醒下及时改回合适的答法有利。变用离火仍旺，受休巽所生，末后耗费仍较重。前面的牵制虽然可应对，调整仍难把本轮推进到通过。',
       summary: '本轮偏难通过，容易慢在反复补充。把反馈指向的事情单独说清，少在别的细节上花力气。',
       counterevidence: '死金弱克、牵复吉使改答有余地。体互与变用旺火泄休木，本用克体无直接生扶，收尾以耗费为主。',
-      timing: {kind:'drain',role:'changed_use',event:'收尾为重新说明具体成效可能费力',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'收尾为重新说明具体成效可能费力',eventScope:'closing-drain',
         suffix:'前后，若收尾要补说具体成效，准备和说明可能比较耗精力，属阶段性凶应。',reason:'变旺离受休巽所生，火日对应收尾耗费。'},
     },
     {
@@ -269,7 +269,7 @@ export default {
       opening: '乾金体夏死，本用巽木夏休，受体克，起头能主动问明要求，承接起来仍较费力。',
       process: '体互兑金夏死，与体比和，问答能够接续，配合较弱。用互离火当旺而克体，具体核验较难接住。适合先准备最需要举证的材料。',
       ending: '九五“有孚挛如，富以其邻”，帮助需要落实到真实配合。变用艮土夏相，直接生乾金，末后有较实的支撑。中段的关键问题若能补实，这轮仍有望通过，落实会慢些。',
-      summary: '本轮有望慢成，转机主要在后段。收到具体反馈就补能查实的材料，先处理最难的一项。',
+      summary: '本轮有望通过，关键在收尾能否补齐材料。收到具体反馈后，先给最难核实那一项的凭据。',
       counterevidence: '死体和用互旺火克体是反证，前中段不能略过。相艮直接生体与九五互助相合，限中段关键要求能补清时保留成就机会。',
       timing: {kind:'support',role:'changed_use',event:'关键追问补清后，本轮通过较易明朗',eventScope:'positive-result-candidate',
         suffix:'前后，若最难的一项追问已经答清，本轮通过结果有机会明朗，属吉应。',reason:'相艮生死乾，土日为末后转机，须以中段实际问题已补实为条件。'},
@@ -295,7 +295,7 @@ export default {
       ending: '九五有孚而相助，能够把话谈下去。变用艮土冬囚，虽生休乾，末后助力偏弱。前面的实际要求还不易兑现，收尾有一些回应，本轮通过仍偏难。',
       summary: '本轮偏难通过，末后仍有补答余地。把可核实的内容对准考察要求，别靠反复说明代替证据。',
       counterevidence: '原稿取有孚和变艮生体为通过。休乾制相巽起头费力，中段协调温和，囚艮后援弱，末后帮助限补证，修订为偏难。',
-      timing: {kind:'support',role:'changed_use',event:'后段可能有针对一项经历的补答机会',eventScope:'process-repair',
+      timing: {kind:'support',role:'changed_use',event:'后段可能有针对一项经历的补答机会',eventScope:'closing-repair',
         suffix:'前后，若末后收到反馈，较有机会补清一项经历，属阶段性吉应。本轮通过仍偏难。',reason:'囚艮生休乾助力有限，土日仅取阶段修正。'},
     },
     {
@@ -343,7 +343,7 @@ export default {
       ending: '上九既雨既处、积德已载，事情有可收住之处，近满再往便有危险。变用坎水秋相，受旺乾所生，末后投入较实。能够应答仍不足以把追加投入变成通过，本轮偏难。',
       summary: '本轮偏难通过，收尾要留意反复投入。把必须补充的材料讲实，答完就等明确反馈。',
       counterevidence: '旺乾克死巽、体互旺比、囚火弱克，前段均有应对基础。变相水泄体与上九戒强推相合，继续投入难助成就。',
-      timing: {kind:'drain',role:'changed_use',event:'收尾追加材料时可能多花些精力',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'收尾追加材料时可能多花些精力',eventScope:'closing-drain',
         suffix:'前后，若收尾还需补材料，整理和说明可能增加投入，属阶段性凶应。',reason:'变相坎受旺乾所生，水日用于末后耗费。'},
     },
     {
@@ -355,7 +355,7 @@ export default {
       ending: '上九既雨既处，积累可以保留，近满之时仍须慎而知止。变用坎水当旺，受休乾所生，收尾会较耗精力。继续投入较难把现有条件推到通过，本轮偏难。',
       summary: '本轮偏难通过，收尾容易耗在追加说明。照明确要求把材料交代齐，答完后给核对留些时间。',
       counterevidence: '休金比和能接话，死火克轻，既雨保留已有进展。起初难制相巽，末后旺坎受生，征凶提示继续强求不利。',
-      timing: {kind:'drain',role:'changed_use',event:'最后补充说明时可能较费精力',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'最后补充说明时可能较费精力',eventScope:'closing-drain',
         suffix:'前后，若收尾仍需要补充说明，整理和答复可能比较费心，属阶段性凶应。',reason:'旺坎末后受休乾所生，水日取较重的收尾耗费。'},
     },
     {

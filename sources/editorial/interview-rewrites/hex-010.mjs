@@ -43,7 +43,7 @@ export default {
       ending: '初九“素履，往无咎”，平实作答、按实际条件推进较稳。变用坎水秋相，受旺乾所生，收尾的投入较实，原体有余力承接。前段同气配合和中段应对有基础，本轮有望通过。',
       summary: '本轮有望通过，收尾可能稍慢。把已经做过的事讲实，最后按明确要求补齐材料。',
       counterevidence: '用互囚离仍克，变坎相受生有末耗。主局旺金比和，旺乾能制死巽并承担投入，初九取平实有序，条件性通过。',
-      timing: {kind:'drain',role:'changed_use',event:'收尾整理补充说明时可能费些精力',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'收尾整理补充说明时可能费些精力',eventScope:'closing-drain',
         suffix:'前后，若最后还要补充说明，准备可能多花些心力，属阶段性凶应。本轮仍有望通过。',reason:'变相坎受旺乾生，水日列末后可承接的投入。'},
     },
     {
@@ -55,7 +55,7 @@ export default {
       ending: '初九“素履，往无咎”，宜按事实把能做的工作说明白。变用坎水冬旺，受休乾所生，末后投入较重。前段能沟通，收尾仍难把工作说明落实为通过。',
       summary: '本轮偏难通过，容易拖在收尾补答。照已明确的要求准备，少追加无关材料。',
       counterevidence: '本卦同休可接话，死火弱克，素履少过。休乾制相巽较费力，末后旺坎耗体，前中弱配合难支撑成事。',
-      timing: {kind:'drain',role:'changed_use',event:'末后补充或核对材料时可能投入较多',eventScope:'process-drain',
+      timing: {kind:'drain',role:'changed_use',event:'末后补充或核对材料时可能投入较多',eventScope:'closing-drain',
         suffix:'前后，若收尾仍需补材料，准备和说明可能比较耗精力，属阶段性凶应。',reason:'变旺坎受休乾生，水日取收尾耗费。'},
     },
     {

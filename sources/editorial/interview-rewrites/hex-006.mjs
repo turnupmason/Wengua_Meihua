@@ -64,7 +64,7 @@ export default {
       summary: '本轮偏难通过，末后有缓和余地。把要核对的事实讲够，别因为迟迟未定就一再增加说明。',
       counterevidence: '离死使中段克制较轻，休兑比和与终吉都有缓解作用。旺坎泄休金较实，处理相巽也费力，协调尚不足以定案。',
       timing: {
-        kind: 'drain', role: 'use', event: '早段整理证据或准备答复可能较费精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '早段整理证据或准备答复可能较费精力', eventScope: 'opening-drain',
         suffix: '前后，若要准备核对经历所需的材料，可能多花一些心力，属阶段性凶应。',
         reason: '旺坎受休乾所生，水日对应初期投入。末后比和另作缓和证据。',
       },
@@ -109,7 +109,7 @@ export default {
       summary: '本轮偏难通过，后段有补正余地。优先补能澄清关键分歧的材料，别继续承诺没有条件做到的事。',
       counterevidence: '变相坤为较实的直接生扶，有补救价值。旺离已克死体，九二不克讼的退守条件明确，后助不足以改判本轮。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '后段较有机会补清一项争议', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '后段较有机会补清一项争议', eventScope: 'closing-repair',
         suffix: '前后，若有机会补充材料，较容易围绕一项争议继续说明，属阶段性吉应。本轮通过仍偏难。',
         reason: '相坤末后生死乾，土日落在修正，主要中段压力已在正文处理。',
       },
@@ -124,7 +124,7 @@ export default {
       summary: '本轮偏难通过，问答本身可以做好。把能证实的部分说清，职责谈不拢时留有分寸。',
       counterevidence: '旺乾能承前中段，休坤仍生体，是明显反证。九二不克讼并以退而无眚收束，后助主要减损、澄清，未足以取成就。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '收尾有机会就原有分歧补充事实', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '收尾有机会就原有分歧补充事实', eventScope: 'closing-repair',
         suffix: '前后，若仍有不同理解，较有机会补清实际事实，属阶段性吉应。',
         reason: '休坤生旺乾，土日仅对应收尾的澄清机会。',
       },
@@ -139,7 +139,7 @@ export default {
       summary: '本轮偏难通过，前面的投入较多。围绕尚未核实的部分回应，分歧确认后及时收束。',
       counterevidence: '死离弱克使中段压力减轻，囚坤仍有后扶。旺坎初泄休金、相巽也难处理，退而无眚不等于得名。',
       timing: {
-        kind: 'drain', role: 'use', event: '开头为说明职责准备材料时可能较耗费', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '开头为说明职责准备材料时可能较耗费', eventScope: 'opening-drain',
         suffix: '前后，若开头要准备工作记录或回应疑问，投入可能增加，属阶段性凶应。',
         reason: '旺坎初期受休乾所生，水日用于准备耗费，末后后援弱。',
       },
@@ -154,7 +154,7 @@ export default {
       summary: '本轮偏难通过，后段的帮助适合用于说明关键事实。把没有谈拢的条件说准，少反复争取。',
       counterevidence: '相乾能承弱耗、制囚巽，末后旺坤生体为本组强反证。九二不克讼明确指求争未成，后助取减损与澄清，保留偏难。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '后段较易收到针对具体分歧的补充要求', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '后段较易收到针对具体分歧的补充要求', eventScope: 'closing-repair',
         suffix: '前后，若收尾需要补答，较容易获得具体的补充要求，属阶段性吉应。',
         reason: '旺坤生相乾取土日为实质补救，仍不把补答写成通过。',
       },
@@ -214,7 +214,7 @@ export default {
       summary: '本轮偏难通过，开头和收尾都要花力气。把旧经验适用的条件讲明白，再谈怎样回应新的要求。',
       counterevidence: '死离使克体压力较轻，终吉保留守实的好处。旺坎初泄较重、前后休乾制相巽费力，无生助把应对落实为通过。',
       timing: {
-        kind: 'drain', role: 'use', event: '开头整理过去的工作依据时投入可能增加', eventScope: 'process-drain',
+        kind: 'drain', role: 'use', event: '开头整理过去的工作依据时投入可能增加', eventScope: 'opening-drain',
         suffix: '前后，若开头需要整理旧项目的说明，准备可能较费心，属阶段性凶应。',
         reason: '旺坎受休乾所生，水日对应起步耗费。',
       },
@@ -244,7 +244,7 @@ export default {
       summary: '本轮偏难通过，容易慢在重新说明。先问准哪一处需要重答，再用有实际依据的经历补足。',
       counterevidence: '本用乾仍有生扶，九四改而安贞可缓和。囚乾助弱，休坎制相离吃力，中段及末后旺木受生，调整成本较实，修订原稿的有望。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾重新整理答复或补证可能较费精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾重新整理答复或补证可能较费精力', eventScope: 'closing-drain',
         suffix: '前后，若最后仍需重新组织说明或补证，投入可能增加，属阶段性凶应。',
         reason: '变巽旺受休坎所生，木日对应收尾投入，安贞吉保留调整价值。',
       },
@@ -259,7 +259,7 @@ export default {
       summary: '本轮偏难通过，关键追问较费力。调整答复时只补与所问相关的实例，少围绕原先的说法争执。',
       counterevidence: '安贞吉支持调整，休木末后耗费不重。初用死金生扶弱、囚坎中段难制旺离，减误未能转化为本轮成就，改判偏难。',
       timing: {
-        kind: 'support', role: 'use', event: '开头可能得到一项调整回答的提示', eventScope: 'process-repair',
+        kind: 'support', role: 'use', event: '开头可能得到一项调整回答的提示', eventScope: 'opening-repair',
         suffix: '前后，若得到反馈，较可能弄清一项需要调整的答复，属阶段性吉应。',
         reason: '死乾仍生体但作用弱，金日只用于局部改答提示。',
       },
@@ -274,7 +274,7 @@ export default {
       summary: '本轮有望通过，确认略慢。把答偏的地方改实，后面按明确的考察要求继续。',
       counterevidence: '不克讼提示旧答法难推，变用仍泄。旺乾生相坎，中段囚离可制、死巽耗轻，安贞的改正条件有卦势支持。',
       timing: {
-        kind: 'support', role: 'use', event: '早段较易得到明确的调整方向', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '早段较易得到明确的调整方向', eventScope: 'opening-support',
         suffix: '前后，若有补答或修正要求，较容易弄清该怎样调整，属阶段性吉应。',
         reason: '旺乾生相水在本用，金日作初期明确反馈参考，末后仍有核对。',
       },
@@ -289,7 +289,7 @@ export default {
       summary: '本轮偏难通过，确认可能慢在继续补充。把已经说清的部分保留，只改真正需要改的一处。',
       counterevidence: '旺水可制死离，也能承接休乾直接生助。九四的吉着重改后安定，前中末仍偏向自行应对和补充，过程和末后相木耗费较实，修订原稿通过倾向。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾补充和调整说明时可能较耗费', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾补充和调整说明时可能较耗费', eventScope: 'closing-drain',
         suffix: '前后，若收尾仍需补充实际说明，整理和回应可能较耗精力，属阶段性凶应。',
         reason: '变相巽继续受旺水所生，木日为末后投入，不改变可缓和的判断。',
       },
@@ -301,10 +301,10 @@ export default {
       opening: '土令坎水体属死，本用乾金属相而生水，开头有可用的助力，自己应对仍偏吃力。',
       process: '体互离火土休，受死水所克，实际核验仍要费心。用互巽木土囚，受体水所生，补答有耗费，负担相对有限。借明确反馈先解决最关键的问题。',
       ending: '九四“复即命，渝，安贞吉”，原先谈不拢时，照可行要求调整才有利。变用巽木属囚，末后仍受体生，耗费较轻。前面的相金助力可接上，能够补清关键问题的话，本轮有望慢成。',
-      summary: '本轮有望慢成，主要靠及时改答。先把具体反馈转成能核实的补充，再耐心等确认。',
+      summary: '本轮有望通过，确认要等改过的答复核实。收到具体反馈后，就着原记录补清需要调整的那一步。',
       counterevidence: '死体制休离费力，两个阶段仍有泄体。相乾本用直接生扶较实，巽囚耗较轻，九四安贞须真实按反馈改正，限此保留通过机会。',
       timing: {
-        kind: 'support', role: 'use', event: '前段较易收到可用于改答的具体反馈', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '前段较易收到可用于改答的具体反馈', eventScope: 'opening-support',
         suffix: '前后，较有机会弄清需要修正或补证的内容，属阶段性吉应。收尾仍需确认。',
         reason: '相乾生死水，金日对应开局支撑，不把改答机会合并为最终通过日。',
       },
@@ -334,7 +334,7 @@ export default {
       summary: '本轮偏难通过，难处在实际核验。把可以证实的做法讲完整，若有反馈先核对是否还欠关键材料。',
       counterevidence: '乾兑生体仍有回应机会，巽休耗费不重。夏金死，囚水难制旺离，末后仍弱，上九的认可不稳更难落实。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '末后可能有机会补清一项实际做法', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '末后可能有机会补清一项实际做法', eventScope: 'closing-repair',
         suffix: '前后，若收到补答要求，较有机会把一项做法说明白，属阶段性吉应。整体通过仍偏难。',
         reason: '死兑生囚坎助力弱，金日只取局部补答，实际考察仍较难承接。',
       },
@@ -349,7 +349,7 @@ export default {
       summary: '本轮偏难通过，前后仍有较好的沟通条件。得到肯定后核对尚未定下的事项，按实际要求补证。',
       counterevidence: '旺乾与旺兑的生扶是显著反证，体互可处理、用互耗轻。上九明确显示所得不稳，后助用于补证，不能把口头认可等同稳定通过。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '后段较容易收到积极回应或补证要求', eventScope: 'process-support',
+        kind: 'support', role: 'changed_use', event: '后段较容易收到积极回应或补证要求', eventScope: 'closing-support',
         suffix: '前后，较有机会收到积极回应，或弄清还要补哪项材料，属阶段性吉应。结果仍可能反复。',
         reason: '旺兑末后直接生体，金日只取阶段反馈，保留上九不稳定的条件。',
       },
@@ -379,7 +379,7 @@ export default {
       summary: '本轮偏难通过，收尾可能继续确认。把已有帮助用在补足关键证据上，按明确结果安排后续。',
       counterevidence: '前后相金确有直接生扶，囚木末中耗费有限。原体死、体互仍难处理，结合上九认可反复，后援取补正而非稳定通过。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '末后较有机会获得有针对性的反馈', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '末后较有机会获得有针对性的反馈', eventScope: 'closing-repair',
         suffix: '前后，若仍有事项待核对，较容易收到可以据此补答的反馈，属阶段性吉应。',
         reason: '相兑生死坎，取金日为末后较实的修正机会。',
       },

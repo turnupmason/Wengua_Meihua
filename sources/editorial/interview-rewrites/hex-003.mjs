@@ -92,13 +92,13 @@ export default {
       short: '这一轮面试仍有通过机会，前面要花心思说明，确认不会太快。遇到和预想不同的问法，先弄明白对方在核对什么，再把实际经历补完整。后段有机会得到进一步回应，尤其要把容易让人误会的职责和做法说开。',
       opening: '坎水体春休，震木本用当旺，受水所生。开始的问答容易费力，介绍宜紧扣岗位，而后再补必要细节。',
       process: '体互艮土属死而克体，疑问有机会澄清。用互坤土也属死而克体，沟通可能再绕回某个条件，牵制较轻。宜先搞清两种问法是否都在核对同一段经历。',
-      ending: '六二前有屯邅班如、贞不字，后有“匪寇婚媾”“十年乃字”的转合。变用兑金春囚，能生休水，后段有帮助但推动有限。把原先的疑点答开后仍有望通过，落实偏慢。',
-      summary: '本轮有望慢成。把容易误会的经历讲准，尤其分清自己实际负责什么、结果怎样核实。',
+      ending: '六二先写迟疑徘徊，又以“匪寇婚媾”和“十年乃字”写久待后的转合。变用兑金春囚，能生休水，后段有帮助但推动有限。把原先的疑点答开后仍有望通过，落实偏慢。',
+      summary: '本轮还有通过机会，确认偏慢。把容易误会的职责讲明白，并给出可以核实结果的办法。',
       counterevidence: '开局震旺耗体，两互克体虽死仍有牵制。变兑囚生休水作用有限，结合六二从疑至合，保留迟成的条件性倾向。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '疑点澄清后，本轮通过结果较易明朗', eventScope: 'positive-result-candidate',
-        suffix: '前后，若原先的疑点已答清，本轮通过结果有机会明朗，属吉应。进展可能偏慢。',
-        reason: '变用囚兑生休坎，取申酉日为迟成的参考，依实际日期换算，爻辞数字不作期限。',
+        kind: 'support', role: 'changed_use', event: '收尾或有机会澄清此前没有说准的职责', eventScope: 'closing-repair',
+        suffix: '前后，若收尾仍有疑问，可以补清本人负责的环节。',
+        reason: '变用囚兑生休坎，只取能落实的少量收尾帮助。开局旺震泄体，缺少独立依据为本轮结果定日。',
       },
     },
     {
@@ -156,7 +156,7 @@ export default {
       summary: '本轮偏难通过，后段仍能修正说明。收到补答要求时，先核对它有没有碰到中段最难应付的那一项。',
       counterevidence: '相兑直接生体是较实反证，六二也有后合。但死水前段未得生、中段受两旺土直接牵制，所取末后转机限补答，尚不足以确认本轮通过。',
       timing: {
-        kind: 'support', role: 'changed_use', event: '面试后段有机会补清某项实际要求', eventScope: 'process-repair',
+        kind: 'support', role: 'changed_use', event: '面试后段有机会补清某项实际要求', eventScope: 'closing-repair',
         suffix: '前后，若收到进一步反馈，较有机会补清一项未说透的要求，属阶段性吉应。本轮通过仍偏难。',
         reason: '相兑为末后直接生体，金日只作收到回应或修正的参考，保留中段已经形成的困难。',
       },
@@ -321,7 +321,7 @@ export default {
       summary: '本轮有望通过。把关键能力用实绩说明，遇到更宽的要求，先弄清范围再谈能否承担。',
       counterevidence: '坎休生体较温和，九五另有大贞凶，体克用仍须落实。旺震处理两互和变用死土有余，合小处有据的条件才取通过。',
       timing: {
-        kind: 'support', role: 'use', event: '开头较易收到对准备重点的明确回应', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '开头较易收到对准备重点的明确回应', eventScope: 'opening-support',
         suffix: '前后，若面试方需要补材料，较容易得到明确的准备要求，属阶段性吉应。',
         reason: '本用休坎生旺体，水日对应开局帮助，变用体克用的收尾另有确认过程。',
       },
@@ -336,7 +336,7 @@ export default {
       summary: '本轮偏难通过，进展会慢在能否承接完整要求。把有证据的工作说准，超出经历的部分保留分寸。',
       counterevidence: '原稿凭坎生体判有望。夏囚坎助力有限，休震先后均需处理相土，九五吉仅限小贞，原先成就依据不足，改判偏难。',
       timing: {
-        kind: 'support', role: 'use', event: '可就一项有限的补充要求得到回应', eventScope: 'process-repair',
+        kind: 'support', role: 'use', event: '可就一项有限的补充要求得到回应', eventScope: 'opening-repair',
         suffix: '前后，若要说明一项确实做过的工作，较有机会得到具体的补充要求，属阶段性吉应。',
         reason: '囚坎仍生震体，水日只作弱助和澄清参考，末后处理相土仍难。',
       },
@@ -351,7 +351,7 @@ export default {
       summary: '本轮仍有通过机会，确认偏慢。借前面的明确反馈把最关键的一项答实，额外职责等条件说清再应。',
       counterevidence: '秋木死，处理休土仍费力，九五明言大贞凶。相水本用直接生扶较实，末后无克体，限小处有据的前提保留有条件通过。',
       timing: {
-        kind: 'support', role: 'use', event: '开头可能得到较明确的考察要求', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '开头可能得到较明确的考察要求', eventScope: 'opening-support',
         suffix: '前后，较有机会弄清本轮重点需要说明什么，属阶段性吉应。最后确认仍要花些时间。',
         reason: '相坎生死震是实际助力，水日取开局明确要求，体克用末后有迟成义。',
       },
@@ -366,7 +366,7 @@ export default {
       summary: '本轮倾向能过。依明确的要求把做法讲实，答到已有经验能支持的范围即可。',
       counterevidence: '九五大贞凶限制外扩，体克用保留落实时间。旺坎生相震、两互与变用囚土可处理，落实小处有实据时通过倾向较好。',
       timing: {
-        kind: 'support', role: 'use', event: '开头较易得到针对能力说明的明确反馈', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '开头较易得到针对能力说明的明确反馈', eventScope: 'opening-support',
         suffix: '前后，较容易得到针对性的反馈或明确需要补充的内容，属阶段性吉应。',
         reason: '旺坎直接生相体，取水日列初期积极反馈，后段确认按体克用保留时间。',
       },
@@ -381,7 +381,7 @@ export default {
       summary: '本轮偏难通过，容易慢在处理实际要求。把可以承担的工作说实，没核清的条件先保留。',
       counterevidence: '本用死坎仍有生体，小贞仍能改善局部答复。原体囚，面对两互及末后的旺土，难将小处的有利扩大为本轮通过。',
       timing: {
-        kind: 'support', role: 'use', event: '有机会收到一项补充材料的具体要求', eventScope: 'process-repair',
+        kind: 'support', role: 'use', event: '有机会收到一项补充材料的具体要求', eventScope: 'opening-repair',
         suffix: '前后，补充沟通若有回应，宜着重核对一项能举证的要求，属阶段性吉应。整体通过仍偏难。',
         reason: '死坎仍生体，水日只作小处回应参考，不给本轮通过日期。',
       },
@@ -396,7 +396,7 @@ export default {
       summary: '本轮偏难通过，可能停在持续沟通。把反复问到的一处答准，已有信息说完整后等明确回应。',
       counterevidence: '旺震有休坎生扶，能制弱土，变巽旺比和，均为实在的有利条件。上六警戒反复已至难持，配合能继续也未见化为正面评定，保留本轮偏难。',
       timing: {
-        kind: 'support', role: 'use', event: '前段可得到有助于明确疑点的反馈', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '前段可得到有助于明确疑点的反馈', eventScope: 'opening-support',
         suffix: '前后，若收到反馈，较有机会弄清反复追问的是哪一处，属阶段性吉应。',
         reason: '本用休坎生旺震，水日对应初期反馈。末后爻义仍不支持用它定通过日。',
       },
@@ -411,7 +411,7 @@ export default {
       summary: '本轮偏难通过，容易拖在补答上。找出问题真正缺的证据，能补就答实，减少重复解释。',
       counterevidence: '囚坎仍生体，末后休巽比和保留沟通。休木处理两相土较费力，末后协调不足以上承，上六反复难久。',
       timing: {
-        kind: 'support', role: 'use', event: '早段有机会收到对补答内容的提示', eventScope: 'process-repair',
+        kind: 'support', role: 'use', event: '早段有机会收到对补答内容的提示', eventScope: 'opening-repair',
         suffix: '前后，若需要补答，可能得到关于重点的提示，属阶段性吉应。确认仍可能反复。',
         reason: '囚坎生体较弱，水日只列开局补答提示，未形成成就候选。',
       },
@@ -426,7 +426,7 @@ export default {
       summary: '本轮偏难通过。前面的帮助用于弄清要核对的内容，补答放在确实能证实的一项。',
       counterevidence: '相坎生体较实，末后无克体。原体与变巽俱死，处理两休土吃力，上六又警戒反复难持，开头助力难维持到结果。',
       timing: {
-        kind: 'support', role: 'use', event: '早段可能收到有用的考察范围说明', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '早段可能收到有用的考察范围说明', eventScope: 'opening-support',
         suffix: '前后，可能较容易确认要补充的具体范围，属阶段性吉应。',
         reason: '相坎生弱体的帮助较实，取水日只对应前段要求说明，末后死木比和并未改判。',
       },
@@ -441,7 +441,7 @@ export default {
       summary: '本轮仍偏难通过，耗时多在收尾反复确认。把尚未定下的条件集中问清，再按事实补答。',
       counterevidence: '旺水生相木、两互囚土可处理、末后相木比和，前中后都有有利面。上六把问题落在久拖无决，能反复协调仍与可定案有别，主判偏难。',
       timing: {
-        kind: 'support', role: 'use', event: '开头较易得到具体的准备方向', eventScope: 'process-support',
+        kind: 'support', role: 'use', event: '开头较易得到具体的准备方向', eventScope: 'opening-support',
         suffix: '前后，较容易得到有助于准备的明确要求，属阶段性吉应。后段仍需处理反复确认。',
         reason: '旺坎生相震取水日为初期助力，不把末后协调写为通过。',
       },

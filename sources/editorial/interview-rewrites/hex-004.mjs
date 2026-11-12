@@ -50,7 +50,7 @@ export default {
       summary: '本轮偏难通过，收尾可能耗在补充证据。先把真正要补的事项问准，再集中解释。',
       counterevidence: '体互比和、震死克轻可减轻过程阻力，发蒙也支持修正。相坎起初难制，末后旺兑受休土所生而耗费较显，以偏难为主。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾补充说明或材料时较易增加投入', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾补充说明或材料时较易增加投入', eventScope: 'closing-drain',
         suffix: '前后，若到收尾需要补材料，解释和整理可能多费些精力，属阶段性凶应。',
         reason: '休艮生旺兑，取变用金日对应末后投入，《日应》不支持从泄体日直接定落选通知。',
       },
@@ -80,7 +80,7 @@ export default {
       summary: '本轮偏难通过。前段可以把问题讲清，收尾只补必要的证据，免得继续投入却未能推动确认。',
       counterevidence: '原稿取旺土能制本用、体互旺比为通过依据。用互囚震可承接，但变兑相受体生，初六以往吝限制继续投入。前段能解疑，收尾成就证据仍不足，改判偏难。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '最后整理补充说明时较易耗费精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '最后整理补充说明时较易耗费精力', eventScope: 'closing-drain',
         suffix: '前后，若临到收尾仍要补说明，整理和回应可能比预想费心，属阶段性凶应。',
         reason: '变兑土令属相而受体生，金日只对应末后的继续投入。',
       },
@@ -320,7 +320,7 @@ export default {
       summary: '本轮偏难通过，进展会慢在补足陌生要求。把目前能做的和仍需了解的分别讲准。',
       counterevidence: '六五童蒙吉和土死弱克支持问清并学习。体互与变用旺木皆受体生，耗费较实，本用克体又无生扶，收尾难成。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾补学或补充说明时可能较耗精力', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾补学或补充说明时可能较耗精力', eventScope: 'closing-drain',
         suffix: '前后，若需要补足陌生要求，收尾的整理和说明可能较耗精力，属阶段性凶应。',
         reason: '变巽旺而受休坎所生，木日落在末后投入，保留童蒙改善作答的空间。',
       },
@@ -365,7 +365,7 @@ export default {
       summary: '本轮偏难通过，收尾可能慢在补充实际经验。把已经理解的要求复述准确，再举能说明它的例子。',
       counterevidence: '旺坎能承接囚土，童蒙吉支持吸收指点。体互、变用相木泄体较实，起初克体又无生体，改进和成就须区分。',
       timing: {
-        kind: 'drain', role: 'changed_use', event: '收尾可能需要再投入精力补实际说明', eventScope: 'process-drain',
+        kind: 'drain', role: 'changed_use', event: '收尾可能需要再投入精力补实际说明', eventScope: 'closing-drain',
         suffix: '前后，若到收尾仍要说明怎样落实新要求，补充准备可能增加，属阶段性凶应。',
         reason: '相巽受旺水所生，取木日为末后的持续投入。',
       },

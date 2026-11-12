@@ -3,7 +3,7 @@
  * (createProductRepository().getContent) and frozen into the record exactly as given.
  *
  * The lookup is exact: product question + 本卦 + 动爻 + the actual month branch (月令) + the
- * casting day (旬空 and dates). A question, chart or month with no written 断语 comes back as
+ * casting day (date conversion). A question, chart or month with no written 断语 comes back as
  * pending, and nothing stands in for it: no other question's, line's or month's text, and no
  * generic text. The app never writes, completes or rewrites a 断语.
  */
@@ -93,7 +93,7 @@ const addDays = (date: string, n: number) => {
 
 /**
  * The civil date whose day 干支 is the cast's. Usually the local date; after 23:00, when 子时
- * starts the next day, it is the next one. The interface reckons 旬空 and dates from it.
+ * starts the next day, it is the next one. The interface uses it to convert reference dates.
  */
 export function castingDateOf(localWallClock: string | null, dayGanzhi: string | null): string | null {
   if (!localWallClock || !dayGanzhi) return null;
