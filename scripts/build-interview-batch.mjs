@@ -1,4 +1,4 @@
-import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,readdir,readFile,writeFile} from 'node:fs/promises';
 import {loadLibrary,interpretationArtifactDigest,AUDIT_CHECKS} from '../src/index.js';
 import {getVoidProfileKey,resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {inspectMovingLine,validateStoryCopy} from '../src/story-editorial.js';
@@ -143,12 +143,14 @@ await writeFile(new URL('docs/INTERVIEW_PASS_BATCH_001.md',root),winter);
 console.log({question:question.id,authoredVersions:rows.length,monthSlots:monthSlotCount,total:4608,shards:files.length,shortHanRange:[Math.min(...rows.map(r=>r.copyChecks.shortHanCount)),Math.max(...rows.map(r=>r.copyChecks.shortHanCount))]});
 
 await mkdir(new URL('docs/interview-pass/',root),{recursive:true});
+const reviewDocs=new Set(await readdir(new URL('docs/',root)));
 let directory='# 求职面试：全部基础卦象\n\n目标问项为“这次面试能通过吗”。共有384种基础盘、4,608个月令检索位置、1,920篇不同正文。\n\n'+
  `保留原${index.authorship.retainedIndividuallyAuthored}篇逐篇稿。已逐篇重写并由作者全文复核${index.authorship.rewrittenAndWholeArticleReviewed}篇，覆盖${index.authorship.rewrittenMonthSlots}个月令位置。仍有${index.authorship.remainingRuleCompiled}篇为离线编译稿。独立专业审核仍待完成。\n\n`+
  '普通场景按实际起卦日换算日干支、旬空与日期。改变核心判断而缺少专稿的空亡情境返回待写。\n\n寅卯木、巳午火、申酉金、亥子水、辰未戌丑土，十二月令各自有键，同气且同结论时共用全文。文档日期为2026-11-11起卦的对照演示。\n\n';
 for(const file of files){
  const pool=rows.filter(r=>r.primaryId===file.primaryId).sort((a,b)=>a.movingLine-b.movingLine||MONTH_ORDERS.findIndex(m=>m.id===a.monthOrder)-MONTH_ORDERS.findIndex(m=>m.id===b.monthOrder));
- const name=library.getHexagram(file.primaryId).name,path=`docs/interview-pass/hex-${String(file.primaryId).padStart(3,'0')}.md`;
+ const hexId=String(file.primaryId).padStart(3,'0');
+ const name=library.getHexagram(file.primaryId).name,path=`docs/interview-pass/hex-${hexId}.md`;
  let doc=`# ${file.primaryId} · ${name}：六动爻与十二月令\n\n本页30份完整正文对应72个月令槽位。此处为不应用旬空的基础对照；实际页面另行计算旬空。全部日期为2026-11-11起卦的日序展示，不声称不同月令是同一天的实际节令。\n\n`;
  const rewrittenCount=pool.filter(r=>r.authorship.method===REWRITE_METHOD).length;
  if(rewrittenCount)doc+=`本卦有${rewrittenCount}篇已逐篇重写并完成作者全文复核。独立专业审核仍待完成。\n\n`;
@@ -166,6 +168,9 @@ for(const file of files){
   ].join('\n\n')+'\n\n':'';
   doc+=`## ${r.selectedMovingLine.label}动 · ${row.monthBranches.map(b=>b+'月').join('、')}\n\n${row.copy.title}\n\n${row.facts.stages.map(s=>s.name).join(' → ')}\n\n简断\n\n${row.copy.short.text}\n\n${rendered.paragraphs.join('\n\n')}\n\n古籍依据：${titles}。\n\n动爻完整原文：${row.movingLineText}\n\n<details>\n<summary>计算说明</summary>\n\n对照用月令：${row.monthBranches[0]}月；本组共用：${row.monthBranches.join('、')}。实际输入仍显示实际月令。\n\n${r.nodes.filter(n=>n.role!=='body_inherited').map(n=>n.role+'：'+n.trigram+n.element+'，'+n.strength.state).join('；')}。\n\n基础稿未应用旬空，不把半空或全空当作此处已发生的事实。实际旬空与应期从真实起卦日重算。\n\n${editorialDetails}判据：${row.decision.decisionPolicy.id}；写作方式：${row.authorship.method}。\n\n</details>\n\n`;
  }
- await writeFile(new URL(path,root),doc);directory+=`- [${file.primaryId} ${name}](interview-pass/hex-${String(file.primaryId).padStart(3,'0')}.md)：六动爻、十二月令，72槽位。\n`;
+ await writeFile(new URL(path,root),doc);
+ const reviewDoc=`INTERVIEW_REWRITE_${hexId}.md`;
+ const reviewLink=reviewDocs.has(reviewDoc)?` [审查记录](${reviewDoc})`:'';
+ directory+=`- [${file.primaryId} ${name}](interview-pass/hex-${hexId}.md)：六动爻、十二月令，72槽位。${reviewLink}\n`;
 }
 await writeFile(new URL('docs/INTERVIEW_PASS_ALL_BASES.md',root),directory);
