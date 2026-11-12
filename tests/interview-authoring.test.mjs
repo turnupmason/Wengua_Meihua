@@ -181,8 +181,16 @@ test('all short readings stay date-free while the reference timing field supplie
   assert.equal(checkInterviewShort(row.copy.short.text).status,'passed');
   const out=await product.getContent({questionId:question.id,...context,primaryId:row.primaryId,movingLine:row.movingLine,monthOrder:row.monthOrder,monthBranch:row.monthBranches[0]});
   assert.equal(out.narrativeParagraphs.length,4);assert.ok(out.narrativeParagraphs.every(p=>!p.startsWith('应期：')));
-  assert.equal(out.timingSection.referenceNote,'以下为传统推算的参考窗口。');
   assert.equal(out.timingSection.windows.length,out.dateResolution.dateMatches.length);
+  if(row.timingOmission){
+   assert.equal(out.timingSection.referenceNote,'此盘暂无有据的日期可列。');
+   assert.deepEqual(out.timingSection.windows,[]);
+   assert.equal(row.timingOmission.status,'not-derived');
+   assert.ok(row.timingOmission.reason&&row.timingOmission.sourceIds.length);
+   continue;
+  }
+  assert.equal(out.timingSection.referenceNote,'以下为传统推算的参考窗口。');
+  assert.ok(out.timingSection.windows.length);
   for(const w of out.timingSection.windows){
    assert.ok(w.event&&['吉','凶'].includes(w.valence)&&w.calculationBasis.sourceIds.length);
    assert.ok(w.displayedDates.length);assert.match(w.text,/号/);assert.ok(!w.text.includes('{{date:'));

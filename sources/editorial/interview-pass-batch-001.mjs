@@ -104,7 +104,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮倾向能过。把疑点从经历和做法中讲清，补齐真正需要的说明，让考察回到关键事实。',
   lineApplication:{evidence:['田获三狐','得黄矢','贞吉'],conditions:['不把三狐移植成三位面试官、三轮面试或三个录用机会']},
   counterevidence:[{fact:'用互离火受体生，末后体克用有迟成义',resolution:'离火冬死，中段耗较轻；初用和体互旺水生体，末后仍有落实余地。'}],
-  timing:[good('use')]
+  timing:[{...good('use'),id:'opening-support',stage:'opening',eventScope:'opening-support',
+   event:'本轮面试开场较有机会问清需要说明的关键经历',ruleIds:['good-event'],sourceIds:['mh-058','mh-116','mh-117','mh-122','mh-143'],
+   suffix:'前后，留意开头有助于定位疑点的实在回应，属开局吉应。',
+   reason:'冬旺本用坎直接生相震，取开场实助，末囚坤仍须处理。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:40,movingLine:5,outcome:'pass-after-effort',title:'前面要花力气，后面有望通过',
@@ -115,7 +118,10 @@ export const INTERVIEW_PASS_BATCH_001=[
   summary:'本轮倾向能过，前紧后松。先把关键问题处理完整，减少来回牵扯，后面的帮助才容易落到事情上。',
   lineApplication:{evidence:['君子维有解','吉','有孚于小人'],conditions:['不把小人直接指认为面试官或同事；取解开牵连的事项象意']},
   counterevidence:[{fact:'本用受体生，初期有耗；末后金休助力偏弱',resolution:'体水旺、互用比和可承接投入，变用生体与爻吉相合，取稍迟而非立即通过。'}],
-  timing:[good('changed_use')]
+  timing:[{...good('changed_use'),id:'closing-support',stage:'closing',eventScope:'positive-result-candidate',
+   event:'本轮面试前面卡住的要求核准后，通过结果较易明确',ruleIds:['fame-date'],sourceIds:['mh-058','mh-071','mh-122','mh-143'],
+   suffix:'前后，若关键要求已经核准，可留意本轮结果，属收尾吉应。',
+   reason:'冬休变兑直接生旺坎，助力温和而可承，取牵连解开后的结果。',revision:'interview-pass-reference-timing-2.1.0'}]
  },
  {
   primaryId:47,movingLine:4,outcome:'pass-with-slow-progress',title:'推进较慢，但这轮有望走到通过',
