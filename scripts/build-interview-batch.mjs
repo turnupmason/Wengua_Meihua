@@ -14,6 +14,7 @@ import {loadInterviewLineLedger,createBaseInterviewReading,authorBaseInterview,B
 import {loadInterviewRewrites,bindInterviewRewrite,REWRITE_METHOD,REWRITE_VERSION} from './interview-rewrites.mjs';
 import {authorInterviewVoidContexts} from '../sources/editorial/interview-void-contexts.mjs';
 import {authorFirstThreeVoidContexts,renderFirstThreeVoidReview} from './interview-first-three-contexts.mjs';
+import {writeFirstThreeVoidFullText} from './interview-void-full-text.mjs';
 const root=new URL('../',import.meta.url),library=await loadLibrary(),base='data/authored-readings/interview-pass/';
 const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview-pass');
 const question={...raw,id:INTERVIEW_QUESTION_ID,manuscriptIndexPath:base+'index.json'};
@@ -161,6 +162,7 @@ for(const file of files){
  const hexId=String(file.primaryId).padStart(3,'0');
  const name=library.getHexagram(file.primaryId).name,path=`docs/interview-pass/hex-${hexId}.md`;
  let doc=`# ${file.primaryId} · ${name}：六动爻与十二月令\n\n本页30份完整正文对应72个月令槽位。此处为不应用旬空的基础对照；实际页面另行计算旬空。全部日期为2026-11-11起卦的日序展示，不声称不同月令是同一天的实际节令。\n\n`;
+ if(file.primaryId<=3)doc+=`[本卦基础稿与旬空情境稿全文](../INTERVIEW_VOID_FULL_TEXT.md#${name})\n\n`;
  const rewrittenCount=pool.filter(r=>r.authorship.method===REWRITE_METHOD).length;
  if(rewrittenCount)doc+=`本卦有${rewrittenCount}篇已逐篇重写并完成作者全文复核。独立专业审核仍待完成。\n\n`;
  for(const row of pool){
@@ -184,3 +186,4 @@ for(const file of files){
 }
 await writeFile(new URL('docs/INTERVIEW_PASS_ALL_BASES.md',root),directory);
 await writeFile(new URL('docs/INTERVIEW_VOID_FIRST_THREE.md',root),renderFirstThreeVoidReview(rows));
+await writeFirstThreeVoidFullText({root,library,question,rows});

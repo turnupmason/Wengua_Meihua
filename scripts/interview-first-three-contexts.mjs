@@ -2,6 +2,7 @@ import {advice,judgments} from '../sources/editorial/interview-void-first-three-
 import {createInterviewReading} from '../src/interview-manuscripts.js';
 import {getVoidProfileKey} from '../src/prewritten-manuscripts.js';
 import {MONTH_ORDERS} from '../src/narrative-rules.js';
+import {firstThreeFullTextPath} from './interview-void-full-text.mjs';
 
 const sourcePath = 'sources/editorial/interview-void-first-three-judgments.mjs';
 const roles = {body:'原体',use:'本用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用'};
@@ -119,11 +120,12 @@ export function renderFirstThreeVoidReview(rows) {
   const judgmentCount = new Set(reviewed.map(r => r.counterevidence[0].resolution)).size;
   const lines = [
     '# 乾、坤、屯面试断语旬空复核', '',
+    '**[直接阅读 90 条基础稿和 353 份旬空情境稿](INTERVIEW_VOID_FULL_TEXT.md)**', '',
     `90 条基础断语对应 216 个月令入口。补齐 ${reviewed.length} 个精确取稿状态，共 ${judgmentCount} 个情境判断。仅配支命中或日扶记录不同、实际作用及判断相同的状态可共用断语。日序和实际命中各自保存。`,
     '',
     '同一旬内的日支可影响静空位置是否得扶。半空保留定性减力，发动、旺相和原体承接分别说明。应期仍以实际起卦日换算；原稿取期节点减力、静待或通过依据不足时，详列暂缓取期的原因。',
     '',
-    '代表日用于复现状态，月令为显式输入。稿号对应各卦 JSON 中的 `number`，可核对完整文字、原文、应期依据和保存的状态。', '',
+    '代表日用于复现状态，月令为显式输入。点击稿号跳到全文，展开对应的旬空稿。稿号也对应各卦 JSON 中的 `number`。', '',
     '[逐案判断来源](../sources/editorial/interview-void-first-three-judgments.mjs) · [两年回放](../scripts/replay-interview-calendar.mjs)', '',
   ];
   for (const id of [1,2,3]) {
@@ -136,7 +138,8 @@ export function renderFirstThreeVoidReview(rows) {
       const timing = row.timingSlots.length
         ? row.timingSlots.map(s => `${s.event}，取${s.branches.join('、')}日`).join('。')
         : row.timingOmission.reason;
-      lines.push(`| ${row.number} | ${row.facts.movingLine.label} · ${row.monthBranches.join('')} | ${row.facts.referenceContext.castingDate} · ${row.voidScenario.xun} | ${row.coreVoidNotes.join('')} | ${result}。 ${row.counterevidence[0].resolution} | ${timing} |`);
+      const fullText = firstThreeFullTextPath(id,row.movingLine)+`#manuscript-${row.number}`;
+      lines.push(`| [${row.number}](${fullText}) | ${row.facts.movingLine.label} · ${row.monthBranches.join('')} | ${row.facts.referenceContext.castingDate} · ${row.voidScenario.xun} | ${row.coreVoidNotes.join('')} | ${result}。 ${row.counterevidence[0].resolution} | ${timing} |`);
     }
     lines.push('');
   }
