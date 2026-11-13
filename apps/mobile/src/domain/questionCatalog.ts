@@ -83,6 +83,7 @@ interface ProductQuestion {
   referenceParagraphs?: string[];
   guidanceParagraphs?: string[];
   manuscriptIndexPath?: string;
+  archived?: boolean;
 }
 interface ProductFile {
   productCatalogVersion: string;
@@ -133,7 +134,7 @@ function toQuestion(q: ProductQuestion): CatalogQuestion {
     practical_advice: [...q.practicalAdvice],
     paragraphs: [...(q.referenceParagraphs ?? q.guidanceParagraphs ?? [])],
     authored: q.mode === 'narrative' && !!q.manuscriptIndexPath,
-    enabled: true,
+    enabled: !q.archived,
     ...(conditions ? { conditions } : {}),
   };
 }

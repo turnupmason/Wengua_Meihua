@@ -74,6 +74,7 @@ test('question context, selection identity and legacy type tampering fail before
  await assert.rejects(repo.getContent({questionId:'search.valuables.recovery',context:{objectKind:'person'}}),/context value/);
  await assert.rejects(repo.getContent({questionId:'wealth.debt.receivable',context:{hiddenQuestion:'other'}}),/context field/);
  const annual=await repo.getContent({questionId:'career.promotion-pay.pay-rise',context:{targetYear:2027}});assert.match(annual.selection.question,/2027年/);
+ assert.equal((await repo.getQuestion('career.promotion-pay.pay-rise')).archived,true);
  const c=await read('data/product-categories.json');c.categories[0].subcategories[0].questions[0].legacyQuestionId='domain-09-job-offer';
  const tampered=createProductRepository({library,readJSON:async p=>p==='data/product-categories.json'?c:read(p)});
  await assert.rejects(tampered.getCatalog(),/changes question meaning/);

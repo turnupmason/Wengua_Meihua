@@ -19,7 +19,7 @@ function refreshContext(){
 }
 function refreshQuestions(){
  const sub=questionCatalog.categories.flatMap(c=>c.subcategories).find(s=>s.id===$('#subcategory').value);
- $('#question-item').innerHTML=sub.questions.map(q=>`<option value="${q.id}">${esc(q.question)}</option>`).join('');refreshContext();
+ $('#question-item').innerHTML=sub.questions.filter(q=>!q.archived).map(q=>`<option value="${q.id}">${esc(q.question)}</option>`).join('');refreshContext();
 }
 function refreshSubcategories(){
  const c=questionCatalog.categories.find(c=>c.id===$('#domain').value);

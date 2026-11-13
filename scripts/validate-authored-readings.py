@@ -52,7 +52,7 @@ for f in index['files']:
 assert count==index['authoredVersionCount']==progress['uniqueAuthoredVersions']
 assert count-scenarios==index['baseVersionCount']==progress['baseVersionsWritten']==1920
 assert scenarios==index['voidScenarioCount']==progress['coreChangingVoidVariants']['completedInCurrentRevision']
-assert db.execute('SELECT count(*) FROM authored_product_month_slots').fetchone()[0]==slots+scenario_slots
+assert db.execute('SELECT count(*) FROM authored_product_month_slots WHERE question_id=?',(index['questionId'],)).fetchone()[0]==slots+scenario_slots
 assert slots==index['baseCaseCount']==progress['baseCasesWritten']==4608
 assert len(texts)==1920 and len(per_chart)==384 and all(len(v)==12 for v in per_chart.values())
 assert index['totalBaseCases']==progress['totalBaseCases']==4608 and progress['remainingBaseSlots']==0

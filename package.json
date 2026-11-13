@@ -34,6 +34,7 @@
     "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs",
     "build:product": "node scripts/build-product-catalog.mjs && node scripts/run-python.mjs scripts/export-product.py",
     "validate:product": "node scripts/run-python.mjs scripts/validate-product.py",
+    "build:promotion-pay": "node scripts/build-promotion-pay.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:interview": "node scripts/build-interview-batch.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "validate:authored": "node scripts/run-python.mjs scripts/validate-authored-readings.py",
     "app:install": "npm --prefix apps/mobile install",

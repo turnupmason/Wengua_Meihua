@@ -92,8 +92,10 @@ describe('QuestionCatalog = the formal product catalog', () => {
     // Health is traditional reference only; finding someone and retracing steps are guidance.
     expect(allQuestions().filter((q) => q.domain_id === 'health').every((q) => q.mode === 'reference')).toBe(true);
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
-    // Only the interview question has a written 断语 library so far.
-    expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => q.question_id)).toEqual([INTERVIEW]);
+    // The promotion library is being filled one complete hexagram at a time.
+    expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => q.question_id)).toEqual([INTERVIEW, 'career.promotion-pay.promotion']);
+    const promotionPay = allSubtypes().find((s) => s.subtype_id === 'career.promotion-pay')!;
+    expect(enabledQuestions(promotionPay).map((q) => q.question_id)).toEqual(['career.promotion-pay.promotion']);
     for (const s of allSubtypes()) expect(enabledQuestions(s).length).toBeGreaterThanOrEqual(1);
   });
 
@@ -132,7 +134,7 @@ describe('click-only home', () => {
     }
     // 求职录用 includes written 断语; the other five career entries are pending.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(5);
+    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(4);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);

@@ -15,9 +15,9 @@ export const PRODUCT_TAXONOMY=[
   s('interview','求职录用','面试能通过吗？|这次求职能拿到录用吗？',[
    q('interview.interview-pass','这次面试能通过吗？','interview_pass',['domain-09'],o('只回答这一轮面试是否通过，不把通过面试等同于获得最终录用。',{manuscriptIndexPath:'data/authored-readings/interview-pass/index.json'})),
    q('interview.job-offer','这次求职能拿到录用吗？','job_application',['domain-09'],o('回答本次录用是否落实，不只回答面试表现。',{legacyQuestionId:'domain-09-job-offer'}))]),
-  s('promotion-pay','晋升加薪','这次能晋升吗？|今年能加薪吗？',[
-   q('promotion-pay.promotion','这次晋升能争取到吗？','promotion',['domain-09'],o('回答本次晋升，不由在任见克条文推成必遭处分或失业。',{legacyQuestionId:'domain-09-promotion'})),
-   q('promotion-pay.pay-rise','今年能获得加薪吗？','salary_increase',['domain-09','domain-10'],o('回答所选年度薪资调整，不把升职、奖金和加薪互相替代。',{contextFields:{targetYear:{label:'所问年份',type:'year',required:true}}}))]),
+  s('promotion-pay','晋升加薪','这次能晋升并随岗加薪吗？',[
+   q('promotion-pay.promotion','这次能晋升并随岗加薪吗？','promotion',['domain-09','domain-10'],o('回答本次晋升及随岗加薪。晋升落实时一并看随岗薪资幅度。',{manuscriptIndexPath:'data/authored-readings/promotion-pay/index.json'})),
+   q('promotion-pay.pay-rise','今年能获得加薪吗？','salary_increase',['domain-09','domain-10'],o('回答所选年度薪资调整，不把升职、奖金和加薪互相替代。',{archived:true,contextFields:{targetYear:{label:'所问年份',type:'year',required:true}}}))]),
   s('job-change','跳槽去留','现在适合辞职吗？|新工作和现在的工作怎么选？',[
    q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('属于去留决策，须有明确备选安排；不以求职可成代答辞职适宜。',{requiresComparisonMethod:true})),
    q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('须明确比较目标及两个选项，不能凭单一得失结论断新工作全面更好。',{requiresComparisonMethod:true}))]),

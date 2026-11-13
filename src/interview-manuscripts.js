@@ -9,6 +9,8 @@ import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
+export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.0',directory:'promotion-pay'});
+const INTERVIEW_PROFILE={questionId:INTERVIEW_QUESTION_ID,questionType:'interview_pass',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,directory:'interview-pass'};
 const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
 const NO_WINDOW_NOTE='此盘暂无有据的日期可列。';
 const GENERATES={木:'火',火:'土',土:'金',金:'水',水:'木'};
@@ -94,24 +96,25 @@ export function interviewTimingSlots(reading,specs){
  });
 }
 
-export function createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid=false}){
+export function createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid=false,profile=INTERVIEW_PROFILE}){
+ const directory='data/authored-readings/'+profile.directory+'/';
  const cache=new Map();
  const read=path=>{if(!cache.has(path))cache.set(path,Promise.resolve(readJSON(path)).then(v=>{
-  if(v.schemaVersion!=='1.0.0'||v.contentVersion!==library.contentVersion||v.manuscriptVersion!==INTERVIEW_MANUSCRIPT_VERSION)throw new Error('Authored interview version mismatch');return freeze(v);
+  if(v.schemaVersion!=='1.0.0'||v.contentVersion!==library.contentVersion||v.manuscriptVersion!==profile.manuscriptVersion)throw new Error('Authored interview version mismatch');return freeze(v);
  }).catch(e=>{cache.delete(path);throw e;}));
  while(cache.size>3){const victim=[...cache.keys()].find(k=>!k.endsWith('/index.json')&&k!==path);if(!victim)break;cache.delete(victim);}
  return cache.get(path);};
  async function getContent(question,options){
-  if(question.id!==INTERVIEW_QUESTION_ID||question.manuscriptIndexPath!=='data/authored-readings/interview-pass/index.json')throw new Error('Invalid interview manuscript binding');
+  if(question.id!==profile.questionId||question.question_type!==profile.questionType||question.manuscriptIndexPath!==directory+'index.json')throw new Error('Invalid authored manuscript binding');
   const missing=!options.castingDate?['castingDate']:[];if(!options.monthBranch&&!options.monthOrder)missing.push('monthBranch');
   if(missing.length)return {status:'requires-context',missingContext:missing,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false};
-  const reading=createInterviewReading({library,question,...options,applyVoid:includeHistoricalVoid});
+  const reading=createContextualReading({library,question,...options,applyVoid:includeHistoricalVoid});
   const index=await read(question.manuscriptIndexPath);
   if(index.questionId!==question.id)throw new Error('Authored interview question mismatch');
   const pending=()=>({status:'pending-authoring',reading,story:null,paragraphs:[],predictionAllowed:false,productionAllowed:false,
    coverage:{baseCases:index.baseCaseCount,authoredVersions:index.authoredVersionCount,contextProfiles:index.contextProfileCount,totalBaseCases:4608}});
   const entry=index.files.find(f=>f.primaryId===reading.primaryId);if(!entry)return pending();
-  if(entry.path!==`data/authored-readings/interview-pass/hex-${String(reading.primaryId).padStart(3,'0')}.json`)throw new Error('Invalid authored shard path');
+  if(entry.path!==`${directory}hex-${String(reading.primaryId).padStart(3,'0')}.json`)throw new Error('Invalid authored shard path');
   const file=await read(entry.path);if(file.questionId!==question.id||file.primaryId!==reading.primaryId)throw new Error('Authored shard identity mismatch');
   const position=file.monthSlots[reading.movingLine+':'+reading.monthSlotForLookup];
   if(position===undefined)return pending();
@@ -130,7 +133,8 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
-  checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
+  if(profile===INTERVIEW_PROFILE)checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
+  else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!=='promotion-with-associated-pay')throw new Error('Authored promotion scope mismatch');
   checkInterviewShort(row.copy.short.text);
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');

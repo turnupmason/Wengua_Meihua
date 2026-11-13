@@ -20,8 +20,9 @@ with sync_playwright() as p:
   expect(page.locator('#subcategory option')).to_have_count(len(category['subcategories']))
   for sub in category['subcategories']:
    page.select_option('#subcategory',sub['id'])
-   expect(page.locator('#question-item option')).to_have_count(len(sub['questions']))
-   for q in sub['questions']:
+   available=[q for q in sub['questions'] if not q.get('archived')]
+   expect(page.locator('#question-item option')).to_have_count(len(available))
+   for q in available:
     page.select_option('#question-item',q['id']);settled();checked+=1
     expect(page.locator('.stone')).to_be_visible() if q['mode']=='narrative' else expect(page.locator('.stone')).not_to_be_visible()
     if category['id']=='health':
@@ -80,6 +81,6 @@ with sync_playwright() as p:
  page.select_option('#domain','career');page.select_option('#subcategory','career.interview');page.select_option('#question-item','career.interview.job-offer');settled()
  page.screenshot(path=str(Path(tempfile.gettempdir())/'wengua-product-career.png'),full_page=True)
  assert not errors,errors
- assert checked==82
+ assert checked==81
  print(json.dumps({'categories':6,'subcategories':31,'questions':checked,'twelveMonthOptions':12,'interviewCalculationCollapsible':True,'castDateRecalculated':True,'actualMaoMonthAndFutureYears':True,'separateTimingSection':True,'fullBaseNewCases':True,'healthPatientChartsHidden':True,'walletAndPhoneActionsDistinct':True,'pageErrors':errors}))
  browser.close()

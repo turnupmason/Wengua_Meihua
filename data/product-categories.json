@@ -122,20 +122,20 @@
           "position": 2,
           "categoryId": "career",
           "exampleQuestions": [
-            "这次能晋升吗？",
-            "今年能加薪吗？"
+            "这次能晋升并随岗加薪吗？"
           ],
           "questions": [
             {
               "id": "career.promotion-pay.promotion",
-              "question": "这次晋升能争取到吗？",
+              "question": "这次能晋升并随岗加薪吗？",
               "question_type": "promotion",
               "sourceDomainIds": [
-                "domain-09"
+                "domain-09",
+                "domain-10"
               ],
               "mode": "narrative",
-              "answerScope": "回答本次晋升，不由在任见克条文推成必遭处分或失业。",
-              "legacyQuestionId": "domain-09-promotion",
+              "answerScope": "回答本次晋升及随岗加薪。晋升落实时一并看随岗薪资幅度。",
+              "manuscriptIndexPath": "data/authored-readings/promotion-pay/index.json",
               "position": 1,
               "categoryId": "career",
               "subcategoryId": "career.promotion-pay",
@@ -144,9 +144,13 @@
                 {
                   "domainId": "domain-09",
                   "sectionId": "mh-071"
+                },
+                {
+                  "domainId": "domain-10",
+                  "sectionId": "mh-072"
                 }
               ],
-              "ruleStatus": "exact-question-link;release-review-separate",
+              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -167,6 +171,7 @@
               ],
               "mode": "narrative",
               "answerScope": "回答所选年度薪资调整，不把升职、奖金和加薪互相替代。",
+              "archived": true,
               "contextFields": {
                 "targetYear": {
                   "label": "所问年份",
@@ -188,7 +193,7 @@
                   "sectionId": "mh-072"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,

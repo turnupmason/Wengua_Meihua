@@ -32,7 +32,7 @@ JSON按本卦分片，monthSlots以动爻:月令指向行池；每次只读一�
 
 本助手是实际写作者与逐篇复核者，状态为author-checked，不声称独立人类专家或用户逐篇认证。旧1,920篇批次与旧审核视图单列。
 
-正式产品导航为六大领域、31 个细分入口和 82 个固定问项，见 [正式分类 V2](docs/PRODUCT_CATEGORIES_V1.md)。使用 createProductRepository，古籍门类和兼容问法在内部使用。
+正式产品导航为六大领域、31 个细分入口和 81 个可选问项，另存 1 个年度加薪历史问项，见 [正式分类 V2](docs/PRODUCT_CATEGORIES_V1.md)。使用 createProductRepository，古籍门类和兼容问法在内部使用。
 
 最新断语标准为 [V3规范](docs/STORY_GENERATION_STANDARD_V3.md)，[十篇简断与详断](docs/TEN_READINGS_V3.md)由本助手负责撰写，开发侧接入已写稿件。第一层卦象事实、第二层专业结论、第三层自然文字分开；简详绑定同一结论。十篇V3内容与文风已获用户通过，验收记录见 data/editorial-acceptance.json，绑定原稿摘要；不重复请求文风确认。接受范围不自动扩展到其他盘、旬空或精确应期。
 
@@ -66,7 +66,7 @@ Windows 注意：仓库用 `.gitattributes` 固定 LF，原文件哈希才能通
 
 ## 事项与正式接口
 
-产品层读取 data/product-categories.json，按六大领域和 31 个细分入口展示 82 个固定问项。问项 ID 保持稳定，当前所属入口读取 subcategoryId。18个原典门类和旧90问是内部兼容来源，不是产品一级菜单。读取 question_type、回答范围、来源和辅助字段；辅助字段不由AI分类。复合与成婚不同；婚可成不能证明喜欢自己；失物不能代替失联人员。前端可另分导航大类，但保留原门类绑定。备注如保留，仅个人记录，不参与AI分类，不声称已回答备注里的其他问题。
+产品层读取 data/product-categories.json，按六大领域和 31 个细分入口展示 81 个可选问项，并兼容原年度加薪问项。问项 ID 保持稳定，当前所属入口读取 subcategoryId。18个原典门类和旧90问是内部兼容来源，不是产品一级菜单。读取 question_type、回答范围、来源和辅助字段；辅助字段不由AI分类。复合与成婚不同；婚可成不能证明喜欢自己；失物不能代替失联人员。前端可另分导航大类，但保留原门类绑定。备注如保留，仅个人记录，不参与AI分类，不声称已回答备注里的其他问题。
 
 createProductRepository({library}).getContent 精确匹配产品事项；仅显式同范围连接才调用内部 createQuestionRepository。未写稿为 pending-authoring；已有未过九项为 pending-review，story:null、空段落、productionAllowed:false，不输出占期。15项查阅为 reference。正式产品不得回退其他事项或旧领域通用稿。
 
