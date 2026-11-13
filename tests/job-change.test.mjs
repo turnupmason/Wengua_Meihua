@@ -39,6 +39,25 @@ test('job-change uses one reading for both parts and preserves historical casts'
  }
 });
 
+test('job-change recalculates at a new cast, keeps historical dates, and bounds each window', async () => {
+ const input = {...cast, questionId, context, primaryId:2, movingLine:1, monthBranch:'寅'};
+ const [first, fresh, nextMonth, archived] = await Promise.all([
+  product.getContent({...input, castingDate:'2026-11-11'}),
+  product.getContent({...input, castingDate:'2026-11-13'}),
+  product.getContent({...input, castingDate:'2026-11-30'}),
+  product.getContent({...input, castingDate:'2026-11-11', viewDate:'2026-12-01'}),
+ ]);
+ const [earlier, current, following, historical] = [first, fresh, nextMonth, archived].map(r => r.timingSection.windows[0]);
+ assert.deepEqual(earlier.displayedDates, ['2026-11-12', '2026-11-13']);
+ assert.deepEqual(current.displayedDates, ['2026-11-13', '2026-11-24']);
+ assert.deepEqual(following.displayedDates, ['2026-12-06', '2026-12-07']);
+ assert.deepEqual(historical.displayedDates, earlier.displayedDates);
+ assert.match(historical.text, /11月12、13号/u);
+ assert.match(following.text, /下月6、7号/u);
+ assert.equal(current.event, earlier.event);
+ assert.equal(current.valence, earlier.valence);
+});
+
 test('job-change reads exact month keys with shared output order and actual dates', async () => {
   const index = JSON.parse(await read('data/authored-readings/' + directory + '/index.json'));
   let checkedKeys = 0;

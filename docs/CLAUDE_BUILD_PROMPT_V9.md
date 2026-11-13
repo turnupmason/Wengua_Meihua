@@ -45,7 +45,7 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 3. `开局：`、`过程：`、`结局：`、`应期：`、`总断：`。
 4. `古籍依据：`、`动爻完整原文：`，然后用 `<details>` 和 `<summary>计算说明</summary>` 折叠计算依据。
 
-已有日级依据时，「应期：以下为传统推算的参考窗口。」下一行显示「本月×号」或「下月×号」及对应事件和吉凶。地支、取期方法、日期换算和适用条件保存于计算说明和结构化字段。静态阅读文档使用与面试相同的 2026-11-11 对照日并在页首明示；软件使用实际起卦日，历史盘固定原日期基准。禁止以只列地支、日期占位符或另一套排版交付已有取期的断语。确无可据取期时，沿用已定说明并记录原因。
+已有日级依据时，「应期：以下为传统推算的参考窗口。」下一行显示「本月×号」或「下月×号」及对应事件和吉凶。地支、取期方法、日期换算和适用条件保存于计算说明和结构化字段。静态阅读文档统一以 2026-11-11 演示并在页首标明，供核对排版。Claude 或客户端接入时传本次实际当地起卦日 `castingDate`，读取 `timingSection.windows` 的 `displayedDates` 和 `text`，保存 `castingDate` 与公历日期。新盘从起卦日查起，先取本月，若本月没有合格日则匹配下月，每个事件至多显示最早的两个候选日。历史盘回看可传 `viewDate` 以显示准确月份，原候选过期仍按原日存档。日支每 12 天轮转，完整干支每 60 天轮转，按原声明匹配，已过应期不会自动顺延。禁止以只列地支、日期占位符或另一套排版交付已有取期的断语。确无可据取期时，沿用已定说明并记录原因。
 
 运行时沿用 `createProductRepository().getContent` 和字段 `short`、`narrativeParagraphs`、`timingSection`、`calculationExplanation`、`paragraphs`、`story`。日期窗口继续使用 `event`、`valence`、`text`、`displayedDates`、`eventScope`、`targetBranches`、`calculationBasis`。软件显示仍使用原组件，抓取时保持既有的 `questionId`、本卦、动爻、月令键和稿件字段。每次重建后按实际输出校验栏目、取期结果和索引，发现格式漂移先修正再交付。
 
@@ -60,7 +60,7 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 | 05 | 家庭家宅 | 5 | 13 |
 | 06 | 寻人失物 | 4 | 8 |
 
-现行导航为六大领域、31 个细分入口和 82 个固定问项。名称、顺序和归属见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。读取 subcategoryId 定位导航，固定问项继续使用原有 ID。
+现行导航为六大领域和 31 个细分入口，目录保存 80 个现用问项和 3 个历史问项。名称、顺序和归属见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。读取 subcategoryId 定位导航，固定问项继续使用原有 ID。
 
 data/product-categories.json 为产品目录，sources/editorial/product-taxonomy.mjs 为编辑源。18个古籍门类及原90个固定问法仍作为内部来源和兼容接口保留，产品categoryId与古籍domainId分开。
 
@@ -80,7 +80,7 @@ const result = await product.getContent({
   primaryId: 48,
   movingLine: 5,
   monthBranch: '亥',
-  castingDate: '2026-11-11',
+  castingDate: castLocalDate, // 本次起卦的当地 YYYY-MM-DD
   timingScale: 'day',
   timingContext: {castingMethod:'pre-heaven', periodMethod:'element-qi'}
 });

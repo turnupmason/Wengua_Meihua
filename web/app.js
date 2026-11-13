@@ -3,15 +3,24 @@ import {createContextualReading} from '../src/interview-manuscripts.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createProductRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
 const questionCatalog=await questions.getCatalog();
-const now=new Date(),localDate=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
-$('#casting-date').value=localDate;$('#ganzhi').value=getCivilDay(localDate).dayGanzhi;
+function localToday(){
+ const now=new Date();
+ return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+}
+const castDateInput=$('#casting-date');
+let castingDateEdited=false;
+function syncCastingDate(){
+ if(!castingDateEdited)castDateInput.value=localToday();
+ $('#ganzhi').value=castDateInput.value?getCivilDay(castDateInput.value).dayGanzhi:'';
+}
+syncCastingDate();
 $('#primary').innerHTML=lib.listHexagrams().map(h=>`<option value="${h.id}">${h.id} · ${esc(h.name)}</option>`).join('');$('#primary').value='49';
 $('#domain').innerHTML=questionCatalog.categories.map(c=>`<option value="${c.id}">${c.number} · ${esc(c.label)}</option>`).join('');
 function selectedQuestion(){return questionCatalog.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions).find(q=>q.id===$('#question-item').value);}
 const contextLabels={keys:'钥匙',wallet:'钱包',phone:'手机',documents:'证件或文件',jewellery:'首饰',other:'其他物品','self-use':'自住',investment:'投资'};
 function refreshContext(){
  const q=selectedQuestion();
- $('#context-fields').innerHTML=Object.entries(q.contextFields).map(([key,f])=>`<label>${esc(f.label)}${f.type==='year'?`<input data-product-context="${key}" type="number" min="1900" max="2200" value="${Number($('#casting-date').value.slice(0,4))||now.getFullYear()}" required>`:`<select data-product-context="${key}" required><option value="">请选择</option>${f.options.map(v=>`<option value="${esc(v)}">${esc(contextLabels[v]||v)}</option>`).join('')}</select>`}</label>`).join('');
+ $('#context-fields').innerHTML=Object.entries(q.contextFields).map(([key,f])=>`<label>${esc(f.label)}${f.type==='year'?`<input data-product-context="${key}" type="number" min="1900" max="2200" value="${Number(castDateInput.value.slice(0,4))||new Date().getFullYear()}" required>`:`<select data-product-context="${key}" required><option value="">请选择</option>${f.options.map(v=>`<option value="${esc(v)}">${esc(contextLabels[v]||v)}</option>`).join('')}</select>`}</label>`).join('');
  const info=q.mode!=='narrative';document.querySelectorAll('[data-chart-control],.stone,.detail,#context-panel,#source-panel').forEach(el=>el.hidden=info);
  $('#view-button').textContent=info?'查看说明':'查看卦象';$('#story-label').textContent=q.mode==='reference'?'查看传统象意说明':q.mode==='guidance'?'查看现实查找建议':'展开本次解读';
  $('#question-note').textContent=q.categoryId==='health'?'健康类提供古籍术语与传统象意查阅。':'选择一个具体问题，一次只问一件事。';
@@ -34,7 +43,7 @@ async function showStory(current){
   const advice=[...selected.practicalAdvice,...(current.productContext.objectKind?questionCatalog.objectPracticalAdvice[current.productContext.objectKind]||[]:[])];
   const adviceHTML=[...new Set(advice)].map(p=>`<p>${esc(p)}</p>`).join('');
   if(!order&&selected.mode==='narrative'){$('#story').innerHTML=adviceHTML+'<p>选择月令后，可查看本次事项。</p>';return;}
-  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
+  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,castingDate:current.castingDate,viewDate:localToday(),timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
   let body;
   if(content.status==='ready'&&content.short){
@@ -77,6 +86,7 @@ $('#detail').addEventListener('click',async e=>{
  finally{if(request===detailRequest)button.disabled=false;}
 });
 function update(){try{
+ syncCastingDate();
  const selected=selectedQuestion();if(!selected)throw new Error('请选择具体问题。');
  const productContext=Object.freeze(Object.fromEntries([...document.querySelectorAll('[data-product-context]')].filter(el=>el.value!=='').map(el=>[el.dataset.productContext,el.type==='number'?Number(el.value):el.value])));
  const sourceDomainId=selected.chartSourceDomainId;
@@ -103,7 +113,7 @@ $('#domain').addEventListener('change',()=>{refreshSubcategories();update();});
 $('#subcategory').addEventListener('change',()=>{refreshQuestions();update();});
 $('#question-item').addEventListener('change',()=>{refreshContext();update();});
 $('#context-fields').addEventListener('change',update);
-$('#casting-date').addEventListener('change',()=>{if($('#casting-date').value)$('#ganzhi').value=getCivilDay($('#casting-date').value).dayGanzhi;update();});
+castDateInput.addEventListener('change',()=>{castingDateEdited=Boolean(castDateInput.value);update();});
 $('#panels').addEventListener('click',e=>{const article=e.target.closest('article');if(!article)return;const line=e.target.closest('[data-line-position]');if(line)showDetail(article.dataset.stage,Number(line.dataset.linePosition));else if(e.target.closest('.panel-detail'))showDetail(article.dataset.stage);});
 $('#panels').addEventListener('keydown',e=>{if(['Enter',' '].includes(e.key)&&e.target.matches('[data-line-position]')){e.preventDefault();showDetail(e.target.closest('article').dataset.stage,Number(e.target.dataset.linePosition));}});
 update();

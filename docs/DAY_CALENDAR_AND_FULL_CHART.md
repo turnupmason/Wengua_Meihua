@@ -1,6 +1,6 @@
 # 日期查表、六个经卦与行动提示
 
-> 最新：用户已确认最近十篇的口吻，1,920篇已获重写授权，存量正文尚未逐篇改写。读取 [已确认文风与未来日期](APPROVED_STORY_STYLE.md)。新盘用 `findUpcomingCivilDayMatches` 排除起卦日之前的日期，先筛本月、没有合格候选再查下月；`formatUpcomingCivilDay` 对过去日期报错，并处理历史回看标签。它们不代替完整应期判断。
+> 最新：用户已确认最近十篇的口吻，1,920篇已获重写授权，存量正文尚未逐篇改写。读取 [已确认文风与未来日期](APPROVED_STORY_STYLE.md)。新盘用 `findUpcomingCivilDayMatches` 排除起卦日之前的日期，先筛本月、没有合格候选再查下月；`formatUpcomingCivilDay` 对过去日期报错，并处理历史回看标签。阅读文档里的 2026-11-11 是对照盘的演示日。软件接入应传实际起卦日 `castingDate`，直接读取 `timingSection.windows` 的 `displayedDates` 和 `text`。每个事件最多展示两个最近的合格日。日支每 12 天轮转，完整日干支每 60 天轮转；旧盘的窗口过期后仍保存原日，`viewDate` 只影响回看时的日期称呼。日期换算和应期断法分别核对。
 
 ## 按日查询无需填写时分
 
