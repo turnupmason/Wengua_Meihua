@@ -16,11 +16,11 @@ import { WALK_IN_FILES, walkInUrl } from './walkInArt';
 const DOORS = { courtyard: [0.5, 0.592], threshold: [0.5, 0.565] } as const;
 /** Lantern windows in each picture, for their flicker (x, y as fractions; size as a fraction of the width). */
 const LAMPS = {
-  courtyard: [[0.066, 0.702, 0.11], [0.182, 0.663, 0.07], [0.818, 0.663, 0.07], [0.936, 0.702, 0.11]],
+  courtyard: [[0.066, 0.702, 0.14], [0.182, 0.663, 0.09], [0.818, 0.663, 0.09], [0.936, 0.702, 0.14]],
   threshold: [[0.368, 0.521, 0.05], [0.5, 0.52, 0.05], [0.631, 0.521, 0.05]],
 } as const;
-/** Where the incense rises from the courtyard censer. */
-const CENSER = [0.5, 0.735] as const;
+/** The incense sticks' tips in the courtyard censer: the smoke rises from here. */
+const CENSER = [0.502, 0.728] as const;
 
 const easeIn = (x: number) => x * x * x;
 
@@ -58,9 +58,9 @@ export function PaintedWalkIn({ clock, intro, reduced, onDone }: Props) {
       const k = held ? clamp01(WALK_AT / seconds) : it.start === null ? 0 : clamp01((c.elapsed - it.start) / seconds);
       const s = k * seconds;
       if (it.start === null && !held) {
-        // Waiting at the title: the courtyard breathes a little (still when motion is reduced).
-        const b = reduced ? 0 : Math.sin(c.elapsed * 0.18);
-        place(court.current, DOORS.courtyard, 1.02 + b * 0.008, 0, 1);
+        // Waiting at the title: the courtyard holds still (its lamps and incense, animated on the GPU,
+        // keep it alive while the app is still busy starting up).
+        place(court.current, DOORS.courtyard, 1.02, 0, 1);
         place(sill.current, DOORS.threshold, 1, 0, 0);
       } else if (reduced) {
         // Reduced motion: no push, the courtyard fades straight onto the hall.
@@ -91,8 +91,10 @@ export function PaintedWalkIn({ clock, intro, reduced, onDone }: Props) {
         {LAMPS.courtyard.map(([x, y, w], i) => (
           <i key={i} className="walkin-lamp" style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${w * 100}%`, animationDelay: `${-i * 0.7}s` }} />
         ))}
-        {[0, 1].map((i) => (
-          <img key={i} className="walkin-smoke" src={walkInUrl(WALK_IN_FILES.wisp)} alt="" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%`, animationDelay: `${-i * 4.5}s` }} />
+        {/* Incense: the sticks' tips glow, and smoke rises, sways and thins over the painted wisp. */}
+        <i className="hall-embers" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%` }} />
+        {[0, 1, 2].map((i) => (
+          <img key={i} className={`hall-smoke is-${i}`} src={walkInUrl(WALK_IN_FILES.wisp)} alt="" style={{ left: `${(CENSER[0] + (i - 1) * 0.012) * 100}%`, top: `${CENSER[1] * 100}%` }} />
         ))}
       </div>
       <div ref={sill} className="walkin-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.threshold)})`, opacity: 0 }}>

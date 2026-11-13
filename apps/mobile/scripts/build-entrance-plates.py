@@ -82,8 +82,27 @@ def gilt_text(img: Image.Image, box: tuple[int, int, int, int]) -> Image.Image:
     return Image.composite(layer, img, soft)
 
 
+def hall_wall(pack: Path) -> None:
+    """The 3D hall's back wall during the ritual: keyframe 03 above the seats (its wood panels, warm
+    light, brackets and lanterns), fading at the sides into the hall's dark walls."""
+    img = Image.open(pack / 'keyframes/03-hall-lighting.png').convert('RGB').crop((0, 0, 941, 745))
+    w, h = img.size
+    dark = Image.new('RGB', img.size, (24, 17, 13))
+    mask = Image.new('L', img.size, 255)
+    px = mask.load()
+    edge = round(w * 0.1)
+    for x in range(w):
+        k = min(1.0, min(x, w - 1 - x) / edge)
+        for y in range(h):
+            px[x, y] = round(255 * (k * k * (3 - 2 * k)))
+    img = Image.composite(img, dark, mask)
+    img.save(OUT / 'hall-wall.webp', 'WEBP', quality=84, method=6)
+    print('hall-wall.webp', img.size, (OUT / 'hall-wall.webp').stat().st_size, 'bytes')
+
+
 def main(pack: Path) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    hall_wall(pack)
     for src, name, box, draw_board in PLATES:
         img = Image.open(pack / src).convert('RGB')
         if draw_board:

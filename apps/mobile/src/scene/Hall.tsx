@@ -6,7 +6,7 @@
  * banners, light shafts from high windows, the burner, the kneeling cushion and the offerings.
  * Everything is generated in code (see ASSETS.md).
  */
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { flameGeometry, flameMaterial } from './flame';
@@ -16,6 +16,7 @@ import { drawCloud, lathe, normalFromHeight, patternedCloth, sceneMaterials, sha
 import { LightingCandle, OfferingTable } from './Offerings';
 import { Burner } from './Burner';
 import { Courtyard, Facade } from './Exterior';
+import { entranceTexture } from './entranceArt';
 import { WORLD } from './timeline';
 import type { V3 } from './timeline';
 
@@ -43,15 +44,62 @@ function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => 
   return t;
 }
 
+/**
+ * The red runner as in the painted hall: muted burgundy with a fine weave, darker toward its edges,
+ * a dark border band ruled in old gold, and a few faint cloud scrolls far apart (one canvas for the
+ * whole 17 m length, so nothing repeats).
+ */
+function runnerTexture() {
+  const W = 192;
+  const H = 2048;
+  const c = document.createElement('canvas');
+  c.width = W;
+  c.height = H;
+  const g = c.getContext('2d')!;
+  g.fillStyle = '#4a171a';
+  g.fillRect(0, 0, W, H);
+  // Weave: fine uneven threads.
+  for (let y = 0; y < H; y += 2) {
+    g.fillStyle = `rgba(${y % 4 ? 20 : 90}, ${y % 4 ? 6 : 30}, ${y % 4 ? 8 : 32}, ${0.05 + ((y * 7919) % 13) / 260})`;
+    g.fillRect(0, y, W, 1);
+  }
+  // Darker toward both edges.
+  const edge = g.createLinearGradient(0, 0, W, 0);
+  edge.addColorStop(0, 'rgba(12, 4, 5, 0.55)');
+  edge.addColorStop(0.18, 'rgba(12, 4, 5, 0.1)');
+  edge.addColorStop(0.82, 'rgba(12, 4, 5, 0.1)');
+  edge.addColorStop(1, 'rgba(12, 4, 5, 0.55)');
+  g.fillStyle = edge;
+  g.fillRect(0, 0, W, H);
+  // Border band ruled in old gold.
+  for (const x of [10, W - 26]) {
+    g.fillStyle = 'rgba(28, 9, 10, 0.75)';
+    g.fillRect(x, 0, 16, H);
+    g.fillStyle = 'rgba(150, 112, 64, 0.5)';
+    g.fillRect(x, 0, 1.5, H);
+    g.fillRect(x + 14.5, 0, 1.5, H);
+  }
+  // A few faint cloud scrolls, far apart, alternating sides.
+  g.strokeStyle = 'rgba(150, 112, 64, 0.3)';
+  g.lineWidth = 3;
+  g.lineCap = 'round';
+  for (let k = 0; k < 7; k++) drawCloud(g, W * (k % 2 ? 0.62 : 0.4), 150 + k * 280, 18);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 8;
+  return t;
+}
+
 let decor: ReturnType<typeof buildDecor> | null = null;
 function buildDecor() {
   // Beam painting (旋子彩画): blue/green bands, gold outlines, a whirl medallion in the centre.
   const beam = canvasTex(512, 64, (g) => {
-    g.fillStyle = '#1e2624';
+    // Dark lacquered beams with faint old-gold lines (as in the painted hall).
+    g.fillStyle = '#18120f';
     g.fillRect(0, 0, 512, 64);
-    g.fillStyle = '#24302a';
+    g.fillStyle = '#211913';
     g.fillRect(0, 10, 512, 44);
-    g.strokeStyle = '#7d6440';
+    g.strokeStyle = '#5a4630';
     g.lineWidth = 3;
     g.strokeRect(2, 8, 508, 48);
     for (const x of [64, 448]) {
@@ -61,7 +109,7 @@ function buildDecor() {
       g.lineTo(x - 30, 56);
       g.stroke();
     }
-    g.fillStyle = '#232b30';
+    g.fillStyle = '#1f1814';
     g.beginPath();
     g.ellipse(256, 32, 90, 22, 0, 0, Math.PI * 2);
     g.fill();
@@ -74,18 +122,18 @@ function buildDecor() {
   }, [3, 1]);
   // Ceiling panels (天花): dark blue-green ground, gold circle with a lotus rosette.
   const panel = canvasTex(256, 256, (g) => {
-    g.fillStyle = '#1b201e';
+    g.fillStyle = '#15100d';
     g.fillRect(0, 0, 256, 256);
-    g.strokeStyle = '#6f5a3a';
+    g.strokeStyle = '#33281e';
     g.lineWidth = 8;
     g.strokeRect(4, 4, 248, 248);
-    g.fillStyle = '#232a2c';
+    g.fillStyle = '#1c1612';
     g.beginPath();
     g.arc(128, 128, 82, 0, Math.PI * 2);
     g.fill();
     g.lineWidth = 4;
     g.stroke();
-    g.fillStyle = '#7d6440';
+    g.fillStyle = '#3a2e22';
     for (let i = 0; i < 8; i++) {
       g.save();
       g.translate(128, 128);
@@ -174,11 +222,7 @@ function buildDecor() {
     lattice: new THREE.MeshStandardMaterial({ map: lattice, emissive: new THREE.Color('#ffb060'), emissiveMap: lattice, emissiveIntensity: 0.55, roughness: 0.8 }),
     // Smooth lacquer (no raised embroidery relief): a quiet ground so the 三清 lead.
     screen: new THREE.MeshStandardMaterial({ map: screen.map, roughness: 0.82, metalness: 0.05 }),
-    runner: (() => {
-      // Muted burgundy with a sparse, low-contrast old-gold figure (not a bright red field).
-      const set = patternedCloth('#3d1517', '#5a3f2a', [2, 16], 111);
-      return new THREE.MeshStandardMaterial({ map: set.map, normalMap: set.normalMap, roughness: 0.85 });
-    })(),
+    runner: new THREE.MeshStandardMaterial({ map: runnerTexture(), roughness: 0.95 }),
     lanternPanel: new THREE.MeshStandardMaterial({ color: '#ffd9a0', emissive: new THREE.Color('#ff9a40'), emissiveIntensity: 1.7, roughness: 0.7, side: THREE.DoubleSide }),
     candleFlame: new THREE.MeshBasicMaterial({ color: '#ffd38a', toneMapped: false }),
     shaft: new THREE.ShaderMaterial({
@@ -627,13 +671,10 @@ export function Hall({ shadows }: { shadows: boolean }) {
       {/* Altar platform with a gold cloud screen behind the statues */}
       <Block position={[0, 0.55, -13.9]} scale={[13, 1.1, 4.6]} material={m.lacquer} shadows={shadows} />
       <Block position={[0, 1.16, -13.9]} scale={[13.2, 0.12, 4.8]} material={m.gilt} />
-      <mesh position={[0, 4.4, -16.05]} material={d.screen}>
-        <planeGeometry args={[12.5, 6.4]} />
-      </mesh>
-      <Block position={[0, 7.65, -16.0]} scale={[12.8, 0.18, 0.12]} material={m.gilt} />
-      {[-6.3, 6.3].map((x) => (
-        <Block key={x} position={[x, 4.4, -16.0]} scale={[0.18, 6.6, 0.12]} material={m.gilt} />
-      ))}
+      {/* Swapped in once its picture loads, so it stays out of the static batch. */}
+      <group userData={{ dynamic: true }}>
+        <BackWall screen={d.screen} gilt={m.gilt} />
+      </group>
       <OfferingTable />
       <CandleRack position={[-3.6, 0, -10.2]} />
       <CandleRack position={[3.6, 0, -10.2]} />
@@ -649,6 +690,43 @@ export function Hall({ shadows }: { shadows: boolean }) {
       <pointLight position={[0, 5.5, -1.5]} color="#ffb874" intensity={4} distance={12} decay={1.6} />
       <pointLight position={[0, 5.5, 5]} color="#ffb874" intensity={3} distance={10} decay={1.6} />
     </group>
+  );
+}
+
+/**
+ * Behind the 三清 during the ritual: the artist's hall wall (keyframes/03 above the seats — wood
+ * panels, warm light, brackets, lanterns), shown unlit as painted, so the 3D hall the visitor walks
+ * through matches the painted hall at home. Until it loads (or if it cannot), the old cloud screen.
+ */
+const WALL = { file: 'hall-wall.webp', aspect: 941 / 745, bottom: 1.15, top: 8.55 };
+function BackWall({ screen, gilt }: { screen: THREE.Material; gilt: THREE.Material }) {
+  const art = entranceTexture(WALL.file);
+  const [painted, setPainted] = useState(art.loaded);
+  useEffect(() => {
+    let alive = true;
+    void art.ready.then((ok) => alive && setPainted(ok));
+    return () => {
+      alive = false;
+    };
+  }, [art]);
+  const material = useMemo(() => new THREE.MeshBasicMaterial({ map: art.texture, toneMapped: false, fog: false }), [art]);
+  const h = WALL.top - WALL.bottom;
+  if (painted)
+    return (
+      <mesh position={[0, WALL.bottom + h / 2, -16.08]} material={material}>
+        <planeGeometry args={[h * WALL.aspect, h]} />
+      </mesh>
+    );
+  return (
+    <>
+      <mesh position={[0, 4.4, -16.05]} material={screen}>
+        <planeGeometry args={[12.5, 6.4]} />
+      </mesh>
+      <Block position={[0, 7.65, -16.0]} scale={[12.8, 0.18, 0.12]} material={gilt} />
+      {[-6.3, 6.3].map((x) => (
+        <Block key={x} position={[x, 4.4, -16.0]} scale={[0.18, 6.6, 0.12]} material={gilt} />
+      ))}
+    </>
   );
 }
 

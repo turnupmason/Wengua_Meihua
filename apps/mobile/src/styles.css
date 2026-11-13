@@ -463,7 +463,9 @@ a { color: var(--gold); }
   filter: drop-shadow(0 0 18px rgba(255, 200, 110, 0.35));
 }
 .splash-title p { margin: 10px 0 0; font-family: var(--serif); font-size: 14px; letter-spacing: 0.45em; margin-right: -0.45em; color: #d8c49a; }
-@keyframes splashIn { from { opacity: 0; transform: translateY(14px); letter-spacing: 0.7em; } to { opacity: 1; transform: none; } }
+/* Only opacity and transform, which the GPU composites on its own: the title rises smoothly even
+   while the app is still busy starting up (no letter-spacing here, which re-lays out text every frame). */
+@keyframes splashIn { from { opacity: 0; transform: translate3d(0, 14px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
 .splash-foot { position: relative; margin-bottom: calc(var(--safe-b) + 9vh); display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 60px; }
 .splash-enter { margin: 0; font-family: var(--serif); font-size: 16px; letter-spacing: 0.5em; margin-right: -0.5em; color: #f0d79e; animation: enterBreath 2.8s ease-in-out infinite; }
 @keyframes enterBreath { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
@@ -1469,3 +1471,71 @@ input, textarea, select { font-size: max(16px, 1em); }
 @media (prefers-reduced-motion: reduce) { .hall-glow, .hall-embers, .hall-smoke { animation: none; } }
 /* The tray: see-through without a backdrop blur, so the moving incense behind it costs nothing to redraw. */
 .home-panel.v3 { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+/* The title and the sign-in art are their own layers from the start: drawn once (brush text, its
+   shadows, the dark glow behind it), then only moved and faded. */
+.splash-title, .splash-key, .login-v2, .login-card { will-change: transform, opacity; backface-visibility: hidden; }
+
+/* Lamps breathe like flame: a slow swell and ebb, with small uneven flickers on top (every lamp in
+   the courtyard, the threshold, the hall, 藏经阁 and 问事录). GPU-only (opacity, transform). */
+.walkin-lamp {
+  background: radial-gradient(circle, rgba(255, 222, 160, 0.62) 0%, rgba(255, 196, 120, 0.3) 30%, rgba(255, 176, 96, 0.1) 52%, rgba(255, 160, 80, 0) 72%);
+  animation: lampBreath 3.4s ease-in-out infinite; will-change: opacity, transform;
+}
+.walkin-lamp.is-small { animation-duration: 3.9s; }
+@keyframes lampBreath {
+  0% { opacity: 0.38; transform: translate(-50%, -50%) scale(0.9); }
+  12% { opacity: 0.7; }
+  16% { opacity: 0.5; }
+  34% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.06); }
+  48% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  55% { opacity: 0.78; }
+  60% { opacity: 0.92; }
+  78% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.98); }
+  100% { opacity: 0.38; transform: translate(-50%, -50%) scale(0.9); }
+}
+.walkin.is-still .walkin-lamp, .walkin.is-still .hall-smoke, .walkin.is-still .hall-embers { animation: none; opacity: 0.6; }
+@media (prefers-reduced-motion: reduce) { .walkin-lamp { animation: none; opacity: 0.6; } }
+
+/* 祖师赐卦 in the painted hall: a swelling gold light with slow rays around 元始天尊, and the pearl. */
+.hall-glory {
+  position: absolute; width: 110%; aspect-ratio: 1; transform: translate(-50%, -50%); opacity: 0; z-index: 2; pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255, 236, 190, 0.75) 0%, rgba(255, 214, 140, 0.4) 10%, rgba(255, 190, 110, 0.14) 28%, rgba(255, 170, 90, 0) 50%),
+    repeating-conic-gradient(from 0deg, rgba(255, 224, 160, 0.16) 0deg 2.5deg, rgba(255, 224, 160, 0) 2.5deg 11deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.7) 26%, transparent 50%);
+  mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.7) 26%, transparent 50%);
+  animation: gloryTurn 24s linear infinite; will-change: opacity, transform;
+}
+@keyframes gloryTurn { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+.hall-flare {
+  position: absolute; width: 16%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; opacity: 0; z-index: 4; pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 252, 238, 0.95) 0%, rgba(255, 232, 170, 0.6) 14%, rgba(255, 206, 120, 0.22) 34%, rgba(255, 190, 100, 0) 62%);
+  will-change: opacity;
+}
+/* A soft shaft of gold let down from the pearl, unrolling downward, with motes drifting down in it. */
+.hall-beam {
+  position: absolute; width: 9%; height: 75%; opacity: 0; z-index: 3; pointer-events: none; transform-origin: 50% 0;
+  transform: translateX(-50%) scaleY(0); will-change: transform, opacity;
+  background: linear-gradient(180deg, rgba(255, 244, 210, 0.85) 0%, rgba(255, 218, 140, 0.5) 22%, rgba(255, 198, 110, 0.22) 60%, rgba(255, 190, 100, 0) 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 38%, #000 62%, transparent 100%);
+}
+.hall-beam i { position: absolute; top: 0; height: 100%; width: 7%; animation: beamMote 1.9s linear infinite; }
+.hall-beam i::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, #fff6dc 0%, rgba(255, 220, 150, 0.8) 40%, rgba(255, 200, 120, 0) 72%);
+}
+@keyframes beamMote {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(90%); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .hall-glory, .hall-beam i { animation: none; } }
+
+.ritual-vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10, 7, 5, 0.94) 0%, rgba(10, 7, 5, 0.82) 16%, rgba(10, 7, 5, 0.35) 30%, rgba(10, 7, 5, 0) 42%);
+  animation: vignetteIn 0.6s ease both;
+}
+@keyframes vignetteIn { from { opacity: 0; } to { opacity: 1; } }

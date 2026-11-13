@@ -389,6 +389,13 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         )}
       </div>
 
+      {/* At the stone table the 3D hall behind is kept in shadow: the eye stays on the table, and the
+          painted hall (above this, when the visitor looks up) is the only hall the visitor sees. */}
+      {walkInArt && phase === 'revealing' && <i className="ritual-vignette" aria-hidden="true" />}
+      {/* The painted hall and places sit right over the 3D view and under every word and button. */}
+      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} phase={phase} clock={clock} />}
+      {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
+
       {phase === 'idle' && intro === 'done' && (
         <nav className="place-tabs" aria-label={t.placesLabel}>
           {(['altar', 'library', 'records'] as const).map((p) => (
@@ -461,8 +468,6 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       )}
 
       {phase === 'entering' && <PreceptSubtitle t={t} clock={clock} reduced={reduced} />}
-      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} />}
-      {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
       {tier && intro !== 'done' && introRef.current.painted && ritual.phase === 'idle' && (
         <PaintedWalkIn
           clock={clock}

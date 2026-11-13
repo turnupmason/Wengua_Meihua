@@ -90,7 +90,7 @@ function TableBody() {
   const legZ = D / 2 - 0.13;
   return (
     <group>
-      <mesh position={[0, waistTop - 0.03, 0]} scale={[W - 0.16, 0.06, D - 0.16]} geometry={g.box} material={m.darkStone} castShadow receiveShadow />
+      <mesh position={[0, waistTop - 0.03, 0]} scale={[W - 0.16, 0.06, D - 0.16]} geometry={g.box} material={m.tableBase} castShadow receiveShadow />
       {[1, -1].map((s) => (
         <mesh key={`f${s}`} position={[0, waistTop - 0.06, s * (D / 2 - 0.1)]} geometry={geos.apronFront} material={m.apronStone} castShadow />
       ))}
@@ -106,14 +106,14 @@ function TableBody() {
         <mesh key={`${x}${z}`} position={[x + (ry ? 0.065 : -0.065), 0.05, z]} rotation={[0, ry, 0]} geometry={geos.leg} material={m.tableStone} castShadow receiveShadow />
       ))}
       {[1, -1].map((s) => (
-        <mesh key={`tf${s}`} position={[0, 0.025, s * legZ]} scale={[W - 0.12, 0.05, 0.12]} geometry={g.box} material={m.darkStone} receiveShadow />
+        <mesh key={`tf${s}`} position={[0, 0.025, s * legZ]} scale={[W - 0.12, 0.05, 0.12]} geometry={g.box} material={m.tableBase} receiveShadow />
       ))}
       {[1, -1].map((s) => (
-        <mesh key={`ts${s}`} position={[s * legX, 0.025, 0]} scale={[0.12, 0.05, D - 0.12]} geometry={g.box} material={m.darkStone} receiveShadow />
+        <mesh key={`ts${s}`} position={[s * legX, 0.025, 0]} scale={[0.12, 0.05, D - 0.12]} geometry={g.box} material={m.tableBase} receiveShadow />
       ))}
       {/* Stone stool (石凳) at the near end, where the reader sits */}
       <group position={[0, 0, D / 2 + 0.42]}>
-        <mesh geometry={geos.stoolBase} material={m.darkStone} castShadow />
+        <mesh geometry={geos.stoolBase} material={m.tableBase} castShadow />
         <mesh position={[0, 0.37, 0]} geometry={geos.stoolTop} material={m.tableStone} castShadow receiveShadow />
       </group>
     </group>
