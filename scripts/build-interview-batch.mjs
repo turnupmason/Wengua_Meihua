@@ -1,4 +1,5 @@
 import {mkdir,readdir,readFile,writeFile} from 'node:fs/promises';
+import {readingDocumentHeader,renderReadingDocumentEntry,READING_DOCUMENT_DEMO_DATE,READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {loadLibrary,interpretationArtifactDigest,AUDIT_CHECKS} from '../src/index.js';
 import {getVoidProfileKey,resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {inspectMovingLine,validateStoryCopy} from '../src/story-editorial.js';
@@ -191,13 +192,13 @@ for(const file of files){
  const pool=baseRows.filter(r=>r.primaryId===file.primaryId).sort((a,b)=>a.movingLine-b.movingLine||MONTH_ORDERS.findIndex(m=>m.id===a.monthOrder)-MONTH_ORDERS.findIndex(m=>m.id===b.monthOrder));
  const hexId=String(file.primaryId).padStart(3,'0');
  const name=library.getHexagram(file.primaryId).name,path=`docs/interview-pass/hex-${hexId}.md`;
- let doc=`# ${file.primaryId} · ${name}：六动爻与十二月令\n\n本页30份完整正文对应72个月令槽位。应期以2026-11-11作日序演示，各组月令另行给定。\n\n`;
+ let doc=readingDocumentHeader(file.primaryId,name);
  const rewrittenCount=pool.filter(r=>r.authorship.method===REWRITE_METHOD).length;
  if(rewrittenCount)doc+=`本卦有${rewrittenCount}篇已逐篇重写并完成作者全文复核。独立专业审核仍待完成。\n\n`;
  for(const row of pool){
-  const r=createBaseInterviewReading({library,question,primaryId:row.primaryId,movingLine:row.movingLine,monthBranch:row.monthBranches[0],castingDate:'2026-11-11'});
+  const r=createBaseInterviewReading({library,question,primaryId:row.primaryId,movingLine:row.movingLine,monthBranch:row.monthBranches[0],castingDate:READING_DOCUMENT_DEMO_DATE});
   const c=row.copy.long,timingText=row.timingOmission?'此盘暂无有据的日期可列。':'以下为传统推算的参考窗口。\n'+row.timingSlots.map(s=>s.token).join(' ');
-  const rendered=resolveManuscriptDates({paragraphs:['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+timingText,'总断：'+c.summary],dateSlots:row.timingSlots,reading:r,castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}});
+  const rendered=resolveManuscriptDates({paragraphs:['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+timingText,'总断：'+c.summary],dateSlots:row.timingSlots,reading:r,castingDate:READING_DOCUMENT_DEMO_DATE,timingScale:'day',timingContext:READING_DOCUMENT_TIMING_CONTEXT});
   if(rendered.status!=='resolved')throw new Error('Base date render failed');
   const sources=row.decision.sourceEvidence;
   const titles=sources?`《周易·${name}》`+[...new Set(sources.map(s=>s.title))].map(title=>`《梅花易数·${title}》`).join(''):'《梅花易数·求名占》《衰旺论》《占卦诀》《体用互变之诀》《体用衰旺之诀》《日应》';
@@ -206,7 +207,8 @@ for(const file of files){
    row.timingOmission?.reason||row.timingSlots.map((s,i)=>`${s.valence}应 · ${s.event}。取${s.calculationBasis.trigram}${s.calculationBasis.element}，${s.branches.join('、')}日。用先天卦气法按日匹配，先查起卦当月余日，无匹配再查下月。示例 ${rendered.dateMatches[i].displayedDates.join('、')}。`).join('\n\n'),
    ...sources.map(s=>`- ${s.id}《${s.title}》，原文第 ${s.locator.startLine} 行起。\n  “${s.quote}”\n  ${s.reason}`),
   ].join('\n\n')+'\n\n':'';
-  doc+=`## ${r.selectedMovingLine.label}动 · ${row.monthBranches.map(b=>b+'月').join('、')}\n\n${row.copy.title}\n\n${row.facts.stages.map(s=>s.name).join(' → ')}\n\n简断\n\n${row.copy.short.text}\n\n${rendered.paragraphs.join('\n\n')}\n\n古籍依据：${titles}。\n\n动爻完整原文：${row.movingLineText}\n\n<details>\n<summary>计算说明</summary>\n\n对照用月令：${row.monthBranches[0]}月；本组共用：${row.monthBranches.join('、')}。实际输入仍显示实际月令。\n\n${r.nodes.filter(n=>n.role!=='body_inherited').map(n=>n.role+'：'+n.trigram+n.element+'，'+n.strength.state).join('；')}。\n\n应期用实际起卦日重算。表中月份用于对照正文。\n\n${editorialDetails}判据：${row.decision.decisionPolicy.id}；写作方式：${row.authorship.method}。\n\n</details>\n\n`;
+  doc+=renderReadingDocumentEntry({row,reading:r,paragraphs:rendered.paragraphs,sourceTitles:titles,
+   calculation:[editorialDetails+`判据：${row.decision.decisionPolicy.id}；写作方式：${row.authorship.method}。`]});
  }
  await writeFile(new URL(path,root),doc);
  const reviewDoc=`INTERVIEW_REWRITE_${hexId}.md`;

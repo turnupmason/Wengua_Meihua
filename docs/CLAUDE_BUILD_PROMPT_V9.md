@@ -1,4 +1,4 @@
-当前接入以 [终校记录](INTERVIEW_FINAL_REVIEW_20261112.md) 及 [实时接口](LIVE_CONTEXT_AND_SHORT_READINGS.md) 为准。面试通过按经典体用及月令查稿，原 60 篇和后来逐篇重写的 1,860 篇均有作者源。以下为历史开发交接。
+当前接入以 [终校记录](INTERVIEW_FINAL_REVIEW_20261112.md)、[实时接口](LIVE_CONTEXT_AND_SHORT_READINGS.md) 及本文件的 [正式断语固定格式](#正式断语的固定格式) 为准。面试通过按经典体用及月令查稿，原 60 篇和后来逐篇重写的 1,860 篇均有作者源。以下为历史开发交接。
 
 基础库已补齐：问项“这次面试能通过吗”，64卦、384个普通动爻组合、十二月令各自有键，共4,608槽位，去重全文1,920份。全部阅读目录INTERVIEW_PASS_ALL_BASES.md；新判据、取期与写作方式见INTERVIEW_BASE_POLICY.md。
 
@@ -31,6 +31,21 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 用户已通过V3十篇简断与详断，要求保持这一口吻与解释方式。断语由本助手负责撰写；Claude负责软件搭建、数据接入与交互，不在运行时让模型自行决定吉凶或补写未覆盖的故事。验收记录精确绑定原稿，见 data/editorial-acceptance.json，不重复请求文风确认。
 
 先读 CLAUDE.md、docs/PRODUCT_CATEGORIES_V1.md、docs/STORY_GENERATION_STANDARD_V3.md、docs/INTERPRETATION_AUDIT_V2.md，再检查实际代码与数据。V9覆盖旧版“18个产品领域、每领域固定5问”及更早的大领域套稿口径。
+
+## 正式断语的固定格式
+
+以 [面试逐卦阅读文档](interview-pass/hex-001.md#九二动--寅月卯月) 和现有正式读取接口为基准。本节是当前交付约定。所有领域复用同一个阅读文档渲染器 `scripts/authored-reading-document.mjs`。后续写作只填该事项的正文、依据和已核定的应期。未经用户明确要求，禁止自改栏目名、字段名、字段类型、标点、顺序、标题层级、折叠区、文件路径、匹配键或显示结构。涉及软件抓取的格式改动，须同步验证既有消费者。
+
+每篇 Markdown 按以下固定顺序输出，栏目使用全角冒号，段落间空一行：
+
+1. 二级标题 `## 九二动 · 寅月、卯月`，保留「动」和每个月的「月」。
+2. 断语标题、本卦 → 互卦 → 变卦、独立一行「简断」、简断正文。
+3. `开局：`、`过程：`、`结局：`、`应期：`、`总断：`。
+4. `古籍依据：`、`动爻完整原文：`，然后用 `<details>` 和 `<summary>计算说明</summary>` 折叠计算依据。
+
+已有日级依据时，「应期：以下为传统推算的参考窗口。」下一行显示「本月×号」或「下月×号」及对应事件和吉凶。地支、取期方法、日期换算和适用条件保存于计算说明和结构化字段。静态阅读文档使用与面试相同的 2026-11-11 对照日并在页首明示；软件使用实际起卦日，历史盘固定原日期基准。禁止以只列地支、日期占位符或另一套排版交付已有取期的断语。确无可据取期时，沿用已定说明并记录原因。
+
+运行时沿用 `createProductRepository().getContent` 和字段 `short`、`narrativeParagraphs`、`timingSection`、`calculationExplanation`、`paragraphs`、`story`。日期窗口继续使用 `event`、`valence`、`text`、`displayedDates`、`eventScope`、`targetBranches`、`calculationBasis`。软件显示仍使用原组件，抓取时保持既有的 `questionId`、本卦、动爻、月令键和稿件字段。每次重建后按实际输出校验栏目、取期结果和索引，发现格式漂移先修正再交付。
 
 ## 正式产品分类
 

@@ -1,6 +1,8 @@
 import {mkdir, readFile, readdir, writeFile} from 'node:fs/promises';
 import {loadLibrary, interpretationArtifactDigest, AUDIT_CHECKS} from '../src/index.js';
 import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
+import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
+import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
 import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
@@ -74,14 +76,14 @@ for (const [batchIndex, filename] of batches.entries()) {
  const rows = [];
  const monthSlots = {};
  const name = library.getHexagram(primaryId).name;
- const readingDoc = ['# ' + name + ' · 晋升加薪', '', '每一爻按五组月气查预写全文。'];
+ let readingDoc = readingDocumentHeader(primaryId, name);
  for (const [i, draft] of drafts.entries()) {
   const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, payRange] = draft;
   if (movingLine !== Math.floor(i / 5) + 1 || monthOrder !== orders[i % 5] ||
       !['favourable', 'difficult'].includes(outcome) || !resolution ||
       (outcome === 'favourable') !== Boolean(payRange)) throw new Error('Invalid promotion author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
-  const r = createContextualReading({library, question, primaryId, movingLine, monthOrder, castingDate: '2026-11-11', applyVoid: false});
+  const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const key = [questionId, primaryId, movingLine, monthOrder].join('/');
   const decisionId = key + '/' + outcome;
   const stageIds = Object.values(r.stages).map(stage => stage.id);
@@ -155,20 +157,51 @@ for (const [batchIndex, filename] of batches.entries()) {
   counts.keys += monthBranches.length;
   counts.favourable += Number(outcome === 'favourable');
   counts.timingWindows += timingSlots.length;
-  readingDoc.push('', '## ' + facts.movingLine.label + ' · ' + monthBranches.join('、'),
-   '', title, '', short, '', '开局　' + opening, '', '过程　' + process, '', '结局　' + ending,
-   '', '应期　传统推算的参考窗口，适用于本次评定已进入近期流程。', '',
-   ...timingSlots.map(slot => '- ' + slot.valence + '应 · ' + slot.event + '，取' + slot.branches.join('、') + '日。' + slot.text),
-   '', '总断　' + summary, '', '<details><summary>卦象和依据</summary>', '',
-   facts.stages.map(s => s.name).join(' → '), '', movingLineText, '',
-   facts.nodes.map(n => n.role + ' ' + n.trigram + n.element + n.qi).join('，'), '',
-   facts.directRelations.map(e => e.role + ' ' + e.type).join('，'), '',
-   resolution, '', ...timingSlots.map(slot => '取期依据 · ' + slot.reason + '（' + slot.sourceIds.join('、') + '）'), '', ...(payRange ? ['加薪幅度取象　' + payRange, ''] : []), '稿件键 `' + key + '` · [作者源](../../' + sourcePath + ') · [断法和出处](../PROMOTION_PAY_POLICY.md)', '', '</details>');
+  const timing = resolveManuscriptDates({
+   paragraphs: timingSlots.map(slot => slot.token),
+   dateSlots: timingSlots,
+   reading: r,
+   castingDate: READING_DOCUMENT_DEMO_DATE,
+   timingScale: 'day',
+   timingContext: READING_DOCUMENT_TIMING_CONTEXT,
+  });
+  if (timing.status !== 'resolved' || timing.dateMatches.some(window => !window.displayedDates.length)) {
+   throw new Error('Missing demonstration dates: ' + key);
+  }
+  const sourceTitles = `《周易·${name}》` + [...new Set(sourceIds.filter(id => id.startsWith('mh-')).map(id => library.getSection(id).title))]
+   .map(title => `《梅花易数·${title}》`).join('');
+  readingDoc += renderReadingDocumentEntry({
+   row,
+   reading: r,
+   paragraphs: [
+    '开局：' + opening,
+    '过程：' + process,
+    '结局：' + ending + (payRange ? ' ' + payRange : ''),
+    '应期：以下为传统推算的参考窗口。\n' +
+     timing.paragraphs.map((text, index) => text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
+    '总断：' + summary,
+   ],
+   sourceTitles,
+   calculation: [
+    `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
+    r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
+    resolution,
+    '日级参考窗口适用于评定已进入近期流程。',
+    ...timingSlots.map((slot, index) => {
+     const {trigram, element} = slot.calculationBasis;
+     const method = slot.method === 'trigram-periods' ? '先天体卦时序法' : '先天卦气法';
+     return `${slot.valence}应 · ${slot.event}。取${trigram}${element}，${slot.branches.join('、')}日。用${method}按日匹配，先查起卦当月余日，无匹配再查下月。示例 ${timing.dateMatches[index].displayedDates.join('、')}。 ${slot.reason}`;
+    }),
+    ...sourceEvidence.map(source => `- ${source.id}《${source.title}》，原文第 ${source.locator.startLine} 行起。\n  “${source.quote}”\n  ${source.reason}`),
+    `稿件键 \`${key}\` · [作者源](../../${sourcePath}) · [断法和出处](../PROMOTION_PAY_POLICY.md)`,
+    `判据：${row.ruleVersions.decision}；写作方式：${row.authorship.method}。`,
+   ],
+  });
  }
  const path = base + stem + '.json';
  await saveJSON(path, {...common, primaryId, monthSlots, rows});
  files.push({primaryId, path, count:rows.length, monthSlotCount:Object.keys(monthSlots).length});
- await writeFile(new URL(docDir + stem + '.md', root), readingDoc.join('\n') + '\n');
+ await writeFile(new URL(docDir + stem + '.md', root), readingDoc.trimEnd() + '\n');
  directory.push('- [' + name + '](' + stem + '.md) · ' + rows.length + ' 篇');
 }
 const progress = {
@@ -183,7 +216,7 @@ await writeFile(new URL(docDir + 'README.md', root), [
  '# 晋升加薪断语', '', '问项为本次晋升及随岗加薪。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
  '其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。',
- '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。公历候选日按各次起卦日期换算，独立专业审核待完成。',
+ '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../PROMOTION_PAY_POLICY.md)', '', ...directory, '',
 ].join('\n'));

@@ -8,6 +8,8 @@
 
 # Claude repository instructions
 
+正式断语的文档、结构化字段和应用显示遵循 [开发 prompt 的固定格式](docs/CLAUDE_BUILD_PROMPT_V9.md#正式断语的固定格式)。逐卦阅读文档以面试为基准，复用统一渲染器，严格保留栏目名、顺序、折叠结构与匹配键。已有日级取期须输出换算后的日期、事件和吉凶。未经用户明确要求禁止自行改动抓取格式。
+
 本轮显示规则见docs/LIVE_CONTEXT_AND_SHORT_READINGS.md。60篇简断只写自然解释，不出现应期、窗口、吉应凶应或计算提示；构建和读取都以checkInterviewShort拦截。当前正文版本interview-pass-2.0.0。
 
 实际界面读short、narrativeParagraphs、timingSection及calculationExplanation。应期单独显示timingSection，附“传统推算的参考窗口”，每窗仍保留自己的事件、吉凶和日期。paragraphs/story保留完整格式供导出或兼容，采用独立应期栏后不要再把完整paragraphs中的应期重复显示。
