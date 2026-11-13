@@ -39,6 +39,8 @@
 
 泰卦初九取同汇而往，九二兼顾远近、无私朋而得中，九三重变中艰贞，六四以邻同愿相孚，六五取守礼相合，上六见势转则勿以力强推。九二末助要放回前中过程核验，上六的生扶用于复核及修正。 [《周易·泰》](https://zh.wikisource.org/wiki/周易/泰) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+否卦初六用「贞吉亨」取守正待通，与泰初九「征吉」分别。六二分顺承暂得与守正处否；六三查藏而不明的不妥；九四有合宜的正式安排方能行；九五止否后仍须求固；上九先塞后通，核改善之后的投入。 [《周易·否》](https://zh.wikisource.org/wiki/周易/否) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
