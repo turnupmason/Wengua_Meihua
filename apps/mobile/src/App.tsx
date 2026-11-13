@@ -13,7 +13,7 @@ function daysAgo(iso: string) {
   const d = Math.floor((new Date().setHours(0, 0, 0, 0) - new Date(iso).setHours(0, 0, 0, 0)) / 86_400_000);
   return d;
 }
-import { INITIAL_RITUAL, ritualReducer, type RitualPhase } from './domain/ritual';
+import { INITIAL_RITUAL, ritualReducer } from './domain/ritual';
 import { effectivePace, loadSettings, saveSettings, type Settings } from './domain/settings';
 import { STRINGS } from './domain/i18n';
 import { deviceTimeZone } from './domain/calendar';
@@ -109,22 +109,16 @@ export function App() {
       .then((k) => {
         if (!alive) return;
         setKnowledge(k);
-        // Resume an in-progress ritual after a reload, with the same frozen cast.
-        const active = history.getActive();
-        const rec = active ? history.get(active.castId) : null;
-        if (rec) {
-          recordRef.current = rec;
-          setRecord(rec);
-          void openSavedJudgment(k, rec);
-          dispatch({ type: 'RESUME', castId: rec.castId, phase: active!.phase as RitualPhase });
-          setScreen('temple');
-        }
+        // 入殿 always walks into the hall: a cast left open when the app was last closed is not
+        // reopened on the stone table (it is saved, and stays in 问事录). Older versions kept a
+        // marker for it; clear it.
+        history.clearActive();
       })
       .catch((e: Error) => alive && setLoadState((s) => ({ ...s, error: e.message })));
     return () => {
       alive = false;
     };
-  }, [loadAttempt, history, openSavedJudgment]);
+  }, [loadAttempt, history]);
 
   // Background/foreground: pause audio; the ritual clock and renderer pause themselves.
   useEffect(() => {
@@ -132,10 +126,6 @@ export function App() {
     document.addEventListener('visibilitychange', onVis);
     return () => document.removeEventListener('visibilitychange', onVis);
   }, []);
-
-  useEffect(() => {
-    if (screen === 'temple' && ritual.castId) history.setActive(ritual.castId, ritual.phase);
-  }, [screen, ritual.castId, ritual.phase, history]);
 
   /**
    * Casts once: the hexagram is frozen, its 断语 is looked up (product question + 本卦 + 动爻 +
@@ -337,8 +327,8 @@ export function App() {
     setSplash('shown');
     setIntro('waiting');
   };
-  // Over the title the painted courtyard of the walk-in shows through ("live"); a reading being
-  // resumed has no walk-in behind it, so the title keeps its own picture instead.
+  // Over the title the painted courtyard of the walk-in shows through ("live"); only from the hall
+  // (no cast open), so the title never covers a ritual.
   const splashLayer =
     splash !== 'gone' && knowledge ? (
       <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />

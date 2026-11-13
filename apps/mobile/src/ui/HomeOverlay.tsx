@@ -440,7 +440,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
 
       {showMethods && (
         <div className="sheet-backdrop" onClick={() => setShowMethods(false)}>
-          <section className="sheet method-sheet" role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
+          <section className={`sheet method-sheet${methodStep === 'input' && form.method === 'object-direction' ? ' is-tall' : ''}`} role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
               {methodStep === 'input' && (
                 <button type="button" className="icon-btn method-back" onClick={backToMethods} aria-label={t.back}>
@@ -452,7 +452,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 ✕
               </button>
             </header>
-            <div className="sheet-body method-body">
+            <div className={`sheet-body method-body${methodStep === 'list' ? ' is-list' : ''}`}>
           {methodStep === 'list' ? (
             <>
               <p className="method-hint">{t.methodHint}</p>

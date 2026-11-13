@@ -562,12 +562,17 @@ a { color: var(--gold); }
 .home-panel.v2 .privacy { margin-top: 12px; font-size: 10.5px; color: rgba(233, 222, 200, 0.35); letter-spacing: 0.08em; }
 .home-panel.v2 .error { margin-top: 10px; }
 
-.method-sheet { max-height: 86%; }
+/* One height for the list and the methods' pages, so choosing or going back does not jump; only
+   物象方位 (eight trigrams and eight directions) needs more, and the sheet eases up to it. */
+.method-sheet { height: min(calc(360px + var(--safe-b)), 84%); max-height: none; transition: height 0.28s ease; }
+.method-sheet.is-tall { height: min(84%, 700px); }
+/* The list keeps its row of method names, in the middle of that height. */
+.method-body.is-list { justify-content: center; }
+.method-body .methods { flex-wrap: wrap; justify-content: center; }
 /* A method's own page: ← back to the list, its name, ✕. */
 .method-sheet .sheet-head { align-items: center; gap: 8px; }
 .method-sheet .sheet-head h2 { flex: 1; }
 .method-body { display: flex; flex-direction: column; gap: 12px; padding-bottom: calc(var(--safe-b) + 20px); }
-.method-body .methods { flex-wrap: wrap; justify-content: center; }
 .method-body .cast-time { border-top: 1px solid rgba(207, 174, 108, 0.14); padding-top: 12px; }
 .login-providers { display: flex; flex-direction: column; gap: 8px; }
 .provider-btn {

@@ -97,7 +97,7 @@ npm run cap:ios       # 仅 macOS：先 `cd ios/App && pod install`，再用 Xco
 | `src/domain/questionCatalog.ts` | 由正式产品目录生成问事菜单（大类 → 细分入口，入口即问题，并指明所读断语），附英文名与提示 |
 | `src/domain/judgment.ts` | 起卦后按产品问题、本卦、动爻、月令与起卦日向 `createProductRepository` 取断语；查不到时说明原因，不代替 |
 | `src/domain/ritual.ts` | 仪式状态机 `idle → entering → revealing → reading`，所有事件幂等；旧版本保存的上香中途状态恢复时直接进入赐卦 |
-| `src/domain/history.ts` | 本地历史：保存、删除、全部删除、导出 JSON；进行中的仪式可在刷新后以同一卦继续 |
+| `src/domain/history.ts` | 本地历史：保存、删除、全部删除、导出 JSON。2026-11-13 起重新打开应用不再续上次开着的卦（以前会在「入殿」后直接回到石板），入殿总是进殿，上次的卦在问事录里 |
 | `src/domain/journal.ts` | 卦册（收卦入册）：标记要保留的卦，按时间记后续进展；只存本机，删历史时一并删除，导出 JSON 时一并导出 |
 | `src/ui/Verdict.tsx`、`src/ui/ReadingView.tsx` | 结果页结论卡（标题、基调、开局→过程→结局、三段可点）与读卦模式（大字卦象、每爻可点、体用逐段、判断依据、动爻爻辞、本类占法） |
 | `src/domain/interpretation.ts` | `InterpretationProvider` 接口与本地实现；模型输出不得改卦、动爻、等级、体用，引用须在给定原文内 |
