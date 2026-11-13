@@ -206,6 +206,8 @@ a { color: var(--gold); }
 .intro-reading > .is-main { border-color: rgba(226, 190, 120, 0.8); background: rgba(226, 190, 120, 0.1); }
 .intro-reading small { display: block; font-size: 11.5px; letter-spacing: 0.2em; color: rgba(233, 205, 150, 0.75); }
 .intro-reading b { display: block; margin-top: 2px; font: 600 16px/1.45 var(--serif); color: #f6e7c6; }
+/* Scrolled to, a layer settles a little below the top of the reading, its heading whole. */
+.read-layer { scroll-margin-top: 10px; }
 /* 详断 opened from the 简断 card has no second entry while folded. */
 .read-layer.is-from-card:not([open]) { display: none; }
 /* In each 详断 part the judgment reads on its own; the terms it rests on sit apart below it, on their
@@ -214,7 +216,7 @@ a { color: var(--gold); }
 .script-part { margin-bottom: 18px; }
 .script-part p.script-basis {
   margin: 10px 0 0; padding: 6px 0 2px 11px; border-left: 2px solid rgba(196, 160, 104, 0.4);
-  font: 14px/1.7 var(--serif-body); color: #b6a585;
+  font: 14px/1.7 var(--serif-body); color: #c6b796;
 }
 .script-part p.script-basis b { display: block; margin: 0 0 1px; font: 500 12px var(--serif); letter-spacing: 0.24em; color: #c4a46c; }
 /* 专业依据's 经过: 体互 (the one carved on the stone) and 用互 on their own labelled lines. */
@@ -225,8 +227,19 @@ a { color: var(--gold); }
 .evidence-col .ev-pair .stone-tag { margin: -1px 0 3px; }
 .read-rel-row .stone-tag { align-self: flex-start; width: auto; margin: 2px 0 0; padding: 0 7px; border: 1px solid rgba(196, 164, 108, 0.45); border-radius: 999px; }
 .save-note { margin: 8px 2px 0; font-size: 12.5px; line-height: 1.55; color: var(--muted); }
-/* Deleting is there, but quiet (it asks first). */
-.history-delete { color: var(--muted); text-decoration: none; font-size: 13px; }
+/* The matter on the left, when on the right (two casts of one matter tell apart at a glance). */
+.history-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; width: 100%; }
+.history-when { flex-shrink: 0; font-size: 13px; color: #c9b48b; font-variant-numeric: tabular-nums; }
+.history-list li { position: relative; }
+/* 删除 lives in the card's ⋯ menu (it still asks first). */
+.history-more { flex-shrink: 0; align-self: flex-start; width: 36px; height: 40px; margin: 4px 2px 0 0; border: 0; border-radius: 10px; background: none; color: var(--muted); font-size: 18px; letter-spacing: 0.05em; }
+.history-more[aria-expanded='true'] { background: rgba(226, 190, 120, 0.12); color: #f3e3c0; }
+.history-menu {
+  position: absolute; right: 8px; top: 44px; z-index: 3; min-width: 112px; padding: 4px; border-radius: 10px;
+  background: #241a11; border: 1px solid rgba(216, 174, 94, 0.4); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+.history-menu button { display: block; width: 100%; min-height: 40px; padding: 0 12px; border: 0; border-radius: 8px; background: none; text-align: left; font-size: 15px; }
+.history-menu .history-delete { color: #e58a6a; }
 
 /* Temple */
 .temple { position: fixed; inset: 0; overflow: hidden; background: #0c0907; }
@@ -861,6 +874,10 @@ a { color: var(--gold); }
 .journal-label textarea { min-height: 88px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(0, 0, 0, 0.3); font-size: 16px; resize: vertical; }
 .primary-btn:disabled { opacity: 0.45; }
 .history-tabs { display: flex; margin: 0 auto 8px; }
+/* 问事录's head: ← and the two lists on one row. */
+.screen-head.history-head { margin-bottom: 8px; }
+.history-head .history-tabs { margin: 0 auto; justify-self: center; }
+.history-head .history-tabs button { white-space: nowrap; padding-left: 14px; padding-right: 14px; }
 .history-book { font-size: 13px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
 .history-book b { color: #9fd3a8; font-weight: 500; }
 @media (prefers-reduced-motion: reduce) { .read-view { animation: none; } }

@@ -104,7 +104,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const reading = useMemo(() => (record ? readingFromCast(knowledge.library, record) : null), [record, knowledge]);
   const relation = useMemo(() => (reading ? primaryRelation(reading) : null), [reading]);
   // 读卦: the reading laid out to read (null = 观卦, the stone table). 'top' opens at the conclusion.
-  const [readMode, setReadMode] = useState<SynthStage | 'top' | null>(null);
+  // 'detail': opened by 「看详断」 on the stone, straight onto the 详断, unfolded.
+  const [readMode, setReadMode] = useState<SynthStage | 'top' | 'detail' | null>(null);
   const readButton = useRef<HTMLButtonElement>(null);
   const restoreReadButton = useRef(false);
   useLayoutEffect(() => {
@@ -561,7 +562,9 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
               ref={readButton}
               onClick={() => {
                 coach.done('stone');
-                setReadMode('top');
+                // 「看详断」 keeps its word: the reading opens on the 详断, unfolded (without a written
+                // 断语, 「查看说明」 opens at the top).
+                setReadMode(judgmentView?.state === 'ready' ? 'detail' : 'top');
               }}
               aria-label={`${t.viewJudgment}${headline ? `：${headline}` : ''}`}>
               <span className="view-judgment-label">{judgmentView?.state === 'ready' ? t.briefKicker : t.viewJudgment}</span>
@@ -622,7 +625,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           castTime={castTimeLabel}
           t={t}
           lang={settings.lang}
-          focus={readMode === 'top' ? null : readMode}
+          focus={readMode === 'top' || readMode === 'detail' ? null : readMode}
+          startAt={readMode === 'detail' ? 'detail' : undefined}
           saved={!!bookEntry}
           onPick={onPick}
           onSave={() => setShowBook(true)}

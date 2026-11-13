@@ -19,7 +19,7 @@ const TERM = new RegExp(
     '体互|用互|变用|本用|原体|体用|比和|同气',
     `[${EL}](?:所)?[生克]|[生克]体|体[生克]`, // 木所生, 克体, 体克
     '^[初上][六九]|^[九六][二三四五]|^用[九六]', // 初六, 九五 (a line's name opening the clause)
-    '“', // a line's quoted text
+    '“|「', // a line's quoted text
   ].join('|'),
 );
 
@@ -34,8 +34,9 @@ function pieces(text: string, marks: string): string[] {
   let quoted = false;
   for (const ch of text) {
     cur += ch;
-    if (ch === '“') quoted = true;
-    else if (ch === '”') quoted = false;
+    // A quotation (“…” or 「…」, as the 断语 quote a line's words) is never cut.
+    if (ch === '“' || ch === '「') quoted = true;
+    else if (ch === '”' || ch === '」') quoted = false;
     else if (!quoted && marks.includes(ch)) {
       out.push(cur);
       cur = '';
@@ -46,8 +47,16 @@ function pieces(text: string, marks: string): string[] {
 }
 
 const END = /[。！？]$/;
+/** A sentence opened by the moving line itself: its name (初六, 九五…) or its quoted text. */
+const LINE = /^\s*(?:[初上][六九]|[九六][二三四五]|用[九六]|“|「)/;
+/** The part's own conclusion, as the 断语 words it: 「本轮偏难通过」「这轮仍偏向通过」. */
+const VERDICT = /^\s*(?:本轮|这轮|本次|这次|此次)/;
 
-export function plainFirst(text: string): { plain: string; basis: string } {
+/**
+ * `verdictFirst` (结局): the clause that states this round's outcome, where the part has one, is read
+ * first; the rest follows in its own order.
+ */
+export function plainFirst(text: string, { verdictFirst = false }: { verdictFirst?: boolean } = {}): { plain: string; basis: string } {
   const plain: string[] = [];
   const basis: string[] = [];
   for (const sentence of pieces(text.trim(), '。！？')) {
@@ -55,8 +64,10 @@ export function plainFirst(text: string): { plain: string; basis: string } {
     const clauses = pieces(sentence.slice(0, sentence.length - end.length), '，；、');
     let n = 0;
     while (n < clauses.length && isTerm(clauses[n])) n += 1;
-    // What follows the terms leans on them (「取…」「以…」「而…」): the sentence stays whole, as written.
-    if (n > 0 && n < clauses.length && LEANS.test(clauses[n].trim())) n = 0;
+    // What follows the terms leans on them (「取…」「以…」「而…」). After the moving line's own words it
+    // is the reading of that line, and goes with them into the basis; after other terms the sentence
+    // stays whole, as written.
+    if (n > 0 && n < clauses.length && LEANS.test(clauses[n].trim())) n = LINE.test(clauses[0]) ? clauses.length : 0;
     if (n === 0) plain.push(sentence);
     else if (n === clauses.length) basis.push(sentence);
     else {
@@ -66,5 +77,22 @@ export function plainFirst(text: string): { plain: string; basis: string } {
     }
   }
   if (!plain.length || !basis.length) return { plain: text.trim(), basis: '' };
-  return { plain: plain.join('').trim(), basis: basis.join('').trim() };
+  return { plain: (verdictFirst ? withVerdictFirst(plain) : plain).join('').trim(), basis: basis.join('').trim() };
+}
+
+/** Moves the clause that states the outcome to the head; its sentence closes where it stood. */
+function withVerdictFirst(sentences: string[]): string[] {
+  for (let i = 0; i < sentences.length; i++) {
+    const s = sentences[i];
+    const end = END.exec(s)?.[0] ?? '。';
+    const clauses = pieces(s.slice(0, s.length - (END.test(s) ? 1 : 0)), '，；、');
+    const k = clauses.findIndex((c) => VERDICT.test(c));
+    if (k < 0) continue;
+    if (i === 0 && k === 0) return sentences;
+    const verdict = `${clauses[k].replace(/[，；、]$/, '')}。`;
+    const rest = clauses.filter((_, j) => j !== k);
+    const left = rest.length ? `${rest.join('').replace(/[，；、]$/, '')}${end}` : '';
+    return [verdict, ...sentences.slice(0, i), ...(left ? [left] : []), ...sentences.slice(i + 1)];
+  }
+  return sentences;
 }

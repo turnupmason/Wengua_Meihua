@@ -17,7 +17,7 @@ const chars = (s: string) => [...s.replace(/[，。；、！？\s]/g, '')].sort(
 
 describe('详断, plain first', () => {
   it('puts the plain words first and the terms after, keeping every word', () => {
-    const out = SAMPLES.map(plainFirst);
+    const out = SAMPLES.map((s) => plainFirst(s));
     for (const [i, o] of out.entries()) {
       // Nothing lost or added (punctuation aside).
       expect(chars(o.plain + o.basis)).toBe(chars(SAMPLES[i]));
@@ -29,8 +29,18 @@ describe('详断, plain first', () => {
     expect(out[5]).toEqual({ plain: '沟通可以照旧展开，推动更改要多费周折。', basis: '冬乾体用皆休而比和。' });
     // All plain: as written.
     expect(out[7]).toEqual({ plain: SAMPLES[7], basis: '' });
-    // What follows the terms leans on them: that sentence stays whole.
-    const leaning = plainFirst('上六“系用徽纆，置于丛棘，三岁不得，凶”，取持续沿用原法会被同一难点牵住。末段仍要花力气。');
-    expect(leaning.plain).toBe('上六“系用徽纆，置于丛棘，三岁不得，凶”，取持续沿用原法会被同一难点牵住。末段仍要花力气。');
+    // After other terms, a clause that leans on them keeps its sentence whole.
+    const leaning = plainFirst('冬乾体用皆休，而沟通可以照旧展开。末段仍要花力气。');
+    expect(leaning).toEqual({ plain: '冬乾体用皆休，而沟通可以照旧展开。末段仍要花力气。', basis: '' });
+  });
+
+  it('结局: the outcome first, the moving line and its reading whole in the basis', () => {
+    const text = '上六“系用徽纆，置于丛棘，三岁不得，凶”，取持续沿用原法会被同一难点牵住。末段仍要花力气。缺少直接接应解开反复纠缠的要求，本轮偏难通过。变用巽木冬相，受旺坎所生。原体有余力作答。';
+    const out = plainFirst(text, { verdictFirst: true });
+    expect(out.plain).toBe('本轮偏难通过。末段仍要花力气。缺少直接接应解开反复纠缠的要求。');
+    expect(out.basis).toBe('上六“系用徽纆，置于丛棘，三岁不得，凶”，取持续沿用原法会被同一难点牵住。变用巽木冬相，受旺坎所生。原体有余力作答。');
+    expect(chars(out.plain + out.basis)).toBe(chars(text));
+    // Where the outcome already leads, nothing moves.
+    expect(plainFirst('本轮仍偏难通过。末段仍要花力气。', { verdictFirst: true }).plain).toBe('本轮仍偏难通过。末段仍要花力气。');
   });
 });

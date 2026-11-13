@@ -75,8 +75,24 @@ describe('问事录', () => {
     history.save(r);
     render(<HistoryScreen history={history} journal={createJournal(memoryStore())} t={t} onOpen={() => {}} onBack={() => {}} />);
     const item = document.querySelector('.history-main')!;
-    expect([...item.children].map((c) => c.className)).toEqual(['history-q', 'history-verdict', 'history-meta']);
+    expect([...item.children].map((c) => c.className)).toEqual(['history-top', 'history-verdict', 'history-meta']);
     expect(item.querySelector('.history-verdict')!.textContent).toBe('有望通过，细节确认时要答得完整');
+    // The time beside the title; the small line is the hexagrams only.
+    expect(item.querySelector('.history-top .history-when')!.textContent).toMatch(/\d{1,2}:\d{2}$/);
+    expect(item.querySelector('.history-meta')!.textContent).not.toMatch(/\d{1,2}:\d{2}/);
+    // 删除 is in the card's menu.
+    expect(screen.queryByRole('menuitem', { name: t.delete })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: t.moreActions }));
+    expect(screen.getByRole('menuitem', { name: t.delete })).toBeTruthy();
+  });
+
+  it('says when a record was cast as a list would: today, yesterday, a date', async () => {
+    const { recordWhen } = await import('../src/ui/timeText');
+    const now = new Date(2026, 10, 13, 15, 0);
+    expect(recordWhen('2026-11-13T13:38', 'zh', now)).toBe('今天 13:38');
+    expect(recordWhen('2026-11-12T20:23', 'zh', now)).toBe('昨天 20:23');
+    expect(recordWhen('2026-11-02T09:05', 'zh', now)).toBe('11月2日 09:05');
+    expect(recordWhen('2025-12-31T23:10', 'zh', now)).toBe('2025年12月31日 23:10');
   });
 
   it('opens the whole 断语 in one tap, or the stone', async () => {

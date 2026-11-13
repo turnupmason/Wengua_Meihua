@@ -1,4 +1,4 @@
-import { otherTimeZone } from './timeText';
+import { otherTimeZone, recordWhen } from './timeText';
 import { useEffect, useState } from 'react';
 import { shownQuestion } from '../domain/questionCatalog';
 import { STRINGS } from '../domain/i18n';
@@ -57,6 +57,9 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
   const items = onlySaved ? all.filter((r) => book[r.castId]) : all;
+  const lang = t === STRINGS.en ? 'en' : 'zh';
+  // The record whose ⋯ menu is open.
+  const [menu, setMenu] = useState<string | null>(null);
   const [detail, setDetail] = useState<CastRecord | null>(null);
   useEffect(() => {
     if (!active) setDetail(null);
@@ -64,21 +67,23 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
   if (detail) return <RecordDetail key={detail.castId} record={detail} journal={journal} t={t} onOpen={(read) => onOpen(detail, read)} onBack={() => setDetail(null)} onChanged={refresh} />;
   return (
     <main className="screen">
-      <header className="screen-head">
+      {/* ← and the two lists on one row (the place tab above already says 问事录), so the first record
+          comes up sooner under the desk. */}
+      <header className="screen-head history-head">
         <button className="icon-btn" onClick={onBack} aria-label={t.back}>
           ←
         </button>
-        <h2>{t.history}</h2>
-        <span />
+        <h2 className="sr-only">{t.history}</h2>
+        <div className="mode-switch history-tabs" role="tablist">
+          <button role="tab" aria-selected={!onlySaved} onClick={() => setOnlySaved(false)}>
+            {t.bookAll} {all.length}
+          </button>
+          <button role="tab" aria-selected={onlySaved} onClick={() => setOnlySaved(true)}>
+            {t.bookSaved} {Object.keys(book).filter((id) => all.some((r) => r.castId === id)).length}
+          </button>
+        </div>
+        <span className="history-head-pad" />
       </header>
-      <div className="mode-switch history-tabs" role="tablist">
-        <button role="tab" aria-selected={!onlySaved} onClick={() => setOnlySaved(false)}>
-          {t.bookAll} {all.length}
-        </button>
-        <button role="tab" aria-selected={onlySaved} onClick={() => setOnlySaved(true)}>
-          {t.bookSaved} {Object.keys(book).filter((id) => all.some((r) => r.castId === id)).length}
-        </button>
-      </div>
       {/* One line on top, so the first record shows early; storage and export are with 记录管理 below. */}
       <p className="history-explain">{onlySaved ? t.historyExplainSaved : t.historyLead}</p>
       {active && all.length > 0 && <CoachTip id="records" t={t} text={t.coachRecords} anchor=".place-panel.is-on .history-main" below />}
@@ -90,18 +95,25 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
           <ul className="history-list">
             {items.map((r) => (
               <li key={r.castId}>
-                {/* What was asked first, then what the 断语 said; the hexagrams and the time after. */}
+                {/* What was asked and when (two casts of the same matter tell apart at a glance), what the
+                    断语 said, and the hexagrams small. */}
                 <button
                   className="history-main"
                   onClick={() => {
                     coach.done('records');
+                    setMenu(null);
                     setDetail(r);
                   }}
                 >
-                  <span className="history-q">{r.question ? shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh') : r.stages.primary.name}</span>
+                  <span className="history-top">
+                    <span className="history-q">{r.question ? shownQuestion(r.questionId, r.question, lang) : r.stages.primary.name}</span>
+                    <time className="history-when" dateTime={r.localWallClock ?? r.createdAt}>
+                      {recordWhen(r.localWallClock ?? r.createdAt.slice(0, 16), lang)}
+                    </time>
+                  </span>
                   {r.judgment?.state === 'ready' && r.judgment.title && <span className="history-verdict">{r.judgment.title}</span>}
                   <span className="history-meta">
-                    {r.stages.primary.name} → {r.stages.mutual.name} → {r.stages.changed.name} · {r.localWallClock?.replace('T', ' ').slice(0, 16) ?? r.createdAt}
+                    {r.stages.primary.name} → {r.stages.mutual.name} → {r.stages.changed.name}
                     {otherTimeZone(r.timeZone) && ` · ${r.timeZone}`}
                   </span>
                   {book[r.castId] && (
@@ -111,20 +123,36 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
                     </span>
                   )}
                 </button>
+                {/* 删除 is in the card's menu (it still asks first). */}
                 <button
-                  className="text-btn history-delete"
-                  aria-label={`${t.delete} ${r.question ? shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh') : ''}`}
-                  onClick={() => {
-                    if (confirm(t.confirmDelete)) {
-                      changeRecords(() => {
-                        history.remove(r.castId);
-                        journal.remove(r.castId);
-                      });
-                    }
-                  }}
+                  type="button"
+                  className="history-more"
+                  aria-label={t.moreActions}
+                  aria-expanded={menu === r.castId}
+                  onClick={() => setMenu((m) => (m === r.castId ? null : r.castId))}
                 >
-                  {t.delete}
+                  ⋯
                 </button>
+                {menu === r.castId && (
+                  <div className="history-menu" role="menu">
+                    <button
+                      type="button"
+                      role="menuitem"
+                      className="history-delete"
+                      onClick={() => {
+                        setMenu(null);
+                        if (confirm(t.confirmDelete)) {
+                          changeRecords(() => {
+                            history.remove(r.castId);
+                            journal.remove(r.castId);
+                          });
+                        }
+                      }}
+                    >
+                      {t.delete}
+                    </button>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

@@ -525,6 +525,11 @@ describe('cast, reading and 问事录', () => {
     const calculation = document.querySelector('details.script-calc');
     expect(calculation?.querySelector('summary')?.textContent).toBe(STRINGS.zh.calcTitle);
     expect([...calculation!.querySelectorAll('.calc-label')].map(label => label.textContent)).toEqual(['历法','卦象','体用','取期']);
+    cleanup();
+    // From the stone's 「看详断」: the reading opens on the 详断, already unfolded (no second tap).
+    render(<ReadingView reading={chart} question="晋升加薪" questionId="career.promotion-pay" judgment={{ state: 'ready', judgment: reading, full: true }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} startAt="detail" saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />);
+    expect((document.querySelector('details.read-layer.is-from-card') as HTMLDetailsElement).open).toBe(true);
+    expect(screen.getByRole('button', { name: STRINGS.zh.detailClose })).toBeTruthy();
     // All 64 are written, the last batch (归妹 54 → 未济 64) included.
     for (const id of [48, 54, 60, 64]) expect(await at(id)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: id });
     const unavailable = { getContent: async () => ({ predictionAllowed: false, status: 'pending-authoring' }) };

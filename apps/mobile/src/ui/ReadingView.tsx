@@ -81,6 +81,8 @@ interface Props {
   t: Strings;
   lang: Lang;
   focus: SynthStage | null;
+  /** 'detail': open on the 详断, unfolded (the stone's 「看详断」). */
+  startAt?: 'detail';
   saved: boolean;
   onPick: (p: LinePick) => void;
   onSave: () => void;
@@ -103,7 +105,7 @@ function ScriptTitle({ title }: { title: string }) {
   );
 }
 
-export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, saved, onPick, onSave, onClose }: Props) {
+export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, startAt, saved, onPick, onSave, onClose }: Props) {
   const y = reading.synthesis;
   const txt = synthText(reading, lang);
   const wtxt = weatherText(reading, lang);
@@ -117,7 +119,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
   const legacy = judgment.state === 'legacy';
   const advice = practicalAdviceFor(questionId, conditions);
   // Layers: 简断 always; 详断 and 专业依据 open on demand (专业依据 opens itself for a stage chip).
-  const [openDetail, setOpenDetail] = useState(false);
+  const [openDetail, setOpenDetail] = useState(startAt === 'detail' && judgment.state === 'ready');
   const [openPro, setOpenPro] = useState(focus !== null);
   useEffect(() => {
     if (focus) setOpenPro(true);
@@ -137,7 +139,9 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
   useEffect(() => {
     const el = focus ? refs.current[focus] : null;
     if (el) el.scrollIntoView?.({ block: 'start' });
+    else if (startAt === 'detail' && detailRef.current?.open) detailRef.current.scrollIntoView?.({ block: 'start' });
     else if (body.current) body.current.scrollTop = 0;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focus]);
 
   const moving = reading.selectedMovingLine;
@@ -148,14 +152,13 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
 
   const weather = !y.applicable ? y.weather : null;
   const detailRef = useRef<HTMLDetailsElement>(null);
-  // The one way into 详断 (the button in the 简断 card): it opens and goes straight to 开局.
+  // 展开详断 in the 简断 card: it opens and stops with the 详断 heading and 开局 at the top, whole.
   const openDetailLayer = () => {
     setOpenDetail(true);
-    window.setTimeout(() => {
-      const first = detailRef.current?.querySelector('.script-part') ?? detailRef.current;
-      first?.scrollIntoView?.({ block: 'start', behavior: 'smooth' });
-    }, 30);
+    window.setTimeout(() => detailRef.current?.scrollIntoView?.({ block: 'start', behavior: 'smooth' }), 30);
   };
+  // 专业依据, opened by its heading: it settles with that heading (and 收起) fully in view.
+  const proRef = useRef<HTMLDetailsElement>(null);
   // A 《梅花易数》 section the 断语 draws on, linked into the 藏经阁.
   const sourceItem = (title: string) => (
     <li key={title}>
@@ -376,7 +379,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               {j.paragraphs.map((para) => {
                 const [label, text] = labelled(para);
                 // The plain judgment first, the terms it rests on after (ui/plainFirst: order only).
-                const { plain, basis } = plainFirst(text);
+                // 结局 reads its outcome first, like the parts before it.
+                const { plain, basis } = plainFirst(text, { verdictFirst: /结局/.test(label ?? '') });
                 return (
                   <div key={para} className="script-part">
                     {label && <h3 lang="zh">{label}</h3>}
@@ -458,7 +462,17 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
         </details>
 
         {/* 专业依据 (collapsed unless opened from a stage): hexagrams, 体用 by stage, basis, sources. */}
-        <details className="read-layer" open={openPro} onToggle={(e) => setOpenPro((e.target as HTMLDetailsElement).open)}>
+        <details
+          ref={proRef}
+          className="read-layer"
+          open={openPro}
+          onToggle={(e) => {
+            const open = (e.target as HTMLDetailsElement).open;
+            setOpenPro(open);
+            // Opened by its heading (not for a stage chip, which goes to that stage): keep the heading in view.
+            if (open && !focus) window.setTimeout(() => proRef.current?.scrollIntoView?.({ block: 'start', behavior: 'smooth' }), 30);
+          }}
+        >
           <summary>
             <b>{t.proTitle}</b>
             <small>{t.proHint}</small>
@@ -481,7 +495,6 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                           <em>{t.bodyMutualShort} ·</em>
                           {st.main.stageLabel}
                         </span>
-                        <small className="stone-tag">{t.stoneSummary}</small>
                         <span>
                           <em>{t.useMutualShort} ·</em>
                           {st.secondary.stageLabel}
