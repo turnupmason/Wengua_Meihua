@@ -1,4 +1,4 @@
-import {loadLibrary,getCivilDay,getVoidReleaseTargets,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_SLOTS} from '../src/index.js';
+import {loadLibrary,getCivilDay,createDetailsRepository,createNarrativeRepository,createProductRepository,buildInterpretationEvidence,MONTH_SLOTS} from '../src/index.js';
 import {createContextualReading} from '../src/interview-manuscripts.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lib=await loadLibrary(),details=createDetailsRepository({library:lib}),narratives=createNarrativeRepository({library:lib}),questions=createProductRepository({library:lib});let reading,detailRequest=0,storyRequest=0;
@@ -34,7 +34,7 @@ async function showStory(current){
   const advice=[...selected.practicalAdvice,...(current.productContext.objectKind?questionCatalog.objectPracticalAdvice[current.productContext.objectKind]||[]:[])];
   const adviceHTML=[...new Set(advice)].map(p=>`<p>${esc(p)}</p>`).join('');
   if(!order&&selected.mode==='narrative'){$('#story').innerHTML=adviceHTML+'<p>选择月令后，可查看本次事项。</p>';return;}
-  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,voidContext:current.selectedVoidContext,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
+  const content=await questions.getContent({questionId:current.questionId,categoryId:selected.categoryId,subcategoryId:selected.subcategoryId,context:current.productContext,primaryId:current.primaryId,movingLine:current.movingLine,monthOrder:order||undefined,monthBranch:current.selectedMonthBranch||undefined,castingDate:current.castingDate,timingScale:'day',timingContext:current.timingContext});
   if(ticket!==storyRequest)return;
   let body;
   if(content.status==='ready'&&content.short){
@@ -84,17 +84,17 @@ function update(){try{
   reading=null;detailRequest++;$('#error').textContent='';
   showStory({questionId:selected.id,productContext,selectedMonthOrder:null});return;
  }
- const selectedMonthBranch=$('#month').value,selectedMonthOrder=MONTH_SLOTS.find(m=>m.branch===selectedMonthBranch)?.qi||'',selectedVoidContext=Object.freeze($('#ganzhi').value?{ganzhi:$('#ganzhi').value}:{});
+ const selectedMonthBranch=$('#month').value,selectedMonthOrder=MONTH_SLOTS.find(m=>m.branch===selectedMonthBranch)?.qi||'';
  const castingDate=$('#casting-date').value,timingContext=Object.freeze({castingMethod:$('#timing-method').value==='pre-heaven-demo'?'pre-heaven':'manual',periodMethod:'element-qi'});
- const chart=selectedMonthOrder?createContextualReading({library:lib,question:selected,primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),monthOrder:selectedMonthOrder,monthBranch:selectedMonthBranch,castingDate,voidContext:selectedVoidContext}):lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:{},voidContext:selectedVoidContext});
- reading=Object.freeze({...chart,questionId:selected.id,productContext,selectedMonthOrder,selectedMonthBranch,selectedVoidContext,castingDate,timingContext});
+ const chart=selectedMonthOrder?createContextualReading({library:lib,question:selected,primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),monthOrder:selectedMonthOrder,monthBranch:selectedMonthBranch,castingDate,applyVoid:false}):lib.createReading({primaryId:Number($('#primary').value),movingLine:Number($('#moving').value),domainId:sourceDomainId,question:selected.question,calendar:{},applyVoid:false});
+ reading=Object.freeze({...chart,questionId:selected.id,productContext,selectedMonthOrder,selectedMonthBranch,castingDate,timingContext});
  $('#error').textContent='';$('#roles').textContent=`体：自己 · 主（${reading.body.trigram}${reading.body.element}，${reading.body.side==='upper'?'上卦':'下卦'}）　用：事情 · 事（${reading.use.trigram}${reading.use.element}，${reading.use.side==='upper'?'上卦':'下卦'}）`;
  $('#panels').innerHTML=Object.values(reading.stages).map(s=>`<article data-stage="${s.stage}"><p class="phase">${s.caption}</p><button class="panel-detail">${s.stage==='primary'?'本卦':s.stage==='mutual'?'互卦':'变卦'} · ${esc(s.name)}</button>${lib.renderHexagramSVG(s.id,{movingLine:reading.movingLine,stage:s.stage,svgId:s.stage})}<p class="grade">${esc(s.baseGrade)}</p></article>`).join('');
  const edge=reading.edges.find(e=>e.targetRole==='use');$('#relation').textContent=`体用关系：${edge.label}`;
  const evidence=selectedMonthOrder?buildInterpretationEvidence(reading,{monthOrder:selectedMonthOrder}):null;
- const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(evidence?evidence.nodes.find(x=>x.role===n.role).strength.state:'月令未选')}</td><td>${esc(n.void.hitKind==='partial'?'半空：'+(n.void.matchedBranches||[]).join('、')+'（减力，仍有作用）':n.void.label)}</td></tr>`).join('');
- const targets=$('#ganzhi').value?getVoidReleaseTargets($('#ganzhi').value).targets.map(t=>`${t.emptyBranch}空：填${t.fill}，冲${t.clash}`).join('；'):'旬空待提供';
- $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th><th>旬空</th></tr></thead><tbody>${rows}</tbody></table><p>${esc(targets)}</p><p>全空与半空按八卦配支记录。填冲支只作对应关系，不代表已核定应验日期。</p>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · 直接关系</p>`).join('');
+ const rows=reading.nodes.map(n=>`<tr><td>${esc({body:'体',use:'用',body_mutual:'体互',use_mutual:'用互',body_inherited:'体·沿用',changed_use:'变用'}[n.role])}</td><td>${n.trigram}${n.element}</td><td>${esc(evidence?evidence.nodes.find(x=>x.role===n.role).strength.state:'月令未选')}</td> </tr>`).join('');
+
+ $('#context').innerHTML=`<table><thead><tr><th>位置</th><th>卦</th><th>时令</th></tr></thead><tbody>${rows}</tbody></table>`+reading.edges.map(e=>`<p>${esc(e.targetRole)}：${esc(e.label)} · 直接关系</p>`).join('');
  $('#domain-text').textContent=reading.domain.text;showDetail('primary',reading.movingLine);showStory(reading);
  }catch(e){$('#error').textContent=e.message;}
 }

@@ -27,7 +27,7 @@ const timingQuotes = {
  equal:['mh-143','盖卦宜生体，宜比和；'],
 };
 const seen = new Map();
-const counts = {bodies: 0, keys: 0, favourable: 0, noDate: 0};
+const counts = {bodies: 0, keys: 0, favourable: 0, timingWindows: 0};
 const files = [];
 const directory = [];
 const references = [
@@ -76,9 +76,9 @@ for (const [batchIndex, filename] of batches.entries()) {
  const name = library.getHexagram(primaryId).name;
  const readingDoc = ['# ' + name + ' · 晋升加薪', '', '每一爻按五组月气查预写全文。'];
  for (const [i, draft] of drafts.entries()) {
-  const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, timing, payRange] = draft;
+  const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, payRange] = draft;
   if (movingLine !== Math.floor(i / 5) + 1 || monthOrder !== orders[i % 5] ||
-      !['favourable', 'difficult'].includes(outcome) || !resolution || !timing ||
+      !['favourable', 'difficult'].includes(outcome) || !resolution ||
       (outcome === 'favourable') !== Boolean(payRange)) throw new Error('Invalid promotion author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthOrder, castingDate: '2026-11-11', applyVoid: false});
@@ -154,7 +154,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   counts.bodies++;
   counts.keys += monthBranches.length;
   counts.favourable += Number(outcome === 'favourable');
-  counts.noDate += Number(timingSlots.length === 0);
+  counts.timingWindows += timingSlots.length;
   readingDoc.push('', '## ' + facts.movingLine.label + ' · ' + monthBranches.join('、'),
    '', title, '', short, '', '开局　' + opening, '', '过程　' + process, '', '结局　' + ending,
    '', '应期　传统推算的参考窗口，适用于本次评定已进入近期流程。', '',
@@ -175,7 +175,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies, favourable:counts.favourable,
- dated:counts.bodies-counts.noDate, undated:counts.noDate, independentReview:'pending', userAccepted:0, files,
+ dated:counts.bodies, undated:0, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
 };
 await saveJSON(base + 'index.json', progress);
