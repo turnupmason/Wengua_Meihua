@@ -102,8 +102,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
     expect(readinessOf(questionById('search.direction')!)).toBe('reference');
     expect(readinessOf(questionById('search.missing-contact')!)).toBe('guidance');
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
-    // 求职录用 reads the interview library; 晋升加薪 reads the promotion library being written hexagram by
-    // hexagram (the archived yearly pay rise is not offered); the others carry none yet.
+    // 求职录用 reads the interview library; 晋升加薪 reads the full promotion library (the archived yearly
+    // pay rise is not offered); the others carry none yet.
     const written = [[JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion']];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -491,7 +491,8 @@ describe('cast, reading and 问事录', () => {
     const calculation = document.querySelector('details.script-calc');
     expect(calculation?.querySelector('summary')?.textContent).toBe(STRINGS.zh.calcTitle);
     expect([...calculation!.querySelectorAll('.calc-label')].map(label => label.textContent)).toEqual(['历法','卦象','体用','取期']);
-    expect(await at(64)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 64 });
+    // All 64 are written, the last batch (归妹 54 → 未济 64) included.
+    for (const id of [48, 54, 60, 64]) expect(await at(id)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: id });
     const unavailable = { getContent: async () => ({ predictionAllowed: false, status: 'pending-authoring' }) };
     expect(await judgmentFor(unavailable as never, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay' })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
   });
