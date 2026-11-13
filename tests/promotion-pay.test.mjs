@@ -10,6 +10,44 @@ const repository = createProductRepository({library});
 const load = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const index = await load('data/authored-readings/promotion-pay/index.json');
 const options = {questionId, castingDate:'2028-02-25', timingScale:'day', timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
+const trigramByBits = {111:'乾',110:'兑',101:'离',100:'震','011':'巽','010':'坎','001':'艮','000':'坤'};
+const elementByTrigram = {乾:'金',兑:'金',离:'火',震:'木',巽:'木',坎:'水',艮:'土',坤:'土'};
+const generates = {木:'火',火:'土',土:'金',金:'水',水:'木'};
+const controls = {木:'土',土:'水',水:'火',火:'金',金:'木'};
+const seasonQi = {
+ 'spring-wood':'木火水金土', 'summer-fire':'火土木水金', 'autumn-metal':'金水土火木',
+ 'winter-water':'水木金土火', 'seasonal-earth':'土金火木水',
+};
+
+function expectedChart(primaryId, movingLine, monthOrder) {
+ const bits = library.getHexagram(primaryId).bitsBottomUp;
+ const mutual = [...bits.slice(1, 4), ...bits.slice(2, 5)];
+ const changed = bits.map((bit, index) => index === movingLine - 1 ? 1 - bit : bit);
+ const useStart = movingLine > 3 ? 3 : 0;
+ const bodyStart = 3 - useStart;
+ const trigramAt = (lines, offset) => trigramByBits[lines.slice(offset, offset + 3).join('')];
+ const expectedTrigrams = {
+  body:trigramAt(bits, bodyStart), use:trigramAt(bits, useStart),
+  body_mutual:trigramAt(mutual, bodyStart), use_mutual:trigramAt(mutual, useStart),
+  changed_use:trigramAt(changed, useStart), body_inherited:trigramAt(changed, bodyStart),
+ };
+ const bodyElement = elementByTrigram[expectedTrigrams.body];
+ const nodes = Object.fromEntries(Object.entries(expectedTrigrams).map(([role, trigram]) => {
+  const element = elementByTrigram[trigram];
+  return [role, {role, trigram, element, qi:'旺相休囚死'[seasonQi[monthOrder].indexOf(element)]}];
+ }));
+ const relationTo = element => {
+  if (element === bodyElement) return 'equal';
+  if (generates[element] === bodyElement) return 'use_generates_body';
+  if (generates[bodyElement] === element) return 'body_generates_use';
+  if (controls[element] === bodyElement) return 'use_controls_body';
+  assert.equal(controls[bodyElement], element);
+  return 'body_controls_use';
+ };
+ const relations = Object.fromEntries(['use','body_mutual','use_mutual','changed_use'].map(role => [role, relationTo(nodes[role].element)]));
+ const stageIds = [primaryId, library.getHexagramByBits(mutual).id, library.getHexagramByBits(changed).id];
+ return {nodes, relations, stageIds};
+}
 
 test('each completed promotion chart resolves all twelve keys to its own reviewed text and pay verdict', async () => {
  let copies = 0, slots = 0, dated = 0;
@@ -29,7 +67,16 @@ test('each completed promotion chart resolves all twelve keys to its own reviewe
     assert.equal(row.timingOmission?.status, 'not-derived');
     assert.ok(row.timingOmission.reason && row.timingOmission.sourceIds.length);
    }
+   const expected = expectedChart(row.primaryId, row.movingLine, row.monthOrder);
+   assert.deepEqual(row.stageIds, expected.stageIds);
+   assert.deepEqual(Object.fromEntries(row.facts.nodes.map(node => [node.role, node])), expected.nodes);
+   assert.deepEqual(Object.fromEntries(row.facts.directRelations.map(edge => [edge.role, edge.type])), expected.relations);
    for (const node of row.facts.nodes) assert.equal(node.qi, assessSeasonalQi(node.element, row.monthOrder).state);
+   if (row.decision.outcomeCode === 'favourable' && expected.relations.use === 'use_controls_body') {
+    assert.ok(Object.values(expected.relations).includes('use_generates_body'), row.decision.id);
+   }
+   const hanCount = row.copy.short.text.match(/\p{Script=Han}/gu)?.length ?? 0;
+   assert.ok(hanCount >= 60 && hanCount <= 120, row.decision.id);
    for (const evidence of row.decision.sourceEvidence) {
     const section = library.getSection(evidence.id);
     assert.ok(section.text.includes(evidence.quote));
@@ -63,15 +110,23 @@ test('each completed promotion chart resolves all twelve keys to its own reviewe
      assert.deepEqual(window.displayedDates, expected.matches.slice(0,2).map(day => day.date));
      assert.equal(window.event, rule.event);
      assert.equal(window.valence, rule.valence);
+    assert.equal(window.eventScope, rule.eventScope);
+    assert.deepEqual(window.targetBranches, rule.branches);
      assert.ok(window.text.includes(rule.text));
      assert.ok(window.displayedDates.every(day => day >= options.castingDate && rule.branches.includes(getCivilDay(day).dayBranch)));
-     if (window.eventScope === 'positive-result-candidate') assert.equal(row.decision.outcomeCode, 'favourable');
+     if (window.eventScope === 'positive-result-candidate') {
+     assert.equal(row.decision.outcomeCode, 'favourable');
+     assert.ok(['name-support', 'name-body'].includes(rule.kind));
+    }
     }
     slots++;
    }
   }
  }
  assert.equal(index.authorWholeArticleReviewed, copies);
+ assert.equal(index.fullTwelveMonthCharts, 384);
+ assert.equal(copies, 1920);
+ assert.equal(slots, 4608);
  assert.equal(index.baseCaseCount, slots);
  assert.equal(index.remainingBaseSlots, 4608 - slots);
  assert.equal(index.dated, dated);

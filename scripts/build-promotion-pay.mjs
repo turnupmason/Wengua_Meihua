@@ -29,13 +29,14 @@ const timingQuotes = {
  equal:['mh-143','盖卦宜生体，宜比和；'],
 };
 const seen = new Map();
+const seenSentences = new Map();
 const counts = {bodies: 0, keys: 0, favourable: 0, timingWindows: 0, dated: 0};
 const files = [];
 const directory = [];
 const references = [
  ['mh-056', '成卦之后先看《周易》爻辞', '依本卦完整动爻取义。'],
  ['mh-071', '凡占求名，以体为主，用为名。', '本次职位或职级能否落实，参求名。'],
- ['mh-072', '用生体，财有进益之喜。', '辨随岗薪资的进益和幅度，依本次职位结果。'],
+ ['mh-072', '用生体，财有进益之喜。', '用于辨别与岗位有关的财利与投入，实际薪差依正式薪档。'],
  ['mh-117', '用为占之即应，互为中间之应，变为事占之终应。', '本用及两互、变用各自对原体，分阶段核看。'],
  ['mh-119', '凡体卦宜乘旺，克体之卦宜衰。', '各位置同时使用实际月令五态。'],
  ['mh-116', '如占吉事，无生体之卦，有克体之卦，则事不谐矣。', '在有克而无直接生扶的盘里核对名成反证。'],
@@ -98,10 +99,18 @@ for (const [batchIndex, filename] of batches.entries()) {
   } catch (error) {
    throw new Error(key + ': ' + error.message, {cause:error});
   }
-  for (const [field, value] of Object.entries({title, short, opening, process, ending, summary})) {
-   const sample = value.replace(/[^\p{Script=Han}\p{Letter}\p{Number}]/gu, '');
-   if (seen.has(sample)) throw new Error('Duplicate promotion copy: ' + key + '/' + field + ' / ' + seen.get(sample));
-   seen.set(sample, key + '/' + field);
+  for (const [field, value] of Object.entries({title, short, opening, process, ending, summary, ...(payRange ? {payRange} : {})})) {
+   const location = key + '/' + field;
+   const sample = value.replace(/[^\p{Letter}\p{Number}]/gu, '');
+   if (seen.has(sample)) throw new Error('Duplicate promotion copy: ' + location + ' / ' + seen.get(sample));
+   seen.set(sample, location);
+   for (const sentence of value.split(/[。！？]/u)) {
+    const hanCount = sentence.match(/\p{Script=Han}/gu)?.length ?? 0;
+    if (hanCount < 12) continue;
+    const normalized = sentence.replace(/[^\p{Letter}\p{Number}]/gu, '');
+    if (seenSentences.has(normalized)) throw new Error('Duplicate promotion sentence: ' + location + ' / ' + seenSentences.get(normalized));
+    seenSentences.set(normalized, location);
+   }
   }
 
   const timingLine = timingByHexagram[primaryId]?.[movingLine - 1];
@@ -116,10 +125,16 @@ for (const [batchIndex, filename] of batches.entries()) {
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
   const timingReason = timingOmission?.reason ?? timingSlots.map(slot => slot.reason).join(' ');
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
-  const relation = r.edges.find(e => e.targetRole === 'changed_use').type;
+  const openingRelation = r.edges.find(edge => edge.targetRole === 'use').type;
+  const closingRelation = r.edges.find(edge => edge.targetRole === 'changed_use').type;
+  if (outcome === 'favourable' && openingRelation === 'use_controls_body' &&
+      !r.edges.some(edge => edge.type === 'use_generates_body')) {
+   throw new Error('Promotion verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
+  }
   const sourceEvidence = [...commonEvidence,
-   evidence('mh-071', nameClauses[relation], resolution),
-   evidence('mh-072', moneyClauses[relation], payRange || '本次晋升偏难，随岗薪资同断。'),
+   evidence('mh-071', nameClauses[openingRelation], '本用对原体为开局的直接依据。'),
+   ...(openingRelation === closingRelation ? [] : [evidence('mh-071', nameClauses[closingRelation], '同一关系条文用于理解末段走势。')]),
+   evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。'),
    evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', '日级窗口对应已经进入近期流程的评定。'),
    ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
    ...(timingSlots.some(slot => slot.kind === 'name-body') ? [evidence('mh-052',
