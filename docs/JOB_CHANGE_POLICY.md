@@ -41,6 +41,8 @@
 
 否卦初六用「贞吉亨」取守正待通，与泰初九「征吉」分别。六二分顺承暂得与守正处否；六三查藏而不明的不妥；九四有合宜的正式安排方能行；九五止否后仍须求固；上九先塞后通，核改善之后的投入。 [《周易·否》](https://zh.wikisource.org/wiki/周易/否) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+同人卦初九取开放求实，六二戒交往过狭，九三审势而久不兴，九四因困返则见吉，九五先克隔而后能合，上九虽无悔而志未得。「三岁」留原文；九五的战事譬喻不移作现实中的争斗。 [《周易·同人》](https://zh.wikisource.org/wiki/周易/同人) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
