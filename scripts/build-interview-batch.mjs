@@ -66,7 +66,13 @@ for(const [index,a] of authored.entries()){
  const copy={title:a.title,short:{decisionId,text:a.short},long:{decisionId,opening:a.opening,process:a.process,ending:a.ending,summary:a.summary}};
  const checks={...validateStoryCopy({decision,copy,lineApplication:a.lineApplication,counterevidence:a.counterevidence}),shortSeparation:checkInterviewShort(copy.short.text)};
  if(!scenario&&[copy.short.text,...Object.values(copy.long)].some(s=>/逢空|午空|空亡|动空|未支|申支/.test(s)))throw new Error('Base prose still contains a fixed void profile: '+decisionId);
- const timingSlots=interviewTimingSlots(reading,a.timing);
+ const candidates=interviewTimingSlots(reading,a.timing);
+ // 《日应》 supports interpreting the strain, but does not assign that interview event to a date.
+ const deferredTiming=scenario?[]:candidates.filter(slot=>slot.kind==='drain');
+ const timingSlots=scenario?candidates:candidates.filter(slot=>slot.kind!=='drain');
+ const timingOmission=a.timingOmission??(!timingSlots.length&&deferredTiming.length?{
+  status:'not-derived',reason:'卦象可见这一步较费力。《日应》可参看当日气势，现有依据不足以定这一环节的日期。',sourceIds:['mh-122','mh-143'],
+ }:undefined);
  if(!scenario){
   const stageByRole={use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing',body:'closing'};
   for(const slot of timingSlots){
@@ -92,8 +98,8 @@ for(const [index,a] of authored.entries()){
   'extension-provenance':scenario?[coreVoidNotes.join(' '),'user-void-extension;user-void-timing;exact-void-profile']:
    ['Production base manuscripts use classical body/use and monthly qi. Civil day is used for date conversion.','mh-061;mh-117;mh-119'],
   'bounded-indirect-relations':['No indirect effect reverses a direct relation','decision.indirectEffectsApplied'],
-  'reproducible-event-timing':a.timingOmission?[a.timingOmission.reason,'timingOmission;mh-071;mh-116;mh-122;mh-143']:
-   [a.timing[0]?.reason||'Stored support/control event distinguishes overall result from phase obstruction or repair; dates use saved casting day','timingSlots;mh-071;mh-116;mh-143'],
+  'reproducible-event-timing':timingOmission?[timingOmission.reason,`timingOmission;${timingOmission.sourceIds.join(';')}`]:
+   [timingSlots[0]?.reason||'Stored event distinguishes the overall result from phase obstruction or repair; dates use the saved casting day',`timingSlots;${timingSlots[0].sourceIds.join(';')}`],
   'conclusion-and-counterevidence':[a.counterevidence.map(c=>c.resolution).join('；'),'decision.counterevidence;complete-moving-line']
  };
  const review={status:'author-checked',actor:'assistant-author',version:scenario||retained?a.authorship.version:rewritten?REWRITE_VERSION:INTERVIEW_MANUSCRIPT_VERSION,
@@ -104,7 +110,9 @@ for(const [index,a] of authored.entries()){
   checks:Object.fromEntries(AUDIT_CHECKS.map(id=>[id,{status:'pass',scope:'author-check-only;not-independent-approval',evidence:[{sourceId:'project-interview-authoring',locator:evidence[id][1],reason:evidence[id][0]}]}]))};
  const row={number:index+1,primaryId:a.primaryId,movingLine:a.movingLine,monthOrder:a.monthOrder,monthBranches,voidProfileKey:a.baseNoVoid?'base-no-void':getVoidProfileKey(reading),
   stageIds:Object.values(reading.stages).map(s=>s.id),movingLineText:reading.selectedMovingLine.text,facts,decision,copy,timingSlots,
-  ...(a.timingOmission?{timingOmission:a.timingOmission}:{}),...(scenario?{voidScenario:scenario}:{}),
+  ...(timingOmission?{timingOmission}:{}),
+  ...(deferredTiming.length?{timingEditorialHold:deferredTiming.map(({role,event,eventScope,reason})=>({role,event,eventScope,reason,sourceId:'mh-143',basis:'day-qi-context-only'}))}:{}),
+  ...(scenario?{voidScenario:scenario}:{}),
   baseProse:!scenario,baseNoVoid:Boolean(a.baseNoVoid),authorship:a.authorship||{method:'individually-authored-reference-case',manualWholeArticleReview:true},coreVoidNotes,ruleVersions:{void:VOID_RULESET.id,decision:INTERVIEW_DECISION_POLICY_VERSION},voidReleaseSpecs:[],voidTimingSlots:[],voidTimingText:'',
   lineApplication:a.lineApplication,counterevidence:a.counterevidence,sourceIds,review,copyChecks:checks};
  row.artifactDigest=await interpretationArtifactDigest(row);rows.push(row);

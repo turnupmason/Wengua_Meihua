@@ -59,9 +59,19 @@ test('every full-base record independently binds canonical geometry, all five-st
 
 test('all stored timing forms have sourced events and convert a future casting date without reusing demonstration dates',()=>{
  const kinds=new Set();
+ let withheldDrainEvents=0;
  for(const row of rows){
   const reading=createBaseInterviewReading({library,question,...cast,castingDate:'2028-03-20',primaryId:row.primaryId,movingLine:row.movingLine,monthOrder:row.monthOrder});
   const slots=interviewTimingSlots(reading,row.timingSlots);slots.forEach(s=>kinds.add(s.kind));
+  for(const held of row.timingEditorialHold||[]){
+   assert.equal(held.sourceId,'mh-143');
+   assert.equal(held.basis,'day-qi-context-only');
+   assert.equal(reading.edges.find(e=>e.targetRole===held.role).type,'body_generates_use');
+   assert.ok(held.event&&held.reason);
+   assert.ok(!slots.some(s=>s.eventScope===held.eventScope));
+   assert.ok(slots.length||row.timingOmission?.sourceIds.includes('mh-143'));
+   withheldDrainEvents++;
+  }
   for(const slot of slots){
    const stage={use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing',body:'closing'}[slot.role];
    assert.ok(slot.reason);
@@ -74,7 +84,8 @@ test('all stored timing forms have sourced events and convert a future casting d
   for(const window of rendered.dateMatches){assert.ok(window.event&&window.valence&&window.sourceIds.length);assert.ok(window.matches.every(d=>d.date>='2028-03-20'));}
   for(const slot of slots)if(slot.kind==='body-period')assert.ok(!reading.edges.some(e=>e.type==='use_controls_body'));
  }
- assert.ok(kinds.has('body-period'));assert.ok(kinds.has('drain'));assert.ok(kinds.has('support'));assert.ok(kinds.has('control'));
+ assert.deepEqual([...kinds].sort(),['body-period','control','support']);
+ assert.ok(withheldDrainEvents>0);
 });
 
 test('authored Qian rewrites return a dated stage event only where supported',async()=>{

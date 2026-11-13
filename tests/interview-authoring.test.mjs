@@ -11,6 +11,7 @@ const question=await product.getQuestion('career.interview.interview-pass');
 const index=await read('data/authored-readings/interview-pass/index.json');
 const all=await Promise.all(index.files.map(f=>read(f.path)));
 const batch={rows:all.flatMap(f=>f.rows).filter(r=>r.authorship.method==='individually-authored-reference-case')};
+const classicalProduct=createProductRepository({library});
 const context={castingDate:'2026-11-11',monthOrder:'winter-water',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
 test('sixty separately authored qi versions retain full sources, all qi states, nine scoped checks and shared short/long decisions',async()=>{
@@ -35,11 +36,10 @@ test('positive and adverse windows independently match support/control branches 
  assert.match(adverse.story,/本月12、13号/);assert.ok(adverse.dateResolution.dateMatches.every(s=>s.valence==='凶'));
  assert.equal(adverse.timingDecision[0].eventScope,'opening-obstruction');
  for(const monthOrder of ['autumn-metal','seasonal-earth']){
-  const gu=await product.getContent({questionId:question.id,...context,primaryId:18,movingLine:3,monthOrder});
+  const gu=await classicalProduct.getContent({questionId:question.id,...context,primaryId:18,movingLine:3,monthOrder});
   assert.equal(gu.decision.outcomeCode,'not-pass-this-round');
-  const [timing]=gu.timingDecision;
-  assert.equal(timing.eventScope,'process-drain');assert.equal(timing.role,'use_mutual');assert.deepEqual(timing.branches,['申','酉']);
-  assert.ok(gu.dateResolution.dateMatches[0].matches.every(d=>timing.branches.includes(getCivilDay(d.date).dayBranch)));
+  assert.deepEqual(gu.timingDecision,[]);
+  assert.match(gu.calculationExplanation.timing.omission.reason,/日应/);
  }
  for(const monthOrder of ['spring-wood','summer-fire','autumn-metal','winter-water']){
   const shiHe=await product.getContent({questionId:question.id,...context,primaryId:21,movingLine:4,monthOrder});
@@ -48,15 +48,18 @@ test('positive and adverse windows independently match support/control branches 
   assert.deepEqual(shiHe.timingDecision[0].ruleIds,['good-event']);
   assert.ok(shiHe.timingDecision[0].sourceIds.includes('mh-116'));
  }
- const earthShiHe=await product.getContent({questionId:question.id,...context,primaryId:21,movingLine:4,monthOrder:'seasonal-earth'});
- assert.equal(earthShiHe.timingDecision[0].eventScope,'opening-drain');
- assert.equal(earthShiHe.timingDecision[0].role,'use');
+ const earthShiHe=await classicalProduct.getContent({questionId:question.id,...context,primaryId:21,movingLine:4,monthOrder:'seasonal-earth'});
+ assert.deepEqual(earthShiHe.timingSection.windows,[]);
+ assert.match(earthShiHe.calculationExplanation.timing.omission.reason,/不足以定/);
  for(const r of [positive,adverse])for(const event of r.dateResolution.dateMatches)for(const d of event.matches)
   assert.ok(r.timingDecision.find(s=>s.id===event.slotId).branches.includes(getCivilDay(d.date).dayBranch));
  assert.ok(![...positive.timingDecision,...adverse.timingDecision].some(s=>s.ruleIds.includes('fame-office-risk')));
  const mixed=await product.getContent({questionId:question.id,...context,primaryId:48,movingLine:5});
  assert.match(mixed.story,/本月18、19号/);assert.match(mixed.story,/本月21、22号/);
  assert.deepEqual(mixed.dateResolution.dateMatches.slice(0,2).map(x=>x.valence),['凶','吉']);
+ const springMixed=await classicalProduct.getContent({questionId:question.id,...context,primaryId:48,movingLine:5,monthOrder:'spring-wood'});
+ assert.equal(springMixed.timingDecision.length,1);
+ assert.equal(springMixed.timingDecision[0].kind,'support');
  const release=mixed.dateResolution.dateMatches.filter(x=>x.slotId.startsWith('void-'));
  assert.equal(release.length,0);assert.ok(!mixed.story.includes('空亡节点')); 
 });
@@ -138,8 +141,6 @@ test('strong body or mutual equality cannot reverse unassisted use-control into 
  }
  for(const [movingLine,monthOrder,scope,role] of [
   [2,'summer-fire','opening-obstruction','use'],
-  [2,'autumn-metal','closing-drain','changed_use'],
-  [2,'seasonal-earth','closing-drain','changed_use'],
   [3,'spring-wood','opening-obstruction','use'],
   [3,'summer-fire','closing-repair','changed_use'],
   [3,'seasonal-earth','closing-repair','changed_use'],
