@@ -186,7 +186,7 @@ export const DOMAINS: readonly CatalogDomain[] = file.categories.map((c) => ({
       subtype_id: s.id,
       label: { zh: s.label, en: names.subcategories[s.id] ?? s.label },
       ...(names.safety[s.id] ? { safety: names.safety[s.id] } : {}),
-      questions: [entryQuestion(s, members)],
+      questions: s.id === 'career.job-change' ? members.filter(q => q.enabled) : [entryQuestion(s, members)],
     };
   }),
 }));
@@ -208,7 +208,7 @@ for (const d of DOMAINS)
 const byMember = new Map([...MEMBERS].map(([id, m]) => [id, { ...m.q, domain_id: m.domain, subtype_id: m.entry } as ResolvedQuestion]));
 
 export const allSubtypes = () => [...bySubtype.values()];
-/** The questions a visitor can pick: one per entry. */
+/** The questions a visitor can pick. Entries with distinct job-change scopes expose both choices. */
 export const allQuestions = () => [...byQuestion.values()];
 /** The catalog's fixed questions behind the entries (82). */
 export const catalogQuestions = () => [...byMember.values()];

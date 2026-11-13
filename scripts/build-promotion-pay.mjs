@@ -4,22 +4,26 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILES} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 
 const root = new URL('../', import.meta.url);
-const sourceDir = 'sources/editorial/promotion-pay/';
-const base = 'data/authored-readings/promotion-pay/';
-const docDir = 'docs/promotion-pay/';
-const {questionId, manuscriptVersion} = PROMOTION_PAY_PROFILE;
 const library = await loadLibrary();
-const raw = PRODUCT_TAXONOMY[0].subcategories.find(s => s.id === 'promotion-pay').questions.find(q => q.id === 'promotion-pay.promotion');
+const careerQuestions = PRODUCT_TAXONOMY[0].subcategories.flatMap(subcategory => subcategory.questions);
+
+async function buildCareerManuscripts(profile, config) {
+const {directory: slug, questionId, manuscriptVersion} = profile;
+const sourceDir = 'sources/editorial/' + slug + '/';
+const base = 'data/authored-readings/' + slug + '/';
+const docDir = 'docs/' + slug + '/';
+const isPromotion = profile === PROMOTION_PAY_PROFILE;
+const raw = careerQuestions.find(q => 'career.' + q.id === questionId);
 const question = {...raw, id: questionId};
 const common = {schemaVersion: '1.0.0', contentVersion: library.contentVersion, manuscriptVersion, questionId};
 const orders = ['spring-wood', 'summer-fire', 'autumn-metal', 'winter-water', 'seasonal-earth'];
-const timingByHexagram = JSON.parse(await readFile(new URL(sourceDir + 'timing.json', root), 'utf8'));
+const timingByHexagram = isPromotion ? JSON.parse(await readFile(new URL(sourceDir + 'timing.json', root), 'utf8')) : null;
 const timingQuotes = {
  'name-support':['mh-071','欲知名成之日，生体之卦气详之。'],
  'name-body':['mh-071','若无克体之卦，则名易就，止看卦体时序之类，以定日期。'],
@@ -35,11 +39,10 @@ const files = [];
 const directory = [];
 const references = [
  ['mh-056', '成卦之后先看《周易》爻辞', '依本卦完整动爻取义。'],
- ['mh-071', '凡占求名，以体为主，用为名。', '本次职位或职级能否落实，参求名。'],
- ['mh-072', '用生体，财有进益之喜。', '用于辨别与岗位有关的财利与投入，实际薪差依正式薪档。'],
+ ...config.references,
  ['mh-117', '用为占之即应，互为中间之应，变为事占之终应。', '本用及两互、变用各自对原体，分阶段核看。'],
  ['mh-119', '凡体卦宜乘旺，克体之卦宜衰。', '各位置同时使用实际月令五态。'],
- ['mh-116', '如占吉事，无生体之卦，有克体之卦，则事不谐矣。', '在有克而无直接生扶的盘里核对名成反证。'],
+ ['mh-116', '如占吉事，无生体之卦，有克体之卦，则事不谐矣。', config.counterevidence],
 ];
 
 function evidence(id, quote, reason) {
@@ -48,13 +51,6 @@ function evidence(id, quote, reason) {
  return {id, title: section.title, quote, locator: section.sourceRef, reason};
 }
 const commonEvidence = references.map(args => evidence(...args));
-const nameClauses = {
- equal:'体用比和，功名称意。',
- body_controls_use:'体克用，名可成，但成迟。',
- use_controls_body:'用克体，名不可成。',
- use_generates_body:'用生体，名易成，或因名有得。',
- body_generates_use:'体生用，名不可就，或因名有丧。',
-};
 const moneyClauses = {
  equal:'体用比和，财利快意。',
  body_controls_use:'体克用，有财；',
@@ -70,7 +66,7 @@ const batches = (await readdir(new URL(sourceDir, root))).filter(name => /^hex-\
 for (const [batchIndex, filename] of batches.entries()) {
  const primaryId = batchIndex + 1;
  const stem = 'hex-' + String(primaryId).padStart(3, '0');
- if (filename !== stem + '.json') throw new Error('Expected sequential promotion source: ' + stem);
+ if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
  if (drafts.length !== 30) throw new Error('A promotion batch needs 30 individually written versions');
@@ -79,10 +75,11 @@ for (const [batchIndex, filename] of batches.entries()) {
  const name = library.getHexagram(primaryId).name;
  let readingDoc = readingDocumentHeader(primaryId, name);
  for (const [i, draft] of drafts.entries()) {
-  const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, payRange] = draft;
+  const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, topicDetail] = draft;
+  const payRange = isPromotion ? topicDetail : undefined;
   if (movingLine !== Math.floor(i / 5) + 1 || monthOrder !== orders[i % 5] ||
-      !['favourable', 'difficult'].includes(outcome) || !resolution ||
-      (outcome === 'favourable') !== Boolean(payRange)) throw new Error('Invalid promotion author record: ' + stem + '/' + (i + 1));
+      !config.outcomes.includes(outcome) || !resolution ||
+      (isPromotion && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const key = [questionId, primaryId, movingLine, monthOrder].join('/');
@@ -96,6 +93,10 @@ for (const [batchIndex, filename] of batches.entries()) {
   try {
    copyChecks = validateStoryCopy({decision: {id: decisionId}, copy, lineApplication, counterevidence});
    checkInterviewShort(short);
+   if (!isPromotion) {
+    const length = short.match(/\p{Script=Han}/gu)?.length ?? 0;
+    if (length < 60 || length > 120) throw new Error('简断需有 60–120 个汉字');
+   }
   } catch (error) {
    throw new Error(key + ': ' + error.message, {cause:error});
   }
@@ -113,13 +114,14 @@ for (const [batchIndex, filename] of batches.entries()) {
    }
   }
 
-  const timingLine = timingByHexagram[primaryId]?.[movingLine - 1];
-  const timingSelection = timingLine?.[1][i % orders.length];
+  const timingLine = timingByHexagram?.[primaryId]?.[movingLine - 1];
+  const timingSelection = isPromotion ? timingLine?.[1][i % orders.length] : topicDetail;
   if (!timingSelection?.length) throw new Error('Missing author timing: ' + key);
   const timingOmission = typeof timingSelection === 'string'
-   ? {status:'not-derived', reason:timingSelection, sourceIds:['mh-071','mh-122']}
+   ? {status:'not-derived', reason:timingSelection, sourceIds:[config.primarySource,'mh-122']}
    : null;
-  const timingSpecs = timingOmission ? [] : timingSelection.map(index => timingLine[0][index]);
+  const timingSpecs = timingOmission ? [] : isPromotion ? timingSelection.map(index => timingLine[0][index]) : timingSelection;
+  if (!isPromotion && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) throw new Error('Job change only dates named transition events: ' + key);
   if (timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Invalid author timing: ' + key);
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
@@ -127,15 +129,15 @@ for (const [batchIndex, filename] of batches.entries()) {
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const openingRelation = r.edges.find(edge => edge.targetRole === 'use').type;
   const closingRelation = r.edges.find(edge => edge.targetRole === 'changed_use').type;
-  if (outcome === 'favourable' && openingRelation === 'use_controls_body' &&
+  if (isPromotion && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
       !r.edges.some(edge => edge.type === 'use_generates_body')) {
    throw new Error('Promotion verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
   const sourceEvidence = [...commonEvidence,
-   evidence('mh-071', nameClauses[openingRelation], '本用对原体为开局的直接依据。'),
-   ...(openingRelation === closingRelation ? [] : [evidence('mh-071', nameClauses[closingRelation], '同一关系条文用于理解末段走势。')]),
-   evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。'),
-   evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', '日级窗口对应已经进入近期流程的评定。'),
+   evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
+   ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
+   ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
+   evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', config.timingContext),
    ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
    ...(timingSlots.some(slot => slot.kind === 'name-body') ? [evidence('mh-052',
     TRIGRAM_PERIOD_SPECS.find(period => period.trigram === r.nodes.find(node => node.role === 'body').trigram).quote,
@@ -149,14 +151,14 @@ for (const [batchIndex, filename] of batches.entries()) {
   };
   const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), ...timingSourceIds, facts.movingLine.sourceRef.sourceId])];
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
-   questionScope:'promotion-with-associated-pay', lineApplication, counterevidence, sourceEvidence,
-   pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'},
+   questionScope:profile.questionScope??'promotion-with-associated-pay', lineApplication, counterevidence, sourceEvidence,
+   ...(isPromotion ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
    indirectEffectsApplied:[]};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
   const receipts = [
    ['facts.stages', stageIds.join(' / ') + '，' + facts.movingLine.label + '动'],
    ['facts.nodes', facts.nodes.map(n => n.role + ' ' + n.trigram).join(' / ')],
-   ['mh-071;mh-072', '名分与随岗薪资同问，薪资承接晋升结果'],
+   [isPromotion ? 'mh-071;mh-072' : config.primarySource, config.scopeNote],
    ['facts.directRelations', facts.directRelations.map(e => e.role + ' ' + e.type).join(' / ')],
    ['facts.nodes', facts.nodes.map(n => n.trigram + n.qi).join(' / ')],
    ['mh-061;mh-117', '经典体用及同一月令五态'],
@@ -169,7 +171,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:'promotion-pay-day-1.0.0'}};
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:slug+'-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
@@ -207,14 +209,14 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     resolution,
-    timingOmission?.reason ?? '日级参考窗口适用于评定已进入近期流程。',
+    timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;
      const method = slot.method === 'trigram-periods' ? '先天体卦时序法' : '先天卦气法';
      return `${slot.valence}应 · ${slot.event}。取${trigram}${element}，${slot.branches.join('、')}日。用${method}按日匹配，先查起卦当月余日，无匹配再查下月。示例 ${timing.dateMatches[index].displayedDates.join('、')}。 ${slot.reason}`;
     }),
     ...sourceEvidence.map(source => `- ${source.id}《${source.title}》，原文第 ${source.locator.startLine} 行起。\n  “${source.quote}”\n  ${source.reason}`),
-    `稿件键 \`${key}\` · [作者源](../../${sourcePath}) · [断法和出处](../PROMOTION_PAY_POLICY.md)`,
+    `稿件键 \`${key}\` · [作者源](../../${sourcePath}) · [断法和出处](../${config.policy})`,
     `判据：${row.ruleVersions.decision}；写作方式：${row.authorship.method}。`,
    ],
   });
@@ -234,11 +236,52 @@ const progress = {
 };
 await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
- '# 晋升加薪断语', '', '问项为本次晋升及随岗加薪。', '',
+ '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
- '其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。',
+ ...(isPromotion ? ['其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
- '', '[断法与古籍出处](../PROMOTION_PAY_POLICY.md)', '', ...directory, '',
+ '', '[断法与古籍出处](../' + config.policy + ')', '', ...directory, '',
 ].join('\n'));
-console.log(progress);
+console.log({...progress,files:files.length});
+}
+
+const promotion = {
+ title:'晋升加薪', policy:'PROMOTION_PAY_POLICY.md', primarySource:'mh-071',
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','本次职位或职级能否落实，参求名。'],
+  ['mh-072','用生体，财有进益之喜。','用于辨别与岗位有关的财利与投入，实际薪差依正式薪档。'],
+ ],
+ counterevidence:'在有克而无直接生扶的盘里核对名成反证。',
+ clauses:{
+  equal:'体用比和，功名称意。', body_controls_use:'体克用，名可成，但成迟。',
+  use_controls_body:'用克体，名不可成。', use_generates_body:'用生体，名易成，或因名有得。',
+  body_generates_use:'体生用，名不可就，或因名有丧。',
+ },
+ outcomes:['favourable','difficult'], scopeNote:'名分与随岗薪资同问，薪资承接晋升结果',
+ timingContext:'日级窗口对应已经进入近期流程的评定。',
+ timingDisplay:'日级参考窗口适用于评定已进入近期流程。',
+};
+const planning = {
+ policy:'JOB_CHANGE_POLICY.md', primarySource:'mh-070',
+ references:[
+  ['mh-070','占求谋，以体为主，用为所谋之事。','以明确的离职或换职计划为所谋。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','核对实际过渡过程和原体能否承接变化。'],
+ ],
+ clauses:{
+  equal:'体用比和，求谋称意。', body_controls_use:'体克用，谋虽可成，但成迟。',
+  use_controls_body:'用克体，求谋不成，谋亦有害。', use_generates_body:'用生体。不谋而成',
+  body_generates_use:'体生用，多谋少遂。',
+ },
+ counterevidence:'检验克体和无生扶对具体换职计划的限制。',
+ timingContext:'日级参考窗口适用于离职或换职已进入近期办理阶段。',
+};
+const jobConfigs = [
+ {...planning,title:'现在适合辞职吗',scopeNote:'以暂留现职为参照，判断已明确的离职安排能否现在执行',outcomes:['stay','prepare','leave']},
+ {...planning,title:'新工作与现职怎么选',scopeNote:'就用户所选首要目标，比较明确的新工作和现职条件',outcomes:['current','new','unresolved']},
+];
+const target = process.argv[2];
+if (target && target !== 'job-change') throw new Error('Unknown career manuscript target: ' + target);
+if (target === 'job-change') {
+ for (const [index, profile] of JOB_CHANGE_PROFILES.entries()) await buildCareerManuscripts(profile, jobConfigs[index]);
+} else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);

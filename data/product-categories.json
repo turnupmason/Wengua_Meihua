@@ -225,8 +225,19 @@
                 "domain-09"
               ],
               "mode": "narrative",
-              "answerScope": "属于去留决策，须有明确备选安排；不以求职可成代答辞职适宜。",
+              "answerScope": "以暂留现职为参照，判断现在执行已明确的离职安排是否合适。",
               "requiresComparisonMethod": true,
+              "contextFields": {
+                "jobPlan": {
+                  "label": "离职后的安排",
+                  "options": [
+                    "new-job-confirmed",
+                    "other-plan-confirmed"
+                  ],
+                  "required": true
+                }
+              },
+              "manuscriptIndexPath": "data/authored-readings/job-resign/index.json",
               "position": 1,
               "categoryId": "career",
               "subcategoryId": "career.job-change",
@@ -241,7 +252,7 @@
                   "sectionId": "mh-071"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -249,8 +260,7 @@
                 "mentalStateIsFact": false,
                 "symbolicLocationIsFact": false
               },
-              "practicalAdvice": [],
-              "contextFields": {}
+              "practicalAdvice": []
             },
             {
               "id": "career.job-change.compare-jobs",
@@ -261,8 +271,28 @@
                 "domain-09"
               ],
               "mode": "narrative",
-              "answerScope": "须明确比较目标及两个选项，不能凭单一得失结论断新工作全面更好。",
+              "answerScope": "以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。",
               "requiresComparisonMethod": true,
+              "contextFields": {
+                "jobPriority": {
+                  "label": "这次最看重什么",
+                  "options": [
+                    "income",
+                    "stability",
+                    "development",
+                    "workload"
+                  ],
+                  "required": true
+                },
+                "comparisonTerms": {
+                  "label": "两份工作的条件是否清楚",
+                  "options": [
+                    "both-known"
+                  ],
+                  "required": true
+                }
+              },
+              "manuscriptIndexPath": "data/authored-readings/job-compare/index.json",
               "position": 2,
               "categoryId": "career",
               "subcategoryId": "career.job-change",
@@ -277,7 +307,7 @@
                   "sectionId": "mh-071"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -285,8 +315,7 @@
                 "mentalStateIsFact": false,
                 "symbolicLocationIsFact": false
               },
-              "practicalAdvice": [],
-              "contextFields": {}
+              "practicalAdvice": []
             }
           ]
         },

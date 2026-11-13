@@ -10,6 +10,10 @@ import {checkInterviewDecision,checkInterviewShort} from './interview-decision-c
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
+export const JOB_CHANGE_PROFILES=Object.freeze([
+ Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
+ Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
+]);
 const INTERVIEW_PROFILE={questionId:INTERVIEW_QUESTION_ID,questionType:'interview_pass',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,directory:'interview-pass'};
 const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
 const NO_WINDOW_NOTE='此盘暂无有据的日期可列。';
@@ -134,6 +138,8 @@ export function promotionTimingSlots(reading,specs,outcome){
 }
 
 export function createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid=false,profile=INTERVIEW_PROFILE}){
+ const isPromotion=profile===PROMOTION_PAY_PROFILE;
+ const usesStoredTimingSpecs=profile!==INTERVIEW_PROFILE;
  const directory='data/authored-readings/'+profile.directory+'/';
  const cache=new Map();
  const read=path=>{if(!cache.has(path))cache.set(path,Promise.resolve(readJSON(path)).then(v=>{
@@ -171,13 +177,12 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const material=structuredClone(row);delete material.artifactDigest;
   if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
   if(profile===INTERVIEW_PROFILE)checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
-  else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!=='promotion-with-associated-pay')throw new Error('Authored promotion scope mismatch');
+  else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!==(profile.questionScope??'promotion-with-associated-pay'))throw new Error('Authored question scope mismatch');
   checkInterviewShort(row.copy.short.text);
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
-  const isPromotion=profile===PROMOTION_PAY_PROFILE;
-  const actualSlots=isPromotion?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode):interviewTimingSlots(reading,row.timingSlots);
+  const actualSlots=usesStoredTimingSpecs?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode):interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
   const storedTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
   const missingTiming=[];
@@ -215,7 +220,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    `本互变：${Object.values(reading.stages).map(stage=>stage.name).join(' → ')}，本卦${reading.selectedMovingLine.label}动。`,
    reading.nodes.map(n=>`${labels[n.role]}${n.trigram}${n.element}${n.strength.state}`).join('，')+'。',
    reading.edges.map(e=>labels[e.targetRole]+relationLabels[e.type]).join('，')+'。',
-   ...(isPromotion?[`体用位置：${reading.body.side==='upper'?'上卦':'下卦'}为原体，动爻所在${reading.use.side==='upper'?'上卦':'下卦'}为本用。`]:[]),
+   ...(usesStoredTimingSpecs?[`体用位置：${reading.body.side==='upper'?'上卦':'下卦'}为原体，动爻所在${reading.use.side==='upper'?'上卦':'下卦'}为本用。`]:[]),
    ...reading.nodes.filter(n=>n.role!=='body_inherited'&&n.void.hit).map(n=>
     `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
    ...row.counterevidence.map(c=>c.resolution),
@@ -241,7 +246,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
      const role=d.calculationBasis.role;
      const label=(!row.decision.sourceEvidence&&{body:'体',use:'用'}[role])||labels[role]||role;
-     const ruleNote=isPromotion?` ${d.calculationBasis.reason} 依据 ${d.sourceIds.join('、')}。`:'';
+     const ruleNote=usesStoredTimingSpecs?` ${d.calculationBasis.reason} 依据 ${d.sourceIds.join('、')}。`:'';
      return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${ruleNote}`;
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,

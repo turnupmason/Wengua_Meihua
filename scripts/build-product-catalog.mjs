@@ -8,6 +8,18 @@ let authoredProgress=null;
 try{authoredProgress=JSON.parse(await readFile(new URL('data/authored-readings/progress.json',root),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
 const promotionPath='data/authored-readings/promotion-pay/index.json';
 const promotion=JSON.parse(await readFile(new URL(promotionPath,root),'utf8'));
+const jobProgress=await Promise.all(['job-resign','job-compare'].map(async directory=>{
+ const progressPath='data/authored-readings/'+directory+'/index.json';
+ try {
+  const index=JSON.parse(await readFile(new URL(progressPath,root),'utf8'));
+  return {...index,progressPath};
+ } catch(error) {
+  if(error.code!=='ENOENT')throw error;
+  return null;
+ }
+}));
+const careerProgress=new Map([ {...promotion,progressPath:promotionPath}, ...jobProgress.filter(Boolean)].map(index=>[index.questionId,index]));
+const current=[...careerProgress.values()].find(index=>index.remainingBaseSlots)??[...careerProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}
 const categories=[];
@@ -44,12 +56,12 @@ await writeFile(new URL('data/product-categories.json',root),JSON.stringify(cata
 await writeFile(new URL('data/editorial-acceptance.json',root),JSON.stringify({...base,productCatalogVersion:'1.0.0',...accepted,scopeStillMatches:true},null,2)+'\n');
 const plan={...base,productCatalogVersion:catalogVersion,...counts,acceptedSampleCount:accepted.samples.length,style:'user-accepted-story-editorial-3.0.0',
  activeAuthoring:authoredProgress?{questionId:authoredProgress.activeQuestionId,baseCasesWritten:authoredProgress.baseCasesWritten,totalBaseCases:4608,uniqueAuthoredVersions:authoredProgress.uniqueAuthoredVersions,contextProfilesWritten:authoredProgress.contextProfilesWritten,baseCoverageComplete:authoredProgress.baseCoverageComplete===true,progressPath:'data/authored-readings/progress.json'}:null,
- currentAuthoring:{questionId:promotion.questionId,progressPath:promotionPath,baseCasesWritten:promotion.baseCaseCount,totalBaseCases:promotion.totalBaseCases,authoredVersions:promotion.baseVersionCount,authorWholeArticleReviewed:promotion.authorWholeArticleReviewed,next:promotion.next},
+ currentAuthoring:{questionId:current.questionId,progressPath:current.progressPath,baseCasesWritten:current.baseCaseCount,totalBaseCases:current.totalBaseCases,authoredVersions:current.baseVersionCount,authorWholeArticleReviewed:current.authorWholeArticleReviewed,next:current.next},
  noFurtherStyleApprovalRequired:true,authorship:'assistant-authors;application-developers-integrate',backgroundExecution:false,
  questionTypeCount:new Set(questions.map(q=>q.question_type)).size,
  sharedTypePolicy:'Explicit equivalent-scope references may share prose; question count is not independent-article count.',
  items:questions.map(q=>({questionId:q.id,question_type:q.question_type,categoryId:q.categoryId,subcategoryId:q.subcategoryId,
-  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.archived?'archived':q.id===promotion.questionId?(promotion.remainingBaseSlots?'writing-in-progress':'base-coverage-complete;classical-body-use'):q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?(authoredProgress.baseCoverageComplete?'base-coverage-complete;classical-body-use':'writing-in-progress'):'exact-coverage-pending'):'reference-or-guidance-written',
+  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.archived?'archived':careerProgress.has(q.id)?(careerProgress.get(q.id).remainingBaseSlots?'writing-in-progress':'base-coverage-complete;classical-body-use'):q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?(authoredProgress.baseCoverageComplete?'base-coverage-complete;classical-body-use':'writing-in-progress'):'exact-coverage-pending'):'reference-or-guidance-written',
   legacyQuestionId:q.legacyQuestionId||null,legacyBindings:q.legacyBindings||null}))};
 await writeFile(new URL('data/product-authoring-plan.json',root),JSON.stringify(plan,null,2)+'\n');
 let doc='# 正式产品分类 V2\n\n六大领域按新版导航归为 31 个细分入口，依次为 6、6、6、4、5、4 项。目录保存 82 个固定问项。当前可选 81 个，原年度加薪问项供历史记录读取。随晋升的加薪在「这次能晋升并随岗加薪吗」一并解读。原 18 个古籍门类作为内容来源。\n\n十篇V3简断与详断已获用户通过，内容及文风按原版本保留；无需重复请求文风确认。验收记录绑定原稿摘要，见 data/editorial-acceptance.json。\n\n';

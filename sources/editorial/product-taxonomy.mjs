@@ -4,6 +4,9 @@ const q=(id,question,question_type,sourceDomainIds,options={})=>({id,question,qu
 const s=(id,label,examples,questions)=>({id,label,exampleQuestions:examples.split('|'),questions});
 const o=(scope,options={})=>({answerScope:scope,...options});
 const lostContext={objectKind:{label:'物品类型',options:['keys','wallet','phone','documents','jewellery','other'],required:true}};
+const jobPlan={label:'离职后的安排',options:['new-job-confirmed','other-plan-confirmed'],required:true};
+const jobPriority={label:'这次最看重什么',options:['income','stability','development','workload'],required:true};
+const comparisonTerms={label:'两份工作的条件是否清楚',options:['both-known'],required:true};
 const lostBindings={contextKey:'objectKind',values:{keys:'domain-15-keys',wallet:'domain-15-wallet',phone:'domain-15-phone',documents:'domain-15-documents',jewellery:'domain-15-jewellery'}};
 const health=(id,leaf,question,paragraph)=>q(id,question,'health_symbolic_'+leaf,['domain-16'],{mode:'reference',
  answerScope:'只解释传统术语与象意；不诊断、不定位病灶、不评估病情严重程度、不预测疗效或指导医疗决策。',
@@ -19,8 +22,8 @@ export const PRODUCT_TAXONOMY=[
    q('promotion-pay.promotion','这次能晋升并随岗加薪吗？','promotion',['domain-09','domain-10'],o('回答本次晋升及随岗加薪。晋升落实时一并看随岗薪资幅度。',{manuscriptIndexPath:'data/authored-readings/promotion-pay/index.json'})),
    q('promotion-pay.pay-rise','今年能获得加薪吗？','salary_increase',['domain-09','domain-10'],o('回答所选年度薪资调整，不把升职、奖金和加薪互相替代。',{archived:true,contextFields:{targetYear:{label:'所问年份',type:'year',required:true}}}))]),
   s('job-change','跳槽去留','现在适合辞职吗？|新工作和现在的工作怎么选？',[
-   q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('属于去留决策，须有明确备选安排；不以求职可成代答辞职适宜。',{requiresComparisonMethod:true})),
-   q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('须明确比较目标及两个选项，不能凭单一得失结论断新工作全面更好。',{requiresComparisonMethod:true}))]),
+   q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('以暂留现职为参照，判断现在执行已明确的离职安排是否合适。',{requiresComparisonMethod:true,contextFields:{jobPlan},manuscriptIndexPath:'data/authored-readings/job-resign/index.json'})),
+   q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。',{requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-compare/index.json'}))]),
   s('workplace','职场情况','试用期能通过吗？|与领导的工作关系能协调好吗？',[
    q('job-stability.layoff','当前工作的稳定性如何，会有被裁员的风险吗？','employment_stability',['domain-09'],o('只作工作形势的传统解释，不声称核实了雇主决定或保证工作安全。')),
    q('job-stability.probation','这次试用期能通过吗？','probation_completion',['domain-09'],o('只回答试用期结果，不用求职录用或终身工作稳定代答。')),

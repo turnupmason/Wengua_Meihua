@@ -75,10 +75,14 @@ describe('QuestionCatalog = the formal product catalog', () => {
     ]);
     for (const [i, d] of DOMAINS.entries()) {
       expect(d.subtypes.map((s) => [s.subtype_id, s.label.zh])).toEqual(file.categories[i].subcategories.map((s) => [s.id, s.label]));
-      for (const s of d.subtypes) expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual([[s.subtype_id, s.label.zh]]);
+      for (const s of d.subtypes) {
+        if (s.subtype_id === 'career.job-change') {
+          expect(s.questions.map((q) => q.question_id)).toEqual(['career.job-change.resign', 'career.job-change.compare-jobs']);
+        } else expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual([[s.subtype_id, s.label.zh]]);
+      }
     }
     expect(allSubtypes()).toHaveLength(31);
-    expect(allQuestions()).toHaveLength(31);
+    expect(allQuestions()).toHaveLength(32);
     // The catalog's own questions stay resolvable (records cast before entries), under their entry.
     expect(catalogQuestions().map((q) => q.question_id)).toEqual(file.categories.flatMap((c) => c.subcategories.flatMap((s) => s.questions.map((q) => q.id))));
     expect(questionById(INTERVIEW)).toMatchObject({ subtype_id: JOB, question_text: { zh: '这次面试能通过吗？' } });
@@ -94,17 +98,18 @@ describe('QuestionCatalog = the formal product catalog', () => {
       expect(q.question_text.en).not.toBe(q.question_text.zh);
       if (q.mode !== 'narrative') expect(q.paragraphs.length).toBeGreaterThan(0);
     }
-    for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(1);
-    // Entries ask nothing finer: no fixed options.
-    expect(allQuestions().filter((q) => q.conditions?.length)).toEqual([]);
+    for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(s.subtype_id === 'career.job-change' ? 2 : 1);
+    expect(allQuestions().filter((q) => q.conditions?.length).map(q => q.question_id)).toEqual(['career.job-change.resign', 'career.job-change.compare-jobs']);
     // Health is traditional reference only; 方向原因 reads; 失联寻人 is guidance (nothing written to cast for).
     expect(allQuestions().filter((q) => q.domain_id === 'health').map((q) => q.mode)).toEqual(['reference', 'reference', 'reference', 'reference']);
     expect(readinessOf(questionById('search.direction')!)).toBe('reference');
     expect(readinessOf(questionById('search.missing-contact')!)).toBe('guidance');
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
-    // 求职录用 reads the interview library; 晋升加薪 reads the full promotion library (the archived yearly
-    // pay rise is not offered); the others carry none yet.
-    const written = [[JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion']];
+    // 求职录用 and 晋升加薪 read their full libraries. 跳槽去留 has two separate question IDs.
+    const written = [
+      [JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion'],
+      ['career.job-change.resign', undefined], ['career.job-change.compare-jobs', undefined],
+    ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
     expect(questionById('career.promotion-pay.pay-rise')).toMatchObject({ enabled: false, subtype_id: 'career.promotion-pay' });
@@ -143,9 +148,9 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 求职录用 and 晋升加薪 have written 断语; the other four career entries are pending.
+    // 求职录用、晋升加薪 and 跳槽去留 have written material.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(4);
+    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(3);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
@@ -173,6 +178,22 @@ describe('click-only home', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
     expect(keyboardFields()).toHaveLength(0);
+  });
+
+  it('selects a distinct job-change question and its fixed context', () => {
+    let last: EntryForm = EMPTY_FORM;
+    render(<Home onChange={(f) => (last = f)} />);
+    fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
+    fireEvent.click(screen.getByRole('button', { name: '跳槽去留' }));
+    expect(screen.getByRole('button', { name: '现在适合辞去当前工作吗？' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: '新工作与现在的工作相比，哪一个更适合我？' }));
+    fireEvent.click(screen.getByRole('radio', { name: '稳定性' }));
+    fireEvent.click(screen.getByRole('radio', { name: '现职与新工作的条件均已明确' }));
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.done }));
+    expect(last).toMatchObject({
+      questionId: 'career.job-change.compare-jobs',
+      conditions: { jobPriority: 'stability', comparisonTerms: 'both-known' },
+    });
   });
 
   it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {

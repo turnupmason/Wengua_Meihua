@@ -1,6 +1,6 @@
 import {readRepositoryJSON} from './io.js';
 import {createQuestionRepository} from './questions.js';
-import {createInterviewManuscriptRepository,PROMOTION_PAY_PROFILE} from './interview-manuscripts.js';
+import {createInterviewManuscriptRepository,JOB_CHANGE_PROFILES,PROMOTION_PAY_PROFILE} from './interview-manuscripts.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
@@ -10,7 +10,7 @@ const SUBCATEGORY_COUNT=SUBCATEGORY_COUNTS.reduce((total,count)=>total+count,0);
 export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository,includeHistoricalInterviewVoid=false}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
  const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid:includeHistoricalInterviewVoid});
- const promotion=createInterviewManuscriptRepository({library,readJSON,profile:PROMOTION_PAY_PROFILE});let cache;
+ const exactRepositories=new Map([PROMOTION_PAY_PROFILE,...JOB_CHANGE_PROFILES].map(profile=>[profile.questionId,createInterviewManuscriptRepository({library,readJSON,profile})]));let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
    if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='2.0.0'||c.categoryCount!==6||c.subcategoryCount!==SUBCATEGORY_COUNT||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
@@ -59,7 +59,7 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
    return freeze({...base,status:q.mode,paragraphs,story:paragraphs.join('\n\n'),predictionAllowed:false,provesLocation:false});
   }
   if(q.manuscriptIndexPath){
-   const repository=q.id===PROMOTION_PAY_PROFILE.questionId?promotion:authored;
+   const repository=exactRepositories.get(q.id)??authored;
    const result=await repository.getContent(q,options);
    return freeze({...result,...base,predictionAllowed:result.productionAllowed===true});
   }
@@ -69,5 +69,5 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
    voidContext:options.voidContext,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext});
   return freeze({...result,...base,legacySelection:result.selection,predictionAllowed:result.productionAllowed===true});
  }
- return Object.freeze({getCatalog,getQuestion,listSubcategories,listQuestions,getContent,clearCache:()=>{cache=undefined;legacy.clearCache?.();authored.clearCache();promotion.clearCache();}});
+ return Object.freeze({getCatalog,getQuestion,listSubcategories,listQuestions,getContent,clearCache:()=>{cache=undefined;legacy.clearCache?.();authored.clearCache();for(const repository of exactRepositories.values())repository.clearCache();}});
 }
