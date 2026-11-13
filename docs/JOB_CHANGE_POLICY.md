@@ -25,6 +25,8 @@
 
 蒙卦初六用明规解缚，过用则吝；九二以包纳而能任为吉；六三戒逐利失其所守；六四困在远离实能指引的人；六五之吉系于谦顺求教；上九利防护而戒侵夺。原爻中刑、婚等譬喻取其处事条件。 [《周易·蒙》](https://zh.wikisource.org/wiki/周易/蒙) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
 
+需卦以险在前而待为总义。初九远险守常，九二虽有小言仍可待会而吉，九三逼难须敬慎，六四有相伤之势宜退避，九五安待得中，上六善待不召而来的协助才取终吉。「三人」只留于爻辞。 [《周易·需》](https://zh.wikisource.org/wiki/周易/需) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
