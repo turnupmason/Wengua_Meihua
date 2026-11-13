@@ -97,7 +97,13 @@ describe('专业依据 relation layer', () => {
       <ReadingView reading={reading} question="这次搬家合适吗？" castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} judgment={{ state: 'legacy' }} onUnlock={() => {}} onClose={() => {}} onOpenBook={() => {}} onOpenSection={(title) => opened.push(title)} />,
     );
     expect(screen.getByText('从卦象证据直接对应断语')).toBeTruthy();
-    expect(screen.getByText('互克兼比')).toBeTruthy();
+    // 经过: 体互 and 用互 on two labelled lines (no merged 「互克兼比」); the 体互 line is marked as the
+    // one carved on the stone, in the summary and in the 经过 card.
+    const pair = [...document.querySelectorAll('.ev-pair > span')].map((s) => s.textContent);
+    expect(pair).toEqual(['体互 ·互克体', expect.stringMatching(/^用互 ·/)]);
+    expect(document.querySelector('.ev-pair .stone-tag')?.textContent).toBe('石案摘要');
+    const marked = [...document.querySelectorAll('.read-rel-row')].filter((r) => r.querySelector('.stone-tag'));
+    expect(marked.map((r) => r.querySelector('.read-rel-pair')?.textContent)).toEqual([expect.stringMatching(/^体互/)]);
     expect(screen.getByText('前期耗费，中间有牵制也有配合，末后出现比和之象。')).toBeTruthy();
     expect(screen.getAllByRole('button', { name: '查看《雷火丰·九三》原文' }).length).toBeGreaterThan(0);
     expect(screen.getByRole('button', { name: '查看《泽风大过》原文' })).toBeTruthy();

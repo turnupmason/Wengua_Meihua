@@ -206,6 +206,24 @@ a { color: var(--gold); }
 .intro-reading > .is-main { border-color: rgba(226, 190, 120, 0.8); background: rgba(226, 190, 120, 0.1); }
 .intro-reading small { display: block; font-size: 11.5px; letter-spacing: 0.2em; color: rgba(233, 205, 150, 0.75); }
 .intro-reading b { display: block; margin-top: 2px; font: 600 16px/1.45 var(--serif); color: #f6e7c6; }
+/* 详断 opened from the 简断 card has no second entry while folded. */
+.read-layer.is-from-card:not([open]) { display: none; }
+/* In each 详断 part the judgment reads on its own; the terms it rests on sit apart below it, on their
+   own line, smaller and in a quieter warm grey-gold, so a reader can skim 开局 → 过程 → 结局 → 总断
+   and still find the basis in place. (More specific than .script-part p, which sets the body text.) */
+.script-part { margin-bottom: 18px; }
+.script-part p.script-basis {
+  margin: 10px 0 0; padding: 6px 0 2px 11px; border-left: 2px solid rgba(196, 160, 104, 0.4);
+  font: 14px/1.7 var(--serif-body); color: #b6a585;
+}
+.script-part p.script-basis b { display: block; margin: 0 0 1px; font: 500 12px var(--serif); letter-spacing: 0.24em; color: #c4a46c; }
+/* 专业依据's 经过: 体互 (the one carved on the stone) and 用互 on their own labelled lines. */
+.evidence-col .ev-pair { display: flex; flex-direction: column; gap: 1px; align-items: center; }
+.evidence-col .ev-pair span { white-space: nowrap; }
+.evidence-col .ev-pair em { font-style: normal; font-size: 11px; color: var(--muted); margin-right: 3px; }
+.stone-tag { display: inline-block; font-style: normal; font-size: 10.5px; line-height: 1.3; letter-spacing: 0.06em; color: #c4a46c; }
+.evidence-col .ev-pair .stone-tag { margin: -1px 0 3px; }
+.read-rel-row .stone-tag { align-self: flex-start; width: auto; margin: 2px 0 0; padding: 0 7px; border: 1px solid rgba(196, 164, 108, 0.45); border-radius: 999px; }
 .save-note { margin: 8px 2px 0; font-size: 12.5px; line-height: 1.55; color: var(--muted); }
 /* Deleting is there, but quiet (it asks first). */
 .history-delete { color: var(--muted); text-decoration: none; font-size: 13px; }
@@ -947,6 +965,11 @@ input, textarea, select { font-size: max(16px, 1em); }
   transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0.45s; }
 .place-panel.is-on { transform: none; visibility: visible; transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s, visibility 0s linear 0s; }
 .hex-grid li { content-visibility: auto; contain-intrinsic-size: 0 120px; }
+/* 藏经阁 / 问事录: as the list is scrolled up the panel rises to just under the place tabs. */
+.temple .place-panel { transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.32s ease; }
+.temple .place-panel.is-on { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s, height 0.32s ease; }
+.temple .place-panel.is-raised { height: calc(100% - var(--safe-t) - 64px); }
+.history-manage { margin: 22px 2px 4px; font: 600 14px var(--serif); letter-spacing: 0.12em; color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) { .place-panel, .place-panel.is-on, .home-wrap > .home { transition: none; } }
 
 .verdict-asked { margin: 2px 0 0; font-size: 14px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

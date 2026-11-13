@@ -437,7 +437,15 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         (['library', 'records'] as const).map(
           (p) =>
             panelsReady[p] && (
-              <div key={p} className={`place-panel ${place === p ? 'is-on' : ''}`} aria-hidden={place !== p} inert={place !== p}>
+              <div
+                key={p}
+                className={`place-panel ${place === p ? 'is-on' : ''}`}
+                aria-hidden={place !== p}
+                inert={place !== p}
+                // Scrolled up, the panel rises over the picture so the list has the screen; back at the
+                // top it settles again under the desk or the shelves.
+                onScroll={(e) => e.currentTarget.classList.toggle('is-raised', e.currentTarget.scrollTop > 8)}
+              >
                 {p === 'library' ? libraryPanel : cloneElement(recordsPanel, { active: place === 'records' })}
               </div>
             ),

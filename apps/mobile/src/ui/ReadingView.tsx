@@ -25,6 +25,7 @@ import { calculationGroups, windowBody, windowDates } from '../domain/judgment';
 import { answerText, conclusionText, synthText, weatherText, type SynthStage } from './Verdict';
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
+import { plainFirst } from './plainFirst';
 
 type SRel = Reading['synthesis'] extends infer Y ? (Y extends { applicable: true; stages: readonly (infer S)[] } ? S : never) : never;
 
@@ -147,9 +148,13 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
 
   const weather = !y.applicable ? y.weather : null;
   const detailRef = useRef<HTMLDetailsElement>(null);
+  // The one way into 详断 (the button in the 简断 card): it opens and goes straight to 开局.
   const openDetailLayer = () => {
     setOpenDetail(true);
-    window.setTimeout(() => detailRef.current?.scrollIntoView?.({ block: 'start', behavior: 'smooth' }), 30);
+    window.setTimeout(() => {
+      const first = detailRef.current?.querySelector('.script-part') ?? detailRef.current;
+      first?.scrollIntoView?.({ block: 'start', behavior: 'smooth' });
+    }, 30);
   };
   // A 《梅花易数》 section the 断语 draws on, linked into the 藏经阁.
   const sourceItem = (title: string) => (
@@ -248,6 +253,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                 <b>
                   {r.stageLabel} <small>{elementRelation(r.type, reading.body.element, r.element, lang)}</small>
                 </b>
+                {/* Where 体互 and 用互 both show, the one carved on the stone says so. */}
+                {s?.secondary && r === s.main && <em className="stone-tag">{t.stoneSummary}</em>}
               </p>
             ))}
             {w && (
@@ -345,13 +352,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           )}
           <div className="btn-row">
             {authored && (
-              <button
-                className="primary-btn"
-                onClick={() => {
-                  openDetailLayer();
-                }}
-              >
-                {t.detailOpen}
+              <button className="primary-btn" aria-expanded={openDetail} onClick={() => (openDetail ? setOpenDetail(false) : openDetailLayer())}>
+                {openDetail ? t.detailClose : t.detailOpen}
               </button>
             )}
             <button className="ghost-btn" onClick={onSave} aria-pressed={saved}>
@@ -362,7 +364,9 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           <p className="save-note">{t.saveNote}</p>
         </section>
 
-        <details ref={detailRef} className="read-layer" open={openDetail} onToggle={(e) => setOpenDetail((e.target as HTMLDetailsElement).open)}>
+        {/* With a written 断语, 详断 has no second entry of its own: it shows only once opened from the
+            简断 card (its heading then folds it again). Without one, it stays as the way to the structure. */}
+        <details ref={detailRef} className={`read-layer ${authored ? 'is-from-card' : ''}`} open={openDetail} onToggle={(e) => setOpenDetail((e.target as HTMLDetailsElement).open)}>
           <summary>
             <b>{t.detailTitle}</b>
             <small>{t.detailHint}</small>
@@ -371,10 +375,18 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
             <section className="script-full">
               {j.paragraphs.map((para) => {
                 const [label, text] = labelled(para);
+                // The plain judgment first, the terms it rests on after (ui/plainFirst: order only).
+                const { plain, basis } = plainFirst(text);
                 return (
                   <div key={para} className="script-part">
                     {label && <h3 lang="zh">{label}</h3>}
-                    <p lang="zh">{text}</p>
+                    <p lang="zh">{plain}</p>
+                    {basis && (
+                      <p className="script-basis" lang="zh">
+                        <b>{t.basisWord}</b>
+                        {basis}
+                      </p>
+                    )}
                   </div>
                 );
               })}
@@ -462,7 +474,22 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                   <button key={k} type="button" className={`evidence-col tone-${st ? (quiet ? 'plain' : st.tone) : 'weather'}`} onClick={() => refs.current[k]?.scrollIntoView?.({ block: 'start', behavior: 'smooth' })}>
                     <small>{t.verdictStage[k]}</small>
                     <b>{reading.stages[hs].name}</b>
-                    <span>{y.applicable ? y.compact[i] : w ? w.images.join('·') : ''}</span>
+                    {/* 经过 has two relations: 体互 (the stone's middle) and 用互, each on its own labelled line. */}
+                    {k === 'mutual' && st?.secondary ? (
+                      <span className="ev-pair">
+                        <span>
+                          <em>{t.bodyMutualShort} ·</em>
+                          {st.main.stageLabel}
+                        </span>
+                        <small className="stone-tag">{t.stoneSummary}</small>
+                        <span>
+                          <em>{t.useMutualShort} ·</em>
+                          {st.secondary.stageLabel}
+                        </span>
+                      </span>
+                    ) : (
+                      <span>{y.applicable ? y.compact[i] : w ? w.images.join('·') : ''}</span>
+                    )}
                   </button>
                 );
               })}

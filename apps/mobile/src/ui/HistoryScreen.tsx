@@ -79,9 +79,9 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
           {t.bookSaved} {Object.keys(book).filter((id) => all.some((r) => r.castId === id)).length}
         </button>
       </div>
-      <p className="history-explain">{onlySaved ? t.historyExplainSaved : t.historyExplainAll}</p>
+      {/* One line on top, so the first record shows early; storage and export are with 记录管理 below. */}
+      <p className="history-explain">{onlySaved ? t.historyExplainSaved : t.historyLead}</p>
       {active && all.length > 0 && <CoachTip id="records" t={t} text={t.coachRecords} anchor=".place-panel.is-on .history-main" below />}
-      <p className="privacy">{t.privacy} {t.localHistoryRisk}</p>
       {writeError && <p className="error" role="alert">{t.storageWriteFailed}</p>}
       {items.length === 0 ? (
         <p className="muted center">{onlySaved ? t.bookEmpty : t.emptyHistory}</p>
@@ -128,6 +128,8 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
               </li>
             ))}
           </ul>
+          <h3 className="history-manage">{t.historyManage}</h3>
+          <p className="privacy">{t.privacy} {t.localHistoryRisk}</p>
           <div className="btn-row">
             <button className="ghost-btn" onClick={() => void shareOrDownload(JSON.stringify({ ...JSON.parse(history.exportJSON()), journal: journal.all() }, null, 2))}>
               {t.exportHistory}
