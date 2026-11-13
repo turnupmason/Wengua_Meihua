@@ -159,6 +159,12 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
     let raf = 0;
     let last = -1;
     const tick = () => {
+      // The clock moves on to the reading (t back to 0) a moment before this effect is replaced:
+      // drawing that frame would wipe the carving for an instant.
+      if (clock.current.phase !== 'revealing') {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
       const now = clock.current.t;
       let cutting: { x: number; y: number } | null = null;
       for (const p of all) {

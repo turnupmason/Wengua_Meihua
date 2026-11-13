@@ -1397,8 +1397,15 @@ input, textarea, select { font-size: max(16px, 1em); }
 
 /* The painted hall at home (ui/PaintedHall.tsx): the artist's hall with the three portraits on their
    seats. Fades out onto the 3D hall when the visitor walks to the table or another place. */
-.painted-hall { position: absolute; inset: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: opacity 0.9s ease; background: #120d0a; }
-.painted-hall.is-on { opacity: 1; pointer-events: auto; }
+.painted-hall { position: absolute; inset: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: opacity 0.45s ease; background: #120d0a; }
+.painted-hall.is-on { opacity: 1; pointer-events: auto; z-index: 1; }
+/* Between the hall, 藏经阁 and 问事录 the two pictures never overlap: the one going out is gone at once
+   and the one coming in rises out of the dark floor under them (.painted-floor), on top, in the time
+   of the panels' slide. So no ghost of the 三清 is left over another place's picture. (Leaving the
+   hall for the stone table is different: the ritual drives its opacity itself.) */
+.painted-hall:not(.is-on) { z-index: 0; }
+.painted-hall.is-place:not(.is-on), .painted-hall.is-away { transition: none; opacity: 0; }
+.painted-floor { position: absolute; inset: 0; z-index: 0; background: #120d0a; pointer-events: none; }
 /* Back from the stone table: no cross-fade over the 3D hall; the picture rises out of the dark. */
 .painted-hall.is-return { transition: none; }
 .painted-hall.is-return .hall-plate { animation: hallReturn 0.6s ease both; }
@@ -1591,11 +1598,17 @@ input, textarea, select { font-size: max(16px, 1em); }
 .ptab-line.is-moving .ptab-groove::before {
   content: ''; position: absolute; left: -10px; right: -10px; top: -9px; bottom: -9px; border-radius: 12px; pointer-events: none;
   background: radial-gradient(ellipse at 50% 55%, rgba(240, 80, 50, 0.55) 0%, rgba(220, 60, 35, 0.22) 45%, rgba(200, 50, 30, 0) 72%);
-  opacity: calc(var(--g, 1) * 0.3); animation: movingBreath 2.8s ease-in-out infinite;
+  opacity: calc(var(--g, 1) * 0.3); animation: movingBreath 2.8s ease-in-out infinite; will-change: opacity;
 }
 @keyframes movingBreath { 0%, 100% { opacity: calc(var(--g, 1) * 0.25); } 50% { opacity: var(--g, 1); } }
-.ptab-line.is-moving .ptab-groove i::after { animation: movingGlow 2.8s ease-in-out infinite; }
-@keyframes movingGlow { 0%, 100% { filter: brightness(0.95); } 50% { filter: brightness(1.45); } }
+/* Its cinnabar brightens and dims with the breath: a lighter copy laid over it, only its opacity
+   animated (a filter animation would repaint the slab every frame). */
+.ptab-line.is-moving .ptab-groove i::before {
+  content: ''; position: absolute; left: 3px; right: 3px; top: 7px; bottom: 2px; border-radius: 1px; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, #8a2a14 0%, #f06a44 45%, #ffb08a 100%);
+  opacity: 0; animation: movingLight 2.8s ease-in-out infinite; will-change: opacity;
+}
+@keyframes movingLight { 0%, 100% { opacity: 0; } 50% { opacity: calc(var(--g, 1) * 0.55); } }
 /* A tapped line: its gold turns pale (the moving line stays cinnabar, ringed in pale light). */
 .ptab-line.is-selected:not(.is-moving) .ptab-groove i::after { background: linear-gradient(180deg, #6e5a3e 0%, #c9b38a 40%, #f6e8c8 85%, #fff6de 100%); box-shadow: 0 0 8px rgba(255, 236, 200, 0.45); }
 .ptab-line.is-selected.is-moving .ptab-groove i { outline: 1px solid rgba(255, 236, 205, 0.7); outline-offset: 2px; }
@@ -1605,7 +1618,7 @@ input, textarea, select { font-size: max(16px, 1em); }
   background: radial-gradient(circle, rgba(255, 252, 235, 1) 0%, rgba(255, 220, 150, 0.8) 22%, rgba(255, 180, 90, 0.25) 50%, rgba(255, 160, 70, 0) 72%);
   will-change: transform, opacity; z-index: 2;
 }
-@media (prefers-reduced-motion: reduce) { .ptab-line.is-moving .ptab-groove::before, .ptab-line.is-moving .ptab-groove i::after { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ptab-line.is-moving .ptab-groove::before, .ptab-line.is-moving .ptab-groove i::before { animation: none; } }
 .ptab-mark { left: 451px; transform: translateY(-52%); color: #dc4a30; font-size: 28px; font-weight: 600; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 0 8px rgba(230, 70, 40, 0.5); }
 .ptab-counter { left: 455px; width: 14px; height: 14px; margin-top: -7px; border: 2px solid #b48c4a; border-radius: 50%; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.7); }
 /* 本卦 · 卦名, and the grade, down the slab. */

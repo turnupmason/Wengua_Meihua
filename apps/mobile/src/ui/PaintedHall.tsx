@@ -133,7 +133,7 @@ function ritualFrame(phase: string, t: number, reduced: boolean) {
 /** How long before the hand-over to the stone table the 3D view starts drawing again (settles its framing). */
 const RESUME_AHEAD = 0.9;
 
-export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { shown: boolean; still: boolean; phase?: string; clock?: MutableRefObject<RitualClock>; onCover?: (covering: boolean) => void }) {
+export function PaintedHall({ shown, still, phase = 'idle', clock, onCover, away = false }: { shown: boolean; still: boolean; phase?: string; clock?: MutableRefObject<RitualClock>; onCover?: (covering: boolean) => void; /** The visitor is at 藏经阁 or 问事录: the hall is gone at once, not faded. */ away?: boolean }) {
   const cover = useRef(onCover);
   cover.current = onCover;
   const base = import.meta.env.BASE_URL;
@@ -167,6 +167,12 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { 
     let raf = 0;
     let covering: boolean | null = null;
     const tick = () => {
+      // The clock moves to the next phase (and back to t = 0) a moment before this effect is
+      // replaced: a frame drawn then would bring the hall back over the stone table for an instant.
+      if (clock.current.phase !== phase) {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
       const t = clock.current.t;
       const f = ritualFrame(phase, t, still);
       // While the painting fully covers the screen the 3D view rests; it resumes a moment before
@@ -210,7 +216,7 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { 
     return () => window.clearInterval(id);
   }, [shown]);
   return (
-    <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${shown && returning ? 'is-return' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
+    <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${shown && returning ? 'is-return' : ''} ${!shown && away ? 'is-away' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
       <div ref={plate} className="walkin-plate hall-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }}>
         {LAMPS.map(([x, y, w], i) => (
           <i key={i} className="walkin-lamp" style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${w * 100}%`, animationDelay: `${-i * 1.1}s` }} />

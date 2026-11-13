@@ -462,10 +462,12 @@ export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
         <NightSkyM />
         <MountainsM />
         {!plainBestowal && <Bestowal clock={clock} reduced={reduced} />}
-        <Precompile deps={[reading]} />
+        {/* With the painted stone table (ui/PaintedTable) the 3D table is never seen: nothing is carved
+            on it, so a cast does not stall on drawing its inscriptions or compiling their shaders. */}
+        <Precompile deps={[plainBestowal ? null : reading]} />
         <Dust count={reduced ? 0 : tier.dustParticles} />
         <StoneTable
-          reading={reading}
+          reading={plainBestowal ? null : reading}
           clock={clock}
           reduced={reduced}
           selection={selection}

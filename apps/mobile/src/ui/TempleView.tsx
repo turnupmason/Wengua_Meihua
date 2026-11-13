@@ -403,7 +403,10 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           onMiss={onMiss}
         />
       )}
-      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
+      {/* Under the hall's and the places' pictures, while one is shown: an opaque dark floor, so that
+          however fast the visitor switches places, the resting 3D hall (and its 三清) never shows through. */}
+      {walkInArt && (paintedHall || paintedPlace) && <div className="painted-floor" aria-hidden="true" />}
+      {walkInArt && <PaintedHall shown={paintedHall} away={paintedPlace} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
 
       {phase === 'idle' && intro === 'done' && (
