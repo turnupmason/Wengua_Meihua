@@ -47,11 +47,11 @@ let decor: ReturnType<typeof buildDecor> | null = null;
 function buildDecor() {
   // Beam painting (旋子彩画): blue/green bands, gold outlines, a whirl medallion in the centre.
   const beam = canvasTex(512, 64, (g) => {
-    g.fillStyle = '#1f4a52';
+    g.fillStyle = '#1e2624';
     g.fillRect(0, 0, 512, 64);
-    g.fillStyle = '#2f6b4f';
+    g.fillStyle = '#24302a';
     g.fillRect(0, 10, 512, 44);
-    g.strokeStyle = '#d8b25c';
+    g.strokeStyle = '#7d6440';
     g.lineWidth = 3;
     g.strokeRect(2, 8, 508, 48);
     for (const x of [64, 448]) {
@@ -61,7 +61,7 @@ function buildDecor() {
       g.lineTo(x - 30, 56);
       g.stroke();
     }
-    g.fillStyle = '#1b3a6b';
+    g.fillStyle = '#232b30';
     g.beginPath();
     g.ellipse(256, 32, 90, 22, 0, 0, Math.PI * 2);
     g.fill();
@@ -74,18 +74,18 @@ function buildDecor() {
   }, [3, 1]);
   // Ceiling panels (天花): dark blue-green ground, gold circle with a lotus rosette.
   const panel = canvasTex(256, 256, (g) => {
-    g.fillStyle = '#163a3c';
+    g.fillStyle = '#1b201e';
     g.fillRect(0, 0, 256, 256);
-    g.strokeStyle = '#c9a24a';
+    g.strokeStyle = '#6f5a3a';
     g.lineWidth = 8;
     g.strokeRect(4, 4, 248, 248);
-    g.fillStyle = '#1d3f6c';
+    g.fillStyle = '#232a2c';
     g.beginPath();
     g.arc(128, 128, 82, 0, Math.PI * 2);
     g.fill();
     g.lineWidth = 4;
     g.stroke();
-    g.fillStyle = '#d8b25c';
+    g.fillStyle = '#7d6440';
     for (let i = 0; i < 8; i++) {
       g.save();
       g.translate(128, 128);
@@ -95,7 +95,7 @@ function buildDecor() {
       g.fill();
       g.restore();
     }
-    g.fillStyle = '#9b2a1e';
+    g.fillStyle = '#4e231b';
     g.beginPath();
     g.arc(128, 128, 16, 0, Math.PI * 2);
     g.fill();
@@ -166,7 +166,7 @@ function buildDecor() {
     g.strokeRect(0, 0, 256, 512);
   });
   // Cloud screen behind the 三清: deep lacquer with a few large, muted gold clouds (not a dense repeat).
-  const screen = patternedCloth('#3a140f', '#7a5a30', [1.2, 0.8], 101, 0.3);
+  const screen = patternedCloth('#2a1813', '#5a4528', [1.2, 0.8], 101, 0.3);
   return {
     beam: new THREE.MeshStandardMaterial({ map: beam, roughness: 0.7 }),
     panel: new THREE.MeshStandardMaterial({ map: panel, roughness: 0.75 }),
@@ -175,7 +175,8 @@ function buildDecor() {
     // Smooth lacquer (no raised embroidery relief): a quiet ground so the 三清 lead.
     screen: new THREE.MeshStandardMaterial({ map: screen.map, roughness: 0.82, metalness: 0.05 }),
     runner: (() => {
-      const set = patternedCloth('#7a1d16', '#c9a24a', [1, 12], 111);
+      // Muted burgundy with a sparse, low-contrast old-gold figure (not a bright red field).
+      const set = patternedCloth('#3d1517', '#5a3f2a', [2, 16], 111);
       return new THREE.MeshStandardMaterial({ map: set.map, normalMap: set.normalMap, roughness: 0.85 });
     })(),
     lanternPanel: new THREE.MeshStandardMaterial({ color: '#ffd9a0', emissive: new THREE.Color('#ff9a40'), emissiveIntensity: 1.7, roughness: 0.7, side: THREE.DoubleSide }),
@@ -382,16 +383,16 @@ function doorTextures() {
   }
   // Lacquer ground with a little grain.
   const lac = col.g.createLinearGradient(0, 0, W, 0);
-  lac.addColorStop(0, '#5e130d');
-  lac.addColorStop(0.5, '#7a1b12');
-  lac.addColorStop(1, '#5e130d');
+  lac.addColorStop(0, '#34170f');
+  lac.addColorStop(0.5, '#43201a');
+  lac.addColorStop(1, '#34170f');
   col.g.fillStyle = lac;
   col.g.fillRect(0, 0, W, H);
   rgh.g.fillStyle = '#a0a0a0';
   rgh.g.fillRect(0, 0, W, H);
   hgt.g.fillStyle = '#808080';
   hgt.g.fillRect(0, 0, W, H);
-  const gold = '#d2a64e';
+  const gold = '#8c6c40'; // 旧金: narrow beads, not a bright frame
   const bead = (x: number, y: number, w: number, h: number) => {
     col.g.strokeStyle = gold;
     col.g.lineWidth = 6;
@@ -420,14 +421,14 @@ function doorTextures() {
   col.g.beginPath();
   col.g.rect(M, top, W - 2 * M, latH);
   col.g.clip();
-  col.g.fillStyle = '#2a0f08';
+  col.g.fillStyle = '#1c0d09';
   col.g.fillRect(M, top, W - 2 * M, latH);
   for (const ctx of [col.g, hgt.g, glow.g]) {
     ctx.save();
     ctx.beginPath();
     ctx.rect(M, top, W - 2 * M, latH);
     ctx.clip();
-    ctx.strokeStyle = ctx === col.g ? '#8a2216' : ctx === hgt.g ? '#ffffff' : '#000000';
+    ctx.strokeStyle = ctx === col.g ? '#4a241c' : ctx === hgt.g ? '#ffffff' : '#000000';
     ctx.lineWidth = 11;
     for (let k = -H; k < W + H; k += cell) {
       ctx.beginPath();
@@ -509,8 +510,8 @@ function doorTextures() {
 function DoorLeaf({ side }: { side: 1 | -1 }) {
   const mats = useMemo(() => {
     const t = doorTextures();
-    const face = new THREE.MeshStandardMaterial({ map: t.map, normalMap: t.normalMap, roughnessMap: t.roughnessMap, roughness: 1, metalness: 0.15, emissiveMap: t.emissiveMap, emissive: new THREE.Color('#ffae5c'), emissiveIntensity: 1.3 });
-    const edge = new THREE.MeshStandardMaterial({ color: '#5e130d', roughness: 0.5 });
+    const face = new THREE.MeshStandardMaterial({ map: t.map, normalMap: t.normalMap, roughnessMap: t.roughnessMap, roughness: 1, metalness: 0.1, emissiveMap: t.emissiveMap, emissive: new THREE.Color('#e8b47a'), emissiveIntensity: 0.22 });
+    const edge = new THREE.MeshStandardMaterial({ color: '#3d201b', roughness: 0.56 });
     return [edge, edge, edge, edge, face, face];
   }, []);
   const leaf = useRef<THREE.Group>(null);

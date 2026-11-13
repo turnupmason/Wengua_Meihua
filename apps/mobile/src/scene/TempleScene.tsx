@@ -12,7 +12,7 @@ import { tickFlames } from './flame';
 import { Mountains, NightSky } from './Exterior';
 import { introProgress } from './introState';
 import { StoneTable, type LinePick, type Selection } from './StoneTable';
-import { cameraPose, clamp01, FAR, fovFor, HOME, INTRO_SECONDS, introPose, readingPose, WORLD } from './timeline';
+import { cameraPose, clamp01, FAR, fovFor, HOME, INSIDE, INTRO_SECONDS, introPose, paintedIntroPose, readingPose, WALK_AT, WALK_IN, WORLD } from './timeline';
 import { sceneInsets } from './insets';
 import { PLACE_PANEL, PLACE_POSES, type Place } from './placeLayout';
 import { Places } from './Places';
@@ -33,11 +33,17 @@ const LOOK_FACES = import.meta.env.DEV && typeof location !== 'undefined' && new
 const LOOK_X = LOOK_FACES ? Number(new URLSearchParams(location.search).get('x')) || 0 : 0;
 const LOOK_SIDE = LOOK_FACES && new URLSearchParams(location.search).get('side') === '1';
 const LOOK_D = LOOK_FACES ? Number(new URLSearchParams(location.search).get('d')) || 1 : 1;
+/** Development only: `?introAt=0.49` holds the walk-in at that progress (camera and doors), for same-moment shots. */
+const INTRO_AT = import.meta.env.DEV && typeof location !== 'undefined' ? Number(new URLSearchParams(location.search).get('introAt') ?? Number.NaN) : Number.NaN;
 
 /** Height of the reading-view buttons and hint at the bottom of the screen. */
 
-/** Opening walk-in: `start` is clock.elapsed when it began (null: still waiting at the gate); `done` once home. */
-export interface IntroRef { start: number | null; done: boolean }
+/**
+ * Opening walk-in: `start` is clock.elapsed when it began (null: still waiting at the gate); `done`
+ * once home. `painted`: the courtyard and the doors are the artist's pictures (ui/PaintedWalkIn), and
+ * the 3D camera only takes the last steps inside; otherwise the walk is the 3D courtyard's.
+ */
+export interface IntroRef { start: number | null; done: boolean; painted?: boolean }
 
 function CameraRig({ clock, reduced, intro }: { clock: MutableRefObject<RitualClock>; reduced: boolean; intro?: MutableRefObject<IntroRef> }) {
   const { camera, size } = useThree();
@@ -77,10 +83,14 @@ function CameraRig({ clock, reduced, intro }: { clock: MutableRefObject<RitualCl
     let pose = cameraPose(c.phase, c.t, reduced, readingPose(aspect, fov, rt, r));
     const it = intro?.current;
     if (it && !it.done && c.phase === 'idle') {
-      const dur = reduced ? INTRO_SECONDS.reduced : INTRO_SECONDS.normal;
-      introProgress.k = it.start === null ? 0 : clamp01((c.elapsed - it.start) / dur);
-      pose = introPose(introProgress.k, pose, c.elapsed);
+      const dur = it.painted ? (reduced ? WALK_IN.reducedSeconds : WALK_IN.seconds) : reduced ? INTRO_SECONDS.reduced : INTRO_SECONDS.normal;
+      introProgress.k = it.painted && Number.isFinite(WALK_AT) ? clamp01(WALK_AT / dur) : it.start === null ? 0 : clamp01((c.elapsed - it.start) / dur);
+      pose = it.painted ? paintedIntroPose(introProgress.k, pose, reduced) : introPose(introProgress.k, pose, c.elapsed);
     } else introProgress.k = 1;
+    if (Number.isFinite(INTRO_AT) && c.phase === 'idle' && !it?.done) {
+      introProgress.k = clamp01(INTRO_AT);
+      pose = introPose(introProgress.k, cameraPose('idle', 0, true, pose), 0);
+    }
     // 殿中三处: glide from the home view to the 藏经阁 cabinet or the 问事录 desk and back.
     const dt = Math.min(0.1, Math.max(0, c.elapsed - last.current));
     last.current = c.elapsed;
@@ -166,9 +176,20 @@ function LightZones({ phase }: { phase: string }) {
     gl.shadowMap.needsUpdate = true;
     frames.current = 0;
   }, [gl, phase]);
+  const fogIn = useMemo(() => ({ color: new THREE.Color('#120d0a'), near: 12, far: 38 }), []);
+  const fogOut = useMemo(() => ({ color: new THREE.Color('#17161b'), near: 34, far: 110 }), []);
   useFrame(() => {
     // Refresh shadows for a couple of frames after a change (late objects settle), then keep them.
     if (frames.current++ < 2) gl.shadowMap.needsUpdate = true;
+    // Air by zone: a thin cool night mist out in the courtyard (the hall stays clear across it),
+    // the warm close haze of the hall once through the doors; blended across the threshold.
+    const fog = scene.fog as THREE.Fog | null;
+    if (fog) {
+      const k = clamp01((camera.position.z - 12) / 8);
+      fog.color.copy(fogIn.color).lerp(fogOut.color, k);
+      fog.near = fogIn.near + (fogOut.near - fogIn.near) * k;
+      fog.far = fogIn.far + (fogOut.far - fogIn.far) * k;
+    }
     const want = camera.position.z > 10;
     if (want !== on.current) {
       on.current = want;
@@ -403,7 +424,7 @@ export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
 
         shadows={tier.shadows}
         gl={{ antialias: tier.antialias, powerPreference: 'high-performance', alpha: false }}
-        camera={{ fov: 50, near: 0.03, far: 160, position: intro && !intro.current.done ? FAR.pos : HOME.pos }}
+        camera={{ fov: 50, near: 0.03, far: 160, position: intro && !intro.current.done ? (intro.current.painted ? INSIDE.pos : FAR.pos) : HOME.pos }}
         onPointerMissed={() => onMiss?.()}
         onCreated={({ gl, scene, camera }) => {
           // Development only: renderer, scene and camera for performance and layout checks.

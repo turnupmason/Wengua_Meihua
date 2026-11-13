@@ -1346,3 +1346,74 @@ input, textarea, select { font-size: max(16px, 1em); }
 .read-judge-fold[open] > summary::after { content: '收起'; }
 :root[lang='en'] .read-judge-fold > summary::after { content: 'Open'; }
 :root[lang='en'] .read-judge-fold[open] > summary::after { content: 'Close'; }
+
+/* Painted walk-in (ui/PaintedWalkIn.tsx): the artist's courtyard and threshold, covering the screen
+   like the 3D view would (cover), moved by script on the ritual clock. */
+.walkin { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.walkin-plate {
+  position: absolute; left: 50%; top: 50%;
+  width: max(100%, calc(100dvh * 941 / 1672)); aspect-ratio: 941 / 1672;
+  background-size: 100% 100%; background-repeat: no-repeat;
+  transform: translate(-50%, -50%); will-change: transform, opacity; backface-visibility: hidden;
+}
+/* Lantern windows breathe a little; very low, warm, never a bloom. */
+.walkin-lamp {
+  position: absolute; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 150, 0.32) 0%, rgba(255, 190, 120, 0.12) 38%, rgba(255, 170, 90, 0) 70%);
+  mix-blend-mode: screen; animation: walkinFlicker 3.1s ease-in-out infinite;
+}
+.walkin-lamp.is-small { animation-duration: 3.7s; }
+@keyframes walkinFlicker {
+  0%, 100% { opacity: 0.75; }
+  18% { opacity: 1; }
+  33% { opacity: 0.82; }
+  52% { opacity: 0.95; }
+  71% { opacity: 0.7; }
+  86% { opacity: 0.9; }
+}
+/* Incense: thin and low over the censer, rising slowly and thinning out. */
+.walkin-smoke {
+  position: absolute; width: 7%; transform: translate(-50%, -100%); opacity: 0;
+  mix-blend-mode: screen; animation: walkinSmoke 9s linear infinite;
+}
+@keyframes walkinSmoke {
+  0% { opacity: 0; transform: translate(-50%, -96%) scaleY(0.9); }
+  15% { opacity: 0.38; }
+  70% { opacity: 0.16; }
+  100% { opacity: 0; transform: translate(-46%, -128%) scaleY(1.15); }
+}
+.walkin.is-still .walkin-lamp, .walkin.is-still .walkin-smoke { animation: none; }
+.walkin.is-still .walkin-smoke { opacity: 0.2; }
+@media (prefers-reduced-motion: reduce) {
+  .walkin-lamp, .walkin-smoke { animation: none; }
+}
+
+/* The painted hall at home (ui/PaintedHall.tsx): the artist's hall with the three portraits on their
+   seats. Fades out onto the 3D hall when the visitor walks to the table or another place. */
+.painted-hall { position: absolute; inset: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: opacity 0.9s ease; background: #120d0a; }
+.painted-hall.is-on { opacity: 1; pointer-events: auto; }
+.hall-figure {
+  position: absolute; height: auto; user-select: none; -webkit-user-drag: none;
+  /* In the hall's warm, low light: a little darker and warmer than the bright originals. */
+  filter: brightness(0.9) saturate(0.92) sepia(0.06) drop-shadow(0 0.5vh 1vh rgba(10, 6, 3, 0.5));
+}
+.hall-figure.is-yuanshi { z-index: 1; }
+.hall-figure.is-laojun, .hall-figure.is-lingbao { z-index: 2; }
+/* Where each seat carries its figure: a soft dark contact shadow. */
+.hall-shadow {
+  position: absolute; aspect-ratio: 6 / 1; transform: translateY(-50%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(6, 3, 2, 0.6) 0%, rgba(6, 3, 2, 0.25) 45%, rgba(6, 3, 2, 0) 72%);
+}
+.walkin-smoke.is-hall { width: 8%; z-index: 3; }
+.painted-hall.is-still .walkin-lamp, .painted-hall.is-still .walkin-smoke { animation: none; }
+/* Framed by script (see frame()); its top and bottom fade into the hall's dark where the picture ends. */
+.hall-plate {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 3%, #000 96%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 3%, #000 96%, transparent 100%);
+}
+/* 藏经阁 / 问事录 pictures: the lower edge fades into the dark under the panel. */
+.place-plate {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0, #000 88%, transparent 100%);
+}
+.walkin-smoke.is-desk { width: 4%; }

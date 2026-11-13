@@ -26,10 +26,14 @@ export const WORLD = Object.freeze({
 
 export const STICK_LEN = 0.38;
 
-/** Where the app opens: far back in the courtyard at night, the whole hall, roof and sky in view. */
-export const FAR = Object.freeze({ pos: [0, 2.0, 40.5] as V3, target: [0, 9.6, 6] as V3 });
+/**
+ * Where the app opens: back in the courtyard at night, at about eye height on the raised path, so
+ * the roof reads as a roof (ridge, slope and eaves), with the doors, the lanterns and the censer
+ * below it and the moon over the hills above.
+ */
+export const FAR = Object.freeze({ pos: [0, 3.4, 44] as V3, target: [0, 5.8, 10] as V3 });
 /** At the doors, looking up at the plaque. */
-export const GATE = Object.freeze({ pos: [0, 1.75, 21.2] as V3, target: [0, 3.55, 13.6] as V3 });
+export const GATE = Object.freeze({ pos: [0, 1.8, 23.2] as V3, target: [0, 3.3, 13.6] as V3 });
 /** The path passes beside the courtyard censer. */
 const PAST_CENSER: V3 = [2.2, 1.9, 26.5];
 /** Seconds from the courtyard, through the doors, to the home view. */
@@ -64,6 +68,43 @@ export function introPose(k: number, home: Pose, t = 0): Pose {
 /** How far the doors are open during the walk-in (0 closed → 1 open). */
 export const doorOpen = (k: number) => easeInOut(clamp01((k - INTRO.arrive) / (INTRO.open - INTRO.arrive)));
 
+/**
+ * The painted walk-in (docs/art-reference/sanqing-entrance): the moonlit courtyard is the artist's
+ * picture, pushed in toward the doors; it dissolves into the open threshold, which is pushed through;
+ * the real hall shows under it and the camera settles at home. Seconds, on the ritual clock.
+ */
+export const WALK_IN = Object.freeze({
+  seconds: 7.6,
+  reducedSeconds: 2,
+  /** Courtyard pushed in toward the doors. */
+  courtyard: [0, 3.0] as const,
+  /** Courtyard → open threshold (the doors swing open). */
+  doors: [2.5, 3.5] as const,
+  /** Threshold held, then pushed through into the hall. */
+  through: [4.4, 6.9] as const,
+  /** The painted threshold fades off the real hall. */
+  reveal: [5.5, 6.9] as const,
+  /** The 3D camera's last steps, from just inside the doors to home. */
+  settle: [5.1, 7.4] as const,
+});
+/** Just inside the doors, facing the 三清: where the 3D camera waits under the painted plates. */
+export const INSIDE = Object.freeze({ pos: [0, 1.8, 9.4] as V3, target: [0, 2.4, -13.6] as V3 });
+
+/** Development only: `?walkAt=4.2` holds the painted walk-in (pictures and camera) at that second. */
+export const WALK_AT = import.meta.env?.DEV && typeof location !== 'undefined' ? Number(new URLSearchParams(location.search).get('walkAt') ?? Number.NaN) : Number.NaN;
+
+/** Seconds of the painted walk-in at progress k (0..1). */
+export const walkInSeconds = (k: number, reduced: boolean) => clamp01(k) * (reduced ? WALK_IN.reducedSeconds : WALK_IN.seconds);
+/** 0..1 of a [from, to] span at s seconds. */
+export const span = (s: number, [a, b]: readonly [number, number]) => clamp01((s - a) / (b - a));
+
+/** 3D camera during the painted walk-in: waiting just inside the doors, then the last steps home. */
+export function paintedIntroPose(k: number, home: Pose, reduced: boolean): Pose {
+  if (reduced) return home;
+  const g = easeInOut(span(walkInSeconds(k, false), WALK_IN.settle));
+  return { pos: lerp3(INSIDE.pos, home.pos, g), target: lerp3(INSIDE.target, home.target, g) };
+}
+
 /** Home view inside the hall (the 问事 panel covers the lower half of the screen). */
 export const HOME = Object.freeze({ pos: [0, 1.75, 3.6] as V3, target: [0, -0.2, -13.6] as V3 });
 
@@ -87,9 +128,18 @@ export function phaseFraction(phase: RitualPhase, t: number, reduced: boolean): 
 
 export interface Pose { pos: V3; target: V3 }
 
-/** Wider lens in portrait so the three statues fit side by side. */
+/**
+ * Wider lens in portrait so the three statues fit side by side. On phones taller than 9:16 the
+ * lens keeps the 9:16 width of view (so 太上老君 and 灵宝天尊 keep room at the screen edges) and
+ * simply shows more above and below.
+ */
+const PORTRAIT_FOV = 56;
+const PORTRAIT_ASPECT = 9 / 16;
 export function fovFor(aspect: number): number {
-  return aspect < 0.8 ? 56 : 46;
+  if (aspect >= 0.8) return 46;
+  if (aspect >= PORTRAIT_ASPECT) return PORTRAIT_FOV;
+  const halfWidth = Math.tan((PORTRAIT_FOV * Math.PI) / 360) * PORTRAIT_ASPECT;
+  return Math.round(((2 * Math.atan(halfWidth / Math.max(0.3, aspect)) * 180) / Math.PI) * 10) / 10;
 }
 
 const READ_TILT = (36 * Math.PI) / 180; // from vertical, viewer at the seat (+z)
