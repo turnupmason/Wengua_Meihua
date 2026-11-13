@@ -562,12 +562,8 @@ a { color: var(--gold); }
 .home-panel.v2 .privacy { margin-top: 12px; font-size: 10.5px; color: rgba(233, 222, 200, 0.35); letter-spacing: 0.08em; }
 .home-panel.v2 .error { margin-top: 10px; }
 
-/* One height for the list and the methods' pages, so choosing or going back does not jump; only
-   物象方位 (eight trigrams and eight directions) needs more, and the sheet eases up to it. */
-.method-sheet { height: min(calc(360px + var(--safe-b)), 84%); max-height: none; transition: height 0.28s ease; }
-.method-sheet.is-tall { height: min(84%, 700px); }
-/* The list keeps its row of method names, in the middle of that height. */
-.method-body.is-list { justify-content: center; }
+/* As tall as its content (set in HomeOverlay); the height eases between the list and a method's page. */
+.method-sheet { max-height: 84%; transition: height 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .method-body .methods { flex-wrap: wrap; justify-content: center; }
 /* A method's own page: ← back to the list, its name, ✕. */
 .method-sheet .sheet-head { align-items: center; gap: 8px; }
@@ -1407,13 +1403,34 @@ input, textarea, select { font-size: max(16px, 1em); }
 .painted-hall.is-return { transition: none; }
 .painted-hall.is-return .hall-plate { animation: hallReturn 0.6s ease both; }
 @keyframes hallReturn { from { opacity: 0; } to { opacity: 1; } }
+.hall-seat { position: absolute; }
+.hall-seat > img { position: absolute; user-select: none; -webkit-user-drag: none; pointer-events: none; }
 .hall-figure {
-  position: absolute; height: auto; user-select: none; -webkit-user-drag: none;
+  inset: 0; width: 100%; height: 100%;
   /* In the hall's warm, low light: a little darker and warmer than the bright originals. */
   filter: brightness(0.9) saturate(0.92) sepia(0.06);
 }
-.hall-figure.is-yuanshi { z-index: 1; }
-.hall-figure.is-laojun, .hall-figure.is-lingbao { z-index: 2; }
+.hall-seat.is-yuanshi { z-index: 1; }
+.hall-seat.is-laojun, .hall-seat.is-lingbao { z-index: 2; }
+/* The clouds under each seat: 元始天尊's own clouds, drifting slowly to and fro and breathing. */
+.hall-cloud { height: auto; filter: brightness(0.9) saturate(0.92) sepia(0.06); will-change: transform, opacity; }
+.hall-cloud.is-l { left: 0; transform-origin: 0 100%; animation: cloudDriftL 11s ease-in-out infinite alternate; }
+.hall-cloud.is-r { right: 0; transform-origin: 100% 100%; animation: cloudDriftR 13s ease-in-out infinite alternate; }
+@keyframes cloudDriftL {
+  0% { opacity: 0.6; transform: translate(-10%, 2%) scale(0.95); }
+  50% { opacity: 1; }
+  100% { opacity: 0.75; transform: translate(22%, -5%) scale(1.12); }
+}
+@keyframes cloudDriftR {
+  0% { opacity: 0.75; transform: translate(10%, -4%) scale(1.1); }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; transform: translate(-22%, 2%) scale(0.95); }
+}
+/* Incense before each of the 三清: the tips glow and a thin smoke rises (the hall's wisp, smaller). */
+.hall-embers.is-seat { width: 20%; z-index: 1; }
+.hall-smoke.is-seat { width: 22%; z-index: 1; mix-blend-mode: screen; }
+.hall-smoke.is-seat.is-0 { animation: hallSmokeA 8.2s ease-in-out infinite; }
+.hall-smoke.is-seat.is-1 { animation: hallSmokeB 9.6s ease-in-out infinite; width: 18%; }
 /* Where each seat carries its figure: a soft dark contact shadow. */
 .hall-shadow {
   position: absolute; aspect-ratio: 6 / 1; transform: translateY(-50%);
@@ -1479,9 +1496,10 @@ input, textarea, select { font-size: max(16px, 1em); }
   60% { opacity: 0.4; transform: translate(-40%, -118%) scale(-1, 1.08) rotate(-4deg); }
   100% { opacity: 0; transform: translate(-58%, -152%) scale(-1.2, 1.32) rotate(5deg); }
 }
-.painted-hall.is-still .hall-glow, .painted-hall.is-still .hall-embers, .painted-hall.is-still .hall-smoke { animation: none; }
+.painted-hall.is-still .hall-glow, .painted-hall.is-still .hall-embers, .painted-hall.is-still .hall-smoke, .painted-hall.is-still .hall-cloud { animation: none; }
 .painted-hall.is-still .hall-smoke.is-0 { opacity: 0.35; }
-@media (prefers-reduced-motion: reduce) { .hall-glow, .hall-embers, .hall-smoke { animation: none; } }
+.painted-hall.is-still .hall-cloud { opacity: 0.8; }
+@media (prefers-reduced-motion: reduce) { .hall-glow, .hall-embers, .hall-smoke, .hall-cloud { animation: none; } }
 /* The tray: see-through without a backdrop blur, so the moving incense behind it costs nothing to redraw. */
 .home-panel.v3 { backdrop-filter: none; -webkit-backdrop-filter: none; }
 

@@ -5,7 +5,8 @@
  * carries its question and 断语 into 问事录.
  */
 import { afterEach, describe, expect, it } from 'vitest';
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { placeStore } from '../src/ui/placeStore';
 import { useState } from 'react';
 import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
@@ -251,6 +252,11 @@ describe('click-only home', () => {
     expect(tray.style.getPropertyValue('--tray-y')).toBe('');
     fireEvent.keyDown(head, { key: 'ArrowDown' });
     expect(tray.style.getPropertyValue('--tray-y')).toBe('40px');
+    // To 藏经阁 and back: the tray is fully open again.
+    act(() => placeStore.set('library'));
+    act(() => placeStore.set('altar'));
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('');
+    expect(localStorage.getItem('wengua.trayOffset.v1')).toBe('0');
     localStorage.removeItem('wengua.trayOffset.v1');
   });
 
@@ -282,6 +288,9 @@ describe('click-only home', () => {
     render(<Home onChange={(f) => (last = f)} />);
     expect(UI_METHODS).not.toContain('text');
     fireEvent.click(screen.getByRole('button', { name: /更多起卦方式/ }));
+    // It opens on the method in use, 年月日时; ← shows the others.
+    expect(screen.getByRole('heading', { name: '年月日时' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
     expect(screen.queryByRole('radio', { name: '字占' })).toBeNull();
     fireEvent.click(screen.getByRole('radio', { name: '物数' }));
     fireEvent.click(screen.getByRole('button', { name: /数得几数/ }));
@@ -297,6 +306,7 @@ describe('click-only home', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('button', { name: /更多起卦方式/ }));
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
     // 物数: 38, then ← back to the list, then 声音: its count is not 物数's.
     fireEvent.click(screen.getByRole('radio', { name: '物数' }));
     fireEvent.click(screen.getByRole('button', { name: /数得几数/ }));

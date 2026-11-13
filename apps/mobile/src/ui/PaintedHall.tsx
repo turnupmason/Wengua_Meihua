@@ -89,12 +89,18 @@ function frame(plate: HTMLElement, root: HTMLElement, trayHeight: number) {
   Object.assign(plate.style, { width: `${pw}px`, height: `${ph}px`, left: `${(W - pw) / 2}px`, top: `${top}px`, transform: 'none' });
 }
 
-/** Seats in the 941×1672 picture: left %, top %, width % (each portrait's foot on its seat's top). */
+/**
+ * Seats in the 941×1672 picture: left %, top %, width % (each portrait's foot on its seat's top),
+ * the portrait's own proportions, and, as fractions of the portrait, the tips of the incense in its
+ * censer and the tops of the clouds it sits on (left, right).
+ */
 const SEATS = [
-  { key: 'yuanshi', file: 'art/sanqing-yuanshi.webp', left: 37.4, top: 27.3, width: 25.5, shadowTop: 46.2, glowY: 34.9 },
-  { key: 'laojun', file: 'art/sanqing-laojun.webp', left: 8.9, top: 30.9, width: 22.8, shadowTop: 47.6, glowY: 37.7 },
-  { key: 'lingbao', file: 'art/sanqing-lingbao.webp', left: 68.8, top: 31.4, width: 22.8, shadowTop: 47.6, glowY: 38.0 },
+  { key: 'yuanshi', file: 'art/sanqing-yuanshi.webp', left: 37.4, top: 27.3, width: 25.5, shadowTop: 46.2, glowY: 34.9, aspect: 1005 / 1337, incense: [0.503, 0.752], clouds: [0.748, 0.748] },
+  { key: 'laojun', file: 'art/sanqing-laojun.webp', left: 8.9, top: 30.9, width: 22.8, shadowTop: 47.6, glowY: 37.7, aspect: 1030 / 1361, incense: [0.496, 0.768], clouds: [0.77, 0.775] },
+  { key: 'lingbao', file: 'art/sanqing-lingbao.webp', left: 68.8, top: 31.4, width: 22.8, shadowTop: 47.6, glowY: 38.0, aspect: 1017 / 1301, incense: [0.509, 0.762], clouds: [0.712, 0.72] },
 ] as const;
+/** The clouds lifted from 元始天尊's portrait (scripts/build-hall-clouds.py): width as a fraction of a portrait. */
+const CLOUD_SPRITES = { l: { file: WALK_IN_FILES.cloudL, width: 0.2985 }, r: { file: WALK_IN_FILES.cloudR, width: 0.2836 } } as const;
 /** Hanging lanterns (x, y, size as fractions of the width) and the censer's mouth. */
 const LAMPS = [
   [0.138, 0.145, 0.12],
@@ -216,8 +222,30 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { 
         {SEATS.map((s) => (
           <i key={`shadow-${s.key}`} className="hall-shadow" style={{ left: `${s.left - 1}%`, top: `${s.shadowTop}%`, width: `${s.width + 2}%` }} />
         ))}
-        {SEATS.map((s) => (
-          <img key={s.key} className={`hall-figure is-${s.key}`} src={`${base}${s.file}`} alt="" style={{ left: `${s.left}%`, top: `${s.top}%`, width: `${s.width}%` }} />
+        {/* Each of the 三清 on its seat: the clouds beneath drift, and incense rises from the censer before them. */}
+        {SEATS.map((s, i) => (
+          <div key={s.key} className={`hall-seat is-${s.key}`} style={{ left: `${s.left}%`, top: `${s.top}%`, width: `${s.width}%`, aspectRatio: String(s.aspect) }}>
+            <img className="hall-figure" src={`${base}${s.file}`} alt="" />
+            {(['l', 'r'] as const).map((side, k) => (
+              <img
+                key={side}
+                className={`hall-cloud is-${side}`}
+                src={walkInUrl(CLOUD_SPRITES[side].file)}
+                alt=""
+                style={{ top: `${s.clouds[k] * 100}%`, width: `${CLOUD_SPRITES[side].width * 100}%`, animationDelay: `${-(i * 3.7 + k * 5.3)}s` }}
+              />
+            ))}
+            <i className="hall-embers is-seat" style={{ left: `${s.incense[0] * 100}%`, top: `${s.incense[1] * 100}%`, animationDelay: `${-i * 0.7}s` }} />
+            {[0, 1].map((k) => (
+              <img
+                key={k}
+                className={`hall-smoke is-seat is-${k}`}
+                src={walkInUrl(WALK_IN_FILES.wisp)}
+                alt=""
+                style={{ left: `${(s.incense[0] + (k ? 0.02 : -0.015)) * 100}%`, top: `${s.incense[1] * 100}%`, animationDelay: `${-(i * 2.3 + k * 4.1)}s` }}
+              />
+            ))}
+          </div>
         ))}
         {/* The incense: the sticks' tips glow, and smoke rises, sways and thins over the painted wisp. */}
         <i className="hall-embers" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%` }} />

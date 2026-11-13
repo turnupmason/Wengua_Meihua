@@ -6,7 +6,7 @@
  * Then the method, the hour of casting, the pace, and 诚心起卦 — or, for a reference or guidance
  * question, 查看说明 at once (no cast). Library, history and settings are small icons at the top.
  */
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
@@ -307,10 +307,11 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const [mk, dk] = METHOD_KEY[form.method];
 
   const [showMethods, setShowMethods] = useState(false);
-  // The sheet in two steps: choose the method, then its own page of inputs (with ← back to the list).
-  const [methodStep, setMethodStep] = useState<'list' | 'input'>('list');
+  // The sheet in two steps: the method's own page of inputs, and the list (← from that page).
+  // It opens on the page of the method in use (年月日时 unless another was chosen).
+  const [methodStep, setMethodStep] = useState<'list' | 'input'>('input');
   const openMethods = () => {
-    setMethodStep('list');
+    setMethodStep('input');
     setShowMethods(true);
   };
   /** Choosing another method starts it empty; choosing the same one again keeps what was entered. */
@@ -328,6 +329,23 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   // Which number the in-app pad is editing.
   const [pad, setPad] = useState<{ key: 'surname' | 'count' | 'major' | 'minor'; max: number } | null>(null);
   useEffect(() => setPad(null), [form.method, showMethods]);
+  // The method sheet is as tall as what it shows (no empty space); between the list and a method's
+  // page its height eases from one to the other instead of jumping.
+  const methodSheet = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const s = methodSheet.current;
+    if (!s) return;
+    const from = s.style.height ? s.getBoundingClientRect().height : null;
+    s.style.height = 'auto';
+    const to = s.getBoundingClientRect().height;
+    if (from === null || Math.abs(from - to) < 1) {
+      s.style.height = `${to}px`;
+      return;
+    }
+    s.style.height = `${from}px`;
+    void s.offsetHeight; // start the transition from the old height
+    s.style.height = `${to}px`;
+  }, [showMethods, methodStep, form.method, form.customTime, pad, settings.lang]);
   const chosen = questionById(form.questionId);
   const chosenSubtype = chosen ? subtypeOf(chosen) : null;
   const lang = settings.lang;
@@ -440,7 +458,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
 
       {showMethods && (
         <div className="sheet-backdrop" onClick={() => setShowMethods(false)}>
-          <section className={`sheet method-sheet${methodStep === 'input' && form.method === 'object-direction' ? ' is-tall' : ''}`} role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
+          <section ref={methodSheet} className="sheet method-sheet" role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
               {methodStep === 'input' && (
                 <button type="button" className="icon-btn method-back" onClick={backToMethods} aria-label={t.back}>
@@ -452,7 +470,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 ✕
               </button>
             </header>
-            <div className={`sheet-body method-body${methodStep === 'list' ? ' is-list' : ''}`}>
+            <div className="sheet-body method-body">
           {methodStep === 'list' ? (
             <>
               <p className="method-hint">{t.methodHint}</p>

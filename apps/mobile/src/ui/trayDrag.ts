@@ -1,10 +1,12 @@
 /**
  * The 问事 tray can be pulled down (and back up) by its head, to see more of the hall: it stays
- * wherever it is let go, between fully open and folded down to its head, and is kept on the device.
+ * wherever it is let go, between fully open and folded down to its head, and is kept on the device
+ * until the visitor goes to 藏经阁 or 问事录: coming back, it is fully open again.
  * A tap on the head folds or unfolds it; arrow keys move it. It moves by the CSS `translate`
  * property (from --tray-y), so it does not fight the tray's rising animation (`transform`).
  */
 import { useCallback, useEffect, useRef, type KeyboardEvent, type PointerEvent, type RefObject } from 'react';
+import { placeStore } from './placeStore';
 
 const KEY = 'wengua.trayOffset.v1';
 /** What stays on screen when folded: the grip and the 「问何事」 line. */
@@ -49,6 +51,14 @@ export function useTrayDrag(panel: RefObject<HTMLElement | null>) {
   useEffect(() => {
     place(offset);
   }, [place]);
+  // Going to 藏经阁 or 问事录 puts it back as it was (fully open) for the return to 问事香案.
+  useEffect(
+    () =>
+      placeStore.subscribe(() => {
+        if (placeStore.get() !== 'altar' && offset) remember(place(0));
+      }),
+    [place],
+  );
 
   const onPointerDown = (e: PointerEvent<HTMLElement>) => {
     if (e.button !== 0) return;

@@ -22,6 +22,10 @@ PLATES = [
     ('keyframes/03-hall-lighting.png', 'plate-hall.webp', (352, 372, 590, 428), True),
 ]
 TEXT = '三清殿'
+# The user's hall with the altar dressed (candles, oranges, three cups of tea, persimmons; 2026-11-13,
+# docs/art-reference/sanqing-entrance/hall-offerings.webp). When it is in the pack, the home hall is
+# that picture instead of the bare keyframe 03; `--hall <picture>` builds only the hall from it.
+DRESSED_HALL = 'hall-offerings.webp'
 
 
 def board(img: Image.Image, box: tuple[int, int, int, int]) -> Image.Image:
@@ -104,7 +108,11 @@ def main(pack: Path) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     hall_wall(pack)
     for src, name, box, draw_board in PLATES:
+        if name == 'plate-hall.webp' and (pack / DRESSED_HALL).exists():
+            src = DRESSED_HALL
         img = Image.open(pack / src).convert('RGB')
+        if img.size != (941, 1672):
+            img = img.resize((941, 1672), Image.LANCZOS)
         if draw_board:
             img = board(img, box)
         img = gilt_text(img, box)
@@ -131,7 +139,21 @@ def places(folder: Path) -> None:
         print(name, img.size, (OUT / name).stat().st_size, 'bytes')
 
 
+def hall_only(picture: Path) -> None:
+    """The home hall from one picture of it (941×1672), with the plaque and its writing."""
+    box = next(b for _, n, b, _ in PLATES if n == 'plate-hall.webp')
+    img = Image.open(picture).convert('RGB')
+    if img.size != (941, 1672):
+        img = img.resize((941, 1672), Image.LANCZOS)
+    img = gilt_text(board(img, box), box)
+    img.save(OUT / 'plate-hall.webp', 'WEBP', quality=84, method=6)
+    print('plate-hall.webp', img.size, (OUT / 'plate-hall.webp').stat().st_size, 'bytes')
+
+
 if __name__ == '__main__':
+    if sys.argv[1] == '--hall':
+        hall_only(Path(sys.argv[2]))
+        sys.exit()
     main(Path(sys.argv[1]))
     if len(sys.argv) > 2:
         places(Path(sys.argv[2]))
