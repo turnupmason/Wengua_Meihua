@@ -17,8 +17,20 @@ const SEAT_LINE = 0.472;
 const FIGURES = 0.205;
 /** Distance of the outer figures' edges from the picture's side. */
 const SIDE_MARGIN = 0.089;
-/** Last measured top of the 问事 tray (fraction of the screen), for framing before it appears. */
-let trayTop = 0.39;
+/**
+ * Height of the 问事 tray (it sits on the bottom of the screen, about the same height on every
+ * phone): measured once and kept on the device, so the hall is framed the same before and after the
+ * tray rises — the picture never shifts when it appears.
+ */
+const TRAY_KEY = 'wengua.trayHeight.v1';
+let trayHeight = (() => {
+  try {
+    const v = Number(localStorage.getItem(TRAY_KEY));
+    return v > 200 && v < 900 ? v : 410;
+  } catch {
+    return 410;
+  }
+})();
 
 const topOf = (el: HTMLElement) => {
   let y = 0;
@@ -37,8 +49,15 @@ function frame(plate: HTMLElement, root: HTMLElement) {
   if (!W || !H) return;
   const panel = document.querySelector<HTMLElement>('.home-panel');
   const header = document.querySelector<HTMLElement>('.temple-top');
-  if (panel?.offsetHeight) trayTop = topOf(panel) / H;
-  const tray = trayTop * H;
+  if (panel?.offsetHeight && Math.abs(panel.offsetHeight - trayHeight) > 1) {
+    trayHeight = panel.offsetHeight;
+    try {
+      localStorage.setItem(TRAY_KEY, String(Math.round(trayHeight)));
+    } catch {
+      /* framing still works this session */
+    }
+  }
+  const tray = Math.max(H * 0.25, H - trayHeight);
   const bar = header?.offsetHeight ? topOf(header) + header.offsetHeight : 64;
   const room = Math.max(80, tray - bar - 10);
   const sideMax = (W / 2 - 8) / (0.5 - SIDE_MARGIN);
@@ -46,6 +65,10 @@ function frame(plate: HTMLElement, root: HTMLElement) {
   const pw = Math.max(W, Math.min(sideMax, fitMax, W * 1.3));
   const ph = pw / ASPECT;
   const top = Math.min(0, tray - 6 - SEAT_LINE * ph);
+  // Written only when it changes: re-setting a large picture's size repaints it.
+  const next = `${pw.toFixed(1)}|${ph.toFixed(1)}|${top.toFixed(1)}`;
+  if (plate.dataset.frame === next) return;
+  plate.dataset.frame = next;
   Object.assign(plate.style, { width: `${pw}px`, height: `${ph}px`, left: `${(W - pw) / 2}px`, top: `${top}px`, transform: 'none' });
 }
 
@@ -62,7 +85,8 @@ const LAMPS = [
 ] as const;
 const CENSER = [0.5, 0.572] as const;
 
-export function PaintedHall({ shown, still }: { shown: boolean; still: boolean }) {
+/** `smoke`: the censer sits under the 问事 tray at home, so its incense only rises during the walk-in. */
+export function PaintedHall({ shown, still, smoke }: { shown: boolean; still: boolean; smoke: boolean }) {
   const base = import.meta.env.BASE_URL;
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
@@ -71,7 +95,7 @@ export function PaintedHall({ shown, still }: { shown: boolean; still: boolean }
     // Re-framed a few times a second while shown: cheap, and it follows the tray and rotation.
     const fit = () => root.current && plate.current && frame(plate.current, root.current);
     fit();
-    const id = window.setInterval(fit, 250);
+    const id = window.setInterval(fit, 500);
     window.addEventListener('resize', fit);
     return () => {
       window.clearInterval(id);
@@ -90,7 +114,7 @@ export function PaintedHall({ shown, still }: { shown: boolean; still: boolean }
         {SEATS.map((s) => (
           <img key={s.key} className={`hall-figure is-${s.key}`} src={`${base}${s.file}`} alt="" style={{ left: `${s.left}%`, top: `${s.top}%`, width: `${s.width}%` }} />
         ))}
-        {[0, 1].map((i) => (
+        {smoke && [0, 1].map((i) => (
           <img key={i} className="walkin-smoke is-hall" src={walkInUrl(WALK_IN_FILES.wisp)} alt="" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%`, animationDelay: `${-i * 4.5}s` }} />
         ))}
       </div>

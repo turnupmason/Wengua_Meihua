@@ -1360,7 +1360,7 @@ input, textarea, select { font-size: max(16px, 1em); }
 .walkin-lamp {
   position: absolute; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 214, 150, 0.32) 0%, rgba(255, 190, 120, 0.12) 38%, rgba(255, 170, 90, 0) 70%);
-  mix-blend-mode: screen; animation: walkinFlicker 3.1s ease-in-out infinite;
+  animation: walkinFlicker 3.1s ease-in-out infinite;
 }
 .walkin-lamp.is-small { animation-duration: 3.7s; }
 @keyframes walkinFlicker {
@@ -1374,7 +1374,7 @@ input, textarea, select { font-size: max(16px, 1em); }
 /* Incense: thin and low over the censer, rising slowly and thinning out. */
 .walkin-smoke {
   position: absolute; width: 7%; transform: translate(-50%, -100%); opacity: 0;
-  mix-blend-mode: screen; animation: walkinSmoke 9s linear infinite;
+  animation: walkinSmoke 9s linear infinite;
 }
 @keyframes walkinSmoke {
   0% { opacity: 0; transform: translate(-50%, -96%) scaleY(0.9); }
@@ -1395,7 +1395,7 @@ input, textarea, select { font-size: max(16px, 1em); }
 .hall-figure {
   position: absolute; height: auto; user-select: none; -webkit-user-drag: none;
   /* In the hall's warm, low light: a little darker and warmer than the bright originals. */
-  filter: brightness(0.9) saturate(0.92) sepia(0.06) drop-shadow(0 0.5vh 1vh rgba(10, 6, 3, 0.5));
+  filter: brightness(0.9) saturate(0.92) sepia(0.06);
 }
 .hall-figure.is-yuanshi { z-index: 1; }
 .hall-figure.is-laojun, .hall-figure.is-lingbao { z-index: 2; }

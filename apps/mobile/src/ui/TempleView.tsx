@@ -341,8 +341,9 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   // 藏经阁 and 问事录 painted too, when their pictures are there.
   const placeArt = usePlaceArt();
   const paintedPlace = placeArt && walkInArt && intro === 'done' && phase === 'idle' && place !== 'altar';
-  // While a painting covers the hall, the 3D view rests (it resumes the moment it is needed).
-  const hallRests = (paintedHall && intro === 'done') || paintedPlace;
+  // While a painting covers the hall — the whole walk-in, home, 藏经阁, 问事录 — the 3D view rests;
+  // it resumes the moment the visitor walks to the stone table.
+  const hallRests = paintedHall || paintedPlace;
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
     revealing: t.revealing,
@@ -460,7 +461,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       )}
 
       {phase === 'entering' && <PreceptSubtitle t={t} clock={clock} reduced={reduced} />}
-      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} />}
+      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} smoke={intro !== 'done'} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
       {tier && intro !== 'done' && introRef.current.painted && ritual.phase === 'idle' && (
         <PaintedWalkIn
