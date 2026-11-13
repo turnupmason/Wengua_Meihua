@@ -2,8 +2,9 @@ import {mkdir, readFile, readdir, writeFile} from 'node:fs/promises';
 import {loadLibrary, interpretationArtifactDigest, AUDIT_CHECKS} from '../src/index.js';
 import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, PROMOTION_PAY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
+import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -16,6 +17,15 @@ const raw = PRODUCT_TAXONOMY[0].subcategories.find(s => s.id === 'promotion-pay'
 const question = {...raw, id: questionId};
 const common = {schemaVersion: '1.0.0', contentVersion: library.contentVersion, manuscriptVersion, questionId};
 const orders = ['spring-wood', 'summer-fire', 'autumn-metal', 'winter-water', 'seasonal-earth'];
+const timingByHexagram = JSON.parse(await readFile(new URL(sourceDir + 'timing.json', root), 'utf8'));
+const timingQuotes = {
+ 'name-support':['mh-071','欲知名成之日，生体之卦气详之。'],
+ 'name-body':['mh-071','若无克体之卦，则名易就，止看卦体时序之类，以定日期。'],
+ support:['mh-116','看卦中有生体之卦，则事应于生体卦气之日'],
+ control:['mh-122','细观生体之卦为吉，应决期克体之卦为凶。'],
+ drain:['mh-143','不宜克体，亦不宜体卦生之也。'],
+ equal:['mh-143','盖卦宜生体，宜比和；'],
+};
 const seen = new Map();
 const counts = {bodies: 0, keys: 0, favourable: 0, noDate: 0};
 const files = [];
@@ -92,12 +102,22 @@ for (const [batchIndex, filename] of batches.entries()) {
    seen.set(sample, key + '/' + field);
   }
 
-  const timingOmission = {status:'not-derived', reason: timing, sourceIds:['mh-071','mh-122']};
+  const timingLine = timingByHexagram[primaryId]?.[movingLine - 1];
+  const timingSpecs = timingLine?.[1][i % orders.length]?.map(index => timingLine[0][index]);
+  if (!timingSpecs?.length || timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Missing author timing: ' + key);
+  const timingSlots = promotionTimingSlots(r, timingSpecs, outcome);
+  if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
+  const timingReason = timingSlots.map(slot => slot.reason).join(' ');
+  const timingSourceIds = [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const relation = r.edges.find(e => e.targetRole === 'changed_use').type;
   const sourceEvidence = [...commonEvidence,
    evidence('mh-071', nameClauses[relation], resolution),
    evidence('mh-072', moneyClauses[relation], payRange || '本次晋升偏难，随岗薪资同断。'),
-   evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', timing)];
+   evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', '日级窗口对应已经进入近期流程的评定。'),
+   ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
+   ...(timingSlots.some(slot => slot.kind === 'name-body') ? [evidence('mh-052',
+    TRIGRAM_PERIOD_SPECS.find(period => period.trigram === r.nodes.find(node => node.role === 'body').trigram).quote,
+    '按原体所属时序取日支。')] : [])];
   const facts = {
    stages: Object.values(r.stages).map(s => ({id:s.id, name:s.name, baseGrade:s.baseGrade})),
    nodes: r.nodes.map(n => ({role:n.role, trigram:n.trigram, element:n.element, qi:n.strength.state})),
@@ -105,7 +125,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    movingLine: {...inspectMovingLine(movingLineText), label:r.selectedMovingLine.label, image:r.selectedMovingLine.image,
     sourceRef:r.selectedMovingLine.sourceRef, referenceUrl:r.selectedMovingLine.referenceUrl},
   };
-  const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), facts.movingLine.sourceRef.sourceId])];
+  const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), ...timingSourceIds, facts.movingLine.sourceRef.sourceId])];
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
    questionScope:'promotion-with-associated-pay', lineApplication, counterevidence, sourceEvidence,
    pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'},
@@ -119,7 +139,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    ['facts.nodes', facts.nodes.map(n => n.trigram + n.qi).join(' / ')],
    ['mh-061;mh-117', '经典体用及同一月令五态'],
    ['decision.indirectEffectsApplied', '四处各自对原体看直接作用'],
-   ['mh-071;mh-122', timing],
+   [timingSourceIds.join(';'), timingReason],
    ['decision.counterevidence', resolution],
   ];
   const review = {status:'author-checked', actor:'assistant-author', version:manuscriptVersion,
@@ -127,21 +147,23 @@ for (const [batchIndex, filename] of batches.entries()) {
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSlots:[], voidTimingSlots:[], timingOmission, ruleVersions:{decision:manuscriptVersion}};
+   timingSpecs, timingSlots, voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:'promotion-pay-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
   counts.bodies++;
   counts.keys += monthBranches.length;
   counts.favourable += Number(outcome === 'favourable');
-  counts.noDate++;
+  counts.noDate += Number(timingSlots.length === 0);
   readingDoc.push('', '## ' + facts.movingLine.label + ' · ' + monthBranches.join('、'),
    '', title, '', short, '', '开局　' + opening, '', '过程　' + process, '', '结局　' + ending,
-   '', '应期　' + timing, '', '总断　' + summary, '', '<details><summary>卦象和依据</summary>', '',
+   '', '应期　传统推算的参考窗口，适用于本次评定已进入近期流程。', '',
+   ...timingSlots.map(slot => '- ' + slot.valence + '应 · ' + slot.event + '，取' + slot.branches.join('、') + '日。' + slot.text),
+   '', '总断　' + summary, '', '<details><summary>卦象和依据</summary>', '',
    facts.stages.map(s => s.name).join(' → '), '', movingLineText, '',
    facts.nodes.map(n => n.role + ' ' + n.trigram + n.element + n.qi).join('，'), '',
    facts.directRelations.map(e => e.role + ' ' + e.type).join('，'), '',
-   resolution, '', ...(payRange ? ['加薪幅度取象　' + payRange, ''] : []), '稿件键 `' + key + '` · [作者源](../../' + sourcePath + ') · [断法和出处](../PROMOTION_PAY_POLICY.md)', '', '</details>');
+   resolution, '', ...timingSlots.map(slot => '取期依据 · ' + slot.reason + '（' + slot.sourceIds.join('、') + '）'), '', ...(payRange ? ['加薪幅度取象　' + payRange, ''] : []), '稿件键 `' + key + '` · [作者源](../../' + sourcePath + ') · [断法和出处](../PROMOTION_PAY_POLICY.md)', '', '</details>');
  }
  const path = base + stem + '.json';
  await saveJSON(path, {...common, primaryId, monthSlots, rows});
@@ -161,7 +183,7 @@ await writeFile(new URL(docDir + 'README.md', root), [
  '# 晋升加薪断语', '', '问项为本次晋升及随岗加薪。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
  '其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。',
- '已取公历日期 ' + progress.dated + ' 篇，未取日期 ' + progress.undated + ' 篇。独立专业审核待完成。',
+ '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。公历候选日按各次起卦日期换算，独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../PROMOTION_PAY_POLICY.md)', '', ...directory, '',
 ].join('\n'));

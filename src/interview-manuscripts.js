@@ -3,7 +3,7 @@ import {MONTH_ORDERS} from './narrative-rules.js';
 import {assessSeasonalQi,interpretationArtifactDigest,AUDIT_CHECKS} from './interpretation-audit.js';
 import {getCivilDay} from './day-calendar.js';
 import {getVoidProfileKey,resolveManuscriptDates} from './prewritten-manuscripts.js';
-import {ELEMENT_DAY_BRANCHES} from './timing-rules.js';
+import {ELEMENT_DAY_BRANCHES,TRIGRAM_PERIOD_SPECS} from './timing-rules.js';
 import {resolveMonthSlot} from './month-slots.js';
 import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
@@ -96,6 +96,43 @@ export function interviewTimingSlots(reading,specs){
  });
 }
 
+const promotionTimingKinds={
+ 'name-support':{relation:'use_generates_body',valence:'吉',rule:'fame-date',source:'mh-071'},
+ 'name-body':{relation:'equal',valence:'吉',rule:'fame-body-fallback',source:'mh-071'},
+ support:{relation:'use_generates_body',valence:'吉',rule:'good-event',source:'mh-116'},
+ control:{relation:'use_controls_body',valence:'凶',rule:'adverse-event',source:'mh-122'},
+ drain:{relation:'body_generates_use',valence:'凶',rule:'daily-qi-body-drain',source:'mh-143'},
+ equal:{relation:'equal',valence:'吉',rule:'daily-qi-equal',source:'mh-143'},
+};
+const promotionTimingStages={body:'closing',use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing'};
+
+export function promotionTimingSlots(reading,specs,outcome){
+ return specs.map(([kind,role,event,text,reason])=>{
+  const rule=promotionTimingKinds[kind],stage=promotionTimingStages[role];
+  const node=reading.nodes.find(n=>n.role===role);
+  const edge=reading.edges.find(e=>e.targetRole===role);
+  const bodyPeriod=kind==='name-body',isResult=kind==='name-support'||bodyPeriod;
+  if(!rule||!stage||!node||!event||!text||!reason||(isResult&&outcome!=='favourable')||
+    (bodyPeriod?role!=='body'||reading.edges.some(e=>e.type==='use_controls_body'):
+     edge?.type!==rule.relation))throw new Error('Invalid promotion timing declaration');
+  const period=bodyPeriod?TRIGRAM_PERIOD_SPECS.find(p=>p.trigram===node.trigram&&p.scales.includes('day')):null;
+  const branches=period?.branches??ELEMENT_DAY_BRANCHES[node.element];
+  if(!branches?.length||(bodyPeriod&&!period))throw new Error('Missing promotion day branches');
+  const method=bodyPeriod?'trigram-periods':'element-qi';
+  const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',bodyPeriod?'mh-052':'mh-143'])];
+  const ruleIds=[rule.rule,'method-order','horizon'];
+  const id=kind+'-'+role;
+  return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence:rule.valence,
+   eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
+   prefix:'可留意',suffix:'前后，'+text,displayLimit:2,
+   emptyText:text,branches:[...branches],sourceIds,ruleIds,method,scale:'day',
+   calculationBasis:{role,trigram:node.trigram,element:node.element,directRelation:rule.relation,
+    method:bodyPeriod?'pre-heaven-trigram-periods':'pre-heaven-element-qi',scale:'day',ruleIds,sourceIds,
+    reason,stage,selectionOrder:['casting-month-remaining-days','next-month-if-no-match'],
+    interpretationReview:'author-source-checked',independentInterpretationReview:'pending'}};
+ });
+}
+
 export function createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid=false,profile=INTERVIEW_PROFILE}){
  const directory='data/authored-readings/'+profile.directory+'/';
  const cache=new Map();
@@ -139,7 +176,8 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
-  const actualSlots=interviewTimingSlots(reading,row.timingSlots);
+  const isPromotion=profile===PROMOTION_PAY_PROFILE;
+  const actualSlots=isPromotion?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode):interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
   const storedTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
   const missingTiming=[];
@@ -150,12 +188,16 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const timingOmission=missingTiming.length?{status:'not-derived',reason:'此起卦方式或时间尺度无法按先天卦气取日。',sourceIds:['mh-058','mh-122']}:row.timingOmission;
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const timingNote=hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE;
+  const timingNote=isPromotion
+   ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':'以下为这次评定各阶段的参考。')
+   : (hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE);
   const c=row.copy.long;
-  const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending];
-  const payParagraphs=row.decision.pay?.range?[ '加薪幅度：'+row.decision.pay.range ]:[];
+  const payRange=row.decision.pay?.range;
+  const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending+(payRange?' '+payRange:'')];
   const summary='总断：'+c.summary;
-  const paragraphs=[...stages,...payParagraphs,'应期：'+timingNote+(hasTiming?'\n'+row.timingSlots.map(s=>s.token).join(' '):''),summary];
+  const phaseNotes=isPromotion&&!hasTiming?actualSlots.map(slot=>slot.text):[];
+  const timingBody=hasTiming?row.timingSlots.map(s=>s.token):phaseNotes;
+  const paragraphs=[...stages,'应期：'+[timingNote,...timingBody].join('\n'),summary];
   const allSlots=hasTiming?[...row.timingSlots,...row.voidTimingSlots]:[];
   const dates=hasTiming?resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext}):
    {status:'resolved',paragraphs,dateMatches:[],castingDate:reading.castingDate,dayGanzhi:reading.dayGanzhi};
@@ -166,13 +208,14 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    return {...d,text:rendered.paragraphs[0],eventScope:slot.eventScope,targetBranches:[...slot.branches],calculationBasis:slot.calculationBasis};
   })};
   const timingSection={title:'应期参考',referenceNote:timingNote,castingDate:reading.castingDate,
-   windows:dateResolution.dateMatches};
-  const narrativeParagraphs=[...stages,...payParagraphs,summary];
+   windows:dateResolution.dateMatches,...(phaseNotes.length?{phaseNotes}:{})};
+  const narrativeParagraphs=[...stages,summary];
   const labels={body:'原体',use:'本用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用',body_inherited:'变卦沿用原体'};
   const detailLines=row.decision.sourceEvidence?[
    `本互变：${Object.values(reading.stages).map(stage=>stage.name).join(' → ')}，本卦${reading.selectedMovingLine.label}动。`,
    reading.nodes.map(n=>`${labels[n.role]}${n.trigram}${n.element}${n.strength.state}`).join('，')+'。',
    reading.edges.map(e=>labels[e.targetRole]+relationLabels[e.type]).join('，')+'。',
+   ...(isPromotion?[`体用位置：${reading.body.side==='upper'?'上卦':'下卦'}为原体，动爻所在${reading.use.side==='upper'?'上卦':'下卦'}为本用。`]:[]),
    ...reading.nodes.filter(n=>n.role!=='body_inherited'&&n.void.hit).map(n=>
     `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
    ...row.counterevidence.map(c=>c.resolution),
@@ -198,7 +241,8 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
      const role=d.calculationBasis.role;
      const label=(!row.decision.sourceEvidence&&{body:'体',use:'用'}[role])||labels[role]||role;
-     return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。`;
+     const ruleNote=isPromotion?` ${d.calculationBasis.reason} 依据 ${d.sourceIds.join('、')}。`:'';
+     return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${ruleNote}`;
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,

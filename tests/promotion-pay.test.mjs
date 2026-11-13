@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {assessSeasonalQi, interpretationArtifactDigest, loadLibrary, createProductRepository, MONTH_SLOTS} from '../src/index.js';
+import {assessSeasonalQi, interpretationArtifactDigest, loadLibrary, createProductRepository, findUpcomingCivilDayMatches, getCivilDay, MONTH_SLOTS} from '../src/index.js';
 
 const questionId = 'career.promotion-pay.promotion';
 const library = await loadLibrary();
 const repository = createProductRepository({library});
 const load = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const index = await load('data/authored-readings/promotion-pay/index.json');
-const options = {questionId, castingDate:'2026-11-11'};
+const options = {questionId, castingDate:'2028-02-25', timingScale:'day', timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
 test('each completed promotion chart resolves all twelve keys to its own reviewed text and pay verdict', async () => {
  let copies = 0, slots = 0;
@@ -42,10 +42,23 @@ test('each completed promotion chart resolves all twelve keys to its own reviewe
     assert.equal(result.short, row.copy.short.text);
     assert.equal(result.decision.id, row.copy.long.decisionId);
     assert.equal(result.decision.pay.state, result.decision.outcomeCode === 'favourable' ? 'follows-promotion' : 'unfavourable-with-promotion');
-    const payParagraph = result.narrativeParagraphs.find(paragraph => paragraph.startsWith('加薪幅度：'));
-    assert.equal(payParagraph, row.decision.pay.range ? '加薪幅度：' + row.decision.pay.range : undefined);
+    assert.deepEqual(result.narrativeParagraphs.map(p => p.split('：',1)[0]), ['开局','过程','结局','总断']);
+    if (row.decision.pay.range) assert.ok(result.narrativeParagraphs[2].endsWith(row.decision.pay.range));
     assert.equal(result.calculationExplanation.void, undefined);
-    assert.ok(result.timingSection.windows.length || result.calculationExplanation.timing.omission.reason);
+    assert.equal(result.timingSection.windows.length, row.timingSlots.length);
+    assert.ok(result.timingSection.windows.length);
+    assert.ok(result.calculationExplanation.paragraphs.some(p => p.startsWith('本互变：')));
+    assert.ok(result.calculationExplanation.paragraphs.some(p => p.includes('体互') && p.includes('用互') && p.includes('变用')));
+    for (const [i, window] of result.timingSection.windows.entries()) {
+     const rule = row.timingSlots[i];
+     const expected = findUpcomingCivilDayMatches({castingDate:options.castingDate, branches:rule.branches});
+     assert.deepEqual(window.displayedDates, expected.matches.slice(0,2).map(day => day.date));
+     assert.equal(window.event, rule.event);
+     assert.equal(window.valence, rule.valence);
+     assert.ok(window.text.includes(rule.text));
+     assert.ok(window.displayedDates.every(day => day >= options.castingDate && rule.branches.includes(getCivilDay(day).dayBranch)));
+     if (window.eventScope === 'positive-result-candidate') assert.equal(row.decision.outcomeCode, 'favourable');
+    }
     slots++;
    }
   }
@@ -53,6 +66,7 @@ test('each completed promotion chart resolves all twelve keys to its own reviewe
  assert.equal(index.authorWholeArticleReviewed, copies);
  assert.equal(index.baseCaseCount, slots);
  assert.equal(index.remainingBaseSlots, 4608 - slots);
+ assert.equal(index.dated, copies);
  if (index.next) {
   const pending = await repository.getContent({...options, primaryId:index.next.primaryId, movingLine:1, monthBranch:'寅'});
   assert.equal(pending.status, 'pending-authoring');

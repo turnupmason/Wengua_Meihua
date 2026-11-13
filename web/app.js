@@ -39,7 +39,7 @@ async function showStory(current){
   let body;
   if(content.status==='ready'&&content.short){
    const explanation=content.calculationExplanation?`<details class="calculation-explanation"><summary>计算说明</summary>${content.calculationExplanation.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`:'';
-   const timing=content.timingSection?`<section class="timing-section" aria-label="应期参考"><h4>${esc(content.timingSection.title)}</h4><p class="reference-note">${esc(content.timingSection.referenceNote)}</p>${content.timingSection.windows.map(w=>`<article class="timing-window" data-event-id="${esc(w.slotId)}"><p><span class="badge">${esc(w.valence)}应</span> ${esc(w.event)}</p><p>${esc(w.text)}</p></article>`).join('')}</section>`:'';
+   const timing=content.timingSection?`<section class="timing-section" aria-label="应期参考"><h4>${esc(content.timingSection.title)}</h4><p class="reference-note">${esc(content.timingSection.referenceNote)}</p>${(content.timingSection.phaseNotes ?? []).map(note=>`<p>${esc(note)}</p>`).join('')}${content.timingSection.windows.map(w=>`<article class="timing-window" data-event-id="${esc(w.slotId)}"><p><span class="badge">${esc(w.valence)}应</span> ${esc(w.event)}</p><p>${esc(w.text)}</p></article>`).join('')}</section>`:'';
    body=`<h3>${esc(content.title)}</h3><p class="short-reading">${esc(content.short)}</p>${timing}<details class="long-reading"><summary>详断</summary>${(content.narrativeParagraphs||content.paragraphs).map(p=>`<p>${esc(p)}</p>`).join('')}</details>${explanation}`;
   }
   else if(['reference','guidance','ready'].includes(content.status))body=content.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('');

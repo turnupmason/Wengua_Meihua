@@ -411,6 +411,18 @@ describe('cast, reading and 问事录', () => {
     const { product } = await testKnowledge();
     const at = (primaryId: number) => judgmentFor(product, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay', primaryId, movingLine: 1 });
     expect(await at(1)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 1 });
+    const reading = await at(1);
+    if (reading.state !== 'ready') throw new Error('Expected the written promotion manuscript');
+    expect(reading.timing?.windows.length || reading.timing?.phaseNotes?.length).toBeGreaterThan(0);
+    expect(calculationGroups(reading.calculation, () => null).map(({group}) => group)).toEqual(['calendar','chart','bodyUse','timing']);
+    const { library } = await testKnowledge();
+    const chart = library.createReading({ primaryId: 1, movingLine: 1, domainId: 'domain-09', applyVoid: false });
+    render(<ReadingView reading={chart} question="晋升加薪" questionId="career.promotion-pay" judgment={{ state: 'ready', judgment: reading, full: true }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />);
+    expect([...document.querySelectorAll('.script-full .script-part h3')].slice(0,5).map(h => h.textContent)).toEqual(['开局','过程','结局','总断',STRINGS.zh.timingTitle]);
+    expect(document.querySelector('.timing-when b')?.textContent).toMatch(/\d+日/);
+    const calculation = document.querySelector('details.script-calc');
+    expect(calculation?.querySelector('summary')?.textContent).toBe(STRINGS.zh.calcTitle);
+    expect([...calculation!.querySelectorAll('.calc-label')].map(label => label.textContent)).toEqual(['历法','卦象','体用','取期']);
     expect(await at(48)).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
   });
 

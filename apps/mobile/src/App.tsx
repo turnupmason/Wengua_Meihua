@@ -80,6 +80,23 @@ export function App() {
     document.documentElement.lang = settings.lang === 'zh' ? 'zh-Hans' : 'en';
   }, [settings.lang]);
 
+  const openSavedJudgment = useCallback(async (knowledge: Knowledge, rec: CastRecord) => {
+    const previous = rec.judgment;
+    if (previous?.state !== 'ready' || previous.timing?.windows.length || previous.timing?.phaseNotes?.length ||
+        (previous.contentQuestionId ?? previous.questionId) !== 'career.promotion-pay.promotion') return;
+    const question = questionById(rec.questionId);
+    const input = judgmentInput(rec);
+    if (!input || !question) return;
+    const updated = await judgmentFor(knowledge.product, question, input);
+    if (updated.state !== 'ready' || updated.decisionId !== previous.decisionId ||
+        updated.castingDate !== previous.castingDate || updated.monthBranch !== previous.monthBranch) return;
+    const current = recordRef.current;
+    if (current?.castId !== rec.castId) return;
+    const repaired = {...current, judgment: {...previous, timing: updated.timing, calculation: updated.calculation}};
+    recordRef.current = repaired;
+    setRecord(repaired);
+  }, []);
+
   // Load bundled texts once; failures can be retried.
   useEffect(() => {
     let alive = true;
@@ -94,6 +111,7 @@ export function App() {
         if (rec) {
           recordRef.current = rec;
           setRecord(rec);
+          void openSavedJudgment(k, rec);
           dispatch({ type: 'RESUME', castId: rec.castId, phase: active!.phase as RitualPhase });
           setScreen('temple');
         }
@@ -102,7 +120,7 @@ export function App() {
     return () => {
       alive = false;
     };
-  }, [loadAttempt, history]);
+  }, [loadAttempt, history, openSavedJudgment]);
 
   // Background/foreground: pause audio; the ritual clock and renderer pause themselves.
   useEffect(() => {
@@ -205,6 +223,7 @@ export function App() {
   const openRecord = (rec: CastRecord, withRitual = false) => {
     recordRef.current = rec;
     setRecord(rec);
+    if (knowledge) void openSavedJudgment(knowledge, rec);
     dispatch({ type: 'RESET' });
     if (withRitual) dispatch({ type: 'BEGIN', castId: rec.castId });
     else dispatch({ type: 'RESUME', castId: rec.castId, phase: 'reading' });

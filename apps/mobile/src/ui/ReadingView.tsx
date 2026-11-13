@@ -378,6 +378,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                   <p className="read-meta" lang="zh">
                     {j.timing.referenceNote}
                   </p>
+                  {j.timing.phaseNotes?.map((note) => <p key={note} className="timing-text" lang="zh">{note}</p>)}
                   {j.timing.windows.length > 0 && (
                     <ul className="timing-list">
                       {j.timing.windows.map((w) => {

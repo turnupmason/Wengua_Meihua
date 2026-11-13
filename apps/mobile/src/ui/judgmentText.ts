@@ -17,6 +17,6 @@ export function missingText(t: Strings, reason: MissingReason): { title: string;
 
 /** 「开局：……」 → ['开局', '……']; a paragraph without a label keeps its text whole. */
 export function labelled(paragraph: string): [string | null, string] {
-  const m = /^(开局|过程|结局|加薪幅度|总断|应期)：([\s\S]*)$/.exec(paragraph);
+  const m = /^(开局|过程|结局|总断|应期)：([\s\S]*)$/.exec(paragraph);
   return m ? [m[1], m[2]] : [null, paragraph];
 }

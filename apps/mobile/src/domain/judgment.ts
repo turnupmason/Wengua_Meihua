@@ -49,7 +49,7 @@ export interface ProductJudgment {
   /** 详断, as written (e.g. 「开局：…」「过程：…」「结局：…」「总断：…」). */
   paragraphs: string[];
   /** 应期参考 (shown on its own, never mixed into 详断); null when the record has none. */
-  timing: { referenceNote: string; windows: TimingWindow[] } | null;
+  timing: { referenceNote: string; windows: TimingWindow[]; phaseNotes?: string[] } | null;
   /** 计算说明, as given (shown collapsed, through readableCalculation). */
   calculation: string[];
   /** Titles of the 《梅花易数》 sections the 断语 draws on. */
@@ -237,6 +237,7 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       timing: timing
         ? {
             referenceNote: timing.referenceNote,
+            ...(timing.phaseNotes ? { phaseNotes: [...timing.phaseNotes] } : {}),
             windows: timing.windows.map((w) => ({ event: w.event, valence: w.valence, text: w.text, dates: [...w.displayedDates] })),
           }
         : null,
