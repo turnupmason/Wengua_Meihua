@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { AUDIT_CHECKS, createProductRepository, findUpcomingCivilDayMatches, loadLibrary, MONTH_SLOTS } from '../src/index.js';
+import { checkChartFacts } from './helpers/chart-facts.mjs';
 
 const library = await loadLibrary();
 const product = createProductRepository({library});
@@ -52,8 +53,8 @@ test('all published exam month keys retain authored copy, sources, layout, and c
    const key = row.decision.id;
    assert.equal(row.decision.questionScope, 'result-of-this-exam', key);
    assert.equal(row.movingLineText, library.getLineReading(entry.primaryId, row.movingLine).text, key);
-   assert.deepEqual(row.stageIds, [entry.primaryId, library.getMutualHexagram(entry.primaryId, row.movingLine).id,
-    library.getChangedHexagram(entry.primaryId, row.movingLine).id], key);
+   checkChartFacts(library, row, key);
+   assert.deepEqual(row.stageIds, row.facts.stages.map(stage => stage.id), key);
    assert.deepEqual([row.copy.title, row.copy.short.text, row.copy.long.opening, row.copy.long.process,
     row.copy.long.ending, row.copy.long.summary], drafts[i].slice(3,9), key);
    assert.equal(row.copy.short.decisionId, key);
