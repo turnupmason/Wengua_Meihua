@@ -63,7 +63,7 @@ export function ritualReducer(state: RitualState, event: RitualEvent): RitualSta
 
 /** Phase durations in seconds. Reading and idle are open-ended. */
 export const DURATIONS: Record<'normal' | 'reduced', Partial<Record<RitualPhase, number>>> = {
-  normal: { entering: 4.6, revealing: revealPlan(false).total },
+  normal: { entering: 3.6, revealing: revealPlan(false).total },
   reduced: { entering: 1.2, revealing: revealPlan(true).total },
 };
 

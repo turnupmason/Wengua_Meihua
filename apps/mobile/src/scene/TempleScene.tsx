@@ -240,8 +240,9 @@ function TempleEnvironment() {
 /**
  * 祖师赐卦: a shaft of warm light from the altar comes down onto the stone table when the
  * reader sits, the statues' halos brighten, and stays faintly while the reading is shown.
+ * `plain` (the painted hall carries 祖师赐卦): only the warm light on the table, no shaft.
  */
-function DivineLight({ clock, reduced }: { clock: MutableRefObject<RitualClock>; reduced: boolean }) {
+function DivineLight({ clock, reduced, plain }: { clock: MutableRefObject<RitualClock>; reduced: boolean; plain: boolean }) {
   const m = sceneMaterials();
   const plan = useMemo(() => revealPlan(reduced), [reduced]);
   const beam = useMemo(() => {
@@ -295,7 +296,8 @@ function DivineLight({ clock, reduced }: { clock: MutableRefObject<RitualClock>;
   });
   return (
     <>
-      <primitive object={beam.mesh} />
+      {/* With the painted hall: the warm light on the table only, no shaft. */}
+      {!plain && <primitive object={beam.mesh} />}
       <pointLight ref={tableLight} position={[WORLD.table[0], WORLD.tableTopY + 1.2, WORLD.table[2] - 0.3]} intensity={0} distance={4} decay={1.4} color="#ffd79a" />
     </>
   );
@@ -405,10 +407,12 @@ export interface TempleSceneProps {
   intro?: MutableRefObject<IntroRef>;
   /** Tapping the 藏经阁 cabinet or the 问事录 desk goes there. */
   onPlace?: (p: Place) => void;
+  /** The painted hall carries 祖师赐卦: no light shaft, glory, motes or seal on the 3D table. */
+  plainBestowal?: boolean;
 }
 
 export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
-  const { reading, relation, castTime, clock, phase, covered, reduced, tier, selection, t, lang, onPick, onOpenStage, onOpenRelation, onMiss, onContextLost, intro, onPlace } = props;
+  const { reading, relation, castTime, clock, phase, covered, reduced, tier, selection, t, lang, onPick, onOpenStage, onOpenRelation, onMiss, onContextLost, intro, onPlace, plainBestowal } = props;
   // Stable across phases (so the memoised places never re-render); taps count only while idle.
   const placeRef = useRef(onPlace);
   placeRef.current = onPlace;
@@ -454,10 +458,10 @@ export const TempleScene = memo(function TempleScene(props: TempleSceneProps) {
         <PlacesM onPlace={placeTap} />
         <IncenseHolderM />
         <BurningOffering particles={tier.smokeParticles * 2} />
-        <DivineLight clock={clock} reduced={reduced} />
+        <DivineLight clock={clock} reduced={reduced} plain={!!plainBestowal} />
         <NightSkyM />
         <MountainsM />
-        <Bestowal clock={clock} reduced={reduced} />
+        {!plainBestowal && <Bestowal clock={clock} reduced={reduced} />}
         <Precompile deps={[reading]} />
         <Dust count={reduced ? 0 : tier.dustParticles} />
         <StoneTable

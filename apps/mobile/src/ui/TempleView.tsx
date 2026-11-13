@@ -14,6 +14,7 @@ import { useRitualClock } from './useRitualClock';
 import { HomeOverlay } from './HomeOverlay';
 import type { IntroRef } from '../scene/TempleScene';
 import { INTRO_SECONDS } from '../scene/timeline';
+import { bestowalTimes } from '../scene/carving';
 import { PaintedWalkIn } from './PaintedWalkIn';
 import { PaintedHall, PaintedPlace } from './PaintedHall';
 import { PLACE_PANEL } from '../scene/placeLayout';
@@ -220,8 +221,14 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const versionChanged = !!record && record.contentVersion !== knowledge.contentVersion;
 
   const onPhaseDone = useCallback((p: RitualState['phase']) => dispatch({ type: 'PHASE_DONE', phase: p }), [dispatch]);
+  // 祖师赐卦 is said over the 三清; only when the stone table is shown does 石桌显卦 follow (never together).
   const [bestowed, setBestowed] = useState(false);
-  const [flash, setFlash] = useState(0);
+  const [tableShown, setTableShown] = useState(false);
+  // 祖师赐卦 stays until the 三清 give way to the table, and has faded by then.
+  const bestowSeconds = useMemo(() => {
+    const b = bestowalTimes(reduced);
+    return Math.max(0.5, b.orbArrive - b.lookUp);
+  }, [reduced]);
   // Sounds and moments, all solemn and sparse.
   const onCue = useCallback(
     (p: RitualState['phase'], i: number) => {
@@ -231,10 +238,11 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         setTimeout(() => templeAudio.handbell(3), 500);
         setTimeout(() => templeAudio.qing(1.5, 0.6), 1400);
         setBestowed(true);
-        setTimeout(() => setBestowed(false), 4200);
+        setTableShown(false);
       } else if (p === 'revealing' && i === 2) {
-        // The golden orb lands on the table: a warm flash.
-        setFlash((n) => n + 1);
+        // The 三清 give way to the stone table.
+        setBestowed(false);
+        setTableShown(true);
         templeAudio.qing(2, 0.5);
       } else if (p === 'revealing' && i === 1) {
         templeAudio.qing(1, 0.8);
@@ -244,6 +252,12 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     [settings.haptics],
   );
   const clock = useRitualClock(ritual.phase, reduced, onPhaseDone, onCue);
+  useEffect(() => {
+    if (ritual.phase !== 'revealing') {
+      setBestowed(false);
+      setTableShown(false);
+    }
+  }, [ritual.phase]);
 
   // Opening walk-in: start the glide when the title screen is tapped, show the home tray after it.
   // The painted courtyard and threshold (docs/art-reference/sanqing-entrance) when their pictures
@@ -276,32 +290,6 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     else templeAudio.stopMusic();
     return () => templeAudio.stopMusic();
   }, [settings.sound]);
-
-  // Footsteps while walking up the hall; a rustle of robes when sitting down at the table.
-  useEffect(() => {
-    let lastStep = 0;
-    const done = new Set<string>();
-    let phaseSeen = '';
-    const id = window.setInterval(() => {
-      const c = clock.current;
-      if (c.phase !== phaseSeen) {
-        phaseSeen = c.phase;
-        done.clear();
-      }
-      if (c.phase === 'entering' && !reduced && c.elapsed - lastStep > 0.55) {
-        lastStep = c.elapsed;
-        templeAudio.footstep();
-      }
-      const once = (key: string, when: boolean) => {
-        if (when && !done.has(key)) {
-          done.add(key);
-          templeAudio.rustle();
-        }
-      };
-      once('sit', c.phase === 'revealing' && c.t > 0.2);
-    }, 100);
-    return () => window.clearInterval(id);
-  }, [clock, reduced]);
 
   // A tapped line glows and a small tip appears beside it; the full text opens from the tip.
   const [tip, setTip] = useState<{ sel: Selection; at: [number, number] } | null>(null);
@@ -343,10 +331,12 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const paintedPlace = placeArt && walkInArt && intro === 'done' && phase === 'idle' && place !== 'altar';
   // While a painting covers the hall — the whole walk-in, home, 藏经阁, 问事录 — the 3D view rests;
   // it resumes the moment the visitor walks to the stone table.
-  const hallRests = paintedHall || paintedPlace;
+  // During the ritual the painting reports when it fully covers the screen (the walk, sitting, looking up).
+  const [ritualCovered, setRitualCovered] = useState(false);
+  const hallRests = paintedHall || paintedPlace || ritualCovered;
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
-    revealing: t.revealing,
+    revealing: tableShown ? t.revealing : undefined,
   };
 
   return (
@@ -375,6 +365,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
                 onContextLost={onSceneLost}
                 intro={introRef}
                 onPlace={onPlace}
+                plainBestowal={walkInArt}
               />
             </Suspense>
           </SceneBoundary>
@@ -391,9 +382,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
 
       {/* At the stone table the 3D hall behind is kept in shadow: the eye stays on the table, and the
           painted hall (above this, when the visitor looks up) is the only hall the visitor sees. */}
-      {walkInArt && phase === 'revealing' && <i className="ritual-vignette" aria-hidden="true" />}
       {/* The painted hall and places sit right over the 3D view and under every word and button. */}
-      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} phase={phase} clock={clock} />}
+      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
 
       {phase === 'idle' && intro === 'done' && (
@@ -498,9 +488,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         </button>
       )}
 
-      {flash > 0 && <div className="bestow-flash" key={flash} aria-hidden="true" />}
       {bestowed && (
-        <p className="bestowed" aria-live="polite">
+        <p className="bestowed" aria-live="polite" style={{ animationDuration: `${bestowSeconds}s` }}>
           {t.bestowed}
         </p>
       )}

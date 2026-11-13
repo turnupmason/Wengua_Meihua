@@ -129,7 +129,8 @@ export function arrowGrooves(relation: RelationView): Groove[] {
 
 export const CARVE_TIMING = {
   // Sit at the table (the walk there is 'entering'), then the light from the altar, then carving.
-  normal: { sit: 0.9, light: 4.6, frames: 0.9, line: 0.32, arrow: 0.7, text: 0.7, glow: 0.7, hold: 1.2 },
+  // About 12 s in all with the walk (was about 20): the bestowal holds ~1.9 s, the 18 lines carve in ~2.9 s.
+  normal: { sit: 0.4, light: 2.6, frames: 0.6, line: 0.16, arrow: 0.5, text: 0.5, glow: 0.5, hold: 0.8 },
   reduced: { sit: 0.3, light: 0.8, frames: 0.4, line: 1.0, arrow: 0.6, text: 0.5, glow: 0.4, hold: 0.4 },
 };
 

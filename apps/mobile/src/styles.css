@@ -268,7 +268,7 @@ a { color: var(--gold); }
   text-shadow: 0 0 18px rgba(255, 200, 120, 0.85), 0 0 42px rgba(255, 170, 80, 0.5), 0 2px 8px #000;
   animation: bestow 3.6s ease both;
 }
-@keyframes bestow { 0% { opacity: 0; transform: translateY(8px) scale(0.98); filter: blur(4px); } 20% { opacity: 1; transform: none; filter: none; } 75% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes bestow { 0% { opacity: 0; } 22% { opacity: 1; } 78% { opacity: 1; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .bestowed { animation: none; } }
 
 /* Sheet: header, handle and line picker never shrink; only the body scrolls. */
@@ -301,9 +301,6 @@ a { color: var(--gold); }
 }
 @media (prefers-reduced-motion: reduce) { .precept-subtitle { animation: none; opacity: 1; } }
 
-.bestow-flash { position: absolute; inset: 0; z-index: 24; pointer-events: none; background: radial-gradient(ellipse at 50% 55%, rgba(255, 236, 190, 0.85), rgba(255, 200, 110, 0.35) 35%, rgba(255, 180, 90, 0) 70%); animation: bestowFlash 1.4s ease-out forwards; }
-@keyframes bestowFlash { 0% { opacity: 0; } 12% { opacity: 1; } 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .bestow-flash { animation-duration: 0.6s; } }
 
 /* ---------- Flat board (mirrors the stone table) ---------- */
 .flat-table { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: calc(var(--safe-t) + 64px) 12px calc(var(--safe-b) + 170px);
@@ -1497,45 +1494,3 @@ input, textarea, select { font-size: max(16px, 1em); }
 .walkin.is-still .walkin-lamp, .walkin.is-still .hall-smoke, .walkin.is-still .hall-embers { animation: none; opacity: 0.6; }
 @media (prefers-reduced-motion: reduce) { .walkin-lamp { animation: none; opacity: 0.6; } }
 
-/* 祖师赐卦 in the painted hall: a swelling gold light with slow rays around 元始天尊, and the pearl. */
-.hall-glory {
-  position: absolute; width: 110%; aspect-ratio: 1; transform: translate(-50%, -50%); opacity: 0; z-index: 2; pointer-events: none;
-  background:
-    radial-gradient(circle, rgba(255, 236, 190, 0.75) 0%, rgba(255, 214, 140, 0.4) 10%, rgba(255, 190, 110, 0.14) 28%, rgba(255, 170, 90, 0) 50%),
-    repeating-conic-gradient(from 0deg, rgba(255, 224, 160, 0.16) 0deg 2.5deg, rgba(255, 224, 160, 0) 2.5deg 11deg);
-  -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.7) 26%, transparent 50%);
-  mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.7) 26%, transparent 50%);
-  animation: gloryTurn 24s linear infinite; will-change: opacity, transform;
-}
-@keyframes gloryTurn { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-.hall-flare {
-  position: absolute; width: 16%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; opacity: 0; z-index: 4; pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 252, 238, 0.95) 0%, rgba(255, 232, 170, 0.6) 14%, rgba(255, 206, 120, 0.22) 34%, rgba(255, 190, 100, 0) 62%);
-  will-change: opacity;
-}
-/* A soft shaft of gold let down from the pearl, unrolling downward, with motes drifting down in it. */
-.hall-beam {
-  position: absolute; width: 9%; height: 75%; opacity: 0; z-index: 3; pointer-events: none; transform-origin: 50% 0;
-  transform: translateX(-50%) scaleY(0); will-change: transform, opacity;
-  background: linear-gradient(180deg, rgba(255, 244, 210, 0.85) 0%, rgba(255, 218, 140, 0.5) 22%, rgba(255, 198, 110, 0.22) 60%, rgba(255, 190, 100, 0) 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%, #000 62%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 38%, #000 62%, transparent 100%);
-}
-.hall-beam i { position: absolute; top: 0; height: 100%; width: 7%; animation: beamMote 1.9s linear infinite; }
-.hall-beam i::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle, #fff6dc 0%, rgba(255, 220, 150, 0.8) 40%, rgba(255, 200, 120, 0) 72%);
-}
-@keyframes beamMote {
-  0% { transform: translateY(0); opacity: 0; }
-  15% { opacity: 1; }
-  100% { transform: translateY(90%); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) { .hall-glory, .hall-beam i { animation: none; } }
-
-.ritual-vignette {
-  position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10, 7, 5, 0.94) 0%, rgba(10, 7, 5, 0.82) 16%, rgba(10, 7, 5, 0.35) 30%, rgba(10, 7, 5, 0) 42%);
-  animation: vignetteIn 0.6s ease both;
-}
-@keyframes vignetteIn { from { opacity: 0; } to { opacity: 1; } }

@@ -352,49 +352,6 @@ export class TempleAudio {
 
   // ---------------- ritual sounds ----------------
 
-  /** Soft footstep on stone. */
-  footstep() {
-    if (!this.ready()) return;
-    const ctx = this.ctx!;
-    const t = ctx.currentTime;
-    const len = Math.floor(ctx.sampleRate * 0.12);
-    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
-    const d = buf.getChannelData(0);
-    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 4);
-    const src = ctx.createBufferSource();
-    src.buffer = buf;
-    const lp = ctx.createBiquadFilter();
-    lp.type = 'lowpass';
-    lp.frequency.value = 700 + Math.random() * 200;
-    const g = ctx.createGain();
-    g.gain.value = 0.07;
-    src.connect(lp).connect(g);
-    this.out(g, 0.5);
-    src.start(t);
-  }
-
-  /** Cloth rustle as one sits down at the table. */
-  rustle() {
-    if (!this.ready()) return;
-    const ctx = this.ctx!;
-    const t = ctx.currentTime;
-    const len = Math.floor(ctx.sampleRate * 0.6);
-    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
-    const d = buf.getChannelData(0);
-    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.sin((i / len) * Math.PI);
-    const src = ctx.createBufferSource();
-    src.buffer = buf;
-    const bp = ctx.createBiquadFilter();
-    bp.type = 'bandpass';
-    bp.frequency.value = 2600;
-    bp.Q.value = 0.6;
-    const g = ctx.createGain();
-    g.gain.value = 0.035;
-    src.connect(bp).connect(g);
-    this.out(g, 0.4);
-    src.start(t);
-  }
-
   /** 法铃: a small hand bell, bright and brief, rung a few times. */
   handbell(times = 3) {
     if (!this.ready()) return;

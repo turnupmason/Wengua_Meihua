@@ -102,13 +102,13 @@ const LAMPS = [
 ] as const;
 /** Where the incense sticks' tips are in the hall picture: the smoke rises from here. */
 const CENSER = [0.495, 0.568] as const;
-/** The pearl in 元始天尊's hands, in the hall picture (from his portrait: 506/1005, 575/1337). */
-const PEARL = [0.5024, 0.355] as const;
+/** The pearl in 元始天尊's hands, in the hall picture (his portrait: 511/1005, 564/1337): the push's focus. */
+const PEARL = [0.5037, 0.3535] as const;
 
 /**
  * During the ritual the hall stays painted: the walk toward the 三清, sitting down and looking up
- * for 祖师赐卦 are one slow push into the picture toward 元始天尊; his light swells, the pearl in
- * his hands brightens and lets down a shaft of gold — handing over to the 3D stone table as it lands.
+ * are one slow push into the picture toward 元始天尊. 祖师赐卦 is said over the painting as it is —
+ * nothing is drawn on it — and then the painting gives way to the stone table, where 石桌显卦.
  * Same clock as the ritual; values only (no React renders per frame).
  */
 function ritualFrame(phase: string, t: number, reduced: boolean) {
@@ -120,55 +120,54 @@ function ritualFrame(phase: string, t: number, reduced: boolean) {
   const s = phase === 'entering' ? t : walk + t;
   const end = walk + b.orbArrive;
   const zoom = 1 + 0.38 * easeInOut(span(s, [0, end]));
-  if (phase === 'entering') return { opacity: 1, zoom, focus: PEARL, glory: 0, pearl: -1 };
-  return {
-    opacity: 1 - easeInOut(span(t, [b.orbArrive - 0.05, b.orbArrive + 0.5])),
-    zoom,
-    focus: PEARL,
-    glory: easeInOut(span(t, [b.lookUp, b.orbStart])) * (1 - 0.5 * span(t, [b.orbStart, b.orbArrive])),
-    pearl: t < b.orbStart ? -1 : span(t, [b.orbStart, b.orbArrive]),
-  };
+  if (phase === 'entering') return { opacity: 1, zoom, focus: PEARL };
+  return { opacity: 1 - easeInOut(span(t, [b.orbArrive - 0.05, b.orbArrive + 0.7])), zoom, focus: PEARL };
 }
 
-export function PaintedHall({ shown, still, phase = 'idle', clock }: { shown: boolean; still: boolean; phase?: string; clock?: MutableRefObject<RitualClock> }) {
+/** How long before the hand-over to the stone table the 3D view starts drawing again (settles its framing). */
+const RESUME_AHEAD = 0.9;
+
+export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { shown: boolean; still: boolean; phase?: string; clock?: MutableRefObject<RitualClock>; onCover?: (covering: boolean) => void }) {
+  const cover = useRef(onCover);
+  cover.current = onCover;
   const base = import.meta.env.BASE_URL;
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
-  const glory = useRef<HTMLElement>(null);
-  const flare = useRef<HTMLElement>(null);
-  const beam = useRef<HTMLElement>(null);
   useEffect(() => {
     const r = root.current;
     const p = plate.current;
     if (!r || !p) return;
     if (!clock || (phase !== 'entering' && phase !== 'revealing')) {
+      cover.current?.(false);
       // Back to home: the picture's own framing and the class-driven fade.
       r.style.opacity = '';
       r.style.transition = '';
       p.style.transform = 'none';
-      for (const el of [glory.current, flare.current, beam.current]) if (el) el.style.opacity = '0';
       return;
     }
     let raf = 0;
+    let covering: boolean | null = null;
     const tick = () => {
-      const f = ritualFrame(phase, clock.current.t, still);
+      const t = clock.current.t;
+      const f = ritualFrame(phase, t, still);
+      // While the painting fully covers the screen the 3D view rests; it resumes a moment before
+      // the hand-over to the stone table, so it is drawn and settled when it shows.
+      const now = phase === 'entering' || (f.opacity >= 0.999 && t < bestowalTimes(still).orbArrive - RESUME_AHEAD);
+      if (now !== covering) {
+        covering = now;
+        cover.current?.(now);
+      }
       r.style.transition = 'none';
       r.style.opacity = f.opacity.toFixed(3);
       p.style.transformOrigin = `${f.focus[0] * 100}% ${f.focus[1] * 100}%`;
       p.style.transform = `scale(${f.zoom.toFixed(4)})`;
-      if (glory.current) glory.current.style.opacity = f.glory.toFixed(3);
-      // The pearl in his hands brightens, then lets down a soft shaft of gold toward the table.
-      if (flare.current) flare.current.style.opacity = Math.max(f.glory, f.pearl < 0 ? 0 : 1).toFixed(3);
-      const b = beam.current;
-      if (b) {
-        const k = f.pearl < 0 ? 0 : easeInOut(f.pearl);
-        b.style.opacity = f.pearl < 0 ? '0' : Math.min(1, f.pearl * 4).toFixed(3);
-        b.style.transform = `translateX(-50%) scaleY(${k.toFixed(4)})`;
-      }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(raf);
+      cover.current?.(false);
+    };
   }, [phase, clock, still]);
   useEffect(() => {
     // Framed once for this screen size, and again only if the screen itself changes (rotation).
@@ -207,14 +206,6 @@ export function PaintedHall({ shown, still, phase = 'idle', clock }: { shown: bo
         {SEATS.map((s) => (
           <img key={s.key} className={`hall-figure is-${s.key}`} src={`${base}${s.file}`} alt="" style={{ left: `${s.left}%`, top: `${s.top}%`, width: `${s.width}%` }} />
         ))}
-        {/* 祖师赐卦: the light swelling around 元始天尊, and the pearl that falls from his hands. */}
-        <i ref={glory} className="hall-glory" style={{ left: `${PEARL[0] * 100}%`, top: `${PEARL[1] * 100}%` }} />
-        <i ref={flare} className="hall-flare" style={{ left: `${PEARL[0] * 100}%`, top: `${PEARL[1] * 100}%` }} />
-        <span ref={beam} className="hall-beam" style={{ left: `${PEARL[0] * 100}%`, top: `${PEARL[1] * 100}%` }}>
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <i key={i} style={{ left: `${18 + ((i * 37) % 64)}%`, animationDelay: `${-i * 0.27}s`, animationDuration: `${1.6 + (i % 3) * 0.35}s` }} />
-          ))}
-        </span>
         {/* The incense: the sticks' tips glow, and smoke rises, sways and thins over the painted wisp. */}
         <i className="hall-embers" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%` }} />
         {[0, 1, 2].map((i) => (
