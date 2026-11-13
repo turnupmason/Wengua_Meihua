@@ -147,6 +147,18 @@ export function calculationGroups(lines: readonly string[], sectionTitle: (id: s
   return CALC_ORDER.filter((g) => parts.get(g)?.length).map((group) => ({ group, lines: parts.get(group)! }));
 }
 
+/** 「可留意本月21、22号前后，」: the dates a window's text opens with (shown on their own line instead). */
+const DATE_LEAD = /^可?留意(?:本月|下月|次月)?[\d、]+号(前后)?，/;
+
+/**
+ * A window's text without the dates it opens with, since they are shown on their own line;
+ * `around` keeps the 「前后」 for that line. Text that opens otherwise is left whole.
+ */
+export function windowBody(text: string): { around: boolean; text: string } {
+  const m = DATE_LEAD.exec(text);
+  return m ? { around: !!m[1], text: text.slice(m[0].length) } : { around: false, text };
+}
+
 const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /**

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'r
 import { getKnowledge, type Knowledge } from './knowledge/knowledge';
 import { chargesToday, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
 import { judgmentFor } from './domain/judgment';
-import { questionById, type ResolvedQuestion } from './domain/questionCatalog';
+import { questionById, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
 import { createJournal } from './domain/journal';
 import { placeStore } from './ui/placeStore';
@@ -401,7 +401,7 @@ export function App() {
               <div className="sheet-body member-body">
                 <div className="member-reason">
                   <h3>{t.sameMatterTitle}</h3>
-                  <p>{t.sameMatterText(daysAgo(repeatOf.createdAt), repeatOf.question, `${repeatOf.stages.primary.name} → ${repeatOf.stages.changed.name}`)}</p>
+                  <p>{t.sameMatterText(daysAgo(repeatOf.createdAt), shownQuestion(repeatOf.questionId, repeatOf.question, settings.lang), `${repeatOf.stages.primary.name} → ${repeatOf.stages.changed.name}`)}</p>
                 </div>
                 <button
                   type="button"

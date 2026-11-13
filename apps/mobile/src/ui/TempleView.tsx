@@ -1,4 +1,5 @@
 import { Component, Suspense, cloneElement, lazy, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ComponentProps, type ReactElement, type ReactNode } from 'react';
+import { shownQuestion } from '../domain/questionCatalog';
 import type { Knowledge } from '../knowledge/knowledge';
 import { readingFromCast, snapshotDrift, type CastRecord } from '../domain/cast';
 import { isRitualPhase, type RitualEvent, type RitualState } from '../domain/ritual';
@@ -208,6 +209,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     const y = reading.synthesis;
     return y.applicable ? `${y.headline} · ${y.leadText}` : y.weather?.headline ?? '';
   }, [reading, record, settings.lang, judgmentView, t]);
+  // A cast on an entry shows the entry's name (求职录用), whatever wording was saved with it.
+  const asked = record ? shownQuestion(record.questionId, record.question, settings.lang) : '';
   const castTimeLabel = useMemo(() => (record?.calendar ? (settings.lang === 'en' ? `Cast ${castTimeShort(record.calendar)}` : `${castTimeShort(record.calendar)} 起卦`) : ''), [record, settings.lang]);
   const drift = useMemo(() => (record && reading ? snapshotDrift(record, reading) : []), [record, reading]);
   const versionChanged = !!record && record.contentVersion !== knowledge.contentVersion;
@@ -399,9 +402,9 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         <button className="icon-btn" onClick={phase === 'reading' ? onNewCast : onExit} aria-label={phase === 'reading' ? t.finish : t.home}>
           ←
         </button>
-        {record?.question ? (
-          <button type="button" className="question-line" onClick={() => setShowQuestion((v) => !v)} aria-expanded={showQuestion} aria-label={`${t.askedMatter}：${record.question}`}>
-            “{record.question}”
+        {asked ? (
+          <button type="button" className="question-line" onClick={() => setShowQuestion((v) => !v)} aria-expanded={showQuestion} aria-label={`${t.askedMatter}：${asked}`}>
+            “{asked}”
           </button>
         ) : (
           <span />
@@ -410,11 +413,11 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           {settings.sound ? '♪' : '♪̸'}
         </button>
       </header>
-      {showQuestion && record?.question && (
+      {showQuestion && asked && (
         <div className="question-full" role="dialog" aria-label={t.askedMatter} onClick={() => setShowQuestion(false)}>
           <button type="button" className="icon-btn" aria-label={t.close} onClick={() => setShowQuestion(false)}>✕</button>
           <p className="read-kicker">{t.askedMatter}</p>
-          <p>“{record.question}”</p>
+          <p>“{asked}”</p>
         </div>
       )}
       </>
@@ -489,7 +492,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         <ReadingView
           reading={reading}
           blocked={!!(showBook || bookPage || sectionPage || selection || memberOpen)}
-          question={record?.question ?? ''}
+          question={asked}
           questionId={record?.questionId}
           conditions={record?.conditions}
           topicId={record?.topicId}

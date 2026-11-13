@@ -245,13 +245,12 @@ export function questionWording(q: CatalogQuestion, conditions: Record<string, s
 }
 
 /**
- * What a cast asks, worded as its 断语 answers it: an entry with written 断语 asks the question they
- * were written for (求职录用 → 这次面试能通过吗？), so the reading's heading matches its answer.
- * Otherwise the entry or question as worded.
+ * The question a record shows: the entry's name for a cast made on an entry (求职录用), whatever
+ * wording was saved with it; otherwise the wording saved.
  */
-export function askedWording(q: CatalogQuestion, conditions: Record<string, string> | undefined, lang: 'zh' | 'en') {
-  const content = q.content_id ? questionById(q.content_id) : null;
-  return content ? questionWording(content, conditions, lang) : questionWording(q, conditions, lang);
+export function shownQuestion(questionId: string | null | undefined, saved: string, lang: 'zh' | 'en') {
+  const entry = questionId ? byQuestion.get(questionId) : undefined;
+  return entry ? entry.question_text[lang] : saved;
 }
 
 /** The chosen options as the product repository takes them (years as numbers). */

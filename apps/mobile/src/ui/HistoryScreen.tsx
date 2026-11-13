@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { shownQuestion } from '../domain/questionCatalog';
+import { STRINGS } from '../domain/i18n';
 import type { CastRecord } from '../domain/cast';
 import type { History } from '../domain/history';
 import type { Journal } from '../domain/journal';
@@ -92,7 +94,7 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
                   <span className="history-meta">
                     {r.localWallClock?.replace('T', ' ') ?? r.createdAt} · {r.timeZone}
                   </span>
-                  {r.question && <span className="history-q">“{r.question}”</span>}
+                  {r.question && <span className="history-q">“{shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh')}”</span>}
                   {book[r.castId] && (
                     <span className="history-book">
                       <b>{t.savedToBook}</b>

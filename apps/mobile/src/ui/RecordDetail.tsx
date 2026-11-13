@@ -9,7 +9,8 @@ import type { Journal } from '../domain/journal';
 import type { Strings } from '../domain/i18n';
 import { topicById } from '../domain/topics';
 import { recordKind } from '../domain/cast';
-import { questionById, subtypeById } from '../domain/questionCatalog';
+import { questionById, shownQuestion, subtypeById } from '../domain/questionCatalog';
+import { STRINGS } from '../domain/i18n';
 
 const when = (iso: string) => {
   const d = new Date(iso);
@@ -50,7 +51,7 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
           <i>1</i>
           {t.rdAsked}
         </h3>
-        <p className="rd-q">{r.question ? `“${r.question}”` : t.noQuestion}</p>
+        <p className="rd-q">{r.question ? `“${shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh')}”` : t.noQuestion}</p>
         <p className="rd-meta">
           {tp ? `${tp.zh} · ` : ''}
           {sub ? `${sub.label.zh} · ` : ''}

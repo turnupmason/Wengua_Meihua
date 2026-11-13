@@ -21,7 +21,7 @@ import { HexagramSVG } from './HexagramSVG';
 import { topicById } from '../domain/topics';
 import { cautionsFor, practicalAdviceFor, questionById, subtypeById } from '../domain/questionCatalog';
 import { labelled, missingText } from './judgmentText';
-import { calculationGroups, windowDates } from '../domain/judgment';
+import { calculationGroups, windowBody, windowDates } from '../domain/judgment';
 import { answerText, conclusionText, synthText, weatherText, type SynthStage } from './Verdict';
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
@@ -174,7 +174,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
         <tbody>
           {y.stages.map((s) => (
             <tr key={s.stage} className={`tone-${s.tone}`}>
-              <th scope="row">{lang === 'en' ? t.verdictStage[s.stage] : s.scope}</th>
+              <th scope="row">{t.verdictStage[s.stage]}</th>
               <td>
                 <b>{s.main.stageLabel}</b>
                 <span>{lang === 'en' ? SYNTH_EN.stage[s.main.type] : s.evidence}</span>
@@ -347,7 +347,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           <div className="btn-row">
             {authored && (
               <button className="primary-btn" onClick={openDetailLayer}>
-                {t.detailTitle}
+                {t.detailOpen}
               </button>
             )}
             <button className="ghost-btn" onClick={onSave} aria-pressed={saved}>
@@ -380,18 +380,22 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                   </p>
                   {j.timing.windows.length > 0 && (
                     <ul className="timing-list">
-                      {j.timing.windows.map((w) => (
-                        <li key={w.event + w.text} className={w.valence === '吉' ? 'is-good' : w.valence === '凶' ? 'is-bad' : ''}>
-                          {/* The dates first, on a line of their own; then when they apply. */}
-                          <p className="timing-when">
-                            {w.dates.length > 0 && <b>{windowDates(w.dates, j.castingDate, lang)}</b>}
-                            <span className="timing-tag">{valence(w.valence)}</span>
-                          </p>
-                          <p className="timing-text" lang="zh">
-                            {w.text}
-                          </p>
-                        </li>
-                      ))}
+                      {j.timing.windows.map((w) => {
+                        // The dates once, on a line of their own (with 前后 when the text said so); the text from its condition on.
+                        const body = w.dates.length ? windowBody(w.text) : { around: false, text: w.text };
+                        const when = w.dates.length ? windowDates(w.dates, j.castingDate, lang) : null;
+                        return (
+                          <li key={w.event + w.text} className={w.valence === '吉' ? 'is-good' : w.valence === '凶' ? 'is-bad' : ''}>
+                            <p className="timing-when">
+                              {when && <b>{body.around ? (lang === 'en' ? `around ${when}` : `${when}前后`) : when}</b>}
+                              <span className="timing-tag">{valence(w.valence)}</span>
+                            </p>
+                            <p className="timing-text" lang="zh">
+                              {body.text}
+                            </p>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </div>
@@ -474,7 +478,13 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               </p>
             )}
           </section>
-        {!legacy && structural}
+        {!legacy && structural && (
+          // The 体用 summary repeats the stage cards below, so it is folded.
+          <details className="read-judge-fold">
+            <summary>{t.structuralTitle}</summary>
+            {structural}
+          </details>
+        )}
         {(['use', 'mutual', 'changed'] as const).map(stageCard)}
         <p className="read-hint">{t.tapLineHint}</p>
 

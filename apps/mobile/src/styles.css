@@ -1333,3 +1333,16 @@ input, textarea, select { font-size: max(16px, 1em); }
 .splash.is-login .login-or { color: rgba(233, 222, 200, 0.6); }
 .splash.is-login .login-note, .splash .login-note { color: rgba(233, 222, 200, 0.74); }
 .login-v2 .about-link { margin: -2px auto 0; font-size: 12.5px; letter-spacing: 0.12em; }
+
+/* 专业依据: the folded 体用 summary (its own heading moves into the summary line). */
+.read-judge-fold { margin: 12px 0; border: 1px solid rgba(216, 174, 94, 0.18); border-radius: 14px; padding: 0 14px; background: rgba(255, 240, 210, 0.02); }
+.read-judge-fold > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font: 600 15px var(--serif); letter-spacing: 0.12em; color: #e9d3a0; }
+.read-judge-fold[open] > summary { border-bottom: 1px solid rgba(216, 174, 94, 0.14); }
+.read-judge-fold .read-judge { border: 0; padding: 4px 0 12px; margin: 0; background: none; }
+.read-judge-fold .read-judge > h3 { display: none; }
+.read-judge-fold > summary { list-style: none; }
+.read-judge-fold > summary::-webkit-details-marker { display: none; }
+.read-judge-fold > summary::after { content: '展开'; margin-left: auto; font: 13px var(--sans); letter-spacing: 0; color: var(--gold); flex-shrink: 0; }
+.read-judge-fold[open] > summary::after { content: '收起'; }
+:root[lang='en'] .read-judge-fold > summary::after { content: 'Open'; }
+:root[lang='en'] .read-judge-fold[open] > summary::after { content: 'Close'; }

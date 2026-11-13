@@ -9,8 +9,8 @@ import { cleanup, fireEvent, render, screen, within } from '@testing-library/rea
 import { useState } from 'react';
 import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
-import { DOMAINS, allQuestions, allSubtypes, catalogProblems, catalogQuestions, enabledQuestions, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
-import { calculationGroups, castingDateOf, judgmentFor, readableCalculation, seasonOf, windowDates, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
+import { DOMAINS, allQuestions, allSubtypes, catalogProblems, catalogQuestions, enabledQuestions, shownQuestion, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
+import { calculationGroups, castingDateOf, judgmentFor, readableCalculation, seasonOf, windowBody, windowDates, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
 import { chargesToday, freezeCast, judgmentInput, recordKind, withJudgment } from '../src/domain/cast';
 import { createHistory } from '../src/domain/history';
 import { createJournal } from '../src/domain/journal';
@@ -313,6 +313,11 @@ describe('断语 lookup (createProductRepository)', () => {
     expect(windowDates(['2026-11-30', '2026-12-01', '2026-12-05'], '2026-11-12', 'zh')).toBe('11月30日–12月1日、5日');
     expect(windowDates(['2027-01-03'], '2026-12-28', 'zh')).toBe('2027年1月3日');
     expect(windowDates(['2026-11-21', '2026-11-22'], '2026-11-12', 'en')).toBe('Nov 21–22');
+    // The text's own date lead is dropped (shown on the date line), keeping 前后 for that line.
+    expect(windowBody('可留意本月21、22号前后，若关键条件和答复已核实，可留意本轮通过结果。')).toEqual({ around: true, text: '若关键条件和答复已核实，可留意本轮通过结果。' });
+    expect(windowBody('可留意本月21、22号，本轮面试补证后，通过结果较易明朗。')).toEqual({ around: false, text: '本轮面试补证后，通过结果较易明朗。' });
+    expect(windowBody('留意本月12、13号前后，可能遇到较难承接的追问。')).toEqual({ around: true, text: '可能遇到较难承接的追问。' });
+    expect(windowBody('收尾时留意对方答复。')).toEqual({ around: false, text: '收尾时留意对方答复。' });
   });
 
   it('reports a library it cannot read as unavailable, not as a 断语', async () => {
@@ -386,8 +391,11 @@ describe('cast, reading and 问事录', () => {
   it('求职录用: cast as the entry, it reads the interview 断语 for the chart, month and day, with no 旬空', async () => {
     const { library, product } = await testKnowledge();
     const base = freezeCast(library, { method: 'manual', manual: { primaryId: 48, movingLine: 5, monthBranch: '亥', dayGanzhi: '己丑' }, questionId: JOB, instant: new Date('2026-11-11T09:00:00+08:00'), timeZone: 'Asia/Shanghai' });
-    // Worded as its 断语 answers it, so the reading's heading matches (求职录用 → 这次面试能通过吗？).
-    expect(base).toMatchObject({ questionId: JOB, subtypeId: JOB, question: '这次面试能通过吗？', domainId: 'domain-09', topicId: 'career' });
+    // The entry is the question: it is saved and shown as 求职录用.
+    expect(base).toMatchObject({ questionId: JOB, subtypeId: JOB, question: '求职录用', domainId: 'domain-09', topicId: 'career' });
+    // A record saved with the narrower wording (2026-11-12 builds) still shows the entry's name.
+    expect(shownQuestion(JOB, '这次面试能通过吗？', 'zh')).toBe('求职录用');
+    expect(shownQuestion(INTERVIEW, '这次面试能通过吗？', 'zh')).toBe('这次面试能通过吗？');
     const j = (await judgmentFor(product, questionById(JOB)!, { ...WELL, questionId: JOB })) as ProductJudgment;
     const written = (await judgmentFor(product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
     expect(j).toMatchObject({ state: 'ready', questionId: JOB, contentQuestionId: INTERVIEW, primaryId: 48, movingLine: 5 });
@@ -463,9 +471,10 @@ describe('cast, reading and 问事录', () => {
     expect(within(timing as HTMLElement).getByRole('heading', { name: STRINGS.zh.timingTitle })).toBeTruthy();
     expect(timing.querySelectorAll('.timing-list li')).toHaveLength(j.timing!.windows.length);
     expect(timing.textContent).toMatch(/吉|凶/);
-    // Each window shows its dates first, on a line of their own.
+    // Each window shows its dates once, first and on a line of their own; the text starts from its condition.
     const first = j.timing!.windows.find((w) => w.dates.length)!;
-    expect(timing.querySelector('.timing-when b')!.textContent).toBe(windowDates(first.dates, j.castingDate, 'zh'));
+    expect(timing.querySelector('.timing-when b')!.textContent).toMatch(new RegExp(`^${windowDates(first.dates, j.castingDate, 'zh')}(前后)?$`));
+    for (const p of timing.querySelectorAll('.timing-text')) expect(p.textContent).not.toMatch(/^可?留意(本月|下月|次月)?[\d、]+号/);
     const calc = document.querySelector('details.script-calc') as HTMLDetailsElement;
     expect(calc.open).toBe(false);
     // Folded, and in four labelled parts.
@@ -473,6 +482,12 @@ describe('cast, reading and 问事录', () => {
     expect(calc.textContent).not.toMatch(/旬空|空亡/);
     expect(calc.textContent).toMatch(/亥月/);
     expect(document.body.textContent).not.toMatch(/interview-pass|trigram-void|mh-\d/);
+    // The brief's button is named apart from the 详断 section it opens.
+    expect(screen.getByRole('button', { name: STRINGS.zh.detailOpen })).toBeTruthy();
+    // 专业依据: the 体用 summary is folded and uses the stone table's stage names.
+    const fold = document.querySelector('details.read-judge-fold') as HTMLDetailsElement;
+    expect(fold.open).toBe(false);
+    expect([...fold.querySelectorAll('.judge-table th')].map((th) => th.textContent)).toEqual(['目前', '经过', '结果', STRINGS.zh.judgeOverall]);
     fireEvent.click(screen.getByRole('button', { name: '《梅花易数·求名占第九》 ↗' }));
     expect(opened).toEqual(['求名占第九']);
   });
