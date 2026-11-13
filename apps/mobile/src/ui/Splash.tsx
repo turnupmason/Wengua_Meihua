@@ -74,6 +74,23 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
     if (method === 'phone') setShowPhone((shown) => !shown);
     else onSignIn?.(method, '');
   };
+  // Until an account service is connected, the ways in that work now (guest, a name kept on this
+  // device) come first and plainest; the four account buttons stay, smaller, below them.
+  const anyProvider = providers.some((p) => can(p.method));
+  const nameLine = auth?.methods.includes('local') ? (
+    <div className="name-line">
+      <input value={name} maxLength={16} placeholder={t.loginNamePlaceholder} aria-label={t.loginNameLabel} onChange={(e) => setName(e.target.value)} autoComplete="nickname" />
+      <button type="submit" disabled={!name.trim()} aria-label={t.loginEnter}>
+        {t.loginEnterShort} →
+      </button>
+    </div>
+  ) : null;
+  const guest = auth?.methods.includes('guest') ? (
+    <button type="button" className={`login-guest v2 ${anyProvider ? '' : 'is-primary'}`} onClick={() => onSignIn?.('guest', '')}>
+      {t.loginGuest}
+    </button>
+  ) : null;
+  const login = mode === 'login' && progress === null;
   return (
     // Tapping anywhere on the title enters (the 「轻触 · 入殿」 button is there for keyboards and readers).
     <div className={`splash ${leaving ? 'is-leaving' : ''} ${mode === 'login' && progress === null ? 'is-login' : ''} ${live && progress === null ? 'is-live' : ''} ${sceneShown ? 'scene-shown' : ''} ${welcoming ? 'is-welcome' : ''}`} onClick={ready && !leaving ? onEnter : undefined}>
@@ -133,18 +150,14 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
       </svg>
 
       {mode === 'login' && progress === null && (
-        // The Three Pure Ones (the artist's key art) behind the sign-in card.
-        <div className="splash-key" aria-hidden="true" style={{ backgroundImage: `linear-gradient(180deg, rgba(6, 6, 10, 0.55), rgba(6, 6, 10, 0.25) 30%, rgba(6, 6, 10, 0.8) 62%, rgba(4, 4, 6, 0.96)), url(${import.meta.env.BASE_URL}art/sanqing.webp)` }} />
+        // The Three Pure Ones (the artist's key art) behind the sign-in card. The face is kept clear and
+        // bright; the shade gathers from the shoulders down, where the buttons are.
+        <div className="splash-key" aria-hidden="true" style={{ backgroundImage: `linear-gradient(180deg, rgba(6, 6, 10, 0.6) 0%, rgba(6, 6, 10, 0.18) 16%, rgba(6, 6, 10, 0) 26%, rgba(6, 6, 10, 0.04) 46%, rgba(6, 6, 10, 0.55) 57%, rgba(5, 5, 8, 0.9) 68%, rgba(4, 4, 6, 0.97) 100%), url(${import.meta.env.BASE_URL}art/sanqing.webp)` }} />
       )}
       <div className="splash-title">
         <h1>{t.appName}</h1>
         <p>{t.splashSub}</p>
-        <p className="model-badge">{t.modelBadge}</p>
-        {mode === 'login' && progress === null && (
-          <button type="button" className="about-link" onClick={() => setShowAbout(true)}>
-            {t.aboutJudgments} ›
-          </button>
-        )}
+        {!login && <p className="model-badge">{t.modelBadge}</p>}
       </div>
 
       <div className="splash-foot">
@@ -157,7 +170,7 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
               {t.retry}
             </button>
           </>
-        ) : mode === 'login' && progress === null ? (
+        ) : login ? (
           <form
             className="login-v2"
             onClick={(e) => e.stopPropagation()}
@@ -166,7 +179,10 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
               if (name.trim()) onSignIn?.('local', name);
             }}
           >
-            <div className="login-providers v2">
+            {!anyProvider && guest}
+            {!anyProvider && nameLine}
+            {!anyProvider && <p className="login-or">{t.loginOr}</p>}
+            <div className={`login-providers v2 ${anyProvider ? '' : 'is-compact'}`}>
               {providers.map(({ method, label }) => (
                 <button type="button" className={`provider-btn ${method === 'phone' && showPhone ? 'is-on' : ''}`} key={method} onClick={() => provider(method)}>
                   {label}
@@ -190,21 +206,13 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
               </p>
             )}
             {signInError && <p className="login-notice" role="alert">{signInError}</p>}
-            <p className="login-or">{t.loginOr}</p>
-            {auth?.methods.includes('local') && (
-              <div className="name-line">
-                <input value={name} maxLength={16} placeholder={t.loginNamePlaceholder} aria-label={t.loginNameLabel} onChange={(e) => setName(e.target.value)} autoComplete="nickname" />
-                <button type="submit" disabled={!name.trim()} aria-label={t.loginEnter}>
-                  {t.loginEnterShort} →
-                </button>
-              </div>
-            )}
-            {auth?.methods.includes('guest') && (
-              <button type="button" className="login-guest v2" onClick={() => onSignIn?.('guest', '')}>
-                {t.loginGuest}
-              </button>
-            )}
+            {anyProvider && <p className="login-or">{t.loginOr}</p>}
+            {anyProvider && nameLine}
+            {anyProvider && guest}
             <p className="login-note">{t.loginNote}</p>
+            <button type="button" className="about-link" onClick={() => setShowAbout(true)}>
+              {t.aboutJudgments} ›
+            </button>
           </form>
         ) : titleReady ? (
           <>

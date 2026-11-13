@@ -121,7 +121,7 @@ const zh = {
   // ——— 断语来源说明（模型名称与训练描述由产品方提供，上线前请核实）———
   modelBadge: '断语逐篇人工审查 · 皆有古籍依据',
   modelStoryTitle: '断语何以可信',
-  aboutJudgments: '了解我们的断语',
+  aboutJudgments: '断语逐篇人工审查 · 了解来源',
   welcomeEnter: '欢迎入殿',
   modelStory: [
     '我们把《梅花易数》等二十多部易学古籍一部部收录进来，逐字整理，连同书里的老断例，做成了自己的数据集。',
@@ -515,7 +515,7 @@ const en: Strings = {
   strengthNote: 'Season follows “卦气旺衰”: the element in season is strong, the one it overcomes is weak; the classics list nothing else, so nothing else is judged.',
   modelBadge: 'Every judgment reviewed by hand · grounded in the classics',
   modelStoryTitle: 'Why our judgments can be trusted',
-  aboutJudgments: 'About our judgments',
+  aboutJudgments: 'Every judgment reviewed by hand · learn more',
   welcomeEnter: 'Welcome to the hall',
   modelStory: [
     'We brought in more than twenty classical books on the Yi, the Meihua Yishu among them, typed them up word for word, and built our own dataset from them and the old cases they record.',

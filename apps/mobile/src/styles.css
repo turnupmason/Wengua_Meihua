@@ -1308,3 +1308,28 @@ input, textarea, select { font-size: max(16px, 1em); }
 .script-calc summary + .calc-group { border-top: 0; }
 .calc-label { align-self: start; margin-top: 3px; padding: 1px 7px; border-radius: 6px; font: 600 12px/1.6 var(--sans); letter-spacing: 0.1em; background: rgba(216, 174, 94, 0.12); color: #e9cf95; white-space: nowrap; }
 .calc-group p { margin: 0 0 4px; }
+
+/* Sign-in (2026-11-12): the face clear between title and buttons; the usable way in plainest. */
+/* The art a little larger and pinned to the top: the eyes sit below the title, and the 元始天尊 plaque
+   at his side stays whole on screen. */
+.splash.is-login .splash-key { background-size: auto 108%; background-position: 51% 0; }
+@media (min-aspect-ratio: 9/4) { .splash.is-login .splash-key { background-size: cover; } }
+.splash.is-live.is-login::before { background: linear-gradient(180deg, rgba(4, 5, 9, 0.35) 0%, rgba(4, 5, 9, 0) 24%, rgba(4, 5, 9, 0) 46%, rgba(4, 4, 5, 0.5) 62%, rgba(4, 4, 5, 0.8) 100%); }
+.splash.is-login .splash-foot { margin-bottom: calc(var(--safe-b) + 24px); }
+/* Guest: the main button while no account service is connected. */
+.splash.is-login .login-guest.v2.is-primary {
+  align-self: stretch; min-height: 50px; height: 50px; border-radius: 999px; border: 1px solid rgba(226, 196, 140, 0.75);
+  background: linear-gradient(180deg, rgba(122, 90, 42, 0.62), rgba(70, 50, 22, 0.62)); color: #fbecc8;
+  font: 600 16px var(--serif); letter-spacing: 0.3em; box-shadow: 0 0 18px rgba(226, 180, 100, 0.18);
+}
+/* The four account buttons, smaller, two by two, until they are connected. */
+.login-providers.v2.is-compact { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.login-providers.v2.is-compact .provider-btn, .login-providers.v2.is-compact .provider-btn:first-child {
+  height: 44px; min-height: 44px; padding: 0 6px; font-size: 13.5px; letter-spacing: 0.04em; white-space: nowrap;
+  border-color: rgba(226, 196, 140, 0.28); color: rgba(240, 226, 196, 0.85); background: rgba(8, 7, 6, 0.5);
+}
+/* Easier to read: the name prompt, the divider and the privacy line. */
+.splash.is-login .name-line input::placeholder { color: rgba(233, 222, 200, 0.62); }
+.splash.is-login .login-or { color: rgba(233, 222, 200, 0.6); }
+.splash.is-login .login-note, .splash .login-note { color: rgba(233, 222, 200, 0.74); }
+.login-v2 .about-link { margin: -2px auto 0; font-size: 12.5px; letter-spacing: 0.12em; }

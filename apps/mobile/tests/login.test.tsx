@@ -10,10 +10,12 @@ const t = STRINGS.zh;
 const login = (welcoming = false) => render(<Splash t={t} progress={null} leaving={false} onEnter={() => {}} mode="login" auth={localAuth} onSignIn={() => {}} welcoming={welcoming} />);
 
 describe('Sign-in screen', () => {
-  it('keeps the long explanation off the page until 「了解我们的断语」 is tapped', () => {
-    login();
+  it('keeps the long explanation off the page until 「了解来源」 is tapped, below the buttons, the face left clear', () => {
+    const { container } = login();
     expect(screen.queryByText(t.modelStory[0])).toBeNull();
-    expect(screen.getByText(t.modelBadge)).toBeTruthy();
+    // Nothing over the face: the title keeps only the name and 三清殿 · 梅花易数.
+    expect(container.querySelector('.splash-title .model-badge, .splash-title .about-link')).toBeNull();
+    expect(container.querySelector('.splash-foot .about-link')!.textContent).toMatch(/人工审查/);
     fireEvent.click(screen.getByRole('button', { name: `${t.aboutJudgments} ›` }));
     const card = screen.getByRole('dialog', { name: t.modelStoryTitle });
     for (const line of t.modelStory) expect(card.textContent).toContain(line);
@@ -31,6 +33,19 @@ describe('Sign-in screen', () => {
     expect(container.querySelector('input[inputmode="tel"], input[autocomplete="one-time-code"]')).toBeNull();
     expect(screen.getByRole('button', { name: t.loginEnter }).textContent).toBe(`${t.loginEnterShort} →`);
     expect(screen.getByRole('button', { name: t.loginGuest })).toBeTruthy();
+  });
+
+  it('puts the way in that works first: guest as the main button until an account service is connected', () => {
+    const { container, unmount } = login();
+    const order = () => [...container.querySelectorAll('.login-v2 > *')].map((el) => el.className.split(' ')[0] || el.tagName);
+    expect(order().slice(0, 4)).toEqual(['login-guest', 'name-line', 'login-or', 'login-providers']);
+    expect(container.querySelector('.login-guest.is-primary')).toBeTruthy();
+    expect(container.querySelector('.login-providers.is-compact')).toBeTruthy();
+    unmount();
+    const connected = render(<Splash t={t} progress={null} leaving={false} onEnter={() => {}} mode="login" auth={{ ...localAuth, methods: [...localAuth.methods, 'wechat'] }} onSignIn={() => {}} />);
+    const first = connected.container.querySelector('.login-v2 > *')!;
+    expect(first.className).toMatch(/login-providers/);
+    expect(connected.container.querySelector('.login-guest.is-primary')).toBeNull();
   });
 
   it('enters from the title by a tap anywhere or by the 「轻触 · 入殿」 button, once each', () => {
