@@ -189,7 +189,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
   const timingNote=isPromotion
-   ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':'以下为这次评定各阶段的参考。')
+   ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
    : (hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE);
   const c=row.copy.long;
   const payRange=row.decision.pay?.range;

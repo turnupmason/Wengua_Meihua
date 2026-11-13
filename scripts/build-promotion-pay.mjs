@@ -29,7 +29,7 @@ const timingQuotes = {
  equal:['mh-143','盖卦宜生体，宜比和；'],
 };
 const seen = new Map();
-const counts = {bodies: 0, keys: 0, favourable: 0, timingWindows: 0};
+const counts = {bodies: 0, keys: 0, favourable: 0, timingWindows: 0, dated: 0};
 const files = [];
 const directory = [];
 const references = [
@@ -105,12 +105,17 @@ for (const [batchIndex, filename] of batches.entries()) {
   }
 
   const timingLine = timingByHexagram[primaryId]?.[movingLine - 1];
-  const timingSpecs = timingLine?.[1][i % orders.length]?.map(index => timingLine[0][index]);
-  if (!timingSpecs?.length || timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Missing author timing: ' + key);
+  const timingSelection = timingLine?.[1][i % orders.length];
+  if (!timingSelection?.length) throw new Error('Missing author timing: ' + key);
+  const timingOmission = typeof timingSelection === 'string'
+   ? {status:'not-derived', reason:timingSelection, sourceIds:['mh-071','mh-122']}
+   : null;
+  const timingSpecs = timingOmission ? [] : timingSelection.map(index => timingLine[0][index]);
+  if (timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Invalid author timing: ' + key);
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
-  const timingReason = timingSlots.map(slot => slot.reason).join(' ');
-  const timingSourceIds = [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
+  const timingReason = timingOmission?.reason ?? timingSlots.map(slot => slot.reason).join(' ');
+  const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const relation = r.edges.find(e => e.targetRole === 'changed_use').type;
   const sourceEvidence = [...commonEvidence,
    evidence('mh-071', nameClauses[relation], resolution),
@@ -149,7 +154,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:'promotion-pay-day-1.0.0'}};
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:'promotion-pay-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
@@ -157,7 +162,8 @@ for (const [batchIndex, filename] of batches.entries()) {
   counts.keys += monthBranches.length;
   counts.favourable += Number(outcome === 'favourable');
   counts.timingWindows += timingSlots.length;
-  const timing = resolveManuscriptDates({
+  counts.dated += Number(timingSlots.length > 0);
+  const timing = timingOmission ? null : resolveManuscriptDates({
    paragraphs: timingSlots.map(slot => slot.token),
    dateSlots: timingSlots,
    reading: r,
@@ -165,7 +171,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    timingScale: 'day',
    timingContext: READING_DOCUMENT_TIMING_CONTEXT,
   });
-  if (timing.status !== 'resolved' || timing.dateMatches.some(window => !window.displayedDates.length)) {
+  if (timing && (timing.status !== 'resolved' || timing.dateMatches.some(window => !window.displayedDates.length))) {
    throw new Error('Missing demonstration dates: ' + key);
   }
   const sourceTitles = `《周易·${name}》` + [...new Set(sourceIds.filter(id => id.startsWith('mh-')).map(id => library.getSection(id).title))]
@@ -177,7 +183,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     '开局：' + opening,
     '过程：' + process,
     '结局：' + ending + (payRange ? ' ' + payRange : ''),
-    '应期：以下为传统推算的参考窗口。\n' +
+    timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
      timing.paragraphs.map((text, index) => text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
    ],
@@ -186,7 +192,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     resolution,
-    '日级参考窗口适用于评定已进入近期流程。',
+    timingOmission?.reason ?? '日级参考窗口适用于评定已进入近期流程。',
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;
      const method = slot.method === 'trigram-periods' ? '先天体卦时序法' : '先天卦气法';
@@ -208,7 +214,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies, favourable:counts.favourable,
- dated:counts.bodies, undated:0, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
+ dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
 };
 await saveJSON(base + 'index.json', progress);
