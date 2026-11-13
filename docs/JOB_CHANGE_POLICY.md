@@ -43,6 +43,8 @@
 
 同人卦初九取开放求实，六二戒交往过狭，九三审势而久不兴，九四因困返则见吉，九五先克隔而后能合，上九虽无悔而志未得。「三岁」留原文；九五的战事譬喻不移作现实中的争斗。 [《周易·同人》](https://zh.wikisource.org/wiki/周易/同人) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+大有初九以知艰防咎，九二以能任重为可往之本，九三审其所任与所凭，九四依《象》取明辨，六五取诚信相交并守其分，上九依《系辞》取履信、思顺、尚贤。九三四处体克用时，按实际权责与流程论快慢，缺有据日级事件则写明缺项。 [《周易·大有》](https://zh.wikisource.org/wiki/周易/大有) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
