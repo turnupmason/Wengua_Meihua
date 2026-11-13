@@ -47,6 +47,8 @@
 
 谦卦初六知难自牧而能涉险，六二名闻须有内实，九三有劳而善终，六四以不违则为要，六五合众力处理实有的难处，上六志未得且所行有范围。侵伐、行师仅从原注取行动的条件与范围。 [《周易·谦》](https://zh.wikisource.org/wiki/周易/謙) · [《周易注疏》卷四](https://www.shidianguji.com/book/SK0006/chapter/1l9rdoupxcsg0)。
 
+豫卦初六戒乐过而张扬，六二知几及时而守正，六三须辨仰人而进与失时迟疑，九四取以信聚实助，六五取难久在而根基仍守，上六以改过作为无咎的条件。「不终日」用于说明辨事及时，正式离职日期仍按实际办理。 [《周易·豫》](https://zh.wikisource.org/wiki/周易/豫) · [《周易注疏》卷四](https://www.shidianguji.com/book/SK0006/chapter/1l9rdoupxcsg0)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
