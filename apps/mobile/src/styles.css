@@ -1826,3 +1826,8 @@ input, textarea, select { font-size: max(16px, 1em); }
 .ptab-face.is-en .ptab-tablet > span, .ptab-face.is-en .ptab-name, .ptab-face.is-en .ptab-grade { writing-mode: horizontal-tb; font-size: 18px; letter-spacing: 0; }
 .ptab-face.is-en .ptab-name span { font-size: 22px !important; writing-mode: horizontal-tb; }
 .ptab-face.is-en .ptab-rel-line { font-size: 22px; white-space: normal; text-align: center; }
+
+/* 设置: the same dark disc as ← so it reads against the lanterns and the painted beams. */
+.home-top .home-settings { display: grid; place-items: center; padding: 0; color: #f0e2c4; }
+.home-top .home-settings svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.home-top .home-settings circle { fill: rgba(12, 9, 7, 0.9); }

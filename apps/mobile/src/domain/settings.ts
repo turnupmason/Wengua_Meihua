@@ -5,6 +5,8 @@ export type Quality = 'auto' | 'high' | 'medium' | 'low' | '2d';
 
 export interface Settings {
   lang: Lang;
+  /** Set once someone picks a language in 设置; until then the app is in Chinese. */
+  langChosen: boolean;
   sound: boolean;
   reducedMotion: boolean;
   haptics: boolean;
@@ -26,16 +28,8 @@ function prefersReducedMotion(): boolean {
   }
 }
 
-function defaultLang(): Lang {
-  try {
-    return (globalThis.navigator?.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
-  } catch {
-    return 'en';
-  }
-}
-
 export function defaultSettings(): Settings {
-  return { lang: defaultLang(), sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto' };
+  return { lang: 'zh', langChosen: false, sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto' };
 }
 
 export function loadSettings(): Settings {
@@ -43,7 +37,10 @@ export function loadSettings(): Settings {
   try {
     const saved = JSON.parse(safeStore().getItem(KEY) || '{}');
     return {
-      lang: saved.lang === 'zh' || saved.lang === 'en' ? saved.lang : base.lang,
+      // The app is for Chinese readers: Chinese unless a language was picked by hand (a language saved
+      // only because the device was set to it, before 2026-11-13, does not count).
+      lang: saved.langChosen === true && (saved.lang === 'zh' || saved.lang === 'en') ? saved.lang : base.lang,
+      langChosen: saved.langChosen === true,
       sound: typeof saved.sound === 'boolean' ? saved.sound : base.sound,
       reducedMotion: typeof saved.reducedMotion === 'boolean' ? saved.reducedMotion : base.reducedMotion,
       haptics: typeof saved.haptics === 'boolean' ? saved.haptics : base.haptics,

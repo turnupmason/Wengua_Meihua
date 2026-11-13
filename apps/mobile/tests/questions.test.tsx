@@ -194,8 +194,13 @@ describe('click-only home', () => {
 
   it('reads the job-change 断语 without any option chosen', async () => {
     const { product } = await testKnowledge();
-    const j = await judgmentFor(product, questionById('career.job-change')!, { ...WELL, questionId: 'career.job-change', primaryId: 1, movingLine: 1 });
-    expect(j).toMatchObject({ state: 'ready', contentQuestionId: 'career.job-change.decision' });
+    // All 64 are written (2026-11-13).
+    for (let id = 1; id <= 64; id += 9) {
+      const j = await judgmentFor(product, questionById('career.job-change')!, { ...WELL, questionId: 'career.job-change', primaryId: id, movingLine: 1 + (id % 6) });
+      expect(j).toMatchObject({ state: 'ready', contentQuestionId: 'career.job-change.decision', primaryId: id });
+      expect((j as ProductJudgment).paragraphs).toHaveLength(4);
+    }
+    expect(await judgmentFor(product, questionById('career.job-change')!, { ...WELL, questionId: 'career.job-change', primaryId: 64, movingLine: 6 })).toMatchObject({ state: 'ready' });
   });
 
   it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {

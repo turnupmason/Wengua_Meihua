@@ -383,7 +383,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 7.5V12l3 2" /></svg>
         </button>
         <span className="home-spacer" />
-        <button className="line-icon" onClick={() => setShowSettings(true)} aria-label={t.settings} title={t.settings}>
+        <button className="icon-btn home-settings" onClick={() => setShowSettings(true)} aria-label={t.settings} title={t.settings}>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /><circle cx="9" cy="7" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="8" cy="17" r="1.6" /></svg>
         </button>
       </header>
@@ -595,10 +595,10 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             </header>
             <div className="sheet-body toggles">
               <div className="lang-switch" role="group" aria-label={t.language}>
-                <button className={settings.lang === 'zh' ? 'is-on' : ''} onClick={() => set('lang', 'zh')}>
+                <button className={settings.lang === 'zh' ? 'is-on' : ''} onClick={() => onSettings({ ...settings, lang: 'zh', langChosen: true })}>
                   中文
                 </button>
-                <button className={settings.lang === 'en' ? 'is-on' : ''} onClick={() => set('lang', 'en')}>
+                <button className={settings.lang === 'en' ? 'is-on' : ''} onClick={() => onSettings({ ...settings, lang: 'en', langChosen: true })}>
                   English
                 </button>
               </div>
