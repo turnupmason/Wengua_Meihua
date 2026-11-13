@@ -31,6 +31,8 @@
 
 师卦初六从出师守律取办理次序，九二重受任而能任，六三戒进退乏援，六四取暂驻保常，六五辨委任得当与失当，上六取正式定功并审用人。有关负责人的断语只用于核实际分工与权限。 [《周易·师》](https://zh.wikisource.org/wiki/周易/師) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+比卦初六重诚信可验证，六二从内有应而不失其所，六三戒相与不得其人，六四可向外择可托之人，九五以中正明白取舍，上六依王注取迟而未能接合、无所终。六二与六四分别落实为现有协作与外部承接的证据。 [《周易·比》](https://zh.wikisource.org/wiki/周易/比) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
