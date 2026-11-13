@@ -29,6 +29,8 @@
 
 讼卦初六有言而不久争，九二退以免患，六三重守已有之基础，九四转回合宜做法，九五以中正听断，上九戒争得之物难以长保。九五的吉落在关键条件核定，上九见直接生体时取可以借助核查。 [《周易·讼》](https://zh.wikisource.org/wiki/周易/訟) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
 
+师卦初六从出师守律取办理次序，九二重受任而能任，六三戒进退乏援，六四取暂驻保常，六五辨委任得当与失当，上六取正式定功并审用人。有关负责人的断语只用于核实际分工与权限。 [《周易·师》](https://zh.wikisource.org/wiki/周易/師) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
