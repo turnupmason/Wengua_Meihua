@@ -27,6 +27,8 @@
 
 需卦以险在前而待为总义。初九远险守常，九二虽有小言仍可待会而吉，九三逼难须敬慎，六四有相伤之势宜退避，九五安待得中，上六善待不召而来的协助才取终吉。「三人」只留于爻辞。 [《周易·需》](https://zh.wikisource.org/wiki/周易/需) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
 
+讼卦初六有言而不久争，九二退以免患，六三重守已有之基础，九四转回合宜做法，九五以中正听断，上九戒争得之物难以长保。九五的吉落在关键条件核定，上九见直接生体时取可以借助核查。 [《周易·讼》](https://zh.wikisource.org/wiki/周易/訟) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
