@@ -79,8 +79,13 @@ for (const [batchIndex, filename] of batches.entries()) {
   const lineApplication = {evidence: [movingLineText], conditions: [resolution], sourcePath};
   const counterevidence = [{fact: 'facts.directRelations; facts.nodes; facts.movingLine', resolution}];
   const copy = {title, short: {decisionId, text: short}, long: {decisionId, opening, process, ending, summary}};
-  const copyChecks = validateStoryCopy({decision: {id: decisionId}, copy, lineApplication, counterevidence});
-  checkInterviewShort(short);
+  let copyChecks;
+  try {
+   copyChecks = validateStoryCopy({decision: {id: decisionId}, copy, lineApplication, counterevidence});
+   checkInterviewShort(short);
+  } catch (error) {
+   throw new Error(key + ': ' + error.message, {cause:error});
+  }
   for (const [field, value] of Object.entries({title, short, opening, process, ending, summary})) {
    const sample = value.replace(/[^\p{Script=Han}\p{Letter}\p{Number}]/gu, '');
    if (seen.has(sample)) throw new Error('Duplicate promotion copy: ' + key + '/' + field + ' / ' + seen.get(sample));

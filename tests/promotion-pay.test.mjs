@@ -24,6 +24,8 @@ test('each completed promotion chart resolves all twelve keys to its own reviewe
     assert.equal(result.short, row.copy.short.text);
     assert.equal(result.decision.id, row.copy.long.decisionId);
     assert.equal(result.decision.pay.state, result.decision.outcomeCode === 'favourable' ? 'follows-promotion' : 'unfavourable-with-promotion');
+    const payParagraph = result.narrativeParagraphs.find(paragraph => paragraph.startsWith('加薪幅度：'));
+    assert.equal(payParagraph, row.decision.pay.range ? '加薪幅度：' + row.decision.pay.range : undefined);
     assert.equal(result.calculationExplanation.void, undefined);
     assert.ok(result.timingSection.windows.length || result.calculationExplanation.timing.omission.reason);
     slots++;

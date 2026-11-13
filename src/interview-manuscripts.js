@@ -151,7 +151,11 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
   const timingNote=hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE;
-  const c=row.copy.long,paragraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'应期：'+timingNote+(hasTiming?'\n'+row.timingSlots.map(s=>s.token).join(' '):''),'总断：'+c.summary];
+  const c=row.copy.long;
+  const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending];
+  const payParagraphs=row.decision.pay?.range?[ '加薪幅度：'+row.decision.pay.range ]:[];
+  const summary='总断：'+c.summary;
+  const paragraphs=[...stages,...payParagraphs,'应期：'+timingNote+(hasTiming?'\n'+row.timingSlots.map(s=>s.token).join(' '):''),summary];
   const allSlots=hasTiming?[...row.timingSlots,...row.voidTimingSlots]:[];
   const dates=hasTiming?resolveManuscriptDates({paragraphs,dateSlots:allSlots,reading,castingDate:options.castingDate,viewDate:options.viewDate,timingScale:options.timingScale,timingContext:options.timingContext}):
    {status:'resolved',paragraphs,dateMatches:[],castingDate:reading.castingDate,dayGanzhi:reading.dayGanzhi};
@@ -163,7 +167,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   })};
   const timingSection={title:'应期参考',referenceNote:timingNote,castingDate:reading.castingDate,
    windows:dateResolution.dateMatches};
-  const narrativeParagraphs=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending,'总断：'+c.summary];
+  const narrativeParagraphs=[...stages,...payParagraphs,summary];
   const labels={body:'原体',use:'本用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用',body_inherited:'变卦沿用原体'};
   const detailLines=row.decision.sourceEvidence?[
    `本互变：${Object.values(reading.stages).map(stage=>stage.name).join(' → ')}，本卦${reading.selectedMovingLine.label}动。`,
