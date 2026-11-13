@@ -159,8 +159,10 @@ const progress = {
 await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# 晋升加薪断语', '', '问项为本次晋升及随岗加薪。', '',
- '已写及作者全文核读 ' + counts.bodies + ' 篇，覆盖 ' + counts.keys + ' / 4,608 个月令检索位置。',
- '下一键 ' + (progress.next ? [progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
+ '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
+ '其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。',
+ '已取公历日期 ' + progress.dated + ' 篇，未取日期 ' + progress.undated + ' 篇。独立专业审核待完成。',
+ '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../PROMOTION_PAY_POLICY.md)', '', ...directory, '',
 ].join('\n'));
 console.log(progress);
