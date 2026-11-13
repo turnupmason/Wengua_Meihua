@@ -20,6 +20,10 @@ import { deviceTimeZone } from './domain/calendar';
 import { templeAudio, haptic } from './domain/audio';
 import { EMPTY_FORM, type EntryForm } from './ui/HomeOverlay';
 import { Splash } from './ui/Splash';
+import { preloadWalkInArt } from './ui/walkInArt';
+
+// The painted courtyard is fetched while the library loads, so it is there when the title shows.
+void preloadWalkInArt();
 import { hasWebGL } from './domain/quality';
 import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
 import { createMembership, purchaseProvider } from './domain/membership';

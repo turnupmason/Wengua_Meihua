@@ -54,7 +54,8 @@ let cache: ReturnType<typeof build> | null = null;
 
 function build() {
   // Built in the background, in the order the forecourt and gate need them (they show first).
-  const lacquerSet = procSet('wood', ['#7a2418', 41, 0.38], [1, 4], look('#7a2418', 0.85), 0.45);
+  // 乌朱漆: deep oxblood lacquer, a soft sheen rather than a hard white highlight.
+  const lacquerSet = procSet('wood', ['#5a241c', 41, 0.5], [1, 4], look('#5a241c', 0.85), 0.56);
   const darkWoodSet = procSet('wood', ['#3a2619', 43, 0.7], [2, 2], look('#3a2619', 0.85), 0.77);
   const gold = procSet('gold', [], [2, 2], look('#c89f55', 0.97), 0.35);
   const stone = procSet('stone', [7, '#7a7d74'], [1.5, 1.5], look('#7a7d74', 0.94), 0.77);
@@ -62,7 +63,8 @@ function build() {
   const floor = procSet('floor', [], [4, 7], look('#45403a', 0.93), 0.87);
   const tableStone = procSet('stone', [17, '#8b8d84'], [1, 1], look('#8b8d84', 0.94), 0.77);
   const apron = procSet('carvedPanel', [], [1, 1], look('#6f746c', 0.85), 0.77);
-  const clothSet = patternedCloth('#a87a22', '#e3c06a', [2, 1], 51);
+  // Altar cloth: old gold on a dark ground, not a bright yellow field.
+  const clothSet = patternedCloth('#5c4422', '#9a7a48', [2, 1], 51);
   const cushionSet = patternedCloth('#6b4a1e', '#b48a3c', [1, 1], 61);
   const std = (p: THREE.MeshStandardMaterialParameters) => new THREE.MeshStandardMaterial(p);
   const fromSet = (s: TextureSet, p: THREE.MeshStandardMaterialParameters = {}) => std({ map: s.map, normalMap: s.normalMap, roughnessMap: s.roughnessMap, ...p });

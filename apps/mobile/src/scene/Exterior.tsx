@@ -4,10 +4,11 @@
  * red silk festoon, stone lanterns and a courtyard censer — under a night sky with stars, the moon
  * and misty mountains. Everything is drawn procedurally (canvas textures and shaders).
  */
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { drawCloud, fbm, lathe, normalFromHeight, sceneMaterials, sharedGeometry } from './materials';
+import { entranceTexture } from './entranceArt';
 
 export const FRONT = 13.6;
 const BRUSH = '"WenguaBrush", "WenguaSerifHeading", "Noto Serif SC", serif';
@@ -65,9 +66,10 @@ function ornateBoard(g: CanvasRenderingContext2D, w: number, h: number, field: [
   const band = Math.min(w, h) * 0.13;
   // Gilt frame.
   const gold = g.createLinearGradient(0, 0, w, h);
-  gold.addColorStop(0, '#f0cf7a');
-  gold.addColorStop(0.5, '#b98a3a');
-  gold.addColorStop(1, '#e6c06a');
+  // Old gilt, toned down so the board reads as carved wood, not a lit sign.
+  gold.addColorStop(0, '#c4a262');
+  gold.addColorStop(0.5, '#8a6a34');
+  gold.addColorStop(1, '#b8955a');
   g.fillStyle = gold;
   g.fillRect(0, 0, w, band);
   g.fillRect(0, h - band, w, band);
@@ -87,7 +89,7 @@ function ornateBoard(g: CanvasRenderingContext2D, w: number, h: number, field: [
     drawCloud(g, w - band * 0.75, y, s);
   }
   // Inner beads.
-  g.strokeStyle = '#f6dc90';
+  g.strokeStyle = '#cdb07a';
   g.lineWidth = band * 0.08;
   g.strokeRect(band * 1.08, band * 1.08, w - band * 2.16, h - band * 2.16);
   g.strokeStyle = 'rgba(0,0,0,0.5)';
@@ -95,7 +97,7 @@ function ornateBoard(g: CanvasRenderingContext2D, w: number, h: number, field: [
   g.strokeRect(band * 0.98, band * 0.98, w - band * 1.96, h - band * 1.96);
   // Corner rosettes.
   for (const [cx, cy] of [[band / 2, band / 2], [w - band / 2, band / 2], [band / 2, h - band / 2], [w - band / 2, h - band / 2]]) {
-    g.fillStyle = '#fff1bd';
+    g.fillStyle = '#d8c08a';
     g.beginPath();
     g.arc(cx, cy, band * 0.32, 0, Math.PI * 2);
     g.fill();
@@ -111,7 +113,8 @@ export function plaqueTexture(text = '三清殿') {
   const W = 1536;
   const H = 560;
   return brushTexture(W, H, (g) => {
-    ornateBoard(g, W, H, ['#163a3b', '#0b2223']);
+    // Charcoal board, as on the painted plaques of the walk-in.
+    ornateBoard(g, W, H, ['#2a2825', '#141310']);
     giltText(g, text, W / 2, H / 2 + 8, 250);
   });
 }
@@ -130,11 +133,11 @@ function beamTexture() {
   const W = 2048;
   const H = 192;
   const { c, g } = canvas(W, H);
-  const blue = '#1f4f7a';
-  const green = '#2c6a55';
+  const blue = '#1e2a2f'; // faded mineral colours, nearly ink
+  const green = '#24302a';
   g.fillStyle = green;
   g.fillRect(0, 0, W, H);
-  g.strokeStyle = '#e2bb5c';
+  g.strokeStyle = '#8f7246';
   g.lineWidth = 6;
   // Central panel (枋心).
   g.fillStyle = blue;
@@ -165,7 +168,7 @@ function beamTexture() {
         g.stroke();
       }
     }
-    g.fillStyle = '#e2bb5c';
+    g.fillStyle = '#8f7246';
     g.beginPath();
     g.arc(cx, H / 2, H * 0.06, 0, Math.PI * 2);
     g.fill();
@@ -194,7 +197,7 @@ function tileTextures() {
       const col = Math.sin(((x % 32) / 32) * Math.PI); // round barrel tiles
       const row = ((y % 64) / 64) ** 0.6; // each course overlaps the next
       const v = 0.25 + col * 0.55 * (0.6 + row * 0.4) + n[i] * 0.15;
-      img.data.set([70 * v + 30, 76 * v + 32, 86 * v + 38, 255], i * 4);
+      img.data.set([44 * v + 26, 44 * v + 26, 50 * v + 30, 255], i * 4); // charcoal ceramic
       h[i] = col * 0.7 + row * 0.3;
     }
   g.putImageData(img, 0, 0);
@@ -233,7 +236,8 @@ function Roof() {
     const t = tileTextures();
     t.map.repeat.set(1.6, 1.6);
     t.normal.repeat.set(1.6, 1.6);
-    return new THREE.MeshStandardMaterial({ map: t.map, normalMap: t.normal, roughness: 0.42, metalness: 0.15, envMapIntensity: 0.6 });
+    // Dark fired tiles: the slope stays a deep charcoal against the sky; the moon picks out the edges.
+    return new THREE.MeshStandardMaterial({ map: t.map, normalMap: t.normal, color: '#5a5a62', roughness: 0.68, metalness: 0, envMapIntensity: 0.15 });
   }, []);
   return (
     <group position={[0, 0, FRONT]}>
@@ -259,8 +263,8 @@ function Roof() {
 function Brackets() {
   const mats = useMemo(
     () => ({
-      green: new THREE.MeshStandardMaterial({ color: '#2c5f4f', roughness: 0.6 }),
-      blue: new THREE.MeshStandardMaterial({ color: '#25466a', roughness: 0.6 }),
+      green: new THREE.MeshStandardMaterial({ color: '#25302b', roughness: 0.76 }),
+      blue: new THREE.MeshStandardMaterial({ color: '#232a30', roughness: 0.76 }),
       gilt: sceneMaterials().gilt,
     }),
     [],
@@ -303,7 +307,7 @@ function Festoon() {
       p.setXYZ(i, v.x * k, v.y * k, v.z * k);
     }
     flower.computeVertexNormals();
-    const mat = new THREE.MeshPhysicalMaterial({ color: '#b3141b', roughness: 0.55, sheen: 1, sheenColor: new THREE.Color('#ff6a5a'), sheenRoughness: 0.4 });
+    const mat = new THREE.MeshPhysicalMaterial({ color: '#5e1a18', roughness: 0.8, sheen: 0.6, sheenColor: new THREE.Color('#a8584a'), sheenRoughness: 0.5 });
     return { tube, flower, mat };
   }, []);
   return (
@@ -330,12 +334,12 @@ export function Facade() {
       {/* Painted lintel across the porch */}
       <mesh position={[0, 7.55, FRONT + 1.62]}>
         <boxGeometry args={[14.4, 0.62, 0.42]} />
-        <meshStandardMaterial attach="material-0" color="#2c5f4f" />
-        <meshStandardMaterial attach="material-1" color="#2c5f4f" />
-        <meshStandardMaterial attach="material-2" color="#2c5f4f" />
-        <meshStandardMaterial attach="material-3" color="#2c5f4f" />
-        <meshStandardMaterial attach="material-4" map={beam} roughness={0.55} />
-        <meshStandardMaterial attach="material-5" map={beam} roughness={0.55} />
+        <meshStandardMaterial attach="material-0" color="#24302a" roughness={0.76} />
+        <meshStandardMaterial attach="material-1" color="#24302a" roughness={0.76} />
+        <meshStandardMaterial attach="material-2" color="#24302a" roughness={0.76} />
+        <meshStandardMaterial attach="material-3" color="#24302a" roughness={0.76} />
+        <meshStandardMaterial attach="material-4" map={beam} roughness={0.76} />
+        <meshStandardMaterial attach="material-5" map={beam} roughness={0.76} />
       </mesh>
       <Brackets />
       <Roof />
@@ -345,7 +349,7 @@ export function Facade() {
         <mesh position={[0, 0, -0.04]} scale={[3.7, 1.42, 0.12]} geometry={sharedGeometry().box} material={m.darkWood} />
         <mesh position={[0, 0, 0.025]}>
           <planeGeometry args={[3.6, 1.32]} />
-          <meshStandardMaterial map={plaque} roughness={0.38} metalness={0.35} emissive="#2a1c08" emissiveIntensity={0.35} envMapIntensity={0.8} />
+          <meshStandardMaterial map={plaque} roughness={0.45} metalness={0.3} emissive="#2a1c08" emissiveIntensity={0.12} envMapIntensity={0.6} />
         </mesh>
       </group>
       {/* Couplet boards on the two inner columns */}
@@ -372,6 +376,12 @@ const skyVertex = /* glsl */ `
 const skyFragment = /* glsl */ `
   uniform float uTime;
   uniform vec3 uMoon;
+  uniform sampler2D uMatte;
+  uniform float uHasMatte;
+  // Painted night (moon and misty hills) by view direction: x yaw centre, y yaw span, z elevation
+  // at the picture's foot, w elevation span (radians). Beyond the picture its edge is held (clamp).
+  uniform vec4 uMatteMap;
+  uniform float uMatteGain;
   varying vec3 vDir;
   float hash(vec3 p) { return fract(sin(dot(p, vec3(12.9898, 78.233, 45.164))) * 43758.5453); }
   float noise(vec3 p) {
@@ -383,6 +393,14 @@ const skyFragment = /* glsl */ `
   float fbm(vec3 p) { return noise(p) * 0.55 + noise(p * 2.1) * 0.28 + noise(p * 4.3) * 0.17; }
   void main() {
     vec3 d = normalize(vDir);
+    if (uHasMatte > 0.5) {
+      float yaw = atan(d.x, -d.z);
+      float elev = asin(clamp(d.y, -1.0, 1.0));
+      vec2 uv = vec2(0.5 + (yaw - uMatteMap.x) / uMatteMap.y, (elev - uMatteMap.z) / uMatteMap.w);
+      vec3 painted = texture2D(uMatte, clamp(uv, vec2(0.001), vec2(0.999))).rgb * uMatteGain;
+      gl_FragColor = linearToOutputTexel(vec4(painted, 1.0));
+      return;
+    }
     float h = clamp(d.y, -0.2, 1.0);
     vec3 mdir = normalize(uMoon);
     float m = dot(d, mdir);
@@ -427,11 +445,42 @@ const skyFragment = /* glsl */ `
   }
 `;
 
+/** The painted night sky in use (moon and hills in one picture), or null while it loads or if it failed. */
+const SKY_MATTE = 'moon-and-mountain-matte.webp';
+const deg = (d: number) => (d * Math.PI) / 180;
+/**
+ * Where the picture sits in the sky: centred straight ahead (toward the hall), 36° wide and 18° high
+ * (its own 2:1), its foot 16° above the horizon so the hills show over the ridge from the courtyard
+ * and the moon falls high on the right of the opening view.
+ */
+export const SKY_MATTE_MAP = { yaw: 0, yawSpan: deg(36), foot: deg(16), span: deg(18) };
+
+/** True once the painted sky has loaded (the procedural moon and hills then stand down). */
+export function usePaintedSky() {
+  const [on, setOn] = useState(() => entranceTexture(SKY_MATTE).loaded);
+  useEffect(() => {
+    let alive = true;
+    void entranceTexture(SKY_MATTE).ready.then((ok) => alive && setOn(ok));
+    return () => {
+      alive = false;
+    };
+  }, []);
+  return on;
+}
+
 export function NightSky() {
+  const painted = usePaintedSky();
   const mat = useMemo(
     () =>
       new THREE.ShaderMaterial({
-        uniforms: { uTime: { value: 0 }, uMoon: { value: new THREE.Vector3(0.2, 0.74, -1) } },
+        uniforms: {
+          uTime: { value: 0 },
+          uMoon: { value: new THREE.Vector3(0.2, 0.74, -1) },
+          uMatte: { value: entranceTexture(SKY_MATTE).texture },
+          uHasMatte: { value: 0 },
+          uMatteMap: { value: new THREE.Vector4(SKY_MATTE_MAP.yaw, SKY_MATTE_MAP.yawSpan, SKY_MATTE_MAP.foot, SKY_MATTE_MAP.span) },
+          uMatteGain: { value: 1 },
+        },
         vertexShader: skyVertex,
         fragmentShader: skyFragment,
         side: THREE.BackSide,
@@ -439,6 +488,7 @@ export function NightSky() {
       }),
     [],
   );
+  mat.uniforms.uHasMatte.value = painted ? 1 : 0;
   const sky = useRef<THREE.Mesh>(null);
   useFrame(({ clock, camera }) => {
     mat.uniforms.uTime.value = clock.elapsedTime;
@@ -471,8 +521,9 @@ const ridgeFragment = /* glsl */ `
   }
 `;
 
-/** Layered mountain ridges behind the hall, fading into mist. */
+/** Layered mountain ridges behind the hall, fading into mist (only while the painted sky is absent). */
 export function Mountains() {
+  const painted = usePaintedSky();
   const layers = useMemo(
     () =>
       [
@@ -490,7 +541,7 @@ export function Mountains() {
     [],
   );
   return (
-    <group>
+    <group visible={!painted}>
       {layers.map((l) => (
         <mesh key={l.z} position={[0, l.y + l.h / 2, l.z]} material={l.mat}>
           <planeGeometry args={[l.w, l.h]} />
@@ -553,7 +604,7 @@ function CourtyardCenser({ position }: { position: [number, number, number] }) {
     const rnd = (k: number) => ((Math.sin(k * 91.3 + 7.7) * 43758.5453) % 1 + 1) % 1;
     const n = 220;
     const sticks = new THREE.InstancedMesh(new THREE.CylinderGeometry(1, 1, 1, 5), sceneMaterials().stick, n);
-    const embers = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 6, 4), new THREE.MeshBasicMaterial({ color: '#ff7a30', toneMapped: false }), n);
+    const embers = new THREE.InstancedMesh(new THREE.SphereGeometry(1, 6, 4), new THREE.MeshBasicMaterial({ color: '#b8521f' }), n);
     const o = new THREE.Object3D();
     for (let i = 0; i < n; i++) {
       const a = rnd(i) * Math.PI * 2;
@@ -571,7 +622,7 @@ function CourtyardCenser({ position }: { position: [number, number, number] }) {
       o.updateMatrix();
       embers.setMatrixAt(i, o.matrix);
     }
-    const ash = new THREE.MeshStandardMaterial({ color: '#8f8a82', roughness: 1 });
+    const ash = new THREE.MeshStandardMaterial({ color: '#5d5852', roughness: 1 });
     return { sticks, embers, ash };
   }, []);
   const stand = useMemo(() => lathe([[0.001, 0], [1.2, 0], [1.2, 0.1], [1.0, 0.2], [0.9, 0.62], [1.05, 0.7], [0.001, 0.7]], 8), []);
@@ -639,11 +690,20 @@ function FacadeLight() {
     o.position.set(0, 5.5, FRONT);
     return o;
   }, []);
+  // The moon sits behind and to the right: its light grazes the ridge and the eave edges.
+  const ridge = useMemo(() => {
+    const o = new THREE.Object3D();
+    o.position.set(0, 10.5, FRONT + 1);
+    return o;
+  }, []);
   return (
     <>
       <primitive object={target} />
-      <spotLight position={[0, 10, FRONT + 20]} target={target} angle={0.42} penumbra={0.9} intensity={160} distance={40} decay={1.5} color="#c9cfe6" />
-      <spotLight position={[0, 1.4, FRONT + 8]} target={target} angle={0.45} penumbra={0.85} intensity={140} distance={16} decay={1.5} color="#ffb874" />
+      <primitive object={ridge} />
+      {/* Moonlight from high on the right: cool edges on the roof, the eaves and the step nosings. */}
+      <spotLight position={[18, 22, FRONT - 1.2]} target={ridge} angle={0.55} penumbra={0.9} intensity={70} distance={60} decay={1.3} color="#a9b2cc" />
+      {/* Warm lantern wash low on the doors and the paving. */}
+      <spotLight position={[0, 1.4, FRONT + 8]} target={target} angle={0.45} penumbra={0.85} intensity={75} distance={16} decay={1.5} color="#ffb874" />
     </>
   );
 }
@@ -664,8 +724,9 @@ export function Courtyard() {
         </group>
       ))}
       <FacadeLight />
-      <pointLight position={[-3.8, 1.5, FRONT + 7.5]} color="#ffb367" intensity={2.4} distance={7} decay={1.6} />
-      <pointLight position={[3.8, 1.5, FRONT + 7.5]} color="#ffb367" intensity={2.4} distance={7} decay={1.6} />
+      {/* Lantern light pooling on the paving, fading with distance. */}
+      <pointLight position={[-3.8, 1.5, FRONT + 7.5]} color="#ffb367" intensity={4} distance={9} decay={1.6} />
+      <pointLight position={[3.8, 1.5, FRONT + 7.5]} color="#ffb367" intensity={4} distance={9} decay={1.6} />
     </group>
   );
 }

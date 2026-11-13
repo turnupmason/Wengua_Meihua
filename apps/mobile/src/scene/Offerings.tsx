@@ -36,7 +36,7 @@ function useOfferingMaterials() {
       tea: new THREE.MeshStandardMaterial({ color: '#7a4e16', roughness: 0.2 }),
       blossom: new THREE.MeshStandardMaterial({ color: '#f3d9e0', roughness: 0.6, side: THREE.DoubleSide }),
       blossomCore: new THREE.MeshStandardMaterial({ color: '#e8b13a', roughness: 0.6 }),
-      vase: new THREE.MeshStandardMaterial({ color: '#2f5b78', roughness: 0.18, metalness: 0.05 }),
+      vase: new THREE.MeshStandardMaterial({ color: '#2e3a40', roughness: 0.3, metalness: 0.05 }),
       bun: new THREE.MeshStandardMaterial({ color: '#f3ead8', roughness: 0.85 }),
       bunDot: new THREE.MeshStandardMaterial({ color: '#d8455a', roughness: 0.6 }),
       lampGlass: new THREE.MeshPhysicalMaterial({ color: '#ffd9a0', transmission: 0.6, roughness: 0.1, thickness: 0.02, transparent: true, opacity: 0.6 }),

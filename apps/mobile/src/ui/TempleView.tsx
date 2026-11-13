@@ -14,6 +14,10 @@ import { useRitualClock } from './useRitualClock';
 import { HomeOverlay } from './HomeOverlay';
 import type { IntroRef } from '../scene/TempleScene';
 import { INTRO_SECONDS } from '../scene/timeline';
+import { PaintedWalkIn } from './PaintedWalkIn';
+import { PaintedHall, PaintedPlace } from './PaintedHall';
+import { PLACE_PANEL } from '../scene/placeLayout';
+import { usePlaceArt, useWalkInArt, walkInArtReady } from './walkInArt';
 import { PreceptSubtitle } from './Precepts';
 import { DetailSheet, type JudgmentView } from './DetailSheet';
 import type { SynthStage } from './Verdict';
@@ -242,7 +246,11 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const clock = useRitualClock(ritual.phase, reduced, onPhaseDone, onCue);
 
   // Opening walk-in: start the glide when the title screen is tapped, show the home tray after it.
-  const introRef = useRef<IntroRef>({ start: null, done: intro === 'done' });
+  // The painted courtyard and threshold (docs/art-reference/sanqing-entrance) when their pictures
+  // have loaded; otherwise the 3D courtyard walk. Chosen while waiting, fixed once the walk starts.
+  const walkInArt = useWalkInArt();
+  const introRef = useRef<IntroRef>({ start: null, done: intro === 'done', painted: walkInArtReady() });
+  if (intro === 'waiting') introRef.current.painted = walkInArt;
   useEffect(() => {
     if (intro === 'done') {
       introRef.current.done = true;
@@ -255,6 +263,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       return;
     }
     introRef.current.start = clock.current.elapsed;
+    // The painted walk-in ends itself on the ritual clock (with the camera); the 3D walk on a timer.
+    if (introRef.current.painted) return;
     const id = window.setTimeout(onIntroDone, (reduced ? INTRO_SECONDS.reduced : INTRO_SECONDS.normal) * 1000 - 300);
     return () => window.clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -325,6 +335,14 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const phase = ritual.phase;
   const inRitual = isRitualPhase(phase);
   const boardBlocked = !!(readMode || selection || showQuestion || memberOpen);
+  // The painted hall (ui/PaintedHall): under the walk-in's pictures, and at home in the 殿中 view.
+  // It gives way to the 3D hall when the visitor walks to the stone table or to another place.
+  const paintedHall = walkInArt && ((intro !== 'done' && !!introRef.current.painted) || (intro === 'done' && phase === 'idle' && place === 'altar'));
+  // 藏经阁 and 问事录 painted too, when their pictures are there.
+  const placeArt = usePlaceArt();
+  const paintedPlace = placeArt && walkInArt && intro === 'done' && phase === 'idle' && place !== 'altar';
+  // While a painting covers the hall, the 3D view rests (it resumes the moment it is needed).
+  const hallRests = (paintedHall && intro === 'done') || paintedPlace;
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
     revealing: t.revealing,
@@ -342,7 +360,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
                 castTime={castTimeLabel}
                 clock={clock}
                 phase={phase}
-                covered={!!readMode}
+                covered={!!readMode || hallRests}
                 reduced={reduced}
                 tier={tier}
                 selection={tip?.sel ?? selection}
@@ -442,6 +460,19 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       )}
 
       {phase === 'entering' && <PreceptSubtitle t={t} clock={clock} reduced={reduced} />}
+      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} />}
+      {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
+      {tier && intro !== 'done' && introRef.current.painted && ritual.phase === 'idle' && (
+        <PaintedWalkIn
+          clock={clock}
+          intro={introRef}
+          reduced={reduced}
+          onDone={() => {
+            introRef.current.done = true;
+            onIntroDone();
+          }}
+        />
+      )}
       {/* Skipping changes nothing about the cast: the same reading, just without the walk and the bestowal. */}
       {(phase === 'entering' || phase === 'revealing') && record && (
         <button type="button" className="skip-btn" onClick={() => dispatch({ type: 'SKIP', castId: record.castId })}>

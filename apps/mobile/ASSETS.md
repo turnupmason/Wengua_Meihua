@@ -5,6 +5,7 @@
 | 资源 | 来源 | 授权 |
 | --- | --- | --- |
 | 三清像画作 `public/art/sanqing-yuanshi.webp`、`sanqing-lingbao.webp`、`sanqing-laojun.webp`、`sanqing.webp`（三维殿中的神像立牌见 `src/scene/shrineLayout.ts`，二维仪式见 `src/ui/Ritual2D.tsx`，启屏背景见 `src/ui/Splash.tsx`）；原图在仓库 `docs/art-reference/` | 用户提供的画作，抠图与压缩为 WebP（`scripts/deity-cut/`） | **待用户确认**：作者、来源与可用于上架应用的授权。上架前须在此写明 |
+| 入殿与殿内画面 `public/art/entrance/plate-courtyard.webp`、`plate-threshold.webp`、`plate-hall.webp`、`incense-wisp.webp`、`moon-and-mountain-matte.webp`；藏经阁、问事录画面 `place-library.webp`、`place-records.webp` | 用户提供的美术包 `docs/art-reference/sanqing-entrance`（关键帧由内置 ImageGen 生成，见其 IMAGEGEN_PROMPTS.md）与用户发来的书架、书案图；匾上「三清殿」由 `scripts/build-entrance-plates.py` 用 Ma Shan Zheng（OFL）写入 | **待用户确认**：可用于上架应用的授权 |
 | 神座、光环、底座（`src/scene/Sanqing.tsx`） | 代码生成的几何造型 | 本项目原创（MIT） |
 | 殿堂、香炉、蜡烛、蒲团、石桌（`Hall.tsx`、`StoneTable.tsx`） | 代码生成 | 本项目原创（MIT） |
 | 石材、地砖、木纹、烟雾纹理（`materials.ts`） | Canvas 程序生成 | 本项目原创（MIT） |
