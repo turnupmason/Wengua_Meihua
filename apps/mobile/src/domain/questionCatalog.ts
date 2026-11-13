@@ -1,6 +1,6 @@
 /**
  * QuestionCatalog: every question a visitor can ask, chosen by tapping. It reads the repository's
- * formal product catalog (data/product-categories.json: six categories, 31 entries, 82 fixed
+ * formal product catalog (data/product-categories.json: six categories, 31 entries, 83 fixed
  * questions) as-is and adds what the catalog does not carry (English labels, the names of fixed
  * options, cautions; see product-catalog.labels.json). Nothing is typed in.
  *
@@ -11,7 +11,7 @@
  *   is still cast and says its 断语 is being written; no other question's 断语 stands in.
  * - reference / guidance: when nothing is written to cast for but the entry has explanations
  *   (health, 方向原因, 失联寻人), they are shown at once, with no cast and no prediction.
- * The catalog's own 82 questions stay resolvable by id, for records cast before entries.
+ * The catalog's own questions stay resolvable by id, for records cast before entries.
  */
 import raw from '../../../../data/product-categories.json';
 import labels from '../data/product-catalog.labels.json';
@@ -169,6 +169,7 @@ export function entryQuestion(s: { id: string; label: string }, all: CatalogQues
     authored: !!written,
     enabled: true,
     content_id: written?.question_id ?? null,
+    ...(written?.conditions ? { conditions: written.conditions } : {}),
   };
 }
 
@@ -186,7 +187,7 @@ export const DOMAINS: readonly CatalogDomain[] = file.categories.map((c) => ({
       subtype_id: s.id,
       label: { zh: s.label, en: names.subcategories[s.id] ?? s.label },
       ...(names.safety[s.id] ? { safety: names.safety[s.id] } : {}),
-      questions: s.id === 'career.job-change' ? members.filter(q => q.enabled) : [entryQuestion(s, members)],
+      questions: [entryQuestion(s, members)],
     };
   }),
 }));
@@ -208,9 +209,9 @@ for (const d of DOMAINS)
 const byMember = new Map([...MEMBERS].map(([id, m]) => [id, { ...m.q, domain_id: m.domain, subtype_id: m.entry } as ResolvedQuestion]));
 
 export const allSubtypes = () => [...bySubtype.values()];
-/** The questions a visitor can pick. Entries with distinct job-change scopes expose both choices. */
+/** The questions a visitor can pick. */
 export const allQuestions = () => [...byQuestion.values()];
-/** The catalog's fixed questions behind the entries (82). */
+/** The catalog's fixed questions behind the entries. */
 export const catalogQuestions = () => [...byMember.values()];
 /**
  * An entry, or one of the catalog's fixed questions (records cast before entries). Ids from

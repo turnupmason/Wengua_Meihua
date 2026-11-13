@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILES} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -34,7 +34,8 @@ const timingQuotes = {
 };
 const seen = new Map();
 const seenSentences = new Map();
-const counts = {bodies: 0, keys: 0, favourable: 0, timingWindows: 0, dated: 0};
+const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0};
+const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
 const directory = [];
 const references = [
@@ -69,7 +70,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
- if (drafts.length !== 30) throw new Error('A promotion batch needs 30 individually written versions');
+ if (drafts.length !== 30) throw new Error('A career batch needs 30 individually written versions');
  const rows = [];
  const monthSlots = {};
  const name = library.getHexagram(primaryId).name;
@@ -103,13 +104,13 @@ for (const [batchIndex, filename] of batches.entries()) {
   for (const [field, value] of Object.entries({title, short, opening, process, ending, summary, ...(payRange ? {payRange} : {})})) {
    const location = key + '/' + field;
    const sample = value.replace(/[^\p{Letter}\p{Number}]/gu, '');
-   if (seen.has(sample)) throw new Error('Duplicate promotion copy: ' + location + ' / ' + seen.get(sample));
+   if (seen.has(sample)) throw new Error('Duplicate career copy: ' + location + ' / ' + seen.get(sample));
    seen.set(sample, location);
    for (const sentence of value.split(/[。！？]/u)) {
     const hanCount = sentence.match(/\p{Script=Han}/gu)?.length ?? 0;
     if (hanCount < 12) continue;
     const normalized = sentence.replace(/[^\p{Letter}\p{Number}]/gu, '');
-    if (seenSentences.has(normalized)) throw new Error('Duplicate promotion sentence: ' + location + ' / ' + seenSentences.get(normalized));
+    if (seenSentences.has(normalized)) throw new Error('Duplicate career sentence: ' + location + ' / ' + seenSentences.get(normalized));
     seenSentences.set(normalized, location);
    }
   }
@@ -177,7 +178,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   rows.push(row);
   counts.bodies++;
   counts.keys += monthBranches.length;
-  counts.favourable += Number(outcome === 'favourable');
+  outcomeCounts[outcome]++;
   counts.timingWindows += timingSlots.length;
   counts.dated += Number(timingSlots.length > 0);
   const timing = timingOmission ? null : resolveManuscriptDates({
@@ -230,7 +231,8 @@ for (const [batchIndex, filename] of batches.entries()) {
 const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
- remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies, favourable:counts.favourable,
+ remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
+ ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
 };
@@ -238,7 +240,7 @@ await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
- ...(isPromotion ? ['其中 ' + counts.favourable + ' 篇倾向晋升并随岗加薪，' + (counts.bodies-counts.favourable) + ' 篇倾向本次难以落实。'] : []),
+ ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../' + config.policy + ')', '', ...directory, '',
@@ -276,12 +278,12 @@ const planning = {
  counterevidence:'检验克体和无生扶对具体换职计划的限制。',
  timingContext:'日级参考窗口适用于离职或换职已进入近期办理阶段。',
 };
-const jobConfigs = [
- {...planning,title:'现在适合辞职吗',scopeNote:'以暂留现职为参照，判断已明确的离职安排能否现在执行',outcomes:['stay','prepare','leave']},
- {...planning,title:'新工作与现职怎么选',scopeNote:'就用户所选首要目标，比较明确的新工作和现职条件',outcomes:['current','new','unresolved']},
-];
+const jobChange = {
+ ...planning, title:'跳槽去留', scopeNote:'就最看重的条件比较两份工作，并一并判断现在的辞职时机',
+ outcomes:['stay','verify','prepare','switch'],
+};
 const target = process.argv[2];
 if (target && target !== 'job-change') throw new Error('Unknown career manuscript target: ' + target);
 if (target === 'job-change') {
- for (const [index, profile] of JOB_CHANGE_PROFILES.entries()) await buildCareerManuscripts(profile, jobConfigs[index]);
+ await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);

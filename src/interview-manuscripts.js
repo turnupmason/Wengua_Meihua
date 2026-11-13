@@ -10,7 +10,8 @@ import {checkInterviewDecision,checkInterviewShort} from './interview-decision-c
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
-export const JOB_CHANGE_PROFILES=Object.freeze([
+export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.0',directory:'job-change'});
+export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
 ]);
@@ -195,7 +196,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
   const timingNote=isPromotion
    ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
-   : (hasTiming?REFERENCE_WINDOW_NOTE:NO_WINDOW_NOTE);
+   : (hasTiming ? (profile===JOB_CHANGE_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
   const c=row.copy.long;
   const payRange=row.decision.pay?.range;
   const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending+(payRange?' '+payRange:'')];

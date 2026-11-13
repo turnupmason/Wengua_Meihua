@@ -21,9 +21,10 @@ export const PRODUCT_TAXONOMY=[
   s('promotion-pay','晋升加薪','这次能晋升并随岗加薪吗？',[
    q('promotion-pay.promotion','这次能晋升并随岗加薪吗？','promotion',['domain-09','domain-10'],o('回答本次晋升及随岗加薪。晋升落实时一并看随岗薪资幅度。',{manuscriptIndexPath:'data/authored-readings/promotion-pay/index.json'})),
    q('promotion-pay.pay-rise','今年能获得加薪吗？','salary_increase',['domain-09','domain-10'],o('回答所选年度薪资调整，不把升职、奖金和加薪互相替代。',{archived:true,contextFields:{targetYear:{label:'所问年份',type:'year',required:true}}}))]),
-  s('job-change','跳槽去留','现在适合辞职吗？|新工作和现在的工作怎么选？',[
-   q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('以暂留现职为参照，判断现在执行已明确的离职安排是否合适。',{requiresComparisonMethod:true,contextFields:{jobPlan},manuscriptIndexPath:'data/authored-readings/job-resign/index.json'})),
-   q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。',{requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-compare/index.json'}))]),
+  s('job-change','跳槽去留','现职和这份新工作怎么选，现在适合辞职吗？',[
+   q('job-change.decision','现职和这份新工作怎么选，现在适合辞职吗？','job_change_decision',['domain-08','domain-09'],o('按最看重的一项比较现职与这份新工作，并判断现在宜辞职、宜先准备，还是宜继续留任。',{requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-change/index.json'})),
+   q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('以暂留现职为参照，判断现在执行已明确的离职安排是否合适。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPlan},manuscriptIndexPath:'data/authored-readings/job-resign/index.json'})),
+   q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-compare/index.json'}))]),
   s('workplace','职场情况','试用期能通过吗？|与领导的工作关系能协调好吗？',[
    q('job-stability.layoff','当前工作的稳定性如何，会有被裁员的风险吗？','employment_stability',['domain-09'],o('只作工作形势的传统解释，不声称核实了雇主决定或保证工作安全。')),
    q('job-stability.probation','这次试用期能通过吗？','probation_completion',['domain-09'],o('只回答试用期结果，不用求职录用或终身工作稳定代答。')),

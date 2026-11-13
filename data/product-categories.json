@@ -4,7 +4,7 @@
   "productCatalogVersion": "2.0.0",
   "categoryCount": 6,
   "subcategoryCount": 31,
-  "questionCount": 82,
+  "questionCount": 83,
   "selectionPolicy": {
     "input": "category-subcategory-fixed-question",
     "aiClassification": false,
@@ -212,32 +212,40 @@
           "position": 3,
           "categoryId": "career",
           "exampleQuestions": [
-            "现在适合辞职吗？",
-            "新工作和现在的工作怎么选？"
+            "现职和这份新工作怎么选，现在适合辞职吗？"
           ],
           "questions": [
             {
-              "id": "career.job-change.resign",
-              "question": "现在适合辞去当前工作吗？",
-              "question_type": "resignation_decision",
+              "id": "career.job-change.decision",
+              "question": "现职和这份新工作怎么选，现在适合辞职吗？",
+              "question_type": "job_change_decision",
               "sourceDomainIds": [
                 "domain-08",
                 "domain-09"
               ],
               "mode": "narrative",
-              "answerScope": "以暂留现职为参照，判断现在执行已明确的离职安排是否合适。",
+              "answerScope": "按最看重的一项比较现职与这份新工作，并判断现在宜辞职、宜先准备，还是宜继续留任。",
               "requiresComparisonMethod": true,
               "contextFields": {
-                "jobPlan": {
-                  "label": "离职后的安排",
+                "jobPriority": {
+                  "label": "这次最看重什么",
                   "options": [
-                    "new-job-confirmed",
-                    "other-plan-confirmed"
+                    "income",
+                    "stability",
+                    "development",
+                    "workload"
+                  ],
+                  "required": true
+                },
+                "comparisonTerms": {
+                  "label": "两份工作的条件是否清楚",
+                  "options": [
+                    "both-known"
                   ],
                   "required": true
                 }
               },
-              "manuscriptIndexPath": "data/authored-readings/job-resign/index.json",
+              "manuscriptIndexPath": "data/authored-readings/job-change/index.json",
               "position": 1,
               "categoryId": "career",
               "subcategoryId": "career.job-change",
@@ -263,6 +271,53 @@
               "practicalAdvice": []
             },
             {
+              "id": "career.job-change.resign",
+              "question": "现在适合辞去当前工作吗？",
+              "question_type": "resignation_decision",
+              "sourceDomainIds": [
+                "domain-08",
+                "domain-09"
+              ],
+              "mode": "narrative",
+              "answerScope": "以暂留现职为参照，判断现在执行已明确的离职安排是否合适。",
+              "archived": true,
+              "requiresComparisonMethod": true,
+              "contextFields": {
+                "jobPlan": {
+                  "label": "离职后的安排",
+                  "options": [
+                    "new-job-confirmed",
+                    "other-plan-confirmed"
+                  ],
+                  "required": true
+                }
+              },
+              "manuscriptIndexPath": "data/authored-readings/job-resign/index.json",
+              "position": 2,
+              "categoryId": "career",
+              "subcategoryId": "career.job-change",
+              "chartSourceDomainId": "domain-08",
+              "sourceSections": [
+                {
+                  "domainId": "domain-08",
+                  "sectionId": "mh-070"
+                },
+                {
+                  "domainId": "domain-09",
+                  "sectionId": "mh-071"
+                }
+              ],
+              "ruleStatus": "archived",
+              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
+              "outputPolicy": {
+                "oneQuestionOnly": true,
+                "unverifiedDates": false,
+                "mentalStateIsFact": false,
+                "symbolicLocationIsFact": false
+              },
+              "practicalAdvice": []
+            },
+            {
               "id": "career.job-change.compare-jobs",
               "question": "新工作与现在的工作相比，哪一个更适合我？",
               "question_type": "job_option_comparison",
@@ -272,6 +327,7 @@
               ],
               "mode": "narrative",
               "answerScope": "以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。",
+              "archived": true,
               "requiresComparisonMethod": true,
               "contextFields": {
                 "jobPriority": {
@@ -293,7 +349,7 @@
                 }
               },
               "manuscriptIndexPath": "data/authored-readings/job-compare/index.json",
-              "position": 2,
+              "position": 3,
               "categoryId": "career",
               "subcategoryId": "career.job-change",
               "chartSourceDomainId": "domain-08",
@@ -307,7 +363,7 @@
                   "sectionId": "mh-071"
                 }
               ],
-              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,

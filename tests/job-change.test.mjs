@@ -10,21 +10,29 @@ const cast = {
  primaryId:1, movingLine:4, monthBranch:'酉', castingDate:'2028-02-25', timingScale:'day',
  timingContext:{castingMethod:'pre-heaven', periodMethod:'element-qi'},
 };
-const questions = [
- {questionId:'career.job-change.resign', directory:'job-resign', context:{jobPlan:'new-job-confirmed'}},
- {questionId:'career.job-change.compare-jobs', directory:'job-compare', context:{jobPriority:'income',comparisonTerms:'both-known'}},
-];
+const questionId = 'career.job-change.decision';
+const directory = 'job-change';
+const context = {jobPriority:'income',comparisonTerms:'both-known'};
 
-test('job-change keeps the comparison and resignation conditions and outcomes distinct', async () => {
- const [resign, compare] = questions;
- assert.deepEqual((await product.getContent({...cast, questionId:resign.questionId})).missingContext, ['jobPlan']);
- assert.deepEqual((await product.getContent({...cast, questionId:compare.questionId})).missingContext, ['jobPriority','comparisonTerms']);
- const leaving = await product.getContent({...cast, questionId:resign.questionId, context:resign.context});
- const choosing = await product.getContent({...cast, questionId:compare.questionId, context:compare.context});
- assert.equal(leaving.decision.outcomeCode, 'leave');
- assert.equal(choosing.decision.outcomeCode, 'new');
- assert.notEqual(leaving.short, choosing.short);
- const pending = await product.getContent({...cast, questionId:resign.questionId, context:resign.context, primaryId:64});
+test('job-change uses one reading for both parts and preserves historical casts', async () => {
+ const questions = await product.listQuestions('career.job-change');
+ assert.deepEqual(questions.filter(q => !q.archived).map(q => q.id), [questionId]);
+ assert.deepEqual((await product.getContent({...cast, questionId})).missingContext, ['jobPriority','comparisonTerms']);
+ const choosing = await product.getContent({...cast, questionId, context});
+ assert.equal(choosing.decision.outcomeCode, 'switch');
+ assert.match(choosing.short, /倾向新岗位.*办离职/u);
+ const delayed = await product.getContent({...cast, questionId, context, movingLine:5});
+ assert.equal(delayed.decision.outcomeCode, 'prepare');
+ assert.match(delayed.short, /新工作.*准备.*再/u);
+ for (const [id, oldContext, outcome] of [
+  ['career.job-change.resign', {jobPlan:'new-job-confirmed'}, 'leave'],
+  ['career.job-change.compare-jobs', context, 'new'],
+ ]) {
+  assert.equal((await product.getQuestion(id)).archived, true);
+  const historical = await product.getContent({...cast, questionId:id, context:oldContext});
+  assert.equal(historical.decision.outcomeCode, outcome);
+ }
+ const pending = await product.getContent({...cast, questionId, context, primaryId:64});
  if (pending.status !== 'ready') {
   assert.equal(pending.status, 'pending-authoring');
   assert.equal(pending.story, null);
@@ -32,7 +40,6 @@ test('job-change keeps the comparison and resignation conditions and outcomes di
 });
 
 test('job-change reads exact month keys with shared output order and actual dates', async () => {
- for (const {questionId, directory, context} of questions) {
   const index = JSON.parse(await read('data/authored-readings/' + directory + '/index.json'));
   let checkedKeys = 0;
   for (const entry of index.files) {
@@ -67,5 +74,4 @@ test('job-change reads exact month keys with shared output order and actual date
   }
   assert.equal(checkedKeys, index.baseCaseCount);
   assert.equal(index.authorWholeArticleReviewed, index.files.length * 30);
- }
 });

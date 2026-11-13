@@ -4,7 +4,7 @@
   "productCatalogVersion": "2.0.0",
   "categoryCount": 6,
   "subcategoryCount": 31,
-  "questionCount": 82,
+  "questionCount": 83,
   "acceptedSampleCount": 10,
   "style": "user-accepted-story-editorial-3.0.0",
   "activeAuthoring": {
@@ -17,8 +17,8 @@
     "progressPath": "data/authored-readings/progress.json"
   },
   "currentAuthoring": {
-    "questionId": "career.job-change.resign",
-    "progressPath": "data/authored-readings/job-resign/index.json",
+    "questionId": "career.job-change.decision",
+    "progressPath": "data/authored-readings/job-change/index.json",
     "baseCasesWritten": 72,
     "totalBaseCases": 4608,
     "authoredVersions": 30,
@@ -36,7 +36,7 @@
   "noFurtherStyleApprovalRequired": true,
   "authorship": "assistant-authors;application-developers-integrate",
   "backgroundExecution": false,
-  "questionTypeCount": 79,
+  "questionTypeCount": 80,
   "sharedTypePolicy": "Explicit equivalent-scope references may share prose; question count is not independent-article count.",
   "items": [
     {
@@ -84,8 +84,8 @@
       "legacyBindings": null
     },
     {
-      "questionId": "career.job-change.resign",
-      "question_type": "resignation_decision",
+      "questionId": "career.job-change.decision",
+      "question_type": "job_change_decision",
       "categoryId": "career",
       "subcategoryId": "career.job-change",
       "mode": "narrative",
@@ -95,13 +95,24 @@
       "legacyBindings": null
     },
     {
+      "questionId": "career.job-change.resign",
+      "question_type": "resignation_decision",
+      "categoryId": "career",
+      "subcategoryId": "career.job-change",
+      "mode": "narrative",
+      "ruleStatus": "archived",
+      "contentStatus": "archived",
+      "legacyQuestionId": null,
+      "legacyBindings": null
+    },
+    {
       "questionId": "career.job-change.compare-jobs",
       "question_type": "job_option_comparison",
       "categoryId": "career",
       "subcategoryId": "career.job-change",
       "mode": "narrative",
-      "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
-      "contentStatus": "writing-in-progress",
+      "ruleStatus": "archived",
+      "contentStatus": "archived",
       "legacyQuestionId": null,
       "legacyBindings": null
     },

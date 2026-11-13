@@ -18,7 +18,7 @@ test('six domains and 31 navigation entries match the new names and order',async
   ['物品找回','方向原因','宠物走失','失联寻人']
  ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
- assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
+ assert.equal(questions.length,83);assert.equal(new Set(questions.map(q=>q.id)).size,83);
  assert.equal(c.subcategoryCount,31);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
