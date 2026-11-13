@@ -1,14 +1,15 @@
 /**
- * 全点击式问事 on the formal product catalog: the six categories, 31 subcategories and 82
- * questions of data/product-categories.json, the click-only home entry, the 断语 lookup through
- * createProductRepository, and how a cast carries its question and 断语 into 问事录.
+ * 全点击式问事 on the formal product catalog: the six categories and 31 entries of
+ * data/product-categories.json, each entry asked as itself (its 82 fixed questions stay behind
+ * it), the click-only home entry, the 断语 lookup through createProductRepository, and how a cast
+ * carries its question and 断语 into 问事录.
  */
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { useState } from 'react';
 import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
-import { DOMAINS, allQuestions, allSubtypes, catalogProblems, enabledQuestions, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
+import { DOMAINS, allQuestions, allSubtypes, catalogProblems, catalogQuestions, enabledQuestions, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
 import { castingDateOf, judgmentFor, readableCalculation, seasonOf, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
 import { chargesToday, freezeCast, judgmentInput, recordKind, withJudgment } from '../src/domain/cast';
 import { createHistory } from '../src/domain/history';
@@ -28,6 +29,8 @@ afterEach(cleanup);
 
 type File = typeof productFile;
 const INTERVIEW = 'career.interview.interview-pass';
+/** The entry 求职录用: the question asked, reading the interview 断语. */
+const JOB = 'career.interview';
 
 function Home({ onChange, onTitle = () => {}, busy = false }: { onChange?: (f: EntryForm) => void; onTitle?: () => void; busy?: boolean }) {
   const [form, setForm] = useState<EntryForm>(EMPTY_FORM);
@@ -60,7 +63,7 @@ const keyboardFields = () => [...document.querySelectorAll('textarea, input, [co
 const WELL: JudgmentInput = { questionId: INTERVIEW, primaryId: 48, movingLine: 5, method: 'classical-time', monthBranch: '亥', dayGanzhi: '己丑', localWallClock: '2026-11-11T09:00' };
 
 describe('QuestionCatalog = the formal product catalog', () => {
-  it('has its six categories, 31 subcategories and 82 questions, in its order and wording', () => {
+  it('has its six categories and 31 entries in order, each the one question it asks, with the 82 questions behind them', () => {
     const file = productFile as File;
     expect(DOMAINS.map((d) => [d.domain_id, d.label.zh])).toEqual([
       ['career', '事业工作'],
@@ -72,31 +75,39 @@ describe('QuestionCatalog = the formal product catalog', () => {
     ]);
     for (const [i, d] of DOMAINS.entries()) {
       expect(d.subtypes.map((s) => [s.subtype_id, s.label.zh])).toEqual(file.categories[i].subcategories.map((s) => [s.id, s.label]));
-      for (const [j, s] of d.subtypes.entries()) expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual(file.categories[i].subcategories[j].questions.map((q) => [q.id, q.question]));
+      for (const s of d.subtypes) expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual([[s.subtype_id, s.label.zh]]);
     }
     expect(allSubtypes()).toHaveLength(31);
-    expect(allQuestions()).toHaveLength(82);
+    expect(allQuestions()).toHaveLength(31);
+    // The catalog's own questions stay resolvable (records cast before entries), under their entry.
+    expect(catalogQuestions().map((q) => q.question_id)).toEqual(file.categories.flatMap((c) => c.subcategories.flatMap((s) => s.questions.map((q) => q.id))));
+    expect(questionById(INTERVIEW)).toMatchObject({ subtype_id: JOB, question_text: { zh: '这次面试能通过吗？' } });
     expect(catalogProblems()).toEqual([]);
   });
 
   it('gives every question a classical category, an English wording and its mode', async () => {
     const { library } = await testKnowledge();
     const categories = new Set(library.listDomains().map((d) => d.id));
-    for (const q of allQuestions()) {
+    for (const q of [...allQuestions(), ...catalogQuestions()]) {
       expect(q.question_id.startsWith(`${q.domain_id}.`)).toBe(true);
-      expect(allSubtypes().find((s) => s.subtype_id === q.subtype_id)?.questions.some((entry) => entry.question_id === q.question_id)).toBe(true);
       if (q.mode === 'narrative') expect(categories.has(q.classical_domain_id!)).toBe(true);
       expect(q.question_text.en).not.toBe(q.question_text.zh);
       if (q.mode !== 'narrative') expect(q.paragraphs.length).toBeGreaterThan(0);
     }
-    // Health is traditional reference only; finding someone and retracing steps are guidance.
-    expect(allQuestions().filter((q) => q.domain_id === 'health').every((q) => q.mode === 'reference')).toBe(true);
+    for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(1);
+    // Entries ask nothing finer: no fixed options.
+    expect(allQuestions().filter((q) => q.conditions?.length)).toEqual([]);
+    // Health is traditional reference only; 方向原因 reads; 失联寻人 is guidance (nothing written to cast for).
+    expect(allQuestions().filter((q) => q.domain_id === 'health').map((q) => q.mode)).toEqual(['reference', 'reference', 'reference', 'reference']);
+    expect(readinessOf(questionById('search.direction')!)).toBe('reference');
+    expect(readinessOf(questionById('search.missing-contact')!)).toBe('guidance');
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
-    // The promotion library is being filled one complete hexagram at a time.
-    expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => q.question_id)).toEqual([INTERVIEW, 'career.promotion-pay.promotion']);
-    const promotionPay = allSubtypes().find((s) => s.subtype_id === 'career.promotion-pay')!;
-    expect(enabledQuestions(promotionPay).map((q) => q.question_id)).toEqual(['career.promotion-pay.promotion']);
-    for (const s of allSubtypes()) expect(enabledQuestions(s).length).toBeGreaterThanOrEqual(1);
+    // 求职录用 reads the interview library; 晋升加薪 reads the promotion library being written hexagram by
+    // hexagram (the archived yearly pay rise is not offered); the others carry none yet.
+    const written = [[JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion']];
+    expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
+    expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
+    expect(questionById('career.promotion-pay.pay-rise')).toMatchObject({ enabled: false, subtype_id: 'career.promotion-pay' });
   });
 
   it('finds a missing English label or an option without a name', () => {
@@ -132,7 +143,7 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 求职录用 includes written 断语; the other five career entries are pending.
+    // 求职录用 and 晋升加薪 have written 断语; the other four career entries are pending.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
     expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(4);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
@@ -140,52 +151,46 @@ describe('click-only home', () => {
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
   });
 
-  it('chooses a question by taps alone and never offers a keyboard', () => {
+  it('chooses an entry with one tap (the entry is the question) and never offers a keyboard', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     expect(keyboardFields()).toHaveLength(0);
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
     fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
-    // Two questions: a second step lists them; the written one has no tag.
-    fireEvent.click(screen.getByRole('button', { name: '这次面试能通过吗？' }));
-    expect(last).toMatchObject({ questionId: INTERVIEW, domainId: 'domain-09', topicId: 'career' });
+    // Nothing finer to pick: the drawer closes on the entry itself.
+    expect(last).toMatchObject({ questionId: JOB, domainId: 'domain-09', topicId: 'career' });
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(screen.queryByText(STRINGS.zh.scriptPendingNote)).toBeNull();
     expect(entryProblem(last)).toBeNull();
-    // Change: back into the drawer, another subcategory, a question still being written.
-    fireEvent.click(screen.getByRole('button', { name: /所问之事 · 求职录用/ }));
-    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
-    fireEvent.click(screen.getByRole('button', { name: /考试选拔/ }));
-    fireEvent.click(screen.getByRole('button', { name: /这次岗位竞聘能成功吗/ }));
-    expect(last.questionId).toBe('career.selection.competition');
-    expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: /所问之事 · 考试选拔/ }));
+    // Change: back into the drawer, another entry, still being written.
+    // The entry's name is said once (所问之事 · 求职录用 / 求职录用 would repeat it).
+    expect(document.querySelector('.chosen-kicker > span')!.textContent).toBe(STRINGS.zh.askedMatter);
+    fireEvent.click(screen.getByRole('button', { name: /所问之事.*求职录用/ }));
     const drawer = screen.getByRole('dialog', { name: '事业工作' });
-    expect(within(drawer).getByRole('button', { name: /这次岗位竞聘能成功吗/ }).getAttribute('aria-current')).toBe('true');
+    expect(within(drawer).getByRole('button', { name: /求职录用/ }).getAttribute('aria-current')).toBe('true');
+    fireEvent.click(within(drawer).getByRole('button', { name: /考试选拔/ }));
+    expect(last.questionId).toBe('career.exams');
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
     expect(keyboardFields()).toHaveLength(0);
   });
 
-  it('asks a fixed option first when the question needs one (the kind of item lost)', () => {
+  it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
     fireEvent.click(screen.getByRole('button', { name: /物品找回/ }));
-    fireEvent.click(screen.getByRole('button', { name: /丢失的这件物品还能找回来吗/ }));
-    expect(screen.getByRole('radiogroup', { name: '物品类型' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: STRINGS.zh.done }).hasAttribute('disabled')).toBe(true);
-    fireEvent.click(screen.getByRole('radio', { name: '手机' }));
-    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.done }));
-    expect(last).toMatchObject({ questionId: 'search.lost-object.recovery', conditions: { objectKind: 'phone' }, domainId: 'domain-15' });
-    expect(entryProblem({ ...last, conditions: {} })).toBe('conditions');
+    expect(screen.queryByRole('radiogroup', { name: '物品类型' })).toBeNull();
+    expect(last).toMatchObject({ questionId: 'search.lost-object', conditions: {}, domainId: 'domain-15' });
+    expect(entryProblem(last)).toBeNull();
   });
 
-  it('offers a reference question to read at once: no method, no pace, 查看说明', () => {
+  it('offers a reference entry to read at once: no method, no pace, 查看说明', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '健康疾病' }));
     fireEvent.click(screen.getByRole('button', { name: /身体象意/ }));
-    fireEvent.click(screen.getByRole('button', { name: /古籍如何描述身体状况相关的象意/ }));
-    expect(last.questionId).toBe('health.condition.condition');
+    expect(last.questionId).toBe('health.condition');
     expect(screen.getByText(STRINGS.zh.referenceNote)).toBeTruthy();
     expect(screen.queryByRole('radiogroup', { name: STRINGS.zh.paceLabel })).toBeNull();
     expect(screen.getByRole('button', { name: STRINGS.zh.readReference })).toBeTruthy();
@@ -205,19 +210,14 @@ describe('click-only home', () => {
     expect(backs).toBe(1);
   });
 
-  it('shows real-world help first for a missing person, then the question', () => {
+  it('shows real-world help with 失联寻人, which opens its guidance and casts nothing', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
     fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
-    expect(screen.getByRole('note').textContent).toMatch(/911.*报警/);
-    expect(last.questionId).toBeNull();
-    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
-    expect(document.querySelectorAll('.subtype-grid button')).toHaveLength(4);
-    fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
-    fireEvent.click(screen.getByRole('button', { name: /与这位失联者还能恢复联系吗/ }));
-    expect(last.questionId).toBe('search.missing-contact.contact');
-    expect(screen.getByText(/卦象不能说明真实位置或安全状况/)).toBeTruthy();
+    expect(last.questionId).toBe('search.missing-contact');
+    expect(screen.getByText(/911.*报警.*卦象不能说明真实位置或安全状况/)).toBeTruthy();
+    expect(screen.getByRole('button', { name: STRINGS.zh.readReference })).toBeTruthy();
   });
 
   it('takes casting numbers on an in-app pad and no longer offers 字占', () => {
@@ -364,6 +364,40 @@ describe('cast, reading and 问事录', () => {
     // Internal ids and versions stay in the record, never on screen.
     expect(document.body.textContent).not.toMatch(/interview-pass|career\./);
     expect(screen.getByText((j as ProductJudgment).short)).toBeTruthy();
+  });
+
+  it('求职录用: cast as the entry, it reads the interview 断语 for the chart, month and day, with no 旬空', async () => {
+    const { library, product } = await testKnowledge();
+    const base = freezeCast(library, { method: 'manual', manual: { primaryId: 48, movingLine: 5, monthBranch: '亥', dayGanzhi: '己丑' }, questionId: JOB, instant: new Date('2026-11-11T09:00:00+08:00'), timeZone: 'Asia/Shanghai' });
+    expect(base).toMatchObject({ questionId: JOB, subtypeId: JOB, question: '求职录用', domainId: 'domain-09', topicId: 'career' });
+    const j = (await judgmentFor(product, questionById(JOB)!, { ...WELL, questionId: JOB })) as ProductJudgment;
+    const written = (await judgmentFor(product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
+    expect(j).toMatchObject({ state: 'ready', questionId: JOB, contentQuestionId: INTERVIEW, primaryId: 48, movingLine: 5 });
+    expect([j.title, j.short, j.paragraphs, j.timing]).toEqual([written.title, written.short, written.paragraphs, written.timing]);
+    // The classical method has no 空亡: the base 断语 is read and nothing speaks of it.
+    expect([j.short, ...j.paragraphs, ...j.calculation].join()).not.toMatch(/空亡|旬空/);
+    const rec = withJudgment(base, j);
+    expect(rec.judgment).toEqual(j);
+    expect(chargesToday(rec)).toBe(true);
+  });
+
+  it('晋升加薪 reads the promotion 断语 where a hexagram is written, and says so where it is not yet', async () => {
+    const { product } = await testKnowledge();
+    const at = (primaryId: number) => judgmentFor(product, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay', primaryId, movingLine: 1 });
+    expect(await at(1)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 1 });
+    expect(await at(48)).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
+  });
+
+  it('an entry with nothing written is still cast, says so, and looks nothing up', async () => {
+    let asked = 0;
+    const product = {
+      getContent: async () => {
+        asked += 1;
+        throw new Error('not to be asked');
+      },
+    };
+    expect(await judgmentFor(product as never, questionById('career.exams')!, { ...WELL, questionId: 'career.exams' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
+    expect(asked).toBe(0);
   });
 
   it('with no 断语: says so plainly, substitutes nothing, and is not charged', async () => {

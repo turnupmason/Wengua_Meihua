@@ -114,16 +114,16 @@ const subtypeReadiness = (s: CatalogSubtype): Readiness => {
 const subtypeOf = (q: CatalogQuestion) => subtypeById(questionById(q.question_id)?.subtype_id);
 
 /**
- * The drawer: a domain's subtypes (two columns), then — when a subtype has several fixed
- * questions, a safety note, or fixed-option conditions — the questions and options. Back returns
- * one level. It sits at the bottom so the 三清 stay in view above it.
+ * The drawer: a domain's entries (two columns). An entry is the question itself, so tapping it
+ * chooses it; the question and option levels remain only for a subtype with several questions or
+ * fixed options, which the catalog's entries do not have. Back returns one level. It sits at the bottom so the 三清 stay in view above it.
  */
 function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; domain: CatalogDomain; lang: 'zh' | 'en'; form: EntryForm; onPick: (q: CatalogQuestion, conditions: Record<string, string>) => void; onClose: () => void }) {
   const current = questionById(form.questionId);
   const mine = current?.domain_id === domain.domain_id ? current : null;
   const [subtype, setSubtype] = useState<CatalogSubtype | null>(() => {
     const selected = subtypeById(mine?.subtype_id);
-    return selected && (enabledQuestions(selected).length > 1 || selected.safety) ? selected : null;
+    return selected && enabledQuestions(selected).length > 1 ? selected : null;
   });
   const [question, setQuestion] = useState<CatalogQuestion | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>(() => (mine ? form.conditions : {}));
@@ -137,8 +137,8 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
   };
   const openSubtype = (s: CatalogSubtype) => {
     const qs = enabledQuestions(s);
-    // One fixed question and no safety note to read first: chosen at once (or straight to its options).
-    if (qs.length === 1 && !s.safety) choose(qs[0]);
+    // An entry is its own question: chosen at once. (A safety note shows with what it opens.)
+    if (qs.length === 1) choose(qs[0]);
     else setSubtype(s);
   };
   const level = question ? 'conditions' : subtype ? 'questions' : 'subtypes';
@@ -360,7 +360,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <button type="button" className="chosen-question" onClick={() => setDrawer(DOMAINS.find((d) => d.domain_id === chosen.domain_id) ?? null)}>
             <span className="chosen-kicker">
               <span>
-                {t.askedMatter} · {chosenSubtype.label[lang]}
+                {t.askedMatter}
+                {/* An entry is its own question: its name is not said twice. */}
+                {chosen.question_text[lang] !== chosenSubtype.label[lang] && ` · ${chosenSubtype.label[lang]}`}
               </span>
               <em>{t.changeQuestion} ›</em>
             </span>

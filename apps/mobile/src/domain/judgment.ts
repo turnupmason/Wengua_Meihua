@@ -36,6 +36,8 @@ export interface ProductJudgment {
   state: 'ready';
   source: 'product';
   questionId: string;
+  /** The catalog question whose 断语 this is, when the cast was for an entry (求职录用 → interview-pass). */
+  contentQuestionId?: string;
   /** The chart it was written for (checked against the cast when frozen). */
   primaryId: number;
   movingLine: number;
@@ -127,11 +129,15 @@ const missing = (monthBranch: string | null, reason: MissingReason): CastJudgmen
 /** Asks the product interface for this cast's 断语. Never throws: a failure is reported as unavailable. */
 export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>, question: CatalogQuestion, c: JudgmentInput): Promise<CastJudgment> {
   if (question.mode !== 'narrative') return missing(c.monthBranch, 'unknown-question');
+  // An entry reads the 断语 of the catalog question it carries; none written yet, none given.
+  const contentId = question.content_id === undefined ? question.question_id : question.content_id;
+  if (!contentId) return missing(c.monthBranch, 'pending-authoring');
   const castingDate = castingDateOf(c.localWallClock, c.dayGanzhi);
   if (!castingDate || !c.monthBranch) return missing(c.monthBranch, 'requires-context');
   try {
+    // No 旬空: the base 断语 are read as the classical method has it (no includeHistoricalInterviewVoid).
     const content = await product.getContent({
-      questionId: question.question_id,
+      questionId: contentId,
       context: productContext(question, c.conditions),
       primaryId: c.primaryId,
       movingLine: c.movingLine,
@@ -151,6 +157,7 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       state: 'ready',
       source: 'product',
       questionId: question.question_id,
+      ...(contentId !== question.question_id ? { contentQuestionId: contentId } : {}),
       primaryId: c.primaryId,
       movingLine: c.movingLine,
       manuscriptVersion: content.manuscriptVersion ?? null,

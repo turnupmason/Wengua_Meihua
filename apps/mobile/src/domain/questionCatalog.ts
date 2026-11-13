@@ -1,13 +1,17 @@
 /**
- * QuestionCatalog: every question a visitor can ask, chosen by tapping. It is the repository's
- * formal product catalog (data/product-categories.json: six categories, 31 subcategories,
- * 82 questions), read as-is; this file only adds what the catalog does not carry (English labels,
- * the names of fixed options, cautions; see product-catalog.labels.json). Nothing is typed in.
+ * QuestionCatalog: every question a visitor can ask, chosen by tapping. It reads the repository's
+ * formal product catalog (data/product-categories.json: six categories, 31 entries, 82 fixed
+ * questions) as-is and adds what the catalog does not carry (English labels, the names of fixed
+ * options, cautions; see product-catalog.labels.json). Nothing is typed in.
  *
- * Each question keeps its catalog id; casts, the 断语 lookup (createProductRepository) and 问事录
- * key on it, never on the wording. A question is one of:
- * - narrative: cast a hexagram, then read the written 断语 for exactly this question, chart and month;
- * - reference / guidance: a written explanation shown at once, with no cast and no prediction.
+ * The visitor picks one of the 31 entries and nothing finer: the entry's name (求职录用) is the
+ * question asked. Its id is the entry id; casts, the 断语 lookup and 问事录 key on it. An entry is:
+ * - narrative: cast a hexagram, then read the written 断语 its catalog question carries
+ *   (`content_id`; 求职录用 reads career.interview.interview-pass). An entry with none written yet
+ *   is still cast and says its 断语 is being written; no other question's 断语 stands in.
+ * - reference / guidance: when nothing is written to cast for but the entry has explanations
+ *   (health, 方向原因, 失联寻人), they are shown at once, with no cast and no prediction.
+ * The catalog's own 82 questions stay resolvable by id, for records cast before entries.
  */
 import raw from '../../../../data/product-categories.json';
 import labels from '../data/product-catalog.labels.json';
@@ -44,6 +48,8 @@ export interface CatalogQuestion {
   enabled: boolean;
   /** Fixed options the question needs first (never typed, never asked by AI). */
   conditions?: CatalogCondition[];
+  /** For an entry: the catalog question whose written 断语 it reads (null while none is written). */
+  content_id?: string | null;
 }
 
 export interface CatalogSubtype {
@@ -139,16 +145,50 @@ function toQuestion(q: ProductQuestion): CatalogQuestion {
   };
 }
 
+const unique = <T,>(xs: T[]) => [...new Set(xs)];
+
+/** An entry as the one question it asks (see the file comment). */
+export function entryQuestion(s: { id: string; label: string }, all: CatalogQuestion[]): CatalogQuestion {
+  // Archived questions (e.g. the yearly pay rise, now asked with the promotion) are kept only for old records.
+  const members = all.filter((q) => q.enabled);
+  const written = members.find((q) => q.authored) ?? null;
+  const readable = members.filter((q) => q.mode !== 'narrative');
+  const mode: QuestionMode = written || !readable.length ? 'narrative' : readable.every((q) => q.mode === 'guidance') ? 'guidance' : 'reference';
+  const chart = written ?? members.find((q) => q.mode === 'narrative') ?? members[0];
+  const shown = mode === 'narrative' ? (written ? [written] : []) : readable;
+  return {
+    question_id: s.id,
+    question_text: { zh: s.label, en: names.subcategories[s.id] ?? s.label },
+    question_type: written?.question_type ?? 'product_entry',
+    mode,
+    answer_scope: shown.map((q) => q.answer_scope).join(''),
+    classical_domain_id: chart.classical_domain_id ?? members.find((q) => q.classical_domain_id)?.classical_domain_id ?? null,
+    source_section_ids: unique(shown.flatMap((q) => q.source_section_ids)),
+    practical_advice: unique(shown.flatMap((q) => q.practical_advice)),
+    paragraphs: mode === 'narrative' ? [] : readable.flatMap((q) => q.paragraphs),
+    authored: !!written,
+    enabled: true,
+    content_id: written?.question_id ?? null,
+  };
+}
+
+/** The catalog's fixed questions, by id (older records were cast for these). */
+const MEMBERS = new Map<string, { q: CatalogQuestion; domain: DomainId; entry: string }>();
+
 export const DOMAINS: readonly CatalogDomain[] = file.categories.map((c) => ({
   domain_id: c.id as DomainId,
   label: { zh: c.label, en: names.categories[c.id] ?? c.label },
   ...(names.cautions[c.id] ? { caution: names.cautions[c.id] } : {}),
-  subtypes: c.subcategories.map((s) => ({
-    subtype_id: s.id,
-    label: { zh: s.label, en: names.subcategories[s.id] ?? s.label },
-    ...(names.safety[s.id] ? { safety: names.safety[s.id] } : {}),
-    questions: s.questions.map(toQuestion),
-  })),
+  subtypes: c.subcategories.map((s) => {
+    const members = s.questions.map(toQuestion);
+    for (const q of members) MEMBERS.set(q.question_id, { q, domain: c.id as DomainId, entry: s.id });
+    return {
+      subtype_id: s.id,
+      label: { zh: s.label, en: names.subcategories[s.id] ?? s.label },
+      ...(names.safety[s.id] ? { safety: names.safety[s.id] } : {}),
+      questions: [entryQuestion(s, members)],
+    };
+  }),
 }));
 export const DOMAIN_IDS = DOMAINS.map((d) => d.domain_id);
 
@@ -165,11 +205,18 @@ for (const d of DOMAINS)
     bySubtype.set(s.subtype_id, { ...s, domain_id: d.domain_id });
     for (const q of s.questions) byQuestion.set(q.question_id, { ...q, domain_id: d.domain_id, subtype_id: s.subtype_id });
   }
+const byMember = new Map([...MEMBERS].map(([id, m]) => [id, { ...m.q, domain_id: m.domain, subtype_id: m.entry } as ResolvedQuestion]));
 
 export const allSubtypes = () => [...bySubtype.values()];
+/** The questions a visitor can pick: one per entry. */
 export const allQuestions = () => [...byQuestion.values()];
-/** Older records keep question ids from before the formal catalog; those are not looked up here. */
-export const questionById = (id: string | null | undefined) => (id ? byQuestion.get(id) ?? null : null);
+/** The catalog's fixed questions behind the entries (82). */
+export const catalogQuestions = () => [...byMember.values()];
+/**
+ * An entry, or one of the catalog's fixed questions (records cast before entries). Ids from
+ * before the formal catalog are not looked up here.
+ */
+export const questionById = (id: string | null | undefined) => (id ? byQuestion.get(id) ?? byMember.get(id) ?? null : null);
 export const subtypeById = (id: string | null | undefined) => (id ? bySubtype.get(id) ?? null : null);
 
 /** Older records used other ids for three of the six domains. */
