@@ -45,6 +45,8 @@
 
 大有初九以知艰防咎，九二以能任重为可往之本，九三审其所任与所凭，九四依《象》取明辨，六五取诚信相交并守其分，上九依《系辞》取履信、思顺、尚贤。九三四处体克用时，按实际权责与流程论快慢，缺有据日级事件则写明缺项。 [《周易·大有》](https://zh.wikisource.org/wiki/周易/大有) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+谦卦初六知难自牧而能涉险，六二名闻须有内实，九三有劳而善终，六四以不违则为要，六五合众力处理实有的难处，上六志未得且所行有范围。侵伐、行师仅从原注取行动的条件与范围。 [《周易·谦》](https://zh.wikisource.org/wiki/周易/謙) · [《周易注疏》卷四](https://www.shidianguji.com/book/SK0006/chapter/1l9rdoupxcsg0)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
