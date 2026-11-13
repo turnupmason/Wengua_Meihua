@@ -22,7 +22,8 @@ for category in catalog['categories']:
   for q in sub['questions']:db.execute('INSERT INTO product_questions VALUES (?,?,?,?,?,?,?,?)',(q['id'],sub['id'],q['position'],q['question_type'],q['question'],q['mode'],q.get('legacyQuestionId'),j(q)))
 db.commit()
 assert not db.execute('PRAGMA foreign_key_check').fetchall()
-assert db.execute('SELECT count(*) FROM product_subcategories').fetchone()[0]==52
+for table, count_key in [('product_categories','categoryCount'),('product_subcategories','subcategoryCount'),('product_questions','questionCount')]:
+ assert db.execute('SELECT count(*) FROM '+table).fetchone()[0]==catalog[count_key]
 dump=[x for x in db.iterdump() if x.startswith('CREATE TABLE product_') or x.startswith('INSERT INTO "product_')]
 (root/'data/product-categories.sql').write_text('PRAGMA foreign_keys=ON;\nBEGIN TRANSACTION;\nPRAGMA defer_foreign_keys=ON;\n'+'\n'.join([x for x in dump if x.startswith('CREATE')]+[x for x in dump if x.startswith('INSERT')])+'\nCOMMIT;\n')
-print('Product SQL: 6 categories, 52 subcategories, 82 atomic questions; accepted samples preserved.')
+print(f"Product SQL: {catalog['categoryCount']} categories, {catalog['subcategoryCount']} subcategories, {catalog['questionCount']} atomic questions; accepted samples preserved.")

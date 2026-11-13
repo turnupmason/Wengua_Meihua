@@ -4,21 +4,22 @@ import {createInterviewManuscriptRepository} from './interview-manuscripts.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
-const SUBCATEGORY_COUNTS=[8,9,10,8,9,8];
+const SUBCATEGORY_COUNTS=[6,6,6,4,5,4];
+const SUBCATEGORY_COUNT=SUBCATEGORY_COUNTS.reduce((total,count)=>total+count,0);
 /** Product navigation is independent of the eighteen classical source domains. */
 export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository,includeHistoricalInterviewVoid=false}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
  const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid:includeHistoricalInterviewVoid});let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
-   if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='1.0.0'||c.categoryCount!==6||c.subcategoryCount!==52||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
+   if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='2.0.0'||c.categoryCount!==6||c.subcategoryCount!==SUBCATEGORY_COUNT||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
    const ids=new Set(),subIds=new Set(),categoryIds=new Set();let count=0;
    for(const [i,category] of c.categories.entries()){
     if(categoryIds.has(category.id)||category.id!==CATEGORY_IDS[i]||category.position!==i+1||category.subcategories?.length!==SUBCATEGORY_COUNTS[i])throw new Error('Product category identity mismatch');categoryIds.add(category.id);
     for(const sub of category.subcategories){
      if(subIds.has(sub.id)||sub.categoryId!==category.id||!sub.id.startsWith(category.id+'.'))throw new Error('Product subcategory identity mismatch');subIds.add(sub.id);
      for(const q of sub.questions){
-      if(ids.has(q.id)||q.categoryId!==category.id||q.subcategoryId!==sub.id||!q.id.startsWith(sub.id+'.')||!q.question_type||!q.answerScope||!MODES.has(q.mode))throw new Error('Product question identity mismatch');
+      if(ids.has(q.id)||q.categoryId!==category.id||q.subcategoryId!==sub.id||!q.id.startsWith(category.id+'.')||!q.question_type||!q.answerScope||!MODES.has(q.mode))throw new Error('Product question identity mismatch');
       if(category.id==='health'&&q.mode!=='reference')throw new Error('Health entries must be cultural references');
       if(q.mode==='reference'&&!q.referenceParagraphs?.length||q.mode==='guidance'&&!q.guidanceParagraphs?.length)throw new Error('Product reference or guidance missing');
       for(const domainId of q.sourceDomainIds)if(!library.listDomains().some(d=>d.id===domainId))throw new Error('Unknown source domain');
@@ -29,7 +30,7 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
      }
     }
    }
-   if(subIds.size!==52||count!==c.questionCount)throw new Error('Product counts mismatch');
+   if(subIds.size!==SUBCATEGORY_COUNT||count!==c.questionCount)throw new Error('Product counts mismatch');
    return freeze(c);
   }).catch(e=>{cache=undefined;throw e;});
   return cache;

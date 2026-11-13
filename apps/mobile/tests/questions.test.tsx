@@ -1,5 +1,5 @@
 /**
- * 全点击式问事 on the formal product catalog: the six categories, 52 subcategories and 82
+ * 全点击式问事 on the formal product catalog: the six categories, 31 subcategories and 82
  * questions of data/product-categories.json, the click-only home entry, the 断语 lookup through
  * createProductRepository, and how a cast carries its question and 断语 into 问事录.
  */
@@ -60,7 +60,7 @@ const keyboardFields = () => [...document.querySelectorAll('textarea, input, [co
 const WELL: JudgmentInput = { questionId: INTERVIEW, primaryId: 48, movingLine: 5, method: 'classical-time', monthBranch: '亥', dayGanzhi: '己丑', localWallClock: '2026-11-11T09:00' };
 
 describe('QuestionCatalog = the formal product catalog', () => {
-  it('has its six categories, 52 subcategories and 82 questions, in its order and wording', () => {
+  it('has its six categories, 31 subcategories and 82 questions, in its order and wording', () => {
     const file = productFile as File;
     expect(DOMAINS.map((d) => [d.domain_id, d.label.zh])).toEqual([
       ['career', '事业工作'],
@@ -74,7 +74,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
       expect(d.subtypes.map((s) => [s.subtype_id, s.label.zh])).toEqual(file.categories[i].subcategories.map((s) => [s.id, s.label]));
       for (const [j, s] of d.subtypes.entries()) expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual(file.categories[i].subcategories[j].questions.map((q) => [q.id, q.question]));
     }
-    expect(allSubtypes()).toHaveLength(52);
+    expect(allSubtypes()).toHaveLength(31);
     expect(allQuestions()).toHaveLength(82);
     expect(catalogProblems()).toEqual([]);
   });
@@ -83,7 +83,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
     const { library } = await testKnowledge();
     const categories = new Set(library.listDomains().map((d) => d.id));
     for (const q of allQuestions()) {
-      expect(q.question_id.startsWith(`${q.subtype_id}.`)).toBe(true);
+      expect(q.question_id.startsWith(`${q.domain_id}.`)).toBe(true);
+      expect(allSubtypes().find((s) => s.subtype_id === q.subtype_id)?.questions.some((entry) => entry.question_id === q.question_id)).toBe(true);
       if (q.mode === 'narrative') expect(categories.has(q.classical_domain_id!)).toBe(true);
       expect(q.question_text.en).not.toBe(q.question_text.zh);
       if (q.mode !== 'narrative') expect(q.paragraphs.length).toBeGreaterThan(0);
@@ -129,12 +130,12 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 求职面试 has written 断语; the other seven career subcategories are still being written.
+    // 求职录用 includes written 断语; the other five career entries are pending.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(7);
+    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(5);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
-    expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(8);
+    expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
   });
 
   it('chooses a question by taps alone and never offers a keyboard', () => {
@@ -142,7 +143,7 @@ describe('click-only home', () => {
     render(<Home onChange={(f) => (last = f)} />);
     expect(keyboardFields()).toHaveLength(0);
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
-    fireEvent.click(screen.getByRole('button', { name: /求职面试/ }));
+    fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
     // Two questions: a second step lists them; the written one has no tag.
     fireEvent.click(screen.getByRole('button', { name: '这次面试能通过吗？' }));
     expect(last).toMatchObject({ questionId: INTERVIEW, domainId: 'domain-09', topicId: 'career' });
@@ -150,12 +151,15 @@ describe('click-only home', () => {
     expect(screen.queryByText(STRINGS.zh.scriptPendingNote)).toBeNull();
     expect(entryProblem(last)).toBeNull();
     // Change: back into the drawer, another subcategory, a question still being written.
-    fireEvent.click(screen.getByRole('button', { name: /所问之事 · 求职面试/ }));
+    fireEvent.click(screen.getByRole('button', { name: /所问之事 · 求职录用/ }));
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
-    fireEvent.click(screen.getByRole('button', { name: /考试考核/ }));
-    fireEvent.click(screen.getByRole('button', { name: /这次考试能通过吗/ }));
-    expect(last.questionId).toBe('career.exams.exam');
+    fireEvent.click(screen.getByRole('button', { name: /考试选拔/ }));
+    fireEvent.click(screen.getByRole('button', { name: /这次岗位竞聘能成功吗/ }));
+    expect(last.questionId).toBe('career.selection.competition');
     expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /所问之事 · 考试选拔/ }));
+    const drawer = screen.getByRole('dialog', { name: '事业工作' });
+    expect(within(drawer).getByRole('button', { name: /这次岗位竞聘能成功吗/ }).getAttribute('aria-current')).toBe('true');
     expect(keyboardFields()).toHaveLength(0);
   });
 
@@ -163,7 +167,8 @@ describe('click-only home', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
-    fireEvent.click(screen.getByRole('button', { name: /失物寻找/ }));
+    fireEvent.click(screen.getByRole('button', { name: /物品找回/ }));
+    fireEvent.click(screen.getByRole('button', { name: /丢失的这件物品还能找回来吗/ }));
     expect(screen.getByRole('radiogroup', { name: '物品类型' })).toBeTruthy();
     expect(screen.getByRole('button', { name: STRINGS.zh.done }).hasAttribute('disabled')).toBe(true);
     fireEvent.click(screen.getByRole('radio', { name: '手机' }));
@@ -176,7 +181,8 @@ describe('click-only home', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '健康疾病' }));
-    fireEvent.click(screen.getByRole('button', { name: /身体状况/ }));
+    fireEvent.click(screen.getByRole('button', { name: /身体象意/ }));
+    fireEvent.click(screen.getByRole('button', { name: /古籍如何描述身体状况相关的象意/ }));
     expect(last.questionId).toBe('health.condition.condition');
     expect(screen.getByText(STRINGS.zh.referenceNote)).toBeTruthy();
     expect(screen.queryByRole('radiogroup', { name: STRINGS.zh.paceLabel })).toBeNull();
@@ -201,12 +207,12 @@ describe('click-only home', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
-    fireEvent.click(screen.getByRole('button', { name: /人员失联/ }));
+    fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
     expect(screen.getByRole('note').textContent).toMatch(/911.*报警/);
     expect(last.questionId).toBeNull();
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.backLevel }));
-    expect(document.querySelectorAll('.subtype-grid button')).toHaveLength(8);
-    fireEvent.click(screen.getByRole('button', { name: /人员失联/ }));
+    expect(document.querySelectorAll('.subtype-grid button')).toHaveLength(4);
+    fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
     fireEvent.click(screen.getByRole('button', { name: /与这位失联者还能恢复联系吗/ }));
     expect(last.questionId).toBe('search.missing-contact.contact');
     expect(screen.getByText(/卦象不能说明真实位置或安全状况/)).toBeTruthy();

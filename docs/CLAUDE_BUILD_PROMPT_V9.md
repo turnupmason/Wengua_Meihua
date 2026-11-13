@@ -43,7 +43,7 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 | 05 | 家庭家宅 | 9 | 13 |
 | 06 | 寻人失物 | 8 | 8 |
 
-共6大类、52个细分项、82个单事项入口。原始常见问法保存在 exampleQuestions，正式选项保存在 questions。名称与顺序按用户方案，不自行增删第七大类，不恢复旧18门一级菜单。
+现行导航为六大领域、31 个细分入口和 82 个固定问项。名称、顺序和归属见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。读取 subcategoryId 定位导航，固定问项继续使用原有 ID。
 
 data/product-categories.json 为产品目录，sources/editorial/product-taxonomy.mjs 为编辑源。18个古籍门类及原90个固定问法仍作为内部来源和兼容接口保留，产品categoryId与古籍domainId分开。
 

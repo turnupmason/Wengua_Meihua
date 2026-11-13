@@ -8,7 +8,7 @@ SQL注意：data/authored-readings.sql只保留结构；完整数据由npm run b
 
 当前正式产品接入以[开发交接 V8](CLAUDE_BUILD_PROMPT_V8.md)为准。首问有60份完整写定正文、144个十二月令槽位，完整目标4,608。JSON见data/authored-readings/interview-pass/index.json与按卦分片；SQLite正文表authored_product_manuscripts共60行，月令映射表authored_product_month_slots共144行。软件传monthBranch，按问项、本卦、动爻、月令读取；空亡改变核心时另匹配。旧接口、旧五类月令稿及其审核状态为历史兼容资料。
 
-最新产品API：createProductRepository({library})。data/product-categories.json包含6大类52细分82单事项；用listSubcategories、listQuestions及getContent({questionId,context,...})接入。categoryId与古籍domainId分开。健康返回reference，现实线索返回guidance，缺辅助字段返回requires-context；其余精确连接继续遵守待写与审核状态。见 docs/CLAUDE_BUILD_PROMPT_V7.md。
+最新产品API：createProductRepository({library})。data/product-categories.json 包含六大领域、31 个细分入口和 82 个固定问项。用 listSubcategories、listQuestions 和 getContent({questionId,context,...}) 接入。categoryId 与古籍 domainId 分开。问项 ID 稳定，所属导航读取 subcategoryId。健康返回reference，现实线索返回guidance，缺辅助字段返回requires-context；其余精确连接继续遵守待写与审核状态。见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。
 
 当前规则以 [开发交接 V6](CLAUDE_BUILD_PROMPT_V6.md) 和 [断语审核 V2](INTERPRETATION_AUDIT_V2.md) 为准。以下旧接口或历史批次说明中的 reviewed、ready 不代表九项断法批准。现有尾款稿正式调用为 pending-review，内部预览为 review-preview；SQL全文为 structural-only，approved_fixed_question_stories 当前0行。
 

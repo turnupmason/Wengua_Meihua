@@ -1,6 +1,6 @@
 /**
  * QuestionCatalog: every question a visitor can ask, chosen by tapping. It is the repository's
- * formal product catalog (data/product-categories.json: six categories, 52 subcategories,
+ * formal product catalog (data/product-categories.json: six categories, 31 subcategories,
  * 82 questions), read as-is; this file only adds what the catalog does not carry (English labels,
  * the names of fixed options, cautions; see product-catalog.labels.json). Nothing is typed in.
  *

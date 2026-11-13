@@ -17,7 +17,7 @@ import {authorFirstThreeVoidContexts,renderFirstThreeVoidReview} from './intervi
 import {writeFirstThreeVoidFullText} from './interview-void-full-text.mjs';
 import {authorInterviewVoidRewrites,scanInterviewVoidProfiles,writeInterviewVoidRewrites} from './interview-void-rewrites.mjs';
 const root=new URL('../',import.meta.url),library=await loadLibrary(),base='data/authored-readings/interview-pass/';
-const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview-pass');
+const raw=PRODUCT_TAXONOMY.find(c=>c.id==='career').subcategories.find(s=>s.id==='interview').questions.find(q=>q.id==='interview.interview-pass');
 const question={...raw,id:INTERVIEW_QUESTION_ID,manuscriptIndexPath:base+'index.json'};
 const common={schemaVersion:'1.0.0',contentVersion:library.contentVersion,manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,questionId:question.id};
 const baselineSourceIds=['mh-056','mh-058','mh-071','mh-101','mh-116','mh-117','mh-119','mh-143','user-void-extension','user-void-timing'];

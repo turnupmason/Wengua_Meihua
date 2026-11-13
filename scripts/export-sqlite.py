@@ -66,9 +66,9 @@ def main():
         product=ROOT/'data/product-categories.sql'
         if product.exists():
             disk.executescript(product.read_text())
-            assert disk.execute('SELECT count(*) FROM product_categories').fetchone()[0]==6
-            assert disk.execute('SELECT count(*) FROM product_subcategories').fetchone()[0]==52
-            assert disk.execute('SELECT count(*) FROM product_questions').fetchone()[0]==82
+            catalog=load('data/product-categories.json')
+            for table, count_key in [('product_categories','categoryCount'),('product_subcategories','subcategoryCount'),('product_questions','questionCount')]:
+                assert disk.execute('SELECT count(*) FROM '+table).fetchone()[0]==catalog[count_key]
         authored=ROOT/'dist/authored-readings.sql'
         if authored.exists():disk.executescript(authored.read_text())
         assert disk.execute('PRAGMA integrity_check').fetchone()[0]=='ok'

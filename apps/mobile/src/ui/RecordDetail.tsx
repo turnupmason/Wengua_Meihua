@@ -9,7 +9,7 @@ import type { Journal } from '../domain/journal';
 import type { Strings } from '../domain/i18n';
 import { topicById } from '../domain/topics';
 import { recordKind } from '../domain/cast';
-import { subtypeById } from '../domain/questionCatalog';
+import { questionById, subtypeById } from '../domain/questionCatalog';
 
 const when = (iso: string) => {
   const d = new Date(iso);
@@ -33,7 +33,7 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
   const tp = topicById(r.topicId);
   const s = r.snapshot;
   const legacy = recordKind(r) === 'legacy-free-text';
-  const sub = subtypeById(r.subtypeId);
+  const sub = subtypeById(questionById(r.questionId)?.subtype_id ?? r.subtypeId);
   const j = r.judgment;
   return (
     <article className="record-detail">

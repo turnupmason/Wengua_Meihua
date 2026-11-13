@@ -1,4 +1,4 @@
-最新状态：十篇V3内容与文风已获用户通过，精确验收见 data/editorial-acceptance.json；后续保持这一版本，不重复请求文风确认。产品分类采用 [6大类52细分](PRODUCT_CATEGORIES_V1.md)。
+最新状态：十篇V3内容与文风已获用户通过，精确验收见 data/editorial-acceptance.json；后续保持这一版本，不重复请求文风确认。产品分类采用 [六大领域、31 个细分入口](PRODUCT_CATEGORIES_V1.md)。
 
 # 三清问道：断语生成与审核规范 V3
 

@@ -6,14 +6,20 @@ const library=await loadLibrary(),repo=createProductRepository({library});
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const dated={primaryId:48,movingLine:5,monthOrder:'winter-water',castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
-test('user-selected six categories and all 52 named subcategories retain their order, with atomic question IDs',async()=>{
+test('six domains and 31 navigation entries match the new names and order',async()=>{
  const c=await repo.getCatalog();
  assert.deepEqual(c.categories.map(c=>c.label),['事业工作','财富财运','感情姻缘','健康疾病','家庭家宅','寻人失物']);
- assert.deepEqual(c.categories.map(c=>c.subcategories.length),[8,9,10,8,9,8]);
- assert.deepEqual(c.categories[0].subcategories.map(s=>s.label),['求职面试','升职加薪','跳槽去留','工作稳定','职场人际','考试考核','项目事业','竞聘选拔']);
- assert.deepEqual(c.categories[2].subcategories.map(s=>s.label),['暗恋心意','暧昧发展','表白追求','恋爱关系','冷战矛盾','分手复合','桃花正缘','谈婚论嫁','婚姻家庭','异地恋情']);
+ assert.deepEqual(c.categories.map(c=>c.subcategories.map(s=>s.label)),[
+  ['求职录用','晋升加薪','跳槽去留','职场情况','考试选拔','项目任务'],
+  ['财运收入','投资理财','经营合作','订单合同','借款尾款','买卖求财'],
+  ['桃花心意','暧昧表白','恋爱发展','矛盾复合','谈婚论嫁','夫妻婚姻'],
+  ['身体象意','病势象意','诊疗康复','家人健康'],
+  ['房屋买卖','租住环境','搬家迁居','装修建造','家庭亲子'],
+  ['物品找回','方向原因','宠物走失','失联寻人']
+ ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
  assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
+ assert.equal(c.subcategoryCount,31);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
  for(const category of c.categories)for(const sub of await repo.listSubcategories(category.id))assert.deepEqual(await repo.listQuestions(sub.id),sub.questions);
@@ -23,6 +29,8 @@ test('distinct outcomes stay distinct; same lost-object goal may share a type th
  for(const [a,b] of [['career.interview.interview-pass','career.interview.job-offer'],['career.promotion-pay.promotion','career.promotion-pay.pay-rise'],['wealth.selling.sale','wealth.selling.price'],['relationships.reconciliation.reconcile','relationships.reconciliation.stability'],['relationships.conflict.reunite','relationships.conflict.improvement']])
   assert.notEqual((await repo.getQuestion(a)).question_type,(await repo.getQuestion(b)).question_type);
  assert.equal((await repo.getQuestion('search.lost-object.recovery')).question_type,(await repo.getQuestion('search.valuables.recovery')).question_type);
+ assert.equal((await repo.getQuestion('search.valuables.recovery')).subcategoryId,'search.lost-object');
+ assert.equal((await repo.getQuestion('career.work-relations.leader')).subcategoryId,'career.workplace');
  assert.notEqual((await repo.getQuestion('search.pets.recovery')).question_type,'lost_object_recovery');
  assert.notEqual((await repo.getQuestion('search.missing-contact.contact')).question_type,'traveller_return');
 });
@@ -34,14 +42,14 @@ test('only explicit exact question links delegate; interview and unrecorded obje
  assert.equal((await product.getContent({questionId:'career.interview.interview-pass',...dated})).status,'ready');assert.equal(calls.length,0);
  const offer=await product.getContent({questionId:'career.interview.job-offer',...dated});
  assert.equal(calls.at(-1).questionId,'domain-09-job-offer');assert.equal(offer.selection.questionId,'career.interview.job-offer');assert.equal(offer.legacySelection.questionId,'domain-09-job-offer');
- const needed=await product.getContent({questionId:'search.valuables.recovery',...dated});assert.equal(needed.status,'requires-context');assert.deepEqual(needed.missingContext,['objectKind']);
+ const needed=await product.getContent({questionId:'search.valuables.recovery',subcategoryId:'search.lost-object',...dated});assert.equal(needed.status,'requires-context');assert.deepEqual(needed.missingContext,['objectKind']);
  await product.getContent({questionId:'search.valuables.recovery',context:{objectKind:'phone'},...dated});assert.equal(calls.at(-1).questionId,'domain-15-phone');
  const before=calls.length;
  assert.equal((await product.getContent({questionId:'search.lost-object.recovery',context:{objectKind:'other'},...dated})).status,'pending-authoring');
  assert.equal((await product.getContent({questionId:'search.pets.recovery',...dated})).status,'pending-authoring');assert.equal(calls.length,before);
 });
 
-test('all eight health branches provide reference text without casting, severity grades, clinical forecasts or story fallback',async()=>{
+test('all eight health questions across four branches provide reference text without casting, severity grades, clinical forecasts or story fallback',async()=>{
  const health=await repo.listSubcategories('health');
  for(const sub of health)for(const q of sub.questions){
   const r=await repo.getContent({questionId:q.id});assert.equal(r.status,'reference');assert.equal(r.predictionAllowed,false);

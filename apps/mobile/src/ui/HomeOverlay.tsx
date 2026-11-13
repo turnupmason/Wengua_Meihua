@@ -111,7 +111,7 @@ const subtypeReadiness = (s: CatalogSubtype): Readiness => {
   if (states.includes('pending')) return 'pending';
   return states.every((x) => x === 'guidance') ? 'guidance' : 'reference';
 };
-const subtypeOf = (q: CatalogQuestion) => subtypeById(q.question_id.split('.').slice(0, 2).join('.'));
+const subtypeOf = (q: CatalogQuestion) => subtypeById(questionById(q.question_id)?.subtype_id);
 
 /**
  * The drawer: a domain's subtypes (two columns), then — when a subtype has several fixed
@@ -121,7 +121,10 @@ const subtypeOf = (q: CatalogQuestion) => subtypeById(q.question_id.split('.').s
 function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; domain: CatalogDomain; lang: 'zh' | 'en'; form: EntryForm; onPick: (q: CatalogQuestion, conditions: Record<string, string>) => void; onClose: () => void }) {
   const current = questionById(form.questionId);
   const mine = current?.domain_id === domain.domain_id ? current : null;
-  const [subtype, setSubtype] = useState<CatalogSubtype | null>(() => (mine && (enabledQuestions(subtypeOf(mine)!).length > 1 || subtypeOf(mine)!.safety) ? subtypeOf(mine) : null));
+  const [subtype, setSubtype] = useState<CatalogSubtype | null>(() => {
+    const selected = subtypeById(mine?.subtype_id);
+    return selected && (enabledQuestions(selected).length > 1 || selected.safety) ? selected : null;
+  });
   const [question, setQuestion] = useState<CatalogQuestion | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>(() => (mine ? form.conditions : {}));
   const tag = (state: Readiness) =>
