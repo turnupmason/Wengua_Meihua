@@ -6,7 +6,7 @@
  * on the right. Contact shadows and a touch of the hall's warm light settle them into the picture.
  * The 3D hall takes over (cross-fade) once the visitor walks to the stone table or to another place.
  */
-import { useEffect, useRef, type MutableRefObject } from 'react';
+import { useEffect, useRef, useState, type MutableRefObject } from 'react';
 import { WALK_IN_FILES, walkInUrl } from './walkInArt';
 import type { RitualClock } from './useRitualClock';
 import { phaseDuration } from '../domain/ritual';
@@ -133,6 +133,19 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { 
   const base = import.meta.env.BASE_URL;
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
+  // Back from the stone table (or a ritual cut short): the painting covers the screen at once,
+  // coming up out of the dark, so the 3D hall is never seen behind it (no second 三清 flashing by).
+  const [prevPhase, setPrevPhase] = useState(phase);
+  const [returning, setReturning] = useState(false);
+  if (phase !== prevPhase) {
+    setPrevPhase(phase);
+    setReturning(phase === 'idle' && prevPhase !== 'idle');
+  }
+  useEffect(() => {
+    if (!returning) return;
+    const id = window.setTimeout(() => setReturning(false), 800);
+    return () => window.clearTimeout(id);
+  }, [returning]);
   useEffect(() => {
     const r = root.current;
     const p = plate.current;
@@ -191,7 +204,7 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover }: { 
     return () => window.clearInterval(id);
   }, [shown]);
   return (
-    <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
+    <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${shown && returning ? 'is-return' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
       <div ref={plate} className="walkin-plate hall-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }}>
         {LAMPS.map(([x, y, w], i) => (
           <i key={i} className="walkin-lamp" style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${w * 100}%`, animationDelay: `${-i * 1.1}s` }} />
