@@ -33,7 +33,7 @@ export const PRODUCT_TAXONOMY=[
    q('work-relations.leader','与这位领导的工作关系能协调好吗？','supervisor_relationship',['domain-02'],o('回答工作沟通与配合，不推测领导未表达的真实心理。')),
    q('work-relations.coworker-support','这件工作能得到同事的支持吗？','coworker_support',['domain-02'],o('回答所选工作上的支持，不泛断同事品格或永久立场。'))]),
   s('exams','考试选拔','这次考试能通过吗？|这次竞聘能成功吗？',[
-   q('exams.exam','这次考试能通过吗？','examination_result',['domain-09'],o('回答本次考试结果。',{legacyQuestionId:'domain-09-examination'})),
+   q('exams.exam','这次考试能通过吗？','examination_result',['domain-09'],o('回答本次考试结果。',{legacyQuestionId:'domain-09-examination',manuscriptIndexPath:'data/authored-readings/exam/index.json'})),
    q('exams.credential','这次能取得所报考的资格证吗？','credential_attainment',['domain-09'],o('回答取得资格证这一目标，区分考试通过、资格审核和发证。')),
    q('selection.competition','这次岗位竞聘能成功吗？','job_competition',['domain-09'],o('回答本次岗位竞聘的名额结果。')),
    q('selection.selection','这次选拔能被选中吗？','selection_result',['domain-09','domain-02'],o('回答本次明确选拔，不推为所有后续考核均会通过。'))]),

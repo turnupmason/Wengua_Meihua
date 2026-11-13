@@ -108,7 +108,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
     // Each written entry reads its own manuscript library.
     const written = [
       [JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion'],
-      ['career.job-change', 'career.job-change.decision'],
+      ['career.job-change', 'career.job-change.decision'], ['career.exams', 'career.exams.exam'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -148,9 +148,9 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 求职录用、晋升加薪 and 跳槽去留 have written material.
+    // 求职录用、晋升加薪、跳槽去留 and 考试选拔 have written material.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(3);
+    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(2);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
@@ -167,7 +167,7 @@ describe('click-only home', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(screen.queryByText(STRINGS.zh.scriptPendingNote)).toBeNull();
     expect(entryProblem(last)).toBeNull();
-    // Change: back into the drawer, another entry, still being written.
+    // Change to another entry without adding a second question selector.
     // The entry's name is said once (所问之事 · 求职录用 / 求职录用 would repeat it).
     expect(document.querySelector('.chosen-kicker > span')!.textContent).toBe(STRINGS.zh.askedMatter);
     fireEvent.click(screen.getByRole('button', { name: /所问之事.*求职录用/ }));
@@ -176,7 +176,7 @@ describe('click-only home', () => {
     fireEvent.click(within(drawer).getByRole('button', { name: /考试选拔/ }));
     expect(last.questionId).toBe('career.exams');
     expect(screen.queryByRole('dialog')).toBeNull();
-    expect(screen.getByText(STRINGS.zh.scriptPendingNote)).toBeTruthy();
+    expect(screen.queryByText(STRINGS.zh.scriptPendingNote)).toBeNull();
     expect(keyboardFields()).toHaveLength(0);
   });
 
@@ -544,14 +544,14 @@ describe('cast, reading and 问事录', () => {
         throw new Error('not to be asked');
       },
     };
-    expect(await judgmentFor(product as never, questionById('career.exams')!, { ...WELL, questionId: 'career.exams' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
+    expect(await judgmentFor(product as never, questionById('career.projects')!, { ...WELL, questionId: 'career.projects' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
     expect(asked).toBe(0);
   });
 
   it('with no 断语: says so plainly, substitutes nothing, and is not charged', async () => {
     const knowledge = await testKnowledge();
-    const base = freezeCast(knowledge.library, castRequest(form({ questionId: 'career.exams.exam' }), opts(new Date('2026-12-20T09:00:00+08:00'))));
-    const rec = withJudgment(base, await judgmentFor(knowledge.product, questionById('career.exams.exam')!, judgmentInput(base)!));
+    const base = freezeCast(knowledge.library, castRequest(form({ questionId: 'career.exams.credential' }), opts(new Date('2026-12-20T09:00:00+08:00'))));
+    const rec = withJudgment(base, await judgmentFor(knowledge.product, questionById('career.exams.credential')!, judgmentInput(base)!));
     expect(rec.judgment).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
     expect(chargesToday(rec)).toBe(false);
     const reading = knowledge.library.createReading({ primaryId: rec.primaryId, movingLine: rec.movingLine, domainId: rec.domainId });
@@ -563,7 +563,7 @@ describe('cast, reading and 问事录', () => {
     expect(brief.textContent).not.toContain(rec.snapshot!.headline);
     expect(screen.getByText(STRINGS.zh.structuralNote)).toBeTruthy();
     // Nor does the structure answer the question in its place.
-    expect(document.body.textContent).not.toMatch(/就“这次考试能通过吗？”而言/);
+    expect(document.body.textContent).not.toMatch(/就“这次能取得所报考的资格证吗？”而言/);
   });
 
   it('says why when a draft is under review or the method has no dating yet', async () => {

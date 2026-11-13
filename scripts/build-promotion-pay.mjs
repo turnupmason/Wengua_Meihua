@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -122,7 +122,10 @@ for (const [batchIndex, filename] of batches.entries()) {
    ? {status:'not-derived', reason:timingSelection, sourceIds:[config.primarySource,'mh-122']}
    : null;
   const timingSpecs = timingOmission ? [] : isPromotion ? timingSelection.map(index => timingLine[0][index]) : timingSelection;
-  if (!isPromotion && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) throw new Error('Job change only dates named transition events: ' + key);
+  if (profile === JOB_CHANGE_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
+   throw new Error('Job change only dates named transition events: ' + key);
+  }
+  if (profile === EXAM_PROFILE && timingSpecs.length > 1) throw new Error('Only one exam event per draft: ' + key);
   if (timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Invalid author timing: ' + key);
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome, profile);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
@@ -130,9 +133,9 @@ for (const [batchIndex, filename] of batches.entries()) {
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const openingRelation = r.edges.find(edge => edge.targetRole === 'use').type;
   const closingRelation = r.edges.find(edge => edge.targetRole === 'changed_use').type;
-  if (isPromotion && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
+  if ((isPromotion || profile === EXAM_PROFILE) && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
       !r.edges.some(edge => edge.type === 'use_generates_body')) {
-   throw new Error('Promotion verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
+   throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
   const sourceEvidence = [...commonEvidence,
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
@@ -282,8 +285,20 @@ const jobChange = {
  ...planning, title:'跳槽去留', scopeNote:'就最看重的条件比较两份工作，并一并判断现在的辞职时机',
  outcomes:['stay','verify','prepare','switch'],
 };
+const exam = {
+ title:'这次考试能通过吗', policy:'EXAM_POLICY.md', primarySource:'mh-071', clauses:promotion.clauses,
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','以求名类推本次考试的合格结果。原体为应试者，本用为所应考试。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','分阶段检查备考、作答和交卷后的结果。'],
+ ],
+ outcomes:['favourable','difficult'], scopeNote:'只问本次考试是否达到合格要求',
+ counterevidence:'核对能否达到考试要求，分清答题过程较顺、爻辞所限与结果有利。',
+ timingContext:'日级窗口只适用于已进入近期流程的对应考试事项。考试日、查分日和合格标准依据主办方通知。',
+};
 const target = process.argv[2];
-if (target && target !== 'job-change') throw new Error('Unknown career manuscript target: ' + target);
+if (target && !['job-change','exam'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
 if (target === 'job-change') {
  await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
+} else if (target === 'exam') {
+ await buildCareerManuscripts(EXAM_PROFILE, exam);
 } else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);

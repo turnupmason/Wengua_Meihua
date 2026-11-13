@@ -11,6 +11,9 @@ const promotion=JSON.parse(await readFile(new URL(promotionPath,root),'utf8'));
 const jobChangePath='data/authored-readings/job-change/index.json';
 const jobChange=JSON.parse(await readFile(new URL(jobChangePath,root),'utf8'));
 const careerProgress=new Map([{...promotion,progressPath:promotionPath},{...jobChange,progressPath:jobChangePath}].map(index=>[index.questionId,index]));
+const examPath='data/authored-readings/exam/index.json';
+const exam=JSON.parse(await readFile(new URL(examPath,root),'utf8'));
+careerProgress.set(exam.questionId,{...exam,progressPath:examPath});
 const current=[...careerProgress.values()].find(index=>index.remainingBaseSlots)??[...careerProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}

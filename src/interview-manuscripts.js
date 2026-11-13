@@ -11,6 +11,7 @@ export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
+export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.0',timingVersion:'exam-day-1.0.0',directory:'exam'});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -127,9 +128,9 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',bodyPeriod?'mh-052':'mh-143'])];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  const isJobChange=profile===JOB_CHANGE_PROFILE;
-  const valence=isJobChange&&kind==='drain'?'耗':rule.valence;
-  const suffix=isJobChange?'前后，'+event+'。'+text:'前后，'+text;
+  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE;
+  const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
+  const suffix=namedStageEvent?'前后，'+event+'。'+text:'前后，'+text;
   return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
    prefix:'可留意',suffix,displayLimit:2,
@@ -197,7 +198,9 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const timingOmission=missingTiming.length?{status:'not-derived',reason:'此起卦方式或时间尺度无法按先天卦气取日。',sourceIds:['mh-058','mh-122']}:row.timingOmission;
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const timingNote=isPromotion
+  const timingNote=profile===EXAM_PROFILE
+   ? (hasTiming?'以下为传统推算的参考窗口，仅用于已进入近期流程的对应事项。':NO_WINDOW_NOTE)
+   : isPromotion
    ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
    : (hasTiming ? (profile===JOB_CHANGE_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
   const c=row.copy.long;

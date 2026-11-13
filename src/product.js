@@ -1,6 +1,6 @@
 import {readRepositoryJSON} from './io.js';
 import {createQuestionRepository} from './questions.js';
-import {createInterviewManuscriptRepository,HISTORICAL_JOB_CHANGE_PROFILES,JOB_CHANGE_PROFILE,PROMOTION_PAY_PROFILE} from './interview-manuscripts.js';
+import {createInterviewManuscriptRepository,EXAM_PROFILE,HISTORICAL_JOB_CHANGE_PROFILES,JOB_CHANGE_PROFILE,PROMOTION_PAY_PROFILE} from './interview-manuscripts.js';
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
@@ -10,7 +10,7 @@ const SUBCATEGORY_COUNT=SUBCATEGORY_COUNTS.reduce((total,count)=>total+count,0);
 export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository,includeHistoricalInterviewVoid=false}={}){
  if(!library?.contentVersion)throw new TypeError('Canonical library required');
  const legacy=questionRepository||createQuestionRepository({library,readJSON}),authored=createInterviewManuscriptRepository({library,readJSON,includeHistoricalVoid:includeHistoricalInterviewVoid});
- const exactRepositories=new Map([PROMOTION_PAY_PROFILE,JOB_CHANGE_PROFILE,...HISTORICAL_JOB_CHANGE_PROFILES].map(profile=>[profile.questionId,createInterviewManuscriptRepository({library,readJSON,profile})]));let cache;
+ const exactRepositories=new Map([PROMOTION_PAY_PROFILE,JOB_CHANGE_PROFILE,EXAM_PROFILE,...HISTORICAL_JOB_CHANGE_PROFILES].map(profile=>[profile.questionId,createInterviewManuscriptRepository({library,readJSON,profile})]));let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
    if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='2.0.0'||c.categoryCount!==6||c.subcategoryCount!==SUBCATEGORY_COUNT||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
