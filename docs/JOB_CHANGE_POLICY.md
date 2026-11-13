@@ -23,6 +23,8 @@
 
 屯卦初九重在守位而建起承接；六二迟回守正、终有接合，「十年」保留在经文，不换成离职期限；六三缺引导时宜舍；六四找到合宜的配合可以进；九五分小事与大举；上六困至无所往。两处相反证据着重核六四末段兑克与九五初段坎生。 [《周易·屯》](https://zh.wikisource.org/wiki/周易/屯) · [王弼《周易注》卷一](https://www.shidianguji.com/zh/book/SK0005/chapter/1lcbvpwjhnpxc)。
 
+蒙卦初六用明规解缚，过用则吝；九二以包纳而能任为吉；六三戒逐利失其所守；六四困在远离实能指引的人；六五之吉系于谦顺求教；上九利防护而戒侵夺。原爻中刑、婚等譬喻取其处事条件。 [《周易·蒙》](https://zh.wikisource.org/wiki/周易/蒙) · [《周易注疏》卷二](https://www.shidianguji.com/book/SK0006/chapter/1l9rdom587kma)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
