@@ -686,6 +686,7 @@ a { color: var(--gold); }
 
 /* As tall as its content (set in HomeOverlay); the height eases between the list and a method's page. */
 .method-sheet { max-height: 84%; transition: height 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.method-sheet.is-sizing .sheet-body { overflow: hidden; }
 .method-body .methods { flex-wrap: wrap; justify-content: center; }
 /* A method's own page: ← back to the list, its name, ✕. */
 .method-sheet .sheet-head { align-items: center; gap: 8px; }

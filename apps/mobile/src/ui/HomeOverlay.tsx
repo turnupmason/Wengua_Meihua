@@ -348,7 +348,15 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
     }
     s.style.height = `${from}px`;
     void s.offsetHeight; // start the transition from the old height
+    // While it eases to the new height the content is taller than the sheet for a moment: no
+    // scrollbar then (it would flash, narrow the page and re-wrap the text), only once settled.
+    s.classList.add('is-sizing');
     s.style.height = `${to}px`;
+    const settle = window.setTimeout(() => s.classList.remove('is-sizing'), 340);
+    return () => {
+      window.clearTimeout(settle);
+      s.classList.remove('is-sizing');
+    };
   }, [showMethods, methodStep, form.method, form.customTime, pad, settings.lang]);
   const chosen = questionById(form.questionId);
   const chosenSubtype = chosen ? subtypeOf(chosen) : null;
