@@ -1288,3 +1288,23 @@ input, textarea, select { font-size: max(16px, 1em); }
 .reference-advice { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.7; color: #eadcc0; }
 .reference-body .enter-seal { margin-top: 6px; }
 .enter-seal[disabled] { opacity: 0.6; cursor: progress; }
+
+/* 读卦 layout pass (2026-11-12) */
+/* 简断 title: clause by clause, sized to the longest clause so lines break after a comma. */
+.read-verdict { container-type: inline-size; }
+.read-verdict h2.script-title { display: block; margin: 2px 0 10px; font-size: clamp(20px, calc(100cqi / (var(--clause) * 1.06)), 28px); line-height: 1.38; letter-spacing: 0.03em; }
+.script-title span { display: inline-block; }
+/* 简断 prose one weight lighter than the title; the actions set apart from it. */
+.read-answer.authored { font-family: var(--serif-body); font-weight: 400; font-size: 17.5px; line-height: 1.75; color: #efe2c6; }
+.read-verdict .btn-row { margin-top: 18px; }
+/* 应期: the dates on their own line first, then when they apply. */
+.timing-list li { display: block; }
+.timing-when { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 4px; }
+.timing-when b { font: 600 18px/1.4 var(--serif); letter-spacing: 0.04em; color: #f6dfa4; }
+.timing-text { margin: 0; font: 15px/1.7 var(--serif-body); color: #e3d5b8; }
+.timing-when .timing-tag { min-width: 0; padding: 0 7px; font-size: 11.5px; }
+/* 计算说明: four short labels (历法 / 卦象 / 体用 / 取期). */
+.calc-group { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; padding: 8px 0; border-top: 1px dashed rgba(216, 174, 94, 0.14); }
+.script-calc summary + .calc-group { border-top: 0; }
+.calc-label { align-self: start; margin-top: 3px; padding: 1px 7px; border-radius: 6px; font: 600 12px/1.6 var(--sans); letter-spacing: 0.1em; background: rgba(216, 174, 94, 0.12); color: #e9cf95; white-space: nowrap; }
+.calc-group p { margin: 0 0 4px; }

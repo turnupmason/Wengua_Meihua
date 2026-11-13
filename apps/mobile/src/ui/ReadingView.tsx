@@ -9,7 +9,7 @@
  *   and the category passage. Older free-written records keep their structural reading.
  * The 断语 text comes only from the stored record; nothing here writes or rewrites one.
  */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { JudgmentView } from './DetailSheet';
 import type { Reading } from '../knowledge/knowledge';
 import type { Strings } from '../domain/i18n';
@@ -19,9 +19,9 @@ import type { StageKey } from '../domain/layout';
 import type { LinePick } from '../scene/StoneTable';
 import { HexagramSVG } from './HexagramSVG';
 import { topicById } from '../domain/topics';
-import { cautionsFor, practicalAdviceFor, questionById } from '../domain/questionCatalog';
+import { cautionsFor, practicalAdviceFor, questionById, subtypeById } from '../domain/questionCatalog';
 import { labelled, missingText } from './judgmentText';
-import { readableCalculation } from '../domain/judgment';
+import { calculationGroups, windowDates } from '../domain/judgment';
 import { answerText, conclusionText, synthText, weatherText, type SynthStage } from './Verdict';
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
@@ -86,6 +86,22 @@ interface Props {
   onClose: () => void;
 }
 
+/**
+ * The 断语 title, clause by clause: a clause stays on one line where it fits, and the size follows
+ * the longest clause, so the line breaks after a comma rather than inside a phrase.
+ */
+function ScriptTitle({ title }: { title: string }) {
+  const clauses = title.split(/(?<=[，、；])/);
+  const longest = Math.max(...clauses.map((c) => [...c].length));
+  return (
+    <h2 className="script-title" lang="zh" aria-label={title} style={{ '--clause': longest } as CSSProperties}>
+      {clauses.map((c, i) => (
+        <span key={i}>{c}</span>
+      ))}
+    </h2>
+  );
+}
+
 export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, saved, onPick, onSave, onClose }: Props) {
   const y = reading.synthesis;
   const txt = synthText(reading, lang);
@@ -108,6 +124,9 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
   const cautions = cautionsFor(questionId, lang, topicId);
   const tp = topicById(topicId);
   const topicLabel = tp ? (lang === 'en' ? tp.en : tp.zh) : null;
+  // The entry chosen (求职录用) goes under the question its 断语 answers.
+  const entry = subtypeById(questionById(questionId)?.subtype_id)?.label[lang] ?? null;
+  const entryLabel = entry && entry !== question ? entry : null;
   const refs = useRef<Partial<Record<SynthStage, HTMLElement | null>>>({});
   const body = useRef<HTMLDivElement>(null);
   const backButton = useRef<HTMLButtonElement>(null);
@@ -269,6 +288,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           <p className="read-question">{question ? `“${question}”` : t.noQuestion}</p>
           <p className="read-meta">
             {topicLabel && `${topicLabel} · `}
+            {entryLabel && `${entryLabel} · `}
             {domainTitle(reading.domain, lang)}
             {castTime && ` · ${castTime}`}
           </p>
@@ -278,7 +298,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           <p className="read-kicker">{t.briefTitle}</p>
           {j ? (
             <>
-              {j.title && <h2 lang="zh">{j.title}</h2>}
+              {j.title && <ScriptTitle title={j.title} />}
               <p className="read-answer authored" lang="zh">
                 {j.short}
               </p>
@@ -362,8 +382,14 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                     <ul className="timing-list">
                       {j.timing.windows.map((w) => (
                         <li key={w.event + w.text} className={w.valence === '吉' ? 'is-good' : w.valence === '凶' ? 'is-bad' : ''}>
-                          <span className="timing-tag">{valence(w.valence)}</span>
-                          <span lang="zh">{w.text}</span>
+                          {/* The dates first, on a line of their own; then when they apply. */}
+                          <p className="timing-when">
+                            {w.dates.length > 0 && <b>{windowDates(w.dates, j.castingDate, lang)}</b>}
+                            <span className="timing-tag">{valence(w.valence)}</span>
+                          </p>
+                          <p className="timing-text" lang="zh">
+                            {w.text}
+                          </p>
                         </li>
                       ))}
                     </ul>
@@ -373,10 +399,17 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               {j.calculation.length > 0 && (
                 <details className="script-calc">
                   <summary>{t.calcTitle}</summary>
-                  {readableCalculation(j.calculation, sectionTitle).map((c) => (
-                    <p key={c} lang="zh">
-                      {c}
-                    </p>
+                  {calculationGroups(j.calculation, sectionTitle).map((g) => (
+                    <div key={g.group} className="calc-group">
+                      <span className="calc-label">{t.calcGroup[g.group]}</span>
+                      <div>
+                        {g.lines.map((c) => (
+                          <p key={c} lang="zh">
+                            {c}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </details>
               )}

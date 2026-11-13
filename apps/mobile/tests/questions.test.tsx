@@ -10,7 +10,7 @@ import { useState } from 'react';
 import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
 import { DOMAINS, allQuestions, allSubtypes, catalogProblems, catalogQuestions, enabledQuestions, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
-import { castingDateOf, judgmentFor, readableCalculation, seasonOf, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
+import { calculationGroups, castingDateOf, judgmentFor, readableCalculation, seasonOf, windowDates, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
 import { chargesToday, freezeCast, judgmentInput, recordKind, withJudgment } from '../src/domain/cast';
 import { createHistory } from '../src/domain/history';
 import { createJournal } from '../src/domain/journal';
@@ -298,6 +298,23 @@ describe('断语 lookup (createProductRepository)', () => {
     expect(readableCalculation(lines, (id) => (id === 'mh-117' ? '体用总诀' : null))).toEqual(['月令：亥月。旺衰与旬空分别计算。', '空亡依据：八卦配支补充法。', '变用离囚仍克体，依《体用总诀》保留末后牵制。']);
   });
 
+  it('groups the 计算说明 as 历法 / 卦象 / 体用 / 取期, and writes window dates for scanning', () => {
+    const lines = ['月令：亥月。', '起卦日：2026-11-12，庚寅日。', '本互变：风地观 → 山地剥 → 风水涣，本卦六二动。', '本用坤土囚，原体巽木相。', '本用受体所克，变用生体。', '体克用须实际处理，依mh-117。', '判断口径：interview-evidence-1.0.0。稿件版本：interview-pass-2.1.0。', '吉应 · 收尾：取变用坎水所应亥、子日；显示2026-11-21、2026-11-22（起卦当月匹配）。'];
+    expect(calculationGroups(lines, (id) => (id === 'mh-117' ? '体用总诀' : null))).toEqual([
+      { group: 'calendar', lines: ['月令：亥月。', '起卦日：2026-11-12，庚寅日。'] },
+      { group: 'chart', lines: ['本互变：风地观 → 山地剥 → 风水涣，本卦六二动。'] },
+      { group: 'bodyUse', lines: ['本用坤土囚，原体巽木相。', '本用受体所克，变用生体。', '体克用须实际处理，依《体用总诀》。'] },
+      { group: 'timing', lines: ['吉应 · 收尾：取变用坎水所应亥、子日；显示2026-11-21、2026-11-22（起卦当月匹配）。'] },
+    ]);
+    // A line after 判断口径 that gives no date is still about 取期.
+    expect(calculationGroups(['判断口径：x。', '中后阶段可以查分工，日期无充分依据。'], () => null)).toEqual([{ group: 'timing', lines: ['中后阶段可以查分工，日期无充分依据。'] }]);
+    expect(windowDates(['2026-11-22', '2026-11-21'], '2026-11-12', 'zh')).toBe('11月21–22日');
+    expect(windowDates(['2026-11-14', '2026-11-17'], '2026-11-12', 'zh')).toBe('11月14日、17日');
+    expect(windowDates(['2026-11-30', '2026-12-01', '2026-12-05'], '2026-11-12', 'zh')).toBe('11月30日–12月1日、5日');
+    expect(windowDates(['2027-01-03'], '2026-12-28', 'zh')).toBe('2027年1月3日');
+    expect(windowDates(['2026-11-21', '2026-11-22'], '2026-11-12', 'en')).toBe('Nov 21–22');
+  });
+
   it('reports a library it cannot read as unavailable, not as a 断语', async () => {
     const broken = { getContent: async () => Promise.reject(new Error('offline')) };
     const errors = console.error;
@@ -369,7 +386,8 @@ describe('cast, reading and 问事录', () => {
   it('求职录用: cast as the entry, it reads the interview 断语 for the chart, month and day, with no 旬空', async () => {
     const { library, product } = await testKnowledge();
     const base = freezeCast(library, { method: 'manual', manual: { primaryId: 48, movingLine: 5, monthBranch: '亥', dayGanzhi: '己丑' }, questionId: JOB, instant: new Date('2026-11-11T09:00:00+08:00'), timeZone: 'Asia/Shanghai' });
-    expect(base).toMatchObject({ questionId: JOB, subtypeId: JOB, question: '求职录用', domainId: 'domain-09', topicId: 'career' });
+    // Worded as its 断语 answers it, so the reading's heading matches (求职录用 → 这次面试能通过吗？).
+    expect(base).toMatchObject({ questionId: JOB, subtypeId: JOB, question: '这次面试能通过吗？', domainId: 'domain-09', topicId: 'career' });
     const j = (await judgmentFor(product, questionById(JOB)!, { ...WELL, questionId: JOB })) as ProductJudgment;
     const written = (await judgmentFor(product, questionById(INTERVIEW)!, WELL)) as ProductJudgment;
     expect(j).toMatchObject({ state: 'ready', questionId: JOB, contentQuestionId: INTERVIEW, primaryId: 48, movingLine: 5 });
@@ -445,8 +463,13 @@ describe('cast, reading and 问事录', () => {
     expect(within(timing as HTMLElement).getByRole('heading', { name: STRINGS.zh.timingTitle })).toBeTruthy();
     expect(timing.querySelectorAll('.timing-list li')).toHaveLength(j.timing!.windows.length);
     expect(timing.textContent).toMatch(/吉|凶/);
+    // Each window shows its dates first, on a line of their own.
+    const first = j.timing!.windows.find((w) => w.dates.length)!;
+    expect(timing.querySelector('.timing-when b')!.textContent).toBe(windowDates(first.dates, j.castingDate, 'zh'));
     const calc = document.querySelector('details.script-calc') as HTMLDetailsElement;
     expect(calc.open).toBe(false);
+    // Folded, and in four labelled parts.
+    expect([...calc.querySelectorAll('.calc-label')].map((l) => l.textContent)).toEqual(['历法', '卦象', '体用', '取期']);
     expect(calc.textContent).not.toMatch(/旬空|空亡/);
     expect(calc.textContent).toMatch(/亥月/);
     expect(document.body.textContent).not.toMatch(/interview-pass|trigram-void|mh-\d/);

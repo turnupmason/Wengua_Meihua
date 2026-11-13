@@ -124,6 +124,63 @@ export function readableCalculation(lines: readonly string[], sectionTitle: (id:
     );
 }
 
+/** The four parts of a 计算说明, in reading order. */
+export type CalcGroup = 'calendar' | 'chart' | 'bodyUse' | 'timing';
+const CALC_ORDER: CalcGroup[] = ['calendar', 'chart', 'bodyUse', 'timing'];
+
+/**
+ * The 计算说明 in four labelled parts: 历法 (月令, 起卦日), 卦象 (本互变), 体用 (旺衰, 生克 and how
+ * they weigh) and 取期 (the lines after the interface's 判断口径 line: 吉应 / 凶应 and why a step has
+ * no date). Lines read as readableCalculation gives them; empty parts are left out.
+ */
+export function calculationGroups(lines: readonly string[], sectionTitle: (id: string) => string | null): { group: CalcGroup; lines: string[] }[] {
+  const parts = new Map<CalcGroup, string[]>();
+  let timing = false;
+  for (const line of lines) {
+    if (/^判断口径：/.test(line)) {
+      timing = true;
+      continue;
+    }
+    const group: CalcGroup = /^(月令|起卦日)：/.test(line) ? 'calendar' : /^本互变：/.test(line) ? 'chart' : timing || /^(吉应|凶应) · /.test(line) ? 'timing' : 'bodyUse';
+    parts.set(group, [...(parts.get(group) ?? []), ...readableCalculation([line], sectionTitle)]);
+  }
+  return CALC_ORDER.filter((g) => parts.get(g)?.length).map((group) => ({ group, lines: parts.get(group)! }));
+}
+
+const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/**
+ * A window's dates as a reader scans them: consecutive days joined (11月21–22日), a month named once
+ * (11月14日、17日), the year only when it is not the casting year.
+ */
+export function windowDates(dates: readonly string[], castingDate: string | null, lang: 'zh' | 'en'): string {
+  const runs: [string, string][] = [];
+  for (const d of [...new Set(dates)].sort()) {
+    const last = runs[runs.length - 1];
+    if (last && addDays(last[1], 1) === d) last[1] = d;
+    else runs.push([d, d]);
+  }
+  const year = castingDate?.slice(0, 4);
+  let shownMonth = '';
+  return runs
+    .map(([a, b]) => {
+      const [ay, am, ad] = [a.slice(0, 4), Number(a.slice(5, 7)), Number(a.slice(8, 10))];
+      const [by, bm, bd] = [b.slice(0, 4), Number(b.slice(5, 7)), Number(b.slice(8, 10))];
+      const key = a.slice(0, 7);
+      const fresh = key !== shownMonth;
+      shownMonth = b.slice(0, 7);
+      if (lang === 'en') {
+        const head = `${fresh ? `${MONTHS_EN[am - 1]} ` : ''}${ad}`;
+        const tail = a === b ? '' : am === bm && ay === by ? `–${bd}` : `–${MONTHS_EN[bm - 1]} ${bd}`;
+        return `${head}${tail}${ay !== year ? ` ${ay}` : ''}`;
+      }
+      const head = `${ay !== year && fresh ? `${ay}年` : ''}${fresh ? `${am}月` : ''}${ad}`;
+      if (a === b) return `${head}日`;
+      return am === bm && ay === by ? `${head}–${bd}日` : `${head}日–${by !== ay ? `${by}年` : ''}${bm}月${bd}日`;
+    })
+    .join(lang === 'en' ? ', ' : '、');
+}
+
 const missing = (monthBranch: string | null, reason: MissingReason): CastJudgment => ({ state: 'missing', season: seasonOf(monthBranch), reason });
 
 /** Asks the product interface for this cast's 断语. Never throws: a failure is reported as unavailable. */

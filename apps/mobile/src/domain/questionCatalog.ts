@@ -244,6 +244,16 @@ export function questionWording(q: CatalogQuestion, conditions: Record<string, s
   return lang === 'en' ? q.question_text.en.replace('this year', `in ${year}`) : q.question_text.zh.replace('今年', `${year}年`);
 }
 
+/**
+ * What a cast asks, worded as its 断语 answers it: an entry with written 断语 asks the question they
+ * were written for (求职录用 → 这次面试能通过吗？), so the reading's heading matches its answer.
+ * Otherwise the entry or question as worded.
+ */
+export function askedWording(q: CatalogQuestion, conditions: Record<string, string> | undefined, lang: 'zh' | 'en') {
+  const content = q.content_id ? questionById(q.content_id) : null;
+  return content ? questionWording(content, conditions, lang) : questionWording(q, conditions, lang);
+}
+
 /** The chosen options as the product repository takes them (years as numbers). */
 export function productContext(q: CatalogQuestion, conditions: Record<string, string> | undefined): Record<string, string | number> {
   const out: Record<string, string | number> = {};

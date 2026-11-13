@@ -1,6 +1,6 @@
 /** Turns the home form into casting inputs, and says what is missing before entering. */
 import type { MethodInputs } from '../domain/methods';
-import { questionById, questionWording } from '../domain/questionCatalog';
+import { askedWording, questionById } from '../domain/questionCatalog';
 import type { CastRequest } from '../domain/cast';
 import type { CalendarPolicy } from '../domain/calendar';
 import type { EntryForm } from './HomeOverlay';
@@ -62,7 +62,7 @@ export function castRequest(f: EntryForm, o: { lang: 'zh' | 'en'; timeZone: stri
     method: f.method,
     questionId: f.questionId ?? undefined,
     // The wording as shown when it was chosen (kept with the record).
-    question: q ? questionWording(q, f.conditions, o.lang) : '',
+    question: q ? askedWording(q, f.conditions, o.lang) : '',
     conditions: f.conditions,
     inputs: entryInputs(f),
     instant: custom ?? o.now ?? new Date(),

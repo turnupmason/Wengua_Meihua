@@ -4,7 +4,7 @@
  */
 import type { Library, Reading } from '../knowledge/knowledge';
 import { outcomeFor } from './topics';
-import { CATALOG_VERSION, questionById } from './questionCatalog';
+import { CATALOG_VERSION, askedWording, questionById } from './questionCatalog';
 import { seasonOf, type CastJudgment, type JudgmentInput, type Season } from './judgment';
 import { createCalendarProvider, type CalendarPolicy, type CalendarProvider, type CalendarResult } from './calendar';
 import { methodNumbers, type ClassicalMethod, type MethodInputs } from './methods';
@@ -226,7 +226,7 @@ export function freezeCast(
     canonicalGrade: reading.stages[s].detail.grade.canonicalGrade,
   });
   const profile = reading.profile as { id?: string; version?: string };
-  const question = (request.question || cq?.question_text.zh || '').slice(0, 500);
+  const question = (request.question || (cq ? askedWording(cq, request.conditions, 'zh') : '')).slice(0, 500);
   const season = seasonOf(context.monthBranch);
   const snapshot = snapshotOf(reading, question, topicId, domainId, cq?.question_id);
 
