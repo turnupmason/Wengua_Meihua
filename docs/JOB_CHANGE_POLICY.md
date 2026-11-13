@@ -33,6 +33,8 @@
 
 比卦初六重诚信可验证，六二从内有应而不失其所，六三戒相与不得其人，六四可向外择可托之人，九五以中正明白取舍，上六依王注取迟而未能接合、无所终。六二与六四分别落实为现有协作与外部承接的证据。 [《周易·比》](https://zh.wikisource.org/wiki/周易/比) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+小畜初九复其所行，九二与人牵携而不自失，九三失去承接而难进，六四实信可解忧，九五可信相助而共享所获，上九积而已处、再进有凶。上九即使当令能办手续，仍须回应既处与征凶。 [《周易·小畜》](https://zh.wikisource.org/wiki/周易/小畜) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)

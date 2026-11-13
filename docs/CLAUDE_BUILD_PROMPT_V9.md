@@ -47,6 +47,8 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 
 已有日级依据时，「应期：以下为传统推算的参考窗口。」下一行显示「本月×号」或「下月×号」及对应事件和吉凶。地支、取期方法、日期换算和适用条件保存于计算说明和结构化字段。静态阅读文档统一以 2026-11-11 演示并在页首标明，供核对排版。Claude 或客户端接入时传本次实际当地起卦日 `castingDate`，读取 `timingSection.windows` 的 `displayedDates` 和 `text`，保存 `castingDate` 与公历日期。新盘从起卦日查起，先取本月，若本月没有合格日则匹配下月，每个事件至多显示最早的两个候选日。历史盘回看可传 `viewDate` 以显示准确月份，原候选过期仍按原日存档。日支每 12 天轮转，完整干支每 60 天轮转，按原声明匹配，已过应期不会自动顺延。禁止以只列地支、日期占位符或另一套排版交付已有取期的断语。确无可据取期时，沿用已定说明并记录原因。
 
+取期先写明所应事件，再据实际进程定年、月、日、时，接着核原起卦法与适用的取期条文，最后判断何时的条件足以应事。先天卦气按所应节点与事项取支，受克本身不构成补缺或通关的依据。后天原数另核物卦数、方位卦数、时数及占者当时的动静；取半、取倍、取本数见《老人有忧色占》，仅在原数与事理适用时采用。完整动爻序号用于识别爻辞，后天端法加的是起卦时数。外应需现场如实记录并说明它如何与卦和事项相应。详见 [应期审查](TIMING_AUDIT.md)。
+
 运行时沿用 `createProductRepository().getContent` 和字段 `short`、`narrativeParagraphs`、`timingSection`、`calculationExplanation`、`paragraphs`、`story`。日期窗口继续使用 `event`、`valence`、`text`、`displayedDates`、`eventScope`、`targetBranches`、`calculationBasis`。软件显示仍使用原组件，抓取时保持既有的 `questionId`、本卦、动爻、月令键和稿件字段。每次重建后按实际输出校验栏目、取期结果和索引，发现格式漂移先修正再交付。
 
 ## 正式产品分类
