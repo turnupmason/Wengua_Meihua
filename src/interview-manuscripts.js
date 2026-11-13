@@ -10,7 +10,7 @@ import {checkInterviewDecision,checkInterviewShort} from './interview-decision-c
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
-export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.0',directory:'job-change'});
+export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.1',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -111,7 +111,7 @@ const promotionTimingKinds={
 };
 const promotionTimingStages={body:'closing',use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing'};
 
-export function promotionTimingSlots(reading,specs,outcome){
+export function promotionTimingSlots(reading,specs,outcome,profile){
  return specs.map(([kind,role,event,text,reason])=>{
   const rule=promotionTimingKinds[kind],stage=promotionTimingStages[role];
   const node=reading.nodes.find(n=>n.role===role);
@@ -127,9 +127,12 @@ export function promotionTimingSlots(reading,specs,outcome){
   const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',bodyPeriod?'mh-052':'mh-143'])];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence:rule.valence,
+  const isJobChange=profile===JOB_CHANGE_PROFILE;
+  const valence=isJobChange&&kind==='drain'?'耗':rule.valence;
+  const suffix=isJobChange?'前后，'+event+'。'+text:'前后，'+text;
+  return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
-   prefix:'可留意',suffix:'前后，'+text,displayLimit:2,
+   prefix:'可留意',suffix,displayLimit:2,
    emptyText:text,branches:[...branches],sourceIds,ruleIds,method,scale:'day',
    calculationBasis:{role,trigram:node.trigram,element:node.element,directRelation:rule.relation,
     method:bodyPeriod?'pre-heaven-trigram-periods':'pre-heaven-element-qi',scale:'day',ruleIds,sourceIds,
@@ -183,7 +186,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
   if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
-  const actualSlots=usesStoredTimingSpecs?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode):interviewTimingSlots(reading,row.timingSlots);
+  const actualSlots=usesStoredTimingSpecs?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode,profile):interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
   const storedTiming=row.timingSlots.length>0||row.voidTimingSlots.length>0;
   const missingTiming=[];

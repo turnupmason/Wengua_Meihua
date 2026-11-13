@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { createProductRepository, findUpcomingCivilDayMatches, loadLibrary, MONTH_SLOTS } from '../src/index.js';
+import { AUDIT_CHECKS, createProductRepository, findUpcomingCivilDayMatches, getCivilDay, loadLibrary, MONTH_SLOTS } from '../src/index.js';
 
 const library = await loadLibrary();
 const product = createProductRepository({library});
@@ -35,11 +35,8 @@ test('job-change uses one reading for both parts and preserves historical casts'
   const historical = await product.getContent({...cast, questionId:id, context:oldContext});
   assert.equal(historical.decision.outcomeCode, outcome);
  }
- const pending = await product.getContent({...cast, questionId, context, primaryId:64});
- if (pending.status !== 'ready') {
-  assert.equal(pending.status, 'pending-authoring');
-  assert.equal(pending.story, null);
- }
+ const finalHexagram = await product.getContent({...cast, questionId, context, primaryId:64});
+ assert.equal(finalHexagram.status, 'ready');
 });
 
 test('job-change recalculates at a new cast, keeps historical dates, and bounds each window', async () => {
@@ -64,8 +61,40 @@ test('job-change recalculates at a new cast, keeps historical dates, and bounds 
 test('job-change reads exact month keys with shared output order and actual dates', async () => {
   const index = JSON.parse(await read('data/authored-readings/' + directory + '/index.json'));
   let checkedKeys = 0;
+  let checkedArticles = 0;
+  let dated = 0;
+  let timingWindows = 0;
+  assert.equal(index.files.length, 64);
+  assert.equal(index.fullTwelveMonthCharts, 384);
+  assert.equal(index.remainingBaseSlots, 0);
+  assert.equal(index.next, null);
   for (const entry of index.files) {
    const shard = JSON.parse(await read(entry.path));
+   assert.equal(shard.rows.length, 30);
+   assert.equal(Object.keys(shard.monthSlots).length, 72);
+   for (const row of shard.rows) {
+    const key = row.decision.id;
+    assert.equal(row.movingLineText, library.getLineReading(row.primaryId, row.movingLine).text, key);
+    assert.equal(row.copy.short.decisionId, key);
+    assert.equal(row.copy.long.decisionId, key);
+    assert.equal(row.review.independentReview.status, 'pending', key);
+    assert.equal(row.review.independentReview.userAcceptedThisVersion, false, key);
+    for (const check of AUDIT_CHECKS) assert.ok(row.review.checks[check].evidence.length, key);
+    for (const evidence of row.decision.sourceEvidence) {
+     const section = library.getSection(evidence.id);
+     assert.ok(section.text.includes(evidence.quote), key);
+     assert.deepEqual(evidence.locator, section.sourceRef, key);
+    }
+    for (const slot of row.timingSlots) {
+     const explicitBranches = slot.reason.matchAll(/(?:取|按|用|之|的)([子丑寅卯辰巳午未申酉戌亥](?:、[子丑寅卯辰巳午未申酉戌亥])*)日/gu);
+     for (const [, branches] of explicitBranches) assert.deepEqual(branches.split('、'), slot.branches, key);
+     assert.equal(slot.valence, {control:'凶', drain:'耗', equal:'吉', support:'吉'}[slot.kind], key);
+     assert.doesNotMatch(slot.text, /^(?:属吉应|属凶应|属耗应|属阶段提醒)/u, key);
+    }
+    dated += Number(row.timingSlots.length > 0);
+    timingWindows += row.timingSlots.length;
+    checkedArticles++;
+   }
    const doc = await read('docs/' + directory + '/' + entry.path.split('/').at(-1).replace('.json', '.md'));
    const sections = doc.split(/(?=^## )/mu).slice(1);
    assert.equal(sections.length, shard.rows.length);
@@ -77,23 +106,34 @@ test('job-change reads exact month keys with shared output order and actual date
      assert.equal(result.status, 'ready');
      assert.equal(result.monthBranch, branch);
      assert.equal(result.short, row.copy.short.text);
+     assert.equal(result.reading.selectedMovingLine.text, row.movingLineText);
+     assert.equal(result.calculationExplanation.month.branch, branch);
      assert.equal(result.calculationExplanation.void, undefined);
      assert.deepEqual(result.narrativeParagraphs.map(p => p.split('：', 1)[0]), ['开局','过程','结局','总断']);
      const parts = sections[position].split('\n\n');
      assert.equal(parts[3], '简断');
      assert.deepEqual(parts.slice(5,12).map(p => p.split('：',1)[0]), ['开局','过程','结局','应期','总断','古籍依据','动爻完整原文']);
      assert.equal(parts[12], '<details>\n<summary>计算说明</summary>');
-     if (row.timingSlots.length) assert.match(parts[8], /(?:本月|下月)\d+号|(?:本月|下月)\d+(?:、\d+)+号/u);
-     else assert.ok(result.calculationExplanation.timing.omission.reason);
+     if (row.timingSlots.length) {
+      assert.match(parts[8], /(?:本月|下月)\d+(?:、\d+)*号/u);
+      for (const slot of row.timingSlots) assert.ok(parts[8].includes(slot.event + '，属' + slot.valence + '应。'));
+     } else assert.ok(result.calculationExplanation.timing.omission.reason);
      for (const window of result.timingSection.windows) {
       const expected = findUpcomingCivilDayMatches({castingDate:cast.castingDate, branches:window.targetBranches});
       assert.deepEqual(window.displayedDates, expected.matches.slice(0,2).map(day => day.date));
       assert.ok(window.event && window.valence && window.calculationBasis);
+      assert.ok(window.text.includes(window.event));
+      assert.ok(window.displayedDates.every(day => day >= cast.castingDate && window.targetBranches.includes(getCivilDay(day).dayBranch)));
      }
      checkedKeys++;
     }
    }
   }
   assert.equal(checkedKeys, index.baseCaseCount);
-  assert.equal(index.authorWholeArticleReviewed, index.files.length * 30);
+  assert.equal(checkedKeys, 4608);
+  assert.equal(checkedArticles, 1920);
+  assert.equal(index.authorWholeArticleReviewed, checkedArticles);
+  assert.equal(index.dated, dated);
+  assert.equal(index.undated, checkedArticles - dated);
+  assert.equal(index.timingWindowCount, timingWindows);
 });

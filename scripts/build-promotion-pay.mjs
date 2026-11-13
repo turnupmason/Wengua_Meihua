@@ -124,7 +124,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const timingSpecs = timingOmission ? [] : isPromotion ? timingSelection.map(index => timingLine[0][index]) : timingSelection;
   if (!isPromotion && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) throw new Error('Job change only dates named transition events: ' + key);
   if (timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Invalid author timing: ' + key);
-  const timingSlots = promotionTimingSlots(r, timingSpecs, outcome);
+  const timingSlots = promotionTimingSlots(r, timingSpecs, outcome, profile);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
   const timingReason = timingOmission?.reason ?? timingSlots.map(slot => slot.reason).join(' ');
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
@@ -172,7 +172,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:slug+'-day-1.0.0'}};
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);

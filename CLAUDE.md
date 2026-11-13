@@ -1,5 +1,7 @@
 `career.interview.interview-pass` 基础库覆盖 384 种卦爻组合与 4,608 个月令键，保存 1,920 篇正文。问项只涉及本轮面试。全文见 [基础目录](docs/INTERVIEW_PASS_ALL_BASES.md)，逐条核对结果见 [终校记录](docs/INTERVIEW_FINAL_REVIEW_20261112.md)。
 
+`career.job-change.decision` 同篇比较现职与新工作并回答现在是否宜辞。已逐篇写作并作者核读 1,920 篇，覆盖 384 种基础盘和 4,608 个月令键。应期从实际起卦日换算。见[正文目录](docs/job-change/README.md)及[取义与复核记录](docs/JOB_CHANGE_POLICY.md)。
+
 原 60 篇及已逐篇重写的 1,860 篇均有持久作者源。构建按卦、爻、月令读取 `sources/editorial/interview-rewrites/` 和原对照稿。当前进度见 [progress.json](data/authored-readings/progress.json)。独立专业审核仍为 pending。客户端读取预写字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。
