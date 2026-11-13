@@ -461,7 +461,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       )}
 
       {phase === 'entering' && <PreceptSubtitle t={t} clock={clock} reduced={reduced} />}
-      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} smoke={intro !== 'done'} />}
+      {walkInArt && <PaintedHall shown={paintedHall} still={reduced} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
       {tier && intro !== 'done' && introRef.current.painted && ritual.phase === 'idle' && (
         <PaintedWalkIn

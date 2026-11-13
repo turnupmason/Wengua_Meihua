@@ -197,6 +197,45 @@ describe('click-only home', () => {
     expect(entryProblem(last)).toBeNull();
   });
 
+  it('lets the tray be pulled down and back by its head, stays where it is let go, and a tap folds it', () => {
+    localStorage.removeItem('wengua.trayOffset.v1');
+    // jsdom has no PointerEvent: a mouse event carrying a pointerId stands in for it.
+    const w = window as unknown as { PointerEvent?: unknown };
+    w.PointerEvent ??= class extends MouseEvent {
+      pointerId: number;
+      constructor(type: string, init: PointerEventInit = {}) {
+        super(type, init);
+        this.pointerId = init.pointerId ?? 0;
+      }
+    };
+    const { container } = render(<Home />);
+    const tray = container.querySelector('form.home-panel') as HTMLElement;
+    Object.defineProperty(tray, 'offsetHeight', { configurable: true, value: 410 });
+    const head = screen.getByRole('button', { name: STRINGS.zh.trayGrip });
+    head.setPointerCapture = () => {};
+    const drag = (dy: number) => {
+      fireEvent.pointerDown(head, { pointerId: 1, button: 0, clientY: 500 });
+      fireEvent.pointerMove(head, { pointerId: 1, clientY: 500 + dy });
+      fireEvent.pointerUp(head, { pointerId: 1, clientY: 500 + dy });
+    };
+    drag(120);
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('120px');
+    expect(localStorage.getItem('wengua.trayOffset.v1')).toBe('120');
+    // Never below its head (410 − 64), never above fully open.
+    drag(900);
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('346px');
+    drag(-2000);
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('');
+    // A tap folds it down to its head; another opens it.
+    drag(0);
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('346px');
+    drag(0);
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('');
+    fireEvent.keyDown(head, { key: 'ArrowDown' });
+    expect(tray.style.getPropertyValue('--tray-y')).toBe('40px');
+    localStorage.removeItem('wengua.trayOffset.v1');
+  });
+
   it('holds the button while the 断语 is looked up', () => {
     render(<Home busy />);
     const b = screen.getByRole('button', { name: STRINGS.zh.castingNow });

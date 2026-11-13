@@ -6,7 +6,8 @@
  * Then the method, the hour of casting, the pace, and 诚心起卦 — or, for a reference or guidance
  * question, 查看说明 at once (no cast). Library, history and settings are small icons at the top.
  */
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { useTrayDrag } from './trayDrag';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
 import { createCalendarProvider } from '../domain/calendar';
@@ -315,6 +316,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   // Reference and guidance questions are read at once: no method, time or pace to choose.
   const readOnly = ready === 'reference' || ready === 'guidance';
   const litDomain = drawer?.domain_id ?? chosen?.domain_id ?? null;
+  const tray = useRef<HTMLFormElement>(null);
+  const trayDrag = useTrayDrag(tray);
   const numberField = (key: 'surname' | 'count' | 'major' | 'minor', label: string, max: number) => (
     <NumberField label={label} value={form[key]} active={pad?.key === key} onFocus={() => setPad({ key, max })} />
   );
@@ -341,13 +344,18 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
 
       {/* The working layer: solid enough to read on, below the 三清 so it never covers them. */}
       <form
+        ref={tray}
         className="home-panel v3 is-rising"
         onSubmit={(e) => {
           e.preventDefault();
           onEnter();
         }}
       >
-        <p className="ask-label">{t.askWhat}</p>
+        {/* The head pulls the tray down or up, wherever the visitor likes; a tap folds or unfolds it. */}
+        <div className="tray-head" role="button" tabIndex={0} aria-label={t.trayGrip} {...trayDrag}>
+          <i className="tray-grip" aria-hidden="true" />
+          <p className="ask-label">{t.askWhat}</p>
+        </div>
         <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
           {DOMAINS.map((d) => (
             <button type="button" key={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => setDrawer(d)}>

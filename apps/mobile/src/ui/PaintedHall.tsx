@@ -18,19 +18,46 @@ const FIGURES = 0.205;
 /** Distance of the outer figures' edges from the picture's side. */
 const SIDE_MARGIN = 0.089;
 /**
- * Height of the 问事 tray (it sits on the bottom of the screen, about the same height on every
- * phone): measured once and kept on the device, so the hall is framed the same before and after the
- * tray rises — the picture never shifts when it appears.
+ * Height of the 问事 tray as it first rises (before a question adds its line): the hall is framed by
+ * it once, on arrival, and then never moves — choosing a question, pulling the tray down or its
+ * rising never shift the picture. It is measured on the device, per screen width, for next time;
+ * until then it is estimated (its usual height plus the phone's bottom safe area).
  */
-const TRAY_KEY = 'wengua.trayHeight.v1';
-let trayHeight = (() => {
+const TRAY_KEY = 'wengua.trayHeight.v2';
+const TRAY_BASE = 440;
+function storedTrays(): Record<string, number> {
   try {
-    const v = Number(localStorage.getItem(TRAY_KEY));
-    return v > 200 && v < 900 ? v : 410;
+    return JSON.parse(localStorage.getItem(TRAY_KEY) || '{}') as Record<string, number>;
   } catch {
-    return 410;
+    return {};
   }
-})();
+}
+function safeBottom() {
+  const probe = document.createElement('div');
+  probe.style.cssText = 'position:fixed;left:0;bottom:0;width:0;height:env(safe-area-inset-bottom,0px);visibility:hidden;pointer-events:none';
+  document.body.appendChild(probe);
+  const h = probe.offsetHeight;
+  probe.remove();
+  return h;
+}
+function expectedTray(W: number) {
+  const v = storedTrays()[String(Math.round(W))];
+  return v > 200 && v < 900 ? v : TRAY_BASE + safeBottom();
+}
+/** Notes the tray's first height for this screen width (only while no question line is shown). */
+function noteTray(W: number) {
+  const panel = document.querySelector<HTMLElement>('.home-panel');
+  if (!panel?.offsetHeight || panel.querySelector('.chosen-question')) return;
+  const all = storedTrays();
+  const key = String(Math.round(W));
+  if (all[key] === panel.offsetHeight) return;
+  all[key] = panel.offsetHeight;
+  try {
+    localStorage.setItem(TRAY_KEY, JSON.stringify(all));
+  } catch {
+    /* estimated again next time */
+  }
+}
 
 const topOf = (el: HTMLElement) => {
   let y = 0;
@@ -41,22 +68,12 @@ const topOf = (el: HTMLElement) => {
 /**
  * Frames the picture for the screen: the figures, crown to seat, fit between the top bar and the
  * 问事 tray, seated just above the tray's edge; the outer figures keep room at the screen's sides.
- * Layout positions are used (not the tray's rising animation), so the framing never jumps.
  */
-function frame(plate: HTMLElement, root: HTMLElement) {
+function frame(plate: HTMLElement, root: HTMLElement, trayHeight: number) {
   const W = root.clientWidth;
   const H = root.clientHeight;
   if (!W || !H) return;
-  const panel = document.querySelector<HTMLElement>('.home-panel');
   const header = document.querySelector<HTMLElement>('.temple-top');
-  if (panel?.offsetHeight && Math.abs(panel.offsetHeight - trayHeight) > 1) {
-    trayHeight = panel.offsetHeight;
-    try {
-      localStorage.setItem(TRAY_KEY, String(Math.round(trayHeight)));
-    } catch {
-      /* framing still works this session */
-    }
-  }
   const tray = Math.max(H * 0.25, H - trayHeight);
   const bar = header?.offsetHeight ? topOf(header) + header.offsetHeight : 64;
   const room = Math.max(80, tray - bar - 10);
@@ -65,42 +82,47 @@ function frame(plate: HTMLElement, root: HTMLElement) {
   const pw = Math.max(W, Math.min(sideMax, fitMax, W * 1.3));
   const ph = pw / ASPECT;
   const top = Math.min(0, tray - 6 - SEAT_LINE * ph);
-  // Written only when it changes: re-setting a large picture's size repaints it.
-  const next = `${pw.toFixed(1)}|${ph.toFixed(1)}|${top.toFixed(1)}`;
-  if (plate.dataset.frame === next) return;
-  plate.dataset.frame = next;
   Object.assign(plate.style, { width: `${pw}px`, height: `${ph}px`, left: `${(W - pw) / 2}px`, top: `${top}px`, transform: 'none' });
 }
 
 /** Seats in the 941×1672 picture: left %, top %, width % (each portrait's foot on its seat's top). */
 const SEATS = [
-  { key: 'yuanshi', file: 'art/sanqing-yuanshi.webp', left: 37.4, top: 27.3, width: 25.5, shadowTop: 46.2 },
-  { key: 'laojun', file: 'art/sanqing-laojun.webp', left: 8.9, top: 30.9, width: 22.8, shadowTop: 47.6 },
-  { key: 'lingbao', file: 'art/sanqing-lingbao.webp', left: 68.8, top: 31.4, width: 22.8, shadowTop: 47.6 },
+  { key: 'yuanshi', file: 'art/sanqing-yuanshi.webp', left: 37.4, top: 27.3, width: 25.5, shadowTop: 46.2, glowY: 34.9 },
+  { key: 'laojun', file: 'art/sanqing-laojun.webp', left: 8.9, top: 30.9, width: 22.8, shadowTop: 47.6, glowY: 37.7 },
+  { key: 'lingbao', file: 'art/sanqing-lingbao.webp', left: 68.8, top: 31.4, width: 22.8, shadowTop: 47.6, glowY: 38.0 },
 ] as const;
 /** Hanging lanterns (x, y, size as fractions of the width) and the censer's mouth. */
 const LAMPS = [
   [0.138, 0.145, 0.12],
   [0.882, 0.145, 0.12],
 ] as const;
-const CENSER = [0.5, 0.572] as const;
+/** Where the incense sticks' tips are in the hall picture: the smoke rises from here. */
+const CENSER = [0.495, 0.568] as const;
 
-/** `smoke`: the censer sits under the 问事 tray at home, so its incense only rises during the walk-in. */
-export function PaintedHall({ shown, still, smoke }: { shown: boolean; still: boolean; smoke: boolean }) {
+export function PaintedHall({ shown, still }: { shown: boolean; still: boolean }) {
   const base = import.meta.env.BASE_URL;
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!shown) return;
-    // Re-framed a few times a second while shown: cheap, and it follows the tray and rotation.
-    const fit = () => root.current && plate.current && frame(plate.current, root.current);
-    fit();
-    const id = window.setInterval(fit, 500);
-    window.addEventListener('resize', fit);
-    return () => {
-      window.clearInterval(id);
-      window.removeEventListener('resize', fit);
+    // Framed once for this screen size, and again only if the screen itself changes (rotation).
+    let size = '';
+    const fit = () => {
+      const r = root.current;
+      if (!r || !plate.current) return;
+      const now = `${r.clientWidth}x${r.clientHeight}`;
+      if (now === size) return;
+      size = now;
+      frame(plate.current, r, expectedTray(r.clientWidth));
     };
+    fit();
+    window.addEventListener('resize', fit);
+    return () => window.removeEventListener('resize', fit);
+  }, []);
+  useEffect(() => {
+    if (!shown) return;
+    // Learn the tray's real height on this device, for the next visit (the picture stays put now).
+    const id = window.setInterval(() => root.current && noteTray(root.current.clientWidth), 1000);
+    return () => window.clearInterval(id);
   }, [shown]);
   return (
     <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
@@ -108,14 +130,20 @@ export function PaintedHall({ shown, still, smoke }: { shown: boolean; still: bo
         {LAMPS.map(([x, y, w], i) => (
           <i key={i} className="walkin-lamp" style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${w * 100}%`, animationDelay: `${-i * 1.1}s` }} />
         ))}
+        {/* A soft light behind each of the 三清, breathing slowly. */}
+        {SEATS.map((s, i) => (
+          <i key={`glow-${s.key}`} className="hall-glow" style={{ left: `${s.left + s.width / 2}%`, top: `${s.glowY}%`, width: `${s.width * 1.55}%`, animationDelay: `${-i * 2.1}s` }} />
+        ))}
         {SEATS.map((s) => (
           <i key={`shadow-${s.key}`} className="hall-shadow" style={{ left: `${s.left - 1}%`, top: `${s.shadowTop}%`, width: `${s.width + 2}%` }} />
         ))}
         {SEATS.map((s) => (
           <img key={s.key} className={`hall-figure is-${s.key}`} src={`${base}${s.file}`} alt="" style={{ left: `${s.left}%`, top: `${s.top}%`, width: `${s.width}%` }} />
         ))}
-        {smoke && [0, 1].map((i) => (
-          <img key={i} className="walkin-smoke is-hall" src={walkInUrl(WALK_IN_FILES.wisp)} alt="" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%`, animationDelay: `${-i * 4.5}s` }} />
+        {/* The incense: the sticks' tips glow, and smoke rises, sways and thins over the painted wisp. */}
+        <i className="hall-embers" style={{ left: `${CENSER[0] * 100}%`, top: `${CENSER[1] * 100}%` }} />
+        {[0, 1, 2].map((i) => (
+          <img key={i} className={`hall-smoke is-${i}`} src={walkInUrl(WALK_IN_FILES.wisp)} alt="" style={{ left: `${(CENSER[0] + (i - 1) * 0.012) * 100}%`, top: `${CENSER[1] * 100}%` }} />
         ))}
       </div>
     </div>
