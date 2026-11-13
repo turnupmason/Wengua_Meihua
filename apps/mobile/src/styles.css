@@ -1473,23 +1473,36 @@ input, textarea, select { font-size: max(16px, 1em); }
    shadows, the dark glow behind it), then only moved and faded. */
 .splash-title, .splash-key, .login-v2, .login-card { will-change: transform, opacity; backface-visibility: hidden; }
 
-/* Lamps breathe like flame: a slow swell and ebb, with small uneven flickers on top (every lamp in
-   the courtyard, the threshold, the hall, 藏经阁 and 问事录). GPU-only (opacity, transform). */
+/* Lamps breathe like flame: the lantern itself brightens and dims (screen-blended over the painting,
+   so its own paper and frame glow) with a warm halo around it — a slow swell and ebb with small
+   uneven flickers (every lamp in the courtyard, the threshold, the hall, 藏经阁 and 问事录).
+   GPU-only (opacity, transform). */
 .walkin-lamp {
-  background: radial-gradient(circle, rgba(255, 222, 160, 0.62) 0%, rgba(255, 196, 120, 0.3) 30%, rgba(255, 176, 96, 0.1) 52%, rgba(255, 160, 80, 0) 72%);
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(255, 220, 160, 0.75) 0%, rgba(255, 196, 116, 0.4) 30%, rgba(255, 170, 90, 0.12) 52%, rgba(255, 160, 80, 0) 70%);
   animation: lampBreath 3.4s ease-in-out infinite; will-change: opacity, transform;
+}
+/* The light it throws on the dark beams around it: a wide soft halo. */
+.walkin-lamp::after {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 260%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 196, 120, 0.8) 0%, rgba(255, 178, 100, 0.42) 22%, rgba(255, 160, 80, 0.16) 42%, rgba(255, 150, 70, 0) 62%);
+}
+/* The lantern's body: a tall warm core where the paper is. */
+.walkin-lamp::before {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 42%; height: 92%; transform: translate(-50%, -50%); border-radius: 45%;
+  background: radial-gradient(ellipse, rgba(255, 232, 180, 1) 0%, rgba(255, 206, 128, 0.6) 45%, rgba(255, 180, 100, 0) 75%);
 }
 .walkin-lamp.is-small { animation-duration: 3.9s; }
 @keyframes lampBreath {
-  0% { opacity: 0.38; transform: translate(-50%, -50%) scale(0.9); }
-  12% { opacity: 0.7; }
-  16% { opacity: 0.5; }
-  34% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.06); }
-  48% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-  55% { opacity: 0.78; }
-  60% { opacity: 0.92; }
-  78% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.98); }
-  100% { opacity: 0.38; transform: translate(-50%, -50%) scale(0.9); }
+  0% { opacity: 0.12; transform: translate(-50%, -50%) scale(0.92); }
+  12% { opacity: 0.45; }
+  16% { opacity: 0.3; }
+  34% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.04); }
+  48% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  55% { opacity: 0.72; }
+  60% { opacity: 0.88; }
+  78% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.98); }
+  100% { opacity: 0.12; transform: translate(-50%, -50%) scale(0.92); }
 }
 .walkin.is-still .walkin-lamp, .walkin.is-still .hall-smoke, .walkin.is-still .hall-embers { animation: none; opacity: 0.6; }
 @media (prefers-reduced-motion: reduce) { .walkin-lamp { animation: none; opacity: 0.6; } }
