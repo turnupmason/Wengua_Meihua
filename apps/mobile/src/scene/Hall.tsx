@@ -12,7 +12,7 @@ import * as THREE from 'three';
 import { flameGeometry, flameMaterial } from './flame';
 import { introProgress } from './introState';
 import { doorOpen } from './timeline';
-import { drawCloud, lathe, normalFromHeight, patternedCloth, sceneMaterials, sharedGeometry } from './materials';
+import { drawCloud, lathe, normalFromHeight, patternedCloth, sceneMaterials, sharedGeometry, tiledPlane } from './materials';
 import { LightingCandle, OfferingTable } from './Offerings';
 import { Burner } from './Burner';
 import { Courtyard, Facade } from './Exterior';
@@ -575,11 +575,10 @@ function DoorLeaf({ side }: { side: 1 | -1 }) {
 function Forecourt() {
   const m = sceneMaterials();
   const g = sharedGeometry();
+  const forecourt = useMemo(() => tiledPlane(30, 12), []);
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.001, HALL.front + 6]} material={m.floor}>
-        <planeGeometry args={[30, 12]} />
-      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.001, HALL.front + 6]} material={m.floor} geometry={forecourt} />
       {/* Threshold (门槛) and a broad stone step */}
       <Block position={[0, 0.11, HALL.front]} scale={[DOOR.half * 2, 0.22, 0.42]} material={m.lacquer} />
       <Block position={[0, 0.06, HALL.front + 1.0]} scale={[DOOR.half * 2 + 2.4, 0.12, 1.4]} material={m.darkStone} />
@@ -615,13 +614,12 @@ export function Hall({ shadows }: { shadows: boolean }) {
     f.envMapIntensity = 0.18;
     return f;
   }, [m.floor]);
+  const hallFloor = useMemo(() => tiledPlane(HALL.halfWidth * 2, 32), []);
   const cushionGeo = useMemo(() => lathe([[0.001, 0], [0.3, 0], [0.36, 0.04], [0.38, 0.1], [0.34, 0.16], [0.2, 0.19], [0.001, 0.2]], 36), []);
   return (
     <group>
       {/* Floor, red runner, walls */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -2]} material={floorMat} receiveShadow={shadows}>
-        <planeGeometry args={[HALL.halfWidth * 2, 32]} />
-      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -2]} material={floorMat} geometry={hallFloor} receiveShadow={shadows} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.004, 3]} material={d.runner}>
         <planeGeometry args={[1.6, 17]} />
       </mesh>

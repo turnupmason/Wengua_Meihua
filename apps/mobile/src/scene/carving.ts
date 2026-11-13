@@ -131,7 +131,8 @@ export const CARVE_TIMING = {
   // Sit at the table (the walk there is 'entering'), then the light from the altar, then carving.
   // About 12 s in all with the walk (was about 20): the bestowal holds ~1.9 s, the 18 lines carve in ~2.9 s.
   normal: { sit: 0.4, light: 2.6, frames: 0.6, line: 0.16, arrow: 0.5, text: 0.5, glow: 0.5, hold: 0.8 },
-  reduced: { sit: 0.3, light: 0.8, frames: 0.4, line: 1.0, arrow: 0.6, text: 0.5, glow: 0.4, hold: 0.4 },
+  // Reduced motion: fewer moves, not less time to read — 祖师赐卦 still stays about 1.2 s.
+  reduced: { sit: 0.3, light: 1.6, frames: 0.4, line: 1.0, arrow: 0.6, text: 0.5, glow: 0.4, hold: 0.4 },
 };
 
 export interface RevealPlan {

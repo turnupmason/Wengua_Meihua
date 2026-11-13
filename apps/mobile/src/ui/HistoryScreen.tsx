@@ -1,3 +1,4 @@
+import { otherTimeZone } from './timeText';
 import { useEffect, useState } from 'react';
 import { shownQuestion } from '../domain/questionCatalog';
 import { STRINGS } from '../domain/i18n';
@@ -92,7 +93,8 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
                     {r.stages.primary.name} → {r.stages.mutual.name} → {r.stages.changed.name}
                   </span>
                   <span className="history-meta">
-                    {r.localWallClock?.replace('T', ' ') ?? r.createdAt} · {r.timeZone}
+                    {r.localWallClock?.replace('T', ' ') ?? r.createdAt}
+                    {otherTimeZone(r.timeZone) && ` · ${r.timeZone}`}
                   </span>
                   {r.question && <span className="history-q">“{shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh')}”</span>}
                   {book[r.castId] && (

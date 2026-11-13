@@ -38,6 +38,9 @@ export interface EntryForm {
   topicId: DomainId | null;
 }
 
+/** Every method's own inputs, empty: each method keeps nothing of another's (物数 is not 声音). */
+export const NO_METHOD_INPUT = { count: '', surname: '', textUpper: '', textLower: '', major: '', minor: '', objectTrigram: '', directionTrigram: '' } as const;
+
 export const EMPTY_FORM: EntryForm = {
   questionId: null,
   conditions: {},
@@ -304,6 +307,22 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const [mk, dk] = METHOD_KEY[form.method];
 
   const [showMethods, setShowMethods] = useState(false);
+  // The sheet in two steps: choose the method, then its own page of inputs (with ← back to the list).
+  const [methodStep, setMethodStep] = useState<'list' | 'input'>('list');
+  const openMethods = () => {
+    setMethodStep('list');
+    setShowMethods(true);
+  };
+  /** Choosing another method starts it empty; choosing the same one again keeps what was entered. */
+  const chooseMethod = (m: ClassicalMethod) => {
+    if (m !== form.method) onForm({ ...form, ...NO_METHOD_INPUT, method: m });
+    setMethodStep('input');
+  };
+  /** ← from a method's page: nothing chosen there is kept, and the cast goes back to 年月日时. */
+  const backToMethods = () => {
+    onForm({ ...form, ...NO_METHOD_INPUT, method: EMPTY_FORM.method });
+    setMethodStep('list');
+  };
   // The domain whose drawer is open (its button glows while the drawer is up).
   const [drawer, setDrawer] = useState<CatalogDomain | null>(null);
   // Which number the in-app pad is editing.
@@ -382,7 +401,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {!readOnly && (
           <>
             <div className="cast-row">
-              <button type="button" className="method-line" onClick={() => setShowMethods(true)}>
+              <button type="button" className="method-line" onClick={openMethods}>
                 <span>{t[mk] as string}</span>
                 <i aria-hidden="true">·</i>
                 <span className="method-time">{timeText}</span>
@@ -423,20 +442,30 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         <div className="sheet-backdrop" onClick={() => setShowMethods(false)}>
           <section className="sheet method-sheet" role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
-              <h2>{t.methodLabel}</h2>
+              {methodStep === 'input' && (
+                <button type="button" className="icon-btn method-back" onClick={backToMethods} aria-label={t.back}>
+                  ←
+                </button>
+              )}
+              <h2>{methodStep === 'input' ? (t[mk] as string) : t.methodLabel}</h2>
               <button className="icon-btn" onClick={() => setShowMethods(false)} aria-label={t.close}>
                 ✕
               </button>
             </header>
             <div className="sheet-body method-body">
-          <p className="method-hint">{t.methodHint}</p>
-          <div className="methods" role="radiogroup" aria-label={t.methodLabel}>
-            {UI_METHODS.map((m) => (
-              <button type="button" key={m} role="radio" aria-checked={form.method === m} className={form.method === m ? 'is-on' : ''} onClick={() => f('method', m)}>
-                {t[METHOD_KEY[m][0]] as string}
-              </button>
-            ))}
-          </div>
+          {methodStep === 'list' ? (
+            <>
+              <p className="method-hint">{t.methodHint}</p>
+              <div className="methods" role="radiogroup" aria-label={t.methodLabel}>
+                {UI_METHODS.map((m) => (
+                  <button type="button" key={m} role="radio" aria-checked={form.method === m} className={form.method === m ? 'is-on' : ''} onClick={() => chooseMethod(m)}>
+                    {t[METHOD_KEY[m][0]] as string}
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+          <>
           <div className="method-card" aria-live="polite">
             <p className="method-rule">
               <b>{t[mk] as string}</b>　{t[dk] as string}
@@ -497,6 +526,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
               <button type="button" className="enter-seal small" onClick={() => setShowMethods(false)}>
                 {t.done}
               </button>
+          </>
+          )}
             </div>
           </section>
         </div>
@@ -563,9 +594,12 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                   {profileName ? `（${profileName}）` : ''}
                 </button>
               )}
-              <button className="text-btn" onClick={onDebug}>
-                {t.debug}
-              </button>
+              {/* 手动联调 is a development tool: not in a release build. */}
+              {import.meta.env.DEV && (
+                <button className="text-btn" onClick={onDebug}>
+                  {t.debug}
+                </button>
+              )}
             </div>
           </section>
         </div>

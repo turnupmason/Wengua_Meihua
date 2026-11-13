@@ -37,7 +37,7 @@ export function domainTitle(domain: { id: string; title: string }, lang: Lang) {
   return lang === 'en' ? `${DOMAIN_EN[domain.id] ?? domain.id} · ${domain.title}` : domain.title;
 }
 
+/** For screen readers: the relation itself (体克用…), not a rule-only verdict that could contradict the 断语. */
 export function relationAria(r: RelationView, lang: Lang) {
-  const txt = relationText(r, lang);
-  return `${txt.label}: ${txt.phrase}`;
+  return relationText(r, lang).label;
 }

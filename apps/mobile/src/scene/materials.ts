@@ -51,64 +51,43 @@ function smokeSprite() {
 }
 
 /**
- * A colour map from the user's stone swatch (public/art/entrance/materials), usable at once (a flat
- * placeholder of the same tone) and filled in when the picture loads. `tiles` lays the swatch out
- * as tiles×tiles slabs per texture, each a touch lighter or darker, with soft dark grout between
- * them — on the same grid as the procedural floor's normal map, so the grooves line up.
+ * A texture from the user's stone pictures (public/art/entrance/materials, built by
+ * scripts/build-stone-maps.py), usable at once (a flat placeholder of the same tone) and filled
+ * in when the picture loads. Colour maps are sRGB; a normal map is linear data.
  */
-function swatchMap(file: string, repeat: [number, number], placeholder: string, tiles = 1) {
+function swatchMap(file: string, repeat: [number, number], placeholder: string, srgb = true) {
   const c = document.createElement('canvas');
   c.width = c.height = 4;
   const g0 = c.getContext('2d')!;
   g0.fillStyle = placeholder;
   g0.fillRect(0, 0, 4, 4);
-  const t = new THREE.CanvasTexture(c);
-  t.colorSpace = THREE.SRGBColorSpace;
+  const t = new THREE.Texture<HTMLCanvasElement | HTMLImageElement>(c);
+  t.needsUpdate = true;
+  if (srgb) t.colorSpace = THREE.SRGBColorSpace;
   t.wrapS = t.wrapT = THREE.RepeatWrapping;
   t.repeat.set(...repeat);
   t.anisotropy = 8;
   if (typeof Image === 'undefined') return t;
   const img = new Image();
   img.onload = () => {
-    const S = img.width;
-    const out = document.createElement('canvas');
-    out.width = out.height = S * tiles;
-    const g = out.getContext('2d')!;
-    let seed = 7;
-    const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-    for (let y = 0; y < tiles; y++)
-      for (let x = 0; x < tiles; x++) {
-        // Each slab a different part of the stone (flipped), and its own slight tone.
-        g.save();
-        g.translate(x * S + (x % 2 ? S : 0), y * S + (y % 2 ? S : 0));
-        g.scale(x % 2 ? -1 : 1, y % 2 ? -1 : 1);
-        g.drawImage(img, 0, 0, S, S);
-        g.restore();
-        if (tiles > 1) {
-          const k = rnd() - 0.5;
-          g.fillStyle = k > 0 ? `rgba(255, 236, 214, ${k * 0.09})` : `rgba(8, 5, 3, ${-k * 0.16})`;
-          g.fillRect(x * S, y * S, S, S);
-        }
-      }
-    if (tiles > 1) {
-      // Grout: a dark core with a soft falloff (the normal map carries the groove).
-      const core = S * 0.012;
-      const soft = S * 0.03;
-      for (let i = 0; i <= tiles; i++) {
-        const p = i * S;
-        for (const [w, a] of [[soft * 2, 0.22], [core * 2, 0.55]] as const) {
-          g.fillStyle = `rgba(10, 6, 4, ${a})`;
-          g.fillRect(p - w / 2, 0, w, out.height);
-          g.fillRect(0, p - w / 2, out.width, w);
-        }
-      }
-    }
     t.dispose();
-    t.image = out;
+    t.image = img;
     t.needsUpdate = true;
   };
   img.src = `${import.meta.env.BASE_URL}art/entrance/materials/${file}`;
   return t;
+}
+
+/** One texture of the floor tiles covers this many metres each way (three slabs across, four rows). */
+export const FLOOR_TILE = 2.4;
+
+/** A floor plane whose UVs run in tiles of FLOOR_TILE metres, so every floor has the same slab size. */
+export function tiledPlane(width: number, depth: number, tile = FLOOR_TILE) {
+  const geo = new THREE.PlaneGeometry(width, depth);
+  const uv = geo.attributes.uv as THREE.BufferAttribute;
+  for (let i = 0; i < uv.count; i++) uv.setXY(i, (uv.getX(i) * width) / tile, (uv.getY(i) * depth) / tile);
+  uv.needsUpdate = true;
+  return geo;
 }
 
 let cache: ReturnType<typeof build> | null = null;
@@ -121,16 +100,17 @@ function build() {
   const gold = procSet('gold', [], [2, 2], look('#c89f55', 0.97), 0.35);
   const stone = procSet('stone', [7, '#7a7d74'], [1.5, 1.5], look('#7a7d74', 0.94), 0.77);
   const darkStoneSet = procSet('stone', [27, '#4e4f4a'], [2, 2], look('#4e4f4a', 0.94), 0.77);
-  // Hall and forecourt paving: the user's brown stone as the slabs' colour, the procedural grout
-  // grooves and relief as their normal map (the same 2×2 grid).
-  const floorProc = procSet('floor', [], [4, 7], look('#45403a', 0.93), 0.87);
-  const floor: TextureSet = { ...floorProc, map: swatchMap('floor-stone.webp', [4, 7], 'rgb(56,49,44)', 2) };
-  // The stone table (top, legs, stools, frame, apron): the user's grey stone, procedural relief.
+  // Hall, forecourt and courtyard paving: the user's running-bond stone tiles as the colour, and a
+  // shallow relief made from that same picture as the normal map (joints sink). Floors use
+  // tiledPlane(), so the maps repeat every FLOOR_TILE metres.
+  const floorMap = swatchMap('floor-tiles.webp', [1, 1], 'rgb(46,39,31)');
+  const floorNormal = swatchMap('floor-tiles-normal.webp', [1, 1], 'rgb(128,128,255)', false);
+  // The stone table (top, edge, legs, stools, frame): the user's dark stone, procedural relief.
   const tableProc = procSet('stone', [17, '#8b8d84'], [1, 1], look('#8b8d84', 0.94), 0.77);
-  const tableStone: TextureSet = { ...tableProc, map: swatchMap('table-stone.webp', [1, 1], 'rgb(68,64,60)') };
+  const tableStone: TextureSet = { ...tableProc, map: swatchMap('table-stone.webp', [1, 1], 'rgb(33,31,29)') };
   const apronProc = procSet('carvedPanel', [], [1, 1], look('#6f746c', 0.85), 0.77);
-  const apron: TextureSet = { ...apronProc, map: swatchMap('table-stone.webp', [1, 1], 'rgb(68,64,60)') };
-  const tableBase: TextureSet = { ...darkStoneSet, map: swatchMap('table-stone.webp', [2, 2], 'rgb(68,64,60)') };
+  const apron: TextureSet = { ...apronProc, map: swatchMap('table-stone.webp', [1, 1], 'rgb(33,31,29)') };
+  const tableBase: TextureSet = { ...darkStoneSet, map: swatchMap('table-stone.webp', [2, 2], 'rgb(33,31,29)') };
   // Altar cloth: old gold on a dark ground, not a bright yellow field.
   const clothSet = patternedCloth('#2a1d16', '#5e4a30', [2, 1], 51, 0.4);
   const cushionSet = patternedCloth('#6b4a1e', '#b48a3c', [1, 1], 61);
@@ -139,11 +119,12 @@ function build() {
   return {
     textures: { stone: stone.map, smoke: smokeSprite(), tableStone },
     sets: { stone, tableStone, darkStone: darkStoneSet, gold },
-    floor: fromSet(floor, { metalness: 0.02 }),
+    floor: std({ map: floorMap, normalMap: floorNormal, normalScale: new THREE.Vector2(0.7, 0.7), roughness: 0.88, metalness: 0.02 }),
     stone: fromSet(stone, { metalness: 0.02 }),
-    tableStone: fromSet(tableStone, { metalness: 0.03 }),
+    // The user's dark stone as it is: a faint relief only, one even honed roughness (no speckled sheen).
+    tableStone: std({ map: tableStone.map, normalMap: tableStone.normalMap, normalScale: new THREE.Vector2(0.3, 0.3), roughness: 0.84, metalness: 0.03 }),
     /** The table's frame and the stools' bases: the same grey stone, slightly darker. */
-    tableBase: fromSet(tableBase, { color: '#c9c4bc' }),
+    tableBase: std({ map: tableBase.map, normalMap: tableBase.normalMap, normalScale: new THREE.Vector2(0.3, 0.3), roughness: 0.86, color: '#c9c4bc' }),
     apronStone: fromSet(apron, { metalness: 0.03 }),
     darkStone: fromSet(darkStoneSet),
     lacquer: fromSet(lacquerSet, { metalness: 0.08 }),

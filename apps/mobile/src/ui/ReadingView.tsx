@@ -164,6 +164,9 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
     </li>
   );
   const j = authored?.judgment;
+  // With a written 断语, 专业依据 keeps the facts (三卦, 体用 relations, 爻辞, 古籍) but not the
+  // rule-only conclusions (当前有利 / 结局顺和…): those ignore 旺衰 and can contradict the 断语.
+  const quiet = !!j;
   const valence = (v: string) => (v === '吉' ? t.valenceGood : v === '凶' ? t.valenceBad : v);
   // 体用 structure by the rules: in 详断 for older records (as they were shown), else in 专业依据.
   const structural = y.applicable ? (
@@ -212,7 +215,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
     const st = reading.stages[hs];
     const rows = s ? [s.main, ...(s.secondary ? [s.secondary] : [])] : [];
     return (
-      <section key={key} ref={(el) => void (refs.current[key] = el)} className={`read-stage tone-${s ? s.tone : 'weather'} ${focus === key ? 'is-focus' : ''}`} aria-labelledby={`rs-${key}`}>
+      <section key={key} ref={(el) => void (refs.current[key] = el)} className={`read-stage tone-${s ? (quiet ? 'plain' : s.tone) : 'weather'} ${focus === key ? 'is-focus' : ''}`} aria-labelledby={`rs-${key}`}>
         <div className="read-stage-head">
           <span className="read-stage-word">{t.verdictStage[key]}</span>
           <h3 id={`rs-${key}`}>
@@ -238,7 +241,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           />
           <div className="read-rel">
             {rows.map((r) => (
-              <p key={r.role} className={`read-rel-row tone-${r.tone}`}>
+              <p key={r.role} className={`read-rel-row tone-${quiet ? 'plain' : r.tone}`}>
                 <span className="read-rel-pair">
                   {roleName(r.title, lang)} {tri(r)} <i>·</i> {lang === 'en' ? 'Body' : '体'} {bodyTri}
                 </span>
@@ -256,7 +259,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                 </b>
               </p>
             )}
-            {s && <p className="read-phrase">{s.phrase}</p>}
+            {s && !quiet && <p className="read-phrase">{s.phrase}</p>}
           </div>
         </div>
       </section>
@@ -287,10 +290,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           <p className="read-kicker">{t.askedMatter}</p>
           <p className="read-question">{question ? `“${question}”` : t.noQuestion}</p>
           <p className="read-meta">
-            {topicLabel && `${topicLabel} · `}
-            {entryLabel && `${entryLabel} · `}
-            {domainTitle(reading.domain, lang)}
-            {castTime && ` · ${castTime}`}
+            {/* The classical 门类 (人事占第二…) is internal; it is cited only beside its passages under 专业依据. */}
+            {[topicLabel, entryLabel, topicLabel ? null : domainTitle(reading.domain, lang), castTime].filter(Boolean).join(' · ')}
           </p>
         </section>
 
@@ -453,7 +454,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                 const st = y.applicable ? y.stages[i] : null;
                 const w = weather?.stages[i];
                 return (
-                  <button key={k} type="button" className={`evidence-col tone-${st ? st.tone : 'weather'}`} onClick={() => refs.current[k]?.scrollIntoView?.({ block: 'start', behavior: 'smooth' })}>
+                  <button key={k} type="button" className={`evidence-col tone-${st ? (quiet ? 'plain' : st.tone) : 'weather'}`} onClick={() => refs.current[k]?.scrollIntoView?.({ block: 'start', behavior: 'smooth' })}>
                     <small>{t.verdictStage[k]}</small>
                     <b>{reading.stages[hs].name}</b>
                     <span>{y.applicable ? y.compact[i] : w ? w.images.join('·') : ''}</span>
@@ -461,10 +462,12 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                 );
               })}
             </div>
-            <p className="evidence-line">
-              <b>{t.evidenceHex}</b>
-              {y.applicable ? y.evidenceSummary : weather?.summary}
-            </p>
+            {!(quiet && y.applicable) && (
+              <p className="evidence-line">
+                <b>{t.evidenceHex}</b>
+                {y.applicable ? y.evidenceSummary : weather?.summary}
+              </p>
+            )}
             {onOpenSection && (
               <p className="evidence-line">
                 <b>{t.evidenceBook}</b>
@@ -479,7 +482,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               </p>
             )}
           </section>
-        {!legacy && structural && (
+        {!legacy && !quiet && structural && (
           // The 体用 summary repeats the stage cards below, so it is folded.
           <details className="read-judge-fold">
             <summary>{t.structuralTitle}</summary>

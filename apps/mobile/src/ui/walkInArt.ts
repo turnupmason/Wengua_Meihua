@@ -5,7 +5,7 @@
  */
 import { useEffect, useState } from 'react';
 
-export const WALK_IN_FILES = { courtyard: 'plate-courtyard.webp', threshold: 'plate-threshold.webp', hall: 'plate-hall.webp', wisp: 'incense-wisp.webp' } as const;
+export const WALK_IN_FILES = { courtyard: 'plate-courtyard.webp', threshold: 'plate-threshold.webp', hall: 'plate-hall.webp', wisp: 'incense-wisp.webp', table: 'plate-table.webp' } as const;
 export const walkInUrl = (file: string) => `${import.meta.env.BASE_URL}art/entrance/${file}`;
 
 let ready = false;

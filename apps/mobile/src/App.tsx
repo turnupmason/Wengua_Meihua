@@ -337,9 +337,11 @@ export function App() {
     setSplash('shown');
     setIntro('waiting');
   };
+  // Over the title the painted courtyard of the walk-in shows through ("live"); a reading being
+  // resumed has no walk-in behind it, so the title keeps its own picture instead.
   const splashLayer =
     splash !== 'gone' && knowledge ? (
-      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={settings.quality !== '2d' && hasWebGL()} welcoming={welcoming} />
+      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />
     ) : null;
 
   if (!knowledge) {

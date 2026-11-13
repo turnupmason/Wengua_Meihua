@@ -7,6 +7,8 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent as RPointerEvent } from 'react';
 import type { Knowledge, Reading, DetailedLine, DetailedHexagram, ReferenceCommentary } from '../knowledge/knowledge';
 import { getVoidReleaseTargets } from '../knowledge/knowledge';
+import { assessSeasonalQi } from '@knowledge';
+import { seasonOf } from '../domain/judgment';
 import type { Selection } from '../scene/StoneTable';
 import type { CastRecord } from '../domain/cast';
 import type { MissingReason, ProductJudgment } from '../domain/judgment';
@@ -327,8 +329,22 @@ function ExtendedBlock({ extended, t, onRetry, onOpenChanged }: { extended: Exte
 /** Relation notes worth showing: what 旬空 does to the effect. The rest ("保留本项生克作用", "空亡资料待定…") are internal. */
 const SHOWN_NOTES = new Set(['耗克作用暂减，仍核对体卦状态', '助益或可控条件暂难落实']);
 
-/** 时令: the source lists only 旺 and 衰; other elements get a dash rather than a judgment. */
-const strengthText = (state: string, label: string) => (state === 'strong' || state === 'weak' ? label : '—');
+/**
+ * 时令 in the five states 旺相休囚死 of the actual 月令 — the same table the 断语's 计算说明 uses
+ * (寅卯木、巳午火、申酉金、亥子水、辰未戌丑土). No 月令, no state.
+ */
+const MONTH_ORDER = { spring: 'spring-wood', summer: 'summer-fire', autumn: 'autumn-metal', winter: 'winter-water', earth: 'seasonal-earth' } as const;
+const QI_EN: Record<string, string> = { 旺: 'prosperous', 相: 'strong', 休: 'resting', 囚: 'confined', 死: 'dead' };
+function qiText(element: string, monthBranch: string | null | undefined, lang: Lang) {
+  const season = seasonOf(monthBranch);
+  if (!season) return '—';
+  try {
+    const state = assessSeasonalQi(element as never, MONTH_ORDER[season]).state;
+    return lang === 'en' ? `${state} ${QI_EN[state]}` : state;
+  } catch {
+    return '—';
+  }
+}
 
 /** Casting numbers in words: upper / lower trigram numbers and the number that gives the moving line. */
 function castNumbers(raw: Record<string, unknown>, lang: Lang): string {
@@ -386,7 +402,7 @@ function ReadingBasis({ reading, record, t, lang }: { reading: Reading; record: 
                 {ROLE_LABEL[n.role]?.[lang] ?? n.role} {n.trigram}
                 {n.element}
               </td>
-              <td>{strengthText(n.strength.state, n.strength.label)}</td>
+              <td>{qiText(n.element, record?.context.monthBranch, lang)}</td>
               {showHistoricalVoid && <td>{n.void.label}</td>}
             </tr>
           ))}

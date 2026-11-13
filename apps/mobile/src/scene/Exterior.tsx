@@ -7,7 +7,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { drawCloud, fbm, lathe, normalFromHeight, sceneMaterials, sharedGeometry } from './materials';
+import { drawCloud, fbm, lathe, normalFromHeight, sceneMaterials, sharedGeometry, tiledPlane } from './materials';
 import { entranceTexture } from './entranceArt';
 
 export const FRONT = 13.6;
@@ -711,11 +711,10 @@ function FacadeLight() {
 /** Courtyard beyond the steps: stone ground, lanterns and the censer. */
 export function Courtyard() {
   const m = sceneMaterials();
+  const paving = useMemo(() => tiledPlane(60, 30), []);
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, FRONT + 18]} material={m.floor} receiveShadow>
-        <planeGeometry args={[60, 30]} />
-      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, FRONT + 18]} material={m.floor} geometry={paving} receiveShadow />
       <CourtyardCenser position={[0, 0, FRONT + 11.5]} />
       {[-1, 1].map((s) => (
         <group key={s}>

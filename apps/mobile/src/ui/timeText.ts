@@ -24,3 +24,13 @@ export function castTimeShort(cal: CalendarResult): string {
 
 /** Characters the lunar calendar can print at runtime, listed so the font subset includes them. */
 export const CALENDAR_GLYPHS = '甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥年月日时点正一二三四五六七八九十冬腊初廿卅闰';
+
+/** A record's time zone, shown only when it is not the one this device is in now (cast while travelling). */
+export function otherTimeZone(timeZone: string | null | undefined): string | null {
+  if (!timeZone) return null;
+  try {
+    return timeZone === Intl.DateTimeFormat().resolvedOptions().timeZone ? null : timeZone;
+  } catch {
+    return timeZone;
+  }
+}

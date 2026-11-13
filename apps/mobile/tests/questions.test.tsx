@@ -274,6 +274,35 @@ describe('click-only home', () => {
     expect(last.count).toBe('1');
     expect(keyboardFields()).toHaveLength(0);
   });
+
+  it('keeps each method on its own: switching starts empty, ← back to the list clears what was chosen', () => {
+    let last: EntryForm = EMPTY_FORM;
+    render(<Home onChange={(f) => (last = f)} />);
+    fireEvent.click(screen.getByRole('button', { name: /更多起卦方式/ }));
+    // 物数: 38, then ← back to the list, then 声音: its count is not 物数's.
+    fireEvent.click(screen.getByRole('radio', { name: '物数' }));
+    fireEvent.click(screen.getByRole('button', { name: /数得几数/ }));
+    fireEvent.click(screen.getByRole('button', { name: '3' }));
+    fireEvent.click(screen.getByRole('button', { name: '8' }));
+    expect(last).toMatchObject({ method: 'object-count', count: '38' });
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
+    expect(last).toMatchObject({ method: 'classical-time', count: '' });
+    fireEvent.click(screen.getByRole('radio', { name: '声音' }));
+    expect(last).toMatchObject({ method: 'sound-count', count: '' });
+    // Switching straight from 声音 (with a number) to 物数 also starts empty.
+    fireEvent.click(screen.getByRole('button', { name: /闻声几数/ }));
+    fireEvent.click(screen.getByRole('button', { name: '5' }));
+    expect(last.count).toBe('5');
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
+    fireEvent.click(screen.getByRole('radio', { name: '物象方位' }));
+    // 物象方位 has its own page with ← back: what was picked there is cleared on the way out.
+    fireEvent.click(screen.getByRole('radio', { name: /^乾/ }));
+    fireEvent.click(screen.getByRole('radio', { name: /^北/ }));
+    expect(last).toMatchObject({ method: 'object-direction', objectTrigram: '乾', directionTrigram: '坎', count: '' });
+    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
+    expect(last).toMatchObject({ method: 'classical-time', objectTrigram: '', directionTrigram: '' });
+    expect(screen.getByRole('radio', { name: '年月日时' }).getAttribute('aria-checked')).toBe('true');
+  });
 });
 
 describe('reference and guidance', () => {
@@ -535,10 +564,12 @@ describe('cast, reading and 问事录', () => {
     expect(document.body.textContent).not.toMatch(/interview-pass|trigram-void|mh-\d/);
     // The brief's button is named apart from the 详断 section it opens.
     expect(screen.getByRole('button', { name: STRINGS.zh.detailOpen })).toBeTruthy();
-    // 专业依据: the 体用 summary is folded and uses the stone table's stage names.
-    const fold = document.querySelector('details.read-judge-fold') as HTMLDetailsElement;
-    expect(fold.open).toBe(false);
-    expect([...fold.querySelectorAll('.judge-table th')].map((th) => th.textContent)).toEqual(['目前', '经过', '结果', STRINGS.zh.judgeOverall]);
+    // 专业依据 under a written 断语: the facts (stages, 体用 relations) but no rule-only verdict that
+    // ignores 旺衰 (no 体用结构推演, no 当前有利 / 结局顺和, no good/bad colouring).
+    expect(document.querySelector('details.read-judge-fold')).toBeNull();
+    expect(document.querySelectorAll('.read-phrase').length).toBe(0);
+    expect(document.querySelectorAll('.read-stage.tone-plain').length).toBe(3);
+    expect([...document.querySelectorAll('.read-stage .read-stage-word')].map((w) => w.textContent)).toEqual(['目前', '经过', '结果']);
     fireEvent.click(screen.getByRole('button', { name: '《梅花易数·求名占第九》 ↗' }));
     expect(opened).toEqual(['求名占第九']);
   });

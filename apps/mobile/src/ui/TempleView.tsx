@@ -15,6 +15,7 @@ import { HomeOverlay } from './HomeOverlay';
 import type { IntroRef } from '../scene/TempleScene';
 import { INTRO_SECONDS } from '../scene/timeline';
 import { bestowalTimes } from '../scene/carving';
+import { PaintedTable } from './PaintedTable';
 import { PaintedWalkIn } from './PaintedWalkIn';
 import { PaintedHall, PaintedPlace } from './PaintedHall';
 import { PLACE_PANEL } from '../scene/placeLayout';
@@ -333,7 +334,9 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   // it resumes the moment the visitor walks to the stone table.
   // During the ritual the painting reports when it fully covers the screen (the walk, sitting, looking up).
   const [ritualCovered, setRitualCovered] = useState(false);
-  const hallRests = paintedHall || paintedPlace || ritualCovered;
+  // The stone table is the user's painting too (ui/PaintedTable), from 石桌显卦 through the reading.
+  const paintedTable = walkInArt && !!reading && (phase === 'revealing' || phase === 'reading');
+  const hallRests = paintedHall || paintedPlace || ritualCovered || paintedTable;
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
     revealing: tableShown ? t.revealing : undefined,
@@ -383,6 +386,23 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       {/* At the stone table the 3D hall behind is kept in shadow: the eye stays on the table, and the
           painted hall (above this, when the visitor looks up) is the only hall the visitor sees. */}
       {/* The painted hall and places sit right over the 3D view and under every word and button. */}
+      {paintedTable && reading && (
+        <PaintedTable
+          reading={reading}
+          relation={relation}
+          phase={phase}
+          clock={clock}
+          reduced={reduced}
+          t={t}
+          lang={settings.lang}
+          selection={tip?.sel ?? selection}
+          castTime={castTimeLabel}
+          onPick={onPick}
+          onOpenStage={onOpenStage}
+          onOpenRelation={onOpenRelation}
+          onMiss={onMiss}
+        />
+      )}
       {walkInArt && <PaintedHall shown={paintedHall} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
 

@@ -3,6 +3,7 @@
  * reading as it was given then (frozen; never rewritten) → what happened later (notes appended
  * with their own dates). The original and the follow-up stay visibly separate.
  */
+import { otherTimeZone } from './timeText';
 import { useState } from 'react';
 import type { CastRecord } from '../domain/cast';
 import type { Journal } from '../domain/journal';
@@ -54,8 +55,10 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
         <p className="rd-q">{r.question ? `“${shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh')}”` : t.noQuestion}</p>
         <p className="rd-meta">
           {tp ? `${tp.zh} · ` : ''}
-          {sub ? `${sub.label.zh} · ` : ''}
-          {(r.localWallClock ?? r.createdAt).replace('T', ' ').slice(0, 16)} · {r.timeZone}
+          {/* The entry is the question (求职录用): not repeated when it is the line above. */}
+          {sub && sub.label.zh !== r.question ? `${sub.label.zh} · ` : ''}
+          {(r.localWallClock ?? r.createdAt).replace('T', ' ').slice(0, 16)}
+          {otherTimeZone(r.timeZone) && ` · ${r.timeZone}`}
         </p>
         {legacy && <p className="rd-meta">{t.legacyRecord}</p>}
       </section>
@@ -91,18 +94,23 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
         {j?.state === 'missing' && <p className="rd-meta">{t.rdJudgmentMissingAtCast}</p>}
         {s ? (
           <>
-            {!legacy && <h4 className="rd-sub">{t.structuralTitle}</h4>}
-            <p className="rd-head">
-              <b>{s.headline}</b> {s.leadText && <span>{s.leadText}</span>}
-            </p>
-            <p className="rd-conclusion">{s.conclusion}</p>
-            <ul className="rd-stages">
-              {s.stages.map((x) => (
-                <li key={x.stage}>
-                  <b>{x.scope}</b> {x.label} · {x.evidence}
-                </li>
-              ))}
-            </ul>
+            {/* Under a written 断语 the rule-only structure (which ignores 旺衰) is not repeated: it can contradict it. */}
+            {j?.state !== 'ready' && (
+              <>
+                {!legacy && <h4 className="rd-sub">{t.structuralTitle}</h4>}
+                <p className="rd-head">
+                  <b>{s.headline}</b> {s.leadText && <span>{s.leadText}</span>}
+                </p>
+                <p className="rd-conclusion">{s.conclusion}</p>
+                <ul className="rd-stages">
+                  {s.stages.map((x) => (
+                    <li key={x.stage}>
+                      <b>{x.scope}</b> {x.label} · {x.evidence}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
             <p className="rd-meta">{t.rdVersion(s.ruleId, r.contentVersion)}</p>
             {legacy && <p className="rd-meta">{t.rdJudgmentNone}</p>}
           </>
