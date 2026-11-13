@@ -35,6 +35,8 @@
 
 小畜初九复其所行，九二与人牵携而不自失，九三失去承接而难进，六四实信可解忧，九五可信相助而共享所获，上九积而已处、再进有凶。上九即使当令能办手续，仍须回应既处与征凶。 [《周易·小畜》](https://zh.wikisource.org/wiki/周易/小畜) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
 
+履卦初九取质素，九二平正不自乱，六三戒见与行都不足而强进，九四谨慎过险，九五虽决而仍有危，上九回核前事。上九库内「考祥」照录，在线本另有「考详」；以王弼注与《释文》所见理解为回顾所行而考其征验。 [《周易·履》](https://zh.wikisource.org/wiki/周易/履) · [《周易注疏》卷三](https://www.shidianguji.com/book/SK0006/chapter/1l9rdor5dcwfc)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
