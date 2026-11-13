@@ -49,6 +49,8 @@
 
 豫卦初六戒乐过而张扬，六二知几及时而守正，六三须辨仰人而进与失时迟疑，九四取以信聚实助，六五取难久在而根基仍守，上六以改过作为无咎的条件。「不终日」用于说明辨事及时，正式离职日期仍按实际办理。 [《周易·豫》](https://zh.wikisource.org/wiki/周易/豫) · [《周易注疏》卷四](https://www.shidianguji.com/book/SK0006/chapter/1l9rdoupxcsg0)。
 
+随卦初九随时变而不失正，六二与六三分别核所系与所失，九四区分一时所获与有孚在道，九五信其所从须合宜，上六取相随至极的约束。西山之象及亨、享异释留在文献层，用于具体稿时核长期承诺能否调整。 [《周易·随》](https://zh.wikisource.org/wiki/周易/隨) · [《周易注疏》卷四](https://www.shidianguji.com/book/SK0006/chapter/1l9rdoupxcsg0)。
+
 ## 稿件、查取与断点
 
 - [跳槽去留断语](job-change/README.md)
