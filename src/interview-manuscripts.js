@@ -9,7 +9,7 @@ import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
-export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.0',directory:'promotion-pay'});
+export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.1',directory:'promotion-pay'});
 const INTERVIEW_PROFILE={questionId:INTERVIEW_QUESTION_ID,questionType:'interview_pass',manuscriptVersion:INTERVIEW_MANUSCRIPT_VERSION,directory:'interview-pass'};
 const REFERENCE_WINDOW_NOTE='以下为传统推算的参考窗口。';
 const NO_WINDOW_NOTE='此盘暂无有据的日期可列。';

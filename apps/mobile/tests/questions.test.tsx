@@ -475,7 +475,7 @@ describe('cast, reading and 问事录', () => {
     expect(chargesToday(rec)).toBe(true);
   });
 
-  it('晋升加薪 reads the promotion 断语 where a hexagram is written, and says so where it is not yet', async () => {
+  it('晋升加薪 reads the published promotion 断语 and preserves the shared display', async () => {
     const { product } = await testKnowledge();
     const at = (primaryId: number) => judgmentFor(product, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay', primaryId, movingLine: 1 });
     expect(await at(1)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 1 });
@@ -491,13 +491,9 @@ describe('cast, reading and 问事录', () => {
     const calculation = document.querySelector('details.script-calc');
     expect(calculation?.querySelector('summary')?.textContent).toBe(STRINGS.zh.calcTitle);
     expect([...calculation!.querySelectorAll('.calc-label')].map(label => label.textContent)).toEqual(['历法','卦象','体用','取期']);
-    // A hexagram not written yet says so (found as the library grows, not fixed to one id).
-    let unwritten = null;
-    for (let id = 64; id >= 1 && !unwritten; id--) {
-      const j = await at(id);
-      if (j.state !== 'ready') unwritten = j;
-    }
-    if (unwritten) expect(unwritten).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
+    expect(await at(64)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 64 });
+    const unavailable = { getContent: async () => ({ predictionAllowed: false, status: 'pending-authoring' }) };
+    expect(await judgmentFor(unavailable as never, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay' })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
   });
 
   it('an entry with nothing written is still cast, says so, and looks nothing up', async () => {
