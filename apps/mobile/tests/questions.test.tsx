@@ -98,7 +98,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
       if (q.mode !== 'narrative') expect(q.paragraphs.length).toBeGreaterThan(0);
     }
     for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(1);
-    expect(allQuestions().filter((q) => q.conditions?.length).map(q => q.question_id)).toEqual(['career.job-change']);
+    // Entries ask nothing finer: no fixed options, 跳槽去留 included.
+    expect(allQuestions().filter((q) => q.conditions?.length).map(q => q.question_id)).toEqual([]);
     // Health is traditional reference only; 方向原因 reads; 失联寻人 is guidance (nothing written to cast for).
     expect(allQuestions().filter((q) => q.domain_id === 'health').map((q) => q.mode)).toEqual(['reference', 'reference', 'reference', 'reference']);
     expect(readinessOf(questionById('search.direction')!)).toBe('reference');
@@ -179,19 +180,22 @@ describe('click-only home', () => {
     expect(keyboardFields()).toHaveLength(0);
   });
 
-  it('selects one job-change entry and its fixed context without a second question', () => {
+  it('chooses 跳槽去留 with one tap, like every other entry (no options to pick)', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
     fireEvent.click(screen.getByRole('button', { name: '跳槽去留' }));
     expect(screen.queryByRole('button', { name: '现在适合辞去当前工作吗？' })).toBeNull();
-    fireEvent.click(screen.getByRole('radio', { name: '稳定性' }));
-    fireEvent.click(screen.getByRole('radio', { name: '现职与新工作的条件均已明确' }));
-    fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.done }));
-    expect(last).toMatchObject({
-      questionId: 'career.job-change',
-      conditions: { jobPriority: 'stability', comparisonTerms: 'both-known' },
-    });
+    expect(screen.queryByRole('radiogroup', { name: '这次最看重什么' })).toBeNull();
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(last).toMatchObject({ questionId: 'career.job-change', conditions: {} });
+    expect(entryProblem(last)).toBeNull();
+  });
+
+  it('reads the job-change 断语 without any option chosen', async () => {
+    const { product } = await testKnowledge();
+    const j = await judgmentFor(product, questionById('career.job-change')!, { ...WELL, questionId: 'career.job-change', primaryId: 1, movingLine: 1 });
+    expect(j).toMatchObject({ state: 'ready', contentQuestionId: 'career.job-change.decision' });
   });
 
   it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {
@@ -478,7 +482,9 @@ describe('cast, reading and 问事录', () => {
     // For a catalog question the 体用 sentence is the structure alone, never an answer.
     expect(back.snapshot?.conclusion).not.toMatch(/面试/);
     render(<RecordDetail record={back} journal={createJournal(memoryStore())} t={STRINGS.zh} onOpen={() => {}} onBack={() => {}} onChanged={() => {}} />);
-    expect(screen.getByText('按亥月月令写定 · 起卦时所得，原样保存')).toBeTruthy();
+    // Which month's text it is stays internal (计算说明), not in the record.
+    expect(screen.getByText('起卦时所得，原样保存')).toBeTruthy();
+    expect(document.body.textContent).not.toMatch(/月令写定/);
     // Internal ids and versions stay in the record, never on screen.
     expect(document.body.textContent).not.toMatch(/interview-pass|career\./);
     expect(screen.getByText((j as ProductJudgment).short)).toBeTruthy();

@@ -17,8 +17,11 @@ const context = {jobPriority:'income',comparisonTerms:'both-known'};
 test('job-change uses one reading for both parts and preserves historical casts', async () => {
  const questions = await product.listQuestions('career.job-change');
  assert.deepEqual(questions.filter(q => !q.archived).map(q => q.id), [questionId]);
- assert.deepEqual((await product.getContent({...cast, questionId})).missingContext, ['jobPriority','comparisonTerms']);
+ // Asked like every other entry (2026-11-13): nothing finer is required, and the reading is the same.
+ const plain = await product.getContent({...cast, questionId});
+ assert.equal(plain.missingContext, undefined);
  const choosing = await product.getContent({...cast, questionId, context});
+ assert.equal(plain.short, choosing.short);
  assert.equal(choosing.decision.outcomeCode, 'switch');
  assert.match(choosing.short, /倾向新岗位.*办离职/u);
  const delayed = await product.getContent({...cast, questionId, context, movingLine:5});

@@ -6,6 +6,7 @@ import type { CastRecord } from '../domain/cast';
 import type { History } from '../domain/history';
 import type { Journal } from '../domain/journal';
 import { RecordDetail } from './RecordDetail';
+import { CoachTip, coach } from './coach';
 import type { Strings } from '../domain/i18n';
 
 async function shareOrDownload(json: string) {
@@ -29,7 +30,7 @@ async function shareOrDownload(json: string) {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
-export function HistoryScreen({ history, journal, t, onOpen, onBack, active = true }: { history: History; journal: Journal; t: Strings; onOpen: (r: CastRecord) => void; onBack: () => void; active?: boolean }) {
+export function HistoryScreen({ history, journal, t, onOpen, onBack, active = true }: { history: History; journal: Journal; t: Strings; onOpen: (r: CastRecord, read?: boolean) => void; onBack: () => void; active?: boolean }) {
   const [writeError, setWriteError] = useState(false);
   const [all, setAll] = useState(() => history.list());
   const [book, setBook] = useState(() => journal.all());
@@ -60,7 +61,7 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
   useEffect(() => {
     if (!active) setDetail(null);
   }, [active]);
-  if (detail) return <RecordDetail key={detail.castId} record={detail} journal={journal} t={t} onOpen={() => onOpen(detail)} onBack={() => setDetail(null)} onChanged={refresh} />;
+  if (detail) return <RecordDetail key={detail.castId} record={detail} journal={journal} t={t} onOpen={(read) => onOpen(detail, read)} onBack={() => setDetail(null)} onChanged={refresh} />;
   return (
     <main className="screen">
       <header className="screen-head">
@@ -79,6 +80,7 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
         </button>
       </div>
       <p className="history-explain">{onlySaved ? t.historyExplainSaved : t.historyExplainAll}</p>
+      {active && all.length > 0 && <CoachTip id="records" t={t} text={t.coachRecords} anchor=".place-panel.is-on .history-main" below />}
       <p className="privacy">{t.privacy} {t.localHistoryRisk}</p>
       {writeError && <p className="error" role="alert">{t.storageWriteFailed}</p>}
       {items.length === 0 ? (
@@ -88,15 +90,20 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
           <ul className="history-list">
             {items.map((r) => (
               <li key={r.castId}>
-                <button className="history-main" onClick={() => setDetail(r)}>
-                  <span className="history-names">
-                    {r.stages.primary.name} → {r.stages.mutual.name} → {r.stages.changed.name}
-                  </span>
+                {/* What was asked first, then what the 断语 said; the hexagrams and the time after. */}
+                <button
+                  className="history-main"
+                  onClick={() => {
+                    coach.done('records');
+                    setDetail(r);
+                  }}
+                >
+                  <span className="history-q">{r.question ? shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh') : r.stages.primary.name}</span>
+                  {r.judgment?.state === 'ready' && r.judgment.title && <span className="history-verdict">{r.judgment.title}</span>}
                   <span className="history-meta">
-                    {r.localWallClock?.replace('T', ' ') ?? r.createdAt}
+                    {r.stages.primary.name} → {r.stages.mutual.name} → {r.stages.changed.name} · {r.localWallClock?.replace('T', ' ').slice(0, 16) ?? r.createdAt}
                     {otherTimeZone(r.timeZone) && ` · ${r.timeZone}`}
                   </span>
-                  {r.question && <span className="history-q">“{shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh')}”</span>}
                   {book[r.castId] && (
                     <span className="history-book">
                       <b>{t.savedToBook}</b>
@@ -105,7 +112,8 @@ export function HistoryScreen({ history, journal, t, onOpen, onBack, active = tr
                   )}
                 </button>
                 <button
-                  className="text-btn danger"
+                  className="text-btn history-delete"
+                  aria-label={`${t.delete} ${r.question ? shownQuestion(r.questionId, r.question, t === STRINGS.en ? 'en' : 'zh') : ''}`}
                   onClick={() => {
                     if (confirm(t.confirmDelete)) {
                       changeRecords(() => {

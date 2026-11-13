@@ -8,6 +8,7 @@
  */
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
+import { CoachTip, coach } from './coach';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
 import { createCalendarProvider } from '../domain/calendar';
@@ -170,6 +171,7 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
           </button>
         </header>
         <div className="sheet-body ask-sheet-body">
+          {level === 'subtypes' && <CoachTip id="drawer" t={t} text={t.coachDrawer} anchor=".ask-sheet" />}
           {domain.caution && level === 'subtypes' && <p className="ask-caution">{domain.caution[lang]}</p>}
           {level === 'subtypes' && (
             <div className="subtype-grid">
@@ -326,6 +328,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   };
   // The domain whose drawer is open (its button glows while the drawer is up).
   const [drawer, setDrawer] = useState<CatalogDomain | null>(null);
+  // The six fields, shown until a matter is chosen (and again when the visitor wants to change it).
+  const [pickOpen, setPickOpen] = useState(false);
   // Which number the in-app pad is editing.
   const [pad, setPad] = useState<{ key: 'surname' | 'count' | 'major' | 'minor'; max: number } | null>(null);
   useEffect(() => setPad(null), [form.method, showMethods]);
@@ -385,6 +389,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         className="home-panel v3 is-rising"
         onSubmit={(e) => {
           e.preventDefault();
+          // Doing what a tip says is as good as 「知道了」.
+          coach.done('cast');
           onEnter();
         }}
       >
@@ -393,16 +399,29 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <i className="tray-grip" aria-hidden="true" />
           <p className="ask-label">{t.askWhat}</p>
         </div>
-        <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
-          {DOMAINS.map((d) => (
-            <button type="button" key={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => setDrawer(d)}>
-              <DomainIcon id={d.domain_id} />
-              <span>{d.label[lang]}</span>
-            </button>
-          ))}
-        </div>
+        {/* Once a matter is chosen the six fields fold away, so the tray stays low and the 三清 and
+            the altar stay in view; tapping the chosen matter brings them back to change it. */}
+        {!chosen && <CoachTip id="domain" t={t} text={t.coachDomain} anchor=".home-panel .topic-grid" />}
+        {(!chosen || pickOpen) && (
+          <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
+            {DOMAINS.map((d) => (
+              <button type="button" key={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => { coach.done('domain'); setDrawer(d); }}>
+                <DomainIcon id={d.domain_id} />
+                <span>{d.label[lang]}</span>
+              </button>
+            ))}
+          </div>
+        )}
         {chosen && chosenSubtype && (
-          <button type="button" className="chosen-question" onClick={() => setDrawer(DOMAINS.find((d) => d.domain_id === chosen.domain_id) ?? null)}>
+          <button
+            type="button"
+            className="chosen-question"
+            onClick={() => {
+              // Its field's drawer at once (the usual change); the six fields open behind it for another field.
+              setPickOpen(true);
+              setDrawer(DOMAINS.find((d) => d.domain_id === chosen.domain_id) ?? null);
+            }}
+          >
             <span className="chosen-kicker">
               <span>
                 {t.askedMatter}
@@ -428,14 +447,17 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             </div>
             <div className="pace-switch" role="radiogroup" aria-label={t.paceLabel}>
               {(['full', 'quick'] as const).map((p) => (
-                <button type="button" key={p} role="radio" aria-checked={pace === p} className={pace === p ? 'is-on' : ''} onClick={() => set('ritualMode', p)}>
+                <button type="button" key={p} role="radio" aria-checked={pace === p} aria-label={p === 'full' ? t.paceFull : t.paceQuick} className={pace === p ? 'is-on' : ''} onClick={() => set('ritualMode', p)}>
                   {p === 'full' ? t.paceFull : t.paceQuick}
+                  {/* How long each takes, so the choice is an informed one. */}
+                  <small className="pace-hint">{p === 'full' ? t.paceFullHint : t.paceQuickHint}</small>
                 </button>
               ))}
             </div>
           </>
         )}
         {error && <p className="error" role="alert">{error}</p>}
+        {chosen && !readOnly && <CoachTip id="cast" t={t} text={t.coachCast} anchor=".home-panel .enter-seal" />}
         <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
           {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
         </button>
@@ -452,6 +474,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           onPick={(q, conditions) => {
             onForm({ ...form, questionId: q.question_id, conditions, topicId: drawer.domain_id, domainId: q.classical_domain_id ?? form.domainId });
             setDrawer(null);
+            setPickOpen(false);
+            coach.done('domain');
+            coach.done('drawer');
           }}
         />
       )}
@@ -606,6 +631,15 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                   {memberLine ? ` · ${memberLine}` : ''}
                 </button>
               )}
+              <button
+                className="text-btn"
+                onClick={() => {
+                  coach.reset();
+                  setShowSettings(false);
+                }}
+              >
+                {t.coachReplay}
+              </button>
               {onSignOut && (
                 <button className="text-btn" onClick={onSignOut}>
                   {t.signOut}

@@ -169,7 +169,8 @@ export function entryQuestion(s: { id: string; label: string }, all: CatalogQues
     authored: !!written,
     enabled: true,
     content_id: written?.question_id ?? null,
-    ...(written?.conditions ? { conditions: written.conditions } : {}),
+    // An entry is the question: one tap chooses it, with nothing finer to pick (跳槽去留 included,
+    // 2026-11-13). Older records keep the options they were cast with on their own questions.
   };
 }
 

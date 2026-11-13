@@ -303,10 +303,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               <p className="read-answer authored" lang="zh">
                 {j.short}
               </p>
-              <p className="read-meta">
-                {t.scriptMeta(j.monthBranch)}
-                {lang === 'en' && ` · ${t.zhOnly}`}
-              </p>
+              {/* Which month's text it is is bookkeeping: it stays in 计算说明, not under the conclusion. */}
+              {lang === 'en' && <p className="read-meta">{t.zhOnly}</p>}
             </>
           ) : miss ? (
             <>
@@ -347,7 +345,12 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           )}
           <div className="btn-row">
             {authored && (
-              <button className="primary-btn" onClick={openDetailLayer}>
+              <button
+                className="primary-btn"
+                onClick={() => {
+                  openDetailLayer();
+                }}
+              >
                 {t.detailOpen}
               </button>
             )}
@@ -355,6 +358,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               {saved ? `✓ ${t.savedToBook}` : t.saveToBook}
             </button>
           </div>
+          {/* Nothing is lost without saving: say so where the visitor decides. */}
+          <p className="save-note">{t.saveNote}</p>
         </section>
 
         <details ref={detailRef} className="read-layer" open={openDetail} onToggle={(e) => setOpenDetail((e.target as HTMLDetailsElement).open)}>

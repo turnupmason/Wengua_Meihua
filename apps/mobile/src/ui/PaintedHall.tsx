@@ -51,7 +51,8 @@ function expectedTray(W: number) {
 /** Notes the tray's first height for this screen width (only while no question line is shown). */
 function noteTray(W: number) {
   const panel = document.querySelector<HTMLElement>('.home-panel');
-  if (!panel?.offsetHeight || panel.querySelector('.chosen-question')) return;
+  // Not with a question line or a first-use tip in it: neither is the tray's usual height.
+  if (!panel?.offsetHeight || panel.querySelector('.chosen-question, .coach-tip')) return;
   const all = storedTrays();
   const key = String(Math.round(W));
   if (all[key] === panel.offsetHeight) return;

@@ -35,12 +35,23 @@ const QUAD: [number, number][] = [
 const SLAB_X: [number, number] = [32, 902];
 /** The flat face the writing is laid out on (the 3D slab is 1.5 × 2.6 m). */
 const FACE = { w: 600, h: 1040 };
-/** Room kept at the foot for the 查看断语 bar. */
-const BARS = { bottom: 96 };
+/** Room kept at the foot for the 简断 card (its height, its margin and the gap above it). */
+const BARS = { bottom: 132 };
 
 /** Band centres on the face (结果 at the far end, 目前 nearest), and the hexagram's measures. */
 const BAND_Y: Record<StageKey, number> = { changed: 215, mutual: 485, primary: 755 };
 const HEX = { pitch: 34 };
+/**
+ * The far bands are seen smaller (the slab recedes), and more so in height than in width: from the
+ * slab's own perspective map at each name (relative to 本卦's), 互卦 is seen at 0.90 wide × 0.81
+ * high and 变卦 at 0.82 wide × 0.67 high. Their writing is set larger by the height's inverse and
+ * narrowed back by the width's, so the three names (and grades) look the same size and shape.
+ */
+const FAR: Record<StageKey, { size: number; x: number }> = {
+  primary: { size: 1, x: 1 },
+  mutual: { size: 1.239, x: 0.899 },
+  changed: { size: 1.502, x: 0.816 },
+};
 const lineY = (stage: StageKey, position: number) => BAND_Y[stage] + (3.5 - position) * HEX.pitch;
 
 /** CSS matrix3d taking the rectangle (0,0)–(w,h) onto the quad (projective, square-to-quad). */
@@ -63,16 +74,28 @@ function quadMatrix(w: number, h: number, q: [number, number][]) {
   return `matrix3d(${m.map((v) => +v.toFixed(8)).join(',')})`;
 }
 
+/** The screen's side margin for the slab: the same 12px as the top bar's buttons. */
+const SIDE = 12;
+/** The table as seen (slab top to the feet of its legs), in the picture's pixels. */
+const TABLE_Y: [number, number] = [209, 1363];
+
 /**
- * The picture is the whole screen: as large as it goes while the slab stays whole across the
- * width; it starts at the top (the bar sits over the far paving) and the dark floor continues below.
+ * The picture fills the screen: the slab as wide as it goes within the side margins, and the table
+ * (slab and legs) centred between the top bar and the 简断 card at the foot, so the space above and
+ * below it is even. The dark floor of the picture runs on beyond.
  */
 function frame(root: HTMLElement, plate: HTMLElement, face: HTMLElement) {
   const W = root.clientWidth;
   const H = root.clientHeight;
-  const s = Math.min(H / PLATE.h, (W - 8) / (SLAB_X[1] - SLAB_X[0]));
+  const s = Math.min(H / PLATE.h, (W - 2 * SIDE) / (SLAB_X[1] - SLAB_X[0]));
   const left = W / 2 - ((SLAB_X[0] + SLAB_X[1]) / 2) * s;
-  const top = Math.max(0, (H - PLATE.h * s - BARS.bottom) / 2);
+  const bar = document.querySelector<HTMLElement>('.temple-top')?.getBoundingClientRect().bottom || 56;
+  const above = bar;
+  const below = H - BARS.bottom;
+  const mid = (above + below) / 2 - ((TABLE_Y[0] + TABLE_Y[1]) / 2) * s;
+  // Never so high that the slab's far edge meets the bar (on a short screen the legs go behind the
+  // 简断 card instead).
+  const top = Math.max(mid, above + 24 - TABLE_Y[0] * s);
   Object.assign(plate.style, { width: `${PLATE.w * s}px`, height: `${PLATE.h * s}px`, left: `${left}px`, top: `${top}px` });
   face.style.transform = quadMatrix(FACE.w, FACE.h, QUAD.map(([x, y]) => [x * s, y * s] as [number, number]));
 }
@@ -92,6 +115,8 @@ interface Props {
   onOpenRelation: () => void;
   /** A tap on the table away from any line (closes the line's tip). */
   onMiss: () => void;
+  /** First time at the stone: 目前 lights once (start here). */
+  hint?: boolean;
 }
 
 type Part = { el: HTMLElement; at: number; dur: number; kind: 'fade' | 'groove'; y?: number };
@@ -116,7 +141,7 @@ const tappable = (on: boolean, act: () => void) => ({
   },
 });
 
-export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang, selection, castTime, onPick, onOpenStage, onOpenRelation, onMiss }: Props) {
+export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang, selection, castTime, onPick, onOpenStage, onOpenRelation, onMiss, hint = false }: Props) {
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
   const face = useRef<HTMLDivElement>(null);
@@ -204,8 +229,10 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
   };
 
   return (
-    <div ref={root} className={`painted-table ${interactive ? 'is-live' : ''}`} aria-hidden={!interactive} onClick={interactive ? onMiss : undefined}>
-      <div ref={plate} className="ptab-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.table)})` }}>
+    <div ref={root} className={`painted-table ${interactive ? 'is-live' : ''} ${hint ? 'is-hint' : ''}`} aria-hidden={!interactive} onClick={interactive ? onMiss : undefined}>
+      {/* A thin warm wash over the picture (static, so it costs nothing per frame) brings the table's
+          cooler grey toward the hall's lamplight. */}
+      <div ref={plate} className="ptab-plate" style={{ backgroundImage: `linear-gradient(rgba(150, 90, 30, 0.1), rgba(150, 90, 30, 0.1)), url(${walkInUrl(WALK_IN_FILES.table)})` }}>
         <div ref={face} className={`ptab-face ${zh ? '' : 'is-en'}`} style={{ width: FACE.w, height: FACE.h }}>
           <i ref={spark} className="ptab-spark" />
           {/* The rule between the frames and the hexagrams. */}
@@ -256,15 +283,18 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
                   </b>
                 )}
                 {s === 'changed' && <i ref={part('counter', plan.textStart(2), 0.5)} className="ptab-counter" style={{ top: lineY(s, reading.movingLine) }} />}
-                {/* 本卦 · name, and its grade, written down the slab. */}
+                {/* The name (本卦 / 互卦 / 变卦 is said by the frame on the left and when the name is
+                    tapped), and its grade, written down the slab. */}
                 <div ref={part(`name-${s}`, textAt, plan.textDuration)} className="ptab-name" style={{ top: bandY }} aria-label={`${t[`stage_${s}`]} ${panel.name}`} {...tappable(interactive, () => onOpenStage(s))}>
-                  {name.map((l, j) => (
-                    <span key={j} className={l.tone === 'pale' ? 'ptab-pale' : 'ptab-gold'} style={{ fontSize: l.tone === 'pale' ? 20 : 44 }}>
-                      {l.text}
-                    </span>
-                  ))}
+                  {name
+                    .filter((l) => l.tone !== 'pale')
+                    .map((l, j) => (
+                      <span key={j} className="ptab-gold" style={zh ? { fontSize: Math.round(44 * FAR[s].size), transform: `scaleX(${FAR[s].x})` } : undefined}>
+                        {l.text}
+                      </span>
+                    ))}
                 </div>
-                <span ref={part(`grade-${s}`, textAt, plan.textDuration)} className="ptab-grade ptab-gold" style={{ top: bandY }}>
+                <span ref={part(`grade-${s}`, textAt, plan.textDuration)} className="ptab-grade ptab-gold" style={{ top: bandY, ...(zh ? { fontSize: Math.round(24 * FAR[s].size), transform: `translateY(-50%) scaleX(${FAR[s].x})` } : {}) }}>
                   {grade.map((l) => l.text).join(zh ? '' : ' ')}
                 </span>
               </div>
@@ -276,9 +306,12 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
               <span key={j}>{l.text}</span>
             ))}
           </span>
-          {/* 体 and 用 beside the primary's two trigrams, an arrow from 体 to 用. */}
+          {/* 体 and 用 beside the primary's two trigrams (with the trigram and its element), an arrow from
+              体 to 用. Their meaning (自己 / 事情) is too small to read on a phone carved here; it is
+              given when 体用 is opened. */}
           {(['upper', 'lower'] as const).map((side) => {
-            const lines = text(blocks.get(`role-${side}`));
+            const all = text(blocks.get(`role-${side}`));
+            const lines = all.length > 2 ? [all[0], all[all.length - 1]] : all;
             const y = BAND_Y.primary + (side === 'upper' ? -1.5 : 1.5) * HEX.pitch;
             return (
               <span key={side} ref={part(`role-${side}`, plan.tagsStart, plan.textDuration)} className="ptab-role" style={{ top: y }}>

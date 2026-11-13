@@ -5,8 +5,10 @@ const s=(id,label,examples,questions)=>({id,label,exampleQuestions:examples.spli
 const o=(scope,options={})=>({answerScope:scope,...options});
 const lostContext={objectKind:{label:'物品类型',options:['keys','wallet','phone','documents','jewellery','other'],required:true}};
 const jobPlan={label:'离职后的安排',options:['new-job-confirmed','other-plan-confirmed'],required:true};
-const jobPriority={label:'这次最看重什么',options:['income','stability','development','workload'],required:true};
-const comparisonTerms={label:'两份工作的条件是否清楚',options:['both-known'],required:true};
+// 2026-11-13 (product owner): 跳槽去留 asks nothing finer, like every other entry; the manuscripts speak of
+// 「你最看重的那一项」 without depending on which. Kept optional for older records that carry them.
+const jobPriority={label:'这次最看重什么',options:['income','stability','development','workload'],required:false};
+const comparisonTerms={label:'两份工作的条件是否清楚',options:['both-known'],required:false};
 const lostBindings={contextKey:'objectKind',values:{keys:'domain-15-keys',wallet:'domain-15-wallet',phone:'domain-15-phone',documents:'domain-15-documents',jewellery:'domain-15-jewellery'}};
 const health=(id,leaf,question,paragraph)=>q(id,question,'health_symbolic_'+leaf,['domain-16'],{mode:'reference',
  answerScope:'只解释传统术语与象意；不诊断、不定位病灶、不评估病情严重程度、不预测疗效或指导医疗决策。',

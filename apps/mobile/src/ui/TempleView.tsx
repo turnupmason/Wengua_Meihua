@@ -16,6 +16,7 @@ import type { IntroRef } from '../scene/TempleScene';
 import { INTRO_SECONDS } from '../scene/timeline';
 import { bestowalTimes } from '../scene/carving';
 import { PaintedTable } from './PaintedTable';
+import { CoachTip, coach, useCoach } from './coach';
 import { PaintedWalkIn } from './PaintedWalkIn';
 import { PaintedHall, PaintedPlace } from './PaintedHall';
 import { PLACE_PANEL } from '../scene/placeLayout';
@@ -75,13 +76,15 @@ interface Props {
   memberRev: number;
   memberOpen?: boolean;
   onOpenMembership: (reason: MembershipReason, castId: string | null) => void;
+  /** Opened from 问事录 with 「看全文断语」: show this cast's 读卦 at once. */
+  readOnOpen?: { castId: string; at: number } | null;
   journal: Journal;
   /** 殿中三处: the pages shown at 藏经阁 and 问事录 (the place itself is in placeStore). */
   libraryPanel: ReactNode;
   recordsPanel: ReactElement<{ active?: boolean }>;
 }
 
-export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel }: Props) {
+export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null }: Props) {
   const place = usePlace();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
@@ -196,6 +199,11 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     setBookPage(null);
     setSectionPage(null);
   }, [record?.castId]);
+  useEffect(() => {
+    if (readOnOpen && readOnOpen.castId === record?.castId && ritual.phase === 'reading') setReadMode('top');
+  }, [readOnOpen, record?.castId, ritual.phase]);
+  // First-use popups at the stone (ui/coach.tsx): how to read it, then where the conclusion is.
+  const coachStone = useCoach('stone');
   // The 断语 was looked up once, at casting (question + 本卦 + 动爻 + 月令 + day), and frozen with the cast.
   const judgmentView = useMemo<JudgmentView | null>(() => {
     if (!record) return null;
@@ -401,6 +409,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           onOpenStage={onOpenStage}
           onOpenRelation={onOpenRelation}
           onMiss={onMiss}
+          hint={coachStone && phase === 'reading'}
         />
       )}
       {/* Under the hall's and the places' pictures, while one is shown: an opaque dark floor, so that
@@ -525,13 +534,33 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             {/* The relation is carved on the table; screen readers still get it here. */}
             {tier && relation && <p className="sr-only">{relationAria(relation, settings.lang)}</p>}
             {/* 观卦: the stone stays fully in view; one entry leads to the 断语 (读卦). */}
-            {orderHint && !readMode && !tip && (
+            {/* First time at the stone: how to read it, then where the conclusion is (ui/coach.tsx).
+                With the tips off, the short 「卦象自下而上」 line still shows once. */}
+            {/* The first time at the stone: one short line in the open floor under the table's feet,
+                just above the 简断 card, closable; the slab itself stays clear. The line card explains
+                a tapped line. */}
+            {!readMode && !tip && !bookPage && !sectionPage && !showBook && !selection && !memberOpen && phase === 'reading' && (
+              <CoachTip id="stone" t={t} text={t.coachStone} anchor=".view-judgment" strip />
+            )}
+            {orderHint && !readMode && !tip && coach.snapshot().off && (
               <p className="order-hint" role="status"><span aria-hidden="true">↑</span> {t.orderHint}</p>
             )}
-            <button type="button" className="view-judgment" ref={readButton} onClick={() => setReadMode('top')}>
-              <span className="view-judgment-label">{t.viewJudgment}</span>
+            {/* The conclusion, whole, under the stone (not cut off in a one-line bar): 简断's title and
+                one tap to read it all. Without a written 断语 it says so and still opens the reading. */}
+            <button
+              type="button"
+              className="view-judgment"
+              ref={readButton}
+              onClick={() => {
+                coach.done('stone');
+                setReadMode('top');
+              }}
+              aria-label={`${t.viewJudgment}${headline ? `：${headline}` : ''}`}>
+              <span className="view-judgment-label">{judgmentView?.state === 'ready' ? t.briefKicker : t.viewJudgment}</span>
               {headline && <span className="view-judgment-head">{headline}</span>}
-              <span aria-hidden="true">›</span>
+              <span className="view-judgment-more">
+                {judgmentView?.state === 'ready' ? t.readFull : t.readNote} <span aria-hidden="true">›</span>
+              </span>
             </button>
           </>
         )}

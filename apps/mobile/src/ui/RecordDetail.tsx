@@ -23,7 +23,8 @@ interface Props {
   record: CastRecord;
   journal: Journal;
   t: Strings;
-  onOpen: () => void;
+  /** Opens the cast again: on the stone (观卦), or with `read` straight on its 断语 (读卦). */
+  onOpen: (read?: boolean) => void;
   onBack: () => void;
   onChanged: () => void;
 }
@@ -111,12 +112,22 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
                 </ul>
               </>
             )}
-            <p className="rd-meta">{t.rdVersion(s.ruleId, r.contentVersion)}</p>
             {legacy && <p className="rd-meta">{t.rdJudgmentNone}</p>}
           </>
         ) : (
           <p className="rd-meta">{t.rdNoSnapshot}</p>
         )}
+        {/* Straight to the whole 断语, or back to the stone. */}
+        <div className="btn-row">
+          {j?.state === 'ready' && (
+            <button className="primary-btn" onClick={() => onOpen(true)}>
+              {t.rdOpenReading}
+            </button>
+          )}
+          <button className="ghost-btn" onClick={() => onOpen(false)}>
+            {t.rdOpenStone}
+          </button>
+        </div>
       </section>
 
       <section className="rd-step">
@@ -157,9 +168,6 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
             }}
           >
             {t.rdAddNote}
-          </button>
-          <button className="ghost-btn" onClick={onOpen}>
-            {t.rdOpen}
           </button>
         </div>
       </section>

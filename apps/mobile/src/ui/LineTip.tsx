@@ -27,6 +27,8 @@ export function LineTip({ tip, knowledge, reading, t, onOpen }: { tip: { sel: Se
         {moving && <em>{t.movingLineBadge}</em>}
       </p>
       <p className="line-tip-text">{text}</p>
+      {/* What this place in the hexagram stands for, in plain words (初爻 the start … 上爻 the end). */}
+      {sel.linePosition ? <p className="line-tip-place">{`${line?.label ?? ''} · ${t.linePlace[sel.linePosition - 1]}`}</p> : null}
       <button type="button" className="line-tip-open" onClick={onOpen}>
         {t.openLineText}
       </button>

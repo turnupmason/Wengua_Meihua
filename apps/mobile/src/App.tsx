@@ -6,6 +6,7 @@ import { questionById, shownQuestion, type ResolvedQuestion } from './domain/que
 import { createHistory } from './domain/history';
 import { createJournal } from './domain/journal';
 import { placeStore } from './ui/placeStore';
+import { CoachIntro } from './ui/coach';
 import { sameMatterCandidate } from './domain/sameMatter';
 
 /** 今天 / 昨天 / N 天前 */
@@ -214,7 +215,10 @@ export function App() {
     setScreen('temple');
   };
 
-  const openRecord = (rec: CastRecord, withRitual = false) => {
+  // A record opened from 问事录 with 「看全文断语」 lands on 读卦 directly (a fresh token each time).
+  const [readOnOpen, setReadOnOpen] = useState<{ castId: string; at: number } | null>(null);
+  const openRecord = (rec: CastRecord, withRitual = false, read = false) => {
+    setReadOnOpen(read ? { castId: rec.castId, at: Date.now() } : null);
     recordRef.current = rec;
     setRecord(rec);
     if (knowledge) void openSavedJudgment(knowledge, rec);
@@ -260,9 +264,9 @@ export function App() {
         history={history}
         journal={journal}
         t={t}
-        onOpen={(r) => {
+        onOpen={(r, read) => {
           placeStore.set('altar');
-          openRecordRef.current(r);
+          openRecordRef.current(r, false, read);
         }}
         onBack={goAltar}
       />
@@ -280,8 +284,9 @@ export function App() {
       setWelcoming(false);
       signInPending.current = false;
     }, settings.reducedMotion ? 150 : 1500);
-    // Returning visitors on 简洁问事 go straight to the hall; the walk-in is for the full ritual.
-    setIntro(inHall.current || pace === 'quick' ? 'done' : 'gliding');
+    // Straight into the hall (2026-11-13): the walk through the courtyard was a long wait with
+    // nothing to do. The title already shows the courtyard; the hall comes up as the title fades.
+    setIntro('done');
   };
   // First visit: sign in (a 道号 or as a guest) before walking in.
   const onSplashEnter = () => (profile ? walkIn() : setSplashMode('login'));
@@ -342,6 +347,8 @@ export function App() {
       return (
         <>
         {splashLayer}
+        {/* The first time in the hall (title gone, no cast open): the five-page introduction. */}
+        {splash === 'gone' && ritual.phase === 'idle' && <CoachIntro t={t} />}
         <TempleView
           knowledge={knowledge}
           record={record}
@@ -381,6 +388,7 @@ export function App() {
           memberRev={memberRev}
           memberOpen={!!memberSheet}
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
+          readOnOpen={readOnOpen}
         />
         {memberSheet && (
           <MembershipSheet
@@ -448,7 +456,7 @@ export function App() {
     case 'library':
       return <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={() => setScreen('temple')} />;
     case 'history':
-      return <HistoryScreen history={history} journal={journal} t={t} onOpen={(r) => openRecord(r)} onBack={() => setScreen('temple')} />;
+      return <HistoryScreen history={history} journal={journal} t={t} onOpen={(r, read) => openRecord(r, false, read)} onBack={() => setScreen('temple')} />;
     case 'debug':
       return <DebugScreen knowledge={knowledge} t={t} lang={settings.lang} onCast={manualCast} onBack={() => setScreen('temple')} />;
     default:
