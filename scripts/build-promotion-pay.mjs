@@ -334,15 +334,15 @@ const workplaceProbation = {
  timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
 };
 const newRelationshipOpportunity = {
- title:'近期有开始新感情的机会吗', policy:'NEW_RELATIONSHIP_OPPORTUNITY_POLICY.md', primarySource:'mh-064',
+ title:'桃花缘分 · 近期新感情机会与相遇时机', policy:'NEW_RELATIONSHIP_OPPORTUNITY_POLICY.md', primarySource:'mh-064',
  references:[
   ['mh-064','体卦为主，用卦为宾。','原体为问事人，本用为接触新对象的现实条件。'],
   ['mh-067','体用比和，婚姻吉利。','只参照双方相就这一条件，类推新接触能否有来有往。'],
  ],
  clauses:workplaceStability.clauses,
- outcomes:['favourable','conditional','difficult'], scopeNote:'只回答近期是否有机会发展出一段新感情',
- counterevidence:'区分接触、互相回应与能够继续发展，结合完整动爻及本互变的实际力量。',
- timingContext:'日级窗口只用于已经进入近期安排的一次见面、回访或具体阻碍。关系何时建立须有单独依据。',
+ outcomes:['favourable','conditional','difficult'], scopeNote:'同篇回答近期新感情机会，以及何时较可能遇到适合继续了解的人',
+ counterevidence:'区分初遇、再见、互相回应与可以继续发展，结合完整动爻及本互变的实际力量。',
+ timingContext:'日级窗口对应一次有依据的初遇、再见或具体阻碍。应事发生阶段以所取节点为准。',
 };
 const target = process.argv[2];
 if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity'].includes(target)) throw new Error('Unknown manuscript target: ' + target);

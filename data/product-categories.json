@@ -1371,14 +1371,18 @@
           "questions": [
             {
               "id": "relationships.new-partner.opportunity",
-              "question": "近期有开始新感情的机会吗？",
+              "question": "近期有开始新感情的机会吗？何时可能遇到适合发展关系的人？",
               "question_type": "new_relationship_opportunity",
               "sourceDomainIds": [
                 "domain-02",
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "适用于尚无确定对象的人，回答近期是否有开始新感情的机会。只谈相识与发展条件。",
+              "answerScope": "适用于尚无确定对象的人。同一篇断语回答近期有无新感情机会、何时较可能遇到适合继续了解的人，以及相识如何发展。应期按实际起卦日换算，依据不足时说明时机尚不明朗。",
+              "aliases": [
+                "近期有开始新感情的机会吗？",
+                "何时可能遇到适合发展关系的人？"
+              ],
               "manuscriptIndexPath": "data/authored-readings/new-relationship-opportunity/index.json",
               "position": 1,
               "categoryId": "relationships",
@@ -1414,7 +1418,8 @@
                 "domain-02"
               ],
               "mode": "narrative",
-              "answerScope": "适用于尚无确定对象的人，回答有机会相识或见面的参考时段。日级窗口以取期规则和实际起卦日为准。",
+              "answerScope": "历史问项。现由桃花缘分的同一篇断语回答。",
+              "archived": true,
               "requiresTimingMethod": true,
               "position": 2,
               "categoryId": "relationships",
@@ -1430,7 +1435,7 @@
                   "sectionId": "mh-064"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,

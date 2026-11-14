@@ -59,9 +59,13 @@ test('all eight health questions across four branches provide reference text wit
 });
 
 test('affection and missing-person questions do not inherit marriage, lost-object or traveller-return predictions',async()=>{
- assert.deepEqual((await repo.listQuestions('relationships.affection')).map(q=>q.id),[
-  'relationships.new-partner.opportunity','relationships.new-partner.timing',
+ assert.deepEqual((await repo.listQuestions('relationships.affection')).filter(q=>!q.archived).map(q=>q.id),[
+  'relationships.new-partner.opportunity',
  ]);
+ const newPartner=await repo.getQuestion('relationships.new-partner.opportunity');
+ assert.match(newPartner.question,/开始新感情.*何时可能遇到/);
+ assert.equal(newPartner.manuscriptIndexPath,'data/authored-readings/new-relationship-opportunity/index.json');
+ assert.equal((await repo.getQuestion('relationships.new-partner.timing')).archived,true);
  assert.deepEqual((await repo.listQuestions('relationships.confession')).map(q=>q.id),[
   'relationships.affection.affection','relationships.developing.contact','relationships.confession.timing',
  ]);

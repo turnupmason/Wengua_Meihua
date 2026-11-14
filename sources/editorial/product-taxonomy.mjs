@@ -70,8 +70,8 @@ export const PRODUCT_TAXONOMY=[
  ]},
  {id:'relationships',number:'03',label:'感情姻缘',subcategories:[
   s('affection','桃花缘分','近期有开始新感情的机会吗？|何时可能遇到适合发展关系的人？',[
-   q('new-partner.opportunity','近期有开始新感情的机会吗？','new_relationship_opportunity',['domain-02','domain-05'],o('适用于尚无确定对象的人，回答近期是否有开始新感情的机会。只谈相识与发展条件。',{manuscriptIndexPath:'data/authored-readings/new-relationship-opportunity/index.json'})),
-   q('new-partner.timing','何时可能遇到适合发展关系的人？','partner_meeting_timing',['domain-05','domain-02'],o('适用于尚无确定对象的人，回答有机会相识或见面的参考时段。日级窗口以取期规则和实际起卦日为准。',{requiresTimingMethod:true}))]),
+   q('new-partner.opportunity','近期有开始新感情的机会吗？何时可能遇到适合发展关系的人？','new_relationship_opportunity',['domain-02','domain-05'],o('适用于尚无确定对象的人。同一篇断语回答近期有无新感情机会、何时较可能遇到适合继续了解的人，以及相识如何发展。应期按实际起卦日换算，依据不足时说明时机尚不明朗。',{aliases:['近期有开始新感情的机会吗？','何时可能遇到适合发展关系的人？'],manuscriptIndexPath:'data/authored-readings/new-relationship-opportunity/index.json'})),
+   q('new-partner.timing','何时可能遇到适合发展关系的人？','partner_meeting_timing',['domain-05','domain-02'],o('历史问项。现由桃花缘分的同一篇断语回答。',{archived:true,requiresTimingMethod:true}))]),
   s('confession','暧昧表白','这段关系中，对方心意的传统取象如何理解？|对方近期会主动联系我吗？|现在适合向对方表白吗？',[
    q('affection.affection','这段关系中，对方心意的传统取象如何理解？','affection_symbolism',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。',{aliases:['他/她喜欢我吗？','对我有没有好感？']})),
    q('developing.contact','对方近期会主动联系我吗？','partner_initiated_contact',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。')),
