@@ -139,3 +139,21 @@ test('exam dates use the date of each cast and preserve the dates of a saved rea
  assert.equal(fallback.status, 'ready');
  assert.equal(windows(fallback).length, 0);
 });
+
+test('favourable chart support can carry conditional lines through to the exam result', async () => {
+ const cases = [
+  [50, 1, '寅', 'use'], [50, 1, '午', 'use'],
+  [59, 3, '卯', 'use'], [59, 3, '子', 'use'],
+  [61, 4, '酉', 'use_mutual'], [61, 4, '辰', 'use_mutual'],
+  [61, 5, '申', 'changed_use'], [61, 5, '丑', 'changed_use'],
+ ];
+ for (const [primaryId, movingLine, monthBranch, role] of cases) {
+  const result = await product.getContent({...request, primaryId, movingLine, monthBranch});
+  assert.equal(result.status, 'ready');
+  assert.equal(result.decision.outcomeCode, 'favourable');
+  const [window] = result.timingSection.windows;
+  assert.equal(window.eventScope, 'positive-result-candidate');
+  assert.equal(window.calculationBasis.role, role);
+  assert.equal(window.calculationBasis.directRelation, 'use_generates_body');
+ }
+});
