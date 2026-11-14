@@ -16,6 +16,8 @@ export interface Settings {
   calendarClock: 'local-wallclock' | 'china-standard-time';
   /** auto: the full ritual until the first reading is done, then quick. */
   ritualMode: 'auto' | 'full' | 'quick';
+  /** 应期提醒: a phone notification on the evening a 应期 ends (native app only; asked for first). */
+  timingReminders: boolean;
 }
 
 const KEY = 'wengua.settings.v1';
@@ -29,7 +31,7 @@ function prefersReducedMotion(): boolean {
 }
 
 export function defaultSettings(): Settings {
-  return { lang: 'zh', langChosen: false, sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto' };
+  return { lang: 'zh', langChosen: false, sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto', timingReminders: false };
 }
 
 export function loadSettings(): Settings {
@@ -48,6 +50,7 @@ export function loadSettings(): Settings {
       ziHour: saved.ziHour === 'zi-late-same-day' ? 'zi-late-same-day' : base.ziHour,
       calendarClock: saved.calendarClock === 'china-standard-time' ? 'china-standard-time' : base.calendarClock,
       ritualMode: saved.ritualMode === 'full' || saved.ritualMode === 'quick' ? saved.ritualMode : 'auto',
+      timingReminders: saved.timingReminders === true,
     };
   } catch {
     return base;

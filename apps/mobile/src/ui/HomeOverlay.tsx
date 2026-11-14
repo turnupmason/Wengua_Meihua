@@ -9,6 +9,8 @@
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
 import { CoachTip, coach } from './coach';
+import { FollowupCard, type FollowupAsk } from './FollowupCard';
+import { askReminderPermission, canRemind } from '../domain/reminders';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
 import { createCalendarProvider } from '../domain/calendar';
@@ -83,6 +85,8 @@ interface Props {
   pace: 'full' | 'quick';
   /** The 断语 is being looked up for a cast just made (the button waits). */
   busy?: boolean;
+  /** 应期回访: a 应期 that has come, asked about in the tray. */
+  followup?: FollowupAsk | null;
 }
 
 /** 人事占第二 → 人事 */
@@ -283,8 +287,9 @@ function DigitPad({ t, value, max, onChange, onDone }: { t: Strings; value: stri
   );
 }
 
-export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false }: Props) {
+export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false, followup = null }: Props) {
   const [showSettings, setShowSettings] = useState(false);
+  const [remindDenied, setRemindDenied] = useState(false);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => onSettings({ ...settings, [k]: v });
   const f = <K extends keyof EntryForm>(k: K, v: EntryForm[K]) => onForm({ ...form, [k]: v });
 
@@ -387,6 +392,11 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /><circle cx="9" cy="7" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="8" cy="17" r="1.6" /></svg>
         </button>
       </header>
+
+      {/* 应期回访: a slim line over the beams, under the top bar (the tray and the 三清 stay as they are). */}
+      <div className="followup-float">
+        <FollowupCard t={t} ask={followup} lang={settings.lang} />
+      </div>
 
       {/* The hall's own 三清殿 plaque is the title; the name stays for screen readers. */}
       <h1 className="sr-only">{t.appName} · {t.tagline}</h1>
@@ -622,6 +632,27 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 </select>
               </label>
               <p className="note">{t.flatModeNote}</p>
+              {canRemind() && (
+                <>
+                  <label className="toggle">
+                    <input
+                      type="checkbox"
+                      checked={settings.timingReminders}
+                      onChange={async (e) => {
+                        const on = e.target.checked;
+                        if (on && !(await askReminderPermission())) {
+                          setRemindDenied(true);
+                          return;
+                        }
+                        setRemindDenied(false);
+                        set('timingReminders', on);
+                      }}
+                    />{' '}
+                    {t.remindToggle}
+                  </label>
+                  <p className="note">{remindDenied ? t.remindDenied : t.remindNote}</p>
+                </>
+              )}
               <label>
                 <span>{t.calendarPolicy}</span>
                 <select value={settings.ziHour} onChange={(e) => set('ziHour', e.target.value as Settings['ziHour'])}>

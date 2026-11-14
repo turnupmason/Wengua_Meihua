@@ -25,6 +25,7 @@ import { calculationGroups, windowBody, windowDates } from '../domain/judgment';
 import { answerText, conclusionText, synthText, weatherText, type SynthStage } from './Verdict';
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
+import { canRemind } from '../domain/reminders';
 import { plainFirst } from './plainFirst';
 
 type SRel = Reading['synthesis'] extends infer Y ? (Y extends { applicable: true; stages: readonly (infer S)[] } ? S : never) : never;
@@ -83,6 +84,8 @@ interface Props {
   focus: SynthStage | null;
   /** 'detail': open on the 详断, unfolded (the stone's 「看详断」). */
   startAt?: 'detail';
+  /** 应期提醒 (phone app only): offered under the 应期 until it is on. */
+  remind?: { on: boolean; onTurnOn: () => void };
   saved: boolean;
   onPick: (p: LinePick) => void;
   onSave: () => void;
@@ -105,7 +108,7 @@ function ScriptTitle({ title }: { title: string }) {
   );
 }
 
-export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, startAt, saved, onPick, onSave, onClose }: Props) {
+export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, startAt, remind, saved, onPick, onSave, onClose }: Props) {
   const y = reading.synthesis;
   const txt = synthText(reading, lang);
   const wtxt = weatherText(reading, lang);
@@ -421,6 +424,14 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                       })}
                     </ul>
                   )}
+                  {remind && j.timing.windows.some((w) => w.dates.length) && canRemind() &&
+                    (remind.on ? (
+                      <p className="read-meta remind-on">{t.remindIsOn}</p>
+                    ) : (
+                      <button type="button" className="ghost-btn remind-ask" onClick={remind.onTurnOn}>
+                        {t.remindAsk}
+                      </button>
+                    ))}
                 </div>
               )}
               {j.calculation.length > 0 && (
