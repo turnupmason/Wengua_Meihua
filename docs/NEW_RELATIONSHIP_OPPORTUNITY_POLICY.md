@@ -141,3 +141,9 @@ mh-116、mh-122 和 mh-143 分别核定应事方向、时间尺度及日支五�
 按正式断语结构写作，逐篇作者核读后保存源稿及计算依据。全问底稿写定后，执行[单 AI 文学润色 V5.0](READING_LITERARY_POLISH_V5.md)，保存锁定内容核验和修改回执。独立专业审核待完成。
 
 [逐卦阅读与进度](new-relationship-opportunity/README.md) · [精确稿件断点](../data/authored-readings/new-relationship-opportunity/index.json)
+
+## V5.0 精修记录
+
+乾为天六爻、五气类共 30 篇已逐篇全文精修，对应 72 个月令键。[逐篇回执](../sources/editorial/new-relationship-opportunity/polish/hex-001.json)保存原稿提交、正文前后摘要、判断、改动段落和原因。重建后核对动爻原文、判断、用典、取期、月令键和展示结构。全问还余 1,890 篇，下一篇为坤为地初六、寅卯月。
+
+后续重点核对初次相遇的时间表述。已约续见、活动中有话可续或安排受阻的日期只对应所标事件。校阅时如发现正文把它写成初遇日期，或现有正文欠缺可据的相遇阶段，需要在专业修订记录中注明。
