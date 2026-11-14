@@ -3,6 +3,8 @@ import { getKnowledge, type Knowledge } from './knowledge/knowledge';
 import { chargesToday, fillJudgment, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
 import { judgmentFor, windowDates } from './domain/judgment';
 import { createFollowups, type Outcome, type TimingRef } from './domain/followup';
+import { createCollection, createDaily } from './domain/daily';
+import { createCalendarProvider } from './domain/calendar';
 import { askReminderPermission, onReminderTap, syncReminders } from './domain/reminders';
 import { questionById, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
@@ -73,6 +75,14 @@ export function App() {
   const bumpFollow = useCallback(() => setFollowRev((n) => n + 1), []);
   // A record to open in 问事录 (from the hall's 回访 card or a reminder), a fresh token each time.
   const [detailRequest, setDetailRequest] = useState<{ castId: string; at: number } | null>(null);
+  // 今日一卦 and 卦册 (which of the 64 the visitor has met).
+  const daily = useMemo(() => createDaily(), []);
+  const collection = useMemo(() => createCollection(), []);
+  const [dailyRev, setDailyRev] = useState(0);
+  // The hexagrams a cast just added to 卦册, shown once in its reading.
+  const [newMet, setNewMet] = useState<{ castId: string; ids: number[] } | null>(null);
+  // A hexagram page to open in 藏经阁 (from 今日一卦), a fresh token each time.
+  const [bookRequest, setBookRequest] = useState<{ hexagramId: number; at: number } | null>(null);
   const openDetail = useCallback((castId: string) => {
     setDetailRequest({ castId, at: Date.now() });
     placeStore.set('records');
@@ -161,6 +171,8 @@ export function App() {
       .then((k) => {
         if (!alive) return;
         setKnowledge(k);
+        // Casts made before 卦册 existed count as met.
+        collection.meet(history.list().flatMap((r) => [r.stages.primary.id, r.stages.mutual.id, r.stages.changed.id]), 'cast');
         void fillWritten(k);
         // 入殿 always walks into the hall: a cast left open when the app was last closed is not
         // reopened on the stone table (it is saved, and stays in 问事录). Older versions kept a
@@ -209,6 +221,10 @@ export function App() {
       }
       // Only a cast that was given a written 断语 counts toward today's readings.
       if (chargesToday(rec) && rec.questionId) membership.recordCast(rec.questionId);
+      // A newcomer's first written reading is read in full (once).
+      if (rec.judgment?.state === 'ready') membership.giftFirst(rec.castId);
+      const fresh = collection.meet([rec.stages.primary.id, rec.stages.mutual.id, rec.stages.changed.id], 'cast');
+      setNewMet(fresh.length ? { castId: rec.castId, ids: fresh } : null);
       setMemberRev((n) => n + 1);
       recordRef.current = rec;
       setRecord(rec);
@@ -330,9 +346,52 @@ export function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [knowledge, followRev, memberRev, record, settings.lang, readableRecords]);
 
+  // 今日一卦: taken the first time the hall is open on a day (a new day after the app was in the background too).
+  useEffect(() => {
+    const onVis = () => document.visibilityState === 'visible' && setDailyRev((n) => n + 1);
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, []);
+  const dailyView = useMemo(() => {
+    if (!knowledge || splash !== 'gone') return null;
+    try {
+      const d = daily.today(knowledge.library, createCalendarProvider(), deviceTimeZone(), { ziHour: settings.ziHour, clock: settings.calendarClock });
+      const h = knowledge.library.getHexagram(d.primaryId);
+      const line = h.lines[d.movingLine - 1];
+      return {
+        id: h.id,
+        name: h.name,
+        theme: h.grade?.theme ?? '',
+        bits: h.bitsBottomUp,
+        text: h.reading.text,
+        vernacular: h.reading.vernacular,
+        imageVernacular: h.reading.imageVernacular,
+        movingLine: d.movingLine,
+        line: { label: line.label, text: line.text, vernacular: line.vernacular },
+        timeLabel: d.timeLabel,
+        seen: d.seen,
+        onSeen: () => {
+          daily.markSeen();
+          collection.meet([d.primaryId], 'daily');
+          setDailyRev((n) => n + 1);
+        },
+        onRead: () => {
+          setBookRequest({ hexagramId: d.primaryId, at: Date.now() });
+          placeStore.set('library');
+        },
+      };
+    } catch {
+      return null;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [knowledge, splash, dailyRev, settings.ziHour, settings.calendarClock]);
+
   // 藏经阁 and 问事录 pages: built once per language/data change, reused across renders.
   const goAltar = useCallback(() => placeStore.set('altar'), []);
-  const libraryPanel = useMemo(() => (knowledge ? <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={goAltar} /> : null), [knowledge, t, settings.lang, goAltar]);
+  const libraryPanel = useMemo(
+    () => (knowledge ? <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={goAltar} collection={collection} metRev={dailyRev + (newMet?.ids.length ?? 0)} openRequest={bookRequest} /> : null),
+    [knowledge, t, settings.lang, goAltar, collection, dailyRev, newMet, bookRequest],
+  );
   const recordsPanel = useMemo(
     () => (
       <HistoryScreen
@@ -463,6 +522,7 @@ export function App() {
             onSignOut,
             profileName: profile?.name ?? '',
             followup: followAsk,
+            daily: dailyView,
           }}
           intro={intro}
           onIntroDone={() => setIntro('done')}
@@ -471,6 +531,7 @@ export function App() {
           memberOpen={!!memberSheet}
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
           readOnOpen={readOnOpen}
+          newMet={newMet && newMet.castId === record?.castId ? { names: newMet.ids.map((id) => knowledge.library.getHexagram(id).name), count: collection.count() } : null}
           remind={{
             on: settings.timingReminders,
             onTurnOn: async () => {

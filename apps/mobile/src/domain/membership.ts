@@ -36,6 +36,8 @@ export interface Entitlement {
   expiresAt: string | null;
   /** Readings whose full 断语 were bought one at a time. */
   unlocked: string[];
+  /** The first written reading, given in full once so a newcomer sees what 详断 is (never twice). */
+  firstGift?: string;
 }
 
 const ENT_KEY = 'wengua.entitlement.v1';
@@ -90,7 +92,23 @@ export function createMembership(store: KeyValueStore = safeStore('local')) {
     },
     /** Full 断语 for this reading: members, or a single unlock. */
     canReadFull(castId: string | null, now = new Date()) {
-      return api.isMember(now) || (!!castId && read().unlocked.includes(castId));
+      const e = read();
+      return api.isMember(now) || (!!castId && (e.unlocked.includes(castId) || e.firstGift === castId));
+    },
+    /**
+     * The first cast given a written 断语 is read in full for free, once per device (deleting
+     * history does not give it again). Members need no gift. Returns whether this cast got it.
+     */
+    giftFirst(castId: string, now = new Date()): boolean {
+      const e = read();
+      if (e.firstGift || api.isMember(now)) return false;
+      e.firstGift = castId;
+      write(e);
+      return true;
+    },
+    /** Whether this cast's 详断 is the first-reading gift. */
+    isGift(castId: string | null) {
+      return !!castId && read().firstGift === castId;
     },
     /** Applies a completed purchase. */
     grant(product: ProductId, castId: string | null, now = new Date()) {

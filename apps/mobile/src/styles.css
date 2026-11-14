@@ -1892,3 +1892,99 @@ input, textarea, select { font-size: max(16px, 1em); }
 .fu-outcome.is-happened { color: #f6c86a; }
 .fu-redo { margin-left: 10px; min-height: 32px; padding: 0 2px; border: 0; background: none; font: 13px var(--sans); color: #b7a582; text-decoration: underline; text-underline-offset: 3px; }
 .remind-ask { margin-top: 10px; }
+
+/* 第一卦的详断: a quiet note that it is a gift. */
+.gift-note { margin: 0 0 12px; padding: 8px 12px; border-radius: 8px; border: 1px dashed rgba(216, 174, 94, 0.4); font: 13.5px/1.6 var(--serif-body); color: #e2cf9f; }
+
+/* 常问: one scrolling row of plain-worded questions above the six fields. */
+.common-asks { display: flex; gap: 8px; margin: 0 -16px 10px; padding: 0 16px 2px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.common-asks::-webkit-scrollbar { display: none; }
+.common-asks button { flex: none; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(216, 174, 94, 0.38); background: rgba(255, 236, 196, 0.06); color: #f0e0bd; font: 14.5px var(--serif); letter-spacing: 0.02em; white-space: nowrap; }
+.common-asks button:active { background: rgba(216, 174, 94, 0.2); }
+
+/* 今日一卦: warm lacquer and quiet bronze, like the hall and the reading panels. */
+.daily-strip b::before { background: #d8ae5e; box-shadow: 0 0 6px rgba(216, 174, 94, 0.8); }
+.followup-float { display: grid; gap: 6px; }
+.daily-pop {
+  width: min(376px, 100%);
+  max-height: calc(100vh - var(--safe-t) - var(--safe-b) - 32px);
+  max-height: calc(100dvh - var(--safe-t) - var(--safe-b) - 32px);
+  padding: 18px 18px 12px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--ink);
+  border: 1px solid rgba(216, 174, 94, 0.40);
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 12% 0%, #42291a, transparent 57%),
+    linear-gradient(160deg, #281d14, var(--bg-2) 56%, #17110d);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 219, 154, 0.13);
+}
+.daily-pop .fu-kicker { flex-wrap: wrap; gap: 4px 12px; margin-bottom: 12px; }
+.daily-pop .fu-kicker b { color: #e5bf84; letter-spacing: 0.18em; }
+.daily-pop .fu-kicker span { color: #d3bf9d; font-size: 13px; }
+.daily-head { display: flex; align-items: center; gap: 14px; margin: 2px 0 10px; }
+.daily-head .hexagram-svg { flex: none; }
+.daily-head .hexagram-svg.is-revealed .bar { fill: #c9a265; }
+.daily-head .hexagram-svg.is-revealed .moving .bar { fill: #ee8b70; filter: none; }
+.daily-head h3 { margin: 0; font: 600 22px var(--serif); letter-spacing: 0.08em; color: #f3dfb5; }
+.daily-theme { margin: 2px 0 0; font: 13.5px var(--serif); color: #d4b581; letter-spacing: 0.12em; }
+.daily-body p { margin: 0 0 6px; font: 14.5px/1.75 var(--serif-body); color: #ded0b6; }
+.daily-body .daily-classic, .daily-body .daily-line { font: 600 15.5px/1.7 var(--serif); color: #f0e1c7; }
+.daily-body .daily-line { margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(216, 174, 94, 0.25); }
+.daily-line b { margin-right: 8px; color: #ee9a82; }
+.daily-note { margin: 10px 0 0; font: 12.5px/1.6 var(--sans); color: #bcab8f; }
+.daily-pop .fu-foot { align-items: center; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
+.daily-pop .fu-foot button { min-height: 44px; color: #e6c490; }
+.daily-pop .daily-ok {
+  margin-inline-start: auto;
+  padding: 0 15px;
+  border: 1px solid rgba(216, 174, 94, 0.52);
+  border-radius: 999px;
+  background: #3b2a19;
+  color: #f6e4bd;
+  text-decoration: none;
+}
+.daily-pop .daily-ok:active { background: #503920; }
+
+/* 卦册 in 藏经阁: how many of the 64 have been met, and a small seal on each. */
+.book-progress { margin: 4px 16px 10px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(216, 174, 94, 0.25); background: rgba(255, 236, 196, 0.04); }
+.book-progress p { margin: 0 0 6px; font: 600 15px var(--serif); color: #f0dcae; letter-spacing: 0.06em; }
+.book-bar { display: block; height: 4px; border-radius: 4px; background: rgba(216, 174, 94, 0.15); overflow: hidden; }
+.book-bar > i { display: block; height: 100%; background: linear-gradient(90deg, #b8863a, #f0c870); }
+.book-progress small { display: block; margin-top: 6px; font: 12.5px/1.5 var(--sans); color: #b7a582; }
+.hex-grid button { position: relative; }
+.hex-met { position: absolute; top: 6px; right: 6px; padding: 0 5px; border-radius: 3px; background: #a2341c; color: #f8ebd2; font: 600 11px/1.6 var(--serif); letter-spacing: 0.06em; }
+.new-met { margin: 6px 0 0; font: 13px/1.5 var(--sans); color: #d9b46a; }
+
+/* 摇签: a round 签筒 button beside 诚心起卦, and the 签筒 itself. */
+.enter-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.enter-row .enter-seal { flex: 1; max-width: 260px; }
+.shake-open { flex: none; width: 58px; height: 58px; display: grid; place-items: center; align-content: center; gap: 1px; border-radius: 50%; border: 1px solid rgba(216, 174, 94, 0.55); background: rgba(30, 18, 10, 0.85); color: #f0dcae; }
+.shake-open svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.shake-open span { font: 600 11px var(--serif); letter-spacing: 0.12em; margin-right: -0.12em; }
+.shake-backdrop { align-items: center; background: rgba(6, 4, 2, 0.82); }
+.shake-cast { width: min(320px, calc(100% - 32px)); text-align: center; color: #f1e2bf; }
+.shake-cast h2 { margin: 0 0 6px; font: 600 22px var(--serif); letter-spacing: 0.3em; margin-right: -0.3em; color: #f6dfa4; }
+.shake-say { margin: 0 0 14px; font: 15px/1.7 var(--serif-body); color: #e2d2b0; min-height: 3.4em; }
+.qian-tong { position: relative; display: block; width: min(166px, 23vh); aspect-ratio: 3 / 4; margin: 0 auto; padding: 0; border: 0; background: none; transform-origin: 50% 90%; }
+.qian-tong img { pointer-events: none; user-select: none; }
+.tong-body, .tong-lip { position: absolute; bottom: 0; left: 19%; width: 62%; height: 70%; }
+.tong-lip { clip-path: polygon(0 5%, 16% 6.8%, 34% 7.5%, 66% 7.5%, 84% 6.8%, 100% 5%, 100% 100%, 0 100%); }
+.qian { position: absolute; width: 5%; height: 55%; display: block; transform-origin: 50% 88%; }
+.tong-word {
+  position: absolute;
+  inset: 60% 0 auto;
+  color: #d6ad72;
+  font: 600 clamp(20px, 6vw, 29px)/1 var(--serif);
+  text-shadow: 0 -1px #2a1209, 0 1px rgba(245, 208, 152, 0.24);
+}
+.qian-tong.is-shaking { animation: tongShake 0.16s linear infinite; }
+.qian-tong.is-shaking .qian { animation: qianRattle 0.12s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -0.03s); }
+.qian-tong.is-done .qian.is-out { transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); transform: translateY(-30%) rotate(-6deg); }
+@keyframes tongShake { 0% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } 100% { transform: rotate(-5deg); } }
+@keyframes qianRattle { from { transform: translateY(0); } to { transform: translateY(-5px); } }
+.shake-hint { margin: 12px 0 2px; font: 13px/1.6 var(--sans); color: #b7a582; }
+@media (prefers-reduced-motion: reduce) {
+  .qian-tong.is-shaking, .qian-tong.is-shaking .qian { animation: none; }
+  .qian-tong.is-done .qian.is-out { transition: none; }
+}

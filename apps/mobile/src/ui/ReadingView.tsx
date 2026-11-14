@@ -26,6 +26,7 @@ import { answerText, conclusionText, synthText, weatherText, type SynthStage } f
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
 import { canRemind } from '../domain/reminders';
+import { drawCard, shareCard } from './shareCard';
 import { plainFirst } from './plainFirst';
 
 type SRel = Reading['synthesis'] extends infer Y ? (Y extends { applicable: true; stages: readonly (infer S)[] } ? S : never) : never;
@@ -86,6 +87,8 @@ interface Props {
   startAt?: 'detail';
   /** 应期提醒 (phone app only): offered under the 应期 until it is on. */
   remind?: { on: boolean; onTurnOn: () => void };
+  /** The hexagrams this cast added to 卦册. */
+  newMet?: { names: string[]; count: number } | null;
   saved: boolean;
   onPick: (p: LinePick) => void;
   onSave: () => void;
@@ -108,7 +111,7 @@ function ScriptTitle({ title }: { title: string }) {
   );
 }
 
-export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, startAt, remind, saved, onPick, onSave, onClose }: Props) {
+export function ReadingView({ blocked = false, reading, question, questionId, conditions, topicId, snapshot, judgment, onUnlock, sectionTitle = () => null, onOpenBook, onOpenSection, castTime, t, lang, focus, startAt, remind, newMet = null, saved, onPick, onSave, onClose }: Props) {
   const y = reading.synthesis;
   const txt = synthText(reading, lang);
   const wtxt = weatherText(reading, lang);
@@ -118,6 +121,8 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
   const conclusion = conclusionText(reading, question, topicId, lang, snapshot, questionId);
   const stale = !!snapshot && snapshot.ruleId !== y.ruleId;
   const authored = judgment.state === 'ready' ? judgment : null;
+  const [sharing, setSharing] = useState(false);
+  const [shareNote, setShareNote] = useState<string | null>(null);
   const miss = judgment.state === 'missing' ? missingText(t, judgment.reason) : null;
   const legacy = judgment.state === 'legacy';
   const advice = practicalAdviceFor(questionId, conditions);
@@ -306,6 +311,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
             {/* The classical 门类 (人事占第二…) is internal; it is cited only beside its passages under 专业依据. */}
             {[topicLabel, entryLabel, topicLabel ? null : domainTitle(reading.domain, lang), castTime].filter(Boolean).join(' · ')}
           </p>
+          {newMet && newMet.names.length > 0 && <p className="new-met">{t.newlyMet(newMet.names.join(lang === 'en' ? ', ' : '、'), newMet.count)}</p>}
         </section>
 
         <section className="read-verdict">
@@ -365,7 +371,41 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
             <button className="ghost-btn" onClick={onSave} aria-pressed={saved}>
               {saved ? `✓ ${t.savedToBook}` : t.saveToBook}
             </button>
+            {/* 卦签: the three hexagrams and the 简断 as a picture (what was asked is not on it). */}
+            {authored && j && (
+              <button
+                className="ghost-btn share-btn"
+                disabled={sharing}
+                onClick={async () => {
+                  setSharing(true);
+                  try {
+                    const s = reading.stages;
+                    const blob = await drawCard({
+                      appName: t.appName,
+                      stages: [
+                        { caption: t.stageNow, name: s.primary.name, bits: s.primary.bitsBottomUp, moving: reading.movingLine },
+                        { caption: t.stageMid, name: s.mutual.name, bits: s.mutual.bitsBottomUp },
+                        { caption: t.stageEnd, name: s.changed.name, bits: s.changed.bitsBottomUp },
+                      ],
+                      title: j.title || j.short,
+                      short: j.title ? j.short : '',
+                      when: castTime,
+                      foot: t.shareFoot,
+                    });
+                    const done = await shareCard(blob, `wengua-${s.primary.name}.png`);
+                    setShareNote(done === 'saved' ? t.shareSaved : null);
+                  } catch {
+                    setShareNote(t.shareFailed);
+                  } finally {
+                    setSharing(false);
+                  }
+                }}
+              >
+                {t.shareCard}
+              </button>
+            )}
           </div>
+          {shareNote && <p className="save-note" role="status">{shareNote}</p>}
           {/* Nothing is lost without saving: say so where the visitor decides. */}
           <p className="save-note">{t.saveNote}</p>
         </section>
@@ -379,6 +419,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
           </summary>
           {j && authored?.full && (
             <section className="script-full">
+              {authored.gift && <p className="gift-note">{t.firstGiftNote}</p>}
               {j.paragraphs.map((para) => {
                 const [label, text] = labelled(para);
                 // The plain judgment first, the terms it rests on after (ui/plainFirst: order only).

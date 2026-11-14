@@ -10,6 +10,9 @@ import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'rea
 import { useTrayDrag } from './trayDrag';
 import { CoachTip, coach } from './coach';
 import { FollowupCard, type FollowupAsk } from './FollowupCard';
+import { DailyCard, type DailyView } from './DailyCard';
+import { ShakeCast, askMotion } from './ShakeCast';
+import { haptic } from '../domain/audio';
 import { askReminderPermission, canRemind } from '../domain/reminders';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
@@ -87,7 +90,17 @@ interface Props {
   busy?: boolean;
   /** 应期回访: a 应期 that has come, asked about in the tray. */
   followup?: FollowupAsk | null;
+  /** 今日一卦, offered until opened that day (after any 回访). */
+  daily?: DailyView | null;
 }
+
+/** 常问: the written entries, said the way people say them. */
+const COMMON_ASKS: readonly { id: string; words: { zh: string; en: string } }[] = [
+  { id: 'career.interview', words: { zh: '面试能不能过', en: 'Will I pass the interview?' } },
+  { id: 'career.job-change', words: { zh: '想跳槽又怕后悔', en: 'Should I change jobs?' } },
+  { id: 'career.exams', words: { zh: '这次考试能过吗', en: 'Will I pass this exam?' } },
+  { id: 'career.promotion-pay', words: { zh: '升职加薪有没有戏', en: 'Will I be promoted?' } },
+];
 
 /** 人事占第二 → 人事 */
 export const shortDomain = (title: string) => title.replace(/占第.+$/, '');
@@ -287,9 +300,10 @@ function DigitPad({ t, value, max, onChange, onDone }: { t: Strings; value: stri
   );
 }
 
-export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false, followup = null }: Props) {
+export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false, followup = null, daily = null }: Props) {
   const [showSettings, setShowSettings] = useState(false);
   const [remindDenied, setRemindDenied] = useState(false);
+  const [shake, setShake] = useState(false);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => onSettings({ ...settings, [k]: v });
   const f = <K extends keyof EntryForm>(k: K, v: EntryForm[K]) => onForm({ ...form, [k]: v });
 
@@ -396,6 +410,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
       {/* 应期回访: a slim line over the beams, under the top bar (the tray and the 三清 stay as they are). */}
       <div className="followup-float">
         <FollowupCard t={t} ask={followup} lang={settings.lang} />
+        {!followup && <DailyCard t={t} daily={daily} />}
       </div>
 
       {/* The hall's own 三清殿 plaque is the title; the name stays for screen readers. */}
@@ -420,6 +435,29 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {/* Once a matter is chosen the six fields fold away, so the tray stays low and the 三清 and
             the altar stay in view; tapping the chosen matter brings them back to change it. */}
         {!chosen && <CoachTip id="domain" t={t} text={t.coachDomain} anchor=".home-panel .topic-grid" />}
+        {/* 常问: what people actually worry about, in their own words, for the entries with written 断语
+            (one tap chooses that entry, as its drawer would). */}
+        {!chosen && (
+          <div className="common-asks" role="group" aria-label={t.commonAsks}>
+            {COMMON_ASKS.map((c) => {
+              const q = questionById(c.id);
+              if (!q || readinessOf(q) !== 'written') return null;
+              return (
+                <button
+                  type="button"
+                  key={c.id}
+                  onClick={() => {
+                    onForm({ ...form, questionId: q.question_id, conditions: {}, topicId: q.domain_id, domainId: q.classical_domain_id ?? form.domainId });
+                    coach.done('domain');
+                    coach.done('drawer');
+                  }}
+                >
+                  {c.words[lang]}
+                </button>
+              );
+            })}
+          </div>
+        )}
         {(!chosen || pickOpen) && (
           <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
             {DOMAINS.map((d) => (
@@ -476,9 +514,30 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         )}
         {error && <p className="error" role="alert">{error}</p>}
         {chosen && !readOnly && <CoachTip id="cast" t={t} text={t.coachCast} anchor=".home-panel .enter-seal" />}
-        <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
-          {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
-        </button>
+        <div className="enter-row">
+          <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
+            {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
+          </button>
+          {/* 摇签: the same time cast, at the moment the shaking stops (time casting only). */}
+          {chosen && !readOnly && form.method === 'classical-time' && (
+            <button
+              type="button"
+              className="shake-open"
+              disabled={busy}
+              aria-label={t.shakeTitle}
+              title={t.shakeTitle}
+              onClick={() => {
+                void askMotion();
+                coach.done('cast');
+                setShake(true);
+              }}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10h12l-1.2 10.2q-4.8 1.4-9.6 0z" /><path d="M8.5 10V3.5M11 10V2.5M13.5 10V3M16 10V4.5" /></svg>
+              <span>{t.shakeOpen}</span>
+            </button>
+          )}
+        </div>
+        <ShakeCast t={t} open={shake} onClose={() => setShake(false)} onCast={onEnter} onHaptic={(ms) => haptic(settings.haptics, ms)} />
         <p className="privacy">{t.privacy}</p>
       </form>
 
