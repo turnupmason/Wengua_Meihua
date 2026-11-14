@@ -25,7 +25,11 @@ test('workplace retains its three precise questions', async () => {
  ]);
 });
 
-for (const [slug, id] of [['workplace-stability',questionId],['workplace-probation',probationId]]) {
+for (const [slug, id] of [
+ ['workplace-stability',questionId],
+ ['workplace-probation',probationId],
+ ['new-relationship-opportunity','relationships.new-partner.opportunity'],
+]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
  const sourceDir = 'sources/editorial/' + slug + '/';
