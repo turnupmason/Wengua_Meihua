@@ -98,6 +98,8 @@ function frame(root: HTMLElement, plate: HTMLElement, face: HTMLElement) {
   const top = Math.max(mid, above + 24 - TABLE_Y[0] * s);
   Object.assign(plate.style, { width: `${PLATE.w * s}px`, height: `${PLATE.h * s}px`, left: `${left}px`, top: `${top}px` });
   face.style.transform = quadMatrix(FACE.w, FACE.h, QUAD.map(([x, y]) => [x * s, y * s] as [number, number]));
+  // Where the table's feet end (from the top of the screen): 石桌显卦 is said in the open floor below.
+  document.documentElement.style.setProperty('--table-feet', `${Math.round(root.getBoundingClientRect().top + top + TABLE_Y[1] * s)}px`);
 }
 
 interface Props {

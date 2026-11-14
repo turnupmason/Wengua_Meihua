@@ -2051,9 +2051,11 @@ body.shrine-open .home-panel, body.shrine-open .home-top, body.shrine-open .foll
 .bestow-asked small { font: 500 11px var(--serif); letter-spacing: 0.42em; padding-inline-start: 0.42em; color: rgba(200, 170, 112, 0.62); }
 .bestow-asked b { font: 600 25px var(--serif); letter-spacing: 0.16em; padding-inline-start: 0.16em; color: #fbefd6; text-shadow: 0 0 18px rgba(240, 200, 130, 0.18); }
 .bestow-slip {
-  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px; width: 112px; height: 340px; padding: 30px 0 0;
-  clip-path: polygon(14% 0, 86% 0, 100% 5%, 100% 95%, 86% 100%, 14% 100%, 0 95%, 0 5%);
-  background: linear-gradient(180deg, transparent 82%, #9c2f1a 82%), repeating-linear-gradient(90deg, rgba(120, 72, 24, 0.12) 0 2px, transparent 2px 7px), linear-gradient(90deg, #b8863f, #e2bd7a 30%, #f0d39a 50%, #d8ad66 72%, #a8783a);
+  /* The slip grows with the name (地火明夷 is four characters): the cinnabar foot is a fixed band at the
+     bottom, so the writing always stays on the bamboo. */
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px; width: 112px; min-height: 340px; padding: 30px 0 82px;
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+  background: linear-gradient(180deg, transparent calc(100% - 62px), #9c2f1a calc(100% - 62px)), repeating-linear-gradient(90deg, rgba(120, 72, 24, 0.12) 0 2px, transparent 2px 7px), linear-gradient(90deg, #b8863f, #e2bd7a 30%, #f0d39a 50%, #d8ad66 72%, #a8783a);
   filter: drop-shadow(0 0 28px rgba(240, 190, 100, 0.45));
   animation: slipRise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -2179,3 +2181,7 @@ body.shrine-open .home-panel, body.shrine-open .home-top, body.shrine-open .foll
 .me-menu button { gap: 8px; grid-template-columns: 26px auto 1fr 12px; }
 .me-menu small { font-size: min(12.5px, 3.3vw); }
 .me-menu button > i { grid-column: 4; }
+
+/* 石桌显卦 in the open floor under the table's feet, not on the table (2026-11-14); without the painted
+   table (3D) it keeps its place at 64%. */
+.temple.phase-revealing .phase-title { top: calc(var(--table-feet, 58vh) + 26px); }
