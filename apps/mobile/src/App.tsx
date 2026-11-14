@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { getKnowledge, type Knowledge } from './knowledge/knowledge';
-import { chargesToday, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
+import { chargesToday, fillJudgment, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
 import { judgmentFor } from './domain/judgment';
 import { questionById, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
@@ -87,6 +87,20 @@ export function App() {
 
   const openSavedJudgment = useCallback(async (knowledge: Knowledge, rec: CastRecord) => {
     const previous = rec.judgment;
+    // Cast while its 断语 was still being written: read it now if it has been (for the original day).
+    if (previous?.state === 'missing' && (previous.reason === 'pending-authoring' || previous.reason === 'pending-review')) {
+      const question = questionById(rec.questionId);
+      const input = judgmentInput(rec);
+      if (!input || !question) return;
+      const written = await judgmentFor(knowledge.product, question, input);
+      const current = recordRef.current;
+      if (written.state !== 'ready' || current?.castId !== rec.castId) return;
+      const filled = fillJudgment(current, written) as CastRecord;
+      history.fill(filled);
+      recordRef.current = filled;
+      setRecord(filled);
+      return;
+    }
     if (previous?.state !== 'ready' || previous.timing?.windows.length || previous.timing?.phaseNotes?.length ||
         (previous.contentQuestionId ?? previous.questionId) !== 'career.promotion-pay.promotion') return;
     const question = questionById(rec.questionId);
@@ -100,7 +114,20 @@ export function App() {
     const repaired = {...current, judgment: {...previous, timing: updated.timing, calculation: updated.calculation}};
     recordRef.current = repaired;
     setRecord(repaired);
-  }, []);
+  }, [history]);
+
+  // Casts made while their 断语 was still being written get it once it is (问事录, detail and 读卦 alike).
+  const fillWritten = useCallback(async (knowledge: Knowledge) => {
+    for (const rec of history.list()) {
+      const was = rec.judgment;
+      if (was?.state !== 'missing' || (was.reason !== 'pending-authoring' && was.reason !== 'pending-review')) continue;
+      const question = questionById(rec.questionId);
+      const input = judgmentInput(rec);
+      if (!input || !question) continue;
+      const written = await judgmentFor(knowledge.product, question, input).catch(() => null);
+      if (written?.state === 'ready') history.fill(fillJudgment(rec, written) as CastRecord);
+    }
+  }, [history]);
 
   // Load bundled texts once; failures can be retried.
   useEffect(() => {
@@ -110,6 +137,7 @@ export function App() {
       .then((k) => {
         if (!alive) return;
         setKnowledge(k);
+        void fillWritten(k);
         // 入殿 always walks into the hall: a cast left open when the app was last closed is not
         // reopened on the stone table (it is saved, and stays in 问事录). Older versions kept a
         // marker for it; clear it.
@@ -119,7 +147,7 @@ export function App() {
     return () => {
       alive = false;
     };
-  }, [loadAttempt, history]);
+  }, [loadAttempt, history, fillWritten]);
 
   // Background/foreground: pause audio; the ritual clock and renderer pause themselves.
   useEffect(() => {

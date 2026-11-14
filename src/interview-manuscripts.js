@@ -11,7 +11,7 @@ export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
-export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.1',timingVersion:'exam-day-1.0.1',directory:'exam'});
+export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.2',timingVersion:'exam-day-1.0.2',directory:'exam'});
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',
  questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-1.0.0',
@@ -133,7 +133,9 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const branches=period?.branches??ELEMENT_DAY_BRANCHES[node.element];
   if(!branches?.length||(useTrigramPeriod&&!period))throw new Error('Missing promotion day branches');
   const method=useTrigramPeriod?'trigram-periods':'element-qi';
-  const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',useTrigramPeriod?'mh-052':'mh-143'])];
+  const timingSources=[rule.source,'mh-058','mh-117','mh-122',useTrigramPeriod?'mh-052':'mh-143'];
+  if(nodePeriod&&kind==='name-support')timingSources.push('mh-116');
+  const sourceIds=[...new Set(timingSources)];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
   const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE||profile?.namedStageEvents===true;

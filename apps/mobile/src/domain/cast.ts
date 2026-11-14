@@ -289,6 +289,20 @@ export function withJudgment(record: Readonly<CastRecord>, judgment: CastJudgmen
   return deepFreeze({ ...structuredClone(record), judgment: structuredClone(judgment), ...(snapshot ? { snapshot } : {}) } as CastRecord);
 }
 
+/**
+ * A cast made while its 断语 was still being written (「整理中」) is given the 断语 once it exists,
+ * read for the original cast (same chart, month and casting day). Nothing else about the record
+ * changes, and a record that already has a 断语 is never rewritten.
+ */
+export function fillJudgment(record: Readonly<CastRecord>, judgment: CastJudgment): Readonly<CastRecord> {
+  const was = record.judgment;
+  if (was?.state !== 'missing' || (was.reason !== 'pending-authoring' && was.reason !== 'pending-review'))
+    throw new Error('Only a 断语 still being written is filled in later');
+  if (judgment.state !== 'ready') throw new Error('Only a written 断语 fills a record');
+  const { judgment: _was, ...rest } = record;
+  return withJudgment(rest as CastRecord, judgment);
+}
+
 /** Freezes what the reading says now, in Chinese (the language of the record). */
 export function snapshotOf(reading: Reading, question: string, topicId: string | undefined, domainId: string, questionId?: string): ReadingSnapshot {
   const y = reading.synthesis;
