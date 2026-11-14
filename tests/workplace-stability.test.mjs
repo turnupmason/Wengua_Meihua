@@ -17,15 +17,15 @@ const request = {
 };
 const branches = {木:['寅','卯'],火:['巳','午'],土:['辰','戌','丑','未'],金:['申','酉'],水:['亥','子']};
 
-test('workplace retains its four precise questions', async () => {
+test('workplace retains its three precise questions', async () => {
  const questions = await product.listQuestions('career.workplace');
  assert.deepEqual(questions.map(q => q.id), [
-  questionId, probationId, 'career.work-relations.leader',
+  questionId, probationId,
   'career.work-relations.coworker-support',
  ]);
 });
 
-for (const [slug, id] of [['workplace-stability',questionId],['workplace-probation',probationId],['workplace-leader','career.work-relations.leader']]) {
+for (const [slug, id] of [['workplace-stability',questionId],['workplace-probation',probationId]]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
  const sourceDir = 'sources/editorial/' + slug + '/';

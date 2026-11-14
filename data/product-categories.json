@@ -4,7 +4,7 @@
   "productCatalogVersion": "2.0.0",
   "categoryCount": 6,
   "subcategoryCount": 31,
-  "questionCount": 83,
+  "questionCount": 82,
   "selectionPolicy": {
     "input": "category-subcategory-fixed-question",
     "aiClassification": false,
@@ -383,7 +383,7 @@
           "categoryId": "career",
           "exampleQuestions": [
             "试用期能通过吗？",
-            "与领导的工作关系能协调好吗？"
+            "这件工作能得到同事的支持吗？"
           ],
           "questions": [
             {
@@ -449,37 +449,6 @@
               "contextFields": {}
             },
             {
-              "id": "career.work-relations.leader",
-              "question": "与这位领导的工作关系能协调好吗？",
-              "question_type": "supervisor_relationship",
-              "sourceDomainIds": [
-                "domain-02"
-              ],
-              "mode": "narrative",
-              "answerScope": "回答工作沟通与配合，不推测领导未表达的真实心理。",
-              "manuscriptIndexPath": "data/authored-readings/workplace-leader/index.json",
-              "position": 3,
-              "categoryId": "career",
-              "subcategoryId": "career.workplace",
-              "chartSourceDomainId": "domain-02",
-              "sourceSections": [
-                {
-                  "domainId": "domain-02",
-                  "sectionId": "mh-064"
-                }
-              ],
-              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
-              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
-              "outputPolicy": {
-                "oneQuestionOnly": true,
-                "unverifiedDates": false,
-                "mentalStateIsFact": false,
-                "symbolicLocationIsFact": false
-              },
-              "practicalAdvice": [],
-              "contextFields": {}
-            },
-            {
               "id": "career.work-relations.coworker-support",
               "question": "这件工作能得到同事的支持吗？",
               "question_type": "coworker_support",
@@ -488,7 +457,7 @@
               ],
               "mode": "narrative",
               "answerScope": "回答所选工作上的支持，不泛断同事品格或永久立场。",
-              "position": 4,
+              "position": 3,
               "categoryId": "career",
               "subcategoryId": "career.workplace",
               "chartSourceDomainId": "domain-02",

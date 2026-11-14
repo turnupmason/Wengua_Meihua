@@ -18,7 +18,7 @@ test('six domains and 31 navigation entries match the new names and order',async
   ['物品找回','方向原因','宠物走失','失联寻人']
  ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
- assert.equal(questions.length,83);assert.equal(new Set(questions.map(q=>q.id)).size,83);
+ assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
  assert.equal(c.subcategoryCount,31);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
@@ -30,7 +30,7 @@ test('distinct outcomes stay distinct; same lost-object goal may share a type th
   assert.notEqual((await repo.getQuestion(a)).question_type,(await repo.getQuestion(b)).question_type);
  assert.equal((await repo.getQuestion('search.lost-object.recovery')).question_type,(await repo.getQuestion('search.valuables.recovery')).question_type);
  assert.equal((await repo.getQuestion('search.valuables.recovery')).subcategoryId,'search.lost-object');
- assert.equal((await repo.getQuestion('career.work-relations.leader')).subcategoryId,'career.workplace');
+ await assert.rejects(repo.getQuestion('career.work-relations.leader'), /Unknown product question/u);
  assert.notEqual((await repo.getQuestion('search.pets.recovery')).question_type,'lost_object_recovery');
  assert.notEqual((await repo.getQuestion('search.missing-contact.contact')).question_type,'traveller_return');
 });

@@ -22,11 +22,6 @@ export const WORKPLACE_PROBATION_PROFILE=Object.freeze({
  questionScope:'completion-of-current-probation',manuscriptVersion:'workplace-probation-1.0.0',
  timingVersion:'workplace-probation-day-1.0.0',directory:'workplace-probation',namedStageEvents:true,
 });
-export const WORKPLACE_LEADER_PROFILE=Object.freeze({
- questionId:'career.work-relations.leader',questionType:'supervisor_relationship',
- questionScope:'coordination-on-current-work-with-this-supervisor',manuscriptVersion:'workplace-leader-1.0.0',
- timingVersion:'workplace-leader-day-1.0.0',directory:'workplace-leader',namedStageEvents:true,
-});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),

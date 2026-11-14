@@ -38,7 +38,7 @@ JSON按本卦分片，monthSlots以动爻:月令指向行池；每次只读一�
 
 既有作者逐篇核读记录保留为 author-checked。专业审核、文学润色、独立真人专业审核和用户逐篇验收按实际工作记录。文学润色通过全文对照后记为 `POLISH_COMPLETED`，专业批准状态沿用独立记录。旧 1,920 篇批次与旧审核视图另行留档。
 
-正式产品导航为六大领域、31 个细分入口，目录保存 80 个现用问项和 3 个历史问项，见 [正式分类 V2](docs/PRODUCT_CATEGORIES_V1.md)。使用 createProductRepository，古籍门类和兼容问法在内部使用。
+正式产品导航为六大领域、31 个细分入口，目录保存 79 个现用问项和 3 个历史问项，见 [正式分类 V2](docs/PRODUCT_CATEGORIES_V1.md)。使用 createProductRepository，古籍门类和兼容问法在内部使用。
 
 最新断语标准为 [V3规范](docs/STORY_GENERATION_STANDARD_V3.md)，[十篇简断与详断](docs/TEN_READINGS_V3.md)由本助手负责撰写，开发侧接入已写稿件。第一层卦象事实、第二层专业结论、第三层自然文字分开；简详绑定同一结论。十篇V3内容与文风已获用户通过，验收记录见 data/editorial-acceptance.json，绑定原稿摘要；不重复请求文风确认。接受范围不自动扩展到其他盘、旬空或精确应期。
 

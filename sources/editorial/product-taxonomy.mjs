@@ -27,10 +27,9 @@ export const PRODUCT_TAXONOMY=[
    q('job-change.decision','现职和这份新工作怎么选，现在适合辞职吗？','job_change_decision',['domain-08','domain-09'],o('按最看重的一项比较现职与这份新工作，并判断现在宜辞职、宜先准备，还是宜继续留任。',{requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-change/index.json'})),
    q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('以暂留现职为参照，判断现在执行已明确的离职安排是否合适。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPlan},manuscriptIndexPath:'data/authored-readings/job-resign/index.json'})),
    q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-compare/index.json'}))]),
-  s('workplace','职场情况','试用期能通过吗？|与领导的工作关系能协调好吗？',[
+  s('workplace','职场情况','试用期能通过吗？|这件工作能得到同事的支持吗？',[
    q('job-stability.layoff','当前工作的稳定性如何，会有被裁员的风险吗？','employment_stability',['domain-09'],o('只作工作形势的传统解释，不声称核实了雇主决定或保证工作安全。',{manuscriptIndexPath:'data/authored-readings/workplace-stability/index.json'})),
    q('job-stability.probation','这次试用期能通过吗？','probation_completion',['domain-09'],o('只回答试用期结果，不用求职录用或终身工作稳定代答。',{manuscriptIndexPath:'data/authored-readings/workplace-probation/index.json'})),
-   q('work-relations.leader','与这位领导的工作关系能协调好吗？','supervisor_relationship',['domain-02'],o('回答工作沟通与配合，不推测领导未表达的真实心理。',{manuscriptIndexPath:'data/authored-readings/workplace-leader/index.json'})),
    q('work-relations.coworker-support','这件工作能得到同事的支持吗？','coworker_support',['domain-02'],o('回答所选工作上的支持，不泛断同事品格或永久立场。'))]),
   s('exams','考试选拔','这次考试能通过吗？|这次竞聘能成功吗？',[
    q('exams.exam','这次考试能通过吗？','examination_result',['domain-09'],o('回答本次考试结果。',{legacyQuestionId:'domain-09-examination',manuscriptIndexPath:'data/authored-readings/exam/index.json'})),
