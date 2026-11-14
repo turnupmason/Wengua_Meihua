@@ -108,7 +108,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
     // Each written entry reads its own manuscript library.
     const written = [
       [JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion'],
-      ['career.job-change', 'career.job-change.decision'], ['career.exams', 'career.exams.exam'],
+      ['career.job-change', 'career.job-change.decision'], ['career.workplace', 'career.job-stability.layoff'],
+      ['career.exams', 'career.exams.exam'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -148,9 +149,9 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 求职录用、晋升加薪、跳槽去留 and 考试选拔 have written material.
+    // 项目任务 is the remaining career entry without any written material.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getAllByText(STRINGS.zh.scriptPendingTag)).toHaveLength(2);
+    expect(screen.getByText(STRINGS.zh.scriptPendingTag)).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
