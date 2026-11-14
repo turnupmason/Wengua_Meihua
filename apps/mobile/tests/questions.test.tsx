@@ -423,6 +423,7 @@ describe('断语 lookup (createProductRepository)', () => {
     expect(windowBody('可留意本月21、22号，本轮面试补证后，通过结果较易明朗。')).toEqual({ around: false, text: '本轮面试补证后，通过结果较易明朗。' });
     expect(windowBody('留意本月12、13号前后，可能遇到较难承接的追问。')).toEqual({ around: true, text: '可能遇到较难承接的追问。' });
     expect(windowBody('收尾时留意对方答复。')).toEqual({ around: false, text: '收尾时留意对方答复。' });
+    expect(windowBody('可留意本月22号前后，中段较易发现遗漏，属凶应。先检查漏看的条件。')).toEqual({ around: true, text: '中段较易发现遗漏。先检查漏看的条件。' });
   });
 
   it('reports a library it cannot read as unavailable, not as a 断语', async () => {

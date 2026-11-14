@@ -156,7 +156,8 @@ const DATE_LEAD = /^可?留意(?:本月|下月|次月)?[\d、]+号(前后)?，/;
  */
 export function windowBody(text: string): { around: boolean; text: string } {
   const m = DATE_LEAD.exec(text);
-  return m ? { around: !!m[1], text: text.slice(m[0].length) } : { around: false, text };
+  return m ? { around: !!m[1], text: text.slice(m[0].length).replace(/^([^。！？]+)，属[吉凶耗]应。/u, '$1。') }
+    : { around: false, text };
 }
 
 const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
