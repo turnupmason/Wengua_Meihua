@@ -1360,12 +1360,12 @@
         {
           "id": "relationships.affection",
           "slug": "affection",
-          "label": "桃花心意",
+          "label": "桃花缘分",
           "position": 1,
           "categoryId": "relationships",
           "exampleQuestions": [
-            "近期有机会开始新感情吗？",
-            "怎样理解对方心意的传统取象？"
+            "近期有开始新感情的机会吗？",
+            "何时可能遇到适合发展关系的人？"
           ],
           "questions": [
             {
@@ -1377,7 +1377,7 @@
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "回答新关系机会，不核实命定身份或编造对象特征。",
+              "answerScope": "适用于尚无确定对象的人，回答近期是否有开始新感情的机会。只谈相识与发展条件。",
               "position": 1,
               "categoryId": "relationships",
               "subcategoryId": "relationships.affection",
@@ -1412,7 +1412,7 @@
                 "domain-02"
               ],
               "mode": "narrative",
-              "answerScope": "需要新关系与应期专项；未核算不写具体日期或指定命定对象。",
+              "answerScope": "适用于尚无确定对象的人，回答有机会相识或见面的参考时段。日级窗口以取期规则和实际起卦日为准。",
               "requiresTimingMethod": true,
               "position": 2,
               "categoryId": "relationships",
@@ -1438,7 +1438,21 @@
               },
               "practicalAdvice": [],
               "contextFields": {}
-            },
+            }
+          ]
+        },
+        {
+          "id": "relationships.confession",
+          "slug": "confession",
+          "label": "暧昧表白",
+          "position": 2,
+          "categoryId": "relationships",
+          "exampleQuestions": [
+            "这段关系中，对方心意的传统取象如何理解？",
+            "对方近期会主动联系我吗？",
+            "现在适合向对方表白吗？"
+          ],
+          "questions": [
             {
               "id": "relationships.affection.affection",
               "question": "这段关系中，对方心意的传统取象如何理解？",
@@ -1448,14 +1462,14 @@
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "两个常见问法共用关系取象；不核实对方真实心理，不把婚可成当作喜欢的证据。",
+              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。",
               "aliases": [
                 "他/她喜欢我吗？",
                 "对我有没有好感？"
               ],
-              "position": 3,
+              "position": 1,
               "categoryId": "relationships",
-              "subcategoryId": "relationships.affection",
+              "subcategoryId": "relationships.confession",
               "chartSourceDomainId": "domain-02",
               "sourceSections": [
                 {
@@ -1477,20 +1491,7 @@
               },
               "practicalAdvice": [],
               "contextFields": {}
-            }
-          ]
-        },
-        {
-          "id": "relationships.confession",
-          "slug": "confession",
-          "label": "暧昧表白",
-          "position": 2,
-          "categoryId": "relationships",
-          "exampleQuestions": [
-            "对方近期会主动联系吗？",
-            "现在适合表白吗？"
-          ],
-          "questions": [
+            },
             {
               "id": "relationships.developing.contact",
               "question": "对方近期会主动联系我吗？",
@@ -1500,8 +1501,8 @@
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "回答联系行为的传统倾向，不借此证明爱意或成婚。",
-              "position": 1,
+              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。",
+              "position": 2,
               "categoryId": "relationships",
               "subcategoryId": "relationships.confession",
               "chartSourceDomainId": "domain-02",
@@ -1535,8 +1536,8 @@
                 "domain-08"
               ],
               "mode": "narrative",
-              "answerScope": "回答当前行动适宜，不保证表白成功；择时方法须单独审核。",
-              "position": 2,
+              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，回答现在适不适合向这个人表达心意。择时方法须单独核对。",
+              "position": 3,
               "categoryId": "relationships",
               "subcategoryId": "relationships.confession",
               "chartSourceDomainId": "domain-02",
