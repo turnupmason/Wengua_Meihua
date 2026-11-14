@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -125,7 +125,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   if (profile === JOB_CHANGE_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
-  if ((profile === EXAM_PROFILE || profile === WORKPLACE_STABILITY_PROFILE) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
+  if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
   if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
@@ -139,7 +139,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const openingRelation = r.edges.find(edge => edge.targetRole === 'use').type;
   const closingRelation = r.edges.find(edge => edge.targetRole === 'changed_use').type;
-  if ((isPromotion || profile === EXAM_PROFILE) && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
+  if ((isPromotion || profile === EXAM_PROFILE || profile === WORKPLACE_PROBATION_PROFILE) && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
       !r.edges.some(edge => edge.type === 'use_generates_body')) {
    throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
@@ -318,12 +318,24 @@ const workplaceStability = {
  counterevidence:'对照工作承接、外部要求、爻辞限制与尾段变化。普通工作压力与岗位中断分别判断。',
  timingContext:'日级参考窗口适用于对应工作事项已进入近期流程。人事决定及日期以实际通知为准。',
 };
+const workplaceProbation = {
+ title:'这次试用期能通过吗', policy:'WORKPLACE_POLICY.md', primarySource:'mh-071', clauses:promotion.clauses,
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','将名成类推至这次试用期的正式通过。原体为试用员工，本用为这次试用评定。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','依次核对试用要求、实际工作和最后的评定。'],
+ ],
+ outcomes:['favourable','difficult'], scopeNote:'只判断当次试用期的通过倾向',
+ counterevidence:'分别看评定标准、执行中的协作或限制、爻辞条件与末段。过程改善与最终通过各有证据。',
+ timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability','workplace-probation'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
 if (target === 'job-change') {
  await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
  await buildCareerManuscripts(EXAM_PROFILE, exam);
 } else if (target === 'workplace-stability') {
  await buildCareerManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
+} else if (target === 'workplace-probation') {
+ await buildCareerManuscripts(WORKPLACE_PROBATION_PROFILE, workplaceProbation);
 } else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);
