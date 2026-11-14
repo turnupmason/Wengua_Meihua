@@ -47,6 +47,16 @@ test('year rollover and leap day use complete civil dates',()=>{
  assert.throws(()=>formatUpcomingCivilDay('2027-02-29',{castingDate:'2027-02-12'}));
 });
 
+test('the last supported month returns no candidates when the search would cross the calendar boundary',()=>{
+ const castingDate='2099-12-31', lastBranch=getCivilDay(castingDate).dayBranch;
+ const missedBranch=lastBranch==='子'?'丑':'子';
+ const missed=findUpcomingCivilDayMatches({castingDate,branches:[missedBranch]});
+ assert.equal(missed.monthOffset,null);
+ assert.deepEqual(missed.matches,[]);
+ const sameDay=findUpcomingCivilDayMatches({castingDate,branches:[lastBranch]});
+ assert.deepEqual(sameDay.matches.map(day=>day.date),[castingDate]);
+});
+
 test('history changes the label to an actual month without rolling the saved date forward',()=>{
  const options={castingDate:'2026-11-12'};
  assert.equal(formatUpcomingCivilDay('2026-11-20',options),'本月20号');

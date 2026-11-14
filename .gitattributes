@@ -12,3 +12,6 @@ sources/original/** -text
 *.woff2 binary
 *.bat text eol=crlf
 *.cmd text eol=crlf
+
+# Preserve the byte sequence bound to the sealed exam blind review.
+sources/audit/exam-six-role/blind* -text whitespace=cr-at-eol,-blank-at-eof

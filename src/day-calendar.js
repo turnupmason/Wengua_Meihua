@@ -1,8 +1,9 @@
 /** Civil-date labels only. UTC arithmetic here avoids DST; it does not select a user's timezone. */
+const FIRST_YEAR=1900,LAST_YEAR=2099;
 const DAY=86400000,ANCHOR=Date.UTC(2000,0,7),STEMS=[...'甲乙丙丁戊己庚辛壬癸'],BRANCHES=[...'子丑寅卯辰巳午未申酉戌亥'];
 function ordinal(value){
  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))throw new TypeError('Expected a complete YYYY-MM-DD civil date, without a clock time');
- const [y,m,d]=value.split('-').map(Number);if(y<1900||y>2099)throw new RangeError('Civil date year must be 1900..2099');
+ const [y,m,d]=value.split('-').map(Number);if(y<FIRST_YEAR||y>LAST_YEAR)throw new RangeError(`Civil date year must be ${FIRST_YEAR}..${LAST_YEAR}`);
  const t=Date.UTC(y,m-1,d),date=new Date(t);
  if(date.getUTCFullYear()!==y||date.getUTCMonth()!==m-1||date.getUTCDate()!==d)throw new RangeError('Invalid civil date');
  return t/DAY;
@@ -43,7 +44,8 @@ export function findUpcomingCivilDayMatches({castingDate,branches,isEligible}={}
  ordinal(castingDate);
  if(isEligible!==undefined&&typeof isEligible!=='function')throw new TypeError('isEligible must be a synchronous boolean predicate');
  const [year,month]=castingDate.split('-').map(Number);
- for(let offset=0;offset<=1;offset++){
+ const maxOffset=year===LAST_YEAR&&month===12?0:1;
+ for(let offset=0;offset<=maxOffset;offset++){
   const start=offset===0?castingDate:new Date(Date.UTC(year,month,1)).toISOString().slice(0,10);
   const end=new Date(Date.UTC(year,month+offset,0)).toISOString().slice(0,10);
   const matches=findCivilDayMatches({startDate:start,endDate:end,branches}).filter(row=>{
