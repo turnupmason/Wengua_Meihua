@@ -257,8 +257,11 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
      const role=d.calculationBasis.role;
      const label=(!row.decision.sourceEvidence&&{body:'体',use:'用'}[role])||labels[role]||role;
+     const methodNote=profile===EXAM_PROFILE
+      ? (d.calculationBasis.method==='pre-heaven-trigram-periods'?' 取期方法为经卦时序。':' 取期方法为五行卦气。')
+      : '';
      const ruleNote=usesStoredTimingSpecs?` ${d.calculationBasis.reason} 依据 ${d.sourceIds.join('、')}。`:'';
-     return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${ruleNote}`;
+     return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${methodNote}${ruleNote}`;
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
