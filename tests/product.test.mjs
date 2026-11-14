@@ -12,13 +12,13 @@ test('six domains and 31 navigation entries match the new names and order',async
  assert.deepEqual(c.categories.map(c=>c.subcategories.map(s=>s.label)),[
   ['求职录用','晋升加薪','跳槽去留','职场情况','考试选拔','项目任务'],
   ['财运收入','投资理财','经营合作','订单合同','借款尾款','买卖求财'],
-  ['桃花心意','暧昧表白','恋爱发展','矛盾复合','谈婚论嫁','夫妻婚姻'],
+  ['桃花缘分','暧昧表白','恋爱发展','矛盾复合','谈婚论嫁','夫妻婚姻'],
   ['身体象意','病势象意','诊疗康复','家人健康'],
   ['房屋买卖','租住环境','搬家迁居','装修建造','家庭亲子'],
   ['物品找回','方向原因','宠物走失','失联寻人']
  ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
- assert.equal(questions.length,83);assert.equal(new Set(questions.map(q=>q.id)).size,83);
+ assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
  assert.equal(c.subcategoryCount,31);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
@@ -30,7 +30,7 @@ test('distinct outcomes stay distinct; same lost-object goal may share a type th
   assert.notEqual((await repo.getQuestion(a)).question_type,(await repo.getQuestion(b)).question_type);
  assert.equal((await repo.getQuestion('search.lost-object.recovery')).question_type,(await repo.getQuestion('search.valuables.recovery')).question_type);
  assert.equal((await repo.getQuestion('search.valuables.recovery')).subcategoryId,'search.lost-object');
- assert.equal((await repo.getQuestion('career.work-relations.leader')).subcategoryId,'career.workplace');
+ await assert.rejects(repo.getQuestion('career.work-relations.leader'), /Unknown product question/u);
  assert.notEqual((await repo.getQuestion('search.pets.recovery')).question_type,'lost_object_recovery');
  assert.notEqual((await repo.getQuestion('search.missing-contact.contact')).question_type,'traveller_return');
 });
@@ -59,8 +59,14 @@ test('all eight health questions across four branches provide reference text wit
 });
 
 test('affection and missing-person questions do not inherit marriage, lost-object or traveller-return predictions',async()=>{
+ assert.deepEqual((await repo.listQuestions('relationships.affection')).map(q=>q.id),[
+  'relationships.new-partner.opportunity','relationships.new-partner.timing',
+ ]);
+ assert.deepEqual((await repo.listQuestions('relationships.confession')).map(q=>q.id),[
+  'relationships.affection.affection','relationships.developing.contact','relationships.confession.timing',
+ ]);
  const affection=await repo.getContent({questionId:'relationships.affection.affection',...dated});
- assert.equal(affection.status,'pending-authoring');assert.match(affection.selection.answerScope,/不核实对方真实心理/);
+ assert.equal(affection.status,'pending-authoring');assert.match(affection.selection.answerScope,/对方心意以其实际表达为准/);
  const missing=await repo.getContent({questionId:'search.missing-contact.contact',...dated});
  assert.equal(missing.status,'pending-authoring');assert.equal(missing.story,null);assert.equal(missing.reading,undefined);assert.ok(missing.practicalAdvice.some(p=>p.includes('警方')));
  const leads=await repo.getContent({questionId:'search.person-leads.guidance'});assert.equal(leads.status,'guidance');assert.equal(leads.predictionAllowed,false);assert.equal(leads.provesLocation,false);
