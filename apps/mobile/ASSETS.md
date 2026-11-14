@@ -13,6 +13,7 @@
 | 环境声与钟声（`domain/audio.ts`） | Web Audio 实时合成 | 本项目原创（MIT） |
 | 应用图标、启动屏（`public/icon.svg`、`resources/icon.svg`、`resources/splash.svg`） | 手写 SVG，**仍是占位**；尚未生成原生图标与启动屏（Xcode `Assets.xcassets`、Android `res/`） | 本项目原创（MIT） |
 | 供品、供桌、烛台、香炉、手部、石案、刻字（`Offerings.tsx`、`Hands.tsx`、`StoneTable.tsx`、`engrave.ts`） | 代码生成 | 本项目原创（MIT） |
+| 摇签筒与竹签 `public/art/ritual/shake-holder.webp`、`shake-holder-front.webp`、`shake-slip.webp` | 用户提供的原画（原件存 `docs/art-reference/shake/`），由 `scripts/build-shake-art.py` 只做裁切、缩放，并切出去掉筒口的前沿层。透明 WebP | 用户提供 |
 | 字体 `public/fonts/wengua-serif-*.woff2` | Noto Serif SC（思源宋体）子集，取自 npm `@expo-google-fonts/noto-serif-sc@0.4.4`，用 `npm run font:subset` 重新生成 | SIL Open Font License 1.1，全文见 `public/fonts/OFL.txt` |
 | 毛笔字体 `public/fonts/wengua-brush.woff2`（标题、匾额、「欢迎入殿」） | Ma Shan Zheng（马善政）子集，取自 npm `@expo-google-fonts/ma-shan-zheng@0.4.3`，同一脚本生成 | SIL Open Font License 1.1，全文见 `public/fonts/OFL-MaShanZheng.txt` |
 

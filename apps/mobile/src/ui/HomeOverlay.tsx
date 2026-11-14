@@ -6,13 +6,16 @@
  * Then the method, the hour of casting, the pace, and 诚心起卦 — or, for a reference or guidance
  * question, 查看说明 at once (no cast). Library, history and settings are small icons at the top.
  */
+import { createPortal } from 'react-dom';
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
-import { CoachTip, coach } from './coach';
+import { coach } from './coach';
+import { Exit } from './Exit';
+import { tour } from './Tour';
 import { FollowupCard, type FollowupAsk } from './FollowupCard';
 import { DailyCard, type DailyView } from './DailyCard';
-import { ShakeCast, askMotion } from './ShakeCast';
-import { haptic } from '../domain/audio';
+import { askMotion } from './ShakeCast';
+import { MeScreen, type MeData } from './MeScreen';
 import { askReminderPermission, canRemind } from '../domain/reminders';
 import type { Settings } from '../domain/settings';
 import type { Strings } from '../domain/i18n';
@@ -90,16 +93,33 @@ interface Props {
   busy?: boolean;
   /** 应期回访: a 应期 that has come, asked about in the tray. */
   followup?: FollowupAsk | null;
+  /** 我的: what the user centre shows. */
+  me?: MeData;
   /** 今日一卦, offered until opened that day (after any 回访). */
   daily?: DailyView | null;
 }
 
-/** 常问: the written entries, said the way people say them. */
+/**
+ * 常问: what people worry about, in their own words, across all six fields (each one an entry, so
+ * it reads that entry's 断语 once written; until then the entry says 整理中 as usual). Mixed by
+ * field so the first few already show the range.
+ */
 const COMMON_ASKS: readonly { id: string; words: { zh: string; en: string } }[] = [
   { id: 'career.interview', words: { zh: '面试能不能过', en: 'Will I pass the interview?' } },
+  { id: 'relationships.affection', words: { zh: '对方心里有没有我', en: 'Do they care for me?' } },
   { id: 'career.job-change', words: { zh: '想跳槽又怕后悔', en: 'Should I change jobs?' } },
+  { id: 'wealth.debt', words: { zh: '这笔钱能不能要回来', en: 'Will I get this money back?' } },
+  { id: 'relationships.reconciliation', words: { zh: '这段感情还能复合吗', en: 'Can we get back together?' } },
+  { id: 'search.lost-object', words: { zh: '东西丢了还能找回吗', en: 'Will I find what I lost?' } },
   { id: 'career.exams', words: { zh: '这次考试能过吗', en: 'Will I pass this exam?' } },
+  { id: 'home.buying', words: { zh: '这套房子该不该买', en: 'Should I buy this home?' } },
   { id: 'career.promotion-pay', words: { zh: '升职加薪有没有戏', en: 'Will I be promoted?' } },
+  { id: 'wealth.income', words: { zh: '最近财运怎么样', en: 'How is money looking?' } },
+  { id: 'relationships.marriage-plans', words: { zh: '能不能走到结婚', en: 'Will we marry?' } },
+  { id: 'home.family-relations', words: { zh: '家里的争执能平息吗', en: 'Will the family quarrel settle?' } },
+  { id: 'wealth.operations', words: { zh: '生意能不能做起来', en: 'Will the business do well?' } },
+  { id: 'search.pets', words: { zh: '走失的宠物能找回吗', en: 'Will my lost pet come home?' } },
+  { id: 'health.family-health', words: { zh: '家人身体让人担心', en: 'Worried about a family member’s health' } },
 ];
 
 /** 人事占第二 → 人事 */
@@ -188,14 +208,13 @@ function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; dom
           </button>
         </header>
         <div className="sheet-body ask-sheet-body">
-          {level === 'subtypes' && <CoachTip id="drawer" t={t} text={t.coachDrawer} anchor=".ask-sheet" />}
           {domain.caution && level === 'subtypes' && <p className="ask-caution">{domain.caution[lang]}</p>}
           {level === 'subtypes' && (
             <div className="subtype-grid">
               {domain.subtypes.map((s) => {
                 const on = current?.subtype_id === s.subtype_id;
                 return (
-                  <button type="button" key={s.subtype_id} className={on ? 'is-on' : ''} aria-current={on ? 'true' : undefined} onClick={() => openSubtype(s)}>
+                  <button type="button" key={s.subtype_id} data-tour={s.subtype_id} className={on ? 'is-on' : ''} aria-current={on ? 'true' : undefined} onClick={() => openSubtype(s)}>
                     <span>{s.label[lang]}</span>
                     {tag(subtypeReadiness(s))}
                   </button>
@@ -300,10 +319,10 @@ function DigitPad({ t, value, max, onChange, onDone }: { t: Strings; value: stri
   );
 }
 
-export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, pace, busy = false, followup = null, daily = null }: Props) {
+export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error, onForm, onSettings, onEnter, onLibrary, onHistory, onTitle, onDebug, onSignOut, profileName, onMembership, memberLine, busy = false, followup = null, daily = null, me }: Props) {
   const [showSettings, setShowSettings] = useState(false);
   const [remindDenied, setRemindDenied] = useState(false);
-  const [shake, setShake] = useState(false);
+  const [showMe, setShowMe] = useState(false);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => onSettings({ ...settings, [k]: v });
   const f = <K extends keyof EntryForm>(k: K, v: EntryForm[K]) => onForm({ ...form, [k]: v });
 
@@ -347,6 +366,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   };
   // The domain whose drawer is open (its button glows while the drawer is up).
   const [drawer, setDrawer] = useState<CatalogDomain | null>(null);
+  const [lastDomain, setLastDomain] = useState<string | null>(null);
   // The six fields, shown until a matter is chosen (and again when the visitor wants to change it).
   const [pickOpen, setPickOpen] = useState(false);
   // Which number the in-app pad is editing.
@@ -383,7 +403,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const ready = chosen ? readinessOf(chosen) : null;
   // Reference and guidance questions are read at once: no method, time or pace to choose.
   const readOnly = ready === 'reference' || ready === 'guidance';
-  const litDomain = drawer?.domain_id ?? chosen?.domain_id ?? null;
+  // The field last tapped stays lit after its drawer closes (even with nothing chosen there); a matter
+  // chosen elsewhere does not pull it back.
+  const litDomain = drawer?.domain_id ?? lastDomain ?? chosen?.domain_id ?? null;
   const tray = useRef<HTMLFormElement>(null);
   const trayDrag = useTrayDrag(tray);
   const numberField = (key: 'surname' | 'count' | 'major' | 'minor', label: string, max: number) => (
@@ -402,8 +424,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 7.5V12l3 2" /></svg>
         </button>
         <span className="home-spacer" />
-        <button className="icon-btn home-settings" onClick={() => setShowSettings(true)} aria-label={t.settings} title={t.settings}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /><circle cx="9" cy="7" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="8" cy="17" r="1.6" /></svg>
+        {/* 我的: the user centre (设置 is inside it). */}
+        <button className="icon-btn home-settings home-me" onClick={() => (me ? setShowMe(true) : setShowSettings(true))} aria-label={t.meTitle} title={t.meTitle}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6" /><path d="M5 20c.8-3.8 3.6-5.8 7-5.8s6.2 2 7 5.8" /></svg>
         </button>
       </header>
 
@@ -424,6 +447,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           e.preventDefault();
           // Doing what a tip says is as good as 「知道了」.
           coach.done('cast');
+          // Every cast is shaking the 签筒 before the 三清: iOS asks for motion only from a tap.
+          void askMotion();
           onEnter();
         }}
       >
@@ -434,19 +459,19 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         </div>
         {/* Once a matter is chosen the six fields fold away, so the tray stays low and the 三清 and
             the altar stay in view; tapping the chosen matter brings them back to change it. */}
-        {!chosen && <CoachTip id="domain" t={t} text={t.coachDomain} anchor=".home-panel .topic-grid" />}
-        {/* 常问: what people actually worry about, in their own words, for the entries with written 断语
-            (one tap chooses that entry, as its drawer would). */}
+        {/* 常问: what people actually worry about, in their own words, across the six fields (one tap
+            chooses that entry, as its drawer would). */}
         {!chosen && (
           <div className="common-asks" role="group" aria-label={t.commonAsks}>
             {COMMON_ASKS.map((c) => {
               const q = questionById(c.id);
-              if (!q || readinessOf(q) !== 'written') return null;
+              if (!q) return null;
               return (
                 <button
                   type="button"
                   key={c.id}
                   onClick={() => {
+                    setLastDomain(q.domain_id);
                     onForm({ ...form, questionId: q.question_id, conditions: {}, topicId: q.domain_id, domainId: q.classical_domain_id ?? form.domainId });
                     coach.done('domain');
                     coach.done('drawer');
@@ -461,7 +486,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {(!chosen || pickOpen) && (
           <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
             {DOMAINS.map((d) => (
-              <button type="button" key={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => { coach.done('domain'); setDrawer(d); }}>
+              <button type="button" key={d.domain_id} data-tour={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => { coach.done('domain'); setLastDomain(d.domain_id); setDrawer(d); }}>
                 <DomainIcon id={d.domain_id} />
                 <span>{d.label[lang]}</span>
               </button>
@@ -494,54 +519,28 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {!readOnly && (
           <>
             <div className="cast-row">
+              {/* The hour cast in, whole and centred on its own line; the other methods a small way in below. */}
               <button type="button" className="method-line" onClick={openMethods}>
-                <span>{t[mk] as string}</span>
-                <i aria-hidden="true">·</i>
-                <span className="method-time">{timeText}</span>
-                <em>{t.moreMethods}</em>
+                <span className="method-when">
+                  <span className="method-name">{t[mk] as string}</span>
+                  <i aria-hidden="true">·</i>
+                  <span className="method-time">{timeText}</span>
+                </span>
+                <em>{t.moreMethods} ›</em>
               </button>
-            </div>
-            <div className="pace-switch" role="radiogroup" aria-label={t.paceLabel}>
-              {(['full', 'quick'] as const).map((p) => (
-                <button type="button" key={p} role="radio" aria-checked={pace === p} aria-label={p === 'full' ? t.paceFull : t.paceQuick} className={pace === p ? 'is-on' : ''} onClick={() => set('ritualMode', p)}>
-                  {p === 'full' ? t.paceFull : t.paceQuick}
-                  {/* How long each takes, so the choice is an informed one. */}
-                  <small className="pace-hint">{p === 'full' ? t.paceFullHint : t.paceQuickHint}</small>
-                </button>
-              ))}
             </div>
           </>
         )}
         {error && <p className="error" role="alert">{error}</p>}
-        {chosen && !readOnly && <CoachTip id="cast" t={t} text={t.coachCast} anchor=".home-panel .enter-seal" />}
         <div className="enter-row">
           <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
             {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
           </button>
-          {/* 摇签: the same time cast, at the moment the shaking stops (time casting only). */}
-          {chosen && !readOnly && form.method === 'classical-time' && (
-            <button
-              type="button"
-              className="shake-open"
-              disabled={busy}
-              aria-label={t.shakeTitle}
-              title={t.shakeTitle}
-              onClick={() => {
-                void askMotion();
-                coach.done('cast');
-                setShake(true);
-              }}
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10h12l-1.2 10.2q-4.8 1.4-9.6 0z" /><path d="M8.5 10V3.5M11 10V2.5M13.5 10V3M16 10V4.5" /></svg>
-              <span>{t.shakeOpen}</span>
-            </button>
-          )}
         </div>
-        <ShakeCast t={t} open={shake} onClose={() => setShake(false)} onCast={onEnter} onHaptic={(ms) => haptic(settings.haptics, ms)} />
         <p className="privacy">{t.privacy}</p>
       </form>
 
-      {drawer && (
+      <Exit show={!!(drawer)}>{drawer && (
         <AskDrawer
           t={t}
           domain={drawer}
@@ -556,9 +555,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             coach.done('drawer');
           }}
         />
-      )}
+      )}</Exit>
 
-      {showMethods && (
+      <Exit show={!!(showMethods)}>{showMethods && (
         <div className="sheet-backdrop" onClick={() => setShowMethods(false)}>
           <section ref={methodSheet} className="sheet method-sheet" role="dialog" aria-label={t.methodLabel} onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
@@ -651,9 +650,26 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             </div>
           </section>
         </div>
-      )}
+      )}</Exit>
 
-      {showSettings && (
+      {createPortal(
+        <Exit show={showMe && !!me}>
+          {showMe && me && (
+        <MeScreen
+          t={t}
+          lang={lang}
+          data={{ ...me, onOpenRecord: (r) => { setShowMe(false); me.onOpenRecord(r); }, onRecords: () => { setShowMe(false); me.onRecords(); }, onSaved: () => { setShowMe(false); me.onSaved(); }, onLibrary: () => { setShowMe(false); me.onLibrary(); } }}
+          onClose={() => setShowMe(false)}
+          onSettings={() => {
+            setShowMe(false);
+            setShowSettings(true);
+          }}
+        />
+      )}
+        </Exit>,
+        document.body,
+      )}
+      <Exit show={!!(showSettings)}>{showSettings && (
         <div className="sheet-backdrop" onClick={() => setShowSettings(false)}>
           <section className="sheet settings-sheet" role="dialog" aria-label={t.settings} onClick={(e) => e.stopPropagation()}>
             <header className="sheet-head">
@@ -733,6 +749,9 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 className="text-btn"
                 onClick={() => {
                   coach.reset();
+                  tour.reset();
+                  // The arrow starts from the six fields: clear what was chosen.
+                  onForm(EMPTY_FORM);
                   setShowSettings(false);
                 }}
               >
@@ -753,7 +772,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             </div>
           </section>
         </div>
-      )}
+      )}</Exit>
     </div>
   );
 });

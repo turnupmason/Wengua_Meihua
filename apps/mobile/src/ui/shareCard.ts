@@ -1,6 +1,7 @@
 /**
- * 卦签: a picture of one reading to send to a friend — the three hexagrams (目前 → 经过 → 结果) with
- * the moving line in cinnabar, the 简断's headline and its few lines, and when it was cast. What was
+ * 卦签: a picture of one reading to send to a friend. Read top down: brand and hour, the 简断's
+ * headline (the first thing seen, even as a chat thumbnail), the three hexagrams (目前 → 经过 → 结果,
+ * moving line in cinnabar), then a few lines of the 简断. What was
  * asked is not on it (the visitor shares the reading, not the worry). Drawn on a canvas in the app's
  * own fonts; shared through the system sheet where there is one, otherwise saved as a PNG.
  */
@@ -104,74 +105,78 @@ export async function drawCard(c: CardContent): Promise<Blob> {
   bg.addColorStop(1, '#0f0a07');
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
-  // A fine double rule, like the stone's frame.
-  ctx.strokeStyle = 'rgba(231, 194, 122, 0.55)';
-  ctx.lineWidth = 3;
-  ctx.strokeRect(44, 44, W - 88, H - 88);
-  ctx.strokeStyle = 'rgba(231, 194, 122, 0.25)';
-  ctx.lineWidth = 1.5;
-  ctx.strokeRect(60, 60, W - 120, H - 120);
+  // One fine copper line, the same distance from every edge.
+  const EDGE = 52;
+  ctx.strokeStyle = 'rgba(196, 146, 82, 0.75)';
+  ctx.lineWidth = 2.5;
+  ctx.strokeRect(EDGE, EDGE, W - EDGE * 2, H - EDGE * 2);
 
   ctx.textAlign = 'center';
   ctx.textBaseline = 'alphabetic';
+  // Brand and date, small.
   ctx.fillStyle = GOLD;
-  ctx.font = font(HEAD, 44);
+  ctx.font = font(HEAD, 40);
   ctx.fillText([...c.appName].join(' '), W / 2, 150);
   ctx.fillStyle = 'rgba(241, 226, 191, 0.6)';
-  ctx.font = font(BODY, 30);
-  ctx.fillText(c.when, W / 2, 200);
+  ctx.font = font(BODY, 28);
+  ctx.fillText(c.when, W / 2, 198);
 
-  // 目前 → 经过 → 结果
-  const colW = 260;
-  const xs = [W / 2 - colW - 60, W / 2, W / 2 + colW + 60];
-  const hexW = 170;
-  const top = 290;
+  // The 简断's headline first: what the card is saying, readable even as a chat thumbnail.
+  let y = 250;
+  ctx.fillStyle = '#f8e2a6';
+  ctx.font = font(HEAD, 70);
+  for (const l of wrap(ctx, c.title, W - 200, 3)) {
+    y += 92;
+    ctx.fillText(l, W / 2, y);
+  }
+
+  // Then the three hexagrams: 目前 → 经过 → 结果, the moving line in cinnabar.
+  const colW = 250;
+  const xs = [W / 2 - colW - 50, W / 2, W / 2 + colW + 50];
+  const hexW = 150;
+  const top = y + 120;
+  let below = top;
   c.stages.forEach((s, i) => {
-    ctx.fillStyle = 'rgba(241, 226, 191, 0.55)';
+    ctx.fillStyle = 'rgba(241, 226, 191, 0.6)';
     ctx.font = font(BODY, 28);
-    ctx.fillText(s.caption, xs[i], top - 24);
+    ctx.fillText(s.caption, xs[i], top - 26);
     const h = drawHexagram(ctx, xs[i] - hexW / 2, top, hexW, s);
     ctx.fillStyle = INK;
-    ctx.font = font(HEAD, 40);
-    ctx.fillText(s.name, xs[i], top + h + 64);
+    ctx.font = font(HEAD, 38);
+    ctx.fillText(s.name, xs[i], top + h + 58);
+    below = top + h + 58;
   });
   ctx.strokeStyle = 'rgba(231, 194, 122, 0.4)';
   ctx.lineWidth = 2;
-  for (const x of [xs[0] + colW / 2 + 10, xs[1] + colW / 2 + 10]) {
+  for (const x of [xs[0] + colW / 2 + 6, xs[1] + colW / 2 + 6]) {
     ctx.beginPath();
-    ctx.moveTo(x, top + 70);
-    ctx.lineTo(x + 18, top + 82);
-    ctx.lineTo(x, top + 94);
+    ctx.moveTo(x, top + 62);
+    ctx.lineTo(x + 16, top + 74);
+    ctx.lineTo(x, top + 86);
     ctx.stroke();
   }
 
-  // The 简断: headline, then its lines.
-  let y = 700;
-  ctx.fillStyle = 'rgba(231, 194, 122, 0.3)';
-  ctx.fillRect(W / 2 - 60, y - 40, 120, 2);
-  ctx.fillStyle = '#f6dfa4';
-  ctx.font = font(HEAD, 60);
-  for (const l of wrap(ctx, c.title, W - 220, 3)) {
-    y += 80;
-    ctx.fillText(l, W / 2, y);
-  }
-  y += 40;
-  ctx.fillStyle = 'rgba(241, 226, 191, 0.85)';
-  ctx.font = font(BODY, 36);
-  for (const l of wrap(ctx, c.short, W - 240, 6)) {
-    y += 58;
+  // A few lines of the 简断 itself, brighter and shorter.
+  y = below + 50;
+  ctx.fillStyle = 'rgba(231, 194, 122, 0.35)';
+  ctx.fillRect(W / 2 - 50, y, 100, 2);
+  y += 22;
+  ctx.fillStyle = 'rgba(246, 234, 208, 0.95)';
+  ctx.font = font(BODY, 38);
+  for (const l of wrap(ctx, c.short, W - 260, 4)) {
+    y += 60;
     ctx.fillText(l, W / 2, y);
   }
 
-  // A cinnabar seal and the foot line.
+  // The cinnabar seal and the foot line.
   ctx.fillStyle = '#a2341c';
-  ctx.fillRect(W / 2 - 34, H - 210, 68, 68);
+  ctx.fillRect(W / 2 - 34, H - 214, 68, 68);
   ctx.fillStyle = '#f8ebd2';
   ctx.font = font(HEAD, 40);
-  ctx.fillText('卦', W / 2, H - 162);
-  ctx.fillStyle = 'rgba(241, 226, 191, 0.5)';
+  ctx.fillText('卦', W / 2, H - 166);
+  ctx.fillStyle = 'rgba(241, 226, 191, 0.55)';
   ctx.font = font(BODY, 26);
-  ctx.fillText(c.foot, W / 2, H - 100);
+  ctx.fillText(c.foot, W / 2, H - 104);
 
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Could not draw the card'))), 'image/png'));
 }

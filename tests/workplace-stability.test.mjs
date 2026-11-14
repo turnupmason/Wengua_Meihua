@@ -17,12 +17,12 @@ const request = {
 };
 const branches = {木:['寅','卯'],火:['巳','午'],土:['辰','戌','丑','未'],金:['申','酉'],水:['亥','子']};
 
-test('workplace retains its three precise questions', async () => {
- const questions = await product.listQuestions('career.workplace');
- assert.deepEqual(questions.map(q => q.id), [
-  questionId, probationId,
-  'career.work-relations.coworker-support',
- ]);
+test('职场情况 asks about stability; 能否转正 is its own entry (2026-11-14)', async () => {
+ const workplace = await product.listQuestions('career.workplace');
+ assert.deepEqual(workplace.map(q => q.id), [questionId, 'career.work-relations.coworker-support']);
+ // 能否转正 reads the probation library; the two project questions it replaced are kept, archived.
+ const probation = await product.listQuestions('career.probation');
+ assert.deepEqual(probation.filter(q => !q.archived).map(q => q.id), [probationId]);
 });
 
 for (const [slug, id] of [

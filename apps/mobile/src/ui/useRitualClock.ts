@@ -26,6 +26,8 @@ export function useRitualClock(
   reducedMotion: boolean,
   onPhaseDone: (phase: RitualPhase) => void,
   onCue?: (phase: RitualPhase, index: number) => void,
+  /** Seconds into the phase to start from (the stone after the 签筒: the bestowal light was the slip). */
+  startAt = 0,
 ) {
   const clock = useRef<RitualClock>({ phase, t: 0, elapsed: 0 });
   const doneFired = useRef<RitualPhase | null>(null);
@@ -34,7 +36,7 @@ export function useRitualClock(
   callbacks.current = { onPhaseDone, onCue, reducedMotion };
 
   if (clock.current.phase !== phase) {
-    clock.current = { phase, t: 0, elapsed: clock.current.elapsed };
+    clock.current = { phase, t: startAt, elapsed: clock.current.elapsed };
     doneFired.current = null;
     cuesFired.current = new Set();
   }

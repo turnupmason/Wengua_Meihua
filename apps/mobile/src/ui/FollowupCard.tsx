@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Strings } from '../domain/i18n';
 import type { Outcome, TimingRef } from '../domain/followup';
+import { Exit } from './Exit';
 
 export interface FollowupAsk {
   w: TimingRef;
@@ -43,8 +44,9 @@ export function FollowupCard({ t, ask, lang }: { t: Strings; ask: FollowupAsk | 
         <span>{lang === 'en' ? `“${ask.question}” · ${ask.when}` : `「${ask.question}」的应期到了`}</span>
         <em aria-hidden="true">›</em>
       </button>
-      {open &&
-        createPortal(
+      {createPortal(
+        <Exit show={open}>
+          {open && (
           <div className="sheet-backdrop followup-backdrop" onClick={() => setOpen(false)}>
             <section className="followup-pop" role="dialog" aria-modal="true" aria-label={t.fuKicker} onClick={(e) => e.stopPropagation()}>
               <p className="fu-kicker">
@@ -96,9 +98,11 @@ export function FollowupCard({ t, ask, lang }: { t: Strings; ask: FollowupAsk | 
                 </button>
               </p>
             </section>
-          </div>,
-          document.body,
-        )}
+          </div>
+          )}
+        </Exit>,
+        document.body,
+      )}
     </>
   );
 }

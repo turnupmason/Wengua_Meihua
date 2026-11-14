@@ -45,3 +45,14 @@ describe('ritual state machine', () => {
     }
   });
 });
+
+describe('REVEAL (from the 签筒)', () => {
+  it('goes from the hall straight to the carving, keeps the cast, and still ends in reading', () => {
+    let s = ritualReducer(INITIAL_RITUAL, { type: 'REVEAL', castId: 'c1' });
+    expect(s).toMatchObject({ phase: 'revealing', castId: 'c1', skipped: false });
+    // Not twice, and not over another cast.
+    expect(ritualReducer(s, { type: 'REVEAL', castId: 'c2' })).toBe(s);
+    s = ritualReducer(s, { type: 'PHASE_DONE', phase: 'revealing' });
+    expect(s).toMatchObject({ phase: 'reading', castId: 'c1' });
+  });
+});

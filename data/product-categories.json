@@ -382,7 +382,7 @@
           "position": 4,
           "categoryId": "career",
           "exampleQuestions": [
-            "试用期能通过吗？",
+            "当前工作稳不稳？",
             "这件工作能得到同事的支持吗？"
           ],
           "questions": [
@@ -418,37 +418,6 @@
               "contextFields": {}
             },
             {
-              "id": "career.job-stability.probation",
-              "question": "这次试用期能通过吗？",
-              "question_type": "probation_completion",
-              "sourceDomainIds": [
-                "domain-09"
-              ],
-              "mode": "narrative",
-              "answerScope": "只回答试用期结果，不用求职录用或终身工作稳定代答。",
-              "manuscriptIndexPath": "data/authored-readings/workplace-probation/index.json",
-              "position": 2,
-              "categoryId": "career",
-              "subcategoryId": "career.workplace",
-              "chartSourceDomainId": "domain-09",
-              "sourceSections": [
-                {
-                  "domainId": "domain-09",
-                  "sectionId": "mh-071"
-                }
-              ],
-              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
-              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
-              "outputPolicy": {
-                "oneQuestionOnly": true,
-                "unverifiedDates": false,
-                "mentalStateIsFact": false,
-                "symbolicLocationIsFact": false
-              },
-              "practicalAdvice": [],
-              "contextFields": {}
-            },
-            {
               "id": "career.work-relations.coworker-support",
               "question": "这件工作能得到同事的支持吗？",
               "question_type": "coworker_support",
@@ -457,7 +426,7 @@
               ],
               "mode": "narrative",
               "answerScope": "回答所选工作上的支持，不泛断同事品格或永久立场。",
-              "position": 3,
+              "position": 2,
               "categoryId": "career",
               "subcategoryId": "career.workplace",
               "chartSourceDomainId": "domain-02",
@@ -621,16 +590,46 @@
           ]
         },
         {
-          "id": "career.projects",
-          "slug": "projects",
-          "label": "项目任务",
+          "id": "career.probation",
+          "slug": "probation",
+          "label": "能否转正",
           "position": 6,
           "categoryId": "career",
           "exampleQuestions": [
-            "项目能达到目标吗？",
-            "这项任务能完成吗？"
+            "这次试用期能转正吗？"
           ],
           "questions": [
+            {
+              "id": "career.job-stability.probation",
+              "question": "这次试用期能通过吗？",
+              "question_type": "probation_completion",
+              "sourceDomainIds": [
+                "domain-09"
+              ],
+              "mode": "narrative",
+              "answerScope": "只回答试用期结果，不用求职录用或终身工作稳定代答。",
+              "manuscriptIndexPath": "data/authored-readings/workplace-probation/index.json",
+              "position": 1,
+              "categoryId": "career",
+              "subcategoryId": "career.probation",
+              "chartSourceDomainId": "domain-09",
+              "sourceSections": [
+                {
+                  "domainId": "domain-09",
+                  "sectionId": "mh-071"
+                }
+              ],
+              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
+              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
+              "outputPolicy": {
+                "oneQuestionOnly": true,
+                "unverifiedDates": false,
+                "mentalStateIsFact": false,
+                "symbolicLocationIsFact": false
+              },
+              "practicalAdvice": [],
+              "contextFields": {}
+            },
             {
               "id": "career.projects.project",
               "question": "这个项目能达到预定目标吗？",
@@ -640,9 +639,10 @@
               ],
               "mode": "narrative",
               "answerScope": "需明确项目目标；项目完成不等于盈利、回本或收到尾款。",
-              "position": 1,
+              "archived": true,
+              "position": 2,
               "categoryId": "career",
-              "subcategoryId": "career.projects",
+              "subcategoryId": "career.probation",
               "chartSourceDomainId": "domain-08",
               "sourceSections": [
                 {
@@ -650,7 +650,7 @@
                   "sectionId": "mh-070"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -670,9 +670,10 @@
               ],
               "mode": "narrative",
               "answerScope": "回答所选任务是否完成，不扩展为事业整体成败。",
-              "position": 2,
+              "archived": true,
+              "position": 3,
               "categoryId": "career",
-              "subcategoryId": "career.projects",
+              "subcategoryId": "career.probation",
               "chartSourceDomainId": "domain-08",
               "sourceSections": [
                 {
@@ -680,7 +681,7 @@
                   "sectionId": "mh-070"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,

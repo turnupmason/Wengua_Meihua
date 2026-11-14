@@ -10,7 +10,7 @@ test('six domains and 31 navigation entries match the new names and order',async
  const c=await repo.getCatalog();
  assert.deepEqual(c.categories.map(c=>c.label),['事业工作','财富财运','感情姻缘','健康疾病','家庭家宅','寻人失物']);
  assert.deepEqual(c.categories.map(c=>c.subcategories.map(s=>s.label)),[
-  ['求职录用','晋升加薪','跳槽去留','职场情况','考试选拔','项目任务'],
+  ['求职录用','晋升加薪','跳槽去留','职场情况','考试选拔','能否转正'],
   ['财运收入','投资理财','经营合作','订单合同','借款尾款','买卖求财'],
   ['桃花缘分','暧昧表白','恋爱发展','矛盾复合','谈婚论嫁','夫妻婚姻'],
   ['身体象意','病势象意','诊疗康复','家人健康'],

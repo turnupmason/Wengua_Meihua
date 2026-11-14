@@ -30,7 +30,11 @@ export default defineConfig({
   server: {
     port: 5173,
     fs: { allow: [repoRoot] },
+    // Trying the app on a phone off this network, through a temporary Cloudflare tunnel (dev only).
+    allowedHosts: ['.trycloudflare.com'],
   },
+  // The built app served for the same phone check (vite preview).
+  preview: { allowedHosts: ['.trycloudflare.com'] },
   build: {
     target: 'es2020',
     assetsInlineLimit: 0,

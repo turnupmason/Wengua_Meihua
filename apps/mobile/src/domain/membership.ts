@@ -28,6 +28,13 @@ export const PRODUCTS: Record<ProductId, Product> = {
 };
 
 export const DAILY_LIMIT: Record<'free' | 'member', number> = { free: 1, member: 3 };
+
+/**
+ * 内测 (2026-11-14, the user: "目前我们还在测试，不要加会员，准备上架了再弄"): every reading is
+ * open and casts are not limited; no paywall or membership entry is shown. Turn off before the
+ * store release, when the plans in README (上架前待做) are put in.
+ */
+export const OPEN_BETA = true;
 export const REPEAT_DAYS = 7;
 
 export interface Entitlement {
@@ -44,7 +51,7 @@ const ENT_KEY = 'wengua.entitlement.v1';
 const USAGE_KEY = 'wengua.usage.v1';
 const FREE: Entitlement = { plan: 'free', expiresAt: null, unlocked: [] };
 
-export function createMembership(store: KeyValueStore = safeStore('local')) {
+export function createMembership(store: KeyValueStore = safeStore('local'), { openBeta = OPEN_BETA }: { openBeta?: boolean } = {}) {
   const read = (): Entitlement => {
     try {
       const e = JSON.parse(store.getItem(ENT_KEY) || 'null');
@@ -79,6 +86,7 @@ export function createMembership(store: KeyValueStore = safeStore('local')) {
       return usage().filter((u) => new Date(u.at).toDateString() === day).length;
     },
     canCast(now = new Date()) {
+      if (openBeta) return true;
       return api.castsToday(now) < api.dailyLimit(now);
     },
     /**
@@ -92,6 +100,7 @@ export function createMembership(store: KeyValueStore = safeStore('local')) {
     },
     /** Full 断语 for this reading: members, or a single unlock. */
     canReadFull(castId: string | null, now = new Date()) {
+      if (openBeta) return true;
       const e = read();
       return api.isMember(now) || (!!castId && (e.unlocked.includes(castId) || e.firstGift === castId));
     },
@@ -101,7 +110,7 @@ export function createMembership(store: KeyValueStore = safeStore('local')) {
      */
     giftFirst(castId: string, now = new Date()): boolean {
       const e = read();
-      if (e.firstGift || api.isMember(now)) return false;
+      if (openBeta || e.firstGift || api.isMember(now)) return false;
       e.firstGift = castId;
       write(e);
       return true;

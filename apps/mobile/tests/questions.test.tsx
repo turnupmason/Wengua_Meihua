@@ -109,7 +109,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
     const written = [
       [JOB, INTERVIEW], ['career.promotion-pay', 'career.promotion-pay.promotion'],
       ['career.job-change', 'career.job-change.decision'], ['career.workplace', 'career.job-stability.layoff'],
-      ['career.exams', 'career.exams.exam'],
+      ['career.exams', 'career.exams.exam'], ['career.probation', 'career.job-stability.probation'],
       ['relationships.affection', 'relationships.new-partner.opportunity'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
@@ -150,9 +150,10 @@ describe('click-only home', () => {
       expect(within(grid).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
       fireEvent.click(within(drawer).getByRole('button', { name: STRINGS.zh.close }));
     }
-    // 项目任务 is the remaining career entry without any written material.
+    // 事业工作 is written through (2026-11-14: 能否转正 took 项目任务's place): no entry says 整理中.
     fireEvent.click(within(grid).getByRole('radio', { name: '事业工作' }));
-    expect(screen.getByText(STRINGS.zh.scriptPendingTag)).toBeTruthy();
+    expect(screen.queryByText(STRINGS.zh.scriptPendingTag)).toBeNull();
+    expect([...document.querySelectorAll('.subtype-grid button span')].map((b) => b.textContent)).toEqual(['求职录用', '晋升加薪', '跳槽去留', '职场情况', '考试选拔', '能否转正']);
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.close }));
     fireEvent.click(within(grid).getByRole('radio', { name: '健康疾病' }));
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
@@ -562,7 +563,7 @@ describe('cast, reading and 问事录', () => {
         throw new Error('not to be asked');
       },
     };
-    expect(await judgmentFor(product as never, questionById('career.projects')!, { ...WELL, questionId: 'career.projects' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
+    expect(await judgmentFor(product as never, questionById('wealth.income')!, { ...WELL, questionId: 'wealth.income' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
     expect(asked).toBe(0);
   });
 

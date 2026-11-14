@@ -20,6 +20,8 @@ export interface RitualState {
 
 export type RitualEvent =
   | { type: 'BEGIN'; castId: string }
+  /** From the 签筒 straight to the stone: no walk; the carving (with its sounds) plays in full. */
+  | { type: 'REVEAL'; castId: string }
   | { type: 'PHASE_DONE'; phase: RitualPhase }
   | { type: 'SKIP'; castId: string }
   /** `phase` is whatever was saved, possibly by an older version with more steps. */
@@ -38,6 +40,9 @@ export function ritualReducer(state: RitualState, event: RitualEvent): RitualSta
     case 'BEGIN':
       if (state.phase !== 'idle') return state;
       return { ...state, phase: 'entering', castId: state.castId ?? event.castId };
+    case 'REVEAL':
+      if (state.phase !== 'idle') return state;
+      return { ...state, phase: 'revealing', castId: state.castId ?? event.castId };
     case 'PHASE_DONE': {
       if (event.phase !== state.phase) return state;
       const next = AUTO_NEXT[state.phase];

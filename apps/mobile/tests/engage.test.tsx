@@ -20,7 +20,7 @@ const t = STRINGS.zh;
 
 describe('第一卦的详断', () => {
   it('is given once, to the first written reading, and not to members', () => {
-    const m = createMembership(memoryStore());
+    const m = createMembership(memoryStore(), { openBeta: false });
     expect(m.canReadFull('c1')).toBe(false);
     expect(m.giftFirst('c1')).toBe(true);
     expect(m.canReadFull('c1')).toBe(true);
@@ -28,7 +28,7 @@ describe('第一卦的详断', () => {
     // Never twice.
     expect(m.giftFirst('c2')).toBe(false);
     expect(m.canReadFull('c2')).toBe(false);
-    const member = createMembership(memoryStore());
+    const member = createMembership(memoryStore(), { openBeta: false });
     member.grant('wengua.member.monthly', null);
     expect(member.giftFirst('c3')).toBe(false);
     expect(member.isGift('c3')).toBe(false);
@@ -59,16 +59,30 @@ describe('常问', () => {
     );
   }
 
-  it('offers the written entries in plain words; one tap chooses the entry', () => {
+  it('offers questions from all six fields in plain words; one tap chooses the entry', async () => {
+    const { DOMAINS } = await import('../src/domain/questionCatalog');
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     const row = screen.getByRole('group', { name: t.commonAsks });
-    expect([...row.querySelectorAll('button')].map((b) => b.textContent)).toEqual(['面试能不能过', '想跳槽又怕后悔', '这次考试能过吗', '升职加薪有没有戏']);
+    const words = [...row.querySelectorAll('button')].map((b) => b.textContent);
+    expect(words.slice(0, 4)).toEqual(['面试能不能过', '对方心里有没有我', '想跳槽又怕后悔', '这笔钱能不能要回来']);
+    expect(words).toHaveLength(15);
+    // Every field is there, and every chip is a real entry.
+    const { questionById } = await import('../src/domain/questionCatalog');
+    const fields = new Set(['面试能不能过', '对方心里有没有我', '这笔钱能不能要回来', '东西丢了还能找回吗', '这套房子该不该买', '家人身体让人担心'].map((w) => {
+      cleanup();
+      render(<Home onChange={(f) => (last = f)} />);
+      fireEvent.click(screen.getByRole('button', { name: w }));
+      return questionById(last.questionId)!.domain_id;
+    }));
+    expect(fields).toEqual(new Set(DOMAINS.map((d) => d.domain_id)));
+    cleanup();
+    render(<Home onChange={(f) => (last = f)} />);
     fireEvent.click(screen.getByRole('button', { name: '想跳槽又怕后悔' }));
     expect(last).toMatchObject({ questionId: 'career.job-change', topicId: 'career', conditions: {} });
-    // Chosen: the row folds away with the six fields, and 摇签 is offered beside 诚心起卦 (a time cast).
+    // Chosen: the row folds away with the six fields; 诚心起卦 is the one way in (完整仪式 is 摇签).
     expect(screen.queryByRole('group', { name: t.commonAsks })).toBeNull();
-    expect(screen.getByRole('button', { name: t.shakeTitle })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: t.shakeTitle })).toBeNull();
   });
 });
 
@@ -119,25 +133,27 @@ describe('今日一卦 and 卦册', () => {
   });
 });
 
-describe('摇签', () => {
+describe('摇签 (完整仪式)', () => {
   const motion = (x: number) => {
     const e = new Event('devicemotion') as DeviceMotionEvent;
     Object.defineProperty(e, 'acceleration', { value: { x, y: 0, z: 0 } });
     window.dispatchEvent(e);
   };
+  const SLIP = { name: '山风蛊', grade: '中下卦', theme: '振疲起衰', poem: '卦中爻象犯小耗，君子占之运不高，婚姻合伙有琐碎，做事必然受苦劳。' };
 
-  it('casts when a long enough shake comes to rest (not on a jolt)', () => {
+  it('casts the moment a long enough shake comes to rest (not on a jolt)', () => {
     vi.useFakeTimers();
     let clock = 0;
     vi.spyOn(performance, 'now').mockImplementation(() => clock);
     const onCast = vi.fn();
-    const onClose = vi.fn();
-    render(<ShakeCast t={t} open onClose={onClose} onCast={onCast} onHaptic={() => {}} />);
+    render(<ShakeCast t={t} open question="求职录用" onClose={() => {}} onCast={onCast} onContinue={() => {}} onHaptic={() => {}} />);
+    // The three 戒 are under the 签筒.
+    expect(screen.getByRole('list', { name: t.preceptsTitle }).textContent).toContain('初筮告');
     // A single jolt: nothing.
     act(() => motion(20));
     act(() => void vi.advanceTimersByTime(1000));
     expect(onCast).not.toHaveBeenCalled();
-    // Shaking for most of a second, then still.
+    // Shaking for most of a second, then still: cast at once.
     for (let i = 0; i < 20; i++) {
       clock += 45;
       act(() => motion(i % 2 ? 15 : -15));
@@ -145,21 +161,45 @@ describe('摇签', () => {
     expect(document.querySelector('.qian-tong.is-shaking')).toBeTruthy();
     act(() => void vi.advanceTimersByTime(500));
     expect(screen.getByText(t.shakeDone)).toBeTruthy();
-    act(() => void vi.advanceTimersByTime(700));
-    expect(onClose).toHaveBeenCalled();
     expect(onCast).toHaveBeenCalledTimes(1);
   });
 
-  it('three taps on the 签筒 do the same where there is no motion', () => {
+  it('the slip that fell is shown as 祖师赐卦, with the 本卦’s grade and name, then 请看石案', () => {
     vi.useFakeTimers();
-    const onCast = vi.fn();
-    render(<ShakeCast t={t} open onClose={() => {}} onCast={onCast} onHaptic={() => {}} />);
+    const onContinue = vi.fn();
+    const onBestow = vi.fn();
+    const { rerender } = render(<ShakeCast t={t} open onClose={() => {}} onCast={() => {}} onContinue={onContinue} onHaptic={() => {}} onBestow={onBestow} />);
     const tong = screen.getByRole('button', { name: t.shakeTap });
     fireEvent.click(tong);
     fireEvent.click(tong);
-    expect(onCast).not.toHaveBeenCalled();
     fireEvent.click(tong);
-    act(() => void vi.advanceTimersByTime(700));
-    expect(onCast).toHaveBeenCalledTimes(1);
+    // The cast is made; the slip shows once it has risen and the cast is known.
+    act(() => void vi.advanceTimersByTime(2200));
+    expect(document.querySelector('.bestow')).toBeNull();
+    rerender(<ShakeCast t={t} open bestow={SLIP} onClose={() => {}} onCast={() => {}} onContinue={onContinue} onHaptic={() => {}} onBestow={onBestow} />);
+    expect(screen.getByLabelText(`${t.bestowed} 中下卦 山风蛊`)).toBeTruthy();
+    expect(screen.getByText('中下卦')).toBeTruthy();
+    // One short line of the 签意 (the poem's first couplet), no long explanation.
+    expect(document.querySelector('.bestow-poem')?.textContent).toBe('卦中爻象犯小耗，君子占之运不高。');
+    expect(document.querySelector('.bestow-note')).toBeNull();
+    expect(screen.getByText('山风蛊')).toBeTruthy();
+    expect(onBestow).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByRole('button', { name: t.bestowGo }));
+    expect(onContinue).toHaveBeenCalled();
+  });
+});
+
+describe('六大领域的高亮', () => {
+  it('stays on the field last tapped after its drawer closes, not the chosen matter’s field', async () => {
+    const { HomeOverlay: Home, EMPTY_FORM: EMPTY } = await import('../src/ui/HomeOverlay');
+    const { defaultSettings: defaults } = await import('../src/domain/settings');
+    render(<Home t={t} settings={{ ...defaults(), lang: 'zh' }} form={{ ...EMPTY, questionId: 'career.promotion-pay', topicId: 'career' }} error={null} onForm={() => {}} onSettings={() => {}} onEnter={() => {}} onLibrary={() => {}} onHistory={() => {}} onTitle={() => {}} onDebug={() => {}} pace="full" />);
+    // A matter in 事业工作 is chosen; open the six fields and look into 财富财运 without choosing.
+    fireEvent.click(document.querySelector('.chosen-question')!);
+    fireEvent.click(screen.getByRole('button', { name: t.close }));
+    fireEvent.click(screen.getByRole('radio', { name: /财富财运/ }));
+    fireEvent.click(screen.getByRole('button', { name: t.close }));
+    expect(screen.getByRole('radio', { name: /财富财运/ }).getAttribute('aria-checked')).toBe('true');
+    expect(screen.getByRole('radio', { name: /事业工作/ }).getAttribute('aria-checked')).toBe('false');
   });
 });

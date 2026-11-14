@@ -27,18 +27,20 @@ export const PRODUCT_TAXONOMY=[
    q('job-change.decision','现职和这份新工作怎么选，现在适合辞职吗？','job_change_decision',['domain-08','domain-09'],o('按最看重的一项比较现职与这份新工作，并判断现在宜辞职、宜先准备，还是宜继续留任。',{requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-change/index.json'})),
    q('job-change.resign','现在适合辞去当前工作吗？','resignation_decision',['domain-08','domain-09'],o('以暂留现职为参照，判断现在执行已明确的离职安排是否合适。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPlan},manuscriptIndexPath:'data/authored-readings/job-resign/index.json'})),
    q('job-change.compare-jobs','新工作与现在的工作相比，哪一个更适合我？','job_option_comparison',['domain-08','domain-09'],o('以已知的现职条件为参照，只就你最看重的一项比较这份具体新工作。',{archived:true,requiresComparisonMethod:true,contextFields:{jobPriority,comparisonTerms},manuscriptIndexPath:'data/authored-readings/job-compare/index.json'}))]),
-  s('workplace','职场情况','试用期能通过吗？|这件工作能得到同事的支持吗？',[
+  s('workplace','职场情况','当前工作稳不稳？|这件工作能得到同事的支持吗？',[
    q('job-stability.layoff','当前工作的稳定性如何，会有被裁员的风险吗？','employment_stability',['domain-09'],o('只作工作形势的传统解释，不声称核实了雇主决定或保证工作安全。',{manuscriptIndexPath:'data/authored-readings/workplace-stability/index.json'})),
-   q('job-stability.probation','这次试用期能通过吗？','probation_completion',['domain-09'],o('只回答试用期结果，不用求职录用或终身工作稳定代答。',{manuscriptIndexPath:'data/authored-readings/workplace-probation/index.json'})),
    q('work-relations.coworker-support','这件工作能得到同事的支持吗？','coworker_support',['domain-02'],o('回答所选工作上的支持，不泛断同事品格或永久立场。'))]),
   s('exams','考试选拔','这次考试能通过吗？|这次竞聘能成功吗？',[
    q('exams.exam','这次考试能通过吗？','examination_result',['domain-09'],o('回答本次考试结果。',{legacyQuestionId:'domain-09-examination',manuscriptIndexPath:'data/authored-readings/exam/index.json'})),
    q('exams.credential','这次能取得所报考的资格证吗？','credential_attainment',['domain-09'],o('回答取得资格证这一目标，区分考试通过、资格审核和发证。')),
    q('selection.competition','这次岗位竞聘能成功吗？','job_competition',['domain-09'],o('回答本次岗位竞聘的名额结果。')),
    q('selection.selection','这次选拔能被选中吗？','selection_result',['domain-09','domain-02'],o('回答本次明确选拔，不推为所有后续考核均会通过。'))]),
-  s('projects','项目任务','项目能达到目标吗？|这项任务能完成吗？',[
-   q('projects.project','这个项目能达到预定目标吗？','project_goal_attainment',['domain-08'],o('需明确项目目标；项目完成不等于盈利、回本或收到尾款。')),
-   q('projects.task','当前这项任务能完成吗？','task_completion',['domain-08'],o('回答所选任务是否完成，不扩展为事业整体成败。'))])
+  // 2026-11-14 (the user): 项目任务 gives way to 能否转正, which reads the probation library; the two
+  // project questions are kept, archived, for older records.
+  s('probation','能否转正','这次试用期能转正吗？',[
+   q('job-stability.probation','这次试用期能通过吗？','probation_completion',['domain-09'],o('只回答试用期结果，不用求职录用或终身工作稳定代答。',{manuscriptIndexPath:'data/authored-readings/workplace-probation/index.json'})),
+   q('projects.project','这个项目能达到预定目标吗？','project_goal_attainment',['domain-08'],o('需明确项目目标；项目完成不等于盈利、回本或收到尾款。',{archived:true})),
+   q('projects.task','当前这项任务能完成吗？','task_completion',['domain-08'],o('回答所选任务是否完成，不扩展为事业整体成败。',{archived:true}))])
  ]},
  {id:'wealth',number:'02',label:'财富财运',subcategories:[
   s('income','财运收入','近期有进账吗？|这笔收入能拿到吗？',[

@@ -6,11 +6,14 @@ import { createFollowups, type Outcome, type TimingRef } from './domain/followup
 import { createCollection, createDaily } from './domain/daily';
 import { createCalendarProvider } from './domain/calendar';
 import { askReminderPermission, onReminderTap, syncReminders } from './domain/reminders';
-import { questionById, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
+import { questionById, questionWording, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
 import { createJournal } from './domain/journal';
 import { placeStore } from './ui/placeStore';
-import { CoachIntro } from './ui/coach';
+import { CoachIntro, useCoach } from './ui/coach';
+import { Tour, tour } from './ui/Tour';
+import { ShakeCast } from './ui/ShakeCast';
+import { Exit } from './ui/Exit';
 import { sameMatterCandidate } from './domain/sameMatter';
 
 /** 今天 / 昨天 / N 天前 */
@@ -31,7 +34,7 @@ import { preloadWalkInArt } from './ui/walkInArt';
 void preloadWalkInArt();
 import { hasWebGL } from './domain/quality';
 import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
-import { createMembership, purchaseProvider } from './domain/membership';
+import { OPEN_BETA, createMembership, purchaseProvider } from './domain/membership';
 import { clearProfile, loadProfile, localAuth, type Profile, type SignInMethod } from './domain/profile';
 import { castRequest, entryProblem } from './ui/entry';
 import { TempleView } from './ui/TempleView';
@@ -96,6 +99,13 @@ export function App() {
   const [reference, setReference] = useState<{ question: ResolvedQuestion; conditions: Record<string, string> } | null>(null);
   // The 断语 of a cast just made is being looked up.
   const [busy, setBusy] = useState(false);
+  // 完整仪式: shaking the 签筒 before the 三清; then the slip that fell (祖师赐卦), then the stone.
+  const [shrine, setShrine] = useState<null | { rec: CastRecord | null; leaving?: boolean }>(null);
+  // The cast whose slip was just shown as 祖师赐卦 (the stone does not say it a second time).
+  const [slipFor, setSlipFor] = useState<string | null>(null);
+  // The five-page introduction comes first; the arrow tour waits for it.
+  const introPending = useCoach('intro');
+  const introSeen = !introPending;
 
   const setSettings = useCallback((s: Settings) => {
     setSettingsState(s);
@@ -228,6 +238,7 @@ export function App() {
       setMemberRev((n) => n + 1);
       recordRef.current = rec;
       setRecord(rec);
+      tour.cast();
       return rec;
     } catch (e) {
       setEntryError((e as Error).message);
@@ -271,16 +282,25 @@ export function App() {
     }
     templeAudio.setEnabled(settings.sound); // within the user's gesture
     haptic(settings.haptics);
-    // The cast is frozen now (with its 断语); the visitor walks straight up the hall to the bestowal.
-    // Whether it counts toward today is decided once its 断语 is known (castNow).
+    // Every cast, whatever the method, is shaking the 签筒 before the 三清 (2026-11-14: the walk and
+    // 简洁问事 are gone); the cast is made when the shaking stops (shrineCast).
+    templeAudio.bowl(0.6);
+    setShrine({ rec: null });
+  };
+  // The slip fell and was shown: to the stone, where the hexagrams carve in line by line with their
+  // sounds (only the walk up the hall is left out).
+  const toStone = (rec: CastRecord) => {
+    setSlipFor(rec.castId);
+    dispatch({ type: 'REVEAL', castId: rec.castId });
+    setScreen('temple');
+  };
+  /** The shaking stopped: the cast is made at this moment (年月日时 or the chosen method). */
+  const shrineCast = async () => {
     setBusy(true);
     const rec = await castNow();
     setBusy(false);
-    if (!rec) return;
-    dispatch({ type: 'BEGIN', castId: rec.castId });
-    // 简洁问事: the same cast, straight to the reading (no walk, no bestowal).
-    if (pace === 'quick') dispatch({ type: 'SKIP', castId: rec.castId });
-    setScreen('temple');
+    if (!rec) return setShrine(null);
+    setShrine({ rec });
   };
 
   // A record opened from 问事录 with 「看全文断语」 lands on 读卦 directly (a fresh token each time).
@@ -489,6 +509,39 @@ export function App() {
         {splashLayer}
         {/* The first time in the hall (title gone, no cast open): the five-page introduction. */}
         {splash === 'gone' && ritual.phase === 'idle' && <CoachIntro t={t} />}
+        {/* 完整仪式: the 签筒 before the 三清 (the hall stays behind it), then the slip that fell. */}
+        <ShakeCast
+          t={t}
+          open={!!shrine}
+          question={(() => {
+            const q = questionById(form.questionId);
+            return q ? questionWording(q, form.conditions, settings.lang) : '';
+          })()}
+          bestow={
+            shrine?.rec && knowledge
+              ? (() => {
+                  const p = shrine.rec.stages.primary;
+                  const h = knowledge.library.getHexagram(p.id);
+                  return { name: p.name, grade: p.displayGrade, theme: h.grade?.theme ?? '', poem: h.grade?.poem ?? '' };
+                })()
+              : null
+          }
+          onClose={() => setShrine(null)}
+          onCast={() => void shrineCast()}
+          onBestow={() => templeAudio.qing(1, 0.8)}
+          leaving={!!shrine?.leaving}
+          onContinue={() => {
+            const rec = shrine?.rec;
+            if (!rec || shrine?.leaving) return;
+            // The stone starts under the slip, which then fades into it: nothing in between.
+            toStone(rec);
+            setShrine({ rec, leaving: true });
+            window.setTimeout(() => setShrine(null), 900);
+          }}
+          onHaptic={(ms) => haptic(settings.haptics, ms)}
+        />
+        {/* After the five pages, the arrow takes a first visit through the hall and the stone. */}
+        {splash === 'gone' && introSeen && screen === 'temple' && <Tour t={t} />}
         <TempleView
           knowledge={knowledge}
           record={record}
@@ -513,7 +566,8 @@ export function App() {
             onSettings: setSettings,
             onEnter: () => void enter(),
             busy,
-            onMembership: () => setMemberSheet({ reason: 'browse', castId: null }),
+            // 内测: no membership entry (OPEN_BETA).
+            onMembership: OPEN_BETA ? undefined : () => setMemberSheet({ reason: 'browse', castId: null }),
             memberLine: memberLine,
             onLibrary: () => setPlace('library'),
             onHistory: () => setPlace('records'),
@@ -523,6 +577,27 @@ export function App() {
             profileName: profile?.name ?? '',
             followup: followAsk,
             daily: dailyView,
+            me: (() => {
+              const records = history.list();
+              const book = journal.all();
+              return {
+                name: profile?.name ?? '',
+                id: profile && profile.method !== 'guest' ? profile.id.replace(/[^a-z0-9]/gi, '').slice(-8).toUpperCase() : '',
+                guest: !profile || profile.method === 'guest',
+                records,
+                saved: records.filter((r) => book[r.castId]).length,
+                met: collection.count(),
+                tally: followups.tally(records),
+                symbolOf: (r: CastRecord) => knowledge?.library.getHexagram(r.stages.primary.id).symbol ?? '',
+                questionOf: (r: CastRecord) => (r.question ? shownQuestion(r.questionId, r.question, settings.lang) : r.stages.primary.name),
+                onOpenRecord: (r: CastRecord) => openDetail(r.castId),
+                onRecords: () => setPlace('records'),
+                onSaved: () => setPlace('records'),
+                onLibrary: () => setPlace('library'),
+                onSignIn: onSignOut,
+                onSignOut,
+              };
+            })(),
           }}
           intro={intro}
           onIntroDone={() => setIntro('done')}
@@ -531,6 +606,7 @@ export function App() {
           memberOpen={!!memberSheet}
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
           readOnOpen={readOnOpen}
+          slipFor={slipFor}
           newMet={newMet && newMet.castId === record?.castId ? { names: newMet.ids.map((id) => knowledge.library.getHexagram(id).name), count: collection.count() } : null}
           remind={{
             on: settings.timingReminders,
@@ -539,7 +615,7 @@ export function App() {
             },
           }}
         />
-        {memberSheet && (
+        <Exit show={!!(memberSheet)}>{memberSheet && (
           <MembershipSheet
             t={t}
             lang={settings.lang}
@@ -550,8 +626,8 @@ export function App() {
             onClose={() => setMemberSheet(null)}
             onChanged={() => setMemberRev((n) => n + 1)}
           />
-        )}
-        {reference && (
+        )}</Exit>
+        <Exit show={!!(reference)}>{reference && (
           <ReferenceSheet
             t={t}
             lang={settings.lang}
@@ -566,8 +642,8 @@ export function App() {
             }}
             onClose={() => setReference(null)}
           />
-        )}
-        {repeatOf && (
+        )}</Exit>
+        <Exit show={!!(repeatOf)}>{repeatOf && (
           <div className="sheet-backdrop" onClick={() => setRepeatOf(null)}>
             <section className="sheet repeat-sheet" role="alertdialog" aria-label={t.sameMatterTitle} onClick={(e) => e.stopPropagation()}>
               <div className="sheet-body member-body">
@@ -599,7 +675,7 @@ export function App() {
               </div>
             </section>
           </div>
-        )}
+        )}</Exit>
         </>
       );
     case 'library':

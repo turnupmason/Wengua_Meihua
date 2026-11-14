@@ -16,7 +16,8 @@ import type { IntroRef } from '../scene/TempleScene';
 import { INTRO_SECONDS } from '../scene/timeline';
 import { bestowalTimes } from '../scene/carving';
 import { PaintedTable } from './PaintedTable';
-import { CoachTip, coach, useCoach } from './coach';
+import { coach, useCoach } from './coach';
+import { Exit } from './Exit';
 import { PaintedWalkIn } from './PaintedWalkIn';
 import { PaintedHall, PaintedPlace } from './PaintedHall';
 import { PLACE_PANEL } from '../scene/placeLayout';
@@ -78,6 +79,8 @@ interface Props {
   onOpenMembership: (reason: MembershipReason, castId: string | null) => void;
   /** Opened from 问事录 with 「看全文断语」: show this cast's 读卦 at once. */
   readOnOpen?: { castId: string; at: number } | null;
+  /** The cast whose slip was just shown as 祖师赐卦: the light still comes, the words are not repeated. */
+  slipFor?: string | null;
   /** The hexagrams this cast added to 卦册 (said once in its reading). */
   newMet?: { names: string[]; count: number } | null;
   /** 应期提醒: whether it is on, and turning it on (asks the phone first). */
@@ -88,7 +91,7 @@ interface Props {
   recordsPanel: ReactElement<{ active?: boolean }>;
 }
 
-export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null }: Props) {
+export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null, slipFor = null }: Props) {
   const place = usePlace();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
@@ -235,6 +238,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const versionChanged = !!record && record.contentVersion !== knowledge.contentVersion;
 
   const onPhaseDone = useCallback((p: RitualState['phase']) => dispatch({ type: 'PHASE_DONE', phase: p }), [dispatch]);
+  const slipRef = useRef(false);
+  slipRef.current = !!record && record.castId === slipFor;
   // 祖师赐卦 is said over the 三清; only when the stone table is shown does 石桌显卦 follow (never together).
   const [bestowed, setBestowed] = useState(false);
   const [tableShown, setTableShown] = useState(false);
@@ -247,6 +252,9 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const onCue = useCallback(
     (p: RitualState['phase'], i: number) => {
       if (p === 'entering') templeAudio.bowl(0.8);
+      // From the 签筒 the bestowal's own bowl and bell were the slip's; the stone's 磬 as it appears,
+      // each line's chime and the 磬 when all is carved all sound.
+      else if (p === 'revealing' && i === 0 && slipRef.current) return;
       else if (p === 'revealing' && i === 0) {
         templeAudio.bowl(1);
         setTimeout(() => templeAudio.handbell(3), 500);
@@ -265,7 +273,10 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     },
     [settings.haptics],
   );
-  const clock = useRitualClock(ritual.phase, reduced, onPhaseDone, onCue);
+  // From the 签筒: the slip was the bestowal, so the stone starts as it appears and carves in line
+  // by line with its sounds (the light from the 三清 and its close view of the hall are left out).
+  const fromSlip = ritual.phase === 'revealing' && !!record && record.castId === slipFor;
+  const clock = useRitualClock(ritual.phase, reduced, onPhaseDone, onCue, fromSlip ? bestowalTimes(reduced).settle - 0.05 : 0);
   useEffect(() => {
     if (ritual.phase !== 'revealing') {
       setBestowed(false);
@@ -514,12 +525,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           }}
         />
       )}
-      {/* Skipping changes nothing about the cast: the same reading, just without the walk and the bestowal. */}
-      {(phase === 'entering' || phase === 'revealing') && record && (
-        <button type="button" className="skip-btn" onClick={() => dispatch({ type: 'SKIP', castId: record.castId })}>
-          {t.skipRitual}
-        </button>
-      )}
+      {/* No 跳过仪式: the carving is part of the reading (the user, 2026-11-14). */}
       {intro === 'gliding' && (
         <button
           type="button"
@@ -533,7 +539,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         </button>
       )}
 
-      {bestowed && (
+      {bestowed && record?.castId !== slipFor && (
         <p className="bestowed" aria-live="polite" style={{ animationDuration: `${bestowSeconds}s` }}>
           {t.bestowed}
         </p>
@@ -552,9 +558,6 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             {/* The first time at the stone: one short line in the open floor under the table's feet,
                 just above the 简断 card, closable; the slab itself stays clear. The line card explains
                 a tapped line. */}
-            {!readMode && !tip && !bookPage && !sectionPage && !showBook && !selection && !memberOpen && phase === 'reading' && (
-              <CoachTip id="stone" t={t} text={t.coachStone} anchor=".view-judgment" strip />
-            )}
             {orderHint && !readMode && !tip && coach.snapshot().off && (
               <p className="order-hint" role="status"><span aria-hidden="true">↑</span> {t.orderHint}</p>
             )}
@@ -652,7 +655,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           <HexagramPage knowledge={knowledge} target={bookPage} t={t} lang={settings.lang} onNavigate={setBookPage} onBack={() => setBookPage(null)} />
         </div>
       )}
-      {showBook && record && reading && (
+      <Exit show={!!(showBook && record && reading)}>{showBook && record && reading && (
         <JournalSheet
           t={t}
           title={`${reading.stages.primary.name} → ${reading.stages.changed.name}`}
@@ -668,16 +671,16 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           }}
           onClose={() => setShowBook(false)}
         />
-      )}
+      )}</Exit>
       {tip && reading && phase === 'reading' && !readMode && (
         <LineTip tip={tip} knowledge={knowledge} reading={reading} t={t} onOpen={() => {
           setSelection(tip.sel);
           setTip(null);
         }} />
       )}
-      {selection && reading && (
+      <Exit show={!!(selection && reading)}>{selection && reading && (
         <DetailSheet knowledge={knowledge} selection={selection} reading={reading} record={record} t={t} lang={settings.lang} onSelect={setSelection} onClose={() => setSelection(null)} />
-      )}
+      )}</Exit>
     </div>
   );
 }

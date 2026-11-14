@@ -19,6 +19,8 @@ const ASPECT = 941 / 1672;
 const SEAT_LINE = 0.472;
 /** From the highest crown to the seats. */
 const FIGURES = 0.205;
+/** The narrowest the picture may be, as a share of the screen's width. */
+const MIN_WIDTH = 0.9;
 /** Distance of the outer figures' edges from the picture's side. */
 const SIDE_MARGIN = 0.089;
 /**
@@ -84,7 +86,9 @@ function frame(plate: HTMLElement, root: HTMLElement, trayHeight: number) {
   const room = Math.max(80, tray - bar - 10);
   const sideMax = (W / 2 - 8) / (0.5 - SIDE_MARGIN);
   const fitMax = (room / FIGURES) * ASPECT;
-  const pw = Math.max(W, Math.min(sideMax, fitMax, W * 1.3));
+  // The figures may be up to ~10% narrower than the screen (2026-11-14 review: give the 问事 tray room);
+  // the hall continues behind them, dimmed, so no edge shows.
+  const pw = Math.max(W * MIN_WIDTH, Math.min(sideMax, fitMax, W * 1.3));
   const ph = pw / ASPECT;
   const top = Math.min(0, tray - 6 - SEAT_LINE * ph);
   Object.assign(plate.style, { width: `${pw}px`, height: `${ph}px`, left: `${(W - pw) / 2}px`, top: `${top}px`, transform: 'none' });
@@ -218,6 +222,9 @@ export function PaintedHall({ shown, still, phase = 'idle', clock, onCover, away
   }, [shown]);
   return (
     <div ref={root} className={`painted-hall ${shown ? 'is-on' : ''} ${shown && returning ? 'is-return' : ''} ${!shown && away ? 'is-away' : ''} ${still ? 'is-still' : ''}`} aria-hidden="true">
+      {/* The same hall, wide and dim, behind the picture: when the picture is narrower than the screen
+          its edges fade into it. */}
+      <i className="hall-backdrop" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }} />
       <div ref={plate} className="walkin-plate hall-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }}>
         {LAMPS.map(([x, y, w], i) => (
           <i key={i} className="walkin-lamp" style={{ left: `${x * 100}%`, top: `${y * 100}%`, width: `${w * 100}%`, animationDelay: `${-i * 1.1}s` }} />

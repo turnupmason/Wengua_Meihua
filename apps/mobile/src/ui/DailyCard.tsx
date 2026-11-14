@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Strings } from '../domain/i18n';
 import { HexagramSVG } from './HexagramSVG';
+import { Exit } from './Exit';
 
 export interface DailyView {
   id: number;
@@ -28,20 +29,23 @@ export interface DailyView {
 
 export function DailyCard({ t, daily }: { t: Strings; daily: DailyView | null }) {
   const [open, setOpen] = useState(false);
-  if (!daily || (daily.seen && !open)) return null;
+  if (!daily) return null;
   const close = () => {
     setOpen(false);
     daily.onSeen();
   };
   return (
     <>
+      {!daily.seen && (
       <button type="button" className="followup-strip daily-strip" onClick={() => setOpen(true)} aria-haspopup="dialog">
         <b>{t.dailyKicker}</b>
         <span>{daily.name}</span>
         <em aria-hidden="true">›</em>
       </button>
-      {open &&
-        createPortal(
+      )}
+      {createPortal(
+        <Exit show={open}>
+          {open && (
           <div className="sheet-backdrop followup-backdrop" onClick={close}>
             <section className="followup-pop daily-pop" role="dialog" aria-modal="true" aria-label={t.dailyKicker} onClick={(e) => e.stopPropagation()}>
               <p className="fu-kicker">
@@ -80,9 +84,11 @@ export function DailyCard({ t, daily }: { t: Strings; daily: DailyView | null })
                 </button>
               </p>
             </section>
-          </div>,
-          document.body,
-        )}
+          </div>
+          )}
+        </Exit>,
+        document.body,
+      )}
     </>
   );
 }

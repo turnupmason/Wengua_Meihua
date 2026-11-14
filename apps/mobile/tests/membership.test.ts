@@ -9,7 +9,7 @@ const at = (s: string) => new Date(s);
 
 describe('membership', () => {
   it('free visitors cast once a day; members three times', () => {
-    const ms = createMembership(memStore());
+    const ms = createMembership(memStore(), { openBeta: false });
     const now = at('2026-11-10T09:00:00');
     expect(ms.canCast(now)).toBe(true);
     ms.recordCast('一', now);
@@ -24,7 +24,7 @@ describe('membership', () => {
   });
 
   it('a month runs out; a year extends from the current end', () => {
-    const ms = createMembership(memStore());
+    const ms = createMembership(memStore(), { openBeta: false });
     const now = at('2026-01-15T00:00:00');
     ms.grant('wengua.member.monthly', null, now);
     expect(ms.isMember(at('2026-02-20T00:00:00'))).toBe(false);
@@ -34,14 +34,14 @@ describe('membership', () => {
   });
 
   it('a single unlock opens one reading only', () => {
-    const ms = createMembership(memStore());
+    const ms = createMembership(memStore(), { openBeta: false });
     ms.grant('wengua.reading.single', 'cast-a');
     expect(ms.canReadFull('cast-a')).toBe(true);
     expect(ms.canReadFull('cast-b')).toBe(false);
   });
 
   it('counts a charged cast by its question_id, per local day', () => {
-    const ms = createMembership(memStore());
+    const ms = createMembership(memStore(), { openBeta: false });
     ms.recordCast('career.exam.pass', at('2026-11-01T10:00:00'));
     expect(ms.castsToday(at('2026-11-01T20:00:00'))).toBe(1);
     expect(ms.castsToday(at('2026-11-02T08:00:00'))).toBe(0);
@@ -50,7 +50,7 @@ describe('membership', () => {
 
 describe('test-store helpers', () => {
   it('reset today’s count and end a subscription without touching single unlocks', () => {
-    const m = createMembership(memStore());
+    const m = createMembership(memStore(), { openBeta: false });
     const now = new Date('2026-11-11T10:00:00');
     m.grant('wengua.member.yearly', null, now);
     m.grant('wengua.reading.single', 'c1', now);
@@ -62,5 +62,17 @@ describe('test-store helpers', () => {
     m.endSubscription();
     expect(m.isMember(now)).toBe(false);
     expect(m.canReadFull('c1', now)).toBe(true);
+  });
+});
+
+describe('内测 (OPEN_BETA)', () => {
+  it('opens every reading and does not limit casts while the app is in testing', async () => {
+    const { OPEN_BETA } = await import('../src/domain/membership');
+    expect(OPEN_BETA).toBe(true);
+    const m = createMembership(memStore());
+    for (let i = 0; i < 5; i++) m.recordCast('career.interview');
+    expect(m.canCast()).toBe(true);
+    expect(m.canReadFull('any-cast')).toBe(true);
+    expect(m.giftFirst('c1')).toBe(false);
   });
 });
