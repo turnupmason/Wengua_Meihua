@@ -2173,3 +2173,9 @@ body.shrine-open .home-panel, body.shrine-open .home-top, body.shrine-open .foll
 .share-actions button { flex: 1; min-height: 48px; border-radius: 12px; font: 600 16px var(--serif); letter-spacing: 0.12em; }
 .share-go { border: 0; background: linear-gradient(180deg, #d6b475, #b98f4c 62%, #a27a3c); color: #2a1708; }
 .share-save { border: 1px solid rgba(216, 174, 94, 0.55); background: rgba(255, 236, 196, 0.06); color: #f0dcae; }
+/* A row's note on one line (记录问事结果，回看卦象变化): the name keeps its width, the note takes the rest. */
+.me-menu button { grid-template-columns: 28px auto 1fr 14px; }
+.me-menu small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: unset; font-size: 12.5px; letter-spacing: 0; }
+.me-menu button { gap: 8px; grid-template-columns: 26px auto 1fr 12px; }
+.me-menu small { font-size: min(12.5px, 3.3vw); }
+.me-menu button > i { grid-column: 4; }
