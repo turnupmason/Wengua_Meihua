@@ -124,10 +124,11 @@ const promotionTimingStages={body:'closing',use:'opening',body_mutual:'process',
 
 export function promotionTimingSlots(reading,specs,outcome,profile){
  return specs.map(([kind,role,event,text,reason,declaredMethod])=>{
-  const rule=promotionTimingKinds[kind],stage=promotionTimingStages[role];
+  const rule=promotionTimingKinds[kind];
+  const bodyPeriod=kind==='name-body',isResult=kind==='name-support'||bodyPeriod;
+  const stage=profile===WORKPLACE_PROBATION_PROFILE&&isResult?'closing':promotionTimingStages[role];
   const node=reading.nodes.find(n=>n.role===role);
   const edge=reading.edges.find(e=>e.targetRole===role);
-  const bodyPeriod=kind==='name-body',isResult=kind==='name-support'||bodyPeriod;
   if(!rule||!stage||!node||!event||!text||!reason||(isResult&&outcome!=='favourable')||
     (bodyPeriod?role!=='body'||reading.edges.some(e=>e.type==='use_controls_body'):
      edge?.type!==rule.relation))throw new Error('Invalid promotion timing declaration');

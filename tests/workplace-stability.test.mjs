@@ -71,6 +71,10 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    const [slot] = row.timingSlots;
    if (slot) {
     const node = row.facts.nodes.find(n => n.role === slot.role);
+    if (slot.kind === 'name-support' || slot.kind === 'name-body') {
+     assert.equal(slot.stage,'closing',key);
+     assert.equal(slot.eventScope,'positive-result-candidate',key);
+    }
     if (slot.kind === 'name-body') {
      assert.equal(row.decision.outcomeCode,'favourable',key);
      assert.equal(slot.role,'body',key);
