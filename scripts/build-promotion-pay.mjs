@@ -208,7 +208,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     '过程：' + process,
     '结局：' + ending + (payRange ? ' ' + payRange : ''),
     timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
-     timing.paragraphs.map((text, index) => text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
+     timing.paragraphs.map((text, index) => profile === EXAM_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
    ],
    sourceTitles,

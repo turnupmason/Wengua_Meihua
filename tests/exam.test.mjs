@@ -112,6 +112,7 @@ test('all published exam month keys retain authored copy, sources, layout, and c
      const expected = findUpcomingCivilDayMatches({castingDate:date, branches:window.targetBranches});
      assert.deepEqual(window.displayedDates, expected.matches.slice(0,2).map(day => day.date));
      assert.ok(window.text.includes(window.event));
+     assert.equal(window.text.split('，属' + window.valence + '应。').length, 2);
     }
     months++;
    }

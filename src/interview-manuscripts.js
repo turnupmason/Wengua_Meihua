@@ -133,7 +133,8 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const id=kind+'-'+role;
   const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
-  const suffix=namedStageEvent?'前后，'+event+'。'+text:'前后，'+text;
+  const eventEnd=profile===EXAM_PROFILE?'，属'+valence+'应。':'。';
+  const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;
   return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
    prefix:'可留意',suffix,displayLimit:2,
