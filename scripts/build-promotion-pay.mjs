@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, WORKPLACE_LEADER_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -126,7 +126,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
-  if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
+  if ((profile === WORKPLACE_STABILITY_PROFILE || profile === WORKPLACE_LEADER_PROFILE) && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
   if (timingSpecs.some(spec => spec?.length !== 5 &&
@@ -329,8 +329,19 @@ const workplaceProbation = {
  counterevidence:'分别看评定标准、执行中的协作或限制、爻辞条件与末段。过程改善与最终通过各有证据。',
  timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
 };
+const workplaceLeader = {
+ title:'与这位领导的工作关系能协调好吗', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
+ references:[
+  ['mh-064','体卦为主，用卦为宾。','原体为问事人，本用为与这位领导围绕具体工作发生的配合。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','分阶段核对目前要求、来回协调的条件、最后能否形成可执行的安排。'],
+ ],
+ clauses:workplaceStability.clauses,
+ outcomes:['coordinated','conditional','strained'], scopeNote:'只看与这位领导围绕当前工作能否协调',
+ counterevidence:'同向、口头反馈、实际决定与资源交接分别衡量。判断条件落实到共同要求和可执行安排。',
+ timingContext:'日级参考窗口限已安排的工作接触、协作、补充说明或卡点。关系的长期变化未取日级应期。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability','workplace-probation','workplace-leader'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
 if (target === 'job-change') {
  await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
@@ -339,4 +350,6 @@ if (target === 'job-change') {
  await buildCareerManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
 } else if (target === 'workplace-probation') {
  await buildCareerManuscripts(WORKPLACE_PROBATION_PROFILE, workplaceProbation);
+} else if (target === 'workplace-leader') {
+ await buildCareerManuscripts(WORKPLACE_LEADER_PROFILE, workplaceLeader);
 } else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);

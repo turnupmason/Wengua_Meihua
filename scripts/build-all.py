@@ -11,3 +11,4 @@ for name in ['build-data.py','import-details.py','build-narratives.mjs','build-c
         subprocess.run([*command,'job-change'],check=True,cwd=root.parent,env=env)
         subprocess.run([*command,'workplace-stability'],check=True,cwd=root.parent,env=env)
         subprocess.run([*command,'workplace-probation'],check=True,cwd=root.parent,env=env)
+        subprocess.run([*command,'workplace-leader'],check=True,cwd=root.parent,env=env)

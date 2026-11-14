@@ -20,6 +20,9 @@ careerProgress.set(workplaceStability.questionId,{...workplaceStability,progress
 const workplaceProbationPath='data/authored-readings/workplace-probation/index.json';
 const workplaceProbation=JSON.parse(await readFile(new URL(workplaceProbationPath,root),'utf8'));
 careerProgress.set(workplaceProbation.questionId,{...workplaceProbation,progressPath:workplaceProbationPath});
+const workplaceLeaderPath='data/authored-readings/workplace-leader/index.json';
+const workplaceLeader=JSON.parse(await readFile(new URL(workplaceLeaderPath,root),'utf8'));
+careerProgress.set(workplaceLeader.questionId,{...workplaceLeader,progressPath:workplaceLeaderPath});
 const current=[...careerProgress.values()].find(index=>index.remainingBaseSlots)??[...careerProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}
