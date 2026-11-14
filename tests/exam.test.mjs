@@ -13,6 +13,10 @@ const request = {questionId, castingDate:date, timingScale:'day', timingContext}
 const read = path => readFile(new URL('../' + path, import.meta.url), 'utf8');
 const json = async path => JSON.parse(await read(path));
 const index = await json('data/authored-readings/exam/index.json');
+const trigramDayBranches = {乾:['戌','亥'], 坤:['未','申'], 震:['卯'], 巽:['辰','巳'],
+ 坎:['子'], 离:['午'], 艮:['丑','寅'], 兑:['酉']};
+const elementDayBranches = {木:['寅','卯'], 火:['巳','午'], 土:['辰','戌','丑','未'],
+ 金:['申','酉'], 水:['亥','子']};
 const columns = ['开局','过程','结局','应期','总断','古籍依据','动爻完整原文'];
 
 test('exam selects exact drafts, preserving separate credential, competition, and selection questions', async () => {
@@ -80,6 +84,13 @@ test('all published exam month keys retain authored copy, sources, layout, and c
    assert.ok(row.timingSlots.length <= 1, key);
    if (row.timingSlots.length) {
     const [slot] = row.timingSlots;
+    const [kind, role, , , , declaredMethod] = drafts[i][10][0];
+    const node = row.facts.nodes.find(entry => entry.role === role);
+    const usesTrigram = kind === 'name-body' || declaredMethod === 'trigram-periods';
+    const expectedBranches = usesTrigram ? trigramDayBranches[node.trigram] : elementDayBranches[node.element];
+    assert.equal(slot.method, usesTrigram ? 'trigram-periods' : 'element-qi', key);
+    assert.deepEqual(slot.branches, expectedBranches, key);
+    if (usesTrigram) assert.ok(row.decision.sourceEvidence.some(source => source.id === 'mh-052'), key);
     assert.match(parts[8], /(?:本月|下月)\d+(?:、\d+)*号/u, key);
     assert.ok(parts[8].includes(slot.event + '，属' + slot.valence + '应。'), key);
     dated++;

@@ -11,7 +11,7 @@ export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
-export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.0',timingVersion:'exam-day-1.0.0',directory:'exam'});
+export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.1',timingVersion:'exam-day-1.0.1',directory:'exam'});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -113,7 +113,7 @@ const promotionTimingKinds={
 const promotionTimingStages={body:'closing',use:'opening',body_mutual:'process',use_mutual:'process',changed_use:'closing'};
 
 export function promotionTimingSlots(reading,specs,outcome,profile){
- return specs.map(([kind,role,event,text,reason])=>{
+ return specs.map(([kind,role,event,text,reason,declaredMethod])=>{
   const rule=promotionTimingKinds[kind],stage=promotionTimingStages[role];
   const node=reading.nodes.find(n=>n.role===role);
   const edge=reading.edges.find(e=>e.targetRole===role);
@@ -121,11 +121,14 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   if(!rule||!stage||!node||!event||!text||!reason||(isResult&&outcome!=='favourable')||
     (bodyPeriod?role!=='body'||reading.edges.some(e=>e.type==='use_controls_body'):
      edge?.type!==rule.relation))throw new Error('Invalid promotion timing declaration');
-  const period=bodyPeriod?TRIGRAM_PERIOD_SPECS.find(p=>p.trigram===node.trigram&&p.scales.includes('day')):null;
+  const nodePeriod=declaredMethod==='trigram-periods';
+  if(declaredMethod!==undefined&&(!nodePeriod||profile!==EXAM_PROFILE||bodyPeriod))throw new Error('Invalid authored timing method');
+  const useTrigramPeriod=bodyPeriod||nodePeriod;
+  const period=useTrigramPeriod?TRIGRAM_PERIOD_SPECS.find(p=>p.trigram===node.trigram&&p.scales.includes('day')):null;
   const branches=period?.branches??ELEMENT_DAY_BRANCHES[node.element];
-  if(!branches?.length||(bodyPeriod&&!period))throw new Error('Missing promotion day branches');
-  const method=bodyPeriod?'trigram-periods':'element-qi';
-  const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',bodyPeriod?'mh-052':'mh-143'])];
+  if(!branches?.length||(useTrigramPeriod&&!period))throw new Error('Missing promotion day branches');
+  const method=useTrigramPeriod?'trigram-periods':'element-qi';
+  const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',useTrigramPeriod?'mh-052':'mh-143'])];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
   const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE;
@@ -136,7 +139,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
    prefix:'可留意',suffix,displayLimit:2,
    emptyText:text,branches:[...branches],sourceIds,ruleIds,method,scale:'day',
    calculationBasis:{role,trigram:node.trigram,element:node.element,directRelation:rule.relation,
-    method:bodyPeriod?'pre-heaven-trigram-periods':'pre-heaven-element-qi',scale:'day',ruleIds,sourceIds,
+    method:useTrigramPeriod?'pre-heaven-trigram-periods':'pre-heaven-element-qi',scale:'day',ruleIds,sourceIds,
     reason,stage,selectionOrder:['casting-month-remaining-days','next-month-if-no-match'],
     interpretationReview:'author-source-checked',independentInterpretationReview:'pending'}};
  });

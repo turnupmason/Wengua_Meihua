@@ -126,7 +126,10 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if (profile === EXAM_PROFILE && timingSpecs.length > 1) throw new Error('Only one exam event per draft: ' + key);
-  if (timingSpecs.some(spec => spec?.length !== 5)) throw new Error('Invalid author timing: ' + key);
+  if (timingSpecs.some(spec => spec?.length !== 5 &&
+      !(profile === EXAM_PROFILE && spec?.length === 6 && spec[5] === 'trigram-periods'))) {
+   throw new Error('Invalid author timing: ' + key);
+  }
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome, profile);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
   const timingReason = timingOmission?.reason ?? timingSlots.map(slot => slot.reason).join(' ');
@@ -143,9 +146,9 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
    evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', config.timingContext),
    ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
-   ...(timingSlots.some(slot => slot.kind === 'name-body') ? [evidence('mh-052',
-    TRIGRAM_PERIOD_SPECS.find(period => period.trigram === r.nodes.find(node => node.role === 'body').trigram).quote,
-    '按原体所属时序取日支。')] : [])];
+   ...timingSlots.filter(slot => slot.method === 'trigram-periods').map(slot => evidence('mh-052',
+    TRIGRAM_PERIOD_SPECS.find(period => period.trigram === slot.calculationBasis.trigram).quote,
+    slot.kind === 'name-body' ? '按原体所属时序取日支。' : '按本篇选定节点的经卦时序取日支。'))];
   const facts = {
    stages: Object.values(r.stages).map(s => ({id:s.id, name:s.name, baseGrade:s.baseGrade})),
    nodes: r.nodes.map(n => ({role:n.role, trigram:n.trigram, element:n.element, qi:n.strength.state})),
@@ -216,7 +219,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;
-     const method = slot.method === 'trigram-periods' ? '先天体卦时序法' : '先天卦气法';
+     const method = slot.method === 'trigram-periods' ? (slot.kind === 'name-body' ? '先天体卦时序法' : '先天经卦时序法') : '先天卦气法';
      return `${slot.valence}应 · ${slot.event}。取${trigram}${element}，${slot.branches.join('、')}日。用${method}按日匹配，先查起卦当月余日，无匹配再查下月。示例 ${timing.dateMatches[index].displayedDates.join('、')}。 ${slot.reason}`;
     }),
     ...sourceEvidence.map(source => `- ${source.id}《${source.title}》，原文第 ${source.locator.startLine} 行起。\n  “${source.quote}”\n  ${source.reason}`),
