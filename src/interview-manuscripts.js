@@ -22,6 +22,11 @@ export const WORKPLACE_PROBATION_PROFILE=Object.freeze({
  questionScope:'completion-of-current-probation',manuscriptVersion:'workplace-probation-1.0.0',
  timingVersion:'workplace-probation-day-1.0.0',directory:'workplace-probation',namedStageEvents:true,
 });
+export const NEW_RELATIONSHIP_OPPORTUNITY_PROFILE=Object.freeze({
+ questionId:'relationships.new-partner.opportunity',questionType:'new_relationship_opportunity',
+ questionScope:'near-term-opportunity-to-start-a-new-relationship',manuscriptVersion:'new-relationship-opportunity-1.0.0',
+ timingVersion:'new-relationship-opportunity-day-1.0.0',directory:'new-relationship-opportunity',namedStageEvents:true,
+});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),

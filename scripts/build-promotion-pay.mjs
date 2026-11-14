@@ -4,23 +4,24 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 
 const root = new URL('../', import.meta.url);
 const library = await loadLibrary();
-const careerQuestions = PRODUCT_TAXONOMY[0].subcategories.flatMap(subcategory => subcategory.questions);
+const questions = PRODUCT_TAXONOMY.flatMap(category => category.subcategories.flatMap(subcategory =>
+ subcategory.questions.map(question => ({...question, id:category.id + '.' + question.id}))));
 
-async function buildCareerManuscripts(profile, config) {
+async function buildAuthoredManuscripts(profile, config) {
 const {directory: slug, questionId, manuscriptVersion} = profile;
 const sourceDir = 'sources/editorial/' + slug + '/';
 const base = 'data/authored-readings/' + slug + '/';
 const docDir = 'docs/' + slug + '/';
 const isPromotion = profile === PROMOTION_PAY_PROFILE;
-const raw = careerQuestions.find(q => 'career.' + q.id === questionId);
-const question = {...raw, id: questionId};
+const question = questions.find(item => item.id === questionId);
+if (!question) throw new Error('Unknown manuscript question: ' + questionId);
 const common = {schemaVersion: '1.0.0', contentVersion: library.contentVersion, manuscriptVersion, questionId};
 const orders = ['spring-wood', 'summer-fire', 'autumn-metal', 'winter-water', 'seasonal-earth'];
 const timingByHexagram = isPromotion ? JSON.parse(await readFile(new URL(sourceDir + 'timing.json', root), 'utf8')) : null;
@@ -70,7 +71,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
- if (drafts.length !== 30) throw new Error('A career batch needs 30 individually written versions');
+ if (drafts.length !== 30) throw new Error('An authored batch needs 30 individually written versions');
  const rows = [];
  const monthSlots = {};
  const name = library.getHexagram(primaryId).name;
@@ -104,13 +105,13 @@ for (const [batchIndex, filename] of batches.entries()) {
   for (const [field, value] of Object.entries({title, short, opening, process, ending, summary, ...(payRange ? {payRange} : {})})) {
    const location = key + '/' + field;
    const sample = value.replace(/[^\p{Letter}\p{Number}]/gu, '');
-   if (seen.has(sample)) throw new Error('Duplicate career copy: ' + location + ' / ' + seen.get(sample));
+   if (seen.has(sample)) throw new Error('Duplicate authored copy: ' + location + ' / ' + seen.get(sample));
    seen.set(sample, location);
    for (const sentence of value.split(/[。！？]/u)) {
     const hanCount = sentence.match(/\p{Script=Han}/gu)?.length ?? 0;
     if (hanCount < 12) continue;
     const normalized = sentence.replace(/[^\p{Letter}\p{Number}]/gu, '');
-    if (seenSentences.has(normalized)) throw new Error('Duplicate career sentence: ' + location + ' / ' + seenSentences.get(normalized));
+    if (seenSentences.has(normalized)) throw new Error('Duplicate authored sentence: ' + location + ' / ' + seenSentences.get(normalized));
     seenSentences.set(normalized, location);
    }
   }
@@ -126,6 +127,9 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
+  if (profile === NEW_RELATIONSHIP_OPPORTUNITY_PROFILE && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
+   throw new Error('New relationship opportunities date supported contacts or specific obstacles: ' + key);
+  }
   if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
@@ -329,14 +333,27 @@ const workplaceProbation = {
  counterevidence:'分别看评定标准、执行中的协作或限制、爻辞条件与末段。过程改善与最终通过各有证据。',
  timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
 };
+const newRelationshipOpportunity = {
+ title:'近期有开始新感情的机会吗', policy:'NEW_RELATIONSHIP_OPPORTUNITY_POLICY.md', primarySource:'mh-064',
+ references:[
+  ['mh-064','体卦为主，用卦为宾。','原体为问事人，本用为接触新对象的现实条件。'],
+  ['mh-067','体用比和，婚姻吉利。','只参照双方相就这一条件，类推新接触能否有来有往。'],
+ ],
+ clauses:workplaceStability.clauses,
+ outcomes:['favourable','conditional','difficult'], scopeNote:'只回答近期是否有机会发展出一段新感情',
+ counterevidence:'区分接触、互相回应与能够继续发展，结合完整动爻及本互变的实际力量。',
+ timingContext:'日级窗口只用于已经进入近期安排的一次见面、回访或具体阻碍。关系何时建立须有单独依据。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
 if (target === 'job-change') {
- await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
+ await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
- await buildCareerManuscripts(EXAM_PROFILE, exam);
+ await buildAuthoredManuscripts(EXAM_PROFILE, exam);
 } else if (target === 'workplace-stability') {
- await buildCareerManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
+ await buildAuthoredManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
 } else if (target === 'workplace-probation') {
- await buildCareerManuscripts(WORKPLACE_PROBATION_PROFILE, workplaceProbation);
-} else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);
+ await buildAuthoredManuscripts(WORKPLACE_PROBATION_PROFILE, workplaceProbation);
+} else if (target === 'new-relationship-opportunity') {
+ await buildAuthoredManuscripts(NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, newRelationshipOpportunity);
+} else await buildAuthoredManuscripts(PROMOTION_PAY_PROFILE, promotion);

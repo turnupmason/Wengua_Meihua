@@ -10,17 +10,20 @@ const promotionPath='data/authored-readings/promotion-pay/index.json';
 const promotion=JSON.parse(await readFile(new URL(promotionPath,root),'utf8'));
 const jobChangePath='data/authored-readings/job-change/index.json';
 const jobChange=JSON.parse(await readFile(new URL(jobChangePath,root),'utf8'));
-const careerProgress=new Map([{...promotion,progressPath:promotionPath},{...jobChange,progressPath:jobChangePath}].map(index=>[index.questionId,index]));
+const manuscriptProgress=new Map([{...promotion,progressPath:promotionPath},{...jobChange,progressPath:jobChangePath}].map(index=>[index.questionId,index]));
 const examPath='data/authored-readings/exam/index.json';
 const exam=JSON.parse(await readFile(new URL(examPath,root),'utf8'));
-careerProgress.set(exam.questionId,{...exam,progressPath:examPath});
+manuscriptProgress.set(exam.questionId,{...exam,progressPath:examPath});
 const workplaceStabilityPath='data/authored-readings/workplace-stability/index.json';
 const workplaceStability=JSON.parse(await readFile(new URL(workplaceStabilityPath,root),'utf8'));
-careerProgress.set(workplaceStability.questionId,{...workplaceStability,progressPath:workplaceStabilityPath});
+manuscriptProgress.set(workplaceStability.questionId,{...workplaceStability,progressPath:workplaceStabilityPath});
 const workplaceProbationPath='data/authored-readings/workplace-probation/index.json';
 const workplaceProbation=JSON.parse(await readFile(new URL(workplaceProbationPath,root),'utf8'));
-careerProgress.set(workplaceProbation.questionId,{...workplaceProbation,progressPath:workplaceProbationPath});
-const current=[...careerProgress.values()].find(index=>index.remainingBaseSlots)??[...careerProgress.values()].at(-1);
+manuscriptProgress.set(workplaceProbation.questionId,{...workplaceProbation,progressPath:workplaceProbationPath});
+const relationshipPath='data/authored-readings/new-relationship-opportunity/index.json';
+const relationship=JSON.parse(await readFile(new URL(relationshipPath,root),'utf8'));
+manuscriptProgress.set(relationship.questionId,{...relationship,progressPath:relationshipPath});
+const current=[...manuscriptProgress.values()].find(index=>index.remainingBaseSlots)??[...manuscriptProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}
 const categories=[];
@@ -62,7 +65,7 @@ const plan={...base,productCatalogVersion:catalogVersion,...counts,acceptedSampl
  questionTypeCount:new Set(questions.map(q=>q.question_type)).size,
  sharedTypePolicy:'Explicit equivalent-scope references may share prose; question count is not independent-article count.',
  items:questions.map(q=>({questionId:q.id,question_type:q.question_type,categoryId:q.categoryId,subcategoryId:q.subcategoryId,
-  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.archived?'archived':careerProgress.has(q.id)?(careerProgress.get(q.id).remainingBaseSlots?'writing-in-progress':'base-coverage-complete;classical-body-use'):q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?(authoredProgress.baseCoverageComplete?'base-coverage-complete;classical-body-use':'writing-in-progress'):'exact-coverage-pending'):'reference-or-guidance-written',
+  mode:q.mode,ruleStatus:q.ruleStatus,contentStatus:q.archived?'archived':manuscriptProgress.has(q.id)?(manuscriptProgress.get(q.id).remainingBaseSlots?'writing-in-progress':'base-coverage-complete;classical-body-use'):q.mode==='narrative'?(authoredProgress?.activeQuestionId===q.id?(authoredProgress.baseCoverageComplete?'base-coverage-complete;classical-body-use':'writing-in-progress'):'exact-coverage-pending'):'reference-or-guidance-written',
   legacyQuestionId:q.legacyQuestionId||null,legacyBindings:q.legacyBindings||null}))};
 await writeFile(new URL('data/product-authoring-plan.json',root),JSON.stringify(plan,null,2)+'\n');
 let doc='# 正式产品分类 V2\n\n六大领域按新版导航归为 31 个细分入口，依次为 6、6、6、4、5、4 项。目录保存 '+questions.length+' 个固定问项，其中 '+questions.filter(q=>!q.archived).length+' 个现用问项与 '+questions.filter(q=>q.archived).length+' 个历史问项。晋升加薪合为一问。跳槽去留在同一问项判断现职和新工作怎么选，以及现在适不适合辞职。原 18 个古籍门类作为内容来源。\n\n十篇V3简断与详断已获用户通过，内容及文风按原版本保留；无需重复请求文风确认。验收记录绑定原稿摘要，见 data/editorial-acceptance.json。\n\n';

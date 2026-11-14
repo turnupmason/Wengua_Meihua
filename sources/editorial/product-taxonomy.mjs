@@ -68,7 +68,7 @@ export const PRODUCT_TAXONOMY=[
  ]},
  {id:'relationships',number:'03',label:'感情姻缘',subcategories:[
   s('affection','桃花缘分','近期有开始新感情的机会吗？|何时可能遇到适合发展关系的人？',[
-   q('new-partner.opportunity','近期有开始新感情的机会吗？','new_relationship_opportunity',['domain-02','domain-05'],o('适用于尚无确定对象的人，回答近期是否有开始新感情的机会。只谈相识与发展条件。')),
+   q('new-partner.opportunity','近期有开始新感情的机会吗？','new_relationship_opportunity',['domain-02','domain-05'],o('适用于尚无确定对象的人，回答近期是否有开始新感情的机会。只谈相识与发展条件。',{manuscriptIndexPath:'data/authored-readings/new-relationship-opportunity/index.json'})),
    q('new-partner.timing','何时可能遇到适合发展关系的人？','partner_meeting_timing',['domain-05','domain-02'],o('适用于尚无确定对象的人，回答有机会相识或见面的参考时段。日级窗口以取期规则和实际起卦日为准。',{requiresTimingMethod:true}))]),
   s('confession','暧昧表白','这段关系中，对方心意的传统取象如何理解？|对方近期会主动联系我吗？|现在适合向对方表白吗？',[
    q('affection.affection','这段关系中，对方心意的传统取象如何理解？','affection_symbolism',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。',{aliases:['他/她喜欢我吗？','对我有没有好感？']})),
