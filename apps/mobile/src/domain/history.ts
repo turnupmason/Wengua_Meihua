@@ -40,6 +40,15 @@ export function createHistory(store: KeyValueStore = safeStore('local', true), s
       if (items.some((r) => isCastRecord(r) && r.castId === record.castId)) return;
       write([record, ...items]);
     },
+    /** The one change a saved record takes: a 「整理中」 cast given its 断语 once written (see fillJudgment). */
+    fill(record: CastRecord) {
+      const items = read();
+      const at = items.findIndex((r) => isCastRecord(r) && r.castId === record.castId);
+      const was = at >= 0 ? (items[at] as CastRecord).judgment : undefined;
+      if (was?.state !== 'missing' || record.judgment?.state !== 'ready') return;
+      items[at] = record;
+      write(items);
+    },
     remove(castId: string) {
       write(read().filter((r) => !isCastRecord(r) || r.castId !== castId));
       if (this.getActive()?.castId === castId) this.clearActive();

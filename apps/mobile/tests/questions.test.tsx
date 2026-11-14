@@ -12,7 +12,7 @@ import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
 import { DOMAINS, allQuestions, allSubtypes, catalogProblems, catalogQuestions, enabledQuestions, shownQuestion, productContext, questionById, questionWording, readinessOf } from '../src/domain/questionCatalog';
 import { calculationGroups, castingDateOf, judgmentFor, readableCalculation, seasonOf, windowBody, windowDates, type JudgmentInput, type ProductJudgment } from '../src/domain/judgment';
-import { chargesToday, freezeCast, judgmentInput, recordKind, withJudgment } from '../src/domain/cast';
+import { chargesToday, fillJudgment, freezeCast, judgmentInput, recordKind, withJudgment, type CastRecord } from '../src/domain/cast';
 import { createHistory } from '../src/domain/history';
 import { createJournal } from '../src/domain/journal';
 import { sameMatterCandidate } from '../src/domain/sameMatter';
@@ -201,6 +201,16 @@ describe('click-only home', () => {
       expect((j as ProductJudgment).paragraphs).toHaveLength(4);
     }
     expect(await judgmentFor(product, questionById('career.job-change')!, { ...WELL, questionId: 'career.job-change', primaryId: 64, movingLine: 6 })).toMatchObject({ state: 'ready' });
+  });
+
+  it('reads the 考试选拔 断语 for every hexagram', async () => {
+    const { product } = await testKnowledge();
+    // All 64 are written (2026-11-14).
+    for (const id of [1, 10, 19, 28, 37, 46, 55, 64]) {
+      const j = await judgmentFor(product, questionById('career.exams')!, { ...WELL, questionId: 'career.exams', primaryId: id, movingLine: 1 + (id % 6) });
+      expect(j).toMatchObject({ state: 'ready', contentQuestionId: 'career.exams.exam', primaryId: id });
+      expect((j as ProductJudgment).paragraphs).toHaveLength(4);
+    }
   });
 
   it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {
@@ -552,6 +562,25 @@ describe('cast, reading and 问事录', () => {
     };
     expect(await judgmentFor(product as never, questionById('career.projects')!, { ...WELL, questionId: 'career.projects' })).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
     expect(asked).toBe(0);
+  });
+
+  it('a cast made while its 断语 was being written is given it once written, for its own day', async () => {
+    const knowledge = await testKnowledge();
+    const base = freezeCast(knowledge.library, castRequest(form({ questionId: 'career.exams' }), opts(new Date('2026-12-20T09:00:00+08:00'))));
+    const waiting = withJudgment(base, { state: 'missing', season: null, reason: 'pending-authoring' }) as CastRecord;
+    const store = memoryStore();
+    const history = createHistory(store);
+    history.save(waiting);
+    const written = await judgmentFor(knowledge.product, questionById('career.exams')!, judgmentInput(waiting)!);
+    expect(written).toMatchObject({ state: 'ready', castingDate: waiting.localWallClock!.slice(0, 10) });
+    history.fill(fillJudgment(waiting, written) as CastRecord);
+    const kept = history.get(waiting.castId)!;
+    expect(kept.judgment).toMatchObject({ state: 'ready', contentQuestionId: 'career.exams.exam' });
+    expect({ ...kept, judgment: null, snapshot: null }).toEqual({ ...waiting, judgment: null, snapshot: null });
+    // A record that already has its 断语 is never rewritten.
+    expect(() => fillJudgment(kept, written)).toThrow();
+    history.fill({ ...kept, judgment: { ...written, title: 'x' } } as CastRecord);
+    expect(history.get(waiting.castId)!.judgment).toMatchObject({ title: (written as ProductJudgment).title });
   });
 
   it('with no 断语: says so plainly, substitutes nothing, and is not charged', async () => {
