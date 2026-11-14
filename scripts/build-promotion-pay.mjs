@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -125,7 +125,10 @@ for (const [batchIndex, filename] of batches.entries()) {
   if (profile === JOB_CHANGE_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
-  if (profile === EXAM_PROFILE && timingSpecs.length > 1) throw new Error('Only one exam event per draft: ' + key);
+  if ((profile === EXAM_PROFILE || profile === WORKPLACE_STABILITY_PROFILE) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
+  if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
+   throw new Error('Workplace stability only dates named workplace events: ' + key);
+  }
   if (timingSpecs.some(spec => spec?.length !== 5 &&
       !(profile === EXAM_PROFILE && spec?.length === 6 && spec[5] === 'trigram-periods'))) {
    throw new Error('Invalid author timing: ' + key);
@@ -298,10 +301,27 @@ const exam = {
  counterevidence:'核对能否达到考试要求，分清答题过程较顺、爻辞所限与结果有利。',
  timingContext:'日级窗口只适用于已进入近期流程的对应考试事项。考试日、查分日和合格标准依据主办方通知。',
 };
+const workplaceStability = {
+ title:'当前工作稳定性', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
+ references:[
+  ['mh-064','体卦为主，用卦为宾。','原体为当前工作中的当事人，本用为工作安排及其外部要求。'],
+  ['mh-071','若在任占卜，最忌见克体之卦','在任受克条作工作受制的参照，按现有关系和旺衰判断作用范围。'],
+ ],
+ clauses:{
+  equal:'体用比和，谋为吉利。', body_controls_use:'体克用则吉。',
+  use_controls_body:'用克体不宜', use_generates_body:'用生体有进益之喜',
+  body_generates_use:'体生用有耗失之患。',
+ },
+ outcomes:['stable','watch','strained'], scopeNote:'只判断当前工作稳定性和中断风险的传统倾向',
+ counterevidence:'对照工作承接、外部要求、爻辞限制与尾段变化。普通工作压力与岗位中断分别判断。',
+ timingContext:'日级参考窗口适用于对应工作事项已进入近期流程。人事决定及日期以实际通知为准。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability'].includes(target)) throw new Error('Unknown career manuscript target: ' + target);
 if (target === 'job-change') {
  await buildCareerManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
  await buildCareerManuscripts(EXAM_PROFILE, exam);
+} else if (target === 'workplace-stability') {
+ await buildCareerManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
 } else await buildCareerManuscripts(PROMOTION_PAY_PROFILE, promotion);

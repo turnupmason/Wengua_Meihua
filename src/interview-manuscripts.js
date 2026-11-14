@@ -12,6 +12,11 @@ export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
 export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.1',timingVersion:'exam-day-1.0.1',directory:'exam'});
+export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
+ questionId:'career.job-stability.layoff',questionType:'employment_stability',
+ questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-1.0.0',
+ timingVersion:'workplace-stability-day-1.0.0',directory:'workplace-stability',namedStageEvents:true,
+});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -131,7 +136,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const sourceIds=[...new Set([rule.source,'mh-058','mh-117','mh-122',useTrigramPeriod?'mh-052':'mh-143'])];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE;
+  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE||profile?.namedStageEvents===true;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
   const eventEnd=profile===EXAM_PROFILE?'，属'+valence+'应。':'。';
   const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;

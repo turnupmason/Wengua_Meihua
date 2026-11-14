@@ -34,6 +34,7 @@
     "build:editorial-samples": "node scripts/build-ten-readings-v3.mjs",
     "build:product": "node scripts/build-product-catalog.mjs && node scripts/run-python.mjs scripts/export-product.py",
     "validate:product": "node scripts/run-python.mjs scripts/validate-product.py",
+    "build:workplace-stability": "node scripts/build-promotion-pay.mjs workplace-stability && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:exam": "node scripts/build-promotion-pay.mjs exam && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:job-change": "node scripts/build-promotion-pay.mjs job-change && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:promotion-pay": "node scripts/build-promotion-pay.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
