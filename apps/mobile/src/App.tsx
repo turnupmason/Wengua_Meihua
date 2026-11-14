@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { getKnowledge, type Knowledge } from './knowledge/knowledge';
 import { chargesToday, fillJudgment, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
-import { judgmentFor } from './domain/judgment';
+import { judgmentFor, windowDates } from './domain/judgment';
+import { createFollowups, type Outcome, type TimingRef } from './domain/followup';
+import { createCollection, createDaily } from './domain/daily';
+import { createCalendarProvider } from './domain/calendar';
+import { askReminderPermission, onReminderTap, syncReminders } from './domain/reminders';
 import { questionById, shownQuestion, type ResolvedQuestion } from './domain/questionCatalog';
 import { createHistory } from './domain/history';
 import { createJournal } from './domain/journal';
@@ -65,6 +69,24 @@ export function App() {
   const [profile, setProfile] = useState<Profile | null>(() => loadProfile());
   const history = useMemo(() => createHistory(), []);
   const journal = useMemo(() => createJournal(), []);
+  // 应期回访: answers kept beside the records; followRev re-reads them after a change.
+  const followups = useMemo(() => createFollowups(), []);
+  const [followRev, setFollowRev] = useState(0);
+  const bumpFollow = useCallback(() => setFollowRev((n) => n + 1), []);
+  // A record to open in 问事录 (from the hall's 回访 card or a reminder), a fresh token each time.
+  const [detailRequest, setDetailRequest] = useState<{ castId: string; at: number } | null>(null);
+  // 今日一卦 and 卦册 (which of the 64 the visitor has met).
+  const daily = useMemo(() => createDaily(), []);
+  const collection = useMemo(() => createCollection(), []);
+  const [dailyRev, setDailyRev] = useState(0);
+  // The hexagrams a cast just added to 卦册, shown once in its reading.
+  const [newMet, setNewMet] = useState<{ castId: string; ids: number[] } | null>(null);
+  // A hexagram page to open in 藏经阁 (from 今日一卦), a fresh token each time.
+  const [bookRequest, setBookRequest] = useState<{ hexagramId: number; at: number } | null>(null);
+  const openDetail = useCallback((castId: string) => {
+    setDetailRequest({ castId, at: Date.now() });
+    placeStore.set('records');
+  }, []);
   const membership = useMemo(() => createMembership(), []);
   const [memberRev, setMemberRev] = useState(0);
   const [memberSheet, setMemberSheet] = useState<{ reason: MembershipReason; castId: string | null } | null>(null);
@@ -116,6 +138,17 @@ export function App() {
     setRecord(repaired);
   }, [history]);
 
+  // 应期 are part of 详断: only records whose 详断 the visitor can read are asked about or reminded of.
+  const readableRecords = useCallback(() => history.list().filter((r) => membership.canReadFull(r.castId)), [history, membership]);
+  const reminderText = useCallback(
+    (w: TimingRef) => ({ title: t.notifyTitle, body: t.notifyBody(windowDates(w.dates, w.first, settings.lang)) }),
+    [t, settings.lang],
+  );
+  useEffect(() => {
+    void syncReminders(readableRecords(), followups, settings.timingReminders, reminderText);
+  }, [readableRecords, followups, settings.timingReminders, reminderText, followRev, memberRev, record?.castId]);
+  useEffect(() => onReminderTap(openDetail), [openDetail]);
+
   // Casts made while their 断语 was still being written get it once it is (问事录, detail and 读卦 alike).
   const fillWritten = useCallback(async (knowledge: Knowledge) => {
     for (const rec of history.list()) {
@@ -127,7 +160,8 @@ export function App() {
       const written = await judgmentFor(knowledge.product, question, input).catch(() => null);
       if (written?.state === 'ready') history.fill(fillJudgment(rec, written) as CastRecord);
     }
-  }, [history]);
+    bumpFollow();
+  }, [history, bumpFollow]);
 
   // Load bundled texts once; failures can be retried.
   useEffect(() => {
@@ -137,6 +171,8 @@ export function App() {
       .then((k) => {
         if (!alive) return;
         setKnowledge(k);
+        // Casts made before 卦册 existed count as met.
+        collection.meet(history.list().flatMap((r) => [r.stages.primary.id, r.stages.mutual.id, r.stages.changed.id]), 'cast');
         void fillWritten(k);
         // 入殿 always walks into the hall: a cast left open when the app was last closed is not
         // reopened on the stone table (it is saved, and stays in 问事录). Older versions kept a
@@ -185,6 +221,10 @@ export function App() {
       }
       // Only a cast that was given a written 断语 counts toward today's readings.
       if (chargesToday(rec) && rec.questionId) membership.recordCast(rec.questionId);
+      // A newcomer's first written reading is read in full (once).
+      if (rec.judgment?.state === 'ready') membership.giftFirst(rec.castId);
+      const fresh = collection.meet([rec.stages.primary.id, rec.stages.mutual.id, rec.stages.changed.id], 'cast');
+      setNewMet(fresh.length ? { castId: rec.castId, ids: fresh } : null);
       setMemberRev((n) => n + 1);
       recordRef.current = rec;
       setRecord(rec);
@@ -283,14 +323,85 @@ export function App() {
   const memberLine = membership.isMember()
     ? t.memberToday.replace('{n}', String(membership.castsToday())).replace('{max}', String(membership.dailyLimit()))
     : `${t.memberFree} · ${t.memberToday.replace('{n}', String(membership.castsToday())).replace('{max}', String(membership.dailyLimit()))}`;
+  // 应期回访 in the hall: the most recent 应期 that has come and is not yet answered.
+  const followAsk = useMemo(() => {
+    if (!knowledge) return null;
+    const w = followups.due(readableRecords())[0];
+    const rec = w ? history.get(w.castId) : null;
+    if (!w || !rec) return null;
+    return {
+      w,
+      question: shownQuestion(rec.questionId, rec.question, settings.lang),
+      when: windowDates(w.dates, w.first, settings.lang),
+      onAnswer: (o: Outcome) => {
+        followups.answer(w.castId, w.index, o);
+        bumpFollow();
+      },
+      onLater: () => {
+        followups.later(w.castId);
+        bumpFollow();
+      },
+      onOpen: () => openDetail(w.castId),
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [knowledge, followRev, memberRev, record, settings.lang, readableRecords]);
+
+  // 今日一卦: taken the first time the hall is open on a day (a new day after the app was in the background too).
+  useEffect(() => {
+    const onVis = () => document.visibilityState === 'visible' && setDailyRev((n) => n + 1);
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, []);
+  const dailyView = useMemo(() => {
+    if (!knowledge || splash !== 'gone') return null;
+    try {
+      const d = daily.today(knowledge.library, createCalendarProvider(), deviceTimeZone(), { ziHour: settings.ziHour, clock: settings.calendarClock });
+      const h = knowledge.library.getHexagram(d.primaryId);
+      const line = h.lines[d.movingLine - 1];
+      return {
+        id: h.id,
+        name: h.name,
+        theme: h.grade?.theme ?? '',
+        bits: h.bitsBottomUp,
+        text: h.reading.text,
+        vernacular: h.reading.vernacular,
+        imageVernacular: h.reading.imageVernacular,
+        movingLine: d.movingLine,
+        line: { label: line.label, text: line.text, vernacular: line.vernacular },
+        timeLabel: d.timeLabel,
+        seen: d.seen,
+        onSeen: () => {
+          daily.markSeen();
+          collection.meet([d.primaryId], 'daily');
+          setDailyRev((n) => n + 1);
+        },
+        onRead: () => {
+          setBookRequest({ hexagramId: d.primaryId, at: Date.now() });
+          placeStore.set('library');
+        },
+      };
+    } catch {
+      return null;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [knowledge, splash, dailyRev, settings.ziHour, settings.calendarClock]);
+
   // 藏经阁 and 问事录 pages: built once per language/data change, reused across renders.
   const goAltar = useCallback(() => placeStore.set('altar'), []);
-  const libraryPanel = useMemo(() => (knowledge ? <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={goAltar} /> : null), [knowledge, t, settings.lang, goAltar]);
+  const libraryPanel = useMemo(
+    () => (knowledge ? <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={goAltar} collection={collection} metRev={dailyRev + (newMet?.ids.length ?? 0)} openRequest={bookRequest} /> : null),
+    [knowledge, t, settings.lang, goAltar, collection, dailyRev, newMet, bookRequest],
+  );
   const recordsPanel = useMemo(
     () => (
       <HistoryScreen
         history={history}
         journal={journal}
+        followups={followups}
+        canRead={(castId) => membership.canReadFull(castId)}
+        remindOn={settings.timingReminders}
+        onFollowup={bumpFollow}
+        openDetail={detailRequest}
         t={t}
         onOpen={(r, read) => {
           placeStore.set('altar');
@@ -299,7 +410,8 @@ export function App() {
         onBack={goAltar}
       />
     ),
-    [history, journal, t, goAltar],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [history, journal, t, goAltar, followups, detailRequest, settings.timingReminders, memberRev, bumpFollow],
   );
   // Pace of the next cast: the full ritual until a first reading exists, then quick (unless chosen).
   const pace = effectivePace(settings.ritualMode, history.list().length > 0);
@@ -409,6 +521,8 @@ export function App() {
             onDebug: () => setScreen('debug'),
             onSignOut,
             profileName: profile?.name ?? '',
+            followup: followAsk,
+            daily: dailyView,
           }}
           intro={intro}
           onIntroDone={() => setIntro('done')}
@@ -417,6 +531,13 @@ export function App() {
           memberOpen={!!memberSheet}
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
           readOnOpen={readOnOpen}
+          newMet={newMet && newMet.castId === record?.castId ? { names: newMet.ids.map((id) => knowledge.library.getHexagram(id).name), count: collection.count() } : null}
+          remind={{
+            on: settings.timingReminders,
+            onTurnOn: async () => {
+              if (await askReminderPermission()) setSettings({ ...settings, timingReminders: true });
+            },
+          }}
         />
         {memberSheet && (
           <MembershipSheet
@@ -484,7 +605,7 @@ export function App() {
     case 'library':
       return <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={() => setScreen('temple')} />;
     case 'history':
-      return <HistoryScreen history={history} journal={journal} t={t} onOpen={(r, read) => openRecord(r, false, read)} onBack={() => setScreen('temple')} />;
+      return <HistoryScreen history={history} journal={journal} followups={followups} canRead={(castId) => membership.canReadFull(castId)} remindOn={settings.timingReminders} onFollowup={bumpFollow} t={t} onOpen={(r, read) => openRecord(r, false, read)} onBack={() => setScreen('temple')} />;
     case 'debug':
       return <DebugScreen knowledge={knowledge} t={t} lang={settings.lang} onCast={manualCast} onBack={() => setScreen('temple')} />;
     default:

@@ -12,6 +12,14 @@ import { topicById } from '../domain/topics';
 import { recordKind } from '../domain/cast';
 import { questionById, shownQuestion, subtypeById } from '../domain/questionCatalog';
 import { STRINGS } from '../domain/i18n';
+import { hasBegun, localDay, timingOf, type Followups, type Outcome } from '../domain/followup';
+import { windowBody, windowDates } from '../domain/judgment';
+
+/** 11月22日 / 11/22, device time. */
+const dayOf = (iso: string, lang: 'zh' | 'en') => {
+  const d = new Date(iso);
+  return lang === 'en' ? `${d.getMonth() + 1}/${d.getDate()}` : `${d.getMonth() + 1}月${d.getDate()}日`;
+};
 
 const when = (iso: string) => {
   const d = new Date(iso);
@@ -22,6 +30,10 @@ const when = (iso: string) => {
 interface Props {
   record: CastRecord;
   journal: Journal;
+  /** 应期回访 answers; null when the visitor cannot read this cast's 详断 (its 应期 are part of it). */
+  followups?: Followups | null;
+  /** 应期提醒 is on. */
+  remindOn?: boolean;
   t: Strings;
   /** Opens the cast again: on the stone (观卦), or with `read` straight on its 断语 (读卦). */
   onOpen: (read?: boolean) => void;
@@ -29,7 +41,7 @@ interface Props {
   onChanged: () => void;
 }
 
-export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged }: Props) {
+export function RecordDetail({ record: r, journal, followups = null, remindOn = false, t, onOpen, onBack, onChanged }: Props) {
   const [note, setNote] = useState('');
   const [saveError, setSaveError] = useState(false);
   const [entry, setEntry] = useState(() => journal.get(r.castId));
@@ -38,6 +50,22 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
   const legacy = recordKind(r) === 'legacy-free-text';
   const sub = subtypeById(questionById(r.questionId)?.subtype_id ?? r.subtypeId);
   const j = r.judgment;
+  const lang = t === STRINGS.en ? 'en' : 'zh';
+  // 应期回访: what the reading said for each 应期, and what the visitor recorded after.
+  const windows = followups ? timingOf(r) : [];
+  const [answers, setAnswers] = useState(() => (followups ? followups.answers(r.castId) : {}));
+  const today = localDay(new Date());
+  const answer = (index: number, o: Outcome | null) => {
+    if (!followups) return;
+    try {
+      followups.answer(r.castId, index, o);
+      setAnswers(followups.answers(r.castId));
+      setSaveError(false);
+      onChanged();
+    } catch {
+      setSaveError(true);
+    }
+  };
   return (
     <article className="record-detail">
       <header className="screen-head">
@@ -135,6 +163,50 @@ export function RecordDetail({ record: r, journal, t, onOpen, onBack, onChanged 
           <i>4</i>
           {t.rdLater}
         </h3>
+        {windows.length > 0 && j?.state === 'ready' && (
+          <div className="fu-record" aria-label={t.fuTitle}>
+            <h4 className="rd-sub">{t.fuTitle}</h4>
+            <ul>
+              {windows.map((w) => {
+                const a = answers[String(w.index)];
+                const around = windowBody(w.text).around;
+                const when = windowDates(w.dates, j.castingDate, lang);
+                return (
+                  <li key={w.index} className={w.valence === '吉' ? 'is-good' : w.valence === '凶' ? 'is-bad' : ''}>
+                    <p className="fu-then">
+                      <b>{t.fuThen}</b>
+                      <span>
+                        {around ? (lang === 'en' ? `around ${when}` : `${when}前后`) : when} · <span lang="zh">{w.event}</span>
+                        {w.valence && <i className="timing-tag">{w.valence}</i>}
+                      </span>
+                    </p>
+                    <div className="fu-after">
+                      <b>{t.fuAfter}</b>
+                      {a ? (
+                        <span>
+                          <em className={`fu-outcome is-${a.outcome}`}>{t.fuRecorded(t.fuOutcome[a.outcome], dayOf(a.at, lang))}</em>
+                          <button type="button" className="fu-redo" onClick={() => answer(w.index, null)}>
+                            {t.fuRedo}
+                          </button>
+                        </span>
+                      ) : hasBegun(w, today) ? (
+                        <span className="fu-answers" role="group" aria-label={t.fuAsk}>
+                          {(['happened', 'not', 'unsure'] as const).map((o) => (
+                            <button type="button" key={o} className={`fu-answer is-${o}`} onClick={() => answer(w.index, o)}>
+                              {t.fuOutcome[o]}
+                            </button>
+                          ))}
+                        </span>
+                      ) : (
+                        <span className="rd-meta">{remindOn ? t.fuNotYetRemind : t.fuNotYet}</span>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
         {entry && entry.notes.length > 0 ? (
           <ol className="journal-notes">
             {entry.notes.map((n) => (

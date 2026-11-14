@@ -5,6 +5,7 @@ import { CoachIntro, CoachTip, coach } from '../src/ui/coach';
 import { STRINGS } from '../src/domain/i18n';
 import { RecordDetail } from '../src/ui/RecordDetail';
 import { HistoryScreen } from '../src/ui/HistoryScreen';
+import { createFollowups } from '../src/domain/followup';
 import { createJournal } from '../src/domain/journal';
 import { createHistory } from '../src/domain/history';
 import { freezeCast, withJudgment } from '../src/domain/cast';
@@ -73,7 +74,7 @@ describe('问事录', () => {
     const r = await record();
     const history = createHistory(memoryStore(), memoryStore());
     history.save(r);
-    render(<HistoryScreen history={history} journal={createJournal(memoryStore())} t={t} onOpen={() => {}} onBack={() => {}} />);
+    render(<HistoryScreen history={history} journal={createJournal(memoryStore())} followups={createFollowups(memoryStore())} canRead={() => false} onFollowup={() => {}} t={t} onOpen={() => {}} onBack={() => {}} />);
     const item = document.querySelector('.history-main')!;
     expect([...item.children].map((c) => c.className)).toEqual(['history-top', 'history-verdict', 'history-meta']);
     expect(item.querySelector('.history-verdict')!.textContent).toBe('有望通过，细节确认时要答得完整');

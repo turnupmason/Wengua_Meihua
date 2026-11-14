@@ -78,13 +78,17 @@ interface Props {
   onOpenMembership: (reason: MembershipReason, castId: string | null) => void;
   /** Opened from 问事录 with 「看全文断语」: show this cast's 读卦 at once. */
   readOnOpen?: { castId: string; at: number } | null;
+  /** The hexagrams this cast added to 卦册 (said once in its reading). */
+  newMet?: { names: string[]; count: number } | null;
+  /** 应期提醒: whether it is on, and turning it on (asks the phone first). */
+  remind?: { on: boolean; onTurnOn: () => void };
   journal: Journal;
   /** 殿中三处: the pages shown at 藏经阁 and 问事录 (the place itself is in placeStore). */
   libraryPanel: ReactNode;
   recordsPanel: ReactElement<{ active?: boolean }>;
 }
 
-export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null }: Props) {
+export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null }: Props) {
   const place = usePlace();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
@@ -211,7 +215,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     const j = record.judgment;
     if (!record.questionId || !j) return { state: 'legacy' };
     if (j.state !== 'ready') return { state: 'missing', reason: j.reason };
-    return { state: 'ready', judgment: j, full: membership.canReadFull(record.castId) };
+    return { state: 'ready', judgment: j, full: membership.canReadFull(record.castId), gift: !membership.isMember() && membership.isGift(record.castId) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [record, membership, memberRev]);
   // Under 「查看断语」: the 断语's own title, or why there is none (never a stand-in).
@@ -627,6 +631,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           lang={settings.lang}
           focus={readMode === 'top' || readMode === 'detail' ? null : readMode}
           startAt={readMode === 'detail' ? 'detail' : undefined}
+          remind={remind}
+          newMet={newMet}
           saved={!!bookEntry}
           onPick={onPick}
           onSave={() => setShowBook(true)}

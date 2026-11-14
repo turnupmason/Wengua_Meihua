@@ -48,7 +48,7 @@ interface Props {
  * record whose question was written freely and so has no fixed question to match.
  */
 export type JudgmentView =
-  | { state: 'ready'; judgment: ProductJudgment; full: boolean }
+  | { state: 'ready'; judgment: ProductJudgment; full: boolean; /** Read in full as the first-reading gift. */ gift?: boolean }
   | { state: 'missing'; reason: MissingReason }
   | { state: 'legacy' };
 
