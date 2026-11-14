@@ -146,6 +146,8 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
    evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', config.timingContext),
    ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
+   ...timingSlots.filter(slot => slot.kind === 'name-support' && slot.method === 'trigram-periods').map(slot => evidence(
+    'mh-116', '便看生体之卦，于八卦时序类决其日时。', slot.reason)),
    ...timingSlots.filter(slot => slot.method === 'trigram-periods').map(slot => evidence('mh-052',
     TRIGRAM_PERIOD_SPECS.find(period => period.trigram === slot.calculationBasis.trigram).quote,
     slot.kind === 'name-body' ? '按原体所属时序取日支。' : '按本篇选定节点的经卦时序取日支。'))];

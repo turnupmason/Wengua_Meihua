@@ -101,7 +101,7 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 
 取期先写明所应事件，再据实际进程定年、月、日、时，接着核原起卦法与适用的取期条文，最后判断何时的条件足以应事。先天卦气按所应节点与事项取支，受克本身不构成补缺或通关的依据。后天原数另核物卦数、方位卦数、时数及占者当时的动静；取半、取倍、取本数见《老人有忧色占》，仅在原数与事理适用时采用。完整动爻序号用于识别爻辞，后天端法加的是起卦时数。外应需现场如实记录并说明它如何与卦和事项相应。详见 [应期审查](TIMING_AUDIT.md)。
 
-「这次考试能通过吗」使用 career.exams.exam，目录见 [考试断语](exam/README.md)，逐篇依据见 [考试断法](EXAM_POLICY.md)。应用直接读取所选问项的固定键和已有稿件字段。每篇最多一个日级事件窗口，按已声明的五行卦气或经卦时序和实际起卦日换算，日期取值与方法可在计算说明核对。资格证取得、岗位竞聘和其他选拔按目录各自的具体目标写作。
+「这次考试能通过吗」使用 career.exams.exam，目录见 [考试断语](exam/README.md)，逐篇依据见 [考试断法](EXAM_POLICY.md)。应用直接读取所选问项的固定键和已有稿件字段。每篇最多一个日级事件窗口，按已声明的五行卦气或经卦时序和实际起卦日换算，日期取值与方法可在计算说明核对。考试选拔当前只撰写和复核这个问项。
 
 运行时沿用 `createProductRepository().getContent` 和字段 `short`、`narrativeParagraphs`、`timingSection`、`calculationExplanation`、`paragraphs`、`story`。日期窗口继续使用 `event`、`valence`、`text`、`displayedDates`、`eventScope`、`targetBranches`、`calculationBasis`。软件显示仍使用原组件，抓取时保持既有的 `questionId`、本卦、动爻、月令键和稿件字段。每次重建后按实际输出校验栏目、取期结果和索引，发现格式漂移先修正再交付。
 
