@@ -26,7 +26,9 @@ import { answerText, conclusionText, synthText, weatherText, type SynthStage } f
 import type { ReadingSnapshot } from '../domain/cast';
 import { DisplayGradeText, domainTitle } from './text';
 import { canRemind } from '../domain/reminders';
-import { drawCard, shareCard } from './shareCard';
+import { canShareImage, drawCard, saveImage, shareImage } from './shareCard';
+import { createPortal } from 'react-dom';
+import { Exit, EXIT_MS } from './Exit';
 import { plainFirst } from './plainFirst';
 
 type SRel = Reading['synthesis'] extends infer Y ? (Y extends { applicable: true; stages: readonly (infer S)[] } ? S : never) : never;
@@ -123,6 +125,14 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
   const authored = judgment.state === 'ready' ? judgment : null;
   const [sharing, setSharing] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
+  // The card drawn, shown before it is shared or saved.
+  const [preview, setPreview] = useState<{ blob: Blob; url: string; name: string } | null>(null);
+  useEffect(
+    () => () => {
+      if (preview) setTimeout(() => URL.revokeObjectURL(preview.url), EXIT_MS + 100);
+    },
+    [preview],
+  );
   const miss = judgment.state === 'missing' ? missingText(t, judgment.reason) : null;
   const legacy = judgment.state === 'legacy';
   const advice = practicalAdviceFor(questionId, conditions);
@@ -382,6 +392,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                     const s = reading.stages;
                     const blob = await drawCard({
                       appName: t.appName,
+                      field: [topicLabel, entry].filter(Boolean).join(' · '),
                       stages: [
                         { caption: t.stageNow, name: s.primary.name, bits: s.primary.bitsBottomUp, moving: reading.movingLine },
                         { caption: t.stageMid, name: s.mutual.name, bits: s.mutual.bitsBottomUp },
@@ -392,8 +403,9 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
                       when: castTime,
                       foot: t.shareFoot,
                     });
-                    const done = await shareCard(blob, `wengua-${s.primary.name}.png`);
-                    setShareNote(done === 'saved' ? t.shareSaved : null);
+                    // First a look at the card; sharing or saving is chosen there.
+                    setShareNote(null);
+                    setPreview({ blob, url: URL.createObjectURL(blob), name: `wengua-${s.primary.name}.png` });
                   } catch {
                     setShareNote(t.shareFailed);
                   } finally {
@@ -406,6 +418,51 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
             )}
           </div>
           {shareNote && <p className="save-note" role="status">{shareNote}</p>}
+          {createPortal(
+            <Exit show={!!preview}>
+              {preview && (
+                <div className="sheet-backdrop share-backdrop" onClick={() => setPreview(null)}>
+                  <section className="share-preview" role="dialog" aria-modal="true" aria-label={t.sharePreviewTitle} onClick={(e) => e.stopPropagation()}>
+                    <header className="share-head">
+                      <h3>{t.sharePreviewTitle}</h3>
+                      <button type="button" className="icon-btn" onClick={() => setPreview(null)} aria-label={t.close}>
+                        ✕
+                      </button>
+                    </header>
+                    <img className="share-image" src={preview.url} alt={t.sharePreviewAlt} />
+                    <p className="share-hint">{t.shareHoldHint}</p>
+                    <div className="share-actions">
+                      {canShareImage(preview.blob, preview.name) && (
+                        <button
+                          type="button"
+                          className="share-go"
+                          onClick={async () => {
+                            const r = await shareImage(preview.blob, preview.name);
+                            if (r === 'shared') setPreview(null);
+                            if (r === 'failed') setShareNote(t.shareFailed);
+                          }}
+                        >
+                          {t.shareSend}
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="share-save"
+                        onClick={() => {
+                          saveImage(preview.blob, preview.name);
+                          setShareNote(t.shareSaved);
+                          setPreview(null);
+                        }}
+                      >
+                        {t.shareSaveImage}
+                      </button>
+                    </div>
+                  </section>
+                </div>
+              )}
+            </Exit>,
+            document.body,
+          )}
           {/* Nothing is lost without saving: say so where the visitor decides. */}
           <p className="save-note">{t.saveNote}</p>
         </section>

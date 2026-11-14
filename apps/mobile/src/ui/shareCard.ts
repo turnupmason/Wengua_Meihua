@@ -3,7 +3,8 @@
  * headline (the first thing seen, even as a chat thumbnail), the three hexagrams (目前 → 经过 → 结果,
  * moving line in cinnabar), then a few lines of the 简断. What was
  * asked is not on it (the visitor shares the reading, not the worry). Drawn on a canvas in the app's
- * own fonts; shared through the system sheet where there is one, otherwise saved as a PNG.
+ * own fonts. It is shown first (the preview in ReadingView), then shared through the system sheet or
+ * saved as a PNG; the field asked about (事业工作 · 能否转正) is on it, never the visitor’s own words.
  */
 
 export interface CardStage {
@@ -19,6 +20,8 @@ export interface CardContent {
   stages: [CardStage, CardStage, CardStage];
   title: string;
   short: string;
+  /** The field and entry asked about (事业工作 · 能否转正) — never the visitor's own words. */
+  field?: string;
   /** e.g. 丙午年 十月初六 巳时 起卦 */
   when: string;
   foot: string;
@@ -113,16 +116,24 @@ export async function drawCard(c: CardContent): Promise<Blob> {
 
   ctx.textAlign = 'center';
   ctx.textBaseline = 'alphabetic';
-  // Brand and date, small.
+  // Brand, the field asked about, and the hour, small.
   ctx.fillStyle = GOLD;
   ctx.font = font(HEAD, 40);
-  ctx.fillText([...c.appName].join(' '), W / 2, 150);
+  ctx.fillText([...c.appName].join(' '), W / 2, 140);
+  let head = 140;
+  if (c.field) {
+    head += 52;
+    ctx.fillStyle = '#f3e3c4';
+    ctx.font = font(HEAD, 34);
+    ctx.fillText(c.field, W / 2, head);
+  }
+  head += 46;
   ctx.fillStyle = 'rgba(241, 226, 191, 0.6)';
   ctx.font = font(BODY, 28);
-  ctx.fillText(c.when, W / 2, 198);
+  ctx.fillText(c.when, W / 2, head);
 
   // The 简断's headline first: what the card is saying, readable even as a chat thumbnail.
-  let y = 250;
+  let y = head + 50;
   ctx.fillStyle = '#f8e2a6';
   ctx.font = font(HEAD, 70);
   for (const l of wrap(ctx, c.title, W - 200, 3)) {
@@ -181,23 +192,32 @@ export async function drawCard(c: CardContent): Promise<Blob> {
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Could not draw the card'))), 'image/png'));
 }
 
-/** Opens the system share sheet with the card, or saves it where sharing files is not possible. */
-export async function shareCard(blob: Blob, name: string): Promise<'shared' | 'saved' | 'cancelled'> {
-  const file = new File([blob], name, { type: 'image/png' });
-  const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
-  if (nav.canShare?.({ files: [file] })) {
-    try {
-      await nav.share({ files: [file] });
-      return 'shared';
-    } catch (e) {
-      if ((e as Error).name === 'AbortError') return 'cancelled';
-    }
+/** Whether this device can hand the picture to the system share sheet. */
+export function canShareImage(blob: Blob, name: string): boolean {
+  try {
+    const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
+    return !!nav.canShare?.({ files: [new File([blob], name, { type: 'image/png' })] });
+  } catch {
+    return false;
   }
+}
+
+/** The system share sheet with the card. */
+export async function shareImage(blob: Blob, name: string): Promise<'shared' | 'cancelled' | 'failed'> {
+  try {
+    await navigator.share({ files: [new File([blob], name, { type: 'image/png' })] });
+    return 'shared';
+  } catch (e) {
+    return (e as Error).name === 'AbortError' ? 'cancelled' : 'failed';
+  }
+}
+
+/** Saves the card as a PNG (a download in the browser). */
+export function saveImage(blob: Blob, name: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
   a.download = name;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 2000);
-  return 'saved';
 }
