@@ -130,7 +130,8 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
   if (timingSpecs.some(spec => spec?.length !== 5 &&
-      !(profile === EXAM_PROFILE && spec?.length === 6 && spec[5] === 'trigram-periods'))) {
+      !((profile === EXAM_PROFILE || (profile === WORKPLACE_PROBATION_PROFILE && spec?.[0] === 'name-support')) &&
+        spec?.length === 6 && spec[5] === 'trigram-periods'))) {
    throw new Error('Invalid author timing: ' + key);
   }
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome, profile);

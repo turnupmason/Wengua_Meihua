@@ -81,6 +81,12 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
      assert.ok(row.facts.directRelations.every(edge => edge.type !== 'use_controls_body'),key);
      const period = TRIGRAM_PERIOD_SPECS.find(period => period.trigram === node.trigram);
      assert.deepEqual(slot.branches,period.branches,key);
+    } else if (slot.method === 'trigram-periods') {
+     assert.equal(slot.kind,'name-support',key);
+     const period = TRIGRAM_PERIOD_SPECS.find(item => item.trigram === node.trigram);
+     assert.deepEqual(slot.branches,period.branches,key);
+     assert.equal(drafts[i][10][0][5],'trigram-periods',key);
+     assert.ok(row.decision.sourceEvidence.some(item => item.id === 'mh-116' && item.quote.includes('八卦时序')),key);
     } else assert.deepEqual(slot.branches,branches[node.element],key);
     assert.ok(parts[8].includes(slot.event),key);
     assert.match(parts[8],/(?:本月|下月)\d+(?:、\d+)*号/u,key);

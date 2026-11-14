@@ -133,7 +133,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
     (bodyPeriod?role!=='body'||reading.edges.some(e=>e.type==='use_controls_body'):
      edge?.type!==rule.relation))throw new Error('Invalid promotion timing declaration');
   const nodePeriod=declaredMethod==='trigram-periods';
-  if(declaredMethod!==undefined&&(!nodePeriod||profile!==EXAM_PROFILE||bodyPeriod))throw new Error('Invalid authored timing method');
+  if(declaredMethod!==undefined&&(!nodePeriod||(profile!==EXAM_PROFILE&&!(profile===WORKPLACE_PROBATION_PROFILE&&kind==='name-support'))||bodyPeriod))throw new Error('Invalid authored timing method');
   const useTrigramPeriod=bodyPeriod||nodePeriod;
   const period=useTrigramPeriod?TRIGRAM_PERIOD_SPECS.find(p=>p.trigram===node.trigram&&p.scales.includes('day')):null;
   const branches=period?.branches??ELEMENT_DAY_BRANCHES[node.element];
