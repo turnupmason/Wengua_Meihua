@@ -65,11 +65,11 @@ describe('常问', () => {
     render(<Home onChange={(f) => (last = f)} />);
     const row = screen.getByRole('group', { name: t.commonAsks });
     const words = [...row.querySelectorAll('button')].map((b) => b.textContent);
-    expect(words.slice(0, 4)).toEqual(['面试能不能过', '对方心里有没有我', '想跳槽又怕后悔', '这笔钱能不能要回来']);
-    expect(words).toHaveLength(15);
+    expect(words.slice(0, 4)).toEqual(['面试能不能过', '最近有没有新桃花', '想跳槽又怕后悔', '这笔钱能不能要回来']);
+    expect(words).toHaveLength(16);
     // Every field is there, and every chip is a real entry.
     const { questionById } = await import('../src/domain/questionCatalog');
-    const fields = new Set(['面试能不能过', '对方心里有没有我', '这笔钱能不能要回来', '东西丢了还能找回吗', '这套房子该不该买', '家人身体让人担心'].map((w) => {
+    const fields = new Set(['面试能不能过', '最近有没有新桃花', '这笔钱能不能要回来', '东西丢了还能找回吗', '这套房子该不该买', '家人身体让人担心'].map((w) => {
       cleanup();
       render(<Home onChange={(f) => (last = f)} />);
       fireEvent.click(screen.getByRole('button', { name: w }));

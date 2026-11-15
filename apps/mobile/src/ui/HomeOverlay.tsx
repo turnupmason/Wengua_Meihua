@@ -106,10 +106,11 @@ interface Props {
  */
 const COMMON_ASKS: readonly { id: string; words: { zh: string; en: string } }[] = [
   { id: 'career.interview', words: { zh: '面试能不能过', en: 'Will I pass the interview?' } },
-  { id: 'relationships.affection', words: { zh: '对方心里有没有我', en: 'Do they care for me?' } },
+  { id: 'relationships.affection', words: { zh: '最近有没有新桃花', en: 'Will someone new come along?' } },
   { id: 'career.job-change', words: { zh: '想跳槽又怕后悔', en: 'Should I change jobs?' } },
   { id: 'wealth.debt', words: { zh: '这笔钱能不能要回来', en: 'Will I get this money back?' } },
   { id: 'relationships.reconciliation', words: { zh: '这段感情还能复合吗', en: 'Can we get back together?' } },
+  { id: 'relationships.confession', words: { zh: '对方心里有没有我', en: 'Do they care for me?' } },
   { id: 'search.lost-object', words: { zh: '东西丢了还能找回吗', en: 'Will I find what I lost?' } },
   { id: 'career.exams', words: { zh: '这次考试能过吗', en: 'Will I pass this exam?' } },
   { id: 'home.buying', words: { zh: '这套房子该不该买', en: 'Should I buy this home?' } },
