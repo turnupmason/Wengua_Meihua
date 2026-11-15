@@ -18,7 +18,7 @@ test('six domains and 31 navigation entries match the new names and order',async
   ['物品找回','方向原因','宠物走失','失联寻人']
  ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
- assert.equal(questions.length,82);assert.equal(new Set(questions.map(q=>q.id)).size,82);
+ assert.equal(questions.length,83);assert.equal(new Set(questions.map(q=>q.id)).size,83);
  assert.equal(c.subcategoryCount,31);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
@@ -66,7 +66,12 @@ test('affection and missing-person questions do not inherit marriage, lost-objec
  assert.match(newPartner.question,/开始新感情.*何时可能遇到/);
  assert.equal(newPartner.manuscriptIndexPath,'data/authored-readings/new-relationship-opportunity/index.json');
  assert.equal((await repo.getQuestion('relationships.new-partner.timing')).archived,true);
- assert.deepEqual((await repo.listQuestions('relationships.confession')).map(q=>q.id),[
+ const confession=await repo.listQuestions('relationships.confession');
+ assert.deepEqual(confession.filter(q=>!q.archived).map(q=>q.id),['relationships.confession.decision']);
+ const combined=confession.find(q=>!q.archived);
+ assert.match(combined.question,/心意.*先联系.*表白/u);
+ assert.equal(combined.manuscriptIndexPath,'data/authored-readings/confession-decision/index.json');
+ assert.deepEqual(confession.filter(q=>q.archived).map(q=>q.id),[
   'relationships.affection.affection','relationships.developing.contact','relationships.confession.timing',
  ]);
  const affection=await repo.getContent({questionId:'relationships.affection.affection',...dated});

@@ -73,9 +73,10 @@ export const PRODUCT_TAXONOMY=[
    q('new-partner.opportunity','近期有开始新感情的机会吗？何时可能遇到适合发展关系的人？','new_relationship_opportunity',['domain-02','domain-05'],o('适用于尚无确定对象的人。同一篇断语回答近期有无新感情机会、何时较可能遇到适合继续了解的人，以及相识如何发展。应期按实际起卦日换算，依据不足时说明时机尚不明朗。',{aliases:['近期有开始新感情的机会吗？','何时可能遇到适合发展关系的人？'],manuscriptIndexPath:'data/authored-readings/new-relationship-opportunity/index.json'})),
    q('new-partner.timing','何时可能遇到适合发展关系的人？','partner_meeting_timing',['domain-05','domain-02'],o('历史问项。现由桃花缘分的同一篇断语回答。',{archived:true,requiresTimingMethod:true}))]),
   s('confession','暧昧表白','这段关系中，对方心意的传统取象如何理解？|对方近期会主动联系我吗？|现在适合向对方表白吗？',[
-   q('affection.affection','这段关系中，对方心意的传统取象如何理解？','affection_symbolism',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。',{aliases:['他/她喜欢我吗？','对我有没有好感？']})),
-   q('developing.contact','对方近期会主动联系我吗？','partner_initiated_contact',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。')),
-   q('confession.timing','现在适合向对方表白吗？','confession_suitability',['domain-02','domain-08'],o('适用于已有喜欢的人、尚未正式确立关系时，回答现在适不适合向这个人表达心意。择时方法须单独核对。'))]),
+   q('confession.decision','对方对我的心意如何、近期会先联系我吗、现在适合表白吗？','romantic_confession_decision',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时。同一篇断语解释对方心意的传统取象、近期主动联系倾向，以及现在是否适合表达心意。对方心意以其实际表达为准。',{aliases:['这段关系中，对方心意的传统取象如何理解？','对方近期会主动联系我吗？','现在适合向对方表白吗？'],manuscriptIndexPath:'data/authored-readings/confession-decision/index.json'})),
+   q('affection.affection','这段关系中，对方心意的传统取象如何理解？','affection_symbolism',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。',{archived:true,aliases:['他/她喜欢我吗？','对我有没有好感？']})),
+   q('developing.contact','对方近期会主动联系我吗？','partner_initiated_contact',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。',{archived:true})),
+   q('confession.timing','现在适合向对方表白吗？','confession_suitability',['domain-02','domain-08'],o('适用于已有喜欢的人、尚未正式确立关系时，回答现在适不适合向这个人表达心意。择时方法须单独核对。',{archived:true}))]),
   s('dating','恋爱发展','我们能确定恋爱关系吗？|这段关系接下来如何发展？|结束异地的安排能落实吗？',[
    q('developing.relationship','我们能确定恋爱关系吗？','relationship_establishment',['domain-05'],o('回答关系能否建立，不只回答联络。',{legacyQuestionId:'domain-05-start-relationship'})),
    q('confession.pursuit','这次追求能促成恋爱关系吗？','romantic_pursuit_result',['domain-05','domain-08'],o('回答追求这一行动的结果，不替对方作心理确认。')),

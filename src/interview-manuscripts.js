@@ -27,6 +27,11 @@ export const NEW_RELATIONSHIP_OPPORTUNITY_PROFILE=Object.freeze({
  questionScope:'near-term-opportunity-to-start-a-new-relationship',manuscriptVersion:'new-relationship-opportunity-1.0.0',
  timingVersion:'new-relationship-opportunity-day-1.0.0',directory:'new-relationship-opportunity',namedStageEvents:true,
 });
+export const CONFESSION_DECISION_PROFILE=Object.freeze({
+ questionId:'relationships.confession.decision',questionType:'romantic_confession_decision',
+ questionScope:'symbolic-interest-near-term-outreach-and-whether-to-confess',manuscriptVersion:'confession-decision-1.0.0',
+ timingVersion:'confession-decision-day-1.0.0',directory:'confession-decision',namedStageEvents:true,
+});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),

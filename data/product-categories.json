@@ -4,7 +4,7 @@
   "productCatalogVersion": "2.0.0",
   "categoryCount": 6,
   "subcategoryCount": 31,
-  "questionCount": 82,
+  "questionCount": 83,
   "selectionPolicy": {
     "input": "category-subcategory-fixed-question",
     "aiClassification": false,
@@ -1461,19 +1461,21 @@
           ],
           "questions": [
             {
-              "id": "relationships.affection.affection",
-              "question": "这段关系中，对方心意的传统取象如何理解？",
-              "question_type": "affection_symbolism",
+              "id": "relationships.confession.decision",
+              "question": "对方对我的心意如何、近期会先联系我吗、现在适合表白吗？",
+              "question_type": "romantic_confession_decision",
               "sourceDomainIds": [
                 "domain-02",
                 "domain-05"
               ],
               "mode": "narrative",
-              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。",
+              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时。同一篇断语解释对方心意的传统取象、近期主动联系倾向，以及现在是否适合表达心意。对方心意以其实际表达为准。",
               "aliases": [
-                "他/她喜欢我吗？",
-                "对我有没有好感？"
+                "这段关系中，对方心意的传统取象如何理解？",
+                "对方近期会主动联系我吗？",
+                "现在适合向对方表白吗？"
               ],
+              "manuscriptIndexPath": "data/authored-readings/confession-decision/index.json",
               "position": 1,
               "categoryId": "relationships",
               "subcategoryId": "relationships.confession",
@@ -1488,7 +1490,47 @@
                   "sectionId": "mh-067"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
+              "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
+              "outputPolicy": {
+                "oneQuestionOnly": true,
+                "unverifiedDates": false,
+                "mentalStateIsFact": false,
+                "symbolicLocationIsFact": false
+              },
+              "practicalAdvice": [],
+              "contextFields": {}
+            },
+            {
+              "id": "relationships.affection.affection",
+              "question": "这段关系中，对方心意的传统取象如何理解？",
+              "question_type": "affection_symbolism",
+              "sourceDomainIds": [
+                "domain-02",
+                "domain-05"
+              ],
+              "mode": "narrative",
+              "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，从来往及回应解释传统取象。对方心意以其实际表达为准。",
+              "archived": true,
+              "aliases": [
+                "他/她喜欢我吗？",
+                "对我有没有好感？"
+              ],
+              "position": 2,
+              "categoryId": "relationships",
+              "subcategoryId": "relationships.confession",
+              "chartSourceDomainId": "domain-02",
+              "sourceSections": [
+                {
+                  "domainId": "domain-02",
+                  "sectionId": "mh-064"
+                },
+                {
+                  "domainId": "domain-05",
+                  "sectionId": "mh-067"
+                }
+              ],
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -1509,7 +1551,8 @@
               ],
               "mode": "narrative",
               "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。",
-              "position": 2,
+              "archived": true,
+              "position": 3,
               "categoryId": "relationships",
               "subcategoryId": "relationships.confession",
               "chartSourceDomainId": "domain-02",
@@ -1523,7 +1566,7 @@
                   "sectionId": "mh-067"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -1544,7 +1587,8 @@
               ],
               "mode": "narrative",
               "answerScope": "适用于已有喜欢的人、尚未正式确立关系时，回答现在适不适合向这个人表达心意。择时方法须单独核对。",
-              "position": 3,
+              "archived": true,
+              "position": 4,
               "categoryId": "relationships",
               "subcategoryId": "relationships.confession",
               "chartSourceDomainId": "domain-02",
@@ -1558,7 +1602,7 @@
                   "sectionId": "mh-070"
                 }
               ],
-              "ruleStatus": "specific-method-review-required",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,

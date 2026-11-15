@@ -111,6 +111,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
       ['career.job-change', 'career.job-change.decision'], ['career.workplace', 'career.job-stability.layoff'],
       ['career.exams', 'career.exams.exam'], ['career.probation', 'career.job-stability.probation'],
       ['relationships.affection', 'relationships.new-partner.opportunity'],
+      ['relationships.confession', 'relationships.confession.decision'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);

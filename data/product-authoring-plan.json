@@ -4,7 +4,7 @@
   "productCatalogVersion": "2.0.0",
   "categoryCount": 6,
   "subcategoryCount": 31,
-  "questionCount": 82,
+  "questionCount": 83,
   "acceptedSampleCount": 10,
   "style": "user-accepted-story-editorial-3.0.0",
   "activeAuthoring": {
@@ -17,18 +17,26 @@
     "progressPath": "data/authored-readings/progress.json"
   },
   "currentAuthoring": {
-    "questionId": "relationships.new-partner.opportunity",
-    "progressPath": "data/authored-readings/new-relationship-opportunity/index.json",
-    "baseCasesWritten": 4608,
+    "questionId": "relationships.confession.decision",
+    "progressPath": "data/authored-readings/confession-decision/index.json",
+    "baseCasesWritten": 360,
     "totalBaseCases": 4608,
-    "authoredVersions": 1920,
-    "authorWholeArticleReviewed": 1920,
-    "next": null
+    "authoredVersions": 150,
+    "authorWholeArticleReviewed": 150,
+    "next": {
+      "primaryId": 6,
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "monthBranches": [
+        "寅",
+        "卯"
+      ]
+    }
   },
   "noFurtherStyleApprovalRequired": true,
   "authorship": "assistant-authors;application-developers-integrate",
   "backgroundExecution": false,
-  "questionTypeCount": 79,
+  "questionTypeCount": 80,
   "sharedTypePolicy": "Explicit equivalent-scope references may share prose; question count is not independent-article count.",
   "items": [
     {
@@ -428,13 +436,24 @@
       "legacyBindings": null
     },
     {
+      "questionId": "relationships.confession.decision",
+      "question_type": "romantic_confession_decision",
+      "categoryId": "relationships",
+      "subcategoryId": "relationships.confession",
+      "mode": "narrative",
+      "ruleStatus": "author-checked-exact-cases;other-contexts-pending",
+      "contentStatus": "writing-in-progress",
+      "legacyQuestionId": null,
+      "legacyBindings": null
+    },
+    {
       "questionId": "relationships.affection.affection",
       "question_type": "affection_symbolism",
       "categoryId": "relationships",
       "subcategoryId": "relationships.confession",
       "mode": "narrative",
-      "ruleStatus": "specific-method-review-required",
-      "contentStatus": "exact-coverage-pending",
+      "ruleStatus": "archived",
+      "contentStatus": "archived",
       "legacyQuestionId": null,
       "legacyBindings": null
     },
@@ -444,8 +463,8 @@
       "categoryId": "relationships",
       "subcategoryId": "relationships.confession",
       "mode": "narrative",
-      "ruleStatus": "specific-method-review-required",
-      "contentStatus": "exact-coverage-pending",
+      "ruleStatus": "archived",
+      "contentStatus": "archived",
       "legacyQuestionId": null,
       "legacyBindings": null
     },
@@ -455,8 +474,8 @@
       "categoryId": "relationships",
       "subcategoryId": "relationships.confession",
       "mode": "narrative",
-      "ruleStatus": "specific-method-review-required",
-      "contentStatus": "exact-coverage-pending",
+      "ruleStatus": "archived",
+      "contentStatus": "archived",
       "legacyQuestionId": null,
       "legacyBindings": null
     },
