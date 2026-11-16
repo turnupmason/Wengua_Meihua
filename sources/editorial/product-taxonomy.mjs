@@ -78,7 +78,7 @@ export const PRODUCT_TAXONOMY=[
    q('developing.contact','对方近期会主动联系我吗？','partner_initiated_contact',['domain-02','domain-05'],o('适用于已有喜欢的人、尚未正式确立关系时，只回答对方近期主动联系的传统倾向。',{archived:true})),
    q('confession.timing','现在适合向对方表白吗？','confession_suitability',['domain-02','domain-08'],o('适用于已有喜欢的人、尚未正式确立关系时，回答现在适不适合向这个人表达心意。择时方法须单独核对。',{archived:true}))]),
   s('dating','恋爱发展','我们能确定恋爱关系吗？|这段关系接下来如何发展？|结束异地的安排能落实吗？',[
-   q('developing.relationship','我们能确定恋爱关系吗？','relationship_establishment',['domain-05'],o('回答关系能否建立，不只回答联络。',{legacyQuestionId:'domain-05-start-relationship'})),
+   q('developing.relationship','我们能确定恋爱关系吗？','relationship_establishment',['domain-05'],o('回答关系能否建立，不只回答联络。',{legacyQuestionId:'domain-05-start-relationship',manuscriptIndexPath:'data/authored-readings/relationship-establishment/index.json'})),
    q('confession.pursuit','这次追求能促成恋爱关系吗？','romantic_pursuit_result',['domain-05','domain-08'],o('回答追求这一行动的结果，不替对方作心理确认。')),
    q('dating.stability','这段恋爱关系能稳定维持吗？','dating_stability',['domain-05'],o('回答既有恋爱关系的稳定，不直接套婚姻已成或成婚规则。')),
    q('dating.outlook','这段恋爱关系接下来如何发展？','dating_outlook',['domain-05'],o('回答已明确范围的关系变化，不无期限概括一生。')),

@@ -26,6 +26,9 @@ manuscriptProgress.set(relationship.questionId,{...relationship,progressPath:rel
 const confessionPath='data/authored-readings/confession-decision/index.json';
 const confession=JSON.parse(await readFile(new URL(confessionPath,root),'utf8'));
 manuscriptProgress.set(confession.questionId,{...confession,progressPath:confessionPath});
+const establishmentPath='data/authored-readings/relationship-establishment/index.json';
+const establishment=JSON.parse(await readFile(new URL(establishmentPath,root),'utf8'));
+manuscriptProgress.set(establishment.questionId,{...establishment,progressPath:establishmentPath});
 const current=[...manuscriptProgress.values()].find(index=>index.remainingBaseSlots)??[...manuscriptProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}

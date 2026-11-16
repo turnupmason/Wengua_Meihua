@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -127,7 +127,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
-  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
+  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Relationship windows require supported contact, mutual interaction or a specific obstacle: ' + key);
   }
   if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
@@ -357,8 +357,27 @@ const confessionDecision = {
  counterevidence:'区分有回应和对方主动，核对双方实际往来、完整动爻及表意的适用条件。',
  timingContext:'日级窗口仅用于近期可辨的联系、私下交谈或沟通受阻，依对应节点取日。',
 };
+const relationshipEstablishment = {
+ title:'恋爱发展 · 我们能确定恋爱关系吗？',
+ policy:'RELATIONSHIP_ESTABLISHMENT_POLICY.md', primarySource:'mh-067',
+ references:[
+  ['mh-064','更详观互卦、变卦，以断吉凶','所问是同意建立关系，分段判断联系能否走到双方确认。'],
+  ['mh-067','若体用比和，则彼此相就','从古代婚占类推双方接应的条件，是否确立关系以两人明确同意为准。'],
+ ],
+ clauses:{
+  equal:'体用比和，婚姻吉利。',
+  body_controls_use:'体克用，可成但成之迟；',
+  use_controls_body:'用克体，不可成，成亦有害。',
+  use_generates_body:'用生体，婚易成，或因婚有得；',
+  body_generates_use:'体生用，婚难成，或因婚有失。',
+ },
+ outcomes:['favourable','conditional','difficult'],
+ scopeNote:'判断彼此能否明确同意建立恋爱关系，落实的门槛是双方有清楚而自愿的回应',
+ counterevidence:'分别核对起初愿意往来、解决实际分歧和最后能否确认关系。完整爻辞的限制须放回具体阶段。',
+ timingContext:'只有具备近期现实前提的见面、相互商量或具体阻节才取日窗。事件和所取节点一一对应。双方确认关系另外看是否有足够依据。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
 if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
@@ -371,4 +390,6 @@ if (target === 'job-change') {
  await buildAuthoredManuscripts(NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, newRelationshipOpportunity);
 } else if (target === 'confession-decision') {
  await buildAuthoredManuscripts(CONFESSION_DECISION_PROFILE, confessionDecision);
+} else if (target === 'relationship-establishment') {
+ await buildAuthoredManuscripts(RELATIONSHIP_ESTABLISHMENT_PROFILE, relationshipEstablishment);
 } else await buildAuthoredManuscripts(PROMOTION_PAY_PROFILE, promotion);
