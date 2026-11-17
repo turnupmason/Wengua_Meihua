@@ -132,7 +132,7 @@ export const PRODUCT_TAXONOMY=[
  ]},
  {id:'search',number:'06',label:'寻人失物',subcategories:[
   s('lost-object','物品找回','这件物品还能找回来吗？|遗失的证件或文件还能找到吗？',[
-   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('回答物品找回；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
+   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('回答物品找回；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,manuscriptIndexPath:'data/authored-readings/lost-object-recovery/index.json',practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
    q('valuables.recovery','遗失的这件贵重物品能找回来吗？','lost_object_recovery',['domain-15'],o('物品找回规则可共享，实际保护措施按手机、钱包或首饰分别显示。',{contextFields:{objectKind:{label:'物品类型',options:['phone','wallet','jewellery'],required:true}},legacyBindings:lostBindings})),
    q('documents.recovery','遗失的证件或文件能找回来吗？','lost_object_recovery',['domain-15'],o('回答证件文件找回，同时保留挂失、补办及信息保护的现实操作。',{legacyQuestionId:'domain-15-documents',practicalAdvice:['核实遗失地点和招领信息；按证件或文件种类联系签发机构了解挂失、补办及信息保护步骤。']}))]),
   s('direction','方向原因','古籍有哪些方位取象？|怎样回查物品可能遗忘的地方？',[

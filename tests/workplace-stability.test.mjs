@@ -32,13 +32,15 @@ for (const [slug, id] of [
  ['confession-decision','relationships.confession.decision'],
  ['relationship-establishment','relationships.developing.relationship'],
  ['relationship-reconciliation','relationships.reconciliation.reconcile'],
+ ['lost-object-recovery','search.lost-object.recovery'],
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
  const sourceDir = 'sources/editorial/' + slug + '/';
+ const context = slug === 'lost-object-recovery' ? {context:{objectKind:'other'}} : {};
  if (index.next) {
   const {primaryId,movingLine,monthBranches} = index.next;
-  const pending = await product.getContent({...request,questionId:id,primaryId,movingLine,monthBranch:monthBranches[0]});
+  const pending = await product.getContent({...request,questionId:id,primaryId,movingLine,monthBranch:monthBranches[0],...context});
   assert.equal(pending.status,'pending-authoring');
   assert.equal(pending.story,null);
  }
@@ -103,7 +105,7 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
   for (let movingLine = 1; movingLine <= 6; movingLine++) {
    for (const {branch,qi} of MONTH_SLOTS) {
     const row = shard.rows[shard.monthSlots[movingLine + ':' + branch]];
-    const result = await product.getContent({...request,questionId:id,primaryId:entry.primaryId,movingLine,monthBranch:branch});
+    const result = await product.getContent({...request,questionId:id,primaryId:entry.primaryId,movingLine,monthBranch:branch,...context});
     assert.equal(result.status,'ready');
     assert.equal(result.short,row.copy.short.text);
     assert.equal(result.monthOrder,qi);

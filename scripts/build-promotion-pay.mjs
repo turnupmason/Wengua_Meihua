@@ -4,7 +4,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -127,6 +127,9 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
+  if (profile === LOST_OBJECT_RECOVERY_PROFILE && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
+   throw new Error('Lost-object timing requires a named lead, check or obstacle: ' + key);
+  }
   if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Relationship windows require supported contact, mutual interaction or a specific obstacle: ' + key);
   }
@@ -395,8 +398,27 @@ const relationshipReconciliation = {
  counterevidence:'分别核对恢复联络、处理当初分开的关键问题和双方明确同意复合。以完整爻辞检验推动和止退各自的条件。',
  timingContext:'日级窗口只用于近期可以观察的表态、修复行动或重遇旧的阻节，须与所取节点对应。复合本身没有依据则单独保留时机未明。',
 };
+const lostObjectRecovery = {
+ title:'物品找回 · 丢失的这件物品还能找回来吗？',
+ policy:'LOST_OBJECT_RECOVERY_POLICY.md', primarySource:'mh-077',
+ references:[
+  ['mh-077','占失物，以体为主，用为失物。','依失物专章，原体指问事者能够动用的查找条件，本用指当前失物情势。'],
+  ['mh-077','又以变卦为失物之所在。','依动侧变用取传统场所类象，只在已知行程内作补充排查。'],
+ ],
+ clauses:{
+  equal:'体用比和，物不失矣。',
+  body_controls_use:'体克用，可寻迟得；',
+  use_controls_body:'用克体，不可寻。',
+  use_generates_body:'用生体，物易寻。',
+  body_generates_use:'体生用，物难见；',
+ },
+ outcomes:['favourable','conditional','difficult'],
+ scopeNote:'判断指定物品是否有望核实并实际取回。确认遗落范围、获得消息和领回原物分开记录',
+ counterevidence:'核对初段难寻、两互能否提供有效线索及收尾能否领回。比和可取在已知处回查，不视为物品已定位。',
+ timingContext:'近期已有可继续核查的记录或可联系的经手方时，才依生体、比和或克体择一个可观察的阶段事件，不据取日推定已经寻回。',
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
 if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
@@ -409,6 +431,8 @@ if (target === 'job-change') {
  await buildAuthoredManuscripts(NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, newRelationshipOpportunity);
 } else if (target === 'confession-decision') {
  await buildAuthoredManuscripts(CONFESSION_DECISION_PROFILE, confessionDecision);
+} else if (target === 'lost-object-recovery') {
+ await buildAuthoredManuscripts(LOST_OBJECT_RECOVERY_PROFILE, lostObjectRecovery);
 } else if (target === 'relationship-reconciliation') {
  await buildAuthoredManuscripts(RELATIONSHIP_RECONCILIATION_PROFILE, relationshipReconciliation);
 } else if (target === 'relationship-establishment') {

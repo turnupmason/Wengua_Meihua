@@ -45,7 +45,10 @@ test('only explicit exact question links delegate; interview and unrecorded obje
  const needed=await product.getContent({questionId:'search.valuables.recovery',subcategoryId:'search.lost-object',...dated});assert.equal(needed.status,'requires-context');assert.deepEqual(needed.missingContext,['objectKind']);
  await product.getContent({questionId:'search.valuables.recovery',context:{objectKind:'phone'},...dated});assert.equal(calls.at(-1).questionId,'domain-15-phone');
  const before=calls.length;
- assert.equal((await product.getContent({questionId:'search.lost-object.recovery',context:{objectKind:'other'},...dated})).status,'pending-authoring');
+ const recoveryIndex=await read('data/authored-readings/lost-object-recovery/index.json');
+ const recovery=await product.getContent({questionId:'search.lost-object.recovery',context:{objectKind:'other'},...dated});
+ assert.equal(recovery.status,recoveryIndex.files.some(file=>file.primaryId===dated.primaryId)?'ready':'pending-authoring');
+ assert.equal(recovery.selection.questionId,'search.lost-object.recovery');
  assert.equal((await product.getContent({questionId:'search.pets.recovery',...dated})).status,'pending-authoring');assert.equal(calls.length,before);
 });
 

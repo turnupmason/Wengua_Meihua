@@ -15,3 +15,4 @@ for name in ['build-data.py','import-details.py','build-narratives.mjs','build-c
         subprocess.run([*command,'confession-decision'],check=True,cwd=root.parent,env=env)
         subprocess.run([*command,'relationship-establishment'],check=True,cwd=root.parent,env=env)
         subprocess.run([*command,'relationship-reconciliation'],check=True,cwd=root.parent,env=env)
+        subprocess.run([*command,'lost-object-recovery'],check=True,cwd=root.parent,env=env)
