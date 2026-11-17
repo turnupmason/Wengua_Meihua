@@ -99,6 +99,9 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     } else assert.deepEqual(slot.branches,branches[node.element],key);
     assert.ok(parts[8].includes(slot.event),key);
     assert.match(parts[8],/(?:本月|下月)\d+(?:、\d+)*号/u,key);
+    if (slug === 'lost-object-recovery') {
+     assert.equal((parts[8].match(/属[吉凶耗]应/gu) ?? []).length,1,key);
+    }
     datedBodies++;
    } else assert.ok(row.timingOmission.reason,key);
   }
