@@ -23,14 +23,14 @@ describe('Sign-in screen', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  it('offers the four sign-in buttons as one set; one not connected says so and asks for nothing', () => {
+  it('offers Apple, Google and email as one set; one not connected says so and asks for nothing', () => {
     const { container } = login();
-    expect([...container.querySelectorAll('.login-providers .provider-btn')].map((b) => b.textContent)).toEqual([t.loginWechat, t.loginApple, t.loginGoogle, t.loginPhone]);
+    expect([...container.querySelectorAll('.login-providers .provider-btn')].map((b) => b.textContent)).toEqual([t.loginApple, t.loginGoogle, t.loginEmail]);
     expect(screen.queryByText(t.loginPending)).toBeNull();
-    fireEvent.click(screen.getByRole('button', { name: t.loginPhone }));
+    fireEvent.click(screen.getByRole('button', { name: t.loginEmail }));
     expect(screen.getByText(t.loginPending)).toBeTruthy();
-    // No phone number or code is asked for a service that is not connected.
-    expect(container.querySelector('input[inputmode="tel"], input[autocomplete="one-time-code"]')).toBeNull();
+    // No address or code is asked for a service that is not connected.
+    expect(container.querySelector('input[type="email"], input[autocomplete="one-time-code"]')).toBeNull();
     expect(screen.getByRole('button', { name: t.loginEnter }).textContent).toBe(`${t.loginEnterShort} →`);
     expect(screen.getByRole('button', { name: t.loginGuest })).toBeTruthy();
   });
@@ -42,10 +42,39 @@ describe('Sign-in screen', () => {
     expect(container.querySelector('.login-guest.is-primary')).toBeTruthy();
     expect(container.querySelector('.login-providers.is-compact')).toBeTruthy();
     unmount();
-    const connected = render(<Splash t={t} progress={null} leaving={false} onEnter={() => {}} mode="login" auth={{ ...localAuth, methods: [...localAuth.methods, 'wechat'] }} onSignIn={() => {}} />);
+    const connected = render(<Splash t={t} progress={null} leaving={false} onEnter={() => {}} mode="login" auth={{ ...localAuth, methods: [...localAuth.methods, 'apple'] }} onSignIn={() => {}} />);
     const first = connected.container.querySelector('.login-v2 > *')!;
     expect(first.className).toMatch(/login-providers/);
     expect(connected.container.querySelector('.login-guest.is-primary')).toBeNull();
+  });
+
+  it('signs in by email: a code is sent to the address, then the code signs in', async () => {
+    const sent: string[] = [];
+    const signed: unknown[] = [];
+    render(
+      <Splash
+        t={t}
+        progress={null}
+        leaving={false}
+        onEnter={() => {}}
+        mode="login"
+        auth={{ ...localAuth, methods: [...localAuth.methods, 'email'], sendCode: async (e) => void sent.push(e) }}
+        onSignIn={(m, _n, e) => signed.push([m, e])}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: t.loginEmail }));
+    const address = screen.getByLabelText(t.loginEmailPlaceholder);
+    fireEvent.change(address, { target: { value: 'not-an-address' } });
+    fireEvent.click(screen.getByRole('button', { name: t.loginSendCode }));
+    expect(screen.getByText(t.loginEmailBad)).toBeTruthy();
+    expect(sent).toEqual([]);
+    fireEvent.change(address, { target: { value: 'reader@example.com' } });
+    fireEvent.click(screen.getByRole('button', { name: t.loginSendCode }));
+    expect(await screen.findByText(t.loginCodeSent)).toBeTruthy();
+    expect(sent).toEqual(['reader@example.com']);
+    fireEvent.change(screen.getByLabelText(t.loginCodePlaceholder), { target: { value: '12a3456' } });
+    fireEvent.click(screen.getByRole('button', { name: t.loginVerify }));
+    expect(signed).toEqual([['email', { email: 'reader@example.com', code: '123456' }]]);
   });
 
   it('enters from the title by a tap anywhere or by the 「轻触 · 入殿」 button, once each', () => {

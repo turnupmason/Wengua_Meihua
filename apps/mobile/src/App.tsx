@@ -37,7 +37,9 @@ if (!PAPER) void preloadWalkInArt();
 import { hasWebGL } from './domain/quality';
 import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
 import { OPEN_BETA, createMembership, purchaseProvider } from './domain/membership';
-import { clearProfile, loadProfile, localAuth, type Profile, type SignInMethod } from './domain/profile';
+import { clearProfile, loadProfile, type Profile, type SignInMethod } from './domain/profile';
+import { createAppAuth, profileFromSession } from './services/appAuth';
+import { deleteAccount, signOutAccount } from './services/accounts';
 import { castRequest, entryProblem } from './ui/entry';
 import { TempleView } from './ui/TempleView';
 import { LibraryScreen } from './ui/LibraryScreen';
@@ -72,6 +74,8 @@ export function App() {
   const signInPending = useRef(false);
   const [signInError, setSignInError] = useState<string | null>(null);
   const [profile, setProfile] = useState<Profile | null>(() => loadProfile());
+  // Sign-in: on this device (道号, guest) and, with the keys, Apple / Google / email (services/appAuth).
+  const auth = useMemo(() => createAppAuth(), []);
   const history = useMemo(() => createHistory(), []);
   const journal = useMemo(() => createJournal(), []);
   // 应期回访: answers kept beside the records; followRev re-reads them after a change.
@@ -94,6 +98,30 @@ export function App() {
   }, []);
   const membership = useMemo(() => createMembership(), []);
   const [memberRev, setMemberRev] = useState(0);
+  // Back from the web's Apple / Google sign-in: the session is there, the profile not yet.
+  useEffect(() => {
+    if (profile) return;
+    let live = true;
+    void profileFromSession().then((p) => live && p && setProfile(p));
+    return () => {
+      live = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // Where purchases are open: the subscription, credits and opened readings come from the server
+  // for whoever is signed in (and again after each change of account).
+  useEffect(() => {
+    if (OPEN_BETA || !purchaseProvider.sync) return;
+    let live = true;
+    void purchaseProvider.sync().then((state) => {
+      if (!live || !state) return;
+      membership.applyServer(state);
+      setMemberRev((n) => n + 1);
+    });
+    return () => {
+      live = false;
+    };
+  }, [membership, profile?.id]);
   const [memberSheet, setMemberSheet] = useState<{ reason: MembershipReason; castId: string | null } | null>(null);
   // An earlier cast that may be about the same matter (the visitor decides).
   const [repeatOf, setRepeatOf] = useState<CastRecord | null>(null);
@@ -473,25 +501,33 @@ export function App() {
   };
   // First visit: sign in (a 道号 or as a guest) before walking in.
   const onSplashEnter = () => (profile ? walkIn() : setSplashMode('login'));
-  const onSignIn = (method: SignInMethod, name: string) => {
+  const onSignIn = (method: SignInMethod, name: string, email?: { email: string; code: string }) => {
     if (signInPending.current) return;
     signInPending.current = true;
     setSignInError(null);
     templeAudio.setEnabled(settings.sound);
-    localAuth
-      .signIn(method, { name })
+    auth
+      .signIn(method, { name, ...email })
       .then((p) => {
+        // The web's Apple / Google sign-in continues on their page and comes back here.
+        if (!p) {
+          signInPending.current = false;
+          return;
+        }
         setProfile(p);
         // A short change of light: the 三清 dim, 「欢迎入殿」, then the moonlit hall.
         setWelcoming(true);
         window.setTimeout(walkIn, settings.reducedMotion ? 600 : 2200);
       })
-      .catch(() => {
+      .catch((e: unknown) => {
         signInPending.current = false;
-        setSignInError(t.loginFailed);
+        // Closing Apple's or Google's own sheet is not a failure.
+        if (/cancel/i.test(String((e as Error)?.message ?? e))) return;
+        setSignInError(method === 'email' ? t.loginCodeFailed : t.loginFailed);
       });
   };
   const onSwitchAccount = () => {
+    void signOutAccount();
     clearProfile();
     setProfile(null);
     setSignInError(null);
@@ -509,6 +545,7 @@ export function App() {
   };
   const onSignOut = () => {
     inHall.current = true;
+    void signOutAccount();
     clearProfile();
     setProfile(null);
     setSplashMode('login');
@@ -519,7 +556,7 @@ export function App() {
   // (no cast open), so the title never covers a ritual.
   const splashLayer =
     splash !== 'gone' && knowledge ? (
-      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={!PAPER && settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />
+      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={auth} onSignIn={onSignIn} signInError={signInError} live={!PAPER && settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />
     ) : null;
 
   if (!knowledge) {
@@ -621,6 +658,22 @@ export function App() {
                 onStudy: () => setStudy({ example: null }),
                 onSignIn: onSignOut,
                 onSignOut,
+                // Purchases open: the membership card, with its plans.
+                ...(OPEN_BETA ? {} : { member: { line: memberLine, credits: membership.credits(), onOpen: () => setMemberSheet({ reason: 'browse', castId: null }) } }),
+                // An online account can be deleted here (App Store rule 5.1.1(v)).
+                ...(profile?.userId
+                  ? {
+                      onDeleteAccount: async () => {
+                        await deleteAccount();
+                        clearProfile();
+                        setProfile(null);
+                        inHall.current = true;
+                        setSplashMode('login');
+                        setSplash('shown');
+                        setIntro('waiting');
+                      },
+                    }
+                  : {}),
               };
             })(),
           }}

@@ -6,12 +6,12 @@ describe('local sign-in', () => {
 
   it('keeps a 道号 on the device and reads it back', async () => {
     const p = await localAuth.signIn('local', { name: '  清虚子  ' });
-    expect(p.name).toBe('清虚子');
+    expect(p?.name).toBe('清虚子');
     expect(loadProfile()?.name).toBe('清虚子');
   });
 
   it('allows a guest, refuses an empty name and methods it cannot complete', async () => {
-    expect((await localAuth.signIn('guest', {})).name).toBe('');
+    expect((await localAuth.signIn('guest', {}))?.name).toBe('');
     await expect(localAuth.signIn('local', { name: ' ' })).rejects.toThrow();
     await expect(localAuth.signIn('wechat', {})).rejects.toThrow();
     expect(localAuth.methods).toEqual(['local', 'guest']);

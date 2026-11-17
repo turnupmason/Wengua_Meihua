@@ -1,12 +1,15 @@
 /**
  * Membership sheet: current status and today's count, the reason it opened (daily limit, a
- * locked 断语, or browsing), yearly and monthly plans, a single unlock for the current reading,
- * restore purchases, and the auto-renew disclosure the stores require.
+ * locked 断语, or browsing), yearly and monthly plans (3 days free for new members), reading
+ * credits (one, or ten in a pack) for the current reading, restore purchases, manage the
+ * subscription, and the renewal terms with the privacy policy and terms the App Store requires.
+ * Prices are the App Store's own when it can say them.
  */
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Strings } from '../domain/i18n';
 import type { Lang } from '../domain/settings';
 import { PRODUCTS, type Membership, type ProductId, type PurchaseProvider } from '../domain/membership';
+import { LEGAL } from '../services/cloud';
 
 export type MembershipReason = 'browse' | 'limit' | 'judgment';
 
@@ -16,7 +19,7 @@ interface Props {
   membership: Membership;
   store: PurchaseProvider;
   reason: MembershipReason;
-  /** The reading a single unlock would apply to. */
+  /** The reading a credit would open. */
   castId?: string | null;
   onClose: () => void;
   onChanged: () => void;
@@ -26,15 +29,25 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
   const [busy, setBusy] = useState(false);
   const processing = useRef(false);
   const [note, setNote] = useState<string | null>(null);
+  const [storePrices, setStorePrices] = useState<Partial<Record<ProductId, string>>>({});
   // Re-read after test-store actions change membership or today's count.
   const [, setRev] = useState(0);
+  useEffect(() => {
+    let live = true;
+    void store.prices?.().then((p) => live && setStorePrices(p));
+    return () => {
+      live = false;
+    };
+  }, [store]);
   const member = membership.isMember();
   const full = !membership.canCast();
   const ent = membership.entitlement();
+  const credits = membership.credits();
   const until = ent.expiresAt ? new Date(ent.expiresAt).toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US') : '';
-  const price = (id: ProductId) => PRODUCTS[id].price[lang];
+  const price = (id: ProductId) => storePrices[id] ?? PRODUCTS[id].price[lang];
+  const opening = !member && !!castId && reason === 'judgment';
 
-  const perform = async (action: () => Promise<string>) => {
+  const perform = async (action: () => Promise<string | null>) => {
     if (!store.available || processing.current) return;
     processing.current = true;
     setBusy(true);
@@ -48,20 +61,48 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
       setBusy(false);
     }
   };
-  const buy = (id: ProductId) => perform(async () => {
-    const result = await store.buy(id);
-    if (!result.ok) return t.memberFailed;
-    membership.grant(id, castId);
-    onChanged();
-    return t.memberThanks;
-  });
-  const restore = () => perform(async () => {
-    const restored = await store.restore();
-    if (!restored) return t.memberNothingToRestore;
-    membership.restore(restored);
-    onChanged();
-    return t.memberThanks;
-  });
+  /** Opens the current reading with a credit (on the server in the app). */
+  const spend = async () => {
+    if (!castId) return true;
+    if (store.unlock) {
+      const state = await store.unlock(castId);
+      if (!state) return false;
+      membership.applyServer(state);
+      return true;
+    }
+    return membership.useCredit(castId);
+  };
+  const buy = (id: ProductId) =>
+    perform(async () => {
+      const result = await store.buy(id);
+      if (result.cancelled) return null;
+      if (!result.ok) return t.memberFailed;
+      if (result.state) {
+        membership.applyServer(result.state);
+        if (PRODUCTS[id].kind === 'consumable' && opening && !(await spend())) return t.memberFailed;
+      } else {
+        membership.grant(id, opening ? castId : null);
+      }
+      onChanged();
+      return t.memberThanks;
+    });
+  const useCredit = () =>
+    perform(async () => {
+      if (!(await spend())) return t.memberFailed;
+      onChanged();
+      onClose();
+      return null;
+    });
+  const restore = () =>
+    perform(async () => {
+      const restored = await store.restore();
+      const state = await store.sync?.();
+      if (state) membership.applyServer(state);
+      else if (restored) membership.restore(restored);
+      if (!restored && !(state && state.credits > 0)) return t.memberNothingToRestore;
+      onChanged();
+      return t.memberThanks;
+    });
 
   return (
     <div className="sheet-backdrop" onClick={onClose}>
@@ -71,6 +112,7 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
             <h2>{t.memberTitle}</h2>
             <p className="sheet-kicker">
               {member ? t.memberUntil.replace('{date}', until) : t.memberFree} · {t.memberToday.replace('{n}', String(membership.castsToday())).replace('{max}', String(membership.dailyLimit()))}
+              {credits > 0 && ` · ${t.memberCredits(credits)}`}
             </p>
           </div>
           <button className="icon-btn" onClick={onClose} aria-label={t.close}>
@@ -91,6 +133,11 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
               <h3>{t.memberLimitTitle}</h3>
               <p>{t.memberLimitText}</p>
             </div>
+          )}
+          {opening && credits > 0 && (
+            <button type="button" className="single-unlock is-credit" disabled={busy || !store.available} onClick={useCredit}>
+              {t.memberUseCredit(credits)}
+            </button>
           )}
           <div className="member-story">
             <h3>{t.modelStoryTitle}</h3>
@@ -143,18 +190,45 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
                   <span className="plan-price">{price('wengua.member.monthly')}</span>
                 </button>
               </div>
+              <p className="member-trial">{t.memberTrial}</p>
             </>
           )}
-          {!member && castId && reason === 'judgment' && (
-            <button type="button" className="single-unlock" disabled={busy || !store.available} onClick={() => buy('wengua.reading.single')}>
-              {t.memberSingle} · {price('wengua.reading.single')}
-            </button>
+          {!member && (
+            <div className="plans plans-credits">
+              {opening && (
+                <button type="button" className="plan" disabled={busy || !store.available} onClick={() => buy('wengua.reading.single')}>
+                  <span className="plan-name">{t.memberSingle}</span>
+                  <span className="plan-price">{price('wengua.reading.single')}</span>
+                </button>
+              )}
+              <button type="button" className="plan" disabled={busy || !store.available} onClick={() => buy('wengua.reading.pack10')}>
+                <span className="plan-name">{t.memberPack10}</span>
+                <span className="plan-price">{price('wengua.reading.pack10')}</span>
+                <span className="plan-tag">{t.memberPack10Note}</span>
+              </button>
+            </div>
           )}
           {note && <p className="member-note" role="status">{note}</p>}
-          <button type="button" className="text-btn member-restore" disabled={busy || !store.available} onClick={restore}>
-            {t.memberRestore}
-          </button>
-          {store.available && <p className="member-fine">{t.memberRenew}</p>}
+          <div className="member-links">
+            <button type="button" className="text-btn member-restore" disabled={busy || !store.available} onClick={restore}>
+              {t.memberRestore}
+            </button>
+            {member && store.manage && (
+              <button type="button" className="text-btn" onClick={() => void store.manage?.()}>
+                {t.memberManage}
+              </button>
+            )}
+          </div>
+          {store.available && <p className="member-fine">{store.isTest ? t.memberRenew : t.memberRenewApple}</p>}
+          <p className="member-legal">
+            <a href={LEGAL.terms} target="_blank" rel="noreferrer">
+              {t.memberTerms}
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a href={LEGAL.privacy} target="_blank" rel="noreferrer">
+              {t.memberPrivacy}
+            </a>
+          </p>
         </div>
       </section>
     </div>

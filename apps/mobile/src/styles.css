@@ -1481,8 +1481,9 @@ input, textarea, select { font-size: max(16px, 1em); }
   background: linear-gradient(180deg, rgba(122, 90, 42, 0.62), rgba(70, 50, 22, 0.62)); color: #fbecc8;
   font: 600 16px var(--serif); letter-spacing: 0.3em; box-shadow: 0 0 18px rgba(226, 180, 100, 0.18);
 }
-/* The four account buttons, smaller, two by two, until they are connected. */
+/* The three account buttons, smaller until they are connected: Apple across, Google and email under it. */
 .login-providers.v2.is-compact { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.login-providers.v2.is-compact .provider-btn:first-child { grid-column: 1 / -1; }
 .login-providers.v2.is-compact .provider-btn, .login-providers.v2.is-compact .provider-btn:first-child {
   height: 44px; min-height: 44px; padding: 0 6px; font-size: 13.5px; letter-spacing: 0.04em; white-space: nowrap;
   border-color: rgba(226, 196, 140, 0.28); color: rgba(240, 226, 196, 0.85); background: rgba(8, 7, 6, 0.5);
