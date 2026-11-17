@@ -104,7 +104,7 @@ describe('专业依据 relation layer', () => {
     expect(document.querySelector('.ev-pair .stone-tag')).toBeNull();
     const marked = [...document.querySelectorAll('.read-rel-row')].filter((r) => r.querySelector('.stone-tag'));
     expect(marked.map((r) => r.querySelector('.read-rel-pair')?.textContent)).toEqual([expect.stringMatching(/^体互/)]);
-    expect(marked[0].querySelector('.stone-tag')?.textContent).toBe('与石案一致');
+    expect(marked[0].querySelector('.stone-tag')?.textContent).toBe('与卦面一致');
     expect(screen.getByText('前期耗费，中间有牵制也有配合，末后出现比和之象。')).toBeTruthy();
     expect(screen.getAllByRole('button', { name: '查看《雷火丰·九三》原文' }).length).toBeGreaterThan(0);
     expect(screen.getByRole('button', { name: '查看《泽风大过》原文' })).toBeTruthy();

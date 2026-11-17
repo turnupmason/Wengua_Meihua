@@ -18,6 +18,8 @@ export interface Settings {
   ritualMode: 'auto' | 'full' | 'quick';
   /** 应期提醒: a phone notification on the evening a 应期 ends (native app only; asked for first). */
   timingReminders: boolean;
+  /** 夜间模式 (2026-11-15): 宣纸 by day, 玄墨绿 by night, or as the phone is set. */
+  theme: 'light' | 'dark' | 'system';
 }
 
 const KEY = 'wengua.settings.v1';
@@ -31,7 +33,7 @@ function prefersReducedMotion(): boolean {
 }
 
 export function defaultSettings(): Settings {
-  return { lang: 'zh', langChosen: false, sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto', timingReminders: false };
+  return { lang: 'zh', langChosen: false, sound: true, reducedMotion: prefersReducedMotion(), haptics: true, quality: 'auto', ziHour: 'zi-starts-next-day', calendarClock: 'local-wallclock', ritualMode: 'auto', timingReminders: false, theme: 'light' };
 }
 
 export function loadSettings(): Settings {
@@ -51,6 +53,7 @@ export function loadSettings(): Settings {
       calendarClock: saved.calendarClock === 'china-standard-time' ? 'china-standard-time' : base.calendarClock,
       ritualMode: saved.ritualMode === 'full' || saved.ritualMode === 'quick' ? saved.ritualMode : 'auto',
       timingReminders: saved.timingReminders === true,
+      theme: saved.theme === 'dark' || saved.theme === 'system' ? saved.theme : 'light',
     };
   } catch {
     return base;
@@ -65,3 +68,15 @@ export function effectivePace(mode: Settings['ritualMode'], hasReadings: boolean
 export function saveSettings(s: Settings) {
   safeStore().setItem(KEY, JSON.stringify(s));
 }
+
+/** Whether the app is shown at night (玄墨绿) under this setting, now. */
+export function isNight(theme: Settings['theme']): boolean {
+  if (theme === 'dark') return true;
+  if (theme !== 'system') return false;
+  try {
+    return globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+  } catch {
+    return false;
+  }
+}
+

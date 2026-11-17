@@ -24,6 +24,8 @@ export interface MeData {
   onRecords: () => void;
   onSaved: () => void;
   onLibrary: () => void;
+  /** 研习与校订 */
+  onStudy?: () => void;
   onSignIn: () => void;
   onSignOut: () => void;
 }
@@ -44,6 +46,7 @@ const ICONS = {
   saved: 'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z',
   book: 'M5 4.5h9.5a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h9.5',
   settings: 'M5 7h14M5 12h14M5 17h14',
+  study: 'M4 5.5c2.5-1 5-1 8 1 3-2 5.5-2 8-1V19c-2.5-1-5-1-8 1-3-2-5.5-2-8-1zM12 6.5V20',
   gear: 'M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1',
 };
 
@@ -170,6 +173,13 @@ export function MeScreen({ t, lang, data, onClose, onSettings }: { t: Strings; l
             <small>{t.meMetLine(data.met)}</small>
             <i aria-hidden="true">›</i>
           </button>
+          {data.onStudy && (
+            <button type="button" onClick={data.onStudy}>
+              <Icon d={ICONS.study} />
+              <span>{t.meStudy}</span>
+              <i aria-hidden="true">›</i>
+            </button>
+          )}
           <button type="button" onClick={onSettings}>
             <Icon d={ICONS.settings} />
             <span>{t.settings}</span>

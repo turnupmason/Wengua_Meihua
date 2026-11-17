@@ -8,6 +8,8 @@
  *   as read. None shows while the introduction is open.
  * - 设置 · 重看新手引导 brings it all back. Kept on the device only.
  */
+import { PAPER } from './paper';
+import { TOPICS } from '../domain/topics';
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { Strings } from '../domain/i18n';
@@ -92,6 +94,9 @@ export function CoachTip({ id, t, text, anchor, below = false, strip = false }: 
       return;
     }
     let target: HTMLElement | null = null;
+    // The place measured last time: a tip moves only to a place measured twice running, so it never
+    // chases a panel that is still sliding in (the user saw it 「动一下」, 2026-11-15).
+    let seen: { left: number; top: number } | null = null;
     const place = () => {
       const el = document.querySelector<HTMLElement>(anchor);
       if (el !== target) {
@@ -115,6 +120,10 @@ export function CoachTip({ id, t, text, anchor, below = false, strip = false }: 
       const gap = strip ? 6 : 14;
       const goBelow = !strip && (below || r.top - h - gap < 8);
       const top = goBelow ? r.bottom + gap : Math.max(4, r.top - h - gap);
+      if (!seen || Math.abs(seen.left - left) > 0.5 || Math.abs(seen.top - top) > 0.5) {
+        seen = { left, top };
+        return;
+      }
       setBox((b) => (b && b.left === left && b.top === top ? b : { left, top, arrow: Math.max(18, Math.min(w - 18, cx - left)), below: goBelow }));
     };
     place();
@@ -160,15 +169,19 @@ export function CoachTip({ id, t, text, anchor, below = false, strip = false }: 
   );
 }
 
-/** A small stone for the introduction: 结果 above 经过 above 目前, the moving line in red. */
+/**
+ * A small stone for the introduction: 结果 above 经过 above 目前, the moving line in red. On paper
+ * (2026-11-15) the three sit side by side as on the 卦笺: 目前 · 经过 · 结果, left to right.
+ */
 function MiniStone({ t }: { t: Strings }) {
   const rows: [string, number[], number | null][] = [
     [t.caption_changed, [0, 1, 1, 0, 0, 0], null],
     [t.caption_mutual, [1, 1, 0, 1, 0, 1], null],
     [t.caption_primary, [0, 1, 1, 0, 1, 0], 5],
   ];
+  if (PAPER) rows.reverse();
   return (
-    <div className="intro-stone" aria-hidden="true">
+    <div className={`intro-stone ${PAPER ? 'is-across' : ''}`} aria-hidden="true">
       {rows.map(([label, bits, moving]) => (
         <div key={label} className="intro-stone-row">
           <b>{label}</b>
@@ -176,6 +189,43 @@ function MiniStone({ t }: { t: Strings }) {
         </div>
       ))}
       <i className="intro-stone-arrow">↑</i>
+    </div>
+  );
+}
+
+/** On paper: the six fields, as the 问事 page shows them. */
+function MiniFields() {
+  return (
+    <div className="intro-fields" aria-hidden="true">
+      {TOPICS.slice(0, 6).map((x) => (
+        <span key={x.id}>{x.zh}</span>
+      ))}
+    </div>
+  );
+}
+
+/** On paper: the matter chosen, and the one button. */
+function MiniCast({ t }: { t: Strings }) {
+  return (
+    <div className="intro-reading" aria-hidden="true">
+      <div className="is-main">
+        <small>{t.askedMatter}</small>
+        <b>求职录用</b>
+      </div>
+      <div className="intro-cast-btn">{t.enter}</div>
+    </div>
+  );
+}
+
+/** On paper: two records, the newest first. */
+function MiniRecords({ t }: { t: Strings }) {
+  return (
+    <div className="intro-reading" aria-hidden="true">
+      <div className="is-main">
+        <small>{t.meRecords}</small>
+        <b>求职录用 · 水风井</b>
+      </div>
+      <div>晋升加薪 · 山地剥</div>
     </div>
   );
 }
@@ -210,11 +260,11 @@ export function CoachIntro({ t }: { t: Strings }) {
   }, [on]);
   const base = import.meta.env.BASE_URL;
   const pages: { title: string; text: string; art: ReactNode }[] = [
-    { title: t.introAskTitle, text: t.introAskText, art: <img className="intro-portrait" src={`${base}art/sanqing-yuanshi.webp`} alt="" /> },
-    { title: t.introCastTitle, text: t.introCastText, art: <div className="intro-pic is-censer" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }} /> },
+    { title: t.introAskTitle, text: t.introAskText, art: PAPER ? <MiniFields /> : <img className="intro-portrait" src={`${base}art/sanqing-yuanshi.webp`} alt="" /> },
+    { title: t.introCastTitle, text: t.introCastText, art: PAPER ? <MiniCast t={t} /> : <div className="intro-pic is-censer" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.hall)})` }} /> },
     { title: t.introStoneTitle, text: t.introStoneText, art: <MiniStone t={t} /> },
     { title: t.introReadTitle, text: t.introReadText, art: <MiniReading t={t} /> },
-    { title: t.introKeepTitle, text: t.introKeepText, art: <div className="intro-pic is-records" style={{ backgroundImage: `url(${walkInUrl(PLACE_FILES.records)})` }} /> },
+    { title: t.introKeepTitle, text: t.introKeepText, art: PAPER ? <MiniRecords t={t} /> : <div className="intro-pic is-records" style={{ backgroundImage: `url(${walkInUrl(PLACE_FILES.records)})` }} /> },
   ];
   if (!on) return null;
   const n = pages.length;

@@ -7,6 +7,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { placeStore } from '../src/ui/placeStore';
+import { PAPER } from '../src/ui/paper';
 import { useState } from 'react';
 import productFile from '../../../data/product-categories.json';
 import labelsFile from '../src/data/product-catalog.labels.json';
@@ -55,6 +56,18 @@ function Home({ onChange, onTitle = () => {}, busy = false }: { onChange?: (f: E
       busy={busy}
     />
   );
+}
+
+/** On paper 首页 has one way in: 开始问卦 opens 立问, where the six fields are. */
+function toAsk() {
+  if (PAPER) fireEvent.click(screen.getByRole('button', { name: /开始问卦/ }));
+}
+
+/** On paper the hour and the method are on the confirm page: choose 求职录用 to get there. */
+function toConfirm() {
+  if (!PAPER) return;
+  fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
+  fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
 }
 
 /** Fields that would bring up the system keyboard. */
@@ -112,6 +125,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
       ['career.exams', 'career.exams.exam'], ['career.probation', 'career.job-stability.probation'],
       ['relationships.affection', 'relationships.new-partner.opportunity'],
       ['relationships.confession', 'relationships.confession.decision'],
+      ['relationships.dating', 'relationships.developing.relationship'],
+      ['relationships.reconciliation', 'relationships.reconciliation.reconcile'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -140,8 +155,44 @@ describe('QuestionCatalog = the formal product catalog', () => {
 });
 
 describe('click-only home', () => {
-  it('opens each of the six categories to its own subcategories, tagged by what they offer', () => {
+  it.runIf(PAPER)('立问: six fields in one list, one open at a time, each showing its own entries, tagged by what they offer', () => {
     render(<Home />);
+    toAsk();
+    const list = screen.getByRole('radiogroup', { name: STRINGS.zh.domainLabel });
+    expect(within(list).getAllByRole('radio')).toHaveLength(6);
+    for (const d of DOMAINS) {
+      fireEvent.click(within(list).getByRole('radio', { name: d.label.zh }));
+      expect([...document.querySelectorAll('.fold-body button span')].map((b) => b.textContent)).toEqual(d.subtypes.map((s) => s.label.zh));
+      expect(within(list).getByRole('radio', { name: d.label.zh }).getAttribute('aria-checked')).toBe('true');
+      expect(document.querySelectorAll('.fold-body')).toHaveLength(1);
+    }
+    fireEvent.click(within(list).getByRole('radio', { name: '事业工作' }));
+    expect(screen.queryByText(STRINGS.zh.scriptPendingTag)).toBeNull();
+    fireEvent.click(within(list).getByRole('radio', { name: '健康疾病' }));
+    expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
+  });
+
+  it.runIf(PAPER)('立问 → 确认: an entry is chosen with one tap; 改选 goes back to its field, open', () => {
+    let last: EntryForm = EMPTY_FORM;
+    render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
+    expect(keyboardFields()).toHaveLength(0);
+    fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
+    fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
+    expect(last).toMatchObject({ questionId: JOB, domainId: 'domain-09', topicId: 'career' });
+    expect(screen.getByRole('region', { name: STRINGS.zh.confirmTitle })).toBeTruthy();
+    expect(entryProblem(last)).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /所问之事.*求职录用/ }));
+    expect(screen.getByRole('button', { name: /求职录用/ }).getAttribute('aria-current')).toBe('true');
+    fireEvent.click(screen.getByRole('button', { name: /考试选拔/ }));
+    expect(last.questionId).toBe('career.exams');
+    expect(screen.getByRole('region', { name: STRINGS.zh.confirmTitle })).toBeTruthy();
+    expect(keyboardFields()).toHaveLength(0);
+  });
+
+  it.skipIf(PAPER)('opens each of the six categories to its own subcategories, tagged by what they offer', () => {
+    render(<Home />);
+    toAsk();
     const grid = screen.getByRole('radiogroup', { name: STRINGS.zh.domainLabel });
     expect(within(grid).getAllByRole('radio')).toHaveLength(6);
     for (const d of DOMAINS) {
@@ -160,9 +211,10 @@ describe('click-only home', () => {
     expect(screen.getAllByText(STRINGS.zh.referenceTag)).toHaveLength(4);
   });
 
-  it('chooses an entry with one tap (the entry is the question) and never offers a keyboard', () => {
+  it.skipIf(PAPER)('chooses an entry with one tap (the entry is the question) and never offers a keyboard', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
     expect(keyboardFields()).toHaveLength(0);
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
     fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
@@ -187,6 +239,7 @@ describe('click-only home', () => {
   it('chooses 跳槽去留 with one tap, like every other entry (no options to pick)', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
     fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
     fireEvent.click(screen.getByRole('button', { name: '跳槽去留' }));
     expect(screen.queryByRole('button', { name: '现在适合辞去当前工作吗？' })).toBeNull();
@@ -220,6 +273,7 @@ describe('click-only home', () => {
   it('asks no fixed option for an entry (物品找回 is chosen at once)', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
     fireEvent.click(screen.getByRole('button', { name: /物品找回/ }));
     expect(screen.queryByRole('radiogroup', { name: '物品类型' })).toBeNull();
@@ -230,6 +284,7 @@ describe('click-only home', () => {
   it('offers a reference entry to read at once: no method, no pace, 查看说明', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
     fireEvent.click(screen.getByRole('radio', { name: '健康疾病' }));
     fireEvent.click(screen.getByRole('button', { name: /身体象意/ }));
     expect(last.questionId).toBe('health.condition');
@@ -239,7 +294,7 @@ describe('click-only home', () => {
     expect(entryProblem(last)).toBeNull();
   });
 
-  it('lets the tray be pulled down and back by its head, stays where it is let go, and a tap folds it', () => {
+  it.skipIf(PAPER)('lets the tray be pulled down and back by its head, stays where it is let go, and a tap folds it', () => {
     localStorage.removeItem('wengua.trayOffset.v1');
     // jsdom has no PointerEvent: a mouse event carrying a pointerId stands in for it.
     const w = window as unknown as { PointerEvent?: unknown };
@@ -285,13 +340,20 @@ describe('click-only home', () => {
 
   it('holds the button while the 断语 is looked up', () => {
     render(<Home busy />);
+    toAsk();
+    // On paper the button is on the confirm page, once a matter is chosen.
+    if (PAPER) {
+      fireEvent.click(screen.getByRole('radio', { name: '事业工作' }));
+      fireEvent.click(screen.getByRole('button', { name: /求职录用/ }));
+    }
     const b = screen.getByRole('button', { name: STRINGS.zh.castingNow });
     expect(b.hasAttribute('disabled')).toBe(true);
   });
 
-  it('has a ← on the home that goes back to the title screen', () => {
+  it.skipIf(PAPER)('has a ← on the home that goes back to the title screen', () => {
     let backs = 0;
     render(<Home onTitle={() => (backs += 1)} />);
+    toAsk();
     fireEvent.click(screen.getByRole('button', { name: '返回标题页' }));
     expect(backs).toBe(1);
   });
@@ -299,6 +361,7 @@ describe('click-only home', () => {
   it('shows real-world help with 失联寻人, which opens its guidance and casts nothing', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
     fireEvent.click(screen.getByRole('radio', { name: '寻人失物' }));
     fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
     expect(last.questionId).toBe('search.missing-contact');
@@ -309,6 +372,8 @@ describe('click-only home', () => {
   it('takes casting numbers on an in-app pad and no longer offers 字占', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
+    toConfirm();
     expect(UI_METHODS).not.toContain('text');
     fireEvent.click(screen.getByRole('button', { name: /更多起卦方式/ }));
     // It opens on the method in use, 年月日时; ← shows the others.
@@ -328,6 +393,8 @@ describe('click-only home', () => {
   it('keeps each method on its own: switching starts empty, ← back to the list clears what was chosen', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
+    toAsk();
+    toConfirm();
     fireEvent.click(screen.getByRole('button', { name: /更多起卦方式/ }));
     fireEvent.click(screen.getByRole('button', { name: STRINGS.zh.back }));
     // 物数: 38, then ← back to the list, then 声音: its count is not 物数's.

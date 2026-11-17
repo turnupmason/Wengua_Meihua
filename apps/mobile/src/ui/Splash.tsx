@@ -1,12 +1,15 @@
 /**
- * Opening screen: the painted moonlit courtyard (docs/art-reference/sanqing-entrance) and 「三清问道」 in gold.
- * While the texts load it shows progress; then 「轻触 · 入殿」. The tap (which also unlocks
- * sound) dissolves this screen and the camera walks from the forecourt into the hall.
+ * Opening screen. On paper (2026-11-15) it is the one dark page of the app: 玄墨绿 with 香槟金 —
+ * WENGUA and 梅花易数 at the top, 乾 in a double ring, 「问卦」, the motto and one line under it,
+ * then 「轻触 · 开卷」. Every page after it is 宣纸.
+ * In the hall build: the painted moonlit courtyard (docs/art-reference/sanqing-entrance) and the name in gold;
+ * the tap dissolves this screen and the camera walks from the forecourt into the hall.
  */
 import { useEffect, useState } from 'react';
 import { isSceneReady, onSceneReady } from '../scene/readiness';
 import type { Strings } from '../domain/i18n';
 import { WALK_IN_FILES, walkInUrl } from './walkInArt';
+import { PAPER } from './paper';
 import type { AuthProvider, Profile, SignInMethod } from '../domain/profile';
 
 interface Props {
@@ -97,9 +100,24 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
     <div className={`splash ${leaving ? 'is-leaving' : ''} ${mode === 'login' && progress === null ? 'is-login' : ''} ${live && progress === null ? 'is-live' : ''} ${sceneShown ? 'scene-shown' : ''} ${welcoming ? 'is-welcome' : ''}`} onClick={ready && !leaving ? onEnter : undefined}>
       {/* The artist's moonlit courtyard, framed exactly as the walk-in holds it at the title, so the
           loading screen, the title and the start of the walk are one picture. */}
-      <div className="splash-art walkin-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.courtyard)})`, transform: 'translate(-50%, -50%) scale(1.02)' }} aria-hidden="true" />
+      {/* On paper (ui/paper.ts) no courtyard: the brand page in 玄墨绿 and 香槟金. */}
+      {PAPER ? (
+        <>
+          <div className="splash-top" aria-hidden="true">
+            <span className="splash-latin">{t.appLatin}</span>
+            <span>{t.brandMethodLatin}</span>
+          </div>
+          <div className="splash-emblem" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <i key={i} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className="splash-art walkin-plate" style={{ backgroundImage: `url(${walkInUrl(WALK_IN_FILES.courtyard)})`, transform: 'translate(-50%, -50%) scale(1.02)' }} aria-hidden="true" />
+      )}
 
-      {mode === 'login' && progress === null && (
+      {!PAPER && mode === 'login' && progress === null && (
         // The Three Pure Ones (the artist's key art) behind the sign-in card. The face is kept clear and
         // bright; the shade gathers from the shoulders down, where the buttons are.
         <div className="splash-key" aria-hidden="true" style={{ backgroundImage: `linear-gradient(180deg, rgba(6, 6, 10, 0.6) 0%, rgba(6, 6, 10, 0.18) 16%, rgba(6, 6, 10, 0) 26%, rgba(6, 6, 10, 0.04) 46%, rgba(6, 6, 10, 0.55) 57%, rgba(5, 5, 8, 0.9) 68%, rgba(4, 4, 6, 0.97) 100%), url(${import.meta.env.BASE_URL}art/sanqing.webp)` }} />
@@ -107,7 +125,7 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
       <div className="splash-title">
         <h1>{t.appName}</h1>
         <p>{t.splashSub}</p>
-        {!login && <p className="model-badge">{t.modelBadge}</p>}
+        {PAPER ? !login && <p className="splash-line">{t.splashLine}</p> : !login && <p className="model-badge">{t.modelBadge}</p>}
       </div>
 
       <div className="splash-foot">

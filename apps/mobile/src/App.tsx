@@ -13,6 +13,7 @@ import { placeStore } from './ui/placeStore';
 import { CoachIntro, useCoach } from './ui/coach';
 import { Tour, tour } from './ui/Tour';
 import { ShakeCast } from './ui/ShakeCast';
+import { StudyPage, type StudyExample } from './ui/StudyPage';
 import { Exit } from './ui/Exit';
 import { sameMatterCandidate } from './domain/sameMatter';
 
@@ -22,16 +23,17 @@ function daysAgo(iso: string) {
   return d;
 }
 import { INITIAL_RITUAL, ritualReducer } from './domain/ritual';
-import { effectivePace, loadSettings, saveSettings, type Settings } from './domain/settings';
+import { effectivePace, isNight, loadSettings, saveSettings, type Settings } from './domain/settings';
 import { STRINGS } from './domain/i18n';
 import { deviceTimeZone } from './domain/calendar';
 import { templeAudio, haptic } from './domain/audio';
 import { EMPTY_FORM, type EntryForm } from './ui/HomeOverlay';
 import { Splash } from './ui/Splash';
 import { preloadWalkInArt } from './ui/walkInArt';
+import { PAPER } from './ui/paper';
 
 // The painted courtyard is fetched while the library loads, so it is there when the title shows.
-void preloadWalkInArt();
+if (!PAPER) void preloadWalkInArt();
 import { hasWebGL } from './domain/quality';
 import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
 import { OPEN_BETA, createMembership, purchaseProvider } from './domain/membership';
@@ -103,6 +105,9 @@ export function App() {
   const [shrine, setShrine] = useState<null | { rec: CastRecord | null; leaving?: boolean }>(null);
   // The cast whose slip was just shown as 祖师赐卦 (the stone does not say it a second time).
   const [slipFor, setSlipFor] = useState<string | null>(null);
+  // 研习与校订, over whatever is open.
+  // 研习与校订; from a 卦笺 it works through that very cast.
+  const [study, setStudy] = useState<{ example: StudyExample | null } | null>(null);
   // The five-page introduction comes first; the arrow tour waits for it.
   const introPending = useCoach('intro');
   const introSeen = !introPending;
@@ -116,6 +121,15 @@ export function App() {
   useEffect(() => {
     document.documentElement.lang = settings.lang === 'zh' ? 'zh-Hans' : 'en';
   }, [settings.lang]);
+  // 夜间模式: the whole app in 玄墨绿 (body.paper.night, styles in paper-night.generated.css).
+  useEffect(() => {
+    const apply = () => document.body.classList.toggle('night', PAPER && isNight(settings.theme));
+    apply();
+    if (settings.theme !== 'system') return;
+    const mq = globalThis.matchMedia?.('(prefers-color-scheme: dark)');
+    mq?.addEventListener?.('change', apply);
+    return () => mq?.removeEventListener?.('change', apply);
+  }, [settings.theme]);
 
   const openSavedJudgment = useCallback(async (knowledge: Knowledge, rec: CastRecord) => {
     const previous = rec.judgment;
@@ -282,8 +296,17 @@ export function App() {
     }
     templeAudio.setEnabled(settings.sound); // within the user's gesture
     haptic(settings.haptics);
-    // Every cast, whatever the method, is shaking the 签筒 before the 三清 (2026-11-14: the walk and
-    // 简洁问事 are gone); the cast is made when the shaking stops (shrineCast).
+    // On paper (2026-11-15, the user: 「不要摇签了，直接点就起出来」) the cast is made on the tap and the
+    // 卦笺 opens at once, its three hexagrams coming up one by one: no 签筒, no slip, no sound.
+    if (PAPER) {
+      setBusy(true);
+      const rec = await castNow();
+      setBusy(false);
+      if (rec) toStone(rec);
+      return;
+    }
+    // In the hall build every cast is shaking the 签筒 before the 三清; the cast is made when the
+    // shaking stops (shrineCast).
     templeAudio.bowl(0.6);
     setShrine({ rec: null });
   };
@@ -496,7 +519,7 @@ export function App() {
   // (no cast open), so the title never covers a ritual.
   const splashLayer =
     splash !== 'gone' && knowledge ? (
-      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />
+      <Splash t={t} progress={null} leaving={splash === 'leaving'} onEnter={onSplashEnter} onSwitch={onSwitchAccount} mode={splashMode} profile={profile} auth={localAuth} onSignIn={onSignIn} signInError={signInError} live={!PAPER && settings.quality !== '2d' && hasWebGL() && ritual.phase === 'idle'} welcoming={welcoming} />
     ) : null;
 
   if (!knowledge) {
@@ -509,6 +532,7 @@ export function App() {
         {splashLayer}
         {/* The first time in the hall (title gone, no cast open): the five-page introduction. */}
         {splash === 'gone' && ritual.phase === 'idle' && <CoachIntro t={t} />}
+        <Exit show={!!study && !!knowledge}>{study && knowledge && <StudyPage knowledge={knowledge} t={t} example={study.example} onClose={() => setStudy(null)} />}</Exit>
         {/* 完整仪式: the 签筒 before the 三清 (the hall stays behind it), then the slip that fell. */}
         <ShakeCast
           t={t}
@@ -594,6 +618,7 @@ export function App() {
                 onRecords: () => setPlace('records'),
                 onSaved: () => setPlace('records'),
                 onLibrary: () => setPlace('library'),
+                onStudy: () => setStudy({ example: null }),
                 onSignIn: onSignOut,
                 onSignOut,
               };
@@ -607,6 +632,7 @@ export function App() {
           onOpenMembership={(reason, castId) => setMemberSheet({ reason, castId })}
           readOnOpen={readOnOpen}
           slipFor={slipFor}
+          onStudy={(example) => setStudy({ example: example ?? null })}
           newMet={newMet && newMet.castId === record?.castId ? { names: newMet.ids.map((id) => knowledge.library.getHexagram(id).name), count: collection.count() } : null}
           remind={{
             on: settings.timingReminders,

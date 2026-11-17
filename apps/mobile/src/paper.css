@@ -1,0 +1,546 @@
+/* ======================================================================================
+   宣纸 (ui/paper.ts): hand-made touches over paper.generated.css. Everything is paper, ink,
+   cinnabar and bronze; no hall, no figures, no glow. The one exception is the opening screen,
+   玄墨绿 and 香槟金 (2026-11-15).
+   ====================================================================================== */
+body.paper {
+  --xuan: #f3eedf; --mo: #17252a; --mo-2: #3d4a4e; --zhu: #ac5145; --tong: #ad936b; --tong-ink: #7d6644; --shiqing: #60767a;
+  --rule: rgba(23, 37, 42, 0.14);
+  --paper-grain:
+    radial-gradient(ellipse 3px 1px at 30% 40%, rgba(120, 96, 60, 0.07), transparent 70%),
+    radial-gradient(ellipse 1px 3px at 70% 20%, rgba(120, 96, 60, 0.06), transparent 70%),
+    linear-gradient(180deg, #f6f2e6, #efe9d8);
+  background: var(--xuan);
+  color: var(--mo);
+}
+body.paper .temple,
+body.paper .painted-table,
+body.paper .shake-page,
+body.paper .bestow,
+body.paper .me-page {
+  background-color: var(--xuan);
+  background-image: var(--paper-grain);
+  background-size: 9px 7px, 13px 11px, 100% 100%;
+}
+
+/* ---------- The opening screen: the one dark page, 玄墨绿 and 香槟金 ----------
+   WENGUA · 梅花易数 at the top, 乾 in a double ring, 「问卦」, the motto, one line, 轻触 · 开卷.
+   (Its rules are kept out of paper.generated.css, so only these apply on paper.) */
+body.paper .splash {
+  --lu: #202724; --jin: #c6b18b; --ya: #f3eee4;
+  justify-content: flex-start; color: var(--ya);
+  background: radial-gradient(ellipse 130% 70% at 50% 36%, #27302c 0%, #202724 58%, #1b211f 100%);
+}
+body.paper .splash-top {
+  position: absolute; top: calc(var(--safe-t) + 22px); left: 24px; right: 24px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font: 11px var(--serif); letter-spacing: 0.08em; color: rgba(198, 177, 139, 0.85); animation: splashIn 2s ease both;
+}
+body.paper .splash-latin { font-size: 13px; letter-spacing: 0.55em; }
+body.paper .splash-emblem {
+  position: relative; flex-shrink: 0; margin-top: calc(var(--safe-t) + 15vh); width: 172px; height: 172px; border-radius: 50%;
+  border: 1px solid rgba(198, 177, 139, 0.55);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  animation: splashIn 2.2s ease both;
+}
+body.paper .splash-emblem::before { content: ''; position: absolute; inset: 13px; border-radius: 50%; border: 1px solid rgba(198, 177, 139, 0.22); }
+body.paper .splash-emblem i { display: block; width: 92px; height: 7px; border-radius: 1px; background: var(--jin); }
+body.paper .splash-title { margin-top: 34px; }
+body.paper .splash-title h1 {
+  font-family: var(--serif); font-weight: 600; font-size: 58px; letter-spacing: 0.32em; margin-right: -0.32em;
+  background: none; -webkit-background-clip: border-box; background-clip: border-box;
+  -webkit-text-fill-color: var(--ya); color: var(--ya); filter: none; text-shadow: none;
+}
+body.paper .splash-title p { margin-top: 14px; font-size: 15px; letter-spacing: 0.22em; margin-right: -0.22em; color: var(--jin); }
+body.paper .splash-title .splash-line { margin-top: 20px; font: 13px var(--serif-body); letter-spacing: 0.12em; margin-right: -0.12em; color: rgba(243, 238, 228, 0.58); }
+body.paper .splash-foot { margin-top: auto; }
+body.paper .splash-enter {
+  padding: 12px 30px 12px calc(30px + 0.5em); border-radius: 999px; border: 1px solid rgba(198, 177, 139, 0.6); background: none;
+  color: var(--jin); box-shadow: none; text-shadow: none;
+}
+body.paper .splash-welcome, body.paper .splash-waiting, body.paper .splash-loading { color: rgba(243, 238, 228, 0.7); text-shadow: none; }
+body.paper .splash-switch { color: rgba(198, 177, 139, 0.75); }
+body.paper .splash .progress { background: rgba(198, 177, 139, 0.18); }
+body.paper .splash .progress i { background: var(--jin); }
+body.paper .splash .error { color: #e3aa9e; }
+body.paper .splash .ghost-btn { border-color: rgba(198, 177, 139, 0.6); background: none; color: var(--jin); }
+/* Sign-in on the same green: no ring, the name higher, the buttons in fine gold. */
+body.paper .splash.is-login .splash-emblem { display: none; }
+body.paper .splash.is-login .splash-title { margin-top: calc(var(--safe-t) + 11vh); }
+body.paper .splash.is-login .splash-title h1 { font-size: 46px; }
+body.paper .login-providers.v2 .provider-btn { background: rgba(243, 238, 228, 0.04); border-color: rgba(198, 177, 139, 0.32); color: var(--ya); backdrop-filter: none; -webkit-backdrop-filter: none; }
+body.paper .login-providers.v2 .provider-btn:first-child { border-color: rgba(198, 177, 139, 0.65); }
+body.paper .name-line button, body.paper .about-link { color: var(--jin); }
+/* The one filled button on the green: flat 香槟金 with green letters (no gold gradient). */
+body.paper .splash.is-login .login-guest.v2.is-primary { background: var(--jin); border: 0; box-shadow: none; text-shadow: none; color: var(--lu); font-weight: 600; }
+body.paper .login-providers.v2 .provider-btn:first-child { background: rgba(243, 238, 228, 0.04); }
+@media (prefers-reduced-motion: reduce) { body.paper .splash-top, body.paper .splash-emblem { animation: none; } }
+
+/* ---------- The hexagrams written on paper (PaintedTable, paper) ---------- */
+.painted-table.is-paper .ptab-face { outline: 1.5px solid rgba(173, 147, 107, 0.55); outline-offset: 0; box-shadow: inset 0 0 0 7px var(--xuan), inset 0 0 0 8px rgba(173, 147, 107, 0.35); }
+.painted-table.is-paper .ptab-gold { color: var(--mo); font-weight: 600; text-shadow: none; }
+.painted-table.is-paper .ptab-pale { color: var(--shiqing); text-shadow: none; }
+.painted-table.is-paper .ptab-time { color: var(--shiqing) !important; text-shadow: none !important; }
+.painted-table.is-paper .ptab-rule { background: rgba(173, 147, 107, 0.55); box-shadow: none; width: 1.5px; }
+.painted-table.is-paper .ptab-tablet { border: 1.5px solid rgba(173, 147, 107, 0.7); box-shadow: none; }
+.painted-table.is-paper .ptab-tablet.ptab-gold { color: var(--mo-2); }
+.painted-table.is-paper.is-hint .band-primary .ptab-tablet { animation: paperHint 2.4s ease-in-out 0.4s 2; }
+@keyframes paperHint { 0%, 100% { color: #3d4a4e; border-color: rgba(173, 147, 107, 0.7); } 45% { color: #ac5145; border-color: #ac5145; } }
+/* Each line a stroke of ink, written from the left (the groove's scaleX), darkening as it dries (--g). */
+.painted-table.is-paper .ptab-band { --gh: 19px; }
+.painted-table.is-paper .ptab-groove i { background: var(--mo); box-shadow: none; clip-path: none; border-radius: 1.5px; opacity: calc(0.62 + var(--g, 1) * 0.38); }
+.painted-table.is-paper .ptab-groove i::after,
+.painted-table.is-paper .ptab-groove i::before { display: none; }
+.painted-table.is-paper .ptab-line.is-moving .ptab-groove i { background: var(--zhu); }
+.painted-table.is-paper .ptab-line.is-moving .ptab-groove::before {
+  background: radial-gradient(ellipse at 50% 50%, rgba(172, 81, 69, 0.28) 0%, rgba(172, 81, 69, 0.08) 50%, rgba(172, 81, 69, 0) 72%);
+}
+.painted-table.is-paper .ptab-line.is-selected:not(.is-moving) .ptab-groove i { background: var(--shiqing); }
+.painted-table.is-paper .ptab-line.is-selected .ptab-groove { outline: 1.5px solid rgba(173, 147, 107, 0.8); outline-offset: 5px; }
+.painted-table.is-paper .ptab-line.is-selected.is-moving .ptab-groove i { outline: none; }
+/* The brush tip as the line is written. */
+.painted-table.is-paper .ptab-spark { width: 16px; height: 16px; margin: -8px 0 0 -8px; background: radial-gradient(circle, rgba(23, 37, 42, 0.85) 0%, rgba(23, 37, 42, 0.35) 45%, rgba(23, 37, 42, 0) 72%); }
+.painted-table.is-paper .ptab-mark { color: var(--zhu); text-shadow: none; }
+.painted-table.is-paper .ptab-counter { border-color: var(--zhu); box-shadow: none; }
+.painted-table.is-paper .ptab-arrow { background: var(--shiqing); box-shadow: none; }
+.painted-table.is-paper .ptab-arrow.is-up::before { border-bottom-color: var(--shiqing); }
+.painted-table.is-paper .ptab-arrow.is-down::before { border-top-color: var(--shiqing); }
+.painted-table.is-paper .ptab-plate { -webkit-mask-image: none; mask-image: none; }
+body.paper .phase-title { color: var(--mo-2); text-shadow: none; }
+
+/* ---------- 问事 (home) ---------- */
+body.paper .paper-mast { position: absolute; left: 0; right: 0; top: calc(var(--safe-t) + 118px); z-index: 0; text-align: center; pointer-events: none; }
+body.paper .paper-mast h1 { margin: 0; font: 400 46px/1.15 var(--brush); letter-spacing: 0.22em; padding-inline-start: 0.22em; color: var(--mo); }
+body.paper .paper-mast p { margin: 8px 0 0; font: 14px var(--serif); letter-spacing: 0.32em; padding-inline-start: 0.32em; color: var(--mo-2); }
+body.paper .paper-mast-seal { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-bottom: 10px; border-radius: 3px; background: var(--zhu); color: #f8ecd8; font: 400 13px/1.05 'WenguaBrush', var(--serif); font-style: normal; writing-mode: vertical-rl; transform: rotate(-4deg); box-shadow: inset 0 0 0 1.5px rgba(248, 236, 216, 0.55); }
+/* The tray: a sheet of slightly brighter paper with one bronze hairline, no shadowed lacquer. */
+body.paper .home-panel.v3 { background: #f8f4e8; border-top: 1px solid rgba(173, 147, 107, 0.45); box-shadow: 0 -10px 30px rgba(90, 70, 40, 0.07); }
+body.paper .home-panel.v3 .tray-grip { background: rgba(173, 147, 107, 0.5); }
+body.paper .home-panel.v3 .topic-grid button { background: rgba(255, 253, 247, 0.6); border-color: rgba(173, 147, 107, 0.35); color: var(--mo); }
+body.paper .home-panel.v3 .topic-grid button .domain-icon { color: var(--tong-ink); }
+body.paper .home-panel.v3 .topic-grid button.is-on { background: rgba(172, 81, 69, 0.06); border-color: var(--zhu); color: var(--mo); }
+body.paper .home-panel.v3 .topic-grid button.is-on .domain-icon { color: var(--zhu); }
+body.paper .home-panel.v3 .common-asks button { background: none; border-color: rgba(173, 147, 107, 0.4); color: var(--mo-2); }
+body.paper .home-panel.v3 .ask-label { color: var(--tong-ink); }
+/* 诚心起卦: the one solid ink button on the page. */
+body.paper .home-panel.v3 .enter-seal { background: var(--mo); border: 0; color: #f3eedf; box-shadow: none; }
+body.paper .home-panel.v3 .enter-seal:active { background: #24363c; }
+body.paper .home-panel.v3 .privacy { color: var(--mo-2); }
+body.paper .home-study { color: var(--tong-ink); }
+body.paper .home-study::before, body.paper .home-study::after { background: rgba(173, 147, 107, 0.6); }
+/* The three places: ink words, the current one underlined in cinnabar. */
+body.paper .place-tabs { background: rgba(248, 244, 232, 0.94); border-color: rgba(173, 147, 107, 0.45); }
+body.paper .place-tabs button { color: var(--mo-2); }
+body.paper .place-tabs button.is-on { background: none; box-shadow: inset 0 -2px 0 var(--zhu); border-radius: 0; color: var(--mo); font-weight: 600; }
+body.paper .home-top .icon-btn, body.paper .temple-top .icon-btn { background: rgba(248, 244, 232, 0.9); border-color: rgba(173, 147, 107, 0.45); color: var(--mo); }
+body.paper .me-gear svg, body.paper .home-me svg { stroke: var(--mo); }
+body.paper .followup-strip { background: rgba(248, 244, 232, 0.94); border-color: rgba(173, 147, 107, 0.45); box-shadow: none; }
+
+/* ---------- 藏经阁 / 问事录: no picture above, so the page takes the whole screen under the tabs ---------- */
+body.paper .temple .place-panel,
+body.paper .temple .place-panel.is-raised { height: calc(100% - var(--safe-t) - 62px); border-radius: 0; border-top: 1px solid rgba(173, 147, 107, 0.35); background-color: var(--xuan); background-image: var(--paper-grain); background-size: 9px 7px, 13px 11px, 100% 100%; box-shadow: none; }
+
+/* ---------- 摇签 / 赐签 on paper ---------- */
+/* No hall above: the 签筒 stands in the middle of the page, on a faint shadow. */
+body.paper .shake-cast .qian-tong { margin-top: auto; margin-bottom: auto; filter: drop-shadow(0 14px 12px rgba(70, 56, 34, 0.18)); }
+body.paper .shake-head h2 { color: var(--mo); }
+body.paper .shake-asked { text-shadow: none; }
+body.paper .shake-asked small { color: var(--tong-ink); }
+body.paper .shake-asked b { color: var(--mo); }
+body.paper .shake-say { color: var(--mo-2); }
+body.paper .shake-precepts { border-top-color: rgba(173, 147, 107, 0.45); }
+body.paper .shake-precepts li { color: var(--mo); }
+body.paper .shake-hint { color: var(--shiqing); }
+/* The slip keeps its bamboo; around it paper and a soft shade, the button in ink. */
+body.paper .bestow-slip { filter: drop-shadow(0 12px 16px rgba(70, 56, 34, 0.22)); }
+body.paper .bestow-asked small { color: var(--tong-ink); }
+body.paper .bestow-asked b { color: var(--mo); text-shadow: none; }
+body.paper .bestow-theme { color: var(--zhu); }
+body.paper .bestow-poem { color: var(--mo-2); }
+body.paper .bestow-go { background: var(--mo); border: 0; color: #f3eedf; box-shadow: none; }
+body.paper .bestow-go::after { border-color: rgba(243, 238, 223, 0.25); }
+body.paper .bestow-go:active { background: #24363c; }
+/* The 简断 card under the written hexagrams. */
+body.paper .view-judgment, body.paper .phase-reading .view-judgment { background: #f8f4e8; border-color: rgba(173, 147, 107, 0.55); color: var(--mo); box-shadow: 0 6px 20px rgba(70, 56, 34, 0.08); }
+body.paper .phase-reading .view-judgment-label { color: var(--tong-ink); }
+body.paper .phase-reading .view-judgment-head { color: var(--mo); }
+body.paper .phase-reading .view-judgment-more { background: var(--mo); border-color: var(--mo); color: #f3eedf; }
+body.paper .phase-reading .temple-bottom { background: linear-gradient(rgba(243, 238, 223, 0), rgba(243, 238, 223, 0.9) 40%); }
+body.paper .temple-top .question-line { background: rgba(248, 244, 232, 0.94); border-color: rgba(173, 147, 107, 0.45); color: var(--mo); }
+
+/* ---------- 我的 on paper: no night sky, flat cards with one bronze hairline ---------- */
+body.paper .me-hero { background-image: none !important; border-bottom: 1px solid rgba(173, 147, 107, 0.35); }
+body.paper .me-bar h2, body.paper .me-name { color: var(--mo); text-shadow: none; }
+body.paper .me-motto, body.paper .me-id { color: var(--mo-2); text-shadow: none; }
+body.paper .me-avatar { background: #f8f4e8; border-color: var(--tong); color: var(--mo); box-shadow: none; }
+body.paper .me-card { background: #f8f4e8; border: 1px solid rgba(173, 147, 107, 0.4); box-shadow: none; }
+body.paper .me-member { background: #f8f4e8; border: 1px solid rgba(172, 81, 69, 0.45); color: var(--mo); box-shadow: none; }
+body.paper .me-member-title b { color: var(--mo); }
+body.paper .me-member-title em { background: var(--zhu); color: #f8ecd8; }
+body.paper .me-member-text { color: var(--mo-2); }
+body.paper .me-hex { background: none; border-color: rgba(173, 147, 107, 0.5); color: var(--mo); }
+body.paper .me-recent button { background: rgba(23, 37, 42, 0.035); }
+
+/* ---------- Sheets on paper ---------- */
+body.paper .sheet { background: #f8f4e8; border-color: rgba(173, 147, 107, 0.45); box-shadow: 0 -12px 34px rgba(70, 56, 34, 0.12); }
+body.paper .sheet-backdrop { background: rgba(40, 34, 24, 0.22); }
+/* 问事抽屉 as a 目录: rows between hairlines, no boxes. */
+body.paper .ask-sheet .subtype-grid { border-top: 1px solid rgba(173, 147, 107, 0.35); }
+body.paper .ask-sheet .subtype-grid button { border: 0; border-bottom: 1px solid rgba(173, 147, 107, 0.28); border-radius: 0; background: none; box-shadow: none; }
+body.paper .ask-sheet .subtype-grid button::before { color: var(--tong-ink); }
+body.paper .ask-sheet .subtype-grid button span { color: var(--mo); }
+body.paper .ask-sheet .subtype-grid button .ready-tag { color: var(--shiqing); }
+body.paper .ask-sheet .subtype-grid button.is-on { background: rgba(172, 81, 69, 0.06); box-shadow: inset 2px 0 0 var(--zhu); }
+body.paper .ask-sheet .subtype-grid button.is-on span { color: var(--mo); }
+body.paper .ask-sheet .sheet-kicker { color: var(--tong-ink); }
+
+/* The introduction's small stone, as the 卦笺 shows it: 目前 · 经过 · 结果 side by side. */
+body.paper .intro-stone.is-across { flex-direction: row; justify-content: center; gap: 14px; padding: 16px 14px; background: #f8f4e8; border: 1px solid rgba(173, 147, 107, 0.55); }
+body.paper .intro-stone.is-across .intro-stone-row { flex-direction: column-reverse; gap: 8px; }
+body.paper .intro-stone.is-across .intro-stone-row b { writing-mode: horizontal-tb; border: 0; padding: 0; font-size: 13px; color: var(--mo-2); }
+body.paper .intro-stone.is-across .intro-stone-arrow { display: none; }
+
+/* The introduction's pictures on paper: the six fields, the one button, two records. */
+body.paper .intro-fields { width: 86%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+body.paper .intro-fields span { padding: 10px 0; text-align: center; border: 1px solid rgba(173, 147, 107, 0.55); border-radius: 8px; background: #fbf8ef; font: 14px var(--serif); color: var(--mo); }
+body.paper .intro-reading > div { border-color: rgba(173, 147, 107, 0.5); background: #fbf8ef; color: var(--mo-2); }
+body.paper .intro-reading > .is-main { border-color: rgba(173, 147, 107, 0.8); background: #fbf8ef; }
+body.paper .intro-reading small { display: block; color: var(--shiqing); font-size: 12px; }
+body.paper .intro-reading b { color: var(--mo); }
+body.paper .intro-reading > .intro-cast-btn { align-self: center; padding: 10px 36px; border-radius: 999px; background: var(--mo); border-color: var(--mo); color: var(--xuan); letter-spacing: 0.3em; }
+
+
+/* ======================================================================================
+   问事 as a page of its own (2026-11-15, after the user's reference): the motto large, the six
+   fields as cards in two columns, the way into 研习与校订 as a card, and one bar at the foot
+   (问事 · 藏经阁 · 问事录 · 我的). 藏经阁 and 问事录 fill the screen above that bar.
+   ====================================================================================== */
+body.paper { --tabbar: calc(var(--safe-b) + 60px); }
+body.paper .home-panel.v3,
+body.paper .home-panel.v3.is-rising {
+  position: absolute; top: 0; left: 0; right: 0; bottom: var(--tabbar); margin: 0; width: auto; max-width: none;
+  height: auto !important; max-height: none; border: 0; border-radius: 0; box-shadow: none; animation: none; transform: none;
+  background: transparent; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  padding: calc(var(--safe-t) + 26px) 20px 28px; gap: 0;
+  /* No translate (the tray's drag used it): it would make the confirm page scroll with this page. */
+  translate: none;
+}
+body.paper .home-hero { position: relative; padding: 2px 42px 20px 0; margin-bottom: 16px; border-bottom: 3px double rgba(173, 147, 107, 0.45); }
+body.paper .home-hero-kicker { margin: 0; font: 13px var(--serif); letter-spacing: 0.14em; color: var(--zhu); }
+body.paper .home-hero h1 { margin: 12px 0 0; font: 700 27px/1.35 var(--serif); letter-spacing: 0.04em; color: var(--mo); }
+body.paper .home-hero-lead { margin: 10px 0 0; font: 14px/1.75 var(--serif-body); color: var(--mo-2); }
+body.paper .home-hero-seal {
+  position: absolute; right: 0; top: 2px; width: 30px; padding: 6px 0; display: grid; place-items: center; border-radius: 3px;
+  background: var(--zhu); color: #f8ecd8; font: 400 14px/1.15 'WenguaBrush', var(--serif); font-style: normal; writing-mode: vertical-rl;
+  letter-spacing: 0.08em; transform: rotate(-3deg); box-shadow: inset 0 0 0 1.5px rgba(248, 236, 216, 0.55);
+}
+body.paper .home-notes { margin-bottom: 16px; }
+body.paper .home-notes:empty { display: none; }
+body.paper .home-notes .followup-strip, body.paper .home-notes .daily-chip { box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+body.paper .home-section-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 12px; }
+body.paper .home-section-head h2 { margin: 0; font: 600 17px var(--serif); letter-spacing: 0.1em; color: var(--mo); }
+body.paper .home-section-head span { font: 12.5px var(--serif); color: var(--shiqing); }
+body.paper .home-panel.v3 .common-asks { margin: 0 -20px 14px; padding: 0 20px 2px; }
+body.paper .home-panel.v3 .topic-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+body.paper .home-panel.v3 .topic-grid button {
+  align-items: flex-start; justify-content: flex-start; text-align: left; gap: 5px; min-height: 104px; padding: 16px 14px 14px;
+  border-radius: 12px; border: 1px solid rgba(173, 147, 107, 0.38); background: #fbf9f2; box-shadow: none;
+}
+body.paper .home-panel.v3 .topic-grid button .domain-icon { width: 22px; height: 22px; margin-bottom: 8px; stroke: var(--zhu); opacity: 1; }
+body.paper .home-panel.v3 .topic-grid button span { font: 600 16.5px var(--serif); letter-spacing: 0.06em; color: var(--mo); }
+body.paper .home-panel.v3 .topic-grid .topic-blurb { font: 12px var(--serif-body); color: var(--shiqing); letter-spacing: 0.02em; }
+body.paper .home-panel.v3 .topic-grid button.is-on { border-color: var(--zhu); background: #fdf8f1; box-shadow: inset 0 0 0 1px rgba(172, 81, 69, 0.35); }
+body.paper .home-panel.v3 .chosen-question { margin-top: 2px; }
+body.paper .home-panel.v3 .cast-row { margin-top: 14px; }
+body.paper .home-panel.v3 .enter-row { margin-top: 12px; }
+body.paper .home-panel.v3 .privacy { margin-top: 10px; }
+body.paper .home-why {
+  display: block; width: 100%; margin-top: 22px; padding: 16px 16px 15px; text-align: left; border-radius: 12px;
+  border: 1px solid rgba(173, 147, 107, 0.3); background: #ebe4d3; color: var(--mo);
+}
+body.paper .home-why-head { display: flex; align-items: center; gap: 10px; }
+body.paper .home-why-head svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: var(--mo-2); stroke-width: 1.5; stroke-linejoin: round; }
+body.paper .home-why-head b { flex: 1; font: 600 15.5px var(--serif); letter-spacing: 0.04em; }
+body.paper .home-why-head i { font-style: normal; color: var(--zhu); }
+body.paper .home-why-text { display: block; margin-top: 8px; font: 13px/1.6 var(--serif-body); color: var(--mo-2); }
+
+/* The bar at the foot. */
+body.paper .tab-bar {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 34; display: grid; grid-template-columns: repeat(4, 1fr);
+  padding: 6px max(8px, var(--safe-l)) calc(var(--safe-b) + 4px); background: rgba(246, 242, 231, 0.97); border-top: 1px solid rgba(173, 147, 107, 0.4);
+}
+body.paper .tab-bar button { display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 48px; padding: 4px 0; border: 0; background: none; color: var(--shiqing); font: 12px var(--serif); letter-spacing: 0.08em; }
+body.paper .tab-bar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+body.paper .tab-bar button.is-on { color: var(--zhu); font-weight: 600; }
+
+/* 藏经阁 and 问事录: the whole screen above the bar, shown in place (no slide). */
+body.paper .temple .place-panel,
+body.paper .temple .place-panel.is-raised {
+  top: 0; bottom: var(--tabbar); height: auto; padding-top: var(--safe-t); border-top: 0; transform: none; opacity: 0;
+  transition: opacity 0.22s ease; will-change: opacity;
+}
+body.paper .temple .place-panel.is-on { opacity: 1; transform: none; transition: opacity 0.22s ease; }
+
+/* ======================================================================================
+   Type (2026-11-15, the pairing the user chose): headings and body in the system's Chinese sans
+   (PingFang SC on iPhone, Noto Sans SC / Source Han Sans elsewhere), bold for titles, regular for
+   reading; the classics' own words stay in 宋体. The opening screen keeps its serif name.
+   ====================================================================================== */
+body.paper {
+  --song: 'WenguaSerif', 'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', serif;
+  --song-head: 'WenguaSerifHeading', 'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', serif;
+  --serif: var(--sans);
+  --serif-body: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+body.paper .splash { --serif: var(--song-head); --serif-body: var(--song); }
+body.paper .jian-classic, body.paper .study-classic, body.paper .jian-classic b { font-family: var(--song-head) !important; }
+body.paper .jian-classic { font-weight: 400; }
+
+/* 卦笺 sizes: title 21, section labels 15, reading 16.5 / 1.75, the stage words 14, 依据 13.5, buttons 15.5. */
+body.paper .jian-ask h1 { font: 600 21px/1.45 var(--sans); letter-spacing: 0.01em; }
+body.paper .jian-kicker { font: 500 15px var(--sans); letter-spacing: 0.06em; }
+body.paper .jian-brief h2 { font: 600 20px/1.5 var(--sans); letter-spacing: 0.01em; }
+body.paper .jian-brief-text { font: 16.5px/1.75 var(--sans); letter-spacing: 0.01em; color: var(--mo-2); }
+body.paper .jian-part { grid-template-columns: 54px 1fr; gap: 6px; padding: 12px 0; }
+body.paper .jian-part h3 {
+  margin: 0; align-self: start; justify-self: start; writing-mode: horizontal-tb; height: 29px;
+  display: flex; align-items: center; padding: 0 0 0 9px; border-left: 3px solid var(--zhu);
+  font: 500 14px/1 var(--sans); letter-spacing: 0.06em; color: var(--zhu);
+}
+body.paper .jian-part p { font: 16.5px/1.75 var(--sans); letter-spacing: 0.01em; color: var(--mo); }
+body.paper .jian-part .jian-basis { margin-top: 6px; font: 13.5px/1.7 var(--sans); color: #756b5c; }
+body.paper .jian-basis b { font: 500 13.5px var(--sans); letter-spacing: 0.02em; color: #756b5c; margin-right: 4px; }
+/* 总断 sums up all before it: a little more room, a heavier rule, the words a shade bolder. */
+body.paper .jian-part.is-final { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--rule); }
+body.paper .jian-part.is-final h3 { border-left-width: 5px; font-weight: 700; }
+body.paper .jian-part.is-final p { font-weight: 600; }
+body.paper .jian-actions button, body.paper .jian-actions .jian-share { font: 500 15.5px var(--sans); letter-spacing: 0.04em; }
+body.paper .jian-hex b { font: 600 16px var(--sans); }
+body.paper .jian-tiyong { font: 13.5px var(--sans); }
+
+/* 问事: three quiet words under the motto, and a faint 卦 in the corner of the head (2026-11-15). */
+body.paper .home-hero { overflow: hidden; }
+body.paper .home-hero::after {
+  content: '卦'; position: absolute; right: -18px; bottom: -34px; z-index: -1; pointer-events: none;
+  font: 150px/1 'WenguaBrush', serif; color: rgba(173, 147, 107, 0.09);
+}
+body.paper .home-hero-tags { display: flex; gap: 8px; margin: 14px 0 0; flex-wrap: wrap; }
+body.paper .home-hero-tags span { padding: 3px 10px; border: 1px solid rgba(172, 81, 69, 0.35); border-radius: 3px; font: 12px var(--sans); letter-spacing: 0.08em; color: var(--zhu); background: rgba(255, 253, 247, 0.6); }
+/* 起卦方式 / 起卦时间, each on its own line. */
+body.paper .cast-facts { display: flex; flex-direction: column; gap: 8px; width: 100%; padding: 12px 14px; border: 1px solid rgba(173, 147, 107, 0.38); border-radius: 12px; background: #fbf9f2; text-align: left; color: var(--mo); }
+body.paper .cast-fact { display: flex; align-items: baseline; gap: 12px; }
+body.paper .cast-fact small { flex-shrink: 0; width: 4.5em; font: 12.5px var(--sans); color: var(--shiqing); }
+body.paper .cast-fact b { font: 500 14.5px var(--sans); color: var(--mo); }
+body.paper .cast-facts em { align-self: flex-end; font: 12.5px var(--sans); font-style: normal; color: var(--tong-ink); }
+
+
+/* 夜间模式 by hand (the rest is paper-night.generated.css): a seal keeps its pale letters. */
+body.paper.night .home-hero-seal,
+body.paper.night .paper-mast-seal,
+body.paper.night .jian-stamp { color: #f3eee4; }
+body.paper.night .home-hero::after { color: rgba(198, 177, 139, 0.08); }
+
+/* ---------- The opening screen, in a Chinese manner (2026-11-15) ----------
+   A thin double frame in 香槟金 with squared corner brackets, as a mounted page is framed; the
+   buttons squared off like seal frames; at sign-in the ring stays, smaller, so the page is not empty. */
+body.paper .splash::before {
+  content: ''; position: absolute; inset: calc(var(--safe-t) + 10px) 10px calc(var(--safe-b) + 10px); pointer-events: none;
+  border: 1px solid rgba(198, 177, 139, 0.32); outline: 1px solid rgba(198, 177, 139, 0.16); outline-offset: -6px;
+}
+body.paper .splash::after {
+  content: ''; position: absolute; inset: calc(var(--safe-t) + 4px) 4px calc(var(--safe-b) + 4px); pointer-events: none;
+  --c: rgba(198, 177, 139, 0.75);
+  background:
+    linear-gradient(var(--c), var(--c)) left top / 22px 1.5px no-repeat,
+    linear-gradient(var(--c), var(--c)) left top / 1.5px 22px no-repeat,
+    linear-gradient(var(--c), var(--c)) right top / 22px 1.5px no-repeat,
+    linear-gradient(var(--c), var(--c)) right top / 1.5px 22px no-repeat,
+    linear-gradient(var(--c), var(--c)) left bottom / 22px 1.5px no-repeat,
+    linear-gradient(var(--c), var(--c)) left bottom / 1.5px 22px no-repeat,
+    linear-gradient(var(--c), var(--c)) right bottom / 22px 1.5px no-repeat,
+    linear-gradient(var(--c), var(--c)) right bottom / 1.5px 22px no-repeat;
+}
+body.paper .splash-top { top: calc(var(--safe-t) + 30px); left: 30px; right: 30px; }
+body.paper .splash-enter { border-radius: 3px; box-shadow: inset 0 0 0 3px #202724, inset 0 0 0 4px rgba(198, 177, 139, 0.35); }
+body.paper .splash.is-login .splash-emblem { display: flex; width: 112px; height: 112px; gap: 6px; margin-top: calc(var(--safe-t) + 9vh); }
+body.paper .splash.is-login .splash-emblem::before { inset: 9px; }
+body.paper .splash.is-login .splash-emblem i { width: 58px; height: 5px; }
+body.paper .splash.is-login .splash-title { margin-top: 22px; }
+body.paper .splash.is-login .splash-title h1 { font-size: 42px; }
+body.paper .splash.is-login .login-guest.v2.is-primary { border-radius: 3px; box-shadow: inset 0 0 0 3px #c6b18b, inset 0 0 0 4px rgba(32, 39, 36, 0.35); }
+body.paper .login-providers.v2 .provider-btn { border-radius: 3px; }
+body.paper .splash .name-line { border-bottom-color: rgba(198, 177, 139, 0.35); }
+
+/* ======================================================================================
+   问事, second pass (2026-11-15): the motto and the fields' names in a fine 宋体 (the brand stays in
+   brush, everything one taps or reads in passing in the sans); each field card with a faint 白描 in its
+   corner; at most three 常见问事, each one written; 研习札记; the hour and method on a page of their own.
+   ====================================================================================== */
+body.paper .home-hero h1 { font: 700 25px/1.4 var(--song-head); letter-spacing: 0.02em; white-space: nowrap; }
+body.paper .home-panel.v3 .topic-grid button { position: relative; overflow: hidden; }
+body.paper .home-panel.v3 .topic-grid button span { font: 700 17.5px var(--song-head); letter-spacing: 0.08em; }
+body.paper .topic-art { position: absolute; right: 8px; bottom: 6px; width: 62px; height: 62px; fill: none; stroke: var(--tong-ink); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; opacity: 0.11; pointer-events: none; }
+
+body.paper .common-list { margin: 18px 0 0; border-top: 1px solid var(--rule); }
+body.paper .common-list h2 { margin: 14px 0 6px; font: 600 15px var(--sans); letter-spacing: 0.08em; color: var(--mo); }
+body.paper .common-list button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 46px; padding: 0 2px; border: 0; border-bottom: 1px solid var(--rule); background: none; text-align: left; }
+body.paper .common-list button span { font: 15.5px var(--sans); color: var(--mo); }
+body.paper .common-list button em { flex-shrink: 0; font: 12.5px var(--sans); font-style: normal; color: var(--shiqing); }
+
+/* The confirm page: what is asked, how and when, then 诚心起卦. */
+body.paper .cast-confirm {
+  position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
+  background-color: var(--xuan); background-image: var(--paper-grain); background-size: 9px 7px, 13px 11px, 100% 100%;
+}
+body.paper .cast-confirm-bar { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; padding: calc(var(--safe-t) + 8px) 12px 8px; border-bottom: 1px solid var(--rule); }
+body.paper .cast-confirm-bar span { text-align: center; font: 600 16px var(--sans); letter-spacing: 0.08em; color: var(--mo); }
+body.paper .cast-confirm-body { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 22px 20px calc(var(--safe-b) + 24px); }
+body.paper .cast-confirm-body .cast-row, body.paper .cast-confirm-body .enter-row, body.paper .cast-confirm-body .privacy { margin-top: 0; }
+body.paper .cast-confirm-body .enter-row { margin-top: 10px; display: flex; justify-content: center; }
+body.paper .cast-confirm-body .privacy { text-align: center; font: 12.5px var(--sans); color: var(--mo-2); }
+
+/* 研习札记 */
+body.paper .study-note {
+  display: block; width: 100%; margin-top: 24px; padding: 18px 16px 16px; text-align: left; border-radius: 12px;
+  border: 1px solid rgba(173, 147, 107, 0.38); background: #fbf9f2; color: var(--mo);
+}
+body.paper .study-note-kicker { display: block; font: 12.5px var(--sans); letter-spacing: 0.14em; color: var(--zhu); }
+body.paper .study-note-title { display: block; margin-top: 8px; font: 700 18px/1.45 var(--song-head); letter-spacing: 0.04em; }
+body.paper .study-note-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 16px 0 12px; }
+body.paper .study-note-case { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+body.paper .study-note-case .jian-gua { width: 34px; height: 37px; }
+body.paper .study-note-case .jian-role .jian-role-name { display: none; }
+body.paper .study-note-case .jian-role .jian-role-word { font-size: 10px; padding: 1px 2px; }
+body.paper .study-note-case .jian-dong { width: 7px; height: 7px; border-width: 1.3px; }
+body.paper .study-note-case small { font: 12px var(--sans); color: var(--mo-2); }
+body.paper .study-note-case em { font: 11.5px var(--sans); font-style: normal; color: var(--zhu); }
+body.paper .study-note-text { display: block; font: 13.5px/1.7 var(--sans); color: var(--mo-2); }
+body.paper .study-note-more { display: block; margin-top: 10px; text-align: right; font: 13px var(--sans); color: var(--tong-ink); }
+
+/* ======================================================================================
+   三个空间 (2026-11-15, the user's direction): 深色 · 问 (首页, 立问, 确认), 深绿与金线 · 象 (the
+   卦笺's hexagrams), 纸白与朱砂 · 解 (the reading, 藏经阁, 问事录). Few frames: space, rules, type.
+   Display in a regular 宋体, section titles in a medium 宋体, everything else in the sans; no spaced-out
+   letters on buttons.
+   ====================================================================================== */
+body.paper { --lu: #202724; --lu-2: #2a332e; --jin: #c6b18b; --ya: #f3eee4; --ya-2: rgba(243, 238, 228, 0.66); --gold-rule: rgba(198, 177, 139, 0.28); }
+
+/* 首页 */
+body.paper .home-panel.v3,
+body.paper .home-panel.v3.is-rising {
+  background: radial-gradient(ellipse 120% 60% at 50% 30%, #27302c 0%, #202724 60%, #1c2320 100%);
+  color: var(--ya); padding: calc(var(--safe-t) + 14px) 24px 28px;
+}
+body.paper .dark-top { display: flex; align-items: flex-start; justify-content: space-between; }
+body.paper .dark-brand { display: flex; flex-direction: column; gap: 4px; }
+body.paper .dark-brand b { font: 400 13px/1 var(--song-head); letter-spacing: 0.42em; color: var(--jin); }
+body.paper .dark-brand small { font: 11px var(--sans); letter-spacing: 0.06em; color: var(--ya-2); }
+body.paper .dark-menu { width: 40px; height: 40px; margin: -8px -10px 0 0; border: 0; background: none; color: var(--ya); }
+body.paper .dark-menu svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+body.paper .dark-hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 6vh 0 26px; }
+body.paper .dark-emblem {
+  position: relative; width: min(58vw, 236px); aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(198, 177, 139, 0.55);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7%;
+}
+body.paper .dark-emblem::before { content: ""; position: absolute; inset: 8%; border-radius: 50%; border: 1px solid rgba(198, 177, 139, 0.22); }
+body.paper .dark-emblem i { display: block; width: 52%; height: 3.8%; border-radius: 1px; background: var(--jin); }
+body.paper .dark-hero h1 { margin: 30px 0 0; font: 400 25px/1.4 var(--song-head); letter-spacing: 0.06em; color: var(--ya); }
+body.paper .dark-lead { margin: 10px 0 0; font: 13.5px/1.7 var(--sans); color: var(--ya-2); }
+body.paper .dark-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 360px; min-height: 52px; margin-top: 26px;
+  border: 0; border-radius: 10px; background: var(--jin); color: var(--lu); font: 500 16px var(--sans); letter-spacing: 0.04em;
+}
+body.paper .dark-cta:active { background: #b8a37d; }
+body.paper .dark-cta-note { margin: 12px 0 0; font: 12px var(--sans); letter-spacing: 0.04em; color: var(--ya-2); }
+body.paper .dark-links { border-top: 1px solid var(--gold-rule); }
+body.paper .dark-links button {
+  position: relative; display: grid; gap: 5px; width: 100%; padding: 18px 28px 18px 0; text-align: left;
+  border: 0; border-bottom: 1px solid var(--gold-rule); background: none; color: var(--ya);
+}
+body.paper .dark-links small { font: 10.5px var(--sans); letter-spacing: 0.14em; color: var(--jin); }
+body.paper .dark-links b { font: 500 16px var(--song-head); letter-spacing: 0.04em; }
+body.paper .dark-links span { font: 12.5px var(--sans); color: var(--ya-2); }
+body.paper .dark-links i { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); font-style: normal; color: var(--jin); }
+body.paper .dark-notes { margin-top: 18px; }
+body.paper .dark-notes:empty { display: none; }
+body.paper .dark-notes .followup-strip, body.paper .dark-notes .daily-chip, body.paper .dark-notes button {
+  background: rgba(243, 238, 228, 0.04); border-color: var(--gold-rule); color: var(--ya); box-shadow: none;
+}
+
+/* 立问 and 确认: a page of their own over 首页, the tab bar hidden. */
+body.paper .flow-page {
+  position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; color: var(--ya);
+  background: radial-gradient(ellipse 120% 60% at 50% 20%, #26302b 0%, #202724 60%, #1c2320 100%);
+}
+body.paper .flow-bar { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 6px; padding: calc(var(--safe-t) + 10px) 20px 10px 12px; font: 12px var(--sans); letter-spacing: 0.06em; color: var(--jin); }
+body.paper .flow-back { width: 40px; height: 40px; border: 0; background: none; color: var(--ya); font-size: 20px; }
+body.paper .flow-step { color: var(--ya-2); }
+body.paper .flow-body { flex: 1; overflow-y: auto; padding: 10px 24px calc(var(--safe-b) + 28px); }
+body.paper .flow-title { margin: 6px 0 0; font: 600 23px/1.4 var(--song-head); letter-spacing: 0.04em; color: var(--ya); }
+body.paper .flow-lead { margin: 8px 0 20px; font: 13.5px/1.7 var(--sans); color: var(--ya-2); }
+body.paper .fold-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--gold-rule); }
+body.paper .fold-list > li { border-bottom: 1px solid var(--gold-rule); }
+body.paper .fold-head { display: grid; grid-template-columns: 30px 1fr 24px; align-items: center; width: 100%; padding: 16px 0; border: 0; background: none; text-align: left; color: var(--ya); }
+body.paper .fold-head small { font: 11px var(--sans); color: var(--jin); }
+body.paper .fold-head span { display: grid; gap: 4px; }
+body.paper .fold-head b { font: 500 17px var(--song-head); letter-spacing: 0.06em; }
+body.paper .fold-head em { font: 10px var(--sans); font-style: normal; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ya-2); }
+body.paper .fold-head i { font-style: normal; font-size: 18px; color: var(--jin); text-align: right; }
+body.paper .fold-body { margin: 0 0 14px; padding: 6px; border-radius: 10px; background: var(--lu-2); }
+body.paper .fold-caution { margin: 6px 10px 8px; font: 12px/1.6 var(--sans); color: var(--ya-2); }
+body.paper .fold-body button { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 46px; padding: 0 12px; border: 0; border-radius: 8px; background: none; text-align: left; color: var(--ya); font: 15px var(--sans); }
+body.paper .fold-body button span { flex: 1; }
+body.paper .fold-body button.is-on { background: rgba(198, 177, 139, 0.14); }
+body.paper .fold-body button i { font-style: normal; color: var(--jin); }
+body.paper .fold-body .ready-tag { color: rgba(198, 177, 139, 0.7); }
+/* 确认: the chosen matter, how and when, then the one button. */
+body.paper .flow-confirm { display: flex; flex-direction: column; gap: 14px; }
+body.paper .flow-confirm .flow-title { margin-bottom: 8px; }
+body.paper .home-panel.v3 .flow-page .chosen-question { border: 0; border-top: 1px solid var(--gold-rule); border-bottom: 1px solid var(--gold-rule); border-radius: 0; background: none; padding: 16px 0; color: var(--ya); box-shadow: none; }
+body.paper .home-panel.v3 .flow-page .chosen-kicker, body.paper .home-panel.v3 .flow-page .chosen-kicker em { color: var(--jin); }
+body.paper .home-panel.v3 .flow-page .chosen-question b { color: var(--ya); font: 500 18px var(--song-head); }
+body.paper .home-panel.v3 .flow-page .chosen-note { color: var(--ya-2); }
+body.paper .home-panel.v3 .flow-page .cast-row { margin: 0; }
+body.paper .home-panel.v3 .flow-page .cast-facts { border: 0; border-bottom: 1px solid var(--gold-rule); border-radius: 0; background: none; padding: 0 0 16px; color: var(--ya); }
+body.paper .home-panel.v3 .flow-page .cast-fact small { color: var(--ya-2); }
+body.paper .home-panel.v3 .flow-page .cast-fact b { color: var(--ya); }
+body.paper .home-panel.v3 .flow-page .cast-facts em { color: var(--jin); }
+body.paper .home-panel.v3 .flow-page .ask-safety { background: rgba(243, 238, 228, 0.05); border-color: var(--gold-rule); color: var(--ya); }
+body.paper .home-panel.v3 .flow-page .error { color: #e3aa9e; }
+body.paper .home-panel.v3 .flow-page .enter-row { margin-top: 12px; }
+body.paper .home-panel.v3 .flow-page .enter-seal { width: 100%; min-height: 52px; border: 0; border-radius: 10px; background: var(--jin); color: var(--lu); font: 500 16px var(--sans); letter-spacing: 0.04em; box-shadow: none; text-shadow: none; }
+body.paper .home-panel.v3 .flow-page .privacy { text-align: center; font: 12px var(--sans); color: var(--ya-2); }
+
+/* The tab bar: three places, dark; out of the way while asking. */
+body.paper .tab-bar { grid-template-columns: repeat(3, 1fr); background: rgba(27, 33, 31, 0.98); border-top: 1px solid var(--gold-rule); }
+body.paper .tab-bar button { color: var(--ya-2); }
+body.paper .tab-bar button.is-on { color: var(--jin); font-weight: 500; }
+body.in-flow .tab-bar { display: none; }
+
+/* 象: the 卦笺's head on dark green, the hexagrams in gold, the moving line and marks in a light cinnabar. */
+body.paper .jian-bar:not(.study-bar) { background: var(--lu); color: var(--ya); border-bottom: 1px solid var(--gold-rule); }
+body.paper .jian-bar:not(.study-bar) .jian-back, body.paper .jian-bar:not(.study-bar) .jian-brand { color: var(--ya); }
+body.paper .jian-bar:not(.study-bar) .jian-kind { color: var(--jin); }
+body.paper .jian-xiang {
+  margin: -18px -22px 0; padding: 18px 22px 18px;
+  background: radial-gradient(ellipse 120% 80% at 50% 40%, #27302c 0%, #202724 70%); color: var(--ya);
+}
+body.paper .jian-xiang .jian-field, body.paper .jian-xiang .jian-when { color: var(--ya-2); }
+body.paper .jian-xiang .jian-ask { border-bottom-color: var(--gold-rule); }
+body.paper .jian-xiang .jian-ask h1 { color: var(--ya); font: 500 21px/1.45 var(--song-head); }
+body.paper .jian-xiang .jian-met { color: var(--jin); }
+body.paper .jian-xiang .jian-gua rect { fill: var(--jin); }
+body.paper .jian-xiang .jian-gua .is-moving rect { fill: #cf6f60; }
+body.paper .jian-xiang .gua-role rect { fill: none; stroke: #d98676; }
+body.paper .jian-xiang .gua-role text, body.paper .jian-xiang .gua-moving text { fill: #e19484; }
+body.paper .jian-xiang .gua-role .gua-role-name { fill: var(--ya-2); }
+body.paper .jian-xiang .gua-moving path { fill: #e19484; }
+body.paper .jian-xiang .gua-moving .gua-moving-stem { fill: none; stroke: #e19484; }
+body.paper .jian-xiang .jian-hex b { color: var(--ya); font: 500 16px var(--song-head); }
+body.paper .jian-xiang .jian-hex small { color: var(--jin); }
+body.paper .jian-xiang .jian-tiyong { color: var(--ya); border-bottom: 0; padding-bottom: 2px; }
+body.paper .jian-xiang .jian-tiyong i { color: var(--jin); }
+body.paper .home-panel.v3 .flow-page .enter-row { display: block; width: 100%; }
+/* 确认的按钮: as wide as the page, the words plain (「确认，进入起卦」). */
+body.paper .home-panel.v3 .flow-page .enter-row .enter-seal { flex: 1; width: 100%; max-width: none; min-width: 0; margin: 0; text-indent: 0; letter-spacing: 0.04em; font: 500 16px var(--sans); }

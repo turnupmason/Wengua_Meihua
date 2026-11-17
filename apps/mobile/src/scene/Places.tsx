@@ -152,7 +152,7 @@ function albumTexture() {
     g.fillRect(56, 236, 40, 40);
     g.fillStyle = '#efe5cb';
     g.font = `16px ${BRUSH}`;
-    g.fillText('问道', 76, 248);
+    g.fillText('问卦', 76, 248);
   }, true);
 }
 
