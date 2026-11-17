@@ -79,7 +79,7 @@ describe('wengualabs.com', () => {
     const { readFileSync } = await import('node:fs');
     const { resolve } = await import('node:path');
     const app = readFileSync(resolve(process.cwd(), 'public/legal/privacy.html'), 'utf8');
-    const site = readFileSync(resolve(process.cwd(), '../../site/privacy.html'), 'utf8');
+    const site = readFileSync(resolve(process.cwd(), '../../site/public/privacy.html'), 'utf8');
     expect(site).toBe(app);
     expect(app).not.toMatch(/DEVELOPER_NAME|CONTACT_EMAIL/);
   });

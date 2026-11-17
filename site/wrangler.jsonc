@@ -1,0 +1,20 @@
+// wengualabs.com: the Cloudflare Worker `wengualabs` serves the pages in public/ as they are.
+// Cloudflare builds it from GitHub on every push to main (root directory `site`, deploy command
+// `npx wrangler@4.156.2 deploy`); see docs/IOS_APP_STORE_RELEASE.md, 第七步.
+{
+  "$schema": "https://unpkg.com/wrangler@4.156.2/config-schema.json",
+  "name": "wengualabs",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    // /privacy serves privacy.html; unknown paths get 404.html.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "wengualabs.com", "custom_domain": true },
+    { "pattern": "www.wengualabs.com", "custom_domain": true }
+  ]
+}
