@@ -107,9 +107,9 @@
 3. Web Client ID / Secret 和 iOS Client ID 填进 Supabase（第五步）。
 4. iOS Client ID 填到 `VITE_GOOGLE_IOS_CLIENT_ID`，Web Client ID 填到 `VITE_GOOGLE_WEB_CLIENT_ID`。
 
-## 七、公司官网 wengualabs.com【你，约 10 分钟】
+## 七、公司官网 wengualabs.com（2026-11-17 已上线）
 
-网站已做好，在仓库的 [`site/`](../site/) 文件夹，三页中英双语：
+网站在仓库的 [`site/`](../site/) 文件夹，页面在 `site/public/`，中英双语：
 
 | 网址 | 页面 | 用在哪里 |
 | --- | --- | --- |
@@ -118,20 +118,31 @@
 | `https://wengualabs.com/support` | 技术支持（联系邮箱、恢复购买、取消订阅、退款、删除账号） | App Store Connect「技术支持网址」 |
 
 - 联系邮箱 support@wengualabs.com；使用条款用 Apple 的标准许可协议（EULA），不用另写。
-- App 里的隐私政策链接已默认指向 `https://wengualabs.com/privacy`，`.env` 里不用再填。
-- 隐私政策只改 `apps/mobile/public/legal/privacy.html` 这一份，然后复制到 `site/privacy.html`；测试会检查两份一致。
+- App 里的隐私政策链接默认指向 `https://wengualabs.com/privacy`，`.env` 里不用再填。
+- 隐私政策只改 `apps/mobile/public/legal/privacy.html` 这一份，再复制到 `site/public/privacy.html`。测试会检查两份是否一致。
 
-**用 Cloudflare Pages 免费发布：**
+**怎么托管的**
 
-1. 注册 / 登录 <https://dash.cloudflare.com>。
-2. **Workers & Pages → 创建 → Pages → 上传资产（Upload assets）**：项目名填 `wengualabs`，把 `site` 文件夹整个拖进去，点部署。会先得到一个 `wengualabs.pages.dev` 的网址，打开看看。
-3. 项目里 **自定义域（Custom domains）→ 设置自定义域**：填 `wengualabs.com`，再加一个 `www.wengualabs.com`。
-   - 域名的 DNS 已经在 Cloudflare：它会自动配好。
-   - 域名在别家（GoDaddy、Namecheap 等）：照 Cloudflare 给的提示，在那边加一条 CNAME 记录，或者把域名的 NS 改到 Cloudflare。
-4. 几分钟后打开 `https://wengualabs.com/privacy` 和 `https://wengualabs.com/support`，能看到就好了。
-5. 以后网站有改动，在项目里点 **创建新部署**，重新拖一次 `site` 文件夹即可。
+- 网站是 Cloudflare 上的 Worker `wengualabs`，配置在 [`site/wrangler.jsonc`](../site/wrangler.jsonc)：
+  - 发布 `site/public/` 里的页面；
+  - 绑定 `wengualabs.com` 和 `www.wengualabs.com`；
+  - `/privacy` 打开的是 `privacy.html`；找不到的页面显示 `404.html`。
+- DNS 已从 Squarespace 搬到 Cloudflare（名称服务器 `rocky` / `tani.ns.cloudflare.com`）。Google Workspace 邮箱的三条记录（MX、SPF、DKIM）保留在 Cloudflare 的 DNS 里，**改 DNS 时别动它们**，否则 support@wengualabs.com 会收不到信。
 
-**邮箱提示：** 改 DNS 时别动 MX 记录，否则 support@wengualabs.com 会收不到信。
+**以后怎么更新：推送到 GitHub 就自动发布**
+
+一次性设置【你，约 5 分钟】：
+
+1. Cloudflare → **Workers & Pages** → 点 `wengualabs` → **Settings（设置）** → **Build（构建）** → **Connect（连接）**。
+2. 选 **GitHub**，按提示授权 Cloudflare 访问仓库 `turnupmason/Wengua_Meihua`（只授权这一个仓库即可）。
+3. 填写：
+   - Branch（分支）：`main`
+   - **Root directory（根目录）：`site`**
+   - Build command（构建命令）：留空
+   - Deploy command（部署命令）：`npx wrangler@4.156.2 deploy`
+4. 保存。之后每次推送到 `main`，Cloudflare 会自动重新发布，一两分钟后生效。在 **Deployments（部署）** 里能看到每次发布的记录，出错也会在那里显示。
+
+设置好之后，改网站只要告诉我改什么。我改完提交推送，网站就自动更新，不用再拖文件夹。
 
 ## 八、在 Mac 上打包【你，按步骤做】
 
