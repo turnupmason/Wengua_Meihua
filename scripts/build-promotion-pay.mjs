@@ -1,4 +1,5 @@
 import {mkdir, readFile, readdir, writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import {loadLibrary, interpretationArtifactDigest, AUDIT_CHECKS} from '../src/index.js';
 import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
@@ -36,6 +37,7 @@ const timingQuotes = {
 const seen = new Map();
 const seenSentences = new Map();
 const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0};
+const literaryProgress = {standard:'V5.0', actor:'single-ai-literary-editor', completed:0, monthKeyCount:0, next:null};
 const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
 const directory = [];
@@ -72,6 +74,21 @@ for (const [batchIndex, filename] of batches.entries()) {
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
  if (drafts.length !== 30) throw new Error('An authored batch needs 30 individually written versions');
+ let literaryReceipt = null;
+ const literaryReceiptPath = sourceDir + 'polish/' + filename;
+ if (profile === LOST_OBJECT_RECOVERY_PROFILE) {
+  try {
+   literaryReceipt = JSON.parse(await readFile(new URL(literaryReceiptPath, root), 'utf8'));
+  } catch (error) {
+   if (error.code !== 'ENOENT') throw error;
+  }
+  if (literaryReceipt && (literaryReceipt.standard !== 'V5.0' || literaryReceipt.actor !== literaryProgress.actor ||
+      literaryReceipt.sourcePath !== sourcePath || !/^[a-f0-9]{7,40}$/.test(literaryReceipt.originalCommit) ||
+      !Array.isArray(literaryReceipt.entries) || new Set(literaryReceipt.entries.map(entry => entry.rowIndex)).size !== literaryReceipt.entries.length ||
+      literaryReceipt.entries.some(entry => !Number.isInteger(entry.rowIndex) || entry.rowIndex < 0 || entry.rowIndex >= drafts.length))) {
+   throw new Error('Invalid literary review receipt: ' + literaryReceiptPath);
+  }
+ }
  const rows = [];
  const monthSlots = {};
  const name = library.getHexagram(primaryId).name;
@@ -175,6 +192,20 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(isPromotion ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
    indirectEffectsApplied:[]};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
+  const literaryEntry = literaryReceipt?.entries.find(entry => entry.rowIndex === i);
+  if (literaryEntry?.status === 'POLISH_COMPLETED') {
+   const copyHash = createHash('sha256').update(JSON.stringify({title,short,opening,process,ending,summary})).digest('hex');
+   if (literaryEntry.afterCopySha256 !== copyHash || literaryEntry.id !== decisionId || literaryEntry.outcome !== outcome ||
+       !/^[a-f0-9]{64}$/.test(literaryEntry.beforeCopySha256) || !literaryEntry.reason || !literaryEntry.reviewedAt) {
+    throw new Error('Stale literary review receipt: ' + key);
+   }
+   authorship.literaryPolish = {standard:'V5.0', status:'POLISH_COMPLETED', actor:literaryProgress.actor,
+    receiptPath:literaryReceiptPath, copySha256:copyHash, reviewedAt:literaryEntry.reviewedAt};
+   literaryProgress.completed++;
+   literaryProgress.monthKeyCount += monthBranches.length;
+  } else if (profile === LOST_OBJECT_RECOVERY_PROFILE && literaryProgress.next === null) {
+   literaryProgress.next = {primaryId,movingLine,monthOrder,monthBranches};
+  }
   const receipts = [
    ['facts.stages', stageIds.join(' / ') + '，' + facts.movingLine.label + '动'],
    ['facts.nodes', facts.nodes.map(n => n.role + ' ' + n.trigram).join(' / ')],
@@ -251,6 +282,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {literaryPolish:{...literaryProgress,remaining:counts.bodies-literaryProgress.completed}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
@@ -259,6 +291,8 @@ await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['V5.0 单 AI 全文精修已完成 ' + literaryProgress.completed + ' / ' + counts.bodies + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' / ' + counts.keys + ' 个月令键。剩余 ' + (counts.bodies-literaryProgress.completed) + ' 篇待精修。'] : []),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE && literaryProgress.next ? ['下一精修键 ' + [questionId,literaryProgress.next.primaryId,literaryProgress.next.movingLine,literaryProgress.next.monthOrder].join(' / ')] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
