@@ -1,6 +1,6 @@
 # 问卦 · iOS 美国区上架步骤
 
-2026-11-17 定：先上美国 App Store。个人开发者账号；Mac 上用 Xcode 打包；登录用「通过 Apple 登录」、Google 和邮箱验证码；会员与充值用 RevenueCat，账号与解锁次数存在 Supabase。
+2026-11-17 定：先上美国 App Store。用公司（LLC）注册开发者账号；Mac 上用 Xcode 打包；登录用「通过 Apple 登录」、Google 和邮箱验证码；会员与充值用 RevenueCat，账号与解锁次数存在 Supabase。
 
 代码已经接好，填上各平台的钥匙就能用。没填钥匙的版本（包括网页预览）照旧全部开放，不出现付费。
 
@@ -10,11 +10,22 @@
 
 ## 一、Apple 开发者账号【你】
 
-1. 打开 <https://developer.apple.com/programs/enroll/>，用你的 Apple ID 登录（需开启双重认证），选 **Individual / Sole Proprietor（个人）**，付 $99/年。一般 1–2 天开通。
-   - 个人账号在商店里显示的卖家是你的真名，以后可以迁到公司名下。
-2. 开通后进 [App Store Connect](https://appstoreconnect.apple.com) → **业务（Business）**：签署 **付费 App 协议（Paid Apps Agreement）**，填银行账户和税表。
-   - 美国税务居民填 W-9，非美国居民填 W-8BEN。
-   - **不签这份协议，内购在沙盒里也拿不到商品**，所以要最先做。
+公司已注册，D-U-N-S 已于 2026-11-17 申请。商店里的卖家名会是公司名。
+
+1. **等 D-U-N-S 编码**：邓白氏（Dun & Bradstreet）会先发确认邮件，有问题会打电话或发邮件核实公司信息，请留意并及时回复。编码一般 5 个工作日左右下来，最长约 2 周；拿到后还要等 1–2 个工作日，Apple 那边才查得到。
+2. **同时准备好**：
+   - **EIN（美国税号）**：在 [IRS 网站](https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online)在线申请，当场拿到；填 W-9 税表要用。
+   - **公司官网**：Apple 要求填一个属于公司的网站（域名最好和公司名对得上，比如 `wengualabs.com`）。隐私政策和技术支持页可以放在同一个站上（见第七步）。
+   - **公司域名邮箱**：比如 `support@wengualabs.com`。Apple 审核公司账号时常用它确认你代表公司，客服邮箱也用它。
+   - **公司电话**：Apple 可能会打来核实身份。
+3. **注册开发者账号**：拿到 D-U-N-S 后，打开 <https://developer.apple.com/programs/enroll/>，用 Apple ID 登录（需开启双重认证），选 **Organization（公司）**。
+   - 填 D-U-N-S 编码和公司法定名称，**与州里注册的完全一致**（包括 "LLC"）；
+   - 你的身份写法定代表人（Owner / Member）；
+   - 付 $99/年。Apple 核实一般 2–7 天，可能打电话确认。
+4. 开通后进 [App Store Connect](https://appstoreconnect.apple.com) → **业务（Business）**：签署 **付费 App 协议（Paid Apps Agreement）**，填公司银行账户和 W-9（用 EIN）。
+   - **不签这份协议，内购在沙盒里也拿不到商品**，所以开通后要最先做。
+
+> 等 D-U-N-S 和 Apple 审核的这段时间，可以先做：第七步（发布官网，Apple 注册时要填）、第五步（Supabase）、第六步（Google 登录）。RevenueCat 可以先建项目，App Store 那部分要等 Apple 账号。第二、三步（App ID、建 App、内购商品）要等 Apple 账号开通。
 
 ## 二、App ID 与商店里的 App【你】
 
@@ -96,14 +107,31 @@
 3. Web Client ID / Secret 和 iOS Client ID 填进 Supabase（第五步）。
 4. iOS Client ID 填到 `VITE_GOOGLE_IOS_CLIENT_ID`，Web Client ID 填到 `VITE_GOOGLE_WEB_CLIENT_ID`。
 
-## 七、隐私政策网址【你 + 我】
+## 七、公司官网 wengualabs.com【你，约 10 分钟】
 
-- 隐私政策已写好：[`apps/mobile/public/legal/privacy.html`](../apps/mobile/public/legal/privacy.html)（中英双语，按 App 实际收集的数据写）。
-  - 把里面的 `DEVELOPER_NAME` 换成你的名字（个人账号的卖家名），`CONTACT_EMAIL` 换成客服邮箱。告诉我，我来替换。
-- 需要一个公开网址。最省事的是 [Cloudflare Pages](https://pages.cloudflare.com)：免费，把 `legal` 文件夹拖上去即可。
-  - 得到的网址填到 `VITE_PRIVACY_URL`，App Store Connect 的「隐私政策网址」也填这个。
-- 「技术支持网址」也是必填项，可以用同一个站点放一页联系方式。
-- 使用条款默认用 Apple 的标准许可协议（EULA），付费页上已有链接，不用另写。
+网站已做好，在仓库的 [`site/`](../site/) 文件夹，三页中英双语：
+
+| 网址 | 页面 | 用在哪里 |
+| --- | --- | --- |
+| `https://wengualabs.com` | 公司首页（Wengua Labs LLC 与问卦介绍） | Apple 公司账号注册时填的官网 |
+| `https://wengualabs.com/privacy` | 隐私政策（与 App 里的是同一份） | App Store Connect「隐私政策网址」；App 付费页的链接 |
+| `https://wengualabs.com/support` | 技术支持（联系邮箱、恢复购买、取消订阅、退款、删除账号） | App Store Connect「技术支持网址」 |
+
+- 联系邮箱 support@wengualabs.com；使用条款用 Apple 的标准许可协议（EULA），不用另写。
+- App 里的隐私政策链接已默认指向 `https://wengualabs.com/privacy`，`.env` 里不用再填。
+- 隐私政策只改 `apps/mobile/public/legal/privacy.html` 这一份，然后复制到 `site/privacy.html`；测试会检查两份一致。
+
+**用 Cloudflare Pages 免费发布：**
+
+1. 注册 / 登录 <https://dash.cloudflare.com>。
+2. **Workers & Pages → 创建 → Pages → 上传资产（Upload assets）**：项目名填 `wengualabs`，把 `site` 文件夹整个拖进去，点部署。会先得到一个 `wengualabs.pages.dev` 的网址，打开看看。
+3. 项目里 **自定义域（Custom domains）→ 设置自定义域**：填 `wengualabs.com`，再加一个 `www.wengualabs.com`。
+   - 域名的 DNS 已经在 Cloudflare：它会自动配好。
+   - 域名在别家（GoDaddy、Namecheap 等）：照 Cloudflare 给的提示，在那边加一条 CNAME 记录，或者把域名的 NS 改到 Cloudflare。
+4. 几分钟后打开 `https://wengualabs.com/privacy` 和 `https://wengualabs.com/support`，能看到就好了。
+5. 以后网站有改动，在项目里点 **创建新部署**，重新拖一次 `site` 文件夹即可。
+
+**邮箱提示：** 改 DNS 时别动 MX 记录，否则 support@wengualabs.com 会收不到信。
 
 ## 八、在 Mac 上打包【你，按步骤做】
 
@@ -192,7 +220,7 @@ App Store Connect → 你的 App → iOS App 1.0：
 | `.env` → `VITE_SUPABASE_URL`、`VITE_SUPABASE_ANON_KEY` | Supabase → Project Settings → API |
 | `.env` → `VITE_REVENUECAT_IOS_KEY` | RevenueCat → API keys → App Store public key（`appl_`） |
 | `.env` → `VITE_GOOGLE_IOS_CLIENT_ID`、`VITE_GOOGLE_WEB_CLIENT_ID` | Google Cloud → 凭据 |
-| `.env` → `VITE_PRIVACY_URL` | 隐私政策的公开网址 |
+| App Store Connect 隐私政策 / 技术支持网址 | `https://wengualabs.com/privacy`、`https://wengualabs.com/support` |
 | Supabase 密钥 `REVENUECAT_SECRET_KEY` | RevenueCat → API keys → Secret key（`sk_`），**只放服务器** |
 | RevenueCat → App Store 设置 | App Store Connect 的 In-App Purchase Key（.p8、Key ID、Issuer ID） |
 | Supabase → Google 提供商 | Google Web 客户端 ID + 密钥，iOS 客户端 ID |
