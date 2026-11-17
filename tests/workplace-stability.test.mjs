@@ -31,6 +31,7 @@ for (const [slug, id] of [
  ['new-relationship-opportunity','relationships.new-partner.opportunity'],
  ['confession-decision','relationships.confession.decision'],
  ['relationship-establishment','relationships.developing.relationship'],
+ ['relationship-reconciliation','relationships.reconciliation.reconcile'],
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');

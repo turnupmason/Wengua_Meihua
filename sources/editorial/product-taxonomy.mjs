@@ -87,7 +87,7 @@ export const PRODUCT_TAXONOMY=[
   s('reconciliation','矛盾复合','冷战能结束吗？|分手后还能复合吗？',[
    q('conflict.reunite','这次冷战能结束、恢复正常相处吗？','relationship_cold_war_resolution',['domain-02','domain-05'],o('回答这次冷战是否结束并和好，不以局部缓和代答；也不等同于分手后的复合。')),
    q('conflict.improvement','当前的关系矛盾能有所改善吗？','relationship_conflict_improvement',['domain-02','domain-05'],o('回答当前矛盾能否缓和，保留部分改善的结果，不自动推为已经和好或成婚。')),
-   q('reconciliation.reconcile','这段已经结束的感情能复合吗？','relationship_reconciliation',['domain-05'],o('回答复合，不自动保证复合后稳定。',{legacyQuestionId:'domain-05-reconcile'})),
+   q('reconciliation.reconcile','这段已经结束的感情能复合吗？','relationship_reconciliation',['domain-05'],o('回答复合，不自动保证复合后稳定。',{legacyQuestionId:'domain-05-reconcile',manuscriptIndexPath:'data/authored-readings/relationship-reconciliation/index.json'})),
    q('reconciliation.stability','如果复合，这段关系能稳定维持吗？','post_reconciliation_stability',['domain-05'],o('以已经或拟复合为前提，回答后续稳定，不再回答能否复合。'))]),
   s('marriage-plans','谈婚论嫁','这段感情能走到结婚吗？|这次谈婚事能谈妥吗？',[
    q('marriage-plans.marry','这段感情能走到结婚吗？','marriage_completion',['domain-05'],o('回答成婚与迟速，不以有好感代答成婚。',{legacyQuestionId:'domain-05-marry'})),

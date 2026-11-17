@@ -37,6 +37,11 @@ export const RELATIONSHIP_ESTABLISHMENT_PROFILE=Object.freeze({
  questionScope:'whether-the-two-people-can-agree-to-form-a-relationship',manuscriptVersion:'relationship-establishment-1.0.0',
  timingVersion:'relationship-establishment-day-1.0.0',directory:'relationship-establishment',namedStageEvents:true,
 });
+export const RELATIONSHIP_RECONCILIATION_PROFILE=Object.freeze({
+ questionId:'relationships.reconciliation.reconcile',questionType:'relationship_reconciliation',
+ questionScope:'whether-an-ended-relationship-can-be-resumed-by-mutual-choice',manuscriptVersion:'relationship-reconciliation-1.0.0',
+ timingVersion:'relationship-reconciliation-day-1.0.0',directory:'relationship-reconciliation',namedStageEvents:true,
+});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
