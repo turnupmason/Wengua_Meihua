@@ -10,6 +10,7 @@ import { defaultSettings } from '../src/domain/settings';
 import { EMPTY_FORM, HomeOverlay, type EntryForm } from '../src/ui/HomeOverlay';
 import { ShakeCast } from '../src/ui/ShakeCast';
 import { DailyCard } from '../src/ui/DailyCard';
+import { PAPER } from '../src/ui/paper';
 import { memoryStore, testKnowledge } from './helpers';
 
 afterEach(() => {
@@ -59,7 +60,16 @@ describe('常问', () => {
     );
   }
 
-  it('offers questions from all six fields in plain words; one tap chooses the entry', async () => {
+  it.runIf(PAPER)('on paper 首页 has one way in: 开始问卦 opens 立问 with the six fields (no 常问 chips, no field cards)', () => {
+    render(<Home onChange={() => {}} />);
+    expect(screen.queryByRole('group', { name: t.commonAsks })).toBeNull();
+    expect(screen.queryByRole('radio', { name: '事业工作' })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /开始问卦/ }));
+    expect(screen.getByRole('region', { name: t.askTitle })).toBeTruthy();
+    expect(screen.getAllByRole('radio')).toHaveLength(6);
+  });
+
+  it.skipIf(PAPER)('offers questions from all six fields in plain words; one tap chooses the entry', async () => {
     const { DOMAINS } = await import('../src/domain/questionCatalog');
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
@@ -190,13 +200,16 @@ describe('摇签 (完整仪式)', () => {
 });
 
 describe('六大领域的高亮', () => {
-  it('stays on the field last tapped after its drawer closes, not the chosen matter’s field', async () => {
+  it.skipIf(PAPER)('stays on the field last tapped after its drawer closes, not the chosen matter’s field', async () => {
     const { HomeOverlay: Home, EMPTY_FORM: EMPTY } = await import('../src/ui/HomeOverlay');
     const { defaultSettings: defaults } = await import('../src/domain/settings');
     render(<Home t={t} settings={{ ...defaults(), lang: 'zh' }} form={{ ...EMPTY, questionId: 'career.promotion-pay', topicId: 'career' }} error={null} onForm={() => {}} onSettings={() => {}} onEnter={() => {}} onLibrary={() => {}} onHistory={() => {}} onTitle={() => {}} onDebug={() => {}} pace="full" />);
     // A matter in 事业工作 is chosen; open the six fields and look into 财富财运 without choosing.
-    fireEvent.click(document.querySelector('.chosen-question')!);
-    fireEvent.click(screen.getByRole('button', { name: t.close }));
+    // (On paper the six fields are always on the page.)
+    if (!PAPER) {
+      fireEvent.click(document.querySelector('.chosen-question')!);
+      fireEvent.click(screen.getByRole('button', { name: t.close }));
+    }
     fireEvent.click(screen.getByRole('radio', { name: /财富财运/ }));
     fireEvent.click(screen.getByRole('button', { name: t.close }));
     expect(screen.getByRole('radio', { name: /财富财运/ }).getAttribute('aria-checked')).toBe('true');

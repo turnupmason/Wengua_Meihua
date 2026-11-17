@@ -6,6 +6,8 @@
  * Then the method, the hour of casting, the pace, and 诚心起卦 — or, for a reference or guidance
  * question, 查看说明 at once (no cast). Library, history and settings are small icons at the top.
  */
+import { PAPER } from './paper';
+import { placeStore } from './placeStore';
 import { createPortal } from 'react-dom';
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
@@ -123,6 +125,29 @@ const COMMON_ASKS: readonly { id: string; words: { zh: string; en: string } }[] 
   { id: 'health.family-health', words: { zh: '家人身体让人担心', en: 'Worried about a family member’s health' } },
 ];
 
+/**
+ * A faint line drawing in the corner of each field's card, as a 白描 in an old book (2026-11-15):
+ * a brush for 事业, an abacus for 财富, twin lotus for 感情, a gourd for 健康, a roof for 家宅, a
+ * lantern for 寻人失物. Strokes only, almost part of the paper.
+ */
+const DOMAIN_ART: Record<string, string> = {
+  career: 'M14 50 L44 14 M40 18 l6 -6 l4 4 l-6 6 M14 50 c-3 4 -6 6 -9 7 c2 -4 4 -7 7 -9 M20 43 l5 4',
+  wealth: 'M8 14 h48 v36 h-48 z M8 24 h48 M16 14 v36 M28 14 v36 M40 14 v36 M52 14 v36 M16 19 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 M28 32 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 M40 38 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0 M28 42 m-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0',
+  relationships: 'M32 58 V40 M32 40 C26 34 22 30 22 24 M32 40 C38 34 42 30 42 24 M22 24 c-6 -2 -8 -10 0 -16 c8 6 6 14 0 16 z M42 24 c-6 -2 -8 -10 0 -16 c8 6 6 14 0 16 z M32 50 c-8 0 -14 -3 -16 -6 c6 -1 12 1 16 6 c4 -5 10 -7 16 -6 c-2 3 -8 6 -16 6',
+  health: 'M32 6 v6 M28 12 h8 M32 12 c-5 0 -8 4 -8 8 c0 4 3 6 6 7 c-9 2 -14 9 -14 17 c0 9 7 14 16 14 s16 -5 16 -14 c0 -8 -5 -15 -14 -17 c3 -1 6 -3 6 -7 c0 -4 -3 -8 -8 -8 z M26 27 h12',
+  home: 'M6 30 L32 10 L58 30 M12 26 v28 h40 v-28 M26 54 v-14 h12 v14 M4 30 h56',
+  search: 'M32 4 v6 M24 10 h16 M22 10 c-8 6 -10 14 -10 22 s2 16 10 22 h20 c8 -6 10 -14 10 -22 s-2 -16 -10 -22 z M24 54 h16 M32 54 v6 M22 22 h20 M20 32 h24 M22 42 h20',
+};
+function DomainArt({ id }: { id: string }) {
+  const d = DOMAIN_ART[id];
+  if (!d) return null;
+  return (
+    <svg className="topic-art" viewBox="0 0 64 64" aria-hidden="true">
+      <path d={d} />
+    </svg>
+  );
+}
+
 /** 人事占第二 → 人事 */
 export const shortDomain = (title: string) => title.replace(/占第.+$/, '');
 
@@ -161,10 +186,11 @@ const subtypeOf = (q: CatalogQuestion) => subtypeById(questionById(q.question_id
  * chooses it; the question and option levels remain only for a subtype with several questions or
  * fixed options, which the catalog's entries do not have. Back returns one level. It sits at the bottom so the 三清 stay in view above it.
  */
-function AskDrawer({ t, domain, lang, form, onPick, onClose }: { t: Strings; domain: CatalogDomain; lang: 'zh' | 'en'; form: EntryForm; onPick: (q: CatalogQuestion, conditions: Record<string, string>) => void; onClose: () => void }) {
+function AskDrawer({ t, domain, lang, form, onPick, onClose, start = null }: { t: Strings; domain: CatalogDomain; lang: 'zh' | 'en'; form: EntryForm; onPick: (q: CatalogQuestion, conditions: Record<string, string>) => void; onClose: () => void; /** Open on this entry (立问). */ start?: CatalogSubtype | null }) {
   const current = questionById(form.questionId);
   const mine = current?.domain_id === domain.domain_id ? current : null;
   const [subtype, setSubtype] = useState<CatalogSubtype | null>(() => {
+    if (start) return start;
     const selected = subtypeById(mine?.subtype_id);
     return selected && enabledQuestions(selected).length > 1 ? selected : null;
   });
@@ -324,6 +350,12 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const [showSettings, setShowSettings] = useState(false);
   const [remindDenied, setRemindDenied] = useState(false);
   const [showMe, setShowMe] = useState(false);
+  // The bottom tab bar's 我的 (TempleView) asks for the user centre through this event.
+  useEffect(() => {
+    const open = () => (me ? setShowMe(true) : setShowSettings(true));
+    window.addEventListener('wengua:me', open);
+    return () => window.removeEventListener('wengua:me', open);
+  }, [me]);
   const set = <K extends keyof Settings>(k: K, v: Settings[K]) => onSettings({ ...settings, [k]: v });
   const f = <K extends keyof EntryForm>(k: K, v: EntryForm[K]) => onForm({ ...form, [k]: v });
 
@@ -370,6 +402,16 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   const [lastDomain, setLastDomain] = useState<string | null>(null);
   // The six fields, shown until a matter is chosen (and again when the visitor wants to change it).
   const [pickOpen, setPickOpen] = useState(false);
+  // On paper (2026-11-15): 首页 → 立问 (the six fields, folding) → 确认 (所问之事, 起卦方式, 时辰, 诚心起卦).
+  const [step, setStep] = useState<'home' | 'ask' | 'confirm'>('home');
+  const [openDomain, setOpenDomain] = useState<string | null>(null);
+  const [drawerStart, setDrawerStart] = useState<CatalogSubtype | null>(null);
+  // While asking, the tab bar and the rest of the app stay out of the way (TempleView hides the bar).
+  useEffect(() => {
+    if (!PAPER) return;
+    document.body.classList.toggle('in-flow', step !== 'home');
+    return () => document.body.classList.remove('in-flow');
+  }, [step]);
   // Which number the in-app pad is editing.
   const [pad, setPad] = useState<{ key: 'surname' | 'count' | 'major' | 'minor'; max: number } | null>(null);
   useEffect(() => setPad(null), [form.method, showMethods]);
@@ -408,12 +450,34 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
   // chosen elsewhere does not pull it back.
   const litDomain = drawer?.domain_id ?? lastDomain ?? chosen?.domain_id ?? null;
   const tray = useRef<HTMLFormElement>(null);
+  /** 立问: an entry with one question and nothing to pick is chosen at once; otherwise its drawer opens there. */
+  const pickSubtype = (d: CatalogDomain, st: CatalogSubtype) => {
+    const qs = enabledQuestions(st);
+    if (qs.length === 1 && !qs[0].conditions?.length) {
+      setLastDomain(d.domain_id);
+      onForm({ ...form, questionId: qs[0].question_id, conditions: {}, topicId: d.domain_id, domainId: qs[0].classical_domain_id ?? form.domainId });
+      coach.done('drawer');
+      setStep('confirm');
+    } else {
+      setDrawerStart(st);
+      setDrawer(d);
+    }
+  };
+  /** One tap on a 常问 chooses that entry, as its drawer would. */
+  const pickAsk = (q: NonNullable<ReturnType<typeof questionById>>) => {
+    setLastDomain(q.domain_id);
+    onForm({ ...form, questionId: q.question_id, conditions: {}, topicId: q.domain_id, domainId: q.classical_domain_id ?? form.domainId });
+    coach.done('domain');
+    coach.done('drawer');
+    setStep('confirm');
+  };
   const trayDrag = useTrayDrag(tray);
   const numberField = (key: 'surname' | 'count' | 'major' | 'minor', label: string, max: number) => (
     <NumberField label={label} value={form[key]} active={pad?.key === key} onFocus={() => setPad({ key, max })} />
   );
   return (
     <div className="home">
+      {!PAPER && (
       <header className="home-top">
         <button type="button" className="icon-btn home-back" onClick={onTitle} aria-label={t.backToTitle} title={t.backToTitle}>
           ←
@@ -430,54 +494,233 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6" /><path d="M5 20c.8-3.8 3.6-5.8 7-5.8s6.2 2 7 5.8" /></svg>
         </button>
       </header>
+      )}
 
       {/* 应期回访: a slim line over the beams, under the top bar (the tray and the 三清 stay as they are). */}
-      <div className="followup-float">
-        <FollowupCard t={t} ask={followup} lang={settings.lang} />
-        {!followup && <DailyCard t={t} daily={daily} />}
-      </div>
+      {!PAPER && (
+        <div className="followup-float">
+          <FollowupCard t={t} ask={followup} lang={settings.lang} />
+          {!followup && <DailyCard t={t} daily={daily} />}
+        </div>
+      )}
 
-      {/* The hall's own 三清殿 plaque is the title; the name stays for screen readers. */}
-      <h1 className="sr-only">{t.appName} · {t.tagline}</h1>
+      {!PAPER && <h1 className="sr-only">{t.appName} · {t.tagline}</h1>}
 
       {/* The working layer: solid enough to read on, below the 三清 so it never covers them. */}
       <form
         ref={tray}
+        id="wengua-ask"
         className="home-panel v3 is-rising"
         onSubmit={(e) => {
           e.preventDefault();
           // Doing what a tip says is as good as 「知道了」.
           coach.done('cast');
-          // Every cast is shaking the 签筒 before the 三清: iOS asks for motion only from a tap.
-          void askMotion();
+          // In the hall every cast shook the 签筒: iOS asks for motion only from a tap. On paper there is no shaking.
+          if (!PAPER) void askMotion();
           onEnter();
         }}
       >
-        {/* The head pulls the tray down or up, wherever the visitor likes; a tap folds or unfolds it. */}
-        <div className="tray-head" role="button" tabIndex={0} aria-label={t.trayGrip} {...trayDrag}>
-          <i className="tray-grip" aria-hidden="true" />
-          <p className="ask-label">{t.askWhat}</p>
-        </div>
-        {/* Once a matter is chosen the six fields fold away, so the tray stays low and the 三清 and
-            the altar stay in view; tapping the chosen matter brings them back to change it. */}
-        {/* 常问: what people actually worry about, in their own words, across the six fields (one tap
-            chooses that entry, as its drawer would). */}
-        {!chosen && (
+        {PAPER ? (
+          <>
+            {/* 首页 (2026-11-15, the user's direction: 深色 · 问): the name, 乾 in its ring, the motto, one
+                way in (开始问卦), and two quiet ways on: the method and the archive. 我的 is in the menu. */}
+            <header className="dark-top">
+              <span className="dark-brand">
+                <b>{t.appLatin}</b>
+                <small>{t.homeBrandSub}</small>
+              </span>
+              <button type="button" className="dark-menu" aria-label={t.meTitle} onClick={() => (me ? setShowMe(true) : setShowSettings(true))}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 8h14M9 14h10" />
+                </svg>
+              </button>
+            </header>
+            <div className="dark-hero">
+              <div className="dark-emblem" aria-hidden="true">
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <i key={i} />
+                ))}
+              </div>
+              <h1>{t.homeTitle}</h1>
+              <p className="dark-lead">{t.homeLead2}</p>
+              <button type="button" className="dark-cta" onClick={() => setStep('ask')}>
+                {t.homeStart} <span aria-hidden="true">→</span>
+              </button>
+              <p className="dark-cta-note">{t.homeMethodsNote}</p>
+            </div>
+            <nav className="dark-links" aria-label={t.homeLinksLabel}>
+              {me?.onStudy && (
+                <button type="button" onClick={me.onStudy}>
+                  <small>01 / THE METHOD</small>
+                  <b>{t.homeWhyTitle}</b>
+                  <span>{t.homeWhyText2}</span>
+                  <i aria-hidden="true">↗</i>
+                </button>
+              )}
+              <button type="button" onClick={() => placeStore.set('records')}>
+                <small>02 / YOUR ARCHIVE</small>
+                <b>{t.homeArchiveTitle}</b>
+                <span>{t.homeArchiveText}</span>
+                <i aria-hidden="true">↗</i>
+              </button>
+            </nav>
+            <div className="dark-notes">
+              <FollowupCard t={t} ask={followup} lang={settings.lang} />
+              {!followup && <DailyCard t={t} daily={daily} />}
+            </div>
+
+            {/* 立问 · 01 / 03: the six fields as one quiet list; one opens at a time, showing its entries. */}
+            {step === 'ask' && (
+              <section className="flow-page" aria-label={t.askTitle}>
+                <header className="flow-bar">
+                  <button type="button" className="flow-back" onClick={() => setStep('home')} aria-label={t.back}>
+                    ←
+                  </button>
+                  <span>WENGUA / {t.flowAsk}</span>
+                  <span className="flow-step">01 / 03</span>
+                </header>
+                <div className="flow-body">
+                  <h2 className="flow-title">{t.askTitle}</h2>
+                  <p className="flow-lead">{t.askLead}</p>
+                  <ol className="fold-list" role="radiogroup" aria-label={t.domainLabel}>
+                    {DOMAINS.map((d, i) => {
+                      const open = openDomain === d.domain_id;
+                      return (
+                        <li key={d.domain_id} className={open ? 'is-open' : ''}>
+                          <button
+                            type="button"
+                            className="fold-head"
+                            role="radio"
+                            aria-checked={open}
+                            aria-expanded={open}
+                            aria-label={d.label[lang]}
+                            data-tour={d.domain_id}
+                            onClick={() => {
+                              coach.done('domain');
+                              setLastDomain(d.domain_id);
+                              setOpenDomain(open ? null : d.domain_id);
+                            }}
+                          >
+                            <small>{String(i + 1).padStart(2, '0')}</small>
+                            <span>
+                              <b>{d.label.zh}</b>
+                              <em>{d.label.en}</em>
+                            </span>
+                            <i aria-hidden="true">{open ? '−' : '+'}</i>
+                          </button>
+                          {open && (
+                            <div className="fold-body">
+                              {d.caution && <p className="fold-caution">{d.caution[lang]}</p>}
+                              {d.subtypes.map((st) => {
+                                const on = chosen?.subtype_id === st.subtype_id;
+                                const state = subtypeReadiness(st);
+                                return (
+                                  <button type="button" key={st.subtype_id} data-tour={st.subtype_id} className={on ? 'is-on' : ''} aria-current={on ? 'true' : undefined} onClick={() => pickSubtype(d, st)}>
+                                    <span>{st.label[lang]}</span>
+                                    {state !== 'written' && <small className={`ready-tag is-${state}`}>{state === 'pending' ? t.scriptPendingTag : state === 'reference' ? t.referenceTag : t.guidanceTag}</small>}
+                                    {on && <i aria-hidden="true">✓</i>}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              </section>
+            )}
+
+            {/* 确认 · 02 / 03: what is asked, how and when, then 诚心起卦. */}
+            {step === 'confirm' && chosen && (
+              <section className="flow-page" aria-label={t.confirmTitle}>
+                <header className="flow-bar">
+                  <button type="button" className="flow-back" onClick={() => setStep('ask')} aria-label={t.confirmBack}>
+                    ←
+                  </button>
+                  <span>WENGUA / {t.flowConfirm}</span>
+                  <span className="flow-step">02 / 03</span>
+                </header>
+                <div className="flow-body flow-confirm">
+                  <h2 className="flow-title">{t.confirmTitle}</h2>
+                  {chosen && chosenSubtype && (
+                    <button
+                      type="button"
+                      className="chosen-question"
+                      onClick={() => {
+                        // Back to 立问 with this field open.
+                        setOpenDomain(chosen.domain_id);
+                        setStep('ask');
+                      }}
+                    >
+                      <span className="chosen-kicker">
+                        <span>
+                          {t.askedMatter}
+                          {/* An entry is its own question: its name is not said twice. */}
+                          {chosen.question_text[lang] !== chosenSubtype.label[lang] && ` · ${chosenSubtype.label[lang]}`}
+                        </span>
+                        <em>{t.changeQuestion} ›</em>
+                      </span>
+                      <b>{questionWording(chosen, form.conditions, lang)}</b>
+                      {ready !== 'written' && <small className="chosen-note">{ready === 'pending' ? t.scriptPendingNote : ready === 'reference' ? t.referenceNote : t.guidanceNote}</small>}
+                    </button>
+                  )}
+                  {chosenSubtype?.safety && <p className="ask-safety compact">{SAFETY[chosenSubtype.safety][lang]}</p>}
+                  {!readOnly && (
+                    <>
+                      <div className="cast-row">
+                        {/* On paper: 起卦方式 and 起卦时间 each on its own line, the other methods below. */}
+                        {PAPER ? (
+                          <button type="button" className="cast-facts" onClick={openMethods}>
+                            <span className="cast-fact">
+                              <small>{t.castMethodLabel}</small>
+                              <b>{t[mk] as string}</b>
+                            </span>
+                            <span className="cast-fact">
+                              <small>{t.castTimeLabel}</small>
+                              <b>{timeText}</b>
+                            </span>
+                            <em>{t.moreMethods} ›</em>
+                          </button>
+                        ) : (
+                        /* The hour cast in, whole and centred on its own line; the other methods a small way in below. */
+                        <button type="button" className="method-line" onClick={openMethods}>
+                          <span className="method-when">
+                            <span className="method-name">{t[mk] as string}</span>
+                            <i aria-hidden="true">·</i>
+                            <span className="method-time">{timeText}</span>
+                          </span>
+                          <em>{t.moreMethods} ›</em>
+                        </button>
+                        )}
+                      </div>
+                    </>
+                  )}
+                  {error && <p className="error" role="alert">{error}</p>}
+                  <div className="enter-row">
+                    <button type="submit" form="wengua-ask" className="enter-seal" disabled={busy} aria-busy={busy}>
+                      {busy ? t.castingNow : readOnly ? t.readReference : t.confirmEnter}
+                    </button>
+                  </div>
+                  <p className="privacy">{t.privacy}</p>
+                </div>
+              </section>
+            )}
+          </>
+        ) : (
+          <>
+          <div className="tray-head" role="button" tabIndex={0} aria-label={t.trayGrip} {...trayDrag}>
+            <i className="tray-grip" aria-hidden="true" />
+            <p className="ask-label">{t.askWhat}</p>
+          </div>
+        {!PAPER && !chosen && (
           <div className="common-asks" role="group" aria-label={t.commonAsks}>
             {COMMON_ASKS.map((c) => {
               const q = questionById(c.id);
               if (!q) return null;
               return (
-                <button
-                  type="button"
-                  key={c.id}
-                  onClick={() => {
-                    setLastDomain(q.domain_id);
-                    onForm({ ...form, questionId: q.question_id, conditions: {}, topicId: q.domain_id, domainId: q.classical_domain_id ?? form.domainId });
-                    coach.done('domain');
-                    coach.done('drawer');
-                  }}
-                >
+                <button type="button" key={c.id} onClick={() => q && pickAsk(q)}>
                   {c.words[lang]}
                 </button>
               );
@@ -487,9 +730,11 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {(!chosen || pickOpen) && (
           <div className="topic-grid" role="radiogroup" aria-label={t.domainLabel}>
             {DOMAINS.map((d) => (
-              <button type="button" key={d.domain_id} data-tour={d.domain_id} role="radio" aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => { coach.done('domain'); setLastDomain(d.domain_id); setDrawer(d); }}>
+              <button type="button" key={d.domain_id} data-tour={d.domain_id} role="radio" aria-label={d.label[lang]} aria-checked={litDomain === d.domain_id} className={litDomain === d.domain_id ? 'is-on' : ''} onClick={() => { coach.done('domain'); setLastDomain(d.domain_id); setDrawer(d); }}>
                 <DomainIcon id={d.domain_id} />
                 <span>{d.label[lang]}</span>
+                {PAPER && <small className="topic-blurb">{t.domainBlurb[d.domain_id] ?? ''}</small>}
+                {PAPER && <DomainArt id={d.domain_id} />}
               </button>
             ))}
           </div>
@@ -520,7 +765,21 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         {!readOnly && (
           <>
             <div className="cast-row">
-              {/* The hour cast in, whole and centred on its own line; the other methods a small way in below. */}
+              {/* On paper: 起卦方式 and 起卦时间 each on its own line, the other methods below. */}
+              {PAPER ? (
+                <button type="button" className="cast-facts" onClick={openMethods}>
+                  <span className="cast-fact">
+                    <small>{t.castMethodLabel}</small>
+                    <b>{t[mk] as string}</b>
+                  </span>
+                  <span className="cast-fact">
+                    <small>{t.castTimeLabel}</small>
+                    <b>{timeText}</b>
+                  </span>
+                  <em>{t.moreMethods} ›</em>
+                </button>
+              ) : (
+              /* The hour cast in, whole and centred on its own line; the other methods a small way in below. */
               <button type="button" className="method-line" onClick={openMethods}>
                 <span className="method-when">
                   <span className="method-name">{t[mk] as string}</span>
@@ -529,16 +788,24 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 </span>
                 <em>{t.moreMethods} ›</em>
               </button>
+              )}
             </div>
           </>
         )}
         {error && <p className="error" role="alert">{error}</p>}
         <div className="enter-row">
-          <button type="submit" className="enter-seal" disabled={busy} aria-busy={busy}>
+          <button type="submit" form="wengua-ask" className="enter-seal" disabled={busy} aria-busy={busy}>
             {busy ? t.castingNow : readOnly ? t.readReference : t.enter}
           </button>
         </div>
         <p className="privacy">{t.privacy}</p>
+        {me?.onStudy && !PAPER && (
+          <button type="button" className="home-study" onClick={me.onStudy}>
+            {t.homeStudy}
+          </button>
+        )}
+          </>
+        )}
       </form>
 
       <Exit show={!!(drawer)}>{drawer && (
@@ -547,11 +814,17 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
           domain={drawer}
           lang={lang}
           form={form}
-          onClose={() => setDrawer(null)}
+          start={drawerStart}
+          onClose={() => {
+            setDrawer(null);
+            setDrawerStart(null);
+          }}
           onPick={(q, conditions) => {
             onForm({ ...form, questionId: q.question_id, conditions, topicId: drawer.domain_id, domainId: q.classical_domain_id ?? form.domainId });
             setDrawer(null);
+            setDrawerStart(null);
             setPickOpen(false);
+            setStep('confirm');
             coach.done('domain');
             coach.done('drawer');
           }}
@@ -659,7 +932,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
         <MeScreen
           t={t}
           lang={lang}
-          data={{ ...me, onOpenRecord: (r) => { setShowMe(false); me.onOpenRecord(r); }, onRecords: () => { setShowMe(false); me.onRecords(); }, onSaved: () => { setShowMe(false); me.onSaved(); }, onLibrary: () => { setShowMe(false); me.onLibrary(); } }}
+          data={{ ...me, onOpenRecord: (r) => { setShowMe(false); me.onOpenRecord(r); }, onRecords: () => { setShowMe(false); me.onRecords(); }, onSaved: () => { setShowMe(false); me.onSaved(); }, onLibrary: () => { setShowMe(false); me.onLibrary(); }, onStudy: me.onStudy && (() => { setShowMe(false); me.onStudy?.(); }) }}
           onClose={() => setShowMe(false)}
           onSettings={() => {
             setShowMe(false);
@@ -688,6 +961,14 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                   English
                 </button>
               </div>
+              {/* 夜间模式: 宣纸 by day, 玄墨绿 by night, or as the phone is set. */}
+              <div className="lang-switch theme-switch" role="group" aria-label={t.themeLabel}>
+                {(['light', 'dark', 'system'] as const).map((m) => (
+                  <button key={m} className={settings.theme === m ? 'is-on' : ''} onClick={() => onSettings({ ...settings, theme: m })}>
+                    {t.themeNames[m]}
+                  </button>
+                ))}
+              </div>
               <label className="toggle">
                 <input type="checkbox" checked={settings.sound} onChange={(e) => set('sound', e.target.checked)} /> {t.sound}
               </label>
@@ -697,6 +978,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
               <label className="toggle">
                 <input type="checkbox" checked={settings.haptics} onChange={(e) => set('haptics', e.target.checked)} /> {t.haptics}
               </label>
+              {!PAPER && (
               <label>
                 <span>{t.quality}</span>
                 <select value={settings.quality} onChange={(e) => set('quality', e.target.value as Settings['quality'])}>
@@ -707,7 +989,8 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                   ))}
                 </select>
               </label>
-              <p className="note">{t.flatModeNote}</p>
+              )}
+              {!PAPER && <p className="note">{t.flatModeNote}</p>}
               {canRemind() && (
                 <>
                   <label className="toggle">

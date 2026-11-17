@@ -1,5 +1,6 @@
 import { Component, Suspense, cloneElement, lazy, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ComponentProps, type ReactElement, type ReactNode } from 'react';
-import { shownQuestion } from '../domain/questionCatalog';
+import { questionById, shownQuestion } from '../domain/questionCatalog';
+import { topicById } from '../domain/topics';
 import type { Knowledge } from '../knowledge/knowledge';
 import { readingFromCast, snapshotDrift, type CastRecord } from '../domain/cast';
 import { isRitualPhase, type RitualEvent, type RitualState } from '../domain/ritual';
@@ -17,6 +18,9 @@ import { INTRO_SECONDS } from '../scene/timeline';
 import { bestowalTimes } from '../scene/carving';
 import { PaintedTable } from './PaintedTable';
 import { coach, useCoach } from './coach';
+import { GuaJian } from './GuaJian';
+import { PAPER } from './paper';
+import type { StudyExample } from './StudyPage';
 import { Exit } from './Exit';
 import { PaintedWalkIn } from './PaintedWalkIn';
 import { PaintedHall, PaintedPlace } from './PaintedHall';
@@ -83,6 +87,8 @@ interface Props {
   slipFor?: string | null;
   /** The hexagrams this cast added to 卦册 (said once in its reading). */
   newMet?: { names: string[]; count: number } | null;
+  /** 研习与校订 */
+  onStudy?: (example?: StudyExample) => void;
   /** 应期提醒: whether it is on, and turning it on (asks the phone first). */
   remind?: { on: boolean; onTurnOn: () => void };
   journal: Journal;
@@ -91,7 +97,16 @@ interface Props {
   recordsPanel: ReactElement<{ active?: boolean }>;
 }
 
-export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null, slipFor = null }: Props) {
+
+/** Line icons for the bottom tab bar (paper): a compass, a shelf of books, a written record, a person. */
+const TAB_ICON = {
+  altar: 'M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM14.8 9.2l-1.6 4-4 1.6 1.6-4z',
+  library: 'M5 4.5v15M9 4.5v15M13 6l3.6 13.4M19 19.5H4',
+  records: 'M7 3.5h8l3 3V20.5H7zM15 3.5v3h3M9.5 11h6M9.5 14h6M9.5 17h4',
+  me: 'M12 12.2a3.6 3.6 0 1 0 0-7.2 3.6 3.6 0 0 0 0 7.2zM5 20c.8-3.8 3.6-5.8 7-5.8s6.2 2 7 5.8',
+} as const;
+
+export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null, slipFor = null, onStudy }: Props) {
   const place = usePlace();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
@@ -105,7 +120,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     if (failures.current <= 2) setTimeout(() => setSceneKey((k) => k + 1), 250);
     else setSceneFailed(true);
   }, []);
-  const tier = useMemo(() => (sceneFailed ? null : pickTier(settings.quality)), [settings.quality, sceneFailed]);
+  // On paper (ui/paper.ts) there is no 3D hall at all.
+  const tier = useMemo(() => (PAPER || sceneFailed ? null : pickTier(settings.quality)), [settings.quality, sceneFailed]);
   const [selection, setSelection] = useState<Selection | null>(null);
 
   const reading = useMemo(() => (record ? readingFromCast(knowledge.library, record) : null), [record, knowledge]);
@@ -252,6 +268,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   const onCue = useCallback(
     (p: RitualState['phase'], i: number) => {
       if (p === 'entering') templeAudio.bowl(0.8);
+      // On paper the three hexagrams simply come up on the 卦笺: no carving sounds (the user, 2026-11-15).
+      else if (PAPER && p === 'revealing') return;
       // From the 签筒 the bestowal's own bowl and bell were the slip's; the stone's 磬 as it appears,
       // each line's chime and the 磬 when all is carved all sound.
       else if (p === 'revealing' && i === 0 && slipRef.current) return;
@@ -287,7 +305,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   // Opening walk-in: start the glide when the title screen is tapped, show the home tray after it.
   // The painted courtyard and threshold (docs/art-reference/sanqing-entrance) when their pictures
   // have loaded; otherwise the 3D courtyard walk. Chosen while waiting, fixed once the walk starts.
-  const walkInArt = useWalkInArt();
+  const walkInArtLoaded = useWalkInArt();
+  const walkInArt = !PAPER && walkInArtLoaded;
   const introRef = useRef<IntroRef>({ start: null, done: intro === 'done', painted: walkInArtReady() });
   if (intro === 'waiting') introRef.current.painted = walkInArt;
   useEffect(() => {
@@ -352,14 +371,20 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
   // It gives way to the 3D hall when the visitor walks to the stone table or to another place.
   const paintedHall = walkInArt && ((intro !== 'done' && !!introRef.current.painted) || (intro === 'done' && phase === 'idle' && place === 'altar'));
   // 藏经阁 and 问事录 painted too, when their pictures are there.
-  const placeArt = usePlaceArt();
+  const placeArtLoaded = usePlaceArt();
+  const placeArt = !PAPER && placeArtLoaded;
   const paintedPlace = placeArt && walkInArt && intro === 'done' && phase === 'idle' && place !== 'altar';
   // While a painting covers the hall — the whole walk-in, home, 藏经阁, 问事录 — the 3D view rests;
   // it resumes the moment the visitor walks to the stone table.
   // During the ritual the painting reports when it fully covers the screen (the walk, sitting, looking up).
   const [ritualCovered, setRitualCovered] = useState(false);
   // The stone table is the user's painting too (ui/PaintedTable), from 石桌显卦 through the reading.
-  const paintedTable = walkInArt && !!reading && (phase === 'revealing' || phase === 'reading');
+  // On paper the same writing, laid flat on 宣纸 and written out line by line.
+  // On paper (2026-11-15) the reading is the 卦笺 itself: it opens as the slip gives way, the three
+  // hexagrams written across it line by line, the 简断 straight after. No 卦面 page in between. Only
+  // older free-written records (no catalog 断语) keep the 卦面 and the 读卦 page.
+  const directJian = PAPER && !!reading && (phase === 'revealing' || phase === 'reading') && !!judgmentView && judgmentView.state !== 'legacy';
+  const paintedTable = (PAPER ? !directJian : walkInArt) && !!reading && (phase === 'revealing' || phase === 'reading');
   const hallRests = paintedHall || paintedPlace || ritualCovered || paintedTable;
   const phaseTitle: Partial<Record<typeof phase, string>> = {
     entering: t.walking,
@@ -396,7 +421,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
               />
             </Suspense>
           </SceneBoundary>
-        ) : phase === 'reading' || phase === 'revealing' ? (
+        ) : PAPER ? null : phase === 'reading' || phase === 'revealing' ? (
           reading && relation && (
             <div className="flat-table">
               <Board2D reading={reading} relation={relation} selection={selection} t={t} lang={settings.lang} revealed={phase === 'reading'} onPick={onPick} onOpenStage={onOpenStage} castTime={castTimeLabel} />
@@ -426,6 +451,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
           onOpenRelation={onOpenRelation}
           onMiss={onMiss}
           hint={coachStone && phase === 'reading'}
+          paper={PAPER}
         />
       )}
       {/* Under the hall's and the places' pictures, while one is shown: an opaque dark floor, so that
@@ -434,7 +460,21 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       {walkInArt && <PaintedHall shown={paintedHall} away={paintedPlace} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
 
-      {phase === 'idle' && intro === 'done' && (
+      {phase === 'idle' && intro === 'done' && PAPER && (
+        // On paper (2026-11-15): three places at the foot, 问事 · 藏经阁 · 问事录 (我的 is in 首页's menu);
+        // hidden while asking (body.in-flow) and at a reading.
+        <nav className="tab-bar" aria-label={t.placesLabel}>
+          {(['altar', 'library', 'records'] as const).map((p) => (
+            <button key={p} type="button" aria-current={place === p ? 'page' : undefined} className={place === p ? 'is-on' : ''} onClick={() => onPlace(p)}>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d={TAB_ICON[p]} />
+              </svg>
+              <span>{p === 'altar' ? t.placeAltar : p === 'library' ? t.library : t.history}</span>
+            </button>
+          ))}
+        </nav>
+      )}
+      {phase === 'idle' && intro === 'done' && !PAPER && (
         <nav className="place-tabs" aria-label={t.placesLabel}>
           {(['altar', 'library', 'records'] as const).map((p) => (
             <button key={p} aria-current={place === p ? 'page' : undefined} className={place === p ? 'is-on' : ''} onClick={() => onPlace(p)}>
@@ -495,7 +535,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       </>
       )}
 
-      {tier && phase === 'reading' && reading && (
+      {(tier || PAPER) && phase === 'reading' && reading && (
         <nav className="sr-only stone-access" aria-label={t.details} inert={boardBlocked}>
           {(['primary', 'mutual', 'changed'] as const).map((s) => (
             <button key={s} onClick={() => onOpenStage(s)}>
@@ -505,7 +545,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
         </nav>
       )}
 
-      {(sceneFailed || (!tier && settings.quality !== '2d')) && <p className="toast">{t.webglFallback}</p>}
+      {!PAPER && (sceneFailed || (!tier && settings.quality !== '2d')) && <p className="toast">{t.webglFallback}</p>}
 
       {inRitual && phaseTitle[phase] && (
         <p className="phase-title" key={phase}>
@@ -551,7 +591,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             {versionChanged && <p className="note">{t.snapshotNotice}</p>}
             {drift.length > 0 && <p className="error">{t.driftNotice}</p>}
             {/* The relation is carved on the table; screen readers still get it here. */}
-            {tier && relation && <p className="sr-only">{relationAria(relation, settings.lang)}</p>}
+            {(tier || PAPER) && relation && <p className="sr-only">{relationAria(relation, settings.lang)}</p>}
             {/* 观卦: the stone stays fully in view; one entry leads to the 断语 (读卦). */}
             {/* First time at the stone: how to read it, then where the conclusion is (ui/coach.tsx).
                 With the tips off, the short 「卦象自下而上」 line still shows once. */}
@@ -563,6 +603,7 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
             )}
             {/* The conclusion, whole, under the stone (not cut off in a one-line bar): 简断's title and
                 one tap to read it all. Without a written 断语 it says so and still opens the reading. */}
+            {!directJian && (
             <button
               type="button"
               className="view-judgment"
@@ -580,11 +621,52 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
                 {judgmentView?.state === 'ready' ? t.readFull : t.readNote} <span aria-hidden="true">›</span>
               </span>
             </button>
+            )}
           </>
         )}
       </footer>
 
-      {readMode && reading && phase === 'reading' && (
+      {/* A written 断语 reads as a 卦笺; older records without one keep the 读卦 page. */}
+      {reading && judgmentView && (directJian || (readMode && phase === 'reading' && judgmentView.state === 'ready')) && (
+        <GuaJian
+          reading={reading}
+          judgment={judgmentView ?? { state: 'legacy' }}
+          question={asked}
+          field={record ? (topicById(record.topicId)?.[settings.lang === 'en' ? 'en' : 'zh'] ?? null) : null}
+          asks={(() => {
+            const j = judgmentView?.state === 'ready' ? judgmentView.judgment : null;
+            const q = j ? questionById(j.contentQuestionId ?? j.questionId) : null;
+            return q ? q.question_text[settings.lang] : null;
+          })()}
+          castTime={castTimeLabel}
+          t={t}
+          lang={settings.lang}
+          saved={!!bookEntry}
+          sectionTitle={(id) => {
+            try {
+              return knowledge.library.getSection(id)?.title ?? null;
+            } catch {
+              return null;
+            }
+          }}
+          onOpenSection={(title) => {
+            const text = knowledge.library.listSections().find((x) => x.title === title)?.text;
+            if (text) setSectionPage({ title, text });
+          }}
+          onOpenBook={(id, line) => setBookPage({ hexagramId: id, line })}
+          onSave={() => setShowBook(true)}
+          onUnlock={() => onOpenMembership('judgment', record?.castId ?? null)}
+          onClose={directJian ? onNewCast : () => setReadMode(null)}
+          focus={readMode === 'top' || readMode === 'detail' ? null : readMode}
+          newMet={newMet}
+          remind={remind}
+          onStudy={onStudy && (() => onStudy({ reading, calendar: record?.calendar ?? null, monthBranch: record?.context.monthBranch ?? null }))}
+          writing={directJian && phase === 'revealing' ? { reduced } : null}
+          pending={judgmentView.state === 'missing' ? missingText(t, judgmentView.reason) : null}
+          closeLabel={directJian ? t.finish : undefined}
+        />
+      )}
+      {readMode && reading && phase === 'reading' && judgmentView?.state !== 'ready' && !directJian && (
         <ReadingView
           reading={reading}
           blocked={!!(showBook || bookPage || sectionPage || selection || memberOpen)}

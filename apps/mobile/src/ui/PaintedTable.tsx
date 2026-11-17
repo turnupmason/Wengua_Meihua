@@ -9,6 +9,9 @@
  * The writing lies on a flat 600 × 1040 face (the 3D slab's proportions) mapped onto the slab
  * in the picture by one CSS perspective transform, so it sits in the stone and stays tappable.
  * While 石桌显卦 the grooves open one by one on the ritual clock, with the same chimes.
+ *
+ * On paper (ui/paper.ts) there is no table: the same face lies flat on 宣纸, without perspective,
+ * and each line is written in ink from left to right (the moving line in cinnabar), with the chimes.
  */
 import { useEffect, useMemo, useRef, type MutableRefObject } from 'react';
 import type { Reading } from '../knowledge/knowledge';
@@ -102,6 +105,20 @@ function frame(root: HTMLElement, plate: HTMLElement, face: HTMLElement) {
   document.documentElement.style.setProperty('--table-feet', `${Math.round(root.getBoundingClientRect().top + top + TABLE_Y[1] * s)}px`);
 }
 
+/** On paper: the face flat, as large as fits between the top bar and the 简断 card, centred. */
+function framePaper(root: HTMLElement, plate: HTMLElement, face: HTMLElement) {
+  const W = root.clientWidth;
+  const H = root.clientHeight;
+  const bar = document.querySelector<HTMLElement>('.temple-top')?.getBoundingClientRect().bottom || 56;
+  const room = H - bar - BARS.bottom - 20;
+  const s = Math.min((W - 2 * SIDE) / FACE.w, room / FACE.h);
+  const left = (W - FACE.w * s) / 2;
+  const top = bar + 8 + Math.max(0, (room - FACE.h * s) / 2);
+  Object.assign(plate.style, { width: `${W}px`, height: `${H}px`, left: '0px', top: '0px' });
+  face.style.transform = `translate(${left.toFixed(1)}px, ${top.toFixed(1)}px) scale(${s.toFixed(4)})`;
+  document.documentElement.style.setProperty('--table-feet', `${Math.round(root.getBoundingClientRect().top + top + FACE.h * s)}px`);
+}
+
 interface Props {
   reading: Reading;
   relation: RelationView | null;
@@ -119,6 +136,8 @@ interface Props {
   onMiss: () => void;
   /** First time at the stone: 目前 lights once (start here). */
   hint?: boolean;
+  /** On 宣纸: flat, in ink (ui/paper.ts). */
+  paper?: boolean;
 }
 
 type Part = { el: HTMLElement; at: number; dur: number; kind: 'fade' | 'groove'; y?: number };
@@ -143,7 +162,7 @@ const tappable = (on: boolean, act: () => void) => ({
   },
 });
 
-export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang, selection, castTime, onPick, onOpenStage, onOpenRelation, onMiss, hint = false }: Props) {
+export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang, selection, castTime, onPick, onOpenStage, onOpenRelation, onMiss, hint = false, paper = false }: Props) {
   const root = useRef<HTMLDivElement>(null);
   const plate = useRef<HTMLDivElement>(null);
   const face = useRef<HTMLDivElement>(null);
@@ -159,11 +178,11 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
   const interactive = phase === 'reading';
 
   useEffect(() => {
-    const fit = () => root.current && plate.current && face.current && frame(root.current, plate.current, face.current);
+    const fit = () => root.current && plate.current && face.current && (paper ? framePaper : frame)(root.current, plate.current, face.current);
     fit();
     window.addEventListener('resize', fit);
     return () => window.removeEventListener('resize', fit);
-  }, []);
+  }, [paper]);
 
   // 石桌显卦: each part shows when its time on the ritual clock comes (grooves open along their
   // length, the writing fades in), with a soft chime as each line begins. Done in the reading.
@@ -231,10 +250,10 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
   };
 
   return (
-    <div ref={root} className={`painted-table ${interactive ? 'is-live' : ''} ${hint ? 'is-hint' : ''}`} aria-hidden={!interactive} onClick={interactive ? onMiss : undefined}>
+    <div ref={root} className={`painted-table ${paper ? 'is-paper' : ''} ${interactive ? 'is-live' : ''} ${hint ? 'is-hint' : ''}`} aria-hidden={!interactive} onClick={interactive ? onMiss : undefined}>
       {/* A thin warm wash over the picture (static, so it costs nothing per frame) brings the table's
           cooler grey toward the hall's lamplight. */}
-      <div ref={plate} className="ptab-plate" style={{ backgroundImage: `linear-gradient(rgba(150, 90, 30, 0.1), rgba(150, 90, 30, 0.1)), url(${walkInUrl(WALK_IN_FILES.table)})` }}>
+      <div ref={plate} className="ptab-plate" style={paper ? undefined : { backgroundImage: `linear-gradient(rgba(150, 90, 30, 0.1), rgba(150, 90, 30, 0.1)), url(${walkInUrl(WALK_IN_FILES.table)})` }}>
         <div ref={face} className={`ptab-face ${zh ? '' : 'is-en'}`} style={{ width: FACE.w, height: FACE.h }}>
           <i ref={spark} className="ptab-spark" />
           {/* The rule between the frames and the hexagrams. */}
@@ -245,6 +264,8 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
             const name = text(blocks.get(`name-${s}`));
             const grade = text(blocks.get(`grade-${s}`));
             const textAt = plan.textStart(i);
+            // Flat paper does not recede: every band the same size.
+            const far = paper ? FAR.primary : FAR[s];
             return (
               <div key={s} className={`ptab-band band-${s}`}>
                 {/* 目前 / 经过 / 结果 in its carved frame. */}
@@ -291,12 +312,12 @@ export function PaintedTable({ reading, relation, phase, clock, reduced, t, lang
                   {name
                     .filter((l) => l.tone !== 'pale')
                     .map((l, j) => (
-                      <span key={j} className="ptab-gold" style={zh ? { fontSize: Math.round(44 * FAR[s].size), transform: `scaleX(${FAR[s].x})` } : undefined}>
+                      <span key={j} className="ptab-gold" style={zh ? { fontSize: Math.round(44 * far.size), transform: `scaleX(${far.x})` } : undefined}>
                         {l.text}
                       </span>
                     ))}
                 </div>
-                <span ref={part(`grade-${s}`, textAt, plan.textDuration)} className="ptab-grade ptab-gold" style={{ top: bandY, ...(zh ? { fontSize: Math.round(24 * FAR[s].size), transform: `translateY(-50%) scaleX(${FAR[s].x})` } : {}) }}>
+                <span ref={part(`grade-${s}`, textAt, plan.textDuration)} className="ptab-grade ptab-gold" style={{ top: bandY, ...(zh ? { fontSize: Math.round(24 * far.size), transform: `translateY(-50%) scaleX(${far.x})` } : {}) }}>
                   {grade.map((l) => l.text).join(zh ? '' : ' ')}
                 </span>
               </div>

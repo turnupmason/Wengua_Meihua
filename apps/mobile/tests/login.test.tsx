@@ -57,8 +57,8 @@ describe('Sign-in screen', () => {
     expect(entered).toBe(2);
   });
 
-  it('shows 「欢迎入殿」 after signing in', () => {
+  it('shows 「欢迎」 after signing in', () => {
     login(true);
-    expect(screen.getByRole('status').textContent).toBe('欢迎入殿');
+    expect(screen.getByRole('status').textContent).toBe('欢迎');
   });
 });
