@@ -46,7 +46,7 @@ describe('付费页 (App Store)', () => {
     expect(screen.getByText(t.memberTrial)).toBeTruthy();
     expect(screen.getByText(t.memberRenewApple)).toBeTruthy();
     expect(screen.getByRole('link', { name: t.memberTerms }).getAttribute('href')).toMatch(/apple\.com\/legal/);
-    expect(screen.getByRole('link', { name: t.memberPrivacy }).getAttribute('href')).toMatch(/privacy\.html$/);
+    expect(screen.getByRole('link', { name: t.memberPrivacy }).getAttribute('href')).toBe('https://wengualabs.com/privacy');
   });
 
   it('a pack bought from a locked reading opens that reading with one of its ten', async () => {
@@ -71,5 +71,16 @@ describe('付费页 (App Store)', () => {
     expect(bought).toEqual([]);
     expect(opened).toEqual(['cast-2']);
     expect(m.canReadFull('cast-2')).toBe(true);
+  });
+});
+
+describe('wengualabs.com', () => {
+  it('publishes the same privacy policy the app carries', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { resolve } = await import('node:path');
+    const app = readFileSync(resolve(process.cwd(), 'public/legal/privacy.html'), 'utf8');
+    const site = readFileSync(resolve(process.cwd(), '../../site/privacy.html'), 'utf8');
+    expect(site).toBe(app);
+    expect(app).not.toMatch(/DEVELOPER_NAME|CONTACT_EMAIL/);
   });
 });

@@ -19,11 +19,12 @@ export const CLOUD = {
 
 /**
  * The privacy policy and terms the App Store asks to be linked beside subscriptions. The policy is
- * public/legal/privacy.html, hosted at a public address (VITE_PRIVACY_URL); the terms are Apple's
- * standard licence unless our own are given (VITE_TERMS_URL).
+ * public/legal/privacy.html, published on the company site as https://wengualabs.com/privacy
+ * (site/privacy.html is the same file); the terms are Apple's standard licence unless our own are
+ * given (VITE_TERMS_URL).
  */
 export const LEGAL = {
-  privacy: env.VITE_PRIVACY_URL || `${import.meta.env?.BASE_URL ?? '/'}legal/privacy.html`,
+  privacy: env.VITE_PRIVACY_URL || 'https://wengualabs.com/privacy',
   terms: env.VITE_TERMS_URL || 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
 };
 
