@@ -76,3 +76,46 @@ describe('内测 (OPEN_BETA)', () => {
     expect(m.giftFirst('c1')).toBe(false);
   });
 });
+
+describe('reading credits (2026-11-17)', () => {
+  it('a pack gives ten; each opens one reading, the same reading only once', () => {
+    const m = createMembership(memStore(), { openBeta: false });
+    m.grant('wengua.reading.pack10', 'c1');
+    expect(m.canReadFull('c1')).toBe(true);
+    expect(m.credits()).toBe(9);
+    expect(m.useCredit('c1')).toBe(true);
+    expect(m.credits()).toBe(9);
+    expect(m.useCredit('c2')).toBe(true);
+    expect(m.credits()).toBe(8);
+    expect(m.canReadFull('c3')).toBe(false);
+  });
+
+  it('cannot open a reading without a credit', () => {
+    const m = createMembership(memStore(), { openBeta: false });
+    expect(m.useCredit('c1')).toBe(false);
+    expect(m.canReadFull('c1')).toBe(false);
+  });
+
+  it('takes the server’s subscription, credits and opened readings as they are', () => {
+    const m = createMembership(memStore(), { openBeta: false });
+    const now = new Date('2026-11-17T10:00:00Z');
+    m.applyServer({ plan: 'yearly', expiresAt: '2027-11-17T10:00:00Z', credits: 4, unlocked: ['a', 'b'] });
+    expect(m.isMember(now)).toBe(true);
+    expect(m.credits()).toBe(4);
+    expect(m.canReadFull('b', now)).toBe(true);
+    m.applyServer({ plan: 'free', expiresAt: null, credits: 0, unlocked: [] });
+    expect(m.isMember(now)).toBe(false);
+    // An opened reading stays opened.
+    expect(m.canReadFull('a', now)).toBe(true);
+  });
+
+  it('prices are the launch prices until the App Store says its own', async () => {
+    const { PRODUCTS } = await import('../src/domain/membership');
+    expect(Object.fromEntries(Object.values(PRODUCTS).map((p) => [p.id, p.price.en]))).toEqual({
+      'wengua.member.monthly': '$9.99 / month',
+      'wengua.member.yearly': '$69.99 / year',
+      'wengua.reading.single': '$0.99',
+      'wengua.reading.pack10': '$4.99',
+    });
+  });
+});

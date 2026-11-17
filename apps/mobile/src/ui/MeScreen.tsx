@@ -3,6 +3,7 @@
  * (内测 for now: everything is open, no plans are sold — see OPEN_BETA), what has been asked (counts,
  * 应验率 from 应期回访, 卦册), the latest three casts, and the ways on: 问事录, 收藏, 卦册, 设置.
  */
+import { useState } from 'react';
 import type { Strings } from '../domain/i18n';
 import type { CastRecord } from '../domain/cast';
 import { walkInUrl, WALK_IN_FILES } from './walkInArt';
@@ -28,6 +29,10 @@ export interface MeData {
   onStudy?: () => void;
   onSignIn: () => void;
   onSignOut: () => void;
+  /** Purchases open (not 内测): the plan line, credits left, and the membership sheet. */
+  member?: { line: string; credits: number; onOpen: () => void };
+  /** An online account: delete it and what the server keeps for it. */
+  onDeleteAccount?: () => Promise<void>;
 }
 
 const day = (r: CastRecord, lang: 'zh' | 'en') => {
@@ -80,16 +85,33 @@ export function MeScreen({ t, lang, data, onClose, onSettings }: { t: Strings; l
       </header>
 
       <main className="me-body">
-        {/* 内测: the card says everything is open; plans and prices come at the store release. */}
-        <section className="me-member">
-          <div>
-            <p className="me-member-title">
-              <b>{t.meBetaTitle}</b>
-              <em>{t.meBetaOn}</em>
-            </p>
-            <p className="me-member-text">{t.meBetaText}</p>
-          </div>
-        </section>
+        {/* 内测: the card says everything is open. Where purchases are open, the plan and the way in. */}
+        {data.member ? (
+          <section className="me-member">
+            <div>
+              <p className="me-member-title">
+                <b>{t.memberTitle}</b>
+              </p>
+              <p className="me-member-text">
+                {data.member.line}
+                {data.member.credits > 0 && ` · ${t.memberCredits(data.member.credits)}`}
+              </p>
+            </div>
+            <button type="button" className="me-member-btn" onClick={data.member.onOpen}>
+              {t.memberBuy} ›
+            </button>
+          </section>
+        ) : (
+          <section className="me-member">
+            <div>
+              <p className="me-member-title">
+                <b>{t.meBetaTitle}</b>
+                <em>{t.meBetaOn}</em>
+              </p>
+              <p className="me-member-text">{t.meBetaText}</p>
+            </div>
+          </section>
+        )}
 
         <section className="me-card">
           <h3>{t.meMine}</h3>
@@ -190,7 +212,51 @@ export function MeScreen({ t, lang, data, onClose, onSettings }: { t: Strings; l
         <button type="button" className="text-btn me-sign" onClick={data.guest ? data.onSignIn : data.onSignOut}>
           {data.guest ? t.meSignIn : t.signOut}
         </button>
+        {data.onDeleteAccount && <DeleteAccount t={t} onDelete={data.onDeleteAccount} />}
       </main>
+    </div>
+  );
+}
+
+/** 删除账号, asked once more before it is done. */
+function DeleteAccount({ t, onDelete }: { t: Strings; onDelete: () => Promise<void> }) {
+  const [asking, setAsking] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+  return (
+    <div className="me-delete">
+      {!asking ? (
+        <button type="button" className="text-btn" onClick={() => setAsking(true)}>
+          {t.accountDelete}
+        </button>
+      ) : (
+        <div role="alertdialog" aria-label={t.accountDelete}>
+          <p>{t.accountDeleteConfirm}</p>
+          <div className="btn-row">
+            <button type="button" className="ghost-btn" disabled={busy} onClick={() => setAsking(false)}>
+              {t.accountDeleteNo}
+            </button>
+            <button
+              type="button"
+              className="ghost-btn is-danger"
+              disabled={busy}
+              onClick={async () => {
+                setBusy(true);
+                setNote(null);
+                try {
+                  await onDelete();
+                } catch {
+                  setNote(t.accountDeleteFailed);
+                  setBusy(false);
+                }
+              }}
+            >
+              {t.accountDeleteYes}
+            </button>
+          </div>
+          {note && <p role="status">{note}</p>}
+        </div>
+      )}
     </div>
   );
 }

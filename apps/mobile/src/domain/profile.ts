@@ -6,7 +6,7 @@
 import { safeStore } from './storage';
 import { newCastId } from './cast';
 
-export type SignInMethod = 'local' | 'guest' | 'phone' | 'wechat' | 'apple' | 'google';
+export type SignInMethod = 'local' | 'guest' | 'phone' | 'wechat' | 'apple' | 'google' | 'email';
 
 export interface Profile {
   id: string;
@@ -14,12 +14,18 @@ export interface Profile {
   /** 道号 shown in the hall; empty for a guest. */
   name: string;
   createdAt: string;
+  /** The online account (Apple, Google or email sign-in); absent for a name kept on this device. */
+  userId?: string;
+  email?: string | null;
 }
 
 export interface AuthProvider {
   /** Methods this provider can actually complete; the login screen shows only these. */
   methods: SignInMethod[];
-  signIn(method: SignInMethod, input: { name?: string }): Promise<Profile>;
+  /** Resolves null when sign-in continues elsewhere (the web's Apple / Google redirect). */
+  signIn(method: SignInMethod, input: { name?: string; email?: string; code?: string }): Promise<Profile | null>;
+  /** Email sign-in: sends the six-digit code. */
+  sendCode?(email: string): Promise<void>;
 }
 
 const KEY = 'wengua.profile.v1';

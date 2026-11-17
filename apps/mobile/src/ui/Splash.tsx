@@ -18,7 +18,7 @@ interface Props {
   mode?: 'title' | 'login';
   profile?: Profile | null;
   auth?: AuthProvider;
-  onSignIn?: (method: SignInMethod, name: string) => void;
+  onSignIn?: (method: SignInMethod, name: string, email?: { email: string; code: string }) => void;
   /** The 3D courtyard is rendering behind: drop the painted backdrop and show it. */
   live?: boolean;
   /** Loading progress 0..1, or null once ready. */
@@ -58,25 +58,42 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
   const titleReady = progress === null && !error && mode === 'title';
   const ready = titleReady && sceneShown;
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [code, setCode] = useState('');
-  const [showPhone, setShowPhone] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+  const [codeSent, setCodeSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const can = (m: SignInMethod) => !!auth?.methods.includes(m);
-  // The four ways in, always shown as one set. One not connected yet says so when tapped and opens
-  // nothing to fill in (no phone number or code is asked for a service that is not there).
+  // The three ways in (2026-11-17, the US App Store first: Apple, Google, an email code), always
+  // shown as one set. One not connected yet says so when tapped and opens nothing to fill in.
   const providers = [
-    { method: 'wechat', label: t.loginWechat },
     { method: 'apple', label: t.loginApple },
     { method: 'google', label: t.loginGoogle },
-    { method: 'phone', label: t.loginPhone },
+    { method: 'email', label: t.loginEmail },
   ] as const;
   const provider = (method: (typeof providers)[number]['method']) => {
     if (!can(method)) return setNotice(t.loginPending);
     setNotice(null);
-    if (method === 'phone') setShowPhone((shown) => !shown);
+    if (method === 'email') setShowEmail((shown) => !shown);
     else onSignIn?.(method, '');
+  };
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+  const sendCode = async () => {
+    if (!validEmail) return setNotice(t.loginEmailBad);
+    if (!auth?.sendCode || sending) return;
+    setSending(true);
+    setNotice(null);
+    try {
+      await auth.sendCode(email);
+      setCodeSent(true);
+      setNotice(t.loginCodeSent);
+    } catch {
+      setNotice(t.loginFailed);
+    } finally {
+      setSending(false);
+    }
   };
   // Until an account service is connected, the ways in that work now (guest, a name kept on this
   // device) come first and plainest; the four account buttons stay, smaller, below them.
@@ -152,19 +169,25 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
             {!anyProvider && <p className="login-or">{t.loginOr}</p>}
             <div className={`login-providers v2 ${anyProvider ? '' : 'is-compact'}`}>
               {providers.map(({ method, label }) => (
-                <button type="button" className={`provider-btn ${method === 'phone' && showPhone ? 'is-on' : ''}`} key={method} onClick={() => provider(method)}>
+                <button type="button" className={`provider-btn ${method === 'email' && showEmail ? 'is-on' : ''}`} key={method} onClick={() => provider(method)}>
                   {label}
                 </button>
               ))}
             </div>
-            {showPhone && can('phone') && (
-              <div className="phone-row">
-                <input inputMode="tel" autoComplete="tel" aria-label={t.loginPhonePlaceholder} placeholder={t.loginPhonePlaceholder} value={phone} onChange={(e) => setPhone(e.target.value.replace(/[^\d+]/g, '').slice(0, 16))} />
+            {showEmail && can('email') && (
+              <div className="phone-row email-row">
+                <input type="email" inputMode="email" autoComplete="email" autoCapitalize="none" aria-label={t.loginEmailPlaceholder} placeholder={t.loginEmailPlaceholder} value={email} maxLength={120} onChange={(e) => setEmail(e.target.value)} />
                 <div className="code-row">
                   <input inputMode="numeric" autoComplete="one-time-code" aria-label={t.loginCodePlaceholder} placeholder={t.loginCodePlaceholder} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))} />
-                  <button type="button" className="ghost-btn" disabled={phone.length < 6} onClick={() => onSignIn?.('phone', '')}>
-                    {t.loginSendCode}
-                  </button>
+                  {codeSent && code.length === 6 ? (
+                    <button type="button" className="ghost-btn" onClick={() => onSignIn?.('email', '', { email, code })}>
+                      {t.loginVerify}
+                    </button>
+                  ) : (
+                    <button type="button" className="ghost-btn" disabled={!email.trim() || sending} onClick={() => void sendCode()}>
+                      {t.loginSendCode}
+                    </button>
+                  )}
                 </div>
               </div>
             )}
@@ -177,7 +200,7 @@ export function Splash({ t, progress, error, leaving, onEnter, onRetry, onSwitch
             {anyProvider && <p className="login-or">{t.loginOr}</p>}
             {anyProvider && nameLine}
             {anyProvider && guest}
-            <p className="login-note">{t.loginNote}</p>
+            <p className="login-note">{anyProvider ? t.loginNoteOnline : t.loginNote}</p>
             <button type="button" className="about-link" onClick={() => setShowAbout(true)}>
               {t.aboutJudgments} ›
             </button>
