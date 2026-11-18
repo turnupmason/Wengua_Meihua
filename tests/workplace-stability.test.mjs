@@ -66,7 +66,13 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     assert.equal(row.locationApplication.trigram,row.facts.nodes.find(node => node.role === 'changed_use').trigram,key);
     assert.equal(row.locationApplication.text,direction.text,key);
     assert.equal(row.locationApplication.realWorldLocationVerified,false,key);
-    expectedCopy[4] += ' ' + direction.text;
+    const images = await json(sourceDir + 'images/' + stem + '.json');
+    const image = images.entries.find(entry => entry.movingLine === row.movingLine);
+    assert.equal(row.imageApplication.objectTrigram,row.facts.nodes.find(node => node.role === 'use').trigram,key);
+    assert.equal(row.imageApplication.environmentTrigram,row.locationApplication.trigram,key);
+    assert.equal(row.imageApplication.text,image.text,key);
+    assert.equal(row.imageApplication.actualFeaturesVerified,false,key);
+    expectedCopy[4] += ' ' + direction.text + ' ' + image.text;
    }
    assert.deepEqual([title,short.text,long.opening,long.process,long.ending,long.summary],expectedCopy,key);
    assert.equal(short.decisionId,key);
@@ -124,7 +130,9 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     assert.equal(result.calculationExplanation.month.branch,branch);
     assert.equal(result.voidMatch,'not-applied');
     if (slug === 'lost-object-recovery') {
-     assert.ok(result.narrativeParagraphs[2].endsWith(row.locationApplication.text),row.decision.id);
+     assert.ok(result.narrativeParagraphs[2].includes(row.locationApplication.text),row.decision.id);
+     assert.ok(result.narrativeParagraphs[2].endsWith(row.imageApplication.text),row.decision.id);
+     assert.deepEqual(result.calculationExplanation.images,row.imageApplication,row.decision.id);
      assert.deepEqual(result.calculationExplanation.location,row.locationApplication,row.decision.id);
     }
     assert.equal(result.calculationExplanation.void,undefined);

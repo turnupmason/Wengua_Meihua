@@ -1,0 +1,274 @@
+{
+  "version": "lost-object-images-1.0.0",
+  "baselineCommit": "f7ce7f97",
+  "questionId": "search.lost-object.recovery",
+  "selection": {
+    "objectRole": "use",
+    "environmentRole": "changed_use",
+    "bodyRole": "original-body-preserved",
+    "monthEffect": "Five-state qi remains in the recovery judgment. Material, shape and colour classes are comparison alternatives, not physical measurements or evidence of damage.",
+    "conditions": "Apply only to already known features of the lost item or a confirmed storage / travel environment. No actual item color, material, location, breakage or intervening person is supplied by these classes.",
+    "reviewScope": "Author-read image paragraph and explicit role/source applicability, shared only where chart, item role and environment role are identical.",
+    "roleBoundaries": {
+      "body": "Original questioner body. Its material/color classes are not assigned to the lost item.",
+      "body_mutual": "Process relation remains in the original author reading. No new independent physical identity or location without actual corroboration.",
+      "use_mutual": "Process relation remains in the original author reading. No new independent physical identity or location without actual corroboration."
+    }
+  },
+  "nonApplicableWithCurrentInputs": [
+    {
+      "sourceIds": [
+        "mh-048",
+        "mh-049"
+      ],
+      "reason": "These chapters describe classifying observed shapes and colors when casting. A known original-item feature may be compared conditionally, but no new shape/color casting input or unknown feature is inferred."
+    },
+    {
+      "sourceIds": [
+        "mh-083",
+        "mh-085",
+        "mh-086",
+        "mh-133"
+      ],
+      "reason": "No actual contemporaneous observed event is supplied. No encounter, sound, gesture or omen is invented."
+    },
+    {
+      "sourceIds": [
+        "mh-130",
+        "mh-131",
+        "mh-132",
+        "mh-134",
+        "mh-135"
+      ],
+      "reason": "Covered-object guessing and alternative object-body methods have separate prerequisites. This entry retains the original owner-body and fixed lost-object question."
+    },
+    {
+      "sourceIds": [
+        "mh-126",
+        "mh-150"
+      ],
+      "reason": "Disputed mh-126 and mh-150 words remain excluded in the collation record. The clear 艮 mountain/path/stone/gate clause alone is separately checked against 說卦 and may explain a confirmed surrounding setting."
+    }
+  ],
+  "references": [
+    "https://zh.wikisource.org/wiki/梅花易數/卷一#八卦類象",
+    "https://zh.wikisource.org/wiki/梅花易數/卷一#八卦萬物屬類",
+    "https://zh.wikisource.org/wiki/易傳/說卦#第十一章"
+  ],
+  "rules": {
+    "乾": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "乾：玄黄、大赤色、金玉、宝珠、镜、狮、圆物、木果、贵物、冠、象、马、天鹅、刚物。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：金玉、宝珠、圆物、水果、刚物、冠、镜。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：大赤色、玄色。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：西北方、京都、大郡、形胜之地、高亢之所。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：公廨、楼台、高堂、大厦、驿舍、西北向之居。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "物之圆者属乾"
+      }
+    },
+    "坤": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "坤：土、方物、五谷、柔物、丝绵、百禽、牛、布帛、舆、金、瓦器、黄色。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：方物、柔物、布帛、丝绵、五谷、舆釜、瓦器。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：黄、黑。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：田野、乡里、平地、西南方。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：西南向、村居、田舍、矮屋、土阶、仓库。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "方者属坤"
+      }
+    },
+    "震": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "震：竹木、青碧绿色、龙、蛇、苇、竹木乐器、草、蕃鲜之物。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：木竹、萑苇、乐器（属竹木者）、花草繁鲜之物。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：青、绿、碧。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：东方、树木、闹市、大途、竹林、草木茂盛之所。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：东向之居、山林之处、楼阁。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "仰者属震"
+      }
+    },
+    "巽": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "巽：木、蛇、长物、青碧绿色、山木之禽鸟、、香、鸡、直物、竹木之器、工巧之器。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：木香、绳、直物、长物、竹木、工巧之器。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：青、绿、碧、洁白。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：东南方之地、草木茂秀之所、花果菜园。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：东南向之居、寺观楼台、山林之居。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "长者属巽"
+      }
+    },
+    "坎": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "坎：水、带子带核之物、豕鱼、弓轮、水具、水中之屋、盐、酒、黑色。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：水带子、带核之物、弓轮、矫揉之物、酒器、水具。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：黑。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：北方、江湖、溪涧、泉井、卑湿之地（沟渎、池沼、凡有水处）。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：向北之居、近水、水阁、江楼、花酒长器、宅中混地之处。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "中刚外柔者属坎"
+      }
+    },
+    "离": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "离：火、文书、干戈、雉、龟、蟹、槁木、甲胄、螺、蚌、鳖、赤色。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：火、书、文、甲胄、干戈、槁衣、干燥之物、赤色之物。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：赤、紫、红。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：南方、干亢之地、窖灶、炉冶之所、刚燥厥地、其地面陽。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：南舍之居、陽明之宅、明窗、虚室。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "内柔外刚者属离"
+      }
+    },
+    "艮": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "艮：土石、黄色、虎、狗、土中之物、瓜果、百禽、鼠、黔喙之属。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：土石、瓜果、黄物、土中之物。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：黄。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：山径路、近山城、丘陵、坟墓、东北方。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：东北方之居、山居近石、近路之宅。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "覆者属艮"
+      },
+      "checkedGateImage": {
+        "sourceId": "mh-150",
+        "quote": "艮为山、为径路、为小石、为门阙",
+        "reference": "https://zh.wikisource.org/wiki/易傳/說卦#第十一章",
+        "scope": "Only this separately checked clear excerpt. Corrupt words elsewhere in the section are excluded."
+      }
+    },
+    "兑": {
+      "classImage": {
+        "sourceId": "mh-051",
+        "quote": "兑：金刃、金器、乐器、泽中之物、白色、有口缺之物、羊。"
+      },
+      "staticObjects": {
+        "sourceId": "mh-052",
+        "quote": "静物：金刀、金类、乐器、废物、缺器。"
+      },
+      "colors": {
+        "sourceId": "mh-052",
+        "quote": "五色：白。"
+      },
+      "environment": {
+        "sourceId": "mh-052",
+        "quote": "地理：泽、水际、缺池、废井、山崩破裂之地、其地为刚卤。"
+      },
+      "housing": {
+        "sourceId": "mh-052",
+        "quote": "屋舍：西向之居、近泽之居、败墙壁宅、户有损。"
+      },
+      "observedShapeClass": {
+        "sourceId": "mh-048",
+        "quote": "物之破者属兑"
+      }
+    }
+  }
+}

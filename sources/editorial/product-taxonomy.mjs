@@ -132,7 +132,7 @@ export const PRODUCT_TAXONOMY=[
  ]},
  {id:'search',number:'06',label:'寻人失物',subcategories:[
   s('lost-object','物品找回','这件物品还能找回来吗，传统方位和场所取象可供怎样补查？|遗失的证件或文件还能找到吗？',[
-   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('同篇回答物品找回倾向、传统方位与场所取象及实际经过的补查提示；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,manuscriptIndexPath:'data/authored-readings/lost-object-recovery/index.json',practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
+   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('同篇回答物品找回倾向、原物形色器质辨认、传统方位与周边场所取象及实际经过的补查提示；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,manuscriptIndexPath:'data/authored-readings/lost-object-recovery/index.json',practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
    q('valuables.recovery','遗失的这件贵重物品能找回来吗？','lost_object_recovery',['domain-15'],o('物品找回规则可共享，实际保护措施按手机、钱包或首饰分别显示。',{contextFields:{objectKind:{label:'物品类型',options:['phone','wallet','jewellery'],required:true}},legacyBindings:lostBindings})),
    q('documents.recovery','遗失的证件或文件能找回来吗？','lost_object_recovery',['domain-15'],o('回答证件文件找回，同时保留挂失、补办及信息保护的现实操作。',{legacyQuestionId:'domain-15-documents',practicalAdvice:['核实遗失地点和招领信息；按证件或文件种类联系签发机构了解挂失、补办及信息保护步骤。']})),
    q('direction.symbolism','传统卦象有哪些可供补充查找的方位取象？','lost_object_direction_symbolism',['domain-15'],o('只介绍传统方位取象，不声称已定位、已知坐标或真实移动轨迹。',{archived:true,previousSubcategoryId:'search.direction',mergedInto:'search.lost-object.recovery',mode:'reference',referenceKind:'lost-object-direction',referenceParagraphs:['失物章以变化的卦象参看传统方位和场所。方位取象仅供实际排查后的补充参考，不能证明物品所在地。'],practicalAdvice:['先核实实际行程、设备定位和场所回复，再参考传统取象。']})),

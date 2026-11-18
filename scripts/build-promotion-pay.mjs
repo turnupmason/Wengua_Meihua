@@ -91,10 +91,16 @@ for (const [batchIndex, filename] of batches.entries()) {
  }
  let directionBatch = null;
  let directionRules = null;
+ let imageBatch = null;
+ let imageRules = null;
+ const imageSourcePath = sourceDir + 'images/' + filename;
  const directionSourcePath = sourceDir + 'directions/' + filename;
  if (profile === LOST_OBJECT_RECOVERY_PROFILE) {
   directionBatch = JSON.parse(await readFile(new URL(directionSourcePath, root), 'utf8'));
   directionRules = JSON.parse(await readFile(new URL(sourceDir + 'directions/source-rules.json', root), 'utf8'));
+  imageBatch = JSON.parse(await readFile(new URL(imageSourcePath, root), 'utf8'));
+  imageRules = JSON.parse(await readFile(new URL(sourceDir + 'images/source-rules.json', root), 'utf8'));
+  if (imageBatch.primaryId !== primaryId || imageBatch.questionId !== questionId || imageBatch.entries.length !== 6 || new Set(imageBatch.entries.map(entry => entry.movingLine)).size !== 6) throw new Error('Invalid image supplement batch: ' + imageSourcePath);
   if (directionBatch.primaryId !== primaryId || directionBatch.questionId !== questionId ||
       directionBatch.entries.length !== 6 || new Set(directionBatch.entries.map(entry => entry.movingLine)).size !== 6) {
    throw new Error('Invalid authored direction batch: ' + directionSourcePath);
@@ -129,7 +135,39 @@ for (const [batchIndex, filename] of batches.entries()) {
    realWorldLocationVerified:false, referencePoint:'use-confirmed-real-world-route-or-storage-context',
    reviewedAt:directionEntry.reviewedAt, textSha256:directionEntry.textSha256,
   } : null;
-  const combinedEnding = locationApplication ? ending + ' ' + locationApplication.text : ending;
+  const imageEntry = imageBatch?.entries.find(entry => entry.movingLine === movingLine);
+  const objectTrigram = r.nodes.find(node => node.role === 'use').trigram;
+  if (imageBatch && (!imageEntry || imageEntry.objectRole !== 'use' || imageEntry.environmentRole !== 'changed_use' ||
+      imageEntry.objectTrigram !== objectTrigram || imageEntry.environmentTrigram !== changedTrigram ||
+      imageEntry.status !== 'AUTHOR_READ' || !imageEntry.reviewedAt ||
+      imageEntry.textSha256 !== createHash('sha256').update(imageEntry.text).digest('hex'))) {
+   throw new Error('Image roles or author receipt mismatch: ' + imageSourcePath + '/' + movingLine);
+  }
+  const imageApplication = imageEntry ? {
+   ...imageEntry, ruleVersion:imageRules.version, sourcePath:imageSourcePath, sourceRulesPath:imageBatch.sourceRulesPath,
+   interpretation:'conditional-traditional-class-comparison',
+   actualFeaturesVerified:false, actualEnvironmentVerified:false,
+   roleBoundaries:imageRules.selection.roleBoundaries,
+   nonApplicableWithCurrentInputs:imageRules.nonApplicableWithCurrentInputs,
+  } : null;
+  const imageEvidence = imageApplication ? [
+   ...[...imageEntry.sourceSelection.object,'observedShapeClass'].map(field => {
+    const source = imageRules.rules[objectTrigram][field];
+    return evidence(source.sourceId, source.quote, '本用' + objectTrigram + '用于对照原物已经知道的形制、材质、器物和颜色。形物条只分类已知特征，具体物色仍由原件资料确认。');
+   }),
+   ...[...imageEntry.sourceSelection.environment,...(changedTrigram === '艮' ? ['checkedGateImage'] : [])].map(field => {
+    const source = imageRules.rules[changedTrigram][field];
+    return evidence(source.sourceId, source.quote, '变用' + changedTrigram + '用于周边陈设、容器及实有环境的补查参照，所指与原物自身特征分别记录。');
+   }),
+  ] : [];
+  for (const source of imageEvidence) {
+   const section = library.getSection(source.id);
+   const startLine = section.sourceRef.startLine + section.text.slice(0, section.text.indexOf(source.quote)).split('\n').length - 1;
+   source.quoteLocator = {sourceId:section.sourceRef.sourceId,startLine,endLine:startLine + source.quote.split('\n').length - 1};
+  }
+  if (imageApplication) imageApplication.sourceEvidence = imageEvidence;
+  const combinedEnding = ending + (locationApplication ? ' ' + locationApplication.text : '') +
+   (imageApplication ? ' ' + imageApplication.text : '');
   const key = [questionId, primaryId, movingLine, monthOrder].join('/');
   const decisionId = key + '/' + outcome;
   const stageIds = Object.values(r.stages).map(stage => stage.id);
@@ -198,6 +236,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
   const sourceEvidence = [...commonEvidence,
+   ...imageEvidence,
    ...(locationApplication ? [evidence(locationApplication.sourceId, locationApplication.quote, '按真实动爻改变的经卦取方位及场所，结合原行程补查，未据此认定真实所在地。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
    ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
@@ -237,6 +276,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    literaryProgress.next = {primaryId,movingLine,monthOrder,monthBranches};
   }
   if (locationApplication) authorship.directionSupplement = {method:'individually-authored-direction-supplement', sourcePath:directionSourcePath, reviewedAt:directionEntry.reviewedAt, textSha256:directionEntry.textSha256};
+  if (imageApplication) authorship.imageSupplement = {method:'individually-authored-image-supplement', sourcePath:imageSourcePath, reviewedAt:imageEntry.reviewedAt, textSha256:imageEntry.textSha256, scope:'object-and-environment-role-bound-conditional-class-comparison'};
   const receipts = [
    ['facts.stages', stageIds.join(' / ') + '，' + facts.movingLine.label + '动'],
    ['facts.nodes', facts.nodes.map(n => n.role + ' ' + n.trigram).join(' / ')],
@@ -249,11 +289,11 @@ for (const [batchIndex, filename] of batches.entries()) {
    ['decision.counterevidence', resolution],
   ];
   const review = {status:'author-checked', actor:'assistant-author', version:manuscriptVersion,
-   scope:locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
+   scope:imageApplication ? 'author-reviewed-base-copy-direction-and-image-supplements' : locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
-   facts, decision, copy, copyChecks, ...(locationApplication ? {locationApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
+   facts, decision, copy, copyChecks, ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
@@ -291,6 +331,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     resolution,
+    ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
@@ -298,7 +339,7 @@ for (const [batchIndex, filename] of batches.entries()) {
      const method = slot.method === 'trigram-periods' ? (slot.kind === 'name-body' ? '先天体卦时序法' : '先天经卦时序法') : '先天卦气法';
      return `${slot.valence}应 · ${slot.event}。取${trigram}${element}，${slot.branches.join('、')}日。用${method}按日匹配，先查起卦当月余日，无匹配再查下月。示例 ${timing.dateMatches[index].displayedDates.join('、')}。 ${slot.reason}`;
     }),
-    ...sourceEvidence.map(source => `- ${source.id}《${source.title}》，原文第 ${source.locator.startLine} 行起。\n  “${source.quote}”\n  ${source.reason}`),
+    ...sourceEvidence.map(source => `- ${source.id}《${source.title}》，原文第 ${source.quoteLocator?.startLine ?? source.locator.startLine} 行起。\n  “${source.quote}”\n  ${source.reason}`),
     `稿件键 \`${key}\` · [作者源](../../${sourcePath}) · [断法和出处](../${config.policy})`,
     `判据：${row.ruleVersions.decision}；写作方式：${row.authorship.method}。`,
    ],
@@ -314,7 +355,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-recovery-copy-before-direction-merge',required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {imageCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-images-1.0.0',facets:['shape','material','color','utensil','environment'],extraLiteraryPolishRequired:false},directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-recovery-copy-before-direction-merge',required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
@@ -323,6 +364,7 @@ await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条按卦爻写定的方位场所补充已合入结局，覆盖全部 4,608 个月令键，原典定位与取象位置在计算说明中展开。'] : []),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条形状、材质、颜色、器物与环境补充已写定并作者核读，逐条区分本用所参的原物特征与变用所参的周边场所，合入全部 1,920 篇正文。'] : []),
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。合并方位前已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
@@ -479,7 +521,7 @@ const lostObjectRecovery = {
   body_generates_use:'体生用，物难见；',
  },
  outcomes:['favourable','conditional','difficult'],
- scopeNote:'同篇判断指定物品的寻回倾向，并参失物章给出传统方位、场所及实际行程回查提示。确认遗落范围、获得消息和领回原物分开记录',
+ scopeNote:'同篇判断指定物品的寻回倾向，补充原物形状、材质、颜色与器物辨认，并参失物章给出周边环境、传统方位与实际行程回查提示。确认遗落范围、获得消息和领回原物分开记录',
  counterevidence:'核对初段难寻、两互能否提供有效线索及收尾能否领回。比和可取在已知处回查，不视为物品已定位。',
  timingContext:'近期已有可继续核查的记录或可联系的经手方时，才依生体、比和或克体择一个可观察的阶段事件，不据取日推定已经寻回。',
 };
