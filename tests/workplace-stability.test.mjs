@@ -59,7 +59,16 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    const {title,short,long} = row.copy;
    checkChartFacts(library,row,key);
    assert.equal(row.movingLineText,library.getLineReading(entry.primaryId,row.movingLine).text,key);
-   assert.deepEqual([title,short.text,long.opening,long.process,long.ending,long.summary],drafts[i].slice(3,9),key);
+   const expectedCopy = drafts[i].slice(3,9);
+   if (slug === 'lost-object-recovery') {
+    const directionBatch = await json(sourceDir + 'directions/' + stem + '.json');
+    const direction = directionBatch.entries.find(entry => entry.movingLine === row.movingLine);
+    assert.equal(row.locationApplication.trigram,row.facts.nodes.find(node => node.role === 'changed_use').trigram,key);
+    assert.equal(row.locationApplication.text,direction.text,key);
+    assert.equal(row.locationApplication.realWorldLocationVerified,false,key);
+    expectedCopy[4] += ' ' + direction.text;
+   }
+   assert.deepEqual([title,short.text,long.opening,long.process,long.ending,long.summary],expectedCopy,key);
    assert.equal(short.decisionId,key);
    assert.equal(long.decisionId,key);
    assert.deepEqual(row.decision.indirectEffectsApplied,[]);
@@ -114,6 +123,10 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     assert.equal(result.monthOrder,qi);
     assert.equal(result.calculationExplanation.month.branch,branch);
     assert.equal(result.voidMatch,'not-applied');
+    if (slug === 'lost-object-recovery') {
+     assert.ok(result.narrativeParagraphs[2].endsWith(row.locationApplication.text),row.decision.id);
+     assert.deepEqual(result.calculationExplanation.location,row.locationApplication,row.decision.id);
+    }
     assert.equal(result.calculationExplanation.void,undefined);
     assert.equal(result.timingSection.windows.length,row.timingSlots.length);
     for (const window of result.timingSection.windows) {

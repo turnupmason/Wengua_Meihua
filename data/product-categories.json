@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
   "contentVersion": "2026.11.10.2",
-  "productCatalogVersion": "2.0.0",
+  "productCatalogVersion": "2.1.0",
   "categoryCount": 6,
-  "subcategoryCount": 31,
+  "subcategoryCount": 30,
   "questionCount": 83,
   "selectionPolicy": {
     "input": "category-subcategory-fixed-question",
@@ -2990,7 +2990,7 @@
           "position": 1,
           "categoryId": "search",
           "exampleQuestions": [
-            "这件物品还能找回来吗？",
+            "这件物品还能找回来吗，传统方位和场所取象可供怎样补查？",
             "遗失的证件或文件还能找到吗？"
           ],
           "questions": [
@@ -3002,7 +3002,7 @@
                 "domain-15"
               ],
               "mode": "narrative",
-              "answerScope": "回答物品找回；按明确物品类型调用，不能用于人或宠物。",
+              "answerScope": "同篇回答物品找回倾向、传统方位与场所取象及实际经过的补查提示；按明确物品类型调用，不能用于人或宠物。",
               "contextFields": {
                 "objectKind": {
                   "label": "物品类型",
@@ -3132,20 +3132,7 @@
                 "symbolicLocationIsFact": false
               },
               "contextFields": {}
-            }
-          ]
-        },
-        {
-          "id": "search.direction",
-          "slug": "direction",
-          "label": "方向原因",
-          "position": 2,
-          "categoryId": "search",
-          "exampleQuestions": [
-            "古籍有哪些方位取象？",
-            "怎样回查物品可能遗忘的地方？"
-          ],
-          "questions": [
+            },
             {
               "id": "search.direction.symbolism",
               "question": "传统卦象有哪些可供补充查找的方位取象？",
@@ -3155,6 +3142,9 @@
               ],
               "mode": "reference",
               "answerScope": "只介绍传统方位取象，不声称已定位、已知坐标或真实移动轨迹。",
+              "archived": true,
+              "previousSubcategoryId": "search.direction",
+              "mergedInto": "search.lost-object.recovery",
               "referenceKind": "lost-object-direction",
               "referenceParagraphs": [
                 "失物章以变化的卦象参看传统方位和场所。方位取象仅供实际排查后的补充参考，不能证明物品所在地。"
@@ -3162,9 +3152,9 @@
               "practicalAdvice": [
                 "先核实实际行程、设备定位和场所回复，再参考传统取象。"
               ],
-              "position": 1,
+              "position": 4,
               "categoryId": "search",
-              "subcategoryId": "search.direction",
+              "subcategoryId": "search.lost-object",
               "chartSourceDomainId": "domain-15",
               "sourceSections": [
                 {
@@ -3172,7 +3162,7 @@
                   "sectionId": "mh-077"
                 }
               ],
-              "ruleStatus": "reference-only",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -3191,15 +3181,18 @@
               ],
               "mode": "guidance",
               "answerScope": "以实际使用记录和行程梳理为主，不从卦象指认盗窃或还原已发生的真实经过。",
+              "archived": true,
+              "previousSubcategoryId": "search.direction",
+              "mergedInto": "search.lost-object.recovery",
               "guidanceParagraphs": [
                 "从最后一次确认物品还在的时间开始，按使用、收放、移动的顺序回想。核对消费、出行或设备记录，并联系经过场所的失物招领。"
               ],
               "practicalAdvice": [
                 "先整理可核实的使用记录与经过地点，再逐一联系场所。"
               ],
-              "position": 2,
+              "position": 5,
               "categoryId": "search",
-              "subcategoryId": "search.direction",
+              "subcategoryId": "search.lost-object",
               "chartSourceDomainId": "domain-15",
               "sourceSections": [
                 {
@@ -3207,7 +3200,7 @@
                   "sectionId": "mh-077"
                 }
               ],
-              "ruleStatus": "practical-guidance-only",
+              "ruleStatus": "archived",
               "sourceMappingMeaning": "scope-candidate-or-explicit-question-link;not-proof-of-modern-rule-approval",
               "outputPolicy": {
                 "oneQuestionOnly": true,
@@ -3223,7 +3216,7 @@
           "id": "search.pets",
           "slug": "pets",
           "label": "宠物走失",
-          "position": 3,
+          "position": 2,
           "categoryId": "search",
           "exampleQuestions": [
             "走失的宠物能找回来吗？"
@@ -3272,7 +3265,7 @@
           "id": "search.missing-contact",
           "slug": "missing-contact",
           "label": "失联寻人",
-          "position": 4,
+          "position": 3,
           "categoryId": "search",
           "exampleQuestions": [
             "与失联者还能恢复联系吗？",

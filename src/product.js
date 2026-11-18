@@ -4,7 +4,7 @@ import {createInterviewManuscriptRepository,LOST_OBJECT_RECOVERY_PROFILE,RELATIO
 const freeze=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);Object.values(x).forEach(freeze);}return x;};
 const MODES=new Set(['narrative','reference','guidance']);
 const CATEGORY_IDS=['career','wealth','relationships','health','home','search'];
-const SUBCATEGORY_COUNTS=[6,6,6,4,5,4];
+const SUBCATEGORY_COUNTS=[6,6,6,4,5,3];
 const SUBCATEGORY_COUNT=SUBCATEGORY_COUNTS.reduce((total,count)=>total+count,0);
 /** Product navigation is independent of the eighteen classical source domains. */
 export function createProductRepository({library,readJSON=readRepositoryJSON,questionRepository,includeHistoricalInterviewVoid=false}={}){
@@ -13,7 +13,7 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
  const exactRepositories=new Map([PROMOTION_PAY_PROFILE,JOB_CHANGE_PROFILE,EXAM_PROFILE,WORKPLACE_STABILITY_PROFILE,WORKPLACE_PROBATION_PROFILE,NEW_RELATIONSHIP_OPPORTUNITY_PROFILE,CONFESSION_DECISION_PROFILE,RELATIONSHIP_ESTABLISHMENT_PROFILE,RELATIONSHIP_RECONCILIATION_PROFILE,LOST_OBJECT_RECOVERY_PROFILE,...HISTORICAL_JOB_CHANGE_PROFILES].map(profile=>[profile.questionId,createInterviewManuscriptRepository({library,readJSON,profile})]));let cache;
  async function getCatalog(){
   if(!cache)cache=Promise.resolve().then(()=>readJSON('data/product-categories.json')).then(async c=>{
-   if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='2.0.0'||c.categoryCount!==6||c.subcategoryCount!==SUBCATEGORY_COUNT||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
+   if(c.schemaVersion!=='1.0.0'||c.contentVersion!==library.contentVersion||c.productCatalogVersion!=='2.1.0'||c.categoryCount!==6||c.subcategoryCount!==SUBCATEGORY_COUNT||c.categories?.length!==6||c.selectionPolicy?.aiClassification!==false||c.selectionPolicy?.freeTextChangesQuestion!==false)throw new Error('Invalid product catalog');
    const ids=new Set(),subIds=new Set(),categoryIds=new Set();let count=0;
    for(const [i,category] of c.categories.entries()){
     if(categoryIds.has(category.id)||category.id!==CATEGORY_IDS[i]||category.position!==i+1||category.subcategories?.length!==SUBCATEGORY_COUNTS[i])throw new Error('Product category identity mismatch');categoryIds.add(category.id);
@@ -38,11 +38,18 @@ export function createProductRepository({library,readJSON=readRepositoryJSON,que
  }
  async function getQuestion(id){const c=await getCatalog(),q=c.categories.flatMap(x=>x.subcategories).flatMap(s=>s.questions).find(q=>q.id===id);if(!q)throw new RangeError('Unknown product question');return q;}
  async function listSubcategories(categoryId){const c=(await getCatalog()).categories.find(x=>x.id===categoryId);if(!c)throw new RangeError('Unknown product category');return c.subcategories;}
- async function listQuestions(subcategoryId){const c=(await getCatalog()).categories.flatMap(x=>x.subcategories).find(s=>s.id===subcategoryId);if(!c)throw new RangeError('Unknown product subcategory');return c.questions;}
+ async function listQuestions(subcategoryId){
+  const subcategories=(await getCatalog()).categories.flatMap(category=>category.subcategories);
+  const current=subcategories.find(subcategory=>subcategory.id===subcategoryId);
+  if(current)return current.questions;
+  const historical=subcategories.flatMap(subcategory=>subcategory.questions).filter(question=>question.archived&&question.previousSubcategoryId===subcategoryId);
+  if(historical.length)return historical;
+  throw new RangeError('Unknown product subcategory');
+ }
  async function getContent(options={}){
   if(['question','text','prompt','legacyQuestionId'].some(k=>k in options))throw new TypeError('Use a fixed product questionId; no text classification or manual legacy override');
   const q=await getQuestion(options.questionId),c=await getCatalog();
-  if(options.categoryId!==undefined&&options.categoryId!==q.categoryId||options.subcategoryId!==undefined&&options.subcategoryId!==q.subcategoryId||options.question_type!==undefined&&options.question_type!==q.question_type)throw new RangeError('Product selection mismatch');
+  if(options.categoryId!==undefined&&options.categoryId!==q.categoryId||options.subcategoryId!==undefined&&options.subcategoryId!==q.subcategoryId&&!(q.archived&&options.subcategoryId===q.previousSubcategoryId)||options.question_type!==undefined&&options.question_type!==q.question_type)throw new RangeError('Product selection mismatch');
   const context=structuredClone(options.context||{}),missing=[];
   for(const k of Object.keys(context))if(!Object.hasOwn(q.contextFields,k))throw new RangeError('Unknown product context field');
   for(const [key,field] of Object.entries(q.contextFields)){

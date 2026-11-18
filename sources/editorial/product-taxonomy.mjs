@@ -131,13 +131,12 @@ export const PRODUCT_TAXONOMY=[
    q('children.resolution','孩子的这项家庭事务能顺利解决吗？','child_family_affair',['domain-03','domain-08'],o('须明确是一项非医疗家庭安排；考试、健康等另选对应问题，不一概按家宅断。'))])
  ]},
  {id:'search',number:'06',label:'寻人失物',subcategories:[
-  s('lost-object','物品找回','这件物品还能找回来吗？|遗失的证件或文件还能找到吗？',[
-   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('回答物品找回；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,manuscriptIndexPath:'data/authored-readings/lost-object-recovery/index.json',practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
+  s('lost-object','物品找回','这件物品还能找回来吗，传统方位和场所取象可供怎样补查？|遗失的证件或文件还能找到吗？',[
+   q('lost-object.recovery','丢失的这件物品还能找回来吗？','lost_object_recovery',['domain-15'],o('同篇回答物品找回倾向、传统方位与场所取象及实际经过的补查提示；按明确物品类型调用，不能用于人或宠物。',{contextFields:lostContext,legacyBindings:lostBindings,manuscriptIndexPath:'data/authored-readings/lost-object-recovery/index.json',practicalAdvice:['先确认最后使用地点、经过场所和失物招领信息。']})),
    q('valuables.recovery','遗失的这件贵重物品能找回来吗？','lost_object_recovery',['domain-15'],o('物品找回规则可共享，实际保护措施按手机、钱包或首饰分别显示。',{contextFields:{objectKind:{label:'物品类型',options:['phone','wallet','jewellery'],required:true}},legacyBindings:lostBindings})),
-   q('documents.recovery','遗失的证件或文件能找回来吗？','lost_object_recovery',['domain-15'],o('回答证件文件找回，同时保留挂失、补办及信息保护的现实操作。',{legacyQuestionId:'domain-15-documents',practicalAdvice:['核实遗失地点和招领信息；按证件或文件种类联系签发机构了解挂失、补办及信息保护步骤。']}))]),
-  s('direction','方向原因','古籍有哪些方位取象？|怎样回查物品可能遗忘的地方？',[
-   q('direction.symbolism','传统卦象有哪些可供补充查找的方位取象？','lost_object_direction_symbolism',['domain-15'],o('只介绍传统方位取象，不声称已定位、已知坐标或真实移动轨迹。',{mode:'reference',referenceKind:'lost-object-direction',referenceParagraphs:['失物章以变化的卦象参看传统方位和场所。方位取象仅供实际排查后的补充参考，不能证明物品所在地。'],practicalAdvice:['先核实实际行程、设备定位和场所回复，再参考传统取象。']})),
-   q('last-location.review','可以怎样梳理物品可能遗忘的地方？','forgotten_item_search_guidance',['domain-15'],o('以实际使用记录和行程梳理为主，不从卦象指认盗窃或还原已发生的真实经过。',{mode:'guidance',guidanceParagraphs:['从最后一次确认物品还在的时间开始，按使用、收放、移动的顺序回想。核对消费、出行或设备记录，并联系经过场所的失物招领。'],practicalAdvice:['先整理可核实的使用记录与经过地点，再逐一联系场所。']}))]),
+   q('documents.recovery','遗失的证件或文件能找回来吗？','lost_object_recovery',['domain-15'],o('回答证件文件找回，同时保留挂失、补办及信息保护的现实操作。',{legacyQuestionId:'domain-15-documents',practicalAdvice:['核实遗失地点和招领信息；按证件或文件种类联系签发机构了解挂失、补办及信息保护步骤。']})),
+   q('direction.symbolism','传统卦象有哪些可供补充查找的方位取象？','lost_object_direction_symbolism',['domain-15'],o('只介绍传统方位取象，不声称已定位、已知坐标或真实移动轨迹。',{archived:true,previousSubcategoryId:'search.direction',mergedInto:'search.lost-object.recovery',mode:'reference',referenceKind:'lost-object-direction',referenceParagraphs:['失物章以变化的卦象参看传统方位和场所。方位取象仅供实际排查后的补充参考，不能证明物品所在地。'],practicalAdvice:['先核实实际行程、设备定位和场所回复，再参考传统取象。']})),
+   q('last-location.review','可以怎样梳理物品可能遗忘的地方？','forgotten_item_search_guidance',['domain-15'],o('以实际使用记录和行程梳理为主，不从卦象指认盗窃或还原已发生的真实经过。',{archived:true,previousSubcategoryId:'search.direction',mergedInto:'search.lost-object.recovery',mode:'guidance',guidanceParagraphs:['从最后一次确认物品还在的时间开始，按使用、收放、移动的顺序回想。核对消费、出行或设备记录，并联系经过场所的失物招领。'],practicalAdvice:['先整理可核实的使用记录与经过地点，再逐一联系场所。']}))]),
   s('pets','宠物走失','走失的宠物能找回来吗？',[
    q('pets.recovery','走失的宠物能找回来吗？','lost_pet_recovery',['domain-15','domain-02'],o('活体宠物专项需独立审核，不自动套失物全文，不以应期代替及时寻找。',{practicalAdvice:['及时寻找最后出现地点周边，联系附近收容所、兽医及走失登记平台；如有芯片，向登记机构更新失联与联系方式。']}))]),
   s('missing-contact','失联寻人','与失联者还能恢复联系吗？|可以怎样整理现实搜寻线索？',[

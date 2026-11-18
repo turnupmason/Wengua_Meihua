@@ -1,5 +1,5 @@
 /**
- * 全点击式问事 on the formal product catalog: the six categories and 31 entries of
+ * 全点击式问事 on the formal product catalog: the six categories and 30 entries of
  * data/product-categories.json, each entry asked as itself (its fixed questions stay behind
  * it), the click-only home entry, the 断语 lookup through createProductRepository, and how a cast
  * carries its question and 断语 into 问事录.
@@ -77,7 +77,7 @@ const keyboardFields = () => [...document.querySelectorAll('textarea, input, [co
 const WELL: JudgmentInput = { questionId: INTERVIEW, primaryId: 48, movingLine: 5, method: 'classical-time', monthBranch: '亥', dayGanzhi: '己丑', localWallClock: '2026-11-11T09:00' };
 
 describe('QuestionCatalog = the formal product catalog', () => {
-  it('has its six categories and 31 entries in order, each the one question it asks, with the fixed questions behind them', () => {
+  it('has its six categories and 30 entries in order, each the one question it asks, with the fixed questions behind them', () => {
     const file = productFile as File;
     expect(DOMAINS.map((d) => [d.domain_id, d.label.zh])).toEqual([
       ['career', '事业工作'],
@@ -93,8 +93,8 @@ describe('QuestionCatalog = the formal product catalog', () => {
         expect(s.questions.map((q) => [q.question_id, q.question_text.zh])).toEqual([[s.subtype_id, s.label.zh]]);
       }
     }
-    expect(allSubtypes()).toHaveLength(31);
-    expect(allQuestions()).toHaveLength(31);
+    expect(allSubtypes()).toHaveLength(30);
+    expect(allQuestions()).toHaveLength(30);
     // The catalog's own questions stay resolvable (records cast before entries), under their entry.
     expect(catalogQuestions().map((q) => q.question_id)).toEqual(file.categories.flatMap((c) => c.subcategories.flatMap((s) => s.questions.map((q) => q.id))));
     expect(questionById(INTERVIEW)).toMatchObject({ subtype_id: JOB, question_text: { zh: '这次面试能通过吗？' } });
@@ -113,9 +113,9 @@ describe('QuestionCatalog = the formal product catalog', () => {
     for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(1);
     // Entries ask nothing finer: no fixed options, 跳槽去留 included.
     expect(allQuestions().filter((q) => q.conditions?.length).map(q => q.question_id)).toEqual([]);
-    // Health is traditional reference only; 方向原因 reads; 失联寻人 is guidance (nothing written to cast for).
+    // Health is traditional reference only; 失联寻人 is guidance (nothing written to cast for).
     expect(allQuestions().filter((q) => q.domain_id === 'health').map((q) => q.mode)).toEqual(['reference', 'reference', 'reference', 'reference']);
-    expect(readinessOf(questionById('search.direction')!)).toBe('reference');
+    expect(readinessOf(questionById('search.direction.symbolism')!)).toBe('reference');
     expect(readinessOf(questionById('search.missing-contact')!)).toBe('guidance');
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
     // Each written entry reads its own manuscript library.

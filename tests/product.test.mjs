@@ -6,7 +6,7 @@ const library=await loadLibrary(),repo=createProductRepository({library});
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const dated={primaryId:48,movingLine:5,monthOrder:'winter-water',castingDate:'2026-11-11',timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}};
 
-test('six domains and 31 navigation entries match the new names and order',async()=>{
+test('six domains and 30 navigation entries match the new names and order',async()=>{
  const c=await repo.getCatalog();
  assert.deepEqual(c.categories.map(c=>c.label),['事业工作','财富财运','感情姻缘','健康疾病','家庭家宅','寻人失物']);
  assert.deepEqual(c.categories.map(c=>c.subcategories.map(s=>s.label)),[
@@ -15,11 +15,11 @@ test('six domains and 31 navigation entries match the new names and order',async
   ['桃花缘分','暧昧表白','恋爱发展','矛盾复合','谈婚论嫁','夫妻婚姻'],
   ['身体象意','病势象意','诊疗康复','家人健康'],
   ['房屋买卖','租住环境','搬家迁居','装修建造','家庭亲子'],
-  ['物品找回','方向原因','宠物走失','失联寻人']
+  ['物品找回','宠物走失','失联寻人']
  ]);
  const questions=c.categories.flatMap(c=>c.subcategories).flatMap(s=>s.questions);
  assert.equal(questions.length,83);assert.equal(new Set(questions.map(q=>q.id)).size,83);
- assert.equal(c.subcategoryCount,31);
+ assert.equal(c.subcategoryCount,30);
  assert.equal(c.classicalDomainCount,18);assert.equal(library.listDomains().length,18);
  assert.equal(c.selectionPolicy.aiClassification,false);assert.equal(c.selectionPolicy.freeTextChangesQuestion,false);
  for(const category of c.categories)for(const sub of await repo.listSubcategories(category.id))assert.deepEqual(await repo.listQuestions(sub.id),sub.questions);
@@ -82,7 +82,10 @@ test('affection and missing-person questions do not inherit marriage, lost-objec
  const missing=await repo.getContent({questionId:'search.missing-contact.contact',...dated});
  assert.equal(missing.status,'pending-authoring');assert.equal(missing.story,null);assert.equal(missing.reading,undefined);assert.ok(missing.practicalAdvice.some(p=>p.includes('警方')));
  const leads=await repo.getContent({questionId:'search.person-leads.guidance'});assert.equal(leads.status,'guidance');assert.equal(leads.predictionAllowed,false);assert.equal(leads.provesLocation,false);
- const direction=await repo.getContent({questionId:'search.direction.symbolism'});assert.equal(direction.status,'reference');assert.equal(direction.provesLocation,false);
+ const direction=await repo.getContent({questionId:'search.direction.symbolism',subcategoryId:'search.direction'});assert.equal(direction.status,'reference');assert.equal(direction.provesLocation,false);
+ assert.equal((await repo.getQuestion('search.direction.symbolism')).mergedInto,'search.lost-object.recovery');
+ assert.equal((await repo.getQuestion('search.last-location.review')).archived,true);
+ assert.deepEqual((await repo.listQuestions('search.direction')).map(question=>question.id),['search.direction.symbolism','search.last-location.review']);
 });
 
 test('question context, selection identity and legacy type tampering fail before incorrect content can be served',async()=>{

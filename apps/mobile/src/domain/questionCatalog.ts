@@ -1,16 +1,16 @@
 /**
  * QuestionCatalog: every question a visitor can ask, chosen by tapping. It reads the repository's
- * formal product catalog (data/product-categories.json: six categories, 31 entries, 83 fixed
+ * formal product catalog (data/product-categories.json: six categories, 30 entries, 83 fixed
  * questions) as-is and adds what the catalog does not carry (English labels, the names of fixed
  * options, cautions; see product-catalog.labels.json). Nothing is typed in.
  *
- * The visitor picks one of the 31 entries and nothing finer: the entry's name (求职录用) is the
+ * The visitor picks one of the 30 entries and nothing finer: the entry's name (求职录用) is the
  * question asked. Its id is the entry id; casts, the 断语 lookup and 问事录 key on it. An entry is:
  * - narrative: cast a hexagram, then read the written 断语 its catalog question carries
  *   (`content_id`; 求职录用 reads career.interview.interview-pass). An entry with none written yet
  *   is still cast and says its 断语 is being written; no other question's 断语 stands in.
  * - reference / guidance: when nothing is written to cast for but the entry has explanations
- *   (health, 方向原因, 失联寻人), they are shown at once, with no cast and no prediction.
+ *   (health, 失联寻人), they are shown at once, with no cast and no prediction.
  * The catalog's own questions stay resolvable by id, for records cast before entries.
  */
 import raw from '../../../../data/product-categories.json';
@@ -218,7 +218,7 @@ export const catalogQuestions = () => [...byMember.values()];
  * An entry, or one of the catalog's fixed questions (records cast before entries). Ids from
  * before the formal catalog are not looked up here.
  */
-export const questionById = (id: string | null | undefined) => (id ? byQuestion.get(id) ?? byMember.get(id) ?? null : null);
+export const questionById = (id: string | null | undefined) => (id ? byQuestion.get(id) ?? byMember.get(id === 'search.direction' ? 'search.direction.symbolism' : id) ?? null : null);
 export const subtypeById = (id: string | null | undefined) => (id ? bySubtype.get(id) ?? null : null);
 
 /** Older records used other ids for three of the six domains. */

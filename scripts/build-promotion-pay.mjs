@@ -89,6 +89,17 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Invalid literary review receipt: ' + literaryReceiptPath);
   }
  }
+ let directionBatch = null;
+ let directionRules = null;
+ const directionSourcePath = sourceDir + 'directions/' + filename;
+ if (profile === LOST_OBJECT_RECOVERY_PROFILE) {
+  directionBatch = JSON.parse(await readFile(new URL(directionSourcePath, root), 'utf8'));
+  directionRules = JSON.parse(await readFile(new URL(sourceDir + 'directions/source-rules.json', root), 'utf8'));
+  if (directionBatch.primaryId !== primaryId || directionBatch.questionId !== questionId ||
+      directionBatch.entries.length !== 6 || new Set(directionBatch.entries.map(entry => entry.movingLine)).size !== 6) {
+   throw new Error('Invalid authored direction batch: ' + directionSourcePath);
+  }
+ }
  const rows = [];
  const monthSlots = {};
  const name = library.getHexagram(primaryId).name;
@@ -101,13 +112,31 @@ for (const [batchIndex, filename] of batches.entries()) {
       (isPromotion && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
+  const directionEntry = directionBatch?.entries.find(entry => entry.movingLine === movingLine);
+  const changedTrigram = r.nodes.find(node => node.role === 'changed_use').trigram;
+  const directionRule = directionEntry ? directionRules.rules[changedTrigram] : null;
+  if (directionBatch && (!directionEntry || directionEntry.changedTrigram !== changedTrigram ||
+      directionEntry.sourceRule !== changedTrigram || directionEntry.status !== 'AUTHOR_READ' ||
+      !directionEntry.reviewedAt || directionEntry.textSha256 !== createHash('sha256').update(directionEntry.text).digest('hex') ||
+      !directionEntry.text.includes(directionRule.direction.replace(/方$/u, '')))) {
+   throw new Error('Direction supplement facts or receipt mismatch: ' + directionSourcePath + '/' + movingLine);
+  }
+  const locationApplication = directionEntry ? {
+   ruleVersion:directionRules.version, role:'changed_use', trigram:changedTrigram,
+   direction:directionRule.direction, text:directionEntry.text, sourceId:directionRules.sourceId,
+   quote:directionRule.quote, sourcePath:directionSourcePath, movingLine,
+   referenceUrl:directionRules.referenceUrl, interpretation:'traditional-symbolic-search-hint',
+   realWorldLocationVerified:false, referencePoint:'use-confirmed-real-world-route-or-storage-context',
+   reviewedAt:directionEntry.reviewedAt, textSha256:directionEntry.textSha256,
+  } : null;
+  const combinedEnding = locationApplication ? ending + ' ' + locationApplication.text : ending;
   const key = [questionId, primaryId, movingLine, monthOrder].join('/');
   const decisionId = key + '/' + outcome;
   const stageIds = Object.values(r.stages).map(stage => stage.id);
   const movingLineText = r.selectedMovingLine.text;
   const lineApplication = {evidence: [movingLineText], conditions: [resolution], sourcePath};
   const counterevidence = [{fact: 'facts.directRelations; facts.nodes; facts.movingLine', resolution}];
-  const copy = {title, short: {decisionId, text: short}, long: {decisionId, opening, process, ending, summary}};
+  const copy = {title, short: {decisionId, text: short}, long: {decisionId, opening, process, ending:combinedEnding, summary}};
   let copyChecks;
   try {
    copyChecks = validateStoryCopy({decision: {id: decisionId}, copy, lineApplication, counterevidence});
@@ -169,6 +198,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
   const sourceEvidence = [...commonEvidence,
+   ...(locationApplication ? [evidence(locationApplication.sourceId, locationApplication.quote, '按真实动爻改变的经卦取方位及场所，结合原行程补查，未据此认定真实所在地。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
    ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
    ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
@@ -199,13 +229,14 @@ for (const [batchIndex, filename] of batches.entries()) {
        !/^[a-f0-9]{64}$/.test(literaryEntry.beforeCopySha256) || !literaryEntry.reason || !literaryEntry.reviewedAt) {
     throw new Error('Stale literary review receipt: ' + key);
    }
-   authorship.literaryPolish = {standard:'V5.0', status:'POLISH_COMPLETED', actor:literaryProgress.actor,
+   authorship[locationApplication ? 'priorLiteraryPolish' : 'literaryPolish'] = {scope:locationApplication ? 'base-recovery-copy-before-direction-merge' : 'whole-copy', standard:'V5.0', status:'POLISH_COMPLETED', actor:literaryProgress.actor,
     receiptPath:literaryReceiptPath, copySha256:copyHash, reviewedAt:literaryEntry.reviewedAt};
    literaryProgress.completed++;
    literaryProgress.monthKeyCount += monthBranches.length;
   } else if (profile === LOST_OBJECT_RECOVERY_PROFILE && literaryProgress.next === null) {
    literaryProgress.next = {primaryId,movingLine,monthOrder,monthBranches};
   }
+  if (locationApplication) authorship.directionSupplement = {method:'individually-authored-direction-supplement', sourcePath:directionSourcePath, reviewedAt:directionEntry.reviewedAt, textSha256:directionEntry.textSha256};
   const receipts = [
    ['facts.stages', stageIds.join(' / ') + '，' + facts.movingLine.label + '动'],
    ['facts.nodes', facts.nodes.map(n => n.role + ' ' + n.trigram).join(' / ')],
@@ -218,11 +249,11 @@ for (const [batchIndex, filename] of batches.entries()) {
    ['decision.counterevidence', resolution],
   ];
   const review = {status:'author-checked', actor:'assistant-author', version:manuscriptVersion,
-   scope:'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
+   scope:locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
-   facts, decision, copy, copyChecks, sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
+   facts, decision, copy, copyChecks, ...(locationApplication ? {locationApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
@@ -250,7 +281,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    paragraphs: [
     '开局：' + opening,
     '过程：' + process,
-    '结局：' + ending + (payRange ? ' ' + payRange : ''),
+    '结局：' + combinedEnding + (payRange ? ' ' + payRange : ''),
     timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
      timing.paragraphs.map((text, index) => profile === EXAM_PROFILE || profile === LOST_OBJECT_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
@@ -260,6 +291,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     resolution,
+    ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;
@@ -282,7 +314,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {literaryPolish:{...literaryProgress,required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-recovery-copy-before-direction-merge',required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
@@ -290,8 +322,9 @@ const progress = {
 await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条按卦爻写定的方位场所补充已合入结局，覆盖全部 4,608 个月令键，原典定位与取象位置在计算说明中展开。'] : []),
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。合并方位前已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
@@ -432,7 +465,7 @@ const relationshipReconciliation = {
  timingContext:'日级窗口只用于近期可以观察的表态、修复行动或重遇旧的阻节，须与所取节点对应。复合本身没有依据则单独保留时机未明。',
 };
 const lostObjectRecovery = {
- title:'物品找回 · 丢失的这件物品还能找回来吗？',
+ title:'物品找回 · 寻回倾向与传统方位场所',
  policy:'LOST_OBJECT_RECOVERY_POLICY.md', primarySource:'mh-077',
  references:[
   ['mh-077','占失物，以体为主，用为失物。','依失物专章，原体指问事者能够动用的查找条件，本用指当前失物情势。'],
@@ -446,7 +479,7 @@ const lostObjectRecovery = {
   body_generates_use:'体生用，物难见；',
  },
  outcomes:['favourable','conditional','difficult'],
- scopeNote:'判断指定物品是否有望核实并实际取回。确认遗落范围、获得消息和领回原物分开记录',
+ scopeNote:'同篇判断指定物品的寻回倾向，并参失物章给出传统方位、场所及实际行程回查提示。确认遗落范围、获得消息和领回原物分开记录',
  counterevidence:'核对初段难寻、两互能否提供有效线索及收尾能否领回。比和可取在已知处回查，不视为物品已定位。',
  timingContext:'近期已有可继续核查的记录或可联系的经手方时，才依生体、比和或克体择一个可观察的阶段事件，不据取日推定已经寻回。',
 };

@@ -103,7 +103,7 @@ SQL构建已调整：data/authored-readings.sql只含表结构；先npm run buil
 | 05 | 家庭家宅 | 5 | 13 |
 | 06 | 寻人失物 | 4 | 8 |
 
-现行导航为六大领域和 31 个细分入口，目录保存 77 个现用问项和 5 个历史问项。名称、顺序和归属见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。读取 subcategoryId 定位导航，固定问项继续使用原有 ID。
+现行导航为六大领域和 30 个细分入口，目录保存 72 个现用问项和 11 个历史问项。名称、顺序和归属见 [正式产品分类 V2](PRODUCT_CATEGORIES_V1.md)。读取 subcategoryId 定位导航，固定问项继续使用原有 ID。
 
 data/product-categories.json 为产品目录，sources/editorial/product-taxonomy.mjs 为编辑源。18个古籍门类及原90个固定问法仍作为内部来源和兼容接口保留，产品categoryId与古籍domainId分开。
 
