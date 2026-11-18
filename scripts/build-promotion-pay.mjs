@@ -9,6 +9,11 @@ import {createContextualReading, promotionTimingSlots, LOST_OBJECT_RECOVERY_PROF
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
+import {createRequire} from 'node:module';
+// 口径 V2.1 间接生克（只算本用、两互、变用之间一层）：与复核记录同一实现，构建时如实记入 decision.indirectEffectsApplied。
+const {adjust:indirectAdjust} = createRequire(import.meta.url)('./review/indirect-test.cjs');
+const INDIRECT_QUOTE = '此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。';
+const INDIRECT_EFFECT = {'克体得生而盛':'control-strengthened', '克体受制而衰':'control-weakened', '生体受制而薄':'support-weakened'};
 
 const root = new URL('../', import.meta.url);
 const library = await loadLibrary();
@@ -36,7 +41,7 @@ const timingQuotes = {
 };
 const seen = new Map();
 const seenSentences = new Map();
-const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0};
+const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0, accepted: 0};
 const literaryProgress = {standard:'V5.0', actor:'single-ai-literary-editor', completed:0, monthKeyCount:0, next:null};
 const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
@@ -73,6 +78,11 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
+ const optionalRecords = async folder => { try { return JSON.parse(await readFile(new URL(sourceDir + folder + filename, root), 'utf8')); } catch (error) { if (error.code === 'ENOENT') return null; throw error; } };
+ // V2 review (docs/READING_POLICY_V2.md) and V5 polish receipts; acceptance is recorded only where a record exists.
+ const reviewRecords = await optionalRecords('review-v2/');
+ const blindRecords = await optionalRecords('blind-v2/');
+ const polishRecords = await optionalRecords('polish-v5/');
  if (drafts.length !== 30) throw new Error('An authored batch needs 30 individually written versions');
  let literaryReceipt = null;
  const literaryReceiptPath = sourceDir + 'polish/' + filename;
@@ -235,9 +245,12 @@ for (const [batchIndex, filename] of batches.entries()) {
       !r.edges.some(edge => edge.type === 'use_generates_body')) {
    throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
+  const indirectNotes = reviewRecords?.[i] ? indirectAdjust({n:Object.fromEntries(r.nodes.map(x => [x.role, x.trigram + x.element + x.strength.state])),
+   rel:Object.fromEntries(r.edges.map(e => [e.targetRole, e.type])), text:''}).notes : [];
   const sourceEvidence = [...commonEvidence,
    ...imageEvidence,
    ...(locationApplication ? [evidence(locationApplication.sourceId, locationApplication.quote, '按真实动爻改变的经卦取方位及场所，结合原行程补查，未据此认定真实所在地。')] : []),
+   ...(indirectNotes.length ? [evidence('mh-099', INDIRECT_QUOTE, '口径 V2.1 间接生克：' + indirectNotes.join('；') + '。只算一层，不连环累计。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
    ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
    ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
@@ -259,7 +272,11 @@ for (const [batchIndex, filename] of batches.entries()) {
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
    questionScope:profile.questionScope??'promotion-with-associated-pay', lineApplication, counterevidence, sourceEvidence,
    ...(isPromotion ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
-   indirectEffectsApplied:[]};
+   indirectEffectsApplied:indirectNotes.map(note => {
+     const [role, label] = note.split(' ');
+     return {role, effect:INDIRECT_EFFECT[label], label, rule:'reading-policy-v2.1-indirect-one-layer', sourceId:'mh-099',
+      quote:INDIRECT_QUOTE};
+    })};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
   const literaryEntry = literaryReceipt?.entries.find(entry => entry.rowIndex === i);
   if (literaryEntry?.status === 'POLISH_COMPLETED') {
@@ -284,22 +301,38 @@ for (const [batchIndex, filename] of batches.entries()) {
    ['facts.directRelations', facts.directRelations.map(e => e.role + ' ' + e.type).join(' / ')],
    ['facts.nodes', facts.nodes.map(n => n.trigram + n.qi).join(' / ')],
    ['mh-061;mh-117', '经典体用及同一月令五态'],
-   ['decision.indirectEffectsApplied', '四处各自对原体看直接作用'],
+   ['decision.indirectEffectsApplied', reviewRecords?.[i] ? '口径 V2.1：本用、两互、变用之间只算一层间接生克（《体用》「彼灭其吉」「稍解其穷」）' : '四处各自对原体看直接作用'],
    [timingSourceIds.join(';'), timingReason],
    ['decision.counterevidence', resolution],
   ];
-  const review = {status:'author-checked', actor:'assistant-author', version:manuscriptVersion,
-   scope:imageApplication ? 'author-reviewed-base-copy-direction-and-image-supplements' : locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
+  const reviewRecord = reviewRecords?.[i], blindRecord = blindRecords?.[i], polishRecord = polishRecords?.[i];
+  if (reviewRecord && (reviewRecord.key !== key || reviewRecord.newOutcome !== outcome)) throw new Error('Review record does not match draft: ' + key);
+  if (polishRecord && (polishRecord.key !== key || polishRecord.outcome !== outcome)) throw new Error('Polish record does not match draft: ' + key);
+  const delegatedPass = reviewRecord?.status === 'passed' && ['agreed','resolved'].includes(blindRecord?.agreement) && polishRecord?.status === 'POLISH_COMPLETED';
+  const independentReview = delegatedPass ? {
+   status:'ai-delegated-approved', timingInterpretation:'ai-delegated-approved', userAcceptedThisVersion:true,
+   acceptance:'用户授权 AI 代审通过（2026-11-18）', reviewerIsHuman:false,
+   reviewer:'Claude Opus 5.5 (claude-opus-5-5) · Claude Code 子调用逐卦复核、独立盲断、全文润色', policy:'docs/READING_POLICY_V2.md', date:reviewRecord.date,
+  } : {status:reviewRecord?.status === 'pending-dispute' ? 'pending-dispute' : 'pending', timingInterpretation:'pending', userAcceptedThisVersion:false};
+  const review = {status:reviewRecord ? (reviewRecord.status === 'passed' ? 'ai-reviewed-v2' : 'pending-dispute') : 'author-checked',
+   actor:reviewRecord ? 'ai-delegated-reviewer' : 'assistant-author', version:manuscriptVersion,
+   scope:reviewRecord ? 'facts-and-full-copy' : (imageApplication ? 'author-reviewed-base-copy-direction-and-image-supplements' : locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy'), independentReview,
+   ...(reviewRecord ? {reviewV2:{changed:reviewRecord.changed, oldOutcome:reviewRecord.oldOutcome, reason:reviewRecord.reason,
+    blindVerdict:blindRecord?.verdict ?? null, blindAgreement:blindRecord?.agreement ?? null}} : {}),
+   ...(polishRecord ? {polish:{status:polishRecord.status, hashBefore:polishRecord.hashBefore, hashAfter:polishRecord.hashAfter, date:polishRecord.date}} : {}),
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0',...(reviewRecord ? {policy:'reading-policy-v2-20261118'} : {})},
+   // 读者可见的计算说明：口径 V2 复核与润色后写定的定档、旺衰、爻辞依据（替换第十栏内部依据的显示）。
+   ...(polishRecord?.calculationNotes ? {calculationNotes:polishRecord.calculationNotes} : {})};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
   counts.bodies++;
   counts.keys += monthBranches.length;
   outcomeCounts[outcome]++;
+  counts.accepted += Number(delegatedPass);
   counts.timingWindows += timingSlots.length;
   counts.dated += Number(timingSlots.length > 0);
   const timing = timingOmission ? null : resolveManuscriptDates({
@@ -330,9 +363,10 @@ for (const [batchIndex, filename] of batches.entries()) {
    calculation: [
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
-    resolution,
+    ...(row.calculationNotes ?? [resolution]),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
+    ...(row.ruleVersions.policy ? ['判断口径：断语判断口径 V2（docs/READING_POLICY_V2.md，2026-11-18）。'] : []),
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;
@@ -357,7 +391,7 @@ const progress = {
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {imageCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-images-1.0.0',facets:['shape','material','color','utensil','environment'],extraLiteraryPolishRequired:false},directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-recovery-copy-before-direction-merge',required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
- dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
+ dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:counts.accepted === counts.bodies ? 'ai-delegated-approved' : 'pending', userAccepted:counts.accepted, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
 };
 await saveJSON(base + 'index.json', progress);
@@ -387,7 +421,7 @@ const promotion = {
   use_controls_body:'用克体，名不可成。', use_generates_body:'用生体，名易成，或因名有得。',
   body_generates_use:'体生用，名不可就，或因名有丧。',
  },
- outcomes:['favourable','difficult'], scopeNote:'名分与随岗薪资同问，薪资承接晋升结果',
+ outcomes:['favourable','conditional','difficult'], scopeNote:'名分与随岗薪资同问，薪资承接晋升结果',
  timingContext:'日级窗口对应已经进入近期流程的评定。',
  timingDisplay:'日级参考窗口适用于评定已进入近期流程。',
 };
@@ -440,7 +474,7 @@ const workplaceProbation = {
   ['mh-071','凡占求名，以体为主，用为名。','将名成类推至这次试用期的正式通过。原体为试用员工，本用为这次试用评定。'],
   ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','依次核对试用要求、实际工作和最后的评定。'],
  ],
- outcomes:['favourable','difficult'], scopeNote:'只判断当次试用期的通过倾向',
+ outcomes:['favourable','conditional','difficult'], scopeNote:'只判断当次试用期的通过倾向',
  counterevidence:'分别看评定标准、执行中的协作或限制、爻辞条件与末段。过程改善与最终通过各有证据。',
  timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
 };

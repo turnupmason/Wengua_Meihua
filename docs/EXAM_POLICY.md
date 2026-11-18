@@ -15,6 +15,81 @@
 
 参照仓库上传本《梅花易数》三卷（`sources/original/meihua-volumes-1-3.txt`）、《周易》六十四卦整理本（`sources/original/yijing64.txt`）、库内 `data/meihua-sections.json` 与 `data/catalog.json`。用于本次考试的章节与逐篇引文定位随稿保存。[《梅花易数·求名占》](https://zh.wikisource.org/wiki/梅花易數/卷二#求名占第九) · [《体用互变之诀》《体用衰旺之诀》《占卜克应之诀》](https://zh.wikisource.org/wiki/梅花易數/卷三#體用互變之訣) · [《日应》](https://zh.wikisource.org/wiki/梅花易數/卷三#占卜十應訣)
 
+## 定稿（2026-11-18）
+
+本问项已按 [断语判断口径 V2 定稿](READING_POLICY_V2.md)（第二、八、十、十一、十三节）逐篇补判、改写和润色。**每篇只判能过（成）或不能过（不成），不再有「有条件」。**过程的难易、要补的功夫写在正文里。1,920 篇中，能过 639 篇，不能过 1,281 篇。逐篇依据见各卦的复核记录（review-v2），计算说明随稿显示在 App 的「计算说明」栏。
+
+下表每格五个字依次为春（寅卯）、夏（巳午）、秋（申酉）、冬（亥子）、四季土（辰未戌丑）月令，「成」为能过，「·」为不能过。
+
+| 卦 | 初爻 | 二爻 | 三爻 | 四爻 | 五爻 | 上爻 | 记录 |
+|---|---|---|---|---|---|---|---|
+| 1 乾为天 | ····· | ····· | ··成·成 | ··成·成 | ····· | ··成·成 | [复核记录](../sources/editorial/exam/review-v2/hex-001.json) |
+| 2 坤为地 | ····· | ·成··成 | ·成··成 | ····· | ·成··成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-002.json) |
+| 3 水雷屯 | ····· | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-003.json) |
+| 4 山水蒙 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-004.json) |
+| 5 水天需 | ····· | 成成成成成 | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-005.json) |
+| 6 天水讼 | ····· | 成·成成成 | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-006.json) |
+| 7 地水师 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-007.json) |
+| 8 水地比 | ····· | ····· | ····· | ····· | ·成··成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-008.json) |
+| 9 风天小畜 | ····· | ····· | ····· | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-009.json) |
+| 10 天泽履 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-010.json) |
+| 11 地天泰 | ····· | 成成成成成 | ····· | 成成成成成 | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-011.json) |
+| 12 天地否 | 成成成成成 | ····· | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-012.json) |
+| 13 天火同人 | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-013.json) |
+| 14 火天大有 | 成成成成成 | 成成··· | 成成成·成 | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-014.json) |
+| 15 地山谦 | 成成成成成 | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-015.json) |
+| 16 雷地豫 | 成成成成成 | 成成成成成 | 成成成成成 | ····· | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-016.json) |
+| 17 泽雷随 | 成成成成成 | 成成成成成 | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-017.json) |
+| 18 山风蛊 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-018.json) |
+| 19 地泽临 | ····· | ····· | ····· | 成成成成成 | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-019.json) |
+| 20 风地观 | 成··成· | 成成成成成 | 成成·成成 | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-020.json) |
+| 21 火雷噬嗑 | ····· | 成成成成成 | 成成成成成 | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-021.json) |
+| 22 山火贲 | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-022.json) |
+| 23 山地剥 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-023.json) |
+| 24 地雷复 | ····· | ····· | 成成成成成 | 成··成· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-024.json) |
+| 25 天雷无妄 | 成成成成成 | 成成成成成 | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-025.json) |
+| 26 山天大畜 | ····· | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-026.json) |
+| 27 山雷颐 | ····· | ····· | ·成成成成 | ····· | 成··成· | 成成·成成 | [复核记录](../sources/editorial/exam/review-v2/hex-027.json) |
+| 28 泽风大过 | ··成·成 | 成成成成成 | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-028.json) |
+| 29 坎为水 | 成成成成成 | ····· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-029.json) |
+| 30 离为火 | ····· | 成成成成成 | 成成成成成 | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-030.json) |
+| 31 泽山咸 | ····· | 成成成成成 | 成成成成成 | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-031.json) |
+| 32 雷风恒 | ····· | ····· | 成成成成成 | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-032.json) |
+| 33 天山遁 | ····· | 成成成成成 | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-033.json) |
+| 34 雷天大壮 | ····· | ····· | ····· | 成成成成成 | ··成·成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-034.json) |
+| 35 火地晋 | 成成成成成 | ····· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-035.json) |
+| 36 地火明夷 | 成成成成成 | ·成··· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-036.json) |
+| 37 风火家人 | ····· | ····· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-037.json) |
+| 38 火泽睽 | ····· | 成成成成成 | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-038.json) |
+| 39 水山蹇 | ····· | ····· | ····· | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-039.json) |
+| 40 雷水解 | ····· | 成成成成成 | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-040.json) |
+| 41 山泽损 | ····· | ····· | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-041.json) |
+| 42 风雷益 | 成··成· | ····· | ····· | ····· | 成··成· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-042.json) |
+| 43 泽天夬 | ····· | ····· | ··成·成 | ····· | ··成·成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-043.json) |
+| 44 天风姤 | ··成·成 | 成成成成成 | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-044.json) |
+| 45 泽地萃 | 成成成成成 | ····· | 成成成成成 | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-045.json) |
+| 46 地风升 | ····· | ····· | ····· | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-046.json) |
+| 47 泽水困 | ····· | 成成成成成 | ····· | 成成成成成 | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-047.json) |
+| 48 水风井 | ····· | ····· | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-048.json) |
+| 49 泽火革 | 成成成成成 | ····· | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-049.json) |
+| 50 火风鼎 | 成成成成成 | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-050.json) |
+| 51 震为雷 | 成成成成成 | ····· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-051.json) |
+| 52 艮为山 | 成成成成成 | ····· | ····· | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-052.json) |
+| 53 风山渐 | ····· | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-053.json) |
+| 54 雷泽归妹 | 成成成成成 | 成成成成成 | ····· | 成成成成成 | ··成·成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-054.json) |
+| 55 雷火丰 | ····· | ····· | ····· | ····· | 成成成成成 | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-055.json) |
+| 56 火山旅 | ····· | 成成成成成 | ····· | 成成成成成 | ·成··· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-056.json) |
+| 57 巽为风 | ····· | 成··成· | 成成成成成 | ····· | 成··成· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-057.json) |
+| 58 兑为泽 | ····· | ····· | ····· | ····· | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-058.json) |
+| 59 风水涣 | ····· | 成成成成成 | 成成成成成 | 成成成成成 | ····· | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-059.json) |
+| 60 水泽节 | 成成成成成 | ····· | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-060.json) |
+| 61 风泽中孚 | 成成成成成 | ····· | ····· | 成成成成成 | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-061.json) |
+| 62 雷山小过 | ····· | ····· | ····· | ····· | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-062.json) |
+| 63 水火既济 | ····· | 成成成成成 | ····· | ····· | ····· | 成成成成成 | [复核记录](../sources/editorial/exam/review-v2/hex-063.json) |
+| 64 火水未济 | ····· | ····· | 成成成成成 | ····· | 成成成成成 | ····· | [复核记录](../sources/editorial/exam/review-v2/hex-064.json) |
+
+下文「逐卦记录」是 V1 时期的取义说明，保留作历史，结论以上表和复核记录为准。
+
 ## 逐卦记录
 
 ### 乾为天
