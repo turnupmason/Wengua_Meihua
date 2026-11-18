@@ -12,6 +12,9 @@ export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
 export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-2.0.0',timingVersion:'exam-day-1.0.2',directory:'exam'});
+// 面试求职按考试定稿口径重写（2026-11-18）：作者源格式、应期写法与考试相同，目录仍为 interview-pass。
+export const INTERVIEW_V3_PROFILE=Object.freeze({questionId:'career.interview.interview-pass',questionType:'interview_pass',questionScope:'result-of-this-interview-round',manuscriptVersion:'interview-pass-3.0.0',timingVersion:'interview-day-3.0.0',directory:'interview-pass',examLike:true});
+export const isExamLike=profile=>profile===EXAM_PROFILE||profile?.examLike===true;
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',
  questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-1.0.0',
@@ -159,7 +162,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
     (bodyPeriod?role!=='body'||reading.edges.some(e=>e.type==='use_controls_body'):
      edge?.type!==rule.relation))throw new Error('Invalid promotion timing declaration');
   const nodePeriod=declaredMethod==='trigram-periods';
-  if(declaredMethod!==undefined&&(!nodePeriod||(profile!==EXAM_PROFILE&&!(profile===WORKPLACE_PROBATION_PROFILE&&kind==='name-support'))||bodyPeriod))throw new Error('Invalid authored timing method');
+  if(declaredMethod!==undefined&&(!nodePeriod||(!isExamLike(profile)&&!(profile===WORKPLACE_PROBATION_PROFILE&&kind==='name-support'))||bodyPeriod))throw new Error('Invalid authored timing method');
   const useTrigramPeriod=bodyPeriod||nodePeriod;
   const period=useTrigramPeriod?TRIGRAM_PERIOD_SPECS.find(p=>p.trigram===node.trigram&&p.scales.includes('day')):null;
   const branches=period?.branches??ELEMENT_DAY_BRANCHES[node.element];
@@ -170,9 +173,9 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const sourceIds=[...new Set(timingSources)];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE||profile?.namedStageEvents===true;
+  const namedStageEvent=profile===JOB_CHANGE_PROFILE||isExamLike(profile)||profile?.namedStageEvents===true;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
-  const eventEnd=(profile===EXAM_PROFILE||profile===LOST_PET_RECOVERY_PROFILE)?'，属'+valence+'应。':'。';
+  const eventEnd=(isExamLike(profile)||profile===LOST_PET_RECOVERY_PROFILE)?'，属'+valence+'应。':'。';
   const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;
   return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
@@ -241,7 +244,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const timingOmission=missingTiming.length?{status:'not-derived',reason:'此起卦方式或时间尺度无法按先天卦气取日。',sourceIds:['mh-058','mh-122']}:row.timingOmission;
   const voidDetails=interviewVoidReleaseSlots(reading,row.voidReleaseSpecs||[]);
   if(JSON.stringify(voidDetails.slots)!==JSON.stringify(row.voidTimingSlots||[])||voidDetails.text!==(row.voidTimingText||''))throw new Error('Authored void-release binding mismatch');
-  const timingNote=profile===EXAM_PROFILE
+  const timingNote=isExamLike(profile)
    ? (hasTiming?'以下为传统推算的参考窗口，仅用于已进入近期流程的对应事项。':NO_WINDOW_NOTE)
    : isPromotion
    ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
@@ -278,7 +281,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ...(row.imageApplication ? ['形色器物对照取本用' + row.imageApplication.objectTrigram + '参原物已有特征，变用' + row.imageApplication.environmentTrigram + '参周边容器与实际环境。', '原件形状、材质、颜色及构造以原照片和记录核对。物象是条件性比对类目。', '形色器物作者源：' + row.imageApplication.sourcePath + '，第 ' + row.imageApplication.movingLine + ' 爻。'] : []),
    ...(row.imageApplication ? row.imageApplication.sourceEvidence.map(source => '类象依据 ' + source.id + '《' + source.title + '》，原文第 ' + source.locator.startLine + ' 行起。“' + source.quote + '” ' + source.reason) : []),
    ...(row.locationApplication ? ['方位取象取变用' + row.locationApplication.trigram + '，传统方向' + row.locationApplication.direction + '。依实际收放或已知行程作补查参照。', '《失物占第十五》原文：' + row.locationApplication.quote, '方位取象作者源：' + row.locationApplication.sourcePath + '，第 ' + row.locationApplication.movingLine + ' 爻。'] : []),
-   row.ruleVersions.policy?`断法依据：《梅花易数》体用生克、衰旺与互变之诀，2026-11-18 定稿。稿件版本：${row.review.version}。`:`判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
+   row.ruleVersions.policy?`断法依据：《梅花易数》体用生克、衰旺与互变之诀，2026-11-18 定稿。稿件版本：${String(row.review.version).replace(/^[a-z-]+-(?=\d)/u,'')}。`:`判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
   ]:[];
   const monthNote=reading.monthBranch?`月令：${reading.monthBranch}月。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}。具体月令未提供。`;
   const dayNote=`起卦日：${reading.castingDate}，${reading.dayGanzhi}日`;
@@ -303,7 +306,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      const round=d.calculationBasis.selectionOrder&&d.matches.length?`（${d.matches[0].monthOffset?'下月匹配':'起卦当月匹配'}）`:'';
      const role=d.calculationBasis.role;
      const label=(!row.decision.sourceEvidence&&{body:'体',use:'用'}[role])||labels[role]||role;
-     const methodNote=profile===EXAM_PROFILE
+     const methodNote=isExamLike(profile)
       ? (d.calculationBasis.method==='pre-heaven-trigram-periods'?' 取期方法为经卦时序。':' 取期方法为五行卦气。')
       : '';
      const ruleNote=usesStoredTimingSpecs?` ${d.calculationBasis.reason} 依据 ${d.sourceIds.join('、')}。`:'';
