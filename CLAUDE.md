@@ -1,4 +1,4 @@
-宠物走失正在逐盘撰写，当前已完成乾为天至山雷颐共810篇、162种基础盘、1,944个月令键；下一键泽风大过初六寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
+宠物走失正在逐盘撰写，当前已完成乾为天至泽风大过共840篇、168种基础盘、2,016个月令键；下一键坎为水初六寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
 
 `career.interview.interview-pass` 基础库覆盖 384 种卦爻组合与 4,608 个月令键，保存 1,920 篇正文。问项只涉及本轮面试。全文见 [基础目录](docs/INTERVIEW_PASS_ALL_BASES.md)，逐条核对结果见 [终校记录](docs/INTERVIEW_FINAL_REVIEW_20261112.md)。
 
