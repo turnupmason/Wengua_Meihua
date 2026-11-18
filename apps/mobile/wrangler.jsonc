@@ -1,0 +1,18 @@
+// 网页版 app.wengualabs.com: the Cloudflare Worker `wengua-app` serves the built app (dist/).
+// Cloudflare builds it from GitHub on every push to main (root directory `apps/mobile`, build
+// command `npm run build`, deploy command `npx wrangler@4.156.2 deploy`). The Supabase URL and
+// publishable key come from the build variables set in Cloudflare, never from a committed file;
+// see docs/IOS_APP_STORE_RELEASE.md, 第七步之二.
+{
+  "$schema": "https://unpkg.com/wrangler@4.156.2/config-schema.json",
+  "name": "wengua-app",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    // One page app: any path that is not a file gets index.html.
+    "not_found_handling": "single-page-application"
+  },
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [{ "pattern": "app.wengualabs.com", "custom_domain": true }]
+}

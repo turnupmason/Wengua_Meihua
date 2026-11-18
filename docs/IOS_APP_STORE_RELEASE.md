@@ -144,6 +144,35 @@
 
 设置好之后，改网站只要告诉我改什么。我改完提交推送，网站就自动更新，不用再拖文件夹。
 
+## 七之二、网页版 app.wengualabs.com
+
+和 App 是同一套代码（`apps/mobile`）。在电脑的宽窗口里用桌面布局，在手机浏览器里和 App 一样。网页版不卖会员，全部免费开放（测试期）；登录用邮箱验证码和 Google，Apple 登录等 Apple 开发者账号开通后再加。
+
+- Cloudflare 上的 Worker `wengua-app`，配置在 [`apps/mobile/wrangler.jsonc`](../apps/mobile/wrangler.jsonc)，发布构建好的 `dist/`，绑定 `app.wengualabs.com`。
+- `apps/mobile/public/_headers`：带哈希的文件长期缓存，其余加两条安全头。
+
+一次性设置【你】：
+
+1. Cloudflare → **Workers & Pages** → **Create（创建）** → **Import a repository（导入仓库）** → 选 `turnupmason/Wengua_Meihua`。
+2. 填写：
+   - Project name：`wengua-app`（必须和 `wrangler.jsonc` 里的 `name` 一样）
+   - Build command：`npm run build`
+   - Deploy command：`npx wrangler@4.156.2 deploy`
+   - Advanced settings → **Root directory：`apps/mobile`**
+   - Advanced settings → **Build variables（构建变量）**，加四条（都是公开值，本来就会出现在网页里）：
+
+     | 名称 | 值 |
+     | --- | --- |
+     | `VITE_SUPABASE_URL` | `https://yjrldtbxorarrfkndzzt.supabase.co` |
+     | `VITE_SUPABASE_ANON_KEY` | Supabase 的 publishable key（`sb_publishable_` 开头） |
+     | `VITE_GOOGLE_WEB_CLIENT_ID` | Google 的 Web Client ID |
+     | `NODE_VERSION` | `22` |
+
+3. **Deploy**。第一次构建约 3～5 分钟（要上传约 900 个文件、280 MB 断语数据）。成功后 `app.wengualabs.com` 会自动加好 DNS。
+4. Supabase → Authentication → **URL Configuration**：Site URL `https://app.wengualabs.com`；Redirect URLs 有 `https://app.wengualabs.com/**` 和 `http://localhost:5173/**`。
+
+之后每次推送到 `main`，网页版和官网都会各自重新发布。
+
 ## 八、在 Mac 上打包【你，按步骤做】
 
 1. Mac 上安装：
