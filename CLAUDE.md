@@ -1,10 +1,10 @@
 宠物走失正在逐盘撰写，当前已完成乾为天至泽风大过共840篇、168种基础盘、2,016个月令键；下一键坎为水初六寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
 
-`career.interview.interview-pass` 基础库覆盖 384 种卦爻组合与 4,608 个月令键，保存 1,920 篇正文。问项只涉及本轮面试。全文见 [基础目录](docs/INTERVIEW_PASS_ALL_BASES.md)，逐条核对结果见 [终校记录](docs/INTERVIEW_FINAL_REVIEW_20261112.md)。
+`career.interview.interview-pass` 于 2026-11-18 按考试定稿口径补判重写为 `interview-pass-3.0.0`：1,920 篇只判能过 639、过不了 1,281，与考试同盘结论逐盘一致；作者源 `sources/editorial/interview-pass/`（含 polish-v5、review-v2），由 `build-promotion-pay.mjs interview-pass` 构建。口径、回测与逐条裁定见 [补判记录](docs/review/INTERVIEW_REJUDGE_20261118.md)，写法见 [写作说明](docs/review/INTERVIEW_WRITE_BRIEF.md)。空亡旧版（interview-pass-2.0.0、`interview-rewrites/`、`interview-void-*`）只留档，不进正文。问项只涉及本轮面试。
 
 `career.job-change.decision` 同篇比较现职与新工作并回答现在是否宜辞。已逐篇写作并作者核读 1,920 篇，覆盖 384 种基础盘和 4,608 个月令键。应期从实际起卦日换算。见[正文目录](docs/job-change/README.md)及[取义与复核记录](docs/JOB_CHANGE_POLICY.md)。
 
-原 60 篇及已逐篇重写的 1,860 篇均有持久作者源。构建按卦、爻、月令读取 `sources/editorial/interview-rewrites/` 和原对照稿。当前进度见 [progress.json](data/authored-readings/progress.json)。独立专业审核仍为 pending。客户端读取预写字段。
+面试旧版（v2）原 60 篇及 1,860 篇重写稿的作者源留档于 `sources/editorial/interview-rewrites/`，`progress.json` 记的是旧版进度。独立专业审核仍为 pending。客户端读取预写字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。
 
@@ -87,6 +87,10 @@ SQL全文为 structural-only 内部稿，生产只查 approved_fixed_question_st
 npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm run validate:product；npm run validate:authored；npm test。结构校验与断法审核分别报告。
 
 当前已有知识层、排盘和二维联调；3D手机应用在 apps/mobile，继续完善可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。
+
+## 全领域核查与古籍引文（2026-11-18）
+
+全领域诊断与逐领域顺序见 [ALL_DOMAINS_AUDIT_20261118](docs/review/ALL_DOMAINS_AUDIT_20261118.md)：一个领域做完（定类型 → 原书专章定口径 → 原书与网上卦例回测 → 补判 → 重写 → 核查 → 构建）再开下一个。核查脚本：`scripts/review/cite-audit-all.mjs`（经传引文）、`commentary-audit.mjs`（王注孔疏、本义、程传逐字，原文在 `sources/reference/`，取自维基文库）、`fact-audit-all.mjs`（旺衰与生克说法对排盘）、`policy-gap-all.cjs`（结论与定稿初判）。考试、面试两项四项核查均为 0。
 
 ## 考试问项定稿（2026-11-18）
 

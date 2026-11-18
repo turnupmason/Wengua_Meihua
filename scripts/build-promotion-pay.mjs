@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -231,7 +231,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   if (profile === JOB_CHANGE_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
-  if ((profile === EXAM_PROFILE || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
+  if ((isExamLike(profile) || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
   if (profile === LOST_OBJECT_RECOVERY_PROFILE && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Lost-object timing requires a named lead, check or obstacle: ' + key);
   }
@@ -242,7 +242,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
   if (timingSpecs.some(spec => spec?.length !== 5 &&
-      !((profile === EXAM_PROFILE || (profile === WORKPLACE_PROBATION_PROFILE && spec?.[0] === 'name-support')) &&
+      !((isExamLike(profile) || (profile === WORKPLACE_PROBATION_PROFILE && spec?.[0] === 'name-support')) &&
         spec?.length === 6 && spec[5] === 'trigram-periods'))) {
    throw new Error('Invalid author timing: ' + key);
   }
@@ -252,7 +252,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const timingSourceIds = timingOmission?.sourceIds ?? [...new Set(timingSlots.flatMap(slot => slot.sourceIds))];
   const openingRelation = r.edges.find(edge => edge.targetRole === 'use').type;
   const closingRelation = r.edges.find(edge => edge.targetRole === 'changed_use').type;
-  if ((isPromotion || profile === EXAM_PROFILE || profile === WORKPLACE_PROBATION_PROFILE) && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
+  if ((isPromotion || isExamLike(profile) || profile === WORKPLACE_PROBATION_PROFILE) && outcome === 'favourable' && openingRelation === 'use_controls_body' &&
       !r.edges.some(edge => edge.type === 'use_generates_body')) {
    throw new Error('求名 verdict conflicts with the opening 求名占 rule and has no direct 生体: ' + key);
   }
@@ -369,7 +369,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     '过程：' + process,
     '结局：' + combinedEnding + (payRange ? ' ' + payRange : ''),
     timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
-     timing.paragraphs.map((text, index) => profile === EXAM_PROFILE || profile === LOST_OBJECT_RECOVERY_PROFILE || profile === LOST_PET_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
+     timing.paragraphs.map((text, index) => isExamLike(profile) || profile === LOST_OBJECT_RECOVERY_PROFILE || profile === LOST_PET_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
    ],
    sourceTitles,
@@ -467,6 +467,18 @@ const exam = {
  outcomes:['favourable','difficult'], scopeNote:'只问本次考试是否达到合格要求',
  counterevidence:'核对能否达到考试要求，分清答题过程较顺、爻辞所限与结果有利。',
  timingContext:'日级窗口只适用于已进入近期流程的对应考试事项。考试日、查分日和合格标准依据主办方通知。',
+};
+// 面试求职按考试定稿口径重写（2026-11-18，docs/review/INTERVIEW_REJUDGE_20261118.md）。
+const interviewV3 = {
+ title:'这次面试能通过吗', policy:'review/INTERVIEW_REJUDGE_20261118.md', primarySource:'mh-071', clauses:promotion.clauses,
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','以求名类推这一轮面试能否通过。原体为面试者，本用为这一轮考察。'],
+  ['mh-076','体克用，可见；用克体，不见。','谒见之占与求名同向，只参照能否被接纳这一面。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','分阶段检查准备、问答和结果。'],
+ ],
+ outcomes:['favourable','difficult'], scopeNote:'只问这一轮面试能否通过，不等同于最终录用',
+ counterevidence:'核对能否通过这一轮考察，分清问答过程较顺、爻辞所限与结果有利。',
+ timingContext:'日级窗口只适用于已进入近期流程的对应面试事项。面试日、通知日以对方安排为准。',
 };
 const workplaceStability = {
  title:'当前工作稳定性', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
@@ -622,11 +634,13 @@ const lostPetRecovery = {
  "timingContext": "只对近期可实际推进的目击核实、搜寻协同或接近受阻，类推采用日尺度。取生体、比和或克体所在节点，一个窗口只指一个阶段事件，不能据此等到某日才找，也不把它当作宠物出现或团聚的保证。"
 };
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target && !['interview-pass','job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
 if (target === 'lost-pet-recovery') {
  await buildAuthoredManuscripts(LOST_PET_RECOVERY_PROFILE, lostPetRecovery);
 } else if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
+} else if (target === 'interview-pass') {
+ await buildAuthoredManuscripts(INTERVIEW_V3_PROFILE, interviewV3);
 } else if (target === 'exam') {
  await buildAuthoredManuscripts(EXAM_PROFILE, exam);
 } else if (target === 'workplace-stability') {

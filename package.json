@@ -44,7 +44,7 @@
     "build:exam": "node scripts/build-promotion-pay.mjs exam && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:job-change": "node scripts/build-promotion-pay.mjs job-change && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "build:promotion-pay": "node scripts/build-promotion-pay.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
-    "build:interview": "node scripts/build-interview-batch.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
+    "build:interview": "node scripts/build-promotion-pay.mjs interview-pass && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
     "validate:authored": "node scripts/run-python.mjs scripts/validate-authored-readings.py",
     "app:install": "npm --prefix apps/mobile install",
     "app:dev": "npm --prefix apps/mobile run dev",

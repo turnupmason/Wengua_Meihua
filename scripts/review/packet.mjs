@@ -14,8 +14,13 @@ const headPath = `sources/editorial/${item}/${stem}.json`;
 let drafts;
 try { drafts = JSON.parse(execFileSync('git', ['show', 'HEAD:' + headPath], {encoding:'utf8', maxBuffer:1 << 26})); }
 catch { drafts = JSON.parse(await readFile(headPath, 'utf8')); }
+// 工作中的草稿优先（复核时看的是现稿）。
+try { drafts = JSON.parse(await readFile(headPath, 'utf8')); } catch {}
 const fields = ['movingLine','monthOrder','outcome','title','short','opening','process','ending','summary','resolution','topicDetail'];
-const rows = data.rows.map((r, i) => {
+// 面试旧分片含空亡版本：只取基础正文，按草稿的爻、月令顺序对齐。
+const baseRows = drafts.map(d => data.rows.find(r => r.movingLine === d[0] && r.monthOrder === d[1] && (r.voidProfileKey ?? 'base-no-void') === 'base-no-void' && r.baseProse !== false)
+  ?? data.rows.find(r => r.movingLine === d[0] && r.monthOrder === d[1]));
+const rows = baseRows.map((r, i) => {
  const n = Object.fromEntries(r.facts.nodes.map(x => [x.role, x.trigram + x.element + x.qi]));
  const rel = Object.fromEntries(r.facts.directRelations.map(x => [x.role, x.type]));
  const diag = {n, rel, text: r.facts.movingLine.fullText};
