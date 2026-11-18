@@ -1,0 +1,57 @@
+<!-- Supabase · Authentication → Emails → Confirm signup. Subject: 欢迎来到问卦 · 你的验证码 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>欢迎来到问卦</title>
+</head>
+<body style="margin:0;padding:0;background:#efe9dc;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">欢迎来到问卦，你的验证码：{{ .Token }}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#efe9dc;">
+  <tr>
+    <td align="center" style="padding:40px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background:#fbf8f1;border:1px solid #ddd2bd;border-radius:14px;overflow:hidden;">
+        <tr>
+          <td align="center" style="background:#202724;padding:30px 24px 26px;">
+            <img src="https://wengualabs.com/icon.png" width="56" height="56" alt="问卦" style="display:block;border:0;border-radius:14px;">
+            <p style="margin:14px 0 0;font-family:'Songti SC','STSong','Noto Serif SC',serif;font-size:20px;letter-spacing:8px;color:#c6b18b;">问卦</p>
+            <p style="margin:6px 0 0;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:4px;color:#9aa39d;">WENGUA · 梅花易数</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:36px 36px 8px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#202724;">
+            <p style="margin:0 0 10px;font-family:'Songti SC','STSong','Noto Serif SC',serif;font-size:22px;letter-spacing:2px;">欢迎来到问卦</p>
+            <p style="margin:0;font-size:15px;line-height:1.8;color:#4a524d;">这是你第一次用这个邮箱登录。把下面这串数字填回问卦的登录页，账号就建好了。以后换了手机，会员和购买记录都跟着这个邮箱走。</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:24px 36px 8px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #c6b18b;border-bottom:1px solid #c6b18b;">
+              <tr>
+                <td align="center" style="padding:18px 28px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:34px;font-weight:600;letter-spacing:10px;color:#202724;">{{ .Token }}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:24px 36px 30px;font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;">
+            <p style="margin:0 0 6px;font-size:13px;line-height:1.8;color:#6b716d;">验证码只能用一次。如果不是你本人填的这个邮箱，忽略这封邮件就好，这个邮箱不会被启用。</p>
+            <p style="margin:18px 0 0;padding-top:18px;border-top:1px solid #e8e0d0;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7;color:#6b716d;">Welcome to Wengua. Your code is <b style="color:#202724;">{{ .Token }}</b>. Enter it on the sign-in screen to finish creating your account. If this wasn't you, you can ignore this email.</p>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;">
+        <tr>
+          <td align="center" style="padding:20px 24px 0;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:12px;line-height:1.8;color:#8a8577;">
+            Wengua Labs LLC · <a href="https://wengualabs.com" style="color:#8a8577;text-decoration:underline;">wengualabs.com</a><br>
+            有问题请写信到 <a href="mailto:support@wengualabs.com" style="color:#8a8577;text-decoration:underline;">support@wengualabs.com</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -74,8 +74,8 @@
    - **Google**：打开；Client ID 填 Google 的 **Web** 客户端 ID 和 **iOS** 客户端 ID（用逗号隔开），Client Secret 填 Web 客户端的密钥（第六步）；打开 **Skip nonce check**。
    - **Email**：打开。
    - Authentication → Sign In / Providers 里打开 **Allow anonymous sign-ins**（游客购买要用）。
-4. **邮件模板**：Authentication → Emails → Templates → **Magic Link**，正文里放验证码 `{{ .Token }}`，例如：「你的问卦登录验证码：{{ .Token }}，10 分钟内有效。」**Confirm signup** 模板同样改。
-5. **发信服务**：Supabase 自带的发信每小时只能发很少几封，上线前在 Authentication → Emails → SMTP Settings 接一个发信服务（如 Resend、Postmark，免费额度够测试）。
+4. **邮件模板**（2026-11-17 已设好）：Authentication → Emails → Templates。**Confirm signup**（新用户第一封）贴 [`supabase/templates/confirm-signup.html`](../apps/mobile/supabase/templates/confirm-signup.html)，标题「欢迎来到问卦 · 你的验证码」；**Magic Link**（之后每次登录）贴 [`supabase/templates/magic-link.html`](../apps/mobile/supabase/templates/magic-link.html)，标题「问卦 Wengua 登录验证码」。正文只放验证码 `{{ .Token }}`，不放链接。
+5. **发信服务**（2026-11-17 已设好）：SMTP 走 Google Workspace，`smtp.gmail.com:465`，账号 developer@wengualabs.com，密码是这个账号的「应用专用密码」（要先开两步验证）。上线前把 Authentication → Rate Limits 的发信上限调到每小时 100 左右。
 6. **部署三个后台函数**（在 Mac 或这台电脑上装 [Supabase CLI](https://supabase.com/docs/guides/cli) 后，在 `apps/mobile` 目录运行）：
 
    ```bash
