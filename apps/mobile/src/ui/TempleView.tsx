@@ -20,6 +20,8 @@ import { PaintedTable } from './PaintedTable';
 import { coach, useCoach } from './coach';
 import { GuaJian } from './GuaJian';
 import { PAPER } from './paper';
+import { useDesktop } from './desktop';
+import { OPEN_BETA } from '../domain/membership';
 import type { StudyExample } from './StudyPage';
 import { Exit } from './Exit';
 import { PaintedWalkIn } from './PaintedWalkIn';
@@ -108,6 +110,8 @@ const TAB_ICON = {
 
 export function TempleView({ knowledge, record, ritual, dispatch, settings, onToggleSound, t, onExit, onNewCast, home, intro, onIntroDone, membership, memberRev, memberOpen = false, onOpenMembership, journal, libraryPanel, recordsPanel, readOnOpen = null, remind, newMet = null, slipFor = null, onStudy }: Props) {
   const place = usePlace();
+  // 网页版: a wide browser window gets the desk layout (desktop.ts, desktop.css).
+  const desk = useDesktop();
   const onPlace = placeStore.set;
   const reduced = settings.reducedMotion;
   const [sceneFailed, setSceneFailed] = useState(false);
@@ -460,7 +464,44 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
       {walkInArt && <PaintedHall shown={paintedHall} away={paintedPlace} still={reduced} phase={phase} clock={clock} onCover={setRitualCovered} />}
       {walkInArt && placeArt && (['library', 'records'] as const).map((p) => <PaintedPlace key={p} place={p} shown={paintedPlace && place === p} still={reduced} panelFraction={PLACE_PANEL} />)}
 
-      {phase === 'idle' && intro === 'done' && PAPER && (
+      {phase === 'idle' && intro === 'done' && PAPER && desk && (
+        // 网页版 (2026-11-17): one bar across the top — the name, the three places, and the account.
+        <header className="desk-nav">
+          <span className="desk-brand">
+            <i aria-hidden="true" />
+            <b>{t.appLatin}</b>
+            <small>{t.homeBrandSub}</small>
+          </span>
+          <nav aria-label={t.placesLabel}>
+            {(['altar', 'library', 'records'] as const).map((p) => (
+              <button key={p} type="button" aria-current={place === p ? 'page' : undefined} className={place === p ? 'is-on' : ''} onClick={() => onPlace(p)}>
+                {p === 'altar' ? t.placeAltar : p === 'library' ? t.library : t.history}
+              </button>
+            ))}
+          </nav>
+          <span className="desk-me">
+            {OPEN_BETA && <span className="desk-pill">{t.meBetaTitle} · {t.meBetaOn}</span>}
+            <button
+              type="button"
+              onClick={() => {
+                // 我的 lives with 首页 (HomeOverlay); go there and open it.
+                onPlace('altar');
+                window.setTimeout(() => window.dispatchEvent(new Event('wengua:me')), 0);
+              }}
+            >
+              {home.profileName ? (
+                <>
+                  <span className="desk-avatar" aria-hidden="true">{[...home.profileName][0]}</span>
+                  {home.profileName}
+                </>
+              ) : (
+                t.meTitle
+              )}
+            </button>
+          </span>
+        </header>
+      )}
+      {phase === 'idle' && intro === 'done' && PAPER && !desk && (
         // On paper (2026-11-15): three places at the foot, 问事 · 藏经阁 · 问事录 (我的 is in 首页's menu);
         // hidden while asking (body.in-flow) and at a reading.
         <nav className="tab-bar" aria-label={t.placesLabel}>

@@ -39,6 +39,7 @@ import { MembershipSheet, type MembershipReason } from './ui/MembershipSheet';
 import { OPEN_BETA, createMembership, purchaseProvider } from './domain/membership';
 import { clearProfile, loadProfile, type Profile, type SignInMethod } from './domain/profile';
 import { createAppAuth, profileFromSession } from './services/appAuth';
+import { useDesktop } from './ui/desktop';
 import { deleteAccount, signOutAccount } from './services/accounts';
 import { castRequest, entryProblem } from './ui/entry';
 import { TempleView } from './ui/TempleView';
@@ -149,6 +150,12 @@ export function App() {
   useEffect(() => {
     document.documentElement.lang = settings.lang === 'zh' ? 'zh-Hans' : 'en';
   }, [settings.lang]);
+  // 网页版: a wide browser window is laid out for the desk (body.desktop, desktop.css).
+  const desk = useDesktop();
+  useEffect(() => {
+    document.body.classList.toggle('desktop', desk);
+    return () => document.body.classList.remove('desktop');
+  }, [desk]);
   // 夜间模式: the whole app in 玄墨绿 (body.paper.night, styles in paper-night.generated.css).
   useEffect(() => {
     const apply = () => document.body.classList.toggle('night', PAPER && isNight(settings.theme));

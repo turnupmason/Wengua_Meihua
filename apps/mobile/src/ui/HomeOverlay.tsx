@@ -8,6 +8,7 @@
  */
 import { PAPER } from './paper';
 import { placeStore } from './placeStore';
+import { useDesktop } from './desktop';
 import { createPortal } from 'react-dom';
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTrayDrag } from './trayDrag';
@@ -472,6 +473,74 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
     setStep('confirm');
   };
   const trayDrag = useTrayDrag(tray);
+  // 网页版: 问事 as three columns on one page (领域 · 具体的事 · 确认).
+  const desk = useDesktop();
+  const deskDomain = DOMAINS.find((d) => d.domain_id === (openDomain ?? chosen?.domain_id)) ?? DOMAINS[0];
+  // 确认: what is asked, how and when, then the one button (the phone's 确认 page, the desk's third column).
+  const confirmBody = (
+    <>
+    {chosen && chosenSubtype && (
+      <button
+        type="button"
+        className="chosen-question"
+        onClick={() => {
+          // Back to 立问 with this field open.
+          setOpenDomain(chosen.domain_id);
+          setStep('ask');
+        }}
+      >
+        <span className="chosen-kicker">
+          <span>
+            {t.askedMatter}
+            {/* An entry is its own question: its name is not said twice. */}
+            {chosen.question_text[lang] !== chosenSubtype.label[lang] && ` · ${chosenSubtype.label[lang]}`}
+          </span>
+          <em>{t.changeQuestion} ›</em>
+        </span>
+        <b>{questionWording(chosen, form.conditions, lang)}</b>
+        {ready !== 'written' && <small className="chosen-note">{ready === 'pending' ? t.scriptPendingNote : ready === 'reference' ? t.referenceNote : t.guidanceNote}</small>}
+      </button>
+    )}
+    {chosenSubtype?.safety && <p className="ask-safety compact">{SAFETY[chosenSubtype.safety][lang]}</p>}
+    {!readOnly && (
+      <>
+        <div className="cast-row">
+          {/* On paper: 起卦方式 and 起卦时间 each on its own line, the other methods below. */}
+          {PAPER ? (
+            <button type="button" className="cast-facts" onClick={openMethods}>
+              <span className="cast-fact">
+                <small>{t.castMethodLabel}</small>
+                <b>{t[mk] as string}</b>
+              </span>
+              <span className="cast-fact">
+                <small>{t.castTimeLabel}</small>
+                <b>{timeText}</b>
+              </span>
+              <em>{t.moreMethods} ›</em>
+            </button>
+          ) : (
+          /* The hour cast in, whole and centred on its own line; the other methods a small way in below. */
+          <button type="button" className="method-line" onClick={openMethods}>
+            <span className="method-when">
+              <span className="method-name">{t[mk] as string}</span>
+              <i aria-hidden="true">·</i>
+              <span className="method-time">{timeText}</span>
+            </span>
+            <em>{t.moreMethods} ›</em>
+          </button>
+          )}
+        </div>
+      </>
+    )}
+    {error && <p className="error" role="alert">{error}</p>}
+    <div className="enter-row">
+      <button type="submit" form="wengua-ask" className="enter-seal" disabled={busy} aria-busy={busy}>
+        {busy ? t.castingNow : readOnly ? t.readReference : t.confirmEnter}
+      </button>
+    </div>
+    <p className="privacy">{t.privacy}</p>
+    </>
+  );
   const numberField = (key: 'surname' | 'count' | 'major' | 'minor', label: string, max: number) => (
     <NumberField label={label} value={form[key]} active={pad?.key === key} onFocus={() => setPad({ key, max })} />
   );
@@ -569,8 +638,75 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
               {!followup && <DailyCard t={t} daily={daily} />}
             </div>
 
+            {/* 网页版: 立问 and 确认 on one page, three columns. */}
+            {desk && step !== 'home' && (
+              <section className="flow-page is-desk" aria-label={t.askTitle}>
+                <div className="desk-ask">
+                  <div className="desk-col">
+                    <p className="desk-step">01 · {t.flowAsk}</p>
+                    <h2 className="flow-title">{t.askTitle}</h2>
+                    <ol className="desk-fields" role="radiogroup" aria-label={t.domainLabel}>
+                      {DOMAINS.map((d, i) => {
+                        const on = deskDomain.domain_id === d.domain_id;
+                        return (
+                          <li key={d.domain_id}>
+                            <button
+                              type="button"
+                              role="radio"
+                              aria-checked={on}
+                              aria-label={d.label[lang]}
+                              className={on ? 'is-on' : ''}
+                              onClick={() => {
+                                coach.done('domain');
+                                setLastDomain(d.domain_id);
+                                setOpenDomain(d.domain_id);
+                              }}
+                            >
+                              <small>{String(i + 1).padStart(2, '0')}</small>
+                              <span>
+                                <b>{d.label.zh}</b>
+                                <em>{d.label.en}</em>
+                              </span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                    <button type="button" className="desk-back" onClick={() => setStep('home')}>
+                      ← {t.back}
+                    </button>
+                  </div>
+                  <div className="desk-col">
+                    <p className="desk-step">02 · {t.deskEntries}</p>
+                    <h2 className="flow-title">{deskDomain.label[lang]}</h2>
+                    {deskDomain.caution && <p className="desk-caution">{deskDomain.caution[lang]}</p>}
+                    <div className="desk-entries">
+                      {deskDomain.subtypes.map((st) => {
+                        const on = chosen?.subtype_id === st.subtype_id;
+                        const state = subtypeReadiness(st);
+                        const asks = enabledQuestions(st)[0];
+                        const full = asks?.content_id ? questionById(asks.content_id)?.question_text[lang] : null;
+                        return (
+                          <button type="button" key={st.subtype_id} data-tour={st.subtype_id} className={`desk-entry is-${state} ${on ? 'is-on' : ''}`} aria-current={on ? 'true' : undefined} onClick={() => pickSubtype(deskDomain, st)}>
+                            <b>{st.label[lang]}</b>
+                            {full && <span>{full}</span>}
+                            <small>{on ? `✓ ${t.deskChosen}` : state === 'written' ? t.deskWritten : state === 'pending' ? t.scriptPendingTag : state === 'reference' ? t.referenceTag : t.guidanceTag}</small>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="desk-col desk-confirm">
+                    <p className="desk-step">03 · {t.flowConfirm}</p>
+                    <h2 className="flow-title">{t.confirmTitle}</h2>
+                    {chosen ? <div className="flow-confirm">{confirmBody}</div> : <p className="desk-hint">{t.deskPickHint}</p>}
+                  </div>
+                </div>
+              </section>
+            )}
+
             {/* 立问 · 01 / 03: the six fields as one quiet list; one opens at a time, showing its entries. */}
-            {step === 'ask' && (
+            {!desk && step === 'ask' && (
               <section className="flow-page" aria-label={t.askTitle}>
                 <header className="flow-bar">
                   <button type="button" className="flow-back" onClick={() => setStep('home')} aria-label={t.back}>
@@ -633,7 +769,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
             )}
 
             {/* 确认 · 02 / 03: what is asked, how and when, then 诚心起卦. */}
-            {step === 'confirm' && chosen && (
+            {!desk && step === 'confirm' && chosen && (
               <section className="flow-page" aria-label={t.confirmTitle}>
                 <header className="flow-bar">
                   <button type="button" className="flow-back" onClick={() => setStep('ask')} aria-label={t.confirmBack}>
@@ -644,66 +780,7 @@ export const HomeOverlay = memo(function HomeOverlay({ t, settings, form, error,
                 </header>
                 <div className="flow-body flow-confirm">
                   <h2 className="flow-title">{t.confirmTitle}</h2>
-                  {chosen && chosenSubtype && (
-                    <button
-                      type="button"
-                      className="chosen-question"
-                      onClick={() => {
-                        // Back to 立问 with this field open.
-                        setOpenDomain(chosen.domain_id);
-                        setStep('ask');
-                      }}
-                    >
-                      <span className="chosen-kicker">
-                        <span>
-                          {t.askedMatter}
-                          {/* An entry is its own question: its name is not said twice. */}
-                          {chosen.question_text[lang] !== chosenSubtype.label[lang] && ` · ${chosenSubtype.label[lang]}`}
-                        </span>
-                        <em>{t.changeQuestion} ›</em>
-                      </span>
-                      <b>{questionWording(chosen, form.conditions, lang)}</b>
-                      {ready !== 'written' && <small className="chosen-note">{ready === 'pending' ? t.scriptPendingNote : ready === 'reference' ? t.referenceNote : t.guidanceNote}</small>}
-                    </button>
-                  )}
-                  {chosenSubtype?.safety && <p className="ask-safety compact">{SAFETY[chosenSubtype.safety][lang]}</p>}
-                  {!readOnly && (
-                    <>
-                      <div className="cast-row">
-                        {/* On paper: 起卦方式 and 起卦时间 each on its own line, the other methods below. */}
-                        {PAPER ? (
-                          <button type="button" className="cast-facts" onClick={openMethods}>
-                            <span className="cast-fact">
-                              <small>{t.castMethodLabel}</small>
-                              <b>{t[mk] as string}</b>
-                            </span>
-                            <span className="cast-fact">
-                              <small>{t.castTimeLabel}</small>
-                              <b>{timeText}</b>
-                            </span>
-                            <em>{t.moreMethods} ›</em>
-                          </button>
-                        ) : (
-                        /* The hour cast in, whole and centred on its own line; the other methods a small way in below. */
-                        <button type="button" className="method-line" onClick={openMethods}>
-                          <span className="method-when">
-                            <span className="method-name">{t[mk] as string}</span>
-                            <i aria-hidden="true">·</i>
-                            <span className="method-time">{timeText}</span>
-                          </span>
-                          <em>{t.moreMethods} ›</em>
-                        </button>
-                        )}
-                      </div>
-                    </>
-                  )}
-                  {error && <p className="error" role="alert">{error}</p>}
-                  <div className="enter-row">
-                    <button type="submit" form="wengua-ask" className="enter-seal" disabled={busy} aria-busy={busy}>
-                      {busy ? t.castingNow : readOnly ? t.readReference : t.confirmEnter}
-                    </button>
-                  </div>
-                  <p className="privacy">{t.privacy}</p>
+                  {confirmBody}
                 </div>
               </section>
             )}

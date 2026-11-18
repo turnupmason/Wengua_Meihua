@@ -1,0 +1,118 @@
+/* ======================================================================================
+   网页版 (2026-11-17, docs/design/web-desktop-v1.html): the same app on a wide browser window
+   (body.paper.desktop, set by ui/desktop.ts). A top bar instead of the tab bar; 首页 in two columns
+   with the three ways on along the foot; 问事 as three columns on one page; the 卦笺 with 象 on the
+   left (held in place) and 解 on the right; 藏经阁 and 问事录 centred.
+   ====================================================================================== */
+body.paper.desktop { --tabbar: 0px; --desk-nav: 64px; }
+
+/* The top bar: the name, the three places, the account. */
+.desk-nav {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--desk-nav); z-index: 35;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 40px;
+  background: #202724; border-bottom: 1px solid rgba(198, 177, 139, 0.26); color: #f3eee4;
+}
+.desk-brand { display: flex; align-items: center; gap: 12px; }
+.desk-brand i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(198, 177, 139, 0.6); display: grid; place-items: center; }
+.desk-brand i::before { content: ''; width: 12px; height: 9px; background: repeating-linear-gradient(#c6b18b 0 1.4px, transparent 1.4px 3.6px); }
+.desk-brand b { font: 400 14px var(--song-head); letter-spacing: 0.4em; color: #c6b18b; }
+.desk-brand small { font: 12px var(--sans); letter-spacing: 0.06em; color: rgba(243, 238, 228, 0.66); }
+.desk-nav nav { display: flex; gap: 44px; }
+.desk-nav nav button {
+  height: var(--desk-nav); padding: 0; border: 0; border-bottom: 2px solid transparent; background: none; cursor: pointer;
+  font: 15px var(--song-head); letter-spacing: 0.12em; color: rgba(243, 238, 228, 0.66);
+}
+.desk-nav nav button:hover { color: #f3eee4; }
+.desk-nav nav button.is-on { color: #c6b18b; border-bottom-color: #c6b18b; }
+.desk-me { justify-self: end; display: flex; align-items: center; gap: 16px; }
+.desk-me button { display: flex; align-items: center; gap: 10px; border: 0; background: none; cursor: pointer; font: 14px var(--sans); color: rgba(243, 238, 228, 0.8); }
+.desk-me button:hover { color: #f3eee4; }
+.desk-avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #2a332e; border: 1px solid rgba(198, 177, 139, 0.26); color: #c6b18b; font: 14px var(--song-head); }
+.desk-pill { padding: 5px 12px; border: 1px solid rgba(198, 177, 139, 0.26); border-radius: 999px; font: 12.5px var(--sans); color: #c6b18b; }
+
+/* 首页: the words on the left, 乾 in its ring on the right, the ways on along the foot. */
+body.paper.desktop .home-panel.v3,
+body.paper.desktop .home-panel.v3.is-rising {
+  top: var(--desk-nav); bottom: 0; padding: 0; display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 1fr auto;
+  background: radial-gradient(ellipse 80% 90% at 70% 40%, #29332e 0%, #202724 55%, #1b221f 100%);
+}
+body.paper.desktop .dark-top { display: none; }
+body.paper.desktop .dark-hero {
+  grid-column: 1 / -1; grid-row: 1; display: grid; grid-template-columns: 1.15fr 1fr; align-content: center; justify-items: start;
+  text-align: left; padding: 0 0 0 clamp(48px, 8vw, 120px); column-gap: 40px;
+}
+body.paper.desktop .dark-hero > * { grid-column: 1; }
+body.paper.desktop .dark-emblem { grid-column: 2; grid-row: 1 / span 5; justify-self: center; align-self: center; width: min(26vw, 360px); margin-bottom: 90px; }
+body.paper.desktop .dark-emblem i { height: 3.6%; }
+body.paper.desktop .dark-hero h1 { margin: 0; font-size: clamp(40px, 3.9vw, 56px); line-height: 1.3; letter-spacing: 0.06em; white-space: normal; max-width: 5.6em; }
+body.paper.desktop .dark-lead { margin-top: 22px; font-size: 16.5px; line-height: 1.9; max-width: 30em; }
+body.paper.desktop .dark-cta { width: auto; padding: 0 34px; min-height: 54px; margin-top: 38px; font-size: 17px; cursor: pointer; }
+body.paper.desktop .dark-cta-note { margin-top: 14px; font-size: 13px; }
+body.paper.desktop .dark-notes { grid-column: 2; grid-row: 1; align-self: end; justify-self: center; width: min(320px, 80%); margin: 0 0 48px; }
+body.paper.desktop .dark-links { grid-column: 1 / -1; grid-row: 2; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-top: 1px solid rgba(198, 177, 139, 0.26); }
+body.paper.desktop .dark-links button { padding: 24px 40px 28px clamp(48px, 8vw, 120px); border-bottom: 0; cursor: pointer; }
+body.paper.desktop .dark-links button + button { border-left: 1px solid rgba(198, 177, 139, 0.26); padding-left: 48px; }
+body.paper.desktop .dark-links button:hover b { color: #c6b18b; }
+
+/* 问事: 领域 · 具体的事 · 确认, three columns on one page under the bar. */
+body.paper.desktop .home-panel.v3 .flow-page.is-desk { top: var(--desk-nav); background: #202724; }
+.desk-ask { display: grid; grid-template-columns: minmax(280px, 340px) 1fr minmax(360px, 420px); height: 100%; }
+.desk-col { padding: 44px 40px; overflow-y: auto; }
+.desk-col + .desk-col { border-left: 1px solid rgba(198, 177, 139, 0.26); }
+.desk-confirm { background: #1c2320; }
+.desk-step { margin: 0; font: 12px var(--sans); letter-spacing: 0.24em; color: #c6b18b; }
+body.paper.desktop .desk-col .flow-title { margin: 10px 0 24px; font: 400 26px/1.4 var(--song-head); letter-spacing: 0.06em; }
+.desk-fields { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(198, 177, 139, 0.26); }
+.desk-fields button {
+  position: relative; display: grid; grid-template-columns: 34px 1fr; align-items: baseline; width: 100%; padding: 16px 0; cursor: pointer;
+  border: 0; border-bottom: 1px solid rgba(198, 177, 139, 0.26); background: none; text-align: left; color: #f3eee4;
+}
+.desk-fields button small { font: 12px var(--sans); color: #c6b18b; }
+.desk-fields button b { font: 400 18px var(--song-head); letter-spacing: 0.08em; }
+.desk-fields button em { display: block; font: 10.5px var(--sans); font-style: normal; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(243, 238, 228, 0.6); }
+.desk-fields button:hover b, .desk-fields button.is-on b { color: #c6b18b; }
+.desk-fields button.is-on::before { content: ''; position: absolute; left: -40px; top: 0; bottom: 0; width: 3px; background: #c6b18b; }
+.desk-back { margin-top: 24px; border: 0; background: none; cursor: pointer; font: 14px var(--sans); color: rgba(243, 238, 228, 0.66); }
+.desk-back:hover { color: #f3eee4; }
+.desk-caution { margin: -8px 0 18px; padding: 12px 14px; border-radius: 8px; background: #2a332e; font: 13px/1.6 var(--sans); color: rgba(243, 238, 228, 0.7); }
+.desk-entries { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.desk-entry {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 18px 20px; border: 1px solid rgba(198, 177, 139, 0.26); border-radius: 12px;
+  background: rgba(243, 238, 228, 0.03); text-align: left; color: #f3eee4; cursor: pointer;
+}
+.desk-entry:hover { border-color: rgba(198, 177, 139, 0.6); }
+.desk-entry b { font: 400 19px var(--song-head); letter-spacing: 0.08em; }
+.desk-entry span { font: 13.5px/1.6 var(--sans); color: rgba(243, 238, 228, 0.7); }
+.desk-entry small { margin-top: auto; padding-top: 6px; font: 12px var(--sans); color: rgba(198, 177, 139, 0.8); }
+.desk-entry.is-on { border-color: #c6b18b; background: rgba(198, 177, 139, 0.1); }
+.desk-entry.is-on small { color: #c6b18b; }
+.desk-entry.is-pending { opacity: 0.6; }
+.desk-entry.is-pending small { color: rgba(243, 238, 228, 0.6); }
+.desk-hint { margin: 0; font: 14px/1.8 var(--sans); color: rgba(243, 238, 228, 0.6); }
+body.paper.desktop .desk-confirm .flow-confirm { display: flex; flex-direction: column; gap: 14px; }
+
+/* 藏经阁 and 问事录: under the bar, the page centred. */
+body.paper.desktop .temple .place-panel,
+body.paper.desktop .temple .place-panel.is-raised { top: var(--desk-nav); bottom: 0; padding-top: 0; }
+body.paper.desktop .temple .place-panel > * { max-width: 1080px; margin-inline: auto; }
+
+/* 卦笺: 象 on the left (dark green and gold, held in place), 解 on the right on paper. */
+body.paper.desktop .jian {
+  display: grid; grid-template-columns: minmax(440px, 36%) 1fr; align-content: start; align-items: start; padding: 0;
+  /* The left band stays dark the whole way down while the reading scrolls past it. */
+  background: linear-gradient(90deg, #202724 0 max(440px, 36%), transparent max(440px, 36%));
+}
+body.paper.desktop .jian > * { grid-column: 2; width: min(100% - 128px, 760px); margin-inline: 72px auto; }
+body.paper.desktop .jian > .jian-xiang {
+  grid-column: 1; grid-row: 1 / span 40; width: auto; margin: 0; position: sticky; top: 0;
+  padding: 44px 48px; background: transparent; border-right: 1px solid rgba(198, 177, 139, 0.26); min-height: 100%;
+}
+body.paper.desktop .jian > :nth-child(2) { margin-top: 44px; }
+body.paper.desktop .jian-xiang .jian-ask h1 { font-size: 27px; }
+body.paper.desktop .jian-guas { justify-content: flex-start; gap: 28px; margin-top: 30px; }
+body.paper.desktop .jian-guas .jian-gua { width: 80px; height: 90px; }
+body.paper.desktop .jian-guas .jian-gua.has-marks { width: 162px; }
+body.paper.desktop .jian-xiang .jian-tiyong { margin-top: 18px; padding: 16px 0; border-top: 1px solid rgba(198, 177, 139, 0.26); border-bottom: 1px solid rgba(198, 177, 139, 0.26); font-size: 15px; }
+body.paper.desktop .jian-brief-text { font-size: 24px; line-height: 1.6; }
+body.paper.desktop .jian-actions { justify-content: flex-end; padding-inline: 40px; }
+body.paper.desktop .jian-actions button { flex: 0 0 auto; min-width: 140px; cursor: pointer; }

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>问卦 网页版 · 设计初稿 v1</title>
+<!--
+  网页版桌面设计初稿（2026-11-17）。三屏：首页、问事（选事三栏）、卦笺（左象右解）。
+  颜色与字体沿用 App：深色 · 问（玄墨绿 #202724、香槟金 #c6b18b），纸白与朱砂 · 解（宣纸 #f3eedf、墨 #17252a、朱砂 #ac5145）。
+  卦例取研习与校订的固定案例：水风井 九五动，亥月。正文为示意文字，不是写定的断语。
+-->
+<style>
+  @font-face { font-family: 'WenguaSerifHeading'; src: url('../../apps/mobile/public/fonts/wengua-serif-heading.woff2') format('woff2'); }
+  @font-face { font-family: 'WenguaSerif'; src: url('../../apps/mobile/public/fonts/wengua-serif-body.woff2') format('woff2'); }
+  :root {
+    --lu: #202724; --lu-2: #2a332e; --jin: #c6b18b; --ya: #f3eee4; --ya-2: rgba(243, 238, 228, 0.66); --gold-rule: rgba(198, 177, 139, 0.26);
+    --xuan: #f3eedf; --xuan-2: #ece5d2; --mo: #17252a; --mo-2: #3d4a4e; --zhu: #ac5145; --tong: #ad936b; --shiqing: #60767a; --rule: rgba(23, 37, 42, 0.14);
+    --song: 'WenguaSerifHeading', 'Noto Serif SC', 'Songti SC', serif;
+    --song-body: 'WenguaSerif', 'Noto Serif SC', 'Songti SC', serif;
+    --sans: -apple-system, 'PingFang SC', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f1311; font: 15px/1.7 var(--sans); color: var(--mo); }
+  .screen { width: 1440px; height: 900px; margin: 0 auto 40px; position: relative; overflow: hidden; }
+  .label { width: 1440px; margin: 28px auto 10px; color: #8d8a80; font: 13px var(--sans); letter-spacing: .08em; }
+
+  /* 顶栏：深色，三处去处居中，账号在右 */
+  .nav { height: 64px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 40px; background: var(--lu); border-bottom: 1px solid var(--gold-rule); color: var(--ya); }
+  .nav .brand { display: flex; align-items: center; gap: 12px; }
+  .nav .brand i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(198,177,139,.6); display: grid; place-items: center; }
+  .nav .brand i::before { content: ''; width: 12px; height: 9px; background: repeating-linear-gradient(var(--jin) 0 1.4px, transparent 1.4px 3.6px); }
+  .nav .brand b { font: 400 14px var(--song); letter-spacing: .4em; color: var(--jin); }
+  .nav .brand small { font-size: 12px; color: var(--ya-2); letter-spacing: .06em; }
+  .nav nav { display: flex; gap: 44px; font: 15px var(--song); letter-spacing: .12em; }
+  .nav nav a { color: var(--ya-2); text-decoration: none; padding: 20px 0; border-bottom: 2px solid transparent; }
+  .nav nav a.on { color: var(--jin); border-bottom-color: var(--jin); }
+  .nav .me { justify-self: end; display: flex; align-items: center; gap: 18px; font-size: 14px; color: var(--ya-2); }
+  .nav .me .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--lu-2); border: 1px solid var(--gold-rule); display: grid; place-items: center; color: var(--jin); font: 14px var(--song); }
+  .nav .me .pill { padding: 5px 12px; border: 1px solid var(--gold-rule); border-radius: 999px; color: var(--jin); font-size: 12.5px; }
+
+  /* 首页 */
+  .home { height: 836px; display: grid; grid-template-columns: 1.15fr 1fr; background: radial-gradient(ellipse 80% 90% at 70% 40%, #29332e 0%, #202724 55%, #1b221f 100%); color: var(--ya); }
+  .home .left { padding: 120px 0 0 120px; }
+  .kicker { font: 13px var(--sans); letter-spacing: .3em; color: var(--jin); }
+  .home h1 { margin: 22px 0 0; font: 400 56px/1.3 var(--song); letter-spacing: .06em; }
+  .home .lead { margin: 22px 0 0; max-width: 30em; font-size: 16.5px; line-height: 1.9; color: var(--ya-2); }
+  .cta-row { display: flex; align-items: center; gap: 22px; margin-top: 42px; }
+  .cta { display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 34px; border-radius: 10px; background: var(--jin); color: var(--lu); font: 500 17px var(--sans); letter-spacing: .04em; }
+  .ghost { color: var(--ya); font-size: 15px; border-bottom: 1px solid var(--gold-rule); padding-bottom: 3px; }
+  .methods { margin-top: 16px; font-size: 13px; color: var(--ya-2); letter-spacing: .06em; }
+  .home .right { position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 86px; gap: 34px; }
+  .emblem { width: 380px; height: 380px; border-radius: 50%; border: 1px solid rgba(198,177,139,.5); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+  .emblem::before { content: ''; position: absolute; inset: 30px; border-radius: 50%; border: 1px solid rgba(198,177,139,.2); }
+  .emblem i { width: 200px; height: 14px; border-radius: 2px; background: var(--jin); }
+  .daily { width: 300px; padding: 18px 20px; border: 1px solid var(--gold-rule); border-radius: 12px; background: rgba(243,238,228,.04); }
+  .daily small { font-size: 12px; letter-spacing: .2em; color: var(--jin); }
+  .daily b { display: block; margin-top: 6px; font: 400 20px var(--song); letter-spacing: .1em; }
+  .daily p { margin: 6px 0 0; font-size: 13px; color: var(--ya-2); }
+  .strip { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--gold-rule); }
+  .strip div { padding: 26px 0 30px 120px; }
+  .strip div + div { border-left: 1px solid var(--gold-rule); padding-left: 48px; }
+  .strip small { font-size: 11.5px; letter-spacing: .18em; color: var(--jin); }
+  .strip b { display: block; margin-top: 6px; font: 400 18px var(--song); letter-spacing: .08em; color: var(--ya); }
+  .strip span { font-size: 13.5px; color: var(--ya-2); }
+
+  /* 问事：三栏，领域 → 具体的事 → 确认 */
+  .ask { height: 836px; display: grid; grid-template-columns: 340px 1fr 420px; background: var(--lu); color: var(--ya); }
+  .col { padding: 48px 40px; }
+  .col + .col { border-left: 1px solid var(--gold-rule); }
+  .step { font-size: 12px; letter-spacing: .24em; color: var(--jin); }
+  .col h2 { margin: 12px 0 26px; font: 400 26px var(--song); letter-spacing: .06em; }
+  .fields { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--gold-rule); }
+  .fields li { display: grid; grid-template-columns: 34px 1fr; align-items: baseline; padding: 17px 0; border-bottom: 1px solid var(--gold-rule); }
+  .fields li small { color: var(--jin); font-size: 12px; }
+  .fields li b { font: 400 18px var(--song); letter-spacing: .08em; }
+  .fields li em { display: block; font: 10.5px var(--sans); font-style: normal; letter-spacing: .16em; color: var(--ya-2); }
+  .fields li.on { position: relative; }
+  .fields li.on::before { content: ''; position: absolute; left: -40px; top: 0; bottom: 0; width: 3px; background: var(--jin); }
+  .fields li.on b { color: var(--jin); }
+  .note { margin: 0 0 18px; padding: 12px 14px; border-radius: 8px; background: var(--lu-2); font-size: 13px; color: var(--ya-2); }
+  .entries { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .entry { padding: 20px 22px; border: 1px solid var(--gold-rule); border-radius: 12px; background: rgba(243,238,228,.03); }
+  .entry b { font: 400 19px var(--song); letter-spacing: .08em; }
+  .entry p { margin: 6px 0 0; font-size: 13.5px; color: var(--ya-2); }
+  .entry .tag { display: inline-block; margin-top: 12px; font-size: 12px; color: rgba(198,177,139,.75); }
+  .entry.on { border-color: var(--jin); background: rgba(198,177,139,.1); }
+  .entry.on .tag { color: var(--jin); }
+  .entry.soon { opacity: .55; }
+  .confirm { background: #1c2320; }
+  .chosen { padding: 18px 0; border-top: 1px solid var(--gold-rule); border-bottom: 1px solid var(--gold-rule); }
+  .chosen small { font-size: 12px; letter-spacing: .14em; color: var(--jin); }
+  .chosen b { display: block; margin-top: 6px; font: 400 21px/1.5 var(--song); }
+  .facts { margin: 22px 0; display: grid; gap: 16px; }
+  .facts div { display: flex; justify-content: space-between; font-size: 14.5px; }
+  .facts span { color: var(--ya-2); }
+  .seg { display: flex; gap: 8px; }
+  .seg i { font-style: normal; padding: 4px 12px; border: 1px solid var(--gold-rule); border-radius: 999px; font-size: 13px; color: var(--ya-2); }
+  .seg i.on { border-color: var(--jin); color: var(--jin); }
+  .wide { display: flex; justify-content: center; width: 100%; margin-top: 28px; }
+  .fine { margin-top: 14px; text-align: center; font-size: 12.5px; color: var(--ya-2); }
+
+  /* 卦笺：左象（深绿与金线，随页面固定），右解（宣纸与朱砂） */
+  .jian { height: 836px; display: grid; grid-template-columns: 520px 1fr; }
+  .xiang { background: radial-gradient(ellipse 120% 70% at 50% 35%, #27302c 0%, #202724 70%); color: var(--ya); padding: 44px 48px; border-right: 1px solid var(--gold-rule); }
+  .xiang .field { font-size: 13px; letter-spacing: .14em; color: var(--jin); }
+  .xiang h1 { margin: 10px 0 6px; font: 400 27px/1.45 var(--song); letter-spacing: .04em; }
+  .xiang .when { font-size: 13px; color: var(--ya-2); }
+  .guas { display: grid; grid-template-columns: auto auto auto; justify-content: start; column-gap: 26px; align-items: end; margin: 36px 0 22px; text-align: center; }
+  .guas svg { display: block; height: 100px; width: auto; margin: 0 auto 10px; }
+  .guas rect { fill: var(--jin); }
+  .guas .mv rect { fill: #cf6f60; }
+  .guas .role rect { fill: none; stroke: #d98676; stroke-width: 1; }
+  .guas .role text { fill: #e19484; font: 10.5px var(--song); text-anchor: middle; }
+  .guas .role .nm { fill: var(--ya-2); font-size: 8.5px; }
+  .guas .arrow path { fill: #e19484; }
+  .guas .arrow text { fill: #e19484; font: 9.5px var(--song); }
+  .guas b { display: block; font: 400 18px var(--song); letter-spacing: .1em; }
+  .guas small { font-size: 12px; color: var(--jin); letter-spacing: .12em; }
+  .tiyong { padding: 16px 0; border-top: 1px solid var(--gold-rule); border-bottom: 1px solid var(--gold-rule); font: 15px var(--song); letter-spacing: .04em; }
+  .tiyong i { font-style: normal; color: var(--jin); padding: 0 6px; }
+  .xiang .tools { display: flex; gap: 12px; margin-top: 22px; }
+  .xiang .tools span { padding: 8px 16px; border: 1px solid var(--gold-rule); border-radius: 8px; font-size: 13.5px; color: var(--ya); }
+  .jie { background: var(--xuan); overflow: hidden; padding: 48px 80px 0 72px; position: relative; }
+  .jie::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(transparent, var(--xuan)); }
+  .jie .summary { font: 400 24px/1.6 var(--song); color: var(--mo); letter-spacing: .03em; }
+  .jie .summary-note { margin: 6px 0 0; font-size: 12.5px; color: var(--shiqing); }
+  .part { display: grid; grid-template-columns: 96px 1fr; gap: 0 24px; padding: 22px 0; border-top: 1px solid var(--rule); }
+  .part h3 { margin: 4px 0 0; padding-left: 10px; border-left: 3px solid var(--zhu); font: 500 16px var(--song); letter-spacing: .12em; }
+  .part p { margin: 0; font: 16.5px/1.8 var(--song-body); color: var(--mo); }
+  .part.final { background: rgba(172,81,69,.05); margin: 0 -24px; padding: 22px 24px; border-top-color: rgba(172,81,69,.3); }
+  .part.final h3 { color: var(--zhu); }
+  .windows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .win { padding: 12px 14px; border: 1px solid var(--rule); border-radius: 10px; background: #fbf8ef; font-size: 13px; }
+  .win b { display: block; font: 500 14.5px var(--song); color: var(--mo); }
+  .win em { font-style: normal; font-size: 12px; padding: 1px 8px; border-radius: 999px; }
+  .win .ji { background: rgba(96,118,122,.14); color: var(--shiqing); }
+  .win .xiong { background: rgba(172,81,69,.12); color: var(--zhu); }
+  .aside { position: absolute; right: 80px; top: 48px; display: flex; gap: 10px; }
+  .aside span { padding: 7px 14px; border: 1px solid var(--rule); border-radius: 8px; font-size: 13px; color: var(--mo-2); background: #fbf8ef; }
+</style>
+</head>
+<body>
+
+<p class="label">01 · 首页（深色 · 问）：左边一句话与「开始问卦」，右边乾卦圆环与今日一卦，底下三条去处</p>
+<section class="screen" id="home">
+  <header class="nav">
+    <div class="brand"><i></i><b>WENGUA</b><small>问卦 · 梅花易数</small></div>
+    <nav><a class="on">问事</a><a>藏经阁</a><a>问事录</a></nav>
+    <div class="me"><span class="pill">内测 · 全部开放</span><span>登录</span></div>
+  </header>
+  <div class="home">
+    <div class="left">
+      <div class="kicker">梅花易数 · 古籍研析</div>
+      <h1>心有所问，<br>卦有所解。</h1>
+      <p class="lead">循古法推演，于变化之中寻一份明晰。择一事而问，按时起卦，本卦、互卦、变卦并排而观，断语依古籍写定，经人工逐篇审核。</p>
+      <div class="cta-row"><span class="cta">开始问卦 →</span><span class="ghost">先看看怎么断的</span></div>
+      <p class="methods">时间起卦 · 数字起卦 · 手机与网页同一账号</p>
+    </div>
+    <div class="right">
+      <div class="emblem"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="daily"><small>今日一卦</small><b>风山渐</b><p>止而巽，动不穷也。供体悟，不问事。</p></div>
+    </div>
+    <div class="strip">
+      <div><small>01 / THE METHOD</small><b>研习与校订</b><span>以一卦为例，从起卦到判断</span></div>
+      <div><small>02 / THE CLASSICS</small><b>藏经阁</b><span>六十四卦卦辞、爻辞与白话</span></div>
+      <div><small>03 / YOUR ARCHIVE</small><b>问事录</b><span>问过的事、应期回访</span></div>
+    </div>
+  </div>
+</section>
+
+<p class="label">02 · 问事（深色 · 问）：手机上要翻三页的「领域 → 具体的事 → 确认」，桌面上一屏三栏摆开</p>
+<section class="screen" id="ask">
+  <header class="nav">
+    <div class="brand"><i></i><b>WENGUA</b><small>问卦 · 梅花易数</small></div>
+    <nav><a class="on">问事</a><a>藏经阁</a><a>问事录</a></nav>
+    <div class="me"><span class="avatar">清</span><span>清虚子</span></div>
+  </header>
+  <div class="ask">
+    <div class="col">
+      <div class="step">01 · 立问</div>
+      <h2>所问何事？</h2>
+      <ol class="fields">
+        <li><small>01</small><span><b>事业工作</b><em>CAREER</em></span></li>
+        <li><small>02</small><span><b>财富财运</b><em>WEALTH</em></span></li>
+        <li class="on"><small>03</small><span><b>感情姻缘</b><em>LOVE</em></span></li>
+        <li><small>04</small><span><b>健康疾病</b><em>HEALTH</em></span></li>
+        <li><small>05</small><span><b>家庭家宅</b><em>HOME &amp; FAMILY</em></span></li>
+        <li><small>06</small><span><b>寻人失物</b><em>LOST &amp; MISSING</em></span></li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="step">02 · 具体的事</div>
+      <h2>感情姻缘</h2>
+      <p class="note">涉及他人心意，卦象只作参考，不能当作对方的真实想法。</p>
+      <div class="entries">
+        <div class="entry"><b>桃花缘分</b><p>最近有没有新桃花，何时遇到合适的人</p><span class="tag">已写定 · 64 卦</span></div>
+        <div class="entry"><b>暧昧表白</b><p>对方心意如何，现在是否适合表白</p><span class="tag">已写定 · 64 卦</span></div>
+        <div class="entry"><b>恋爱发展</b><p>两人能否确立关系</p><span class="tag">已写定 · 64 卦</span></div>
+        <div class="entry on"><b>矛盾复合</b><p>已经结束的感情还能复合吗</p><span class="tag">✓ 已选</span></div>
+        <div class="entry soon"><b>谈婚论嫁</b><p>婚事能否谈成</p><span class="tag">古籍考据编写中·即将上线</span></div>
+        <div class="entry soon"><b>夫妻婚姻</b><p>婚姻能否长久和睦</p><span class="tag">古籍考据编写中·即将上线</span></div>
+      </div>
+    </div>
+    <div class="col confirm">
+      <div class="step">03 · 确认</div>
+      <h2>确认所问</h2>
+      <div class="chosen"><small>感情姻缘 · 矛盾复合</small><b>这段已经结束的感情能复合吗？</b></div>
+      <div class="facts">
+        <div><span>起卦方式</span><span class="seg"><i class="on">时间起卦</i><i>数字起卦</i></span></div>
+        <div><span>起卦时辰</span><b>丙午年 十月初五 午时</b></div>
+        <div><span>月令</span><b>亥月</b></div>
+      </div>
+      <span class="cta wide">确认，进入起卦</span>
+      <p class="fine">所问只存在你的设备上，不上传。</p>
+    </div>
+  </div>
+</section>
+
+<p class="label">03 · 卦笺：左边「象」固定不动（深绿与金线，体用与动爻标在卦上），右边「解」在宣纸上往下读</p>
+<section class="screen" id="jian">
+  <header class="nav">
+    <div class="brand"><i></i><b>WENGUA</b><small>问卦 · 梅花易数</small></div>
+    <nav><a class="on">问事</a><a>藏经阁</a><a>问事录</a></nav>
+    <div class="me"><span class="avatar">清</span><span>清虚子</span></div>
+  </header>
+  <div class="jian">
+    <div class="xiang">
+      <div class="field">感情姻缘 · 矛盾复合</div>
+      <h1>这段已经结束的感情能复合吗？</h1>
+      <div class="when">丙午年 十月初五 午时 · 亥月 · 时间起卦</div>
+      <div class="guas">
+        <div>
+          <!-- 本卦 水风井：自下而上 阴阳阳 阴阳阴，五爻动；上坎为用，下巽为体 -->
+          <svg viewBox="-28 -3 124 68">
+            <g><rect x="0" y="54" width="26" height="6"/><rect x="34" y="54" width="26" height="6"/></g>
+            <g><rect x="0" y="43" width="60" height="6"/></g>
+            <g><rect x="0" y="32" width="60" height="6"/></g>
+            <g><rect x="0" y="21" width="26" height="6"/><rect x="34" y="21" width="26" height="6"/></g>
+            <g class="mv"><rect x="0" y="10" width="60" height="6"/></g>
+            <g><rect x="0" y="-1" width="26" height="6"/><rect x="34" y="-1" width="26" height="6"/></g>
+            <g class="role"><rect x="-24" y="2" width="15" height="13" rx="1.5"/><text x="-16.5" y="12">用</text><text class="nm" x="-16.5" y="25">坎水</text></g>
+            <g class="role"><rect x="-24" y="35" width="15" height="13" rx="1.5"/><text x="-16.5" y="45">体</text><text class="nm" x="-16.5" y="58">巽木</text></g>
+            <g class="arrow"><path d="M63.5 13 l5 -3.2 v6.4 z"/><path d="M68 13 h6" stroke="#e19484"/><text x="76" y="16.3">动爻</text></g>
+          </svg>
+          <b>水风井</b><small>本卦 · 目前</small>
+        </div>
+        <div>
+          <svg viewBox="0 -3 60 68">
+            <g><rect x="0" y="54" width="60" height="6"/></g><g><rect x="0" y="43" width="60" height="6"/></g>
+            <g><rect x="0" y="32" width="26" height="6"/><rect x="34" y="32" width="26" height="6"/></g>
+            <g><rect x="0" y="21" width="60" height="6"/></g>
+            <g><rect x="0" y="10" width="26" height="6"/><rect x="34" y="10" width="26" height="6"/></g>
+            <g><rect x="0" y="-1" width="60" height="6"/></g>
+          </svg>
+          <b>火泽睽</b><small>互卦 · 经过</small>
+        </div>
+        <div>
+          <svg viewBox="0 -3 60 68">
+            <g><rect x="0" y="54" width="26" height="6"/><rect x="34" y="54" width="26" height="6"/></g>
+            <g><rect x="0" y="43" width="60" height="6"/></g><g><rect x="0" y="32" width="60" height="6"/></g>
+            <g><rect x="0" y="21" width="26" height="6"/><rect x="34" y="21" width="26" height="6"/></g>
+            <g><rect x="0" y="10" width="26" height="6"/><rect x="34" y="10" width="26" height="6"/></g>
+            <g><rect x="0" y="-1" width="26" height="6"/><rect x="34" y="-1" width="26" height="6"/></g>
+          </svg>
+          <b>地风升</b><small>变卦 · 结果</small>
+        </div>
+      </div>
+      <div class="tiyong">体 巽木（相）<i>·</i>用 坎水（旺）<i>·</i>用生体<i>·</i>九五动</div>
+      <div class="tools"><span>分享卦签</span><span>在藏经阁中看</span><span>专业依据</span></div>
+    </div>
+    <div class="jie">
+      <div class="aside"><span>收藏</span><span>到应期那天提醒我</span></div>
+      <div class="summary">（示意）旧情未断，转机在于对方先松口。</div>
+      <p class="summary-note">简断 · 以下为排版示意，不是写定的断语</p>
+      <div class="part" style="margin-top:22px"><h3>开局</h3><p>示意文字：本卦用生体，外卦坎水生内卦巽木，眼下对方那边仍有余温，联系的门没有关上。</p></div>
+      <div class="part"><h3>过程</h3><p>示意文字：互卦火泽睽，中间一段两人想法不一，容易各说各话，宜少争对错。</p></div>
+      <div class="part"><h3>结局</h3><p>示意文字：变卦地风升，木得土培，事情有往上走的势头，但要一步一步来。</p></div>
+      <div class="part final"><h3>总断</h3><p>示意文字：可以复合，但不在一时；先恢复往来，再谈名分。</p></div>
+      <div class="part"><h3>应期</h3>
+        <div class="windows">
+          <div class="win"><b>12月3日–5日</b>对方主动联系 <em class="ji">吉</em></div>
+          <div class="win"><b>12月14日</b>旧事重提，易起争执 <em class="xiong">凶</em></div>
+          <div class="win"><b>1月8日–10日</b>关系回暖 <em class="ji">吉</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
