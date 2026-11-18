@@ -380,7 +380,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     ...(petApplication ? [petApplication.application,petApplication.boundaries,'[活体搜索与场景类象作者源](../../'+petCasesPath+')，第 '+movingLine+' 爻。'] : []),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
-    ...(row.ruleVersions.policy ? ['判断口径：断语判断口径 V2（docs/READING_POLICY_V2.md，2026-11-18）。'] : []),
+    ...(row.ruleVersions.policy ? ['断法依据：《梅花易数》体用生克、衰旺与互变之诀，2026-11-18 定稿（docs/READING_POLICY_V2.md）。'] : []),
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
     ...timingSlots.map((slot, index) => {
      const {trigram, element} = slot.calculationBasis;

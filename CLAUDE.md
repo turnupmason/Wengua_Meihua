@@ -99,3 +99,5 @@ npm run build:data；npm run validate；npm run validate:details；npm run valid
 - 爻辞翻转统一闸门。
 
 用户授权 AI 代审（`independentReview.status:'ai-delegated-approved'`，`reviewerIsHuman:false`），复核、盲断、润色三份记录分别在 `sources/editorial/exam/review-v2|blind-v2|polish-v5/`。规则实现在 `scripts/review/policy-final.cjs`，逐卦清单用 `scripts/review/final-packet.mjs`，回测用 `scripts/review/classical-backtest.cjs` 与 `scripts/review/backtest-all.mjs`。本节只适用于考试问项，其他问项复核前，要先按本类条文和结论类型（能否类、选择类、状况类）另定细则。
+
+文字终修（2026-11-18）：1,920 篇正文按 [docs/review/TEXT_FINAL_BRIEF.md](docs/review/TEXT_FINAL_BRIEF.md) 逐篇重写，结论、判断依据、应期种类与取日不动。每篇只写一个胜负手，按本月令旺衰写轻重；生扶只写卷面上的东西，不写人、不断人。polish-v5 记录标 `textFinal`。交付门槛：`check-hex --polish` 与 `text-packet` 逐卦为 0，`similarity.mjs exam` 全库三字组超限与 8 字共用片段为 0，`repeat-scan.mjs exam 12` 无高频套话、起句、收句。

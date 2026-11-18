@@ -102,10 +102,30 @@ try {
   if (flag === '--polish') {
    if (!rec.key || !rec.original || !rec.polished || !rec.hashBefore || !rec.hashAfter || rec.status !== 'POLISH_COMPLETED') errors.push(`润色记录 ${i} 不完整`);
    if (rec.outcome !== d[2]) errors.push(`润色记录 ${i} 结论与稿件不一致`);
+   if (rec.textFinal) {
+    // 文字终修硬性要求（docs/review/TEXT_FINAL_BRIEF.md）
+    const HEDGE = /有条件|有望|偏难|多半|大概率|过线有机会|能不能过|过不过|成败两可|两可|或许|未必|恐怕|把握不大|把握较大|把握不小|机会不小|希望很大|希望不大|胜算|可能性|难过线|很难过|难以过/u;
+    const PASS = /能过|过得了|过得去|可以过|会过|拿得下|拿下|顺利通过|能通过|能过关|过关|能合格|稳过|过线不难|能过线|可以过线|过得了线|考得过|通过这一场|这一关能过/u;
+    const FAIL = /过不了|不能过|过不去|没法过|无法过|不会过|过不了线|够不上|达不到|拿不下|过线无望|没能过|考不过|合格不了|过不去线|这次不过/u;
+    const [, , , ttl, sh, op, pr, en, su] = d;
+    const head2 = String(sh).split(/[。！？]/u).filter(Boolean).slice(0, 2).join('。');
+    const want = d[2] === 'favourable' ? PASS : FAIL;
+    if (HEDGE.test(sh + su)) errors.push(`稿件 ${i} 简断或总断含含糊口气：${(sh + su).match(HEDGE)[0]}`);
+    if (!want.test(head2)) errors.push(`稿件 ${i} 简断前两句未明说结论`);
+    if (!want.test(su)) errors.push(`稿件 ${i} 总断未明说结论`);
+    if (/有条件|口径|生体|克体|旺相|休囚|定档|体用/u.test([ttl, sh, op, pr, en, su].join(''))) errors.push(`稿件 ${i} 正文含内部用语`);
+    if (/^(初|二|三|四|五|上)?[九六一二三四五]?(爻)?[^，。]{0,4}(说|讲|写|道)[：，「“]/u.test(en) && /^[^，。]{0,6}(说|讲)/u.test(en)) errors.push(`稿件 ${i} 结局以「某爻说」起句`);
+    if (/^(中段|中间)/u.test(pr)) errors.push(`稿件 ${i} 过程以「中段/中间」起句`);
+    if (/^(开头|开场|开卷|开局|起步|起手|一开)/u.test(op)) errors.push(`稿件 ${i} 开局以固定词起句`);
+    if (/^(这一场|这场|这次|这回)/u.test(sh)) errors.push(`稿件 ${i} 简断以「这一场/这次」起句`);
+    if (/放到考场上/u.test([op, pr, en, su].join(''))) errors.push(`稿件 ${i} 用「放到考场上」接话`);
+   }
    const notes = rec.calculationNotes;
    if (!Array.isArray(notes) || notes.length < 3 || notes.length > 5) errors.push(`润色记录 ${i} 须有 3–5 行 calculationNotes`);
    else {
-    if (!/^定档：/.test(notes[0]) || !notes.some(n => /^旺衰：/.test(n)) || !notes.some(n => /^爻辞：/.test(n))) errors.push(`润色记录 ${i} calculationNotes 须含 定档、旺衰、爻辞 三行`);
+    if (!/^(定档|判断)：/.test(notes[0]) || !notes.some(n => /^旺衰：/.test(n)) || !notes.some(n => /^爻辞：/.test(n))) errors.push(`润色记录 ${i} calculationNotes 须含 判断、旺衰、爻辞 三行`);
+    // 文字终修后：计算说明不得出现内部用语（档、本馆、上传本、底本、不列日期）
+    if (rec.textFinal && notes.some(n => /档|本馆|上传本|底本|不列日期|有条件|存疑|口径/u.test(n))) errors.push(`润色记录 ${i} 计算说明含内部用语`);
     for (const n of notes) {
      if (han(n) > 90) errors.push(`润色记录 ${i} 计算说明一行超过 90 字`);
      if (/盲断|主审|作者|裁定|复核|原稿|改判|第\s*\d+\s*条|R\d|待核/.test(n)) errors.push(`润色记录 ${i} 计算说明含审稿用语：${n.slice(0, 20)}`);

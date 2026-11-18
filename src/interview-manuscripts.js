@@ -278,7 +278,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ...(row.imageApplication ? ['形色器物对照取本用' + row.imageApplication.objectTrigram + '参原物已有特征，变用' + row.imageApplication.environmentTrigram + '参周边容器与实际环境。', '原件形状、材质、颜色及构造以原照片和记录核对。物象是条件性比对类目。', '形色器物作者源：' + row.imageApplication.sourcePath + '，第 ' + row.imageApplication.movingLine + ' 爻。'] : []),
    ...(row.imageApplication ? row.imageApplication.sourceEvidence.map(source => '类象依据 ' + source.id + '《' + source.title + '》，原文第 ' + source.locator.startLine + ' 行起。“' + source.quote + '” ' + source.reason) : []),
    ...(row.locationApplication ? ['方位取象取变用' + row.locationApplication.trigram + '，传统方向' + row.locationApplication.direction + '。依实际收放或已知行程作补查参照。', '《失物占第十五》原文：' + row.locationApplication.quote, '方位取象作者源：' + row.locationApplication.sourcePath + '，第 ' + row.locationApplication.movingLine + ' 爻。'] : []),
-   row.ruleVersions.policy?`判断口径：断语判断口径 V2（2026-11-18）。稿件版本：${row.review.version}。`:`判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
+   row.ruleVersions.policy?`断法依据：《梅花易数》体用生克、衰旺与互变之诀，2026-11-18 定稿。稿件版本：${row.review.version}。`:`判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
   ]:[];
   const monthNote=reading.monthBranch?`月令：${reading.monthBranch}月。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}。具体月令未提供。`;
   const dayNote=`起卦日：${reading.castingDate}，${reading.dayGanzhi}日`;
