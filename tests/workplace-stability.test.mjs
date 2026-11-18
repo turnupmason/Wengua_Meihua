@@ -65,6 +65,8 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     const cases=await json(sourceDir+'cases/'+stem+'.json');
     const petCase=cases.entries.find(item=>item.movingLine===row.movingLine);
     assert.equal(row.petApplication.application,petCase.application,key);
+    assert.equal(row.ruleVersions.scope,'pet-search-modern-analogy-1.0.0',key);
+    assert.equal(row.petApplication.ruleVersion,row.ruleVersions.scope,key);
     assert.equal(row.petApplication.actualLocationVerified,false,key);
     assert.equal(row.petApplication.actualPetIdentityVerified,false,key);
     assert.equal(row.petApplication.healthOrFateInferred,false,key);

@@ -83,7 +83,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  const petReviewPath=sourceDir+'reviews/'+filename;
  const petReview=petCases?JSON.parse(await readFile(new URL(petReviewPath,root),'utf8')):null;
  if(petReview && (petReview.primaryId!==primaryId || petReview.fullArticlesRead!==30 || petReview.actor!=='assistant-author' || !petReview.reviewedAt || petReview.sourceSha256!==createHash('sha256').update(await readFile(new URL(sourcePath,root))).digest('hex') || petReview.casesSha256!==createHash('sha256').update(await readFile(new URL(petCasesPath,root))).digest('hex')))throw new Error('Pet author full-read receipt is missing or stale: '+stem);
- if(petCases && (petCases.entries.length!==6 || petCases.primaryId!==primaryId)) throw new Error('Pet case count mismatch: '+stem);
+ if(petCases && (petCases.entries.length!==6 || petCases.primaryId!==primaryId || petCases.ruleVersion!=='pet-search-modern-analogy-1.0.0')) throw new Error('Pet case count mismatch: '+stem);
  const optionalRecords = async folder => { try { return JSON.parse(await readFile(new URL(sourceDir + folder + filename, root), 'utf8')); } catch (error) { if (error.code === 'ENOENT') return null; throw error; } };
  // V2 review (docs/READING_POLICY_V2.md) and V5 polish receipts; acceptance is recorded only where a record exists.
  const reviewRecords = await optionalRecords('review-v2/');
@@ -136,7 +136,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
   if(petCases && (!petCase || !petCase.boundaries || !petCase.application || petCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram))) throw new Error('Invalid pet scene application: '+stem+'/'+movingLine);
-  const petApplication = petCase ? {...petCase,sourcePath:petCasesPath,actualPetIdentityVerified:false,actualLocationVerified:false,healthOrFateInferred:false} : null;
+  const petApplication = petCase ? {...petCase,ruleVersion:petCases.ruleVersion,sourcePath:petCasesPath,actualPetIdentityVerified:false,actualLocationVerified:false,healthOrFateInferred:false} : null;
   const directionEntry = directionBatch?.entries.find(entry => entry.movingLine === movingLine);
   const changedTrigram = r.nodes.find(node => node.role === 'changed_use').trigram;
   const directionRule = directionEntry ? directionRules.rules[changedTrigram] : null;
@@ -334,7 +334,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
    facts, decision, copy, copyChecks, ...(petApplication ? {petApplication} : {}), ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0',...(reviewRecord ? {policy:'reading-policy-v2-20261118'} : {})},
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(petCases ? {scope:petCases.ruleVersion} : {}),...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0',...(reviewRecord ? {policy:'reading-policy-v2-20261118'} : {})},
    // 读者可见的计算说明：口径 V2 复核与润色后写定的定档、旺衰、爻辞依据（替换第十栏内部依据的显示）。
    ...(polishRecord?.calculationNotes ? {calculationNotes:polishRecord.calculationNotes} : {})};
   row.artifactDigest = await interpretationArtifactDigest(row);
