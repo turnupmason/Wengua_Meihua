@@ -5,6 +5,7 @@
  * subscription, and the renewal terms with the privacy policy and terms the App Store requires.
  * Prices are the App Store's own when it can say them.
  */
+import { native } from '../services/cloud';
 import { useEffect, useRef, useState } from 'react';
 import type { Strings } from '../domain/i18n';
 import type { Lang } from '../domain/settings';
@@ -145,7 +146,7 @@ export function MembershipSheet({ t, lang, membership, store, reason, castId = n
               <p key={i}>{line}</p>
             ))}
           </div>
-          {!store.available && <p className="member-note" role="status">{t.memberStorePending}</p>}
+          {!store.available && <p className="member-note" role="status">{native() ? t.memberStorePending : t.memberWebPending}</p>}
           {store.isTest && <p className="member-test">{t.memberTestStore}</p>}
           {store.isTest && (
             <div className="btn-row member-dev">

@@ -303,6 +303,20 @@ export function fillJudgment(record: Readonly<CastRecord>, judgment: CastJudgmen
   return withJudgment(rest as CastRecord, judgment);
 }
 
+/**
+ * A reading given only its 简断 (the server kept the 详断) gets the whole 断语 once this account
+ * may read it: the same written 断语 (question, chart, decision, casting day), now complete.
+ */
+export function completeJudgment(record: Readonly<CastRecord>, judgment: CastJudgment): Readonly<CastRecord> {
+  const was = record.judgment;
+  if (was?.state !== 'ready' || !was.partial) throw new Error('Only a 简断-only reading is completed');
+  if (judgment.state !== 'ready' || judgment.partial) throw new Error('Only a whole 断语 completes a reading');
+  if (judgment.decisionId !== was.decisionId || judgment.castingDate !== was.castingDate || judgment.manuscriptVersion !== was.manuscriptVersion)
+    throw new Error('This 断语 is not the one the reading was given');
+  const { judgment: _was, ...rest } = record;
+  return withJudgment(rest as CastRecord, judgment);
+}
+
 /** Freezes what the reading says now, in Chinese (the language of the record). */
 export function snapshotOf(reading: Reading, question: string, topicId: string | undefined, domainId: string, questionId?: string): ReadingSnapshot {
   const y = reading.synthesis;

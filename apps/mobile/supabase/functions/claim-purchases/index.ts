@@ -1,6 +1,7 @@
-// Counts the caller's reading credits from RevenueCat's record of their App Store purchases.
-// Each store transaction is granted once (its id is the key); a transaction RevenueCat now
-// reports for this account is moved here. Returns { credits, unlocked }.
+// Counts the caller's reading credits from RevenueCat's record of their App Store purchases, and
+// copies their membership (the `member` entitlement's end) for reading_access(). Each store
+// transaction is granted once (its id is the key); a transaction RevenueCat now reports for this
+// account is moved here. Returns { plan, expiresAt, credits, unlocked }.
 // Secret: REVENUECAT_SECRET_KEY (RevenueCat → API keys → secret key, v1).
 import { admin, balance, cors, json, userOf } from '../_shared/common.ts';
 
@@ -24,9 +25,16 @@ Deno.serve(async (req) => {
       : [],
   );
   const db = admin();
+  // Membership: when the `member` entitlement runs until (null: never had it).
+  const ent = body?.subscriber?.entitlements?.member as { expires_date?: string | null; product_identifier?: string } | undefined;
+  const expiresAt = ent?.expires_date ?? null;
+  const { error: memberError } = await db.from('memberships').upsert({ user_id: user.id, expires_at: expiresAt, updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
+  if (memberError) return json({ error: memberError.message }, 500);
+  const active = !!expiresAt && new Date(expiresAt).getTime() > Date.now();
+  const plan = !active ? 'free' : ent?.product_identifier === 'wengua.member.yearly' ? 'yearly' : 'monthly';
   if (rows.length) {
     const { error } = await db.from('credit_grants').upsert(rows, { onConflict: 'transaction_id' });
     if (error) return json({ error: error.message }, 500);
   }
-  return json(await balance(db, user.id));
+  return json({ plan, expiresAt: active ? expiresAt : null, ...(await balance(db, user.id)) });
 });

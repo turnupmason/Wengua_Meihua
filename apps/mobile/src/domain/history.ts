@@ -45,7 +45,9 @@ export function createHistory(store: KeyValueStore = safeStore('local', true), s
       const items = read();
       const at = items.findIndex((r) => isCastRecord(r) && r.castId === record.castId);
       const was = at >= 0 ? (items[at] as CastRecord).judgment : undefined;
-      if (was?.state !== 'missing' || record.judgment?.state !== 'ready') return;
+      // A 断语 still being written is filled in; a 简断-only reading is completed (never the reverse).
+      const fills = was?.state === 'missing' || (was?.state === 'ready' && was.partial && record.judgment?.state === 'ready' && !record.judgment.partial);
+      if (!fills || record.judgment?.state !== 'ready') return;
       items[at] = record;
       write(items);
     },

@@ -8,6 +8,8 @@ const config: CapacitorConfig = {
   backgroundColor: '#14100c',
   ios: { contentInset: 'never' },
   android: { allowMixedContent: false },
+  // Sign in with Apple and Google only; Facebook and X are not bundled (smaller app, no ad-ID SDK).
+  plugins: { SocialLogin: { providers: { google: true, apple: true, facebook: false, twitter: false } } },
 };
 
 export default config;

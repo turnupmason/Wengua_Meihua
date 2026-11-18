@@ -6,6 +6,7 @@ import './paper.generated.css';
 import './paper-night.generated.css';
 // Hand-made touches last, so they win over both generated sheets (day and night).
 import './paper.css';
+import './desktop.css';
 import { PAPER } from './ui/paper';
 import { loadCarveFont } from './scene/engrave';
 import { preloadShrine } from './scene/Sanqing';

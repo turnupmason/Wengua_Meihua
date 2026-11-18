@@ -1,0 +1,35 @@
+// 网页版 app.wengualabs.com: the Cloudflare Worker `wengua-app` (worker/index.ts).
+// Cloudflare builds it from GitHub on every push to main (root directory `apps/mobile`, build
+// command `npm run build:web`, deploy command `npx wrangler@4.156.2 deploy`); see
+// docs/IOS_APP_STORE_RELEASE.md, 第七步之二.
+//
+// The page is served straight from the assets. The 断语 library sits beside it under /_data/,
+// which only the Worker reads (run_worker_first): a browser asking for it gets 404, and each cast
+// gets its one 断语 from /api/reading after the sign-in and membership checks (server/reading.ts).
+{
+  "$schema": "https://unpkg.com/wrangler@4.156.2/config-schema.json",
+  "name": "wengua-app",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  // src/io.js reads files with node:fs when run under Node; the Worker never calls it.
+  "compatibility_flags": ["nodejs_compat"],
+  "alias": { "@knowledge": "../../src/index.js" },
+  "assets": {
+    "directory": "./dist-web",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/_data/*"],
+    // One page app: any path that is not a file gets index.html.
+    "not_found_handling": "single-page-application"
+  },
+  // Public by design (the same values are in the page's own code): the Supabase project and its
+  // publishable key. The service-role key is never needed here.
+  "vars": {
+    "SUPABASE_URL": "https://yjrldtbxorarrfkndzzt.supabase.co",
+    "SUPABASE_ANON_KEY": "sb_publishable_9CKsmwIBXhXb3Z7_kZwFGw__cZWV2uC"
+  },
+  // A lookup parses one hexagram's 断语 file (up to ~4 MB): more CPU than the Free plan's 10 ms,
+  // so the account is on Workers Paid.
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [{ "pattern": "app.wengualabs.com", "custom_domain": true }]
+}

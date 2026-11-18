@@ -57,6 +57,13 @@ export interface ProductJudgment {
   castingDate: string;
   dayGanzhi: string;
   monthBranch: string | null;
+  /**
+   * Only the 简断 was given (the server keeps the 详断 until this account may read it: a member,
+   * a credit spent on this reading, or the first-reading gift). Asked again once it may.
+   */
+  partial?: true;
+  /** Why the server gave the 详断 (shown, e.g., as 「首次赠阅」 for the gift). */
+  grantedBy?: 'member' | 'unlock' | 'gift';
 }
 
 export type MissingReason =
@@ -68,6 +75,8 @@ export type MissingReason =
   | 'requires-context'
   /** The library could not be read on this device. */
   | 'unavailable'
+  /** Today's readings are used up (the server's count). The cast is not kept. */
+  | 'daily-limit'
   /** Older records (before the formal catalog). */
   | 'unknown-question'
   | 'no-script';
@@ -217,6 +226,8 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       timingScale: 'day',
       timingContext: { castingMethod: castingMethodOf(c.method) as never, periodMethod: 'element-qi' },
     });
+    const access = (content as { access?: string }).access;
+    const grantedBy = (content as { accessReason?: ProductJudgment['grantedBy'] }).accessReason;
     if (!content.predictionAllowed) {
       const s = content.status;
       return missing(c.monthBranch, s === 'pending-review' || s === 'review-preview' ? 'pending-review' : s === 'requires-context' ? 'requires-context' : 'pending-authoring');
@@ -233,9 +244,9 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       manuscriptVersion: content.manuscriptVersion ?? null,
       decisionId: decision?.id ?? null,
       title: content.title ?? '',
-      short: content.short ?? content.paragraphs[0] ?? '',
+      short: content.short ?? (access === 'brief' ? '' : content.paragraphs[0]) ?? '',
       paragraphs: [...(content.narrativeParagraphs ?? content.paragraphs)],
-      timing: timing
+      timing: timing && timing.windows
         ? {
             referenceNote: timing.referenceNote,
             ...(timing.phaseNotes ? { phaseNotes: [...timing.phaseNotes] } : {}),
@@ -247,8 +258,11 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       castingDate,
       dayGanzhi: c.dayGanzhi!,
       monthBranch: c.monthBranch,
+      ...(access === 'brief' ? { partial: true as const } : {}),
+      ...(access === 'full' && grantedBy ? { grantedBy } : {}),
     };
   } catch (e) {
+    if ((e as Error).message === 'daily-limit') return missing(c.monthBranch, 'daily-limit');
     console.error('断语 lookup failed', e);
     return missing(c.monthBranch, 'unavailable');
   }
