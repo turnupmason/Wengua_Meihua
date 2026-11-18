@@ -127,6 +127,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
       ['relationships.confession', 'relationships.confession.decision'],
       ['relationships.dating', 'relationships.developing.relationship'],
       ['relationships.reconciliation', 'relationships.reconciliation.reconcile'],
+      ['search.lost-object', 'search.lost-object.recovery'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -472,7 +473,8 @@ describe('断语 lookup (createProductRepository)', () => {
     const at = (id: string, extra: Partial<JudgmentInput> = {}) => judgmentFor(product, questionById(id)!, { ...WELL, questionId: id, ...extra });
     expect(await at('career.interview.job-offer')).toEqual({ state: 'missing', season: 'winter', reason: 'pending-authoring' });
     expect(await at('wealth.debt.receivable')).toMatchObject({ state: 'missing', reason: 'pending-review' });
-    expect(await at('search.lost-object.recovery', { conditions: { objectKind: 'phone' } })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
+    expect(await at('search.lost-object.recovery', { conditions: { objectKind: 'phone' } })).toMatchObject({ state: 'ready', questionId: 'search.lost-object.recovery' });
+    expect(await at('search.valuables.recovery', { conditions: { objectKind: 'phone' } })).toMatchObject({ state: 'missing', reason: 'pending-authoring' });
     // The stored dates use the number-based (先天) method. A 后天 cast still receives the prose.
     expect(await at(INTERVIEW, { method: 'object-direction' })).toMatchObject({ state: 'ready', timing: { windows: [] } });
     // No month or day: nothing to look up by.
