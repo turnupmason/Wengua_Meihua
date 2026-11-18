@@ -11,7 +11,7 @@ export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
 export const JOB_CHANGE_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-1.0.2',timingVersion:'job-change-day-1.0.1',directory:'job-change'});
-export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-1.0.2',timingVersion:'exam-day-1.0.2',directory:'exam'});
+export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',questionType:'examination_result',questionScope:'result-of-this-exam',manuscriptVersion:'exam-2.0.0',timingVersion:'exam-day-1.0.2',directory:'exam'});
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',
  questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-1.0.0',
@@ -223,7 +223,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   const baseEligible=baseRow.baseProse===true&&(!includeHistoricalVoid||reading.nodes.every(n=>n.role==='body_inherited'||n.void.effective==='active'));
   if(!exactProfile&&!baseEligible)return pending();
   const material=structuredClone(row);delete material.artifactDigest;
-  if(await interpretationArtifactDigest(material)!==row.artifactDigest||row.review.status!=='author-checked'||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
+  if(await interpretationArtifactDigest(material)!==row.artifactDigest||!['author-checked','ai-reviewed-v2'].includes(row.review.status)||AUDIT_CHECKS.some(id=>row.review.checks[id]?.status!=='pass'||!row.review.checks[id].evidence.length))throw new Error('Authored receipt or content binding invalid');
   if(profile===INTERVIEW_PROFILE)checkInterviewDecision(reading,{outcome:row.decision.outcomeCode,counterevidence:row.counterevidence,decisionPolicy:row.decision.decisionPolicy});
   else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!==(profile.questionScope??'promotion-with-associated-pay'))throw new Error('Authored question scope mismatch');
   checkInterviewShort(row.copy.short.text);
@@ -273,12 +273,12 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ...(usesStoredTimingSpecs?[`体用位置：${reading.body.side==='upper'?'上卦':'下卦'}为原体，动爻所在${reading.use.side==='upper'?'上卦':'下卦'}为本用。`]:[]),
    ...reading.nodes.filter(n=>n.role!=='body_inherited'&&n.void.hit).map(n=>
     `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
-   ...row.counterevidence.map(c=>c.resolution),
+   ...(row.calculationNotes??row.counterevidence.map(c=>c.resolution)),
    ...(row.petApplication ? [row.petApplication.application,row.petApplication.boundaries,'宠物事项与类象作者源：'+row.petApplication.sourcePath+'，第 '+row.movingLine+' 爻。'] : []),
    ...(row.imageApplication ? ['形色器物对照取本用' + row.imageApplication.objectTrigram + '参原物已有特征，变用' + row.imageApplication.environmentTrigram + '参周边容器与实际环境。', '原件形状、材质、颜色及构造以原照片和记录核对。物象是条件性比对类目。', '形色器物作者源：' + row.imageApplication.sourcePath + '，第 ' + row.imageApplication.movingLine + ' 爻。'] : []),
    ...(row.imageApplication ? row.imageApplication.sourceEvidence.map(source => '类象依据 ' + source.id + '《' + source.title + '》，原文第 ' + source.locator.startLine + ' 行起。“' + source.quote + '” ' + source.reason) : []),
    ...(row.locationApplication ? ['方位取象取变用' + row.locationApplication.trigram + '，传统方向' + row.locationApplication.direction + '。依实际收放或已知行程作补查参照。', '《失物占第十五》原文：' + row.locationApplication.quote, '方位取象作者源：' + row.locationApplication.sourcePath + '，第 ' + row.locationApplication.movingLine + ' 爻。'] : []),
-   `判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
+   row.ruleVersions.policy?`判断口径：断语判断口径 V2（2026-11-18）。稿件版本：${row.review.version}。`:`判断口径：${row.ruleVersions.decision}。稿件版本：${row.review.version}。`,
   ]:[];
   const monthNote=reading.monthBranch?`月令：${reading.monthBranch}月。`:`月令气类：${MONTH_ORDERS.find(o=>o.id===reading.monthOrder).label}。具体月令未提供。`;
   const dayNote=`起卦日：${reading.castingDate}，${reading.dayGanzhi}日`;

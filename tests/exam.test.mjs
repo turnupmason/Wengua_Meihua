@@ -63,9 +63,27 @@ test('all published exam month keys retain authored copy, sources, layout, and c
     row.copy.long.ending, row.copy.long.summary], drafts[i].slice(3,9), key);
    assert.equal(row.copy.short.decisionId, key);
    assert.equal(row.copy.long.decisionId, key);
-   assert.equal(row.review.independentReview.status, 'pending');
-   assert.equal(row.review.independentReview.userAcceptedThisVersion, false);
-   assert.deepEqual(row.decision.indirectEffectsApplied, []);
+   // 口径 V2：用户授权 AI 代审通过的稿件如实记为 AI，且须有复核、盲断与润色记录；其余仍为 pending。
+   const independent = row.review.independentReview;
+   if (independent.status === 'ai-delegated-approved') {
+    assert.equal(independent.userAcceptedThisVersion, true, key);
+    assert.equal(independent.reviewerIsHuman, false, key);
+    assert.equal(independent.acceptance, '用户授权 AI 代审通过（2026-11-18）', key);
+    assert.equal(row.ruleVersions.policy, 'reading-policy-v2-20261118', key);
+    assert.ok(row.calculationNotes?.length >= 3, key);
+   } else {
+    assert.equal(independent.status, 'pending', key);
+    assert.equal(independent.userAcceptedThisVersion, false, key);
+   }
+   // 口径 V2.1 只许一层间接生克，且须引《体用》原文；旧稿仍为空。
+   for (const effect of row.decision.indirectEffectsApplied) {
+    assert.equal(row.ruleVersions.policy, 'reading-policy-v2-20261118', key);
+    assert.equal(effect.rule, 'reading-policy-v2.1-indirect-one-layer', key);
+    assert.ok(['control-strengthened','control-weakened','support-weakened'].includes(effect.effect), key);
+    assert.ok(['use','body_mutual','use_mutual','changed_use'].includes(effect.role), key);
+    assert.ok(library.getSection(effect.sourceId).text.includes(effect.quote), key);
+   }
+   if (!row.ruleVersions.policy) assert.deepEqual(row.decision.indirectEffectsApplied, []);
    for (const check of AUDIT_CHECKS) assert.ok(row.review.checks[check].evidence.length, key);
    for (const source of row.decision.sourceEvidence) {
     const section = library.getSection(source.id);

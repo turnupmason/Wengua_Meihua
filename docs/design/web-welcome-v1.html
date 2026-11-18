@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>问卦 网页版 · 欢迎页与关于我们 v1</title>
+<!--
+  网页版欢迎页与「关于我们」设计稿 v1（2026-11-18）。未登录的访客打开 app.wengualabs.com 先到欢迎页。
+  古籍对照的四例取自《梅花易数》原书（sources/original/meihua-volumes-1-3.txt 第 142–182、487 行）：
+  邵康节原断与书中所记结果照录；「本馆推演」是按本馆体用之法排出的体、用、互、变与生克，正式版由知识层实时计算。
+  现代案例（师傅断语 / 本馆断语 / 当事人后来）一律等真实案例与当事人同意后再放，稿中只留版位。
+  卦例断语、示意卦笺为示意。
+-->
+<style>
+  @font-face { font-family: 'WenguaSerifHeading'; src: url('../../apps/mobile/public/fonts/wengua-serif-heading.woff2') format('woff2'); }
+  @font-face { font-family: 'WenguaSerif'; src: url('../../apps/mobile/public/fonts/wengua-serif-body.woff2') format('woff2'); }
+  :root {
+    --lu: #202724; --lu-2: #2a332e; --jin: #c6b18b; --ya: #f3eee4; --ya-2: rgba(243, 238, 228, 0.66); --gold-rule: rgba(198, 177, 139, 0.26);
+    --xuan: #f3eedf; --xuan-2: #ece5d2; --mo: #17252a; --mo-2: #3d4a4e; --mo-3: #6b7577; --zhu: #ac5145; --tong: #ad936b; --rule: rgba(23, 37, 42, 0.14);
+    --song: 'WenguaSerifHeading', 'Noto Serif SC', 'Songti SC', serif;
+    --song-body: 'WenguaSerif', 'Noto Serif SC', 'Songti SC', serif;
+    --sans: -apple-system, 'PingFang SC', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f1311; font: 15px/1.7 var(--sans); color: var(--mo); }
+  .label { width: 1440px; margin: 28px auto 10px; color: #8d8a80; font: 13px var(--sans); letter-spacing: .08em; }
+  .label b { color: #c9c4b6; font-weight: 500; }
+  .page { width: 1440px; margin: 0 auto 40px; background: var(--xuan); }
+  .wrap { width: 1200px; margin: 0 auto; }
+  .kicker { margin: 0; font: 12px var(--sans); letter-spacing: .28em; color: var(--tong); }
+  .dark .kicker, .kicker.dark { color: var(--jin); }
+  h2.sec { margin: 12px 0 0; font: 400 38px/1.35 var(--song); letter-spacing: .06em; }
+  .sec-lead { margin: 16px 0 0; max-width: 40em; font-size: 16px; line-height: 1.9; color: var(--mo-2); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 50px; padding: 0 28px; border-radius: 10px; border: 1px solid var(--rule); font-size: 16px; }
+  .btn.gold { background: var(--jin); border-color: var(--jin); color: var(--lu); font-weight: 500; }
+  .btn.line { border-color: rgba(198,177,139,.5); color: var(--ya); }
+  .btn.ink { background: var(--mo); color: var(--xuan); border-color: var(--mo); }
+  .tag { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12px; }
+  .tag.ji { background: rgba(96,118,122,.14); color: #48605f; }
+  .tag.xiong { background: rgba(172,81,69,.12); color: var(--zhu); }
+  .gua { display: inline-flex; flex-direction: column-reverse; gap: var(--g, 4px); width: var(--w, 40px); flex-shrink: 0; }
+  .gua i { display: flex; justify-content: space-between; height: var(--h, 5px); }
+  .gua i::before, .gua i::after { content: ''; height: 100%; background: var(--c, var(--mo)); border-radius: 1px; }
+  .gua i.y::before { width: 100%; } .gua i.y::after { display: none; }
+  .gua i.n::before, .gua i.n::after { width: 42%; }
+  .gua i.mv::before, .gua i.mv::after { background: var(--zhu); }
+
+  /* 访客顶栏 */
+  .gnav { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; color: var(--ya); border-bottom: 1px solid var(--gold-rule); }
+  .gnav .brand { display: flex; align-items: center; gap: 12px; }
+  .gnav .brand i { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(198,177,139,.6); display: grid; place-items: center; }
+  .gnav .brand i::before { content: ''; width: 13px; height: 10px; background: repeating-linear-gradient(var(--jin) 0 1.5px, transparent 1.5px 3.9px); }
+  .gnav .brand b { font: 400 15px var(--song); letter-spacing: .4em; color: var(--jin); }
+  .gnav .links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; color: var(--ya-2); }
+  .gnav .links .on { color: var(--jin); }
+  .gnav .links .btn { height: 40px; padding: 0 20px; font-size: 14px; }
+  .gnav.paper { color: var(--mo); background: var(--lu); }
+
+  /* ---------- 欢迎页 ---------- */
+  .hero { background: radial-gradient(ellipse 70% 80% at 72% 45%, #2b352f 0%, #202724 55%, #1b221f 100%); color: var(--ya); }
+  .hero .main { display: grid; grid-template-columns: 1fr 520px; gap: 64px; align-items: center; padding: 96px 120px 110px; }
+  .hero h1 { margin: 22px 0 0; font: 400 58px/1.32 var(--song); letter-spacing: .05em; }
+  .hero .lead { margin: 26px 0 0; max-width: 31em; font-size: 17px; line-height: 1.95; color: var(--ya-2); }
+  .hero .ctas { display: flex; gap: 16px; margin-top: 40px; }
+  .hero .free { margin-top: 16px; font-size: 13.5px; color: var(--ya-2); }
+  .card-jian { border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.45); border: 1px solid var(--gold-rule); }
+  .card-jian .xiang { background: var(--lu); padding: 26px 30px; border-bottom: 1px solid var(--gold-rule); }
+  .card-jian .xiang small { color: var(--jin); font-size: 12px; letter-spacing: .2em; }
+  .card-jian .xiang h3 { margin: 6px 0 18px; font: 400 23px var(--song); letter-spacing: .04em; }
+  .card-jian .trio { display: flex; gap: 30px; }
+  .card-jian .trio div { display: flex; flex-direction: column; align-items: center; text-align: center; font: 14px var(--song); color: var(--ya); }
+  .card-jian .trio .gua { --w: 52px; --h: 6px; --g: 5px; --c: var(--jin); margin-bottom: 8px; }
+  .card-jian .trio small { display: block; font: 11.5px var(--sans); color: var(--ya-2); letter-spacing: .1em; }
+  .card-jian .jie { background: var(--xuan); color: var(--mo); padding: 24px 30px; }
+  .card-jian .jie p { margin: 0; }
+  .card-jian .brief { font: 400 20px/1.6 var(--song); }
+  .card-jian .rows { margin-top: 16px; border-top: 1px solid var(--rule); }
+  .card-jian .rows div { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 13.5px; color: var(--mo-2); }
+  .card-jian .rows b { color: var(--zhu); font: 400 14px var(--song); }
+  .hero .strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--gold-rule); }
+  .hero .strip div { padding: 28px 0 32px 40px; }
+  .hero .strip div:first-child { padding-left: 120px; }
+  .hero .strip div + div { border-left: 1px solid var(--gold-rule); }
+  .hero .strip b { display: block; font: 400 34px/1.2 var(--song); color: var(--jin); }
+  .hero .strip span { font-size: 13.5px; color: var(--ya-2); }
+
+  .steps-sec { padding: 110px 0 100px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 54px; }
+  .step { padding: 30px; border: 1px solid var(--rule); border-radius: 16px; background: #f8f4ea; }
+  .step .no { font: 400 15px var(--song); color: var(--zhu); letter-spacing: .2em; }
+  .step h3 { margin: 10px 0 8px; font: 400 23px var(--song); letter-spacing: .06em; }
+  .step p { margin: 0; font-size: 14.5px; line-height: 1.85; color: var(--mo-2); }
+  .step .demo { margin-top: 24px; height: 150px; border-radius: 10px; background: var(--xuan); border: 1px solid var(--rule); padding: 16px 18px; }
+  .demo-fields div { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--rule); font: 14px var(--song); }
+  .demo-fields div:last-child { border: 0; }
+  .demo-fields .on { color: var(--zhu); }
+  .demo-gua { display: flex; justify-content: space-around; align-items: center; height: 100%; }
+  .demo-gua .gua { --w: 46px; --h: 5px; --g: 5px; }
+  .demo-dates div { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .demo-dates div:last-child { border: 0; }
+  .demo-dates b { font: 400 15px var(--song); }
+
+  .why { background: var(--xuan-2); padding: 110px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .why-grid { display: grid; grid-template-columns: 380px 1fr; gap: 90px; }
+  .why-list { border-top: 1px solid var(--rule); }
+  .why-item { display: grid; grid-template-columns: 170px 1fr; gap: 36px; padding: 30px 0; border-bottom: 1px solid var(--rule); }
+  .why-item b { font: 400 40px/1.1 var(--song); color: var(--zhu); }
+  .why-item b small { display: block; margin-top: 8px; font: 13px var(--sans); color: var(--mo-3); letter-spacing: .04em; }
+  .why-item h3 { margin: 0 0 8px; font: 400 21px var(--song); letter-spacing: .05em; }
+  .why-item p { margin: 0; font-size: 15px; line-height: 1.9; color: var(--mo-2); }
+
+  .cases-teaser { padding: 110px 0; }
+  .cmp { margin-top: 44px; border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; background: #f8f4ea; }
+  .cmp-head { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; padding: 30px 36px; background: var(--lu); color: var(--ya); }
+  .cmp-head .figs { display: flex; gap: 26px; }
+  .cmp-head .figs div { display: flex; flex-direction: column; align-items: center; text-align: center; font: 14px var(--song); }
+  .cmp-head .figs .gua { --w: 44px; --h: 5px; --g: 4px; --c: var(--jin); margin-bottom: 6px; }
+  .cmp-head .figs small { display: block; font: 11px var(--sans); color: var(--ya-2); }
+  .cmp-head h3 { margin: 4px 0 6px; font: 400 26px var(--song); letter-spacing: .08em; }
+  .cmp-head p { margin: 0; font-size: 13.5px; color: var(--ya-2); line-height: 1.8; }
+  .cmp-cols { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .cmp-cols > div { padding: 28px 32px 32px; }
+  .cmp-cols > div + div { border-left: 1px solid var(--rule); }
+  .cmp-cols h4 { margin: 0 0 12px; display: flex; align-items: center; gap: 10px; font: 400 17px var(--song); letter-spacing: .08em; }
+  .cmp-cols h4 i { width: 8px; height: 8px; border-radius: 50%; background: var(--tong); }
+  .cmp-cols .ours h4 i { background: var(--zhu); }
+  .cmp-cols .out h4 i { background: var(--mo); }
+  .cmp-cols .quote { margin: 0; font: 16px/1.95 var(--song-body); letter-spacing: .03em; }
+  .cmp-cols .src { margin: 12px 0 0; font-size: 12px; color: var(--mo-3); }
+  .tiyong { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  .tiyong li { display: grid; grid-template-columns: 54px 1fr; padding: 7px 0; border-bottom: 1px dashed var(--rule); }
+  .tiyong li span:first-child { color: var(--mo-3); }
+  .tiyong .verdict { margin-top: 12px; font: 16px/1.8 var(--song); color: var(--zhu); }
+  .match { display: flex; align-items: center; gap: 12px; padding: 16px 32px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--mo-2); }
+  .match b { color: #48605f; font-weight: 500; }
+  .more { margin-top: 26px; display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; color: var(--mo-2); }
+
+  .price { background: var(--lu); color: var(--ya); padding: 100px 0; }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .plan { padding: 32px; border: 1px solid var(--gold-rule); border-radius: 16px; background: rgba(243,238,228,.03); }
+  .plan.hl { border-color: rgba(198,177,139,.7); background: linear-gradient(160deg, rgba(198,177,139,.14), rgba(198,177,139,.03)); }
+  .plan h3 { margin: 0; font: 400 22px var(--song); letter-spacing: .1em; color: var(--jin); }
+  .plan .p { margin: 14px 0 4px; font: 400 40px var(--song); }
+  .plan .p small { font: 14px var(--sans); color: var(--ya-2); }
+  .plan ul { margin: 18px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--ya-2); line-height: 2.1; }
+  .gfoot { padding: 40px 120px; display: flex; justify-content: space-between; background: #1b221f; color: rgba(243,238,228,.5); font-size: 13px; border-top: 1px solid var(--gold-rule); }
+
+  /* ---------- 关于我们 ---------- */
+  .about-hero { background: var(--lu); color: var(--ya); }
+  .about-hero .main { display: grid; grid-template-columns: 1fr 420px; gap: 80px; padding: 100px 120px 96px; align-items: end; }
+  .about-hero h1 { margin: 18px 0 0; font: 400 52px/1.35 var(--song); letter-spacing: .05em; }
+  .about-hero .lead { margin: 24px 0 0; font: 17px/2 var(--song-body); color: var(--ya-2); max-width: 32em; }
+  .founder { padding: 28px; border: 1px solid var(--gold-rule); border-radius: 16px; }
+  .founder .ph { height: 200px; border-radius: 10px; border: 1px dashed rgba(198,177,139,.5); display: grid; place-items: center; color: var(--ya-2); font-size: 13px; }
+  .founder h3 { margin: 18px 0 4px; font: 400 21px var(--song); letter-spacing: .08em; }
+  .founder p { margin: 0; font-size: 13.5px; color: var(--ya-2); line-height: 1.8; }
+  .pipe-sec { padding: 110px 0; }
+  .pipe { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 52px; border-top: 1px solid var(--mo); }
+  .pipe div { padding: 24px 22px 0 0; position: relative; }
+  .pipe div::before { content: ''; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--xuan); border: 1px solid var(--mo); }
+  .pipe div.on::before { background: var(--zhu); border-color: var(--zhu); }
+  .pipe small { font: 12px var(--sans); color: var(--tong); letter-spacing: .2em; }
+  .pipe h3 { margin: 8px 0 8px; font: 400 20px var(--song); letter-spacing: .06em; }
+  .pipe p { margin: 0; font-size: 14px; line-height: 1.85; color: var(--mo-2); }
+  .ledger { background: var(--xuan-2); padding: 110px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .ltable { margin-top: 44px; width: 100%; border-collapse: collapse; background: #f8f4ea; border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+  .ltable th { text-align: left; font: 500 12.5px var(--sans); letter-spacing: .14em; color: var(--mo-3); padding: 16px 20px; border-bottom: 1px solid var(--rule); background: var(--xuan); }
+  .ltable td { padding: 18px 20px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 14px; line-height: 1.8; color: var(--mo-2); }
+  .ltable td:first-child { width: 190px; }
+  .ltable td:first-child b { display: block; font: 400 18px var(--song); color: var(--mo); letter-spacing: .06em; }
+  .ltable td:first-child small { color: var(--mo-3); }
+  .ltable .q { font-family: var(--song-body); color: var(--mo); }
+  .ltable .ok { color: #48605f; font-weight: 500; }
+  .ltable .miss { color: var(--zhu); font-weight: 500; }
+  .ltable tr.hl td { background: rgba(172,81,69,.045); }
+  .modern { padding: 110px 0; }
+  .slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 44px; }
+  .slot { border: 1px dashed rgba(23,37,42,.3); border-radius: 16px; padding: 26px 28px; }
+  .slot .top { display: flex; justify-content: space-between; font-size: 13px; color: var(--mo-3); }
+  .slot h3 { margin: 8px 0 16px; font: 400 21px var(--song); color: var(--mo-3); }
+  .slot .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .slot .three div { height: 110px; border-radius: 10px; background: rgba(23,37,42,.04); padding: 12px; font-size: 12.5px; color: var(--mo-3); }
+  .rules { margin-top: 30px; padding: 22px 26px; border-radius: 12px; background: var(--lu); color: var(--ya-2); font-size: 14px; line-height: 1.9; }
+  .rules b { color: var(--jin); font-weight: 400; }
+  .honest { background: var(--lu); color: var(--ya); padding: 96px 0; }
+  .honest .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .honest p { margin: 0; font: 16px/2 var(--song-body); color: var(--ya-2); }
+  .honest h2.sec { color: var(--ya); }
+</style>
+</head>
+<body>
+
+<p class="label"><b>7 · 欢迎页</b>　未登录的访客打开网页先到这里；登录过的人直接进首页。顶栏只有「怎么断」「古籍对照」「关于我们」「登录」「开始问卦」。</p>
+<section class="page">
+  <div class="hero">
+    <div class="gnav"><div class="brand"><i></i><b>WENGUA</b></div><div class="links"><span>怎么断</span><span>古籍对照</span><span>关于我们</span><span>登录</span><span class="btn gold">开始问卦</span></div></div>
+    <div class="main">
+      <div>
+        <p class="kicker dark">问卦 · 梅花易数</p>
+        <h1>心里挂着一件事，<br>就来问一卦。</h1>
+        <p class="lead">按《梅花易数》的体用之法起卦。你问的那件事，断语早就写好了，每一篇都由易学师傅读过、改过。卦里说什么时候有动静，我们就写到哪几天。</p>
+        <div class="ctas"><span class="btn gold">开始问卦 →</span><span class="btn line">看古籍里怎么断</span></div>
+        <p class="free">不用注册也能问。每天一卦免费，先看简断。</p>
+      </div>
+      <div class="card-jian">
+        <div class="xiang">
+          <small>求职录用 · 时间起卦 · 亥月</small>
+          <h3>这次面试能通过吗？</h3>
+          <div class="trio">
+            <div><span class="gua" data-l="011010" data-mv="5"></span>水风井<small>本卦 · 目前</small></div>
+            <div><span class="gua" data-l="110101"></span>火泽睽<small>互卦 · 经过</small></div>
+            <div><span class="gua" data-l="011000"></span>地风升<small>变卦 · 结果</small></div>
+          </div>
+        </div>
+        <div class="jie">
+          <p style="font-size:12px;color:var(--tong);letter-spacing:.2em">简断（示意）</p>
+          <p class="brief">准备得足，面试官会看重；中间有一轮比较，结果偏向有利。</p>
+          <div class="rows">
+            <div><b>过程</b>（示意）第二轮会有人跟你比，别在细节上丢分。</div>
+            <div><b>应期</b>（示意）11 月 21 日至 23 日前后有消息　<span class="tag ji">吉</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="strip">
+      <div><b>31</b><span>件具体的事可问，分六大领域</span></div>
+      <div><b>4,608</b><span>种卦象情形，单是面试一问</span></div>
+      <div><b>1,920</b><span>篇面试断语，逐篇写定</span></div>
+      <div><b>20+</b><span>部易学古籍，人工校勘</span></div>
+    </div>
+  </div>
+
+  <div class="steps-sec">
+    <div class="wrap">
+      <p class="kicker">怎么断</p>
+      <h2 class="sec">三步，从问到答</h2>
+      <p class="sec-lead">没有输入框让你自由提问。你从清单里挑一件具体的事，这样卦才知道该往哪里看，断语也能写得具体。</p>
+      <div class="steps">
+        <div class="step"><p class="no">一 · 选事</p><h3>挑一件具体的事</h3><p>感情、事业、财运、学业、健康、出行，六个领域，三十一件事。问得越具体，卦答得越清楚。</p>
+          <div class="demo demo-fields"><div><span>事业工作</span><span>›</span></div><div class="on"><span>求职录用</span><span>✓</span></div><div><span>跳槽去留</span><span>›</span></div><div><span>考核晋升</span><span>›</span></div></div></div>
+        <div class="step"><p class="no">二 · 起卦</p><h3>按此刻起一卦</h3><p>以年月日时起卦，也可以报三个数。排出本卦、互卦、变卦，分出哪一半是你，哪一半是事。</p>
+          <div class="demo demo-gua"><span class="gua" data-l="011010" data-mv="5"></span><span class="gua" data-l="110101"></span><span class="gua" data-l="011000"></span></div></div>
+        <div class="step"><p class="no">三 · 读断</p><h3>读断语，记应期</h3><p>开局、过程、结局、总断，像师傅当面讲给你听。应期换算成具体日子，到时候回来记一笔应没应。</p>
+          <div class="demo demo-dates"><div><b>11月21日–23日</b><span class="tag ji">吉</span></div><div><b>11月28日</b><span class="tag xiong">凶</span></div><div><b>12月5日</b><span class="tag ji">吉</span></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <div class="wrap why-grid">
+      <div>
+        <p class="kicker">为什么可以信</p>
+        <h2 class="sec">断语不是现场编的</h2>
+        <p class="sec-lead">很多算卦软件是你一问，机器当场拼一段话。问卦不这样做。每一种情形的断语都先写好、再审过，才会出现在你面前。</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item"><b>4,608<small>种情形逐一对上</small></b><div><h3>同一卦，月份不同，断语就不同</h3><p>面试这一问，六十四卦、六个动爻、十二个月令，每一种情形都对到一篇正文。春天的木和秋天的木不一样旺，我们按实际月令分开写。</p></div></div>
+        <div class="why-item"><b>人工<small>每篇上线前读过</small></b><div><h3>易学师傅一篇一篇看</h3><p>取象、体用、旺衰、应期，师傅逐篇核对，有一处说不通就退回重写。审过的才放进 App。</p></div></div>
+        <div class="why-item"><b>到日子<small>应期换算成日期</small></b><div><h3>告诉你哪几天留意</h3><p>按你起卦那天往后推，写清楚是哪件事、是吉是凶。日期跟着起卦日走，过几天再看也不会变。</p></div></div>
+        <div class="why-item"><b>原文<small>古籍一字不改</small></b><div><h3>依据摆在旁边</h3><p>卦辞、爻辞、《梅花易数》的原句和白话释义分开标注。你可以看结论，也可以翻到依据自己对一遍。</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cases-teaser">
+    <div class="wrap">
+      <p class="kicker">古籍对照</p>
+      <h2 class="sec">邵康节当年怎么断，我们按同一套法子再推一遍</h2>
+      <p class="sec-lead">《梅花易数》里记着邵康节亲手断过的卦，和后来真实发生的事。我们把同一个卦象交给本馆的推演，看能不能走到同一个结论。</p>
+      <div class="cmp">
+        <div class="cmp-head">
+          <div class="figs">
+            <div><span class="gua" data-l="101110" data-mv="1"></span>泽火革<small>本卦</small></div>
+            <div><span class="gua" data-l="011111"></span>天风姤<small>互卦</small></div>
+            <div><span class="gua" data-l="001110"></span>泽山咸<small>变卦</small></div>
+          </div>
+          <div><p class="kicker dark">观梅占 · 辰年十二月十七日申时</p><h3>二雀争枝，坠地</h3><p>邵康节在园中看梅，见两只麻雀争枝，掉到地上。不动不占，这一动反常，于是起卦。</p></div>
+        </div>
+        <div class="cmp-cols">
+          <div><h4><i></i>邵康节原断</h4><p class="quote">明晚当有女子折花，园丁不知而逐之，女子失惊坠地，逐伤其股。……幸变为艮土，兑金得生，知女子但被伤，而不至凶危也。</p><p class="src">《梅花易数》卷一 · 观梅占</p></div>
+          <div class="ours"><h4><i></i>本馆推演</h4>
+            <ul class="tiyong">
+              <li><span>体</span><span>兑金（丑月 · 相）</span></li>
+              <li><span>用</span><span>离火克体</span></li>
+              <li><span>互</span><span>巽木生火，乾金比和</span></li>
+              <li><span>变</span><span>艮土生体</span></li>
+            </ul>
+            <p class="verdict">先受克，有伤；结局得生，不至凶。兑为少女，巽为股。</p></div>
+          <div class="out"><h4><i></i>书中所记结果</h4><p class="quote">次日晚，果有女子折花，园丁逐之，女子惊坠，伤股，未至危。</p><p class="src">据原书该例所记</p></div>
+        </div>
+        <div class="match"><b>● 推演与原断一致</b>　体受克而终得生：有伤，不重。</div>
+      </div>
+      <div class="more"><span>还有牡丹占、少年有喜、今日动静，其中一例单靠体用推不出来，师傅是怎么补上的，都在「关于我们」里。</span><span class="btn ink">看全部对照 →</span></div>
+    </div>
+  </div>
+
+  <div class="price">
+    <div class="wrap">
+      <p class="kicker dark">价格</p>
+      <h2 class="sec" style="color:var(--ya)">先免费问，觉得准再说</h2>
+      <div class="plans">
+        <div class="plan"><h3>免费</h3><p class="p">$0</p><ul><li>每天一卦</li><li>看简断</li><li>问事录、卦册、藏经阁</li></ul></div>
+        <div class="plan hl"><h3>会员</h3><p class="p">$9.99<small> / 月</small></p><ul><li>每天三卦</li><li>断语全文与应期日子</li><li>年付 $69.99</li></ul></div>
+        <div class="plan"><h3>单次</h3><p class="p">$0.99<small> / 篇</small></p><ul><li>解锁一篇断语全文</li><li>十篇 $4.99</li><li>不用订阅</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="gfoot"><span>© 2026 Wengua Labs LLC</span><span>关于我们　·　隐私政策　·　support@wengualabs.com</span></div>
+</section>
+
+<p class="label"><b>8 · 关于我们</b>　谁在做、断语怎么来的、古籍对照全表、现代案例（等真实案例）、我们的分寸。</p>
+<section class="page">
+  <div class="about-hero">
+    <div class="gnav"><div class="brand"><i></i><b>WENGUA</b></div><div class="links"><span>怎么断</span><span>古籍对照</span><span class="on">关于我们</span><span>登录</span><span class="btn gold">开始问卦</span></div></div>
+    <div class="main">
+      <div>
+        <p class="kicker dark">关于问卦</p>
+        <h1>一个学了多年梅花易数的人，<br>想把师傅的断法交到每个人手里。</h1>
+        <p class="lead">（待你改写成自己的话）找师傅断一卦，要等，要托人，还要碰运气遇到真懂的。我们把古籍一本本校过，把每一种卦象情形的断语先写好、再一篇篇审，让人在手机和电脑上就能读到有依据的断语。</p>
+      </div>
+      <div class="founder">
+        <div class="ph">师傅照片（待提供）</div>
+        <h3>创始人 · 易学师傅</h3>
+        <p>（待提供：姓名或道号、学易年数、师承，以及你想让用户知道的一两件事）</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pipe-sec">
+    <div class="wrap">
+      <p class="kicker">断语从哪里来</p>
+      <h2 class="sec">一篇断语上线前走过五步</h2>
+      <div class="pipe">
+        <div class="on"><small>一</small><h3>校古籍</h3><p>二十多部易学典籍，人工整理、对校。原文一字不改，订正都留出处。</p></div>
+        <div class="on"><small>二</small><h3>定断法</h3><p>只用《梅花易数》体用之法：体用生克、互变、月令旺衰。规则写成文，不靠感觉。</p></div>
+        <div class="on"><small>三</small><h3>逐情形写</h3><p>一问拆成卦、动爻、月令。面试一问 4,608 种情形，每种都有对应的正文。</p></div>
+        <div class="on"><small>四</small><h3>师傅审读</h3><p>逐篇核对取象、体用、旺衰和应期。说不通就退回重写。</p></div>
+        <div class="on"><small>五</small><h3>上线留底</h3><p>每篇有版本号。你看到的是哪一版，日后都查得到。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ledger">
+    <div class="wrap">
+      <p class="kicker">古籍对照 · 全表</p>
+      <h2 class="sec">四个书里的真实卦例</h2>
+      <p class="sec-lead">原断和结果照录《梅花易数》。「本馆推演」是同一卦象按本馆的体用之法排出来的结论。最后一例单看体用会推错，我们照实列出来。</p>
+      <table class="ltable">
+        <tr><th>卦例</th><th>邵康节原断</th><th>本馆推演</th><th>书中所记结果</th><th>对照</th></tr>
+        <tr><td><b>观梅占</b><small>泽火革 · 初爻动</small></td><td class="q">明晚有女子折花，被逐坠地伤股，不至凶危。</td><td>体兑金受离火克，互巽生火；变艮土生体。先伤后解。</td><td>次晚果有女子折花，坠地伤股。</td><td class="ok">一致</td></tr>
+        <tr><td><b>牡丹占</b><small>天风姤 · 五爻动</small></td><td class="q">此花明日午时，当为马所践毁。</td><td>体巽木（辰月 · 囚）受乾金克，互又重乾，变离火泄体，全无生意。凶。</td><td>次日午时，贵官之马相啮，驰入花间，花尽践毁。</td><td class="ok">一致</td></tr>
+        <tr><td><b>少年有喜</b><small>山火贲 · 五爻动</small></td><td class="q">子于十七日内必有聘币之喜。</td><td>体离火生用艮土，本卦泄体；但互震木、变巽木皆生体，转吉。</td><td>至期，果然定亲。</td><td class="ok">一致</td></tr>
+        <tr class="hl"><td><b>今日动静</b><small>地风升 · 初爻动</small></td><td class="q">今日有人相请，客不多，酒不醉，味至黍鸡而已。</td><td>体坤土受巽木克，互震又克，变乾金泄体。单看体用：无饮食之兆。</td><td>至晚果然有人相请。</td><td class="miss">体用推不出<br><small style="color:var(--mo-3);font-weight:400">书中自注：须兼外应与卦理</small></td></tr>
+      </table>
+      <div class="rules"><b>这一例为什么也放上来：</b>书里自己说，这一卦用克体，本该没有饮食，结果却有人相请，因为占的人当时身边有应，卦名「升」又有升阶入席之义。公式有算不到的地方，所以每一篇断语还要师傅读过。我们写断语时只依体用下结论，把「卦理另有一层」的情形交给审读的人把关。</div>
+    </div>
+  </div>
+
+  <div class="modern">
+    <div class="wrap">
+      <p class="kicker">现代案例</p>
+      <h2 class="sec">同一件事：师傅怎么断，本馆怎么断，后来怎样</h2>
+      <p class="sec-lead">这里只放真实发生的案例。每一例都要有当时的起卦记录、师傅的断语、本馆的断语，以及当事人事后告诉我们的结果，并经当事人同意，隐去姓名。</p>
+      <div class="slots">
+        <div class="slot"><div class="top"><span>案例 01 · 求职录用</span><span>待收录</span></div><h3>（等真实案例）</h3><div class="three"><div>师傅断语</div><div>本馆断语</div><div>当事人后来</div></div></div>
+        <div class="slot"><div class="top"><span>案例 02 · 跳槽去留</span><span>待收录</span></div><h3>（等真实案例）</h3><div class="three"><div>师傅断语</div><div>本馆断语</div><div>当事人后来</div></div></div>
+      </div>
+      <div class="rules"><b>收录规矩：</b>案例写进来之前，起卦时间、卦象和两份断语都要有当时的记录，结果由当事人自己说。断错的也照样放。我们会写清楚一共收了几例、对了几例，不只挑对的给你看。</div>
+    </div>
+  </div>
+
+  <div class="honest">
+    <div class="wrap cols">
+      <div><p class="kicker dark">分寸</p><h2 class="sec">卦理可以推得严谨，世事仍有变数</h2></div>
+      <div><p>问卦给的是依循传统易学的解读，供你参考，不是对未来的保证。涉及健康、法律、钱财的事，请以实际情况和专业意见为准。遇到紧急情况，请拨打 911。</p><p style="margin-top:18px">有问题或想告诉我们后来怎样了，写信到 support@wengualabs.com，我们都会看。</p></div>
+    </div>
+  </div>
+  <div class="gfoot"><span>© 2026 Wengua Labs LLC</span><span>关于我们　·　隐私政策　·　support@wengualabs.com</span></div>
+</section>
+
+<script>
+  document.querySelectorAll('.gua[data-l]').forEach((el) => {
+    const l = el.dataset.l, mv = Number(el.dataset.mv || 0);
+    el.innerHTML = [...l].map((b, i) => `<i class="${b === '1' ? 'y' : 'n'}${i + 1 === mv ? ' mv' : ''}"></i>`).join('');
+  });
+</script>
+</body>
+</html>

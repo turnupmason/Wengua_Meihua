@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>问卦 网页版 · 设计稿 v2</title>
+<!--
+  网页版桌面设计稿 v2（2026-11-18）：登录、藏经阁、卦页、问事录、我的、研习与校订。
+  v1 只做了首页 / 问事 / 卦笺；其余页面原先是手机版居中拉宽，用户要求网页版完全按电脑重新排。
+  颜色字体同 v1：深色 · 问（玄墨绿 #202724、香槟金 #c6b18b），纸白与朱砂 · 解（宣纸 #f3eedf、墨 #17252a、朱砂 #ac5145）。
+  卦辞爻辞取《周易》原文；断语与回访内容为示意，不是写定的断语。
+-->
+<style>
+  @font-face { font-family: 'WenguaSerifHeading'; src: url('../../apps/mobile/public/fonts/wengua-serif-heading.woff2') format('woff2'); }
+  @font-face { font-family: 'WenguaSerif'; src: url('../../apps/mobile/public/fonts/wengua-serif-body.woff2') format('woff2'); }
+  :root {
+    --lu: #202724; --lu-2: #2a332e; --lu-3: #1b221f; --jin: #c6b18b; --ya: #f3eee4; --ya-2: rgba(243, 238, 228, 0.66); --gold-rule: rgba(198, 177, 139, 0.26);
+    --xuan: #f3eedf; --xuan-2: #ece5d2; --xuan-3: #e4dcc6; --mo: #17252a; --mo-2: #3d4a4e; --mo-3: #6b7577; --zhu: #ac5145; --tong: #ad936b; --rule: rgba(23, 37, 42, 0.14);
+    --song: 'WenguaSerifHeading', 'Noto Serif SC', 'Songti SC', serif;
+    --song-body: 'WenguaSerif', 'Noto Serif SC', 'Songti SC', serif;
+    --sans: -apple-system, 'PingFang SC', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f1311; font: 15px/1.7 var(--sans); color: var(--mo); }
+  .screen { width: 1440px; height: 900px; margin: 0 auto 40px; position: relative; overflow: hidden; background: var(--xuan); }
+  .label { width: 1440px; margin: 28px auto 10px; color: #8d8a80; font: 13px var(--sans); letter-spacing: .08em; }
+  .label b { color: #c9c4b6; font-weight: 500; }
+  button { font: inherit; color: inherit; }
+
+  /* 顶栏（同 v1） */
+  .nav { height: 64px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 40px; background: var(--lu); border-bottom: 1px solid var(--gold-rule); color: var(--ya); }
+  .nav .brand { display: flex; align-items: center; gap: 12px; }
+  .nav .brand i { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(198,177,139,.6); display: grid; place-items: center; }
+  .nav .brand i::before { content: ''; width: 12px; height: 9px; background: repeating-linear-gradient(var(--jin) 0 1.4px, transparent 1.4px 3.6px); }
+  .nav .brand b { font: 400 14px var(--song); letter-spacing: .4em; color: var(--jin); }
+  .nav .brand small { font-size: 12px; color: var(--ya-2); letter-spacing: .06em; }
+  .nav nav { display: flex; gap: 44px; font: 15px var(--song); letter-spacing: .12em; }
+  .nav nav a { color: var(--ya-2); text-decoration: none; padding: 20px 0; border-bottom: 2px solid transparent; }
+  .nav nav a.on { color: var(--jin); border-bottom-color: var(--jin); }
+  .nav .me { justify-self: end; display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--ya-2); padding: 6px 10px 6px 6px; border-radius: 999px; }
+  .nav .me.on { background: var(--lu-2); color: var(--ya); }
+  .nav .me .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--lu-2); border: 1px solid var(--gold-rule); display: grid; place-items: center; color: var(--jin); font: 14px var(--song); }
+  .body { height: 836px; }
+
+  /* 通用 */
+  .kicker { margin: 0; font: 12px var(--sans); letter-spacing: .26em; color: var(--tong); }
+  .kicker.dark { color: var(--jin); }
+  .song { font-family: var(--song); font-weight: 400; }
+  .rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 44px; padding: 0 22px; border-radius: 8px; border: 1px solid var(--rule); background: transparent; font-size: 14.5px; cursor: pointer; }
+  .btn.ink { background: var(--mo); border-color: var(--mo); color: var(--xuan); }
+  .btn.gold { background: var(--jin); border-color: var(--jin); color: var(--lu); font-weight: 500; }
+  .btn.line-gold { border-color: rgba(198,177,139,.6); color: var(--jin); }
+  .field { display: flex; align-items: center; height: 44px; padding: 0 14px; border: 1px solid var(--rule); border-radius: 8px; background: rgba(255,255,255,.45); color: var(--mo-3); font-size: 14px; }
+  .seal { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 3px; background: var(--zhu); color: #f6e9e0; font: 11px var(--song); }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; }
+  .tag.ji { background: rgba(96,118,122,.14); color: #48605f; }
+  .tag.xiong { background: rgba(172,81,69,.12); color: var(--zhu); }
+  .tag.due { background: rgba(173,147,107,.18); color: #7d6440; }
+
+  /* 卦形 */
+  .gua { display: inline-flex; flex-direction: column-reverse; gap: var(--g, 4px); width: var(--w, 40px); }
+  .gua i { display: flex; justify-content: space-between; height: var(--h, 5px); }
+  .gua i::before, .gua i::after { content: ''; height: 100%; background: var(--c, var(--mo)); border-radius: 1px; }
+  .gua i.y::before { width: 100%; } .gua i.y::after { display: none; }
+  .gua i.n::before, .gua i.n::after { width: 42%; }
+  .gua i.mv::before, .gua i.mv::after { background: var(--zhu); }
+
+  /* ---------- 1 登录 ---------- */
+  .login { display: grid; grid-template-columns: 1fr 560px; height: 900px; }
+  .login-art { position: relative; background: radial-gradient(ellipse 80% 80% at 45% 45%, #29332e 0%, #202724 58%, #1b221f 100%); color: var(--ya); padding: 48px 72px; }
+  .login-art .top { display: flex; justify-content: space-between; font: 12px var(--sans); letter-spacing: .32em; color: var(--jin); }
+  .login-art .center { position: absolute; left: 72px; right: 72px; top: 50%; transform: translateY(-54%); display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
+  .ring { width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(198,177,139,.5); position: relative; display: grid; place-items: center; }
+  .ring::before { content: ''; position: absolute; inset: 24px; border-radius: 50%; border: 1px solid rgba(198,177,139,.2); }
+  .login-art h1 { margin: 0; font: 400 64px/1.2 var(--song); letter-spacing: .2em; }
+  .login-art .sub { margin: 18px 0 0; font: 16px var(--song); letter-spacing: .3em; color: var(--jin); }
+  .login-art .lead { margin: 22px 0 0; font-size: 15.5px; color: var(--ya-2); letter-spacing: .08em; }
+  .login-art .foot { position: absolute; left: 72px; right: 72px; bottom: 40px; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(243,238,228,.5); border-top: 1px solid var(--gold-rule); padding-top: 18px; }
+  .login-form { background: var(--xuan); padding: 0 88px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--gold-rule); }
+  .login-form h2 { margin: 12px 0 8px; font: 400 32px var(--song); letter-spacing: .08em; }
+  .login-form .hint { margin: 0 0 34px; font-size: 14px; color: var(--mo-3); }
+  .provider { width: 100%; height: 50px; font-size: 15px; margin-bottom: 12px; }
+  .provider.google { background: #fff; border-color: rgba(23,37,42,.2); }
+  .provider.apple { background: #111; color: #fff; border-color: #111; }
+  .or { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px; margin: 18px 0; color: var(--mo-3); font-size: 13px; }
+  .or::before, .or::after { content: ''; height: 1px; background: var(--rule); }
+  .email-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+  .guest { margin-top: 26px; text-align: center; font-size: 14px; color: var(--mo-2); border-bottom: 1px solid var(--rule); align-self: center; padding-bottom: 2px; }
+  .login-note { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--mo-3); line-height: 1.8; }
+
+  /* ---------- 2 藏经阁 ---------- */
+  .lib { display: grid; grid-template-columns: 268px 1fr 420px; }
+  .side { background: var(--xuan-2); border-right: 1px solid var(--rule); padding: 36px 28px; display: flex; flex-direction: column; gap: 22px; }
+  .side h2 { margin: 6px 0 0; font: 400 28px var(--song); letter-spacing: .1em; }
+  .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 3px; border-radius: 9px; background: rgba(23,37,42,.07); font-size: 13.5px; }
+  .seg span { text-align: center; padding: 6px 0; border-radius: 7px; color: var(--mo-3); }
+  .seg span.on { background: var(--xuan); color: var(--mo); box-shadow: 0 1px 2px rgba(23,37,42,.12); }
+  .side-list { list-style: none; margin: 0; padding: 0; }
+  .side-list li { display: grid; grid-template-columns: 26px 1fr auto; align-items: center; padding: 7px 0; font-size: 14px; color: var(--mo-2); }
+  .side-list li em { font-style: normal; font-size: 12px; color: var(--mo-3); }
+  .side-list li.on { color: var(--mo); font-weight: 600; }
+  .book { margin-top: auto; padding: 18px; border: 1px solid var(--rule); border-radius: 12px; background: var(--xuan); }
+  .book b { font: 400 30px var(--song); } .book b small { font-size: 15px; color: var(--mo-3); }
+  .bar { height: 4px; border-radius: 2px; background: rgba(23,37,42,.08); margin: 10px 0; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--zhu); }
+  .book p { margin: 0; font-size: 12.5px; color: var(--mo-3); line-height: 1.7; }
+  .matrix-wrap { padding: 30px 32px 24px; }
+  .matrix-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+  .matrix-head p { margin: 0; font-size: 13px; color: var(--mo-3); }
+  .matrix { display: grid; grid-template-columns: 54px repeat(8, 1fr); grid-template-rows: 46px repeat(8, 1fr); height: 740px; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+  .matrix > div { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); position: relative; }
+  .mh { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; color: var(--mo-3); background: rgba(23,37,42,.025); }
+  .mh b { font: 400 15px var(--song); color: var(--mo); letter-spacing: .1em; }
+  .corner { font-size: 11px !important; line-height: 1.3; text-align: center; }
+  .cell { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; cursor: pointer; }
+  .cell .gua { --w: 30px; --h: 3.5px; --g: 3px; }
+  .cell b { font: 400 14px var(--song); letter-spacing: .06em; }
+  .cell small { position: absolute; top: 5px; left: 7px; font-size: 10.5px; color: var(--mo-3); }
+  .cell .seal { position: absolute; top: 5px; right: 6px; width: 15px; height: 15px; font-size: 10px; }
+  .cell.met { background: rgba(172,81,69,.045); }
+  .cell.sel { background: var(--mo); color: var(--xuan); }
+  .cell.sel .gua { --c: var(--jin); } .cell.sel small { color: rgba(243,238,223,.6); }
+  .detail { background: #f8f4ea; border-left: 1px solid var(--rule); padding: 36px 36px 28px; display: flex; flex-direction: column; overflow: hidden; }
+  .detail .top { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; }
+  .detail .top .gua { --w: 74px; --h: 9px; --g: 6px; }
+  .detail h3 { margin: 0; font: 400 30px var(--song); letter-spacing: .1em; }
+  .detail .meta { margin: 4px 0 0; font-size: 13px; color: var(--mo-3); }
+  .grade { display: inline-block; margin-top: 8px; padding: 2px 10px; border: 1px solid rgba(172,81,69,.4); border-radius: 4px; color: var(--zhu); font: 13px var(--song); letter-spacing: .1em; }
+  .classic { margin: 0; font: 19px/1.8 var(--song-body); letter-spacing: .06em; }
+  .vern { margin: 4px 0 0; font-size: 13.5px; color: var(--mo-2); line-height: 1.75; }
+  .blk { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .blk .kicker { margin-bottom: 8px; }
+  .lines { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  .lines li { display: grid; grid-template-columns: 44px 1fr; padding: 5px 0; }
+  .lines li span { color: var(--zhu); font-family: var(--song); }
+  .detail .actions { margin-top: auto; display: flex; gap: 10px; padding-top: 18px; }
+
+  /* ---------- 3 卦页 ---------- */
+  .hexpage { display: grid; grid-template-columns: 440px 1fr; }
+  .hex-left { background: var(--lu); color: var(--ya); padding: 40px 48px; border-right: 1px solid var(--gold-rule); display: flex; flex-direction: column; }
+  .crumb { font-size: 13px; color: var(--ya-2); }
+  .crumb b { color: var(--jin); font-weight: 400; }
+  .hex-left .big { margin: 40px 0 0; display: flex; gap: 28px; align-items: center; }
+  .hex-left .big .gua { --w: 120px; --h: 13px; --g: 9px; --c: var(--jin); }
+  .hex-left .big .no { font: 13px var(--sans); letter-spacing: .3em; color: var(--jin); }
+  .hex-left h2 { margin: 6px 0 0; font: 400 40px var(--song); letter-spacing: .12em; }
+  .hex-left .tri { margin: 8px 0 0; color: var(--ya-2); font-size: 14px; }
+  .hex-left .grade { border-color: rgba(198,177,139,.5); color: var(--jin); }
+  .rel { margin-top: auto; border-top: 1px solid var(--gold-rule); }
+  .rel div { display: grid; grid-template-columns: 70px 1fr auto; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--gold-rule); font-size: 14px; }
+  .rel small { color: var(--jin); font-size: 12px; letter-spacing: .14em; }
+  .rel b { font: 400 16px var(--song); letter-spacing: .08em; }
+  .rel .gua { --w: 26px; --h: 3px; --g: 2.5px; --c: var(--ya-2); }
+  .prev-next { display: flex; justify-content: space-between; padding-top: 18px; font-size: 13.5px; color: var(--ya-2); }
+  .hex-right { padding: 44px 72px; overflow: hidden; }
+  .hex-right .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 26px; border-bottom: 1px solid var(--rule); }
+  .yao { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  .yao-item { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .yao-item .gua { --w: 30px; --h: 3px; --g: 2.5px; margin-top: 7px; --c: rgba(23,37,42,.35); }
+  .yao-item p { margin: 0; }
+  .yao-item .head { font: 15px var(--song); color: var(--zhu); letter-spacing: .08em; }
+  .yao-item .t { font: 16.5px/1.7 var(--song-body); letter-spacing: .05em; }
+  .yao-item .v { font-size: 13px; color: var(--mo-3); }
+  .yao-item .to { font-size: 12.5px; color: var(--tong); }
+
+  /* ---------- 4 问事录 ---------- */
+  .rec { display: grid; grid-template-columns: 460px 1fr; }
+  .rec-list { background: var(--xuan-2); border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
+  .rec-list .head { padding: 32px 32px 16px; }
+  .rec-list h2 { margin: 6px 0 16px; font: 400 28px var(--song); letter-spacing: .1em; }
+  .rec-list .tools { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .chips { display: flex; gap: 8px; font-size: 13px; }
+  .chips span { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--rule); color: var(--mo-2); }
+  .chips span.on { background: var(--mo); color: var(--xuan); border-color: var(--mo); }
+  .month { padding: 14px 32px 6px; font-size: 12px; letter-spacing: .2em; color: var(--tong); }
+  .row { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 14px 32px; border-top: 1px solid var(--rule); position: relative; }
+  .row.on { background: var(--xuan); }
+  .row.on::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--zhu); }
+  .row .d { text-align: center; }
+  .row .d b { display: block; font: 400 24px/1.1 var(--song); }
+  .row .d small { font-size: 11.5px; color: var(--mo-3); }
+  .row .q { display: flex; justify-content: space-between; gap: 10px; }
+  .row .q b { font: 400 16px var(--song); letter-spacing: .04em; }
+  .row .v { margin: 2px 0 0; font-size: 13.5px; color: var(--mo-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .m { margin: 2px 0 0; font-size: 12px; color: var(--mo-3); }
+  .rec-list .foot { margin-top: auto; padding: 16px 32px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-size: 12.5px; color: var(--mo-3); }
+  .rec-main { padding: 40px 64px; display: flex; flex-direction: column; }
+  .rec-main .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; }
+  .rec-main h1 { margin: 10px 0 0; font: 400 32px var(--song); letter-spacing: .06em; }
+  .trio { display: flex; gap: 40px; margin: 30px 0 26px; padding-bottom: 26px; border-bottom: 1px solid var(--rule); }
+  .trio div { display: flex; align-items: center; gap: 14px; }
+  .trio .gua { --w: 44px; --h: 5px; --g: 4px; }
+  .trio b { display: block; font: 400 18px var(--song); letter-spacing: .08em; }
+  .trio small { font-size: 12px; color: var(--mo-3); }
+  .verdict { margin: 0; font: 400 25px/1.6 var(--song); letter-spacing: .04em; }
+  .verdict-note { margin: 8px 0 0; font-size: 13px; color: var(--mo-3); }
+  .wins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+  .win { padding: 14px 16px; border: 1px solid var(--rule); border-radius: 10px; background: #f8f4ea; }
+  .win b { font: 400 16px var(--song); }
+  .win p { margin: 4px 0 0; font-size: 13px; color: var(--mo-2); }
+  .follow { margin-top: 26px; padding: 20px 24px; border-radius: 12px; background: var(--lu); color: var(--ya); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+  .follow p { margin: 0; } .follow small { color: var(--jin); letter-spacing: .2em; font-size: 12px; }
+  .follow .opts { display: flex; gap: 8px; }
+  .follow .opts span { padding: 8px 18px; border: 1px solid rgba(198,177,139,.5); border-radius: 8px; color: var(--jin); font-size: 14px; }
+  .rec-main .actions { margin-top: auto; display: flex; gap: 10px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .tally { text-align: right; font-size: 13px; color: var(--mo-3); line-height: 1.9; }
+  .tally b { font: 400 22px var(--song); color: var(--mo); }
+
+  /* ---------- 5 我的 ---------- */
+  .mine { display: grid; grid-template-columns: 400px 1fr; }
+  .profile { background: var(--lu); color: var(--ya); padding: 48px 44px; display: flex; flex-direction: column; border-right: 1px solid var(--gold-rule); }
+  .profile .av { width: 92px; height: 92px; border-radius: 50%; border: 1px solid rgba(198,177,139,.6); display: grid; place-items: center; font: 40px var(--song); color: var(--jin); background: var(--lu-2); }
+  .profile h2 { margin: 22px 0 0; font: 400 30px var(--song); letter-spacing: .08em; }
+  .profile .id { margin: 4px 0 0; font-size: 13px; color: var(--ya-2); }
+  .profile .motto { margin: 14px 0 0; font: 14px var(--song); letter-spacing: .2em; color: var(--jin); }
+  .acct { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--gold-rule); font-size: 13.5px; color: var(--ya-2); line-height: 2; }
+  .acct b { color: var(--ya); font-weight: 400; }
+  .member { margin-top: 26px; padding: 22px; border: 1px solid rgba(198,177,139,.55); border-radius: 14px; background: linear-gradient(160deg, rgba(198,177,139,.13), rgba(198,177,139,.03)); }
+  .member .k { display: flex; justify-content: space-between; align-items: baseline; }
+  .member b { font: 400 22px var(--song); letter-spacing: .1em; color: var(--jin); }
+  .member p { margin: 8px 0 16px; font-size: 13.5px; color: var(--ya-2); line-height: 1.8; }
+  .member .meter { display: flex; gap: 6px; margin-bottom: 18px; }
+  .member .meter i { flex: 1; height: 5px; border-radius: 3px; background: rgba(243,238,228,.12); }
+  .member .meter i.on { background: var(--jin); }
+  .profile .bottom { margin-top: auto; display: flex; gap: 22px; font-size: 13.5px; color: var(--ya-2); }
+  .profile .bottom span:last-child { color: rgba(229,138,106,.85); }
+  .mine-main { padding: 40px 56px; display: grid; grid-template-columns: 1fr 360px; grid-template-rows: auto 1fr auto; gap: 26px 40px; }
+  .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--rule); border-radius: 14px; background: #f8f4ea; }
+  .stats div { padding: 22px 26px; }
+  .stats div + div { border-left: 1px solid var(--rule); }
+  .stats b { display: block; font: 400 38px/1.1 var(--song); }
+  .stats b small { font-size: 16px; color: var(--mo-3); }
+  .stats span { font-size: 13px; color: var(--mo-3); }
+  .panel h3 { display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 10px; font: 400 19px var(--song); letter-spacing: .08em; }
+  .panel h3 a { font: 13px var(--sans); color: var(--tong); text-decoration: none; letter-spacing: 0; }
+  .recent { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .recent li { display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .recent .gua { --w: 30px; --h: 3.5px; --g: 3px; }
+  .recent b { font: 400 16px var(--song); }
+  .recent small { display: block; font-size: 12.5px; color: var(--mo-3); }
+  .recent time { font-size: 13px; color: var(--mo-3); }
+  .mini { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; padding: 16px; border: 1px solid var(--rule); border-radius: 12px; background: #f8f4ea; }
+  .mini i { aspect-ratio: 1; border-radius: 3px; background: rgba(23,37,42,.07); }
+  .mini i.on { background: var(--zhu); }
+  .mini-note { margin: 10px 0 0; font-size: 12.5px; color: var(--mo-3); }
+  .settings { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--rule); padding-top: 22px; }
+  .settings > div { padding-right: 28px; }
+  .settings > div + div { padding-left: 28px; border-left: 1px solid var(--rule); }
+  .settings p { margin: 0 0 10px; font-size: 13.5px; color: var(--mo-2); }
+  .settings small { display: block; margin-top: 8px; font-size: 12px; color: var(--mo-3); }
+
+  /* ---------- 6 研习与校订 ---------- */
+  .study { display: grid; grid-template-columns: 300px 1fr; }
+  .toc { background: var(--lu); color: var(--ya); padding: 44px 36px; display: flex; flex-direction: column; border-right: 1px solid var(--gold-rule); }
+  .toc h2 { margin: 8px 0 30px; font: 400 26px var(--song); letter-spacing: .12em; }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--gold-rule); }
+  .toc li { display: grid; grid-template-columns: 34px 1fr; padding: 15px 0; border-bottom: 1px solid var(--gold-rule); position: relative; }
+  .toc li small { color: var(--jin); font: 13px var(--song); }
+  .toc li b { font: 400 16px var(--song); letter-spacing: .08em; color: var(--ya-2); }
+  .toc li.on b { color: var(--ya); }
+  .toc li.on::before { content: ''; position: absolute; left: -36px; top: 0; bottom: 0; width: 3px; background: var(--jin); }
+  .toc .honest { margin-top: auto; font-size: 12.5px; line-height: 1.85; color: rgba(243,238,228,.5); }
+  .article { padding: 56px 96px; overflow: hidden; }
+  .article .hero { display: grid; grid-template-columns: 1fr 260px; gap: 64px; align-items: end; padding-bottom: 36px; border-bottom: 1px solid var(--rule); }
+  .article h1 { margin: 0; font: 400 46px/1.3 var(--song); letter-spacing: .08em; }
+  .article .brandline { margin: 14px 0 0; font: 16px var(--song); color: var(--zhu); letter-spacing: .24em; }
+  .article .lead { margin: 0; font: 15.5px/1.95 var(--song-body); color: var(--mo-2); }
+  .chapter { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 36px 0; border-bottom: 1px solid var(--rule); }
+  .chapter .no { font: 13px var(--sans); letter-spacing: .24em; color: var(--tong); }
+  .chapter h3 { margin: 8px 0 0; font: 400 24px/1.4 var(--song); letter-spacing: .06em; }
+  .chapter .text { margin: 0 0 18px; font: 15.5px/1.95 var(--song-body); color: var(--mo-2); }
+  .books { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px; }
+  .books span { padding: 10px 14px; border: 1px solid rgba(172,81,69,.3); border-radius: 8px; color: var(--zhu); font: 14px var(--song); text-align: center; }
+  .layers { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+  .layers div { padding: 18px 20px; background: #f8f4ea; }
+  .layers div + div { border-left: 1px solid var(--rule); }
+  .layers b { display: block; font: 400 16px var(--song); margin-bottom: 6px; }
+  .layers p { margin: 0; font-size: 13.5px; color: var(--mo-2); line-height: 1.75; }
+</style>
+</head>
+<body>
+
+<p class="label"><b>1 · 登录</b>　左边深色铭牌，右边纸面表单。已登录时右侧换成「Mason Liu，欢迎回来」与「进入问卦」「切换账号」。</p>
+<section class="screen">
+  <div class="login">
+    <div class="login-art">
+      <div class="top"><span>WENGUA</span><span>梅花易数 · MEI HUA YI SHU</span></div>
+      <div class="center">
+        <div class="ring"><span class="gua" data-l="111111" style="--w:150px;--h:12px;--g:12px;--c:var(--jin)"></span></div>
+        <div>
+          <h1>问卦</h1>
+          <p class="sub">观象知变 · 以理明心</p>
+          <p class="lead">古籍为本，推演有据，解读有度。</p>
+        </div>
+      </div>
+      <div class="foot"><span>Wengua Labs LLC</span><span>关于问卦　·　support@wengualabs.com</span></div>
+    </div>
+    <div class="login-form">
+      <p class="kicker">登录</p>
+      <h2>登录问卦</h2>
+      <p class="hint">登录用来保存会员和购买，换了手机或电脑也能找回。</p>
+      <button class="btn provider google"><b style="color:#4285f4;font:600 17px var(--sans)">G</b>使用 Google 登录</button>
+      <button class="btn provider apple"> 通过 Apple 登录</button>
+      <div class="or">或用邮箱</div>
+      <div class="email-row"><span class="field">邮箱地址</span><button class="btn">获取验证码</button></div>
+      <div class="email-row" style="margin-top:10px"><span class="field">验证码</span><button class="btn ink" style="min-width:108px">登录</button></div>
+      <span class="guest">以游客身份进入</span>
+      <p class="login-note">问卦记录存在这台设备上；会员与购买跟着账号走。<br>游客也能起卦，以后再登录，记录会一并带上。</p>
+    </div>
+  </div>
+</section>
+
+<p class="label"><b>2 · 藏经阁</b>　六十四卦排成八卦方阵（上卦为列，下卦为行），已结识的盖「识」。左栏检索与卦册，右栏是选中一卦的卦辞、象传、六爻；「读全篇」进入卦页。也可切到「卦序」按 1–64 排。</p>
+<section class="screen">
+  <div class="nav"><div class="brand"><i></i><b>WENGUA</b><small>梅花易数 · 古籍研析</small></div><nav><a>问事</a><a class="on">藏经阁</a><a>问事录</a></nav><div class="me"><span class="avatar">M</span>Mason Liu</div></div>
+  <div class="body lib">
+    <aside class="side">
+      <div><p class="kicker">藏经阁</p><h2>六十四卦</h2></div>
+      <span class="field">搜索卦名、卦序、卦辞</span>
+      <div class="seg"><span class="on">八卦方阵</span><span>卦序</span></div>
+      <div>
+        <p class="kicker" style="margin-bottom:6px">只看</p>
+        <ul class="side-list">
+          <li class="on"><span>·</span>全部<em>64</em></li>
+          <li><span class="seal" style="width:16px;height:16px;font-size:10px">识</span>已结识<em>11</em></li>
+          <li><span>·</span>上上卦<em>15</em></li>
+          <li><span>·</span>中上卦<em>20</em></li>
+          <li><span>·</span>中中卦<em>8</em></li>
+          <li><span>·</span>中下卦<em>8</em></li>
+          <li><span>·</span>下下卦<em>13</em></li>
+        </ul>
+      </div>
+      <div class="book">
+        <p class="kicker" style="margin-bottom:4px">卦册</p>
+        <b>11 <small>/ 64</small></b>
+        <div class="bar"><i style="width:17.2%"></i></div>
+        <p>起卦所得的本卦、互卦、变卦，和每天的今日一卦，都会收进卦册。</p>
+      </div>
+    </aside>
+    <div class="matrix-wrap">
+      <div class="matrix-head"><p>列为上卦，行为下卦。乾兑离震巽坎艮坤，依先天八卦之序。</p><p>点一卦看卦辞</p></div>
+      <div class="matrix" id="matrix"></div>
+    </div>
+    <aside class="detail">
+      <div class="top">
+        <span class="gua" data-l="111111"></span>
+        <div><p class="kicker">第 01 卦</p><h3>乾为天</h3><p class="meta">乾天上 · 乾天下</p><span class="grade">上上卦</span></div>
+      </div>
+      <div class="blk"><p class="kicker">卦辞</p><p class="classic">乾：元亨利贞。</p><p class="vern">大为亨通，利于守持正道。</p></div>
+      <div class="blk"><p class="kicker">象传</p><p class="classic">天行健，君子以自强不息。</p></div>
+      <div class="blk" style="border-bottom:0">
+        <p class="kicker">六爻</p>
+        <ol class="lines">
+          <li><span>初九</span>潜龙，勿用。</li>
+          <li><span>九二</span>见龙在田，利见大人。</li>
+          <li><span>九三</span>君子终日乾乾，夕惕若厉，无咎。</li>
+          <li><span>九四</span>或跃在渊，无咎。</li>
+          <li><span>九五</span>飞龙在天，利见大人。</li>
+          <li><span>上九</span>亢龙有悔。</li>
+        </ol>
+      </div>
+      <div class="actions"><button class="btn ink">读全篇 →</button><button class="btn">互卦 · 乾为天</button></div>
+    </aside>
+  </div>
+</section>
+
+<p class="label"><b>3 · 卦页（读全篇）</b>　左边卦形、评等、相关之卦与前后卦；右边卦辞象传并排，六爻两列，每爻注「此爻变 →」。</p>
+<section class="screen">
+  <div class="nav"><div class="brand"><i></i><b>WENGUA</b><small>梅花易数 · 古籍研析</small></div><nav><a>问事</a><a class="on">藏经阁</a><a>问事录</a></nav><div class="me"><span class="avatar">M</span>Mason Liu</div></div>
+  <div class="body hexpage">
+    <aside class="hex-left">
+      <p class="crumb">← 藏经阁　/　<b>水风井</b></p>
+      <div class="big">
+        <span class="gua" data-l="011010"></span>
+        <div><p class="no">第 48 卦</p><h2>水风井</h2><p class="tri">坎水上 · 巽风下</p><span class="grade">上上卦</span></div>
+      </div>
+      <p style="margin:30px 0 0;font-size:13.5px;color:var(--ya-2);line-height:1.8">本次问事：本卦水风井，九五动。</p>
+      <div class="rel">
+        <div><small>互卦</small><b>火泽睽</b><span class="gua" data-l="110101"></span></div>
+        <div><small>综卦</small><b>泽水困</b><span class="gua" data-l="010110"></span></div>
+        <div><small>错卦</small><b>火雷噬嗑</b><span class="gua" data-l="100101"></span></div>
+      </div>
+      <div class="prev-next"><span>← 47 泽水困</span><span>49 泽火革 →</span></div>
+    </aside>
+    <div class="hex-right">
+      <div class="two">
+        <div><p class="kicker" style="margin-bottom:10px">卦辞</p><p class="classic">井：改邑不改井，无丧无得，往来井井。汔至亦未繘井，羸其瓶，凶。</p><p class="vern">村邑可以迁移，水井却搬不走；井水不因汲取而少，也不因不汲而多，来往的人都在这里取水。</p></div>
+        <div><p class="kicker" style="margin-bottom:10px">象传</p><p class="classic">木上有水，井；君子以劳民劝相。</p><p class="vern">木桶入水而上，是井的样子。君子见此，慰劳百姓，劝勉彼此相助。</p></div>
+      </div>
+      <p class="kicker" style="margin-top:26px">六爻 · 自下而上</p>
+      <div class="yao" id="yao"></div>
+    </div>
+  </div>
+</section>
+
+<p class="label"><b>4 · 问事录</b>　左边按月列出每次问事，可筛「待回访」「已收藏」；右边是选中那次的卦、简断、应期和回访，不用跳页。「打开卦笺」进入完整卦笺。</p>
+<section class="screen">
+  <div class="nav"><div class="brand"><i></i><b>WENGUA</b><small>梅花易数 · 古籍研析</small></div><nav><a>问事</a><a>藏经阁</a><a class="on">问事录</a></nav><div class="me"><span class="avatar">M</span>Mason Liu</div></div>
+  <div class="body rec">
+    <aside class="rec-list">
+      <div class="head">
+        <p class="kicker">问事录</p>
+        <h2>每一次问事</h2>
+        <div class="tools">
+          <span class="field">搜索所问之事、卦名</span>
+          <div class="chips"><span class="on">全部 6</span><span>已收藏 2</span><span>待回访 1</span><span>已回访 1</span></div>
+        </div>
+      </div>
+      <p class="month">2026 年 11 月</p>
+      <div class="row on"><div class="d"><b>17</b><small>周二</small></div><div><div class="q"><b>这次求职能被录用吗？</b><span class="tag due">待回访</span></div><p class="v">（示意）仔细准备能少出错，要求仍偏难达到</p><p class="m">泽风大过 → 乾为天 → 泽天夬　·　20:43</p></div></div>
+      <div class="row"><div class="d"><b>12</b><small>周四</small></div><div><div class="q"><b>这段感情还能复合吗？</b><span class="tag ji">应</span></div><p class="v">（示意）旧情未断，转机在于对方先松口</p><p class="m">水风井 → 火泽睽 → 地风升　·　09:12</p></div></div>
+      <div class="row"><div class="d"><b>08</b><small>周日</small></div><div><div class="q"><b>该不该换工作？</b></div><p class="v">（示意）现职可守，新机会条件未齐</p><p class="m">山雷颐 → 坤为地 → 山地剥　·　21:05</p></div></div>
+      <p class="month">2026 年 10 月</p>
+      <div class="row"><div class="d"><b>29</b><small>周四</small></div><div><div class="q"><b>这笔钱能顺利收回吗？</b></div><p class="v">（示意）能收回一部分，过程要催</p><p class="m">火天大有 → 泽天夬 → 离为火　·　14:30</p></div></div>
+      <div class="foot"><span>记录只存在这台设备上</span><span>导出 JSON　·　清空</span></div>
+    </aside>
+    <div class="rec-main">
+      <div class="top">
+        <div><p class="kicker">求职录用 · 11 月 17 日 20:43 · 时间起卦 · 亥月</p><h1>这次求职能被录用吗？</h1></div>
+        <div class="tally">应期回访<br><b>1</b> 应了 · <b>0</b> 没应 · <b>0</b> 说不准</div>
+      </div>
+      <div class="trio">
+        <div><span class="gua" data-l="011110" data-mv="1"></span><span><b>泽风大过</b><small>本卦 · 目前</small></span></div>
+        <div><span class="gua" data-l="111111"></span><span><b>乾为天</b><small>互卦 · 经过</small></span></div>
+        <div><span class="gua" data-l="111110"></span><span><b>泽天夬</b><small>变卦 · 结果</small></span></div>
+      </div>
+      <p class="kicker" style="margin-bottom:8px">简断</p>
+      <p class="verdict">（示意）仔细准备能少出错，但这一轮的要求偏高，录用的把握不大。</p>
+      <p class="verdict-note">简断 · 完整的开局、过程、结局与总断在卦笺里。</p>
+      <div class="wins">
+        <div class="win"><b>11月21日–23日</b><p>（示意）面试反馈　<span class="tag xiong">凶</span></p></div>
+        <div class="win"><b>11月28日</b><p>（示意）补材料　<span class="tag ji">吉</span></p></div>
+        <div class="win"><b>12月5日–8日</b><p>（示意）结果公布　<span class="tag xiong">凶</span></p></div>
+      </div>
+      <div class="follow">
+        <p><small>应期回访</small><br>11月21日至23日前后，面试反馈来了吗？</p>
+        <div class="opts"><span>应了</span><span>没应</span><span>说不准</span></div>
+      </div>
+      <div class="actions"><button class="btn ink">打开卦笺 →</button><button class="btn">收藏</button><button class="btn">分享卦签</button><span style="flex:1"></span><button class="btn" style="color:var(--zhu)">删除</button></div>
+    </div>
+  </div>
+</section>
+
+<p class="label"><b>5 · 我的</b>　点顶栏右侧头像进入，不再是盖住顶栏的手机页。左边账号与会员，右边统计、最近问卦、卦册方阵缩影，设置直接摊开在页面底部。</p>
+<section class="screen">
+  <div class="nav"><div class="brand"><i></i><b>WENGUA</b><small>梅花易数 · 古籍研析</small></div><nav><a>问事</a><a>藏经阁</a><a>问事录</a></nav><div class="me on"><span class="avatar">M</span>Mason Liu</div></div>
+  <div class="body mine">
+    <aside class="profile">
+      <span class="av">M</span>
+      <h2>Mason Liu</h2>
+      <p class="id">ID B744936D</p>
+      <p class="motto">道法自然 · 随缘问道</p>
+      <div class="acct">登录方式　<b>Google</b><br>邮箱　<b>w•••@gmail.com</b></div>
+      <div class="member">
+        <div class="k"><b>会员</b><span style="font-size:13px;color:var(--ya-2)">免费</span></div>
+        <p>每天可问一卦，看简断。开通会员每天三卦，断语全文与应期都能看。</p>
+        <div class="meter"><i></i></div>
+        <p style="margin:-10px 0 16px;font-size:12.5px">今日已问 0 / 1</p>
+        <button class="btn gold" style="width:100%">开通会员</button>
+      </div>
+      <div class="bottom"><span>退出登录</span><span>删除账号</span></div>
+    </aside>
+    <div class="mine-main">
+      <div class="stats">
+        <div><b>6</b><span>累计问卦</span></div>
+        <div><b>2</b><span>已收藏</span></div>
+        <div><b>11<small> / 64</small></b><span>卦册结识</span></div>
+        <div><b>1</b><span>已反馈应期</span></div>
+      </div>
+      <div class="panel">
+        <h3>最近问卦<a href="#">全部记录 ›</a></h3>
+        <ul class="recent">
+          <li><span class="gua" data-l="011110"></span><span><b>这次求职能被录用吗？</b><small>泽风大过 → 泽天夬</small></span><time>11月17日</time></li>
+          <li><span class="gua" data-l="011010"></span><span><b>这段感情还能复合吗？</b><small>水风井 → 地风升</small></span><time>11月12日</time></li>
+          <li><span class="gua" data-l="100001"></span><span><b>该不该换工作？</b><small>山雷颐 → 山地剥</small></span><time>11月8日</time></li>
+          <li><span class="gua" data-l="111101"></span><span><b>这笔钱能顺利收回吗？</b><small>火天大有 → 离为火</small></span><time>10月29日</time></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>卦册<a href="#">去藏经阁 ›</a></h3>
+        <div class="mini" id="mini"></div>
+        <p class="mini-note">已结识 11 / 64。方阵与藏经阁同序，红格是见过的卦。</p>
+      </div>
+      <div class="settings">
+        <div><p>语言</p><div class="seg"><span class="on">中文</span><span>English</span></div><small>断语全文目前只有中文。</small></div>
+        <div><p>显示</p><div class="seg"><span class="on">宣纸</span><span>玄墨</span><span>跟随系统</span></div></div>
+        <div><p>子时换日</p><div class="seg"><span class="on">子时起算次日</span><span>夜子算当日</span></div><small>只影响以后的新起卦。</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="label"><b>6 · 研习与校订</b>　从首页底部「一卦之断，何以有据」进入。左边深色章节目录，随阅读高亮；右边每章标题在左、正文在右，三层内容并排成三栏。</p>
+<section class="screen">
+  <div class="nav"><div class="brand"><i></i><b>WENGUA</b><small>梅花易数 · 古籍研析</small></div><nav><a>问事</a><a>藏经阁</a><a>问事录</a></nav><div class="me"><span class="avatar">M</span>Mason Liu</div></div>
+  <div class="body study">
+    <aside class="toc">
+      <p class="kicker dark">研习与校订</p>
+      <h2>一卦之断<br>何以有据</h2>
+      <ol>
+        <li class="on"><small>一</small><b>一卦一研，字字有据</b></li>
+        <li><small>二</small><b>以一卦为例，从起卦到判断</b></li>
+        <li><small>三</small><b>同卦不同断</b></li>
+        <li><small>四</small><b>常见术语</b></li>
+      </ol>
+      <p class="honest">卦理可以推得严谨，世事仍有变数。这份解读依循传统易学，供你参考，不等于对未来的保证。</p>
+    </aside>
+    <div class="article">
+      <div class="hero">
+        <div><h1>古籍为本，推演有据</h1><p class="brandline">问有所指，断有所据</p></div>
+        <span class="gua" data-l="011010" data-mv="5" style="--w:120px;--h:12px;--g:10px;justify-self:end"></span>
+      </div>
+      <p class="lead" style="margin:28px 0 0;max-width:46em">每一卦，皆用心推敲。从起卦、卦象分析到最终解读，遵循既定的易学规则；每一份断语都事先编写、反复校订，力求判断有依据、解读有条理、文字清楚易懂。</p>
+      <div class="chapter" style="border-top:1px solid var(--rule);margin-top:32px">
+        <div><p class="no">第一章 · 古籍为本</p><h3>一卦一研，<br>字字有据</h3></div>
+        <div>
+          <p class="text">我们以传统易学典籍为基础，用《梅花易数》的体用之法：依起卦之时排出本卦、互卦、变卦，看所问之事对你是生是克，再配以月令旺衰。所依篇目：</p>
+          <div class="books"><span>年月日时起例</span><span>卦以八除</span><span>爻以六除</span><span>体用总诀</span><span>体用互变之诀</span><span>体用衰旺之诀</span></div>
+          <div class="layers">
+            <div><b>古籍原文</b><p>《周易》卦辞、爻辞与《梅花易数》原句，一字不改。</p></div>
+            <div><b>白话释义</b><p>原文的现代汉语译述，帮你读懂，不代替原文。</p></div>
+            <div><b>本馆断语</b><p>依卦象、体用与月令，针对你所问之事写成的判断。三者在卦笺上分开标注。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 卦形：data-l 自下而上六位，1 阳 0 阴；data-mv 为动爻（1–6）。
+  const draw = (el) => {
+    const l = el.dataset.l, mv = Number(el.dataset.mv || 0);
+    el.innerHTML = [...l].map((b, i) => `<i class="${b === '1' ? 'y' : 'n'}${i + 1 === mv ? ' mv' : ''}"></i>`).join('');
+  };
+  // 先天八卦序：乾兑离震巽坎艮坤，三爻自下而上。
+  const T = [['乾', '天', '111'], ['兑', '泽', '110'], ['离', '火', '101'], ['震', '雷', '100'], ['巽', '风', '011'], ['坎', '水', '010'], ['艮', '山', '001'], ['坤', '地', '000']];
+  // 行 = 下卦，列 = 上卦：[卦序, 名]
+  const K = [
+    [[1, '乾'], [43, '夬'], [14, '大有'], [34, '大壮'], [9, '小畜'], [5, '需'], [26, '大畜'], [11, '泰']],
+    [[10, '履'], [58, '兑'], [38, '睽'], [54, '归妹'], [61, '中孚'], [60, '节'], [41, '损'], [19, '临']],
+    [[13, '同人'], [49, '革'], [30, '离'], [55, '丰'], [37, '家人'], [63, '既济'], [22, '贲'], [36, '明夷']],
+    [[25, '无妄'], [17, '随'], [21, '噬嗑'], [51, '震'], [42, '益'], [3, '屯'], [27, '颐'], [24, '复']],
+    [[44, '姤'], [28, '大过'], [50, '鼎'], [32, '恒'], [57, '巽'], [48, '井'], [18, '蛊'], [46, '升']],
+    [[6, '讼'], [47, '困'], [64, '未济'], [40, '解'], [59, '涣'], [29, '坎'], [4, '蒙'], [7, '师']],
+    [[33, '遁'], [31, '咸'], [56, '旅'], [62, '小过'], [53, '渐'], [39, '蹇'], [52, '艮'], [15, '谦']],
+    [[12, '否'], [45, '萃'], [35, '晋'], [16, '豫'], [20, '观'], [8, '比'], [23, '剥'], [2, '坤']],
+  ];
+  const met = new Set([1, 28, 29, 43, 48, 38, 46, 27, 2, 23, 14]);
+  const m = document.getElementById('matrix');
+  let html = '<div class="mh corner">上卦→<br>下卦↓</div>';
+  for (const [n, x] of T) html += `<div class="mh"><b>${n}</b>${x}</div>`;
+  K.forEach((row, r) => {
+    html += `<div class="mh"><b>${T[r][0]}</b>${T[r][1]}</div>`;
+    row.forEach(([no, name], c) => {
+      const lines = T[r][2] + T[c][2];
+      const cls = ['cell', met.has(no) ? 'met' : '', no === 1 ? 'sel' : ''].join(' ');
+      html += `<div class="${cls}"><small>${String(no).padStart(2, '0')}</small>${met.has(no) ? '<span class="seal">识</span>' : ''}<span class="gua" data-l="${lines}"></span><b>${name}</b></div>`;
+    });
+  });
+  m.innerHTML = html;
+  const mini = document.getElementById('mini');
+  mini.innerHTML = K.flat().map(([no]) => `<i class="${met.has(no) ? 'on' : ''}"></i>`).join('');
+  // 水风井六爻
+  const Y = [
+    ['初六', '井泥不食，旧井无禽。', '井底淤泥，没人来汲水，连鸟也不来。', '水天需'],
+    ['九二', '井谷射鲋，瓮敝漏。', '井水只够射小鱼，汲水的瓮又破了。', '水山蹇'],
+    ['九三', '井渫不食，为我心恻。可用汲，王明，并受其福。', '井已淘净却没人取用，令人心伤。', '坎为水'],
+    ['六四', '井甃，无咎。', '修砌井壁，没有过失。', '泽风大过'],
+    ['九五', '井冽，寒泉食。', '井水清冽，寒泉可饮。', '地风升'],
+    ['上六', '井收勿幕，有孚元吉。', '井口不加盖，任人汲取，大吉。', '巽为风'],
+  ];
+  const base = '011010';
+  document.getElementById('yao').innerHTML = Y.map(([h, t, v, to], i) => {
+    return `<div class="yao-item"><span class="gua" data-l="${base}" data-mv="${i + 1}"></span><div><p class="head">${h}</p><p class="t">${t}</p><p class="v">${v}</p><p class="to">此爻变 → ${to}</p></div></div>`;
+  }).join('');
+  document.querySelectorAll('.gua[data-l]').forEach(draw);
+</script>
+</body>
+</html>

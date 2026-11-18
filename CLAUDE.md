@@ -87,3 +87,15 @@ SQL全文为 structural-only 内部稿，生产只查 approved_fixed_question_st
 npm run build:data；npm run validate；npm run validate:details；npm run validate:stories；npm run validate:timing；npm run validate:questions；npm run validate:receivable；npm run validate:product；npm run validate:authored；npm test。结构校验与断法审核分别报告。
 
 当前已有知识层、排盘和二维联调；3D手机应用在 apps/mobile，继续完善可运行的移动竖屏道观体验。用户授权的可逆开发直接实施，不反复询问已确认方向。
+
+## 考试问项定稿（2026-11-18）
+
+`career.exams.exam` 已按 [断语判断口径 V2 定稿](docs/READING_POLICY_V2.md) 逐篇补判，1,920 篇只判能过或不能过：能过 639 篇，不能过 1,281 篇。定稿内容：
+- 一层间接生克，以《体用》「彼灭其吉」「稍解其穷」为据，写入 `decision.indirectEffectsApplied`；
+- 休为无气；
+- 本用泄体或克体；
+- 无生无克时以卦象主断；
+- 有条件按结局拆为成或不成；
+- 爻辞翻转统一闸门。
+
+用户授权 AI 代审（`independentReview.status:'ai-delegated-approved'`，`reviewerIsHuman:false`），复核、盲断、润色三份记录分别在 `sources/editorial/exam/review-v2|blind-v2|polish-v5/`。规则实现在 `scripts/review/policy-final.cjs`，逐卦清单用 `scripts/review/final-packet.mjs`，回测用 `scripts/review/classical-backtest.cjs` 与 `scripts/review/backtest-all.mjs`。本节只适用于考试问项，其他问项复核前，要先按本类条文和结论类型（能否类、选择类、状况类）另定细则。
