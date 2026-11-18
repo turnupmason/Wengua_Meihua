@@ -146,17 +146,35 @@
 
 ## 七之二、网页版 app.wengualabs.com
 
-和 App 是同一套代码（`apps/mobile`）。在电脑的宽窗口里用桌面布局，在手机浏览器里和 App 一样。网页版不卖会员，全部免费开放（测试期）；登录用邮箱验证码和 Google，Apple 登录等 Apple 开发者账号开通后再加。
+和 App 是同一套代码（`apps/mobile`）。在电脑的宽窗口里用桌面布局，在手机浏览器里和 App 一样。登录用邮箱验证码和 Google，Apple 登录等 Apple 开发者账号开通后再加。
 
-- Cloudflare 上的 Worker `wengua-app`，配置在 [`apps/mobile/wrangler.jsonc`](../apps/mobile/wrangler.jsonc)，发布构建好的 `dist/`，绑定 `app.wengualabs.com`。
+**断语不随网页或 App 下发（2026-11-18 起）**
+
+- 网页和 App 里都没有断语文件。起卦后向 `/api/reading` 要这一卦的断语（[`apps/mobile/server/reading.ts`](../apps/mobile/server/reading.ts)）。服务器先核对登录（Supabase 的签名），再问数据库函数 `reading_access` 这个账号能看多少：
+  - 免费：每天 1 次，只给简断；
+  - 会员：每天 3 次，给全文；
+  - 用次数解锁的那一卦：全文；
+  - 正式登录（邮箱 / Google / Apple，不含游客）的账号：第一篇写定的断语送全文，只送一次。
+- 只返回这一卦、这一动爻、这个月令的那一篇。只给简断时，详断、应期、计算说明都不出服务器。
+- 每个账号每小时最多 60 次、每天 200 次查询；同一次起卦（cast id）第一次问的是哪一卦就固定了，不能拿去查别的卦。
+- 次数和赠阅都记在服务器（表 `casts`），清本机数据不会重置。会员到期时间由 `claim-purchases` 从 RevenueCat 抄进表 `memberships`。
+- 网页上暂不卖：会员和次数在 iPhone App 里买，用同一账号登录，网页上也能看全文。以后网页收款用 RevenueCat Web Billing（Stripe，要公司的 Stripe 账号）。
+- 数据库：在 SQL Editor 里运行过 [`20261117000000_credits.sql`](../apps/mobile/supabase/migrations/20261117000000_credits.sql) 和 [`20261118000000_readings.sql`](../apps/mobile/supabase/migrations/20261118000000_readings.sql)（2026-11-18 已运行）。
+
+**怎么托管的**
+
+- Cloudflare 上的 Worker `wengua-app`（[`apps/mobile/worker/index.ts`](../apps/mobile/worker/index.ts)，配置 [`apps/mobile/wrangler.jsonc`](../apps/mobile/wrangler.jsonc)），绑定 `app.wengualabs.com`。
+- `npm run build:web` 先构建网页（`dist/`），再由 `scripts/pack-web.mjs` 把断语数据放进 `dist-web/_data/`。`_data/` 只有 Worker 自己能读，浏览器直接访问一律 404。iOS App 用的是 `dist/`，里面没有断语。
+- 一次取断语要解析一个卦的文件（最大约 4 MB），免费版每次只有 10 毫秒计算时间，不够用，所以 **Cloudflare 账户要升级到 Workers Paid（每月 $5）**。
 - `apps/mobile/public/_headers`：带哈希的文件长期缓存，其余加两条安全头。
 
 一次性设置【你】：
 
-1. Cloudflare → **Workers & Pages** → **Create（创建）** → **Import a repository（导入仓库）** → 选 `turnupmason/Wengua_Meihua`。
-2. 填写：
+1. Cloudflare → **Workers & Pages** → 右上 **Plans** 升级到 **Workers Paid**。
+2. **Create（创建）** → **Import a repository（导入仓库）** → 选 `turnupmason/Wengua_Meihua`。
+3. 填写：
    - Project name：`wengua-app`（必须和 `wrangler.jsonc` 里的 `name` 一样）
-   - Build command：`npm run build`
+   - Build command：`npm run build:web`
    - Deploy command：`npx wrangler@4.156.2 deploy`
    - Advanced settings → **Root directory：`apps/mobile`**
    - Advanced settings → **Build variables（构建变量）**，加四条（都是公开值，本来就会出现在网页里）：
@@ -168,10 +186,13 @@
      | `VITE_GOOGLE_WEB_CLIENT_ID` | Google 的 Web Client ID |
      | `NODE_VERSION` | `22` |
 
-3. **Deploy**。第一次构建约 3～5 分钟（要上传约 900 个文件、280 MB 断语数据）。成功后 `app.wengualabs.com` 会自动加好 DNS。
-4. Supabase → Authentication → **URL Configuration**：Site URL `https://app.wengualabs.com`；Redirect URLs 有 `https://app.wengualabs.com/**` 和 `http://localhost:5173/**`。
+   Worker 运行时要用的 Supabase 地址和 publishable key 已写在 `wrangler.jsonc` 的 `vars` 里，不用另填。**不需要** service role key。
+4. **Deploy**。第一次构建约 3～5 分钟（要上传约 950 个文件、约 280 MB，其中断语数据约 266 MB）。成功后 `app.wengualabs.com` 会自动加好 DNS。
+5. Supabase → Authentication → **URL Configuration**：Site URL `https://app.wengualabs.com`；Redirect URLs 有 `https://app.wengualabs.com/**` 和 `http://localhost:5173/**`。
 
 之后每次推送到 `main`，网页版和官网都会各自重新发布。
+
+**上线前**：GitHub 仓库改成私有（Settings → General → Danger Zone → Change repository visibility），否则断语库仍可从仓库直接下载。
 
 ## 八、在 Mac 上打包【你，按步骤做】
 

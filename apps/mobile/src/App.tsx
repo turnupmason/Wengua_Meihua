@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { getKnowledge, type Knowledge } from './knowledge/knowledge';
-import { chargesToday, fillJudgment, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
+import { chargesToday, completeJudgment, fillJudgment, freezeCast, judgmentInput, withJudgment, type CastRecord } from './domain/cast';
+import { remoteProduct, serverReadings } from './services/readings';
 import { judgmentFor, windowDates } from './domain/judgment';
 import { createFollowups, type Outcome, type TimingRef } from './domain/followup';
 import { createCollection, createDaily } from './domain/daily';
@@ -166,14 +167,51 @@ export function App() {
     return () => mq?.removeEventListener?.('change', apply);
   }, [settings.theme]);
 
+  // Where the 断语 come from: the server, one cast at a time (services/readings.ts), wherever
+  // accounts are configured; otherwise the bundled interface (tests and builds without keys).
+  const productFor = useCallback(
+    (knowledge: Knowledge, rec: Pick<CastRecord, 'castId' | 'localWallClock'>) =>
+      serverReadings() ? remoteProduct(rec.castId, (rec.localWallClock ?? new Date().toISOString()).slice(0, 10)) : knowledge.product,
+    [],
+  );
+  // Whether a reading's 详断 can be read here. From the server, a reading has it or it has only the
+  // 简断 (the server already applied membership, credits and the gift); otherwise this device's plan.
+  const canRead = useCallback(
+    (castId: string | null) => {
+      if (!serverReadings()) return membership.canReadFull(castId);
+      const j = castId ? history.list().find((r) => r.castId === castId)?.judgment : undefined;
+      return j?.state === 'ready' && !j.partial;
+    },
+    [history, membership],
+  );
+
   const openSavedJudgment = useCallback(async (knowledge: Knowledge, rec: CastRecord) => {
     const previous = rec.judgment;
+    // Given only its 简断: ask the server again (a member now, a credit spent, the gift).
+    if (previous?.state === 'ready' && previous.partial) {
+      const question = questionById(rec.questionId);
+      const input = judgmentInput(rec);
+      if (!input || !question) return;
+      const whole = await judgmentFor(productFor(knowledge, rec), question, input);
+      const current = recordRef.current;
+      if (whole.state !== 'ready' || whole.partial || current?.castId !== rec.castId) return;
+      try {
+        const completed = completeJudgment(current, whole) as CastRecord;
+        history.fill(completed);
+        recordRef.current = completed;
+        setRecord(completed);
+        setMemberRev((n) => n + 1);
+      } catch (e) {
+        console.error(e);
+      }
+      return;
+    }
     // Cast while its 断语 was still being written: read it now if it has been (for the original day).
     if (previous?.state === 'missing' && (previous.reason === 'pending-authoring' || previous.reason === 'pending-review')) {
       const question = questionById(rec.questionId);
       const input = judgmentInput(rec);
       if (!input || !question) return;
-      const written = await judgmentFor(knowledge.product, question, input);
+      const written = await judgmentFor(productFor(knowledge, rec), question, input);
       const current = recordRef.current;
       if (written.state !== 'ready' || current?.castId !== rec.castId) return;
       const filled = fillJudgment(current, written) as CastRecord;
@@ -182,7 +220,8 @@ export function App() {
       setRecord(filled);
       return;
     }
-    if (previous?.state !== 'ready' || previous.timing?.windows.length || previous.timing?.phaseNotes?.length ||
+    // (Older records only, read from the bundled library: never asked of the server.)
+    if (serverReadings() || previous?.state !== 'ready' || previous.timing?.windows.length || previous.timing?.phaseNotes?.length ||
         (previous.contentQuestionId ?? previous.questionId) !== 'career.promotion-pay.promotion') return;
     const question = questionById(rec.questionId);
     const input = judgmentInput(rec);
@@ -195,10 +234,10 @@ export function App() {
     const repaired = {...current, judgment: {...previous, timing: updated.timing, calculation: updated.calculation}};
     recordRef.current = repaired;
     setRecord(repaired);
-  }, [history]);
+  }, [history, productFor]);
 
   // 应期 are part of 详断: only records whose 详断 the visitor can read are asked about or reminded of.
-  const readableRecords = useCallback(() => history.list().filter((r) => membership.canReadFull(r.castId)), [history, membership]);
+  const readableRecords = useCallback(() => history.list().filter((r) => canRead(r.castId)), [history, canRead]);
   const reminderText = useCallback(
     (w: TimingRef) => ({ title: t.notifyTitle, body: t.notifyBody(windowDates(w.dates, w.first, settings.lang)) }),
     [t, settings.lang],
@@ -210,17 +249,19 @@ export function App() {
 
   // Casts made while their 断语 was still being written get it once it is (问事录, detail and 读卦 alike).
   const fillWritten = useCallback(async (knowledge: Knowledge) => {
-    for (const rec of history.list()) {
-      const was = rec.judgment;
-      if (was?.state !== 'missing' || (was.reason !== 'pending-authoring' && was.reason !== 'pending-review')) continue;
+    // From the server, not in the background: a 断语 given now counts toward today's readings, so it
+    // is asked for only when the visitor opens that cast (openSavedJudgment).
+    if (serverReadings()) return;
+    const waiting = history.list().filter((r) => r.judgment?.state === 'missing' && (r.judgment.reason === 'pending-authoring' || r.judgment.reason === 'pending-review'));
+    for (const rec of waiting) {
       const question = questionById(rec.questionId);
       const input = judgmentInput(rec);
       if (!input || !question) continue;
-      const written = await judgmentFor(knowledge.product, question, input).catch(() => null);
+      const written = await judgmentFor(productFor(knowledge, rec), question, input).catch(() => null);
       if (written?.state === 'ready') history.fill(fillJudgment(rec, written) as CastRecord);
     }
     bumpFollow();
-  }, [history, bumpFollow]);
+  }, [history, bumpFollow, productFor]);
 
   // Load bundled texts once; failures can be retried.
   useEffect(() => {
@@ -266,9 +307,13 @@ export function App() {
       );
       const input = judgmentInput(base);
       const question = questionById(base.questionId);
-      const rec = input && question ? withJudgment(base, await judgmentFor(knowledge.product, question, input)) : base;
+      const rec = input && question ? withJudgment(base, await judgmentFor(productFor(knowledge, base), question, input)) : base;
       // A cast that would be charged beyond today's readings is not kept (the visitor is asked first).
-      if (chargesToday(rec) && !membership.canCast()) {
+      // From the server, the server counts (and says so); otherwise this device does.
+      const overLimit = serverReadings()
+        ? rec.judgment?.state === 'missing' && rec.judgment.reason === 'daily-limit'
+        : chargesToday(rec) && !membership.canCast();
+      if (overLimit) {
         setMemberSheet({ reason: 'limit', castId: null });
         return null;
       }
@@ -280,8 +325,8 @@ export function App() {
       }
       // Only a cast that was given a written 断语 counts toward today's readings.
       if (chargesToday(rec) && rec.questionId) membership.recordCast(rec.questionId);
-      // A newcomer's first written reading is read in full (once).
-      if (rec.judgment?.state === 'ready') membership.giftFirst(rec.castId);
+      // A newcomer's first written reading is read in full (once). From the server, it says so.
+      if (rec.judgment?.state === 'ready' && (!serverReadings() || rec.judgment.grantedBy === 'gift')) membership.giftFirst(rec.castId);
       const fresh = collection.meet([rec.stages.primary.id, rec.stages.mutual.id, rec.stages.changed.id], 'cast');
       setNewMet(fresh.length ? { castId: rec.castId, ids: fresh } : null);
       setMemberRev((n) => n + 1);
@@ -476,7 +521,7 @@ export function App() {
         history={history}
         journal={journal}
         followups={followups}
-        canRead={(castId) => membership.canReadFull(castId)}
+        canRead={canRead}
         remindOn={settings.timingReminders}
         onFollowup={bumpFollow}
         openDetail={detailRequest}
@@ -710,7 +755,12 @@ export function App() {
             reason={memberSheet.reason}
             castId={memberSheet.castId}
             onClose={() => setMemberSheet(null)}
-            onChanged={() => setMemberRev((n) => n + 1)}
+            onChanged={() => {
+              setMemberRev((n) => n + 1);
+              // A purchase or a credit spent: the open reading, if given only its 简断, is asked again.
+              const open = recordRef.current;
+              if (knowledge && open?.judgment?.state === 'ready' && open.judgment.partial) void openSavedJudgment(knowledge, open);
+            }}
           />
         )}</Exit>
         <Exit show={!!(reference)}>{reference && (
@@ -767,7 +817,7 @@ export function App() {
     case 'library':
       return <LibraryScreen knowledge={knowledge} t={t} lang={settings.lang} onBack={() => setScreen('temple')} />;
     case 'history':
-      return <HistoryScreen history={history} journal={journal} followups={followups} canRead={(castId) => membership.canReadFull(castId)} remindOn={settings.timingReminders} onFollowup={bumpFollow} t={t} onOpen={(r, read) => openRecord(r, false, read)} onBack={() => setScreen('temple')} />;
+      return <HistoryScreen history={history} journal={journal} followups={followups} canRead={canRead} remindOn={settings.timingReminders} onFollowup={bumpFollow} t={t} onOpen={(r, read) => openRecord(r, false, read)} onBack={() => setScreen('temple')} />;
     case 'debug':
       return <DebugScreen knowledge={knowledge} t={t} lang={settings.lang} onCast={manualCast} onBack={() => setScreen('temple')} />;
     default:

@@ -15,6 +15,8 @@ export const CLOUD = {
   revenueCatIosKey: env.VITE_REVENUECAT_IOS_KEY ?? '',
   googleIosClientId: env.VITE_GOOGLE_IOS_CLIENT_ID ?? '',
   googleWebClientId: env.VITE_GOOGLE_WEB_CLIENT_ID ?? '',
+  /** Where the 断语 server is (default: this site on the web, https://app.wengualabs.com in the app). */
+  apiBase: env.VITE_API_BASE ?? '',
 };
 
 /**
@@ -28,7 +30,7 @@ export const LEGAL = {
   terms: env.VITE_TERMS_URL || 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
 };
 
-const native = () => {
+export const native = () => {
   try {
     return Capacitor.isNativePlatform();
   } catch {

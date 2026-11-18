@@ -12,18 +12,18 @@ const core = import.meta.glob(
 const details = import.meta.glob(['../../../../data/details/[0-9][0-9].json', '../../../../data/details/index.json'], { query: '?url', import: 'default', eager: true }) as Record<string, string>;
 // Long commentary is only loaded when a reader expands it.
 const commentary = import.meta.glob('../../../../sources/commentary/*.json', { query: '?url', import: 'default', eager: true }) as Record<string, string>;
-// The formal product catalog and its written 断语 (createProductRepository): one hexagram's file is
-// read per cast, never the whole library.
+// The formal product catalog and the indexes of its written 断语. The 断语 themselves
+// (authored-readings/*/hex-NNN.json, question-stories/*/NN.json) are not bundled (2026-11-18): each
+// cast gets its one 断语 from the server (services/readings.ts, server/reading.ts), so the library
+// cannot be copied out of the page or the app.
 const product = import.meta.glob(
   [
     '../../../../data/product-categories.json',
     '../../../../data/authored-readings/*/index.json',
-    '../../../../data/authored-readings/*/hex-[0-9][0-9][0-9].json',
     '../../../../data/question-items.json',
     '../../../../data/interpretation-reviews.json',
     '../../../../data/question-stories/index.json',
     '../../../../data/question-stories/*/index.json',
-    '../../../../data/question-stories/*/[0-9][0-9].json',
   ],
   { query: '?url', import: 'default', eager: true },
 ) as Record<string, string>;

@@ -1,5 +1,5 @@
-// A guest (anonymous account) has just signed in for real: their credits and opened readings move
-// to the real account, and the guest account is removed. Body: { guestToken } — the guest
+// A guest (anonymous account) has just signed in for real: their credits, opened readings and
+// casts (with the 断语 they were given) move to the real account, and the guest account is removed. Body: { guestToken } — the guest
 // session's access token, read on the device before signing in.
 import { admin, balance, cors, json, userOf } from '../_shared/common.ts';
 
@@ -16,6 +16,8 @@ Deno.serve(async (req) => {
   await db.from('credit_grants').update({ user_id: user.id }).eq('user_id', guest.id);
   const { data: opened } = await db.from('unlocks').select('cast_id').eq('user_id', guest.id);
   if (opened?.length) await db.from('unlocks').upsert(opened.map((o) => ({ user_id: user.id, cast_id: o.cast_id })), { onConflict: 'user_id,cast_id', ignoreDuplicates: true });
+  const { data: casts } = await db.from('casts').select('cast_id, request, local_day, created_at').eq('user_id', guest.id);
+  if (casts?.length) await db.from('casts').upsert(casts.map((c) => ({ ...c, user_id: user.id, gift: false })), { onConflict: 'user_id,cast_id', ignoreDuplicates: true });
   await db.auth.admin.deleteUser(guest.id);
   return json(await balance(db, user.id));
 });

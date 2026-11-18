@@ -10,7 +10,7 @@
  * they opened; what is kept here is a copy of that, refreshed from the server (applyServer).
  */
 import { safeStore, type KeyValueStore } from './storage';
-import { storeReady } from '../services/cloud';
+import { accountsReady, storeReady } from '../services/cloud';
 
 export type PlanId = 'free' | 'monthly' | 'yearly';
 export type ProductId = 'wengua.member.monthly' | 'wengua.member.yearly' | 'wengua.reading.single' | 'wengua.reading.pack10';
@@ -41,11 +41,12 @@ export const DAILY_LIMIT: Record<'free' | 'member', number> = { free: 1, member:
 
 /**
  * 内测 (2026-11-14, the user: "目前我们还在测试，不要加会员，准备上架了再弄"): every reading is
- * open and casts are not limited; no paywall or membership entry is shown. Since 2026-11-17 it ends
- * by itself where purchases can be made: the iOS app built with the RevenueCat and Supabase keys
- * (services/cloud.ts). The web preview and builds without keys stay open.
+ * open and casts are not limited; no paywall or membership entry is shown. Since 2026-11-18 (the
+ * user: 「不能爬虫，跟手机一样会员制」) it ends wherever accounts are configured: the 断语 then come
+ * from the server, which applies the plans (services/readings.ts), on the web as in the app. Only
+ * builds without keys (tests, local previews) stay open.
  */
-export const OPEN_BETA = !storeReady();
+export const OPEN_BETA = !accountsReady();
 export const REPEAT_DAYS = 7;
 
 export interface Entitlement {
@@ -252,9 +253,11 @@ export const noStore: PurchaseProvider = {
 
 /**
  * The iOS app with its keys: the App Store through RevenueCat (services/store.ts, loaded only
- * there). Development: the test store. Otherwise purchases are not open.
+ * there). Where the server gives the 断语 (accounts configured), nothing can be bought outside the
+ * App Store yet: a test purchase here would open nothing on the server. Development without keys:
+ * the test store. Otherwise purchases are not open.
  */
-export const purchaseProvider: PurchaseProvider = storeReady() ? appStoreProxy() : import.meta.env?.DEV ? testStore : noStore;
+export const purchaseProvider: PurchaseProvider = storeReady() ? appStoreProxy() : accountsReady() ? noStore : import.meta.env?.DEV ? testStore : noStore;
 
 /** Loads the App Store provider on first use, so the web build never pulls in RevenueCat. */
 function appStoreProxy(): PurchaseProvider {

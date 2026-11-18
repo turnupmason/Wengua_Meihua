@@ -22,6 +22,7 @@ import { GuaJian } from './GuaJian';
 import { PAPER } from './paper';
 import { useDesktop } from './desktop';
 import { OPEN_BETA } from '../domain/membership';
+import { serverReadings } from '../services/readings';
 import type { StudyExample } from './StudyPage';
 import { Exit } from './Exit';
 import { PaintedWalkIn } from './PaintedWalkIn';
@@ -238,6 +239,8 @@ export function TempleView({ knowledge, record, ritual, dispatch, settings, onTo
     const j = record.judgment;
     if (!record.questionId || !j) return { state: 'legacy' };
     if (j.state !== 'ready') return { state: 'missing', reason: j.reason };
+    // From the server the reading itself says: whole, or only its 简断 (services/readings.ts).
+    if (serverReadings()) return { state: 'ready', judgment: j, full: !j.partial, gift: j.grantedBy === 'gift' };
     return { state: 'ready', judgment: j, full: membership.canReadFull(record.castId), gift: !membership.isMember() && membership.isGift(record.castId) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [record, membership, memberRev]);
