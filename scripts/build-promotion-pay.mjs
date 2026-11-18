@@ -282,7 +282,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {literaryPolish:{...literaryProgress,remaining:counts.bodies-literaryProgress.completed}} : {}),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {literaryPolish:{...literaryProgress,required:false,status:'not-required-by-user',unpolished:counts.bodies-literaryProgress.completed,remaining:0,next:null}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:'pending', userAccepted:0, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
@@ -291,8 +291,7 @@ await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
  '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['V5.0 单 AI 全文精修已完成 ' + literaryProgress.completed + ' / ' + counts.bodies + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' / ' + counts.keys + ' 个月令键。剩余 ' + (counts.bodies-literaryProgress.completed) + ' 篇待精修。'] : []),
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE && literaryProgress.next ? ['下一精修键 ' + [questionId,literaryProgress.next.primaryId,literaryProgress.next.movingLine,literaryProgress.next.monthOrder].join(' / ')] : []),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
