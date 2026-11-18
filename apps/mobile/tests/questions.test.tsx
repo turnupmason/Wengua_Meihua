@@ -128,6 +128,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
       ['relationships.dating', 'relationships.developing.relationship'],
       ['relationships.reconciliation', 'relationships.reconciliation.reconcile'],
       ['search.lost-object', 'search.lost-object.recovery'],
+      ['search.pets', 'search.pets.recovery'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);

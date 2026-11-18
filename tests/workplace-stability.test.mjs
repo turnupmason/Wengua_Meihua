@@ -33,6 +33,7 @@ for (const [slug, id] of [
  ['relationship-establishment','relationships.developing.relationship'],
  ['relationship-reconciliation','relationships.reconciliation.reconcile'],
  ['lost-object-recovery','search.lost-object.recovery'],
+ ['lost-pet-recovery','search.pets.recovery'],
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
@@ -60,6 +61,18 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    checkChartFacts(library,row,key);
    assert.equal(row.movingLineText,library.getLineReading(entry.primaryId,row.movingLine).text,key);
    const expectedCopy = drafts[i].slice(3,9);
+   if(slug==='lost-pet-recovery'){
+    const cases=await json(sourceDir+'cases/'+stem+'.json');
+    const petCase=cases.entries.find(item=>item.movingLine===row.movingLine);
+    assert.equal(row.petApplication.application,petCase.application,key);
+    assert.equal(row.petApplication.actualLocationVerified,false,key);
+    assert.equal(row.petApplication.actualPetIdentityVerified,false,key);
+    assert.equal(row.petApplication.healthOrFateInferred,false,key);
+    assert.ok(row.authorship.wholeArticleReadReceipt.sourceSha256,key);
+    assert.ok(!row.sourceIds.includes('mh-077'),key);
+    assert.equal(row.decision.questionScope,'search-and-safe-reunion-with-a-specific-lost-pet',key);
+    for(const n of petCase.nodes)assert.equal(row.facts.nodes.find(f=>f.role===n.role).trigram,n.trigram,key);
+   }
    if (slug === 'lost-object-recovery') {
     const directionBatch = await json(sourceDir + 'directions/' + stem + '.json');
     const direction = directionBatch.entries.find(entry => entry.movingLine === row.movingLine);
@@ -135,6 +148,7 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
      assert.deepEqual(result.calculationExplanation.images,row.imageApplication,row.decision.id);
      assert.deepEqual(result.calculationExplanation.location,row.locationApplication,row.decision.id);
     }
+    if(slug==='lost-pet-recovery') assert.deepEqual(result.calculationExplanation.pet,row.petApplication,row.decision.id);
     assert.equal(result.calculationExplanation.void,undefined);
     assert.equal(result.timingSection.windows.length,row.timingSlots.length);
     for (const window of result.timingSection.windows) {

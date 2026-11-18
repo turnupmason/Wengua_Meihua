@@ -49,7 +49,10 @@ test('only explicit exact question links delegate; interview and unrecorded obje
  const recovery=await product.getContent({questionId:'search.lost-object.recovery',context:{objectKind:'other'},...dated});
  assert.equal(recovery.status,recoveryIndex.files.some(file=>file.primaryId===dated.primaryId)?'ready':'pending-authoring');
  assert.equal(recovery.selection.questionId,'search.lost-object.recovery');
- assert.equal((await product.getContent({questionId:'search.pets.recovery',...dated})).status,'pending-authoring');assert.equal(calls.length,before);
+ const petIndex=await read('data/authored-readings/lost-pet-recovery/index.json');
+ const pet=await product.getContent({questionId:'search.pets.recovery',...dated});
+ assert.equal(pet.status,petIndex.files.some(file=>file.primaryId===dated.primaryId)?'ready':'pending-authoring');
+ assert.equal(pet.selection.questionId,'search.pets.recovery');assert.equal(calls.length,before);
 });
 
 test('all eight health questions across four branches provide reference text without casting, severity grades, clinical forecasts or story fallback',async()=>{

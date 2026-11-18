@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -73,6 +73,12 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
+ const petCasesPath = sourceDir + 'cases/' + filename;
+ const petCases = profile === LOST_PET_RECOVERY_PROFILE ? JSON.parse(await readFile(new URL(petCasesPath,root),'utf8')) : null;
+ const petReviewPath=sourceDir+'reviews/'+filename;
+ const petReview=petCases?JSON.parse(await readFile(new URL(petReviewPath,root),'utf8')):null;
+ if(petReview && (petReview.primaryId!==primaryId || petReview.fullArticlesRead!==30 || petReview.actor!=='assistant-author' || !petReview.reviewedAt || petReview.sourceSha256!==createHash('sha256').update(await readFile(new URL(sourcePath,root))).digest('hex') || petReview.casesSha256!==createHash('sha256').update(await readFile(new URL(petCasesPath,root))).digest('hex')))throw new Error('Pet author full-read receipt is missing or stale: '+stem);
+ if(petCases && (petCases.entries.length!==6 || petCases.primaryId!==primaryId)) throw new Error('Pet case count mismatch: '+stem);
  if (drafts.length !== 30) throw new Error('An authored batch needs 30 individually written versions');
  let literaryReceipt = null;
  const literaryReceiptPath = sourceDir + 'polish/' + filename;
@@ -118,6 +124,9 @@ for (const [batchIndex, filename] of batches.entries()) {
       (isPromotion && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
+  const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
+  if(petCases && (!petCase || !petCase.boundaries || !petCase.application || petCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram))) throw new Error('Invalid pet scene application: '+stem+'/'+movingLine);
+  const petApplication = petCase ? {...petCase,sourcePath:petCasesPath,actualPetIdentityVerified:false,actualLocationVerified:false,healthOrFateInferred:false} : null;
   const directionEntry = directionBatch?.entries.find(entry => entry.movingLine === movingLine);
   const changedTrigram = r.nodes.find(node => node.role === 'changed_use').trigram;
   const directionRule = directionEntry ? directionRules.rules[changedTrigram] : null;
@@ -237,6 +246,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   }
   const sourceEvidence = [...commonEvidence,
    ...imageEvidence,
+   ...(petCase ? petCase.evidence.map(s=>evidence(s.id,s.quote,s.reason)) : []),
    ...(locationApplication ? [evidence(locationApplication.sourceId, locationApplication.quote, '按真实动爻改变的经卦取方位及场所，结合原行程补查，未据此认定真实所在地。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
    ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
@@ -261,6 +271,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(isPromotion ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
    indirectEffectsApplied:[]};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
+  if(petReview) authorship.wholeArticleReadReceipt={path:petReviewPath,sourceSha256:petReview.sourceSha256,casesSha256:petReview.casesSha256,reviewedAt:petReview.reviewedAt,actor:petReview.actor};
   const literaryEntry = literaryReceipt?.entries.find(entry => entry.rowIndex === i);
   if (literaryEntry?.status === 'POLISH_COMPLETED') {
    const copyHash = createHash('sha256').update(JSON.stringify({title,short,opening,process,ending,summary})).digest('hex');
@@ -292,7 +303,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    scope:imageApplication ? 'author-reviewed-base-copy-direction-and-image-supplements' : locationApplication ? 'author-reviewed-base-copy-and-direction-supplement' : 'facts-and-full-copy', independentReview:{status:'pending', timingInterpretation:'pending', userAcceptedThisVersion:false},
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
-   facts, decision, copy, copyChecks, ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
+   facts, decision, copy, copyChecks, ...(petApplication ? {petApplication} : {}), ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
    timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0'}};
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
@@ -323,7 +334,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     '过程：' + process,
     '结局：' + combinedEnding + (payRange ? ' ' + payRange : ''),
     timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
-     timing.paragraphs.map((text, index) => profile === EXAM_PROFILE || profile === LOST_OBJECT_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
+     timing.paragraphs.map((text, index) => profile === EXAM_PROFILE || profile === LOST_OBJECT_RECOVERY_PROFILE || profile === LOST_PET_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
    ],
    sourceTitles,
@@ -331,6 +342,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     resolution,
+    ...(petApplication ? [petApplication.application,petApplication.boundaries,'[活体搜索与场景类象作者源](../../'+petCasesPath+')，第 '+movingLine+' 爻。'] : []),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     timingOmission?.reason ?? (config.timingDisplay ?? config.timingContext),
@@ -352,6 +364,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  directory.push('- [' + name + '](' + stem + '.md) · ' + rows.length + ' 篇');
 }
 const progress = {
+ ...(profile === LOST_PET_RECOVERY_PROFILE ? {literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'pet-search-modern-analogy-1.0.0',locationClaimsVerified:false,animalHealthOrFateInferred:false} : {}),
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
@@ -525,9 +538,58 @@ const lostObjectRecovery = {
  counterevidence:'核对初段难寻、两互能否提供有效线索及收尾能否领回。比和可取在已知处回查，不视为物品已定位。',
  timingContext:'近期已有可继续核查的记录或可联系的经手方时，才依生体、比和或克体择一个可观察的阶段事件，不据取日推定已经寻回。',
 };
+const lostPetRecovery = {
+ "title": "宠物走失",
+ "policy": "LOST_PET_RECOVERY_POLICY.md",
+ "primarySource": "mh-070",
+ "references": [
+  [
+   "mh-070",
+   "占求谋，以体为主，用为所谋之事。",
+   "现代类推：体指主人可调动的查找条件，用指寻找并安全接回的事情，不把原体作宠物健康或生死。"
+  ],
+  [
+   "mh-028",
+   "凡占群物之动，不可起卦。",
+   "动物起卦原法有实际所见及方位等前提；本入口保留用户既有排盘，不虚构动物出现的外应。"
+  ],
+  [
+   "mh-092",
+   "乾为马，坤为牛，震为龙，巽为鸡，坎为豕，离为雉，艮为狗，兑为羊",
+   "动物种类是象类，不据卦猜问的是什么宠物或推断伤病。"
+  ],
+  [
+   "mh-048",
+   "形物占者，凡见物形，可以起卦。",
+   "形色器质仅供已知场景作条件性对照；毛色、体形和身份由主人实际照片核验。"
+  ],
+  [
+   "mh-052",
+   "右万物之象，庶事之多不止于此。占者宜各以其类而推之耳。",
+   "仅取适合活体搜索的实有周边场所，不把静物收纳或植物生长断法用于宠物。"
+  ]
+ ],
+ "clauses": {
+  "equal": "体用比和，求谋称意。",
+  "body_controls_use": "体克用，谋虽可成，但成迟。",
+  "use_controls_body": "用克体，求谋不成，谋亦有害。",
+  "use_generates_body": "用生体。不谋而成；",
+  "body_generates_use": "体生用，多谋少遂。"
+ },
+ "outcomes": [
+  "favourable",
+  "conditional",
+  "difficult"
+ ],
+ "scopeNote": "同篇判断寻找并安全接回指定走失宠物的倾向，分清可验证目击、接近条件和实际团聚。体指问事者的搜索协调，用指寻找接回之事。类象只在实际最后出现地点和可信目击周边参看，不推断真实位置、伤病、生死或被盗",
+ "counterevidence": "逐篇核对完整爻意、四条直接关系与全部月令五态；弱体与衰比和不自动判有望接回，利见或无咎也不等于已经团聚。",
+ "timingContext": "只对近期可实际推进的目击核实、搜寻协同或接近受阻，类推采用日尺度。取生体、比和或克体所在节点，一个窗口只指一个阶段事件，不能据此等到某日才找，也不把它当作宠物出现或团聚的保证。"
+};
 const target = process.argv[2];
-if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
-if (target === 'job-change') {
+if (target && !['job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target === 'lost-pet-recovery') {
+ await buildAuthoredManuscripts(LOST_PET_RECOVERY_PROFILE, lostPetRecovery);
+} else if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
 } else if (target === 'exam') {
  await buildAuthoredManuscripts(EXAM_PROFILE, exam);

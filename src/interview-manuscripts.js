@@ -47,6 +47,7 @@ export const LOST_OBJECT_RECOVERY_PROFILE=Object.freeze({
  questionScope:'recovery-prospect-with-traditional-direction-and-place-hints',manuscriptVersion:'lost-object-recovery-1.2.0',
  timingVersion:'lost-object-recovery-day-1.0.0',directory:'lost-object-recovery',namedStageEvents:true,
 });
+export const LOST_PET_RECOVERY_PROFILE=Object.freeze({questionId:'search.pets.recovery',questionType:'lost_pet_recovery',questionScope:'search-and-safe-reunion-with-a-specific-lost-pet',manuscriptVersion:'lost-pet-recovery-1.0.0',timingVersion:'lost-pet-stage-day-1.0.0',directory:'lost-pet-recovery',namedStageEvents:true});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -171,7 +172,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const id=kind+'-'+role;
   const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===EXAM_PROFILE||profile?.namedStageEvents===true;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
-  const eventEnd=profile===EXAM_PROFILE?'，属'+valence+'应。':'。';
+  const eventEnd=(profile===EXAM_PROFILE||profile===LOST_PET_RECOVERY_PROFILE)?'，属'+valence+'应。':'。';
   const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;
   return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
@@ -273,6 +274,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ...reading.nodes.filter(n=>n.role!=='body_inherited'&&n.void.hit).map(n=>
     `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
    ...row.counterevidence.map(c=>c.resolution),
+   ...(row.petApplication ? [row.petApplication.application,row.petApplication.boundaries,'宠物事项与类象作者源：'+row.petApplication.sourcePath+'，第 '+row.movingLine+' 爻。'] : []),
    ...(row.imageApplication ? ['形色器物对照取本用' + row.imageApplication.objectTrigram + '参原物已有特征，变用' + row.imageApplication.environmentTrigram + '参周边容器与实际环境。', '原件形状、材质、颜色及构造以原照片和记录核对。物象是条件性比对类目。', '形色器物作者源：' + row.imageApplication.sourcePath + '，第 ' + row.imageApplication.movingLine + ' 爻。'] : []),
    ...(row.imageApplication ? row.imageApplication.sourceEvidence.map(source => '类象依据 ' + source.id + '《' + source.title + '》，原文第 ' + source.locator.startLine + ' 行起。“' + source.quote + '” ' + source.reason) : []),
    ...(row.locationApplication ? ['方位取象取变用' + row.locationApplication.trigram + '，传统方向' + row.locationApplication.direction + '。依实际收放或已知行程作补查参照。', '《失物占第十五》原文：' + row.locationApplication.quote, '方位取象作者源：' + row.locationApplication.sourcePath + '，第 ' + row.locationApplication.movingLine + ' 爻。'] : []),
@@ -290,6 +292,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    month:{branch:reading.monthBranch,input:reading.monthBranch?'explicit-branch':'qi-category-only',qiCategory:reading.monthOrder,states:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,element:n.element,qi:n.strength.state}))},
    ...(includeHistoricalVoid?{void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
     nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]}}:{}),
+   ...(row.petApplication?{pet:row.petApplication}:{}),
    timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(timingOmission?{omission:timingOmission}:{})},
    paragraphs:[...dateAndMonthNotes,
     ...detailLines,
