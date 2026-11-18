@@ -15,6 +15,7 @@ const request = {
  timingScale:'day',
  timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'},
 };
+const petClassicalLines=(await read('sources/revised/meihua-volumes-1-3.txt')).split('\n');
 const branches = {木:['寅','卯'],火:['巳','午'],土:['辰','戌','丑','未'],金:['申','酉'],水:['亥','子']};
 
 test('职场情况 asks about stability; 能否转正 is its own entry (2026-11-14)', async () => {
@@ -99,6 +100,12 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
     const section = library.getSection(evidence.id);
     assert.ok(section.text.includes(evidence.quote),evidence.id);
     assert.deepEqual(evidence.locator,section.sourceRef);
+    if(slug==='lost-pet-recovery'){
+     const startLine=section.sourceRef.startLine+section.text.slice(0,section.text.indexOf(evidence.quote)).split('\n').length-1;
+     assert.deepEqual(evidence.quoteLocator,{sourceId:section.sourceRef.sourceId,startLine,endLine:startLine+evidence.quote.split('\n').length-1},key);
+     assert.equal(evidence.quoteLocator.sourceId,'user-meihua',key);
+     assert.ok(petClassicalLines.slice(evidence.quoteLocator.startLine-1,evidence.quoteLocator.endLine).join('\n').includes(evidence.quote),key+' exact raw source lines');
+    }
    }
    const parts = documents[i].split('\n\n');
    assert.equal(parts[3],'简断',key);

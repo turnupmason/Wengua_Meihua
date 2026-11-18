@@ -57,7 +57,9 @@ const references = [
 function evidence(id, quote, reason) {
  const section = library.getSection(id);
  if (!section.text.includes(quote)) throw new Error('Source excerpt mismatch: ' + id);
- return {id, title: section.title, quote, locator: section.sourceRef, reason};
+ const startLine=section.sourceRef.startLine+section.text.slice(0,section.text.indexOf(quote)).split('\n').length-1;
+ return {id, title: section.title, quote, locator: section.sourceRef, reason,
+  ...(profile===LOST_PET_RECOVERY_PROFILE?{quoteLocator:{sourceId:section.sourceRef.sourceId,startLine,endLine:startLine+quote.split('\n').length-1}}:{})};
 }
 const commonEvidence = references.map(args => evidence(...args));
 const moneyClauses = {
