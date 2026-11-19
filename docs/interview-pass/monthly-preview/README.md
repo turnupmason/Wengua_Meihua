@@ -1,6 +1,6 @@
-# 面试逐月长稿：3240 篇预览
+# 面试逐月长稿：3312 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增火泽睽，共 72 篇；累计 3240 篇。完整目标为 4,608 篇，尚余 1368 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增水山蹇，共 72 篇；累计 3312 篇。完整目标为 4,608 篇，尚余 1296 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -42,6 +42,7 @@
 | 地火明夷 | 72 | [打开全文](hex-036.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-036.json) |
 | 风火家人 | 72 | [打开全文](hex-037.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-037.json) |
 | 火泽睽 | 72 | [打开全文](hex-038.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-038.json) |
+| 水山蹇 | 72 | [打开全文](hex-039.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-039.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-050.json) |
 | 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-052.json) |
@@ -56,7 +57,7 @@
 
 ## 本批阅读入口
 
-- [火泽睽：六爻十二月全文](hex-038.md)
+- [水山蹇：六爻十二月全文](hex-039.md)
 
 
 
@@ -64,7 +65,7 @@
 
 ## 检查与阅读状态
 
-3240 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 87,480 项，差异 0；日期用例 6,480 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–536 汉字。
+3312 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 89,424 项，差异 0；日期用例 6,624 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–536 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
