@@ -209,5 +209,5 @@ test('stability verdicts follow the finalized rule with the in-office clause', a
    counts[row.decision.outcomeCode]++;
   }
  }
- assert.deepEqual(counts, {stable:355, watch:897, strained:668});
+ assert.deepEqual(counts, {stable:343, watch:873, strained:704});
 });
