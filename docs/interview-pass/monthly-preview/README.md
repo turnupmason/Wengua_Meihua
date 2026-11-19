@@ -1,13 +1,15 @@
-# 面试逐月长稿：936 篇预览
+# 面试逐月长稿：1080 篇预览
 
-更新日期：2026-11-18（America/New_York）。本批新增水地比、风天小畜，共 144 篇；累计 936 篇。完整目标为 4,608 篇，尚余 3672 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-18（America/New_York）。本批新增山水蒙、天水讼，共 144 篇；累计 1080 篇。完整目标为 4,608 篇，尚余 3528 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
 | 乾为天 | 72 | [打开全文](hex-001.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-001.json) |
 | 坤为地 | 72 | [打开全文](hex-002.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-002.json) |
 | 水雷屯 | 72 | [打开全文](hex-003.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-003.json) |
+| 山水蒙 | 72 | [打开全文](hex-004.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-004.json) |
 | 水天需 | 72 | [打开全文](hex-005.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-005.json) |
+| 天水讼 | 72 | [打开全文](hex-006.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-006.json) |
 | 地水师 | 72 | [打开全文](hex-007.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-007.json) |
 | 水地比 | 72 | [打开全文](hex-008.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-008.json) |
 | 风天小畜 | 72 | [打开全文](hex-009.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-009.json) |
@@ -24,9 +26,9 @@
 
 ## 本批阅读入口
 
-- [水地比：六爻十二月全文](hex-008.md)
+- [山水蒙：六爻十二月全文](hex-004.md)
 
-- [风天小畜：六爻十二月全文](hex-009.md)
+- [天水讼：六爻十二月全文](hex-006.md)
 
 
 
@@ -34,7 +36,7 @@
 
 ## 检查与阅读状态
 
-936 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 25,272 项，差异 0；日期用例 1,872 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–510 汉字。
+1080 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 29,160 项，差异 0；日期用例 2,160 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–510 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
