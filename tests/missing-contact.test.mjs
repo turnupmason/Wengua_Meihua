@@ -15,7 +15,7 @@ const context={timingScale:'day',timingContext:{castingMethod:'pre-heaven',perio
 
 test('恢复联系 preserves distinct scope, source-applicability records and actual full-read receipts',async()=>{
  const index=await json('data/authored-readings/missing-contact/index.json');
- let articles=0,keys=0;
+ let articles=0,keys=0,questions=0,questionKeys=0;
  for(const file of index.files){
   const name=file.path.split('/').at(-1);
   const source='sources/editorial/missing-contact/';
@@ -43,6 +43,9 @@ test('恢复联系 preserves distinct scope, source-applicability records and ac
    assert.equal(row.contactApplication.privateIntentInferred,false,key);
    assert.equal(row.contactApplication.returnHomeInferred,false,key);
    assert.equal(row.contactApplication.application,c.application,key);
+   const questionsForMonth=(c.judgmentTensions??[]).filter(item=>item.monthOrders.includes(row.monthOrder));
+   assert.deepEqual(row.contactApplication.judgmentTensions,questionsForMonth,key);
+   if(questionsForMonth.length){questions++;questionKeys+=row.monthBranches.length;}
    for(const n of c.nodes)assert.equal(row.facts.nodes.find(f=>f.role===n.role).trigram,n.trigram,key);
    assert.ok((await read(c.lineCommentary.sourcePath)).includes(c.lineCommentary.quote),key);
    assert.ok(c.lineCommentary.locator&&c.lineCommentary.application,key);
@@ -64,6 +67,13 @@ test('恢复联系 preserves distinct scope, source-applicability records and ac
  assert.equal(articles,index.authorWholeArticleReviewed);
  assert.equal(keys,index.baseCaseCount);
  assert.equal(index.literaryPolish.required,false);
+ assert.equal(index.specificApplicationQuestions.articles,questions);
+ assert.equal(index.specificApplicationQuestions.monthKeys,questionKeys);
+ const plan=await json('data/product-authoring-plan.json');
+ assert.equal(plan.items.find(q=>q.questionId===id).contentStatus,index.remainingBaseSlots?'writing-in-progress':'base-coverage-complete;classical-body-use');
+ assert.equal(plan.currentAuthoring.questionId,id);
+ assert.equal(plan.currentAuthoring.baseCasesWritten,index.baseCaseCount);
+ assert.equal(plan.currentAuthoring.authorWholeArticleReviewed,articles);
 });
 
 test('contact dates follow each casting date and never advance a saved historical chart',async()=>{

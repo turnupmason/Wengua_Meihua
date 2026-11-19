@@ -42,7 +42,7 @@ const timingQuotes = {
 };
 const seen = new Map();
 const seenSentences = new Map();
-const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0, accepted: 0};
+const counts = {bodies: 0, keys: 0, timingWindows: 0, dated: 0, accepted: 0, applicationQuestions:0, applicationQuestionMonthKeys:0};
 const literaryProgress = {standard:'V5.0', actor:'single-ai-literary-editor', completed:0, monthKeyCount:0, next:null};
 const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
@@ -86,6 +86,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  const contactReviewPath=sourceDir+'reviews/'+filename;
  const contactReview=contactCases?JSON.parse(await readFile(new URL(contactReviewPath,root),'utf8')):null;
  if(contactCases && (contactCases.primaryId!==primaryId || contactCases.entries.length!==6 || contactCases.ruleVersion!=='missing-contact-modern-analogy-1.0.0'))throw new Error('Invalid contact cases: '+stem);
+ if(contactReview && (contactReview.questionId!==questionId || !Array.isArray(contactReview.entries) || contactReview.entries.length!==30 || contactReview.entries.some((entry,i)=>entry.movingLine!==drafts[i]?.[0] || entry.monthOrder!==drafts[i]?.[1] || entry.outcome!==drafts[i]?.[2] || !entry.reviewFinding || entry.copySha256!==createHash('sha256').update(JSON.stringify(drafts[i])).digest('hex'))))throw new Error('Contact per-article full-read receipts mismatch: '+stem);
  if(contactReview && (contactReview.actor!=='assistant-author' || contactReview.primaryId!==primaryId || contactReview.fullArticlesRead!==30 || !contactReview.reviewedAt || contactReview.sourceSha256!==createHash('sha256').update(await readFile(new URL(sourcePath,root))).digest('hex') || contactReview.casesSha256!==createHash('sha256').update(await readFile(new URL(contactCasesPath,root))).digest('hex')))throw new Error('Missing or stale contact full-read receipt: '+stem);
  const petCasesPath = sourceDir + 'cases/' + filename;
  const petCases = profile === LOST_PET_RECOVERY_PROFILE ? JSON.parse(await readFile(new URL(petCasesPath,root),'utf8')) : null;
@@ -144,9 +145,9 @@ for (const [batchIndex, filename] of batches.entries()) {
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const contactCase=contactCases?.entries.find(entry=>entry.movingLine===movingLine);
-  if(contactCases && (!contactCase || !contactCase.application || !contactCase.boundaries || contactCase.nodes.length!==5 || contactCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram)))throw new Error('Contact facts mismatch: '+stem+'/'+movingLine);
+  if(contactCases && (!contactCase || !contactCase.application || !contactCase.boundaries || contactCase.nodes.length!==5 || new Set(contactCase.nodes.map(n=>n.role)).size!==5 || contactCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram)))throw new Error('Contact facts mismatch: '+stem+'/'+movingLine);
   if(contactCase){const c=contactCase.lineCommentary;const raw=await readFile(new URL(c.sourcePath,root),'utf8');if(!raw.includes(c.quote)||!c.application||!c.referenceUrl||!c.locator)throw new Error('Contact line commentary mismatch: '+stem+'/'+movingLine);}
-  const contactApplication=contactCase?{...contactCase,sourcePath:contactCasesPath,ruleVersion:contactCases.ruleVersion,personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false,returnHomeInferred:false}:null;
+  const contactApplication=contactCase?{...contactCase,sourcePath:contactCasesPath,ruleVersion:contactCases.ruleVersion,judgmentTensions:(contactCase.judgmentTensions??[]).filter(item=>item.monthOrders.includes(monthOrder)),personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false,returnHomeInferred:false}:null;
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
   if(petCases && (!petCase || !petCase.boundaries || !petCase.application || petCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram))) throw new Error('Invalid pet scene application: '+stem+'/'+movingLine);
   const petApplication = petCase ? {...petCase,ruleVersion:petCases.ruleVersion,sourcePath:petCasesPath,actualPetIdentityVerified:false,actualLocationVerified:false,healthOrFateInferred:false} : null;
@@ -356,6 +357,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   row.artifactDigest = await interpretationArtifactDigest(row);
   for (const branch of monthBranches) monthSlots[movingLine + ':' + branch] = i;
   rows.push(row);
+  if(contactApplication?.judgmentTensions.length){counts.applicationQuestions++;counts.applicationQuestionMonthKeys+=monthBranches.length;}
   counts.bodies++;
   counts.keys += monthBranches.length;
   outcomeCounts[outcome]++;
@@ -415,7 +417,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  directory.push('- [' + name + '](' + stem + '.md) · ' + rows.length + ' 篇');
 }
 const progress = {
- ...(profile===MISSING_CONTACT_PROFILE?{literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'missing-contact-modern-analogy-1.0.0',personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false}:{}),
+ ...(profile===MISSING_CONTACT_PROFILE?{literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'missing-contact-modern-analogy-1.0.0',specificApplicationQuestions:{articles:counts.applicationQuestions,monthKeys:counts.applicationQuestionMonthKeys,status:'pending-independent-application-review'},personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false}:{}),
  ...(profile === LOST_PET_RECOVERY_PROFILE ? {literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'pet-search-modern-analogy-1.0.0',locationClaimsVerified:false,animalHealthOrFateInferred:false} : {}),
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
@@ -433,7 +435,8 @@ await writeFile(new URL(docDir + 'README.md', root), [
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。合并方位前已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : hasPay ? ['其中能升 ' + outcomeCounts.favourable + ' 篇（随岗薪资一并说明），升不了 ' + outcomeCounts.difficult + ' 篇。'] : []),
- '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
+ ...(profile===MISSING_CONTACT_PROFILE?['具体断法适用问题保留 '+counts.applicationQuestions+' 篇（'+counts.applicationQuestionMonthKeys+' 个月令键），逐条记录见作者 cases 与 source-study，不计作独立审核通过。']:[]),
+ '已写入应期规则 ' + progress.dated + (profile===MISSING_CONTACT_PROFILE?' 篇，保留具体不取期原因 ':' 篇，待取期 ') + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../' + config.policy + ')', '', ...directory, '',
 ].join('\n'));
