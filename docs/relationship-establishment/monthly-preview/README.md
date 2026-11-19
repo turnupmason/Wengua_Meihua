@@ -1,6 +1,6 @@
-# 确定关系逐月长稿：1224 篇预览
+# 确定关系逐月长稿：1512 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增天火同人，共 72 篇；累计 1224 篇。完整目标为 4,608 篇，尚余 3384 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-19（America/New_York）。本批新增地水师、水地比、火雷噬嗑、山火贲，共 288 篇；累计 1512 篇。完整目标为 4,608 篇，尚余 3096 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -9,6 +9,8 @@
 | 水雷屯 | 72 | [打开全文](hex-003.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-003.json) |
 | 山水蒙 | 72 | [打开全文](hex-004.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-004.json) |
 | 水天需 | 72 | [打开全文](hex-005.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-005.json) |
+| 地水师 | 72 | [打开全文](hex-007.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-007.json) |
+| 水地比 | 72 | [打开全文](hex-008.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-008.json) |
 | 风天小畜 | 72 | [打开全文](hex-009.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-009.json) |
 | 天泽履 | 72 | [打开全文](hex-010.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-010.json) |
 | 地天泰 | 72 | [打开全文](hex-011.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-011.json) |
@@ -21,6 +23,8 @@
 | 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-018.json) |
 | 地泽临 | 72 | [打开全文](hex-019.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-019.json) |
 | 风地观 | 72 | [打开全文](hex-020.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-020.json) |
+| 火雷噬嗑 | 72 | [打开全文](hex-021.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-021.json) |
+| 山火贲 | 72 | [打开全文](hex-022.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-022.json) |
 
 
 
@@ -28,13 +32,19 @@
 
 ## 本批阅读入口
 
-- [天火同人：六爻十二月全文](hex-013.md)
+- [地水师：六爻十二月全文](hex-007.md)
+
+- [水地比：六爻十二月全文](hex-008.md)
+
+- [火雷噬嗑：六爻十二月全文](hex-021.md)
+
+- [山火贲：六爻十二月全文](hex-022.md)
 
 
 
 ## 检查与阅读状态
 
-1224 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 33,048 项，差异 0；日期用例 2,448 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 432–659 汉字。
+1512 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 40,824 项，差异 0；日期用例 3,024 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/RELATIONSHIP_ESTABLISHMENT_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
