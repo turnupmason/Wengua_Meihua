@@ -1,4 +1,4 @@
-宠物走失正在逐盘撰写，当前已完成乾为天至地火明夷共1,080篇、216种基础盘、2,592个月令键；下一键风火家人初九寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
+宠物走失正在逐盘撰写，当前已完成乾为天至风火家人共1,110篇、222种基础盘、2,664个月令键；下一键火泽睽初九寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
 
 `career.interview.interview-pass` 于 2026-11-18 按考试定稿口径补判重写为 `interview-pass-3.0.0`：1,920 篇只判能过 639、过不了 1,281，与考试同盘结论逐盘一致；作者源 `sources/editorial/interview-pass/`（含 polish-v5、review-v2），由 `build-promotion-pay.mjs interview-pass` 构建。口径、回测与逐条裁定见 [补判记录](docs/review/INTERVIEW_REJUDGE_20261118.md)，写法见 [写作说明](docs/review/INTERVIEW_WRITE_BRIEF.md)。空亡旧版（interview-pass-2.0.0、`interview-rewrites/`、`interview-void-*`）只留档，不进正文。问项只涉及本轮面试。
 
