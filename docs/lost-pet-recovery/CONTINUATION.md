@@ -2,9 +2,9 @@
 
 原89篇未取期已逐篇完整读回，补34条动态阶段阻节、55条逐篇保留并具体化原因，当前dated1865/undated55；断法复查已修订12篇为有条件，当前214较有望/531有条件/1175偏难，384盘/4608键/1920正文保持。14份timing-NNN.json、source-study与68次两日期输入换算proof保存于sources/editorial/lost-pet-recovery/recheck-20261119。source/review哈希已更新；构建、宠物定向测试、SQL与SQLite完整性外键通过。
 
-本轮未完成部分：146条断法分歧（原362条件键878个月令位置）已处理69条，余77；下一51震上六春木/冬水（caseIndex69）。必须逐条读事实、完整爻辞、原注及反证，人工形成取舍；不能批量填pass。记录在judgment-rechecks.json，progress.json更新下一键。独立professional/timing均pending，单AI作者不是独立专家。不空亡，不额外精修，不改原排版。
+本轮未完成部分：146条断法分歧（原362条件键878个月令位置）已处理101条，余45；下一57巽六四五组（caseIndex101）。必须逐条读事实、完整爻辞、原注及反证，人工形成取舍；不能批量填pass。记录在judgment-rechecks.json，progress.json更新下一键。独立professional/timing均pending，单AI作者不是独立专家。不空亡，不额外精修，不改原排版。
 
-工作路径D:/Wengua_Meihua-workplace，branch author/lost-object-recovery，初始main c9f2cdc2。89篇取期改动已推main cc4357e4；当前保存69条断法复查检查点，然后继续剩余77条，不停止询问。
+工作路径D:/Wengua_Meihua-workplace，branch author/lost-object-recovery，初始main c9f2cdc2。89篇取期改动已推main cc4357e4；当前保存101条断法复查检查点，然后继续剩余45条，不停止询问。
 
 ---
 
