@@ -1,6 +1,6 @@
-# 确定关系逐月长稿：1008 篇预览
+# 确定关系逐月长稿：1152 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增水天需、风天小畜、天泽履，共 216 篇；累计 1008 篇。完整目标为 4,608 篇，尚余 3600 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-19（America/New_York）。本批新增泽雷随、山风蛊，共 144 篇；累计 1152 篇。完整目标为 4,608 篇，尚余 3456 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -16,6 +16,8 @@
 | 火天大有 | 72 | [打开全文](hex-014.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-014.json) |
 | 地山谦 | 72 | [打开全文](hex-015.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-015.json) |
 | 雷地豫 | 72 | [打开全文](hex-016.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-016.json) |
+| 泽雷随 | 72 | [打开全文](hex-017.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-017.json) |
+| 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-018.json) |
 | 地泽临 | 72 | [打开全文](hex-019.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-019.json) |
 | 风地观 | 72 | [打开全文](hex-020.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-020.json) |
 
@@ -25,17 +27,15 @@
 
 ## 本批阅读入口
 
-- [水天需：六爻十二月全文](hex-005.md)
+- [泽雷随：六爻十二月全文](hex-017.md)
 
-- [风天小畜：六爻十二月全文](hex-009.md)
-
-- [天泽履：六爻十二月全文](hex-010.md)
+- [山风蛊：六爻十二月全文](hex-018.md)
 
 
 
 ## 检查与阅读状态
 
-1008 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 27,216 项，差异 0；日期用例 2,016 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 434–659 汉字。
+1152 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 31,104 项，差异 0；日期用例 2,304 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 432–659 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/RELATIONSHIP_ESTABLISHMENT_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
