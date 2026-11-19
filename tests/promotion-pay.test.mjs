@@ -184,10 +184,32 @@ test('promotion Markdown uses the existing interview extraction format and shows
    assert.equal(rendered.line, '动爻完整原文：' + row.movingLineText);
    if (row.timingOmission) assert.equal(rendered.timing, '应期：此盘暂无有据的日期可列。');
    for (const window of result.timingSection.windows) {
-    assert.ok(rendered.timing.includes(window.text.replace('。', '，属' + window.valence + '应。')), rendered.heading);
+    // promotion-pay-3.0.0 与考试同格式，窗口文字已带「属某应」；旧版由文档补上。
+    assert.ok(rendered.timing.includes(window.text) || rendered.timing.includes(window.text.replace('。', '，属' + window.valence + '应。')), rendered.heading);
     for (const date of window.displayedDates) assert.ok(section.includes(date));
    }
    assert.doesNotMatch(section, /\{\{date:|卦象和依据/u);
   }
  }
 });
+
+// 晋升 v3（docs/review/PROMOTION_REJUDGE_20261118.md）：结论与定稿规则逐盘一致；在任专条下有克体之卦一律升不了；能升才有薪资说明。
+test('promotion verdicts follow the finalized rule with the in-office clause', async () => {
+ const {promotionVerdicts} = await import('../scripts/review/promotion-verdicts.cjs');
+ const want = promotionVerdicts();
+ let favourable = 0;
+ for (const entry of index.files) {
+  const shard = await load(entry.path);
+  for (const row of shard.rows) {
+   const v = want.find(x => x.hex === row.primaryId && x.line === row.movingLine && x.month === row.monthOrder);
+   assert.equal(row.decision.outcomeCode, v.promotion, row.decision.id);
+   if (row.facts.directRelations.some(e => e.type === 'use_controls_body')) assert.equal(row.decision.outcomeCode, 'difficult', row.decision.id);
+   assert.equal(Boolean(row.decision.pay?.range), row.decision.outcomeCode === 'favourable', row.decision.id);
+   const text = [row.copy.title, row.copy.short.text, ...Object.values(row.copy.long)].join('');
+   assert.ok(!/考试|卷面|卷尾|阅卷|偏难|有条件|面试/u.test(text), row.decision.id);
+   favourable += row.decision.outcomeCode === 'favourable';
+  }
+ }
+ assert.equal(favourable, 353);
+});
+

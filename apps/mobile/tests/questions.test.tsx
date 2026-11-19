@@ -602,13 +602,14 @@ describe('cast, reading and 问事录', () => {
   it('晋升加薪 reads the published promotion 断语 and preserves the shared display', async () => {
     const { product } = await testKnowledge();
     const at = (primaryId: number) => judgmentFor(product, questionById('career.promotion-pay')!, { ...WELL, questionId: 'career.promotion-pay', primaryId, movingLine: 1 });
+    // promotion-pay-3.0.0：乾初九五个月令皆无期，取坤初九亥月（有日级窗口）验显示。
     expect(await at(1)).toMatchObject({ state: 'ready', questionId: 'career.promotion-pay', contentQuestionId: 'career.promotion-pay.promotion', primaryId: 1 });
-    const reading = await at(1);
+    const reading = await at(2);
     if (reading.state !== 'ready') throw new Error('Expected the written promotion manuscript');
     expect(reading.timing?.windows.length || reading.timing?.phaseNotes?.length).toBeGreaterThan(0);
     expect(calculationGroups(reading.calculation, () => null).map(({group}) => group)).toEqual(['calendar','chart','bodyUse','timing']);
     const { library } = await testKnowledge();
-    const chart = library.createReading({ primaryId: 1, movingLine: 1, domainId: 'domain-09', applyVoid: false });
+    const chart = library.createReading({ primaryId: 2, movingLine: 1, domainId: 'domain-09', applyVoid: false });
     render(<ReadingView reading={chart} question="晋升加薪" questionId="career.promotion-pay" judgment={{ state: 'ready', judgment: reading, full: true }} onUnlock={() => {}} castTime="" t={STRINGS.zh} lang="zh" focus={null} saved={false} onPick={() => {}} onSave={() => {}} onClose={() => {}} />);
     expect([...document.querySelectorAll('.script-full .script-part h3')].slice(0,5).map(h => h.textContent)).toEqual(['开局','过程','结局','总断',STRINGS.zh.timingTitle]);
     expect(document.querySelector('.timing-when b')?.textContent).toMatch(/\d+日/);
