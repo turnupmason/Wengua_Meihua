@@ -6,12 +6,12 @@ const qiOf = s => s.slice(-1), strong = q => q === '旺' || q === '相', faint =
 const noQi = q => q === '休' || faint(q);
 const ADVERSE = /凶|泣血|勿用|无攸利|吝|厉/u, AUSPICIOUS = /元吉|大吉|无不利|终吉|往吉|贞吉|吉/u;
 const calm = rel => rel === 'equal' || rel === 'body_controls_use';
-// 用党（2026-11-19 用户定，先用于跳槽；其余已定稿问项回改时再开）：《体用》（494 行）「体党多而体势盛，用党多则体势衰。如卦体是金，而互变皆金，则是体之党多。如用卦是金，而互变皆金，则是用之党多。」
+// 用党（2026-11-19 用户定：补进口径；先用于跳槽，同日回改考试、面试、晋升、转正、职场，默认开；opts.useParty === false 只供对照旧口径）：《体用》（494 行）「体党多而体势盛，用党多则体势衰。如卦体是金，而互变皆金，则是体之党多。如用卦是金，而互变皆金，则是用之党多。」
 // 用卦与体不比和，而用卦的五行在两互、变用三处中又见两处以上，为用党多：体势衰，不作「体有力」。
 const usePartyMany = r => r.rel.use !== 'equal' && ['body_mutual','use_mutual','changed_use'].filter(k => r.n[k][1] === r.n.use[1]).length >= 2;
 function bodyUseTier(r, opts = {}) {
  const G = P.filter(k => r.rel[k] === 'use_generates_body'), K = P.filter(k => r.rel[k] === 'use_controls_body');
- const upm = !!opts.useParty && usePartyMany(r);
+ const upm = opts.useParty !== false && usePartyMany(r);
  const bq = qiOf(r.n.body), bodyStrong = strong(bq) && !upm, endDrain = r.rel.changed_use === 'body_generates_use';
  const kWeak = K.every(k => !strong(qiOf(r.n[k])));
  if (!K.length) {

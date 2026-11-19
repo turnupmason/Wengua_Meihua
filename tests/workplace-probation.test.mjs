@@ -213,5 +213,5 @@ test('probation verdicts follow the finalized rule with the in-office clause', a
    favourable += row.decision.outcomeCode === 'favourable';
   }
  }
- assert.equal(favourable, 368);
+ assert.equal(favourable, 356);
 });

@@ -5,6 +5,7 @@
 const fs = require('fs');
 const {tierFinal} = require('./policy-final.cjs');
 const {adjust} = require('./indirect-test.cjs');
+const {usePartyMany} = require('./policy-v2-diagnostic.cjs');
 const strong = q => q === '旺' || q === '相';
 const P4 = ['use', 'body_mutual', 'use_mutual', 'changed_use'];
 // 职场专属爻辞降档（docs/review/STABILITY_REJUDGE_20261119.md 第二节）：象意直接落在现职能否保住上。只降一档：
@@ -30,8 +31,9 @@ function stabilityOf(fx, hexId, changedId, line) {
   let why = t.why;
   if (K.length && v === 'stable') { v = 'watch'; why += ' → 在任见克体（' + K.join('、') + '），轻则上司责罚'; }
   if (!K.length && v === 'strained') { v = 'watch'; why += ' → 无克体之卦，不至削官退居'; }
+  // 用党多则体势衰（《体用》494 行，2026-11-19 补）时不作体有力。
   // 《体用衰旺之诀》「此得令之卦，乘旺之气，虽有他卦克之，亦无大害」「但不要克体之卦气旺」（804 行）；定稿口径第一节第 4 条旺、相同为有力：体有力而克体之卦都无气，属在任条之「轻」。
-  if (v === 'strained') { const a = adjust(fx); if (strong(fx.n.body.slice(-1)) && K.every(k => !strong(a.n[k].slice(-1)))) { v = 'watch'; why += ' → 体有力（旺相）而克体之卦皆无气，亦无大害，属轻'; } }
+  if (v === 'strained') { const a = adjust(fx); if (strong(fx.n.body.slice(-1)) && !usePartyMany(fx) && K.every(k => !strong(a.n[k].slice(-1)))) { v = 'watch'; why += ' → 体有力（旺相）而克体之卦皆无气，亦无大害，属轻'; } }
   const ld = LINE_DOWN[hexId + '-' + line];
   if (ld) {
     const a = adjust(fx), bq = fx.n.body.slice(-1);
