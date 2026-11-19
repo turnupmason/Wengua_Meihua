@@ -1,15 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-  "batch": "interview-monthly-preview-792-20261118",
+  "batch": "interview-monthly-preview-936-20261118",
   "scope": "copy-preview-only",
-  "uploadedArticles": 792,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 936,
+  "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    3
+    8,
+    9
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3816,
-  "authorWholeArticleReadback": 792,
+  "remainingArticles": 3672,
+  "authorWholeArticleReadback": 936,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -79,6 +80,34 @@
       "outcomes": {
         "favourable": 0,
         "difficult": 72
+      }
+    },
+    {
+      "primaryId": 8,
+      "name": "水地比",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-008.json",
+      "sourceSha256": "476bfde31fa7b40a9355937b1c670f10ac370e29fa028e8ffcc84bbcb459e529",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-008.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-008.md",
+      "outcomes": {
+        "favourable": 6,
+        "difficult": 66
+      }
+    },
+    {
+      "primaryId": 9,
+      "name": "风天小畜",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-009.json",
+      "sourceSha256": "7a0e40cfaa2f09bb1473cc94a60abec3f1d5a975ca45a844af190e764a19e6a5",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-009.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-009.md",
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
       }
     },
     {
@@ -178,31 +207,37 @@
       73,
       102
     ],
-    "independentChartComparisons": 21384,
+    "independentChartComparisons": 25272,
     "independentChartMismatches": 0,
-    "dateCases": 1584,
-    "judgmentCorrectionArticles": 48,
+    "dateCases": 1872,
+    "judgmentCorrectionArticles": 112,
     "machineReport": "docs/review/INTERVIEW_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-interpretation": 1,
-    "open-priority": 10,
-    "interpreted-with-limits": 3,
+    "open-priority": 15,
+    "interpreted-with-limits": 6,
     "open-analogy": 1,
     "editorial-correction-complete-audit-retained": 1,
     "open-timing-interpretation": 1,
     "corrected-classical-application": 1,
-    "fixed-documentation-conflict": 3,
+    "fixed-documentation-conflict": 6,
     "corrected-unsupported-scenes": 1,
     "pending-interpretation": 10,
     "verified-one-layer-rule": 2,
     "corrected-action-reading": 1,
     "documented-source-variation": 4,
     "corrected-specific-scene": 1,
-    "fixed-classical-interpretation": 1,
+    "fixed-classical-interpretation": 3,
     "scope-limited-rule": 1,
-    "fixed-copy": 1,
-    "open-strength-rule": 1,
+    "fixed-copy": 2,
+    "open-strength-rule": 2,
+    "open-textual-interpretation": 1,
+    "fixed-unsupported-scenes": 1,
+    "open-strength-and-priority": 1,
+    "verified-rule-application": 1,
+    "interpreted-with-source-limit": 1,
+    "verified-scope": 1,
     "unresolved-project-priority": 12,
     "textual-interpretations-recorded": 3,
     "project-interpretation-retained": 4,
@@ -213,7 +248,7 @@
     "textual-variant-recorded": 1
   },
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
-  "previousMainPublicationCommit": "dbabb985590b241219bbdf17af393c4abf01bea5",
+  "previousMainPublicationCommit": "35b6439fd622454fd92dab2704e99c15698a42bc",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userStyleApproval": {
