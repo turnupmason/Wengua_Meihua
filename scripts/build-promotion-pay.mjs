@@ -394,6 +394,8 @@ for (const [batchIndex, filename] of batches.entries()) {
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     ...(row.calculationNotes ?? [resolution]),
     ...(contactApplication ? [contactApplication.application,contactApplication.boundaries,'恢复联系取义作者源：'+contactCasesPath+'，第 '+movingLine+' 爻。',contactApplication.lineCommentary.quote,contactApplication.lineCommentary.application,'注疏：'+contactApplication.lineCommentary.sourcePath+' · '+contactApplication.lineCommentary.locator] : []),
+    ...(contactApplication?.lineCommentary.parallelReadings??[]).map(source=>'对照注疏：'+source.sourcePath+'。“'+source.quote+'” '+source.application),
+    ...(contactApplication?.lineCommentary.versionDifference?[contactApplication.lineCommentary.versionDifference]:[]),
     ...(petApplication ? [petApplication.application,petApplication.boundaries,'[活体搜索与场景类象作者源](../../'+petCasesPath+')，第 '+movingLine+' 爻。'] : []),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),

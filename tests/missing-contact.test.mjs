@@ -49,6 +49,7 @@ test('恢复联系 preserves distinct scope, source-applicability records and ac
    for(const n of c.nodes)assert.equal(row.facts.nodes.find(f=>f.role===n.role).trigram,n.trigram,key);
    assert.ok((await read(c.lineCommentary.sourcePath)).includes(c.lineCommentary.quote),key);
    assert.ok(c.lineCommentary.locator&&c.lineCommentary.application,key);
+   for(const source of c.lineCommentary.parallelReadings??[])assert.ok((await read(source.sourcePath)).includes(source.quote),key+' parallel commentary');
    for(const e of row.decision.sourceEvidence){
     const s=library.getSection(e.id);
     const line=s.sourceRef.startLine+s.text.slice(0,s.text.indexOf(e.quote)).split('\n').length-1;
