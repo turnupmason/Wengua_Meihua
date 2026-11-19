@@ -101,6 +101,7 @@ export function renderHex(ctx,bundle) {
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
    '取期依据：'+timingReason,
+   '条文对照：以下保留相关判读原文，供核对条件；并非每条都适用于本盘。具体采用、反证与尚待复核的权重，见上方专业说明及本卦核读记录。',
    row.decision.sourceEvidence.map(s=>`- 《梅花易数·${s.title}》：“${s.quote}”`).join('\n'),
    `稿件键：\`${QUESTION_ID}/${id}/${a.movingLine}/${a.monthBranch}/${a.outcome}\`。作者源：[${s}.json](../../../${SOURCE_DIR}/${s}.json)。`,
    '</details>','<details>\n<summary>简断摘要</summary>',a.short,'</details>');
