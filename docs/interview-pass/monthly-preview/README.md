@@ -1,11 +1,12 @@
-# 面试逐月长稿：720 篇预览
+# 面试逐月长稿：792 篇预览
 
-更新日期：2026-11-18（America/New_York）。本批新增水天需、地水师，共 144 篇；累计 720 篇。完整目标为 4,608 篇，尚余 3888 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-18（America/New_York）。本批新增水雷屯，共 72 篇；累计 792 篇。完整目标为 4,608 篇，尚余 3816 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
 | 乾为天 | 72 | [打开全文](hex-001.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-001.json) |
 | 坤为地 | 72 | [打开全文](hex-002.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-002.json) |
+| 水雷屯 | 72 | [打开全文](hex-003.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-003.json) |
 | 水天需 | 72 | [打开全文](hex-005.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-005.json) |
 | 地水师 | 72 | [打开全文](hex-007.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-007.json) |
 | 泽雷随 | 72 | [打开全文](hex-017.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-017.json) |
@@ -21,9 +22,7 @@
 
 ## 本批阅读入口
 
-- [水天需：六爻十二月全文](hex-005.md)
-
-- [地水师：六爻十二月全文](hex-007.md)
+- [水雷屯：六爻十二月全文](hex-003.md)
 
 
 
@@ -31,7 +30,7 @@
 
 ## 检查与阅读状态
 
-720 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 19,440 项，差异 0；日期用例 1,440 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–510 汉字。
+792 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 21,384 项，差异 0；日期用例 1,584 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–510 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
