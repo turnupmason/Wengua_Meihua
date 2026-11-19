@@ -1,6 +1,6 @@
-# 面试逐月长稿：3312 篇预览
+# 面试逐月长稿：3528 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批修订大有九三、观六三、颐上九共 30 篇，使月稿与 main 已生效的用党多规则一致；累计仍为 3312 篇。完整目标为 4,608 篇，尚余 1296 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增雷水解、山泽损、风雷益，共 216 篇；累计 3528 篇。完整目标为 4,608 篇，尚余 1080 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -43,6 +43,9 @@
 | 风火家人 | 72 | [打开全文](hex-037.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-037.json) |
 | 火泽睽 | 72 | [打开全文](hex-038.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-038.json) |
 | 水山蹇 | 72 | [打开全文](hex-039.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-039.json) |
+| 雷水解 | 72 | [打开全文](hex-040.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-040.json) |
+| 山泽损 | 72 | [打开全文](hex-041.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-041.json) |
+| 风雷益 | 72 | [打开全文](hex-042.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-042.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-050.json) |
 | 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-052.json) |
@@ -57,13 +60,11 @@
 
 ## 本批阅读入口
 
-本次修订见[续写与同步记录](../../review/INTERVIEW_MONTHLY_CONTINUATION_20261119.md)；其后接续剩余 18 卦。
+- [雷水解：六爻十二月全文](hex-040.md)
 
-- [大有：九三修订](hex-014.md)
-- [观：六三修订](hex-020.md)
-- [颐：上九修订](hex-027.md)
+- [山泽损：六爻十二月全文](hex-041.md)
 
-- [水山蹇：六爻十二月全文](hex-039.md)
+- [风雷益：六爻十二月全文](hex-042.md)
 
 
 
@@ -71,9 +72,9 @@
 
 ## 检查与阅读状态
 
-3312 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 89,424 项，差异 0；日期用例 6,624 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–536 汉字。
+3528 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 95,256 项，差异 0；日期用例 7,056 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–536 汉字。
 
-[逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
+[逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [续写与同步记录](../../review/INTERVIEW_MONTHLY_CONTINUATION_20261119.md) · [交付清单](manifest.json)
 
 作者读回、独立排盘、古籍解释审计、独立全文复核和用户逐篇验收分别登记。机器通过不等于解释争议已经解决；用户对已看文风的认可，也不写成尚未查看稿件的逐篇验收。
 
