@@ -16,6 +16,8 @@ export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',question
 export const INTERVIEW_V3_PROFILE=Object.freeze({questionId:'career.interview.interview-pass',questionType:'interview_pass',questionScope:'result-of-this-interview-round',manuscriptVersion:'interview-pass-3.0.0',timingVersion:'interview-day-3.0.0',directory:'interview-pass',examLike:true});
 // 晋升加薪按考试定稿口径加《求名占》在任专条重写（2026-11-18）：作者源与考试同格式，第 12 栏为随岗薪资说明（仅能升的篇）。
 export const PROMOTION_V3_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',questionScope:'promotion-with-associated-pay',manuscriptVersion:'promotion-pay-3.0.0',timingVersion:'promotion-day-3.0.0',directory:'promotion-pay',examLike:true,payDetail:true});
+// 能否转正按考试定稿口径加《求名占》在任专条重写（2026-11-18），作者源与考试同格式。
+export const PROBATION_V3_PROFILE=Object.freeze({questionId:'career.job-stability.probation',questionType:'probation_completion',questionScope:'completion-of-current-probation',manuscriptVersion:'workplace-probation-3.0.0',timingVersion:'workplace-probation-day-3.0.0',directory:'workplace-probation',examLike:true});
 export const isExamLike=profile=>profile===EXAM_PROFILE||profile?.examLike===true;
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',

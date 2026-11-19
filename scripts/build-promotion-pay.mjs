@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -493,6 +493,18 @@ const promotionV3 = {
  counterevidence:'核对本次晋升能否落实，在任受克、过程较顺、爻辞所限与结果有利分开看。',
  timingContext:'日级窗口只适用于本次评定已进入近期流程。正式任命、定级与薪档以单位通知为准。',
 };
+// 能否转正 v3（2026-11-18，docs/review/PROBATION_REJUDGE_20261118.md）：考试定稿口径 + 《求名占》在任专条。
+const probationV3 = {
+ title:'这次试用期能通过吗', policy:'review/PROBATION_REJUDGE_20261118.md', primarySource:'mh-071', clauses:promotion.clauses,
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','以名成类推这次试用期能否转正。原体为试用员工，本用为这次试用评定。'],
+  ['mh-071','若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸','试用员工已在岗，盘中有克体之卦即判这次转不了正。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','依次核对试用要求、实际工作和最后的评定。'],
+ ],
+ outcomes:['favourable','difficult'], scopeNote:'只判断这次试用期能否转正',
+ counterevidence:'分别看评定标准、在岗受克、爻辞条件与末段，过程改善与最终转正各有证据。',
+ timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
+};
 const workplaceStability = {
  title:'当前工作稳定性', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
  references:[
@@ -661,7 +673,8 @@ if (target === 'lost-pet-recovery') {
 } else if (target === 'workplace-stability') {
  await buildAuthoredManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
 } else if (target === 'workplace-probation') {
- await buildAuthoredManuscripts(WORKPLACE_PROBATION_PROFILE, workplaceProbation);
+ // 旧版 workplace-probation-1.0.0 留档于 sources/editorial/workplace-probation/legacy-v1/。
+ await buildAuthoredManuscripts(PROBATION_V3_PROFILE, probationV3);
 } else if (target === 'new-relationship-opportunity') {
  await buildAuthoredManuscripts(NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, newRelationshipOpportunity);
 } else if (target === 'confession-decision') {
