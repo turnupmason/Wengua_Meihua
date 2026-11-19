@@ -1,0 +1,267 @@
+{
+  "primaryId": 3,
+  "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
+  "editorialBaseCommit": "a2b6d54521412226834b6875416b8e043e5c2315",
+  "editor": "/root/style_and_pipeline",
+  "reviewedAt": "2026-11-19T03:29:15.608742+00:00",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "ab9e25452b5793a34f83774c69913f00c7d198807aa21dcadcd0d6fbe6665ce5",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "newlyWritten": "72篇按六爻、十二月逐篇直接撰写完整正文；未用句库、随机拼句或自动扩写。",
+    "currentReadback": "每完成一爻12篇，即输出标题、摘要、全部自然段、应期全文读回；六批共72篇已实际读回。读回后涉及正文及判断的局部修改另行输出核对。",
+    "notClaimed": "作者自读不冒充另一位独立全文审稿，不冒充人工验收，不由检查脚本代签已读。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/interview-pass/hex-003.json",
+      "scope": "30篇旧source全字段，分六爻每组五气核读；原outcome及timing种类位置作为基线。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/review-v2/hex-003.json",
+      "scope": "30项 reason、正反证、lineReading、timing、v21与final已按爻核读。"
+    },
+    {
+      "path": "data/authored-readings/interview-pass/hex-003.json",
+      "scope": "30项本互变、六节点五行旺衰、directRelations与indirectEffectsApplied按爻核对；不将旧情节当成排盘事实。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01屯.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/01屯",
+      "scope": "整卦原文、彖、大象、六爻爻辞、小象及王弼注、孔颖达疏全文阅读。六二匪寇婚媾、六三几字、九五大小贞、上六何可长另作辨析。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实读480–484占卜论理诀及先天后天论、550–553求谋/求名、678–688遗论/体用/体用论/衰旺论、791–804占卦诀/互变/生克/衰旺、822–823克应章节。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "磐桓，利居贞，利建侯。",
+      "image": "虽磐桓，志行正也。以贵下贱，大得民也。",
+      "reading": "王孔释动则难生而暂不进，以静息乱，守正且谦下；并非苟求安逸、弃置事务。居贞、建侯与得民的积极意涵保留，不从建侯虚构录取管理岗位，不以停住直接等同失败。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A01"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "屯如邅如，乘马班如，匪寇婚媾。女子贞不字，十年乃字。",
+      "image": "六二之难，乘刚也。十年乃字，反常也。",
+      "reading": "王孔谓二正应五而不从初，初为寇难；匪寇婚媾是若无初之难则可与五合，并非无条件将来者视为友好。十年取数极而变，反常是返回常道；正文取守正待合，不把十年当面试等候时长，不编造追问必是好意。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A02",
+        "I003-A06"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "即鹿无虞，惟入于林中。君子几，不如舍，往吝。",
+      "image": "即鹿无虞，以从禽也。君子舍之，往吝穷也。",
+      "reading": "虞官负责先商度形势可否；徒见目标而不揆条件，有失其所求的危险。孔疏明言几为语辞，非几微之义。本稿避开此字的未定异说，将舍落实为停止无据推进与核清条件，不劝弃面试。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A03"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "乘马班如，求婚媾，往吉，无不利。",
+      "image": "求而往，明也。",
+      "reading": "王孔从四与初相应、明知二不妨其路解释求而往。此吉意是看明相应以后主动求合，贯穿行动，不压缩为前几问漂亮。正文保留吉辞与本用生扶，也如实写末兑受土生而克体；通过与否的优先级仍属待议规则。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A04"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "屯其膏，小贞吉，大贞凶。",
+      "image": "屯其膏，施未光也。",
+      "reading": "王孔强调尊位施泽褊狭、固志同好；孔疏以有司小正与大人应博施之责分大小，不能直接等同答小问题吉、说宏大规划凶。新正文保留支持未广、承担与条件需相称的建议，并明确大贞凶戒意；这一现代转用不冒充古注唯一释义。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A05",
+        "I003-A06"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "乘马班如，泣血涟如。",
+      "image": "泣血涟如，何可长也？",
+      "reading": "王孔释进无所适、居不获安、下无应援而穷困，无处委仰；何可长是困厄不可久长，不保证片刻后自行解脱。新正文认真保留困厄及求现实出路的警戒；不缩成答错数、重画白板、重读题等插曲。原体用取成仍保留，和凶爻的冲突待另行议决。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I003-A07"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "I003-A01",
+      "status": "open-priority",
+      "keys": [
+        "3/1/寅卯巳午申酉戌亥子辰未丑"
+      ],
+      "finding": "初九体坎，三土克体但被震制，间接规则判克体转薄；冬水旺及秋水相等优势仍被无生而有克规则判不成。体旺遇衰克亦无大害与无生有克不谐之间需清楚优先级，正文保留体旺/相与土受制的减轻事实，未捏造失败情节。"
+    },
+    {
+      "id": "I003-A02",
+      "status": "corrected-classical-application",
+      "keys": [
+        "3/2/*"
+      ],
+      "finding": "旧文把匪寇婚媾确定映射为面试官的好意或提携，王孔具体是初妨二五之合，存在注解差异。新文采取可证的守正、受阻、后合；不将十年换算成天数，反常解释为返常道。"
+    },
+    {
+      "id": "I003-A03",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/3/*"
+      ],
+      "finding": "六三虞官商度可否的原意已核；孔疏几为语辞，正文不偷换为见几微。本爻止于方法和条件的审察，舍不等同取消面试，往吝不编造具体答错情节。"
+    },
+    {
+      "id": "I003-A04",
+      "status": "open-priority",
+      "keys": [
+        "3/4/*"
+      ],
+      "finding": "六四往吉无不利与本用水生体并存，仍因末兑克体且受土生被判不成；尤其寅卯体旺与亥子体相、本水旺有实质有利依据。末克、旺衰、吉爻之间如何合断并无此处已核古文的唯一自动裁决；沿用 difficult，不掩盖相反证据。"
+    },
+    {
+      "id": "I003-A05",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "3/5/亥",
+        "3/5/子"
+      ],
+      "finding": "旧 judgment 称旺坎受土克仍助有力、过得宽，与同条 review-v2.v21 和 data 的 support-weakened 冲突。已更正为月令仍旺、作用受制而薄，主要凭体相；article.judgmentCorrection 保存原文、新文、理由、来源与不改结果/应期的影响。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I003-A06",
+      "status": "open-priority",
+      "keys": [
+        "3/2/*",
+        "3/5/*"
+      ],
+      "finding": "无克即成及有生而受制只主迟的二分裁定，是现行项目规则，不能直接称为古籍唯一结论。九五尤其存在王孔大小贞关于施泽与责任、旧稿逐问守正的不同解释；正文保留大贞凶约束，不将其降为单次表达小失误，结论暂不改变。"
+    },
+    {
+      "id": "I003-A07",
+      "status": "open-priority",
+      "keys": [
+        "3/6/*"
+      ],
+      "finding": "上六严重困象与全局无克、本用有生、末变比和的 favourable 有明确张力。新版仍暂用既定结果，正文保留进退失据警戒；体用与凶爻的先后不能用缩小凶象的方式掩盖。需独立规则复核而非文字自行翻判。"
+    },
+    {
+      "id": "I003-A08",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "3/6/*"
+      ],
+      "finding": "上六旧 judgment 将何可长也写成窘在一时，并确定落到改答案、原地重读、半路重写等无据情节。已将这些解释改为王孔的困厄不可久长与现实出路，保存12篇旧新修正记录；亥子条还明确坎原旺而受土制助薄。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I003-A09",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "3/*/*"
+      ],
+      "finding": "72篇不再沿用逐字对话、题目数量、白板重画、资料附表、报错十倍、头三个月两件事等凭空预测。现代例示均作可以如何准备或若遇某情形如何处理，未宣称已经发生或必然发生。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段全文和应期完整输出后实读；判断修订另行核读",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72 complete; 0 errors",
+    "bodyHanRange": [
+      423,
+      472
+    ],
+    "shortHanRange": [
+      73,
+      91
+    ],
+    "flexibleLengthWarnings": 54,
+    "lengthDecision": "423–449汉字的54篇均完整读回，保留原典解释、体用旺衰、限制及实际建议；不为达到450整数机械填句。其余至472汉字，与既有576篇的厚度相近。",
+    "exactSentenceDuplicatesAtLeast22HanExcludingQuotedClassics": 0,
+    "outcomes": {
+      "favourable": 36,
+      "difficult": 36
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "check-interview-monthly 独立literal表、六爻bit运算核本互变、六节点五行月令、四直接关系及间接作用；不评价现实预测准确率"
+    },
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timing": "全部保留原kind、role、method和目标日支；事件限定其过程位置，不把日支窗口升级成通过/拒绝通知日期。",
+    "judgmentCorrections": 14,
+    "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组保持同一五态、强弱与结论，只变行文组织及建议切入。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "尚未由另一作者逐篇独立全文审阅；排盘及日期程序核对已通过。"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}
