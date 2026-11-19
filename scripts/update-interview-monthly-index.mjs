@@ -4,6 +4,8 @@ import {auditMonthly} from './review/check-interview-monthly.mjs';
 import {SOURCE_DIR,RECEIPT_DIR,DOC_DIR,stem} from './review/interview-monthly-lib.mjs';
 
 const args=process.argv.slice(2),get=flag=>args.includes(flag)?args[args.indexOf(flag)+1]:null;
+const publicationDate=get('--publication-date')||new Intl.DateTimeFormat('sv-SE',{timeZone:'America/New_York'}).format(new Date());
+if(!/^\d{4}-\d{2}-\d{2}$/.test(publicationDate))throw new Error('Expected --publication-date YYYY-MM-DD');
 if(!get('--hex')||!get('--added'))throw new Error('Explicit --hex completed-list and --added newly-published-list required');
 const ids=get('--hex').split(',').map(Number).sort((a,b)=>a-b),added=get('--added').split(',').map(Number);
 if(new Set(ids).size!==ids.length||added.some(id=>!ids.includes(id)))throw new Error('Duplicate IDs or added hexagram absent from completed list');
@@ -14,7 +16,7 @@ const receipts=await Promise.all(ids.map(id=>readFile(`${RECEIPT_DIR}/${stem(id)
 const findingStatuses={};for(const receipt of receipts)for(const f of receipt.findings||[])findingStatuses[f.status]=(findingStatuses[f.status]||0)+1;
 const current=report.articleCount,newArticles=added.length*72;
 const manifest={
- schemaVersion:'1.0.0',batch:`interview-monthly-preview-${current}-20261118`,scope:'copy-preview-only',uploadedArticles:current,newArticlesSincePrevious:newArticles,newHexagrams:added,fullTarget:4608,remainingArticles:4608-current,authorWholeArticleReadback:receipts.reduce((n,r)=>n+r.wholeArticlesRead,0),
+ schemaVersion:'1.0.0',batch:`interview-monthly-preview-${current}-${publicationDate.replaceAll('-','')}`,publicationDate,publicationTimeZone:'America/New_York',scope:'copy-preview-only',uploadedArticles:current,newArticlesSincePrevious:newArticles,newHexagrams:added,fullTarget:4608,remainingArticles:4608-current,authorWholeArticleReadback:receipts.reduce((n,r)=>n+r.wholeArticlesRead,0),
  hexagrams:report.hexagrams.map(h=>({primaryId:h.primaryId,name:h.name,articles:h.articles,fullArticleReadback:h.authorWholeArticlesRead,sourcePath:`${SOURCE_DIR}/${stem(h.primaryId)}.json`,sourceSha256:h.sourceSha256,receiptPath:`${RECEIPT_DIR}/${stem(h.primaryId)}.json`,readingPath:`${DOC_DIR}/${stem(h.primaryId)}.md`,outcomes:h.outcomes})),
  checks:{exactFullArticleDuplicates:report.duplicateArticles.length,exactParagraphDuplicates:report.duplicateParagraphs.length,exactSentences24HanOrMoreExcludingQuotedClassics:report.duplicateLongSentences.length,bodyHanRange:report.bodyHanRange,shortHanRange:report.shortHanRange,independentChartComparisons:report.chartComparisons,independentChartMismatches:report.chartMismatches.length,dateCases:report.dateCases,judgmentCorrectionArticles:report.judgmentCorrections.length,machineReport:'docs/review/INTERVIEW_MONTHLY_CHECKS.json'},
  ruleFindingStatuses:findingStatuses,baselineCommit:old.baselineCommit,previousMainPublicationCommit:get('--previous-main')||old.previousMainPublicationCommit||null,
@@ -22,7 +24,7 @@ const manifest={
 };
 const newNames=report.hexagrams.filter(h=>added.includes(h.primaryId)).map(h=>h.name).join('、');
 const lines=[`# 面试逐月长稿：${current} 篇预览`,
- `更新日期：2026-11-18（America/New_York）。本批新增${newNames}，共 ${newArticles} 篇；累计 ${current} 篇。完整目标为 4,608 篇，尚余 ${4608-current} 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。`,
+ `更新日期：${publicationDate}（America/New_York）。本批新增${newNames}，共 ${newArticles} 篇；累计 ${current} 篇。完整目标为 4,608 篇，尚余 ${4608-current} 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。`,
  '| 卦 | 已上传篇数 | 正文 | 核读与规则审计 |','|---|---:|---|---|',
  ...report.hexagrams.map(h=>`| ${h.name} | ${h.articles} | [打开全文](${stem(h.primaryId)}.md) | [查看记录](../../../${RECEIPT_DIR}/${stem(h.primaryId)}.json) |`),'',
  '每卦按初爻至上爻、寅卯辰巳午未申酉戌亥子丑排列。同气月份保持相同五态与判据，文章逐篇写定。正文以自然段展开，讲明判断、过程、爻义与对应准备；篇幅按解释所需伸缩，不以重复建议补字数。',
