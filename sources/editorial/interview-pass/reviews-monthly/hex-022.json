@@ -1,0 +1,1327 @@
+{
+  "primaryId": 22,
+  "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
+  "editorialBaseCommit": "acfb838082b3bdb4a7483031fdfea7d2511b74c2",
+  "editor": "/root/recover_pending",
+  "reviewedAt": "2026-11-19T14:06:00.976859+00:00",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "f0db49c01a01453b8bb447efe8ee2b5918252a541cb5474b1adf2caaed78342d",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "recovered": "初九至六五60篇从上轮未提交源恢复，正文保留；本轮逐篇重新读回，不继承不存在的作者回执，也不将旧稿作者身份写成本轮新写。",
+    "newlyWritten": "上九12篇标题、摘要和五段正文逐篇直接写定，479–499汉字；装配脚本只把全文字面量和同气专业元数据写入JSON，没有句库、循环拼接正文或随机换词。",
+    "currentReadback": "72篇按爻分6批各12篇从磁盘完整输出标题、摘要、五段正文并实际阅读；全部30份旧稿11字段与30条review-v2完整读取；30盘本互变、六节点五态、直接关系、一层作用另行精简输出实读。首轮初九合并输出被截后，12篇全文另行完整重读，遗漏季土review及全30事实另读。30组新judgment、timing、订正理由按爻实际读回；上九卯首段、申第三段、酉首段修改后另读。",
+    "notClaimed": "读取源和签哈希分开，哈希不是阅读。作者全读、机器事实复算、古籍解释审计、另一AI抽读、独立全量复核及用户逐篇验收分别记；不声称现实预测准确率已经验证。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/interview-pass/hex-022.json",
+      "scope": "30份旧五气稿全部11字段完整实读：摘要、四段、专业理由、取期；逐爻5份。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/review-v2/hex-022.json",
+      "scope": "30条完整reason、正反证据、lineReading、timing、v21和final实际读取，不以历史passed替代复核。"
+    },
+    {
+      "path": "data/authored-readings/interview-pass/hex-022.json",
+      "scope": "全部30盘本互变、六节点五态、四条原体直接关系和一层作用精简输出核读；本22互40，六动爻变52、26、27、30、37、36。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03賁.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/03賁",
+      "revisionId": 2404954,
+      "scope": "全卦经彖象、六爻王弼注和孔颖达疏完整读取，并打开在线全页核对相同oldid2404954；六四五六注义分别说明。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "先检索贲全卦对应条目，后完整重读234–252行六爻解释；尤其六四正应理直终合、六五裁制成用、上九尚素非无饰及在上成贲功。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "178–182行完整实读，包含贲卦彖象及六爻；六四九三非寇、六五薄物浅小、上九反本善补过分别核对。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "540–556求谋求名、678–690体用衰旺、788–805占卦与互变完整读取；一层关系和权重分开，正反条文并存。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "1–74、124–146、238–280实际读取，二分、末泄与本用优先、一层作用规则作为项目取法，不冒称古籍唯一结论。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_REWRITE_20261118.md",
+      "scope": "全文读取范围、文章厚度、事实边界、分月独立写作与不同审核状态规则。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "全文读取逐批发布、机器核查、judgmentCorrection、古义冲突保留与状态分记要求。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "贲其趾，舍车而徒。",
+      "reading": "王孔以弃不义而徒行解释取舍，程传又取初四正应、舍近二从远四；核心在义，不是一切模板、工具或借力都应舍弃。首末生扶比和与体互震得坎生并存，季土亦不能忽略现行一层克得生。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "text": "贲其须。",
+      "reading": "王孔二三近而相得、循履附上同兴；程传文依质、须随颐；朱子二附三而动。相附本身非失败或无独立能力的证据，恢复配合的正面意义。生制并见保持原态，末泄优先单列争议。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "text": "贲如濡如，永贞吉。",
+      "reading": "王孔二三各正、相润而长保其贞，程重常正，朱戒溺于所安；永贞吉及终莫之陵完整保留。不能据现行不成反推求测者末问已经失正，也不能把两克硬配两题；有利初助、体旺相的承接与末克优先同时记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "text": "贲如皤如，白马翰如。匪寇，婚媾。",
+      "reading": "王孔初四正应受三所阻、翰如以待，须不轻犯寇难而终无尤；程传初四理直终合、志如飞；朱子九三刚正非寇而求婚、翰如飞疾，守正不与亦无患。不同对象、翰如与条件不混称一致，不写白马来者必为助力。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "text": "贲于丘园，束帛戋戋。吝，终吉。",
+      "reading": "孔疏以尚俭而帛积多解释戋戋，且明确王注非聘贤；程传六五受上九裁制、帛剪裁成用；朱本义取浅小薄物、敦本尚实及礼奢宁俭。终吉有喜整体保留，不能把朱薄帛接王注冒称统一，也不能固定为短答或某个失误。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "text": "白贲，无咎。",
+      "reading": "王孔饰终反素、守志任真、无患忧而得志；程传尚素非无饰、不使华没实，并肯定在上成贲之功；朱子反本复于无色、善补过。积极成效不可缩成只有答题不出错，不以不成倒推未守真或以短答为唯一方法。首末泄优先仍列开放问题。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "findings": [
+    {
+      "id": "I022-A01",
+      "status": "fixed-copy-and-evidence",
+      "keys": [
+        "22/1/*"
+      ],
+      "finding": "初九改回守义取舍，不对应固定框架、漏听否定词、成本题或题量。季土震得死坎生按现有一层有力，与旧judgment只一处小阻之矛盾已由恢复稿有据更正。"
+    },
+    {
+      "id": "I022-A02",
+      "status": "open-rule-priority",
+      "keys": [
+        "22/1/*",
+        "22/3/*"
+      ],
+      "finding": "囚死水生休囚死木即一律有力的程度，以及旺相体与两处克的权重是项目一层定性；初九弱末比和定成、九三永贞终吉与末克定不成的优先未由机器或本轮解释审计关闭。"
+    },
+    {
+      "id": "I022-A03",
+      "status": "fixed-line-reading",
+      "keys": [
+        "22/2/*"
+      ],
+      "finding": "恢复二三相得、文依于质的正面所指，不把与上兴一律倒读为借来模板失灵。删去固定题数、句数、格式、时长、对方表情等无据情节；生制并见仍依原五态。"
+    },
+    {
+      "id": "I022-A04",
+      "status": "open-rule-priority",
+      "keys": [
+        "22/2/*",
+        "22/6/*"
+      ],
+      "finding": "求名本用体生用向末变类推并赋予末泄优先，不能由变生体及比和临终吉利一句反推只有两种关系可能成功。尤其六二夏旺助相体轻泄、上九春相体旺助轻泄的二分权重仍待独立解释复核。"
+    },
+    {
+      "id": "I022-A05",
+      "status": "fixed-commentary-attribution",
+      "keys": [
+        "22/4/*"
+      ],
+      "finding": "六四分记王孔的正应受阻/翰如以待、程传正应理直终合/如飞、朱子九三非寇求婚/守正不与亦无患。删除所谓失败题恰为熟题、二选一或反直觉计算等现代故事。"
+    },
+    {
+      "id": "I022-A06",
+      "status": "open-rule-priority",
+      "keys": [
+        "22/4/申",
+        "22/4/酉",
+        "22/4/亥",
+        "22/4/子",
+        "22/5/申",
+        "22/5/酉",
+        "22/5/亥",
+        "22/5/子",
+        "22/6/申",
+        "22/6/酉",
+        "22/6/亥",
+        "22/6/子"
+      ],
+      "finding": "休囚土制相旺水一律记克减的程度、弱末比和或薄末生对初耗的优先需留审；保留原五态及减克后非无克，不按土节点数量重复减力。"
+    },
+    {
+      "id": "I022-A07",
+      "status": "fixed-commentary-attribution",
+      "keys": [
+        "22/5/*"
+      ],
+      "finding": "戋戋孔疏众多、程传剪裁、朱本义浅小三说各依原文，不混归王注；终吉有喜不降格为一次失误补回，不以木囚无额外依据断定通知迟来。"
+    },
+    {
+      "id": "I022-A08",
+      "status": "fixed-copy-and-line-reading",
+      "keys": [
+        "22/6/*"
+      ],
+      "finding": "补写上九12篇，恢复白贲无咎及上得志完整积极意义；清除关键词漏说、长答挤时间、删套话后空无内容、首尾清单等既成故事。春旺助、夏旺体、冬相木真助等正面条件全部保留，秋冬受制水的轻重进入取期。"
+    },
+    {
+      "id": "I022-A09",
+      "status": "open-rule-priority",
+      "keys": [
+        "22/3/*",
+        "22/6/*"
+      ],
+      "finding": "九三永贞吉/终莫之陵与上九无咎/得志都有原典的积极成效；本轮不改现行二分，但不将古义截成纯过程小利或声称现实当事人已违背条件。完整吉义与末克/末泄优先需独立复核。"
+    },
+    {
+      "id": "I022-A10",
+      "status": "fixed-peer-review",
+      "keys": [
+        "22/6/辰",
+        "22/6/未",
+        "22/6/戌",
+        "22/6/丑"
+      ],
+      "finding": "root完整抽读上九辰月发现judgment将体休简称弱体；同气四月统一改为现行按首末泄、体休与生助偏薄，未改变正文、五态、结果与取期。修改后的完整专业理由由作者读回，并交root复读。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "status": "author-readback-complete",
+      "scope": "标题、摘要、五段正文全文、五气专业判断与取期实读；对应旧五稿/五条review-v2及事实已核。"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72篇完整检查通过；统一渲染器已构建阅读页，--docs逐篇核对标题、摘要和全部正文通过。",
+    "bodyHanRange": [
+      428,
+      499
+    ],
+    "bodyHanMean": 456.35,
+    "bodyHanMedian": 453.5,
+    "shortHanRange": [
+      83,
+      94
+    ],
+    "flexibleLengthWarnings": 25,
+    "lengthDecision": "恢复前60篇428–475汉字保持原厚度；新写上九12篇479–499汉字。长度为参考，不代替内容判断。",
+    "outcomes": {
+      "favourable": 36,
+      "difficult": 36
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "独立文王卦序/位运算/八卦五行/五态/直接关系，27项每篇；不验证间接作用权重和现实结果。"
+    },
+    "authorIndirectReview": "全30盘核读：初、三两爻震得坎生且无金制，一层克增；二爻离与震各生制并见守原态；四五六坎受土制且无金生，克减。原体贯穿，原五态不变，不递归、不按节点数倍增。",
+    "dateCases": 144,
+    "dateErrors": 0,
+    "judgmentCorrections": 72,
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0
+  },
+  "independentReview": {
+    "status": "sample-read-complete",
+    "reviewer": "/root",
+    "reviewerIsHuman": false,
+    "wholeArticlesRead": 6,
+    "keys": [
+      "22/1/巳",
+      "22/2/辰",
+      "22/3/亥",
+      "22/4/寅",
+      "22/5/申",
+      "22/6/辰"
+    ],
+    "scope": "另一AI逐篇反馈上述六篇标题、摘要、五段正文、新judgment和timing完整抽读；第六篇指出四土月judgment把体休简称弱体，已改成体休与生助偏薄，修改后的整句待审者读回确认；未作全72独立复审。",
+    "fullIndependentReviewCompleted": false,
+    "independentFullCopyReview": "pending"
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "copyReadbackFixes": [
+    {
+      "key": "22/6/卯",
+      "scope": "首段去掉面向作者的写成措辞，改为直接说明可用优势；完整改段另读。"
+    },
+    {
+      "key": "22/6/申",
+      "scope": "第三段将倒推经历薄弱的审稿口吻改为保全实际贡献及必要根据；完整改段另读。"
+    },
+    {
+      "key": "22/6/酉",
+      "scope": "首段减去过强的超出可承范围措辞，保留自身弱而首末持续付出的事实；完整改段另读。"
+    }
+  ],
+  "timingChanges": [
+    {
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "中间那道案例套框架时发现缺了前提",
+          "现成的框架先看前提合不合，不合就别硬套。",
+          "旺震体互克死艮，取寅、卯日参过程压力。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段约束较实，需要逐项处理判断依据",
+          "先核实关键条件，再说明可负责的判断与行动范围。",
+          "体互震木旺而得坎水生，克死艮，参寅、卯日的过程约束；不指定题型、失误或结果公布。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "开局几问一听就懂，手感很快起来",
+          "前面答得快，把省下的时间留给加码的那几问。",
+          "旺离本用生相艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段生扶较足，有利于组织并承接可用依据",
+          "把熟悉经验与眼前条件核对，再说明为什么适用。",
+          "旺离本用生相艮，参巳、午日的初段助力；该窗口仍为过程吉应，不改作结果公布日。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "equal",
+          "changed_use",
+          "一个否定词，第二遍听时抓住了",
+          "听不准的问题，请对方再说一遍。",
+          "休艮变用比和原体，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "equal",
+          "changed_use",
+          "后段同气相接，有利于归拢已经说明的内容",
+          "将判断、依据与限制对应清楚，核实后再作补充。",
+          "变用艮土休而与原体比和，参辰、戌、丑、未日的收束接续；不预设漏听或某次更正。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "估算中途查出前面抄错的一个数",
+          "估算算完一项，和上一行对一遍再往下。",
+          "相震体互克囚艮，参寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程约束较重，须稳住依据与承接范围",
+          "按事实所及的范围解释，条件未明处先核实再推进。",
+          "相震体互得旺坎生而克囚艮，参寅、卯日的中段约束；不指定估算题或数字错误。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "熟问题一个接一个，几乎不用想",
+          "熟的问题，也把中间几步说出口。",
+          "休离本用生旺艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段有较薄生扶，可作为组织依据的补充",
+          "主要仍靠自身梳理关键理由，熟悉经验也核实适用条件。",
+          "本用离火休而生旺艮，参巳、午日的初段轻助；不因体旺把休火生扶写成强助。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "收尾那段要拉回自己的经历，时间吃紧",
+          "讲看法时，拿自己经手的事起头。",
+          "囚乾变用受死艮生，取申、酉日看末段投入。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段仍有向外付出，弱体需要节用余力",
+          "围绕最有根据的经历收束，未证实的内容不扩为承诺。",
+          "囚乾变用受死艮生，参申、酉日的后段投入；不指定时间吃紧或某次返工。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "前几问说明得清楚，一遍就讲成",
+          "总结先说一句新的结论，再拿前面的事作依据。",
+          "旺离本用生相艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段生扶较足，便于组织已有材料与判断",
+          "先使判断与依据对应，再整理合适的表达次序。",
+          "旺离本用生相艮，参巳、午日的过程生扶；不预定一遍讲成或结果公布。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "收尾的陈述讲到一半，时间已近",
+          "陈述先写下自己的三个判断，再往格子里放。",
+          "旺乾变用受休艮生，参申、酉日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "后段付出较重，宜集中承接必要内容",
+          "先讲清最能支持判断的依据，避免无把握的扩展。",
+          "旺乾变用受休艮生，参申、酉日的末段耗应；不预言陈述超时或指定题量。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "照背熟的范例讲，发现一个条件变了",
+          "听着熟的问题，先把已知条件和范例逐条比一遍。",
+          "相震体互克囚艮，按寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段约束较重，弱体须稳住判断所据",
+          "先确认适用条件，再采用熟悉的方法与经验。",
+          "相震体互克囚艮，兼生制并见仍取原相，参寅、卯日的过程约束；不预设误听条件。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "会的问题一个个顺利落地",
+          "最后那段落笔前，先把对方要的格式听完。",
+          "休离本用生旺艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段有较薄生扶，主要仍靠自身组织依据",
+          "先核清事实、职责与条件，再选择合宜的叙述方式。",
+          "休离本用生旺艮，参巳、午日的初段轻助；不夸成所有问题顺利落地。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后那道硬问题，推理搭不起来",
+          "陌生的问题，先说出能直接推出的两三步。",
+          "旺震变用克死艮，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "后段约束较重，弱体仍须认真承接",
+          "将主要判断与依据接清，条件未明之处保留适当限度。",
+          "旺震变用得休坎生而克死艮，参寅、卯日的后段约束；两处克体不对应固定两道题。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "前半段一路顺手，时间宽裕",
+          "判断对错时，先找一个让它不成立的情形。",
+          "旺离本用生相艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段生扶较足，可用于整理与承接可靠内容",
+          "把可用力量放在关键条件的核实上，熟悉之处也保留必要依据。",
+          "旺离本用生相艮，参巳、午日的初段助力；不预设时间宽裕或前半段一路顺手。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后那一问要出处，几条依据记不全",
+          "常引的依据，名称和出处各记一句。",
+          "死震变用克休艮，得坎相生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "后段约束仍有分量，初助薄而承接不易",
+          "集中说明最可靠的依据，引用材料先核其含义与适用范围。",
+          "原死震变用得相坎生而克休艮，参寅、卯日的末段约束；不指定追问出处或记忆失误。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后那个长问题听到一半就开讲",
+          "长问题听到最后一句，记下限定条件再开口。",
+          "相震变用克囚艮，参寅、卯日观末阻。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "收束处约束较重，须守住事实与承担范围",
+          "先核清关键条件，再沿已成立的依据作结。",
+          "相震变用得旺坎生而克囚艮，参寅、卯日的后段约束；不预定末问内容或漏听行为。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "support",
+          "use",
+          "惯用的讲法件件对路，入手很快",
+          "对方说过的限制，答每个方案前拿出来筛一遍。",
+          "休离本用生旺艮，取巳、午日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use",
+          "初段有较薄生扶，自身承接是主要条件",
+          "用已有能力核实关键联系，保持前后事实标准一致。",
+          "休离本用生旺艮，参巳、午日的初段轻助；不夸成惯用讲法件件对路。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "name-support",
+          "use_mutual",
+          "这一轮通过的消息到了",
+          "通过的消息以招聘方正式发出的为准，留好记录。",
+          "旺震用互生相离，依求名取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "name-support",
+          "use_mutual",
+          "本轮通过的正式确认",
+          "以招聘方对这一轮的正式通知为准，保留确认记录。",
+          "旺震用互生相离，沿原求名取法参寅、卯日的本轮通过确认；不扩大为最终录用。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "equal",
+          "changed_use",
+          "开局那道大问题讲完整套方法，后面变轻",
+          "拿不准讲多细，先给两分钟版本，再问要不要展开。",
+          "旺离末用比和，取巳、午日。"
+        ]
+      ],
+      "new": [
+        [
+          "equal",
+          "changed_use",
+          "后段同气较有力，有利于归拢并接续前文",
+          "将主要要求、判断依据与责任范围对应清楚。",
+          "旺离变用与原体比和，参巳、午日的后段相接；不预定首题讲完后所有问题转轻。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "两个答法都说得通，一时排不掉一个",
+          "回头找你前面立过的原则，拿它来定。",
+          "相坎体互克囚离，取亥、子日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程仍有约束，减轻后也须弱体认真承接",
+          "有不同判断时先核各自的依据与适用条件。",
+          "原相坎体互克囚离，受休艮制而减轻，参亥、子日的过程约束；不指定二选一题目。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "推出的结论和直觉相反，越看越像错了",
+          "结论反直觉时，先拿个简单例子粗估一下。",
+          "旺坎体互克死离，受艮土所制，参亥、子日看中段之阻。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段约束有所缓和，仍需核实关键条件",
+          "对暂难确认的结论回查根据，辨明后再继续说明。",
+          "原旺坎体互克死离，受囚艮制记克减，参亥、子日的过程约束；不预设反直觉结论或验证方法。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "drain",
+          "use",
+          "第一个开放问题越讲越长，超了时间",
+          "讲三四点就收住，余下的力气留给后面。",
+          "旺艮本用受休离生，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use",
+          "初段投入较重，宜安排好必要说明的轻重",
+          "先将核心根据讲清，再按实际需要补充相关内容。",
+          "旺艮本用受休离生，参辰、戌、丑、未日的初段耗应；不预设超时或固定回答点数。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "name-support",
+          "changed_use",
+          "通过的名单发了，你的名字在上面",
+          "名单以正式公布的为准，截图留底。",
+          "旺巽变用生相离，按求名取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "name-support",
+          "changed_use",
+          "本轮通过结果的正式确认",
+          "以招聘方对这一轮的正式答复为准，核实并保留记录。",
+          "旺巽变用生相离，沿原求名取法参寅、卯日的本轮通过确认，不预设名单或最终录用。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "name-support",
+          "changed_use",
+          "进入下一轮的通知到了",
+          "时间地点逐项核清，按要求回复。",
+          "休巽变用生旺离，依求名取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "name-support",
+          "changed_use",
+          "本轮面试通过的正式确认",
+          "核实这一轮的正式答复，后续安排以实际通知为准。",
+          "休巽变用生旺离，保留原求名取寅、卯日的本轮结果窗口；不自行增设下一轮时间地点。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "一问说得太简，差点漏了成立条件",
+          "回答可以短，成立的前提那半句不能省。",
+          "相坎体互克囚离，取亥、子日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程约束有所减轻，弱体仍须核实关键根据",
+          "表达取舍以理解所需为准，必要条件与责任范围说明清楚。",
+          "原相坎体互克囚离，受休艮制记克减，参亥、子日的过程约束；不预言漏说某句前提。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "support",
+          "changed_use",
+          "最后一问的条件说清了前面那层关系",
+          "结论后面带一句为什么，忘了就收尾回补。",
+          "相巽变用生死离，取寅、卯日参末助。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "changed_use",
+          "后段生扶有实际分量，便于补清并核准主要联系",
+          "将得到的支持转成自己的理解，把判断与依据接好。",
+          "相巽变用生死离，参寅、卯日的后段助力，保留过程期，不改成通过公布日。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "drain",
+          "use",
+          "开篇那段材料复述得太满，耗了时间",
+          "材料题只讲自己的归纳，原文点一两处。",
+          "旺艮本用受休离生，参辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use",
+          "初段投入较重，需要让说明围绕关键要求",
+          "先查实核心事实与职责，再按理解需要安排表达的多少。",
+          "旺艮本用受休离生，参辰、戌、丑、未日的初段耗应；不预设材料题复述或固定引用数量。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "support",
+          "use_mutual",
+          "中段一条线索把理由串得明明白白",
+          "岗位描述里反复出现的词，答职责时要说出来。",
+          "旺震用互生相离，取寅、卯日，过程吉应。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "use_mutual",
+          "中段生扶较足，可用于理清主要依据与判断",
+          "把有用的支持转成自己的理解，核清事实、贡献与成立条件。",
+          "旺震用互生相离，沿原规格参寅、卯日的中段生扶；不指定线索数量、关键词或结果公布。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "收尾要你简单说，你又讲成了一大段",
+          "要你简单讲，就三五句说到即收。",
+          "相坤变用由旺离生，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "后段仍有实在付出，宜守住说明与承担的范围",
+          "将已成立的判断归拢清楚，必要解释保留，无据主张不再扩大。",
+          "相坤变用受旺离生，参辰、戌、丑、未日的末段耗应；不预定答超时或固定句数。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "回头一看，几处说法对不上问题",
+          "每说一句理由，先想它对着问题里的哪一点。",
+          "相坎体互克囚离，按亥、子日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段约束有所减轻，弱体仍须认真核实关键条件",
+          "先查清主要依据及其适用范围，再组织能负责的说明。",
+          "原相坎体互克囚离，受艮坤制而按一层克减，参亥、子日的过程约束；不预言已经答非所问。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "一处理由站不住，回到问题才找到依据",
+          "收尾的总结先说一句结论，再补依据。",
+          "旺坎体互克死离，受两处土制，取亥、子日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程约束有所缓和，仍须照顾弱体的实际承接",
+          "确认可用帮助补足了什么，再沿可靠依据继续说明。",
+          "原旺坎体互克死离，受两土制而按一层克减，参亥、子日的过程约束；不虚定某次回答已经失据。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "收尾那张清单一项项核依据，时间不够",
+          "清单类的问题，先说有把握的几项。",
+          "旺坤变用受休离生，参辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段付出较重，需要把力量集中于必要说明",
+          "围绕已证实的事实和判断收束，保留条件，不再增加无据承诺。",
+          "旺坤变用受休离生，参辰、戌、丑、未日的后段耗应；不指定清单、题量或剩余时间。"
+        ]
+      ],
+      "reason": "清除固定题数、时长、关键词、清单、漏听、考官反应等未证情节；按真实五态及一层作用解释已有过程/结果事件。原kind、role、method、数量和有无不变，取法分歧在findings另记。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    }
+  ]
+}
