@@ -1,0 +1,1442 @@
+{
+  "primaryId": 29,
+  "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
+  "editorialBaseCommit": "acfb838082b3bdb4a7483031fdfea7d2511b74c2",
+  "editor": "/root",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "ba0642b38ae53874c7a839d2e12f391f71e760350eb3af64e4d03c5746e02aaf",
+  "reviewedAt": "2026-11-19T14:56:44.973716+00:00",
+  "authorshipScope": {
+    "newlyWritten": "六爻72篇均逐篇直接写成，程序仅装入完整文字，不以模板循环生成正文。",
+    "currentReadback": "从磁盘分两批输出初六12篇完整标题摘要正文及取期并实际阅读，另读五组新专业说明。辰巳子第二段清理解释编辑口吻后再次完整输出读回。初六旧5稿全部11字段、review-v2五组正反证/lineReading/final/v21及五气盘面均实际读过。 九二12篇从磁盘分三批、每批4篇完整输出并实读标题、短断、五段正文、专业说明与应期；旧5稿全字段、五组review-v2全条及五气事实节点关系一次作用亦全读。 六三12篇分两批各六篇从磁盘完整输出实读，另输出五组完整新judgment/timing实读；六三旧5稿11字段、五气review-v2全条和事实关系一次作用均已实读。 六四12篇分两批各6篇完整实读标题、短断、五段正文，另输出5组新judgment/timing全文实读；旧5稿11字段、review-v2五组全条与五气事实一次作用已读，程传444–452及本义216–218复核句读。 九五12篇分两批各六篇完整读回标题短断与五段正文，另完整输出5组judgment/timing并实读；旧5稿11字段、review-v2全条和五气事实/一次作用均已读，程传452–459及王孔朱原典再核。 上六12篇分两批各六篇从磁盘完整输出并实读标题、短断与五段正文，另五组新judgment/timing单独完整输出实读；此前被截断的审计输出不计入阅读，重读完成后才将总数记为72。旧上六五稿11字段、review-v2五组全条、盘面关系一次作用和三家原典均已读。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03坎.txt",
+      "scope": "习坎卦彖象及六爻王注孔疏全读；初深陷、二小得、三进居皆险、四俭物从牖、五尽平乃无咎、上险终自修可求复，分别核对。",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/03坎"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "习坎全段六爻实际读过，六四444–452、九五452–456、上六456–459再次核读；自所明入、无助不能独济、久极终凶与王孔分别留存。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "习坎卦辞六爻完整核读，216–218六四句读与贰益、九五时亦将出及上六险极再次核对。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "549–555求名、678–690体用生克衰旺、791–806占卦及体用互变全段实读；一层克减、原态与力度分列、末生及末克末泄优先与爻义竞争留审。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/hex-029.json",
+      "scope": "六爻五气30条旧稿全部11字段完整读过；二分结果与取期kind/role/method和数量全部保留。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/review-v2/hex-029.json",
+      "scope": "30组reason、evidenceFor/Against、lineReading、timing、final及v21全条实读；原典正反证与旧稿无据现场分开。"
+    },
+    {
+      "path": "data/authored-readings/interview-pass/hex-029.json",
+      "scope": "30盘本互变六节点五态、直接关系与indirectEffectsApplied完整核对；艮坤受木制克轻，一层不倍数不递归，原五态保留。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,all five prose paragraphs,timing; five-qi judgments separately read"
+    },
+    {
+      "movingLine": 2,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,every prose paragraph,judgment,timing; three batches of four actually read from disk"
+    },
+    {
+      "movingLine": 3,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,every prose paragraph; five complete qi judgments and timings separately read from disk"
+    },
+    {
+      "movingLine": 4,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,every prose paragraph; all five qi judgments and timings separately read from disk"
+    },
+    {
+      "movingLine": 5,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,all five prose paragraphs; all five qi judgments and timings separately read from disk"
+    },
+    {
+      "movingLine": 6,
+      "monthBranches": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-whole-article-readback-completed",
+      "includes": "title,short,all five prose paragraphs; five complete qi judgments and timings separately read from disk after rerunning the truncated output"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "习坎，入于坎窞，凶。",
+      "image": "习坎入坎，失道凶也。",
+      "reading": "王孔深陷无援不能自济，程传处不得当而益陷，朱子阴柔居重险之下其陷益深。是真实重凶，不能因现行末生判成写成一次失误已纠正。正文保存谨慎方法与证据范围的警戒，原典与规则权重另列。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "text": "坎有险，求小得。",
+      "image": "求小得，未出中也。",
+      "reading": "王孔初三相附而援未足，程朱刚中可小自济；肯定有限所得且仍在险中。未出中不是离出坑最近，也不能虚定基础题或一分差距。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "text": "来之坎坎，险且枕，入于坎窞，勿用。",
+      "image": "来之坎坎，终无功也。",
+      "reading": "王孔进居皆险、支倚不安而出行徒劳；程传进退居皆险，求出失道则益困，戒用如三所处之道；朱其陷益深。完整警戒保留，枕不伪造为一根木头，勿用不扩大成禁止求职。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "text": "樽酒簋贰，用缶，纳约自牖，终无咎。",
+      "image": "樽酒簋贰，刚柔际也。",
+      "reading": "王孔一樽二簋俭物从牖进而明信不饰；程传至诚质实，自其所明处入以开通；朱从晁氏读樽酒簋一句、贰用缶一句而贰益也，另存小象无贰异文。相际与无咎完整保留，不缩为固定答题句数，也不解成绕开已经堵住的正门。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "text": "坎不盈，祗既平，无咎。",
+      "image": "坎不盈，中未大也。",
+      "reading": "王孔须尽平乃无咎、尚未免咎；程传刚中居尊而无助不能独济，抵于既平才无咎；朱本义阳刚中正居尊位而时亦将出。较积极的朱义完整保留，不以未平量成只差一铲，也不删无咎条件。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "text": "系用徽纆，寘于丛棘，三岁不得，凶。",
+      "image": "上六失道，凶三岁也。",
+      "reading": "王孔严法险极，险终乃反，孔疏若能自修三岁后可求复自新；程传牢狱取喻，久极不能免而终凶；朱阴柔居险极。分别保留原典差异，不虚称三家都无期序，不直推现代三年失业或真实刑囚。警戒不能靠一次技巧化尽，有据修正仍应允许。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "findings": [
+    {
+      "id": "I029-01",
+      "keys": [
+        "29/1/*"
+      ],
+      "status": "fixed-classical-application",
+      "finding": "删除原稿固定题量、已读错前提、返工次数、项目周期、考官补充材料等无据情节；初六重凶保留，建议不作已实现的预测证据。"
+    },
+    {
+      "id": "I029-02",
+      "keys": [
+        "29/1/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "原爻凶、不能自济、无应援与当前有生有克而末生判成竞争；未以润色裁决先天体用和爻义权重。"
+    },
+    {
+      "id": "I029-03",
+      "keys": [
+        "29/1/辰",
+        "29/1/未",
+        "29/1/戌",
+        "29/1/丑",
+        "29/1/巳",
+        "29/1/午",
+        "29/1/申",
+        "29/1/酉"
+      ],
+      "status": "open-strength-rule",
+      "finding": "囚/休/死木对旺/相/休土的克减按既定一层规则，原五态保持；未证明所有弱制强均可同档减克，不递归因兑金克震而取消震克土。"
+    },
+    {
+      "id": "I029-04",
+      "keys": [
+        "29/1/*"
+      ],
+      "status": "fixed-timing-copy",
+      "finding": "所有期窗保持kind、role、method及数量，事件去掉题数与已经发生的错误，土夏中克注明受制减轻；这些都是过程窗，未改通知日。"
+    },
+    {
+      "id": "I029-05",
+      "keys": [
+        "29/2/*"
+      ],
+      "status": "fixed-copy-and-strength",
+      "finding": "两土受制克轻与土月原稿两处受克最重矛盾已更正。删去固定估算、题数、离职预算、剩余时间、错漏等未有依据的场景。"
+    },
+    {
+      "id": "I029-06",
+      "keys": [
+        "29/2/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "本用比和、九二刚中小得及秋冬旺相体与轻耗轻克均保留积极分量；无生有克和末克二分优先并非原典唯一无争议推导。"
+    },
+    {
+      "id": "I029-07",
+      "keys": [
+        "29/2/*"
+      ],
+      "status": "fixed-timing-copy",
+      "finding": "五组期窗种类角色方法和数量不变，事件仅参中耗或末克过程，未指定结果通知日。"
+    },
+    {
+      "id": "I029-08",
+      "keys": [
+        "29/3/*"
+      ],
+      "status": "fixed-classical-application",
+      "finding": "完整保留勿用和终无功，删除换法三次、部门拍板、开场已给答案、漏记规则等无据场景，不把爻的警戒给占者作性格定论。"
+    },
+    {
+      "id": "I029-09",
+      "keys": [
+        "29/3/*"
+      ],
+      "status": "fixed-stage-and-strength",
+      "finding": "两木泄体属用互与末用即中末阶段，原稿前后两处措辞订正；艮受两木制只算一次且无火生，原五态保留，不按木数量倍减。"
+    },
+    {
+      "id": "I029-10",
+      "keys": [
+        "29/3/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "秋冬旺相体、本用比和、轻克等正面条件完整保留，末泄优先及弱木减土程度继续标记项目裁决待审。"
+    },
+    {
+      "id": "I029-11",
+      "keys": [
+        "29/3/*"
+      ],
+      "status": "fixed-timing-copy",
+      "finding": "五组期窗原签名保持，中克与末泄事件按角色对齐，删除已发生改口返工和耗尽力量断言。"
+    },
+    {
+      "id": "I029-12",
+      "keys": [
+        "29/4/*"
+      ],
+      "status": "fixed-source-attribution",
+      "finding": "纳约自牖的王孔俭物荐进、程传由所明开通、朱子贰字句读与益诚心分别留存；原一樽二簋不推出固定两层答案。"
+    },
+    {
+      "id": "I029-13",
+      "keys": [
+        "29/4/*"
+      ],
+      "status": "fixed-copy-and-stage",
+      "finding": "移除每问只一理由、已漏答临场补上、转行答案、对方递行业资料、正门已堵等无据场景。体互震泄、用互艮克对应中段，兑末生保原态。"
+    },
+    {
+      "id": "I029-14",
+      "keys": [
+        "29/4/申",
+        "29/4/酉",
+        "29/4/亥",
+        "29/4/子"
+      ],
+      "status": "fixed-timing-scope",
+      "finding": "保留name-support/changed_use签名，仅参本轮结果确认，不指定电话邮箱、不保证下一轮存在或等同录用。其余气组原中耗/中克保持。"
+    },
+    {
+      "id": "I029-15",
+      "keys": [
+        "29/4/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "极薄末生优先、弱木减土统一权重，以及同为薄生为何各气选不同结果/过程窗，维持现行且继续开放审查。"
+    },
+    {
+      "id": "I029-16",
+      "keys": [
+        "29/5/*"
+      ],
+      "status": "fixed-classical-balance",
+      "finding": "原稿只取王注未免咎，新稿并列程传协力与朱本义中正尊位时亦将出，不称无咎毫无积极义；未平不量成一问一分之差。"
+    },
+    {
+      "id": "I029-17",
+      "keys": [
+        "29/5/*"
+      ],
+      "status": "fixed-copy-strength-timing",
+      "finding": "删除三问漏一、砍产品线、人员限制、未听清末问、故意绕开规范等无据现场；两土受震制均克轻，原旺相态留存，原期窗签名不改。"
+    },
+    {
+      "id": "I029-18",
+      "keys": [
+        "29/5/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "本比和、秋冬强体轻克及朱本义趋平正面证据未删，现行无生/末克的二分优先继续开放。"
+    },
+    {
+      "id": "I029-19",
+      "keys": [
+        "29/5/*"
+      ],
+      "status": "source-transcription-note",
+      "finding": "程传本地转录含元咎、盈则乎等疑字，正文按上下文及王孔/本义对读用无咎与平，不修改共享原典，也不依据疑字改变判断。"
+    },
+    {
+      "id": "I029-20",
+      "keys": [
+        "29/6/*"
+      ],
+      "status": "fixed-classical-divergence",
+      "finding": "上六王孔险终自修可求复与程传久极终凶分列，朱处险极不磨平为轻微失误；三岁保留原文语境，不换作现代三年不能求职，也不声称古注皆不论期。"
+    },
+    {
+      "id": "I029-21",
+      "keys": [
+        "29/6/*"
+      ],
+      "status": "fixed-copy-and-advice",
+      "finding": "删除改口三遍、年龄用户误听、行业投入产出知识缺失及收尾时间用尽等无据情节。说过便不推翻的绝对要求改为依据可靠新信息作必要修正。"
+    },
+    {
+      "id": "I029-22",
+      "keys": [
+        "29/6/*"
+      ],
+      "status": "fixed-stage-and-strength",
+      "finding": "震体互与巽末用属中末泄耗；艮用互受两木制一次克减，不叠倍不递归，原旺相休囚死保持。过程取期签名与旧稿相同，事件按中克末耗对齐。"
+    },
+    {
+      "id": "I029-23",
+      "keys": [
+        "29/6/*"
+      ],
+      "status": "open-rule-priority",
+      "finding": "秋冬体旺相、本用比和和艮克轻均完整保留，末泄与凶爻仍判难属项目权重；弱木减土幅度及强体优势怎样参与终判继续开放。"
+    },
+    {
+      "id": "I029-24",
+      "keys": [
+        "29/*/*"
+      ],
+      "status": "scope-explicit",
+      "finding": "作者72篇全量全文读回完成，另一位AI审校者独立抽查六篇且未见阻断问题；均不等同独立全库审读、用户逐篇接受、争议规则获证实或现实预测准确率。"
+    }
+  ],
+  "independentReview": {
+    "status": "six-article-independent-sample-completed",
+    "reviewer": "/root/audit_sources",
+    "reviewerIsHuman": false,
+    "wholeArticlesRead": 6,
+    "sourceSha256": "ba0642b38ae53874c7a839d2e12f391f71e760350eb3af64e4d03c5746e02aaf",
+    "scope": "仅六篇独立全文抽查：标题、短断、全部五段、judgment、timing，另核对应事实、一次作用、同气签名与王孔程朱原典；不是独立全量72篇审查。",
+    "blockingIssuesFound": 0,
+    "articles": [
+      {
+        "key": "29/1/辰",
+        "articleSha256": "3637e713dc198fff9ea21d3fc71a1d7cf0d58cd934fcad25a3619d3d9213f984",
+        "finding": "初六深陷凶与末生判成竞争保留，囚木减旺土仅改变力度，不改原态。"
+      },
+      {
+        "key": "29/2/酉",
+        "articleSha256": "546ae1264a43429a6cc58589d24c0cbc16e93735da80a5f2460506e77e129385",
+        "finding": "相体比和与求小得正面完整，克轻未误为无克，无生末克优先留审。"
+      },
+      {
+        "key": "29/3/午",
+        "articleSha256": "88c9f4a11def891fb04d4362a7bafd0f35440b1e3d8106f693443fefe6d3fd74",
+        "finding": "囚体、两休木中末泄轻、相艮受制克轻准确，勿用未扩大为禁止合理修正。"
+      },
+      {
+        "key": "29/4/亥",
+        "articleSha256": "b4c292579db7d0a0a2014d57a0b42a745007321872ba30d0b9b764313a2198fe",
+        "finding": "旺体、相震实耗、囚艮克轻、休兑薄生准确；王孔质实、程从所明入、朱诚心分别表述，句读分歧存回执。"
+      },
+      {
+        "key": "29/5/寅",
+        "articleSha256": "868d837431dc953d17d4905472d5ea43399fed88ba62f22976f4d9c6ca0c0e37",
+        "finding": "体休未称弱，王孔未平有咎、程须抵既平、朱时亦将出均保留。"
+      },
+      {
+        "key": "29/6/子",
+        "articleSha256": "7c8f57f5c1930213722297049c58680f87fe59dbf3aac8c98cfd75b3e3e8d08b",
+        "finding": "王孔险终且自修可求复与程久极终凶并列，三岁不直推现代日期，有据纠错仍允许。"
+      }
+    ],
+    "independentFullCopyReview": "pending",
+    "userPerArticleAcceptance": false
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "timingChanges": [
+    {
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "use_mutual",
+          "长讲讲了一大半，才发觉前提理解偏了",
+          "长讲开口前，把对方问的范围复述一遍。",
+          "旺震用互受休坎生，取寅、卯日察中段返工。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use_mutual",
+          "中段展开需要较多投入，宜留意前提之间的联系",
+          "先核准所问范围和已有根据，再展开需要承担的说明。",
+          "旺震用互受休坎生，参寅、卯日的过程耗应，不指定已读错前提或返工次数。"
+        ]
+      ],
+      "reason": "完整保留初六入坎窞、失道不能自济的重凶与当前末生判成的冲突，不限缩为某一道题答错又及时改正；清除题数、项目细节、返工次数、量化材料和考官提示等无据事实。五气均补足体互艮受震制而克减的一层作用，原五态保持；现行二分与取期签名不变，原典与项目权重另留审计。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "条件一大串的那一问，第一眼无从下手",
+          "从第一个条件讲起，能讲的几步先讲出来。",
+          "相艮体互克囚坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程中的约束有所减轻，承接仍需谨慎",
+          "把已知条件和待核实部分分开，先完成最有根据的说明。",
+          "原相艮体互受休震制记克减，克囚坎，参辰、戌、丑、未日；保留过程凶应而不指定难题内容。"
+        ]
+      ],
+      "reason": "完整保留初六入坎窞、失道不能自济的重凶与当前末生判成的冲突，不限缩为某一道题答错又及时改正；清除题数、项目细节、返工次数、量化材料和考官提示等无据事实。五气均补足体互艮受震制而克减的一层作用，原五态保持；现行二分与取期签名不变，原典与项目权重另留审计。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "support",
+          "changed_use",
+          "后半程的数据，印证了前面讲的判断",
+          "相像的两个问题，先分清一个问过去、一个问将来。",
+          "旺兑末用生相坎，取申、酉日。"
+        ]
+      ],
+      "new": [
+        [
+          "support",
+          "changed_use",
+          "后段有较足生扶，有利于补清关键联系",
+          "把新增信息与原有事实核对，再明确可以成立的结论。",
+          "旺兑变用生相坎，参申、酉日的后段帮助，不限定数据或通知渠道。"
+        ]
+      ],
+      "reason": "完整保留初六入坎窞、失道不能自济的重凶与当前末生判成的冲突，不限缩为某一道题答错又及时改正；清除题数、项目细节、返工次数、量化材料和考官提示等无据事实。五气均补足体互艮受震制而克减的一层作用，原五态保持；现行二分与取期签名不变，原典与项目权重另留审计。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "drain",
+          "use_mutual",
+          "连环追问第一环说错一个数，后面跟着返工",
+          "连环追问的第一环讲完，先在心里核一遍数。",
+          "相震用互受旺坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use_mutual",
+          "中段的推演与说明仍需实在投入",
+          "先核实支撑判断的条件，变更前提时检查相关推论。",
+          "相震用互受旺坎生，参寅、卯日的中段耗应，不预设已报错数字。"
+        ]
+      ],
+      "reason": "完整保留初六入坎窞、失道不能自济的重凶与当前末生判成的冲突，不限缩为某一道题答错又及时改正；清除题数、项目细节、返工次数、量化材料和考官提示等无据事实。五气均补足体互艮受震制而克减的一层作用，原五态保持；现行二分与取期签名不变，原典与项目权重另留审计。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 1,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "一条要求读着苛刻，停下来拆了两遍",
+          "读着苛刻的要求，先拆成两句话再看。",
+          "旺艮体互克死坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "过程约束受制减轻，体弱仍需逐项落实条件",
+          "围绕核心要求组织根据，尚未核准的部分清楚交代。",
+          "原旺艮体互受囚震制记克减而克死坎，参辰、戌、丑、未日，不限定题量或拆解次数。"
+        ]
+      ],
+      "reason": "完整保留初六入坎窞、失道不能自济的重凶与当前末生判成的冲突，不限缩为某一道题答错又及时改正；清除题数、项目细节、返工次数、量化材料和考官提示等无据事实。五气均补足体互艮受震制而克减的一层作用，原五态保持；现行二分与取期签名不变，原典与项目权重另留审计。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "use_mutual",
+          "那段估算越算越长，时间去了大半",
+          "估算开口前，先说好只算到哪一层。",
+          "旺震用互受休坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use_mutual",
+          "中段说明的投入较实，宜围绕关键依据展开",
+          "先确定需要证明的判断，再补足与它直接相关的材料。",
+          "旺震用互受休坎生，保留寅、卯日参中段耗力，不指定长估算或剩余时间。"
+        ]
+      ],
+      "reason": "逐项恢复九二刚中求小得而尚未出险的条件，删除固定估算题、题数、预算、成员离职、失误和时间耗尽等无据现场；两土受震制而克轻覆盖五气，土月不再同时称克轻与两处旺克最重，旺相体与本用比和正面证据保留，既有二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后一问列到第三种情形，想不出了",
+          "分情形的问题，先把每种各讲一句，再展开。",
+          "相坤末用克囚坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "收束仍有轻约束，宜核实结论的适用条件",
+          "讲足已经有据的部分，尚待确认的条件单独说明。",
+          "相坤受休震制而克轻，克囚坎；保留辰、戌、丑、未日参末段约束。"
+        ]
+      ],
+      "reason": "逐项恢复九二刚中求小得而尚未出险的条件，删除固定估算题、题数、预算、成员离职、失误和时间耗尽等无据现场；两土受震制而克轻覆盖五气，土月不再同时称克轻与两处旺克最重，旺相体与本用比和正面证据保留，既有二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "收尾那个结论里，跳过的一步说不出依据",
+          "觉得显然的那一步，也补一句凭的是什么。",
+          "休坤末用克相坎，参辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "末段核查主张与证据是否相称",
+          "将成立条件解释清楚，结论留在实际能够证明的范围。",
+          "休坤受震制后克轻，克相坎；沿辰、戌、丑、未日参收束，不预设省略或追问。"
+        ]
+      ],
+      "reason": "逐项恢复九二刚中求小得而尚未出险的条件，删除固定估算题、题数、预算、成员离职、失误和时间耗尽等无据现场；两土受震制而克轻覆盖五气，土月不再同时称克轻与两处旺克最重，旺相体与本用比和正面证据保留，既有二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "drain",
+          "use_mutual",
+          "长问题第三问缺一条中间结论，来回试了很久",
+          "第三问卡住就先放下，会的讲完再回来。",
+          "相震用互受旺坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "use_mutual",
+          "中段投入较实，宜让展开始终服务于主要判断",
+          "把不同依据之间的联系说清，扩展内容以实际需要为限。",
+          "相震用互受旺坎生，保留寅、卯日参过程中付出，不编定题数和耗时。"
+        ]
+      ],
+      "reason": "逐项恢复九二刚中求小得而尚未出险的条件，删除固定估算题、题数、预算、成员离职、失误和时间耗尽等无据现场；两土受震制而克轻覆盖五气，土月不再同时称克轻与两处旺克最重，旺相体与本用比和正面证据保留，既有二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 2,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "两个大问题都落在最生疏的那块",
+          "基础问题先讲满，再碰那两个大问题。",
+          "旺坤变用克死坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "收束仍须承接有限约束，宜守住可兑现的范围",
+          "先归拢已核实的能力依据，未知部分留下明确检查方向。",
+          "旺坤受囚震制而克轻，克死坎；保留辰、戌、丑、未日参末段，不指定两道大问题。"
+        ]
+      ],
+      "reason": "逐项恢复九二刚中求小得而尚未出险的条件，删除固定估算题、题数、预算、成员离职、失误和时间耗尽等无据现场；两土受震制而克轻覆盖五气，土月不再同时称克轻与两处旺克最重，旺相体与本用比和正面证据保留，既有二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "同一问换了第三种讲法，还卡在原处",
+          "换过一次讲法仍不通，就照实说出卡在哪。",
+          "旺巽末用受休坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "收束仍有较实付出，宜检查展开是否增加依据",
+          "保留已经成立的部分，新增内容先说明它解决了什么实际欠缺。",
+          "旺巽变用受休坎生，沿寅、卯日参末段耗力，不预言固定次数重讲。"
+        ]
+      ],
+      "reason": "完整保留六三进退居皆险、勿用其道与终无功的警戒，枕按支倚不安解释而不虚构一根木头；清除部门题、拍板人、固定换法次数、忘记规则与考官点破等现场。震巽泄体应属中末，不再称前后两处，艮受两木制只计一次克减，原二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "两种讲法推到一半，缺的是同一个条件",
+          "换讲法之前，先回头读开场那段说明。",
+          "相艮体互克囚坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段核实推论所依赖的条件",
+          "前提未明时先划定可讨论范围，再补查必要信息。",
+          "相艮受震巽木制而克轻，克囚坎；保留辰、戌、丑、未日参中段约束。"
+        ]
+      ],
+      "reason": "完整保留六三进退居皆险、勿用其道与终无功的警戒，枕按支倚不安解释而不虚构一根木头；清除部门题、拍板人、固定换法次数、忘记规则与考官点破等现场。震巽泄体应属中末，不再称前后两处，艮受两木制只计一次克减，原二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "收尾那问改了几回，只是换了说法",
+          "说过一回觉得不妥，就补一句具体怎么改。",
+          "死巽末用受相坎生，取寅、卯日参轻耗。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段仍有轻耗，宜使补充内容具备实际作用",
+          "对真正不足处补证或修正，已经成立的材料准确归拢。",
+          "死巽末用受相坎生，取寅、卯日参轻耗，不预设末问内容及改口次数。"
+        ]
+      ],
+      "reason": "完整保留六三进退居皆险、勿用其道与终无功的警戒，枕按支倚不安解释而不虚构一根木头；清除部门题、拍板人、固定换法次数、忘记规则与考官点破等现场。震巽泄体应属中末，不再称前后两处，艮受两木制只计一次克减，原二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "方案推倒重讲了好几遍，依据还是那几条",
+          "重讲之前，先想好这一遍多出的那条依据。",
+          "相巽末用受旺坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段投入较实，宜让收束建立在有效依据上",
+          "核对每次补充怎样改变判断，无新增依据时收住重复展开。",
+          "相巽末用受旺坎生，保留寅、卯日参末段消耗，不定已经返工或耗尽力量。"
+        ]
+      ],
+      "reason": "完整保留六三进退居皆险、勿用其道与终无功的警戒，枕按支倚不安解释而不虚构一根木头；清除部门题、拍板人、固定换法次数、忘记规则与考官点破等现场。震巽泄体应属中末，不再称前后两处，艮受两木制只计一次克减，原二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 3,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "body_mutual",
+          "靠着记了一半的规则往下讲，几步就对不上",
+          "拿不准的规则，先讲不靠它的那部分。",
+          "旺艮体互克死坎，按辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "body_mutual",
+          "中段宜确认方法所依据的条件是否可靠",
+          "拿不准的内容先核实，已知部分说明适用范围。",
+          "旺艮受震巽木制按克轻，克死坎；沿辰、戌、丑、未日参中段，不虚定行业规则缺漏。"
+        ]
+      ],
+      "reason": "完整保留六三进退居皆险、勿用其道与终无功的警戒，枕按支倚不安解释而不虚构一根木头；清除部门题、拍板人、固定换法次数、忘记规则与考官点破等现场。震巽泄体应属中末，不再称前后两处，艮受两木制只计一次克减，原二分及取期结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "body_mutual",
+          "说明性的问题越讲越长，要点埋到了后面",
+          "每问先给结论和最硬的一条理由，够了就停。",
+          "旺震体互受休坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "body_mutual",
+          "中段投入较实，宜让说明直接服务于主要判断",
+          "先核清需要表达的实质，再补上理解它所必需的依据。",
+          "旺震体互受休坎生，沿寅、卯日参中段耗力，不指定每题长度或已经铺陈。"
+        ]
+      ],
+      "reason": "将六四质实诚信、刚柔相际和纳约自牖恢复为完整条件，分别注明王孔俭约之物从牖荐进、程传由所明处开通、朱子贰字句读之异。删除每问一句、两碗等于两层答案、已漏补项和指定资料电话邮箱；保持五态及一层克减、末兑原态与原二分，结果候选仅本轮确认。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "use_mutual",
+          "两层的问题，第二层差点没答",
+          "听到两层的问题，心里先记一个二。",
+          "相艮用互克囚坎，取辰、戌、丑、未日，作中途要过之坎。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "use_mutual",
+          "中段仍须承接轻约束，宜核实说明所需的条件",
+          "分清要求与依据，必要内容讲充分，未知处说明核查方式。",
+          "相艮用互受休震制而克轻，克囚坎；保留辰、戌、丑、未日参中段。"
+        ]
+      ],
+      "reason": "将六四质实诚信、刚柔相际和纳约自牖恢复为完整条件，分别注明王孔俭约之物从牖荐进、程传由所明处开通、朱子贰字句读之异。删除每问一句、两碗等于两层答案、已漏补项和指定资料电话邮箱；保持五态及一层克减、末兑原态与原二分，结果候选仅本轮确认。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "name-support",
+          "changed_use",
+          "下一轮的邀请发到了邮箱",
+          "邀请里的时间和地点，回官方页面再核一遍。",
+          "旺兑变用生相坎，依求名取申、酉日。"
+        ]
+      ],
+      "new": [
+        [
+          "name-support",
+          "changed_use",
+          "可留意本轮通过的明确确认",
+          "以正式答复核准这一轮的状态及后续安排。",
+          "旺兑变用生相坎，保持求名取申、酉日的结果候选，不等同最终录用。"
+        ]
+      ],
+      "reason": "将六四质实诚信、刚柔相际和纳约自牖恢复为完整条件，分别注明王孔俭约之物从牖荐进、程传由所明处开通、朱子贰字句读之异。删除每问一句、两碗等于两层答案、已漏补项和指定资料电话邮箱；保持五态及一层克减、末兑原态与原二分，结果候选仅本轮确认。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "name-support",
+          "changed_use",
+          "电话打来，通知你去下一轮",
+          "电话之后，再查邮箱里的书面通知。",
+          "休兑变用生旺坎，按求名取申、酉日。"
+        ]
+      ],
+      "new": [
+        [
+          "name-support",
+          "changed_use",
+          "可留意本轮结果得到明确回复",
+          "核实正式答复的范围，尚未确认的安排继续以实际通知为准。",
+          "休兑末用薄生旺坎，保留求名取申、酉日的候选，不保证某种联络渠道。"
+        ]
+      ],
+      "reason": "将六四质实诚信、刚柔相际和纳约自牖恢复为完整条件，分别注明王孔俭约之物从牖荐进、程传由所明处开通、朱子贰字句读之异。删除每问一句、两碗等于两层答案、已漏补项和指定资料电话邮箱；保持五态及一层克减、末兑原态与原二分，结果候选仅本轮确认。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 4,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "use_mutual",
+          "正面讲推不动，换了个案例切进去",
+          "推不动的大问题，先找一个自己经手的小案例。",
+          "旺艮用互克死坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "use_mutual",
+          "中段宜把关键判断与可核实的事实接清",
+          "选择真正相关的经验作依据，适用条件与待查事项分别说明。",
+          "旺艮用互受囚震制而克轻，克死坎；保留辰、戌、丑、未日参中段约束。"
+        ]
+      ],
+      "reason": "将六四质实诚信、刚柔相际和纳约自牖恢复为完整条件，分别注明王孔俭约之物从牖荐进、程传由所明处开通、朱子贰字句读之异。删除每问一句、两碗等于两层答案、已漏补项和指定资料电话邮箱；保持五态及一层克减、末兑原态与原二分，结果候选仅本轮确认。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "body_mutual",
+          "连着问的三件事，有一件只在心里想过",
+          "连着问几件事，答完对着数一遍。",
+          "旺震体互受休坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "body_mutual",
+          "中段投入较实，宜核对说明是否覆盖真正的要求",
+          "围绕主要判断组织依据，重要条件分别交代清楚。",
+          "旺震体互受休坎生，保留寅、卯日参中段耗力，不编题数或漏答。"
+        ]
+      ],
+      "reason": "九五恢复王孔程传须既平乃无咎与朱本义阳刚中正居尊位、时亦将出的不同侧重，不能把无咎全部说成无积极含义，也不把未平量成只差一铲。清除固定题数、砍产品线、缺人手、漏问和规范知识等无据现场；艮坤受震制统一克轻，原五态、二分及期窗结构不改。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后那个大问题只报了结论，过程没讲",
+          "再赶时间，也先讲两三句关键过程再报结论。",
+          "相坤末用克囚坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "收束仍有轻约束，宜核实结论赖以成立的条件",
+          "把主要理由与可验证事实讲清，未知部分保留核查范围。",
+          "相坤末用受休震制而克轻，克囚坎；保留辰、戌、丑、未日参末段。"
+        ]
+      ],
+      "reason": "九五恢复王孔程传须既平乃无咎与朱本义阳刚中正居尊位、时亦将出的不同侧重，不能把无咎全部说成无积极含义，也不把未平量成只差一铲。清除固定题数、砍产品线、缺人手、漏问和规范知识等无据现场；艮坤受震制统一克轻，原五态、二分及期窗结构不改。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "给了两个方案，没舍掉不合条件的那个",
+          "方案不止一个时，先回头对一遍开场的限制。",
+          "休坤变用克相坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "末段宜核准方案与必要条件是否相合",
+          "保留已经成立的做法，尚待证实的部分说明前提。",
+          "休坤末用受震制而克轻，克相坎；沿辰、戌、丑、未日参收束，不预设方案数或人员限制。"
+        ]
+      ],
+      "reason": "九五恢复王孔程传须既平乃无咎与朱本义阳刚中正居尊位、时亦将出的不同侧重，不能把无咎全部说成无积极含义，也不把未平量成只差一铲。清除固定题数、砍产品线、缺人手、漏问和规范知识等无据现场；艮坤受震制统一克轻，原五态、二分及期窗结构不改。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "最后一问换了问法，你还在讲原来那件",
+          "讲到最后一问，先把问句在心里重读一遍。",
+          "囚坤变用克旺坎，参辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "收束宜再次核对判断所回应的要求与条件",
+          "将已证实的能力归拢，必要前提说明准确。",
+          "囚坤末用受震制而克轻，克旺坎；参辰、戌、丑、未日，不指定末题换问法。"
+        ]
+      ],
+      "reason": "九五恢复王孔程传须既平乃无咎与朱本义阳刚中正居尊位、时亦将出的不同侧重，不能把无咎全部说成无积极含义，也不把未平量成只差一铲。清除固定题数、砍产品线、缺人手、漏问和规范知识等无据现场；艮坤受震制统一克轻，原五态、二分及期窗结构不改。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 5,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "changed_use",
+          "收尾大问题又问到那块没补上的知识",
+          "不熟的那块，先讲不靠它的几步，再照实说。",
+          "旺坤末用克死坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "changed_use",
+          "末段仍须承接轻约束，宜守住已核实的责任范围",
+          "真实掌握的内容讲充分，未具备条件的部分列明补足方向。",
+          "旺坤受囚震制后按克轻，克死坎；保留辰、戌、丑、未日参末段，不虚定欠缺哪项知识。"
+        ]
+      ],
+      "reason": "九五恢复王孔程传须既平乃无咎与朱本义阳刚中正居尊位、时亦将出的不同侧重，不能把无咎全部说成无积极含义，也不把未平量成只差一铲。清除固定题数、砍产品线、缺人手、漏问和规范知识等无据现场；艮坤受震制统一克轻，原五态、二分及期窗结构不改。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "spring-wood",
+      "months": [
+        "寅",
+        "卯"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "同一件事讲了又改、改了又讲，前后三遍",
+          "说过的不推翻，要补就补在后面。",
+          "旺巽末用受休坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段仍有较实消耗，宜使补充具备明确依据",
+          "核实需要修正的环节，已有事实讲稳，新内容说明实际作用。",
+          "旺巽末用受休坎生，保留寅、卯日参收束耗力，不定改口次数或已耗尽时间。"
+        ]
+      ],
+      "reason": "上六完整保留深陷、失道与凶，分别记录王孔险终可求复自新和程传久极终凶、朱处险极的解释。三岁不直接换成本轮求职日历，但也不声称古注全部只取象而无期序。删除三次改口、误听用户年龄、缺行业知识及时间耗尽等无据现场，允许有依据的纠错，保持原二分与过程期窗。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "summer-fire",
+      "months": [
+        "巳",
+        "午"
+      ],
+      "old": [
+        [
+          "control",
+          "use_mutual",
+          "那条依据找不到，回答越讲越长",
+          "找依据时回到开场材料逐句读，找不到就照实说。",
+          "相艮用互克囚坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "use_mutual",
+          "中段宜核实主要论证的依据是否可靠",
+          "尚未确认的内容留明范围，必要信息查实后再扩展判断。",
+          "相艮用互受震巽制而克轻，克囚坎；沿辰、戌、丑、未日参中段，不编开场材料。"
+        ]
+      ],
+      "reason": "上六完整保留深陷、失道与凶，分别记录王孔险终可求复自新和程传久极终凶、朱处险极的解释。三岁不直接换成本轮求职日历，但也不声称古注全部只取象而无期序。删除三次改口、误听用户年龄、缺行业知识及时间耗尽等无据现场，允许有依据的纠错，保持原二分与过程期窗。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "autumn-metal",
+      "months": [
+        "申",
+        "酉"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "方案改了几遍，始终没动开头那个条件",
+          "改两遍还对不上，就回头重听开头的条件。",
+          "死巽变用受相坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "收束仍有轻耗，宜把有效修正与可靠事实接清",
+          "新信息确实改变前提时据实调整，已经成立的部分保持准确。",
+          "死巽末用受相坎生，取寅、卯日参末段轻耗，不指定改方案次数或误读条件。"
+        ]
+      ],
+      "reason": "上六完整保留深陷、失道与凶，分别记录王孔险终可求复自新和程传久极终凶、朱处险极的解释。三岁不直接换成本轮求职日历，但也不声称古注全部只取象而无期序。删除三次改口、误听用户年龄、缺行业知识及时间耗尽等无据现场，允许有依据的纠错，保持原二分与过程期窗。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "winter-water",
+      "months": [
+        "亥",
+        "子"
+      ],
+      "old": [
+        [
+          "drain",
+          "changed_use",
+          "回头补那个难问题，耗掉了收尾的时间",
+          "最后那段时间先理已讲好的要点，再碰难的。",
+          "相巽变用受旺坎生，取寅、卯日。"
+        ]
+      ],
+      "new": [
+        [
+          "drain",
+          "changed_use",
+          "末段投入较实，宜先归拢有据内容再作必要补充",
+          "判断补充是否增加有效依据，真正需改之处说明理由。",
+          "相巽末用受旺坎生，保留寅、卯日参末段消耗，不预告补难题占尽收尾时间。"
+        ]
+      ],
+      "reason": "上六完整保留深陷、失道与凶，分别记录王孔险终可求复自新和程传久极终凶、朱处险极的解释。三岁不直接换成本轮求职日历，但也不声称古注全部只取象而无期序。删除三次改口、误听用户年龄、缺行业知识及时间耗尽等无据现场，允许有依据的纠错，保持原二分与过程期窗。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "movingLine": 6,
+      "monthOrder": "seasonal-earth",
+      "months": [
+        "辰",
+        "未",
+        "戌",
+        "丑"
+      ],
+      "old": [
+        [
+          "control",
+          "use_mutual",
+          "关键那一步，偏偏缺一块没准备的知识",
+          "缺一块知识时，照实讲已知部分，不硬凑结论。",
+          "旺艮用互克死坎，取辰、戌、丑、未日。"
+        ]
+      ],
+      "new": [
+        [
+          "control",
+          "use_mutual",
+          "中段宜确认关键主张的依据与适用条件",
+          "真实掌握的内容清楚说明，尚待验证的部分提出具体核查方向。",
+          "旺艮用互受震巽木制按克轻，克死坎；沿辰、戌、丑、未日参中段，不指定缺少哪块知识。"
+        ]
+      ],
+      "reason": "上六完整保留深陷、失道与凶，分别记录王孔险终可求复自新和程传久极终凶、朱处险极的解释。三岁不直接换成本轮求职日历，但也不声称古注全部只取象而无期序。删除三次改口、误听用户年龄、缺行业知识及时间耗尽等无据现场，允许有依据的纠错，保持原二分与过程期窗。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72篇完整，六批draft逐批通过；作者72篇全文读回和六篇独立抽查完成。最终非draft check、build及--docs检查均通过，1944项盘面零差异、144日期例、无长句重复。",
+    "bodyHanRange": [
+      438,
+      505
+    ],
+    "bodyHanMean": 459.3333333333333,
+    "bodyHanMedian": 455.0,
+    "shortHanRange": [
+      84,
+      99
+    ],
+    "flexibleLengthWarnings": 18,
+    "lengthDecision": "18篇438–449汉字，均完成盘面、完整爻义和准备论述，逐篇全文读过；处于此前417–510参考厚度范围，不机械重复补字。",
+    "outcomes": {
+      "favourable": 24,
+      "difficult": 48
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "独立卦表、bit互变、五态与直接关系27项/篇；不能证明间接权重与古典优先规则。"
+    },
+    "authorIndirectReview": "六爻艮皆受震制，九二九五末坤同受木制，六三上六有末巽加入；无火生土，一次克轻，不按木数倍减，不递归因兑克木取消木制土；末兑生体维持原五态，体休不列囚死弱档。",
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timingKinds": {
+      "drain": 24,
+      "control": 42,
+      "support": 2,
+      "name-support": 4
+    },
+    "timing": "30组旧新文及全部72签名保持；只有六四秋冬name-support参本轮结果，其余为过程期。",
+    "judgmentCorrections": 72,
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0
+  }
+}
