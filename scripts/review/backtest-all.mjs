@@ -39,6 +39,8 @@ const score = (t, w) => t == null ? null : t === w ? 1 : (t === 'C' || w === 'C'
 const rows = [];
 for (const f of (await readdir('docs/marketing/cases')).filter(n => n.endsWith('.json')))
  for (const c of JSON.parse(await readFile('docs/marketing/cases/' + f, 'utf8'))) {
+  // 六爻摇卦（castingMethod: liuyao）不是梅花先天起卦，判法不同，不进本回测（2026-11-19，见 PROBATION_REJUDGE_20261118.md 第七节）。
+  if (c.castingMethod === 'liuyao') continue;
   const id = toId(c.hexagram), qi = QI[c.monthBranch], line = Number(c.movingLine);
   if (!id || !qi || !(line >= 1)) continue;
   const ex = (await shard('exam', id)).rows.find(x => x.movingLine === line && x.monthOrder === qi);
