@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 import {loadLibrary} from '../../src/index.js';
 import {validateStoryCopy} from '../../src/story-editorial.js';
 import {checkInterviewShort} from '../../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
+import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
  WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE,
  RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE} from '../../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../../src/month-slots.js';
@@ -13,11 +13,11 @@ import {PRODUCT_TAXONOMY} from '../../sources/editorial/product-taxonomy.mjs';
 
 const [item, hexArg, flag] = process.argv.slice(2);
 const profiles = {exam:EXAM_PROFILE, 'interview-pass':INTERVIEW_V3_PROFILE, 'promotion-pay':PROMOTION_V3_PROFILE, 'job-change':JOB_CHANGE_PROFILE,
- 'workplace-stability':WORKPLACE_STABILITY_PROFILE, 'workplace-probation':WORKPLACE_PROBATION_PROFILE,
+ 'workplace-stability':WORKPLACE_STABILITY_PROFILE, 'workplace-probation':PROBATION_V3_PROFILE,
  'new-relationship-opportunity':NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, 'confession-decision':CONFESSION_DECISION_PROFILE,
  'relationship-establishment':RELATIONSHIP_ESTABLISHMENT_PROFILE, 'relationship-reconciliation':RELATIONSHIP_RECONCILIATION_PROFILE};
 const outcomes = {exam:['favourable','conditional','difficult'], 'interview-pass':['favourable','difficult'], 'promotion-pay':['favourable','difficult'],
- 'workplace-probation':['favourable','conditional','difficult'], 'workplace-stability':['stable','watch','strained'],
+ 'workplace-probation':['favourable','difficult'], 'workplace-stability':['stable','watch','strained'],
  'job-change':['stay','verify','prepare','switch']};
 const profile = profiles[item];
 if (!profile) throw new Error('Unknown item ' + item);
@@ -61,10 +61,14 @@ for (const [i, d] of drafts.entries()) {
   for (const re of STOCK) if (re.test(value)) err(`${field} 含套话 ${value.match(re)[0]}`);
   for (const re of VOICE) if (re.test(value)) warn(`${field} 含「不…，也不…」句式`);
  }
- if (item === 'interview-pass' || item === 'promotion-pay') {
-  const EXAMW = item === 'promotion-pay' ? /考试|考场|考生|卷面|卷尾|卷首|全卷|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题|放榜|过线|面试官|面试/u : /考试|考场|考生|卷面|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题/u;
+ if (item === 'interview-pass' || item === 'promotion-pay' || item === 'workplace-probation') {
+  const EXAMW = item === 'promotion-pay' || item === 'workplace-probation' ? /考试|考场|考生|卷面|卷尾|卷首|全卷|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题|放榜|过线|面试官|面试/u : /考试|考场|考生|卷面|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题/u;
   const all = [title, short, opening, process, ending, summary, resolution, JSON.stringify(topicDetail ?? ''), d[11] ?? '', ...(polishRecs?.[i]?.calculationNotes ?? [])].join('');
   if (EXAMW.test(all)) err('稿件含他项用语 ' + all.match(EXAMW)[0]);
+  // 依据、计算说明不许留考试的「定为能过」，也不许与本篇结论相反（2026-11-18 转正复核发现）。
+  if (item !== 'interview-pass' && /定为能过|判能过|翻为能过|能过而/u.test(all)) err('依据或计算说明残留考试结论用语 ' + all.match(/定为能过|判能过|翻为能过|能过而/u)[0]);
+  if (d[2] === 'difficult' && /定为能转正|定为能升|名易成，定为|吉事必可成就矣」[^。]*定为能/u.test(all)) err('转不了／升不了的篇，依据写成了能成');
+  if (d[2] === 'favourable' && /定为转不了|定为升不了|最忌见克体/u.test(all)) err('能成的篇，依据写成了不成');
  }
  if (profile.payDetail) {
   const pay = d[11] ?? '';
@@ -117,8 +121,8 @@ try {
    if (rec.textFinal) {
     // 文字终修硬性要求（docs/review/TEXT_FINAL_BRIEF.md）
     const HEDGE = /有条件|有望|偏难|多半|大概率|过线有机会|能不能过|过不过|成败两可|两可|或许|未必|恐怕|把握不大|把握较大|把握不小|机会不小|希望很大|希望不大|胜算|可能性|难过线|很难过|难以过/u;
-    const PASS = /能过|过得了|过得去|可以过|会过|拿得下|拿下|顺利通过|能通过|能过关|过关|能合格|稳过|过线不难|能过线|可以过线|过得了线|考得过|通过这一场|这一关能过|能被录用|会被录用|录用你|拿得到这个岗位|过得了这一关|通过这一轮|这一轮能过|能进下一轮|拿到这个岗位|能升上去|这次能升|能晋升|晋升能落定|升得上去|职级能动|能升职|升职能成/u;
-    const FAIL = /过不了|不能过|过不去|没法过|无法过|不会过|过不了线|够不上|达不到|拿不下|过线无望|没能过|考不过|合格不了|过不去线|这次不过|还差一截|还差一口气|还差几分|离合格线还差|离线还差|差在线下|落在线下|落到线下|够不到线|够不着线|没够上线|没能过线|还没到线|未到合格线|差一点到线|差几分到线|停在线下|压在线下|没上线|上不了线|差着几分|还欠一截|还欠几分|离那条线|没摸到线|线下还差|还差半截|差了一口气|还差一步|差了一步|差一步|这一轮没过|没过这一轮|止步这一轮|没能进下一轮|没被选上|没选上|落选|未能录用|没被录用|没等到录用|没拿到这个岗位|这回没成|这次没成|升职还差一步|这次还没轮到|这次轮不到|还没轮到你|没升上去|职级没动|职级这次没动|晋升没落定|这次没升成|没能晋升|升职这回没成|晋升这回没成/u;
+    const PASS = /能过|过得了|过得去|可以过|会过|拿得下|拿下|顺利通过|能通过|能过关|过关|能合格|稳过|过线不难|能过线|可以过线|过得了线|考得过|通过这一场|这一关能过|能被录用|会被录用|录用你|拿得到这个岗位|过得了这一关|通过这一轮|这一轮能过|能进下一轮|拿到这个岗位|能升上去|这次能升|能晋升|晋升能落定|升得上去|职级能动|能升职|升职能成|能转正|试用期能通过|能转为正式员工|转正能成/u;
+    const FAIL = /过不了|不能过|过不去|没法过|无法过|不会过|过不了线|够不上|达不到|拿不下|过线无望|没能过|考不过|合格不了|过不去线|这次不过|还差一截|还差一口气|还差几分|离合格线还差|离线还差|差在线下|落在线下|落到线下|够不到线|够不着线|没够上线|没能过线|还没到线|未到合格线|差一点到线|差几分到线|停在线下|压在线下|没上线|上不了线|差着几分|还欠一截|还欠几分|离那条线|没摸到线|线下还差|还差半截|差了一口气|还差一步|差了一步|差一步|这一轮没过|没过这一轮|止步这一轮|没能进下一轮|没被选上|没选上|落选|未能录用|没被录用|没等到录用|没拿到这个岗位|这回没成|这次没成|升职还差一步|这次还没轮到|这次轮不到|还没轮到你|没升上去|职级没动|职级这次没动|晋升没落定|这次没升成|没能晋升|升职这回没成|晋升这回没成|这次还没转成|转正还差一步|还没转下来|这次没转成|转正这回没成|试用期这回没过|没能转正/u;
     const [, , , ttl, sh, op, pr, en, su] = d;
     const head2 = String(sh).split(/[。！？]/u).filter(Boolean).slice(0, 2).join('。');
     const want = d[2] === 'favourable' ? PASS : FAIL;
