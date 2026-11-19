@@ -34,6 +34,7 @@ for (const [slug, id] of [
  ['relationship-reconciliation','relationships.reconciliation.reconcile'],
  ['lost-object-recovery','search.lost-object.recovery'],
  ['lost-pet-recovery','search.pets.recovery'],
+ ['missing-contact','search.missing-contact.contact'],
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
@@ -157,6 +158,7 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
      assert.deepEqual(result.calculationExplanation.location,row.locationApplication,row.decision.id);
     }
     if(slug==='lost-pet-recovery') assert.deepEqual(result.calculationExplanation.pet,row.petApplication,row.decision.id);
+    if(slug==='missing-contact') assert.deepEqual(result.calculationExplanation.contact,row.contactApplication,row.decision.id);
     assert.equal(result.calculationExplanation.void,undefined);
     assert.equal(result.timingSection.windows.length,row.timingSlots.length);
     for (const window of result.timingSection.windows) {

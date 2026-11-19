@@ -82,8 +82,14 @@ test('affection and missing-person questions do not inherit marriage, lost-objec
  ]);
  const affection=await repo.getContent({questionId:'relationships.affection.affection',...dated});
  assert.equal(affection.status,'pending-authoring');assert.match(affection.selection.answerScope,/对方心意以其实际表达为准/);
- const missing=await repo.getContent({questionId:'search.missing-contact.contact',...dated});
- assert.equal(missing.status,'pending-authoring');assert.equal(missing.story,null);assert.equal(missing.reading,undefined);assert.ok(missing.practicalAdvice.some(p=>p.includes('警方')));
+ const missing=await repo.getContent({...dated,questionId:'search.missing-contact.contact',primaryId:1,movingLine:3,monthOrder:'autumn-metal'});
+ assert.equal(missing.status,'ready');
+ assert.equal(missing.decision.question_type,'missing_person_contact_restoration');
+ assert.equal(missing.decision.questionScope,'verified-two-way-contact-with-a-specific-out-of-contact-person');
+ assert.ok(['mh-075','mh-076','mh-077'].every(id=>!missing.sourceIds.includes(id)));
+ assert.equal(missing.calculationExplanation.contact.personLocationInferred,false);
+ assert.equal(missing.calculationExplanation.contact.healthOrFateInferred,false);
+ assert.ok(missing.practicalAdvice.some(p=>p.includes('警方')));
  const leads=await repo.getContent({questionId:'search.person-leads.guidance'});assert.equal(leads.status,'guidance');assert.equal(leads.predictionAllowed,false);assert.equal(leads.provesLocation,false);
  const direction=await repo.getContent({questionId:'search.direction.symbolism',subcategoryId:'search.direction'});assert.equal(direction.status,'reference');assert.equal(direction.provesLocation,false);
  assert.equal((await repo.getQuestion('search.direction.symbolism')).mergedInto,'search.lost-object.recovery');

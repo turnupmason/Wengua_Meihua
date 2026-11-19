@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -60,7 +60,7 @@ function evidence(id, quote, reason) {
  if (!section.text.includes(quote)) throw new Error('Source excerpt mismatch: ' + id);
  const startLine=section.sourceRef.startLine+section.text.slice(0,section.text.indexOf(quote)).split('\n').length-1;
  return {id, title: section.title, quote, locator: section.sourceRef, reason,
-  ...(profile===LOST_PET_RECOVERY_PROFILE?{quoteLocator:{sourceId:section.sourceRef.sourceId,startLine,endLine:startLine+quote.split('\n').length-1}}:{})};
+  ...([LOST_PET_RECOVERY_PROFILE,MISSING_CONTACT_PROFILE].includes(profile)?{quoteLocator:{sourceId:section.sourceRef.sourceId,startLine,endLine:startLine+quote.split('\n').length-1}}:{})};
 }
 const commonEvidence = references.map(args => evidence(...args));
 const moneyClauses = {
@@ -81,6 +81,12 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (filename !== stem + '.json') throw new Error('Expected sequential author source: ' + stem);
  const sourcePath = sourceDir + filename;
  const drafts = JSON.parse(await readFile(new URL(sourcePath, root), 'utf8'));
+ const contactCasesPath=sourceDir+'cases/'+filename;
+ const contactCases=profile===MISSING_CONTACT_PROFILE?JSON.parse(await readFile(new URL(contactCasesPath,root),'utf8')):null;
+ const contactReviewPath=sourceDir+'reviews/'+filename;
+ const contactReview=contactCases?JSON.parse(await readFile(new URL(contactReviewPath,root),'utf8')):null;
+ if(contactCases && (contactCases.primaryId!==primaryId || contactCases.entries.length!==6 || contactCases.ruleVersion!=='missing-contact-modern-analogy-1.0.0'))throw new Error('Invalid contact cases: '+stem);
+ if(contactReview && (contactReview.actor!=='assistant-author' || contactReview.primaryId!==primaryId || contactReview.fullArticlesRead!==30 || !contactReview.reviewedAt || contactReview.sourceSha256!==createHash('sha256').update(await readFile(new URL(sourcePath,root))).digest('hex') || contactReview.casesSha256!==createHash('sha256').update(await readFile(new URL(contactCasesPath,root))).digest('hex')))throw new Error('Missing or stale contact full-read receipt: '+stem);
  const petCasesPath = sourceDir + 'cases/' + filename;
  const petCases = profile === LOST_PET_RECOVERY_PROFILE ? JSON.parse(await readFile(new URL(petCasesPath,root),'utf8')) : null;
  const petReviewPath=sourceDir+'reviews/'+filename;
@@ -137,6 +143,10 @@ for (const [batchIndex, filename] of batches.entries()) {
       (hasPay && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
+  const contactCase=contactCases?.entries.find(entry=>entry.movingLine===movingLine);
+  if(contactCases && (!contactCase || !contactCase.application || !contactCase.boundaries || contactCase.nodes.length!==5 || contactCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram)))throw new Error('Contact facts mismatch: '+stem+'/'+movingLine);
+  if(contactCase){const c=contactCase.lineCommentary;const raw=await readFile(new URL(c.sourcePath,root),'utf8');if(!raw.includes(c.quote)||!c.application||!c.referenceUrl||!c.locator)throw new Error('Contact line commentary mismatch: '+stem+'/'+movingLine);}
+  const contactApplication=contactCase?{...contactCase,sourcePath:contactCasesPath,ruleVersion:contactCases.ruleVersion,personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false,returnHomeInferred:false}:null;
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
   if(petCases && (!petCase || !petCase.boundaries || !petCase.application || petCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram))) throw new Error('Invalid pet scene application: '+stem+'/'+movingLine);
   const petApplication = petCase ? {...petCase,ruleVersion:petCases.ruleVersion,sourcePath:petCasesPath,actualPetIdentityVerified:false,actualLocationVerified:false,healthOrFateInferred:false} : null;
@@ -247,6 +257,7 @@ for (const [batchIndex, filename] of batches.entries()) {
         spec?.length === 6 && spec[5] === 'trigram-periods'))) {
    throw new Error('Invalid author timing: ' + key);
   }
+  if(profile===MISSING_CONTACT_PROFILE && timingSpecs.some(spec=>!['support','control','equal'].includes(spec[0])))throw new Error('Contact timing must identify a sourced contact stage: '+key);
   const timingSlots = promotionTimingSlots(r, timingSpecs, outcome, profile);
   if (new Set(timingSlots.map(slot => slot.id)).size !== timingSlots.length) throw new Error('Duplicate event timing: ' + key);
   const timingReason = timingOmission?.reason ?? timingSlots.map(slot => slot.reason).join(' ');
@@ -262,6 +273,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const sourceEvidence = [...commonEvidence,
    ...imageEvidence,
    ...(petCase ? petCase.evidence.map(s=>evidence(s.id,s.quote,s.reason)) : []),
+   ...(contactCase ? contactCase.evidence.map(s=>evidence(s.id,s.quote,s.reason)) : []),
    ...(locationApplication ? [evidence(locationApplication.sourceId, locationApplication.quote, '按真实动爻改变的经卦取方位及场所，结合原行程补查，未据此认定真实所在地。')] : []),
    ...(indirectNotes.length ? [evidence('mh-099', INDIRECT_QUOTE, '口径 V2.1 间接生克：' + indirectNotes.join('；') + '。只算一层，不连环累计。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
@@ -291,6 +303,7 @@ for (const [batchIndex, filename] of batches.entries()) {
       quote:INDIRECT_QUOTE};
     })};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
+  if(contactReview) authorship.wholeArticleReadReceipt={path:contactReviewPath,sourceSha256:contactReview.sourceSha256,casesSha256:contactReview.casesSha256,reviewedAt:contactReview.reviewedAt,actor:contactReview.actor};
   if(petReview) authorship.wholeArticleReadReceipt={path:petReviewPath,sourceSha256:petReview.sourceSha256,casesSha256:petReview.casesSha256,reviewedAt:petReview.reviewedAt,actor:petReview.actor};
   const literaryEntry = literaryReceipt?.entries.find(entry => entry.rowIndex === i);
   if (literaryEntry?.status === 'POLISH_COMPLETED') {
@@ -336,8 +349,8 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(polishRecord ? {polish:{status:polishRecord.status, hashBefore:polishRecord.hashBefore, hashAfter:polishRecord.hashAfter, date:polishRecord.date}} : {}),
    checks:Object.fromEntries(AUDIT_CHECKS.map((id, j) => [id, {status:'pass', evidence:[{locator:receipts[j][0],reason:receipts[j][1]}]}]))};
   const row = {primaryId, movingLine, monthOrder, monthBranches, stageIds, movingLineText, baseProse:true, voidProfileKey:'base-no-void',
-   facts, decision, copy, copyChecks, ...(petApplication ? {petApplication} : {}), ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
-   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(petCases ? {scope:petCases.ruleVersion} : {}),...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0',...(reviewRecord ? {policy:'reading-policy-v2-20261118'} : {})},
+   facts, decision, copy, copyChecks, ...(contactApplication ? {contactApplication} : {}), ...(petApplication ? {petApplication} : {}), ...(locationApplication ? {locationApplication} : {}), ...(imageApplication ? {imageApplication} : {}), sourceIds, lineApplication, counterevidence, authorship, review,
+   timingSpecs, timingSlots, ...(timingOmission ? {timingOmission} : {}), voidTimingSlots:[], ruleVersions:{decision:manuscriptVersion,...(contactCases ? {scope:contactCases.ruleVersion} : {}),...(petCases ? {scope:petCases.ruleVersion} : {}),...(locationApplication ? {location:directionRules.version} : {}),...(imageApplication ? {images:imageRules.version} : {}),timing:profile.timingVersion ?? slug+'-day-1.0.0',...(reviewRecord ? {policy:'reading-policy-v2-20261118'} : {})},
    // 读者可见的计算说明：口径 V2 复核与润色后写定的定档、旺衰、爻辞依据（替换第十栏内部依据的显示）。
    ...(polishRecord?.calculationNotes ? {calculationNotes:polishRecord.calculationNotes} : {})};
   row.artifactDigest = await interpretationArtifactDigest(row);
@@ -370,7 +383,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     '过程：' + process,
     '结局：' + combinedEnding + (payRange ? ' ' + payRange : ''),
     timingOmission ? '应期：此盘暂无有据的日期可列。' : '应期：以下为传统推算的参考窗口。\n' +
-     timing.paragraphs.map((text, index) => isExamLike(profile) || profile === LOST_OBJECT_RECOVERY_PROFILE || profile === LOST_PET_RECOVERY_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
+     timing.paragraphs.map((text, index) => isExamLike(profile) || profile === LOST_OBJECT_RECOVERY_PROFILE || profile === LOST_PET_RECOVERY_PROFILE || profile === MISSING_CONTACT_PROFILE ? text : text.replace('。', '，属' + timingSlots[index].valence + '应。')).join(' '),
     '总断：' + summary,
    ],
    sourceTitles,
@@ -378,6 +391,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     `对照起卦日：${r.castingDate}，${r.dayGanzhi}日。体用位置：${r.body.side === 'upper' ? '上卦' : '下卦'}为原体，${r.use.side === 'upper' ? '上卦' : '下卦'}为本用。`,
     r.edges.map(edge => edge.targetRole + '：' + edge.label).join('；') + '。',
     ...(row.calculationNotes ?? [resolution]),
+    ...(contactApplication ? [contactApplication.application,contactApplication.boundaries,'恢复联系取义作者源：'+contactCasesPath+'，第 '+movingLine+' 爻。',contactApplication.lineCommentary.quote,contactApplication.lineCommentary.application,'注疏：'+contactApplication.lineCommentary.sourcePath+' · '+contactApplication.lineCommentary.locator] : []),
     ...(petApplication ? [petApplication.application,petApplication.boundaries,'[活体搜索与场景类象作者源](../../'+petCasesPath+')，第 '+movingLine+' 爻。'] : []),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
@@ -401,6 +415,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  directory.push('- [' + name + '](' + stem + '.md) · ' + rows.length + ' 篇');
 }
 const progress = {
+ ...(profile===MISSING_CONTACT_PROFILE?{literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'missing-contact-modern-analogy-1.0.0',personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false}:{}),
  ...(profile === LOST_PET_RECOVERY_PROFILE ? {literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'pet-search-modern-analogy-1.0.0',locationClaimsVerified:false,animalHealthOrFateInferred:false} : {}),
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
@@ -658,9 +673,21 @@ const lostPetRecovery = {
  "counterevidence": "逐篇核对完整爻意、四条直接关系与全部月令五态；弱体与衰比和不自动判有望接回，利见或无咎也不等于已经团聚。",
  "timingContext": "只对近期可实际推进的目击核实、搜寻协同或接近受阻，类推采用日尺度。取生体、比和或克体所在节点，一个窗口只指一个阶段事件，不能据此等到某日才找，也不把它当作宠物出现或团聚的保证。"
 };
+const missingContact={
+ title:'失联寻人',policy:'MISSING_CONTACT_POLICY.md',primarySource:'mh-070',
+ references:[['mh-070','占求谋，以体为主，用为所谋之事。','明示现代类推：体为问事者能核实和协调的联系条件，用为恢复本人可确认的双向联系之事；不用卦代指失联者身体。'],['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','人事通则用于核看事情进程，不据类象定位、识别第三人或判断失联原因。']],
+ clauses:{equal:'体用比和，求谋称意。',body_controls_use:'体克用，谋虽可成，但成迟。',use_controls_body:'用克体，求谋不成，谋亦有害。',use_generates_body:'用生体。不谋而成；',body_generates_use:'体生用，多谋少遂。'},
+ outcomes:['favourable','conditional','difficult'],
+ scopeNote:'仅判断与指定失联者恢复可确认双向联系的传统倾向。本人回复、渠道核实与转述消息分开；不套行人归期，不输出位置、安危、生死、失联动机或确定联系日期',
+ counterevidence:'完整爻辞、四条直接关系及全部五态逐项核看；比和与利见有联系条件之利，但不能抹去勿用、有悔或末后克体。无咎不等于恢复联系。',
+ timingContext:'仅在近期已有正当且可核查的联系渠道时，以卦气法类推观察核实、转达或沟通受阻的阶段事件；日尺度不表示本人会于该日回信，更不指归家或安危。缺少可用事件和依据时逐篇说明不取期原因。',
+ timingDisplay:'动态窗口按实际当地起卦日匹配，限定近期可核查的联系阶段；已经过去的日期不会用于新起卦。不要等窗口才核实失联情况。',
+};
 const target = process.argv[2];
-if (target && !['promotion-pay','promotion-pay-v3','interview-pass','job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
-if (target === 'lost-pet-recovery') {
+if (target && !['promotion-pay','promotion-pay-v3','interview-pass','job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery','missing-contact'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target === 'missing-contact') {
+ await buildAuthoredManuscripts(MISSING_CONTACT_PROFILE,missingContact);
+} else if (target === 'lost-pet-recovery') {
  await buildAuthoredManuscripts(LOST_PET_RECOVERY_PROFILE, lostPetRecovery);
 } else if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);

@@ -140,7 +140,7 @@ export const PRODUCT_TAXONOMY=[
   s('pets','宠物走失','走失的宠物能找回来吗？',[
    q('pets.recovery','走失的宠物能找回来吗？','lost_pet_recovery',['domain-08','domain-02'],o('针对指定走失宠物，判断寻找与安全接回的倾向；以求谋作明示现代类推，条件性参考实有场所类象，不断言真实位置、健康、生死或被盗，不以应期代替及时寻找。',{manuscriptIndexPath:'data/authored-readings/lost-pet-recovery/index.json',practicalAdvice:['及时寻找最后出现地点周边，联系附近收容所、兽医及走失登记平台；如有芯片，向登记机构更新失联与联系方式。']}))]),
   s('missing-contact','失联寻人','与失联者还能恢复联系吗？|可以怎样整理现实搜寻线索？',[
-   q('missing-contact.contact','与这位失联者还能恢复联系吗？','missing_person_contact_restoration',['domain-02','domain-13'],o('恢复联系是独立事项；不套物品找回或行人归期，不判断人身安危、具体位置或保证联系日期。',{practicalAdvice:['先通过已知联系方式和可信共同联系人核实情况。涉及儿童、即时危险或异常失联时，尽快联系当地警方或紧急服务；不要等待卦象或应期。']})),
+   q('missing-contact.contact','与这位失联者还能恢复联系吗？','missing_person_contact_restoration',['domain-02','domain-13'],o('恢复联系是独立事项；不套物品找回或行人归期，不判断人身安危、具体位置或保证联系日期。',{manuscriptIndexPath:'data/authored-readings/missing-contact/index.json',practicalAdvice:['先通过已知联系方式和可信共同联系人核实情况。涉及儿童、即时危险或异常失联时，尽快联系当地警方或紧急服务；不要等待卦象或应期。']})),
    q('person-leads.guidance','可以从哪些现实线索继续寻找或恢复联系？','missing_person_search_guidance',[],o('提供现实线索整理与求助步骤，不输出卦象定位或人身安危预测。',{mode:'guidance',guidanceParagraphs:['整理最后一次确认联系的时间、地点、出行安排和可信联系人，保存相关通信记录。通过可信渠道核实，避免传播未核实的线索。','涉及儿童、即时危险或异常失联时，及时联系当地警方或紧急服务。在美国有即时危险时拨打911，其他情形可联系当地警方咨询报失与寻找程序。'],practicalAdvice:['优先核实最后联系与行程信息，联系可信共同联系人和适当求助渠道；不要等待占断结果。']}))])
  ]}
 ];
