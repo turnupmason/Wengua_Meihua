@@ -1,17 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "batch": "interview-monthly-preview-2088-20261119",
+  "batch": "interview-monthly-preview-2304-20261119",
   "publicationDate": "2026-11-19",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 2088,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 2304,
+  "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    24
+    26,
+    28
   ],
   "fullTarget": 4608,
-  "remainingArticles": 2520,
-  "authorWholeArticleReadback": 2088,
+  "remainingArticles": 2304,
+  "authorWholeArticleReadback": 2304,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -308,6 +309,20 @@
       }
     },
     {
+      "primaryId": 22,
+      "name": "山火贲",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-022.json",
+      "sourceSha256": "f0db49c01a01453b8bb447efe8ee2b5918252a541cb5474b1adf2caaed78342d",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-022.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-022.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
+    },
+    {
       "primaryId": 23,
       "name": "山地剥",
       "articles": 72,
@@ -347,6 +362,34 @@
       "outcomes": {
         "favourable": 24,
         "difficult": 48
+      }
+    },
+    {
+      "primaryId": 26,
+      "name": "山天大畜",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-026.json",
+      "sourceSha256": "e2cecd0ca779cf7eeff73f59d522f7a82ac17970d9bf1616139d47b75a097b2c",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-026.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-026.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
+    },
+    {
+      "primaryId": 28,
+      "name": "泽风大过",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-028.json",
+      "sourceSha256": "e8c0f714f6593225d3f2cb1426bcd1039f1ead762ed1bdac40690dcc5003a977",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-028.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-028.md",
+      "outcomes": {
+        "favourable": 30,
+        "difficult": 42
       }
     },
     {
@@ -432,10 +475,10 @@
       67,
       108
     ],
-    "independentChartComparisons": 56376,
+    "independentChartComparisons": 62208,
     "independentChartMismatches": 0,
-    "dateCases": 4176,
-    "judgmentCorrectionArticles": 990,
+    "dateCases": 4608,
+    "judgmentCorrectionArticles": 1206,
     "machineReport": "docs/review/INTERVIEW_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
@@ -457,9 +500,9 @@
     "scope-limited-rule": 2,
     "fixed-classical-interpretation-and-open-priority": 1,
     "fixed-copy": 10,
-    "open-strength-rule": 11,
-    "open-textual-interpretation": 6,
-    "fixed-unsupported-scenes": 3,
+    "open-strength-rule": 12,
+    "open-textual-interpretation": 7,
+    "fixed-unsupported-scenes": 4,
     "open-strength-and-priority": 1,
     "verified-rule-application": 1,
     "interpreted-with-source-limit": 1,
@@ -467,7 +510,7 @@
     "open-textual-variant": 1,
     "verified-timing-scope": 1,
     "verified-independent-sample": 1,
-    "open-rule-priority": 18,
+    "open-rule-priority": 33,
     "fixed-copy-inference": 4,
     "confirmed-rule-application": 3,
     "confirmed-timing-preservation": 2,
@@ -475,26 +518,30 @@
     "open-independent-full-review": 2,
     "open-line-weight": 1,
     "fixed-classical-misreading": 2,
-    "fixed-classical-application": 27,
+    "fixed-classical-application": 28,
     "open-timing-consistency": 2,
     "open-rule-boundary": 1,
     "open-baseline-timing": 1,
-    "unresolved-project-priority": 24,
+    "unresolved-project-priority": 25,
     "textual-interpretations-recorded": 5,
     "project-interpretation-retained": 4,
     "closed-copy-only": 6,
-    "fixed-timing-documentation": 4,
+    "fixed-timing-documentation": 5,
     "fixed-review-scope": 1,
     "fixed-independent-sample-feedback": 1,
     "fixed-weight-and-copy": 1,
-    "fixed-line-reading": 5,
+    "fixed-line-reading": 6,
     "fixed-timing-copy": 3,
     "review-boundary-recorded": 2,
     "open-classical-scope": 2,
     "fixed-fact-explanation": 3,
     "fixed-copy-after-independent-sample": 1,
     "fixed-peer-copy": 1,
-    "source-transcription-discrepancy": 1,
+    "fixed-copy-and-evidence": 1,
+    "fixed-commentary-attribution": 2,
+    "fixed-copy-and-line-reading": 1,
+    "fixed-peer-review": 1,
+    "source-transcription-discrepancy": 2,
     "fixed-source-applicability": 1,
     "open-textual-punctuation": 1,
     "open-rule-generalization": 1,
@@ -504,13 +551,29 @@
     "scope-limited-source": 2,
     "open-classical-variation": 1,
     "fixed-temporal-application": 1,
-    "scope-explicit": 1,
+    "scope-explicit": 2,
+    "fixed-copy-and-qi": 1,
+    "fixed-line-reading-and-qi": 1,
+    "fixed-indirect-rule": 2,
+    "fixed-source-attribution": 1,
+    "fixed-strength-description": 1,
+    "fixed-copy-readback": 1,
+    "corrected-classical-scope": 2,
+    "retained-positive-conditions": 1,
+    "corrected-one-layer-effect": 1,
+    "preserved-commentary-variants": 3,
+    "bounded-hexagram-image": 1,
+    "retained-strength-distinction": 1,
+    "restored-positive-evidence": 1,
+    "preserved-commentary-disagreement": 1,
+    "corrected-timing-stage": 1,
+    "scope-and-verification-limits": 1,
     "retained-conditional-reading": 2,
     "corrected-reading": 1,
     "textual-variant-recorded": 1
   },
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
-  "previousMainPublicationCommit": "acfb838082b3bdb4a7483031fdfea7d2511b74c2",
+  "previousMainPublicationCommit": "0e4a56dc5d67949f33399141f0f4714e6831cf65",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userStyleApproval": {
