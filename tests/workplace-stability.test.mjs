@@ -27,7 +27,6 @@ test('职场情况 asks about stability; 能否转正 is its own entry (2026-11-
 });
 
 for (const [slug, id] of [
- ['workplace-stability',questionId],
  ['new-relationship-opportunity','relationships.new-partner.opportunity'],
  ['confession-decision','relationships.confession.decision'],
  ['relationship-establishment','relationships.developing.relationship'],
