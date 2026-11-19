@@ -1,7 +1,7 @@
 // 文字终修逐卦清单：列出每篇在简断、总断、正文、计算说明、应期文字上的具体问题，供一次改完。只读。
 // 用法：node scripts/review/text-packet.mjs <问项目录> <卦序>
 import {readFileSync} from 'node:fs';
-import {STATE_WORDS, STATE_CONTRA, STATE_HEDGE, STATE_LABEL} from './state-vocab.mjs';
+import {VOCAB} from './state-vocab.mjs';
 const [item, hexArg] = process.argv.slice(2);
 const id = String(Number(hexArg)).padStart(3, '0');
 const src = JSON.parse(readFileSync(`sources/editorial/${item}/hex-${id}.json`, 'utf8'));
@@ -14,17 +14,17 @@ const HEDGE = /有条件|有望|偏难|多半|大概率|过线有机会|能不�
 const PASS = /能过|过得了|过得去|可以过|会过|拿得下|拿下|顺利通过|能通过|能过关|过关|能合格|稳过|过线不难|能过线|可以过线|过得了线|考得过|通过这一场|这一关能过|能被录用|会被录用|录用你|拿得到这个岗位|过得了这一关|通过这一轮|这一轮能过|能进下一轮|拿到这个岗位|能升上去|这次能升|能晋升|晋升能落定|升得上去|职级能动|能升职|升职能成|能转正|试用期能通过|能转为正式员工|转正能成/u;
 const FAIL = /过不了|不能过|过不去|没法过|无法过|不会过|过不了线|够不上|达不到|拿不下|过线无望|没能过|考不过|合格不了|过不去线|这次不过|还差一截|还差一口气|还差几分|离合格线还差|离线还差|差在线下|落在线下|落到线下|够不到线|够不着线|没够上线|没能过线|还没到线|未到合格线|差一点到线|差几分到线|停在线下|压在线下|没上线|上不了线|差着几分|还欠一截|还欠几分|离那条线|没摸到线|线下还差|还差半截|差了一口气|还差一步|差了一步|差一步|这一轮没过|没过这一轮|止步这一轮|没能进下一轮|没被选上|没选上|落选|未能录用|没被录用|没等到录用|没拿到这个岗位|这回没成|这次没成|升职还差一步|这次还没轮到|这次轮不到|还没轮到你|没升上去|职级没动|职级这次没动|晋升没落定|这次没升成|没能晋升|升职这回没成|晋升这回没成|这次还没转成|转正还差一步|还没转下来|这次没转成|转正这回没成|试用期这回没过|没能转正/u;
 const BAN = /有条件|口径|R\d|盲断|复核|改判|原稿|定档|体用|旺相|休囚|生体|克体/u;
-const isState = item === 'workplace-stability';
-const N = isState ? STATE_LABEL : {favourable:'能过', difficult:'过不了'};
+const V = VOCAB[item], isState = Boolean(V);
+const N = isState ? V.LABEL : {favourable:'能过', difficult:'过不了'};
 const out = [];
 src.forEach((d, i) => {
   const [title, short, opening, process, ending, summary] = d.slice(3, 9);
   const head = short.split(/[。！？]/u).filter(Boolean).slice(0, 2).join('。');
   const f = [];
-  const h1 = (short + summary).match(new RegExp((isState ? STATE_HEDGE : HEDGE).source, 'gu'));
+  const h1 = (short + summary).match(new RegExp((isState ? V.HEDGE : HEDGE).source, 'gu'));
   if (h1) f.push('含糊口气：' + [...new Set(h1)].join('、') + '（简断或总断里改成确定说法）');
-  const want = isState ? STATE_WORDS[d[2]] : d[2] === 'favourable' ? PASS : FAIL;
-  if (isState && STATE_CONTRA[d[2]].test(short + summary)) f.push('简断或总断有与结论相反的说法：' + (short + summary).match(STATE_CONTRA[d[2]])[0]);
+  const want = isState ? V.WORDS[d[2]] : d[2] === 'favourable' ? PASS : FAIL;
+  if (isState && V.CONTRA[d[2]].test(short + summary)) f.push('简断或总断有与结论相反的说法：' + (short + summary).match(V.CONTRA[d[2]])[0]);
   if (!want.test(head)) f.push(`简断前两句没有明说「${N[d[2]]}」`);
   if (!want.test(summary)) f.push(`总断没有明说「${N[d[2]]}」`);
   if (!isState && d[2] === 'favourable' && FAIL.test(short + summary)) f.push('判能过，简断或总断却有「过不了」类字样');

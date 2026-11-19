@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -240,7 +240,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    ? {status:'not-derived', reason:timingSelection, sourceIds:[config.primarySource,'mh-122']}
    : null;
   const timingSpecs = timingOmission ? [] : isPromotion ? timingSelection.map(index => timingLine[0][index]) : timingSelection;
-  if (profile === JOB_CHANGE_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
+  if ((profile === JOB_CHANGE_PROFILE || profile === JOB_CHANGE_V3_PROFILE) && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Job change only dates named transition events: ' + key);
   }
   if ((isExamLike(profile) || profile.namedStageEvents) && timingSpecs.length > 1) throw new Error('Only one event per draft: ' + key);
@@ -479,6 +479,19 @@ const jobChange = {
  ...planning, title:'跳槽去留', scopeNote:'就最看重的条件比较两份工作，并一并判断现在的辞职时机',
  outcomes:['stay','verify','prepare','switch'],
 };
+// 跳槽去留 v3（2026-11-19，docs/review/JOBCHANGE_REJUDGE_20261119.md）：定稿口径（开「用党多则体势衰」）+ 跳槽专属爻辞，有条件按结局拆，成者再分时机。
+const jobChangeV3 = {
+ title:'跳槽去留', policy:'review/JOBCHANGE_REJUDGE_20261119.md', primarySource:'mh-070',
+ references:[
+  ['mh-070','占求谋，以体为主，用为所谋之事。','原体为问事人，本用为换到这份新工作这件事；成与不成定取舍。'],
+  ['mh-116','如生体是用卦，则事即成。生体是互卦，则渐成。生体是变卦，则稍迟耳。','成者再分时机：即成可按约定办，渐成、稍迟与有阻节的先准备。'],
+  ['mh-074','体克用，可行，所至多得意。用克体，出则有祸。','出行之占与去留同向，只参照离开原处一面。'],
+ ],
+ clauses:planning.clauses,
+ outcomes:['stay','prepare','switch'], scopeNote:'比较现职与这份新工作，并判断现在宜留、宜先准备还是可以办辞职',
+ counterevidence:'核对换职计划的阻节、末段走向与爻辞所限，取舍与时机分开看。',
+ timingContext:planning.timingContext,
+};
 const exam = {
  title:'这次考试能通过吗', policy:'EXAM_POLICY.md', primarySource:'mh-071', clauses:promotion.clauses,
  references:[
@@ -712,7 +725,7 @@ if (target === 'missing-contact') {
 } else if (target === 'lost-pet-recovery') {
  await buildAuthoredManuscripts(LOST_PET_RECOVERY_PROFILE, lostPetRecovery);
 } else if (target === 'job-change') {
- await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
+ await buildAuthoredManuscripts(JOB_CHANGE_V3_PROFILE, jobChangeV3);
 } else if (target === 'promotion-pay-v3') {
  await buildAuthoredManuscripts(PROMOTION_V3_PROFILE, promotionV3);
 } else if (target === 'interview-pass') {

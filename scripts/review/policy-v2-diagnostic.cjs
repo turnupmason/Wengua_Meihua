@@ -6,9 +6,13 @@ const qiOf = s => s.slice(-1), strong = q => q === '旺' || q === '相', faint =
 const noQi = q => q === '休' || faint(q);
 const ADVERSE = /凶|泣血|勿用|无攸利|吝|厉/u, AUSPICIOUS = /元吉|大吉|无不利|终吉|往吉|贞吉|吉/u;
 const calm = rel => rel === 'equal' || rel === 'body_controls_use';
-function bodyUseTier(r) {
+// 用党（2026-11-19 用户定，先用于跳槽；其余已定稿问项回改时再开）：《体用》（494 行）「体党多而体势盛，用党多则体势衰。如卦体是金，而互变皆金，则是体之党多。如用卦是金，而互变皆金，则是用之党多。」
+// 用卦与体不比和，而用卦的五行在两互、变用三处中又见两处以上，为用党多：体势衰，不作「体有力」。
+const usePartyMany = r => r.rel.use !== 'equal' && ['body_mutual','use_mutual','changed_use'].filter(k => r.n[k][1] === r.n.use[1]).length >= 2;
+function bodyUseTier(r, opts = {}) {
  const G = P.filter(k => r.rel[k] === 'use_generates_body'), K = P.filter(k => r.rel[k] === 'use_controls_body');
- const bq = qiOf(r.n.body), bodyStrong = strong(bq), endDrain = r.rel.changed_use === 'body_generates_use';
+ const upm = !!opts.useParty && usePartyMany(r);
+ const bq = qiOf(r.n.body), bodyStrong = strong(bq) && !upm, endDrain = r.rel.changed_use === 'body_generates_use';
  const kWeak = K.every(k => !strong(qiOf(r.n[k])));
  if (!K.length) {
   const partyAll = P.filter(k => r.rel[k] === 'equal').map(k => qiOf(r.n[k]));
@@ -23,6 +27,7 @@ function bodyUseTier(r) {
   const party = P.filter(k => r.rel[k] === 'equal').map(k => qiOf(r.n[k]));
   // 无比和之卦时「体之卦党多」不适用：只有体死（衰）而无一处相助才取此条（《衰旺论》「体衰而有生体之卦，则衰稍解」反推）；体休、囚按《求名占》「体克用，名可成，但成迟」。
   if (((bq === '死') || (!bodyStrong && party.length)) && !party.some(strong)) return {t:'C', why:party.length ? 'R1b 体不旺相、党皆无气（「皆是衰卦，终不吉」）' : 'R1b 体死而无一处相助（衰不得解）'};
+  if (upm && !party.some(strong)) return {t:'C', why:'R1b 用党多则体势衰（494 行）'};
   return {t:'F', why:'R1b 无克体'};
  }
  if (G.length) {
@@ -41,7 +46,7 @@ function lineFlag(r) {
  if (AUSPICIOUS.test(r.text)) return 'auspicious-term';
  return null;
 }
-module.exports = {bodyUseTier, lineFlag, suggest:r => ({...bodyUseTier(r), lineFlag:lineFlag(r)})};
+module.exports = {bodyUseTier, usePartyMany, lineFlag, suggest:r => ({...bodyUseTier(r), lineFlag:lineFlag(r)})};
 if (require.main === module) {
  const fs = require('fs'), S = process.argv[2];
  const map = c => ({favourable:'F', conditional:'C', difficult:'D', 'not-pass-this-round':'D', 'not-pass-under-current-approach':'D'}[c] || (c.startsWith('pass') ? 'F' : '?'));
