@@ -1,10 +1,12 @@
-# 宠物走失本轮专项续写
+# 宠物走失本轮专项复查完成记录
 
-原89篇未取期已逐篇完整读回，补34条动态阶段阻节、55条逐篇保留并具体化原因，当前dated1865/undated55；断法复查已修订12篇为有条件，当前214较有望/531有条件/1175偏难，384盘/4608键/1920正文保持。14份timing-NNN.json、source-study与68次两日期输入换算proof保存于sources/editorial/lost-pet-recovery/recheck-20261119。source/review哈希已更新；构建、宠物定向测试、SQL与SQLite完整性外键通过。
+原89篇未取期已逐篇全文重查：34篇补动态阶段规则、55篇具体保留原因。当前1865篇有规则/55篇未取期，分别对应4488/120个月令位置。384种基础盘、4608个月令键、1920篇不同正文保持。正文补丁lost-pet-recovery-1.0.1。
 
-本轮未完成部分：146条断法分歧（原362条件键878个月令位置）已处理101条，余45；下一57巽六四五组（caseIndex101）。必须逐条读事实、完整爻辞、原注及反证，人工形成取舍；不能批量填pass。记录在judgment-rechecks.json，progress.json更新下一键。独立professional/timing均pending，单AI作者不是独立专家。不空亡，不额外精修，不改原排版。
+原146条断法分歧全部已查，未处理数0、下一条null；39条作者保留、33条明确列版本后保留、6条实质修订涉及12篇D改C、68条现代适用仍有具体冲突。当前结果214较有望/531有条件/1175偏难。独立专业和应期解释审核全部pending，不将68条冲突填pass。
 
-工作路径D:/Wengua_Meihua-workplace，branch author/lost-object-recovery，初始main c9f2cdc2。89篇取期改动已推main cc4357e4；当前保存101条断法复查检查点，然后继续剩余45条，不停止询问。
+本轮新增整篇读回101篇（89取期+12改稿）；其余判断记录是依据复查而非新全文精修。不空亡、不额外AI精修、不改既定栏目。64份源/case哈希、690附加注疏引文、200判断证据匹配；34新规则两日期输入68次换算通过，root121通过；SQL/SQLite已重建完整性外键通过。
+
+详见[专项报告](RECHECK_20261119.md)、[逐条取期](TIMING_RECHECKS_20261119.md)、[逐条分歧](JUDGMENT_RECHECKS_20261119.md)。持久记录在sources/editorial/lost-pet-recovery/recheck-20261119/。本轮源稿与复查报告随最终提交发布；main提交号以Git记录为准，发布前核对origin/main并保留他人修改。
 
 ---
 

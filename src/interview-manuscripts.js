@@ -54,7 +54,7 @@ export const LOST_OBJECT_RECOVERY_PROFILE=Object.freeze({
  questionScope:'recovery-prospect-with-traditional-direction-and-place-hints',manuscriptVersion:'lost-object-recovery-1.2.0',
  timingVersion:'lost-object-recovery-day-1.0.0',directory:'lost-object-recovery',namedStageEvents:true,
 });
-export const LOST_PET_RECOVERY_PROFILE=Object.freeze({questionId:'search.pets.recovery',questionType:'lost_pet_recovery',questionScope:'search-and-safe-reunion-with-a-specific-lost-pet',manuscriptVersion:'lost-pet-recovery-1.0.0',timingVersion:'lost-pet-stage-day-1.0.0',directory:'lost-pet-recovery',namedStageEvents:true});
+export const LOST_PET_RECOVERY_PROFILE=Object.freeze({questionId:'search.pets.recovery',questionType:'lost_pet_recovery',questionScope:'search-and-safe-reunion-with-a-specific-lost-pet',manuscriptVersion:'lost-pet-recovery-1.0.1',timingVersion:'lost-pet-stage-day-1.0.0',directory:'lost-pet-recovery',namedStageEvents:true});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
