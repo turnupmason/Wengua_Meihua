@@ -1,16 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "batch": "interview-monthly-preview-720-20261118",
+  "batch": "interview-monthly-preview-792-20261118",
   "scope": "copy-preview-only",
-  "uploadedArticles": 720,
-  "newArticlesSincePrevious": 144,
+  "uploadedArticles": 792,
+  "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    5,
-    7
+    3
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3888,
-  "authorWholeArticleReadback": 720,
+  "remainingArticles": 3816,
+  "authorWholeArticleReadback": 792,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -38,6 +37,20 @@
       "outcomes": {
         "favourable": 18,
         "difficult": 54
+      }
+    },
+    {
+      "primaryId": 3,
+      "name": "水雷屯",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-003.json",
+      "sourceSha256": "ab9e25452b5793a34f83774c69913f00c7d198807aa21dcadcd0d6fbe6665ce5",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-003.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-003.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
       }
     },
     {
@@ -162,22 +175,25 @@
       510
     ],
     "shortHanRange": [
-      76,
+      73,
       102
     ],
-    "independentChartComparisons": 19440,
+    "independentChartComparisons": 21384,
     "independentChartMismatches": 0,
-    "dateCases": 1440,
-    "judgmentCorrectionArticles": 34,
+    "dateCases": 1584,
+    "judgmentCorrectionArticles": 48,
     "machineReport": "docs/review/INTERVIEW_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-interpretation": 1,
-    "open-priority": 6,
-    "interpreted-with-limits": 2,
+    "open-priority": 10,
+    "interpreted-with-limits": 3,
     "open-analogy": 1,
     "editorial-correction-complete-audit-retained": 1,
     "open-timing-interpretation": 1,
+    "corrected-classical-application": 1,
+    "fixed-documentation-conflict": 3,
+    "corrected-unsupported-scenes": 1,
     "pending-interpretation": 10,
     "verified-one-layer-rule": 2,
     "corrected-action-reading": 1,
@@ -187,7 +203,6 @@
     "scope-limited-rule": 1,
     "fixed-copy": 1,
     "open-strength-rule": 1,
-    "fixed-documentation-conflict": 1,
     "unresolved-project-priority": 12,
     "textual-interpretations-recorded": 3,
     "project-interpretation-retained": 4,
@@ -198,7 +213,7 @@
     "textual-variant-recorded": 1
   },
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
-  "previousMainPublicationCommit": "8ef64aa4e0051158fac80e2f4d794c5d413728d2",
+  "previousMainPublicationCommit": "dbabb985590b241219bbdf17af393c4abf01bea5",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userStyleApproval": {
