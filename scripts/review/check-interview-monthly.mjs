@@ -1,12 +1,12 @@
 // Usage: node scripts/review/check-interview-monthly.mjs [--hex 3,4] [--draft] [--docs] [--json path]
 // This audit does not sign an author's full-text readback or an independent interpretation review.
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,writeFile,access} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {MONTHS,QI,DOC_DIR,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,timingSignature} from './interview-monthly-lib.mjs';
 
 export async function auditMonthly({ids,draft=false,docs=false}={}) {
  ids=ids||await listMonthlyIds();const ctx=await context();
- const report={schemaVersion:'1.0.0',scope:'monthly-source-and-render-validation',articleCount:0,hexagrams:[],errors:[],warnings:[],duplicateArticles:[],duplicateParagraphs:[],duplicateLongSentences:[],chartComparisons:0,chartMismatches:[],dateCases:0,bodyHanRange:[Infinity,0],shortHanRange:[Infinity,0],independentFullCopyReview:'not-performed-by-this-script',realWorldPredictionAccuracy:'not-validated'};
+ const report={schemaVersion:'1.0.0',scope:'monthly-source-and-render-validation',articleCount:0,hexagrams:[],errors:[],warnings:[],judgmentCorrections:[],duplicateArticles:[],duplicateParagraphs:[],duplicateLongSentences:[],chartComparisons:0,chartMismatches:[],dateCases:0,bodyHanRange:[Infinity,0],shortHanRange:[Infinity,0],independentFullCopyReview:'not-performed-by-this-script',realWorldPredictionAccuracy:'not-validated'};
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
@@ -36,7 +36,20 @@ export async function auditMonthly({ids,draft=false,docs=false}={}) {
    const old=oldFor(bundle,a);if(!old){err(key,'baseline','No source row');continue;}
    counts[a.outcome]=(counts[a.outcome]||0)+1;
    if(!['favourable','difficult'].includes(a.outcome))err(key,'outcome','Unexpected code');
-   if(a.outcome!==old[2]||a.judgment!==old[9])err(key,'baseline-decision','Changed outcome/judgment requires a separately implemented, evidence-bound correction review');
+   if(a.outcome!==old[2])err(key,'baseline-decision','Outcome changed without a separately implemented decision correction review');
+   if(a.judgment!==old[9]) {
+    const c=a.judgmentCorrection;
+    if(!c||c.old!==old[9]||c.new!==a.judgment||typeof c.reason!=='string'||han(c.reason)<12||c.impact?.outcomeChanged!==false||c.impact?.timingSignatureChanged!==false)err(key,'judgment-correction','Correction must bind exact old/new wording, a substantive reason and unchanged outcome/timing structure');
+    else {
+     const local=(c.sourceEvidence||[]).filter(e=>typeof e?.path==='string'&&typeof e?.scope==='string'&&e.scope.trim());
+     if(!local.length)err(key,'judgment-correction','At least one concrete local source path and scope are required');
+     for(const e of local) {
+      if(!/^(sources|data|docs)\//u.test(e.path)||e.path.split('/').includes('..'))err(key,'judgment-correction','Source must be a repository-relative evidence path');
+      else try {await access(e.path);}catch {err(key,'judgment-correction','Evidence path not found: '+e.path);}
+     }
+     report.judgmentCorrections.push({key,old:c.old,new:c.new,reason:c.reason,sourceEvidence:c.sourceEvidence,interpretationApproval:'not-implied-by-structural-check'});
+    }
+   } else if(a.judgmentCorrection)err(key,'judgment-correction','Correction record present but judgment is unchanged');
    if(timingSignature(a.timing)!==timingSignature(old[10]))err(key,'baseline-timing','Changed timing kind, role, method, count or presence');
    if(typeof a.title!=='string'||!a.title.trim()||typeof a.short!=='string'||!Array.isArray(a.paragraphs)||a.paragraphs.some(p=>typeof p!=='string'||!p.trim())){err(key,'copy-shape','Missing title, short or nonempty paragraphs');continue;}
    const body=a.paragraphs.join('\n\n'),bLen=han(body),sLen=han(a.short);
