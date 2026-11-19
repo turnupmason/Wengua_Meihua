@@ -1,4 +1,4 @@
-宠物走失001乾至064未济已逐盘写定并作者全文核读，共1,920篇不同正文、384种基础盘、4,608个月令键，基础写作无剩余。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。1,831篇有动态应期规则，89篇保存具体未取期原因；独立专业与应期解释审核pending。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
+宠物走失001乾至064未济已逐盘写定并作者全文核读，共1,920篇不同正文、384种基础盘、4,608个月令键，基础写作无剩余。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。1,831篇有动态应期规则，89篇保存具体未取期原因；独立专业与应期解释审核pending。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。完成核查与待审事项见 [收尾记录](docs/lost-pet-recovery/FINAL_AUDIT_20261119.md)。
 
 `career.interview.interview-pass` 于 2026-11-18 按考试定稿口径补判重写为 `interview-pass-3.0.0`：1,920 篇只判能过 639、过不了 1,281，与考试同盘结论逐盘一致；作者源 `sources/editorial/interview-pass/`（含 polish-v5、review-v2），由 `build-promotion-pay.mjs interview-pass` 构建。口径、回测与逐条裁定见 [补判记录](docs/review/INTERVIEW_REJUDGE_20261118.md)，写法见 [写作说明](docs/review/INTERVIEW_WRITE_BRIEF.md)。空亡旧版（interview-pass-2.0.0、`interview-rewrites/`、`interview-void-*`）只留档，不进正文。问项只涉及本轮面试。
 
