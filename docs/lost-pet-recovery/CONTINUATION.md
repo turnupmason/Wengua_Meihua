@@ -1,3 +1,15 @@
+# 宠物走失本轮专项续写
+
+原89篇未取期已逐篇完整读回，补34条动态阶段阻节、55条逐篇保留并具体化原因，当前dated1865/undated55；结论未改，384盘/4608键/1920正文保持。14份timing-NNN.json、source-study与68次两日期输入换算proof保存于sources/editorial/lost-pet-recovery/recheck-20261119。source/review哈希已更新；构建、宠物定向测试、SQL与SQLite完整性外键通过。
+
+本轮未完成部分：146条断法分歧（原362条件键878个月令位置）尚未开始；下一23剥六四夏火/土令。必须逐条读事实、完整爻辞、原注及反证，人工形成取舍；不能批量填pass。记录在judgment-rechecks.json，progress.json更新下一键。独立professional/timing均pending，单AI作者不是独立专家。不空亡，不额外精修，不改原排版。
+
+工作路径D:/Wengua_Meihua-workplace，branch author/lost-object-recovery，初始main c9f2cdc2。本轮取期改动待本次提交推送；然后继续146条，不停止询问。
+
+---
+
+以下为先前完成记录（时间与数量为历史快照）：
+
 # 宠物走失续写断点
 
 当前问项 search.pets.recovery / lost_pet_recovery。001乾至064未济全部写定，共384种基础盘、4,608个月令键、1,920篇不同完整正文，作者全文核读1,920篇；基础写作剩余0。正文1,831篇有动态取期规则，89篇有具体未取期原因；结果214较有望、519有条件机会、1,187偏难。独立专业及应期解释审核pending，用户逐篇验收0。不看空亡，不开额外AI/V5全文精修轮。
