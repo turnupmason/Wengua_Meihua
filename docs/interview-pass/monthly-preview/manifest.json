@@ -1,11 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-  "batch": "interview-monthly-preview-576-20261118",
+  "batch": "interview-monthly-preview-720-20261118",
   "scope": "copy-preview-only",
-  "uploadedArticles": 576,
-  "newArticlesSincePrevious": 360,
+  "uploadedArticles": 720,
+  "newArticlesSincePrevious": 144,
+  "newHexagrams": [
+    5,
+    7
+  ],
   "fullTarget": 4608,
-  "authorWholeArticleReadback": 576,
+  "remainingArticles": 3888,
+  "authorWholeArticleReadback": 720,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -33,6 +38,34 @@
       "outcomes": {
         "favourable": 18,
         "difficult": 54
+      }
+    },
+    {
+      "primaryId": 5,
+      "name": "水天需",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-005.json",
+      "sourceSha256": "4263940e2ed892e73cfd0b4763ecd4802f33830bde15faf9ca33169765d2a5d6",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-005.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-005.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
+    },
+    {
+      "primaryId": 7,
+      "name": "地水师",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/interview-pass/monthly/hex-007.json",
+      "sourceSha256": "f235fe38f269cd4b19b37dac9254ab181533cfcd9c782fa9749bc6b99d5624be",
+      "receiptPath": "sources/editorial/interview-pass/reviews-monthly/hex-007.json",
+      "readingPath": "docs/interview-pass/monthly-preview/hex-007.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
       }
     },
     {
@@ -127,11 +160,45 @@
     "bodyHanRange": [
       417,
       510
-    ]
+    ],
+    "shortHanRange": [
+      76,
+      102
+    ],
+    "independentChartComparisons": 19440,
+    "independentChartMismatches": 0,
+    "dateCases": 1440,
+    "judgmentCorrectionArticles": 34,
+    "machineReport": "docs/review/INTERVIEW_MONTHLY_CHECKS.json"
+  },
+  "ruleFindingStatuses": {
+    "open-interpretation": 1,
+    "open-priority": 6,
+    "interpreted-with-limits": 2,
+    "open-analogy": 1,
+    "editorial-correction-complete-audit-retained": 1,
+    "open-timing-interpretation": 1,
+    "pending-interpretation": 10,
+    "verified-one-layer-rule": 2,
+    "corrected-action-reading": 1,
+    "documented-source-variation": 4,
+    "corrected-specific-scene": 1,
+    "fixed-classical-interpretation": 1,
+    "scope-limited-rule": 1,
+    "fixed-copy": 1,
+    "open-strength-rule": 1,
+    "fixed-documentation-conflict": 1,
+    "unresolved-project-priority": 12,
+    "textual-interpretations-recorded": 3,
+    "project-interpretation-retained": 4,
+    "closed-copy-only": 6,
+    "retained-conditional-reading": 2,
+    "corrected-reading": 1,
+    "scope-limited-source": 1,
+    "textual-variant-recorded": 1
   },
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
-  "previewParentCommit": "edc73f20e62a3c2e9f9fcd6ff3e3070fed93e9a6",
-  "mainIntegrationParent": "fcc7fb8854c07114fa5e6b9e1dc1f0307114ff0f",
+  "previousMainPublicationCommit": "8ef64aa4e0051158fac80e2f4d794c5d413728d2",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userStyleApproval": {
