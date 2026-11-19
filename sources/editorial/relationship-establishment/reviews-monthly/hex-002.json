@@ -1,0 +1,308 @@
+{
+  "primaryId": 2,
+  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
+  "editor": "claude-opus-5-5",
+  "reviewedAt": "2026-11-19T22:48:54.903Z",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "bcd6651197651178b86f33a39b29a2c02097c6fd5b78f9ce4b2f365f44d5e3ea",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "newlyWritten": "坤为地六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气新写（同气月份相同），取期照抄五气源第10栏的种类与位置，事件、提示、依据与无期说明按相处场面重写。",
+    "currentReadback": "每写完一爻12篇即跑 check-monthly --draft，并把标题、简断、全部自然段与取期完整输出读回；六批共72篇实读。读回后为补足厚度、改正比和处数（1/丑）、避免替对方断性格（5/寅、6/辰、6/未）、消除与六三重复的长句（6/戌、6/子）所作的局部修改，另行输出核对。",
+    "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行翻判。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/relationship-establishment/hex-002.json",
+      "scope": "30行五气源全字段：第2栏结论（逐字照用）、第9栏现行说明（与本稿专业说明对照，结论一致）、第10栏取期种类与位置（照抄）；旧正文情节只作素材，不进月稿。"
+    },
+    {
+      "path": "sources/editorial/relationship-establishment/polish-v5/hex-002.json",
+      "scope": "30条 establishmentRule、oldOutcome、calculationNotes 与 readNote，逐条对照结论来由（R3、R3↑′拆分、R1b、R1b加卦象主断）。"
+    },
+    {
+      "path": "sources/editorial/relationship-establishment/review-v2/hex-002.json",
+      "scope": "30条 lineReading 按爻读过；其中《周易》行号与现存 yijing64.txt 不符，见 E002-C01。"
+    },
+    {
+      "path": "data/authored-readings/relationship-establishment/hex-002.json",
+      "scope": "经 scripts/review/packet.mjs 输出30盘本互变、六节点五行五态与四处直接关系，逐爻核对：全卦体、用、两互皆坤；1、4爻变用震木克体，2、5爻变用坎水为体所克，3、6爻变用艮土比和。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/01坤",
+      "scope": "坤卦辞、彖、大象、六爻爻辞与小象、王弼注、孔颖达疏及《文言》分释六爻部分全文阅读；正文所引王注孔疏均按此本逐字核过。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "scope": "谦卦辞「亨，君子有终」与彖、大象「地中有山」（三爻变卦）。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02比.txt",
+      "scope": "比卦辞「比：吉」、彖「比，辅也」、大象「地上有水」（五爻变卦）；卦辞「后夫凶」未引入正文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "豫大象「雷出地奋」（四爻变卦），只取雷出于地、结局起动静之象。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+      "scope": "剥卦辞「不利有攸往」与大象「山附于地」（上爻变卦）。"
+    },
+    {
+      "path": "sources/revised/yijing64.txt",
+      "scope": "坤卦56–83行、剥卦874行、师250行、比289行、谦562行、豫601行、复913行，核卦辞与行号。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实读158–160西林寺牌额占、262坤卦婚姻类象、487卦断遗论、494体用（体党多、用党多）、530–533婚姻占两段、655复明时令之应、688衰旺论、792占卦诀、794–798体用互变之诀、804体用衰旺之诀。"
+    },
+    {
+      "path": "docs/review/ESTABLISHMENT_REJUDGE_20261119.md",
+      "scope": "口径、二分规则、婚恋专属爻辞表（2·2、2·5列为升档之辞；2·6不在降档表）。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第二节判定步骤、第十节休为无气、第十一节无生无克之盘卦象主断（坤上六变剥）、第十三节二分、第十四节用党多（本卦用卦与体比和，不适用）。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "履霜，坚冰至。",
+      "image": "“履霜坚冰”，阴始凝也；驯致其道，至坚冰也。",
+      "reading": "王注「至柔而动也刚」「本于卑弱而后积著」，孔疏「防渐虑微，慎终于始」，《文言》「由辩之不早辩也」。读为相处中没有早说开的小事渐积成碍，不编改约、买单一类具体经过；与变用震木克体在结局同向，五气皆不成，爻辞不翻。寅卯克旺体死最重，亥子克相体囚次之，巳午与四季体有气而克无气、阻轻，申酉克死而体亦休；正文按此写出轻重差别。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A03"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "直方大，不习无不利。",
+      "image": "六二之动，直以方也，“不习无不利”，地道光也。",
+      "reading": "王注「任其自然而物自生，不假修营而功自成」，孔疏直方大为地之三德、「质之与行，内外相副」，《文言》「敬以直内，义以方外」。读为以本来面目、内外一致的坦白相处。巳午、四季体有气，无克体，与吉辞同向，定为能成；变用坎水为体所克，按《婚姻占》「体克用，可成但成之迟」写成收尾需你主动落定，四季坎死成而不迟。寅卯申酉亥子体与比和之卦皆无气，无生体之卦，吉辞不翻；正文完整保留吉意，不把吉辞缩成小事。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A02"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "含章可贞，或从王事，无成有终。",
+      "image": "“含章可贞”，以时发也；“或从王事”，知光大也。",
+      "reading": "王注「不为事始，须唱乃应，待命乃发」「不为事主，顺命而终」，孔疏「上唱下和，奉行其终」，《文言》「地道无成，而代有终」。读为不抢先、待时而发、能把事接到底；「无成」是不居功，非凶吝，也非落在所问上的吉辞。变卦谦「君子有终」与「有终」相应。巳午、四季同气有力，定为能成；其余月份同气无力，含而不发，定为不成。《文言》「妻道也，臣道也」不搬进现代，不写性别角色。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A02"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "括囊，无咎无誉。",
+      "image": "“括囊无咎”，慎不害也。",
+      "reading": "孔疏「囊所以贮物，以譬心藏知也」「功不显物，故曰无誉；不与物忤，故曰无咎」，王注「施慎则可，非泰之道」，《文言》「天地闭，贤人隐」。读为心意扎紧不表，免错而无进展；无咎无誉不是落在所问上的吉辞，与变用震木克体同向，五气皆不成。亥子末克有力时写括囊可少摩擦但换不来成；四季、巳午体有力时写谨慎显得多余。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A03"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "黄裳，元吉。",
+      "image": "“黄裳元吉”，文在中也。",
+      "reading": "王注「以柔顺之德，处于盛位」「垂黄裳以获元吉，非用武者也」，孔疏「能以中和通于物理」，《文言》「美在其中，而畅于四支，发于事业」。读为温和守中、不靠强势；元吉为无条件大吉之辞（补判记录列为升档之辞）。巳午、四季与盘面同向定为能成，变卦比取亲近相辅；寅卯申酉亥子无生体之卦，吉辞不翻，正文写明大吉之意并说明不翻的条件，不把元吉写小。「上衣比君，下裳法臣」只取居下守中之意，不写尊卑。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A02"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "龙战于野，其血玄黄。",
+      "image": "“龙战于野”，其道穷也。",
+      "reading": "王注「阴之为道，卑顺不盈，乃全其美；盛而不已，固阳之地，阳所不堪，故战于野」，《文言》「阴疑于阳必战」「夫玄黄者，天地之杂也」，孔疏「阴既强盛，不肯退避，故必战也」。读为柔顺盛极而不肯退让、两边相持，道穷于争；不写流血伤亡之象。变卦剥「不利有攸往」，按《卦断遗论》西林寺额例「不必拘体用也」，五气皆以卦象定为不成；巳午、四季体用全比和有气，正文如实写体用本可成，结论由卦象定。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E002-A01"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "E002-A01",
+      "status": "open-priority",
+      "keys": [
+        "2/6/巳午辰未戌丑"
+      ],
+      "finding": "上六巳午、辰未戌丑六篇：体坤相或旺，本用、两互、变用全与体比和而有气，全盘无生无克。《婚姻占》「体用比和，婚姻吉利」与第二段「彼此相就，良配无疑」、《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）均指向成；现行结论依 READING_POLICY_V2 第十一节、《卦断遗论》西林寺额剥卦例（487 行）与上六「龙战于野，其血玄黄」、小象「其道穷也」、剥卦辞「不利有攸往」，以卦象定为不成。原书西林寺例的取义是「寺者，纯阳人居之地，而纯阴爻象，则群阴剥阳之义显然」，与所占之物直接相关；推到确定恋爱关系属类推，且坤上六不在补判记录第四节婚恋专属降档表内。正文照实写体用本可成、结论由卦象定，未改结论，待裁定。"
+    },
+    {
+      "id": "E002-A02",
+      "status": "open-priority",
+      "keys": [
+        "2/2/寅卯申酉亥子",
+        "2/3/寅卯申酉亥子",
+        "2/5/寅卯申酉亥子"
+      ],
+      "finding": "六二、六三、六五的寅卯申酉亥子十八篇全盘无克体之卦（本用、两互比和，变用坎水为体所克或艮土比和），《占卦诀》「无克体之卦，则吉事必可成就矣」（792 行）指向成；现行结论依《体用衰旺之诀》「内外并无生体，虽体之卦党多，皆是衰卦，终不吉也」（804 行；READING_POLICY_V2 第二节注为异文、限定使用）定为不成。六二「不习无不利」、六五「黄裳，元吉」又是补判记录所列升档之辞，因盘中无生体之卦（升档须至少一处生体之卦旺相）不翻，其中六五元吉为无条件大吉断辞。正文完整保留吉意并写明不翻的条件；无克体条文、吉辞与衰卦条文的先后，待裁定。"
+    },
+    {
+      "id": "E002-A03",
+      "status": "open-priority",
+      "keys": [
+        "2/1/巳午辰未戌丑",
+        "2/4/巳午辰未戌丑"
+      ],
+      "finding": "初六、六四的巳午与四季十二篇：体坤相或旺，比和之卦同有气（《体用》「体党多而体势盛」，494 行），克体只在变用且震木休或囚（《复明时令之应》「如克体卦气，则宜乘衰」，655 行），《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）的有利一面明显；现行规则按「变卦克体，事于末后，必有不吉」（798 行）与无生体之卦，将这一类拆为不成。正文如实写体有力、阻轻，结论不改；旺体遇衰克与末克的先后，待裁定。"
+    },
+    {
+      "id": "E002-B01",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/1/*",
+        "2/4/*"
+      ],
+      "finding": "《婚姻占》「用克体，不可成，成亦有害」原指本用；初六、六四本用比和，克体在变用震木。专业说明只写「与之同向」，主据为《占卦诀》与《体用互变之诀》；正文把震木写成结局处一股外来的牵制，卦里没有指名是什么，不编排班、出差一类具体事由。"
+    },
+    {
+      "id": "E002-B02",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/2/*",
+        "2/5/*"
+      ],
+      "finding": "「体克用，可成但成之迟」用于变用坎水（本用比和）。正文写成收尾的事要你主动去理、去落定：坎水死则不迟，囚则稍迟，休、相、旺而体无气则制之不及、落不下来。这是条文在结局位置上的类推，不写成对方拖延或不愿。"
+    },
+    {
+      "id": "E002-B03",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/*/*"
+      ],
+      "finding": "《婚姻占》第二段只取「彼此相就」写比和：两人步调相近、肯相互迁就，按卦理所指写，不替对方断心意或性格（读回后把「两边都很有主见」一类说法改为「两边力量相当」）。门第、嫁奁、肖貌不进正文。坤卦婚姻类象（262 行）只引「利于婚姻」「春占不利」两语作寅卯月旁证，不引其余家世之语。"
+    },
+    {
+      "id": "E002-B04",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/6/*"
+      ],
+      "finding": "「其血玄黄」依《文言》「天地之杂」与王注相持之义，写成两边都卷进争执、谁也不好受；孔疏所引庄氏「上六被伤」与王注「阴阳俱伤」的分歧未展开，正文不用流血、伤亡一类比喻。"
+    },
+    {
+      "id": "E002-C01",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "2/6/*",
+        "2/*/*"
+      ],
+      "finding": "五气源第9栏与 review-v2 引剥卦辞「不利有攸往」标「942 行」、引坤爻辞标 yijing64.txt 126–153 行，与现存文件不符：sources/revised/yijing64.txt 中剥卦辞在874行、坤六爻在56–83行，meihua-volumes-1-3.txt 第942行也不是剥卦辞。月稿专业说明不再标这些行号；五气源与 review-v2 未改，回写时宜一并订正。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "E002-C02",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "2/*/*"
+      ],
+      "finding": "专项说明称五气源第9栏仍是考试同盘旧说明；实读当前 hex-002.json 第9栏已是确定关系补判后的说明，均写明定为能成或不成，与第2栏一致。月稿专业说明以其为底按气重写，补引《婚姻占》「体用比和，婚姻吉利」「彼此相就」「体克用，可成但成之迟」「用克体，不可成，成亦有害」及王注；30条结论与五气源一致。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "E002-D01",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "2/*/*"
+      ],
+      "finding": "五气源旧正文的具体情节（改约成常、谁买单、排班全变、社区义卖、海外时差、记错约会时间、二十多条长消息争论、对方家事等）不进月稿。取期按相处场面重写：四爻春、冬两气事件改为「临近见面，安排忽然有变」「约好的见面临时取消」一类看得见的事；无期说明去掉「那条被读岔的消息」「对方那件家事」「时差和距离」「日程总错开」等无据情节，种类、位置与依据结构不变。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72 complete; draft check 0 errors",
+    "bodyHanRange": [
+      437,
+      540
+    ],
+    "shortHanRange": [
+      63,
+      86
+    ],
+    "flexibleLengthWarnings": 6,
+    "lengthDecision": "437–449汉字的6篇均完整读回，保留体用旺衰、爻辞注疏与建议；不为凑满450机械填句。",
+    "outcomes": {
+      "favourable": 18,
+      "difficult": 54
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "check-monthly 独立文王上下卦表与六爻位运算，逐篇27项比较本互变、动爻、六节点五行五态与四处直接关系；不评价现实预测准确率。"
+    },
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timing": "全部保留五气源第10栏的种类与位置（control/equal；changed_use、body_mutual、use_mutual、use），同气月份相同；事件、提示、依据与无期说明按相处场面重写。",
+    "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+    "crossHexDuplicateScope": "已与同时写作中的 hex-001 月稿一并查重，无整篇、整段及24汉字以上长句重复。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}

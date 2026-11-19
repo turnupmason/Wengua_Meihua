@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 import {loadLibrary} from '../../src/index.js';
 import {validateStoryCopy} from '../../src/story-editorial.js';
 import {checkInterviewShort} from '../../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, JOB_CHANGE_V3_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
+import {createContextualReading, promotionTimingSlots, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
  WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE,
  RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE} from '../../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../../src/month-slots.js';
@@ -16,10 +16,10 @@ const [item, hexArg, flag] = process.argv.slice(2);
 const profiles = {exam:EXAM_PROFILE, 'interview-pass':INTERVIEW_V3_PROFILE, 'promotion-pay':PROMOTION_V3_PROFILE, 'job-change':JOB_CHANGE_V3_PROFILE,
  'workplace-stability':STABILITY_V3_PROFILE, 'workplace-probation':PROBATION_V3_PROFILE,
  'new-relationship-opportunity':NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, 'confession-decision':CONFESSION_DECISION_PROFILE,
- 'relationship-establishment':RELATIONSHIP_ESTABLISHMENT_PROFILE, 'relationship-reconciliation':RELATIONSHIP_RECONCILIATION_PROFILE};
+ 'relationship-establishment':ESTABLISHMENT_V3_PROFILE, 'relationship-reconciliation':RELATIONSHIP_RECONCILIATION_PROFILE};
 const outcomes = {exam:['favourable','conditional','difficult'], 'interview-pass':['favourable','difficult'], 'promotion-pay':['favourable','difficult'],
  'workplace-probation':['favourable','difficult'], 'workplace-stability':['stable','watch','strained'],
- 'job-change':['stay','prepare','switch']};
+ 'job-change':['stay','prepare','switch'], 'relationship-establishment':['favourable','difficult']};
 const profile = profiles[item];
 if (!profile) throw new Error('Unknown item ' + item);
 const allowed = outcomes[item] ?? ['favourable','conditional','difficult'];
@@ -63,6 +63,17 @@ for (const [i, d] of drafts.entries()) {
   for (const re of VOICE) if (re.test(value)) warn(`${field} 含「不…，也不…」句式`);
  }
  const V = VOCAB[item];
+ if (item === 'relationship-establishment') {
+  // 确定关系 v3：不出现他项用语；依据与计算说明须写「定为能成／定为不成」，与本篇结论一致（docs/review/ESTABLISHMENT_REJUDGE_20261119.md）。
+  const notes = (polishRecs?.[i]?.calculationNotes ?? []).join('');
+  const all = [title, short, opening, process, ending, summary, resolution, JSON.stringify(topicDetail ?? ''), notes].join('');
+  const OTHER = /考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员|能过|过不了/u;
+  if (OTHER.test(all)) err('稿件含他项用语 ' + all.match(OTHER)[0]);
+  if (!V.NOTE[d[2]].test(resolution)) err('判断依据没有写明本篇结论（' + V.LABEL[d[2]] + '）');
+  if (!V.NOTE[d[2]].test(notes)) err('计算说明没有写明本篇结论（' + V.LABEL[d[2]] + '）');
+  for (const [o, re] of Object.entries(V.NOTE)) if (o !== d[2] && re.test(resolution + notes)) err('依据或计算说明写成了另一档：' + (resolution + notes).match(re)[0]);
+  if (V.BLUNT.test([title, short, summary, ending].join(''))) err('正文用了生硬或断人心意的说法 ' + [title, short, summary, ending].join('').match(V.BLUNT)[0]);
+ }
  if (item === 'job-change') {
   // 跳槽去留 v3：不出现他项用语；依据与计算说明须写「定为留／定为先准备／定为可走」，与本篇结论一致（docs/review/JOBCHANGE_REJUDGE_20261119.md）。
   const notes = (polishRecs?.[i]?.calculationNotes ?? []).join('');
@@ -114,7 +125,7 @@ for (const [i, d] of drafts.entries()) {
  if (typeof timingSelection !== 'string') {
   const specs = isPromotion ? timingSelection.map(k => timingJson[Number(hexArg)][movingLine - 1][0][k]) : timingSelection;
   if ((isExamLike(profile) || profile.namedStageEvents) && specs.length > 1) err('每篇至多一个日级事件');
-  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && specs.some(s => !['support','control','equal'].includes(s[0]))) err('感情问项只取 support/control/equal');
+  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, ESTABLISHMENT_V3_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && specs.some(s => !['support','control','equal'].includes(s[0]))) err('感情问项只取 support/control/equal');
   if ([WORKPLACE_STABILITY_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_PROFILE, JOB_CHANGE_V3_PROFILE].includes(profile) && specs.some(s => !['support','control','drain','equal'].includes(s[0]))) err('只取 support/control/drain/equal');
   try { promotionTimingSlots(r, specs, outcome, profile); } catch (e) { err('应期声明不合：' + e.message + '（kind 必须与该位置对原体的关系一致；name-support/name-body 只用于 favourable）'); }
  }
@@ -122,9 +133,9 @@ for (const [i, d] of drafts.entries()) {
   r.edges.find(e => e.targetRole === 'use').type === 'use_controls_body' && !r.edges.some(e => e.type === 'use_generates_body')) err('本用克体且无生体，不能 favourable');
 }
 // 职场情况 v3：爻辞读法从考试搬来，须改成职场读法（不留考试、面试、转正、晋升字眼）。
-if (item === 'workplace-stability' || item === 'job-change') {
+if (item === 'workplace-stability' || item === 'job-change' || item === 'relationship-establishment') {
  const rv = await readFile(dir + 'review-v2/' + stem + '.json', 'utf8').then(JSON.parse).catch(() => []);
- const OTHERL = item === 'job-change' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|转正|晋升|升职|能过|过不了|裁员|被裁|稳得住|有隐患|风险大/u : /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u;
+ const OTHERL = item === 'relationship-establishment' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|晋升|升职|辞职|跳槽|能过|过不了/u : item === 'job-change' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|转正|晋升|升职|能过|过不了|裁员|被裁|稳得住|有隐患|风险大/u : /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u;
  rv.forEach((r, i) => { const m = String(r.lineReading ?? '').match(OTHERL); if (m) errors.push(`${hexArg}/${r.key?.split('/').slice(-2).join('/')}: 爻辞读法仍是他项读法「${m[0]}」`); });
 }
 // Sentence-level duplicates inside this file and against every other author file of the item.

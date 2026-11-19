@@ -22,6 +22,8 @@ export const PROBATION_V3_PROFILE=Object.freeze({questionId:'career.job-stabilit
 export const STABILITY_V3_PROFILE=Object.freeze({questionId:'career.job-stability.layoff',questionType:'employment_stability',questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-3.0.0',timingVersion:'workplace-stability-day-3.0.0',directory:'workplace-stability',examLike:true,stateOutcomes:true});
 // 跳槽去留按定稿口径重写（2026-11-19，docs/review/JOBCHANGE_REJUDGE_20261119.md）：选择类，留／先准备／可走；作者源格式与考试相同。
 export const JOB_CHANGE_V3_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-3.0.0',timingVersion:'job-change-day-3.0.0',directory:'job-change',examLike:true,choiceOutcomes:true});
+// 确定关系按定稿口径重写（2026-11-19，docs/review/ESTABLISHMENT_REJUDGE_20261119.md）：能否类，成／不成；作者源格式与考试相同。
+export const ESTABLISHMENT_V3_PROFILE=Object.freeze({questionId:'relationships.developing.relationship',questionType:'relationship_establishment',questionScope:'whether-the-two-people-can-agree-to-form-a-relationship',manuscriptVersion:'relationship-establishment-3.0.0',timingVersion:'relationship-establishment-day-3.0.0',directory:'relationship-establishment',examLike:true});
 export const isExamLike=profile=>profile===EXAM_PROFILE||profile?.examLike===true;
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',

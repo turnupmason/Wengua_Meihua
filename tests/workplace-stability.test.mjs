@@ -37,7 +37,8 @@ for (const [slug, id] of [
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
- const sourceDir = 'sources/editorial/' + slug + '/';
+ // 确定关系运行数据仍是 1.0.0，作者源已移到 legacy-v1/（逐月长稿完成并集成前不换库，2026-11-19）。
+ const sourceDir = 'sources/editorial/' + slug + (slug === 'relationship-establishment' ? '/legacy-v1/' : '/');
  const context = slug === 'lost-object-recovery' ? {context:{objectKind:'other'}} : {};
  if (index.next) {
   const {primaryId,movingLine,monthBranches} = index.next;
