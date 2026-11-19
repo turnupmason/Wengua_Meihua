@@ -10,6 +10,8 @@
 
 `career.job-stability.probation` 于 2026-11-18 补判重写为 `workplace-probation-3.0.0`：考试定稿口径加《求名占》在任专条（盘中有克体之卦一律转不了，用户定，与晋升一致），另有讼上九一条转正专属降判；能转正 368、转不了 1,552。作者源与考试同格式，旧稿留档于 `sources/editorial/workplace-probation/legacy-v1/`。口径、回测、裁定与全稿复核见 [转正补判记录](docs/review/PROBATION_REJUDGE_20261118.md)，结论规则在 `scripts/review/probation-verdicts.cjs`，测试在 `tests/workplace-probation.test.mjs`。
 
+`career.job-stability.layoff`（职场情况，状况类）于 2026-11-19 补判重写为 `workplace-stability-3.0.0`：定稿三档初判加《求名占》在任条分轻重（有克体之卦不判稳；无生体而克有力、或体弱遇旺克为风险大；有生可救、或体有力而克体之卦无气为有隐患；无克体之卦最多有隐患），另 29 条职场专属爻辞降一档；稳 355、有隐患 897、风险大 668。旧稿留档于 `sources/editorial/workplace-stability/legacy-v1/`。口径、回测与逐条裁定见 [职场补判记录](docs/review/STABILITY_REJUDGE_20261119.md)，结论规则在 `scripts/review/stability-verdicts.cjs`，测试在 `tests/workplace-stability-v3.test.mjs`。考试第 49–64 卦的收尾见 [考试收尾记录](docs/review/EXAM_49_64_FINAL_20261119.md)；其余七个已写领域的核查见 [七领域核查](docs/review/REMAINING_DOMAINS_AUDIT_20261119.md)。
+
 面试旧版（v2）原 60 篇及 1,860 篇重写稿的作者源留档于 `sources/editorial/interview-rewrites/`，`progress.json` 记的是旧版进度。独立专业审核仍为 pending。客户端读取预写字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。

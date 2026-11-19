@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -250,7 +250,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Relationship windows require supported contact, mutual interaction or a specific obstacle: ' + key);
   }
-  if (profile === WORKPLACE_STABILITY_PROFILE && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
+  if ((profile === WORKPLACE_STABILITY_PROFILE || profile === STABILITY_V3_PROFILE) && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
    throw new Error('Workplace stability only dates named workplace events: ' + key);
   }
   if (timingSpecs.some(spec => spec?.length !== 5 &&
@@ -525,6 +525,23 @@ const probationV3 = {
  counterevidence:'分别看评定标准、在岗受克、爻辞条件与末段，过程改善与最终转正各有证据。',
  timingContext:'日级窗口只在所指试用事项已有近期安排时取用。正式评定结果及日期以实际通知为准。',
 };
+// 职场情况 v3（2026-11-19，docs/review/STABILITY_REJUDGE_20261119.md）：定稿三档 + 《求名占》在任条分轻重。
+const stabilityV3 = {
+ title:'当前工作稳定性', policy:'review/STABILITY_REJUDGE_20261119.md', primarySource:'mh-064',
+ references:[
+  ['mh-071','若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居。','问稳定的人本在任上：有克体之卦即不判稳，轻重分有隐患、风险大。'],
+  ['mh-064','体卦为主，用卦为宾。','原体为当前工作中的当事人，本用为工作安排及其外部要求。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','依次核对眼下的安排、中途的变化和最后的走向。'],
+ ],
+ clauses:{
+  equal:'体用比和，谋为吉利。', body_controls_use:'体克用则吉。',
+  use_controls_body:'用克体不宜', use_generates_body:'用生体有进益之喜',
+  body_generates_use:'体生用有耗失之患。',
+ },
+ outcomes:['stable','watch','strained'], scopeNote:'只判断当前工作稳定性和中断风险的传统倾向',
+ counterevidence:'对照在任受克的轻重、生扶能否救、爻辞所限与尾段变化。普通工作压力与岗位中断分开看。',
+ timingContext:'日级参考窗口适用于对应工作事项已进入近期流程。人事决定及日期以实际通知为准。',
+};
 const workplaceStability = {
  title:'当前工作稳定性', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
  references:[
@@ -703,7 +720,7 @@ if (target === 'missing-contact') {
 } else if (target === 'exam') {
  await buildAuthoredManuscripts(EXAM_PROFILE, exam);
 } else if (target === 'workplace-stability') {
- await buildAuthoredManuscripts(WORKPLACE_STABILITY_PROFILE, workplaceStability);
+ await buildAuthoredManuscripts(STABILITY_V3_PROFILE, stabilityV3);
 } else if (target === 'workplace-probation') {
  // 旧版 workplace-probation-1.0.0 留档于 sources/editorial/workplace-probation/legacy-v1/。
  await buildAuthoredManuscripts(PROBATION_V3_PROFILE, probationV3);
