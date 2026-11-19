@@ -3,9 +3,9 @@
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
   "editorialBaseCommit": "acfb838082b3bdb4a7483031fdfea7d2511b74c2",
   "editor": "/root/recover_pending",
-  "reviewedAt": "2026-11-19T14:42:11.875259+00:00",
+  "reviewedAt": "2026-11-19T21:30:56.972071+00:00",
   "wholeArticlesRead": 72,
-  "sourceSha256": "5a0cadca51c0f7f93879d641604c61de680eabf581e157aec6cc3d3b27ed78d5",
+  "sourceSha256": "046206e290ee8b18a0c5aa0afb955786ae6a675e8cbace83886183ca343697fb",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
@@ -183,6 +183,40 @@
         "27/*/*"
       ],
       "finding": "各处始终对原体；月令五态原值保留，冬令水旺不虚造水节点，秋金旺不虚造金节点；四五上体克土不倒写土克木。无期不证明问题均匀散布全程，日期窗口不等于招聘必定通知。"
+    },
+    {
+      "id": "I027-MAIN-ALIGN-20261119",
+      "status": "fixed-existing-policy-synchronization",
+      "keys": [
+        "27/6/寅",
+        "27/6/卯",
+        "27/6/辰",
+        "27/6/巳",
+        "27/6/午",
+        "27/6/未",
+        "27/6/戌",
+        "27/6/亥",
+        "27/6/子",
+        "27/6/丑"
+      ],
+      "finding": "修复预览月稿落后main既定用党多规则的结论、摘要、全文首尾、专业理由与结果日冲突；本次不变更判断引擎或原始月令事实，旧新文及证据保存在专项同步记录。"
+    },
+    {
+      "id": "I027-USE-PARTY-WEIGHT-20261119",
+      "status": "open-rule-priority",
+      "keys": [
+        "27/6/寅",
+        "27/6/卯",
+        "27/6/辰",
+        "27/6/巳",
+        "27/6/午",
+        "27/6/未",
+        "27/6/戌",
+        "27/6/亥",
+        "27/6/子",
+        "27/6/丑"
+      ],
+      "finding": "原典确有用党多则体势衰，但至少两处阈值、不分各处旺衰的统一裁决为项目具体化；与体克用可成、旺相体制弱用及积极爻义的张力保留，不冒称原典已经唯一证明该二分。"
     }
   ],
   "checks": {
@@ -889,5 +923,51 @@
       "signatureChanged": false,
       "reason": "清除无据既成情节、数量及日历保证；关系、取期角色、方法、窗口规格与有期/无期状态保留。"
     }
-  ]
+  ],
+  "readbackHistory": [
+    {
+      "sourceSha256": "5a0cadca51c0f7f93879d641604c61de680eabf581e157aec6cc3d3b27ed78d5",
+      "record": "previous 72-article author readback; retained as provenance",
+      "reviewedAt": "2026-11-19T14:42:11.875259+00:00",
+      "notRepeatedByCurrentReviewer": true
+    }
+  ],
+  "continuationReadbacks": [
+    {
+      "reviewer": "/root",
+      "reviewerIsHuman": false,
+      "reviewedAt": "2026-11-19T21:30:56.972071+00:00",
+      "wholeChangedArticlesActuallyRead": 10,
+      "keys": [
+        "27/6/寅",
+        "27/6/卯",
+        "27/6/辰",
+        "27/6/巳",
+        "27/6/午",
+        "27/6/未",
+        "27/6/戌",
+        "27/6/亥",
+        "27/6/子",
+        "27/6/丑"
+      ],
+      "scope": "修改前12篇及修改后10篇完整标题、摘要、全部正文、专业说明/取期已实际读取；4处末次自然语修订再次输出检查。其余62篇内容逐字段与旧稿相等，沿用此前作者核读，不声称本次另读72篇。",
+      "unchangedArticlesCoveredByPreviousReadback": 62,
+      "sourceSha256": "046206e290ee8b18a0c5aa0afb955786ae6a675e8cbace83886183ca343697fb"
+    }
+  ],
+  "priorValidationSnapshots": [
+    {}
+  ],
+  "validation": {
+    "status": "passed",
+    "scope": "full source and rebuilt reading page after existing-policy alignment",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "dateCases": 144,
+    "chartMismatches": 0,
+    "sourceSha256": "046206e290ee8b18a0c5aa0afb955786ae6a675e8cbace83886183ca343697fb",
+    "fullPublishedSetDuplicateArticles": 0,
+    "fullPublishedSetDuplicateParagraphs": 0,
+    "fullPublishedSetDuplicateLongSentences": 0
+  }
 }
