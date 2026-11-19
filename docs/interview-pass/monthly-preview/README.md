@@ -1,6 +1,6 @@
-# 面试逐月长稿：1800 篇预览
+# 面试逐月长稿：1872 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增地泽临、风地观，共 144 篇；累计 1800 篇。完整目标为 4,608 篇，尚余 2808 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增火雷噬嗑，共 72 篇；累计 1872 篇。完整目标为 4,608 篇，尚余 2736 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -24,6 +24,7 @@
 | 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-018.json) |
 | 地泽临 | 72 | [打开全文](hex-019.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-019.json) |
 | 风地观 | 72 | [打开全文](hex-020.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-020.json) |
+| 火雷噬嗑 | 72 | [打开全文](hex-021.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-021.json) |
 | 天山遁 | 72 | [打开全文](hex-033.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-033.json) |
 | 雷天大壮 | 72 | [打开全文](hex-034.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-034.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
@@ -36,9 +37,7 @@
 
 ## 本批阅读入口
 
-- [地泽临：六爻十二月全文](hex-019.md)
-
-- [风地观：六爻十二月全文](hex-020.md)
+- [火雷噬嗑：六爻十二月全文](hex-021.md)
 
 
 
@@ -46,7 +45,7 @@
 
 ## 检查与阅读状态
 
-1800 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 48,600 项，差异 0；日期用例 3,600 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–517 汉字。
+1872 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 50,544 项，差异 0；日期用例 3,744 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–517 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
