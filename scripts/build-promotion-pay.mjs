@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -247,7 +247,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   if (profile === LOST_OBJECT_RECOVERY_PROFILE && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Lost-object timing requires a named lead, check or obstacle: ' + key);
   }
-  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
+  if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, ESTABLISHMENT_V3_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && timingSpecs.some(spec => !['support','control','equal'].includes(spec[0]))) {
    throw new Error('Relationship windows require supported contact, mutual interaction or a specific obstacle: ' + key);
   }
   if ((profile === WORKPLACE_STABILITY_PROFILE || profile === STABILITY_V3_PROFILE) && timingSpecs.some(spec => !['support','control','drain','equal'].includes(spec[0]))) {
@@ -623,6 +623,19 @@ const relationshipEstablishment = {
  counterevidence:'分别核对起初愿意往来、解决实际分歧和最后能否确认关系。完整爻辞的限制须放回具体阶段。',
  timingContext:'只有具备近期现实前提的见面、相互商量或具体阻节才取日窗。事件和所取节点一一对应。双方确认关系另外看是否有足够依据。',
 };
+// 确定关系 v3（2026-11-19，docs/review/ESTABLISHMENT_REJUDGE_20261119.md）：定稿口径（含用党多、姤「勿用取女」卦象）+ 婚恋专属爻辞，只判成与不成。
+const establishmentV3 = {
+ title:'恋爱发展 · 我们能确定恋爱关系吗？', policy:'review/ESTABLISHMENT_REJUDGE_20261119.md', primarySource:'mh-067',
+ references:[
+  ['mh-067','占婚姻以体为主，用为婚姻。','原体为问事人，本用为这段关系能否确定；古代婚占类推，以两人明确而自愿的同意为准。'],
+  ['mh-067','若体用比和，则彼此相就，良配无疑。','生体为对方有相就之意，体生用为要我方去求；写进正文，不另定结论。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','分阶段看来往、相处中的分歧和最后能否确认。'],
+ ],
+ clauses:relationshipEstablishment.clauses,
+ outcomes:['favourable','difficult'], scopeNote:'只判断两人能否走到双方明确同意确定关系，不替对方断定心意',
+ counterevidence:'核对能否确认关系，分清来往顺、爻辞所限与结果有利。',
+ timingContext:relationshipEstablishment.timingContext,
+};
 const relationshipReconciliation = {
  title:'矛盾复合 · 这段已经结束的感情能复合吗？',
  policy:'RELATIONSHIP_RECONCILIATION_POLICY.md', primarySource:'mh-064',
@@ -746,7 +759,7 @@ if (target === 'missing-contact') {
 } else if (target === 'relationship-reconciliation') {
  await buildAuthoredManuscripts(RELATIONSHIP_RECONCILIATION_PROFILE, relationshipReconciliation);
 } else if (target === 'relationship-establishment') {
- await buildAuthoredManuscripts(RELATIONSHIP_ESTABLISHMENT_PROFILE, relationshipEstablishment);
+ await buildAuthoredManuscripts(ESTABLISHMENT_V3_PROFILE, establishmentV3);
 } else if (target === 'promotion-pay') {
  await buildAuthoredManuscripts(PROMOTION_V3_PROFILE, promotionV3);
 } else {

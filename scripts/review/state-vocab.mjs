@@ -35,3 +35,18 @@ export const VOCAB = {
  'workplace-stability':{WORDS:STATE_WORDS, CONTRA:STATE_CONTRA, HEDGE:STATE_HEDGE, BLUNT:STATE_BLUNT, LABEL:STATE_LABEL, NOTE:STATE_NOTE},
  'job-change':{WORDS:CHOICE_WORDS, CONTRA:CHOICE_CONTRA, HEDGE:STATE_HEDGE, BLUNT:CHOICE_BLUNT, LABEL:CHOICE_LABEL, NOTE:CHOICE_NOTE},
 };
+
+// 能否类婚恋问项（确定关系：能成／不成，2026-11-19，docs/review/ESTABLISHMENT_REJUDGE_20261119.md）。不成说得委婉而明确。
+export const ESTABLISH_WORDS = {
+ favourable:/能确定关系|关系能定下来|能定下来|定得下来|能走到一起|走得到一起|能在一起|在一起是能成的|能成|成得了|会在一起|能确定下来|能谈成|谈得成|关系能确认|能确认关系/u,
+ difficult:/定不下来|走不到一起|还没到在一起|这回没成|这次没成|还差一步|差了一步|还欠一截|还隔着一层|还隔一层|没能确定|确定不了|成不了|这一回难成|这次难成|难成|没走到一起|没能在一起|还在原地|停在朋友|停在暧昧/u,
+};
+export const ESTABLISH_CONTRA = {
+ favourable:/定不下来|走不到一起|成不了|难成|没能确定|确定不了|这次没成|这回没成/u,
+ difficult:/能确定关系|关系能定下来|能走到一起|会在一起|能谈成|谈得成|能确认关系/u,
+};
+// 生硬或断定对方心意的话
+export const ESTABLISH_BLUNT = /没戏|别想了|死心|不可能在一起|他不喜欢你|她不喜欢你|对方不喜欢你|他根本|她根本|渣|备胎/u;
+export const ESTABLISH_LABEL = {favourable:'能成', difficult:'不成'};
+export const ESTABLISH_NOTE = {favourable:/定为能成/u, difficult:/定为不成/u};
+VOCAB['relationship-establishment'] = {WORDS:ESTABLISH_WORDS, CONTRA:ESTABLISH_CONTRA, HEDGE:STATE_HEDGE, BLUNT:ESTABLISH_BLUNT, LABEL:ESTABLISH_LABEL, NOTE:ESTABLISH_NOTE};
