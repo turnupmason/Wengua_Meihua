@@ -1,0 +1,292 @@
+{
+  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
+  "editor": "claude-opus-5-5",
+  "reviewedAt": "2026-11-19T23:47:38.556Z",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "primaryId": 22,
+  "sourceSha256": "9966a33166ab6e94290670f1766be8bee141c1caded5e880bcf07bc0f5cf176d",
+  "authorshipScope": {
+    "newlyWritten": "山火贲六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气新写（同气月份相同），改引《婚姻占》原句并写明定为能成或不成；取期照抄五气源第10栏种类与位置，事件、提示、依据与无期说明按相处场面重写。",
+    "currentReadback": "每写完一爻12篇即跑 check-monthly --draft，并把标题、简断、全部自然段与取期完整输出读回；六批共72篇实读。读回后为补足厚度（补入解卦彖、贲彖、《本义》《伊川易传》异解）、消除与 hex-021 及本卦他爻的24字长句重复（3/子、3/丑、4/酉、6/酉）、避开他项用语（3/丑「能过」）、订正孔疏标点所作的局部修改，另行输出核对。",
+    "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行翻判。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/relationship-establishment/hex-022.json",
+      "scope": "30行五气源全字段：第2栏结论逐字照用；第9栏仍为考试同盘旧说明（引《求名占》、写「定为能过／过不了」），只作盘面事实对照，见 E022-C01；第10栏取期种类与位置照抄。"
+    },
+    {
+      "path": "sources/editorial/relationship-establishment/polish-v5/hex-022.json",
+      "scope": "30条 establishmentRule、oldOutcome、calculationNotes、oldBasis 逐条对照：1、4、5爻 R2/R2↑ 拆成（变用比和、生体），2、6爻 R2 拆不成（变用泄），3爻 R2/R2↓ 不成（变用克体）。"
+    },
+    {
+      "path": "data/authored-readings/relationship-establishment/hex-022.json",
+      "scope": "经 scripts/review/packet.mjs 输出30盘本互变（贲→解→艮/大畜/颐/离/家人/明夷）、六节点五行五态与四处直接关系，逐爻核对；1–3爻体互震木得用互坎水之生而盘中无金（2爻另有乾金制木）、4–6爻体互坎水受本用艮土（6爻另有坤土）所制的一层作用按五气源说明取用。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03賁.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/03賁",
+      "scope": "卦辞、彖、大象、六爻爻辞与小象、王弼注、孔颖达疏全文阅读；正文所引王注孔疏逐字核过（3/卯等孔疏「贲如，华饰之貌。濡如，润泽之理」标点已按原本）。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "贲卦辞与六爻本义（「内离而外艮，有文明而各得其分之象」「君子之取舍决于义而已」「二附三而动」「皆无应与」「得其贲而润泽者也，然不可溺于所安，故有永贞之戒」「其往求之心如飞翰之疾」「九三刚正非为寇者也，乃求婚媾耳」「若守正而不与，亦无他患」「敦本尚实」「束帛薄物，戋戋浅小之意」「礼奢宁俭」「贲极反本，复于无色，善补过矣」）。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "贲六五程传（丘园指上九，「能从于人成贲之功」）、上九「在上而得志」；只在5/午作异解并列。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04解.txt",
+      "scope": "互卦解彖「解，险以动，动而免乎险，解」；大象「赦过宥罪」未引。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05艮.txt",
+      "scope": "初爻变卦艮大象「兼山，艮，君子以思，不出其位」及王注「各止其所，不侵官也」。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+      "scope": "二爻变卦大畜卦辞「利贞。不家食，吉」、大象「天在山中」「君子以多识前言往行，以畜其德」。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03頤.txt",
+      "scope": "三爻变卦颐卦辞「贞吉。观颐，自求口实」、大象「慎言语，节饮食」及王注。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03離.txt",
+      "scope": "四爻变卦离卦辞「利贞，亨」、王注「以柔为正，故必贞而后乃亨」、大象「明两作」及王注。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04家人.txt",
+      "scope": "五爻变卦家人大象「风自火出」、王注「由内以相成炽也」、孔疏「火出之初，因风方炽」；卦辞「利女贞」不引，不写性别分工。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04明夷.txt",
+      "scope": "上爻变卦明夷卦辞「利艰贞」、彖与大象「明入地中」、彖「内文明而外柔顺」；彖中「以蒙大难」与「夷，伤」之义不入正文。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实读487卦断遗论、494体用（体盛体衰、体党用党）、530–532婚姻占两段、553求名占（只作同构对照）、655复明时令之应、682体用（彼灭其吉、稍解其穷）、688衰旺论、751田姓屋占卦例、792占卦诀（生体是互卦则渐成、是变卦则稍迟、事有阻节、无克体之卦则吉事必可成就）、796–798体用互变之诀、804体用衰旺之诀。"
+    },
+    {
+      "path": "docs/review/ESTABLISHMENT_REJUDGE_20261119.md",
+      "scope": "口径、二分、婚恋专属降档与升档爻辞表（21、22两卦六爻均不在表内）、《婚姻占》第二段写法。"
+    },
+    {
+      "path": "docs/review/ESTABLISHMENT_MONTHLY_BRIEF.md",
+      "scope": "判词、专业说明写法、取期改写、卦象主断一节（本两卦变卦为晋、睽、离、颐、无妄、震、艮、大畜、家人、明夷，均不在剥、否、归妹、讼、姤之列，无卦象主断之篇）。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第二节第一步表（R1a↓、R2、R2↑、R2↓）、第二步爻辞调档（守正才吉之辞不调档）、第十节休为无气、第十三节有条件按结局拆（含网上噬嗑上九本用泄、变比和未成之例）、第十四节用党多（两卦均不成立）。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "通用写法、作者源字段、回执字段、检查与交付；2026-11-19 保持厚度与可参《本义》《伊川易传》核对之补充。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "贲其趾，舍车而徒。",
+      "image": "“舍车而徒”，义弗乘也。",
+      "reading": "王注「弃于不义，安夫徒步以从其志者也」，孔疏「志行高絜，不苟就舆乘」，本义「君子之取舍决于义而已」。读为不借外在排场、贵重礼物或旁人之力推进，以本色、按自己的脚步相处；不写车马身份。无吉凶断辞。五气皆成：变用艮土比和，「体用比和，婚姻吉利」；申酉、亥子体休囚而中段震木得坎之生有力，正文写成慢而费力，见 E022-A01。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E022-A01"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "贲其须。",
+      "image": "“贲其须”，与上兴也。",
+      "reading": "王注「得其位而无应……俱无应而比焉，近而相得者也。须之为物，上附者也。循其所履以附于上」，孔疏「上须于面」「与上同为兴起」，本义「二附三而动」。读为两人挨得近、处得来，但这份近附着于场合或一方的主动，还没有两人各自站定的相应；无吉凶断辞。五气皆不成：变用乾金泄体，「体生用，婚难成」。2爻乾金在盘中制震木，中段之克比1、3爻轻，正文按此写。",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "贲如濡如，永贞吉。",
+      "image": "“永贞”之“吉”，终莫之陵也。",
+      "reading": "王注「和合相润，以成其文」「既得其饰，又得其润」「永保其贞，物莫之陵」，孔疏「其美如此，长保贞吉」，本义「不可溺于所安，故有永贞之戒」。读为两人相处温润相宜，吉系于长守其正；属「永贞吉」一类守正才吉之辞，不在婚恋升档表，不翻。五气皆不成：体互、变用两处震木克体，「变卦克体，事于末后，必有不吉」。巳午体相、本用离火旺生体，见 E022-A02。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E022-A02"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "贲如皤如，白马翰如，匪寇婚媾。",
+      "image": "六四当位，疑也。“匪寇婚媾”，终无尤也。",
+      "reading": "王注「欲静则疑初之应，欲进则惧三之难，故或饰或素，内怀疑惧也……匪寇乃婚，终无尤也」，孔疏「若待匪有寇难乃为婚媾，则终无尤过；若犯寇难而为婚媾，则终有尤也」；本义另解「翰如」为「其往求之心如飞翰之疾」，又说「九三刚正非为寇者也，乃求婚媾耳」。读为先疑后合：在隆重与朴素之间迟疑，等中间那处阻隔过去再说定则无悔，硬闯则有悔。「三」只读作中途的阻隔（体互坎水），不写第三者。爻辞直言婚媾，与五气皆成同向；22·4 不在升档表（表中为睽上九），本无须翻。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E022-A03"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "贲于丘园，束帛戋戋，吝，终吉。",
+      "image": "六五之“吉”，有喜也。",
+      "reading": "王注「施饰丘园，盛莫大焉」「用莫过俭，泰而能约，故必吝焉乃得终吉也」，孔疏「初时俭约，故是其吝也；必俭约之吝，乃得终吉，而有喜也」，本义「敦本尚实」「礼奢宁俭」。读为不尚铺张、以朴素实在相待，开头看着单薄是小吝，终吉有喜。「戋戋」孔疏作「众多」、本义作「浅小」，程传以丘园指上九，三说并列，落点皆在俭朴。五气皆成：用互震木、变用巽木两处生体，《占卦诀》「生体是互卦，则渐成；生体是变卦，则稍迟耳」。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E022-A03"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "白贲，无咎。",
+      "image": "“白贲无咎”，上得志也。",
+      "reading": "王注「处饰之终，饰终反素，故在其质素，不劳文饰而无咎也。以白为饰，而无患忧，得志者也」，孔疏「守志任真，得其本性」，本义「贲极反本，复于无色，善补过矣」。读为放下修饰、回到本色相处，免于差错、心意得安；无咎非吉辞，不翻。五气皆不成：本用艮土、变用坤土首末两处泄体。明夷只取「明入地中」「利艰贞」「内文明而外柔顺」，不写伤与难。",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "E022-A01",
+      "status": "open-priority",
+      "keys": [
+        "22/1/申酉",
+        "22/1/亥子"
+      ],
+      "finding": "初九申酉月体艮土休、生体之离火囚，亥子月体艮土囚、离火死；体互震木得用互坎水（申酉相、亥子旺）之生而盘中无金制之，五气源按有力论，亥子尤重。现行依 R2 有生有克、变用艮土比和拆为成（「变生体及比和，则事事临终有吉利」）。然生体之卦无气、克体之卦有力、体衰，与《衰旺论》「体衰而逢克，则其凶甚」（688 行）有张力；五气源旧稿亥子判 difficult。正文写成中途最难、慢而能合，结论不改，待裁定。"
+    },
+    {
+      "id": "E022-A02",
+      "status": "open-priority",
+      "keys": [
+        "22/3/巳午"
+      ],
+      "finding": "九三巳午月体艮土相、本用离火旺而生体，体互与变用两处震木休，只因得用互坎水之生而无金制，五气源按有力论；五气源旧稿判 favourable，九三又有「永贞吉」。现行依「变卦克体，事于末后，必有不吉」（798 行）拆为不成；「永贞吉」属守正才吉之辞，不调档。休木得生而作有力、旺生在前与末克在后的先后，待裁定；正文如实写开局有力。"
+    },
+    {
+      "id": "E022-A03",
+      "status": "open-priority",
+      "keys": [
+        "22/4/申酉",
+        "22/5/申酉"
+      ],
+      "finding": "六四、六五申酉月体离火囚，用互震木（五爻另有变用巽木）皆死，生体之卦全无气；体互坎水相，只因受本用艮土所制而按气弱论。现行依 R2 有生有克、变用比和（4爻）或生体（5爻）拆为成。无有力生体、体衰而克体之卦得令，与《衰旺论》「体衰而逢克，则其凶甚」及《占卦诀》「无生体之卦，有克体之卦，则事不谐」有张力；五气源旧稿申酉均判 difficult。正文写成过程吃力、结局方向朝你，结论不改，待裁定。"
+    },
+    {
+      "id": "E022-B01",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "22/4/*"
+      ],
+      "finding": "六四「白马翰如」「匪寇婚媾」：王注孔疏以九三为寇难、待其去乃婚，「翰如」为徘徊以待；朱熹《本义》以「翰如」为往求之心如飞翰之疾，并说九三「刚正非为寇者也，乃求婚媾耳」。两说在 4/卯、午、申、未、亥、丑 等篇并列注明；正文一律把「三」读作中途的阻隔，不写第三者，不断谁有心作对。"
+    },
+    {
+      "id": "E022-B02",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "22/5/*"
+      ],
+      "finding": "六五「束帛戋戋」孔疏解为众多、本义解为浅小，程传以丘园指上九、六五「能从于人，成贲之功」；正文在 5/寅、午、子 等篇注明异解，落点均为不尚华侈、以俭朴实在相待。「吝」写成开头看着单薄，不写吝啬心意。"
+    },
+    {
+      "id": "E022-C01",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "22/*/*"
+      ],
+      "finding": "五气源 hex-022.json 第9栏仍是考试同盘旧说明，引《求名占》「体生用，名不可就」，写「定为能过／过不了」，calculationNotes 另有「压轴」「卷首」等卷面意象；4、5爻申酉月以「按气弱论（751 行）」作据，而751行为田姓屋占卦例（「火虽无气，终是制金」），非条文。月稿专业说明按《婚姻占》逐气重写，气弱改引《体用》「此卦克体，诸卦又有克此卦者，稍解其穷」（682 行），30条结论与第2栏一致；五气源与 polish-v5 未改，待回写。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "E022-D01",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "22/*/*"
+      ],
+      "finding": "五气源旧正文情节不进月稿。取期按相处场面重写，如「提出一个更朴素的见面办法，对方爽快接上」「顾虑说开之后，两人又照常见上一面」，提示不以若、如、近期起句，无期说明30–60字；种类、位置与目标日支（火、土、木、水支日）不变。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、五段全文与取期完整输出后实读；读回后为补足厚度、去重、订正引文出处所作的局部修改另行输出核对",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72 complete; check-monthly passed",
+    "bodyHanRange": [
+      450,
+      506
+    ],
+    "shortHanRange": [
+      61,
+      75
+    ],
+    "flexibleLengthWarnings": 0,
+    "lengthDecision": "读回后对不足450汉字的篇逐篇补入有据的解释（解彖、贲彖、《本义》《伊川易传》），不以通用建议凑字。",
+    "outcomes": {
+      "favourable": 36,
+      "difficult": 36
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "check-monthly 独立文王上下卦表与六爻位运算，逐篇27项比较本互变、动爻、六节点五行五态与四处直接关系；不评价现实预测准确率。"
+    },
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timing": "全部保留五气源第10栏种类与位置（support/control/equal；use、body_mutual、use_mutual、changed_use），同气月份相同。",
+    "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+    "crossHexDuplicateScope": "与同时写作中的 hex-001 至 hex-021 月稿一并查重，无整篇、整段及24汉字以上长句重复。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}
