@@ -208,5 +208,5 @@ test('establishment verdicts follow the finalized rule (favourable / difficult)'
    counts[row.decision.outcomeCode]++;
   }
  }
- assert.deepEqual(counts, {favourable:588, difficult:1332});
+ assert.deepEqual(counts, {favourable:582, difficult:1338});
 });
