@@ -20,6 +20,8 @@ export const PROMOTION_V3_PROFILE=Object.freeze({questionId:'career.promotion-pa
 export const PROBATION_V3_PROFILE=Object.freeze({questionId:'career.job-stability.probation',questionType:'probation_completion',questionScope:'completion-of-current-probation',manuscriptVersion:'workplace-probation-3.0.0',timingVersion:'workplace-probation-day-3.0.0',directory:'workplace-probation',examLike:true});
 // 职场情况（状况类：稳／有隐患／风险大）按定稿口径加《求名占》在任条轻重重写（2026-11-19），作者源与考试同格式。
 export const STABILITY_V3_PROFILE=Object.freeze({questionId:'career.job-stability.layoff',questionType:'employment_stability',questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-3.0.0',timingVersion:'workplace-stability-day-3.0.0',directory:'workplace-stability',examLike:true,stateOutcomes:true});
+// 跳槽去留按定稿口径重写（2026-11-19，docs/review/JOBCHANGE_REJUDGE_20261119.md）：选择类，留／先准备／可走；作者源格式与考试相同。
+export const JOB_CHANGE_V3_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-3.0.0',timingVersion:'job-change-day-3.0.0',directory:'job-change',examLike:true,choiceOutcomes:true});
 export const isExamLike=profile=>profile===EXAM_PROFILE||profile?.examLike===true;
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',
@@ -180,7 +182,7 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const sourceIds=[...new Set(timingSources)];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  const namedStageEvent=profile===JOB_CHANGE_PROFILE||isExamLike(profile)||profile?.namedStageEvents===true;
+  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===JOB_CHANGE_V3_PROFILE||isExamLike(profile)||profile?.namedStageEvents===true;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
   const eventEnd=(isExamLike(profile)||profile===LOST_PET_RECOVERY_PROFILE||profile===MISSING_CONTACT_PROFILE)?'，属'+valence+'应。':'。';
   const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;
@@ -255,7 +257,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ? (hasTiming?'以下为传统推算的参考窗口，仅用于已进入近期流程的对应事项。':NO_WINDOW_NOTE)
    : isPromotion
    ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
-   : (hasTiming ? (profile===JOB_CHANGE_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
+   : (hasTiming ? (profile===JOB_CHANGE_PROFILE||profile===JOB_CHANGE_V3_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
   const c=row.copy.long;
   const payRange=row.decision.pay?.range;
   const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending+(payRange?' '+payRange:'')];

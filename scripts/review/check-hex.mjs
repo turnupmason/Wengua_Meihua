@@ -5,21 +5,21 @@ import {readFile, readdir} from 'node:fs/promises';
 import {loadLibrary} from '../../src/index.js';
 import {validateStoryCopy} from '../../src/story-editorial.js';
 import {checkInterviewShort} from '../../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
+import {createContextualReading, promotionTimingSlots, JOB_CHANGE_V3_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
  WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE,
  RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE} from '../../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../../src/month-slots.js';
 import {PRODUCT_TAXONOMY} from '../../sources/editorial/product-taxonomy.mjs';
-import {STATE_WORDS, STATE_CONTRA, STATE_HEDGE, STATE_BLUNT, STATE_NOTE} from './state-vocab.mjs';
+import {VOCAB} from './state-vocab.mjs';
 
 const [item, hexArg, flag] = process.argv.slice(2);
-const profiles = {exam:EXAM_PROFILE, 'interview-pass':INTERVIEW_V3_PROFILE, 'promotion-pay':PROMOTION_V3_PROFILE, 'job-change':JOB_CHANGE_PROFILE,
+const profiles = {exam:EXAM_PROFILE, 'interview-pass':INTERVIEW_V3_PROFILE, 'promotion-pay':PROMOTION_V3_PROFILE, 'job-change':JOB_CHANGE_V3_PROFILE,
  'workplace-stability':STABILITY_V3_PROFILE, 'workplace-probation':PROBATION_V3_PROFILE,
  'new-relationship-opportunity':NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, 'confession-decision':CONFESSION_DECISION_PROFILE,
  'relationship-establishment':RELATIONSHIP_ESTABLISHMENT_PROFILE, 'relationship-reconciliation':RELATIONSHIP_RECONCILIATION_PROFILE};
 const outcomes = {exam:['favourable','conditional','difficult'], 'interview-pass':['favourable','difficult'], 'promotion-pay':['favourable','difficult'],
  'workplace-probation':['favourable','difficult'], 'workplace-stability':['stable','watch','strained'],
- 'job-change':['stay','verify','prepare','switch']};
+ 'job-change':['stay','prepare','switch']};
 const profile = profiles[item];
 if (!profile) throw new Error('Unknown item ' + item);
 const allowed = outcomes[item] ?? ['favourable','conditional','difficult'];
@@ -62,17 +62,30 @@ for (const [i, d] of drafts.entries()) {
   for (const re of STOCK) if (re.test(value)) err(`${field} 含套话 ${value.match(re)[0]}`);
   for (const re of VOICE) if (re.test(value)) warn(`${field} 含「不…，也不…」句式`);
  }
+ const V = VOCAB[item];
+ if (item === 'job-change') {
+  // 跳槽去留 v3：不出现他项用语；依据与计算说明须写「定为留／定为先准备／定为可走」，与本篇结论一致（docs/review/JOBCHANGE_REJUDGE_20261119.md）。
+  const notes = (polishRecs?.[i]?.calculationNotes ?? []).join('');
+  const all = [title, short, opening, process, ending, summary, resolution, JSON.stringify(topicDetail ?? ''), notes].join('');
+  const OTHER = /考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|晋升|升职|职级|能过|过不了|转正|裁员|被裁/u;
+  if (OTHER.test(all)) err('稿件含他项用语 ' + all.match(OTHER)[0]);
+  if (!V.NOTE[d[2]].test(resolution)) err('判断依据没有写明本篇结论（' + V.LABEL[d[2]] + '）');
+  if (!V.NOTE[d[2]].test(notes)) err('计算说明没有写明本篇结论（' + V.LABEL[d[2]] + '）');
+  for (const [o, re] of Object.entries(V.NOTE)) if (o !== d[2] && re.test(resolution + notes)) err('依据或计算说明写成了另一档：' + (resolution + notes).match(re)[0]);
+  if (/定为能过|定为不成|定为能成|定为稳|有隐患|风险大/u.test(resolution + notes)) err('依据或计算说明残留他项结论用语 ' + (resolution + notes).match(/定为能过|定为不成|定为能成|定为稳|有隐患|风险大/u)[0]);
+  if (V.BLUNT.test([title, short, summary, ending].join(''))) err('正文用了吓人的断语 ' + [title, short, summary, ending].join('').match(V.BLUNT)[0]);
+ }
  if (item === 'workplace-stability') {
   // 职场情况 v3：不出现他项用语；依据与计算说明的结论须与本篇三档一致（docs/review/STABILITY_REJUDGE_20261119.md）。
   const notes = (polishRecs?.[i]?.calculationNotes ?? []).join('');
   const all = [title, short, opening, process, ending, summary, resolution, JSON.stringify(topicDetail ?? ''), notes].join('');
   const OTHER = /考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|转正|试用期|晋升|升职|职级|能过|过不了/u;
   if (OTHER.test(all)) err('稿件含他项用语 ' + all.match(OTHER)[0]);
-  if (!STATE_NOTE[d[2]].test(resolution)) err('判断依据没有写明本篇结论（' + d[2] + '）');
-  if (!STATE_NOTE[d[2]].test(notes)) err('计算说明没有写明本篇结论（' + d[2] + '）');
-  for (const [o, re] of Object.entries(STATE_NOTE)) if (o !== d[2] && o !== 'stable' && re.test(resolution + notes)) err('依据或计算说明写成了另一档：' + (resolution + notes).match(re)[0]);
+  if (!V.NOTE[d[2]].test(resolution)) err('判断依据没有写明本篇结论（' + d[2] + '）');
+  if (!V.NOTE[d[2]].test(notes)) err('计算说明没有写明本篇结论（' + d[2] + '）');
+  for (const [o, re] of Object.entries(V.NOTE)) if (o !== d[2] && o !== 'stable' && re.test(resolution + notes)) err('依据或计算说明写成了另一档：' + (resolution + notes).match(re)[0]);
   if (d[2] !== 'stable' && /定为稳|判稳/u.test(resolution + notes)) err('依据或计算说明写成了稳');
-  if (STATE_BLUNT.test([title, short, summary, ending].join(''))) err('正文用了吓人的断语 ' + [title, short, summary, ending].join('').match(STATE_BLUNT)[0]);
+  if (V.BLUNT.test([title, short, summary, ending].join(''))) err('正文用了吓人的断语 ' + [title, short, summary, ending].join('').match(V.BLUNT)[0]);
  }
  if (item === 'interview-pass' || item === 'promotion-pay' || item === 'workplace-probation') {
   const EXAMW = item === 'promotion-pay' || item === 'workplace-probation' ? /考试|考场|考生|卷面|卷尾|卷首|全卷|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题|放榜|过线|面试官|面试/u : /考试|考场|考生|卷面|试卷|卷子|阅卷|合格线|及格|分数|得分|扣分|丢分|拿分|保分|交卷|答卷|考题/u;
@@ -102,16 +115,17 @@ for (const [i, d] of drafts.entries()) {
   const specs = isPromotion ? timingSelection.map(k => timingJson[Number(hexArg)][movingLine - 1][0][k]) : timingSelection;
   if ((isExamLike(profile) || profile.namedStageEvents) && specs.length > 1) err('每篇至多一个日级事件');
   if ([NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE].includes(profile) && specs.some(s => !['support','control','equal'].includes(s[0]))) err('感情问项只取 support/control/equal');
-  if ([WORKPLACE_STABILITY_PROFILE, JOB_CHANGE_PROFILE].includes(profile) && specs.some(s => !['support','control','drain','equal'].includes(s[0]))) err('只取 support/control/drain/equal');
+  if ([WORKPLACE_STABILITY_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_PROFILE, JOB_CHANGE_V3_PROFILE].includes(profile) && specs.some(s => !['support','control','drain','equal'].includes(s[0]))) err('只取 support/control/drain/equal');
   try { promotionTimingSlots(r, specs, outcome, profile); } catch (e) { err('应期声明不合：' + e.message + '（kind 必须与该位置对原体的关系一致；name-support/name-body 只用于 favourable）'); }
  }
  if ((isPromotion || isExamLike(profile) || profile === WORKPLACE_PROBATION_PROFILE) && outcome === 'favourable' &&
   r.edges.find(e => e.targetRole === 'use').type === 'use_controls_body' && !r.edges.some(e => e.type === 'use_generates_body')) err('本用克体且无生体，不能 favourable');
 }
 // 职场情况 v3：爻辞读法从考试搬来，须改成职场读法（不留考试、面试、转正、晋升字眼）。
-if (item === 'workplace-stability') {
+if (item === 'workplace-stability' || item === 'job-change') {
  const rv = await readFile(dir + 'review-v2/' + stem + '.json', 'utf8').then(JSON.parse).catch(() => []);
- rv.forEach((r, i) => { const m = String(r.lineReading ?? '').match(/考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u); if (m) errors.push(`${hexArg}/${r.key?.split('/').slice(-2).join('/')}: 爻辞读法仍是他项读法「${m[0]}」`); });
+ const OTHERL = item === 'job-change' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|转正|晋升|升职|能过|过不了|裁员|被裁|稳得住|有隐患|风险大/u : /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u;
+ rv.forEach((r, i) => { const m = String(r.lineReading ?? '').match(OTHERL); if (m) errors.push(`${hexArg}/${r.key?.split('/').slice(-2).join('/')}: 爻辞读法仍是他项读法「${m[0]}」`); });
 }
 // Sentence-level duplicates inside this file and against every other author file of the item.
 const norm = s => s.replace(/[^\p{Letter}\p{Number}]/gu, '');
@@ -155,17 +169,17 @@ try {
     const FAIL = /过不了|不能过|过不去|没法过|无法过|不会过|过不了线|够不上|达不到|拿不下|过线无望|没能过|考不过|合格不了|过不去线|这次不过|还差一截|还差一口气|还差几分|离合格线还差|离线还差|差在线下|落在线下|落到线下|够不到线|够不着线|没够上线|没能过线|还没到线|未到合格线|差一点到线|差几分到线|停在线下|压在线下|没上线|上不了线|差着几分|还欠一截|还欠几分|离那条线|没摸到线|线下还差|还差半截|差了一口气|还差一步|差了一步|差一步|这一轮没过|没过这一轮|止步这一轮|没能进下一轮|没被选上|没选上|落选|未能录用|没被录用|没等到录用|没拿到这个岗位|这回没成|这次没成|升职还差一步|这次还没轮到|这次轮不到|还没轮到你|没升上去|职级没动|职级这次没动|晋升没落定|这次没升成|没能晋升|升职这回没成|晋升这回没成|这次还没转成|转正还差一步|还没转下来|这次没转成|转正这回没成|试用期这回没过|没能转正/u;
     const [, , , ttl, sh, op, pr, en, su] = d;
     const head2 = String(sh).split(/[。！？]/u).filter(Boolean).slice(0, 2).join('。');
-    const isState = item === 'workplace-stability';
-    const want = isState ? STATE_WORDS[d[2]] : d[2] === 'favourable' ? PASS : FAIL;
-    if (isState && STATE_CONTRA[d[2]].test(sh + su)) errors.push(`稿件 ${i} 简断或总断有与结论相反的说法：${(sh + su).match(STATE_CONTRA[d[2]])[0]}`);
-    if ((isState ? STATE_HEDGE : HEDGE).test(sh + su)) errors.push(`稿件 ${i} 简断或总断含含糊口气：${(sh + su).match(isState ? STATE_HEDGE : HEDGE)[0]}`);
+    const VV = VOCAB[item], isState = Boolean(VV);
+    const want = isState ? VV.WORDS[d[2]] : d[2] === 'favourable' ? PASS : FAIL;
+    if (isState && VV.CONTRA[d[2]].test(sh + su)) errors.push(`稿件 ${i} 简断或总断有与结论相反的说法：${(sh + su).match(VV.CONTRA[d[2]])[0]}`);
+    if ((isState ? VV.HEDGE : HEDGE).test(sh + su)) errors.push(`稿件 ${i} 简断或总断含含糊口气：${(sh + su).match(isState ? VV.HEDGE : HEDGE)[0]}`);
     if (!want.test(head2)) errors.push(`稿件 ${i} 简断前两句未明说结论`);
     if (!want.test(su)) errors.push(`稿件 ${i} 总断未明说结论`);
     if (/有条件|口径|生体|克体|旺相|休囚|定档|体用/u.test([ttl, sh, op, pr, en, su].join(''))) errors.push(`稿件 ${i} 正文含内部用语`);
     if (/^(初|二|三|四|五|上)?[九六一二三四五]?(爻)?[^，。]{0,4}(说|讲|写|道)[：，「“]/u.test(en) && /^[^，。]{0,6}(说|讲)/u.test(en)) errors.push(`稿件 ${i} 结局以「某爻说」起句`);
     if (/^(中段|中间)/u.test(pr)) errors.push(`稿件 ${i} 过程以「中段/中间」起句`);
     if (/^(开头|开场|开卷|开局|起步|起手|一开)/u.test(op)) errors.push(`稿件 ${i} 开局以固定词起句`);
-    if (/^(这一场|这场|这次|这回|这份工作)/u.test(sh)) errors.push(`稿件 ${i} 简断以「这一场/这次」起句`);
+    if (/^(这一场|这场|这次|这回|这份工作|这份新工作|新工作)/u.test(sh)) errors.push(`稿件 ${i} 简断以「这一场/这次」起句`);
     if (/放到考场上/u.test([op, pr, en, su].join(''))) errors.push(`稿件 ${i} 用「放到考场上」接话`);
     // 2026-11-19 全库复查补的几条（考试为 0，以此为准）
     const body6 = [ttl, sh, op, pr, en, su].join('');

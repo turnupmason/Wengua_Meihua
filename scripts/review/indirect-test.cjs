@@ -22,4 +22,4 @@ function adjust(r) {
   }
   return {n, rel:r.rel, text:r.text, notes};
 }
-module.exports = {adjust, tierV21: r => { const a = adjust(r); return {...bodyUseTier(a), notes:a.notes}; }};
+module.exports = {adjust, tierV21: (r, opts = {}) => { const a = adjust(r); return {...bodyUseTier(a, opts), notes:a.notes}; }};
