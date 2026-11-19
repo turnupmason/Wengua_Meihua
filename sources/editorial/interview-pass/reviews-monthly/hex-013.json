@@ -1,0 +1,392 @@
+{
+  "primaryId": 13,
+  "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
+  "editorialBaseCommit": "a2b6d54521412226834b6875416b8e043e5c2315",
+  "editor": "/root/style_and_pipeline",
+  "reviewedAt": "2026-11-19T04:33:50.970445+00:00",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "61a56bf23754c27722e7b006720bad6a28709b8a38deab59153e59ceb30155ac",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "newlyWritten": "72篇按六爻十二月逐篇直接写定，未用模板、句库、随机拼接或程序扩写。Python仅打包作者明确写出的完整正文及基线元数据。",
+    "currentReadback": "每爻12篇完成即完整输出标题、摘要、五段正文及应期，六批72篇实际读回；判断修订全文输出核对。局部改词及最后两条九五判断修改另行输出读回。",
+    "notClaimed": "作者全文自读不冒充独立作者复审、人工验收或用户逐篇接受；脚本不代签已读，也未验证现实预测准确率。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/interview-pass/hex-013.json",
+      "scope": "30篇旧source全部11字段按六爻完整阅读。初次含全data的大输出发生截断后，初九五篇重新完整输出阅读，未以截断输出代签已读。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/review-v2/hex-013.json",
+      "scope": "30项reason、evidenceFor、evidenceAgainst、lineReading、timing、存在时v21、final按六爻全读。"
+    },
+    {
+      "path": "data/authored-readings/interview-pass/hex-013.json",
+      "scope": "30项stageIds、facts.nodes、facts.directRelations、decision.indirectEffectsApplied全读并逐气核对；初九第一项另查看完整data结构。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02同人.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/02同人",
+      "scope": "整卦经文、彖、大象、六爻原辞小象、王弼注及孔颖达疏全文阅读；快照revid2000752。重点核门宗、九三安字、九四义弗克、九五克隔、上九不获同志。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "同人全卦段126–132行实读，经、彖、象及六爻注俱含；与王孔比对审异致同、以义断而不攻、义理所同与郊之荒僻。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷1.txt",
+      "scope": "先定位读同人各爻，再整段实读398–424行，涵盖卦义、彖象及六爻；九五二人同心与私昵非君道的限制另留开放解释。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "本轮任务已实读480–484占卜论理诀及先天后天论、550–553求谋求名、678–688遗论体用及衰旺、791–804占卦诀互变生克衰旺、822–823克应；本卦依相应条文与30项事实核对，不声称通读全书。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "同人于门，无咎。",
+      "image": "出门同人，又谁咎也？",
+      "reading": "王孔以无应于上、心无系吝、出门皆同释无咎，本义与伊川均重未有私主、无偏私。门不是固定答题格式、衔接步骤或熟人，正文取开放公正与共同可核对的依据；无咎不偷换成能力已经充分证明。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A01",
+        "I013-A02"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "同人于宗，吝。",
+      "image": "同人于宗，吝道也。",
+      "reading": "宗为所偏系之党，二与五正应仍受所同偏狭之戒。在同人须通广的语境中解释，不把候选人贴成狭隘的人；现代建议是检验经验的适用条件与理解范围，承认旺体比和的真优势。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A03"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "伏戎于莽，升其高陵，三岁不兴。",
+      "image": "伏戎于莽，敌刚也。三岁不兴，安行也。",
+      "reading": "王孔、伊川、本义均有欲争六二而惮九五之刚，不能仅译成胆小或迟疑。孔疏安为语辞、犹何，何可行；三岁取久困不兴，不换算面试日期或等候期限。正文不把面试官或竞争者定为敌人，也不推定占问者已经争夺或失德。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A03",
+        "I013-A04",
+        "I013-A05"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "乘其墉，弗克攻，吉。",
+      "image": "乘其墉，义弗克也。其吉，则困而反则也。",
+      "reading": "吉在义所不宜而能反归正则。王孔着眼不克乃反，本义、伊川着眼以义断、畏义能改；共同点不是攻击技术失败后换技巧。正文将之转为查实条件、停止不当推进、有范围地修正，不要求凡遇不同意见即退让或抛弃整个考察。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A06",
+        "I013-A07"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "同人，先号咷，而后笑，大师克相遇。",
+      "image": "同人之先，以中直也。大师相遇，言相克也。",
+      "reading": "二五相应而三四间隔，后通须经真实的克隔之功，不能压成前两问小失误。王孔亦指出不能使物自归而用强直，本义重义理所同，伊川区分二人同心之义与君位私昵非大同。正文取正当、有据的克隔求合，不将大师化成对考官施压，更不预测特定人物阻拦。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A07",
+        "I013-A08",
+        "I013-A09"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "同人于郊，无悔。",
+      "image": "同人于郊，志未得也。",
+      "reading": "王孔谓最在外、不获同志而远内争，本义亦云物莫与同、郊未至旷远但荒僻，伊川说虽无悔非善处。无悔与求同未遂并存，不能缩成锦上添花、半步错答或一项新框架未用成。正文保留真实距离和有分寸的主动核实，体用仍沿既定结果，优先级不伪装已经解决。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "I013-A07",
+        "I013-A10",
+        "I013-A11"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "I013-A01",
+      "status": "corrected-classical-application",
+      "keys": [
+        "13/1/*",
+        "13/2/*"
+      ],
+      "finding": "初九旧正文将门直接等同严格讲法规矩、问题接头或出门遇熟人；六二又把宗限定为某个熟题或讲述习惯。新版还原不系私属与所同偏狭的范围，现代建议只作条件性转用，不宣称爻辞规定具体题型和问答格式。"
+    },
+    {
+      "id": "I013-A02",
+      "status": "open-priority",
+      "keys": [
+        "13/1/*"
+      ],
+      "finding": "初九本离克体得木生、末艮生体得离生受巽克相抵，现行末生优先仍取favourable。春体囚末土死、冬体休末土囚，及夏旺火克死金而末相土救应，均有需进一步说明的旺衰与末应先后；正文完整保留前中压力和后助厚薄，不把初九无咎当成直接录取保证。"
+    },
+    {
+      "id": "I013-A03",
+      "status": "open-priority",
+      "keys": [
+        "13/2/*",
+        "13/3/*"
+      ],
+      "finding": "六二、九三无生有克全取difficult，秋体金旺、季土体金相与比和优势仍保留。本离原囚死休在一层规则中因木生而有力，原五态不变，未递归计算木受乾克后再取消生火。旺体免害、无生有克、间接得生之间的优先仍需独立规则审查。"
+    },
+    {
+      "id": "I013-A04",
+      "status": "fixed-classical-misreading",
+      "keys": [
+        "13/3/辰",
+        "13/3/未",
+        "13/3/戌",
+        "13/3/丑"
+      ],
+      "finding": "旧季土正文把安行也解释成后面走得安稳，与孔疏安犹何、何可行的解释相反。已在四季土新正文明确为反问，并保留久困及求合失道的完整语境；其余月稿也均如此解释。",
+      "oldEvidence": {
+        "path": "sources/editorial/interview-pass/hex-013.json",
+        "entryKey": [
+          3,
+          "seasonal-earth"
+        ],
+        "field": "row[7] ending",
+        "text": "象曰「安行也」，后面的问题你确实走得安稳，讲得干净。「三岁不兴」，不兴落在开头那一处来回拉扯：越改越乱，次序打散了，对方听到最后也没理出你的主线。"
+      },
+      "classicalEvidence": {
+        "path": "sources/reference/zhouyi-zhengyi-hans/02同人.txt",
+        "scope": "九三小象孔疏",
+        "text": "安，语辞也，犹言何也。既三岁不兴，五道亦已成矣，何可行也？故云“安行也”。"
+      },
+      "newEvidence": [
+        {
+          "key": "13/3/辰",
+          "field": "paragraphs[1]",
+          "text": "九三小象「三岁不兴，安行也」，孔疏将安释为何，问的是何可行，并非可以安稳前行。它与伏戎、登高相连，指向所争有失、敌又刚健而久不能动的困境。用在面试，宜审查行动所据的事实和道理，不能只因自己已有把握便跳过这一步。"
+        },
+        {
+          "key": "13/3/未",
+          "field": "paragraphs[1]",
+          "text": "「三岁不兴，安行也」中的安，孔疏解释为犹言何，指何可行。九三求合失其正，又见所敌刚健，所以伏而不兴。它提醒你先查行动是否有充分依据，不是建议把观望本身当作稳妥，也不应由此认定面试中的对方必然抱有敌意。"
+        },
+        {
+          "key": "13/3/戌",
+          "field": "paragraphs[1]",
+          "text": "九三小象「安行也」，孔颖达解释为安是何，意为既久不能兴，何可行。它不是说已经可以安然前进，而是追问当前条件何以支持行动。结合伏戎与登高，宜把注意力放在求合的方式、实际力量和所据理由上，不只盯着何时能够出手。"
+        },
+        {
+          "key": "13/3/丑",
+          "field": "paragraphs[1]",
+          "text": "「安行也」在九三小象中，是问何以能行。孔疏明言安犹何，连接三岁不兴，指出久困而无可行之路；不能把它读作安稳前进。面试里宜先查明主张赖以成立的条件，再决定怎样表达和争取，不把多观察一阵本身当作解决了问题。"
+        }
+      ],
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I013-A05",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "13/3/巳",
+        "13/3/午",
+        "13/3/亥",
+        "13/3/子"
+      ],
+      "finding": "九三夏月旧judgment预测时间失在开头，超出排盘能支持的事实；冬月把两处同为相木写成越往后越重，混入无据累计。四篇judgmentCorrection保留完整旧新，改为开局承压和中末分别费力，不改五态、difficult及冬月无期类型。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I013-A06",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "13/4/*"
+      ],
+      "finding": "九四保留义弗克与困而反则的道义和判断限制，不把吉仅等同临时换讲法。现代转用是事实或条件不合时据实校正、保留有效部分；未断言占问者已有不义行为，也未编造必有某个错误待改。"
+    },
+    {
+      "id": "I013-A07",
+      "status": "open-priority",
+      "keys": [
+        "13/4/申酉亥子辰未戌丑",
+        "13/5/申酉亥子辰未戌丑",
+        "13/6/申酉亥子辰未戌丑"
+      ],
+      "finding": "四至上爻有生无克现行一律取favourable，秋火囚制旺金、冬火死及生体木受制薄仍只定艰迟。这是本项目优先裁定，不把古籍弱体、生体弱与克应的讨论当作唯一自动结论。正文保留体弱和受制支持的真实限制，未以小插曲掩去难处。"
+    },
+    {
+      "id": "I013-A08",
+      "status": "open-interpretation",
+      "keys": [
+        "13/5/*"
+      ],
+      "finding": "九五须大师克隔，王孔兼论强直不能使物自归，本义重义理所同，伊川明分二人同心与君位私昵非大同之体。新版正文取真实努力和中直求合的共享部分；不把这一现代应用宣称为各家唯一义，不把号咷缩成固定前两问、后笑缩成一次旧题。"
+    },
+    {
+      "id": "I013-A09",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "13/5/申",
+        "13/5/酉",
+        "13/5/辰",
+        "13/5/未",
+        "13/5/戌",
+        "13/5/丑"
+      ],
+      "finding": "九五六篇旧judgment由体克两乾推出题目多、由末离比和推出收尾回熟路或次序自行理回。已保留完整旧新，改为体克用费力、原囚休比和承接有限；没有新增题目、问答次数或确定改错情节。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I013-A10",
+      "status": "fixed-classical-application",
+      "keys": [
+        "13/6/*"
+      ],
+      "finding": "上九12篇旧judgment以只主所愿未尽排除完整未获同志之义，正文又缩为锦上添花或半步瑕疵。新judgmentCorrection逐篇保存旧新及王孔、本义证据，恢复无悔与志未得并存的实质张力；正文不将这一戒意再缩到无关大局的小遗憾。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "I013-A11",
+      "status": "open-priority",
+      "keys": [
+        "13/6/*"
+      ],
+      "finding": "上九不获同志、志未得与本轮favourable存在明确解释张力。新稿仍沿现行体用结果，不把无悔直接等同通过，也不声称求同未得只能发生在通过之后或与本轮无关；正文以认真核实实际距离的建议同时保留两面，最终取舍须独立议决。"
+    },
+    {
+      "id": "I013-A12",
+      "status": "open-timing-consistency",
+      "keys": [
+        "13/1/*",
+        "13/4/*",
+        "13/5/*",
+        "13/6/*"
+      ],
+      "finding": "原应期类型全部保留：名成12篇、过程56篇、无单独日期4篇。九四及九五夏月休巽受制仍取name-support，而初九夏月相艮生体取support，不在文字润色阶段自行统一门槛；需要规则层复核生体强弱、过程日与名成日的适用条件。原无期九三冬、上九秋未增造日期，support未升级通知日。"
+    },
+    {
+      "id": "I013-A13",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "13/*/*"
+      ],
+      "finding": "72篇清理确定的 面试官逐字对话、题数、耗时、简历以往失误、必遇熟题、特定成本或审批问题等无据情节。现代做法均为建议或条件情形，未替占问者编造经历，未将过本轮扩成最终录用。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、摘要、五段正文和应期完整输出实读；存在的判断修订亦完整输出，局部修改另行读回",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72 complete; 0 errors",
+    "bodyHanRange": [
+      453,
+      501
+    ],
+    "bodyHanMean": 475.125,
+    "bodyHanMedian": 474.5,
+    "shortHanRange": [
+      81,
+      97
+    ],
+    "flexibleLengthWarnings": 0,
+    "lengthDecision": "完整正文453–501汉字，均值475.125，中位474.5；增加原爻实际解释、条件及因果，不以模板或水句机械补长。",
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+    "outcomes": {
+      "favourable": 48,
+      "difficult": 24
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "check-interview-monthly用独立literal表及六爻bit运算比较本互变、动爻、六节点、月令、直接关系及旧事实层共27项；不独立计算间接作用，也不评价现实预测准确率。"
+    },
+    "authorIndirectReview": "作者逐爻逐气核对data间接作用及review-v2：初至三离得木生而克体有力；初末艮得离生受巽克相抵；四至上巽生体受金制而薄。上九另依六节点实际关系辨乾兑均可制木，未作多层递归或重复数量累加；原月令五态保持。",
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timing": "原kind、role、method、日支、位置或无期类型全保留。12名成、56过程、4无期；不为同五气的月份制造额外强弱。",
+    "judgmentCorrections": 22,
+    "sameQiMonths": "寅卯、巳午、申酉、亥子、辰未戌丑各组同五态同强弱同结果，区别仅在自然组织和建议角度。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "作者六批全文读回已完成；尚未由另一作者逐篇独立全文审阅。程序结构、独立27项排盘及日期核对通过。"
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "integrationSampleReview": {
+    "reviewer": "/root",
+    "reviewerIsHuman": false,
+    "wholeArticlesRead": 6,
+    "keys": [
+      "13/1/巳",
+      "13/2/酉",
+      "13/3/辰",
+      "13/4/子",
+      "13/5/申",
+      "13/6/丑"
+    ],
+    "scope": "逐篇完整读取标题、摘要、五段正文、专业说明和应期，并读取本卦完整王孔注疏；另核作者回执的全部发现及结构统计。未见硬性排盘错误、确定虚构情节或需阻止预览发布的解释错误。开放规则优先级与各家异说仍按作者回执保留。",
+    "independentFullReview": false,
+    "result": "sample-readback-completed"
+  }
+}
