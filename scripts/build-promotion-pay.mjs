@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, promotionTimingSlots, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -26,6 +26,7 @@ const sourceDir = 'sources/editorial/' + slug + '/';
 const base = 'data/authored-readings/' + slug + '/';
 const docDir = 'docs/' + slug + '/';
 const isPromotion = profile === PROMOTION_PAY_PROFILE;
+const hasPay = isPromotion || profile.payDetail === true;
 const question = questions.find(item => item.id === questionId);
 if (!question) throw new Error('Unknown manuscript question: ' + questionId);
 const common = {schemaVersion: '1.0.0', contentVersion: library.contentVersion, manuscriptVersion, questionId};
@@ -130,10 +131,10 @@ for (const [batchIndex, filename] of batches.entries()) {
  let readingDoc = readingDocumentHeader(primaryId, name);
  for (const [i, draft] of drafts.entries()) {
   const [movingLine, monthOrder, outcome, title, short, opening, process, ending, summary, resolution, topicDetail] = draft;
-  const payRange = isPromotion ? topicDetail : undefined;
+  const payRange = isPromotion ? topicDetail : profile.payDetail ? draft[11] : undefined;
   if (movingLine !== Math.floor(i / 5) + 1 || monthOrder !== orders[i % 5] ||
       !config.outcomes.includes(outcome) || !resolution ||
-      (isPromotion && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
+      (hasPay && (outcome === 'favourable') !== Boolean(payRange))) throw new Error('Invalid author record: ' + stem + '/' + (i + 1));
   const monthBranches = MONTH_SLOTS.filter(slot => slot.qi === monthOrder).map(slot => slot.branch);
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
@@ -265,7 +266,7 @@ for (const [batchIndex, filename] of batches.entries()) {
    ...(indirectNotes.length ? [evidence('mh-099', INDIRECT_QUOTE, '口径 V2.1 间接生克：' + indirectNotes.join('；') + '。只算一层，不连环累计。')] : []),
    evidence(config.primarySource, config.clauses[openingRelation], '本用对原体为开局的直接依据。'),
    ...(openingRelation === closingRelation ? [] : [evidence(config.primarySource, config.clauses[closingRelation], '同一关系条文用于理解末段走势。')]),
-   ...(isPromotion ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
+   ...(hasPay ? [evidence('mh-072', moneyClauses[closingRelation], '财占条文供辨末段财利和耗费。本问的随岗调薪随任用判断。')] : []),
    evidence('mh-122', '应之期远，则以年，近则以月，又近则以日也。', config.timingContext),
    ...timingSlots.map(slot => evidence(...timingQuotes[slot.kind], slot.reason)),
    ...timingSlots.filter(slot => slot.kind === 'name-support' && slot.method === 'trigram-periods').map(slot => evidence(
@@ -283,7 +284,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), ...timingSourceIds, facts.movingLine.sourceRef.sourceId])];
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
    questionScope:profile.questionScope??'promotion-with-associated-pay', lineApplication, counterevidence, sourceEvidence,
-   ...(isPromotion ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
+   ...(hasPay ? {pay:outcome==='favourable'?{state:'follows-promotion',rangeKind:'qualitative',range:payRange}:{state:'unfavourable-with-promotion'}} : {}),
    indirectEffectsApplied:indirectNotes.map(note => {
      const [role, label] = note.split(' ');
      return {role, effect:INDIRECT_EFFECT[label], label, rule:'reading-policy-v2.1-indirect-one-layer', sourceId:'mh-099',
@@ -411,12 +412,12 @@ const progress = {
 };
 await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
- '# ' + config.title + '断语', '', isPromotion ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
+ '# ' + config.title + '断语', '', hasPay ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条按卦爻写定的方位场所补充已合入结局，覆盖全部 4,608 个月令键，原典定位与取象位置在计算说明中展开。'] : []),
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条形状、材质、颜色、器物与环境补充已写定并作者核读，逐条区分本用所参的原物特征与变用所参的周边场所，合入全部 1,920 篇正文。'] : []),
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['按 2026-11-18 用户要求，额外全文精修无需执行。合并方位前已完成的 V5.0 精修保留 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键，其余 ' + (counts.bodies-literaryProgress.completed) + ' 篇保留已由作者核读的写定正文。'] : []),
- ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : []),
+ ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : hasPay ? ['其中能升 ' + outcomeCounts.favourable + ' 篇（随岗薪资一并说明），升不了 ' + outcomeCounts.difficult + ' 篇。'] : []),
  '已写入应期规则 ' + progress.dated + ' 篇，待取期 ' + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
  '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../' + config.policy + ')', '', ...directory, '',
@@ -479,6 +480,18 @@ const interviewV3 = {
  outcomes:['favourable','difficult'], scopeNote:'只问这一轮面试能否通过，不等同于最终录用',
  counterevidence:'核对能否通过这一轮考察，分清问答过程较顺、爻辞所限与结果有利。',
  timingContext:'日级窗口只适用于已进入近期流程的对应面试事项。面试日、通知日以对方安排为准。',
+};
+// 晋升加薪 v3（2026-11-18，docs/review/PROMOTION_REJUDGE_20261118.md）：考试定稿口径 + 《求名占》在任专条。
+const promotionV3 = {
+ title:'晋升加薪', policy:'review/PROMOTION_REJUDGE_20261118.md', primarySource:'mh-071', clauses:promotion.clauses,
+ references:[
+  ['mh-071','凡占求名，以体为主，用为名。','以求名看本次晋升能否落实。原体为求晋升的人，本用为所争的晋升。'],
+  ['mh-071','若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸','求晋升者在任，盘中有克体之卦即判本次升不了。'],
+  ['mh-064','更详观互卦、变卦，以断吉凶；复究盛衰，以明休咎。','分阶段检查评议、考察和定级。'],
+ ],
+ outcomes:['favourable','difficult'], scopeNote:'回答本次晋升及随岗加薪；能升的篇一并说明随岗薪资',
+ counterevidence:'核对本次晋升能否落实，在任受克、过程较顺、爻辞所限与结果有利分开看。',
+ timingContext:'日级窗口只适用于本次评定已进入近期流程。正式任命、定级与薪档以单位通知为准。',
 };
 const workplaceStability = {
  title:'当前工作稳定性', policy:'WORKPLACE_POLICY.md', primarySource:'mh-064',
@@ -634,11 +647,13 @@ const lostPetRecovery = {
  "timingContext": "只对近期可实际推进的目击核实、搜寻协同或接近受阻，类推采用日尺度。取生体、比和或克体所在节点，一个窗口只指一个阶段事件，不能据此等到某日才找，也不把它当作宠物出现或团聚的保证。"
 };
 const target = process.argv[2];
-if (target && !['interview-pass','job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
+if (target && !['promotion-pay','promotion-pay-v3','interview-pass','job-change','exam','workplace-stability','workplace-probation','new-relationship-opportunity','confession-decision','relationship-establishment','relationship-reconciliation','lost-object-recovery','lost-pet-recovery'].includes(target)) throw new Error('Unknown manuscript target: ' + target);
 if (target === 'lost-pet-recovery') {
  await buildAuthoredManuscripts(LOST_PET_RECOVERY_PROFILE, lostPetRecovery);
 } else if (target === 'job-change') {
  await buildAuthoredManuscripts(JOB_CHANGE_PROFILE, jobChange);
+} else if (target === 'promotion-pay-v3') {
+ await buildAuthoredManuscripts(PROMOTION_V3_PROFILE, promotionV3);
 } else if (target === 'interview-pass') {
  await buildAuthoredManuscripts(INTERVIEW_V3_PROFILE, interviewV3);
 } else if (target === 'exam') {
@@ -657,4 +672,9 @@ if (target === 'lost-pet-recovery') {
  await buildAuthoredManuscripts(RELATIONSHIP_RECONCILIATION_PROFILE, relationshipReconciliation);
 } else if (target === 'relationship-establishment') {
  await buildAuthoredManuscripts(RELATIONSHIP_ESTABLISHMENT_PROFILE, relationshipEstablishment);
-} else await buildAuthoredManuscripts(PROMOTION_PAY_PROFILE, promotion);
+} else if (target === 'promotion-pay') {
+ await buildAuthoredManuscripts(PROMOTION_V3_PROFILE, promotionV3);
+} else {
+ // 晋升旧版（promotion-pay-1.0.2，timing.json 格式）已留档于 sources/editorial/promotion-pay/legacy-v1/，不再构建。
+ await buildAuthoredManuscripts(PROMOTION_V3_PROFILE, promotionV3);
+}

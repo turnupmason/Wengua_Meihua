@@ -4,6 +4,8 @@
 
 `career.job-change.decision` 同篇比较现职与新工作并回答现在是否宜辞。已逐篇写作并作者核读 1,920 篇，覆盖 384 种基础盘和 4,608 个月令键。应期从实际起卦日换算。见[正文目录](docs/job-change/README.md)及[取义与复核记录](docs/JOB_CHANGE_POLICY.md)。
 
+`career.promotion-pay.promotion` 于 2026-11-18 补判重写为 `promotion-pay-3.0.0`：考试定稿口径加《求名占》在任专条（盘中有克体之卦一律升不了，用户定），另有屯九五、讼上九、泰上六、遯九三四条晋升专属降判；能升 353、升不了 1,567，能升的篇第 12 栏写随岗薪资说明。作者源与考试同格式，旧稿及 timing.json 留档于 `sources/editorial/promotion-pay/legacy-v1/`。口径、回测与裁定见 [晋升补判记录](docs/review/PROMOTION_REJUDGE_20261118.md)，结论规则在 `scripts/review/promotion-verdicts.cjs`。
+
 面试旧版（v2）原 60 篇及 1,860 篇重写稿的作者源留档于 `sources/editorial/interview-rewrites/`，`progress.json` 记的是旧版进度。独立专业审核仍为 pending。客户端读取预写字段。
 
 每卦JSON含30份正文及72个月令键，最多缓存两个卦分片。data/authored-readings.sql现在是表结构，完整SQL经npm run build:interview写到dist/authored-readings.sql，npm run build:sqlite合并为dist/wengua.sqlite；不把大SQL与JSON全文重复提交。运行校验前先构建。
