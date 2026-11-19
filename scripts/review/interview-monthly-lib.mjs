@@ -88,9 +88,8 @@ export function renderHex(ctx,bundle) {
  `[返回预览目录](README.md) · [查看原版作对照](../${s}.md)`,
  `应期日期以 ${DEMO_DATE} 为演示基准，实际使用按起卦日换算。本页的“本轮”只指本轮面试。`];
  for(const a of bundle.source.articles) {
-  const r=readingFor(ctx,id,a),row=rowFor(bundle,a),old=oldFor(bundle,a),timing=resolveTiming(r,a);
+  const r=readingFor(ctx,id,a),row=rowFor(bundle,a),timing=resolveTiming(r,a);
   const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(s=>s[4]).join(' ');
-  const beforeReasons=typeof old[10]==='string'?[old[10]]:old[10].map(s=>s[4]);
   const effects=row.decision.indirectEffectsApplied||[];
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(s=>s.name).join(' → '),...a.paragraphs,
    '### 应期参考',...(timing.slots.length?['以下为传统推算的参考窗口。']:[]),...timing.paragraphs,
@@ -99,8 +98,10 @@ export function renderHex(ctx,bundle) {
    `旺衰：${a.monthBranch}月，`+r.nodes.filter(n=>n.role!=='body_inherited').map(n=>LABELS[n.role]+n.trigram+n.element+n.strength.state).join('；')+'。',
    ...(effects.length?['间接作用：按本库所取的一层作用解释，'+effects.map(e=>{const n=r.nodes.find(n=>n.role===e.role);return LABELS[e.role]+n.trigram+n.element+'：'+e.label;}).join('；')+'。上列月令五态保持原值，不作连环累计。']:[]),
    `爻辞：${r.selectedMovingLine.label}「${r.selectedMovingLine.text}」；象曰「${r.selectedMovingLine.image}」。`,
+   '专业说明：'+a.judgment,
+   ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
    '取期依据：'+timingReason,
-   row.decision.sourceEvidence.map(s=>`- 《梅花易数·${s.title}》：“${s.quote}” ${beforeReasons.includes(s.reason)?timingReason:s.reason}`).join('\n'),
+   row.decision.sourceEvidence.map(s=>`- 《梅花易数·${s.title}》：“${s.quote}”`).join('\n'),
    `稿件键：\`${QUESTION_ID}/${id}/${a.movingLine}/${a.monthBranch}/${a.outcome}\`。作者源：[${s}.json](../../../${SOURCE_DIR}/${s}.json)。`,
    '</details>','<details>\n<summary>简断摘要</summary>',a.short,'</details>');
  }
