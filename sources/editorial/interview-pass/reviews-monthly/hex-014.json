@@ -2,9 +2,9 @@
   "primaryId": 14,
   "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
   "editor": "ChatGPT GPT-6 Astra Pro /root/facts_and_qa",
-  "reviewedAt": "2026-11-19",
+  "reviewedAt": "2026-11-19T21:30:56.972071+00:00",
   "wholeArticlesRead": 72,
-  "sourceSha256": "85cd322e18b2b681203d8f44cca421fe9ce5d5cdcffe8b0139109f764c34cf03",
+  "sourceSha256": "db73f5bda4cd0f82e23b9a6fe5351f3b6b0cb7078e14d63ec51dcb68150fe04f",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "sourceEvidence": [
@@ -196,6 +196,40 @@
       "status": "open-independent-full-review",
       "scope": "72篇完整稿",
       "issue": "作者逐爻完成十二篇真实全量读回，修改后受影响文章再全读，机器只核盘面、日期、结构、长度及重复。尚未完成另一审稿人的72篇独立全文复核，用户也未逐篇接受，不以这些检查冒充独立或人工签核。"
+    },
+    {
+      "id": "I014-MAIN-ALIGN-20261119",
+      "status": "fixed-existing-policy-synchronization",
+      "keys": [
+        "14/3/寅",
+        "14/3/卯",
+        "14/3/辰",
+        "14/3/巳",
+        "14/3/午",
+        "14/3/未",
+        "14/3/申",
+        "14/3/酉",
+        "14/3/戌",
+        "14/3/丑"
+      ],
+      "finding": "修复预览月稿落后main既定用党多规则的结论、摘要、全文首尾、专业理由与结果日冲突；本次不变更判断引擎或原始月令事实，旧新文及证据保存在专项同步记录。"
+    },
+    {
+      "id": "I014-USE-PARTY-WEIGHT-20261119",
+      "status": "open-rule-priority",
+      "keys": [
+        "14/3/寅",
+        "14/3/卯",
+        "14/3/辰",
+        "14/3/巳",
+        "14/3/午",
+        "14/3/未",
+        "14/3/申",
+        "14/3/酉",
+        "14/3/戌",
+        "14/3/丑"
+      ],
+      "finding": "原典确有用党多则体势衰，但至少两处阈值、不分各处旺衰的统一裁决为项目具体化；与体克用可成、旺相体制弱用及积极爻义的张力保留，不冒称原典已经唯一证明该二分。"
     }
   ],
   "status": "partially-reviewed",
@@ -207,7 +241,7 @@
       497
     ],
     "bodyHanMean": 475.0416666666667,
-    "bodyHanMedian": 474.0,
+    "bodyHanMedian": 474,
     "shortHanRange": [
       82,
       97
@@ -271,5 +305,51 @@
     "scope": "实际完整抽读六篇标题、短断、五段正文、最终专业断语及应期，并读王孔大有全篇及作者最终回执的全部来源、六爻说明、17项审计和检查范围。未见盘面、强弱或取期硬错；初九巳月一处审稿语气改为直接对读者说明查清条件，根代理实际读回改段；其余正文不动。",
     "status": "sample-read-complete",
     "independentFullCopyReview": "pending"
+  },
+  "readbackHistory": [
+    {
+      "sourceSha256": "85cd322e18b2b681203d8f44cca421fe9ce5d5cdcffe8b0139109f764c34cf03",
+      "record": "previous 72-article author readback; retained as provenance",
+      "reviewedAt": "2026-11-19",
+      "notRepeatedByCurrentReviewer": true
+    }
+  ],
+  "continuationReadbacks": [
+    {
+      "reviewer": "/root",
+      "reviewerIsHuman": false,
+      "reviewedAt": "2026-11-19T21:30:56.972071+00:00",
+      "wholeChangedArticlesActuallyRead": 10,
+      "keys": [
+        "14/3/寅",
+        "14/3/卯",
+        "14/3/辰",
+        "14/3/巳",
+        "14/3/午",
+        "14/3/未",
+        "14/3/申",
+        "14/3/酉",
+        "14/3/戌",
+        "14/3/丑"
+      ],
+      "scope": "修改前12篇及修改后10篇完整标题、摘要、全部正文、专业说明/取期已实际读取；4处末次自然语修订再次输出检查。其余62篇内容逐字段与旧稿相等，沿用此前作者核读，不声称本次另读72篇。",
+      "unchangedArticlesCoveredByPreviousReadback": 62,
+      "sourceSha256": "db73f5bda4cd0f82e23b9a6fe5351f3b6b0cb7078e14d63ec51dcb68150fe04f"
+    }
+  ],
+  "priorValidationSnapshots": [
+    {}
+  ],
+  "validation": {
+    "status": "passed",
+    "scope": "full source and rebuilt reading page after existing-policy alignment",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "dateCases": 144,
+    "chartMismatches": 0,
+    "sourceSha256": "db73f5bda4cd0f82e23b9a6fe5351f3b6b0cb7078e14d63ec51dcb68150fe04f",
+    "fullPublishedSetDuplicateArticles": 0,
+    "fullPublishedSetDuplicateParagraphs": 0,
+    "fullPublishedSetDuplicateLongSentences": 0
   }
 }
