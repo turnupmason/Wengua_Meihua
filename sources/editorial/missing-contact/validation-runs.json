@@ -1642,5 +1642,46 @@
         "卯"
       ]
     }
+  },
+  {
+    "date": "2026-11-19T21:17:12.548Z",
+    "scope": "missing-contact/hex-041",
+    "authorFullRead": 1230,
+    "charts": 246,
+    "monthKeys": 2952,
+    "datedArticles": 995,
+    "omissionReasons": 235,
+    "specificApplicationQuestions": {
+      "articles": 933,
+      "monthKeys": 2234,
+      "status": "pending-independent-application-review"
+    },
+    "technical": {
+      "tests": {
+        "scope": "node --test --test-name-pattern=missing-contact|恢复联系|contact dates|现实寻人 tests/workplace-stability.test.mjs tests/missing-contact.test.mjs",
+        "pass": 4,
+        "fail": 0
+      },
+      "sqlite": {
+        "manuscripts": 1230,
+        "monthKeys": 2952,
+        "exactJSONRecords": "matched",
+        "integrity": "ok",
+        "foreignKeyIssues": 0
+      },
+      "duplicateGate": "no-identical-fields-or-complete-sentences-at-least-12-Han-in-written-target"
+    },
+    "independentProfessionalReview": "pending",
+    "independentTimingInterpretationReview": "pending",
+    "extraLiteraryPolish": false,
+    "next": {
+      "primaryId": 42,
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "monthBranches": [
+        "寅",
+        "卯"
+      ]
+    }
   }
 ]
