@@ -1,6 +1,6 @@
-# 面试逐月长稿：1512 篇预览
+# 面试逐月长稿：1656 篇预览
 
-更新日期：2026-11-18（America/New_York）。本批新增地山谦、雷地豫，共 144 篇；累计 1512 篇。完整目标为 4,608 篇，尚余 3096 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-18（America/New_York）。本批新增火天大有、山风蛊，共 144 篇；累计 1656 篇。完整目标为 4,608 篇，尚余 2952 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -17,9 +17,11 @@
 | 地天泰 | 72 | [打开全文](hex-011.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-011.json) |
 | 天地否 | 72 | [打开全文](hex-012.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-012.json) |
 | 天火同人 | 72 | [打开全文](hex-013.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-013.json) |
+| 火天大有 | 72 | [打开全文](hex-014.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-014.json) |
 | 地山谦 | 72 | [打开全文](hex-015.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-015.json) |
 | 雷地豫 | 72 | [打开全文](hex-016.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-016.json) |
 | 泽雷随 | 72 | [打开全文](hex-017.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-017.json) |
+| 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-018.json) |
 | 天山遁 | 72 | [打开全文](hex-033.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-033.json) |
 | 雷天大壮 | 72 | [打开全文](hex-034.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-034.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
@@ -32,9 +34,9 @@
 
 ## 本批阅读入口
 
-- [地山谦：六爻十二月全文](hex-015.md)
+- [火天大有：六爻十二月全文](hex-014.md)
 
-- [雷地豫：六爻十二月全文](hex-016.md)
+- [山风蛊：六爻十二月全文](hex-018.md)
 
 
 
@@ -42,7 +44,7 @@
 
 ## 检查与阅读状态
 
-1512 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 40,824 项，差异 0；日期用例 3,024 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–517 汉字。
+1656 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 44,712 项，差异 0；日期用例 3,312 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–517 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
