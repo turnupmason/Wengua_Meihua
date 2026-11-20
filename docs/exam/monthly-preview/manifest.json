@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-492-20261120",
+  "batch": "exam-monthly-preview-504-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 492,
+  "uploadedArticles": 504,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    7
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4116,
-  "authorWholeArticleReadback": 492,
+  "remainingArticles": 4104,
+  "authorWholeArticleReadback": 504,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -96,6 +98,20 @@
         "favourable": 34,
         "difficult": 38
       }
+    },
+    {
+      "primaryId": 7,
+      "name": "地水师",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-007.json",
+      "sourceSha256": "742b4a0626ff82b1a3adf6caf01d51e71d32a89da100fc5dd7c8a247ba6f8153",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-007.json",
+      "readingPath": "docs/exam/monthly-preview/hex-007.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -110,45 +126,26 @@
       70,
       95
     ],
-    "independentChartComparisons": 11664,
+    "independentChartComparisons": 13608,
     "independentChartMismatches": 0,
-    "dateCases": 864,
-    "judgmentCorrectionArticles": 48,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼六卦。地水师已发布篇目的检查见其核读记录。"
+    "dateCases": 1008,
+    "judgmentCorrectionArticles": 50,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 37,
+    "open-priority": 44,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 21
+    "interpreted-with-limits": 28
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 7,
-    "movingLine": 6,
+    "primaryId": 8,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 7,
-      "name": "地水师",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-007.json",
-      "sourceSha256": "7d9d772a8a88b2c9447ba8a56489b733d2737aec09f560966f4c4d00f5881a6f",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-007.json",
-      "readingPath": "docs/exam/monthly-preview/hex-007.md"
-    }
-  ]
+  }
 }
