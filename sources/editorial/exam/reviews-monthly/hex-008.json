@@ -2,12 +2,12 @@
   "primaryId": 8,
   "baselineCommit": "bcf08d07e1f6735405d13cb1e9e574a22e5a38f5",
   "editor": "Codex",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水地比已发表的月份共48篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水地比已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -45,6 +45,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、798、804行，求名、时令、互变及订正本无生体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02比.txt",
+      "scope": "第47–50行，比九五爻辞、王注、孔疏和象辞，显比所及与舍逆取顺。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02比"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553行体克用成迟、无克体取期；第792、798、804行，通诀、变比和以及无生体而体党皆衰。"
     }
   ],
   "lineReviews": [
@@ -86,6 +95,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "bi-fourth-weak-support-after-stability"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "显比。王用三驱，失前禽。邑人不诫，吉。",
+      "image": "显比之吉，位正中也。舍逆取顺，失前禽也。邑人不诫，上使中也。",
+      "reading": "九五吉在正中及所比的范围。考卷可以舍偏问而实写所取；原体与两互、变用的旺衰决定守得多少，仍依五气各断。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-008-line-5-no-control-priority"
       ]
     }
   ],
@@ -168,6 +187,26 @@
         "丑"
       ],
       "scope": "逐篇读回六四十二月，春秋冬从变兑取申酉，夏与四土从用互艮取四土日看比和，逐项核早中稳与末泄。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月题名、简断、正文四段、专业原断和取期。复点全部无生体、无克体；本坤克坎、体互坤、用互艮、变用坤比和；校正春月所引804行订正本前句。对照九五显比及所及有界，逐月查难成缺项、成期与正式查分的区别。",
       "status": "author-readback-complete"
     }
   ],
@@ -295,6 +334,44 @@
         "8/4/丑"
       ],
       "finding": "春两月依订正本第804行直接引用无字，余十月以明言替换只许以准确引述。旧新字面、证据和不动的结论及取期逐篇留据。"
+    },
+    {
+      "id": "exam-008-line-5-no-control-priority",
+      "status": "open-priority",
+      "keys": [
+        "8/5/寅",
+        "8/5/卯",
+        "8/5/辰",
+        "8/5/巳",
+        "8/5/午",
+        "8/5/未",
+        "8/5/申",
+        "8/5/酉",
+        "8/5/戌",
+        "8/5/亥",
+        "8/5/子",
+        "8/5/丑"
+      ],
+      "finding": "《求名占》说体克用名可成但迟、无克体则名易就，《占卦诀》也有无克体吉事可成的通句。九五全局只有原体克本用与三处比和，无生体与克体。春体及诸同气皆死，秋同休且原体制相坎，冬同囚且原体制旺坎，源判据804行体党皆衰取难成；夏同相与土月同旺能制本用，互变比和收成。804行据订正本校正邻接前提，书中未明确这些通则每逢同局的先后权重，保留原判待独立复核。"
+    },
+    {
+      "id": "exam-008-line-5-range-and-timing",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "8/5/寅",
+        "8/5/卯",
+        "8/5/辰",
+        "8/5/巳",
+        "8/5/午",
+        "8/5/未",
+        "8/5/申",
+        "8/5/酉",
+        "8/5/戌",
+        "8/5/亥",
+        "8/5/子",
+        "8/5/丑"
+      ],
+      "finding": "孔疏的所及有界及《象》舍逆取顺解释答卷的取舍；显比吉不能单改弱体月份。相、旺两组沿用 name-body / body 的坤体未申，正文区分古法时序与正式出分；春秋冬无另立窗口。"
     }
   ],
   "independentReview": {
@@ -302,16 +379,16 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:53:46.397Z",
-  "sourceSha256": "b23506d1bdcb27e05be27a9c3c36510d4448432b6294df11faca7223fe3aa05c",
+  "reviewedAt": "2026-11-20T17:59:57.632Z",
+  "sourceSha256": "829a1daa2066b77382053cbf9213c19d9f3739589fde4a14a2d57b356ed80864",
   "checks": {
-    "scope": "水地比已写48篇，核对作者源与阅读页",
-    "chartComparisons": 1296,
+    "scope": "水地比已写60篇，核对作者源与阅读页",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
-      492,
-      541
+      491,
+      558
     ]
   }
 }
