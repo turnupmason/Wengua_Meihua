@@ -2,12 +2,12 @@
   "primaryId": 5,
   "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
   "editor": "Codex",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水天需已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水天需已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、798行对照求名、时令、衰得生稍解、体克用成而迟及变应。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02需.txt",
+      "scope": "第40至43行九三经象、王弼注及孔颖达疏，核近水、急进自招及敬慎可以不败。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02需"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行，核直接生体、离火制金减助、衰体得生及末生。"
     }
   ],
   "findings": [
@@ -87,6 +96,21 @@
         "5/2/子"
       ],
       "finding": "秋取旺兑用互、冬取休乾本用，均为直接生体的同金气取期，保留源断的名成应事角色，未改成经过之助。古籍没有指定两生同时出现一律选本用还是用互。窗口只供已有近期公布安排时参照，正文不预设公布时间、渠道或分数。"
+    },
+    {
+      "id": "xu-third-three-gold-supporting-water",
+      "status": "open-priority",
+      "keys": [
+        "5/3/辰",
+        "5/3/巳",
+        "5/3/午",
+        "5/3/未",
+        "5/3/申",
+        "5/3/酉",
+        "5/3/戌",
+        "5/3/丑"
+      ],
+      "finding": "夏三金失时，原断仍纳入三处生扶，写明离旺由弱水制、需自力，源断的中段受制不按离火反克坎解。秋和土令照原断，离火牵制分布于三阶段的金，生力虽减仍有。古籍明减助，不给一处离火制三金的程度、强弱分界或时位叠加尺度，保存原断。"
     }
   ],
   "lineReviews": [
@@ -110,6 +134,16 @@
       "openFindingIds": [
         "xu-second-weak-water-copes-with-fire",
         "xu-second-result-timing-position"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "需于泥，致寇至。",
+      "image": "需于泥，灾在外也。自我致寇，敬慎不败也。",
+      "reading": "九三十二月题名、快读、正文与取期逐篇读回。上坎作原体，分别得本用下乾、用互兑、水泽节变用兑三处金生。体互离由原体水克，夏力量最难办，中段费力清楚注明。秋土令按原断计离火制三金，仍有生扶。各月取末兑的申酉日，秋冬参名成，春夏土令参末助。注疏释泥为已近险、自招困处而仍可敬慎，应用为临考试时核实改动的前提，不猜实际题量和扣分。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "xu-third-three-gold-supporting-water"
       ]
     }
   ],
@@ -153,6 +187,26 @@
       ],
       "scope": "逐篇从源稿读回九二十二月，核对既济变离、两处体克火、金生水的取期层次、经象近险而宽缓。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回九三共十二篇，校对节卦末兑、本互变三生、体克离火方向和春夏土令末助与秋冬结果窗口的差别。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -161,13 +215,13 @@
     "scope": "前中相生与终应泄体的相对分量，火制生体之金的月令边界。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T16:19:55.671Z",
-  "sourceSha256": "b40f34f513d826fa23102fe642e3e57a33578030c01acb7f39730db28d2d94ee",
+  "reviewedAt": "2026-11-20T16:23:59.145Z",
+  "sourceSha256": "317967200620110cb7147b66eaccbfafa47d9c216bae30b261f695aea3a00fee",
   "checks": {
-    "scope": "水天需已写24篇，核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "水天需已写36篇，核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       488,
       556
