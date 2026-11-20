@@ -2,15 +2,13 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-216-20261120",
+  "batch": "promotion-pay-monthly-revision-216-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
   "uploadedArticles": 216,
-  "newArticlesSincePrevious": 72,
-  "newHexagrams": [
-    3
-  ],
+  "newArticlesSincePrevious": 0,
+  "newHexagrams": [],
   "fullTarget": 4608,
   "remainingArticles": 4392,
   "authorWholeArticleReadback": 216,
@@ -21,7 +19,7 @@
       "articles": 72,
       "fullArticleReadback": 72,
       "sourcePath": "sources/editorial/promotion-pay/monthly/hex-001.json",
-      "sourceSha256": "5a1a9707b58b1cdac02b38712f8792ba2581024b2d410924bb7034f090a833b2",
+      "sourceSha256": "b850d27f3c7126589768beef104c96ef72658ec01db65c84b522af47eca4b506",
       "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-001.json",
       "readingPath": "docs/promotion-pay/monthly-preview/hex-001.md",
       "outcomes": {
@@ -35,7 +33,7 @@
       "articles": 72,
       "fullArticleReadback": 72,
       "sourcePath": "sources/editorial/promotion-pay/monthly/hex-002.json",
-      "sourceSha256": "3d0571fa5cf039fdf6a2aeb8594860bc571be79d0fda077927d6a62b1ed9e9f2",
+      "sourceSha256": "d853fba41ab79d2ed27a5c49948cd27c72b66758f51b3aa0d4d85c2e9e95cd5b",
       "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-002.json",
       "readingPath": "docs/promotion-pay/monthly-preview/hex-002.md",
       "outcomes": {
@@ -49,7 +47,7 @@
       "articles": 72,
       "fullArticleReadback": 72,
       "sourcePath": "sources/editorial/promotion-pay/monthly/hex-003.json",
-      "sourceSha256": "d5255b2fb26662223580c3c8fe2d512c36186c190cb3c77bf5f129ac27cb7294",
+      "sourceSha256": "c4b9a05e2410f1f55f1a8c7d1547fd94d2a21e1fb9c56555db4874b9e3c5c7ad",
       "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-003.json",
       "readingPath": "docs/promotion-pay/monthly-preview/hex-003.md",
       "outcomes": {
@@ -63,8 +61,8 @@
     "exactParagraphDuplicates": 0,
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
-      454,
-      546
+      470,
+      550
     ],
     "shortHanRange": [
       76,
@@ -73,13 +71,38 @@
     "independentChartComparisons": 5832,
     "independentChartMismatches": 0,
     "dateCases": 432,
-    "judgmentCorrectionArticles": 18,
+    "judgmentCorrectionArticles": 22,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       42,
       67
     ],
-    "payCorrectionArticles": 216
+    "payCorrectionArticles": 216,
+    "bodyHanByHexagram": {
+      "1": {
+        "min": 470,
+        "median": 519.5,
+        "max": 550
+      },
+      "2": {
+        "min": 472,
+        "median": 502.0,
+        "max": 522
+      },
+      "3": {
+        "min": 475,
+        "median": 508.5,
+        "max": 549
+      }
+    },
+    "voiceCheck": {
+      "status": "passed",
+      "scope": "all-published-216-articles",
+      "bodyMonthOpenings": 0,
+      "shortMonthOpenings": 0,
+      "maximumSameFirstEightHan": 2,
+      "perHexMedianDefinition": "style-monthly.mjs uses upper median; bodyHanByHexagram uses average of the two middle values"
+    }
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 5,
@@ -91,17 +114,34 @@
     "corrected-reader-language": 1,
     "author-fixed-delta-read": 4,
     "corrected-and-delta-read": 2,
+    "corrected-with-evidence": 4,
+    "corrected-and-independently-delta-read": 4,
     "corrected-in-copy": 4,
     "corrected-in-prose": 1,
+    "corrected-and-author-readback-complete": 2,
     "reviewed": 1,
     "resolved": 3,
     "resolved-with-exact-correction": 2,
-    "corrected-with-evidence": 2
+    "corrected-and-read-back": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "independentHumanReview": "pending"
+  "independentHumanReview": "pending",
+  "revisedHexagrams": [
+    1,
+    2,
+    3
+  ],
+  "revisedArticlesSincePrevious": 110,
+  "revisionChanges": {
+    "bodyArticles": 106,
+    "shortArticles": 62,
+    "judgmentArticles": 4,
+    "outcomesChanged": 0,
+    "timingStructuresChanged": 0
+  },
+  "independentReviewScope": "旧版216篇已完整独立审读；本轮全部变更由另一位AI逐字段独立审读，修改后的定点段落另作读回。各版本与差异均分别绑定哈希，不声称重读了所有未变文字。"
 }
