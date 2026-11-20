@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-504-20261120",
+  "batch": "promotion-pay-monthly-preview-576-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 504,
+  "uploadedArticles": 576,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    7
+    9
   ],
   "fullTarget": 4608,
-  "remainingArticles": 4104,
-  "authorWholeArticleReadback": 504,
+  "remainingArticles": 4032,
+  "authorWholeArticleReadback": 576,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -112,6 +112,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 9,
+      "name": "风天小畜",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-009.json",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-009.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-009.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -126,53 +140,16 @@
       76,
       105
     ],
-    "independentChartComparisons": 13608,
+    "independentChartComparisons": 15552,
     "independentChartMismatches": 0,
-    "dateCases": 1008,
-    "judgmentCorrectionArticles": 196,
+    "dateCases": 1152,
+    "judgmentCorrectionArticles": 268,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       40,
       67
     ],
-    "payCorrectionArticles": 504,
-    "bodyHanByHexagram": {
-      "1": {
-        "min": 510,
-        "standardMedian": 528.0,
-        "max": 556
-      },
-      "2": {
-        "min": 472,
-        "standardMedian": 539.5,
-        "max": 588
-      },
-      "3": {
-        "min": 502,
-        "standardMedian": 540.0,
-        "max": 582
-      },
-      "4": {
-        "min": 503,
-        "standardMedian": 535.5,
-        "max": 570
-      },
-      "5": {
-        "min": 487,
-        "standardMedian": 537.5,
-        "max": 613
-      },
-      "6": {
-        "min": 512,
-        "standardMedian": 541.0,
-        "max": 602
-      },
-      "7": {
-        "min": 516,
-        "standardMedian": 541.0,
-        "max": 560
-      }
-    }
+    "payCorrectionArticles": 576
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 10,
@@ -205,12 +182,13 @@
     "documented-baseline-boundary": 1,
     "corrected-professional-precision": 2,
     "resolved-by-author-and-independent-delta-readback": 1,
-    "open-interpretive-priority": 1,
-    "open-project-application-boundary": 2,
-    "open-inherited-timing-boundary": 1,
+    "open-interpretive-priority": 2,
+    "open-project-application-boundary": 4,
+    "open-inherited-timing-boundary": 2,
     "corrected-professional-strength": 2,
     "corrected-professional-and-classical-scope": 1,
-    "corrected-and-independently-read-back": 1
+    "corrected-and-independently-read-back": 1,
+    "resolved-after-complete-field-readback": 3
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -273,10 +251,15 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "独立审读者逐篇实际读完六爻原固定快照72篇全部字段，再实际完整读回31个old/new字段；基线加全部差异逐值等于最终源。下列逐爻报告保留当时待修状态，最终报告已确认全部内容问题闭合；不冒称最终hash又从头整卦阅读。"
+    },
+    {
+      "primaryId": 9,
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "实际独立完整读原冻结源72篇所有字段，再完整读回最终7个old/new整段（涉及6篇）。逐值证明原基线加这7个完整段落恰等于最终源；未冒称最终hash再次从头整卦阅读。"
     }
   ],
-  "independentHumanReview": "pending",
-  "revisedHexagrams": [],
-  "revisedArticlesSincePrevious": 0,
-  "independentReviewScope": "七卦504篇累计全文覆盖；师卦另有最终31完整旧新字段/19篇独立复读，六份原全文快照与全部差异逐值绑定最终源。既有修订的历史全文与后续差异分别保留，不冒称末轮又全文重读。"
+  "independentHumanReview": "pending"
 }
