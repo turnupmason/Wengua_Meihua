@@ -2,12 +2,12 @@
   "primaryId": 6,
   "baselineCommit": "a66230e71c2ce02b3dfebc7e99f0b360c659a765",
   "editor": "Codex",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "天水讼已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "天水讼已发表的月份共48篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -36,6 +36,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、688、792、798、804行，求名、时令、衰旺、无生有克与互变。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02訟.txt",
+      "scope": "第44至49行，九四经、象、王注、孔疏。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02訟"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、798行，求名两条、时令、他卦制生体之卦、衰而得生及变用。"
     }
   ],
   "findings": [
@@ -111,6 +120,59 @@
         "6/3/丑"
       ],
       "finding": "终吉是六三守正而保全原有所得，王事无成是从上而不敢先成；两句各有古注可核，考试原断仍据体用互变，不以任一句来替代。"
+    },
+    {
+      "id": "song-fourth-no-control-and-drain",
+      "status": "open-priority",
+      "keys": [
+        "6/4/寅",
+        "6/4/卯",
+        "6/4/辰",
+        "6/4/巳",
+        "6/4/午",
+        "6/4/未",
+        "6/4/申",
+        "6/4/酉",
+        "6/4/戌",
+        "6/4/亥",
+        "6/4/子",
+        "6/4/丑"
+      ],
+      "finding": "求名一段并见体生用名不可就与无克体名易就。九四先受乾生、全局无克体、用互与末用均泄，源案优先取末泄；变卦条只有克体、生体与比和的明文，未定两条在此格中相遇的优先级。"
+    },
+    {
+      "id": "song-fourth-cross-stage-fire",
+      "status": "open-priority",
+      "keys": [
+        "6/4/辰",
+        "6/4/未",
+        "6/4/申",
+        "6/4/酉",
+        "6/4/戌",
+        "6/4/亥",
+        "6/4/子",
+        "6/4/丑"
+      ],
+      "finding": "原断另参离克生体之乾，金水土月仍保乾生的申酉应期。古文有彼灭其吉，但体互囚、死、休减生到何程度，仍无固定权重。"
+    },
+    {
+      "id": "song-fourth-exclusive-wording",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "6/4/寅",
+        "6/4/卯",
+        "6/4/辰",
+        "6/4/巳",
+        "6/4/午",
+        "6/4/未",
+        "6/4/申",
+        "6/4/酉",
+        "6/4/戌",
+        "6/4/亥",
+        "6/4/子",
+        "6/4/丑"
+      ],
+      "finding": "将变生体及比和的正面引句从只许改为明言，十二篇各保留原新及出处，原判与应期签名不变。"
     }
   ],
   "lineReviews": [
@@ -142,6 +204,17 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "song-third-weak-control-priority"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "不克讼。复即命渝，安贞吉。",
+      "image": "复即命渝，安贞不失也。",
+      "reading": "王注、孔疏均以返从原本不争之理解复即，以变此前与初六相讼之命解渝。应试借其肯据题面纠正起步之义，逐篇读回改正所得、返工所耗、总分及各气的取期。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "song-fourth-no-control-and-drain",
+        "song-fourth-cross-stage-fire"
       ]
     }
   ],
@@ -205,6 +278,26 @@
       ],
       "scope": "读回十二篇摘要、正文、专业说明、应期，所有月份难成；冬两月取本用旺坎亥子，余十月取用互离火巳午。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回九四十二个月。核春两月从变用巽取寅卯，夏两月从用互巽取寅卯，秋冬及四土从本用乾取申酉。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -213,15 +306,15 @@
     "scope": "旺体同气能够承受轻克时的结果权重，以及初耗、中克和末应同气的关系。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T16:52:47.274Z",
-  "sourceSha256": "84b71cb2cc93ea875d229fb328f45d362acff9fc5d761f3a22c3b11782822f61",
+  "reviewedAt": "2026-11-20T16:57:24.899Z",
+  "sourceSha256": "c7e9d888883ec45017195169f0f7bf1f189fe05da99512faeb855bcc0b505236",
   "checks": {
-    "scope": "天水讼已写36篇，核对作者源与阅读页",
-    "chartComparisons": 972,
+    "scope": "天水讼已写48篇，核对作者源与阅读页",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
-      497,
+      495,
       532
     ]
   }
