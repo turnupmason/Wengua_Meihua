@@ -1,6 +1,6 @@
-# 跳槽去留逐月长稿：2160 篇预览
+# 跳槽去留逐月长稿：2304 篇预览
 
-更新日期：2026-11-20（America/New_York）。本批新增山雷颐、泽风大过，共 144 篇；累计 2160 篇。完整目标为 4,608 篇，尚余 2448 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-20（America/New_York）。本批新增坎为水、离为火，共 144 篇；累计 2304 篇。完整目标为 4,608 篇，尚余 2304 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -32,6 +32,8 @@
 | 山天大畜 | 72 | [打开全文](hex-026.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-026.json) |
 | 山雷颐 | 72 | [打开全文](hex-027.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-027.json) |
 | 泽风大过 | 72 | [打开全文](hex-028.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-028.json) |
+| 坎为水 | 72 | [打开全文](hex-029.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-029.json) |
+| 离为火 | 72 | [打开全文](hex-030.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-030.json) |
 | 泽山咸 | 72 | [打开全文](hex-031.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-031.json) |
 | 雷风恒 | 72 | [打开全文](hex-032.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-032.json) |
 
@@ -41,15 +43,15 @@
 
 ## 本批阅读入口
 
-- [山雷颐：六爻十二月全文](hex-027.md)
+- [坎为水：六爻十二月全文](hex-029.md)
 
-- [泽风大过：六爻十二月全文](hex-028.md)
+- [离为火：六爻十二月全文](hex-030.md)
 
 
 
 ## 检查与阅读状态
 
-2160 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 58,320 项，差异 0；日期用例 4,320 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 470–652 汉字。
+2304 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 62,208 项，差异 0；日期用例 4,608 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 470–652 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/JOB_CHANGE_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
