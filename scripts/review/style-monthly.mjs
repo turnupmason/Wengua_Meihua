@@ -40,10 +40,11 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
   for (const m of all.matchAll(MIND)) { mind++; hits.push(key + ' 疑似替对方断心意（人工判）：' + m[0]); }
  }
  const tic = TICS.map(([re, max, label]) => { const keys = arts.filter(a => re.test([a.title, a.short, ...a.paragraphs].join('\n'))).map(a => `${h}/${a.movingLine}/${a.monthBranch}`); if (list && keys.length > max) for (const k of keys) hits.push(k + ' 套话' + label); return [label, keys.length, max]; });
+ const lens = arts.map(a => han(a.paragraphs.join(''))).sort((x, y) => x - y), bodyMedian = lens[lens.length >> 1], bodyMin = lens[0];
  const n = arts.length, avg = sents.reduce((x, y) => x + y, 0) / sents.length, short10 = sents.filter(x => x <= 10).length / sents.length;
  const maxHead = Math.max(...Object.values(heads));
  const r = {hex:h, articles:n, monthOpen:+(monthOpen / n).toFixed(2), monthShort:+(monthShort / n).toFixed(2), maxSameHead:maxHead,
-  avgSentence:+avg.toFixed(1), short10:+(short10 * 100).toFixed(1), light, thisMonth, yiPerMille:Math.round(yi / sents.length * 1000), shortAvg:Math.round(shortHan / n), note, mind};
+  avgSentence:+avg.toFixed(1), short10:+(short10 * 100).toFixed(1), light, thisMonth, yiPerMille:Math.round(yi / sents.length * 1000), shortAvg:Math.round(shortHan / n), bodyMedian, bodyMin, note, mind};
  const fail = [];
  // 门槛按用户亲写面试稿（origin/main，58 卦 4,176 篇）各卦分布定，取面试稿最低一档以下一点，使面试稿各卦全过：平均句长 ≥28.5（面试最低 28.5）、短句 ≤5.5%（最高 5.3%）、宜 ≥55‰（最低 57）、简断均 ≥75（最低 76）、就好与这个月每卦 ≤1；
  // 月份开头面试单卦两极（多数 0，少数近 1），只按全库卡：正文 ≤15%（面试 12%）、简断 ≤10%（面试 4%）。
@@ -58,6 +59,9 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  if (r.yiPerMille < 55) fail.push('宜<55‰');
  if (r.yiPerMille > 220) fail.push('宜>220‰（面试最高 218，用得太密）');
  if (r.shortAvg < 75) fail.push('简断均<75');
+ // 厚度（2026-11-20 用户「保持厚度跟完美程度，不要偷懒」）：用户夸过的确定关系蛊卦、需卦每卦正文中位 517、501，全库中位 506；后续问项每卦中位不低于 500、最短不低于 470（确定关系已验收推送，不回头卡，有 15 卦中位 480–494）。补厚只补有据的内容（盘面轻重、注疏取舍、对应做法），不许凑字。
+ if (!['interview-pass', 'relationship-establishment'].includes(item) && bodyMedian < 500) fail.push('正文中位<500（偏薄）');
+ if (!['interview-pass', 'relationship-establishment'].includes(item) && bodyMin < 470) fail.push('正文最短<470');
  for (const [label, k, max] of tic) if (k > max) fail.push(`套话${label} ${k} 篇>${max}`);
  r.status = fail.length ? 'failed' : 'passed'; r.fail = fail.join('、');
  rows.push(r); if (list) for (const x of hits) console.log(x);
