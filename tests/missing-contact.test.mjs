@@ -95,6 +95,47 @@ test('contact dates follow each casting date and never advance a saved historica
  }
 });
 
+test('小过九四 and 未济六三 use the reviewed text across their twelve month keys',async()=>{
+ const cases=[
+  {primaryId:62,movingLine:4,adopted:'无咎，弗过遇之，往厉必戒，勿用永贞。',outcomes:['difficult','conditional','conditional','difficult','conditional'],notes:/姚舜牧.*分读/u},
+  {primaryId:64,movingLine:3,adopted:undefined,outcomes:['conditional','conditional','difficult','difficult','conditional'],notes:/简58.*脱「不」/u},
+ ];
+ for(const {primaryId,movingLine,adopted,outcomes,notes} of cases){
+  const stem='hex-'+String(primaryId).padStart(3,'0');
+  const shard=await json('data/authored-readings/missing-contact/'+stem+'.json');
+  const doc=await read('docs/missing-contact/'+stem+'.md');
+  const rows=shard.rows.filter(row=>row.movingLine===movingLine);
+  assert.deepEqual(rows.map(row=>row.decision.outcomeCode),outcomes);
+  assert.equal(new Set(rows.flatMap(row=>row.monthBranches)).size,12);
+  for(const row of rows){
+   const canonical=row.contactApplication.lineCommentary;
+   assert.match(canonical.versionDifference,notes);
+   assert.ok(doc.includes('动爻完整原文：'+row.movingLineText));
+   assert.ok(doc.includes(canonical.versionDifference));
+   if(adopted){
+    assert.equal(row.facts.movingLine.referenceUrl,canonical.referenceUrl);
+    assert.equal(row.facts.movingLine.adoptedPunctuationFrom.sourcePath,canonical.sourcePath);
+   }
+   for(const monthBranch of row.monthBranches){
+    for(const castingDate of ['2026-11-19','2026-11-30']){
+     const content=await product.getContent({...context,questionId:id,primaryId,movingLine,monthBranch,castingDate});
+     assert.equal(content.status,'ready');
+     assert.equal(content.monthBranch,monthBranch);
+     assert.equal(content.movingLineText,adopted);
+     assert.equal(content.movingLineText??content.reading.selectedMovingLine.text,row.movingLineText);
+     assert.equal(row.facts.movingLine.fullText,row.movingLineText);
+     assert.equal(row.lineApplication.evidence[0],row.movingLineText);
+     assert.equal(content.calculationExplanation.void,undefined);
+     if(adopted)assert.match(content.reading.selectedMovingLine.text,/勿用，永贞/u);
+     else assert.match(content.reading.selectedMovingLine.text,/利涉大川/u);
+     const expectedDates=row.timingSlots.map(slot=>findUpcomingCivilDayMatches({castingDate,branches:slot.branches}).matches.slice(0,2).map(day=>day.date));
+     assert.deepEqual(content.timingSection.windows.map(window=>window.displayedDates),expectedDates);
+    }
+   }
+  }
+ }
+});
+
 test('现实寻人线索 remains a guidance entry without a second predictive chart library',async()=>{
  const q=await product.getContent({questionId:'search.person-leads.guidance'});
  assert.equal(q.status,'guidance');

@@ -597,7 +597,7 @@ export function ReadingView({ blocked = false, reading, question, questionId, co
               </button>
             )}
           </p>
-          <p className="classical">{moving.text}</p>
+          <p className="classical">{j?.movingLineText ?? moving.text}</p>
           {weather && (
             <>
               <h3>{t.domainPassageTitle}</h3>

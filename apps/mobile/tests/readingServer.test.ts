@@ -71,6 +71,21 @@ describe('/api/reading answers', () => {
     expect(brief.decisionId).toBe(whole.decisionId);
   });
 
+  it('carries the collated 小过九四 wording into the saved full 断语', async () => {
+    const questionId = 'search.missing-contact.contact';
+    const options = { ...OPTIONS, questionId, primaryId: 62, movingLine: 4 };
+    const body = { ...BODY, options };
+    const whole = await answerReading(body, fixed({ access: 'full', reason: 'member' }).deps);
+    const brief = await answerReading(body, fixed({ access: 'brief' }).deps);
+    const movingLineText = '无咎，弗过遇之，往厉必戒，勿用永贞。';
+    expect(whole.body.content).toHaveProperty('movingLineText', movingLineText);
+    expect(brief.body.content).not.toHaveProperty('movingLineText');
+    const repository = { getContent: async () => ({ ...(whole.body.content as object), access: 'full' }) as never };
+    const cast = { ...options, method: 'classical-time', dayGanzhi: '己丑', localWallClock: '2026-11-11T09:00' };
+    const judgment = await judgmentFor(repository, questionById(questionId)!, cast);
+    expect(judgment).toMatchObject({ state: 'ready', movingLineText });
+  });
+
   it('says nothing is written, and charges nothing, for a chart with no 断语', async () => {
     const { deps, seen } = fixed({ access: 'none' });
     const a = await answerReading({ ...BODY, options: { ...OPTIONS, questionId: 'career.interview.job-offer' } }, deps);

@@ -60,7 +60,13 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    const key = row.decision.id;
    const {title,short,long} = row.copy;
    checkChartFacts(library,row,key);
-   assert.equal(row.movingLineText,library.getLineReading(entry.primaryId,row.movingLine).text,key);
+   const catalogLine=library.getLineReading(entry.primaryId,row.movingLine).text;
+   const adoptedPunctuation=row.contactApplication?.lineCommentary.adoptedPunctuation;
+   assert.equal(row.movingLineText,adoptedPunctuation??catalogLine,key);
+   if(adoptedPunctuation){
+    assert.equal(adoptedPunctuation.replace(/[\p{P}\s]/gu,''),catalogLine.replace(/[\p{P}\s]/gu,''),key);
+    assert.ok(row.contactApplication.lineCommentary.quote.startsWith(row.facts.movingLine.label+'：'+adoptedPunctuation+'〈'),key);
+   }
    const expectedCopy = drafts[i].slice(3,9);
    if(slug==='lost-pet-recovery'){
     const cases=await json(sourceDir+'cases/'+stem+'.json');

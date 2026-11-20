@@ -7,6 +7,10 @@ import {ELEMENT_DAY_BRANCHES,TRIGRAM_PERIOD_SPECS} from './timing-rules.js';
 import {resolveMonthSlot} from './month-slots.js';
 import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
+export function hasSameMovingLineText(citedLine,catalogLine) {
+ const characters=text=>text.replace(/[\p{P}\s]/gu,'');
+ return typeof citedLine==='string' && citedLine.length>0 && characters(citedLine)===characters(catalogLine);
+}
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
@@ -242,7 +246,12 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!==(profile.questionScope??'promotion-with-associated-pay'))throw new Error('Authored question scope mismatch');
   checkInterviewShort(row.copy.short.text);
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
-  if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
+  const adoptedPunctuation=profile===MISSING_CONTACT_PROFILE?row.contactApplication?.lineCommentary.adoptedPunctuation:undefined;
+  const catalogLine=reading.selectedMovingLine.text;
+  const matchingLine=adoptedPunctuation===undefined
+   ?row.movingLineText===catalogLine
+   :row.movingLineText===adoptedPunctuation&&hasSameMovingLineText(adoptedPunctuation,catalogLine);
+  if(!matchingLine||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
   const actualSlots=usesStoredTimingSpecs?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode,profile):interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
@@ -328,6 +337,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${methodNote}${ruleNote}`;
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
+   ...(adoptedPunctuation===undefined?{}:{movingLineText:adoptedPunctuation}),
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
    review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:!includeHistoricalVoid?'not-applied':exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:row.review.version,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});

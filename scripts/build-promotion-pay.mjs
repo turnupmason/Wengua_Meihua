@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, hasSameMovingLineText, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -146,7 +146,14 @@ for (const [batchIndex, filename] of batches.entries()) {
   const r = createContextualReading({library, question, primaryId, movingLine, monthBranch: monthBranches[0], castingDate: READING_DOCUMENT_DEMO_DATE, applyVoid: false});
   const contactCase=contactCases?.entries.find(entry=>entry.movingLine===movingLine);
   if(contactCases && (!contactCase || !contactCase.application || !contactCase.boundaries || contactCase.nodes.length!==5 || new Set(contactCase.nodes.map(n=>n.role)).size!==5 || contactCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram)))throw new Error('Contact facts mismatch: '+stem+'/'+movingLine);
-  if(contactCase){const c=contactCase.lineCommentary;const raw=await readFile(new URL(c.sourcePath,root),'utf8');if(!raw.includes(c.quote)||!c.application||!c.referenceUrl||!c.locator)throw new Error('Contact line commentary mismatch: '+stem+'/'+movingLine);}
+  if(contactCase){
+   const c=contactCase.lineCommentary;
+   const raw=await readFile(new URL(c.sourcePath,root),'utf8');
+   if(!raw.includes(c.quote)||!c.application||!c.referenceUrl||!c.locator)throw new Error('Contact line commentary mismatch: '+stem+'/'+movingLine);
+   if(c.adoptedPunctuation!==undefined &&
+    (!hasSameMovingLineText(c.adoptedPunctuation,r.selectedMovingLine.text)||
+     !c.quote.startsWith(r.selectedMovingLine.label+'：'+c.adoptedPunctuation+'〈')))throw new Error('Contact punctuation witness mismatch: '+stem+'/'+movingLine);
+  }
   const contactApplication=contactCase?{...contactCase,sourcePath:contactCasesPath,ruleVersion:contactCases.ruleVersion,judgmentTensions:(contactCase.judgmentTensions??[]).filter(item=>item.monthOrders.includes(monthOrder)),personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false,returnHomeInferred:false}:null;
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
   if(petCases && (!petCase || !petCase.boundaries || !petCase.application || petCase.nodes.some(n=>r.nodes.find(f=>f.role===n.role)?.trigram!==n.trigram))) throw new Error('Invalid pet scene application: '+stem+'/'+movingLine);
@@ -204,7 +211,8 @@ for (const [batchIndex, filename] of batches.entries()) {
   const key = [questionId, primaryId, movingLine, monthOrder].join('/');
   const decisionId = key + '/' + outcome;
   const stageIds = Object.values(r.stages).map(stage => stage.id);
-  const movingLineText = r.selectedMovingLine.text;
+  const commentary = contactCase?.lineCommentary;
+  const movingLineText = commentary?.adoptedPunctuation ?? r.selectedMovingLine.text;
   const lineApplication = {evidence: [movingLineText], conditions: [resolution], sourcePath};
   const counterevidence = [{fact: 'facts.directRelations; facts.nodes; facts.movingLine', resolution}];
   const copy = {title, short: {decisionId, text: short}, long: {decisionId, opening, process, ending:combinedEnding, summary}};
@@ -292,7 +300,8 @@ for (const [batchIndex, filename] of batches.entries()) {
    nodes: r.nodes.map(n => ({role:n.role, trigram:n.trigram, element:n.element, qi:n.strength.state})),
    directRelations: r.edges.map(e => ({role:e.targetRole, type:e.type})),
    movingLine: {...inspectMovingLine(movingLineText), label:r.selectedMovingLine.label, image:r.selectedMovingLine.image,
-    sourceRef:r.selectedMovingLine.sourceRef, referenceUrl:r.selectedMovingLine.referenceUrl},
+    sourceRef:r.selectedMovingLine.sourceRef, referenceUrl:commentary?.adoptedPunctuation ? commentary.referenceUrl : r.selectedMovingLine.referenceUrl,
+    ...(commentary?.adoptedPunctuation ? {adoptedPunctuationFrom:{sourcePath:commentary.sourcePath,locator:commentary.locator}} : {})},
   };
   const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), ...timingSourceIds, facts.movingLine.sourceRef.sourceId])];
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
@@ -396,6 +405,7 @@ for (const [batchIndex, filename] of batches.entries()) {
     ...(contactApplication ? [contactApplication.application,contactApplication.boundaries,'恢复联系取义作者源：'+contactCasesPath+'，第 '+movingLine+' 爻。',contactApplication.lineCommentary.quote,contactApplication.lineCommentary.application,'注疏：'+contactApplication.lineCommentary.sourcePath+' · '+contactApplication.lineCommentary.locator] : []),
     ...(contactApplication?.lineCommentary.parallelReadings??[]).map(source=>'对照注疏：'+source.sourcePath+'。“'+source.quote+'” '+source.application),
     ...(contactApplication?.lineCommentary.versionDifference?[contactApplication.lineCommentary.versionDifference]:[]),
+    ...(contactApplication?.lineCommentary.collation?.sources??[]).map(({work,locator,url,finding})=>'校勘对照：['+work+' · '+locator+']('+url+')。'+finding),
     ...(petApplication ? [petApplication.application,petApplication.boundaries,'[活体搜索与场景类象作者源](../../'+petCasesPath+')，第 '+movingLine+' 爻。'] : []),
     ...(imageApplication ? ['类象对照取本用' + objectTrigram + '参原物已知特征，变用' + changedTrigram + '参周边容器和实有场所。', '形状、材质、颜色、器物构造按原件照片或记录比对。未提供的物色和环境仍待实际核实。', '[形色器物作者源](../../' + imageSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
     ...(locationApplication ? [`方位取象取变用${changedTrigram}，传统方向${locationApplication.direction}。单爻所变经卦按失物章列象，实际排查以已知收放或行程为参照。`, '[方位场所作者源](../../' + directionSourcePath + ')，第 ' + movingLine + ' 爻。'] : []),
