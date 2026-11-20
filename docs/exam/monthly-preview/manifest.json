@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-780-20261120",
+  "batch": "exam-monthly-preview-792-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 780,
+  "uploadedArticles": 792,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    11
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3828,
-  "authorWholeArticleReadback": 780,
+  "remainingArticles": 3816,
+  "authorWholeArticleReadback": 792,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -152,6 +154,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 11,
+      "name": "地天泰",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-011.json",
+      "sourceSha256": "2596e34e9c3712e8c4c92a3772043039ea3dc9c397bba69a67fabc2a99d432a5",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-011.json",
+      "readingPath": "docs/exam/monthly-preview/hex-011.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
     }
   ],
   "checks": {
@@ -166,45 +182,26 @@
       70,
       95
     ],
-    "independentChartComparisons": 19440,
+    "independentChartComparisons": 21384,
     "independentChartMismatches": 0,
-    "dateCases": 1440,
-    "judgmentCorrectionArticles": 178,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜、履十卦。地天泰已发布篇目的检查见其核读记录。"
+    "dateCases": 1584,
+    "judgmentCorrectionArticles": 250,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 62,
+    "open-priority": 68,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 46
+    "interpreted-with-limits": 52
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 11,
-    "movingLine": 6,
+    "primaryId": 12,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 11,
-      "name": "地天泰",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-011.json",
-      "sourceSha256": "9e3b2804d2b8711a325025673453930effb71429f170304fbd5d8779e42f5a9d",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-011.json",
-      "readingPath": "docs/exam/monthly-preview/hex-011.md"
-    }
-  ]
+  }
 }
