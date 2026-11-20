@@ -2,12 +2,12 @@
   "primaryId": 8,
   "baselineCommit": "bcf08d07e1f6735405d13cb1e9e574a22e5a38f5",
   "editor": "Codex",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水地比已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水地比已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -18,6 +18,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、804行，求名、时令、解克、体衰受克、无生有克、旺体承克。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02比.txt",
+      "scope": "第37至40行附近，六二经、象、王注与孔疏，系应与不自失。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02比"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、688、792、798、804行，求名、月令、体衰逢克、无生有克、变用比和及旺体。"
     }
   ],
   "lineReviews": [
@@ -29,6 +38,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "bi-first-multiple-earth-wood"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "比之自内，贞吉。",
+      "image": "比之自内，不自失也。",
+      "reading": "六二居中得位而系应于五，王注以不能来它限其吉，孔疏用不失所应解释《象》。考试取熟法在适用范围内有所得，跨到新前提、指定方法与更深过程仍须证明。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "bi-second-three-controls-and-equal"
       ]
     }
   ],
@@ -51,6 +70,26 @@
         "丑"
       ],
       "scope": "逐篇读回十二个月。春冬从变用震取寅卯参尾耗，夏用互坤、秋体互艮、四土本用坤皆取土日，三者所参环节分别核清。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二个月逐篇读回。春秋从体互艮，夏冬四土从用互坤，皆取土日而逐项确认作用位置和当月轻重。",
       "status": "author-readback-complete"
     }
   ],
@@ -78,6 +117,36 @@
         "8/1/卯"
       ],
       "finding": "专业说明依经文统一终来有它吉的句读；孚吉落在诚相亲，考试源判仍据三土克及尾木泄，结论与应期不动。"
+    },
+    {
+      "id": "bi-second-three-controls-and-equal",
+      "status": "open-priority",
+      "keys": [
+        "8/2/寅",
+        "8/2/卯",
+        "8/2/辰",
+        "8/2/巳",
+        "8/2/午",
+        "8/2/未",
+        "8/2/申",
+        "8/2/酉",
+        "8/2/戌",
+        "8/2/亥",
+        "8/2/子",
+        "8/2/丑"
+      ],
+      "finding": "三处土克上坎，末变坎比和，原案末比稳后半，并未抵前中三克；春土死、秋土休、冬土囚，古籍未统一说明弱克与末比相遇的优先级。夏与四土按强土制衰坎，仍照原断。"
+    },
+    {
+      "id": "bi-second-self-support-reading",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "8/2/寅",
+        "8/2/卯",
+        "8/2/亥",
+        "8/2/子"
+      ],
+      "finding": "六二不自失指所应未失。春月有前两问稳当之得，冬月有后半得分，爻中的所守没有扩到未答的反向证明或格式项目。"
     }
   ],
   "independentReview": {
@@ -85,16 +154,16 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:40:23.423Z",
-  "sourceSha256": "109e2fb329f2ef968390bf206018994dbe6b54165b51960f511e2fca52783efc",
+  "reviewedAt": "2026-11-20T17:44:41.110Z",
+  "sourceSha256": "c17e5e7db162a978a687778554cbe6ac4af4f282c1b5e176029abb7451b9571c",
   "checks": {
-    "scope": "水地比已写12篇，核对作者源与阅读页",
-    "chartComparisons": 324,
+    "scope": "水地比已写24篇，核对作者源与阅读页",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       492,
-      529
+      533
     ]
   }
 }
