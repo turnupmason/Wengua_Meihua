@@ -91,13 +91,21 @@ export function renderHex(ctx,bundle) {
   const r=readingFor(ctx,id,a),row=rowFor(bundle,a),timing=resolveTiming(r,a);
   const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(s=>s[4]).join(' ');
   const effects=row.decision.indirectEffectsApplied||[];
+  // Collate this quotation for the monthly reading page without changing chart facts.
+  const xiaoguoFourth=id===62&&a.movingLine===4;
+  const inheritedLine='无咎，弗过遇之；往厉必戒，勿用，永贞。';
+  const collatedLine='无咎，弗过遇之；往厉必戒，勿用永贞。';
+  if(xiaoguoFourth&&![inheritedLine,collatedLine].includes(r.selectedMovingLine.text))
+   throw new Error('Unexpected wording for hex-62-line-4; recheck the punctuation witness');
+  const displayedLine=xiaoguoFourth?collatedLine:r.selectedMovingLine.text;
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(s=>s.name).join(' → '),...a.paragraphs,
    '### 应期参考',...(timing.slots.length?['以下为传统推算的参考窗口。']:[]),...timing.paragraphs,
    '<details>\n<summary>卦理与出处</summary>',
    `判断：本轮面试${a.outcome==='favourable'?'能通过':'不能通过'}。`+r.edges.map(e=>{const n=r.nodes.find(n=>n.role===e.targetRole);return LABELS[n.role]+n.trigram+n.element+REL_LABELS[e.type];}).join('；')+'。',
    `旺衰：${a.monthBranch}月，`+r.nodes.filter(n=>n.role!=='body_inherited').map(n=>LABELS[n.role]+n.trigram+n.element+n.strength.state).join('；')+'。',
    ...(effects.length?['间接作用：按本库所取的一层作用解释，'+effects.map(e=>{const n=r.nodes.find(n=>n.role===e.role);return LABELS[e.role]+n.trigram+n.element+'：'+e.label;}).join('；')+'。上列月令五态保持原值，不作连环累计。']:[]),
-   `爻辞：${r.selectedMovingLine.label}「${r.selectedMovingLine.text}」；象曰「${r.selectedMovingLine.image}」。`,
+   `爻辞：${r.selectedMovingLine.label}「${displayedLine}」；象曰「${r.selectedMovingLine.image}」。`,
+   ...(xiaoguoFourth?['句读依据：本页依[《周易正义·小过》](https://zh.wikisource.org/zh-hans/周易正義/06小過)及程、朱注连读“勿用永贞”。王孔重免咎而不足长行其正，程传重随时之宜，不可固守。']:[]),
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
    '取期依据：'+timingReason,

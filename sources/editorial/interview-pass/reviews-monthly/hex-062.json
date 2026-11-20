@@ -1,0 +1,3621 @@
+{
+  "primaryId": 62,
+  "baselineCommit": "5c9ffe3f4491ed0ee82103261ef31ce9e07dd313",
+  "continuationMainBaseline": "9e689622ceb203095b07f77446aaf2ea388b6572",
+  "integrationMainAtCompletion": "0b5eafc3d353d013a5682ec9df33c0852b09231b",
+  "editor": "/root/write_xiaoguo",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "author-readback-complete",
+  "wholeArticlesRead": 72,
+  "authorshipScope": {
+    "inheritedDraftArticles": 0,
+    "newlyWrittenThisContinuation": 72,
+    "newArticlesRelativeToMain": 72,
+    "oldFiveQiBaselineCompared": true,
+    "description": "六爻逐月独立写定标题、简断与完整自然段。每完成一爻即存稿、从磁盘输出十二篇标题简断及全部正文实际阅读，再运行草稿检查；前两爻及口吻修订的完整新字段另次从磁盘读回。原三十组专业说明与取期先实读，新三十同气组又从保存后的源文件完整输出实际读回；七十二键同气一致与签名不变另由检查器核对。脚本只存储已逐字写定的文字、绑定证据、统计核查和排版，不生成或拼接正文。",
+    "finalFieldReadback": {
+      "bodyAndShortWholeArticles": 72,
+      "distinctJudgmentAndTimingGroupsActuallyRead": 30,
+      "sameQiBindingsChecked": 72,
+      "postReadbackVoiceRevisionFieldsActuallyRead": 52,
+      "ancestorAttributionRevision": "原典重新实读；两篇修订正文完整输出、同气 judgment 与十二份证据 scope 实际读回。"
+    }
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/interview-pass/hex-062.json",
+      "scope": "六爻五气三十篇旧正文、完整 judgment 与 timing 全文实读；保留原结果及取期种类、角色、默认或显式方法、窗口数量。"
+    },
+    {
+      "path": "data/authored-readings/interview-pass/hex-062.json",
+      "scope": "六爻五气盘面角色、五态、生克及已有一层作用核对；七十二月键另以独立算法复算。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+      "scope": "小过卦卦彖象与六爻经象、王注孔疏相关全文实际阅读；初六、六二、九三、九四、六五、上六的完整条件及注义差别逐爻保留。",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/06小過",
+      "readMethod": "local-snapshot-read; the parent separately opened the web page"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+      "scope": "完整小过卦段落实际阅读：初六躁疾、六二祖妣同德、九三正己过防、九四随宜与长上声、六五同类不足济事、上六过极而远。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+      "scope": "完整小过卦段落实际阅读；保留九三能过防可免，九四遇过及小象存疑，上六遇过句义存疑，不伪称诸注一致。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "470–500、547–558、675–693、786–807 行段落实读：变通、占卜总决、先天后天、卦断遗论、体用总诀、求名、衰旺、占卦及互变正反条文。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "有关现行口径实际阅读，特别重读第八节一层作用及第十三节二分、末用与爻辞升降条件；原五态不随有效强弱改名。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_REJUDGE_20261118.md",
+      "scope": "第六节小过上六五气已有维持裁定实际读取，凶落结果与三条降判条件逐项核对。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_REWRITE_20261118.md",
+      "scope": "全文实读：独立月篇、厚度、原判及应期继承、逐批读回。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "全文实读：精确 old/new、本地证据绑定、规则争议与作者实读边界。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_WRITE_BRIEF.md",
+      "scope": "全文实读：本轮面试范围、现场故事与人物心理禁限、传统依据到现代建议的类推边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "全文实读，并按口吻检查逐字段调整建议动词密度，保留完整文字与厚度。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/monthly/hex-044.json",
+      "scope": "已认可长稿的若干全文样本及回执结构实际读取；只作为口吻厚度与留痕参考，不声称全文独立审核。"
+    },
+    {
+      "path": "src/timing-rules.js",
+      "scope": "ELEMENT_DAY_BRANCHES 火为巳午，TRIGRAM_PERIOD_SPECS 离为午；与 interview-manuscripts、monthly-lib 的缺省 element-qi 解析核对。"
+    },
+    {
+      "path": "scripts/review/interview-monthly-lib.mjs",
+      "scope": "timingSignature 缺省方法解析及 resolveTiming 实际读取，确认旧上六春气未填第六字段即 element-qi，不为迎合旧理由改成 trigram-periods。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 12
+    },
+    {
+      "movingLine": 2,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 24
+    },
+    {
+      "movingLine": 3,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 36
+    },
+    {
+      "movingLine": 4,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 48
+    },
+    {
+      "movingLine": 5,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 60
+    },
+    {
+      "movingLine": 6,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "wholeArticlesRead": 12,
+      "status": "author-readback-complete",
+      "scope": "从保存后的本卦源文件完整输出本爻十二篇标题、简断与全部自然段，实际逐篇阅读；最终 judgment 与 timing 按该爻五个同气组另行完整输出实读，同气月绑定由脚本核对。修订正文完整新字段另次输出。",
+      "newlyWrittenArticles": 12,
+      "draftCheckAtCumulativeArticles": 72
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "status": "author-readback-complete",
+      "chart": "震木体；本艮受克、用互巽比和、体互兑克体、末离泄体。兑同时得土生与火克，一层相抵按原月令，不能单取得生而升强。",
+      "classical": "初六王孔上进无所措足，程传躁疾过速，朱子上而不下；恢复行动与所据相称的完整警戒，去除羽翼未丰、已抢答或先说满的固定故事。",
+      "positiveAndNegativeEvidence": "旺相体与旺相比和的可用处照录；无生有克且末泄仍按现行规则不成。"
+    },
+    {
+      "movingLine": 2,
+      "status": "author-readback-complete",
+      "chart": "震木体；本艮受克、两巽比和，体互兑得艮生而无火制，一层有效有力，原囚死休态保留。",
+      "classical": "王孔祖初妣二、过初履二；程传三为父、四为祖、五为妣，同柔中相求；本义仅言过三四而遇六五，不把三四一并标成祖。守分中正、进退得宜的无咎有积极条件义，不降为局部答对或消极退让。",
+      "positiveAndNegativeEvidence": "体克用、末比和及旺相月份的强相应保留；当前无生有克优先不成，不以守分作为失败原因。"
+    },
+    {
+      "movingLine": 3,
+      "status": "author-readback-complete",
+      "chart": "震木体；本艮及末坤受克，用互巽比和，体互兑得两土生无火克，只作一层有效有力，不累计倍数。",
+      "classical": "王孔未先防又轻从，程传正己为先、加意过防，本义能过防可以免患。保留可免条件，不预设面试官恶意、旧东家话题、藏错数据或题数。",
+      "positiveAndNegativeEvidence": "体克本末、旺相比和仍是正证；无直接生扶且中有力克，现行仍不成。"
+    },
+    {
+      "movingLine": 4,
+      "status": "author-readback-complete",
+      "chart": "艮土体；震与巽克体，受兑制而无水生，原旺相不改而有效气弱；用互兑泄，末坤比和。",
+      "classical": "无咎善义与往厉戒并存；勿用永贞连读。王孔戒怯弱自守不足长任，程传以随宜不可固守解释，本义同取随宜而对遇过及小象存疑。正文以程义作现代类推，不伪称唯一古解。",
+      "positiveAndNegativeEvidence": "相旺土体和相旺末比和保留，无生有克优先不成；不以截出的勿用二字证明整体失败。",
+      "catalogPunctuation": "面试月稿阅读页的十二篇九四出处经文已由 root 据王孔、程朱连读“勿用永贞”，并附句读来源。底层 data/catalog.json、运行盘面字段及旧五气历史经文保留原存档句读；此次只校正面试月稿展示，断法和其他问项不变。"
+    },
+    {
+      "movingLine": 5,
+      "status": "author-readback-complete",
+      "chart": "艮体，本震与体互巽受兑制无水生，有效气弱；两兑中后泄，旺相泄与囚死休泄的程度分别写。",
+      "classical": "密云不雨指聚而未成施用。王孔弋取隐伏之过、尚威不足行文德惠化；程朱在穴为六二，两阴相得不足济大事。不得并成局部答对或固定小成果。",
+      "positiveAndNegativeEvidence": "旺相体、减压与轻泄保留；本用克体、无生且末泄仍不成。"
+    },
+    {
+      "movingLine": 6,
+      "status": "maintained-by-policy",
+      "chart": "艮体，本震与体互巽原五态依月令，受兑制且无水生，一层气弱；兑泄体、末离直接生体。夏旺生最实，春相生，土月休助薄，秋囚助薄，冬死助极薄。",
+      "classical": "上六凶灾眚统一落结果，王孔过亢无托、自致灾眚，程传过极而远，本义对遇过句义有存疑。强戒不能软化为固定失言后修正便获救。",
+      "adjudication": "READING_POLICY 第十三节及 INTERVIEW_REJUDGE 第六节已裁维持五气能过。变用不克体；春体死但克体木有效气弱，其余月体不死；各月盘内均有克。三降条件均不满足，此次不请求重新批准结论。",
+      "positiveAndNegativeEvidence": "末生正证与原典严重不利警告同时保留，过程轻重按月令写清，仅断本轮，不扩大最终录用。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "62-raw-qi-and-effective-strength",
+      "status": "corrected-and-verified",
+      "scope": "全部七十二篇正文、judgment 与 timing",
+      "issue": "原五态、克体者一层调整与正文程度须分清。",
+      "resolution": "初六金同时受生受克按原态；六二九三金得土生无火克有效有力；上三爻震巽受兑制无水生有效气弱。全部原月令五态保持。"
+    },
+    {
+      "id": "62-initial-flight-meaning",
+      "status": "corrected",
+      "scope": "初六十二篇",
+      "issue": "旧羽翼未丰和具体抢答、推导失误均无原典及实况证据。",
+      "resolution": "按上进无所措足与躁疾过速解释；现代建议明确是准备方向，正文去除对既定失误的反向纠错口吻。"
+    },
+    {
+      "id": "62-second-proper-position",
+      "status": "preserved-with-source-variants",
+      "scope": "六二十二篇",
+      "issue": "祖妣取位有王孔与程朱差别，无咎不能窄化为局部未答错。",
+      "resolution": "王孔祖初妣二、程传三父四祖五妣、本义过三四遇六五分别登记；正文保留中正守分、认真担当的积极善义。write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复，root 已读回全部 18 条修订记录；旧新文字证据保留。",
+      "reviewAttribution": {
+        "findingId": "P62-01",
+        "discoveredBy": "/root/write_weiji",
+        "relayedBy": "/root",
+        "correctedBy": "/root/write_xiaoguo",
+        "readBackBy": "/root",
+        "revisionRecordsReadBack": 18,
+        "readbackStatus": "completed-reported-by-root"
+      }
+    },
+    {
+      "id": "62-third-prevention-condition",
+      "status": "corrected",
+      "scope": "九三十二篇",
+      "issue": "失防之凶不能排除能过防可免之条件，也不能对应面试官恶意或固定问题。",
+      "resolution": "正文保留正己、核实、防在未然的准备类推，不以对人的道德推断解释不成。"
+    },
+    {
+      "id": "62-fourth-punctuation-and-meaning",
+      "status": "corrected-and-render-verified",
+      "scope": "九四十二篇释义、专业说明及面试月稿阅读页出处经文",
+      "issue": "旧 judgment 截取往厉必戒、勿用，将其直接指向不成，易受目录勿用与永贞分断误导。",
+      "resolution": "按照原注勿用永贞连读，保留无咎与随宜；王孔不可久任、本义存疑分别记录。root 已修复面试月稿十二篇九四出处经文展示并附句读依据；底层 catalog、运行盘面及旧五气历史经文保持不变，其余六十篇预览逐字不变，正式 --docs 检查通过。"
+    },
+    {
+      "id": "62-fourth-benyi-uncertainty",
+      "status": "open",
+      "scope": "原典释义研究；不涉及本轮结果重新审批",
+      "issue": "朱子对弗过遇之究竟依六二还是依九三例，以及小象终不可长也，明言待知者，诸注不足强合。",
+      "resolution": "保留本义存疑。当前正文清楚取程传随宜作类推，项目判断按已定政策执行；不签出已解决的原典唯一读法。"
+    },
+    {
+      "id": "62-fifth-hidden-object",
+      "status": "corrected",
+      "scope": "六五十二篇",
+      "issue": "王孔弋取隐伏之过与程朱取六二不同，旧只成局部无法容纳原义。",
+      "resolution": "分说未行惠化与同类不足济事，现代层只类推条件、方法、作用的联系，不窄化古义为单题成败。"
+    },
+    {
+      "id": "62-upper-six-result",
+      "status": "maintained-by-policy",
+      "scope": "上六十二篇",
+      "issue": "原典凶灾眚严重且落结果，春体死与当前能过判断形成需要明示的张力。",
+      "resolution": "实读既有 REJUDGE 第六节专门裁定，列出三条降判门槛皆不成立。维持能过，保留严重警戒和各月体弱、泄重、助薄，不把现行已裁列作待用户批准。"
+    },
+    {
+      "id": "62-general-rule-priority",
+      "status": "open",
+      "scope": "原典条文与现代规则优先级的后续研究；当前政策已定",
+      "issue": "无生有克优先于体克用、末比和，以及一层弱金制旺木的二分简化，不能声称是所有古籍唯一规定的固定权重。",
+      "resolution": "逐篇保留正反证，当前按第八、十三节和已有裁定执行。此状态仅说明源义优先级研究未封口，不影响本批已授权文稿完成，也不新增审批要求。"
+    },
+    {
+      "id": "62-timing-fiction-cleanup",
+      "status": "corrected-and-signature-preserved",
+      "scope": "三十组、七十二月 timing",
+      "issue": "旧事件含既定追问、题数、资历差一年、材料页数、失言修正、下一轮安排等无据现场故事。",
+      "resolution": "全部改成可据盘面说明的过程作用或既有结果确认，完整原新文附本回执。"
+    },
+    {
+      "id": "62-upper-six-spring-method",
+      "status": "corrected-and-signature-preserved",
+      "scope": "上六寅卯 timing",
+      "issue": "原元组没有第六字段，实际缺省 element-qi 火支为巳午，而旧理由只写取午。",
+      "resolution": "显式审计缺省方法，保留 name-support/changed_use/element-qi 签名与窗口，只把理由校正为巳午；其余上六原 support/changed_use/trigram-periods 午继续只作过程支持。"
+    },
+    {
+      "id": "62-voice-density-and-editorial-tone",
+      "status": "corrected-and-readback-complete",
+      "scope": "两次共五十二个字段修订",
+      "issue": "部分正文含作者纠错口吻，初次口吻检查宜字密度255‰超过220‰。",
+      "resolution": "逐字段写定自然表达并保存完整原新文，全部修改字段再次从磁盘实读；最终宜216‰、平均句长32.6，正文厚度维持464–516汉字。"
+    }
+  ],
+  "judgmentAudit": {
+    "checkedDistinctGroups": 30,
+    "correctedMonthlyArticles": 72,
+    "exactOldNewAndEvidence": "每篇 article.judgmentCorrection 完整绑定 old/new、具体原因、本地 path/scope 与 unchanged outcome/timing impact。",
+    "oldWordsRemovedOnlyWithEvidence": true,
+    "outcomeChanged": false,
+    "interpretationApproval": "not-implied-by-structural-check"
+  },
+  "timingAudit": {
+    "signatureChanged": false,
+    "outcomeChanged": false,
+    "changedMonthlyArticles": 72,
+    "checkedDistinctGroups": 30,
+    "stageEventsCleaned": true,
+    "method": "保持原种类、角色、默认或显式方法、数量、有无窗口。上六寅卯 name-support/changed_use 缺省 element-qi 巳午为本轮结果参考；其余上六 support/changed_use/trigram-periods 午为过程支持，不能冒称通知。",
+    "signatureGroups": [
+      {
+        "movingLine": 1,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 1,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 1,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 1,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 1,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 2,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 2,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 2,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 2,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 2,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 3,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "equal",
+            "use_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "equal",
+            "use_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 3,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 3,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 3,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 3,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 4,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 4,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 4,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 4,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "use_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "use_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 4,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 5,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 5,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 5,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 5,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "drain",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 5,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "control",
+            "body_mutual",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 6,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "oldSignature": [
+          [
+            "name-support",
+            "changed_use",
+            "element-qi"
+          ]
+        ],
+        "newSignature": [
+          [
+            "name-support",
+            "changed_use",
+            "element-qi"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 6,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "oldSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 6,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "oldSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 6,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "oldSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      },
+      {
+        "movingLine": 6,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "oldSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "newSignature": [
+          [
+            "support",
+            "changed_use",
+            "trigram-periods"
+          ]
+        ],
+        "signatureChanged": false,
+        "defaultMethodExplicitlyResolved": true,
+        "kindRoleMethodCountAndPresencePreserved": true
+      }
+    ],
+    "wordingChanges": [
+      {
+        "movingLine": 1,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾补推导时越讲越长，时间被吃掉",
+            "拿一道案例题，先写出要问的三个问题再给方案。",
+            "相离直接受体生，取午给收尾耗费。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段投入较实，宜照看说明的依据与范围",
+            "准备时把重要判断所依赖的条件核实清楚。",
+            "末离相而受旺震所生，沿离时序午参收尾耗力；属于过程窗口，不作为未通过的公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾补推导时越讲越长，时间被吃掉",
+            "拿一道案例题，先写出要问的三个问题再给方案。",
+            "相离直接受体生，取午给收尾耗费。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段投入较实，宜照看说明的依据与范围",
+            "准备时把重要判断所依赖的条件核实清楚。",
+            "末离相而受旺震所生，沿离时序午参收尾耗力；属于过程窗口，不作为未通过的公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被逐条挑方案的漏洞",
+            "给一个大胆的方案配上预算、人手和出错三条应对。",
+            "相兑直克囚震，按酉观察过程限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜照看判断所需的条件",
+            "把重要主张与实际能力、资源和限制相联系。",
+            "体互相兑克囚震，生克相抵仍按原态，沿兑酉看中段约束，属于过程参考。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾反复解释先前的表态，越说越长",
+            "听完一个长问题后先复述要点，再作回答，练成习惯。",
+            "旺离受休体所生，以午日观察尾段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段耗力较重，宜让回应保持清楚主线",
+            "重要说明围绕事实与所问展开，条件不足处留明。",
+            "旺离直接受休震所生，沿午观察后段投入；不将耗力固定成某次解释失败或结果通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "午",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾反复解释先前的表态，越说越长",
+            "听完一个长问题后先复述要点，再作回答，练成习惯。",
+            "旺离受休体所生，以午日观察尾段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段耗力较重，宜让回应保持清楚主线",
+            "重要说明围绕事实与所问展开，条件不足处留明。",
+            "旺离直接受休震所生，沿午观察后段投入；不将耗力固定成某次解释失败或结果通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "未",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被逐条挑方案的漏洞",
+            "给一个大胆的方案配上预算、人手和出错三条应对。",
+            "相兑直克囚震，按酉观察过程限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜照看判断所需的条件",
+            "把重要主张与实际能力、资源和限制相联系。",
+            "体互相兑克囚震，生克相抵仍按原态，沿兑酉看中段约束，属于过程参考。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "申",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被一组业务数据逐项追问",
+            "翻出目标岗位相关的公开数据，想好第一步从哪里下手。",
+            "旺兑直克死木，取酉日为中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束较重，准备须有可靠依据",
+            "核对真实经验与本轮要求之间的重要联系。",
+            "旺兑体互直接克死震，得艮生与离克相抵后仍旺，沿兑酉参过程约束，不定失败公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被一组业务数据逐项追问",
+            "翻出目标岗位相关的公开数据，想好第一步从哪里下手。",
+            "旺兑直克死木，取酉日为中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束较重，准备须有可靠依据",
+            "核对真实经验与本轮要求之间的重要联系。",
+            "旺兑体互直接克死震，得艮生与离克相抵后仍旺，沿兑酉参过程约束，不定失败公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被逐条挑方案的漏洞",
+            "给一个大胆的方案配上预算、人手和出错三条应对。",
+            "相兑直克囚震，按酉观察过程限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜照看判断所需的条件",
+            "把重要主张与实际能力、资源和限制相联系。",
+            "体互相兑克囚震，生克相抵仍按原态，沿兑酉看中段约束，属于过程参考。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "一问没问清就先答，讲完才发现偏了",
+            "准备几句澄清的问法，问题含糊时先问再答。",
+            "休兑克体取酉，观察过程边界，尾段死火耗仍在。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段有较轻约束，回应宜保持准确分寸",
+            "尚未了解的条件先说明核实方向，再给有据判断。",
+            "体互兑原休，生克并见仍休而克相震，沿酉参过程边界，不指定现实题目或结果日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "子",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "一问没问清就先答，讲完才发现偏了",
+            "准备几句澄清的问法，问题含糊时先问再答。",
+            "休兑克体取酉，观察过程边界，尾段死火耗仍在。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段有较轻约束，回应宜保持准确分寸",
+            "尚未了解的条件先说明核实方向，再给有据判断。",
+            "体互兑原休，生克并见仍休而克相震，沿酉参过程边界，不指定现实题目或结果日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 1,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被逐条挑方案的漏洞",
+            "给一个大胆的方案配上预算、人手和出错三条应对。",
+            "相兑直克囚震，按酉观察过程限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜照看判断所需的条件",
+            "把重要主张与实际能力、资源和限制相联系。",
+            "体互相兑克囚震，生克相抵仍按原态，沿兑酉看中段约束，属于过程参考。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被请现场演示一个工具，几步要停下来想",
+            "把岗位写明的工具从头操作一遍，录下每一步。",
+            "囚兑体互得艮土生，按有力论，直克震木，取兑时序酉日为中段约束；收尾比和之应不用。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有力，宜让能力说明有实据",
+            "准确说明个人职责、判断依据及协作条件。",
+            "囚兑体互得艮生而无火克，按有效有力论，沿兑酉参中段约束；原囚态不改，不取结果通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被请现场演示一个工具，几步要停下来想",
+            "把岗位写明的工具从头操作一遍，录下每一步。",
+            "囚兑体互得艮土生，按有力论，直克震木，取兑时序酉日为中段约束；收尾比和之应不用。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有力，宜让能力说明有实据",
+            "准确说明个人职责、判断依据及协作条件。",
+            "囚兑体互得艮生而无火克，按有效有力论，沿兑酉参中段约束；原囚态不改，不取结果通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问资历差的一年凭什么弥补",
+            "找一件让你提早承担更大责任的事，准备好讲。",
+            "相兑克囚木取酉，指中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段承压较实，宜照看经验与要求的联系",
+            "既讲清已有能力，也准确交代仍需配合或核实的条件。",
+            "相兑体互得旺艮生而克囚震，沿酉参中段约束；只看过程，不定所求未成的通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "漏看只限现有人手的限定，方案要整段重来",
+            "读题时把只限、必须、不得这类字眼先圈出来。",
+            "死兑体互得艮土生，按有力论，直克休震，取兑时序酉日作中段约束；收尾比和之应不用。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段要求需认真承接，自身相应较薄",
+            "将已有经验与适用条件说明清楚，合理界限准确保留。",
+            "死兑体互得艮生而无火克，一层按有效有力论，沿酉看过程限制；不因原死态写成轻克。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "午",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "漏看只限现有人手的限定，方案要整段重来",
+            "读题时把只限、必须、不得这类字眼先圈出来。",
+            "死兑体互得艮土生，按有力论，直克休震，取兑时序酉日作中段约束；收尾比和之应不用。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段要求需认真承接，自身相应较薄",
+            "将已有经验与适用条件说明清楚，合理界限准确保留。",
+            "死兑体互得艮生而无火克，一层按有效有力论，沿酉看过程限制；不因原死态写成轻克。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "未",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问资历差的一年凭什么弥补",
+            "找一件让你提早承担更大责任的事，准备好讲。",
+            "相兑克囚木取酉，指中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段承压较实，宜照看经验与要求的联系",
+            "既讲清已有能力，也准确交代仍需配合或核实的条件。",
+            "相兑体互得旺艮生而克囚震，沿酉参中段约束；只看过程，不定所求未成的通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "申",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "按对方标准流程复盘，几步没有对应经历",
+            "查一查目标公司常用的项目流程，逐步对上自己的经历。",
+            "旺兑克原体，按酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束较重，宜充分核实能力的根据",
+            "以真实经历说明职责、行动与结果之间的联系。",
+            "旺兑体互直克死震，又得艮生，沿酉参中段限制；仅是过程窗口，不指定结果公布。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "按对方标准流程复盘，几步没有对应经历",
+            "查一查目标公司常用的项目流程，逐步对上自己的经历。",
+            "旺兑克原体，按酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束较重，宜充分核实能力的根据",
+            "以真实经历说明职责、行动与结果之间的联系。",
+            "旺兑体互直克死震，又得艮生，沿酉参中段限制；仅是过程窗口，不指定结果公布。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问资历差的一年凭什么弥补",
+            "找一件让你提早承担更大责任的事，准备好讲。",
+            "相兑克囚木取酉，指中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段承压较实，宜照看经验与要求的联系",
+            "既讲清已有能力，也准确交代仍需配合或核实的条件。",
+            "相兑体互得旺艮生而克囚震，沿酉参中段约束；只看过程，不定所求未成的通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问方案与规定冲突时怎么办，只说会请示",
+            "想一个规定和目标冲突的情形，写下你自己的判断。",
+            "休兑体互直克相震，取酉日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束仍有支撑，回应宜有据而清楚",
+            "把主张与所需条件一并说明，让承担恰如其分。",
+            "休兑得艮生且无火克，按有效有力而非原休轻克，沿酉观察过程；末比和不新增结果窗。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "子",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问方案与规定冲突时怎么办，只说会请示",
+            "想一个规定和目标冲突的情形，写下你自己的判断。",
+            "休兑体互直克相震，取酉日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束仍有支撑，回应宜有据而清楚",
+            "把主张与所需条件一并说明，让承担恰如其分。",
+            "休兑得艮生且无火克，按有效有力而非原休轻克，沿酉观察过程；末比和不新增结果窗。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问资历差的一年凭什么弥补",
+            "找一件让你提早承担更大责任的事，准备好讲。",
+            "相兑克囚木取酉，指中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段承压较实，宜照看经验与要求的联系",
+            "既讲清已有能力，也准确交代仍需配合或核实的条件。",
+            "相兑体互得旺艮生而克囚震，沿酉参中段约束；只看过程，不定所求未成的通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "equal",
+            "use_mutual",
+            "用熟悉的分层方法查出一处对不上的地方",
+            "练习听到一个前提时，先问出它的依据。",
+            "旺巽用互与体比和，取巽时序辰、巳日，作过程中的局部帮助。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "equal",
+            "use_mutual",
+            "中段同气相应有力，可用于认真核查依据",
+            "先分清已确认的条件，再说明由此可作的判断。",
+            "旺巽用互比和旺震，沿巽辰巳参过程相接；保留原局部相助窗口，不由此推出整轮通过。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "equal",
+            "use_mutual",
+            "用熟悉的分层方法查出一处对不上的地方",
+            "练习听到一个前提时，先问出它的依据。",
+            "旺巽用互与体比和，取巽时序辰、巳日，作过程中的局部帮助。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "equal",
+            "use_mutual",
+            "中段同气相应有力，可用于认真核查依据",
+            "先分清已确认的条件，再说明由此可作的判断。",
+            "旺巽用互比和旺震，沿巽辰巳参过程相接；保留原局部相助窗口，不由此推出整轮通过。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段直接用了一组藏错的数据",
+            "拿到任何数据，先挑一个数验算是否合理。",
+            "相兑直接克原体，取酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜审慎核对判断依据",
+            "对影响结论的信息保持核查，让事实与推论相接。",
+            "相兑体互得两土生而克囚震，沿酉参过程约束，不把爻象指定为一组藏错数据。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被指出第一问漏了条件，几问一起要改",
+            "做连环题时，每一问开头先写一句本问用到的条件。",
+            "死兑仍直接克体，取酉给局部核验，不择土日。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段得生之克有力，宜把关键前提核实",
+            "说明判断为何成立，条件变化时有据调整。",
+            "死兑体互得艮坤生而无火克，一层按有效有力，沿酉参中段核查；不固定为已发生的返工。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "午",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段被指出第一问漏了条件，几问一起要改",
+            "做连环题时，每一问开头先写一句本问用到的条件。",
+            "死兑仍直接克体，取酉给局部核验，不择土日。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段得生之克有力，宜把关键前提核实",
+            "说明判断为何成立，条件变化时有据调整。",
+            "死兑体互得艮坤生而无火克，一层按有效有力，沿酉参中段核查；不固定为已发生的返工。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "未",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段直接用了一组藏错的数据",
+            "拿到任何数据，先挑一个数验算是否合理。",
+            "相兑直接克原体，取酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜审慎核对判断依据",
+            "对影响结论的信息保持核查，让事实与推论相接。",
+            "相兑体互得两土生而克囚震，沿酉参过程约束，不把爻象指定为一组藏错数据。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "申",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "顺口评价了旧东家，被连着追问",
+            "准备一句不评价旧东家的回应，再接一件你做过的改善。",
+            "旺兑直克死体，取酉观察严格条件。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束明显，回应须有清楚事实根据",
+            "准确说明自己的经历和认识，区分已知与仍待核实。",
+            "旺兑体互克死震且得两土生，沿酉参过程限制，不指认对方恶意或既定追问内容。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "顺口评价了旧东家，被连着追问",
+            "准备一句不评价旧东家的回应，再接一件你做过的改善。",
+            "旺兑直克死体，取酉观察严格条件。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束明显，回应须有清楚事实根据",
+            "准确说明自己的经历和认识，区分已知与仍待核实。",
+            "旺兑体互克死震且得两土生，沿酉参过程限制，不指认对方恶意或既定追问内容。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段直接用了一组藏错的数据",
+            "拿到任何数据，先挑一个数验算是否合理。",
+            "相兑直接克原体，取酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜审慎核对判断依据",
+            "对影响结论的信息保持核查，让事实与推论相接。",
+            "相兑体互得两土生而克囚震，沿酉参过程约束，不把爻象指定为一组藏错数据。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段一道题省掉前提，被追问才补",
+            "为一个常见判断写下它默认的两个前提。",
+            "休兑直克体，以酉对应中段牵制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有来源，关键条件宜先审清",
+            "讲明经验适用的范围，重要前提有变便说明修订。",
+            "休兑体互得艮坤生而无火克，有效有力，沿酉看中段限制；不按原休态低估约束。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "子",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段一道题省掉前提，被追问才补",
+            "为一个常见判断写下它默认的两个前提。",
+            "休兑直克体，以酉对应中段牵制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有来源，关键条件宜先审清",
+            "讲明经验适用的范围，重要前提有变便说明修订。",
+            "休兑体互得艮坤生而无火克，有效有力，沿酉看中段限制；不按原休态低估约束。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段直接用了一组藏错的数据",
+            "拿到任何数据，先挑一个数验算是否合理。",
+            "相兑直接克原体，取酉看中段限制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较实，宜审慎核对判断依据",
+            "对影响结论的信息保持核查，让事实与推论相接。",
+            "相兑体互得两土生而克囚震，沿酉参过程约束，不把爻象指定为一组藏错数据。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被请讲主动推动的事，讲的是被安排的任务",
+            "回想一件你主动发起的小事，写清起因和结果。",
+            "旺巽直克艮，以巽支观中段硬条件。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束受制而缓，宜有据回应实际要求",
+            "把判断所依赖的条件说明清楚，变化时随宜调整。",
+            "体互巽原旺克死艮，受兑制且无水生，按有效气弱；沿辰巳参过程，不称中段硬压。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被请讲主动推动的事，讲的是被安排的任务",
+            "回想一件你主动发起的小事，写清起因和结果。",
+            "旺巽直克艮，以巽支观中段硬条件。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束受制而缓，宜有据回应实际要求",
+            "把判断所依赖的条件说明清楚，变化时随宜调整。",
+            "体互巽原旺克死艮，受兑制且无水生，按有效气弱；沿辰巳参过程，不称中段硬压。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问来了想做出什么改变，只说先观察",
+            "研究目标团队的公开信息，写下一件你想推动的事。",
+            "囚巽体互直克旺艮，取辰、巳日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较轻，宜让稳健与主动相合",
+            "说明经验为何适用，也留意实际条件需要哪些调整。",
+            "囚巽体互受相兑制且无水生，克旺艮之力较弱，沿辰巳看过程，不新增末比和结果窗口。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被请讲一次冒险拍板的经历，说没有",
+            "写下一次信息不全时你做的决定，以及后来的结果。",
+            "休巽体互直克相艮，取巽时序辰、巳日为中段约束；变用比和为收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段仍有较轻约束，处理宜随实际条件",
+            "可靠之处充分说明，尚未了解的内容留出核实方向。",
+            "休巽体互受兑制而无水生，按气弱，沿辰巳参中段限制；末比和不新增通过结果窗。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "午",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被请讲一次冒险拍板的经历，说没有",
+            "写下一次信息不全时你做的决定，以及后来的结果。",
+            "休巽体互直克相艮，取巽时序辰、巳日为中段约束；变用比和为收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段仍有较轻约束，处理宜随实际条件",
+            "可靠之处充分说明，尚未了解的内容留出核实方向。",
+            "休巽体互受兑制而无水生，按气弱，沿辰巳参中段限制；末比和不新增通过结果窗。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "未",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问来了想做出什么改变，只说先观察",
+            "研究目标团队的公开信息，写下一件你想推动的事。",
+            "囚巽体互直克旺艮，取辰、巳日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较轻，宜让稳健与主动相合",
+            "说明经验为何适用，也留意实际条件需要哪些调整。",
+            "囚巽体互受相兑制且无水生，克旺艮之力较弱，沿辰巳看过程，不新增末比和结果窗口。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "申",
+        "old": [
+          [
+            "drain",
+            "use_mutual",
+            "中段一个流程问题讲了很久还没到办法",
+            "每个回答先说一句判断，背景压到一句以内。",
+            "旺兑由艮生，取酉观中段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "use_mutual",
+            "中段投入较重，说明宜切合实际所需",
+            "让主要判断先有根据，必要背景与补充各有用途。",
+            "旺兑用互受休艮所生，沿兑酉参中段耗力；不固定回答句数或现实耗时。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "drain",
+            "use_mutual",
+            "中段一个流程问题讲了很久还没到办法",
+            "每个回答先说一句判断，背景压到一句以内。",
+            "旺兑由艮生，取酉观中段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "use_mutual",
+            "中段投入较重，说明宜切合实际所需",
+            "让主要判断先有根据，必要背景与补充各有用途。",
+            "旺兑用互受休艮所生，沿兑酉参中段耗力；不固定回答句数或现实耗时。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问来了想做出什么改变，只说先观察",
+            "研究目标团队的公开信息，写下一件你想推动的事。",
+            "囚巽体互直克旺艮，取辰、巳日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较轻，宜让稳健与主动相合",
+            "说明经验为何适用，也留意实际条件需要哪些调整。",
+            "囚巽体互受相兑制且无水生，克旺艮之力较弱，沿辰巳看过程，不新增末比和结果窗口。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "开放题只给了一个保守方案",
+            "设想预算翻倍，写出两个你会尝试的新方向。",
+            "相巽直接克原体，按辰巳取中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有所缓和，宜保持实质回应",
+            "条件明确便有据说明，条件变化则交代调整理由。",
+            "体互巽原相克囚艮，受休兑制且无水生，按有效气弱；沿辰巳参过程而非强压或结果日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "子",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "开放题只给了一个保守方案",
+            "设想预算翻倍，写出两个你会尝试的新方向。",
+            "相巽直接克原体，按辰巳取中段约束。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有所缓和，宜保持实质回应",
+            "条件明确便有据说明，条件变化则交代调整理由。",
+            "体互巽原相克囚艮，受休兑制且无水生，按有效气弱；沿辰巳参过程而非强压或结果日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被问来了想做出什么改变，只说先观察",
+            "研究目标团队的公开信息，写下一件你想推动的事。",
+            "囚巽体互直克旺艮，取辰、巳日为中段约束；变用比和属收尾吉应，这一盘过不了，不取。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段限制较轻，宜让稳健与主动相合",
+            "说明经验为何适用，也留意实际条件需要哪些调整。",
+            "囚巽体互受相兑制且无水生，克旺艮之力较弱，沿辰巳看过程，不新增末比和结果窗口。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被追问到底选哪个，又补了一轮分析",
+            "练习每个问题先用一句话给出选择。",
+            "旺巽体互直克死艮，受兑所制，力已减，以巽支观察中段牵制；密云不取天气或日程。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束受制而缓，仍需照看薄弱承接",
+            "让经验、方法与职责要求之间的联系有实际根据。",
+            "旺巽体互原克死艮，受囚兑制且无水生，有效气弱；沿巽辰巳参过程限制，不定具体题目。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "被追问到底选哪个，又补了一轮分析",
+            "练习每个问题先用一句话给出选择。",
+            "旺巽体互直克死艮，受兑所制，力已减，以巽支观察中段牵制；密云不取天气或日程。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束受制而缓，仍需照看薄弱承接",
+            "让经验、方法与职责要求之间的联系有实际根据。",
+            "旺巽体互原克死艮，受囚兑制且无水生，有效气弱；沿巽辰巳参过程限制，不定具体题目。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾讲一个铺垫很长的例子，没讲到判断",
+            "把常用的例子改成先结论、后经过的讲法。",
+            "相兑直接受土生，按酉观察末段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍有较实投入，宜使已有积累形成说明",
+            "把事实、方法与实际效果接清，尚缺条件准确留明。",
+            "相兑变用直接受旺艮所生，沿酉参后段付出；不预设例子的长短或现实通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾翻了很久材料才找到代表成果",
+            "把最有代表性的一件成果写在材料的第一页。",
+            "死兑仍受原体所生，取酉作局部补写参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段有较轻投入，宜使材料切合所需",
+            "把个人贡献、处理方法与结果的依据说明清楚。",
+            "死兑变用受相艮所生，沿兑酉参后段付出；是过程参考，不规定补写材料或通知日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "午",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾翻了很久材料才找到代表成果",
+            "把最有代表性的一件成果写在材料的第一页。",
+            "死兑仍受原体所生，取酉作局部补写参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段有较轻投入，宜使材料切合所需",
+            "把个人贡献、处理方法与结果的依据说明清楚。",
+            "死兑变用受相艮所生，沿兑酉参后段付出；是过程参考，不规定补写材料或通知日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "未",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾讲一个铺垫很长的例子，没讲到判断",
+            "把常用的例子改成先结论、后经过的讲法。",
+            "相兑直接受土生，按酉观察末段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍有较实投入，宜使已有积累形成说明",
+            "把事实、方法与实际效果接清，尚缺条件准确留明。",
+            "相兑变用直接受旺艮所生，沿酉参后段付出；不预设例子的长短或现实通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "申",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾总结只讲了一半，结论没落下",
+            "给每个长回答设一个收尾句，先写好再练。",
+            "旺兑受体生取酉，对应尾段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段投入较重，宜让重要说明形成完整联系",
+            "依据实际所问安排补充，关键判断与事实相互支持。",
+            "旺兑变用受休艮所生，沿酉观察后段耗力；不指认总结失败，也不作为结果公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾总结只讲了一半，结论没落下",
+            "给每个长回答设一个收尾句，先写好再练。",
+            "旺兑受体生取酉，对应尾段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段投入较重，宜让重要说明形成完整联系",
+            "依据实际所问安排补充，关键判断与事实相互支持。",
+            "旺兑变用受休艮所生，沿酉观察后段耗力；不指认总结失败，也不作为结果公布日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾讲一个铺垫很长的例子，没讲到判断",
+            "把常用的例子改成先结论、后经过的讲法。",
+            "相兑直接受土生，按酉观察末段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍有较实投入，宜使已有积累形成说明",
+            "把事实、方法与实际效果接清，尚缺条件准确留明。",
+            "相兑变用直接受旺艮所生，沿酉参后段付出；不预设例子的长短或现实通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段两问问团队管理，讲得空",
+            "找一次你牵头的小组协作，按分工、冲突、结果讲清。",
+            "相巽直接克体，取巽时序给中段牵制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有缓，自身支持仍需照看",
+            "说明真实贡献与适用条件，让材料回应关键需要。",
+            "相巽体互克囚艮，受休兑制且无水生，按有效气弱，沿辰巳参过程；不按原相态断强阻。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "子",
+        "old": [
+          [
+            "control",
+            "body_mutual",
+            "中段两问问团队管理，讲得空",
+            "找一次你牵头的小组协作，按分工、冲突、结果讲清。",
+            "相巽直接克体，取巽时序给中段牵制。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "body_mutual",
+            "中段约束有缓，自身支持仍需照看",
+            "说明真实贡献与适用条件，让材料回应关键需要。",
+            "相巽体互克囚艮，受休兑制且无水生，按有效气弱，沿辰巳参过程；不按原相态断强阻。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "收尾讲一个铺垫很长的例子，没讲到判断",
+            "把常用的例子改成先结论、后经过的讲法。",
+            "相兑直接受土生，按酉观察末段投入。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍有较实投入，宜使已有积累形成说明",
+            "把事实、方法与实际效果接清，尚缺条件准确留明。",
+            "相兑变用直接受旺艮所生，沿酉参后段付出；不预设例子的长短或现实通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "寅",
+        "old": [
+          [
+            "name-support",
+            "changed_use",
+            "通过的消息到了，约你参加下一轮",
+            "接到通知后，把下一轮的时间和形式记下来。",
+            "相离变用直接生死艮，取午日参求名结果。"
+          ]
+        ],
+        "new": [
+          [
+            "name-support",
+            "changed_use",
+            "本轮面试通过的结果得到确认",
+            "依据实际反馈确认本轮状态，并核对确有安排的后续事项。",
+            "相离变用直接生死艮，沿原火气巳午参本轮求名结果；保持既有结果窗口，不预设下一轮或最终录用。"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "卯",
+        "old": [
+          [
+            "name-support",
+            "changed_use",
+            "通过的消息到了，约你参加下一轮",
+            "接到通知后，把下一轮的时间和形式记下来。",
+            "相离变用直接生死艮，取午日参求名结果。"
+          ]
+        ],
+        "new": [
+          [
+            "name-support",
+            "changed_use",
+            "本轮面试通过的结果得到确认",
+            "依据实际反馈确认本轮状态，并核对确有安排的后续事项。",
+            "相离变用直接生死艮，沿原火气巳午参本轮求名结果；保持既有结果窗口，不预设下一轮或最终录用。"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "辰",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾讲了一个小而实的例子",
+            "备好一个小而实的例子，讲清你亲手做的那一步。",
+            "休离直生旺艮，取午为局部修正参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄生扶，自身基础可用于承接",
+            "真实所长充分说明，方法与承诺均照看适用条件。",
+            "休离变用直接生旺艮，沿午参后段支持；保持过程窗，不固定为小案例补救或扩大录用结果。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "巳",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾把答案拉回岗位本身，讲得具体",
+            "练习被提醒跑题后，用一句话把答案拉回问题。",
+            "旺离直生原体，取午给后段修正。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段生扶较有力，宜以清楚分寸承接",
+            "把重要事实与承担条件讲准确，完整回应本轮要求。",
+            "旺离变用直接生相艮，沿午参后段支持；原为过程窗，不指定被提醒跑题后的修正或通过通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "午",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾把答案拉回岗位本身，讲得具体",
+            "练习被提醒跑题后，用一句话把答案拉回问题。",
+            "旺离直生原体，取午给后段修正。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段生扶较有力，宜以清楚分寸承接",
+            "把重要事实与承担条件讲准确，完整回应本轮要求。",
+            "旺离变用直接生相艮，沿午参后段支持；原为过程窗，不指定被提醒跑题后的修正或通过通知。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "未",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾讲了一个小而实的例子",
+            "备好一个小而实的例子，讲清你亲手做的那一步。",
+            "休离直生旺艮，取午为局部修正参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄生扶，自身基础可用于承接",
+            "真实所长充分说明，方法与承诺均照看适用条件。",
+            "休离变用直接生旺艮，沿午参后段支持；保持过程窗，不固定为小案例补救或扩大录用结果。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "申",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾补了一个与岗位贴近的例子",
+            "准备两句谈兴趣的话，讲完就转回岗位。",
+            "囚离变用直生休艮，取午日为末段小助。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄支持，仍须照看中途投入",
+            "围绕可靠依据完成说明，能力与限制都交代准确。",
+            "囚离变用生休艮，沿午参有限后助；维持过程窗口，不推出固定补例或延迟结果日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "酉",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾补了一个与岗位贴近的例子",
+            "准备两句谈兴趣的话，讲完就转回岗位。",
+            "囚离变用直生休艮，取午日为末段小助。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄支持，仍须照看中途投入",
+            "围绕可靠依据完成说明，能力与限制都交代准确。",
+            "囚离变用生休艮，沿午参有限后助；维持过程窗口，不推出固定补例或延迟结果日期。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "戌",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾讲了一个小而实的例子",
+            "备好一个小而实的例子，讲清你亲手做的那一步。",
+            "休离直生旺艮，取午为局部修正参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄生扶，自身基础可用于承接",
+            "真实所长充分说明，方法与承诺均照看适用条件。",
+            "休离变用直接生旺艮，沿午参后段支持；保持过程窗，不固定为小案例补救或扩大录用结果。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "亥",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾主动更正那句说满的话",
+            "想好一句更正的说法：刚才说多了，我实际能做到的是多少。",
+            "死离变用直生囚艮，助力薄，取午日为末段有限补救。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段生扶很薄，宜保持有据而审慎的承接",
+            "认真说明能承担的范围，未知条件保留核实方向。",
+            "死离变用生囚艮，沿午参薄弱后助；不把过程参考写成必然纠正失言或本轮通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "子",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾主动更正那句说满的话",
+            "想好一句更正的说法：刚才说多了，我实际能做到的是多少。",
+            "死离变用直生囚艮，助力薄，取午日为末段有限补救。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段生扶很薄，宜保持有据而审慎的承接",
+            "认真说明能承担的范围，未知条件保留核实方向。",
+            "死离变用生囚艮，沿午参薄弱后助；不把过程参考写成必然纠正失言或本轮通知日。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "丑",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "收尾讲了一个小而实的例子",
+            "备好一个小而实的例子，讲清你亲手做的那一步。",
+            "休离直生旺艮，取午为局部修正参考。",
+            "trigram-periods"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "后段有较薄生扶，自身基础可用于承接",
+            "真实所长充分说明，方法与承诺均照看适用条件。",
+            "休离变用直接生旺艮，沿午参后段支持；保持过程窗，不固定为小案例补救或扩大录用结果。",
+            "trigram-periods"
+          ]
+        ],
+        "reason": "删除无据现场故事、人物动作与固定题数；保持种类、角色、方法、数量及有无窗口，按原五态及一层有效强弱解释过程。上六春气保留原 element-qi 结果窗，按实际火支巳午校正旧理由只称午的遗漏，其余上六仍为过程支持窗。"
+      }
+    ]
+  },
+  "authorReadbackRevisions": [
+    {
+      "movingLine": 1,
+      "monthBranch": "寅",
+      "field": "paragraphs[2]",
+      "old": "初六「飞鸟以凶」，王孔从上进而逆、无处安足解释，程传进一步戒躁进太速，越走越远而难以及时收止。这里重在行为越出适宜的范围，并不能据此断定你已经抢答或说了大话。用于面试准备，应先分清事实、推测与承诺，让每一步展开都有可以核验的依据。",
+      "new": "初六「飞鸟以凶」，王孔从上进而逆、无处安足解释，程传进一步戒躁进太速，越走越远而难以及时收止。所往有适宜的方向，也需要可靠的立足处。用于面试准备，应先分清事实、推测与承诺，让每一步展开都有可以核验的依据，再按实际需要向前推进。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "卯",
+      "field": "paragraphs[2]",
+      "old": "「飞鸟以凶」借飞而无所安说明进退失宜，小象的「不可如何也」又强调越过适宜范围后的难以收止。古注并没有把这只鸟写成羽翼未长好的幼鸟，重点在向前的方向和分寸。借其意准备，应先弄清需要说明什么，再安排材料的展开，不靠声势代替有据的回应。",
+      "new": "「飞鸟以凶」借飞而无所安说明进退失宜，小象的「不可如何也」又强调越过适宜范围后的难以收止。向前须看清方向，展开也应留意可以依凭的条件。借其意准备，应先弄清需要说明什么，再安排材料的次序，让主动回应始终有事实根据和明确目的。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "申",
+      "field": "paragraphs[1]",
+      "old": "申月震木体死，用互巽木也死而比和，虽有接应，承托并不厚。体互兑金旺而克体，约束较有力量；本用艮土休，受体克而仍须费心处理。末离火囚，受木所生，后段有轻耗。全局无直接生体，主要限制在弱体承受实克，不能把它归结为某个预定失误。",
+      "new": "申月震木体死，用互巽木也死而比和，虽有接应，承托并不厚。体互兑金旺而克体，约束较有力量；本用艮土休，受体克而仍须费心处理。末离火囚，受木所生，后段有轻耗。全局无直接生体，主要限制在弱体承受实克，准备宜围绕关键要求安排轻重。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "巳",
+      "field": "paragraphs[1]",
+      "old": "巳月木处休，体震与用互巽同气而力不厚；本用艮土相，虽受体克，掌握它仍较费力。体互兑金死而克木，约束较轻，不能因此把整段交流说成强压。末离火旺，受木所生，付出方向较实；又没有别卦直接生体，故后续投入未转为所需的补益。",
+      "new": "巳月木处休，体震与用互巽同气而力不厚；本用艮土相，虽受体克，掌握它仍较费力。体互兑金死而克木，中途约束较轻，仍有从容澄清的余地。末离火旺，受木所生，付出方向较实；又没有别卦直接生体，故后续投入未转为所需的补益。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "亥",
+      "field": "paragraphs[2]",
+      "old": "初六的飞鸟，在王孔解释中因为上进而失其宜，难找到可安之处。程传又从过速过远说明警戒。借来检点面试，不必假定已经发生冒进，而可预先检查思路所依的前提，明确经验与推论的边界。让每个结论都有可追问的来由，表达才容易前后相承。",
+      "new": "初六的飞鸟，在王孔解释中因为上进而失其宜，难找到可安之处。程传又从过速过远说明警戒。借来检点面试，可预先检查思路所依的前提，明确经验与推论的边界，审清方向之后再作充分展开。让每个结论都有可追问的来由，表达才容易前后相承。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "丑",
+      "field": "paragraphs[4]",
+      "old": "收尾要照看核心问题的完整性，必要补充围绕仍未清楚的联系展开。对超出所知的部分，可以说明核实路径；对能够负责的事情，则有据地说足。此盘仍取不能通过，初六所戒的急进宜落实为对方向与尺度的认真把握，不必把困难写成对个人能力的全盘否定。",
+      "new": "收尾要照看核心问题的完整性，必要补充围绕仍未清楚的联系展开。对超出所知的部分，可以说明核实路径；对能够负责的事情，则有据地说足。此盘仍取不能通过，初六所戒的急进宜落实为对方向与尺度的认真把握，使对个人能力和当前限制的认识都更具体。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "卯",
+      "field": "paragraphs[2]",
+      "old": "「不及其君，遇其臣，无咎」以臣的分际说明进取有度，重点是当其所当。至于祖妣所指，王孔从初与二的位次着眼，程朱另从三四与五解释；各家均没有把它写成必须经过若干面试关卡。借其守中之意，应认真辨清职责，而不是凭职位名称决定该少说什么。",
+      "new": "「不及其君，遇其臣，无咎」以臣的分际说明进取有度，重点是当其所当。至于祖妣所指，王孔从初与二的位次着眼，程朱另从三四与五解释；各家由不同位置说明中正与合宜。借其守中之意，应认真辨清职责，把已有根据的认识讲明，也把应守的责任界限交代准确。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "酉",
+      "field": "paragraphs[2]",
+      "old": "六二的「过其祖，遇其妣」有越初履二与越三四遇五两种主要解释，不能把爻位直接当成面试人员的层级。它所提示的中正和相遇合宜，可落实为对职责的准确理解；「不及其君」又提醒进取不越其分，使主动担当始终与自己的信息、权限和能力相称。",
+      "new": "六二的「过其祖，遇其妣」有越初履二与越三四遇五两种主要解释，都从位次说明合宜的相遇。它所提示的中正，可落实为对职责的准确理解；「不及其君」又提醒进取不越其分，使主动担当始终与自己的信息、权限和能力相称，也让协作中的责任清楚可辨。",
+      "reason": "全文读回后将反向编辑说明改为面向读者的直接经义解释；厚度与结论保持。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "寅",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，已有基础能够支撑开头的推进，收尾却仍需向外付出，尚未把所求落实下来。宜先抓住自己真正熟悉、能够负责的部分，将重要判断的根据说清。初六提醒的是行动与所凭条件须相称，准备越充分，越应让听者看清能力怎样用于眼前的问题。",
+      "new": "本轮面试不能通过，已有基础能够支撑开头的推进，收尾却仍需向外付出，尚未把所求落实下来。准备时可先梳理真正熟悉、能够负责的部分，将重要判断的根据说明清楚。初六提醒的是行动与所凭条件须相称，准备越充分，越应让听者看清能力怎样用于眼前的问题。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "卯",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，前面并非没有可用的条件，关键在于投入之后仍缺少回到自身的支持。卯月宜让已有能力得到充分说明，同时审清每个结论可以推到多远。起头能展开，不表示后续可以不计前提地扩展；越是熟悉的内容，越要交代它与这次实际要求之间的联系。",
+      "new": "本轮不能通过，前面并非没有可用的条件，关键在于投入之后仍缺少回到自身的支持。卯月可以充分说明已有能力，同时仔细审视每个结论能够支持到什么范围。起头能展开，不表示后续可以不计前提地扩展；越是熟悉的内容，越要交代它与这次实际要求之间的联系。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "辰",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，开头需要承接的内容较重，中段又有实在的要求压来，自己的接续偏弱。此时宜把准备集中在决定性的联系上：真实能力怎样对应职责，重要判断靠什么成立。范围看清之后再展开，比急着给出一幅很大的图景更有助于把事情说明完整。",
+      "new": "本轮面试不能通过，开头需要承接的内容较重，中段又有实在的要求压来，自己的接续偏弱。准备可以围绕决定性的联系展开：真实能力怎样对应职责，重要判断靠什么成立。范围看清之后再展开，比急着给出一幅很大的图景更有助于把事情说明完整。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "巳",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，起步需要投入，后段又有较多心力向外付出，中途的相应未能充分接住。准备宜先安排清楚每段说明的目的，所讲内容要能服务于实际要求。初六的警戒尤其适合用来检查判断的起点：方向尚未弄明，就应先澄清，再谈怎样推进。",
+      "new": "这一轮不能通过，起步需要投入，后段又有较多心力向外付出，中途的相应未能充分接住。准备时应先看清每段说明的目的，让所讲内容与当前实际要求保持明确联系。初六的警戒尤其适合用来检查判断的起点：方向尚未弄明，就应先澄清，再谈怎样推进。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "午",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，主要难处在于持续付出之后，所求仍没有得到足够承接。午月不宜因中段压力较轻就放松对前提的核实，也不必把每处都准备成最坏情形。应当辨清真正需要讲透的联系，把有限的精力用在能够证明能力、回答实际要求的内容上。",
+      "new": "本轮不能通过，主要难处在于持续付出之后，所求仍没有得到足够承接。午月中段压力虽轻，前提仍需认真核实；准备时可以据实际轻重安排所用心力。应当辨清真正需要讲透的联系，把有限的精力用在能够证明能力、回答实际要求的内容上。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "未",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，面对的要求有分量，自身与过程中的相助却不够厚，宜把重点放在可核实的依据上。准备得稳，不是把所有回答压短，而是知道哪些内容必须讲透、哪些推论仍需条件。初六所戒的进取失宜，正可帮助你检查表达是否始终落在能够承担的范围。",
+      "new": "本轮不能通过，面对的要求有分量，自身与过程中的相助却不够厚，准备可以从能够核实的重要依据着手。准备得稳，不是把所有回答压短，而是知道哪些内容必须讲透、哪些推论仍需条件。初六所戒的进取失宜，正可帮助你检查表达是否始终落在能够承担的范围。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "申",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，中段的核验与要求较重，自身和相应支持偏弱，难以靠后续补充把整体条件补足。准备应当先站稳真实经历，让每项重要判断都有清楚来由。此时越需要展现能力，越宜分明说明已经做到什么，以及目前经验能够支持怎样的处理范围。",
+      "new": "本轮面试不能通过，中段的核验与要求较重，自身和相应支持偏弱，难以靠后续补充把整体条件补足。准备应当先站稳真实经历，让每项重要判断都有清楚来由。此时越需要展现能力，越应讲清已经做到什么，以及目前经验能够支持怎样的处理范围。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "酉",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，主要困难在中段要求较实，而自身及过程相助都显不足。宜把准备放在可靠内容的充分呈现上，说明你怎样认识问题、作出选择并验证结果。初六提醒进取不可脱离所凭的条件，恰好有助于把能力与承诺之间的界限讲明。",
+      "new": "这一轮不能通过，主要困难在中段要求较实，而自身及过程相助都显不足。准备可以着重呈现可靠内容，完整说明你怎样认识问题、作出选择并验证结果。初六提醒进取不可脱离所凭的条件，恰好有助于把能力与承诺之间的界限讲明。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "戌",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，起步所需处理的事情较重，中段还有有力约束，而自身的接续偏薄。宜先按实际重要性安排准备，确保决定判断的依据能够被清楚说明。初六的警戒在于进取失去落脚处，借其意可以把行动与已知条件扣紧，避免扩大得太快而顾不到根本。",
+      "new": "本轮不能通过，起步所需处理的事情较重，中段还有有力约束，而自身的接续偏薄。准备时可按实际重要性分配精力，让决定判断的依据得到清楚而充分的说明。初六的警戒在于进取失去落脚处，借其意可以把行动与已知条件扣紧，避免扩大得太快而顾不到根本。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "亥",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，自己的基础与过程承接较可用，后段却仍是向外付出，没有形成直接补益。亥月的轻阻轻耗使事情不至于处处难行，宜充分表达能够证明的能力。与此同时，初六提醒每一步进取都要有可靠落点，讲清根据比扩大表达范围更重要。",
+      "new": "本轮不能通过，自己的基础与过程承接较可用，后段却仍是向外付出，没有形成直接补益。亥月轻阻轻耗，仍有可用条件，可以把已有事实能够证明的能力充分表达出来。与此同时，初六提醒每一步进取都要有可靠落点，讲清根据比扩大表达范围更重要。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "子",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，现有条件能够支持一定展开，中段也有相应，但末后未获得直接补益。子月宜把可发挥的部分讲充分，不必因结果偏难就否定自己的准备。真正需要留意的是表达的去向：每增加一层说明，都应让它与所问及事实根据联系得更紧。",
+      "new": "这一轮不能通过，现有条件能够支持一定展开，中段也有相应，但末后未获得直接补益。子月可以把已有经验能够支持的部分讲充分，让准备的内容与可发挥之处相接。真正需要留意的是表达的去向：每增加一层说明，都应让它与所问及事实根据联系得更紧。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 1,
+      "monthBranch": "丑",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，开头的任务分量较实，中途又有需要认真承接的约束，整体支持偏薄。宜先把最影响判断的地方准备扎实，避免重处尚未讲透便转去铺展其他内容。初六提醒行动不能离开适宜的落脚处，这层意思可用来检查经验、判断与承诺是否相称。",
+      "new": "本轮面试不能通过，开头的任务分量较实，中途又有需要认真承接的约束，整体支持偏薄。准备可以先抓住最影响判断的地方，重要联系讲扎实之后，再安排必要的展开与补充。初六提醒行动不能离开适宜的落脚处，这层意思可用来检查经验、判断与承诺是否相称。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "寅",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，自身有力，过程中与收尾也有相应支持，但中途的约束并未因此消失。宜把已有能力讲充分，同时说明自己真正承担到哪里。六二所取的守中与得宜，适合用来分清角色和责任：属于自己的判断认真说明，需要共同条件的部分也交代准确。",
+      "new": "本轮面试不能通过，自身有力，过程中与收尾也有相应支持，但中途的约束并未因此消失。准备应充分呈现已有能力，同时准确交代自己实际承担的内容与范围。六二所取的守中与得宜，适合用来分清角色和责任：属于自己的判断认真说明，需要共同条件的部分也交代准确。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "卯",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前后存在可以接上的条件，真正需要留意的是中段约束仍有支撑。卯月宜用好自身的基础，表达既要充分，也要让责任归属清楚。六二的得中与守分可作为准备重心：把个人所做、所知和能够判断的部分讲明，使认真担当与适当界限并行。",
+      "new": "这一轮不能通过，前后存在可以接上的条件，真正需要留意的是中段约束仍有支撑。卯月可以用好自身的基础，既充分说明实际能力，也把责任归属交代清楚。六二的得中与守分可作为准备重心：把个人所做、所知和能够判断的部分讲明，使认真担当与适当界限并行。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "辰",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，起步事务较重，中段要求又有支持，自身与后续承接则偏薄。宜先把最重要的责任关系理清，知道哪些内容需要充分说明，哪些判断必须补足条件。六二的守分不是一味收缩，而是让承担恰当，让每项说法都能与事实和职责相合。",
+      "new": "本轮不能通过，起步事务较重，中段要求又有支持，自身与后续承接则偏薄。准备可以先理清重要的责任关系，辨明哪些内容应当充分说明，哪些判断还要补足条件。六二的守分不是一味收缩，而是让承担恰当，让每项说法都能与事实和职责相合。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "巳",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前面需要付出较多心力，中段的约束也并不轻易消失，后续相应则不够厚。宜把表达重点放在自己的判断如何成立，而不只停留于态度谨慎。六二所讲的守分，可以帮助分清责任，也要求该由自己说明的内容认真承担，使回应有实际分量。",
+      "new": "这一轮不能通过，前面需要付出较多心力，中段的约束也并不轻易消失，后续相应则不够厚。准备可以着重梳理个人判断如何成立，让慎重从具体依据和实际取舍中得到体现。六二所讲的守分，可以帮助分清责任，也要求该由自己说明的内容认真承担，使回应有实际分量。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "午",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，前中段需要认真应对的地方较多，而可用的承接不够厚。准备宜把分寸与实际承担连在一起：自己的判断讲明，职责以内的事情不回避，必须依赖其他条件的部分也说清。六二的合宜之道，正在于知道何处该进、何处应当留出界限。",
+      "new": "本轮面试不能通过，前中段需要认真应对的地方较多，而可用的承接不够厚。准备可以把分寸与实际承担连在一起：个人判断讲明，职责以内的事情认真说明，依赖其他条件的部分也准确交代。六二的合宜之道，正在于知道何处该进、何处应当留出界限。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "未",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，前段事务较难掌握，中途约束有实在依托，而自己的相应支持偏弱。宜把准备集中在最能说明责任与能力的内容上，避免用笼统的团队经历替代个人判断。六二所取的守中得宜，能帮助你把该承担的部分站稳，也把尚待配合的条件交代清楚。",
+      "new": "本轮不能通过，前段事务较难掌握，中途约束有实在依托，而自己的相应支持偏弱。准备可以集中呈现最能说明责任与能力的内容，把团队背景中的个人判断和实际承担讲清。六二所取的守中得宜，能帮助你把该承担的部分站稳，也把尚待配合的条件交代清楚。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "申",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，最重的限制在中段要求较实，自身及过程承托则偏弱。宜先把真实经验梳理清楚，尤其是自己在其中如何作判断、承担责任。六二的守分并不是失败的原因；它所提示的中正与合宜，仍能帮助你准确表达，让个人能力有具体可核对的落点。",
+      "new": "这一轮不能通过，最重的限制在中段要求较实，自身及过程承托则偏弱。准备可以先梳理真实经验，尤其是自己在其中如何作判断、承担责任。六二的中正与得其分，着重担当准确、进退有据，能够帮助你把个人能力说明完整，让所长有具体可核对的落点。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "酉",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，中段考察的约束较重，后续虽有相接，却不足以改变整体承托偏薄的局面。准备宜以职责和判断为主线，让人看见你怎样在实际条件下完成工作。六二提醒恰当认识自己的位置，这有助于把能力说准，也能避免把谦让误当成无需表达主张。",
+      "new": "本轮不能通过，中段考察的约束较重，后续虽有相接，却不足以改变整体承托偏薄的局面。准备可以沿着职责与判断展开，让人清楚看见你怎样在实际条件下完成工作。六二提醒恰当认识自己的位置，这有助于把能力说准，也能避免把谦让误当成无需表达主张。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "戌",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，开头和中段都需要较多承接，自身与收尾相应却不够有力。宜先分清本轮真正要确认的责任，再把能够说明能力的事实准备完整。六二的合宜之道在于该承担处不退缩、应有界限处不越分，能够让认真与慎重落在具体事情上。",
+      "new": "本轮面试不能通过，开头和中段都需要较多承接，自身与收尾相应却不够有力。准备时可以先辨清本轮需要了解的责任，再将能够说明相应能力的事实梳理完整。六二的合宜之道在于该承担处不退缩、应有界限处不越分，能够让认真与慎重落在具体事情上。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "亥",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，自身与前后承接较有力，中途的约束却仍需要认真面对。亥月不必把整轮看成处处受挫，宜充分利用已有经验，把判断和承担讲清楚。六二所重的合宜，可以帮助你把责任放在真实位置，使个人所长被完整看见，也使未定条件保有准确界限。",
+      "new": "本轮不能通过，自身与前后承接较有力，中途的约束却仍需要认真面对。亥月仍有较可用的基础，可以充分运用已有经验，把个人判断与实际承担讲清楚。六二所重的合宜，可以帮助你把责任放在真实位置，使个人所长被完整看见，也使未定条件保有准确界限。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "子",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前后相应提供了可以发挥的基础，中途要求却并未因之解除。子月宜把表达的重心放在实际担当上，让已有经验说明你如何处理问题。六二的守分得宜提醒人既认识自身界限，也认真完成应担之责，准备时可据此检查有没有把重要判断说清楚。",
+      "new": "这一轮不能通过，前后相应提供了可以发挥的基础，中途要求却并未因之解除。子月可以围绕实际担当安排说明，让已有经验具体呈现你如何判断并处理问题。六二的守分得宜提醒人既认识自身界限，也认真完成应担之责，准备时可据此检查有没有把重要判断说清楚。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "丑",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，前面需要处理的分量较重，中途约束也有支持，而自身及后段接续都偏薄。宜先将真实职责梳理清楚，把能够证明能力的部分讲深。六二的守中得宜可用来校准承担：属于自己的判断认真表达，依赖共同条件的部分也让听者明白其来由。",
+      "new": "本轮不能通过，前面需要处理的分量较重，中途约束也有支持，而自身及后段接续都偏薄。准备应先把真实职责梳理清楚，再将能够证明能力的重要经历展开讲透。六二的守中得宜可用来校准承担：属于自己的判断认真表达，依赖共同条件的部分也让听者明白其来由。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "寅",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，自己的基础较实，前后事务也较可处理，中段约束却仍有支持。宜把准备重点放在重要前提的核实上，尤其是那些一旦改变便会影响结论的条件。九三的警戒强调防在未然，已有把握越多，越应清楚知道它究竟建立在什么根据之上。",
+      "new": "本轮不能通过，自己的基础较实，前后事务也较可处理，中段约束却仍有支持。准备可以着重核实重要前提，尤其要认真检查那些一旦改变便会影响结论的条件。九三的警戒强调防在未然，已有把握越多，越应清楚知道它究竟建立在什么根据之上。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "卯",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前后的可用条件较多，真正要承接的限制集中在中段。卯月宜用好已有经验，同时把经验赖以成立的条件讲明。九三所戒的失防，适合放在准备的起点：看起来熟悉的题意或情境，也要确认它与以往经历有什么相同、有什么变化。",
+      "new": "这一轮不能通过，前后的可用条件较多，真正要承接的限制集中在中段。卯月可以充分运用已有经验，同时把经验赖以成立的条件说明清楚。九三所戒的失防，适合放在准备的起点：看起来熟悉的题意或情境，也要确认它与以往经历有什么相同、有什么变化。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "辰",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，前后都有较重的事务需要处理，中段又有有力约束，自身承接偏薄。此时宜先抓住会决定判断的关键条件，弄清之后再安排展开。九三提醒把防备做在前面，越是费力的局面，越应避免让含混前提进入后续推演，增加不必要的负担。",
+      "new": "本轮面试不能通过，前后都有较重的事务需要处理，中段又有有力约束，自身承接偏薄。准备时可先找出决定判断的关键条件，将其核实清楚之后再安排展开。九三提醒把防备做在前面，越是费力的局面，越应避免让含混前提进入后续推演，增加不必要的负担。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "巳",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，起步与后段都要投入心力，中间的要求又有依托，而自身的接续不够厚。宜先核清影响判断的条件，再决定怎样组织表达。九三提醒失于防备会使后面的努力失去稳固根据，因此准备时应把推理的起点讲明，而不是只记住最终如何回答。",
+      "new": "这一轮不能通过，起步与后段都要投入心力，中间的要求又有依托，而自身的接续不够厚。准备可以从影响判断的条件开始核实，再据已知内容安排表达的轻重与次序。九三提醒失于防备会使后面的努力失去稳固根据，因此准备时应把推理的起点讲明，而不是只记住最终如何回答。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "午",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，前后所需处理的分量不轻，中段约束也有支持，持续推进较费心力。准备宜先确定哪些根据真正影响结论，再围绕它组织说明。九三的警戒可用来检点容易因熟悉而省略的环节，让每项判断都站在清楚条件上，避免投入越多，依据反而越含混。",
+      "new": "本轮不能通过，前后所需处理的分量不轻，中段约束也有支持，持续推进较费心力。准备时可先辨明哪些根据真正影响结论，再围绕这些重要联系组织说明。九三的警戒可用来检点容易因熟悉而省略的环节，让每项判断都站在清楚条件上，避免投入越多，依据反而越含混。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "未",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，前后事务较重，中段要求也有力量，自身则缺少厚实的接续。准备宜抓住推理的根本，先明确哪些条件成立，哪些还需要了解。九三的失防之戒提醒，越是承压的时候，越不能只追求表面完整而放过关键前提，后面的说明才有稳定落点。",
+      "new": "本轮面试不能通过，前后事务较重，中段要求也有力量，自身则缺少厚实的接续。准备可以从推理的根本着手，先查清哪些条件已经成立，哪些仍需进一步了解。九三的失防之戒提醒，越是承压的时候，越不能只追求表面完整而放过关键前提，后面的说明才有稳定落点。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "申",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，中段要求较重，自身与相应支持偏弱，难以只靠继续投入补足局面。宜把准备放在关键核查上，准确说明事实怎样支持判断。九三的警戒重在应防而失防，可提醒你留意经验与当前情境的差别，使回应建立在实际条件之上。",
+      "new": "这一轮不能通过，中段要求较重，自身与相应支持偏弱，难以只靠继续投入补足局面。准备可以从关键核查着手，准确而充分地说明事实如何支持自己的判断。九三的警戒重在应防而失防，可提醒你留意经验与当前情境的差别，使回应建立在实际条件之上。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "酉",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，自身与中途相应承托偏薄，约束却较有力量，准备宜首先照看关键依据的可靠性。经验仍可发挥，但需要连同适用条件一起讲明。九三提醒在能够预先检查之处多用心，使每个结论经得住进一步了解，而不只是保持一套流畅的说法。",
+      "new": "本轮不能通过，自身与中途相应承托偏薄，约束却较有力量，准备首先需要确认关键依据是否完整、可靠。经验仍可发挥，但需要连同适用条件一起讲明。九三提醒在能够预先检查之处多用心，使每个结论经得住进一步了解，而不只是保持一套流畅的说法。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "戌",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前后事务均较费力量，中段又有实在要求，自身支持偏薄。宜先把最影响判断的前提核清，再将精力投入必要说明。九三所戒的失防，可用来提醒自己在复杂处保持审慎，尤其不要为了尽快给出完整回答，省掉那些决定推论是否成立的条件。",
+      "new": "这一轮不能通过，前后事务均较费力量，中段又有实在要求，自身支持偏薄。准备可以先核清最影响判断的前提，再把精力用在解释必要的联系上。九三所戒的失防，可用来提醒自己在复杂处保持审慎，尤其不要为了尽快给出完整回答，省掉那些决定推论是否成立的条件。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "亥",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，前后有较可用的条件，中段约束却仍得到支持。亥月宜发挥已有经验，同时把经验成立的前提讲透；看起来能够处理的事情，也须认真确认范围。九三的警戒适合用来检点省略之处，让防备成为准确判断的一部分，而非等有疑问后才补作说明。",
+      "new": "本轮不能通过，前后有较可用的条件，中段约束却仍得到支持。亥月可以发挥已有经验，同时把经验成立的前提讲透；面对看似能够处理的事情，也须认真确认范围。九三的警戒适合用来检点省略之处，让防备成为准确判断的一部分，而非等有疑问后才补作说明。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "子",
+      "field": "paragraphs[0]",
+      "old": "本轮面试不能通过，基础和过程相应较可用，中段约束仍是影响所求的关键。子月宜把已知优势讲充分，也说明它们在何种条件下能够发挥。九三提醒守正与防备相连，可以用来检查重要判断是否有可靠支点，使主动表达既能展开，也能随实际信息作有据修订。",
+      "new": "本轮面试不能通过，基础和过程相应较可用，中段约束仍是影响所求的关键。子月可以充分说明已有优势，也交代它们需要哪些条件才能实际发挥作用。九三提醒守正与防备相连，可以用来检查重要判断是否有可靠支点，使主动表达既能展开，也能随实际信息作有据修订。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "丑",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前后事务分量较重，中途要求有力，而自身接续不足。宜先做影响判断的核实，再安排展开与补充，使有限精力用在根本处。九三的戒意重在未先防备便轻从，准备时可以据此检查有没有把未经确认的条件带进后续推理，让说明失去可靠基础。",
+      "new": "这一轮不能通过，前后事务分量较重，中途要求有力，而自身接续不足。准备可以先核实影响判断的重要条件，再安排展开与补充，使有限精力用在根本处。九三的戒意重在未先防备便轻从，准备时可以据此检查有没有把未经确认的条件带进后续推理，让说明失去可靠基础。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 4,
+      "monthBranch": "寅",
+      "field": "paragraphs[0]",
+      "old": "本轮不能通过，起步与中段都有要求压来，虽有牵制使其缓和，自身与收尾承托仍偏弱。宜把准备放在适应实际条件上，重要判断有根据，表达方式也能随所问调整。九四所提示的守度，不只是知道何时收住，也在于知道原先的办法何时已不再合宜。",
+      "new": "本轮不能通过，起步与中段都有要求压来，虽有牵制使其缓和，自身与收尾承托仍偏弱。准备可以着重梳理实际条件，重要判断讲出根据，表达方式也随着所问作出调整。九四所提示的守度，不只是知道何时收住，也在于知道原先的办法何时已不再合宜。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 4,
+      "monthBranch": "卯",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，前中约束得到一定缓和，自身与后段相应却仍不足。卯月宜认真辨别什么可以推进、什么必须先核实，使谨慎有清楚对象。九四的处事要点在于适应时宜，既不因急于表现越出根据，也不把暂时的收敛变成无论何种条件都不能改变的办法。",
+      "new": "这一轮不能通过，前中约束得到一定缓和，自身与后段相应却仍不足。卯月可以认真辨别什么能够推进、什么需要先行核实，让谨慎有清楚而具体的对象。九四的处事要点在于适应时宜，既不因急于表现越出根据，也不把暂时的收敛变成无论何种条件都不能改变的办法。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 4,
+      "monthBranch": "巳",
+      "field": "paragraphs[0]",
+      "old": "这一轮不能通过，自身与收尾相应较稳，前中限制也有所减轻，所求却仍未得到直接补益。准备宜把已有能力充分呈现，再依实际问题把握进退。九四提醒适度的收敛有其好处，但做法若脱离眼前条件，守得再久也难以真正回应事情的需要。",
+      "new": "这一轮不能通过，自身与收尾相应较稳，前中限制也有所减轻，所求却仍未得到直接补益。准备可以充分呈现已有能力，再根据实际问题的条件把握回应的范围与深度。九四提醒适度的收敛有其好处，但做法若脱离眼前条件，守得再久也难以真正回应事情的需要。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "申",
+      "field": "paragraphs[2]",
+      "old": "六二「不及其君，遇其臣，无咎」说明不过自身分际而得其宜，王孔尤其强调履中当位。其善意包括责任清楚、进退适当，不宜只理解成表面没有错误。借来准备面试，可以把自己的作用说准，既尊重协作中的真实分工，也使承担的事情有完整解释。",
+      "new": "六二「不及其君，遇其臣，无咎」说明不过自身分际而得其宜，王孔尤其强调履中当位。其中责任清楚、进退适当的善义，可以帮助人把能力与担当放在相称的位置。借来准备面试，可以把自己的作用说准，既尊重协作中的真实分工，也使承担的事情有完整解释。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "亥",
+      "field": "paragraphs[2]",
+      "old": "六二的无咎来自中正守分，王孔着重过初而居其宜，程传则以同德相求、进而不僭说明。祖妣与君臣的比喻可以提醒人看清责任关系，却不必寻找现实中固定对应的人物。用于本轮，宜说明自己怎样担当，让权限、能力与主张之间保持清楚联系。",
+      "new": "六二的无咎来自中正守分，王孔着重过初而居其宜，程传则以同德相求、进而不僭说明。祖妣与君臣之象使人审视所处位置与责任关系，将分际看清，也让应担之责有实处。借来准备本轮，可说明自己怎样担当，使权限、能力与主张保持清楚联系。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "寅",
+      "field": "paragraphs[4]",
+      "old": "后段仍由体来处理事务，宜在收束前核对推理有无遗漏的重要环节。防备的意义是让判断更扎实，不必预设交流中有人故意设局。自身旺与同气相应值得发挥，中段得生之克也须承接，完成可控的准备，本轮所求仍取不能通过。",
+      "new": "后段仍由体来处理事务，宜在收束前核对推理有无遗漏的重要环节。防备可以落实为核实依据与准确推理，使已有判断经得起进一步了解，也保留有据调整的空间。自身旺与同气相应值得发挥，中段得生之克也须承接，完成可控的准备，本轮所求仍取不能通过。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "申",
+      "field": "short",
+      "old": "这一轮不能通过。申月震体死，旺兑得土生而克木，中段约束明显；本末两土休，巽互同弱，缺少生扶。九三戒失防轻从，宜核实材料的含义与结论的前提，真实经验讲准，对不同条件重新判断，让谨慎服务于准确回应，而非预设对方有意为难。",
+      "new": "这一轮不能通过。申月震体死，旺兑得土生而克木，中段约束明显；本末两土休，巽互同弱，缺少生扶。九三戒失防轻从，宜核实材料的含义与结论的前提，真实经验讲准，对不同条件重新判断，让谨慎服务于准确回应，也使能力与条件保持清楚联系。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    },
+    {
+      "movingLine": 3,
+      "monthBranch": "申",
+      "field": "paragraphs[4]",
+      "old": "收尾需要把重要推理闭合，对仍影响结论的未知作准确交代。前提一旦变化，可以说明修订理由；已经核实的事实，则宜有条理地坚持。本轮仍不能通过，九三所示的防备有助于把过程做扎实，判断所据的是盘面的承压与缺助，不是对人的品性推断。",
+      "new": "收尾需要把重要推理闭合，对仍影响结论的未知作准确交代。前提一旦变化，可以说明修订理由；已经核实的事实，则宜有条理地坚持。本轮仍不能通过，九三所示的防备有助于把过程做扎实，盘中承压与缺助仍是主要限制，准确说明与认真核实则是可以落实的准备。",
+      "reason": "逐段明确写定的口吻修订，减少劝告动词密度并把编辑纠错口吻改成读者可用的完整说明；不缩正文，不改结论及判据。"
+    }
+  ],
+  "independentFullCopyReview": "pending; author full readback and structural checks are not independent whole-copy or interpretation approval",
+  "independentSampleReview": {
+    "reportedBy": "/root",
+    "bodySamplesReportedRead": 18,
+    "scope": "父作者按每爻三个月完整抽读，并报告通过；最终 professional/timing 字段复核尚在进行，本作者不替父作者签认。",
+    "ancestorAttributionCorrectionReview": {
+      "findingId": "P62-01",
+      "discoveredBy": "/root/write_weiji",
+      "relayedBy": "/root",
+      "correctedBy": "/root/write_xiaoguo",
+      "readBackBy": "/root",
+      "revisionRecordsReadBack": 18,
+      "readbackStatus": "completed-reported-by-root"
+    }
+  },
+  "userPerArticleAcceptance": false,
+  "realWorldPredictionAccuracy": "not-validated",
+  "sourceSha256": "32a695acb307840b89b5f055ce81a07b7b9c214d6aea5912b7ac9d3268ebbfe3",
+  "reviewedAt": "2026-11-20T03:35:01.266764+00:00",
+  "validation": {
+    "draftChecksActuallyRunAtArticles": [
+      12,
+      24,
+      36,
+      48,
+      60,
+      72
+    ],
+    "finalDraftStatus": "passed",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      464,
+      516
+    ],
+    "shortHanRange": [
+      88,
+      98
+    ],
+    "duplicateArticles": 0,
+    "duplicateParagraphs": 0,
+    "duplicateLongSentences": 0,
+    "styleCheck": {
+      "status": "passed",
+      "averageSentenceHan": 32.6,
+      "shortSentencePercent": 0,
+      "lightEndingCount": 0,
+      "thisMonthCount": 0,
+      "adviceYiPerMille": 216,
+      "shortAverageHan": 93,
+      "authorNoteCount": 0,
+      "mindAssertionFlags": 0
+    },
+    "formalCheck": "passed",
+    "renderAndDocsCheck": "passed",
+    "renderedArticles": 72,
+    "docsVerified": true,
+    "postAncestorAttributionCheck": "passed; formal/build/docs/style rerun after exact attribution fix",
+    "postQuotationDisplayCorrectionCheck": {
+      "status": "passed",
+      "checkedBy": "/root",
+      "check": "formal --docs",
+      "changedQuotationLines": 12,
+      "unchangedOtherArticles": 60,
+      "previewSha256": "c65f7d5efa414f1f7d5822142b2d887a33bc073b4f6ab936dc542bc81618e476",
+      "sourceSha256Unchanged": "32a695acb307840b89b5f055ce81a07b7b9c214d6aea5912b7ac9d3268ebbfe3"
+    }
+  },
+  "postIntegrationRevisions": [
+    {
+      "movingLine": 2,
+      "monthBranch": "寅",
+      "field": "judgment",
+      "old": "寅卯月震体旺，本艮土死受体克，用互、末巽皆旺比和；体互兑金原囚，得本用艮生而无火克，一层按有效有力论，原囚态不改。旺体、两处旺比和与体克用为真实正证，仍无直接生体而有克，现行无生有克规则优先，维持不能通过。六二中正得宜、守分不僭的无咎是正面条件义；王孔祖初妣二与程朱祖三四妣五分读，不能缩成只答对局部或失败缘于守分。",
+      "new": "寅卯月震体旺，本艮土死受体克，用互、末巽皆旺比和；体互兑金原囚，得本用艮生而无火克，一层按有效有力论，原囚态不改。旺体、两处旺比和与体克用为真实正证，仍无直接生体而有克，现行无生有克规则优先，维持不能通过。六二中正得宜、守分不僭的无咎是正面条件义；王孔祖初妣二；程传祖四妣五，本义言过三四遇五，分别保留，不能缩成只答对局部或失败缘于守分。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "寅",
+      "field": "paragraphs[2]",
+      "old": "六二「过其祖，遇其妣」，王孔从越初而居中正解释，程传则从越三四而与五同德说起，所指并不相同。两种读法都重视合宜的相遇与身份分寸。「不及其君，遇其臣，无咎」保留守分得当的积极意义，能够做到恰当担当，本身就是值得保持的长处。",
+      "new": "六二「过其祖，遇其妣」，王孔从越初而居中正解释；程传以三为父、四为祖、五为妣，本义则说过三四而遇六五。诸注取位各有着眼，都重相遇合宜与身份分寸。「不及其君，遇其臣，无咎」保留守分得当的积极意义，恰当担当本身就是值得保持的长处。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "寅",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "卯",
+      "field": "judgment",
+      "old": "寅卯月震体旺，本艮土死受体克，用互、末巽皆旺比和；体互兑金原囚，得本用艮生而无火克，一层按有效有力论，原囚态不改。旺体、两处旺比和与体克用为真实正证，仍无直接生体而有克，现行无生有克规则优先，维持不能通过。六二中正得宜、守分不僭的无咎是正面条件义；王孔祖初妣二与程朱祖三四妣五分读，不能缩成只答对局部或失败缘于守分。",
+      "new": "寅卯月震体旺，本艮土死受体克，用互、末巽皆旺比和；体互兑金原囚，得本用艮生而无火克，一层按有效有力论，原囚态不改。旺体、两处旺比和与体克用为真实正证，仍无直接生体而有克，现行无生有克规则优先，维持不能通过。六二中正得宜、守分不僭的无咎是正面条件义；王孔祖初妣二；程传祖四妣五，本义言过三四遇五，分别保留，不能缩成只答对局部或失败缘于守分。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "卯",
+      "field": "paragraphs[2]",
+      "old": "「不及其君，遇其臣，无咎」以臣的分际说明进取有度，重点是当其所当。至于祖妣所指，王孔从初与二的位次着眼，程朱另从三四与五解释；各家由不同位置说明中正与合宜。借其守中之意，应认真辨清职责，把已有根据的认识讲明，也把应守的责任界限交代准确。",
+      "new": "「不及其君，遇其臣，无咎」以臣的分际说明进取有度，重点是当其所当。祖妣取位，王孔从初与二着眼；程传四为祖、五为妣，本义言过三四而遇六五。各家从位次说明中正与合宜。借其守中之意，应认真辨清职责，把有据的认识讲明，也把责任界限交代准确。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "卯",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "辰",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "巳",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "午",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "未",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "申",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "酉",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "戌",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "亥",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "子",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "丑",
+      "field": "judgmentCorrection.sourceEvidence[1].scope",
+      "old": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；对照程朱祖三四妣五、同德相求。",
+      "new": "六二全文：王孔祖初妣二、履中当位、过而不僭、尽于臣位；程传三父四祖五妣、同德相求，本义说过三四遇六五，分别保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "all",
+      "field": "receipt.lineReviews[1].classical",
+      "old": "王孔祖初妣二、过初履二；程朱祖三四妣五、同柔中相求。守分中正、进退得宜的无咎有积极条件义，不降为局部答对或消极退让。",
+      "new": "王孔祖初妣二、过初履二；程传三为父、四为祖、五为妣，同柔中相求；本义仅言过三四而遇六五，不把三四一并标成祖。守分中正、进退得宜的无咎有积极条件义，不降为局部答对或消极退让。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    },
+    {
+      "movingLine": 2,
+      "monthBranch": "all",
+      "field": "receipt.findings[62-second-proper-position].resolution",
+      "old": "两说分别登记，正文保留中正守分、认真担当的积极善义。",
+      "new": "王孔祖初妣二、程传三父四祖五妣、本义过三四遇六五分别登记；正文保留中正守分、认真担当的积极善义。write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复，root 已读回全部 18 条修订记录；旧新文字证据保留。",
+      "reason": "write_weiji 交叉审查发现 P62-01，root 转交，作者 /root/write_xiaoguo 修复；root 已读回全部 18 条修订记录。原典位次为程传三父四祖五妣，本义只说过三四遇六五，不能合称程朱祖三四。"
+    }
+  ],
+  "quotationDisplayReview": {
+    "implementedAndVerifiedBy": "/root",
+    "verificationRecord": "root_review/quotation-correction-62.json",
+    "verificationRecordScope": "workspace review record; essential verification results copied below",
+    "checkedAt": "2026-11-20T03:40:26.872441+00:00",
+    "status": "passed",
+    "changedArticleSections": [
+      "九四动 · 寅月",
+      "九四动 · 卯月",
+      "九四动 · 辰月",
+      "九四动 · 巳月",
+      "九四动 · 午月",
+      "九四动 · 未月",
+      "九四动 · 申月",
+      "九四动 · 酉月",
+      "九四动 · 戌月",
+      "九四动 · 亥月",
+      "九四动 · 子月",
+      "九四动 · 丑月"
+    ],
+    "changedQuotationLines": 12,
+    "unchangedOtherArticles": 60,
+    "catalogAndRuntimeFactsChanged": false,
+    "legacyFiveQiHistoricalTextChanged": false,
+    "sourceWordingGuard": "exact old or corrected text only",
+    "sourceSha256Unchanged": "32a695acb307840b89b5f055ce81a07b7b9c214d6aea5912b7ac9d3268ebbfe3",
+    "previewSha256": "c65f7d5efa414f1f7d5822142b2d887a33bc073b4f6ab936dc542bc81618e476",
+    "sourceEvidence": [
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+        "scope": "九四经文及勿用永贞王注孔疏"
+      },
+      {
+        "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+        "scope": "九四随时之宜不可固守"
+      },
+      {
+        "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+        "scope": "小过九四连读勿用永贞，另存其他爻义疑问"
+      }
+    ],
+    "receiptAuthorHashVerification": "Source and preview bytes independently hashed before and after this receipt-only update."
+  },
+  "previewSha256": "c65f7d5efa414f1f7d5822142b2d887a33bc073b4f6ab936dc542bc81618e476",
+  "receiptUpdatedAt": "2026-11-20T03:43:39.367972+00:00"
+}
