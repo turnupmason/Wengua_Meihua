@@ -2,14 +2,14 @@
   "primaryId": 1,
   "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T04:40:24.996Z",
-  "wholeArticlesRead": 60,
-  "sourceSha256": "a9626b2050989e871beecf3cc7a014905a9ba12c734e0df7052c54e9429d946c",
+  "reviewedAt": "2026-11-20T04:45:06.671Z",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "ef67ec884488a5bb03e6a15e55e0c52c9ac3a40815e8f05b383a216e8daa4897",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计60篇。"
+    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计72篇。"
   },
   "sourceEvidence": [
     {
@@ -59,6 +59,14 @@
     {
       "path": "sources/editorial/exam/hex-001.json",
       "scope": "九五五行判断和全部末变取期；土月有期，有别于九二土月。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "上九经、象、《文言》知进不知退与知进退存亡而不失其正，孔疏设诫之辞。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "上九五气基线，四土与秋令取 equal/changed_use；未沿用原五气关于候选人固定习惯或具体卷面动作的预设。"
     }
   ],
   "lineReviews": [
@@ -107,6 +115,14 @@
       "openFindingIds": [
         "qian-fifth-strong-body"
       ]
+    },
+    {
+      "movingLine": 6,
+      "text": "亢龙有悔。",
+      "image": "亢龙有悔，盈不可久也。",
+      "reading": "据小象盈不可久、文言知进不知退和孔疏设诫之辞，将悔落实为过盈之戒。春夏冬金失时，不借无克越过旺衰；秋与土月乾兑有气，守住分寸而能成，不凭悔字翻败。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "findings": [
@@ -204,6 +220,19 @@
         "1/5/丑"
       ],
       "finding": "秋土六键本体得令或得相，九五爻辞又显著有利，上离克力轻。保留项目以无生且克落末变断不过的取舍；末克对本场合格的权重属解释待核。"
+    },
+    {
+      "id": "qian-top-warning",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "1/6/辰",
+        "1/6/未",
+        "1/6/申",
+        "1/6/酉",
+        "1/6/戌",
+        "1/6/丑"
+      ],
+      "finding": "上九亢而有悔，孔疏明诫辞之意。体旺相、末变同气时，依考试五气源保留能过，将爻意用于戒过，不将悔写成既发生的失分。六个月的申酉均应兑金收束，不视为放榜日期。"
     }
   ],
   "batchReadback": [
@@ -306,13 +335,45 @@
       ],
       "scope": "核十二篇飞龙的正面解释、春夏秋冬土令克力分别及同取末变离火十二键，未加固定扣分、成绩、名次。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "全读十二份，核对六成六不成、变兑比和与原体乾的区别，六个有期键均应末段核实。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "初九至九五。逐爻核对排盘、日期与阅读页。",
-    "chartComparisons": 1620,
+    "scope": "六爻十二月全文、严格整卦核查与阅读页对照。",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120
+    "dateCases": 144,
+    "bodyHanRange": [
+      451,
+      490
+    ],
+    "shortHanRange": [
+      70,
+      93
+    ],
+    "duplicateWholeArticles": 0,
+    "duplicateParagraphs": 0,
+    "duplicateLongSentences": 0,
+    "report": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "independentReview": {
     "status": "pending",
