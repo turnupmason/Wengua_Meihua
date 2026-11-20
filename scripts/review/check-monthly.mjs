@@ -10,11 +10,38 @@ import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,l
 const INTERNAL = /口径|定档|有条件|R\d|盲断|复核|改判|原稿|待核|存疑/u;
 const HEDGE = /有望|偏难|多半|大概率|成败两可|或许|未必|恐怕|把握不大|把握较大|胜算|可能性|说不准|难说|看运气/u;
 
+// 晋升月稿单独说明随岗薪资。薪资文字不计入正文厚度，也不改变既定晋升判据。
+// 此处只核可确定的字段绑定与盘面规则；具体类推是否恰当仍须作者全文审读。
+export function promotionArticleIssues(article, baseline, reading) {
+ const issues=[],add=(check,detail)=>issues.push({check,detail});
+ const pay=article.payExplanation,oldPay=baseline[11]??'';
+ if(typeof pay!=='string'||!pay.trim())add('pay-explanation','每篇须有独立的随岗薪资说明');
+ else {
+  if(!/薪|工资|报酬|待遇/u.test(pay))add('pay-explanation','随岗薪资说明须明确所谈的薪酬事项');
+  if(pay!==oldPay) {
+   const cr=article.payCorrection;
+   if(!cr||cr.old!==oldPay||cr.new!==pay||typeof cr.reason!=='string'||han(cr.reason)<12||
+      cr.impact?.outcomeChanged!==false||cr.impact?.timingSignatureChanged!==false)
+    add('pay-correction','薪资订正须绑定原第12栏、新文、具体理由与不变的晋升结论及取期结构');
+  } else if(article.payCorrection)add('pay-correction','薪资说明未改变，却带有订正记录');
+ }
+ const visibleTiming=typeof article.timing==='string'?article.timing:
+  Array.isArray(article.timing)?article.timing.flatMap(s=>[s[2],s[3]]).join('\n'):'';
+ const visible=[article.title,article.short,...(article.paragraphs||[]),pay,visibleTiming].join('\n');
+ const otherItem=/面试|考试|考场|考生|试卷|卷面|阅卷|合格线|及格|分数|交卷|答卷|考题/u;
+ if(otherItem.test(visible))add('promotion-public-scope',visible.match(otherItem)[0]);
+ // 用户已定《求名占》在任专条：任一直接克原体，都不得写成能升。
+ if(article.outcome==='favourable'&&reading.edges.some(edge=>edge.type==='use_controls_body'))
+  add('promotion-incumbent-rule','盘中存在直接克原体之卦，不能判为能升；旺衰不取消该专项规则');
+ return issues;
+}
+
 export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  const c=item(name);
  ids=ids||await listMonthlyIds(c);const ctx=await context();
  const outcomes=Object.keys(c.verdict);
  const report={schemaVersion:'1.0.0',item:name,scope:'monthly-source-and-render-validation',articleCount:0,hexagrams:[],errors:[],warnings:[],judgmentCorrections:[],duplicateArticles:[],duplicateParagraphs:[],duplicateLongSentences:[],chartComparisons:0,chartMismatches:[],dateCases:0,bodyHanRange:[Infinity,0],shortHanRange:[Infinity,0],independentFullCopyReview:'not-performed-by-this-script',realWorldPredictionAccuracy:'not-validated'};
+ if(name==='promotion-pay'){report.payHanRange=[Infinity,0];report.payCorrections=[];}
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
@@ -104,6 +131,15 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
     for(const s of stripQuotes(p).split(/[。！？]/u))if(han(s)>=24){const ns=normalize(s);if(seenSentence.has(ns))report.duplicateLongSentences.push({first:seenSentence.get(ns),second:pk,sentence:s});else seenSentence.set(ns,pk);}
    }
    const independent=independentFacts(id,a.movingLine,a.monthBranch),r=readingFor(ctx,c,id,a),row=rowFor(bundle,a);
+   if(name==='promotion-pay') {
+    for(const issue of promotionArticleIssues(a,old,r))err(key,issue.check,issue.detail);
+    if(typeof a.payExplanation==='string') {
+     const n=han(a.payExplanation);report.payHanRange=[Math.min(report.payHanRange[0],n),Math.max(report.payHanRange[1],n)];
+    }
+    if(a.payCorrection)report.payCorrections.push({key,sourcePath:bundle.sourcePath.replace('/monthly/','/'),baselineFieldIndex:11,
+     old:a.payCorrection.old,new:a.payCorrection.new,reason:a.payCorrection.reason,
+     interpretationApproval:'not-implied-by-structural-check'});
+   }
    compare(key,'primaryBits',independent.bits,r.stages.primary.bitsBottomUp);
    compare(key,'stageIds',independent.stageIds,Object.values(r.stages).map(s=>s.id));
    compare(key,'lineLabel',independent.lineLabel,r.selectedMovingLine.label);
@@ -119,7 +155,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
      if(JSON.stringify(timing.dateMatches.map(m=>m.displayedDates))!==JSON.stringify(later.dateMatches.map(m=>m.displayedDates)))err(key,'history-date','Viewing date rolled saved candidate dates');
     }
    }catch(e){err(key,'timing',e.message);}
-   if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
+   if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p]),...(name==='promotion-pay'?[['payExplanation',a.payExplanation]]:[])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
   }
   if(!draft)for(let line=1;line<=6;line++)for(const month of MONTHS)if(!keys.has(`${line}/${month}`))err(`${id}/${line}/${month}`,'month-key','Missing');
   report.hexagrams.push(detail);
@@ -134,6 +170,6 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href) {
  const ids=value('--hex')?.split(',').map(Number);
  const report=await auditMonthly(name,{ids,draft:args.includes('--draft'),docs:args.includes('--docs')});
  if(value('--json'))await writeFile(value('--json'),JSON.stringify(report,null,2)+'\n');
- console.log(JSON.stringify({status:report.status,item:name,articles:report.articleCount,hexagrams:report.hexagrams.length,bodyHanRange:report.bodyHanRange,shortHanRange:report.shortHanRange,chartComparisons:report.chartComparisons,chartMismatches:report.chartMismatches.length,dateCases:report.dateCases,errors:report.errors.slice(0,30),duplicateLongSentences:report.duplicateLongSentences.slice(0,12),flexibleLengthWarnings:report.warnings.length},null,2));
+ console.log(JSON.stringify({status:report.status,item:name,articles:report.articleCount,hexagrams:report.hexagrams.length,bodyHanRange:report.bodyHanRange,shortHanRange:report.shortHanRange,...(name==='promotion-pay'?{payHanRange:report.payHanRange,payCorrectionArticles:report.payCorrections.length}:{}),chartComparisons:report.chartComparisons,chartMismatches:report.chartMismatches.length,dateCases:report.dateCases,errors:report.errors.slice(0,30),duplicateLongSentences:report.duplicateLongSentences.slice(0,12),flexibleLengthWarnings:report.warnings.length},null,2));
  process.exitCode=report.errors.length?1:0;
 }

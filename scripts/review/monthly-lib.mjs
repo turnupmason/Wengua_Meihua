@@ -63,7 +63,7 @@ export const ITEMS = {
   question:{mode:'narrative', question_type:'promotion', question:'这次能晋升加薪吗？', sourceDomainIds:['domain-09']},
   scopeNote:'本页的“这次”只指本次晋升及随岗加薪。',
   verdictLabel:{favourable:'这次能升', difficult:'这次升不了'},
-  verdict:{favourable:/能升|升得上去|能晋升|晋升能落定|职级能动|升职能成/u, difficult:/升不了|升不上|没升上去|没能晋升|这次没升成|职级这次没动|晋升没落定|还没轮到/u},
+  verdict:{favourable:/(?<!不)(?:能|能够|可以)(?:晋升|升职|升)|升得上去|晋升能落定|职级能动|升职能成/u, difficult:/升不了|升不上|不能晋升|无法晋升|不能升职|不能升|没升上去|没能晋升|这次没升成|职级这次没动|晋升没落定|还没轮到/u},
   note:{favourable:/定为能升|定为能过|定为能成/u, difficult:/定为升不了|定为过不了|定为不成/u},
  },
  exam:{
@@ -156,6 +156,7 @@ export function renderHex(ctx,c,bundle) {
   const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(x=>x[4]).join(' ');
   const effects=row?.decision?.indirectEffectsApplied||[];
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(x=>x.name).join(' → '),...a.paragraphs,
+   ...(c.name==='promotion-pay'?['### 随岗薪资',a.payExplanation]:[]),
    '### 应期参考',...(timing.slots.length?['以下为传统推算的参考窗口。']:[]),...timing.paragraphs,
    '<details>\n<summary>卦理与出处</summary>',
    `判断：${c.verdictLabel[a.outcome]}。`+r.edges.map(e=>{const n=r.nodes.find(n=>n.role===e.targetRole);return LABELS[n.role]+n.trigram+n.element+REL_LABELS[e.type];}).join('；')+'。',
@@ -164,6 +165,7 @@ export function renderHex(ctx,c,bundle) {
    `爻辞：${r.selectedMovingLine.label}「${r.selectedMovingLine.text}」；象曰「${r.selectedMovingLine.image}」。`,
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
+   ...(c.name==='promotion-pay'&&a.payCorrection?['薪资说明订正：'+a.payCorrection.reason+' 原文与新文保存在作者源的 payCorrection 中；本次未改变晋升结论或取期结构。']:[]),
    '取期依据：'+timingReason,
    ...(row?.decision?.sourceEvidence?.length?['条文对照：以下保留相关判读原文，供核对条件；并非每条都适用于本盘。具体采用、反证与尚待复核的权重，见上方专业说明及本卦核读记录。',
     row.decision.sourceEvidence.map(x=>`- 《梅花易数·${x.title}》：“${x.quote}”`).join('\n')]:[]),
