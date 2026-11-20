@@ -2,14 +2,14 @@
   "primaryId": 3,
   "baselineCommit": "628066b4b87f84e11b72410c7918a63e6a4bb9e7",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T15:16:57.375Z",
-  "wholeArticlesRead": 12,
-  "sourceSha256": "2ee00e1c948eff50a279cc7b459b7d2b25ba2acca5de7ce498dcbcffde99c6fb",
+  "reviewedAt": "2026-11-20T15:22:41.966Z",
+  "wholeArticlesRead": 24,
+  "sourceSha256": "0ccbd348aa6c771e9a1ad738ce8e07d41f39dd30b47ba78aa3b8f4f286ad84fc",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水雷屯初九寅至丑逐月写作及从最终作者源读回完整正文、标题、简断和取期。"
+    "currentReadback": "水雷屯已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -19,6 +19,14 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第682行《体用》论克体者受制可稍解，第792及804行论无生有克与体旺可承克。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01屯.txt",
+      "scope": "六二爻辞、小象乘刚与反常、王弼及孔颖达释班如、婚媾和十年。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第682、688、792、798、804行，减克、衰体得生、变卦晚生与体旺承克。"
     }
   ],
   "lineReviews": [
@@ -30,6 +38,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "zhun-initial-weak-wood"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "屯如邅如，乘马班如，匪寇婚媾。女子贞不字，十年乃字。",
+      "image": "六二之难，乘刚也。十年乃字，反常也。",
+      "reading": "上坎为体生下震，中间艮坤克水，夏土取震制土稍减。水泽节变兑生坎，春助微、夏最薄、秋旺有力、冬自旺得轻助，四土月相兑接失令坎。爻辞取有难后归常及迟而终合。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "zhun-second-summer-support"
       ]
     }
   ],
@@ -65,6 +83,34 @@
         "3/1/丑"
       ],
       "finding": "巳午参体互艮，四土月参用互坤，均为作答过程中受约束。春、秋、冬六个月参变坤，只应收束。取土日各自有角色，日期不可拿来指公布或合格的结果。"
+    },
+    {
+      "id": "zhun-second-summer-support",
+      "status": "open-priority",
+      "keys": [
+        "3/2/巳",
+        "3/2/午"
+      ],
+      "finding": "坎囚、兑死，五气源依末变直接生扶加木制土稍解，断费力而能过。兑助的分量很薄，早中之耗与克仍在，最终权重待独立核准。"
+    },
+    {
+      "id": "zhun-second-timing-scope",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/2/寅",
+        "3/2/卯",
+        "3/2/辰",
+        "3/2/巳",
+        "3/2/午",
+        "3/2/未",
+        "3/2/申",
+        "3/2/酉",
+        "3/2/戌",
+        "3/2/亥",
+        "3/2/子",
+        "3/2/丑"
+      ],
+      "finding": "春土取变兑生体只指末段得助，秋冬同取变兑而应合格可核实。巳午取用互坤为中段阻碍。各处保持五气源角色，古辞十年不移入公历。"
     }
   ],
   "batchReadback": [
@@ -87,16 +133,36 @@
       ],
       "scope": "逐篇核本用泄体、过程与末变三处土克、轻重、初九爻义与五气取期角色。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐月核前耗、土克、木制缓解、末兑生扶及各期事件。读回十二份题名、简断、全文、取期。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "屯初九十二月逐爻核查",
-    "chartComparisons": 324,
+    "scope": "水雷屯已写24篇，核对作者源与阅读页",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       477,
-      512
+      521
     ]
   },
   "independentReview": {
