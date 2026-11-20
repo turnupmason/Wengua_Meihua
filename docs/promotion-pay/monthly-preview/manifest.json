@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-144-20261120",
+  "batch": "promotion-pay-monthly-preview-216-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 144,
+  "uploadedArticles": 216,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    2
+    3
   ],
   "fullTarget": 4608,
-  "remainingArticles": 4464,
-  "authorWholeArticleReadback": 144,
+  "remainingArticles": 4392,
+  "authorWholeArticleReadback": 216,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -42,6 +42,20 @@
         "favourable": 18,
         "difficult": 54
       }
+    },
+    {
+      "primaryId": 3,
+      "name": "水雷屯",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-003.json",
+      "sourceSha256": "d5255b2fb26662223580c3c8fe2d512c36186c190cb3c77bf5f129ac27cb7294",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-003.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-003.md",
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
+      }
     }
   ],
   "checks": {
@@ -50,26 +64,26 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       454,
-      522
+      546
     ],
     "shortHanRange": [
       76,
-      98
+      106
     ],
-    "independentChartComparisons": 3888,
+    "independentChartComparisons": 5832,
     "independentChartMismatches": 0,
-    "dateCases": 288,
-    "judgmentCorrectionArticles": 0,
+    "dateCases": 432,
+    "judgmentCorrectionArticles": 18,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
-      43,
-      64
+      42,
+      67
     ],
-    "payCorrectionArticles": 144
+    "payCorrectionArticles": 216
   },
   "ruleFindingStatuses": {
-    "interpreted-with-limits": 2,
-    "open-priority": 13,
+    "interpreted-with-limits": 5,
+    "open-priority": 18,
     "corrected-unsupported-scenes": 2,
     "corrected-classical-application": 2,
     "fixed-documentation-conflict": 1,
@@ -77,8 +91,12 @@
     "corrected-reader-language": 1,
     "author-fixed-delta-read": 4,
     "corrected-and-delta-read": 2,
-    "corrected-in-copy": 2,
-    "corrected-in-prose": 1
+    "corrected-in-copy": 4,
+    "corrected-in-prose": 1,
+    "reviewed": 1,
+    "resolved": 3,
+    "resolved-with-exact-correction": 2,
+    "corrected-with-evidence": 2
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",

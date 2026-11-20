@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 144,
+  "articleCount": 216,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -33,30 +33,480 @@
         "favourable": 18,
         "difficult": 54
       }
+    },
+    {
+      "primaryId": 3,
+      "name": "水雷屯",
+      "articles": 72,
+      "sourceSha256": "d5255b2fb26662223580c3c8fe2d512c36186c190cb3c77bf5f129ac27cb7294",
+      "authorWholeArticlesRead": 72,
+      "bodyHanRange": [
+        475,
+        546
+      ],
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
+      }
     }
   ],
   "errors": [],
   "warnings": [],
-  "judgmentCorrections": [],
+  "judgmentCorrections": [
+    {
+      "key": "3/4/寅",
+      "old": "体震木旺，本用坎水休而生体，休为无气，助轻；两互死土为体所克；变用兑金本囚，得坤、艮两土生而无火制，按有力论（682 行），克体在末段。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体旺，《体用衰旺之诀》「虽有他卦克之，亦无大害」（804 行），失在末题而不至大损。六四「往吉，无不利」，生体之卦无旺相、末段克体之卦有力，爻辞不翻。",
+      "new": "体震木旺，本用坎水休而生体，休为无气，助轻；两互死土为体所克；变用兑金本囚，得坤、艮两土生而无火制，按有力论（682 行），克体在末段。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体旺，《体用衰旺之诀》「虽有他卦克之，亦无大害」（804 行），末后任用受制而不至大损。六四「往吉，无不利」，生体之卦无旺相、末段克体之卦有力，爻辞不翻。",
+      "reason": "旧判断以末题或末段一题表达晋升受制，混入其他问项场景；按原末克关系改为本次任用未落实，未改变强弱、结论或取期结构。",
+      "sourceEvidence": [
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "六四春气、冬气第9栏原判断及原第2栏不升结论。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用互变之诀变卦克体末后不吉及体用衰旺之诀旺相体所受之害的轻重。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "晋升问项在任专条，任一直接克体判本次升不了。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/卯",
+      "old": "体震木旺，本用坎水休而生体，休为无气，助轻；两互死土为体所克；变用兑金本囚，得坤、艮两土生而无火制，按有力论（682 行），克体在末段。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体旺，《体用衰旺之诀》「虽有他卦克之，亦无大害」（804 行），失在末题而不至大损。六四「往吉，无不利」，生体之卦无旺相、末段克体之卦有力，爻辞不翻。",
+      "new": "体震木旺，本用坎水休而生体，休为无气，助轻；两互死土为体所克；变用兑金本囚，得坤、艮两土生而无火制，按有力论（682 行），克体在末段。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体旺，《体用衰旺之诀》「虽有他卦克之，亦无大害」（804 行），末后任用受制而不至大损。六四「往吉，无不利」，生体之卦无旺相、末段克体之卦有力，爻辞不翻。",
+      "reason": "旧判断以末题或末段一题表达晋升受制，混入其他问项场景；按原末克关系改为本次任用未落实，未改变强弱、结论或取期结构。",
+      "sourceEvidence": [
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "六四春气、冬气第9栏原判断及原第2栏不升结论。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用互变之诀变卦克体末后不吉及体用衰旺之诀旺相体所受之害的轻重。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "晋升问项在任专条，任一直接克体判本次升不了。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/亥",
+      "old": "体震木相，本用坎水旺而生体，前段之助足；两互囚土为体所克；变用兑金本休，得两土生而无火制，按有力论（682 行）。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体相免于大害，失在末段一题。六四吉辞，末段克体之卦有力，爻辞不翻。",
+      "new": "体震木相，本用坎水旺而生体，前段之助足；两互囚土为体所克；变用兑金本休，得两土生而无火制，按有力论（682 行）。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体相免于大害，未能落实本次任用。六四吉辞，末段克体之卦有力，爻辞不翻。",
+      "reason": "旧判断以末题或末段一题表达晋升受制，混入其他问项场景；按原末克关系改为本次任用未落实，未改变强弱、结论或取期结构。",
+      "sourceEvidence": [
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "六四春气、冬气第9栏原判断及原第2栏不升结论。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用互变之诀变卦克体末后不吉及体用衰旺之诀旺相体所受之害的轻重。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "晋升问项在任专条，任一直接克体判本次升不了。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/子",
+      "old": "体震木相，本用坎水旺而生体，前段之助足；两互囚土为体所克；变用兑金本休，得两土生而无火制，按有力论（682 行）。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体相免于大害，失在末段一题。六四吉辞，末段克体之卦有力，爻辞不翻。",
+      "new": "体震木相，本用坎水旺而生体，前段之助足；两互囚土为体所克；变用兑金本休，得两土生而无火制，按有力论（682 行）。有生有克，《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。体相免于大害，未能落实本次任用。六四吉辞，末段克体之卦有力，爻辞不翻。",
+      "reason": "旧判断以末题或末段一题表达晋升受制，混入其他问项场景；按原末克关系改为本次任用未落实，未改变强弱、结论或取期结构。",
+      "sourceEvidence": [
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "六四春气、冬气第9栏原判断及原第2栏不升结论。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用互变之诀变卦克体末后不吉及体用衰旺之诀旺相体所受之害的轻重。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "晋升问项在任专条，任一直接克体判本次升不了。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/亥",
+      "old": "体震木相，本用坎水旺而生体，虽受三处囚土克，助仍有力；三处囚土为体所克，易制。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），盘面本可成，且成得宽。九五「屯其膏，小贞吉，大贞凶」，晋升属大事，取大贞凶，凶落在结果上，定为升不了。",
+      "new": "体震木相，本用坎水旺而生体，受三处囚土克且无金生，有效生扶按气弱论，原始月令旺不变；三处囚土为体所克，易制。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），盘面本有可成之向，但前助受制而减弱。九五「屯其膏，小贞吉，大贞凶」，晋升属大事，取大贞凶，凶落在结果上，定为升不了。",
+      "reason": "本水受两互及末用三土克且无金生，按现行一层间接作用应削弱有效生扶；保留原始旺水，订正助仍有力与成得宽，不以体克土连环恢复，未改变大贞凶所定不升与取期身份。",
+      "sourceEvidence": [
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第八节8.3：生体之卦受他卦克而无生，按气弱论；仅作一层，不连环累计。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用682行：生体之卦受克灭其吉；与本用旺态的衰旺层次区分。"
+        },
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "九五冬气第9栏旧判断与原第2栏大贞凶不升、第10栏support/use取期。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "九五晋升属名分大事取大贞凶，原能否结论不变。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/子",
+      "old": "体震木相，本用坎水旺而生体，虽受三处囚土克，助仍有力；三处囚土为体所克，易制。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），盘面本可成，且成得宽。九五「屯其膏，小贞吉，大贞凶」，晋升属大事，取大贞凶，凶落在结果上，定为升不了。",
+      "new": "体震木相，本用坎水旺而生体，受三处囚土克且无金生，有效生扶按气弱论，原始月令旺不变；三处囚土为体所克，易制。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），盘面本有可成之向，但前助受制而减弱。九五「屯其膏，小贞吉，大贞凶」，晋升属大事，取大贞凶，凶落在结果上，定为升不了。",
+      "reason": "本水受两互及末用三土克且无金生，按现行一层间接作用应削弱有效生扶；保留原始旺水，订正助仍有力与成得宽，不以体克土连环恢复，未改变大贞凶所定不升与取期身份。",
+      "sourceEvidence": [
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第八节8.3：生体之卦受他卦克而无生，按气弱论；仅作一层，不连环累计。"
+        },
+        {
+          "path": "sources/original/meihua-volumes-1-3.txt",
+          "scope": "体用682行：生体之卦受克灭其吉；与本用旺态的衰旺层次区分。"
+        },
+        {
+          "path": "sources/editorial/promotion-pay/hex-003.json",
+          "scope": "九五冬气第9栏旧判断与原第2栏大贞凶不升、第10栏support/use取期。"
+        },
+        {
+          "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+          "scope": "九五晋升属名分大事取大贞凶，原能否结论不变。"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/寅",
+      "old": "体震木旺，本用坎水休而生体，受两土克，开局之助有限；两互死土为体所克；变用巽木旺，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升。上六「泣血涟如」为忧惧之辞，落在来回改答案的做法，不落在结果，爻辞不翻。",
+      "new": "体震木旺，本用坎水休而生体，受两土克，开局之助有限；两互死土为体所克；变用巽木旺，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/卯",
+      "old": "体震木旺，本用坎水休而生体，受两土克，开局之助有限；两互死土为体所克；变用巽木旺，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升。上六「泣血涟如」为忧惧之辞，落在来回改答案的做法，不落在结果，爻辞不翻。",
+      "new": "体震木旺，本用坎水休而生体，受两土克，开局之助有限；两互死土为体所克；变用巽木旺，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/辰",
+      "old": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「何可长也」，窘在一时，爻辞不翻。",
+      "new": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/巳",
+      "old": "体震木休，本用坎水囚而生体，力薄；两互相土为体所克，体制之费力；变用巽木休，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升，体无气主慢。上六忧惧之辞落在原地重读，爻辞不翻。",
+      "new": "体震木休，本用坎水囚而生体，力薄；两互相土为体所克，体制之费力；变用巽木休，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升，体无气主慢。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/午",
+      "old": "体震木休，本用坎水囚而生体，力薄；两互相土为体所克，体制之费力；变用巽木休，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升，体无气主慢。上六忧惧之辞落在原地重读，爻辞不翻。",
+      "new": "体震木休，本用坎水囚而生体，力薄；两互相土为体所克，体制之费力；变用巽木休，与体比和，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。无克体之卦，定为能升，体无气主慢。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/未",
+      "old": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「何可长也」，窘在一时，爻辞不翻。",
+      "new": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/申",
+      "old": "体震木死，本用坎水相而生体，受两土克，助力打折（682 行「彼灭其吉」）；两互休土为体所克；变用巽木死，与体比和。无克体之卦，定为能升；《衰旺论》「体衰而有生体之卦，则衰稍解」（688 行），主迟。上六忧惧之辞落在半道停住，爻辞不翻。",
+      "new": "体震木死，本用坎水相而生体，受两土克，助力打折（682 行「彼灭其吉」）；两互休土为体所克；变用巽木死，与体比和。无克体之卦，定为能升；《衰旺论》「体衰而有生体之卦，则衰稍解」（688 行），主迟。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/酉",
+      "old": "体震木死，本用坎水相而生体，受两土克，助力打折（682 行「彼灭其吉」）；两互休土为体所克；变用巽木死，与体比和。无克体之卦，定为能升；《衰旺论》「体衰而有生体之卦，则衰稍解」（688 行），主迟。上六忧惧之辞落在半道停住，爻辞不翻。",
+      "new": "体震木死，本用坎水相而生体，受两土克，助力打折（682 行「彼灭其吉」）；两互休土为体所克；变用巽木死，与体比和。无克体之卦，定为能升；《衰旺论》「体衰而有生体之卦，则衰稍解」（688 行），主迟。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/戌",
+      "old": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「何可长也」，窘在一时，爻辞不翻。",
+      "new": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/亥",
+      "old": "体震木相，本用坎水旺而生体；两互囚土为体所克，易制；变用巽木相，与体比和，《求名占》「体用比和，功名称意」（553 行）。全盘无克体之卦，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），定为能升。上六忧惧之辞落在半路推倒重写，爻辞不翻。",
+      "new": "体震木相，本用坎水旺而生体，但受两互囚土克制，四处无生水之金，按一层削助看；水的原旺态与生体关系仍在，助力转薄。两互囚土为体所克，易制；变用巽木相，与体比和，《求名占》「体用比和，功名称意」（553 行）。全盘无克体之卦，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），定为能升。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。冬月另补本用旺水受两互土克的一层削助，保留水旺原态而不连环恢复助力；体木相与末段相比和仍支持现行能升结果。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；第八节第3条生体之卦有克无生按气弱论，第九节不抹掉生体关系。"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/子",
+      "old": "体震木相，本用坎水旺而生体；两互囚土为体所克，易制；变用巽木相，与体比和，《求名占》「体用比和，功名称意」（553 行）。全盘无克体之卦，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），定为能升。上六忧惧之辞落在半路推倒重写，爻辞不翻。",
+      "new": "体震木相，本用坎水旺而生体，但受两互囚土克制，四处无生水之金，按一层削助看；水的原旺态与生体关系仍在，助力转薄。两互囚土为体所克，易制；变用巽木相，与体比和，《求名占》「体用比和，功名称意」（553 行）。全盘无克体之卦，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），定为能升。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。冬月另补本用旺水受两互土克的一层削助，保留水旺原态而不连环恢复助力；体木相与末段相比和仍支持现行能升结果。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；第八节第3条生体之卦有克无生按气弱论，第九节不抹掉生体关系。"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/丑",
+      "old": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「何可长也」，窘在一时，爻辞不翻。",
+      "new": "体震木囚，本用坎水死而生体，力微；两互旺土为体所克，体制之吃力；变用巽木囚，与体比和。无克体之卦，《占卦诀》「则吉事必可成就矣」（792 行），定为能升，体弱只主迟与费力。上六「乘马班如，泣血涟如」与小象「何可长也」保留困窘难进、难以久持的警戒，不解释为某种具体小失误或困难会自行消散。现行结论继续采用本问既定体用优先与爻辞不降的判序，未改变能升结果；该优先取舍与经注困厄重义的张力另见逐卦审计。",
+      "reason": "删除旧说明中改答案、重读、推倒重写等无据情节，并纠正把何可长理解为一时窘迫自动结束；保留困厄古义及既定晋升结论，判序分歧另列审计。",
+      "sourceEvidence": [
+        {
+          "path": "docs/review/PROMOTION_TUN_RULE_AUDIT_20261120.md",
+          "scope": "上六王注孔疏原文、五气旧说明问题与保持现行结论的优先张力"
+        },
+        {
+          "path": "sources/original/yijing64.txt",
+          "scope": "屯上六经文及小象何可长也"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第二步爻辞判读与当前不降处理；本次不重新裁定结果"
+        },
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/01屯",
+          "scope": "上六：处险难之极、下无应援、进无所适；何可久长"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    }
+  ],
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 3888,
+  "chartComparisons": 5832,
   "chartMismatches": [],
-  "dateCases": 288,
+  "dateCases": 432,
   "bodyHanRange": [
     454,
-    522
+    546
   ],
   "shortHanRange": [
     76,
-    98
+    106
   ],
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "payHanRange": [
-    43,
-    64
+    42,
+    67
   ],
   "payCorrections": [
     {
@@ -1353,6 +1803,654 @@
       "old": "",
       "new": "本轮晋升所带来的薪资调整尚未落实，不能先作为新增收入安排。已有待遇和独立调薪、奖金仍需各自确认，本篇不把未升扩大为收入受损。",
       "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此轮未取得晋升，附在本次岗位变化上的薪资调整也不先作落实判断。独立的年度调薪、奖金与其他待遇变化，不在本问结论之内。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落定，随该次职级变化而来的薪资待遇暂不确认。这个判断只跟随所问晋升，不等于否定其他独立安排的收入调整。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次职位未能晋升，其所附的加薪也不按已确定收入安排。普通调薪或其他待遇另有事项依据，不能用本次未升一并否定。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮升职未成，依附此次任职变化的薪资调整也尚不能落实为结论。若另有年度调薪或奖金安排，应按各自事项确认，不与本问混在一起。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这一轮职级未升，随本次晋升而定的工资变化也不先列作已落实事项。另行确定的调薪、奖金或其他报酬，须与此处的随岗调整分别看待。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次任职未升，其所带来的随岗加薪仍不能确认。薪资若因其他独立安排调整，应依据对应事项处理，本问不将它们一并判为没有。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这一回未能晋升，依职级上移而来的薪资变化也不按已成处理。独立调薪、奖金或其他报酬另有安排时，仍需按对应事项确认。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职级没有落实上移，随此次晋升产生的薪资调整也不先予确认。另有普通调薪、奖金或其他收入事项时，应分别依实际安排核对。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未成，随该次职责上移而来的加薪尚不确认。其他独立调薪与奖金不由这一个结果推定，薪酬安排应按对应事项分别核实。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此轮尚未取得晋升，依附本次岗位调整的薪资变化也不当作已落实收入。年度调薪、绩效奖金以及其他独立待遇，应另按各自安排确认。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升没有落定，随此职级变化而来的加薪也不提前计算为确定所得。若有另行安排的薪酬或奖金调整，它们不在本次占问的判断范围。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/1/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次未能晋升，随该次岗位变化产生的薪资调整仍按尚未落实看待。本问不据此判定其他年度调薪、奖金或独立收入变化的结果。",
+      "reason": "补明本次晋升所附薪资的范围，不据卦象推金额、起薪或到账，也不扩大至独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，随该次任职上移的薪资增加也暂不确认。后段的支持不直接代表涨薪，独立调薪和奖金仍按各自事项另看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未获晋升，随该次岗位变化的加薪也暂未落定。过程中的接应不直接换成薪资承诺，现职调薪或单独奖励仍需分别确认。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职级未升，随晋升而来的薪资上调也不提前确认。后续帮助只说明过程支持，不能直接视为薪酬已定；独立调薪和奖励另行查看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未升，随这次晋升而来的加薪也暂不算已实现。后段薄助不能直接当作薪资确认，正常调薪或其他待遇变化仍需另据实际信息判断。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升没有落实，与该次职务变化相连的加薪也暂不确认。其他独立工资调整、奖金或福利变化，需按各自安排另看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职级未能上移，随该次晋升的薪资增加也暂未落实。过程得到支持不等于工资调整已获确认，原岗位独立调薪及奖金另据实际安排查看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未获晋升，随岗薪资上调也暂不落定。旺金生体说明后段支持较足，不能直接换算涨幅；独立调薪和其他奖励仍看各自依据。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升附带的薪资增加尚未确定，不能因后援较强就提前按新待遇计划。现岗位调薪、奖金或其他待遇项目，应分别核实实际安排。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次未升，随此次岗位变化的薪资增加也暂不作落定判断。后段接应属于过程支持，独立工资调整或其他奖励仍按实际事项分别确认。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未升，依附本次晋升的加薪也暂未确认。自身有力和后段薄助并不直接等同薪资增加，其他独立待遇安排仍需分别查看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职级未落实，随此轮晋升而来的薪资变化也暂不确认。过程中的支持不直接构成加薪结果，独立调薪、奖金等另按实际安排判断。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/2/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未取得晋升，随该次职级变化的加薪也暂未落实。后援有力仍属过程接应，普通调薪或其他奖励应按独立事项核看。",
+      "reason": "随岗薪资仅依本次晋升说明；后段生扶只表示过程支持，不换算具体薪资金额、涨幅或到账日期，也不扩展到独立调薪。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未落实，因该次职位上移而增加的薪资也暂不确认。现有工资、独立调薪及奖金各有依据，仍需分别核对。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职位没有上移，随这次晋升发生的薪资增加尚未落实。整理成果和厘清要求是准备工作，不能直接折算成涨幅或起薪日。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未成，附随该次任职调整的薪资增加也未落实。当前判断不延伸到既有收入或独立调薪，具体薪酬事项仍以正式安排为准。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升没有落实，与这次任职上移相连的薪资增加暂不确认。新增工作责任也不自动等于加薪，具体调整仍须有相应的薪酬说明。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮没有晋升，与该次职位变化相连的薪资增长也暂未落实。沟通、准备和新增承担的价值，可另据实际薪酬安排确认，不预设涨幅和到账时间。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，其附随薪资增加也尚不能确认。现有工作仍按已明确的薪酬安排执行，其他调薪或奖励需要另看各自依据。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未实现，随该职位上移产生的薪资增加也暂不确认。自身承接较好、工作较易处理，并不直接对应工资的金额或调整日期。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次任职名分没有上移，所附随的薪资增长也未落实。末段较易处理只说明过程余地，薪酬是否另有调整仍按独立的正式安排核实。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未成，随此次任职变化而增加的薪资尚未落实。原有报酬、专项奖励或另外的调薪，各按对应事项的正式依据另看。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次没有晋升，附随此次任职上移的薪资增加也暂不确认。个人余力较足不等于已得到薪酬承诺，独立调薪与奖金仍分别核实。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职位未上移，所附随的薪资增加亦未落实。当前处置较有余地，只涉及工作过程，独立薪酬调整仍需另有明确依据。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/3/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，因该次任职提高而增加的薪资也尚未确认。原有工资及其他独立收入不由这次判断一并决定，仍分别按实际依据核实。",
+      "reason": "随岗薪资只说明本次晋升所附调整，不以过程耗费、受制或自行处置换算现代工资金额、涨幅及到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未落实，随该次职位变化而来的加薪也不先确认为收入。独立调薪、奖金或其他待遇事项，应依据相应文件分别判断。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次晋升附带的薪资增加尚未落实，先不按新岗位待遇安排。若另有普通调薪或奖金，其变化不由本轮晋升结果一并决定。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未成，相随的岗位薪资调整也暂不确认。独立的工资调整、奖金及其他收入，应按各自实际事项处理。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次职位上移未落实，随岗加薪也不能预先确认为已经增加的待遇。其他独立薪酬项目，仍以各自的正式安排为准。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升附带的工资调整尚未落实，不提前按新岗位收入计算。单独调薪、奖金及其他待遇变化，须有各自的确认依据。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升尚未落实，随岗薪资也先不列作确定调整。普通年度调薪和奖金等独立事项，应以对应的实际通知分别确认。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次晋升未能落定，随岗工资调整也暂不当作已落实的增项。独立调薪或奖金并非本轮所问，应依据其各自事实确认。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮名位没有落实上移，随之调整的薪资也先不确认。其他常规待遇变化，仍须分别查看实际薪酬安排。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升相关的薪资调整未落实，不提前计入确定收入。独立的年度调薪、奖金或其他报酬，仍按对应事项分别确认。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未能落实，随岗加薪也暂不按已经确定处理。普通调薪或奖金等独立待遇事项，并不由本次未升一并否定。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职位上移未成，依附它的薪资增加也不预先确认。其他单独的调薪、奖金及待遇变化，仍应按相应文件核对。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/4/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升所附的工资调整尚未落实，不先按新职级待遇计算。独立调薪与奖金各有其依据，应结合实际安排分别确认。",
+      "reason": "随岗薪资限于本次晋升，未升的附带调整不提前确认，不扩推普通调薪、奖金或其他独立待遇。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升没有落实，随岗薪资也暂不作为已经增加的待遇。独立调薪、奖金或其他报酬事项，应按照各自安排确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这轮晋升所附带的工资调整未落实，不能提前按新职级收入计算。其他常规薪酬变化仍有独立依据，需分别核对。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职位提升未成，相随的薪资增加也暂不作已落实判断。独立年度调薪或奖金发放，仍应查看对应的正式安排。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升附带的加薪尚未落实，先不作为确定的待遇增项。普通调薪、奖金及其他薪酬项目，应按各自事实分别确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次晋升未落实，随岗薪资调整也不提前算作已增加的收入。独立调薪或其他报酬仍须依照其相应安排另行确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升所附的岗位加薪尚未落实，不能先按新职级待遇安排。其他工资调整和奖金事项，仍有各自的实际确认依据。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职级未升，随岗薪资调整也暂不作确定增加。普通年度调薪、奖金和其他独立收入，应根据各自的实际安排判断。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次晋升附带的薪资变化尚未落实，先不列作确定收入。其他薪酬调整或奖金是否发生，需要按对应事项分别确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升没有落实，随该次任职产生的加薪也不先确定。独立的年度调薪、绩效奖金等项目，应依各自的正式依据另行核对。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职位提升未成，随岗薪资也暂不作落实判断。其他独立调薪或奖金的变化，不由本次晋升结论一并决定。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次晋升相关的加薪未落实，不先算入已经确定的待遇。普通调薪、奖金和其他收入事项，仍应根据各自文件分别确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/5/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升所带来的岗位薪资调整尚未落实，暂不作为确定增项。其他独立工资调整或奖金安排，应另按相应实际事项确认。",
+      "reason": "本问只判断本次晋升及随岗薪资，未升的附带加薪不提前确认为收入，不扩展为独立调薪或奖金的结论。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "任命落定后，薪资按新职级对应的薪档执行；拿新档的起点和你现在每月到手的数并排一放，随岗涨的部分就清楚了。",
+      "new": "本次晋升所附的薪资调整可随任职落实一并确认。具体金额、计薪起点与到账时间仍看正式薪酬安排，不由末段比和的参考窗口直接推算。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "任命落定后，薪资按新职级对应的薪档执行；拿新档的起点和你现在每月到手的数并排一放，随岗涨的部分就清楚了。",
+      "new": "晋升落实后，随岗薪资按正式确定的待遇安排执行。涨幅、薪档及执行日期须分别核对，不能把相合的过程或任职消息直接当成工资到账。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级落定，薪资随岗进入新档；拿到通知后，把新档标准和你原来的工资表逐项对照，看清是哪几项上调了。",
+      "new": "此次晋升可带来相应的随岗薪资调整，具体内容仍待正式待遇文件确认。任职推进较慢，不足以单独确定工资起算或到账日期，也不据此推算固定涨幅。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下以后，薪资随岗进入新的薪档；先弄清新档从哪天起算，再拿它和原工资逐项比，涨在哪里一清二楚。",
+      "new": "本轮晋升所附的薪资调整可随任职事项落实，具体额度与生效办法以确认后的待遇为准。开局得到支持的参考日，不能直接当作加薪或发薪日。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下以后，薪资随岗进入新的薪档；先弄清新档从哪天起算，再拿它和原工资逐项比，涨在哪里一清二楚。",
+      "new": "随此次晋升而来的薪资调整可按正式任职与待遇安排落实。具体新旧薪酬差额、执行月份及发放时间分别核对，不能从开局支持期推出到账日。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级落定，薪资随岗进入新档；拿到通知后，把新档标准和你原来的工资表逐项对照，看清是哪几项上调了。",
+      "new": "本次晋升可带来随岗待遇调整，具体薪资仍需与正式任职安排一并核实。金额、薪档位置和发放日期分别确认，任职获准不等于工资立即到账。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定的是新职级薪档；拿到后，把新档的标准和你这个月的工资条放在一起看，差额就是这次随岗加上的。",
+      "new": "晋升相应的薪资待遇可在正式任职落实时确认，具体数额及执行办法依薪酬安排核对。推进主迟，不据此指定工资延后多少天，也不把支持窗口当成发薪窗口。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定的是新职级薪档；拿到后，把新档的标准和你这个月的工资条放在一起看，差额就是这次随岗加上的。",
+      "new": "本轮晋升所带来的薪资调整可随岗位落实确认。新待遇与原待遇的实际差别，应按正式项目逐项核对，不能由卦象代定金额，也不保证任命当天便完成计薪和到账。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级落定，薪资随岗进入新档；拿到通知后，把新档标准和你原来的工资表逐项对照，看清是哪几项上调了。",
+      "new": "本次晋升所附的待遇调整可随任职落实确认，但不从体弱主迟另算某个发薪日。具体薪酬项目、起算办法及到账安排，以正式确定的内容分别核实。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级定下后，工资随岗套入相应薪档；问清执行月份，再拿新旧两个档位的标准对一对，就知道这次加了多少。",
+      "new": "晋升相应的随岗加薪可与正式任职一并确认方向，具体待遇以实际确定的方案为准。末段比和只供观察过程衔接，不直接代表薪酬生效或款项到账。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级定下后，工资随岗套入相应薪档；问清执行月份，再拿新旧两个档位的标准对一对，就知道这次加了多少。",
+      "new": "本次升职所附的薪资待遇可随任职落实确认，涨幅和具体项目仍按正式安排核对。岗位确认、工资生效及实际发放是不同事项，不据比和窗口把三者合成同一天。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "3/6/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-003.json",
+      "baselineFieldIndex": 11,
+      "old": "职级落定，薪资随岗进入新档；拿到通知后，把新档标准和你原来的工资表逐项对照，看清是哪几项上调了。",
+      "new": "随本次晋升而来的待遇调整可按正式任职与薪酬安排落实。具体金额、起薪办法及发放日期另行确认，不能把开头薄助的参考日期当作工资到账时间。",
+      "reason": "随岗薪资限定本次晋升并据正式薪酬安排确认；去掉薪带起点、实发差额及任命同步发薪的无据等同，不改变晋升结果与取期结构。",
       "interpretationApproval": "not-implied-by-structural-check"
     }
   ],
