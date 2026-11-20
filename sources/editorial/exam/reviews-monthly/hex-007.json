@@ -2,12 +2,12 @@
   "primaryId": 7,
   "baselineCommit": "50d16bd72a16efaa29b8fefa1f63bca5375bbca0",
   "editor": "Codex",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "地水师已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "地水师已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、798、804行，求名、时令、他卦生克、无生有克、末比及体用旺衰。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02師.txt",
+      "scope": "第38至41行，师六三经、象、王弼注与孔疏。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02師"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第171至173行牛哀鸣占，第486至487行卦断遗论同案，第688、792、798、804行体衰逢克、有克无生、末克及旺体承克。"
     }
   ],
   "lineReviews": [
@@ -48,6 +57,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "shi-second-weak-wood-and-end-equal"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "师或舆尸，凶。",
+      "image": "师或舆尸，大无功也。",
+      "reading": "王注、孔疏以进无应退无所守解六三，《象》曰大无功。《牛哀鸣占》同为师六三变升，《卦断遗论》重申用不克而互变俱克之例。应试借无功说明实际步骤不成，逐气辨中末两克的强弱及所取时间。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "shi-third-changing-control-strength"
       ]
     }
   ],
@@ -90,6 +109,26 @@
         "丑"
       ],
       "scope": "逐篇读回九二十二月。核春夏秋冬以用互震取寅卯参中段制，四土不另派日期，逐项确认本用坎、两互和变用坤。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回六三十二月，冬两月取用互震，余十月取变用巽，同为寅卯木气，核中段和末段的区别。",
       "status": "author-readback-complete"
     }
   ],
@@ -154,6 +193,40 @@
         "7/2/丑"
       ],
       "finding": "原案四土的格式题只给作答说明，不立日期。依原应期形态记录分栏的实际动作。"
+    },
+    {
+      "id": "shi-third-ancient-example",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "7/3/寅",
+        "7/3/卯",
+        "7/3/辰",
+        "7/3/巳",
+        "7/3/午",
+        "7/3/未",
+        "7/3/申",
+        "7/3/酉",
+        "7/3/戌",
+        "7/3/亥",
+        "7/3/子",
+        "7/3/丑"
+      ],
+      "finding": "核同一爻与体坤、互坤震、变升下巽，古例与学习所问各有用途。卷面场景按考试五气原案写，古例的事类与具体日期未挪入。"
+    },
+    {
+      "id": "shi-third-changing-control-strength",
+      "status": "open-priority",
+      "keys": [
+        "7/3/辰",
+        "7/3/巳",
+        "7/3/午",
+        "7/3/未",
+        "7/3/申",
+        "7/3/酉",
+        "7/3/戌",
+        "7/3/丑"
+      ],
+      "finding": "夏秋及四土为休木、死木、囚木，原案经坎生仍取中末有克；四土旺坤只减其害而不翻。古籍有互变克和旺体免大害的明文，坎水跨位生木与两克并临的具体权重留待横查。"
     }
   ],
   "independentReview": {
@@ -161,13 +234,13 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:17:18.472Z",
-  "sourceSha256": "e62089be19157f0f8ad681c469726162f00b2cfbd3bd6d777a96d95f85f43da6",
+  "reviewedAt": "2026-11-20T17:21:49.818Z",
+  "sourceSha256": "86868c360059f37da2371b727b8652db852908548efefa830444249d82edb58d",
   "checks": {
-    "scope": "地水师已写24篇，核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "地水师已写36篇，核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       493,
       533
