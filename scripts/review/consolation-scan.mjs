@@ -16,7 +16,7 @@ const RULES = [
  // 二、等一等再看：等……再看／再说／再谈／再往前／再处理；……过去，再看。
  ['等一等', /(?:等|待|到)[^。！？]{0,24}再(?:看|说|谈|去|往前|处理|定|提|议)|(?:过去|回过气|缓过来|力气回来|有了力气|恢复)[^。！？]{0,12}再(?:看|说|谈|往前)/u],
  // 三、许诺往后：往后才有／往后还有／往后的路／日后／下一回才／不会后悔／迟早／总会。
- ['许诺', /往后(?:才|还|就|也)?(?:有|会|能|留|好)|往后的路|留着往后|日后|将来|下一回(?:才|的话|会|就)|以后(?:还|会|才|也)|不会(?:留下|积下)?(?:大的)?(?:遗憾|后悔|悔)|不至于(?:后悔|悔)|迟早|总会|还有机会|才有机会/u],
+ ['许诺', /往后(?:才|还|就|也)?(?:有|会|能|留|好)|往后的路|留着往后|日后|将来|下一回(?:才|的话|会|就)|以后(?:还|会|才|也)|不会(?:留下|积下)?(?:大的)?(?:遗憾|后悔|悔)|不至于(?:后悔|悔)|迟早|总会|终会|终究会|总有一天|会好起来|会过去的|会回来|会倒|会松动|留给往后|留到往后|还有机会|才有机会/u],
 ];
 const allowDir = `sources/editorial/${item}/consolation-allow/`;
 const allow = existsSync(allowDir) ? readdirSync(allowDir).filter(f => f.endsWith('.json')).flatMap(f => JSON.parse(readFileSync(allowDir + f, 'utf8'))) : [];
@@ -27,11 +27,14 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const h = Number(f.slice(4, 7)); if (only && !only.has(h)) continue;
  for (const a of JSON.parse(readFileSync(dir + f, 'utf8')).articles) {
   const key = `${h}/${a.movingLine}/${a.monthBranch}`;
-  const texts = [['short', a.short], ...a.paragraphs.map((p, i) => ['p' + (i + 1), p])];
+  const texts = [['title', a.title], ['short', a.short], ...a.paragraphs.map((p, i) => ['p' + (i + 1), p])];
   for (const [where, t] of texts) for (const raw of t.split(/(?<=[。！？])/u)) {
    const s = raw.trim(); if (!s) continue;
    const plain = s.replace(/「[^」]*」/gu, '');
-   const hit = RULES.find(([, re]) => re.test(plain)); if (!hit) continue;
+   // 说的就是本月的时令词不算换季：丑月的「冬末／岁末」，寅月的「开春」。
+   const own = {丑:/冬末|岁末/gu, 寅:/开春/gu}[a.monthBranch];
+   const plain2 = own ? plain.replace(own, '') : plain;
+   const hit = RULES.find(([, re]) => re.test(plain2)); if (!hit) continue;
    if (allowSet.has(key + '\u0000' + s)) { allowed++; continue; }
    out.push({key, outcome:a.outcome, where, kind:hit[0], sentence:s});
    perHex[h] = (perHex[h] ?? 0) + 1;
