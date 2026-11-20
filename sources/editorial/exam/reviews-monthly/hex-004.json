@@ -1,0 +1,102 @@
+{
+  "primaryId": 4,
+  "baselineCommit": "2c6e63585e5c1b90f67292604ee97609ebc1726b",
+  "editor": "Codex",
+  "wholeArticlesRead": 12,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "山水蒙已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01蒙.txt",
+      "scope": "第41至44行核初六爻象、王弼注及孔颖达疏，解释说去桎梏和以往吝。",
+      "url": "https://zh.wikisource.org/zh-hans/周易/蒙"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行核求名、体用起终、减克、旺衰、有克无生和互变先后。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "meng-first-wood-counteraction",
+      "status": "open-priority",
+      "keys": [
+        "4/1/寅",
+        "4/1/卯",
+        "4/1/亥",
+        "4/1/子"
+      ],
+      "finding": "源断按本坎生用互震与末兑制用互震相抵，保留震木本月的旺或相与对艮土的中段实克。《体用》有制克可减凶的依据，未给出休水和囚金在春令、旺水和休金在冬令能够彼此抵消的通则。正文标明依这组原断作解释。"
+    },
+    {
+      "id": "meng-first-terminal-drain",
+      "status": "open-priority",
+      "keys": [
+        "4/1/辰",
+        "4/1/巳",
+        "4/1/午",
+        "4/1/未",
+        "4/1/戌",
+        "4/1/丑"
+      ],
+      "finding": "夏和土令艮有气、体互坤同气、可制本用坎，直接来克的震木较弱，末兑皆属体生变用。原断沿用《求名占》的体生用不利并列无生有克，保留过不了。夏仍取用互所示过程，土令以末兑的实耗取期。弱克和末泄同时在盘时的解释权重及取期分界有待独立核查。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "发蒙，利用刑人，用说桎梏，以往吝。",
+      "image": "利用刑人，以正法也。",
+      "reading": "初六十二月题名、简断、正文、取期均逐篇从最终源读回。原体上艮、本用下坎，体克用。互坤与艮比和，用互震木来克体，山泽损的变用下兑受艮所生。春冬核坎生震及兑制震并见，秋核震失气又受旺兑克。夏和土令保留眼前体能制用、末处依然泄体的原判。初六经义保留正法、疑明可解与治不可长，将其用于按实证订正及停止无效的修改。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "meng-first-wood-counteraction",
+        "meng-first-terminal-drain"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回初六十二篇及取期，核对五气共用的断语与逐月正文；古籍解释的未决项逐条登记。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "用互震受坎生、兑制之后的权重，以及中段制约与末段耗用并见时的取期。"
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "reviewedAt": "2026-11-20T15:48:12.896Z",
+  "sourceSha256": "74b57551d09349ca165ead9e6a5fbe734c09bfc80a781bff4473f906f35cbd9a",
+  "checks": {
+    "scope": "山水蒙已写12篇，核对作者源与阅读页",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      468,
+      491
+    ]
+  }
+}

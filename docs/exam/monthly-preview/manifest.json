@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-216-20261120",
+  "batch": "exam-monthly-preview-228-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 216,
+  "uploadedArticles": 228,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    3
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 4392,
-  "authorWholeArticleReadback": 216,
+  "remainingArticles": 4380,
+  "authorWholeArticleReadback": 228,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -74,7 +72,8 @@
     "independentChartMismatches": 0,
     "dateCases": 432,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯三卦。山水蒙已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 13,
@@ -86,10 +85,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 4,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 4,
+      "name": "山水蒙",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-004.json",
+      "sourceSha256": "74b57551d09349ca165ead9e6a5fbe734c09bfc80a781bff4473f906f35cbd9a",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-004.json",
+      "readingPath": "docs/exam/monthly-preview/hex-004.md"
+    }
+  ]
 }
