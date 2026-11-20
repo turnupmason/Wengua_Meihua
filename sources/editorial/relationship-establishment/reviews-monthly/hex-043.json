@@ -2,9 +2,9 @@
  "primaryId": 43,
  "baselineCommit": "a5659cada856c2000660f9cb5694bb0dae770db5",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T17:52:19.596Z",
+ "reviewedAt": "2026-11-20T18:42:50.529Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "f6c90a01879c42d3a6c14d80bbc9265e0c2cf8884a49c568a636943a61f62906",
+ "sourceSha256": "93458731c6daa93824e58fb01bd2b9c6beb6711b9cb4f5da0f573278a2a6daff",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -248,6 +248,23 @@
     "43/*/*"
    ],
    "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
+  },
+  {
+   "id": "S043-J01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "43/2/寅",
+    "43/2/卯"
+   ],
+   "finding": "2026-11-20 体衰订正：五气源第 9 栏把体囚、体休之盘误引《衰旺论》「体衰」两句或《体用衰旺之诀》「而体卦气衰是不吉之占」之处改正后，本卦 2 篇的专业说明照新第 9 栏同步；标题、简断与正文另见 F043-T01，结论、取期一字未动。"
+  },
+  {
+   "id": "F043-T01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "43/2/寅"
+   ],
+   "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」与《体用衰旺之诀》「而体卦气衰是不吉之占」之衰指死（READING_POLICY_V2 第十节），本卦体囚、体休之篇误引或直称体衰。正文改 1 处（1 篇），五气源第 9 栏改 1 处（经 agentfix，月稿专业说明同步）。改法：正文与第 9 栏各一处《体用衰旺之诀》只留「但不要克体之卦气旺」，删「而体卦气衰是不吉之占」，补说体囚、受月令所制而力弱。逐句手改，改到的段落整段读回；结论、取期一字未动。"
   }
  ],
  "batchReadback": [

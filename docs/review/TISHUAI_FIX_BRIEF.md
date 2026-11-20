@@ -15,3 +15,12 @@
 - 第 9 栏（五气源 `sources/editorial/<问项>/hex-NNN.json` 下标 9）同样改，用 `node scripts/review/agentfix.cjs <问项> <卦序> edits.json opusWrite`（col 9，from/to），改后 `bash scripts/review/chk-hex.sh <问项> <卦序>`（跳槽须全 0；确定关系五气源有改前就存在的旧问题，只须不新增）。再用 `node scripts/review/monthly-judgment-sync.mjs <问项> --hex <卦序> --write` 把月稿专业说明照抄同步。
 - 每卦改完：回执加一条 finding（id `F<卦序>-T01`，status `corrected-classical-application`，keys 列改过的篇，写明改了几处、改法），重算 `sourceSha256`；`node scripts/build-monthly.mjs <问项> --hex N`；跳槽跑 `bash scripts/review/monthly-gate.sh job-change N` 须 GATE PASSED，确定关系跑 `node scripts/review/check-monthly.mjs relationship-establishment --hex N --docs` 须 passed 并跑 style-monthly、consolation-scan。最后 `tishuai-audit` 该卦须为 0（体旺、体相保留的写进回报）。
 - **确定关系运行数据是 1.0.0，绝不跑 `npm run build:relationship-establishment`。**
+
+## 补：「体衰则凶」（2026-11-20）
+
+《体用总诀》（494 行）「体盛则吉，体衰则凶」的衰，与前一行（493 行）同指：「衰者，春坤、艮，秋震、巽，夏乾兑，冬离，四季之月坎是也」，全是死地。所以：
+- 体死，可引「体衰则凶」。
+- 体旺、体相：单引「体盛则吉」；要用后半「用克体固不宜，体生用亦非利」的，把它单独引，不连带「体衰则凶」。
+- 体休、体囚：不引「体衰则凶」，也不说「属衰的一头」「盛衰已在衰的一边」；照上文写「不在旺相、不算有力」「受制、力弱」。
+- 用党多：只引「用党多则体势衰」，白话讲体本身旺也不作数（定稿第十四节），不再接「体衰则凶」，否则是把「体势衰」与按月令论的「衰」连成一条。
+`tishuai-audit` 已加查「体衰则凶」，体不在死地时列出。

@@ -2,9 +2,9 @@
  "primaryId": 5,
  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T17:52:19.516Z",
+ "reviewedAt": "2026-11-20T18:36:22.766Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "f5e06e2d183f697768aa73bdcbcd741832b8172ee418209d5a9aceba8f02cdf5",
+ "sourceSha256": "c6d040b3a376a21918dfe0a29ce2950da01e41220863c6471b5b06da0092d794",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -307,6 +307,24 @@
     "5/*/*"
    ],
    "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
+  },
+  {
+   "id": "S005-J01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "5/2/巳",
+    "5/2/午"
+   ],
+   "finding": "2026-11-20 体衰引文订正：五气源第 9 栏 1 行（下标 6）删去在体囚、体休时误引的《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」或「体衰」说法，本卦 2 篇的专业说明照新第 9 栏同步；标题、简断、正文、取期由本条不动，结论不变。"
+  },
+  {
+   "id": "F005-T01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "5/2/巳",
+    "5/2/午"
+   ],
+   "finding": "2026-11-20 体衰引文订正（TISHUAI_FIX_BRIEF.md，定稿第十节：衰即死，体囚、体休不称体衰）：正文 2 篇 2 处、五气源第 9 栏 1 行（同步专业说明 2 篇）。体在囚的能成篇不再引「体衰而有生体之卦，则衰稍解」：巳月改为直说体囚力弱、两金死而扶得轻；午月与第 9 栏改引《衰旺论》「生体之卦气亦宜旺」，说明生体之金无气、生扶轻。 逐句手改，改到的段落整段读回，接得上、无重复、未添安慰许诺；结论、取期一字未动。"
   }
  ],
  "batchReadback": [

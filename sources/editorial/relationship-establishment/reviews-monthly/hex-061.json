@@ -2,9 +2,9 @@
  "primaryId": 61,
  "baselineCommit": "7287c6ea735f0d8673d23394290de810986a8419",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T17:55:02.058Z",
+ "reviewedAt": "2026-11-20T18:50:52.336Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "5b9772c4ebb6b56670ab6423ecd6feab3a74823caf2162323be58cde57fef801",
+ "sourceSha256": "e89d4365d44b6e578f6b5779d078d59a6f75d16b4a82e6714b9a272f216453d7",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -223,6 +223,16 @@
     "61/*/*"
    ],
    "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。 另：2026-11-20 协调者：梅花各诀篇名按原书各节标题订正（scripts/review/meihua-attr-audit.cjs --fix）：494 行诸句（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「用吉变凶者，先吉后凶」「体生用，有耗失之患」等）在【体用总诀】，「克体之卦气盛」在【观梅占】，此前误标《体用》；只改篇名，引文与其余文字不动。"
+  },
+  {
+   "id": "F061-T01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "61/3/辰",
+    "61/3/未",
+    "61/3/丑"
+   ],
+   "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」与《体用衰旺之诀》「而体卦气衰是不吉之占」之衰指死（READING_POLICY_V2 第十节），本卦体囚、体休之篇误引或直称体衰。正文改 3 处（3 篇），五气源第 9 栏改 0 处（经 agentfix，月稿专业说明同步）。改法：正文三处：两处《体用衰旺之诀》只留「但不要克体之卦气旺」，删「而体卦气衰是不吉之占」，「你自己偏弱」「你又不旺」改说你处囚；61/3/未 保留《衰旺论》「凡占卜，体卦宜盛旺」，删去其后「若体衰而逢克，则其凶甚矣」，改说未月你处囚而不旺、又受两处有气之克。第 9 栏本卦无此误。逐句手改，改到的段落整段读回；结论、取期一字未动。"
   }
  ],
  "batchReadback": [
