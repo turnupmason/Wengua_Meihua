@@ -1,0 +1,359 @@
+{
+ "primaryId": 64,
+ "baselineCommit": "56bc28d5c0dd6f6d75ce68909b0f91290a9e854e",
+ "editor": "claude-opus-5-5",
+ "reviewedAt": "2026-11-20T04:33:59.949Z",
+ "wholeArticlesRead": 72,
+ "sourceSha256": "e20d2bde150acffb1e744dd14d29882226fa4237526e5415aee22433a650e489",
+ "reviewerIsHuman": false,
+ "userIndividuallyAccepted": false,
+ "status": "partially-reviewed",
+ "authorshipScope": {
+  "newlyWritten": "火水未济六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气新写（同气月份相同），写明本用、两互、变用的生克旺衰、一层间接作用、所引《婚姻占》等原句与「定为能成／不成」；取期照抄五气源第10栏的种类与位置，事件、提示、依据与无期说明按相处场面重写。",
+  "currentReadback": "每写完一爻12篇即由草稿脚本写入作者源并跑 check-monthly --draft，逐篇读回标题、简断、五段正文、专业说明与取期，再写下一爻。本卦与既济体用结构相近（未济初二三爻与既济四五上爻、未济四五上爻与既济初二三爻的本用、两互、变用五行相同），初稿多处与 63 卦剔除引文后的长句、整段相撞（64/1 未酉戌亥子丑，64/2 卯辰未申酉戌亥丑，64/3 午申酉亥子，64/4 午酉戌亥子丑，64/5 巳午未子丑，64/6 卯巳午未申酉戌亥子丑），逐段改写为本卦自己的说法后再读；初稿多篇不足480汉字，补入与本盘旺衰、爻义或分寸相关的句子后再读；64/1/卯「存疑」「过不了」、64/2/寅「多半」、64/3/申「能过去」改写；64/3/申 标题与 27/3/亥 重复，改为「开头硌脚，收尾有人接手」；64/3 五篇所引《本义》「将出乎坎」库本脱「坎」字，64/5/巳 所引「光辉之盛」库本作「煇」，改为只引两库本相合的片段；64/3 未申两篇「也许」改为确定说法。consolation-scan 复查后，64/1 巳酉亥子丑、64/2 辰酉亥、64/4 卯辰未戌、64/5 辰、64/6 辰戌共15句「等……再看／再说」「往后才有」改为不靠等待与许诺的说法，逐句读回。协调者裁定未济六三「征凶」补列婚恋降档表后，64/3/亥、64/3/子 两篇按不成整篇重写标题、简断、五段正文、专业说明与取期事件提示，口吻照 docs/review/MONTHLY_VOICE_GUIDE.md（首句不以月份起头、书面完整句、建议用「宜」带理由、不用「就好」「这个月」），两篇整篇输出读回；64/3 其余四气专业说明中「征凶」改写为「作要过的坎」，64/3/寅 第四段「征凶是提醒，不是判词」一句改为要过的坎之说。",
+  "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行翻判。",
+  "voiceRewrite20261119": "2026-11-19 按 docs/review/VOICE_REWRITE_BRIEF.md 与 MONTHLY_VOICE_GUIDE 重写 72 篇标题、简断与正文（E064-V01）。写前读了用户亲写面试稿 hex-003、hex-052 各 4 篇及用户评为「非常好」的确定关系样稿 hex-018、hex-005 各篇，和本卦原作者源全文。每爻先把原 12 篇整篇输出逐篇读过，再逐篇手写新稿（依据、引文逐条保留），写入后把这一爻 12 篇的标题、简断、全文完整输出读回，读回所见问题（如重复用语、补出的句子位置不当、「以后也」触发许诺扫描、两篇 24 字以上长句相撞、开头重复）逐处手改后整篇再读并重跑 check-monthly --draft、style-monthly --list、consolation-scan。六爻写毕，为把同一开头（前 8 字）由 11 篇压到 6 篇，又改了 15 篇的首句（64/1/申，64/2/辰亥，64/3/辰巳酉戌，64/4/申戌，64/5/辰巳戌丑，64/6/申戌），这 15 篇改后整篇输出重读；64/5/戌 因首句改短 2 字补回 2 字，改后读过该段。未用脚本批量断句、合句或替换用语，每处都是逐条写定的字符串替换。 补记：读回后又作小改、当时只重读改动段的 4 篇（64/3/辰、64/4/寅、64/5/亥、64/5/戌）已整篇输出从头重读；重读中 64/5/亥 末段前一句「对方才有余地伸手…给对方留出伸手的位置」用词重复，改为「把位置让一些出来」，改后再整篇读过，复跑四道关。"
+ },
+ "sourceEvidence": [
+  {
+   "path": "sources/editorial/relationship-establishment/hex-064.json",
+   "scope": "30行五气源全字段：第2栏结论逐字照用（六三寅卯巳午申酉四季四气与六五五气能成，六三亥子一气及初六、九二、九四、上九五气不成；六三亥子一行于裁定后由协调者改为 difficult；月稿能成22篇、不成50篇）；第9栏仍为旧说明（「定为过不了」「卷尾」等），只作对照；第10栏取期种类与位置照抄。"
+  },
+  {
+   "path": "sources/editorial/relationship-establishment/polish-v5/hex-064.json",
+   "scope": "30条 establishmentRule 与 calculationNotes 逐条对照：初六、九二、九四 R3 无生有克；六三 寅卯 R2↑、巳午申酉四季 R2 按结局拆为成，亥子一行裁定后为「R2 有生有克 → 有条件按结局拆为成 → 爻辞翻为不成（体死而克体之卦有力）」；六五 R1a 有生无克；上九 R1↓ 变用泄（四季 R1b′）。calculationNotes 中考试情节（卷尾、大题、公式等）不进月稿；上九四季一条所记「内外并也生体」据订正本读「内外并无生体」，正文只引两本相合的「虽体之卦党多，皆是衰卦，终不吉也」。"
+  },
+  {
+   "path": "data/authored-readings/relationship-establishment/hex-064.json",
+   "scope": "经 scripts/review/packet.mjs 输出30盘本互变、六节点五行五态与四处直接关系逐爻核对：初二三爻体离、本用与体互坎克体、用互离比和，变用依次兑受克、坤受生、巽生体；四五上爻体坎、本用与体互离受克、用互坎比和，变用依次艮克体、乾生体、震受生。运行数据 indirectEffectsApplied 为空，一层作用由作者按 READING_POLICY_V2 第八节逐盘手算写入专业说明。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/06未濟.txt",
+   "url": "https://zh.wikisource.org/zh-hans/周易正義/06未濟",
+   "scope": "卦辞、彖、大象、六爻爻辞与小象、王弼注、孔颖达疏全文阅读；正文所引王注孔疏逐字核过。"
+  },
+  {
+   "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+   "scope": "未济卦辞至上九本义读过（204–208行）；引「以阴居下，当未济之初，未能自进」「极字未详……或恐是敬字」「为能自止而不进，得为下之正也」「以柔乘刚」「故有利涉之象」「盖行者可以水浮，而不可以陆走也」「能勉而贞，则悔亡矣」「非极其阳刚用力之久不能也」「虚心以求下之助」「信实而不妄，吉而又吉也」「自信自养以俟命，无咎之道也」「若纵而不反，如狐之涉水而濡其首，则过于自信而失其义矣」等。"
+  },
+  {
+   "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+   "scope": "未济卦程传全文读过（496–520行）；引「不度其才力而进，终不能济，可羞吝也」「兽之济水，必揭其尾，尾濡则不能济」「倒曳其轮，杀其势，缓其进，戒用刚之过也」「未济征凶，谓居险无出险之用而行则凶也，必出险而后可征」「然未济有可济之道，险终有出险之理」「济天下之艰难，非刚健之才不能也」「力勤而远伐，至于三年然后成功」「既光而有孚，时可济也」「君子积充而光盛，至于有晖，善之至也」「至诚安于义命而自乐，则可无咎」「饮酒至于濡首，不知节之甚也」等。"
+  },
+  {
+   "path": "sources/revised/meihua-volumes-1-3.txt",
+   "scope": "实读144观梅占「则克体之卦气盛」、487卦断遗论、494体用（体党、用党）、531–532婚姻占两段、655复明时令之应、682体用（彼灭其吉、稍解其穷）、688衰旺论、792占卦诀、796–798体用互变之诀、804体用衰旺之诀。"
+  },
+  {
+   "path": "docs/review/ESTABLISHMENT_REJUDGE_20261119.md",
+   "scope": "口径、二分规则、婚恋专属爻辞表（未济六爻皆未入表）与第五节已有裁定（谦六二「贞吉」不调档、谦六四吉辞不升、临六四卦象只用于无生无克之盘、屯六四一层作用、豫初六凶落在自身做法写成提醒等同类处理）。"
+  },
+  {
+   "path": "docs/review/WORKER_BRIEF_V2.md",
+   "scope": "第32条：考试等问项未济六三「征凶」作提醒不降档；本问项经协调者 2026-11-19 裁定另行补列婚恋降档表（见 E064-A01），两者不同。"
+  },
+  {
+   "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+   "scope": "64/3/亥、64/3/子 两篇重写所照口吻说明：开头、句长、「宜」带理由、不用「就好」「这个月」、不安慰不许诺。"
+  },
+  {
+   "path": "docs/READING_POLICY_V2.md",
+   "scope": "第二节判定步骤、第八节一层间接作用、第十节休为无气、第十一节卦象主断只用于无生无克之盘、第十三节二分表（R2 变用生体判成、R1↓ 结局泄判不成）、第十四节用党多（本卦六爻皆不构成用党多）。"
+  },
+  {
+   "path": "docs/review/ESTABLISHMENT_MONTHLY_BRIEF.md",
+   "scope": "判词、专业说明写法、取期重写、不替对方断心意、古代原文照录而讲解落在实事；本卦无卦象主断之篇（六五变卦讼虽在卦象表，本盘有生无克，不适用）。"
+  },
+  {
+   "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+   "scope": "通用写法、作者源与回执字段、检查与交付；另以 git show 读面试分支规范、核查方法、hex-003 阅读页与回执，并读确定关系已验收的 hex-002、hex-006、hex-013、hex-037 月稿与回执，只学写法。"
+  }
+ ],
+ "lineReviews": [
+  {
+   "movingLine": 1,
+   "text": "濡其尾，吝。",
+   "image": "“濡其尾”，亦不知极也。",
+   "reading": "王注「困则能反，故不曰凶」，孔疏「不能豫昭事之几萌，困而后反」，程传「不度其才力而进，终不能济，可羞吝也」「兽之济水，必揭其尾，尾濡则不能济」，《本义》「以阴居下，当未济之初，未能自进」。读为不量力而进、未探深浅，吝落在自身做法上，与五气不成同向。《本义》于「极」字存两读（「或恐是敬字」），正文照录并说明两读皆指分寸。未引王注「进则溺身」一类意象。五气皆 R3：本用、体互坎水克体，得变用兑金相生而无土制之，按一层作用作有力；巳午体旺只合「亦无大害」，亥子体死逢旺克最重。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 2,
+   "text": "曳其轮，贞吉。",
+   "image": "九二贞吉，中以行正也。",
+   "reading": "王注「用健拯难，靖难在正，而不违中」，孔疏「曳其轮者，言其劳也。靖难在正，然后得吉」「位虽不正，以其居中，故能行正也」，程传「倒曳其轮，杀其势，缓其进，戒用刚之过也」，《本义》「为能自止而不进，得为下之正也」。读为收住劲、守中正，辛苦而得体；「贞吉」是守正才吉之辞（同谦六二裁定），不落在这一回说定上，不翻。五气皆 R3：本用、体互坎水克体而受变用坤土所克、无金生之，作气弱（「稍解其穷」）；变用坤土泄体，四季坤旺泄最重。变卦晋卦辞「昼日三接」只作写照（接得勤的是你）。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 3,
+   "text": "未济，征凶，利涉大川。",
+   "image": "“未济，征凶”，位不当也。",
+   "reading": "王注「以阴之质，失位居险，不能自济者也」「何忧未济」，孔疏「以不当其位故有征则凶」，程传「未济征凶，谓居险无出险之用而行则凶也，必出险而后可征」「然未济有可济之道，险终有出险之理，上有刚阳之应，若能涉险而往从之，则济矣」，《本义》「以柔乘刚」「故有利涉之象」「盖行者可以水浮，而不可以陆走也」。征即主动推进这段关系。协调者 2026-11-19 裁定补列婚恋降档表：亥子体死而两处坎水当令有力，爻辞翻为不成，「利涉大川」按程传「必出险而后可征」读作须先出险方可往，冬令险未出；其余四气体不死、克不在变用，「征凶」作要过的坎，读为单凭自己硬推则凶、借两人相应之力可济，与结局变用巽木生体（对方有相就之意）同向，仍能成（寅卯 R2↑，巳午申酉四季 R2 按结局拆为成）。未引王注、孔疏中「溺」「丧其身」等语。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 4,
+   "text": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+   "image": "“贞吉悔亡”，志行也。",
+   "reading": "王注「虽履非其位，志在乎正，则吉而悔亡矣」「处文明之初，始出于难，其德未盛，故曰三年也」，孔疏「正则贞吉而悔亡」，程传「济天下之艰难，非刚健之才不能也」「戒以贞固则吉而悔亡」，《本义》「能勉而贞，则悔亡矣……非极其阳刚用力之久不能也」。原句照录，讲解只取守正免悔、久功而后有得，落在相处的分寸与耐心上；不作征伐比喻，「三年」不作日期。「贞吉」为守正之辞，「有赏」在用力之久以后，皆不落在这一回说定上。五气皆 R3：变用艮土克体，得本用、体互两处离火相生而无木制之，按一层作用作有力；申酉、亥子体相旺而克在末段，仍因艮得生作有力，不合「末克弱」。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 5,
+   "text": "贞吉，无悔；君子之光，有孚，吉。",
+   "image": "“君子之光”，其晖吉也。",
+   "reading": "王注「付物以能，而不疑也，物则竭力，功斯克矣」「必正然后乃吉，吉乃得无悔也」，孔疏「付物以能而无疑焉，则物竭其诚，功斯克矣」「君子之德，光晖著见，然后乃得吉也」，程传「既光而有孚，时可济也」「君子积充而光盛，至于有晖，善之至也」，《本义》「虚心以求下之助，故得贞而吉且无悔」。读为坦荡守信、肯托付，与结局变用乾金生体（对方有相就之意）同向，能成；不替对方断心意，只写对方接过一件事、给出明确回应一类实事。五气皆 R1a：乾金生体，受本用、体互两处离火所克、无土生之，按一层作用作气弱（申酉乾旺亦然），「生体是变卦，则稍迟耳」，写成成得慢、相就薄而在结局。变卦讼卦辞「有孚窒惕，中吉，终凶」只取「有孚」写信任之要，不以卦辞定结论。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 6,
+   "text": "有孚于饮酒，无咎；濡其首，有孚失是。",
+   "image": "“饮酒濡首”，亦不知节也。",
+   "reading": "王注「以其能信于物，故得逸豫而不忧于事之废。苟不忧于事之废，而耽于乐之甚，则至于失节矣」，孔疏「既得自逸饮酒，而不知其节，则濡首之难，还复及之」，程传「至诚安于义命而自乐，则可无咎」「饮酒至于濡首，不知节之甚也」「能安则不失其常矣」，《本义》「自信自养以俟命，无咎之道也。若纵而不反……则过于自信而失其义矣」。「饮酒」「濡其首」照录原句，讲解只取安然自处为无咎、不知节而失分寸，不写成饮酒的建议；落在自身分寸上，不落在能否说定上。五气皆不成：寅卯巳午申酉亥子 R1↓ 结局变用震木泄体（第二段「此去求婚方谐」写成要你主动去求，这一回仍难定），四季 R1b′ 体与比和之坎皆死又变泄。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  }
+ ],
+ "findings": [
+  {
+   "id": "E064-A01",
+   "status": "resolved-with-rule",
+   "keys": [
+    "64/3/*",
+    "64/3/亥",
+    "64/3/子"
+   ],
+   "impact": {
+    "outcomeChanged": true,
+    "timingSignatureChanged": false,
+    "articles": 2,
+    "from": "favourable",
+    "to": "difficult"
+   },
+   "finding": "六三「未济，征凶，利涉大川」与五气能成并见。「征凶」属征凶、往吝一类，但此爻不在婚恋降档表；WORKER_BRIEF_V2 第32条已定「未济」是时势而非落空、「征凶」与「利涉大川」并见，作提醒不降档（面试同爻冬令体死维持能过）。假如列入降档，亥子体死而两处坎水旺克（「体死而克体之卦有力」）2篇将翻为不成，其余月令不合翻转条件。初稿按该条维持能成。另记《本义》「或疑利字上当有不字」一说，王孔程皆作「利涉」，正文不取。【2026-11-19 裁定】协调者认定本问项降档表成批收录「征凶」之辞（征即主动推进这段关系），未济六三属漏收，补列婚恋降档表；五气源 hex-064.json 六三 winter-water 一行第2栏改为 difficult，polish-v5 同行 establishmentRule 为「R2 有生有克 → 有条件按结局拆为成 → 爻辞翻为不成（体死而克体之卦有力）」。其余四气体不死、克体不在变用，「征凶」作要过的坎，仍能成。"
+  },
+  {
+   "id": "E064-A07",
+   "status": "corrected-classical-application",
+   "keys": [
+    "64/3/亥",
+    "64/3/子",
+    "64/3/*"
+   ],
+   "impact": {
+    "outcomeChanged": true,
+    "timingSignatureChanged": false,
+    "articles": 2,
+    "from": "favourable",
+    "to": "difficult"
+   },
+   "finding": "按 E064-A01 裁定，64/3/亥、64/3/子 两篇整篇重写：outcome 改 difficult，标题、简断、五段正文按不成写，首句判词「这一回关系定不下来」「这一回还走不到确定关系」；写明冬令体死、两处坎水当令有力（《衰旺论》「若体衰而逢克，则其凶甚矣」、《体用衰旺之诀》「但不要克体之卦气旺。而体卦气衰是不吉之占」），巽木得相只「衰稍解」；六三「征凶」正落在此时主动推进说定上，「利涉大川」按程传「必出险而后可征」读。两月专业说明完全相同，写明体用按结局本拆为成、爻辞翻为不成、定为不成。取期结构照五气源第10栏（support/changed_use，未变），事件与提示改为「后来对方替你分担了一件为难的事」「宜收下这份照应，不借机把说定的话提前」。口吻照 MONTHLY_VOICE_GUIDE：首句不以月份起头，两篇平均句长约35汉字，「宜」分别3处、5处。64/3 其余四气专业说明「征凶」改为作要过的坎。两篇整篇输出读回，check-monthly、consolation-scan、commentary-audit 复跑。"
+  },
+  {
+   "id": "E064-A02",
+   "status": "maintained-by-policy",
+   "keys": [
+    "64/4/*",
+    "64/2/*"
+   ],
+   "finding": "九四「贞吉，悔亡」「三年有赏于大国」、九二「贞吉」与五气不成并见。「贞吉」是守正才吉的条件之辞（同谦六二裁定），「有赏」在用力之久以后，且两爻皆不在升档表、本盘全无生体之卦（同谦六四、履上九），不翻。正文写足守正免悔、久而后得之意。"
+  },
+  {
+   "id": "E064-A03",
+   "status": "maintained-by-policy",
+   "keys": [
+    "64/5/*"
+   ],
+   "finding": "六五变卦天水讼，讼卦辞「终凶」在婚恋卦象表内；卦象主断只用于无生无克之盘（定稿第十一节，同临六四 E019-A01），本盘变用乾金生体、全无克体之卦，不适用，五气维持能成。正文只取讼卦辞「有孚」写信任之要。"
+  },
+  {
+   "id": "E064-A04",
+   "status": "maintained-by-policy",
+   "keys": [
+    "64/4/申",
+    "64/4/酉",
+    "64/4/亥",
+    "64/4/子"
+   ],
+   "finding": "九四秋冬两气体相、体旺，比和之坎同气，克只在变用艮土，诊断初为「R3↑′ 体党旺而末克弱」；但艮土得本用、体互两处离火相生而无木制之，按定稿第八节一层作用作有力，仍 R3 不成（同 E063-A05、屯六四 E003-A01）。"
+  },
+  {
+   "id": "E064-A05",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "64/1/*",
+    "64/3/*",
+    "64/4/*",
+    "64/6/*"
+   ],
+   "finding": "「濡其尾」「涉大川」「震用伐鬼方」「濡其首」「饮酒」皆照录原句；讲解落在量力而行、借力而过、守正久功、知节守分一类相处实事，不作征伐、沉溺比喻，不写饮酒建议；未引王注「进则溺身」、六三注疏「丧其身」「溺可得乎」「没溺可免」等语。"
+  },
+  {
+   "id": "E064-C01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "64/*/*"
+   ],
+   "finding": "五气源 hex-064.json 第9栏仍是旧说明（「定为过不了」等），且引《求名占》。月稿专业说明按确定关系补判记录为每一气新写，改引《婚姻占》（531–532 行）与《占卦诀》《体用互变之诀》《体用》《衰旺论》《体用衰旺之诀》《复明时令之应》原句，写明「定为能成／不成」；30条结论与五气源第2栏一致。polish-v5 calculationNotes 中考试情节不进月稿。五气源未改，待回写。",
+   "impact": {
+    "outcomeChanged": false,
+    "timingSignatureChanged": false
+   }
+  },
+  {
+   "id": "E064-C02",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "64/*/*"
+   ],
+   "finding": "运行数据 data/authored-readings/relationship-establishment/hex-064.json 的 indirectEffectsApplied 为空（同 E063-C02）。月稿按 READING_POLICY_V2 第八节逐盘手算：初六两处坎水克体而得兑金生、无土制，作有力；九二两处坎水克体而受坤土克、无金生，作气弱；九四变用艮土克体而得两离生、无木制，作有力；六五变用乾金生体而受两离克、无土生，作气弱；六三、上九无此层。结论与 establishmentRule 一致。"
+  },
+  {
+   "id": "E064-C03",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "64/3/卯",
+    "64/3/巳",
+    "64/3/午",
+    "64/3/丑",
+    "64/5/巳",
+    "64/1/卯"
+   ],
+   "finding": "引文核对（commentary-audit --monthly）：六三《本义》库本（sources/reference/zhouyi-benyi 卷2）作「然以柔乘刚将出乎故有利涉之象」，脱「坎」字，通行本作「将出乎坎」；六五《本义》库本作「光煇之盛」（煇为辉之异体）。两处正文与专业说明改为只引库本与通行本相合的片段（「以柔乘刚」「故有利涉之象」「信实而不妄，吉而又吉也」），其余用白话转述，复跑后本卦命中 0。初六小象「亦不知极也」，《本义》注「极字未详……或恐是敬字」，正文照录并说明两读皆指分寸。"
+  },
+  {
+   "id": "E064-D01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "64/*/*"
+   ],
+   "finding": "五气源旧正文与取期中的情节（「若近期准备认真表达，起头可能发现一项相处条件要先放慢」等）不进月稿。取期事件改为看得见的相处场面（两人商定把太急的事放慢、对方给出明确回应、一开头碰上一件一个人办不成的事），提示不以「若」起句、本卦前三字不重复，无期说明去掉「末援」「取期」「日期」等内部词，30–60字；种类、位置与依据结构不变。"
+  },
+  {
+   "id": "E064-V01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "64/*/*"
+   ],
+   "finding": "按用户亲写面试稿口吻重写标题、简断、正文 72 篇，结论、专业说明、取期与引文不动（outcome、judgment、timing 与改前逐篇全等；正文与简断改前出现的每条「」引文改后仍在，新增引文只取本篇专业说明已引并核过的句子，如 64/1/寅、64/1/午 补引《占卦诀》）。首句先说结论与本篇要害，月令放到后面；去掉「就好」「这个月」、比较各月的作者口吻（「九四各月里最近的一回」「这一爻里最好的一个月」）、安慰与许诺句（「守住分寸不会白费」「往后才走得动」「下一程才不至于累」「不是认输」类）、替用户编心理的句子（「两人一个眼神就明白对方要往哪边走」）与含糊词（「多半」）；64/1/卯「孔疏合起来讲作」、64/1/辰「程颐把两句连起来解作」等对注疏的引申改为直述。改前→改后口吻指标（style-monthly）：正文以月份开头 68/72（94%）→5/72（7%）；简断以月份开头 48/72（67%）→1/72；同一开头（前 8 字）最多 4→6；平均句长 24.6→32.8 汉字；十字以内短句 4.3%→0；「就好／就够了」8→0；「这个月」230 处→0；「宜」每千句 24→137；简断均 74→85 汉字（66–91→75–94）。字数：正文 471–622→480–642 汉字，全卦 35,956→37,458 汉字，72 篇无一篇少于改前，均在 470–650 之间；本卦不在 23 篇补字名单内。",
+   "impact": {
+    "outcomeChanged": false,
+    "timingSignatureChanged": false,
+    "judgmentChanged": false,
+    "articles": 72
+   }
+  }
+ ],
+ "batchReadback": [
+  {
+   "movingLine": 1,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 2,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 3,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 4,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 5,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 6,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "2026-11-19 口吻重写（E064-V01）：本爻 12 篇先整篇读原稿，再逐篇手写标题、简断与正文，写入后把 12 篇完整输出逐篇读回，读回所见问题逐处手改后整篇再读（4 篇小改后补作整篇重读，见 authorshipScope.voiceRewrite20261119），并跑 check-monthly --draft、style-monthly --list、consolation-scan；全卦写毕为错开开头改首句的篇另行整篇重读（见 authorshipScope.voiceRewrite20261119）。此前读回记录见 authorshipScope.currentReadback。",
+   "status": "author-readback-complete"
+  }
+ ],
+ "checks": {
+  "monthlyStructure": "72 complete; check-monthly passed",
+  "bodyHanRange": [
+   480,
+   642
+  ],
+  "shortHanRange": [
+   75,
+   94
+  ],
+  "flexibleLengthWarnings": 0,
+  "lengthDecision": "口吻重写后逐篇对比改前字数，72 篇正文均不少于改前且在 470–650 汉字之间；补入的只有与本盘旺衰、爻义或分寸相关的句子。",
+  "outcomes": {
+   "difficult": 50,
+   "favourable": 22
+  },
+  "independentChart": {
+   "inputs": 72,
+   "comparisons": 1944,
+   "mismatches": 0,
+   "method": "check-monthly 独立文王上下卦表与六爻位运算，逐篇27项比较本互变、动爻、六节点五行五态与四处直接关系；不评价现实预测准确率。"
+  },
+  "dateCases": 144,
+  "dateErrors": 0,
+  "timing": "全部保留五气源第10栏的种类与位置（support/equal/control；use、use_mutual、changed_use），同气月份相同；事件、提示、依据与无期说明按相处场面重写。",
+  "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
+  "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+  "crossHexDuplicateScope": "已与库中已写的确定关系月稿（含本作者所写 63 卦与同时写作中的其他卦）一并查重，无整篇、整段及24汉字以上长句重复；全库标题无重复。",
+  "citationAudit20261119": "口吻重写后 commentary-audit --monthly 复跑，本卦「」引文未命中 0 条。",
+  "consolationScan20261119": "consolation-scan --hex 64 为 0，未加豁免。",
+  "voice": {
+   "tool": "scripts/review/style-monthly.mjs",
+   "status": "passed",
+   "monthOpen": 0.07,
+   "monthShort": 0.01,
+   "maxSameHead": 6,
+   "avgSentence": 32.8,
+   "short10": 0,
+   "light": 0,
+   "thisMonth": 0,
+   "yiPerMille": 137,
+   "shortAvg": 85,
+   "note": 0,
+   "mind": 0,
+   "before": {
+    "monthOpen": 0.94,
+    "monthShort": 0.67,
+    "maxSameHead": 4,
+    "avgSentence": 24.6,
+    "short10": 4.3,
+    "light": 8,
+    "thisMonth": 230,
+    "yiPerMille": 24,
+    "shortAvg": 74
+   }
+  }
+ },
+ "independentReview": {
+  "status": "pending",
+  "reviewerIsHuman": false,
+  "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+ },
+ "realWorldPredictionAccuracy": "not-validated"
+}

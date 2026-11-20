@@ -1,6 +1,6 @@
-# 确定关系逐月长稿：3024 篇预览
+# 确定关系逐月长稿：4608 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增坎为水、离为火，共 144 篇；累计 3024 篇。完整目标为 4,608 篇，尚余 1584 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-20（America/New_York）。本批新增乾为天、坤为地、水雷屯、山水蒙、水天需、天水讼、地水师、水地比、风天小畜、天泽履、地天泰、天地否、天火同人、火天大有、地山谦、雷地豫、泽雷随、山风蛊、地泽临、风地观、火雷噬嗑、山火贲、山地剥、地雷复、天雷无妄、山天大畜、山雷颐、泽风大过、坎为水、离为火、泽山咸、雷风恒、天山遁、雷天大壮、火地晋、地火明夷、风火家人、火泽睽、水山蹇、雷水解、山泽损、风雷益、泽天夬、天风姤、泽地萃、地风升、泽水困、水风井、泽火革、火风鼎、震为雷、艮为山、风山渐、雷泽归妹、雷火丰、火山旅、巽为风、兑为泽、风水涣、水泽节、风泽中孚、雷山小过、水火既济、火水未济，共 4608 篇；累计 4608 篇。完整目标为 4,608 篇，尚余 0 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -46,6 +46,28 @@
 | 雷水解 | 72 | [打开全文](hex-040.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-040.json) |
 | 山泽损 | 72 | [打开全文](hex-041.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-041.json) |
 | 风雷益 | 72 | [打开全文](hex-042.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-042.json) |
+| 泽天夬 | 72 | [打开全文](hex-043.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-043.json) |
+| 天风姤 | 72 | [打开全文](hex-044.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-044.json) |
+| 泽地萃 | 72 | [打开全文](hex-045.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-045.json) |
+| 地风升 | 72 | [打开全文](hex-046.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-046.json) |
+| 泽水困 | 72 | [打开全文](hex-047.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-047.json) |
+| 水风井 | 72 | [打开全文](hex-048.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-048.json) |
+| 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-049.json) |
+| 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-050.json) |
+| 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-051.json) |
+| 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-052.json) |
+| 风山渐 | 72 | [打开全文](hex-053.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-053.json) |
+| 雷泽归妹 | 72 | [打开全文](hex-054.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-054.json) |
+| 雷火丰 | 72 | [打开全文](hex-055.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-055.json) |
+| 火山旅 | 72 | [打开全文](hex-056.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-056.json) |
+| 巽为风 | 72 | [打开全文](hex-057.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-057.json) |
+| 兑为泽 | 72 | [打开全文](hex-058.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-058.json) |
+| 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-059.json) |
+| 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-061.json) |
+| 雷山小过 | 72 | [打开全文](hex-062.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-062.json) |
+| 水火既济 | 72 | [打开全文](hex-063.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-063.json) |
+| 火水未济 | 72 | [打开全文](hex-064.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-064.json) |
 
 
 
@@ -53,15 +75,139 @@
 
 ## 本批阅读入口
 
+- [乾为天：六爻十二月全文](hex-001.md)
+
+- [坤为地：六爻十二月全文](hex-002.md)
+
+- [水雷屯：六爻十二月全文](hex-003.md)
+
+- [山水蒙：六爻十二月全文](hex-004.md)
+
+- [水天需：六爻十二月全文](hex-005.md)
+
+- [天水讼：六爻十二月全文](hex-006.md)
+
+- [地水师：六爻十二月全文](hex-007.md)
+
+- [水地比：六爻十二月全文](hex-008.md)
+
+- [风天小畜：六爻十二月全文](hex-009.md)
+
+- [天泽履：六爻十二月全文](hex-010.md)
+
+- [地天泰：六爻十二月全文](hex-011.md)
+
+- [天地否：六爻十二月全文](hex-012.md)
+
+- [天火同人：六爻十二月全文](hex-013.md)
+
+- [火天大有：六爻十二月全文](hex-014.md)
+
+- [地山谦：六爻十二月全文](hex-015.md)
+
+- [雷地豫：六爻十二月全文](hex-016.md)
+
+- [泽雷随：六爻十二月全文](hex-017.md)
+
+- [山风蛊：六爻十二月全文](hex-018.md)
+
+- [地泽临：六爻十二月全文](hex-019.md)
+
+- [风地观：六爻十二月全文](hex-020.md)
+
+- [火雷噬嗑：六爻十二月全文](hex-021.md)
+
+- [山火贲：六爻十二月全文](hex-022.md)
+
+- [山地剥：六爻十二月全文](hex-023.md)
+
+- [地雷复：六爻十二月全文](hex-024.md)
+
+- [天雷无妄：六爻十二月全文](hex-025.md)
+
+- [山天大畜：六爻十二月全文](hex-026.md)
+
+- [山雷颐：六爻十二月全文](hex-027.md)
+
+- [泽风大过：六爻十二月全文](hex-028.md)
+
 - [坎为水：六爻十二月全文](hex-029.md)
 
 - [离为火：六爻十二月全文](hex-030.md)
+
+- [泽山咸：六爻十二月全文](hex-031.md)
+
+- [雷风恒：六爻十二月全文](hex-032.md)
+
+- [天山遁：六爻十二月全文](hex-033.md)
+
+- [雷天大壮：六爻十二月全文](hex-034.md)
+
+- [火地晋：六爻十二月全文](hex-035.md)
+
+- [地火明夷：六爻十二月全文](hex-036.md)
+
+- [风火家人：六爻十二月全文](hex-037.md)
+
+- [火泽睽：六爻十二月全文](hex-038.md)
+
+- [水山蹇：六爻十二月全文](hex-039.md)
+
+- [雷水解：六爻十二月全文](hex-040.md)
+
+- [山泽损：六爻十二月全文](hex-041.md)
+
+- [风雷益：六爻十二月全文](hex-042.md)
+
+- [泽天夬：六爻十二月全文](hex-043.md)
+
+- [天风姤：六爻十二月全文](hex-044.md)
+
+- [泽地萃：六爻十二月全文](hex-045.md)
+
+- [地风升：六爻十二月全文](hex-046.md)
+
+- [泽水困：六爻十二月全文](hex-047.md)
+
+- [水风井：六爻十二月全文](hex-048.md)
+
+- [泽火革：六爻十二月全文](hex-049.md)
+
+- [火风鼎：六爻十二月全文](hex-050.md)
+
+- [震为雷：六爻十二月全文](hex-051.md)
+
+- [艮为山：六爻十二月全文](hex-052.md)
+
+- [风山渐：六爻十二月全文](hex-053.md)
+
+- [雷泽归妹：六爻十二月全文](hex-054.md)
+
+- [雷火丰：六爻十二月全文](hex-055.md)
+
+- [火山旅：六爻十二月全文](hex-056.md)
+
+- [巽为风：六爻十二月全文](hex-057.md)
+
+- [兑为泽：六爻十二月全文](hex-058.md)
+
+- [风水涣：六爻十二月全文](hex-059.md)
+
+- [水泽节：六爻十二月全文](hex-060.md)
+
+- [风泽中孚：六爻十二月全文](hex-061.md)
+
+- [雷山小过：六爻十二月全文](hex-062.md)
+
+- [水火既济：六爻十二月全文](hex-063.md)
+
+- [火水未济：六爻十二月全文](hex-064.md)
 
 
 
 ## 检查与阅读状态
 
-3024 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 81,648 项，差异 0；日期用例 6,048 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
+4608 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 124,416 项，差异 0；日期用例 9,216 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 470–650 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/RELATIONSHIP_ESTABLISHMENT_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

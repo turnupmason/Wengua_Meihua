@@ -15,7 +15,7 @@ export const DEMO_DATE = '2026-11-11';
 // sync = 五气作者源第 9 栏尚未写定（新补判问项），专业说明由月稿写定后回写五气源，检查同气一致与结论用语。
 export const ITEMS = {
  'relationship-establishment':{
-  title:'确定关系', questionId:'relationships.developing.relationship', profile:ESTABLISHMENT_V3_PROFILE, judgmentBaseline:'sync',
+  title:'确定关系', questionId:'relationships.developing.relationship', profile:ESTABLISHMENT_V3_PROFILE, judgmentBaseline:'strict',
   question:{mode:'narrative', question_type:'relationship_establishment', question:'我们能确定恋爱关系吗？', sourceDomainIds:['domain-05']},
   scopeNote:'本页的“这一回”只指两人能否走到双方明确同意、确定恋爱关系。',
   verdictLabel:{favourable:'这段关系能确定下来', difficult:'这一回关系定不下来'},
