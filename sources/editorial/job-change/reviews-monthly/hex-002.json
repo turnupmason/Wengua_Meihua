@@ -1,0 +1,294 @@
+{
+ "primaryId": 2,
+ "baselineCommit": "5280b95a9fd5a5899b136b7fc4abb117b23efd09",
+ "editor": "claude-opus-5-5",
+ "reviewedAt": "2026-11-20T15:50:37.059Z",
+ "wholeArticlesRead": 72,
+ "sourceSha256": "616457de4a4478be37578729d3d57144763f794a9983a415a2c8fc2ff3bc08be",
+ "reviewerIsHuman": false,
+ "userIndividuallyAccepted": false,
+ "status": "partially-reviewed",
+ "authorshipScope": {
+  "newlyWritten": "坤为地六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文，口吻照 VOICE_REWRITE_BRIEF 第三节与用户亲写面试稿；未用句库、随机拼句或自动扩写。结论 outcome 与专业说明 judgment 由写入脚本逐字取五气源第2、9栏，取期种类、位置、依据照第10栏；部分事件、提示与无期说明按换工作场面重写（见 J002-T01）。",
+  "currentReadback": "每写完一爻12篇即完整输出标题、简断、全部自然段与取期逐篇读回，再跑三道检查。改动用逐条人工写定的替换表（每条原句、新句各自写定，套用前核对恰好出现一次），未用脚本批量断句、合句或换词；第四爻初稿与乾卦同构句过多，整爻重写后再拆长句，改后整爻输出读回；第六爻读回后只改亥月末段一处重复开头。",
+  "notClaimed": "作者自读不冒充独立全文审稿或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行改判。"
+ },
+ "sourceEvidence": [
+  {
+   "path": "sources/editorial/job-change/hex-002.json",
+   "scope": "30行五气源：第2栏结论（逐字照用：留 22 气、可走 8 气）、第9栏专业说明（逐字照抄，未订正）、第10栏取期种类与位置（照抄），旧正文只作素材。"
+  },
+  {
+   "path": "sources/editorial/job-change/polish-v5/hex-002.json",
+   "scope": "30条 jobChangeRule 逐条对照：初六、六四五气皆留（无生有克或有条件按结局拆）；六二、六三、六五巳午与四季可走（本用比和、无克体），其余三气留（党皆衰卦）；上六五气皆留（无生无克，依《卦断遗论》以变卦剥之卦象主断）。"
+  },
+  {
+   "path": "sources/editorial/job-change/review-v2/hex-002.json",
+   "scope": "六爻 lineReading（跳槽读法）逐条读过：初六戒积渐；六二、六五为升辞而盘中无生体之卦不升；六三无成有终在交接；六四慎而免咎；上六龙战与剥同向。"
+  },
+  {
+   "path": "scripts/review/packet.mjs job-change 2",
+   "scope": "30盘本互变、五态与直接关系逐条核对：体用两互皆坤土比和；变用初、四爻震木（克体），二、五爻坎水（体克用），三、上爻艮土（比和）；无用党多。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+   "url": "https://zh.wikisource.org/zh-hans/周易正義/01坤",
+   "scope": "坤卦辞、彖、大象、六爻爻辞小象、文言各节及王注孔疏全文阅读；正文所引逐字核过，跨注插入处分句引用（如「犹未离其类也」与「故称『血』焉」分引）。"
+  },
+  {
+   "path": "sources/original/yijing64.txt",
+   "scope": "坤爻辞小象；变卦复（「雷在地中，复；先王以至日闭关，商旅不行，后不省方」）、师（「地中有水，师；君子以容民畜众」）、谦（「谦：亨，君子有终」「君子以裒多益寡，称物平施」）、豫、比（未引其吉辞作取舍）、剥（「剥：不利有攸往」「山附于地，剥；上以厚下安宅」）。"
+  },
+  {
+   "path": "sources/original/meihua-volumes-1-3.txt",
+   "scope": "《求谋占》550行、《占卦诀》792行、《体用互变之诀》798行、《体用衰旺之诀》804行、《复明时令之应》655行、《卦断遗论》487行原句逐字核对。"
+  },
+  {
+   "path": "docs/review/JOBCHANGE_MONTHLY_BRIEF.md 等",
+   "scope": "与乾卦同：专项说明、通用说明、口吻说明、补判记录第二、六、七节；口吻范本面试 hex-003/017/030/052/058、确定关系 hex-018/005。"
+  }
+ ],
+ "lineReviews": [
+  {
+   "movingLine": 1,
+   "text": "履霜，坚冰至。",
+   "image": "履霜坚冰，阴始凝也；驯致其道，至坚冰也。",
+   "reading": "戒积渐，不在跳槽爻辞表；落在去这件事的末段：新工作那头书面条件一版版改动、例外条款一条条加上来，积成收尾推不开的硬阻。变用震木克体、全盘无生体之卦，五气皆留，爻辞同向。轻重按震木旺衰分写：寅卯最重，亥子有气，巳午、申酉、四季克轻而仍在结尾。王注「至柔而动也刚」、孔疏「防渐虑微，慎终于始」、文言「由辩之不早辩也」各月轮换取用，不引文言弑君父之语。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 2,
+   "text": "直方大，不习无不利。",
+   "image": "六二之动，直以方也；不习无不利，地道光也。",
+   "reading": "跳槽表列为升档之辞；升须盘中至少一处生体之卦旺相，此卦全无生体之卦，不升（正文写作「往前去的吉辞推不动结论」，不出现内部用语）。巳午、四季本用比和、无克体，定为可走，吉辞同向；寅卯、申酉、亥子党皆衰，留。变用坎水受体克，收尾要亲自料理：巳午坎囚稍迟，四季坎死不迟，申酉、亥子坎相旺而体无气，收尾制之不及。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 3,
+   "text": "含章可贞，或从王事，无成有终。",
+   "image": "含章可贞，以时发也；或从王事，知光大也。",
+   "reading": "无凶吝，「无成」是不居功、非事不成；「有终」落在交接做到底。不落在去留上，不调。巳午、四季可走写成交接有终、不擅其美；其余三气留，写成把现职半截的事做完、不为事始。「王事」不搬成现代机构。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 4,
+   "text": "括囊，无咎无誉。",
+   "image": "括囊无咎，慎不害也。",
+   "reading": "慎而免咎，落在自身做法上：口风收紧、条件问实、不与物竞；无誉是无所得，非凶吝。变用震木克体、无生体之卦，五气皆留，爻辞不翻。王注「括结否闭，贤人乃隐」读为闭塞之时谨慎自守，不读成必须离开。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 5,
+   "text": "黄裳，元吉。",
+   "image": "黄裳元吉，文在中也。",
+   "reading": "大吉之辞，跳槽表列为升档；此卦无生体之卦，不升。巳午、四季可走，吉辞同向而不另添分量；其余三气留，吉辞推不动结论。王注「非用武者也」用作不硬推；「坤为臣道」只在引文中出现，不把臣职搬成现代上下级。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 6,
+   "text": "龙战于野，其血玄黄。",
+   "image": "龙战于野，其道穷也。",
+   "reading": "无生无克，依《卦断遗论》487行以卦象断：变卦山地剥「不利有攸往」正落在去上，五气皆留；体相、体旺只主过程有余力。上六相争两伤，取谈条件拉锯、交接争执、汇报线相扯；剥大象「上以厚下安宅」写成把现职根基加厚。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  }
+ ],
+ "findings": [
+  {
+   "id": "J002-P01",
+   "status": "maintained-by-policy",
+   "keys": [
+    "2/2/巳",
+    "2/2/午",
+    "2/5/巳",
+    "2/5/午"
+   ],
+   "finding": "六二、六五巳午四篇可走：本用坤土比和、无克体之卦，但变用坎水囚而受体所克，五气源第9栏自写「末段体克用，《求谋占》『体克用，谋虽可成，但成迟』，坎水囚，迟只在收尾一处」。补判记录第二节第4步把「本用体克用（成迟）」列为先准备，未提变用体克用；此四篇按本用比和定可走，正文如实写收尾要亲自料理、稍迟。若口径认为变用体克用亦主成迟，四篇应为先准备。只报不改结论，请裁定。四季月坎水死，五气源写「成而不迟」，不在此列。 裁定（2026-11-20，docs/review/JOBCHANGE_REJUDGE_20261119.md 第七节）：维持可走。时机按本用定（第二节第4步），本用比和为「求谋称意」、全盘无克体之卦；变用受体所克只说收尾一段要自己料理，正文照实写，不改时机，全库同类盘照此。"
+  },
+  {
+   "id": "J002-T01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "2/1/申酉",
+    "2/1/亥子",
+    "2/1/辰未戌丑",
+    "2/2/申酉",
+    "2/3/亥子",
+    "2/4/寅卯",
+    "2/4/亥子",
+    "2/4/辰未戌丑",
+    "2/5/申酉",
+    "2/6/申酉",
+    "2/6/亥子"
+   ],
+   "finding": "取期第10栏事件、提示与无期说明里的无据情节改为可核对的换工作事项，种类、位置、依据与无期结构不动，同气月份相同：如「日期对不上…那份证明」「到岗日又往后挪」（含到岗日字样）「限你一周内到岗」「证书转移」「明年要迁去城外」「两地都盖章」「项目归属的争执」「两条汇报线」「三样都写全」等，改为书面条件改动、例外条款、档案社保转移、办公地点另有安排、两边盖章步骤、相争条款写成条文、汇报对象写清等。"
+  },
+  {
+   "id": "J002-I01",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "2/6/*"
+   ],
+   "finding": "上六五气依《卦断遗论》「不必拘体用也」以变卦剥之卦象主断；正文明写体用比和本应为吉、而卦象不利往，不把比和写成有阻，也不把体旺写弱。「龙战」「其血」只取两头相争、彼此消耗之象，不写人身伤害。"
+  },
+  {
+   "id": "J002-I02",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "2/2/*",
+    "2/5/*"
+   ],
+   "finding": "六二「不习无不利」、六五「黄裳，元吉」在留之月写成「往前去的吉辞推不动结论」，在可走之月写成与盘面同向而不另添分量；不写「升档」「补判记录」一类内部用语（初稿曾出现，读回时逐句改写）。"
+  },
+  {
+   "id": "J002-W01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "2/1/午",
+    "2/1/戌",
+    "2/2/寅",
+    "2/2/辰",
+    "2/2/巳",
+    "2/2/午",
+    "2/2/未",
+    "2/2/申",
+    "2/2/戌",
+    "2/2/亥",
+    "2/2/丑",
+    "2/3/辰",
+    "2/3/午",
+    "2/3/戌",
+    "2/3/亥",
+    "2/4/卯",
+    "2/4/午",
+    "2/4/酉",
+    "2/4/戌",
+    "2/4/亥",
+    "2/5/卯",
+    "2/5/辰",
+    "2/5/巳",
+    "2/5/未",
+    "2/5/申",
+    "2/5/戌",
+    "2/5/亥",
+    "2/5/丑",
+    "2/6/辰",
+    "2/6/巳",
+    "2/6/午",
+    "2/6/未",
+    "2/6/酉",
+    "2/6/戌",
+    "2/6/子",
+    "2/6/丑"
+   ],
+   "finding": "按 JOBCHANGE_MONTHLY_BRIEF 第四节新增「规则名目不进正文」（2026-11-20），逐句手改正文与简断里写给审稿看的用语：check-monthly 新拦截所报的「定为留／定为先准备」「只推迟时机」「以卦象定为留」，以及同类的「按结局看」「直接主断」「吉辞不翻」「可走由……而定」「结论仍是留」，共 36 篇，改成白话讲道理本身，如「按结局看，这件事落不下来，所以定为留」→「收尾那一步接不住，换工作这件事便落不下来」，「以卦象定为留」→「照卦象看，这一回不宜动身」，「可走由体用比和、盘中无克而定」→「能换过去，靠的是体用比和、盘中无克」，「结论仍是留」→「这一回仍守现职」等。结论、专业说明、取期与引文不动；每处替换逐条写定，未用脚本批量换词。改后把每篇改到的整段（含简断）完整输出读回，又跑四道检查。"
+  }
+ ],
+ "batchReadback": [
+  {
+   "movingLine": 1,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查；初版字数与句长不合，经两轮整爻改写后再整爻输出读回",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "午戌",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  },
+  {
+   "movingLine": 2,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "寅辰巳午未申戌亥丑",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  },
+  {
+   "movingLine": 3,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查；读回后把可走各篇「先核清……再提辞职」改为签收时核对，以免读成先准备",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "辰午戌亥",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  },
+  {
+   "movingLine": 4,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "卯午酉戌亥",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  },
+  {
+   "movingLine": 5,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查；网络中断后续写前确认第5爻12篇齐全，读回文本即中断前最后一次整爻输出",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "卯辰巳未申戌亥丑",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  },
+  {
+   "movingLine": 6,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后逐篇实读；读回前后跑 check-monthly --draft、style-monthly --list、consolation-scan --list，所见长句、短句、重复长句、许诺句、字数不足处逐条人工改写后再跑检查",
+   "status": "author-readback-complete",
+   "plainWording20261120": {
+    "articles": "辰巳午未酉戌子丑",
+    "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   }
+  }
+ ],
+ "checks": {
+  "monthlyStructure": "72 complete; check-monthly passed",
+  "bodyHanRange": [
+   472,
+   551
+  ],
+  "shortHanRange": [
+   75,
+   91
+  ],
+  "outcomes": {
+   "stay": 54,
+   "switch": 18,
+   "prepare": 0
+  },
+  "styleMonthly": "passed（正文以月份开头 0/72、简断 0/72、同一开头最多 7 篇、句均 32.4、十字以内短句 0%、宜 158‰、简断均 81、写给作者的话 0、疑似断心意 0）",
+  "consolationScan": "0（无豁免）",
+  "commentaryAudit": "job-change --monthly 未核实引文 0",
+  "sameQiMonths": "寅卯、巳午、申酉、亥子、辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
+  "judgmentCorrections": 0,
+  "ruleWordsInProse": 0
+ },
+ "independentReview": {
+  "status": "pending",
+  "reviewerIsHuman": false,
+  "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+ },
+ "realWorldPredictionAccuracy": "not-validated"
+}
