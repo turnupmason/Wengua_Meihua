@@ -2,9 +2,9 @@
  "primaryId": 1,
  "baselineCommit": "5280b95a9fd5a5899b136b7fc4abb117b23efd09",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T15:50:37.056Z",
+ "reviewedAt": "2026-11-20T16:22:14.772Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "191331714584c22dc1a497689da23699e334308475760dfd8df584a98e117ede",
+ "sourceSha256": "2635d48c0b7811b85e817f307aaeed6c63059b10f3f65a5daf80af2c7279260e",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -186,6 +186,30 @@
     "1/6/丑"
    ],
    "finding": "按 JOBCHANGE_MONTHLY_BRIEF 第四节新增「规则名目不进正文」（2026-11-20），逐句手改正文与简断里写给审稿看的用语：check-monthly 新拦截所报的「定为留／定为先准备」「只推迟时机」「以卦象定为留」，以及同类的「按结局看」「直接主断」「吉辞不翻」「可走由……而定」「结论仍是留」，共 27 篇，改成白话讲道理本身，如「最后仍定为留」→「可这一步仍不宜迈出」，「去留由爻辞主断，便直接定为留」→「去留便由爻辞来说，初九说勿用，这一步就不宜迈出」，「属只推迟时机之辞」→「上九爻辞把动身的时候往后推了一步」，「吉辞不翻」→「这份吉意托不起去留」等。结论、专业说明、取期与引文不动；每处替换逐条写定，未用脚本批量换词。改后把每篇改到的整段（含简断）完整输出读回，又跑四道检查。"
+  },
+  {
+   "id": "J001-W02",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "001/*/*"
+   ],
+   "finding": "按 JOBCHANGE_MONTHLY_BRIEF 第四节新增「套话上限」「最看重」两条（2026-11-20），逐句手改套用的收尾与过渡句：改前 最看重 65、落在换工作上 55、辞职申请不递 47 篇，改后 4、8、8 篇（上限 10、14、12）。收尾的落实句随本盘换说法：留写现职要做完的事、要核清的条款、对那边怎样答复（如「对那边只答复条件已收到、暂不动身」「年终奖与离职时点的关系也一并问明」「手上只经你手的几步流程写成说明」）；可走写手续次序（如「签收、交接、到岗按次序走」「权限移交、交接单签字」）；先准备写先落定的那件实事。删去「拿你最看重的那一项去比」一类替读者断比较结果的说法；因删句变薄的篇补入本盘实事，正文仍不低于 470 字。每处替换逐条写定，未用脚本批量换词；改后把 67 篇改到的段落与简断整段输出读回。结论、专业说明、取期与引文不动。"
+  },
+  {
+   "id": "J001-W03",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "001/*/*"
+   ],
+   "finding": "按 2026-11-20 新增上限（照常做／照常推进 ≤14、落在换工作上／落在去留上 ≤14、不必急着回 ≤12）与 phrase-scan 18 篇验收，再压一轮套话：照常做 42→10、落在换工作上／落在去留上 11、不必急着回 6、最看重 4、辞职申请不递 8；phrase-scan 非指称短语 「盘中没有一」21→≤17、「开局与过程」19→≤17、「的书面条件」25→≤17、「条件可以收」22→≤17（余下超 18 的只有「工作这件事」「换到这份新工作」「这份新工作」等必要指称）。逐句手改、随本盘换说法：留写现职这一季要交的事、要核的条款、对那边怎样答复（「本职的事一件件做完」「对方给的条款存好，回复时只说条件已收到、暂不动身」「几版条款的差别标在页边」）；可走与先准备的收尾不动结论。未用脚本批量换词；改到的 41 篇段落整段输出读回，读回后又改了两三处重复用字。结论、专业说明、取期与引文不动。"
+  },
+  {
+   "id": "J001-W04",
+   "status": "corrected-thin-articles",
+   "keys": [
+    "001/*/*"
+   ],
+   "finding": "按 JOBCHANGE_MONTHLY_BRIEF「五之二、厚度」补厚：补厚前正文最短 470、中位约 488，不少篇贴着下限。逐篇手写补句，厚在依据上：本月旺衰对各处生克轻重的影响（与同气月、相邻时令比轻重，只在确有差别处说差别）、本用管开局两互管过程变用管收尾各段的力量、注疏这一句此月取哪一层与不取哪一层、落到哪件实事（交接单写法、社保公积金当月由谁缴、试用期考核、账号绑定、离职证明与背景调查等）、做法与理由。补后正文 501–557、中位 532、简断 75–90。补完把改到的 67 篇整篇输出读回，读回中删改补句里与本篇前句重复、凑数或说错的：同篇重说同一句旺衰的（如乾三丑、坤五卯、坤六戌）、轻重排位不准的（乾四子把相木说成诸月最有力、乾五戌把休火说成诸月最轻，均改为属轻／比亥月又拉开一分）、无据的生克推演（乾四巳「休木生火添柴」、乾五巳「土再生金」、乾四辰「又制水」，均删）、「王注这句讲的是……此月落到实处」成套句式、同篇连说两遍「这一跃才算踩实」及跨卦重复的「当面登录确认」等，逐句改写；「日后」一处许诺句改掉。同时把「照常做／照常推进」压到 14 处（10 篇）。未用脚本批量扩写或断句，结论、专业说明、取期与原有引文不动。"
   }
  ],
  "batchReadback": [
@@ -199,6 +223,19 @@
     "articles": "辰未申酉戌丑",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
     "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "卯辰巳午未申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
+    "status": "author-readback-complete"
    }
   },
   {
@@ -210,6 +247,19 @@
    "plainWording20261120": {
     "articles": "寅卯巳午申戌亥子丑",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "寅卯辰巳午未申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
     "status": "author-readback-complete"
    }
   },
@@ -223,6 +273,19 @@
     "articles": "巳申子",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
     "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "寅卯巳午未申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
+    "status": "author-readback-complete"
    }
   },
   {
@@ -235,6 +298,19 @@
     "articles": "子",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
     "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "寅卯辰巳申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
+    "status": "author-readback-complete"
    }
   },
   {
@@ -246,6 +322,19 @@
    "plainWording20261120": {
     "articles": "卯巳亥",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "寅卯辰巳午未申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
     "status": "author-readback-complete"
    }
   },
@@ -265,14 +354,27 @@
     "articles": "辰申酉戌丑",
     "scope": "规则名目改白话后，改到的段落与简断整段输出读回",
     "status": "author-readback-complete"
+   },
+   "clicheRewrite20261120": {
+    "scope": "套话上限改写后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "clicheRewrite2_20261120": {
+    "scope": "第二轮套话压缩后，本爻改到的段落与简断整段输出读回",
+    "status": "author-readback-complete"
+   },
+   "thicken20261120": {
+    "articles": "寅辰巳午未申酉戌亥子丑",
+    "scope": "补厚后改到的篇整篇输出（标题、简断、全部自然段）逐篇读回，读回所见重复、凑数、轻重说错处再逐句手改，改后再读改到的段落",
+    "status": "author-readback-complete"
    }
   }
  ],
  "checks": {
   "monthlyStructure": "72 complete; check-monthly passed",
   "bodyHanRange": [
-   471,
-   538
+   501,
+   557
   ],
   "shortHanRange": [
    75,
@@ -283,13 +385,15 @@
    "switch": 12,
    "prepare": 6
   },
-  "styleMonthly": "passed（正文以月份开头 0/72、简断 0/72、同一开头最多 6 篇、句均 31.9、十字以内短句 0%、宜 145‰、简断均 80、写给作者的话 0、疑似断心意 0）",
+  "styleMonthly": "passed（正文以月份开头 0/72、简断 0/72、同一开头最多 6 篇、句均 31.8、十字以内短句 0%、宜 150‰、简断均 80、正文中位 532、最短 501；套话按篇：照常做／照常推进 10、落在换工作上／落在去留上 11、不必急着回 6、最看重 4、辞职申请不递 5、较合此局 3）",
   "consolationScan": "0（无豁免）",
-  "commentaryAudit": "job-change --monthly 未核实引文 0",
+  "commentaryAudit": "job-change 未核实引文 0",
   "sameQiMonths": "寅卯、巳午、申酉、亥子、辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
   "judgmentCorrections": 0,
   "fiveQiSource": "上九改判后 bash scripts/review/chk-hex.sh job-change 1：total 0、flag 0、err 0、sim 0 []",
-  "ruleWordsInProse": 0
+  "ruleWordsInProse": 0,
+  "bodyHanMedian": 532,
+  "phraseScan": "phrase-scan 18 篇：超 18 的只剩「工作这件事」「换到这份新」「这份新工作」等必要指称"
  },
  "independentReview": {
   "status": "pending",

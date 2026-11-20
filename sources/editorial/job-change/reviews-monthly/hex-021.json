@@ -1,0 +1,245 @@
+{
+ "primaryId": 21,
+ "baselineCommit": "5280b95a9fd5a5899b136b7fc4abb117b23efd09",
+ "editor": "claude-opus-5-5",
+ "reviewedAt": "2026-11-20T16:16:04.082Z",
+ "wholeArticlesRead": 72,
+ "sourceSha256": "5f20d1f75563bca4900fb0ef8d996dd7fcd84b104e101c67f4c150dccdd46306",
+ "reviewerIsHuman": false,
+ "userIndividuallyAccepted": false,
+ "status": "partially-reviewed",
+ "authorshipScope": {
+  "newlyWritten": "火雷噬嗑六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。结论 outcome 与专业说明 judgment 一字不动取五气源 sources/editorial/job-change/hex-021.json 第2、9栏（留48、先准备24）；取期照抄第10栏的种类、位置与依据，事件、提示按换工作场面重写（只写书面条款、交接、背景调查、薪资条款、一次条件变动这类看得见的事，不写离职日、到岗日、录用日）。",
+  "currentReadback": "每写完一爻12篇即跑 check-monthly --draft、style-monthly --list、consolation-scan --list，并用 show.cjs 把12篇标题、简断、全部自然段与取期完整输出读回。读回中发现并改过：初九寅、巳两篇「用生体。不谋而成」引法造成断句过碎，改为只引「不谋而成」；初九亥「本用的那一点生扶」与亥月震木得相不符，改为「本用那份实在的生扶」；六二寅「到岗日期谈妥再提辞职」触发等待扫描，改为「谈妥，写进书面再提辞职」；六三辰、丑与六二申、六三戌之间各有一句24汉字以上长句重复，改写本卦一侧；六四未「到岗以后还有」触发许诺扫描，改为「到岗之后，还有」；六五第一稿句均过短（约24字）、篇幅不足，整爻重写合句并补实质内容后整篇再读；上九第一稿篇幅不足且有七句与本卦四、五爻及初爻长句重复，整爻重写后整篇再读；上九去掉王注「处罚之极」、小象注「不虑恶积」、孔疏「积恶致此」等刑罚、善恶字面，改引本义「过极之阳在卦之上」「若能审听而早图之则无此凶矣」与王注「聪不明，故不虑」。所有改动篇改后整篇再输出读过。2026-11-20 按协调者新增要求又做三轮逐句手改：一是规则名目（专业说明式「定为留」10 句）改成白话；二是套话上限（「最看重」「落在换工作上」「辞职申请不递」「照常做／照常推进」「新单位那边」「现职手上的」「辞职申请不必先递」）逐句换说法，phrase-scan 本卦无 18 篇以上五字短语；三是厚度，54 篇各补一句本月旺衰对生克轻重的影响或注疏取舍、做法理由，正文中位 517、最短 498，补后整篇输出再读，读回中发现补句与原段重复的 10 处另行改写。",
+  "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；结论与古籍吉凶之间的张力只登记，不据正文自行翻判。"
+ },
+ "sourceEvidence": [
+  {
+   "path": "sources/editorial/job-change/hex-021.json",
+   "scope": "30行五气源：第2栏结论（逐字照用，初、四、五、上四爻留，二、三两爻先准备）、第9栏专业说明（逐字照抄）、第10栏取期种类、位置、依据（照抄，事件与提示重写）；第3–8栏旧短稿只作对照，不进月稿。"
+  },
+  {
+   "path": "sources/editorial/job-change/polish-v5/hex-021.json",
+   "scope": "30条 jobChangeRule 与 calculationNotes 逐条对照：初爻、五爻 R2 有生有克按结局拆为不成（五爻申酉、四季为 R2↓）；二爻 R2↑／R2 有克体之卦事有阻节；三爻 R2 结局比和为成而阻节；四爻、上爻 R1a↓ 本用泄而变用不生体。"
+  },
+  {
+   "path": "sources/editorial/job-change/review-v2/hex-021.json",
+   "scope": "30条 reason、evidenceFor、evidenceAgainst 与 lineReading（跳槽读法）逐条读过，本卦各爻均无跳槽专属升降之辞。"
+  },
+  {
+   "path": "data/authored-readings/job-change/hex-021.json",
+   "scope": "经 node scripts/review/packet.mjs job-change 21 输出30盘本互变、六节点五行五态与四处直接关系：1–3爻体离火、本用震木生体、体互坎水克体、用互艮土泄体，变用坤（泄）、兑（体克用）、离（比和）；4–6爻体震木、本用离火泄体、用互坎水生体、体互艮土为体所克，变用艮（体克用）、乾（克体）、震（比和）。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/03噬嗑.txt",
+   "url": "https://zh.wikisource.org/zh-hans/周易正義/03噬嗑",
+   "scope": "卦辞、彖与王注「凡物之不亲，由有间也」「有物有间，不啮不合，无由亨也」、六爻爻辞、小象、王注、孔疏全文；正文引用均按此本逐字核过，刑罚字面一律不引。"
+  },
+  {
+   "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+   "scope": "噬嗑卦辞本义「九四一阳间于其中必啮之而后合」、六二「所治如噬肤之易」、六三「占虽小吝然时当噬嗑于义为无咎也」、九四「所噬愈坚」「然必利于艰难正固则吉」、六五「噬干肉难于肤而易于腊胏者也」「然必贞厉乃得无咎亦戒占者之辞也」、上九「过极之阳在卦之上」「若能审听而早图之则无此凶矣」。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/04晉.txt",
+   "scope": "初爻变卦晋大象「明出地上，晋。君子以自昭明德」、王注「以顺著明，自显之道」。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/04睽.txt",
+   "scope": "二爻变卦睽大象「上火下泽，睽。君子以同而异」、王注「同于通理，异于职事」。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/03離.txt",
+   "scope": "三爻变卦离彖「离，丽也」、王注「各得所著之宜」、大象「明两作，离」「大人以继明照于四方」、王注「明照相继，不绝旷也」。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/03頤.txt",
+   "scope": "四爻变卦颐彖「颐贞吉，养正则吉也」「自求口实，观其自养也」、大象「山下有雷，颐。君子以慎言语，节饮食」、王注「言语、饮食犹慎而节之」。"
+  },
+  {
+   "path": "sources/original/yijing64.txt",
+   "scope": "五爻变卦无妄卦辞「其匪正有眚，不利有攸往」（1020行，作旁证，不作主断）、大象「天下雷行，物与无妄」；六爻变卦震大象「洊雷，震。君子以恐惧修省」、彖「震来虩虩，恐致福也」「笑言哑哑，后有则也」（王注本 05震.txt 同）。"
+  },
+  {
+   "path": "sources/original/meihua-volumes-1-3.txt",
+   "scope": "实读494体用总诀、550求谋占、682体用（彼灭其吉、稍解其穷）、688衰旺论、792占卦诀、796–798体用互变之诀、804体用衰旺之诀，核引文与行号。"
+  },
+  {
+   "path": "docs/review/JOBCHANGE_MONTHLY_BRIEF.md",
+   "scope": "专项说明全文；另读 MONTHLY_REWRITE_BRIEF.md、MONTHLY_VOICE_GUIDE.md、VOICE_REWRITE_BRIEF.md、JOBCHANGE_REJUDGE_20261119.md（第二、六、七节；本卦六爻均不在专属升降表）、JOBCHANGE_WRITE_BRIEF.md 场面与边界。"
+  },
+  {
+   "path": "docs/READING_POLICY_V2.md",
+   "scope": "第33行 R1a↓、第255–257行 R1a↓／R1c 判不成，并注明网上噬嗑上九本用泄、变比和卦例结果未成。"
+  },
+  {
+   "path": "sources/editorial/job-change/monthly/hex-001.json",
+   "scope": "跳槽已写样稿留与可走各读数篇；origin/main interview-pass monthly hex-003、017、030、052、058 各读3篇以上（能过与过不了兼有）；relationship-establishment monthly/reviews-monthly hex-018 读样稿与回执格式。只学写法，不抄句子。"
+  }
+ ],
+ "lineReviews": [
+  {
+   "movingLine": 1,
+   "text": "屦校灭趾，无咎。",
+   "image": "“屦校灭趾”，不行也。",
+   "reading": "足下受了约束，及早止步则无咎，小象「不行也」；王注「凡过之所始，必始于微」「过而不改，乃谓之过」「足惩而已，故不重也」，小象注「过止于此」。读为这一步先不迈，落在「去」上，与盘面结局泄体同向；不在跳槽专属降表，不另调档。刑具意象不搬进现代，只讲约束与止步。五气皆留：本用震木生体为开头之助，体互坎水克体受二土所制而轻，结局变用坤土泄体，按结局拆为不成；寅卯、亥子开头之助实，巳午、四季末泄实。",
+   "status": "partially-reviewed",
+   "openFindingIds": [
+    "E021-A01"
+   ]
+  },
+  {
+   "movingLine": 2,
+   "text": "噬肤，灭鼻，无咎。",
+   "image": "“噬肤灭鼻”，乘刚也。",
+   "reading": "所治本易（孔疏「肤是柔脆之物」、本义「所治如噬肤之易」），用力过深而「噬过其分」（王注），终无咎。读为谈条件、办交接时用力过头，拖慢的是自己能掌握的那一段，落在自身做法上，不落在去留取舍上；无升降之辞。五气皆先准备：结局变用兑金受体所克（成迟），盘中有体互坎水克体（阻节）。要落定之事按专业说明：寅卯到岗日、巳午交接安排、申酉薪资条款、亥子书面录用、四季试用期条款。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 3,
+   "text": "噬腊肉，遇毒；小吝，无咎。",
+   "image": "“遇毒”，位不当也。",
+   "reading": "啃到坚硬之物又遇苦味（孔疏「毒者，苦恶之物也」），吝归于「位不当」，王注「承于四而不乘刚，虽失其正」故小吝无咎，本义「时当噬嗑于义为无咎」。读为中途一处小磕绊，人在现职、手续在新单位两头之间，照实处理不硬顶即过；「毒」只讲苦味，不写伤病。五气皆先准备：变用离火比和（临终有吉利），盘中有克（阻节）。落定之事：寅卯、亥子书面录用，巳午到岗日，申酉交接安排，四季薪资条款。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 4,
+   "text": "噬干胏，得金矢；利艰贞，吉。",
+   "image": "“利艰贞，吉”，未光也。",
+   "reading": "王注「金，刚也，矢，直也」「可以利于艰贞之吉，未足以尽通理之道也」，孔疏「犹未能光大通理之道」，本义「所噬愈坚」「然必利于艰难正固则吉」。吉在艰难中守正，落在自身做法上，读为在现职守住正当做法之吉，不读成往新工作去的吉；不在升档表，不调。五气皆留：本用离火泄体（最紧），用互坎水之生受体互艮土所克（「彼灭其吉」），变用艮土受体所克而不生体，全盘无克体之卦。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 5,
+   "text": "噬干肉，得黄金；贞厉，无咎。",
+   "image": "“贞厉，无咎”，得当也。",
+   "reading": "王注「黄，中也」「金，刚也」「噬虽不服，得中而胜」，孔疏「故虽贞正自危而无咎害」，本义「然必贞厉乃得无咎亦戒占者之辞也」。所得如实写，吉在守正存惕，落在自身做法：条件再好也要看清末后的约束；无升降之辞。五气皆留：变用乾金克体，《体用互变之诀》「变卦克体，事于末后，必有不吉」；寅卯、亥子体旺相而金囚休，只减其害；申酉金旺克死木最重；巳午死金又受旺火所制，克轻而位在末。另引变卦无妄卦辞「其匪正有眚，不利有攸往」作同向旁证。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 6,
+   "text": "何校灭耳，凶。",
+   "image": "“何校灭耳”，聪不明也。",
+   "reading": "凶落在「聪不明」：听不进摆在眼前的实情；本义「若能审听而早图之则无此凶矣」，王注「聪不明，故不虑」。读为自身做法之戒，不在跳槽专属降表，不另降，与盘面不成同向；刑罚、善恶字面不引。五气皆留：本用离火泄体而变用震木比和不生体（R1a↓），READING_POLICY_V2 第257行已记网上噬嗑上九本用泄、变比和例结果未成；正文照实写收尾比和「不至于难看」而补不回开局之泄。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  }
+ ],
+ "findings": [
+  {
+   "id": "E021-A01",
+   "status": "maintained-by-policy",
+   "keys": [
+    "21/1/寅卯"
+   ],
+   "finding": "初九寅卯：本用震木旺而生相离（《占卦诀》「如生体是用卦，则事即成」），唯一克体之坎水休、又受艮坤二土所制而无金生（按无气），收尾泄体之坤土处死（泄轻）。按定稿第十三节「有条件按结局拆」定为不成（留），但此盘生在最紧之本用且旺、克无气、末泄极轻，「体生用，多谋少遂」的分量与「用生体，不谋而成」相比是否足以定为不成，待裁定。结论未改，正文如实写开头之助实在、中段之阻轻、末泄轻，结论按结局。 裁定（2026-11-20，跳槽补判记录第七节）：维持留。有生有克而结局泄，按结局拆为不成，泄轻只减其势。"
+  },
+  {
+   "id": "E021-J01",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "21/*/*"
+   ],
+   "finding": "五气源第9栏（专业说明）各气末句带有旧短稿的具体情节，如「中段卡在自身交付承诺，末后要接积压之活」「末后落在自费课程之耗」「中段卡在自身年度审计」「住房补贴协议」「节假日轮流值守」「背调查出日期不符」「两年竞业」「推迟发薪」「外包公司」「办公地点将迁」等。按专项说明照抄一字未改；这些情节不是盘面事实，月稿正文与取期均未采用，只按盘面写哪一段阻、哪一段耗与要落定的实事（如书面录用、薪资条款、交接安排）。是否以 judgmentCorrection 统一清理，请协调者定。"
+  },
+  {
+   "id": "E021-B01",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "21/*/*"
+   ],
+   "finding": "噬嗑卦辞「利用狱」与初、上两爻「屦校」「何校」、二爻「灭鼻」、三爻「遇毒」原是刑狱与伤损意象。正文只照录爻辞原句，讲解落在约束止步、用力过深、啃硬遇苦、听不明白上；王注孔疏中的刑、戮、罪、恶字句不引，卦辞「利用狱」不引。"
+  },
+  {
+   "id": "E021-B02",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "21/4/*",
+    "21/5/*"
+   ],
+   "finding": "九四「利艰贞，吉」、六五「得黄金」为吉意，不在跳槽升档表；两爻五气皆因本用泄而变用不生或变用克体定为留。正文把吉落在守正存惕的做法上，所得如实写，不读成往新工作去的吉。"
+  },
+  {
+   "id": "E021-T01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "21/*/*"
+   ],
+   "finding": "取期事件与提示原为旧短稿情节（季末交付、自费课程、年度审计、住房补贴、业绩承诺书、外包公司等），月稿按换工作中看得见的事重写（职责说明多出一项、合同附件列出自担投入、背景调查补材料、薪资条款卡住、书面录用审批、试用期条款往返、竞业约定、岗位归属调整等）；种类、位置、依据与取日方法未动，同气月份相同。"
+  }
+ ],
+ "batchReadback": [
+  {
+   "movingLine": 1,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；补厚的六篇与断句修改的两篇改后整篇再读。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 2,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "完整输出实读；寅篇首句改后整篇再读。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 3,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "完整输出实读；去重与补厚的辰、未、子、丑、戌五篇改后整篇再读。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 4,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "完整输出实读；未篇许诺句与午、未、酉、丑补厚后整篇再读。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 5,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "第一稿完整输出读后判定句子过碎、篇幅不足，整爻重写，重写稿12篇完整输出再读。",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 6,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "第一稿篇幅不足且有长句与他爻重复，整爻重写，重写稿12篇完整输出再读；丑篇补一句后再读。",
+   "status": "author-readback-complete"
+  }
+ ],
+ "checks": {
+  "monthlyStructure": "72 complete; check-monthly passed",
+  "bodyHanRange": [
+   498,
+   582
+  ],
+  "shortHanRange": [
+   75,
+   90
+  ],
+  "outcomes": {
+   "stay": 48,
+   "prepare": 24
+  },
+  "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写。",
+  "styleMonthly": "passed（正文以月份开头 0、简断以月份开头 0、同一开头最多 5 篇、句均 33.3、十字以内短句 0.6%、宜 159‰、简断均 82、写给作者的话 0、疑似断心意 0）",
+  "consolationScan": "0（无豁免）",
+  "commentaryAudit": "本卦 0 条未核实引文",
+  "titleDuplicates": 0,
+  "crossHexDuplicateScope": "已与当时已写定的跳槽月稿（hex-001、003 等）一并查重，无整篇、整段及24汉字以上长句重复。"
+ },
+ "independentReview": {
+  "status": "pending",
+  "reviewerIsHuman": false,
+  "scope": "独立专业审核与用户逐篇验收均未进行。"
+ },
+ "realWorldPredictionAccuracy": "not-validated"
+}
