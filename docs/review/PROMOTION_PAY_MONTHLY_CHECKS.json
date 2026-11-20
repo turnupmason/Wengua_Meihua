@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 72,
+  "articleCount": 144,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -18,6 +18,21 @@
         "favourable": 18,
         "difficult": 54
       }
+    },
+    {
+      "primaryId": 2,
+      "name": "坤为地",
+      "articles": 72,
+      "sourceSha256": "3d0571fa5cf039fdf6a2aeb8594860bc571be79d0fda077927d6a62b1ed9e9f2",
+      "authorWholeArticlesRead": 72,
+      "bodyHanRange": [
+        470,
+        522
+      ],
+      "outcomes": {
+        "favourable": 18,
+        "difficult": 54
+      }
     }
   ],
   "errors": [],
@@ -26,21 +41,21 @@
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 1944,
+  "chartComparisons": 3888,
   "chartMismatches": [],
-  "dateCases": 144,
+  "dateCases": 288,
   "bodyHanRange": [
     454,
-    504
+    522
   ],
   "shortHanRange": [
     76,
-    90
+    98
   ],
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "payHanRange": [
-    52,
+    43,
     64
   ],
   "payCorrections": [
@@ -690,6 +705,654 @@
       "old": "新职级定下后，薪资随岗进入对应薪档；生效月份以任命为准，届时拿工资条上的新档和原档逐项对照。",
       "new": "本次能晋升，薪资有随岗调整的方向；具体金额、构成及生效条件仍以正式待遇说明为准。任职、工资起算与到账分别核实，不由比和之象推成同一日期。",
       "reason": "原薪资栏缺少本问范围说明，或将薪档、生效日等实际制度写成定论；本次只说明随岗调整范围与核实方式，不由卦象推定金额、档位或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，随该次岗位上移而来的薪资增加也不作确定安排。这不涉及原岗位独立调薪、奖金或其他收入变化。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未取得更高职级，与此绑定的加薪暂不算已落定。年度工资调整或单独奖励属于其他事项，不由这一盘一并否定。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此轮晋升未定，依附本次职级变化的薪资上调也暂不确认。现职工资是否另有调整，需按独立事项和实际薪酬通知查看。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次未升，随晋升而来的薪资变化暂不按已实现计算。正常年度调薪、奖金及其他独立待遇，不在此处同时作结论。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这轮职级未能上移，与该次晋升相连的加薪也暂不落定。已有工资项目和另外决定的奖金，仍应分别核看实际安排。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职位未升，随这次任用产生的薪资上调也不提前确认。原岗位另行调整工资或发放奖励，应看各自的实际依据。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次未获晋升，随岗薪资增加也暂不作落实判断。本问并未覆盖普通调薪和单独奖励，不能据此断定所有工资项目都保持原样。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮随晋升而来的薪资调整尚未落实，不宜提前计作稳定增加的收入。其他工资调整或奖励有各自依据，需分别确认。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职级未变，附随这次晋升的加薪也不按确定结果安排。独立调薪、津贴和奖金是否改变，应以相应通知另行查看。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升所附的薪资增加尚未落定，不能提前按新待遇安排支出。其他收入是否变化属于另一事项，此处不作一并判断。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未成，与它一同判断的随岗加薪也暂不确认。原岗位待遇、绩效奖励及独立的薪资安排，应各按实际信息处理。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/1/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未升，随这次职位变化而来的薪资提高暂不作为已定收入。其他独立调整或奖金，不由本次晋升结果直接代替判断。",
+      "reason": "薪资说明仅限本次晋升所附调整，不因未升扩大为全部收入不变，也不添加金额或到账日期。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升尚未落实，与该次任用相随的加薪也暂不确认为新增收入。正常调薪或其他奖励另有依据，不在本问一并决定。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此轮未升，随本次职级上移而来的待遇增加暂不作落定判断。独立的年度调薪、奖金和福利变化，仍须各按实际安排确认。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定下的是新职级的薪档；把档位对应的标准和你现在的工资单并排放着看，涨在哪几项一眼就清楚。",
+      "new": "本次能升，随岗薪资调整也可随任职推进。具体数额、适用项目和生效时间，以正式薪酬说明核对，不将任命日期直接当作工资到账日。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "任命下来后，薪资按新职级所在的薪档起算；拿新档的起点和你现在每月实发的数比一比，差额就是随岗上调的那部分。",
+      "new": "晋升能够落实，随岗位调整的薪资也可一并推进确认。涨幅、计薪项目及开始执行的时间，应分别看正式说明，不能仅凭卦象确定具体金额。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "任命下来后，薪资按新职级所在的薪档起算；拿新档的起点和你现在每月实发的数比一比，差额就是随岗上调的那部分。",
+      "new": "本轮职级能够提升，随岗薪资调整也应随任用事项确认。新标准何时执行、包含哪些项目及何时到账，分别依据正式文件与工资记录核对。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定下的是新职级的薪档；把档位对应的标准和你现在的工资单并排放着看，涨在哪几项一眼就清楚。",
+      "new": "本次晋升能成，随岗薪资上调可与任职一并确认。具体涨多少、从何时计薪以及发放节奏，按正式方案核清，不由旺相程度换算。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮职位未升，与本次晋升相随的加薪也暂未落定。本问不代替对独立调薪、奖金或现有待遇项目的判断。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次随晋升产生的薪资上调未能落实，暂不计作确定增加的收入。普通工资调整和另外的奖励，不随本次未升一同被否定。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定下的是新职级的薪档；把档位对应的标准和你现在的工资单并排放着看，涨在哪几项一眼就清楚。",
+      "new": "本次晋升可以落实，随岗薪资调整随任用确认即可。具体金额、工资构成和执行日期要分别核看，不以卦中土旺推定涨幅或发放速度。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未能晋升，附随该次任职的加薪也暂不视为落定。现岗位是否另有调薪或奖励，应看独立安排，不由此处同时推断。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升带来的薪资变化暂未落实，不提前按新职级待遇计算收入。原工资项目与其他独立奖励，应分别按实际信息核对。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/2/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "随任命一起定下的是新职级的薪档；把档位对应的标准和你现在的工资单并排放着看，涨在哪几项一眼就清楚。",
+      "new": "晋升能够完成，随岗薪资调整可随正式任用核定。金额、适用项目和起薪时间另看薪酬说明，任命生效与工资到账不默认是同一天。",
+      "reason": "以实际薪酬说明确认随岗调整，删去必按薪档起点计算等无据推断；不将未升扩大到独立调薪，也不指定涨幅和到账日。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职位未升，随这次晋升而来的薪资增加也暂不视为确定。独立调薪、奖金和现有待遇的变化，应按各自事项另看。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升附带的薪资上调尚未落实，不提前列作新收入。原岗位正常调整及另行决定的奖励，仍按实际通知分别确认。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下，薪资随岗进入新的薪档；拿新档的区间和你现在的工资对照，看自己落在区间的哪一段。",
+      "new": "本次能够晋升，随岗薪资调整也可随任用推进确认。具体标准与执行日期另看薪酬安排，不把本盘的收尾参考窗口当作加薪到账时间。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级定下后，薪资随岗套进对应薪档；先问清从哪个月执行，再拿新档的标准和原工资逐项比一比。",
+      "new": "晋升能落实，随岗薪资调整可与任职确认一并核清。金额、项目和起算时间以实际方案为准，正式任命与工资发放分别查看。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级定下后，薪资随岗套进对应薪档；先问清从哪个月执行，再拿新档的标准和原工资逐项比一比。",
+      "new": "本轮职级能够提升，随岗薪资也可随正式任职安排确认。具体工资标准、执行起点与发放时间分别核对，不预设一定套入某个薪档位置。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下，薪资随岗进入新的薪档；拿新档的区间和你现在的工资对照，看自己落在区间的哪一段。",
+      "new": "这次能升，随岗位变化的薪资调整可同步办理确认。具体金额和执行办法以正式说明为准，末段比和的过程窗口不直接代表工资生效或到账日期。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未成，相应的随岗薪资上调也暂不落实。其他独立工资调整或奖励是否发生，不能仅由本次职级结果推出。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升所附的薪资增加暂未落定，不能按已获得的新待遇安排。普通调薪、奖金或其他福利仍有各自依据，应另行确认。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下，薪资随岗进入新的薪档；拿新档的区间和你现在的工资对照，看自己落在区间的哪一段。",
+      "new": "晋升能够落实，随岗薪资可随正式任用方案确认。具体标准和开始执行的时间另看薪酬信息，不以过程顺利推定固定涨幅或同日到账。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮未升，随本次任职变化而来的加薪也暂不确定。现岗位另有的工资安排和独立奖励，仍需按各自信息判断。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次随晋升产生的薪资调整暂未落实，不提前计入收入安排。正常调薪或其他独立待遇，并未由这一问同时作出结论。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/3/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级定下，薪资随岗进入新的薪档；拿新档的区间和你现在的工资对照，看自己落在区间的哪一段。",
+      "new": "本次职级能够上移，随岗薪资调整可按正式任用方案办理。具体数额、项目与执行时间分别确认，不从末段比和的参考日推定加薪到账日。",
+      "reason": "随岗薪资只随本次晋升确认；删除必定套入薪档或区间位置等无据细节，并将任职确认、计薪及到账分别说明。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未能落实，随这一岗位变化而来的薪资调整也暂不按已成安排。普通年度调薪、奖金及其他独立收入事项，不由这一结论一并否定。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "随岗待遇依附本次晋升，此轮职级未升，其附带加薪也不提前确认。若另有常规薪酬调整，应依实际薪资事项单独核对。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未落实，随岗薪资变化也先保留为未确定事项。这个范围只包括本次升职附带的调整，不代替对年度调薪或绩效奖金的判断。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次职级没有落实上移，因而随该次晋升而来的薪资增加也不作已成判断。其余独立的待遇调整，仍应按相应事项和实际文件确认。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次升职未定，其附带的加薪也不能先算入已经落实的待遇。这里不涉及普通调薪与其他收入来源，工资变化仍以实际薪酬通知为准。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "随本次晋升发生的薪资调整尚未落实，不宜提前按新岗位待遇安排支出。若另有独立调薪或奖金，应依据对应的薪酬事项另行确认。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职级未升，依附这一晋升的工资调整也先不作落实判断。独立年度调薪、奖金或其他收入变动，不在本篇所断范围之内。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升没有落实，随之而来的岗位薪资调整也不能视为确定收入。这不代表所有待遇都不会变化，独立调薪与奖金仍有各自的确认事项。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "随岗薪资与本次任职相连，此轮晋升未成，相关加薪也暂不确认为已落实。其他薪酬项目是否调整，应以各自的通知与约定判断。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，其所附带的薪资增加也先不确认。单独的年度调薪、奖金发放或其他待遇事项，需要依据对应事实另看。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此轮职级未获上移，随岗薪资也不能作为已经确定的增加额。独立调薪和其他报酬不在这次判断内，不应由未升推成收入全面不变。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/4/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "随本次升职发生的工资调整尚未落定，不宜先按新岗位收入计算。普通调薪、绩效奖金或其他待遇变化，须按各自事项独立确认。",
+      "reason": "随岗薪资只随本次晋升判断；明确未落实的范围，不把普通调薪、奖金及其他独立收入一并否定。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未落实，依附这一职级变化的加薪也不先作确定安排。其他年度调薪、奖金或独立待遇事项，不能仅凭本篇一起判定。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮任职未成，随岗薪资也暂不按已经上调处理。独立的工资调整或奖金，应依据相应事项另看，不由这次晋升结论包办。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级一落定，薪资随岗套入新薪档，从任命写明的月份起执行；拿新档的标准和你原来的工资逐项对一对即可。",
+      "new": "本次晋升能够落实，随岗薪资按正式确认的岗位待遇办理。具体调整金额、工资生效日及到账时间，仍须查看薪酬文件，不与任命日期自动等同。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级落定后，薪资按对应薪档执行；拿新档和现在的工资放在同一张表里比，随岗涨在哪里一看便知。",
+      "new": "能升所附带的待遇调整，应以新岗位正式薪酬安排为准。涨幅、计薪起点与实发日期各有确认依据，不因晋升可成就一并推定。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "新职级落定后，薪资按对应薪档执行；拿新档和现在的工资放在同一张表里比，随岗涨在哪里一看便知。",
+      "new": "随本次晋升的薪资安排可以进入落实阶段，具体标准应由正式待遇文件确认。任职生效、工资起算和实际入账分别核对，不假定必在同一天。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级一落定，薪资随岗套入新薪档，从任命写明的月份起执行；拿新档的标准和你原来的工资逐项对一对即可。",
+      "new": "此次晋升落实后，随岗待遇依正式薪酬安排确认。卦中不直接给出新薪档位置、涨幅或起薪月份，应将任职与工资文件分别核清。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升未成，随该次职位上移发生的加薪也暂不列作确定待遇。若有独立薪酬调整或奖金，应按对应事项和文件另行判断。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次任职未落实，因升职而起的薪资调整也不先确认。这一判断不覆盖单独调薪或奖金安排，实际待遇变化须分别核对。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级一落定，薪资随岗套入新薪档，从任命写明的月份起执行；拿新档的标准和你原来的工资逐项对一对即可。",
+      "new": "本轮晋升可成，随岗加薪依正式待遇安排落实。新薪酬具体包含哪些项目、何日起算及何时入账，需按薪酬通知逐项确认。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升所附的薪资上调尚未落实，不宜先计入确定收入。与晋升无直接关系的普通调薪、奖金或其他待遇，应分项确认。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次任职没有落实上移，随岗工资也暂不作增加判断。独立的年度薪酬调整或奖金发放，仍须按其各自依据判断，不能由本篇一并推断。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/5/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "职级一落定，薪资随岗套入新薪档，从任命写明的月份起执行；拿新档的标准和你原来的工资逐项对一对即可。",
+      "new": "晋升落实后，随岗待遇按正式薪酬文件办理。具体涨幅与起薪时间不由卦象换算，任命生效和工资到账也应分别确认。",
+      "reason": "保留本次晋升与随岗薪资的联系，具体标准依正式薪酬安排确认；去除必定套档、任命月份即起薪等无据保证。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/寅",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未成，随之增加的岗位薪资也不提前确认为收入。这个结果不涉及现有工资必然减少，更不代替对独立调薪和奖金的判断。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/卯",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "随本轮晋升发生的加薪尚未落实，先不按新岗位收入安排。未升不等于现有薪资被削减，其他独立待遇事项仍需分别确认。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/辰",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次职级没有落实上移，随岗薪资调整也暂不确认为已成。此处不推断现薪降低，年度调薪、奖金及其他待遇仍按各自事项核对。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/巳",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升附带的加薪尚未落实，不能提前按新职级待遇计算。现有薪资及独立调薪、奖金各有依据，本篇不将其一并判作受损。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/午",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "此次晋升未落实，随该次任职产生的薪资调整也暂不按增加处理。这个结论不意味现薪被取消，其他收入事项须分别确认。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/未",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次名位未上移，随岗薪资也先不作为确定增项。既有工资、独立调薪与奖金不由这一结果一并判断，应以各自实际安排为准。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/申",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升所附的加薪暂未落实，不提前当作收入增加。剥象不在此推定现有工资减少，独立调薪和其他待遇需另按实际事项核清。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/酉",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次晋升未成，随这一晋升调整的薪资也不先确认。现有待遇是否变化及独立奖金安排，均须另有依据，不能从未升直接推出。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/戌",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮名位未升，其随岗加薪也未作落实判断。现薪不因本篇而被判定减少，独立的调薪、奖金或其他收入事项应分别确认。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/亥",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "这次晋升附带的薪资增加尚未落实，先不按新职级待遇计算。原有工资及独立调薪、奖金等项目，不由这一结果一并否定。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/子",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本次未获晋升，随岗加薪也不作已经落实的判断。现有工资与独立薪酬事项仍以实际文件为准，不从本轮未升推断其必然减少。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "2/6/丑",
+      "sourcePath": "sources/editorial/promotion-pay/hex-002.json",
+      "baselineFieldIndex": 11,
+      "old": "",
+      "new": "本轮晋升所带来的薪资调整尚未落实，不能先作为新增收入安排。已有待遇和独立调薪、奖金仍需各自确认，本篇不把未升扩大为收入受损。",
+      "reason": "随岗薪资仅对应本次晋升未成的范围；剥象不扩推现薪减少，独立调薪与奖金另有各自确认依据。",
       "interpretationApproval": "not-implied-by-structural-check"
     }
   ],
