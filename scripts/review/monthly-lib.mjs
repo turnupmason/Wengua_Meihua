@@ -7,6 +7,7 @@ import {loadLibrary} from '../../src/index.js';
 import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE,
  JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE} from '../../src/interview-manuscripts.js';
 import {resolveManuscriptDates} from '../../src/prewritten-manuscripts.js';
+import {CHOICE_WORDS, CHOICE_CONTRA} from './state-vocab.mjs';
 
 export const MONTHS = [...'寅卯辰巳午未申酉戌亥子丑'];
 export const QI = {寅:'spring-wood',卯:'spring-wood',辰:'seasonal-earth',巳:'summer-fire',午:'summer-fire',未:'seasonal-earth',申:'autumn-metal',酉:'autumn-metal',戌:'seasonal-earth',亥:'winter-water',子:'winter-water',丑:'seasonal-earth'};
@@ -24,18 +25,18 @@ export const ITEMS = {
    difficult:/定不下来|确定不了|走不到一起|没走到一起|成不了|难成|不能确定|还定不下|定不了|没能在一起|不能在一起|走不到确定/u,
   },
   note:{favourable:/定为能成/u, difficult:/定为不成/u},
+  forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员/u,
  },
  'job-change':{
   title:'跳槽去留', questionId:'career.job-change.decision', profile:JOB_CHANGE_V3_PROFILE, judgmentBaseline:'strict',
   question:{mode:'narrative', question_type:'job_change_decision', question:'现职和这份新工作怎么选，现在适合辞职吗？', sourceDomainIds:['domain-08','domain-09']},
   scopeNote:'本页只比较现职与这份具体的新工作，并判断现在宜留、宜先准备还是可以办辞职。',
   verdictLabel:{stay:'眼下宜留在现职', prepare:'新工作可取，先准备再办', switch:'可以换到新工作'},
-  verdict:{
-   stay:/留在现职|现职更合适|宜留|先留|不宜辞|不必辞|暂不辞|先不辞|不换|留下来|还是留|继续做现在/u,
-   prepare:/先准备|先筹备|准备好再|落定再|谈妥再|先别急着辞|不急着辞|晚些再辞|再辞/u,
-   switch:/可以换|可以辞|可以走|新工作更合适|换过去|可以提辞职|可以办离职/u,
-  },
+  // 判词与相反说法沿用五气稿的 state-vocab（CHOICE_WORDS／CHOICE_CONTRA），2026-11-20 改。
+  verdict:CHOICE_WORDS, contra:CHOICE_CONTRA,
   note:{stay:/定为留/u, prepare:/定为先准备/u, switch:/定为可走/u},
+  // 他项用语（照 check-hex 跳槽段，去掉「能过／过不了」：长文里「便能过去」「过不了收尾」是常语）；「面试」「试用期」只能指这份新工作的环节，可写。
+  forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|晋升|升职|职级|转正|裁员|被裁|稳得住|有隐患|风险大/u,
  },
  'workplace-stability':{
   title:'职场情况', questionId:'career.job-stability.layoff', profile:STABILITY_V3_PROFILE, judgmentBaseline:'strict',

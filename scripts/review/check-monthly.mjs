@@ -85,10 +85,13 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    const first=a.paragraphs[0].split(/[。！？]/u)[0],shortFirst=a.short.split(/[。！？]/u)[0];
    for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
     if(!c.verdict[a.outcome].test(sent))err(key,label,sent);
-    for(const o of outcomes)if(o!==a.outcome&&c.verdict[o].test(sent.replace(c.verdict[a.outcome],'')))err(key,label,'含另一档判词：'+sent);
+    if(c.contra){if(c.contra[a.outcome].test(sent))err(key,label,'含相反说法：'+sent);}
+    else for(const o of outcomes)if(o!==a.outcome&&c.verdict[o].test(sent.replace(c.verdict[a.outcome],'')))err(key,label,'含另一档判词：'+sent);
    }
    if(/\{\{|\bTODO\b|\[待(?:补|写)\]/u.test(body+a.short))err(key,'placeholder','Unfinished prose');
    if(INTERNAL.test(body+a.short+a.title))err(key,'internal-terms',(body+a.short+a.title).match(INTERNAL)[0]);
+   // 他项用语（各问项 forbid，2026-11-20 加）：标题、简断、正文、专业说明、取期文字都查。
+   if(c.forbid){const all=[a.title,a.short,body,a.judgment,JSON.stringify(a.timing)].join('\n');if(c.forbid.test(all))err(key,'other-item-terms',all.match(c.forbid)[0]);}
    if(HEDGE.test(a.short+first))err(key,'hedge',(a.short+first).match(HEDGE)[0]);
    const lineText=readingFor(ctx,c,id,a).selectedMovingLine.text.replace(/[^\p{Script=Han}]/gu,'');
    const quoted=[...body.matchAll(/「([^」]+)」/gu)].map(m=>m[1].replace(/[^\p{Script=Han}]/gu,'')).filter(q=>q.length>=2);

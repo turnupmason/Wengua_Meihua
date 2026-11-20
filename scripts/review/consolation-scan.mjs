@@ -33,7 +33,9 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
    const plain = s.replace(/「[^」]*」/gu, '');
    // 说的就是本月的时令词不算换季：丑月的「冬末／岁末」，寅月的「开春」。
    const own = {丑:/冬末|岁末/gu, 寅:/开春/gu}[a.monthBranch];
-   const plain2 = own ? plain.replace(own, '') : plain;
+   let plain2 = own ? plain.replace(own, '') : plain;
+   // 跳槽「先准备」的判词本身就是「等某件实事落定再提辞职」（2026-11-20）：等的是书面条件、交接这类实事时不算等一等；只等时间、等气转的照拦。
+   if (item === 'job-change') plain2 = plain2.replace(/(?:等|待|到)([^。！？]{0,24})再(?:提|递|办|交|去|定)/gu, (m, x) => /录用|通知|条款|合同|协议|交接|到岗|薪资|待遇|书面|签|写明|写进|确认|答复|背调|背景调查|手续|年终|社保|公积金|竞业|保密/u.test(x) ? '' : m);
    const hit = RULES.find(([, re]) => re.test(plain2)); if (!hit) continue;
    if (allowSet.has(key + '\u0000' + s)) { allowed++; continue; }
    out.push({key, outcome:a.outcome, where, kind:hit[0], sentence:s});
