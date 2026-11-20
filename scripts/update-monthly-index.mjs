@@ -16,7 +16,8 @@ const receipts=await Promise.all(ids.map(id=>readFile(`${c.RECEIPT_DIR}/${stem(i
 const findingStatuses={};for(const receipt of receipts)for(const f of receipt.findings||[])findingStatuses[f.status]=(findingStatuses[f.status]||0)+1;
 const current=report.articleCount,newArticles=added.length*72;
 const promotionCrossReadComplete=name==='promotion-pay'&&receipts.every(r=>
- r.independentReview?.status==='ai-cross-reviewed-with-open-findings'&&r.independentReview?.wholeArticlesRead===r.wholeArticlesRead);
+ r.independentReview?.status==='ai-cross-reviewed-with-open-findings'&&r.independentReview?.wholeArticlesRead===r.wholeArticlesRead&&
+ r.independentReview?.sourceSha256===r.sourceSha256);
 const checksPath=`docs/review/${name.toUpperCase().replace(/-/g,'_')}_MONTHLY_CHECKS.json`;
 const manifest={
  schemaVersion:'1.0.0',item:name,questionId:c.questionId,batch:`${name}-monthly-preview-${current}-${publicationDate.replaceAll('-','')}`,publicationDate,publicationTimeZone:'America/New_York',scope:'copy-preview-only',uploadedArticles:current,newArticlesSincePrevious:newArticles,newHexagrams:added,fullTarget:4608,remainingArticles:4608-current,authorWholeArticleReadback:receipts.reduce((n,r)=>n+r.wholeArticlesRead,0),
@@ -29,6 +30,11 @@ if(name==='promotion-pay'){
  manifest.checks.payHanRange=report.payHanRange;
  manifest.checks.payCorrectionArticles=report.payCorrections.length;
  manifest.independentFullCopyReview=promotionCrossReadComplete?'ai-cross-reviewed-with-open-findings':'pending';
+ manifest.independentReviewCoverage=receipts.map(r=>({primaryId:r.primaryId,sourceSha256:r.sourceSha256,
+  wholeArticleCoverage:r.independentReview?.wholeArticlesRead??0,
+  currentRevisionFullTextReadCount:r.independentReview?.currentRevisionFullTextReadCount??null,
+  currentRevisionChangedArticleReadCount:r.independentReview?.currentRevisionChangedArticleReadCount??null,
+  scope:r.independentReview?.scope??'见逐卦回执'}));
  manifest.independentHumanReview='pending';
 }
 const newNames=report.hexagrams.filter(h=>added.includes(h.primaryId)).map(h=>h.name).join('、');
@@ -38,7 +44,7 @@ const lines=[`# ${c.title}逐月长稿：${current} 篇预览`,
  ...report.hexagrams.map(h=>`| ${h.name} | ${h.articles} | [打开全文](${stem(h.primaryId)}.md) | [查看记录](../../../${c.RECEIPT_DIR}/${stem(h.primaryId)}.json) |`),'',
  '每卦按初爻至上爻、寅卯辰巳午未申酉戌亥子丑排列。同气月份保持相同五态与判据，文章逐篇写定。正文以自然段展开，讲明判断、过程、爻义与对应准备；篇幅按解释所需伸缩，不以重复建议补字数。',
  ...(name==='promotion-pay'?['每篇另列随岗薪资，说明本次晋升与其所附调整的范围。金额、薪档、计薪及到账日期不由卦象代定；未晋升也不扩大为所有独立调薪或奖金均无。薪资说明不计入正文字数。',
- `[本批写作与晋升规则审计](../../review/PROMOTION_MONTHLY_REWRITE_20261120.md)。${promotionCrossReadComplete?'已完成全部已发布稿件的独立 AI 交叉全文审读；具体解释分歧仍见逐卦回执，未冒称真人专业审核或用户逐篇验收。':'独立交叉全文审读状态见逐卦回执。'}`]:[]),
+ `[本批写作与晋升规则审计](../../review/PROMOTION_MONTHLY_REWRITE_20261120.md)。${promotionCrossReadComplete?'已发布各篇均有独立 AI 全文审读记录；修订稿另读全部改动，原全文记录与后续差异审读分别绑定各版源文件。具体阅读范围及解释分歧见逐卦回执，未冒称真人专业审核或用户逐篇验收。':'独立交叉全文审读状态见逐卦回执。'}`]:[]),
  '## 本批阅读入口',
  ...report.hexagrams.filter(h=>added.includes(h.primaryId)).map(h=>`- [${h.name}：六爻十二月全文](${stem(h.primaryId)}.md)`),'',
  '## 检查与阅读状态',

@@ -1,0 +1,4732 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 4,
+  "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
+  "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+  "editor": "/root/write_meng",
+  "reviewedAt": "2026-11-20T17:44:13.991609+00:00",
+  "status": "partially-reviewed",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "72篇标题、简断、正文与薪资逐月分别撰写；脚本只装配已逐条写好的静态文本、绑定旧判断与取期结构，未用模板生成正文。最终从实际JSON文件分12批各6篇读完全部字段，所有后续完整修改字段保存后再读，未以字数、正则、哈希或程序通过代替内容阅读。 独立审读基版98396c0a的72篇全文已由另一位AI读毕；作者随后针对反馈改了27篇的40个完整字段，并实际逐字段读回。当前作者覆盖由基版全文读回加这40字段组成，不冒称改后又重新通读72篇。",
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/promotion-pay/hex-004.json",
+      "sha256": "a2868d6877c06e23dee223d732b84dd2b4832e0b56a1261a8a076e6314c5be9e",
+      "scope": "六爻三十组五气完整基准；outcome逐篇不动，专业判断只有绑定旧新值的32篇订正，取期结构保持一致。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01蒙.txt",
+      "sha256": "0e0316550f8253d71b3b82de73b19e0dba4ea72733ef9b8e78ed5ddaa68d52c7",
+      "scope": "全文读过六爻经文、王弼注及孔颖达疏，来源revid2404940；2026-11-20再次在线核对全部六爻。"
+    },
+    {
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "scope": "求名占（含在任条）、占卦诀、体用及体用互变、时令与衰旺。古语的现代晋升应用是本项目既定类推，不冒称毫无歧义的唯一古法。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "一层间接生克、原五态与有效力度分开、原体始终不换，吉爻与无生有克的优先序。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "本问按在任晋升的既定直接克体不升规则处理，古籍居官有害不扩为必被处分或失职。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "逐篇独立写定、正文厚度、首句结论、同气不改判断与取期。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "正文470–650汉字且中位至少500，薪资独立说明、先做实文与规则审计再记审核。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "作者全文读回、独立AI审读、程序核验及用户逐篇验收分别记录，回执绑定实际源hash。"
+    },
+    {
+      "path": "docs/review/VOICE_REWRITE_BRIEF.md",
+      "scope": "读者口气、避免空泛术语与无据故事；问项专条以新版promotion-pay简报为准。"
+    },
+    {
+      "gitRef": "editorial/interview-preview-216-20261118",
+      "paths": [
+        "docs/interview-pass/monthly-preview/hex-001.md",
+        "docs/interview-pass/monthly-preview/hex-003.md",
+        "docs/interview-pass/monthly-preview/hex-017.md",
+        "docs/interview-pass/monthly-preview/hex-052.md"
+      ],
+      "scope": "按用户参照分别选读至少六篇，体会直接结论、解释推进与自然段厚度，不套换固定开头。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/周易正義/01蒙",
+      "accessed": "2026-11-20",
+      "revision": "2404940",
+      "scope": "本作者在线打开核对：初六刑与解缚及刑不可长；九二含容纳配与能干其任；六三金夫为刚阳；六四远实；六五委事于能；上九去蒙及捍御/侵取之别。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二",
+      "accessed": "2026-11-20",
+      "scope": "本作者在线核到求名占第九完整在任条、复明时令之应、体用中受制稍解及衰旺论；同时看见占卜总决先看爻辞之说，保留优先张力。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-004.json",
+      "scope": "本轮收口再由packet.mjs生成30组五气盘面，实际逐组读回六节点原态、四处直接关系、本互变名称及六爻经文小象；diagnostic仅作定位，未以其替代作者结论。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "发蒙，利用刑人，用说桎梏，以往吝。",
+      "image": "利用刑人，以正法也。",
+      "reading": "蒙发疑明后刑与解缚皆应适当；以往吝戒刑道无节延续。现代取求明、有据纠正及解除不必要拘束，不预言处分。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "PP004-STRONG-BODY-WEAK-CONTROL"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "包蒙吉，纳妇吉，子克家。",
+      "image": "子克家，刚柔节也。",
+      "reading": "包容解疑、纳配相应与能干其任均为实际成事的吉义，未缩为材料齐全或仅某一段顺手；小象节/接的底本文字差异另列，正文作刚柔相接之义释。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "PP004-GOOD-LINE-VS-INCUMBENT-RULE"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "勿用取女。见金夫，不有躬，无攸利。",
+      "image": "勿用取女，行不顺也。",
+      "reading": "按王孔以刚阳上九释金夫，保留古代婚配立戒背景，现代仅类推为有据自守和责任边界，不作财力、性别或现代品格判断。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "困蒙，吝。",
+      "image": "困蒙之吝，独远实也。",
+      "reading": "实指阳爻，困于远实而未明；现代求确据、核要求是有边界的类推，不断言现实无人帮助或个人智力低下。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "PP004-STRONG-BODY-WEAK-CONTROL"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "童蒙吉。",
+      "image": "童蒙之吉，顺以巽也。",
+      "reading": "保留谦顺、委事于能及功斯克的任事吉义；善任不等于无主见、弃责或仅局部材料顺畅，吉与既定克体不升之间留有优先序讨论。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "PP004-GOOD-LINE-VS-INCUMBENT-RULE",
+        "PP004-STRONG-BODY-WEAK-CONTROL"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "击蒙，不利为寇，利御寇。",
+      "image": "利用御寇，上下顺也。",
+      "reading": "以刚发蒙与正当捍御同为积极意义，所戒在侵取凌夺；不把利守扩成完全被动，也不虚构具体敌手、自毁成果或材料退回。",
+      "wholeArticlesRead": 12,
+      "readerCopyStatus": "author-readback-complete",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "PP004-STRONG-BODY-WEAK-CONTROL"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "PP004-INITIAL-AUTUMN-TWO-SIDES",
+      "status": "corrected-in-copy",
+      "keys": [
+        "4/1/申",
+        "4/1/酉"
+      ],
+      "finding": "补齐震得坎生与受兑制两端，生制相抵仍按原死气轻克；以往吝不编成收尾越改越深。"
+    },
+    {
+      "id": "PP004-L2-L5-FULL-AUSPICIOUS-MEANING",
+      "status": "corrected-in-copy",
+      "finding": "九二与六五保留包容、纳配、克家及顺以巽、委事于能的真实任事吉义，分别订正仅材料收齐、前两段接住、收尾照应、起头几步和大半已做成等窄化。"
+    },
+    {
+      "id": "PP004-UPPER-EARTH-WEAK-CONTROL",
+      "status": "corrected-in-copy",
+      "keys": [
+        "4/6/辰",
+        "4/6/未",
+        "4/6/戌",
+        "4/6/丑"
+      ],
+      "finding": "三土原旺，受震木制且无火生，依项目一层规则有效按气弱；原旺态与直接克体均不改，不再沿旧说按解得有限保留重克。"
+    },
+    {
+      "id": "PP004-CLASSICS-NOT-OFFICE-STORY",
+      "status": "corrected-in-copy",
+      "finding": "发蒙、金夫、独远实、童蒙与御寇均核到注疏语境；去掉具体材料错数、退回、他人心理或自损经过。正文保留有对象、有目的的建议，不据卦象编造已经发生的职场事件。"
+    },
+    {
+      "id": "PP004-GOOD-LINE-VS-INCUMBENT-RULE",
+      "status": "open-priority",
+      "keys": [
+        "4/2/寅",
+        "4/2/卯",
+        "4/2/辰",
+        "4/2/巳",
+        "4/2/午",
+        "4/2/未",
+        "4/2/申",
+        "4/2/酉",
+        "4/2/戌",
+        "4/2/亥",
+        "4/2/子",
+        "4/2/丑",
+        "4/5/寅",
+        "4/5/卯",
+        "4/5/辰",
+        "4/5/巳",
+        "4/5/午",
+        "4/5/未",
+        "4/5/申",
+        "4/5/酉",
+        "4/5/戌",
+        "4/5/亥",
+        "4/5/子",
+        "4/5/丑"
+      ],
+      "finding": "九二、六五有完整正面经义，梅花占卜总决又有先看爻辞之说；本项目当前优先在任晋升直接克体不升。正文不抹吉意，回执保留解释优先序张力，未重定outcome。"
+    },
+    {
+      "id": "PP004-STRONG-BODY-WEAK-CONTROL",
+      "status": "open-priority",
+      "keys": [
+        "4/1/辰",
+        "4/1/巳",
+        "4/1/午",
+        "4/1/未",
+        "4/1/戌",
+        "4/1/丑",
+        "4/4/申",
+        "4/4/酉",
+        "4/4/亥",
+        "4/4/子",
+        "4/5/申",
+        "4/5/酉",
+        "4/5/亥",
+        "4/5/子",
+        "4/6/申",
+        "4/6/酉",
+        "4/6/亥",
+        "4/6/子"
+      ],
+      "finding": "本组只含初六夏月和四土月、六四六五上九秋冬的强体轻克：体旺相及轻克可承均保留，未因本次不升而一律写弱。九二、六三夏土月的木得坎生无金制属于有力之克，不在此组；九二吉辞优先张力另由GOOD-LINE条记录。古籍旺体衰克的利处与现代正式名位二分仍有适用边界，本次忠实沿用项目判序。"
+    },
+    {
+      "id": "PP004-JOINT-INDIRECT-NO-CHAIN",
+      "status": "reviewed-with-project-scope",
+      "finding": "初六木得水生又受金制、六四土得火生又受木制均回原气；九二六三木得水生无金按有力；六五上九土受木制无火按气弱。未连算土克水、水克火来取消同层输入，也未凭秋月另添盘外金。"
+    },
+    {
+      "id": "PP004-L2-XIANG-VARIANT",
+      "status": "interpreted-with-limits",
+      "finding": "本次王孔底本小象正文作刚柔节也，疏则释刚柔相接；正文不混作同一逐字引文，只说明刚柔相接之义。底本及原始源没有覆盖。"
+    },
+    {
+      "id": "PP004-PROCESS-TIMING-AND-PAY",
+      "status": "corrected-in-copy",
+      "finding": "全部72篇既有应期仍为过程受制或耗费，kind/role/method/count/presence不变。事件文字去无据故事，公开理由不提查询月令；薪资独立说明此次随岗调整未落实，不外推年度工资、奖金或到账日。"
+    },
+    {
+      "id": "PP004-VOICE-AND-READBACK",
+      "status": "author-readback-complete",
+      "finding": "六爻72篇正文各自实写。前36篇正文与简断分别清理固定判词起句；最终12批各6篇按实际文件完整读回，后续53个完整修改字段另行输出复读。root已读到的定点字段不扩称全卦独立审定。"
+    },
+    {
+      "id": "PP004-PEER-PRECISE-STRENGTH-AND-READER-VOICE",
+      "status": "resolved-and-independently-reviewed",
+      "scope": "独立AI完整读72篇后的12组意见；27篇40完整字段已由作者修订并读回。",
+      "keys": [
+        "4/1/酉",
+        "4/2/寅",
+        "4/2/卯",
+        "4/2/未",
+        "4/2/丑",
+        "4/3/辰",
+        "4/3/戌",
+        "4/3/酉",
+        "4/3/子",
+        "4/4/卯",
+        "4/4/丑",
+        "4/5/寅",
+        "4/5/未",
+        "4/5/卯",
+        "4/5/辰",
+        "4/5/子",
+        "4/6/卯",
+        "4/6/巳",
+        "4/6/午",
+        "4/6/未",
+        "4/6/申",
+        "4/6/亥",
+        "4/1/申",
+        "4/4/寅",
+        "4/4/巳",
+        "4/4/午",
+        "4/6/寅"
+      ],
+      "observations": [
+        "初六秋月体休不写成体弱；死气比和仍有关系而助薄，不等于完全无作用；六三子月无直接生体明确写出。",
+        "旺兑或旺震只支持末段或中段泄体较重，不能量定该段现实总耗费最多。六四夏月主动制旺火较费力，不能推成收尾任务数量增加。",
+        "简断及正文将保留吉义、不取结论、判断分寸等作者口气改为受教、任事、责任与求明的直接读者语言，九二/六五/上九完整积极古义照旧。"
+      ],
+      "impact": {
+        "outcomeChanged": false,
+        "timingChanged": false,
+        "payChanged": false
+      },
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "independentReportSha256": "df659a028730e836cac9da837a25daefeb84ed5a6e872b6d9ea26b814531aa53",
+      "resolution": "独立AI已完整复读40个最终新字段，并核对完整源仅这些变动，12组原请求均已解决。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "articleKeys": [
+        "4/1/寅",
+        "4/1/卯",
+        "4/1/辰",
+        "4/1/巳",
+        "4/1/午",
+        "4/1/未",
+        "4/1/申",
+        "4/1/酉",
+        "4/1/戌",
+        "4/1/亥",
+        "4/1/子",
+        "4/1/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    },
+    {
+      "movingLine": 2,
+      "articleKeys": [
+        "4/2/寅",
+        "4/2/卯",
+        "4/2/辰",
+        "4/2/巳",
+        "4/2/午",
+        "4/2/未",
+        "4/2/申",
+        "4/2/酉",
+        "4/2/戌",
+        "4/2/亥",
+        "4/2/子",
+        "4/2/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    },
+    {
+      "movingLine": 3,
+      "articleKeys": [
+        "4/3/寅",
+        "4/3/卯",
+        "4/3/辰",
+        "4/3/巳",
+        "4/3/午",
+        "4/3/未",
+        "4/3/申",
+        "4/3/酉",
+        "4/3/戌",
+        "4/3/亥",
+        "4/3/子",
+        "4/3/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    },
+    {
+      "movingLine": 4,
+      "articleKeys": [
+        "4/4/寅",
+        "4/4/卯",
+        "4/4/辰",
+        "4/4/巳",
+        "4/4/午",
+        "4/4/未",
+        "4/4/申",
+        "4/4/酉",
+        "4/4/戌",
+        "4/4/亥",
+        "4/4/子",
+        "4/4/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    },
+    {
+      "movingLine": 5,
+      "articleKeys": [
+        "4/5/寅",
+        "4/5/卯",
+        "4/5/辰",
+        "4/5/巳",
+        "4/5/午",
+        "4/5/未",
+        "4/5/申",
+        "4/5/酉",
+        "4/5/戌",
+        "4/5/亥",
+        "4/5/子",
+        "4/5/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    },
+    {
+      "movingLine": 6,
+      "articleKeys": [
+        "4/6/寅",
+        "4/6/卯",
+        "4/6/辰",
+        "4/6/巳",
+        "4/6/午",
+        "4/6/未",
+        "4/6/申",
+        "4/6/酉",
+        "4/6/戌",
+        "4/6/亥",
+        "4/6/子",
+        "4/6/丑"
+      ],
+      "wholeArticlesRead": 12,
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "status": "author-readback-complete",
+      "method": "前六篇和后六篇各一批，从实际源文件完整输出；逐篇理解后写实质观察，修改字段另行复读。",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalCoverageMethod": "原版逐篇全文读回，加本爻所有保存后修改字段逐字段完整读回；未重新计算为第二次全篇阅读。"
+    }
+  ],
+  "articleReadback": [
+    {
+      "key": "4/1/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 517,
+      "shortHan": 83,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "从弱体与中途重制切入，随后将发蒙落实到任职要求和责任边界；刑与解缚并存，旺震受生受制相抵，未凭吉意改成升职。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 517,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 523,
+      "shortHan": 87,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "卯月重点在薄和不能补弱，正文先讲刑与解缚的尺度，再说明旺震与末轻泄；主张由事实支持，不把未明评价为个人能力低下。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 523,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 521,
+      "shortHan": 83,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺艮和旺坤的主动及承受力保留，囚震生制并见仍轻、相兑末泄实；纠正有止处，申酉取期只参收尾耗费。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 521,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 515,
+      "shortHan": 85,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "体相、比和与轻克轻泄均如实保留，未用重压解释不升；发蒙兼去疑与解除多余约束，必要澄清之后回到实际承担。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 515,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 520,
+      "shortHan": 84,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "先说明有能力而非全盘看弱，再完整解释刑人、说桎梏与以往吝；三个工作问题是准备建议，未假定现实材料已有缺项。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 520,
+      "finalShortHan": 84,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 524,
+      "shortHan": 83,
+      "payHan": 42,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体可理事但末相兑仍需付出；发蒙立法与解缚相配合，已有经验的条件与新职责区别清楚，未将力量足写为任命已定。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 524,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 528,
+      "shortHan": 82,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "秋月死震同时得坎生、受兑制，按原死气轻克，未漏掉水生一端；休艮制相水较费力，末旺兑耗重而取过程耗费日。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 528,
+      "finalShortHan": 82,
+      "authorFinalDeltaFieldsReadInFull": [
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/1/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 519,
+      "shortHan": 84,
+      "payHan": 43,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "首段删去重复月份，专业订正与申月相同；山泽损仅连体生兑的投入，不推成果必失，薪资直接限定此次随岗未落实。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 519,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "short",
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/1/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 546,
+      "shortHan": 82,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "四土月旺体与末实泄并看，初六严与解的两面均在；额外投入按真实职责决定，未借以往吝编出反复返工的事实。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 546,
+      "finalShortHan": 82,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 546,
+      "shortHan": 84,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "囚艮面对旺坎较难掌握，相震生制相抵仍有实克；既保留解缚方向，也要求先明目标条件，未把轻末耗当作生扶。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 546,
+      "finalShortHan": 84,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 540,
+      "shortHan": 83,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "以扩大承诺不能补足实际支撑开头，刑与解缚置于疑事明白之后；末段改为不给主动争取附上保证，读者口气自然。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 540,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/1/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 546,
+      "shortHan": 82,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺艮、旺坤与死坎的可用基础写足，囚震轻克和相兑实泄未消；准备范围依职责而定，未因未升反推所有工作不足。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 546,
+      "finalShortHan": 82,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 539,
+      "shortHan": 87,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "首段先承认九二包容而能任的吉意，再交代死艮与旺震重克；纳配、克家有实际承任含义，末坤薄和不能补出火生土。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 544,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[0]"
+      ]
+    },
+    {
+      "key": "4/2/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 552,
+      "shortHan": 86,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "以子克家承接包蒙和纳妇，保留刚中、接应及理其任；体弱受旺木生助之克不改，现代例子只作职责说明建议。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 558,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[5]"
+      ]
+    },
+    {
+      "key": "4/2/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 552,
+      "shortHan": 86,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体、旺坤比和与囚震得生仍有力并列，没有连算土克水来删掉水生木；吉义不限于收尾，事实支撑个人贡献与协作条件。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 552,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 549,
+      "shortHan": 87,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "休震得坎生且无金制，正文明确实际按有力看；相气与比和支持承受，包容、担当仍有完整正面意义，未改为升成。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 549,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 538,
+      "shortHan": 88,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "纳妇与克家从相配、承任解释，未预测现实婚配；休木得生克力仍实，开放态度与清楚责任同时成立，薪资去掉编辑措辞。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 538,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 562,
+      "shortHan": 87,
+      "payHan": 50,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "土旺与两坤比和提供真实基础，囚震受生的有效制约仍在；能干其任贯穿理解、协作与落实，不局限最后一段顺手。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 569,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "4/2/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 545,
+      "shortHan": 87,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "秋令不被当作盘中多出金，死震得水生的克制没有抹掉；包容与担当不缩为材料接齐，体休和薄和也没有夸成全无主动。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 545,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 554,
+      "shortHan": 85,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "个人贡献与共同成果分清，包容不等于无界包揽；死木得生之克与末坤薄和一致，读回后已去除“把宽容写成”作者口吻。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 554,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 535,
+      "shortHan": 88,
+      "payHan": 42,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体与实克同时保留，九二吉义覆盖实际组织承任；可迁移经验需前提，末后比和未被写为消除全部克体或正式获任。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 535,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 544,
+      "shortHan": 86,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺水所求与囚土承接的差距说清，包容不是事事应允；简断删除材料齐全的审稿比较，专业订正明确恢复吉义与删具体情节。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 544,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 560,
+      "shortHan": 88,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "纳配的现代类推只到理解专长和连接责任，未指现实婚事；相震得旺水生、末囚坤薄和均保留，薪资仅指随岗调整未落实。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 560,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/2/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 552,
+      "shortHan": 87,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体不取消中段克体，正文按有力但可承分辨；读回去掉“写得很重”的编辑措辞，真实贡献与协作前提共同说明能任。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 556,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "4/3/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 540,
+      "shortHan": 87,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "死艮面对旺震、旺巽得水生的中末强克；金夫按王孔刚阳释，第二段改成先核职责所需、再定承担范围，不凭空指认人物。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 540,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 555,
+      "shortHan": 87,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "勿用取女及无攸利保留古代立戒的上下文，金夫不以金字释财力；弱体重克不推整份工作须推倒，守据不等于拒绝学习。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 555,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 551,
+      "shortHan": 88,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺艮与互坤的有利基础、囚木得生的实际约束均清楚；蛊的整理取向与末巽克体分层，变化须有事实而非只为显得不同。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 551,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "4/3/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 542,
+      "shortHan": 86,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "相体能应事，休震巽得水生仍有力；六三警戒不被编成已经改方案或迎合他人，所作建议回到适用前提，薪资已直接说明。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 542,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 542,
+      "shortHan": 88,
+      "payHan": 50,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "古婚配立戒转为责任与事实的现代类推，不作性别品格判断；前段有利不抹去，中末两克也未由体相取消，末期只参受制。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 542,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 552,
+      "shortHan": 87,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体有实力且囚木克体仍实，知所守落实为独立判断与承担边界；金夫的刚阳解释与现实品格分开，蛊未被当成自动改善结果。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 552,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 543,
+      "shortHan": 89,
+      "payHan": 43,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "死震巽受坎生且无金制，明确秋令不能凭空提供金；以可信事实与职责承接组织说明，取期沿用中段用互而未擅改成末段。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 543,
+      "finalShortHan": 89,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 555,
+      "shortHan": 88,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "本用相水较费力、休坤薄和、中末死木得生有力依次清楚；新的方法须比较前提，整理可做与任用有支持没有混作一件事。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 555,
+      "finalShortHan": 91,
+      "authorFinalDeltaFieldsReadInFull": [
+        "short"
+      ]
+    },
+    {
+      "key": "4/3/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 540,
+      "shortHan": 88,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体的承压基础保留，末巽得生的约束未删；蛊可整理、六三戒失守并列，真实问题支持调整，不将新名称当作进展。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 550,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "4/3/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 550,
+      "shortHan": 88,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "囚体面对旺用及相木得生的重克，工作例子均为准备建议；不把有所趋求解释为实际追随某人，守责不要求拒绝更高责任。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 550,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/3/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 540,
+      "shortHan": 89,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "初中末承接不足的关系完整，王孔刚阳解释保留；根代理建议后改成先辨职责条件、不单凭名位吸引力选择，未改变判据。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 540,
+      "finalShortHan": 95,
+      "authorFinalDeltaFieldsReadInFull": [
+        "short"
+      ]
+    },
+    {
+      "key": "4/3/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 555,
+      "shortHan": 89,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体、比和与两木得生之克并看；王孔金夫与现代人物善恶分开，有据修正和有据坚持同可，末蛊整理仍无生扶转出。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 555,
+      "finalShortHan": 89,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 524,
+      "shortHan": 78,
+      "payHan": 43,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "上三爻已切换原体为坎水，死土得离生受震制相抵仍轻；旺震泄重与末相离需主动处理有别，独远实指向求确据而非智力。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 524,
+      "finalShortHan": 78,
+      "authorFinalDeltaFieldsReadInFull": [
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/4/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 530,
+      "shortHan": 82,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "将中段旺木重泄作为突出难处，未把前中死土轻克说成重压；末离可主动处理仍无生水，困蒙的求明与经验适用前提相连。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 535,
+      "finalShortHan": 82,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[5]",
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/4/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 531,
+      "shortHan": 86,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "死水面对两旺土，离生与震克相抵仍按原旺气，未连算水克离来取消火生土；原体弱与末离休主动不足，取中段土气受制。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 531,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 524,
+      "shortHan": 83,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "两土相气的实际约束与末旺火难制均写明，休震仅轻泄；困蒙从爻位远实解释，准备先核准所问，不虚构有人拒绝帮助。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 524,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": [
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/4/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 538,
+      "shortHan": 83,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "前中实克和收尾囚水制旺火的吃力分层，未用轻泄概括全部压力；未知信息留核实步骤，起步取土日而非最终通知日期。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 538,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": [
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/4/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 549,
+      "shortHan": 85,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "四土月两旺土生制并见而维持重克，弱水缺接续；困蒙不扩大为没人提供信息，已有经验按适用条件展开，不先包揽新职责。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 549,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 521,
+      "shortHan": 84,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "相水能承休土轻克及死木轻泄，读回将生制相抵后的措辞改为原休气轻克、方向未变；末囚离只是主动余地，非既成收尾。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 521,
+      "finalShortHan": 84,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 530,
+      "shortHan": 87,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "能力可用与要求须核准并列，轻克和易制火都未被写为直接生扶；求明只核关键疑处，已有充分事实不需为求升再添夸释。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 530,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 528,
+      "shortHan": 81,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "死体、旺土重克和末休离主动承接清楚；六四独远实保持爻位原义，现代取求取可靠参照，未据困蒙贬低个人能力。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 528,
+      "finalShortHan": 81,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 537,
+      "shortHan": 83,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺水能承轻克、相震实泄与死离易制俱在；读回将王孔说明收在爻位关系，已有经验与当前所需需对应，过程期不作任命期。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 537,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 529,
+      "shortHan": 83,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "有力时也须求证，未将熟悉旧工作等同新职责前提相同；两土生制相抵仍囚轻，震相中泄实，末离死可处理但全盘缺生。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 529,
+      "finalShortHan": 83,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/4/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 550,
+      "shortHan": 88,
+      "payHan": 49,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "前中旺土克死水的较重制约不被震制单端取消，末火仍需主动；求明落实为按关键要求选事实，薪资不推到全部待遇。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 553,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "4/5/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 528,
+      "shortHan": 85,
+      "payHan": 42,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "童蒙吉承认受教与用人之长是成事能力；死土受二木制极轻，但旺震巽由休水生而中末泄重，学习所得不被当作获任保证。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 528,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": [
+        "short"
+      ]
+    },
+    {
+      "key": "4/5/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 546,
+      "shortHan": 86,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "以肯学与识人善任开篇，完整说明委事九二的正面意义；轻克与重泄并存，分工需个人责任清楚，不借协作含混担当。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 552,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[5]"
+      ]
+    },
+    {
+      "key": "4/5/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 540,
+      "shortHan": 87,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "原旺土受二木制而无火生，实际克弱与水死缺接续分清；童蒙不限小步顺手，读回去掉“写成自我贬低”，保留真实所长。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 570,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[1]",
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "4/5/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 532,
+      "shortHan": 89,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "土原相与受木制后有效气弱分开，未把夏土直接判成重克；谦顺善任可以使事情得到适当处理，不仅是准备顺畅的行为劝告。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 532,
+      "finalShortHan": 89,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 533,
+      "shortHan": 88,
+      "payHan": 48,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "原相态不改、有效克转弱，休木泄轻且囚水无补益；受教与善任连着理解、适用范围和个人判断，未将虚心简化为不知道。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 533,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 533,
+      "shortHan": 89,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "四土月原旺受制转弱，弱体与轻耗仍缺接续；委事于能既非一人包办也非交空责任，以具体学习及可行分工呈现吉意。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 533,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "short"
+      ]
+    },
+    {
+      "key": "4/5/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 530,
+      "shortHan": 85,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "体相、休土弱克、死木轻耗如实保留；童蒙吉肯定尊重专长和妥当任事，不编大半工作已经顺势完成的现实故事。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 530,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 532,
+      "shortHan": 86,
+      "payHan": 43,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "学习、识别专长与将事委于适当者均有积极分量；两土轻克与二木轻耗没有改成生水，虚心不要求削弱真实成绩。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 532,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 536,
+      "shortHan": 86,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "土原旺与有效弱克分别交代，水死无补身是承接短处；童蒙吉不限局部省力，核方法前提和说明分工使善任有实际内容。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 536,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 534,
+      "shortHan": 85,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺体能担与中末相木实泄同时看，轻土受制不消克向；善任与自身有力不冲突，新的学习和配合按明确责任安排而非任命事实。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 534,
+      "finalShortHan": 85,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/5/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 539,
+      "shortHan": 86,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "根代理抽读认可的旺水承轻克、相木实泄完整保留；委事于能并不取消自己的判断，投入数量没有被当作获任证明。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 548,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "4/5/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 538,
+      "shortHan": 90,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "原旺土受二木制按弱，与囚木轻耗及死水无生分清；所学须能说明方法，分工须可实行，受教善任未窄化为起头照办几步。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 538,
+      "finalShortHan": 90,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/6/寅",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 503,
+      "shortHan": 87,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "三土死受震制为轻克，中段旺震泄重，末坤仍克体；击蒙主动去昧与御寇正当护持并陈，未把利守扩成一概不得主动。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 503,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": [
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/6/卯",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 501,
+      "shortHan": 86,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "弱水重泄和前后轻克都有明确位置，未把结果不升扩大为原有工作损失；护持、纠偏以事实和权限为界，不虚构现实敌手。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 512,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]",
+        "judgment",
+        "judgmentCorrection"
+      ]
+    },
+    {
+      "key": "4/6/辰",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 524,
+      "shortHan": 88,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "原旺三土受震制且无火生，订正旧“解得有限”为有效气弱；水死无金补、末坤仍克的限制不动，上九允许有据而相称的主动。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 524,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/6/巳",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 517,
+      "shortHan": 88,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "夏土原相而有效克弱，囚水无补身、休震轻耗均清楚；不利侵取而利捍御的正反两义保留，未凭爻辞推定现有职位不稳。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 534,
+      "finalShortHan": 88,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "4/6/午",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 518,
+      "shortHan": 90,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "将三土克弱与原相分别说明，末克关系仍在；上下顺连接正当去蒙护持，建议守责纠偏，未用严厉或包揽代替真实担当。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 522,
+      "finalShortHan": 90,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[2]",
+        "paragraphs[5]"
+      ]
+    },
+    {
+      "key": "4/6/未",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 519,
+      "shortHan": 90,
+      "payHan": 44,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "土旺原态不删除，受震制无火生后按气弱，不重复按原旺加重；先明责任再作纠偏，配合前提不说成已拥有的权限。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 525,
+      "finalShortHan": 90,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[3]"
+      ]
+    },
+    {
+      "key": "4/6/申",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 518,
+      "shortHan": 89,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "相水可承、休土受制轻克、死木泄小均保留，前后克向不变；已有能力充分呈现，确有新事实才修正，没有自损成果故事。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 531,
+      "finalShortHan": 89,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "4/6/酉",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 529,
+      "shortHan": 87,
+      "payHan": 43,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "末坤仍克与相水能承并列，上九主动护持未写成凡事不改；根代理建议后第四段改为先确认事实责任影响范围，再作相称处理。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 529,
+      "finalShortHan": 87,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/6/戌",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 524,
+      "shortHan": 89,
+      "payHan": 47,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "再次核原旺土与有效气弱的差别，未连算三土克水取消水生震；有据纠偏和保护基础都保留，不以减阻预支晋升结果。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 524,
+      "finalShortHan": 89,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/6/亥",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 521,
+      "shortHan": 90,
+      "payHan": 46,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "旺水能承轻克，相震中泄实且末坤继续克；专业说明删去无根据的回查耗时，并补完整去蒙御寇之义，窗口仍只是末段受制。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 533,
+      "finalShortHan": 90,
+      "authorFinalDeltaFieldsReadInFull": [
+        "paragraphs[0]"
+      ]
+    },
+    {
+      "key": "4/6/子",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 518,
+      "shortHan": 86,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "能任其事与行动正当分开说明，旺体没有使囚土之克消失；中段实泄需目的清楚的投入，更多承担未被当作升职已经完成。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 518,
+      "finalShortHan": 86,
+      "authorFinalDeltaFieldsReadInFull": []
+    },
+    {
+      "key": "4/6/丑",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "bodyHan": 530,
+      "shortHan": 90,
+      "payHan": 45,
+      "wholeArticleRead": true,
+      "bodyReadInFull": true,
+      "shortTimingPayReadInFull": true,
+      "judgmentReadInFull": true,
+      "readMethod": "最终实际源文件按每爻前六篇、后六篇全文展示阅读，包含标题、简断、全部正文、专业判断、应期及薪资；保存后改动的完整字段另行输出复读。",
+      "substantiveObservation": "死体缺生、三土原旺而受制气弱、囚震轻泄均匹配；积极处理以确切责任为范围，未将轻克夸大成重压，附薪未扩为全部收入。",
+      "status": "author-readback-complete",
+      "independentReview": "passed-base-full-read-plus-complete-final-delta",
+      "finalSourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "finalBodyHan": 530,
+      "finalShortHan": 90,
+      "authorFinalDeltaFieldsReadInFull": []
+    }
+  ],
+  "revisionLogs": [
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/readback_copy_fixes.json",
+      "entries": 52,
+      "scope": "实际修改记录；各完整新字段保存后重新输出读回。临时路径仅供本轮复核，持久审计见本回执和规则审计。"
+    },
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/three_final_paragraphs.json",
+      "entries": 3,
+      "scope": "实际修改记录；各完整新字段保存后重新输出读回。临时路径仅供本轮复核，持久审计见本回执和规则审计。"
+    },
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/final_reader_fixes.json",
+      "entries": 5,
+      "scope": "实际修改记录；各完整新字段保存后重新输出读回。临时路径仅供本轮复核，持久审计见本回执和规则审计。"
+    },
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/final_readback_changes.json",
+      "entries": 50,
+      "scope": "实际修改记录；各完整新字段保存后重新输出读回。临时路径仅供本轮复核，持久审计见本回执和规则审计。"
+    },
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/root_last_three_changes.json",
+      "entries": 3,
+      "scope": "实际修改记录；各完整新字段保存后重新输出读回。临时路径仅供本轮复核，持久审计见本回执和规则审计。"
+    },
+    {
+      "scratchLog": "/workspace/scratch/4c8efee30d23/drafts/meng/peer-revision-delta.json",
+      "entries": 40,
+      "articles": 27,
+      "baseSourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "scope": "独立全文审读意见对应32个公开/判断字段，以及同步8个完整judgmentCorrection。作者实际读完全部40个保存后的新字段；结论、全部取期及薪资值不变。",
+      "authorDeltaReadback": {
+        "status": "complete",
+        "fullFieldsActuallyRead": 40,
+        "reader": "/root/write_meng",
+        "reviewerIsHuman": false,
+        "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+        "readAtUTC": "2026-11-20T17:36:22.412788+00:00",
+        "scope": "24个完整公开字段及16个完整专业判断/订正字段分两批实际读回；未将仅有机器检查作为阅读。"
+      },
+      "independentDeltaReadback": {
+        "status": "passed",
+        "reviewer": "/root/write_xu",
+        "fullFieldsActuallyRead": 40,
+        "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+        "reportSha256": "df659a028730e836cac9da837a25daefeb84ed5a6e872b6d9ea26b814531aa53"
+      }
+    }
+  ],
+  "judgmentCorrections": [
+    {
+      "keys": [
+        "4/1/申",
+        "4/1/酉"
+      ],
+      "reason": "原说明只列兑金制震，漏列坎水生震；补齐生克并见、相抵仍按原死气论的一层作用。将“以往吝”恢复为强治须有节制的戒意，不虚构收尾反复修改。另去掉“收尾耗得最多”的实际总量推断：旺兑只支持末泄较重，未量出其与初段主动处理等阶段耗费的大小。月令原态、关系、有效力度、本次不升及取期结构不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/2/辰",
+        "4/2/未",
+        "4/2/戌",
+        "4/2/丑"
+      ],
+      "reason": "原说明把九二的包容任事仅放在收尾担得起事；恢复包蒙、纳配与克家对实际承任的完整吉义，同时保留体旺及两坤比和的有利证据。震囚得坎生按有力的关系与力度不改，本次不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/2/巳",
+        "4/2/午"
+      ],
+      "reason": "原说明把九二包蒙、克家的吉义限定为收尾前后照应；依王孔恢复刚中、含容和实际任事的完整解释。原体相、比和及震得坎生而有效有力均不改，本次不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/2/申",
+        "4/2/酉"
+      ],
+      "reason": "原说明将九二吉辞缩为前两段接得住；依王孔恢复包蒙之含容、纳妇之相配与子克家之能任其事。体休、震死得坎生而克势实等盘面关系和力度均不改，本次不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/2/亥",
+        "4/2/子"
+      ],
+      "reason": "原说明以“材料压人”替代体弱制旺用的关系，并将包蒙之吉缩成材料收全；删去无根据的职场情节，恢复含容解疑、刚中担当的古义。艮囚坎旺与震得生的力度不变，本次不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/4/寅",
+        "4/4/卯"
+      ],
+      "reason": "原说明把旺震泄体的较重作用进一步写成中段实际总耗费最多，盘面没有量化各阶段耗费的依据。保留震旺、泄重以及两土生克相抵仍按原气的关系与力度，只删除无据的阶段总量比较；本轮不升及取期结构不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/4/巳",
+        "4/4/午"
+      ],
+      "reason": "原说明由囚水制旺火较费力外推为收尾事项很多，旺衰并不提供真实任务数量。改清末后仍由原体水主动处理、所需承担较费力，保留前中两土相气克体、震休轻泄及既定不升与取期。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/4/申",
+        "4/4/酉"
+      ],
+      "reason": "原说明以“收尾干净”将相水可制囚火落实为已经办妥的实际经过；改为收尾较有主动处理余地，保留能力条件与现实完成之间的边界。体相、两土轻克、末离囚及原不升与取期结构均不改变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/5/寅",
+        "4/5/卯"
+      ],
+      "reason": "原说明把童蒙之吉缩为顺着要求走的几处；依王孔恢复谦顺受教、委事于能的整体任事意义。土死受木制之轻克、二木旺而泄重均照原判保留，本次不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/5/辰",
+        "4/5/未",
+        "4/5/戌",
+        "4/5/丑"
+      ],
+      "reason": "原说明把童蒙之吉限定为起头随引导走出的几步；依王孔恢复受教、委事于能与成事担当的完整意义。两土原旺而受二木制按气弱的既定关系不改，体死及原不升与取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/5/申",
+        "4/5/酉"
+      ],
+      "reason": "原说明将“顺以巽也”写成大半工作已经顺势而为，既狭化善任之吉，也无根据地补出完成经过；改为谦顺受教与善用专长，不假定具体工作已完成。盘面关系、轻克轻泄、原不升与取期结构不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/6/寅",
+        "4/6/卯"
+      ],
+      "reason": "原说明以“利守不利攻”概括上九，易被扩大为一概不能主动；依王孔恢复以刚发蒙与正当捍御，明确不利的是侵取凌夺。另去掉“中段耗得最多”的实际总量推断，旺震仅支持泄体作用较重，未量出各阶段总耗费。三土死受震制之轻克、旺震泄重、原不升及取期结构均不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/6/辰",
+        "4/6/未",
+        "4/6/戌",
+        "4/6/丑"
+      ],
+      "reason": "原说明在三土原旺、受震制而无火生的同层关系下仍称“解得有限”，未落实既定受克无生按气弱的规则；订正为三土有效气弱，原旺态与克体方向不变。并将御寇恢复为正当护持与纠偏，非一概不得主动；原不升及取期结构不动。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/6/申",
+        "4/6/酉"
+      ],
+      "reason": "原说明把“利御寇”解释成戒攻己之守，暗含自己破坏成果的未经支持情节；改回正当护持与去蒙，不预断具体错漏或自损经过。原体相、三土休而克轻、震死泄轻以及不升与取期结构不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "keys": [
+        "4/6/亥",
+        "4/6/子"
+      ],
+      "reason": "原说明以“回查耗时”给相震受生增添具体工作经过，并以利守不利攻概括上九；分别改为过程投入较多、正当纠偏与防护，保留主动去蒙而戒侵取的完整爻义。旺体、轻克、实泄及原不升与取期结构不变。",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    }
+  ],
+  "checks": {
+    "programmaticVerification": "passed",
+    "draftCheck": {
+      "status": "passed",
+      "articles": 72,
+      "chartComparisons": 1944,
+      "chartMismatches": 0,
+      "dateCases": 144,
+      "duplicateLongSentences": 0,
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+    },
+    "styleCheck": {
+      "status": "passed",
+      "bodyHanMin": 503,
+      "bodyHanMax": 570,
+      "bodyHanMedian": 536,
+      "shortHanMean": 86.29,
+      "bodyMonthOpeningRate": 0,
+      "shortMonthOpeningRate": 0.0417,
+      "sameFirstEightHanMaximum": 1,
+      "note": "文风门槛全部通过；正文月份起句0%，简断月份起句3/72，前八字最大相同1，短句比例0.2%。程序与文风通过不等于独立内容审读完成。",
+      "averageSentenceHan": 33.6,
+      "shortSentencesAtMost10HanPercent": 0.2,
+      "yiPerMille": 177,
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+    },
+    "sourceCheck": {
+      "status": "passed",
+      "articles": 72,
+      "chartComparisons": 1944,
+      "chartMismatches": 0,
+      "dateCases": 144,
+      "duplicateLongSentences": 0,
+      "flexibleLengthWarnings": 0,
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+    },
+    "previewBuild": {
+      "status": "passed",
+      "renderedHexagrams": [
+        4
+      ],
+      "articles": 72,
+      "authorApprovalAdded": false,
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "path": "docs/promotion-pay/monthly-preview/hex-004.md"
+    },
+    "previewCheck": {
+      "status": "passed",
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "previewSha256": "3a2c6dcf8ff55fdc2cfb3365aa5957677a788077bf9258753b2cfff099774ede",
+      "fullTextMatchesSource": true
+    },
+    "commands": [
+      "node scripts/review/check-monthly.mjs promotion-pay --hex 4",
+      "node scripts/review/style-monthly.mjs promotion-pay --hex 4",
+      "node scripts/build-monthly.mjs promotion-pay --hex 4",
+      "node scripts/review/check-monthly.mjs promotion-pay --hex 4 --docs"
+    ],
+    "previousVerificationAtBaseSource": {
+      "status": "passed",
+      "sourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "previewSha256": "8d619ce72f3e11fb80c84f84276bf56ff00527a0c61c2886f2dc5cf69c54e1df",
+      "fullTextMatchesSource": true
+    }
+  },
+  "independentReview": {
+    "status": "ai-cross-reviewed-with-open-findings",
+    "reviewer": "/root/write_xu",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+    "wholeArticlesRead": 72,
+    "fullReadSourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+    "finalDeltaCompleteFieldsRead": 40,
+    "fullReadReportSha256": "df659a028730e836cac9da837a25daefeb84ed5a6e872b6d9ea26b814531aa53",
+    "scope": "非作者AI实际完整读完98396c0a基版72篇全部字段，再独立实际复读e7ab3ca6最终版全部40个改动字段；其余值经完整源差异核对未变。12组请求全部解决；未冒称在新hash下再次整卦重读72篇。",
+    "openInterpretivePriorityFindings": [
+      "PP004-GOOD-LINE-VS-INCUMBENT-RULE",
+      "PP004-STRONG-BODY-WEAK-CONTROL"
+    ],
+    "independentReport": {
+      "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+      "reviewer": "/root/write_xu",
+      "status": "passed",
+      "wholeArticlesRead": 72,
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi-hans/01蒙.txt",
+          "url": "https://zh.wikisource.org/wiki/周易正義/01蒙",
+          "webRef": "turn899309741view0",
+          "scope": "已在线实际读完整经文与王孔注疏126–198行，核包蒙、童蒙、击蒙、初六刑说并列、六三金夫为上九、六四独远实及九二节/接异文"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "第8、9、10节实际读取，一层相生相克与原体休的边界"
+        },
+        {
+          "path": "docs/review/PROMOTION_MENG_RULE_AUDIT_20261120.md",
+          "scope": "全文实际读取，全部六爻节点、30组五气及逐爻间接作用、32篇13组专业订正、开放优先、真实作者状态"
+        }
+      ],
+      "completedLines": [
+        {
+          "movingLine": 1,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "标题、简断、全部正文段落、薪资、完整timing、judgment及存在的judgmentCorrection、payCorrection，逐项完整输出并实际阅读",
+          "observation": "原体艮土、体克坎水、坤比和、震克体与末兑泄体均相合；震木同时得水生和金制，五气回原态，秋月已补齐漏生仍死气轻克。刑与说桎梏并读、刑不可长、发蒙解除疑滞说明完整，不虚构处分或真实返工。春冬受制较实、夏土月体有力仍不升的边界清楚；薪资只限本轮随岗，时点都是过程。发现酉short休弱/增负担与秋judgment总耗费最高的精确问题。"
+        },
+        {
+          "movingLine": 2,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "同上，全字段完整输出并实际阅读",
+          "observation": "包蒙、纳妇、子克家的包含解疑、相配与能干其任均展开，未限成材料齐全或几步接住，也未把古代婚配硬套现代事件。互震得本坎生、盘内无金，休死囚仍按有效有力；未继续由土克水删掉水生木，也未凭秋令加金。春冬弱体、秋休体与夏土有力体分别写出，比和与生体区分清楚。定点发现寅正文比和无力过重及卯/未/丑少数作者判语。"
+        },
+        {
+          "movingLine": 3,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "标题、简断、全部正文段落、薪资、完整timing、judgment、payCorrection均完整输出并实际读过；本爻无judgmentCorrection",
+          "observation": "六三从古代婚配立戒到现代有所自守的类推说明清楚，金夫按王孔为上九刚阳，不以金字推富有之人；未对读者性别品德或现实追随者下判断。震巽两木各得坎水生、盘内无金，休死囚都不当轻克，也没有以旺体消掉克向。中末皆克、末蛊整理义与未升并陈；秋月保留用互取期，其余末用，不把整理变任命。定点发现辰戌不取晋升的作者口吻、子简断补益却少和酉简断宜提醒搭配。"
+        },
+        {
+          "movingLine": 4,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "标题、简断、全部正文段落、薪资、完整timing、judgment及存在的judgmentCorrection、payCorrection，逐项完整输出并实际阅读",
+          "observation": "两土得末离火生而受互震木克，同层相抵后按原五气，夏相及土旺仍有力、春死秋休冬囚仍轻。末离由坎水主动克制，未错写火克水；盘内无金生体。困蒙独远实按爻位远阳释义，未扩成现实无人可助或能力标签。正文有履职、权限与承接，不止于材料整理。定点发现春月专业说明中段耗得最多、夏月收尾事多两种无据现实量化，以及两处作者口吻。"
+        },
+        {
+          "movingLine": 5,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "标题、简断、全部正文段落、薪资、完整timing、judgment及存在的judgmentCorrection、payCorrection，逐项完整输出并实际阅读",
+          "observation": "童蒙吉完整展开谦顺受教、委事于能、不自任聪明，以及学习、识别专长和安排责任的能力，未缩成只听话或某小步顺手。两土受震巽制而盘内无火生，各月有效克力均轻，仍保留夏相土旺的原态和克体方向；体生两木的耗泄独立说明，未按木的数量倍乘。冬旺体、相木实泄及秋相体、死木轻泄均分清。发现五篇六字段中保留吉意/仍取未升/判成等判稿视角，其余结论、薪资与过程取期无新增问题。"
+        },
+        {
+          "movingLine": 6,
+          "wholeArticlesRead": 12,
+          "batches": [
+            "寅卯辰巳午未",
+            "申酉戌亥子丑"
+          ],
+          "scope": "标题、简断、全部正文段落、薪资、完整timing、judgment及存在的judgmentCorrection、payCorrection，逐项完整输出并实际阅读",
+          "observation": "击蒙积极去昧与利御寇正当捍御均完整保留，不利为寇限于乘势侵取，并未扩大为凡事不能主动。三处土受震制、无火生，原旺相仍按有效弱克而不改月令原态；互震泄体另论，春旺泄较重、冬相泄实、其余偏轻。未把三处土数量直接换成现实阻力人数，也未添加现职必失的推断。夏土月弱体、秋冬有力体都保持末克无生不升；应期仍为过程轻阻。定点发现春月专业总耗费最高遗词，以及数处判断须保留、虚构敌手、名位结论等作者口吻。"
+        }
+      ],
+      "findings": [
+        {
+          "id": "XM004-REST-STATE",
+          "key": "4/1/酉",
+          "field": "short",
+          "old": "收尾负担增加而自身休弱，酉月这轮不能升职，准备须先厘清目的。",
+          "reason": "原体休不并入囚死弱，且末旺兑可说明耗费较重，未提供现实负担不断增加的趋势。",
+          "request": "直接说明末后仍须较多付出、体休而承接有限，保留不升首句及原结论。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/1/酉",
+              "field": "short",
+              "old": "收尾负担增加而自身休弱，酉月这轮不能升职，准备须先厘清目的。",
+              "fullOldFieldValue": "收尾负担增加而自身休弱，酉月这轮不能升职，准备须先厘清目的。艮制相水较吃力，中途震克虽轻，末旺兑仍耗体。宜让补充各有用途，依事实解除疑处，也保留已清楚的内容，不把一再整理当成名位已经落定。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "799713aab3e2163aa8c309eeae1f04859f4978002dd1deee2d188ad5ddd6f478",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-UNSUPPORTED-MAX-EXPENDITURE",
+          "keys": [
+            "4/1/申",
+            "4/1/酉"
+          ],
+          "field": "judgment",
+          "old": "兑旺，末泄最重，收尾耗得最多。",
+          "reason": "旺兑末泄较重可以保留，但未量化初段主动制相水与末段耗泄的现实总量，不能写收尾耗得最多。",
+          "request": "保留旺兑、末泄较重与需本人付出，去阶段总耗费最高推断；并入已有judgmentCorrection精确绑定理由。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/1/申",
+              "field": "judgment",
+              "old": "兑旺，末泄最重，收尾耗得最多。",
+              "fullOldFieldValue": "艮土为体，坎水为用，体克用，艮休坎相，制之费力，开局慢；互坤休，比和而薄；互震克体，申酉月震死，得坎生又受兑克，生克相抵，仍按原死气论，中段之克轻；变兑受体所生，兑旺，末泄最重，收尾耗得最多。全盘无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），《求名占》「体生用，名不可就」落在终应，定为升不了。初六「以往吝」戒强治无节，不据爻辞虚构收尾反复修改的实际经过，不翻结论。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "b3bdd6bbe84d9d4cb87cf3464170ff45afa6892c1d21b9f2e8cf48e606fe2037",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/1/酉",
+              "field": "judgment",
+              "old": "兑旺，末泄最重，收尾耗得最多。",
+              "fullOldFieldValue": "艮土为体，坎水为用，体克用，艮休坎相，制之费力，开局慢；互坤休，比和而薄；互震克体，申酉月震死，得坎生又受兑克，生克相抵，仍按原死气论，中段之克轻；变兑受体所生，兑旺，末泄最重，收尾耗得最多。全盘无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），《求名占》「体生用，名不可就」落在终应，定为升不了。初六「以往吝」戒强治无节，不据爻辞虚构收尾反复修改的实际经过，不翻结论。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "b3bdd6bbe84d9d4cb87cf3464170ff45afa6892c1d21b9f2e8cf48e606fe2037",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-EQUAL-LIGHT-NOT-NONE",
+          "key": "4/2/寅",
+          "field": "paragraphs[0]",
+          "old": "前后坤土虽与体比和，也同样无力。",
+          "reason": "死气比和仍有相接而轻，不宜写成支持全无。",
+          "request": "改为同处死气、支持较薄。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/2/寅",
+              "field": "paragraphs[0]",
+              "old": "前后坤土虽与体比和，也同样无力。",
+              "fullOldFieldValue": "九二有包容而能任事的吉意，承接基础却弱，这一回不能晋升。寅月艮土死，中段震木当旺来克，前后坤土虽与体比和，也同样无力。宜把包容意见落实为弄清事情，而非把全部责任一并收下。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "b2e5f7ed64443932d3801d50983d0252f8c665954c7fc40b01df15a77463b7b5",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-READER-LANGUAGE-L2",
+          "locations": [
+            {
+              "key": "4/2/卯",
+              "field": "paragraphs[5]",
+              "old": "本轮的未升不要求否定九二的正面意义，包容、能任的做法仍可落实到现职。",
+              "fullOldFieldValue": "本轮的未升不要求否定九二的正面意义，包容、能任的做法仍可落实到现职。只是已有行动方向与名位是否成就不是同一层，前后薄和不能直接代替生扶。安排上宜稳住能够负责的内容，让事实逐项说明能力，不把将来能做的事当作眼前已具的凭据。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "edfe151745fce9798024d248a58abd7ff620a1e880d91628e69d562a7fa909af",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/2/未",
+              "field": "paragraphs[2]",
+              "old": "故本轮不取晋升。",
+              "fullOldFieldValue": "互震木在未月囚，本来失令，却得坎水相生，盘中无金制木，克体依然有力。旺体与两处比和使自身能够承受，并没有取消其中的约束；全盘又缺少直接生土之火，故本轮不取晋升。这里的轻重是能力与限制并看，不能将一方有力解释为另一方无效。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "9b1c941a6e697ebc66ad03090ae44e33359323a609ab63c6c549215b5ab120ce",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/2/丑",
+              "field": "paragraphs[1]",
+              "old": "本轮因此仍未取成。",
+              "fullOldFieldValue": "震木原处囚气，得坎水生且无金制，实际作用仍有分量。不能把体旺理解成克体关系被取消，也不能只见末后同气就跳过中途受制；前后无直接生土补益，本轮因此仍未取成。宜对限制认真说明，无需因结果未成便把各处压力都看得很重。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "2e7031a19468350e881794a323c294e91051f509eea1798852ea318265fc3492",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ],
+          "reason": "解释如何处理吉义和取成的作者口吻，应直接说实际任事意义与本次未升。",
+          "request": "逐处自然改写，不改变古义、结论或关系；提供完整新段回读。",
+          "status": "resolved-after-complete-field-reread"
+        },
+        {
+          "id": "XM004-READER-LANGUAGE-L3",
+          "locations": [
+            {
+              "key": "4/3/辰",
+              "field": "paragraphs[2]",
+              "old": "故本轮仍不取名位提升。",
+              "fullOldFieldValue": "互震、变巽在土月处囚，失令的一面使它们不具春木旺势；两木又得坎水生，且无金克木，实际制约仍有分量。旺体可以承受，比和也能使表达与行动保持协调，盘中却无直接生土来接续，故本轮仍不取名位提升。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "2414266ab0a13dd77c460ab5d7b5d979a59bff7b144c616731db7bd0f975228c",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/3/戌",
+              "field": "paragraphs[1]",
+              "old": "所以本次不取晋升。",
+              "fullOldFieldValue": "互震和末巽原处囚气，得坎水相生而无金克木，克体作用仍有力。旺体可以增加承受，不会把直接相克改为生扶；盘中无直接生土，末后仍受木制，所以本次不取晋升。轻重的分辨应落在承压能力上，不能省去关系方向。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "142690f29c9b0b9a4b6429955c16991d5f3fb7f56c1612cbbe460e8126438260",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/3/酉",
+              "field": "short",
+              "old": "六三宜提醒有据而行",
+              "fullOldFieldValue": "主动处理较吃力，前后支撑又薄，酉月本轮不能升职。震巽虽死，得坎水生而克制仍实，收尾没有转为扶助。六三宜提醒有据而行，新方法先核适用条件，可靠经验稳妥保留，让改变与承担都接在自己能够负责的事实之上。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "107782d9b2a4e153d257094c08c94b98548eb1645b790365255474dbc09ff8e8",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ],
+          "reason": "不取名位/不取晋升是作者判定措辞，宜提醒搭配生硬。",
+          "request": "自然说明本轮未晋升与六三有据自守的建议，完整字段回读。",
+          "status": "resolved-after-complete-field-reread"
+        },
+        {
+          "id": "XM004-NO-SUPPORT-NOT-LITTLE",
+          "key": "4/3/子",
+          "field": "short",
+          "old": "各段都需承接，直接补益却少",
+          "reason": "本爻无直接生土；补益却少容易误读为存在少量直接生体。",
+          "request": "改为盘内却无直接补益，仍保留比和有而薄的事实。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/3/子",
+              "field": "short",
+              "old": "各段都需承接，直接补益却少",
+              "fullOldFieldValue": "各段都需承接，直接补益却少，子月本轮不能晋升。体艮与互坤同囚，本用水旺难制，震巽相得水生使中末约束较重。宜按六三的自守分寸辨清新条件，可靠经验有据保留，尚未了解的责任不先答满，让主张与实际力量相称。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "fb1ad8a0a24c211a106a0c801206c1eccce405491b54c71afb8d852812b991e5",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-L4-MAX-EXPENDITURE",
+          "keys": [
+            "4/4/寅",
+            "4/4/卯"
+          ],
+          "field": "judgment",
+          "old": "震旺，泄重，中段耗得最多",
+          "reason": "旺震泄重支持作用较重，不能据此断实际各阶段总耗费最高。",
+          "request": "保留中段旺震泄重，去总耗费最高的现实量化，并新增精确judgmentCorrection；结论与取期不变。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/4/寅",
+              "field": "judgment",
+              "old": "震旺，泄重，中段耗得最多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤又克体，寅卯月艮、坤皆死，两克轻；互震受体所生，震旺，泄重，中段耗得最多；变离受体所克，离相，制之费力。艮、坤得离生又受震克，生克相抵，按本气论。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），定为升不了。六四「困蒙，吝」与盘面同向。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "615078b8b2221dfefd7067d86efa52e48630720368e8965907628fc10f965244",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/4/卯",
+              "field": "judgment",
+              "old": "震旺，泄重，中段耗得最多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤又克体，寅卯月艮、坤皆死，两克轻；互震受体所生，震旺，泄重，中段耗得最多；变离受体所克，离相，制之费力。艮、坤得离生又受震克，生克相抵，按本气论。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），定为升不了。六四「困蒙，吝」与盘面同向。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "615078b8b2221dfefd7067d86efa52e48630720368e8965907628fc10f965244",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-L4-TASK-COUNT",
+          "keys": [
+            "4/4/巳",
+            "4/4/午"
+          ],
+          "field": "judgment",
+          "old": "离旺，体囚难制，收尾事多",
+          "reason": "弱水制旺火可以说明处理费力，不能推出实际事项数量很多。",
+          "request": "直接说明末后主动处理较费力，不添加任务数；新增精确judgmentCorrection，事实/结论/取期不动。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/4/巳",
+              "field": "judgment",
+              "old": "离旺，体囚难制，收尾事多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤又克体，巳午月艮、坤皆相，前中两克都实；互震受体所生，震休，泄轻；变离受体所克，离旺，体囚难制，收尾事多。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），定为升不了。六四「困蒙，吝」同向。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "f22b3dac6d9416a580aa54918736733e76b3161fbd7f75abf678e9eae75225e1",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/4/午",
+              "field": "judgment",
+              "old": "离旺，体囚难制，收尾事多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤又克体，巳午月艮、坤皆相，前中两克都实；互震受体所生，震休，泄轻；变离受体所克，离旺，体囚难制，收尾事多。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），定为升不了。六四「困蒙，吝」同向。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "f22b3dac6d9416a580aa54918736733e76b3161fbd7f75abf678e9eae75225e1",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-READER-LANGUAGE-L4",
+          "locations": [
+            {
+              "key": "4/4/丑",
+              "field": "paragraphs[1]",
+              "old": "因此本轮不取晋升",
+              "fullOldFieldValue": "两土既受震木制，又得离火生，作用相抵后仍按旺土判断，制约较重。末离火休，体水去克它，死气之水主动处理也费力；没有生水之金接续，前中压力与收尾承担难以相互化解。因此本轮不取晋升，不能只凭愿意多做就看成可成。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "4411c854a74c2d33188ba7bfe6ec8be6cc9c26be33ec6b16de846e5b27f9ffbb",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/4/卯",
+              "field": "paragraphs[5]",
+              "old": "本轮未升的判断不要求把全部经验否定",
+              "fullOldFieldValue": "本轮未升的判断不要求把全部经验否定，六四更提醒人走出未明而求得确据。宜对已经确定的部分保持清楚，对新信息留出确认步骤，责任尚不明时不急于保证。让解释有所本、行动有所据，才不至于将有限力量继续耗在含混之中。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "1882dcd73f7077d3b4233a1138718a0eeee0c987c1f84bf46b988f4337baae46",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ],
+          "reason": "不取晋升、如何处理判断的解释偏作者口吻。",
+          "request": "直接说明此次未升及现有经验能怎样用于履职；完整新段回读。",
+          "status": "resolved-after-complete-field-reread"
+        },
+        {
+          "id": "XM004-READER-LANGUAGE-L5",
+          "locations": [
+            {
+              "key": "4/5/寅",
+              "field": "short",
+              "old": "保留童蒙的吉意",
+              "fullOldFieldValue": "学习与善任自有益处，寅月这一轮仍不能晋升。水体休，两土之克轻，互震和末巽却旺而泄体，投入较重又无补益。宜把请教所得化为明白的分工和做法，保留童蒙的吉意，也分清善于承担与本轮获任之间的距离。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "2f5e70c01f97c0b94e215823c7d973b5617d5f3cb8f847cbd818594ebbfb269a",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/5/未",
+              "field": "short",
+              "old": "既保留善任的积极意义",
+              "fullOldFieldValue": "顺而受教自有吉意，未月此轮仍升不了。艮坤原旺却受木制而克轻，体水死，互震与末巽囚而耗轻，缺少补身接续。宜先把重要要求学明白，再据专长安排责任，既保留善任的积极意义，也不把轻阻看成本轮已经有足够支撑。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "4643fc0d6d399fe7ff2c2d1539ba3e5f2400ceb0ae1f8cef9cc8cf045e844fb3",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/5/卯",
+              "field": "paragraphs[5]",
+              "old": "既保留童蒙的积极取向",
+              "fullOldFieldValue": "本轮未升，不妨把准备的范围收在真正相关的事项之内，使每次学习都有可以检验的所得。所学能否说明白、分工能否接起来，比增加承诺更重要；宜把必要投入安排得有次序，既保留童蒙的积极取向，也不把受教的好处当成任职已定。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "d842bf2b5d30f6565dd016903bb1c816b9bf5c848e6666356a38193b9776642e",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/5/辰",
+              "field": "paragraphs[1]",
+              "old": "对本轮名位仍取未升",
+              "fullOldFieldValue": "体互震木与变用巽木均囚，受原体水生，耗费也较轻。只是弱水没有金来直接补益，轻克与轻泄并未自然接成晋升所需的支撑。对本轮名位仍取未升，不等于每一处都处在强压之下，更不由此认定努力全无价值。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "c46a6fd524a8192750a1f57af698ed84ec174e6adabcd759d71e9c4f528703c3",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/5/辰",
+              "field": "paragraphs[2]",
+              "old": "它不只许某一小步顺手，更不是要求遇事都不作主，积极意义应完整理解。",
+              "fullOldFieldValue": "六五「童蒙吉」肯定谦顺受教，小象以「顺以巽也」明其吉。王孔又指出委事于有能者，不独自凭聪明察断；其中包含学习、识别专长与安排责任的能力。它不只许某一小步顺手，更不是要求遇事都不作主，积极意义应完整理解。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "a645148a9aa39d583402526b865848388f5696e968024576dcd445f9975c160d",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/5/子",
+              "field": "paragraphs[2]",
+              "old": "把晋升判成",
+              "fullOldFieldValue": "体互震木与变用巽木都相，受原体水生，中后段持续耗费有实际分量。盘内没有金来补身，收尾仍属自身付出，并未变成生扶；前中制约又未解除。因此本轮未升，既不应忽略旺体之力，也不宜只凭能担便把晋升判成。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "d127b112a06a81c85b99ad3a4b9bb895ee3208c9a79e2c62d32ca7534bfe71dc",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ],
+          "reason": "保留吉意/取向、意义应完整理解、取未升/判成是对作者处理稿件的要求，读者正文应直接说善任受教有何实效以及本轮未升。",
+          "request": "逐篇自然改写，尤其辰月第三段以正面句完整说出善任、学习与安排责任的价值，保留童蒙完整吉义；提供完整字段回读。",
+          "status": "resolved-after-complete-field-reread"
+        },
+        {
+          "id": "XM004-L6-MAX-EXPENDITURE",
+          "keys": [
+            "4/6/寅",
+            "4/6/卯"
+          ],
+          "field": "judgment",
+          "old": "震旺，泄重，中段耗得最多",
+          "reason": "旺震泄重支持中段作用较实，不提供现实各阶段总耗费最高的证据。",
+          "request": "保留中段旺震泄重，去无据最大量；并入现有judgmentCorrection并明确新增订正理由。",
+          "status": "resolved-after-complete-field-reread",
+          "locations": [
+            {
+              "key": "4/6/寅",
+              "field": "judgment",
+              "old": "震旺，泄重，中段耗得最多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤、变坤又克体，寅卯月三处土皆死，又受震木所制，克力轻而连贯；互震受体所生，震旺，泄重，中段耗得最多。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。上九「击蒙，不利为寇，利御寇」肯定正当纠偏与防护，戒侵取凌夺，不解释为一概不能主动；既定克体判断不翻结论。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "26b35a036a8f5232cd26eb75a9b10a5679ee3b25b696e2ab083e4ecdc643f188",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/卯",
+              "field": "judgment",
+              "old": "震旺，泄重，中段耗得最多",
+              "fullOldFieldValue": "坎水为体，艮土为用，用克体；互坤、变坤又克体，寅卯月三处土皆死，又受震木所制，克力轻而连贯；互震受体所生，震旺，泄重，中段耗得最多。全盘无生体之卦，《求名占》「用克体，名不可成」（553 行），《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行），定为升不了。上九「击蒙，不利为寇，利御寇」肯定正当纠偏与防护，戒侵取凌夺，不解释为一概不能主动；既定克体判断不翻结论。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "26b35a036a8f5232cd26eb75a9b10a5679ee3b25b696e2ab083e4ecdc643f188",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ]
+        },
+        {
+          "id": "XM004-READER-LANGUAGE-L6",
+          "locations": [
+            {
+              "key": "4/6/卯",
+              "field": "paragraphs[2]",
+              "old": "判断仍止于本次晋升",
+              "fullOldFieldValue": "末后仍是坤土来克原体，轻阻没有在收束时变成生扶，所求因此尚未落实。此局要同时看见轻克与重泄。不能以制约较轻便肯定升成，也不应因结果未成就假定原有工作出现损失，判断仍止于本次晋升。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "8824a4049a84f2913c16d48a5aa5d062ef868c199eacdb291fb63c0f5459454e",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/巳",
+              "field": "paragraphs[2]",
+              "old": "判断不须扩大到现有职位是否安稳",
+              "fullOldFieldValue": "体互震木休，受原体水生，中段耗费较轻，仍须由自身提供力量。全盘没有金来生水，囚体缺少补充。收尾的变坤继续克水，前后的轻阻未转为生扶，因此本次晋升尚未落实，判断不须扩大到现有职位是否安稳。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "0b0ae892f7f627c3ada879e6da3060f95692e043b4dbb16a6b328afcf4df2142",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/午",
+              "field": "paragraphs[2]",
+              "old": "宜把限制说到本次所问为止",
+              "fullOldFieldValue": "体互震木处休，由水来生，中段耗费不重，但囚水仍须自行投入。盘内也没有金直接补身，后段未出现生扶。故本轮名位不能落实，宜把限制说到本次所问为止，不由此延伸为现有职责必然受损或全部努力失效。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "ae34e8455c6e81f144e04fa5d939853abdcf1be8c4ad70f565faae6388c04475",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/午",
+              "field": "paragraphs[5]",
+              "old": "提前换取名位结论",
+              "fullOldFieldValue": "准备可从最重要的一处核实开始，再沿明确关系补充说明，让有限力量有先后。已经可靠的成果不必无故翻动。宜把主动留给有根据的事项，把承诺收在能够负责的范围内；本轮未升，仍可有序任事，但不能靠加大动作提前换取名位结论。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "2933af529f16aa4c5dc6b8234753569e058d89166325c1e0c3132c7a7c411e0c",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/未",
+              "field": "paragraphs[3]",
+              "old": "这一层意义不需要虚构现实中已有敌手",
+              "fullOldFieldValue": "小象以「上下顺也」明正当护持之利，这一层意义不需要虚构现实中已有敌手。宜先弄清目标职责与当前承担的差别。真实经历能够说明到哪一步，就把判断依据和结果讲到哪一步，尚缺认识的部分求证，不用更大表态把它盖过去。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "81a714033dcaafb7a16489853504d2b626d1cc5f8acad9c52bd19d0a2559b072",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/申",
+              "field": "paragraphs[1]",
+              "old": "判断须保留这层分寸",
+              "fullOldFieldValue": "体互震木死，受原体水生，中段耗费较小，力量不必处处用来承受重压。四处没有金直接生水，轻耗也未转成补益。末后变坤继续克体，前后限制仍相连，所以过程较轻尚不能落实本轮名位，判断须保留这层分寸。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "3e99e7b5f599a5d68f491809d6e280a4a6a31cdea09624b46c508da361ae4106",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            },
+            {
+              "key": "4/6/亥",
+              "field": "paragraphs[0]",
+              "old": "这一面应如实保留",
+              "fullOldFieldValue": "自身旺而可承轻克，亥月本次仍升不了，主动应有明确对象与责任范围。体坎水旺，本用艮土、用互坤土与变用坤土皆囚。三土又受震木制而无火相生，制约较轻，旺水能承并非处处无力，这一面应如实保留。",
+              "resolution": {
+                "status": "passed",
+                "newCompleteFieldSha256": "a324d6f21a5a205f0cf6a902678037bd00f9a8ad7386c646472cc21c7fe6018f",
+                "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598"
+              }
+            }
+          ],
+          "reason": "判断的保留/扩大、把限制说到、虚构情节和换取结论都偏编辑审稿语言。",
+          "request": "改为本轮未升、现职仍按事实另核、有力可用于履职、正当纠偏可主动实施等直接读者语言；完整字段回读，不动古义/关系/结论/取期。",
+          "status": "resolved-after-complete-field-reread"
+        }
+      ],
+      "reviewType": "independent-whole-article-read",
+      "wholeArticlesReadActually": true,
+      "reviewerIsHuman": false,
+      "userIndividuallyAccepted": false,
+      "completedAtUTC": "2026-11-20T17:31:47.719474+00:00",
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-004.json",
+      "readingMethod": "按六爻，每爻先寅卯辰巳午未、后申酉戌亥子丑，共12批；每篇完整输出全部公开字段、专业判断、应期及所有订正后实际逐项阅读。已读前60篇保留在连续工作上下文，最后上九12篇在本次收口中分两批实际读完。未以字段统计、抽样或自动替换代替全文阅读。",
+      "findingBoundary": "问题均为原体休分类、支持有而轻、直接生体有无、无据现实量化或读者语言精修；没有要求改动任何既定结论、月令原态、体用关系、应期类型/位置/方法。",
+      "acceptance": "独立AI已按98396c0a版完整读72篇，再按e7ab3ca6版逐字段完整复读40个改动字段，并核验完整源只有这些变更；12组请求全部解决。通过当前项目文字与规则一致性独立审，不是人工签署、用户逐篇接受或现实预测准确率证明。",
+      "requiredNext": [
+        "父代理最终核源/回执/阅读页对应后发布"
+      ],
+      "articleReadManifest": [
+        {
+          "key": "4/1/寅",
+          "articleSha256": "4d158acec7c1885b5a24ea2e6980a97244f6ef6dd45546d85e3c887aa63e50c7",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/卯",
+          "articleSha256": "54e8436a624f224ba8f401516ad1862e90e7cbfc29e954b8de2b3705cb3359a7",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/辰",
+          "articleSha256": "d5c7dac3cd8126f2103bab9c38a909288213ae33023f257b012e098035d9507e",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/巳",
+          "articleSha256": "996fd6d32043798bd9837c0c2b5943beb2b43f118f6eafa15aa04d5c9a62eddc",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/午",
+          "articleSha256": "4d92b81a442f018932f2795e48e0af8d9053323c1e07cbc875bb130211912b8f",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/未",
+          "articleSha256": "231d7f9ad3ef1b41f6d5f6ef9616fc6a49429b0f04d64a56183df7dc38e1d517",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/申",
+          "articleSha256": "40715cd458a25d2a9e798076badbe0b358cf5a8eb3982a50e72ed1263ba41830",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/酉",
+          "articleSha256": "633c4c186ed5c354038d67d2cf8aac024a76dbb87b3eb3232753ecd117988861",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/戌",
+          "articleSha256": "e1db35fdd23bf2f24f58292103c5e2c6d7649c1497750bba3ef4130e5b7b52ea",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/亥",
+          "articleSha256": "584bd74d1ffb5d5455ebd04593fded808541be366e0521d0e6a9b951640f1cf3",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/子",
+          "articleSha256": "e2bfcaa7977a38eabce90019ff2e770d64d020607a0811ca633eaf624d02481d",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/1/丑",
+          "articleSha256": "84e5f0884d0b3772cf10c183969f63cf5b67420bb04769fa0f8eef7a7e01eb3d",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/寅",
+          "articleSha256": "b6340cba2f823775abbc40709227559f15492aa4f2ca320f18f58d1e31e38be0",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/卯",
+          "articleSha256": "a0d6bb1ab05af2896b5ab6a628270673e11429565ec855786a9a795064621cc8",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/辰",
+          "articleSha256": "a8b2a72c98a009aaaf154a56c3b490a227d4ca01e42549a037b2c530db56c427",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/巳",
+          "articleSha256": "78861b4f694e070e874d3f3a3a23f82d167bb734ab2a1820704dbd2e84108c2a",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/午",
+          "articleSha256": "d2a80fd34d04dfa8c80518b13eecc63763d8398c6b1d301b8e551a51a4595bdf",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/未",
+          "articleSha256": "1595f8fd2f6ec9f039401548ae6a6ce0bbfaf912b70d78ab0486e8763052a536",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/申",
+          "articleSha256": "3edbf8a9d984e519ea06828b38b58864dca7fd98a44441dfb331ea97b6942a7c",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/酉",
+          "articleSha256": "66800fe78a69405d19e3d9f326c3c4f157736f5cb05d219d57f38fbc4bfd4eaf",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/戌",
+          "articleSha256": "8949edb300400e0288706cfa48254f49cd9b84cf9c20d74ee774424332478127",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/亥",
+          "articleSha256": "72322555100e7453ed3925e71a4b006b85aead63bce8f0ed4f747414f88e03a3",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/子",
+          "articleSha256": "af276882dbcb2961c193e75600cb0cd7b5fdd242c63a38138d26ffcc5319944e",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/2/丑",
+          "articleSha256": "7123b806e83316a6e8366e2f9ddea94faa69d136e2161a09c05bff23d74c75c0",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/寅",
+          "articleSha256": "e65b0070b98dcf6ae6428706235d0338646e72bae917d6cbf3de3184f73e273c",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/卯",
+          "articleSha256": "741053ea98661c15dec702eb0fa7aff80253f8365bb72eeb72562f8762a747c7",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/辰",
+          "articleSha256": "b6a3f73ec3d21837386e4c3a881e59685b0687d59a9480121fc01c69874bac70",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/巳",
+          "articleSha256": "e7d6206b390f2a4321de5e9f8b145a7576d36d710505b65201bf0c1a434b95b8",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/午",
+          "articleSha256": "e46681fa64991f91bc38ac8b25c42b3fc74cb269aaaf1b1c10a5e7ee204770b2",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/未",
+          "articleSha256": "2c5c5e37d5a8756442dd9d4a6d80a4ec4c8157132e0a545f0f685ab68f7e95b8",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/申",
+          "articleSha256": "f2e9ce079a5269cbb997cad38eabf752a208abfb98a1405197d5709fd4afdb88",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/酉",
+          "articleSha256": "f83cd4bb1ee4433e09b7c99cd94a3a78adfc742148c55cec4b1ea935c5b2b6ce",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/戌",
+          "articleSha256": "efdb2b784238511424f76ffb93140b1aecd165fdba735245d52aadb6dc1e4d17",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/亥",
+          "articleSha256": "bab76e9de8ea3cfa69f6892ec96482fb474e3ca6c72061b2ae8469d161115818",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/子",
+          "articleSha256": "cb64750f6244b0756a8d9ec49078ffd5fe9e38bc493d757d8c183267a2b7c93f",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/3/丑",
+          "articleSha256": "481e8d7d0ed052232775a4e954f0e7755d3f8ef3567d62fdf06405a4ba699e44",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/寅",
+          "articleSha256": "54472b5a2f3eda58e1c27b078b9c6402221a224b8c4593eec5c863d597da7be2",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/卯",
+          "articleSha256": "8cf189c0938a9d0e6458a0c657234f1fba8c54b36906a9794637893a0d6107f5",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/辰",
+          "articleSha256": "62ca3cdf1729d72560a569c81a56e44ff73be17250365cc663439ab304541fae",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/巳",
+          "articleSha256": "fb061a8fe871c4a7be3062e611304bcd4fdd3dcbba50b6c9b964a9e053529cf4",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/午",
+          "articleSha256": "a0186857805c7aaf554c64e17fa054c938fe6b7c16bae009baa9e2a60fa04b5f",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/未",
+          "articleSha256": "683a9f132d5a41534ffb0a3f5923510b74119cc4564b9175220ff7196b71f0a3",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/申",
+          "articleSha256": "81af834b44e247c17ea81dd10896f260dd5e7a830f6868fde260562ba53a6022",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/酉",
+          "articleSha256": "14c0b05d90bc178276f56c32af5dee808120bbcb6d481a08bf87fdec686ff596",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/戌",
+          "articleSha256": "877789453baf04da48a9740e8a5ca354c5611e6d32eaa566d4803da13db0dd75",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/亥",
+          "articleSha256": "6ee6ef89ed4b5bc887ab99f1c244371cc2395b0a4e4cd520eeca7a3feb7ba64a",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/子",
+          "articleSha256": "1945cf34cba1bc2c0ed0ace33cceac1a6fe8d29f5c476651ee31e8ffd4efdb87",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/4/丑",
+          "articleSha256": "611c93f61294b5414d4f1d3f5ee69ecf0827c2ef4571689c85b7b703b643bae1",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/寅",
+          "articleSha256": "81d571a26dd7b4744f9aacc002945ab436d0051189b275428d373b33fdd33079",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/卯",
+          "articleSha256": "6ce4a3fb07ba4df323e80787292f181a2ee3eea69e3b8be0b4ec314ef1fb729c",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/辰",
+          "articleSha256": "cc57e8c60692c32e662e92096f18c7f1308e68d53065c3b7052b114c05868a4c",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/巳",
+          "articleSha256": "b32a0d5abcb5f631934b2909411cd8c8f4fbfb255e598f7cc8fbbc9373041735",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/午",
+          "articleSha256": "d92818d8846860b452e3427349c0e3eabf88edb4f116bda6b65def87727a3c4d",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/未",
+          "articleSha256": "b19e76dc2dfdd13ec96cc112bbf7bd0475251efd133b402cd7749e07d8682a49",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/申",
+          "articleSha256": "b6125653e4fb6996553a000a2c5f8df9465bc5ee194232baaa24f366d6634cf0",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/酉",
+          "articleSha256": "925fca18d58a0ed6f631e0aca4349dcaac2e0efeecbe34c4850a5c34662e58f0",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/戌",
+          "articleSha256": "d44b911d17744da55ad17aecceb152a7def773deb981c1c6bde7344e7972f852",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/亥",
+          "articleSha256": "bb2ea5a8d0fb9fb71a1048317479525b716ae9d85867074b84a318de9ac8c469",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/子",
+          "articleSha256": "0770946a8a65884ed771d341d761475deb162cdcb8a95459eb616f88c4be986a",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/5/丑",
+          "articleSha256": "0877480d6299c30409abad99b8e179ffb59a85009fe6320e530ccaf373896fde",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/寅",
+          "articleSha256": "edb32e72bba56c2c0baa6c2f5af6cad5d6833e5a244c6f7c611b8d8ff686ec34",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/卯",
+          "articleSha256": "1eead777484a9e2318edcdd82ee771095e393036fb8eba2b199903f58b8f676e",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/辰",
+          "articleSha256": "3665c15d0db768bcd8e1d4e7703b81d701a1e8e7721ac113582d5b81809f5db3",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/巳",
+          "articleSha256": "32d5e8b175874d5524de1056e8ef74ee06b175f207e379ce406eb5c46948ec80",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/午",
+          "articleSha256": "435208948729d0ded28c18fa8d9a50a5e4aa61d43cbf52ee061ae35e28967432",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/未",
+          "articleSha256": "c94e55ce04e03c660f2171ead1c8d3a0adf186effffab8330266657a80d94e9c",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/申",
+          "articleSha256": "106cfb83e8fc084550e5871c4fbae040609b0db612dc0f0ef776a27a0d74f928",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/酉",
+          "articleSha256": "184f8c00774a80842897e5807cba26a79f8fe6c03c336510a21244077e8b6ad1",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/戌",
+          "articleSha256": "240972eb423857b736f7abda2e351c1949cd0d4232520c174ff56e28947381a4",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/亥",
+          "articleSha256": "c14ce1612372a67687fdd0f61c2b014cd1d87aa2427cf19fabf4ceba74e4da49",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/子",
+          "articleSha256": "f6960b0c38e899938ae749ba078d3e0ca89984761f6045169bc2016d4f5c1d40",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        },
+        {
+          "key": "4/6/丑",
+          "articleSha256": "16c7fbae785342ea9913f5acb845f1b437a4969bd373afbc6644e530a28820b7",
+          "coverage": "初版整篇实际阅读 + 本次全部改动字段实际复读；未动字段经完整源差异确认",
+          "sourceSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+          "status": "covered-by-full-read-and-complete-delta"
+        }
+      ],
+      "manualSummary": "72篇均保留原未升与过程取期；完整古义与一层生克主体成立。初六刑/说并读，九二包蒙、纳妇、子克家完整，六三金夫按王孔为上九，六四独远实不虚构现实，六五童蒙具学习善任价值，上九击蒙/御寇允许正当主动。厚度足、正文与摘要从具体处境起笔，没有全卦轮换判词的固定开头。本报告原审所列12组定点问题已由作者精确订正，独立审随后完整复读40个变更字段并核验全源差异，全部解决；最终通过依据实际阅读与差异核验，不以结构检查替代。",
+      "requestedFieldCount": 32,
+      "requestedArticleCount": 27,
+      "wholeReadSourceSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+      "independentReviewComplete": true,
+      "reviewedAtUTC": "2026-11-20T17:41:02.937863+00:00",
+      "deltaReadback": {
+        "status": "passed",
+        "sourceBeforeSha256": "98396c0a8d912d61544e7c511854f6481a8c3fea27a6b3104145f196e9a758be",
+        "sourceAfterSha256": "e7ab3ca6dba7ba9c95db85a3be38ee0d7e3665b650bab1b85544e0b157869598",
+        "completeChangedFieldsActuallyRead": 40,
+        "changedArticles": 27,
+        "batches": [
+          {
+            "fields": "1–10",
+            "scope": "完整新字段"
+          },
+          {
+            "fields": "11–20",
+            "scope": "完整新字段"
+          },
+          {
+            "fields": "21–30",
+            "scope": "完整新字段及订正全记录"
+          },
+          {
+            "fields": "31–40",
+            "scope": "完整新字段及订正全记录"
+          }
+        ],
+        "otherFieldsUnchangedVerified": true,
+        "outcomesUnchanged": true,
+        "timingUnchanged": true,
+        "payUnchanged": true,
+        "unresolvedFindings": [],
+        "observations": [
+          "初六酉以体休而承接有限替代休弱，不再暗断现实负担增加；秋末旺兑只说泄较重、需付出。",
+          "九二春月比和有而薄明确，包容能任的积极古义直接用于现职；六三子月明确盘内没有直接补益，已有自守与双木得水有力关系保持。",
+          "六四春月旺震泄重不再量总耗费最高，夏月囚水制旺火费力不推任务很多；原两土生克相抵照旧。",
+          "童蒙吉的受教、识别专长和委事于能有完整可行意义，公开稿去保留积极意义等作者措辞而未缩窄吉义。",
+          "上九改动保持主动去蒙与正当护持，正文直接说职责与任职，不把虚构/保留判断当读者行为；春月专业总量最大遗词已去。",
+          "8份订正全部读过完整old/new/reason/sourceEvidence/impact；新增精确理由绑定实际遗词，既定结果、所有应期及薪资完全不变。"
+        ],
+        "fields": [
+          {
+            "key": "4/1/酉",
+            "field": "short",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "799713aab3e2163aa8c309eeae1f04859f4978002dd1deee2d188ad5ddd6f478"
+          },
+          {
+            "key": "4/2/寅",
+            "field": "paragraphs[0]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "b2e5f7ed64443932d3801d50983d0252f8c665954c7fc40b01df15a77463b7b5"
+          },
+          {
+            "key": "4/2/卯",
+            "field": "paragraphs[5]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "edfe151745fce9798024d248a58abd7ff620a1e880d91628e69d562a7fa909af"
+          },
+          {
+            "key": "4/2/未",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "9b1c941a6e697ebc66ad03090ae44e33359323a609ab63c6c549215b5ab120ce"
+          },
+          {
+            "key": "4/2/丑",
+            "field": "paragraphs[1]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "2e7031a19468350e881794a323c294e91051f509eea1798852ea318265fc3492"
+          },
+          {
+            "key": "4/3/辰",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "2414266ab0a13dd77c460ab5d7b5d979a59bff7b144c616731db7bd0f975228c"
+          },
+          {
+            "key": "4/3/戌",
+            "field": "paragraphs[1]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "142690f29c9b0b9a4b6429955c16991d5f3fb7f56c1612cbbe460e8126438260"
+          },
+          {
+            "key": "4/3/酉",
+            "field": "short",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "107782d9b2a4e153d257094c08c94b98548eb1645b790365255474dbc09ff8e8"
+          },
+          {
+            "key": "4/3/子",
+            "field": "short",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "fb1ad8a0a24c211a106a0c801206c1eccce405491b54c71afb8d852812b991e5"
+          },
+          {
+            "key": "4/4/卯",
+            "field": "paragraphs[5]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "1882dcd73f7077d3b4233a1138718a0eeee0c987c1f84bf46b988f4337baae46"
+          },
+          {
+            "key": "4/4/丑",
+            "field": "paragraphs[1]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "4411c854a74c2d33188ba7bfe6ec8be6cc9c26be33ec6b16de846e5b27f9ffbb"
+          },
+          {
+            "key": "4/5/寅",
+            "field": "short",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "2f5e70c01f97c0b94e215823c7d973b5617d5f3cb8f847cbd818594ebbfb269a"
+          },
+          {
+            "key": "4/5/未",
+            "field": "short",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "4643fc0d6d399fe7ff2c2d1539ba3e5f2400ceb0ae1f8cef9cc8cf045e844fb3"
+          },
+          {
+            "key": "4/5/卯",
+            "field": "paragraphs[5]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "d842bf2b5d30f6565dd016903bb1c816b9bf5c848e6666356a38193b9776642e"
+          },
+          {
+            "key": "4/5/辰",
+            "field": "paragraphs[1]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "c46a6fd524a8192750a1f57af698ed84ec174e6adabcd759d71e9c4f528703c3"
+          },
+          {
+            "key": "4/5/辰",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "a645148a9aa39d583402526b865848388f5696e968024576dcd445f9975c160d"
+          },
+          {
+            "key": "4/5/子",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "d127b112a06a81c85b99ad3a4b9bb895ee3208c9a79e2c62d32ca7534bfe71dc"
+          },
+          {
+            "key": "4/6/卯",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "8824a4049a84f2913c16d48a5aa5d062ef868c199eacdb291fb63c0f5459454e"
+          },
+          {
+            "key": "4/6/巳",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "0b0ae892f7f627c3ada879e6da3060f95692e043b4dbb16a6b328afcf4df2142"
+          },
+          {
+            "key": "4/6/午",
+            "field": "paragraphs[2]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "ae34e8455c6e81f144e04fa5d939853abdcf1be8c4ad70f565faae6388c04475"
+          },
+          {
+            "key": "4/6/午",
+            "field": "paragraphs[5]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "2933af529f16aa4c5dc6b8234753569e058d89166325c1e0c3132c7a7c411e0c"
+          },
+          {
+            "key": "4/6/未",
+            "field": "paragraphs[3]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "81a714033dcaafb7a16489853504d2b626d1cc5f8acad9c52bd19d0a2559b072"
+          },
+          {
+            "key": "4/6/申",
+            "field": "paragraphs[1]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "3e99e7b5f599a5d68f491809d6e280a4a6a31cdea09624b46c508da361ae4106"
+          },
+          {
+            "key": "4/6/亥",
+            "field": "paragraphs[0]",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "a324d6f21a5a205f0cf6a902678037bd00f9a8ad7386c646472cc21c7fe6018f"
+          },
+          {
+            "key": "4/1/申",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "b3bdd6bbe84d9d4cb87cf3464170ff45afa6892c1d21b9f2e8cf48e606fe2037"
+          },
+          {
+            "key": "4/1/申",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "3bb60b11dbc276a2e88fc8825f711c4793ea2e22d496be0eb0826ce49962f0d1"
+          },
+          {
+            "key": "4/1/酉",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "b3bdd6bbe84d9d4cb87cf3464170ff45afa6892c1d21b9f2e8cf48e606fe2037"
+          },
+          {
+            "key": "4/1/酉",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "3bb60b11dbc276a2e88fc8825f711c4793ea2e22d496be0eb0826ce49962f0d1"
+          },
+          {
+            "key": "4/4/寅",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "615078b8b2221dfefd7067d86efa52e48630720368e8965907628fc10f965244"
+          },
+          {
+            "key": "4/4/寅",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "3bdb5386aa0ea6e8d7a8b511193729cd2a2ab4fbf4449e41a6c3a33a3a82c5ce"
+          },
+          {
+            "key": "4/4/卯",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "615078b8b2221dfefd7067d86efa52e48630720368e8965907628fc10f965244"
+          },
+          {
+            "key": "4/4/卯",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "3bdb5386aa0ea6e8d7a8b511193729cd2a2ab4fbf4449e41a6c3a33a3a82c5ce"
+          },
+          {
+            "key": "4/4/巳",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "f22b3dac6d9416a580aa54918736733e76b3161fbd7f75abf678e9eae75225e1"
+          },
+          {
+            "key": "4/4/巳",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "83dc752cbca26b192ead199606dbc05c4bdbc460d6f344b95c64e37069ee1f7d"
+          },
+          {
+            "key": "4/4/午",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "f22b3dac6d9416a580aa54918736733e76b3161fbd7f75abf678e9eae75225e1"
+          },
+          {
+            "key": "4/4/午",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "83dc752cbca26b192ead199606dbc05c4bdbc460d6f344b95c64e37069ee1f7d"
+          },
+          {
+            "key": "4/6/寅",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "26b35a036a8f5232cd26eb75a9b10a5679ee3b25b696e2ab083e4ecdc643f188"
+          },
+          {
+            "key": "4/6/寅",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "940ae0dba05a682e58f4a23936446b6c1be32ceffaeac695f95093b7683079f3"
+          },
+          {
+            "key": "4/6/卯",
+            "field": "judgment",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "26b35a036a8f5232cd26eb75a9b10a5679ee3b25b696e2ab083e4ecdc643f188"
+          },
+          {
+            "key": "4/6/卯",
+            "field": "judgmentCorrection",
+            "completeNewFieldActuallyRead": true,
+            "newValueSha256": "940ae0dba05a682e58f4a23936446b6c1be32ceffaeac695f95093b7683079f3"
+          }
+        ]
+      },
+      "initialArticleReadManifest": [
+        {
+          "key": "4/1/寅",
+          "articleSha256": "4d158acec7c1885b5a24ea2e6980a97244f6ef6dd45546d85e3c887aa63e50c7",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/卯",
+          "articleSha256": "54e8436a624f224ba8f401516ad1862e90e7cbfc29e954b8de2b3705cb3359a7",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/辰",
+          "articleSha256": "d5c7dac3cd8126f2103bab9c38a909288213ae33023f257b012e098035d9507e",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/巳",
+          "articleSha256": "996fd6d32043798bd9837c0c2b5943beb2b43f118f6eafa15aa04d5c9a62eddc",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/午",
+          "articleSha256": "4d92b81a442f018932f2795e48e0af8d9053323c1e07cbc875bb130211912b8f",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/未",
+          "articleSha256": "231d7f9ad3ef1b41f6d5f6ef9616fc6a49429b0f04d64a56183df7dc38e1d517",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/申",
+          "articleSha256": "8afef9c7474fdc60568dbb61f6b590d526e2637f586759fd5e04159c1b5b3e4c",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/酉",
+          "articleSha256": "2082df5b767f673710987d9051670eec86f44349be02eaf04874700c80af75bf",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/戌",
+          "articleSha256": "e1db35fdd23bf2f24f58292103c5e2c6d7649c1497750bba3ef4130e5b7b52ea",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/亥",
+          "articleSha256": "584bd74d1ffb5d5455ebd04593fded808541be366e0521d0e6a9b951640f1cf3",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/子",
+          "articleSha256": "e2bfcaa7977a38eabce90019ff2e770d64d020607a0811ca633eaf624d02481d",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/1/丑",
+          "articleSha256": "84e5f0884d0b3772cf10c183969f63cf5b67420bb04769fa0f8eef7a7e01eb3d",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/寅",
+          "articleSha256": "92920c934e04c3f53390816a2573d922a27ef2e6a1d3fb42a9d1405b7d0940fe",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/卯",
+          "articleSha256": "aef0e2da1bfc542d6b8330ad1b6c2462aa9e230a5d12da64774a3fdf61198071",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/辰",
+          "articleSha256": "a8b2a72c98a009aaaf154a56c3b490a227d4ca01e42549a037b2c530db56c427",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/巳",
+          "articleSha256": "78861b4f694e070e874d3f3a3a23f82d167bb734ab2a1820704dbd2e84108c2a",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/午",
+          "articleSha256": "d2a80fd34d04dfa8c80518b13eecc63763d8398c6b1d301b8e551a51a4595bdf",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/未",
+          "articleSha256": "779837d4d59b08182ff58a2538fb3f973b6bd9b60c19a0c85c28d4ee3097dba8",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/申",
+          "articleSha256": "3edbf8a9d984e519ea06828b38b58864dca7fd98a44441dfb331ea97b6942a7c",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/酉",
+          "articleSha256": "66800fe78a69405d19e3d9f326c3c4f157736f5cb05d219d57f38fbc4bfd4eaf",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/戌",
+          "articleSha256": "8949edb300400e0288706cfa48254f49cd9b84cf9c20d74ee774424332478127",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/亥",
+          "articleSha256": "72322555100e7453ed3925e71a4b006b85aead63bce8f0ed4f747414f88e03a3",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/子",
+          "articleSha256": "af276882dbcb2961c193e75600cb0cd7b5fdd242c63a38138d26ffcc5319944e",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/2/丑",
+          "articleSha256": "f808d10bc10a0b313c731465de2c426008e4076e9a058ec428ed21574a0717ff",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/寅",
+          "articleSha256": "e65b0070b98dcf6ae6428706235d0338646e72bae917d6cbf3de3184f73e273c",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/卯",
+          "articleSha256": "741053ea98661c15dec702eb0fa7aff80253f8365bb72eeb72562f8762a747c7",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/辰",
+          "articleSha256": "586880e1f089062c21baa46c4a10233cf125ee8c5a08734586e783404c015b8f",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/巳",
+          "articleSha256": "e7d6206b390f2a4321de5e9f8b145a7576d36d710505b65201bf0c1a434b95b8",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/午",
+          "articleSha256": "e46681fa64991f91bc38ac8b25c42b3fc74cb269aaaf1b1c10a5e7ee204770b2",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/未",
+          "articleSha256": "2c5c5e37d5a8756442dd9d4a6d80a4ec4c8157132e0a545f0f685ab68f7e95b8",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/申",
+          "articleSha256": "f2e9ce079a5269cbb997cad38eabf752a208abfb98a1405197d5709fd4afdb88",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/酉",
+          "articleSha256": "9e911354b08f3324e8be17ae93ad02ad8bae10b6e938f9916250d65fe97a92af",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/戌",
+          "articleSha256": "02e11910bbd55abfe3155cb76ff3c279b16df76c753637d7a24b09a1f3c44465",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/亥",
+          "articleSha256": "bab76e9de8ea3cfa69f6892ec96482fb474e3ca6c72061b2ae8469d161115818",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/子",
+          "articleSha256": "a122c7311998d38f3035cbb0b27cf135e47d54f6d4a42e13d191374b7d64b74a",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/3/丑",
+          "articleSha256": "481e8d7d0ed052232775a4e954f0e7755d3f8ef3567d62fdf06405a4ba699e44",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/寅",
+          "articleSha256": "06b36e53cb1823534c360111cdcb3209ffc9045a66be209e8fa0bff73e04968f",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/卯",
+          "articleSha256": "9e1df95b4d579ab5b2d25aed75d0a674e83618def3b6fefb95c1f217ba8f2bbb",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/辰",
+          "articleSha256": "62ca3cdf1729d72560a569c81a56e44ff73be17250365cc663439ab304541fae",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/巳",
+          "articleSha256": "e9e77b25a52f02a542c93c60af286e465fe1e8dccd27800caeee6b81e69408bb",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/午",
+          "articleSha256": "e94930eca70a16b55f7c6fa6b830f8b6beb3c8a8cef3a28e39e669145cae4b13",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/未",
+          "articleSha256": "683a9f132d5a41534ffb0a3f5923510b74119cc4564b9175220ff7196b71f0a3",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/申",
+          "articleSha256": "81af834b44e247c17ea81dd10896f260dd5e7a830f6868fde260562ba53a6022",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/酉",
+          "articleSha256": "14c0b05d90bc178276f56c32af5dee808120bbcb6d481a08bf87fdec686ff596",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/戌",
+          "articleSha256": "877789453baf04da48a9740e8a5ca354c5611e6d32eaa566d4803da13db0dd75",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/亥",
+          "articleSha256": "6ee6ef89ed4b5bc887ab99f1c244371cc2395b0a4e4cd520eeca7a3feb7ba64a",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/子",
+          "articleSha256": "1945cf34cba1bc2c0ed0ace33cceac1a6fe8d29f5c476651ee31e8ffd4efdb87",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/4/丑",
+          "articleSha256": "9f494e0c4ccd2af953b21069d4d45cb91b4cdfc2fa673b5a89668686618316e5",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/寅",
+          "articleSha256": "1542e549df48bfb5c502ec10a932c25252c548d4466b56e1132c364cefa58e68",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/卯",
+          "articleSha256": "1c657833b77387c9095d57912ed64609939de2ef8820cba29d0118b0addbb371",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/辰",
+          "articleSha256": "a68c312276724d6cfa2f0ab4ecdf600399422d7f31e424166f399272ae7640f9",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/巳",
+          "articleSha256": "b32a0d5abcb5f631934b2909411cd8c8f4fbfb255e598f7cc8fbbc9373041735",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/午",
+          "articleSha256": "d92818d8846860b452e3427349c0e3eabf88edb4f116bda6b65def87727a3c4d",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/未",
+          "articleSha256": "7565e1c2518e55010a6e5cdf4aa180b5eb50b513b0ae4923ee8406c146908ac5",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/申",
+          "articleSha256": "b6125653e4fb6996553a000a2c5f8df9465bc5ee194232baaa24f366d6634cf0",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/酉",
+          "articleSha256": "925fca18d58a0ed6f631e0aca4349dcaac2e0efeecbe34c4850a5c34662e58f0",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/戌",
+          "articleSha256": "d44b911d17744da55ad17aecceb152a7def773deb981c1c6bde7344e7972f852",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/亥",
+          "articleSha256": "bb2ea5a8d0fb9fb71a1048317479525b716ae9d85867074b84a318de9ac8c469",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/子",
+          "articleSha256": "290507542d7f36fda49c57ea553f42c160b2e83200a4fa3fb44611263b9668ec",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/5/丑",
+          "articleSha256": "0877480d6299c30409abad99b8e179ffb59a85009fe6320e530ccaf373896fde",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/寅",
+          "articleSha256": "d63322c7fc4b95ded1da21a8416e6bfdd3d047dcd3ea3c30d97063fd3f7c4edd",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/卯",
+          "articleSha256": "dcdc121a24e104979232b8ce3467e6ccb5219aa7ec364dd8b9215d3a16f05e6b",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/辰",
+          "articleSha256": "3665c15d0db768bcd8e1d4e7703b81d701a1e8e7721ac113582d5b81809f5db3",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/巳",
+          "articleSha256": "588769f8166f0ed1f85585b06ba3d3051fb28d4cf6d59a18f150a291653513ef",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/午",
+          "articleSha256": "225ea62e034e3c9ec1df01b12acfd5f9bc37222540f1deb9548f42440512aada",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/未",
+          "articleSha256": "3d6142b53031ad1692cd2a69de3b2df25f90c28c07f971444cca511173569d50",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/申",
+          "articleSha256": "b1dbc0236981b4735669dffde29110f3e5779703e8403782ed443457df928af9",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/酉",
+          "articleSha256": "184f8c00774a80842897e5807cba26a79f8fe6c03c336510a21244077e8b6ad1",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/戌",
+          "articleSha256": "240972eb423857b736f7abda2e351c1949cd0d4232520c174ff56e28947381a4",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/亥",
+          "articleSha256": "510b9f8e0669414672eae12f71adc0bd252da6d299b6b80a34b4e015d35ee881",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/子",
+          "articleSha256": "f6960b0c38e899938ae749ba078d3e0ca89984761f6045169bc2016d4f5c1d40",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        },
+        {
+          "key": "4/6/丑",
+          "articleSha256": "16c7fbae785342ea9913f5acb845f1b437a4969bd373afbc6644e530a28820b7",
+          "scope": [
+            "title",
+            "outcome",
+            "short",
+            "paragraphs",
+            "payExplanation",
+            "timing",
+            "judgment",
+            "judgmentCorrection(if present)",
+            "payCorrection"
+          ],
+          "actuallyReadComplete": true
+        }
+      ]
+    },
+    "standaloneReportStatus": "passed",
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 27
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}
