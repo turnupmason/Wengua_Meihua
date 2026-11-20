@@ -2,14 +2,14 @@
   "primaryId": 2,
   "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T14:40:27.450Z",
-  "wholeArticlesRead": 24,
-  "sourceSha256": "8400cd3c252e66c9ab22e591c91752587838f483a730e72e92eb7d42b9f1243e",
+  "reviewedAt": "2026-11-20T14:45:35.574Z",
+  "wholeArticlesRead": 36,
+  "sourceSha256": "a949465974b6f9ab27226379df3e27cfbe86f70545cb98a3e7af093110a83401",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "坤卦初六、六二各自寅至丑十二月分别写作与读取最终作者源，核对题名、简断、完整正文和取期。"
+    "currentReadback": "坤卦初六至六三，逐爻写作、分月核定并从最终作者源读回标题、简断、完整正文与取期。"
   },
   "sourceEvidence": [
     {
@@ -31,6 +31,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
       "scope": "六二经、象及文言。参王弼居中得正、任其自然及孔颖达对直、方、大三德的分解。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "六三经象、王注不为事主、孔颖达疏奉行其终、《文言》地道无成而代有终。"
     }
   ],
   "lineReviews": [
@@ -53,6 +57,14 @@
       "openFindingIds": [
         "kun-second-good-line"
       ]
+    },
+    {
+      "movingLine": 3,
+      "text": "含章可贞，或从王事，无成有终。",
+      "image": "含章可贞，以时发也。或从王事，知光大也。",
+      "reading": "上坤仍为体，下坤三爻动变艮。坤艮都是土，本互变前后比和。月令决定同类是否有力。含章取已有所学而应题发用，无成有终取从事而不居功、把所承之事做完，与合格有所对应。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "findings": [
@@ -111,6 +123,38 @@
         "2/2/丑"
       ],
       "finding": "夏令、土令能过，保留坤体未、申时序。事件是结果可以确认，原稿的名单、准考证号和登录方式并非卦中所指，改按考试方实际发布方式核对。"
+    },
+    {
+      "id": "kun-third-meaning",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/3/寅",
+        "2/3/卯",
+        "2/3/辰",
+        "2/3/巳",
+        "2/3/午",
+        "2/3/未",
+        "2/3/申",
+        "2/3/酉",
+        "2/3/戌",
+        "2/3/亥",
+        "2/3/子",
+        "2/3/丑"
+      ],
+      "finding": "《传》把无成和代有终连起来说，不能把无成径作考试不合格。五气源的成败随同气是否有力，爻意用于说明适时用所学、所承有终。"
+    },
+    {
+      "id": "kun-third-timing-scope",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/3/辰",
+        "2/3/巳",
+        "2/3/午",
+        "2/3/未",
+        "2/3/戌",
+        "2/3/丑"
+      ],
+      "finding": "六个有期月均断成。巳午仍用原体坤未申时序看结果确认；四土月仍用艮土比和看作答收束，依五气源分别保留其事件范围。"
     }
   ],
   "batchReadback": [
@@ -153,13 +197,33 @@
       ],
       "scope": "比对各月体克用与四处同土强弱，读回标题、简断、全文、原有结论和有期无期。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回六成六不成的十二份稿件，核有终释义、同土比和与夏土两套事件角色。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "坤初六、六二二十四月，逐爻核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "坤初六至六三，逐爻核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       467,
       522
