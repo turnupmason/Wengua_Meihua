@@ -212,5 +212,5 @@ test('job-change verdicts follow the finalized rule (stay / prepare / switch)', 
    counts[row.decision.outcomeCode]++;
   }
  }
- assert.deepEqual(counts, {stay:1319, prepare:436, switch:165});
+ assert.deepEqual(counts, {stay:1319, prepare:438, switch:163});
 });

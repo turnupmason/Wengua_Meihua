@@ -7,7 +7,8 @@ import {pathToFileURL} from 'node:url';
 import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,timingSignature,item} from './monthly-lib.mjs';
 
 // 全卦通用的正文禁区（照面试月稿规范：不编人物心理、原话与具体经过；内部审稿用语不进正文）。
-const INTERNAL = /口径|定档|有条件|R\d|盲断|复核|改判|原稿|待核|存疑/u;
+// 2026-11-20 加：规则名目（降档、升档、按结局拆、专属爻辞、只推迟时机）与专业说明的「定为……」是写给审稿看的，不进正文、简断、标题。
+const INTERNAL = /口径|定档|有条件|R\d|盲断|复核|改判|原稿|待核|存疑|降档|升档|调档|翻档|专属爻辞|按结局拆|只推迟时机|升辞|降辞|列为降|列为升|定为(?:留|先准备|可走|能成|不成|能过|过不了|稳|有隐患|风险大|能升|升不了|能转正|转不了)/u;
 const HEDGE = /有望|偏难|多半|大概率|成败两可|或许|未必|恐怕|把握不大|把握较大|胜算|可能性|说不准|难说|看运气/u;
 
 // 晋升月稿单独说明随岗薪资。薪资文字不计入正文厚度，也不改变既定晋升判据。
