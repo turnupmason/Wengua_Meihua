@@ -2,12 +2,12 @@
   "primaryId": 7,
   "baselineCommit": "50d16bd72a16efaa29b8fefa1f63bca5375bbca0",
   "editor": "Codex",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "地水师已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "地水师已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -18,6 +18,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、804行，求名、时令、生克、体衰遇克及占卦诀。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02師.txt",
+      "scope": "第34至37行，九二经、象、王注及孔疏的句读、无咎与三锡。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02師"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798、804行，求名、时令、他卦生克、无生有克、末比及体用旺衰。"
     }
   ],
   "lineReviews": [
@@ -29,6 +38,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "shi-first-mutual-cross-stage"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "在师中，吉，无咎，王三锡命。",
+      "image": "在师中吉，承天宠也。王三锡命，怀万邦也。",
+      "reading": "王注以刚中应上解在师中，因所任重而以有功释吉无咎；孔疏说明吉字兼顾上下，三锡从有功而来。考试借统摄数问、安排时力及按项作答之义，仍以中段震克、末坤比和而无生体取原断。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "shi-second-weak-wood-and-end-equal"
       ]
     }
   ],
@@ -51,6 +70,26 @@
         "丑"
       ],
       "scope": "按寅至丑逐篇读回正文、专业说明和应期。春夏冬取用互震的寅卯参制，秋取变兑的申酉参末耗，四土保留不另取日。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回九二十二月。核春夏秋冬以用互震取寅卯参中段制，四土不另派日期，逐项确认本用坎、两互和变用坤。",
       "status": "author-readback-complete"
     }
   ],
@@ -76,6 +115,45 @@
         "7/1/丑"
       ],
       "finding": "四土原应期为文字说明，不立日期，所指是作答位置与篇幅。虽同时出现相兑末泄，文稿沿用原应期形态，没有硬取申酉日期。体旺、比和与轻克末泄共同见时，以末泄压合格的边界留待横查。"
+    },
+    {
+      "id": "shi-second-weak-wood-and-end-equal",
+      "status": "open-priority",
+      "keys": [
+        "7/2/寅",
+        "7/2/卯",
+        "7/2/辰",
+        "7/2/巳",
+        "7/2/午",
+        "7/2/未",
+        "7/2/申",
+        "7/2/酉",
+        "7/2/戌",
+        "7/2/亥",
+        "7/2/子",
+        "7/2/丑"
+      ],
+      "finding": "局中体互、变用皆坤土比和，而无直接生体。原案在夏、秋、四土仍参坎生震且无金制而保留中克，坎在囚、相、死对震木得力各有差别，古籍未给跨位增力公式，也未定中克与末比相遇的次序。"
+    },
+    {
+      "id": "shi-second-punctuation",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "7/2/寅",
+        "7/2/卯"
+      ],
+      "finding": "春木专业引句依《正义》经文校正句读，孔疏的吉字上下兼该在正文和审计保留，源判与取期未改。"
+    },
+    {
+      "id": "shi-second-earth-no-date",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "7/2/辰",
+        "7/2/未",
+        "7/2/戌",
+        "7/2/丑"
+      ],
+      "finding": "原案四土的格式题只给作答说明，不立日期。依原应期形态记录分栏的实际动作。"
     }
   ],
   "independentReview": {
@@ -83,13 +161,13 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:12:25.522Z",
-  "sourceSha256": "50ec5d8268283e2d687811632259b6262cbf3490f1cadd3f71967c2ec5e97b1c",
+  "reviewedAt": "2026-11-20T17:17:18.472Z",
+  "sourceSha256": "e62089be19157f0f8ad681c469726162f00b2cfbd3bd6d777a96d95f85f43da6",
   "checks": {
-    "scope": "地水师已写12篇，核对作者源与阅读页",
-    "chartComparisons": 324,
+    "scope": "地水师已写24篇，核对作者源与阅读页",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       493,
       533
