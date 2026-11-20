@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-564-20261120",
+  "batch": "exam-monthly-preview-576-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 564,
+  "uploadedArticles": 576,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    8
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4044,
-  "authorWholeArticleReadback": 564,
+  "remainingArticles": 4032,
+  "authorWholeArticleReadback": 576,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -110,6 +112,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 8,
+      "name": "水地比",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-008.json",
+      "sourceSha256": "b94a907589e7edf981b37efaeb4e2190e57f3efd537370c0d192697a14ca6465",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-008.json",
+      "readingPath": "docs/exam/monthly-preview/hex-008.md",
+      "outcomes": {
+        "favourable": 6,
+        "difficult": 66
+      }
     }
   ],
   "checks": {
@@ -118,51 +134,32 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       451,
-      556
+      558
     ],
     "shortHanRange": [
       70,
       95
     ],
-    "independentChartComparisons": 13608,
+    "independentChartComparisons": 15552,
     "independentChartMismatches": 0,
-    "dateCases": 1008,
-    "judgmentCorrectionArticles": 50,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师七卦。水地比已发布篇目的检查见其核读记录。"
+    "dateCases": 1152,
+    "judgmentCorrectionArticles": 76,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 44,
+    "open-priority": 50,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 28
+    "interpreted-with-limits": 34
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 8,
-    "movingLine": 6,
+    "primaryId": 9,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 8,
-      "name": "水地比",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-008.json",
-      "sourceSha256": "829a1daa2066b77382053cbf9213c19d9f3739589fde4a14a2d57b356ed80864",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-008.json",
-      "readingPath": "docs/exam/monthly-preview/hex-008.md"
-    }
-  ]
+  }
 }

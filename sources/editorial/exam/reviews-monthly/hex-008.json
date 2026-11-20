@@ -2,12 +2,12 @@
   "primaryId": 8,
   "baselineCommit": "bcf08d07e1f6735405d13cb1e9e574a22e5a38f5",
   "editor": "Codex",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水地比已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水地比已发表的月份共72篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -54,6 +54,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553行体克用成迟、无克体取期；第792、798、804行，通诀、变比和以及无生体而体党皆衰。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02比.txt",
+      "scope": "第51–54行，上六爻辞、王注、孔疏、象辞及象疏。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02比"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第144行观梅本用、互木及金制木；第553、655、682、688、792、798、804行，求名、时令、生克、末克与体旺。"
     }
   ],
   "lineReviews": [
@@ -105,6 +114,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "exam-008-line-5-no-control-priority"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "比之无首，凶。",
+      "image": "比之无首，无所终也。",
+      "reading": "王弼、孔颖达说处终而独后，前人已成比，故无与共终。考试借指最需收束的一问或结论留到最后，全盘亦有末用巽木克坤。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-008-line-6-ending-control-priority"
       ]
     }
   ],
@@ -207,6 +226,26 @@
         "丑"
       ],
       "scope": "逐篇读回十二月题名、简断、正文四段、专业原断和取期。复点全部无生体、无克体；本坤克坎、体互坤、用互艮、变用坤比和；校正春月所引804行订正本前句。对照九五显比及所及有界，逐月查难成缺项、成期与正式查分的区别。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月的长短稿、专业原断和取期。纠正戌、亥、子三个长短稿的装入次序，核对对应五气及盘式，重读改后的月配。作者源逐月与题文月名一致，另扫已发八卦的可识别月名。",
       "status": "author-readback-complete"
     }
   ],
@@ -372,6 +411,44 @@
         "8/5/丑"
       ],
       "finding": "孔疏的所及有界及《象》舍逆取顺解释答卷的取舍；显比吉不能单改弱体月份。相、旺两组沿用 name-body / body 的坤体未申，正文区分古法时序与正式出分；春秋冬无另立窗口。"
+    },
+    {
+      "id": "exam-008-line-6-ending-control-priority",
+      "status": "open-priority",
+      "keys": [
+        "8/6/寅",
+        "8/6/卯",
+        "8/6/辰",
+        "8/6/巳",
+        "8/6/午",
+        "8/6/未",
+        "8/6/申",
+        "8/6/酉",
+        "8/6/戌",
+        "8/6/亥",
+        "8/6/子",
+        "8/6/丑"
+      ],
+      "finding": "各月本坎受坤制，两互与体比和，末巽木克坤，无生体。寅卯体死、巽旺与亥子体囚、巽相较易解释。巳午、申酉、四土月巽依序休、死、囚；尤其土令体旺，804行有「虽有他卦克之，亦无大害」与792行无生有克、798行末后不吉需要并核。观梅第144行是本离得互巽之生，同位换前坎与换后巽能否照用、以及受制或当令程度如何改变其力，未有明文。原案旁取水木相生及卦内无金卦，正文保留各卦本月之气，秋金令与卦内无金卦分开。本轮不重议等级和取期，五气解释中的异文与强弱问题留待独立复核。"
+    },
+    {
+      "id": "exam-008-line-6-control-range",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "8/6/寅",
+        "8/6/卯",
+        "8/6/辰",
+        "8/6/巳",
+        "8/6/午",
+        "8/6/未",
+        "8/6/申",
+        "8/6/酉",
+        "8/6/戌",
+        "8/6/亥",
+        "8/6/子",
+        "8/6/丑"
+      ],
+      "finding": "无首依王注、孔疏读为亲道已成而独后，无所终对应卷末缺答。沿用 control / changed_use 以巽木寅卯日参末阻，十二篇均据缺在卷末判断。"
     }
   ],
   "independentReview": {
@@ -379,15 +456,15 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:59:57.632Z",
-  "sourceSha256": "829a1daa2066b77382053cbf9213c19d9f3739589fde4a14a2d57b356ed80864",
+  "reviewedAt": "2026-11-20T18:05:00.789Z",
+  "sourceSha256": "b94a907589e7edf981b37efaeb4e2190e57f3efd537370c0d192697a14ca6465",
   "checks": {
-    "scope": "水地比已写60篇，核对作者源与阅读页",
-    "chartComparisons": 1620,
+    "scope": "水地比已写72篇，核对作者源与阅读页",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
-      491,
+      472,
       558
     ]
   }
