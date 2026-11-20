@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-288-20261120",
+  "batch": "exam-monthly-preview-300-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 288,
+  "uploadedArticles": 300,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    4
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 4320,
-  "authorWholeArticleReadback": 288,
+  "remainingArticles": 4308,
+  "authorWholeArticleReadback": 300,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -88,7 +86,8 @@
     "independentChartMismatches": 0,
     "dateCases": 576,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙四卦。水天需已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 22,
@@ -100,10 +99,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 5,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 5,
+      "name": "水天需",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-005.json",
+      "sourceSha256": "afd48f3bc536ce7791f82398ae0932a2940e419b302cdd4c20bb0a58e8685233",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-005.json",
+      "readingPath": "docs/exam/monthly-preview/hex-005.md"
+    }
+  ]
 }

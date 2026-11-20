@@ -1,0 +1,112 @@
+{
+  "primaryId": 5,
+  "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
+  "editor": "Codex",
+  "wholeArticlesRead": 12,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "水天需已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02需.txt",
+      "scope": "第32至35行初九经、象、王弼注与孔颖达疏。以郊远坎险、恒为常、所许到无咎为止。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02需"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行，核求名体生用、金受火制、体气旺衰与变为终应。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "xu-first-born-metal-under-fire",
+      "status": "open-priority",
+      "keys": [
+        "5/1/寅",
+        "5/1/卯",
+        "5/1/辰",
+        "5/1/未",
+        "5/1/申",
+        "5/1/酉",
+        "5/1/戌",
+        "5/1/丑"
+      ],
+      "finding": "原断计离火同时制乾兑，春在相地、秋囚、土月休，均减两金生坎。古籍支持生体者受制减吉，未指定秋令囚火受到有气坎水克制时还能削弱旺金到何等程度。秋月照原断保留起步有助、分量转薄，未推断具体分数。"
+    },
+    {
+      "id": "xu-first-favourable-opening-versus-terminal-drain",
+      "status": "open-priority",
+      "keys": [
+        "5/1/寅",
+        "5/1/卯",
+        "5/1/辰",
+        "5/1/巳",
+        "5/1/午",
+        "5/1/未",
+        "5/1/申",
+        "5/1/酉",
+        "5/1/戌",
+        "5/1/亥",
+        "5/1/子",
+        "5/1/丑"
+      ],
+      "finding": "初九五气都有本用、用互两生且无克体，结论权重取变用体生用。秋令末巽死，冬水旺，原断仍取难成。两处前中生扶与末泄何时可以相补，求名与互变篇未给统一阈值，正文保留全程各处，按源断写末应。春夏参末泄而夏中耗最大，其他月应事参的是过程或开端有助。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "需于郊，利用恒，无咎。",
+      "image": "需于郊，不犯难行也。利用恒无咎，未失常也。",
+      "reading": "读回初九十二月题名、简断、正文与取期，核本乾、用互兑生上坎，体互离为坎所克，末变水风井之巽由坎所生，五气无不同经卦来克坎。春末泄重，夏中段制旺离最吃力，秋起步有助而末泄轻、仍差一层，冬可承而末泄实，土月自力弱难承。春夏取变巽耗、秋取本乾之助、冬土令取用互兑之助。无咎按注疏落在守常、避免轻进，用于保留切合条件的作答办法。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "xu-first-born-metal-under-fire",
+        "xu-first-favourable-opening-versus-terminal-drain"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "从初九最终源逐篇读回十二月全文及取期，核五气保持原断、图文题的作答建议，以及不同阶段各自所应。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "前中相生与终应泄体的相对分量，火制生体之金的月令边界。"
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "reviewedAt": "2026-11-20T16:15:30.344Z",
+  "sourceSha256": "afd48f3bc536ce7791f82398ae0932a2940e419b302cdd4c20bb0a58e8685233",
+  "checks": {
+    "scope": "水天需已写12篇，核对作者源与阅读页",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      488,
+      524
+    ]
+  }
+}
