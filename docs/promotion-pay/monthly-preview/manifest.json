@@ -2,15 +2,13 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-432-20261120",
+  "batch": "promotion-pay-monthly-kun-revision-432-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
   "uploadedArticles": 432,
-  "newArticlesSincePrevious": 72,
-  "newHexagrams": [
-    6
-  ],
+  "newArticlesSincePrevious": 0,
+  "newHexagrams": [],
   "fullTarget": 4608,
   "remainingArticles": 4176,
   "authorWholeArticleReadback": 432,
@@ -35,7 +33,7 @@
       "articles": 72,
       "fullArticleReadback": 72,
       "sourcePath": "sources/editorial/promotion-pay/monthly/hex-002.json",
-      "sourceSha256": "d853fba41ab79d2ed27a5c49948cd27c72b66758f51b3aa0d4d85c2e9e95cd5b",
+      "sourceSha256": "c53418fc74db3be15c2e7484e9b5cbbf3e70dc006cfe38daed9f321f41670af2",
       "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-002.json",
       "readingPath": "docs/promotion-pay/monthly-preview/hex-002.md",
       "outcomes": {
@@ -121,7 +119,39 @@
       40,
       67
     ],
-    "payCorrectionArticles": 432
+    "payCorrectionArticles": 432,
+    "bodyHanByHexagram": {
+      "1": {
+        "min": 510,
+        "standardMedian": 528.0,
+        "max": 556
+      },
+      "2": {
+        "min": 472,
+        "standardMedian": 539.5,
+        "max": 588
+      },
+      "3": {
+        "min": 475,
+        "standardMedian": 508.5,
+        "max": 549
+      },
+      "4": {
+        "min": 503,
+        "standardMedian": 535.5,
+        "max": 570
+      },
+      "5": {
+        "min": 487,
+        "standardMedian": 537.5,
+        "max": 613
+      },
+      "6": {
+        "min": 512,
+        "standardMedian": 541.0,
+        "max": 602
+      }
+    }
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 7,
@@ -134,7 +164,7 @@
     "author-fixed-delta-read": 4,
     "corrected-and-delta-read": 2,
     "corrected-with-evidence": 4,
-    "corrected-and-independently-delta-read": 4,
+    "corrected-and-independently-delta-read": 5,
     "corrected-in-copy": 10,
     "corrected-in-prose": 1,
     "corrected-and-author-readback-complete": 2,
@@ -174,11 +204,11 @@
     },
     {
       "primaryId": 2,
-      "sourceSha256": "d853fba41ab79d2ed27a5c49948cd27c72b66758f51b3aa0d4d85c2e9e95cd5b",
+      "sourceSha256": "c53418fc74db3be15c2e7484e9b5cbbf3e70dc006cfe38daed9f321f41670af2",
       "wholeArticleCoverage": 72,
       "currentRevisionFullTextReadCount": 0,
-      "currentRevisionChangedArticleReadCount": 36,
-      "scope": "旧版全文交叉审读及其hash保存在historicalRevisionReadbacks；根代理实际独立读回本轮全部改动字段的完整旧文和新文，并对最后定点修订再读完整字段。原有古义与项目判序张力仍保留。"
+      "currentRevisionChangedArticleReadCount": 62,
+      "scope": "作者与根代理分别实际读完全部113个最终变动字段，末轮两个完整首段另读old/new。原有全文签署与各次差异保留原hash，古义与项目判序开放问题继续保留。"
     },
     {
       "primaryId": 3,
@@ -213,5 +243,19 @@
       "scope": "初六12全文＋5与2段；九二12全文＋3字段；六三12全文；九四12全文＋4字段；九五12初版全文＋48与8字段；上九12全文＋3字段。最终72篇与六份已签最终快照逐值相等。"
     }
   ],
-  "independentHumanReview": "pending"
+  "independentHumanReview": "pending",
+  "revisedHexagrams": [
+    2
+  ],
+  "revisedArticlesSincePrevious": 62,
+  "revisionChanges": {
+    "changedFields": 113,
+    "bodyArticles": 62,
+    "shortArticles": 37,
+    "judgmentArticles": 0,
+    "outcomesChanged": 0,
+    "timingValuesChanged": 0,
+    "payValuesChanged": 0
+  },
+  "independentReviewScope": "已发布432篇历史全文阅读及历次全部差异形成累计覆盖；本次坤卦独立读完113完整旧新字段与最后2段复读，不冒称重新读过72篇未变全文。"
 }
