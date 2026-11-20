@@ -2,12 +2,12 @@
   "primaryId": 5,
   "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
   "editor": "Codex",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水天需已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水天需已发表的月份共72篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -54,6 +54,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、798、804行，核混合生克、变生体终吉、时令取生克的轻重。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02需.txt",
+      "scope": "第51至54行上六及小象、王弼注与孔疏，核不速为未召、三人指下卦三阳、敬接终吉与未大失的层次。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02需"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798、804行，核有克无生、体生用耗、体克用主动处理、克体逢旺。"
     }
   ],
   "findings": [
@@ -183,6 +192,40 @@
         "5/5/丑"
       ],
       "finding": "同一合格断语之下，春参中克，夏参收束得助，冬参起头耗，秋与四土月以末变坤生体参结果。保留原有时位及事件，正文不由有利结果推导实际公布日期。"
+    },
+    {
+      "id": "xu-last-fire-mitigation-scope",
+      "status": "open-priority",
+      "keys": [
+        "5/6/寅",
+        "5/6/卯",
+        "5/6/巳",
+        "5/6/午",
+        "5/6/辰",
+        "5/6/未",
+        "5/6/戌",
+        "5/6/丑"
+      ],
+      "finding": "同是本用坎与用互离，六四、九五原断有计坎制离减克，上六原断春取相离实克、夏取旺离重克，土令取休离轻克。古籍有克体者再受克可稍解，未见相同本互因变卦不同而取减克与否的统一准则。正文维持上六原断月令力量与取期。"
+    },
+    {
+      "id": "xu-last-three-guests",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "5/6/寅",
+        "5/6/卯",
+        "5/6/辰",
+        "5/6/巳",
+        "5/6/午",
+        "5/6/未",
+        "5/6/申",
+        "5/6/酉",
+        "5/6/戌",
+        "5/6/亥",
+        "5/6/子",
+        "5/6/丑"
+      ],
+      "finding": "三客依孔疏明指下卦初九、九二、九三，以王注和小象解释敬接可以保全。正文用作审慎核后来见到的条件，未据三人猜考试人数、题量或日期，吉意与无生有克并存。"
     }
   ],
   "lineReviews": [
@@ -236,6 +279,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "xu-fifth-late-aid-strength"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "入于穴，有不速之客三人来，敬之，终吉。",
+      "image": "不速之客来，敬之终吉，虽不当位，未大失也。",
+      "reading": "上六逐篇读回十二月题名、简断、正文与取期。下乾作体生坎，体互兑与下乾比和，用互离克乾，风天小畜末巽为乾所克；末处春旺木难制、夏火克重且体弱、秋土时自力较可、冬起耗重且末处须再办理。冬参本用亥子日初耗，其余用互巳午参中克。三客及敬接按经疏，取保全以应新见的实际要求。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "xu-last-fire-mitigation-scope"
       ]
     }
   ],
@@ -339,6 +392,26 @@
       ],
       "scope": "读回九五各月逐篇全文与取期，核体生本用、同气、中克减力及末生转成，同时核公布安排已有时的结果窗口。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "上六十二篇完整读回，水天需六爻七十二篇齐备。逐月核三阶段动作、取期、经疏与原断保持相符。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -347,16 +420,12 @@
     "scope": "前中相生与终应泄体的相对分量，火制生体之金的月令边界。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T16:33:22.131Z",
-  "sourceSha256": "0390b83715c8c2b1f40da66507a5c5901f85d181b186e857ef49bd75c91464be",
+  "reviewedAt": "2026-11-20T16:37:22.541Z",
+  "sourceSha256": "db29ad0d76337f8c3a9021a773fdd526522c2a7b063c06e6e3a4bc600e8fd95f",
   "checks": {
-    "scope": "水天需已写60篇，核对作者源与阅读页",
-    "chartComparisons": 1620,
+    "scope": "水天需已写72篇，核对作者源与阅读页",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
-    "bodyHanRange": [
-      488,
-      556
-    ]
+    "dateCases": 144
   }
 }

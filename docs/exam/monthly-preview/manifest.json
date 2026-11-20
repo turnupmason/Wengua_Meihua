@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-348-20261120",
+  "batch": "exam-monthly-preview-360-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 348,
+  "uploadedArticles": 360,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    5
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4260,
-  "authorWholeArticleReadback": 348,
+  "remainingArticles": 4248,
+  "authorWholeArticleReadback": 360,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -68,6 +70,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 5,
+      "name": "水天需",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-005.json",
+      "sourceSha256": "db29ad0d76337f8c3a9021a773fdd526522c2a7b063c06e6e3a4bc600e8fd95f",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-005.json",
+      "readingPath": "docs/exam/monthly-preview/hex-005.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
     }
   ],
   "checks": {
@@ -76,51 +92,32 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       451,
-      525
+      556
     ],
     "shortHanRange": [
       70,
       95
     ],
-    "independentChartComparisons": 7776,
+    "independentChartComparisons": 9720,
     "independentChartMismatches": 0,
-    "dateCases": 576,
+    "dateCases": 720,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙四卦。水天需已发布篇目的检查见其核读记录。"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 22,
+    "open-priority": 30,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 12
+    "interpreted-with-limits": 15
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 5,
-    "movingLine": 6,
+    "primaryId": 6,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 5,
-      "name": "水天需",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-005.json",
-      "sourceSha256": "0390b83715c8c2b1f40da66507a5c5901f85d181b186e857ef49bd75c91464be",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-005.json",
-      "readingPath": "docs/exam/monthly-preview/hex-005.md"
-    }
-  ]
+  }
 }
