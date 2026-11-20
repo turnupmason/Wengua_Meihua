@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-852-20261120",
+  "batch": "exam-monthly-preview-864-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 852,
+  "uploadedArticles": 864,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    12
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3756,
-  "authorWholeArticleReadback": 852,
+  "remainingArticles": 3744,
+  "authorWholeArticleReadback": 864,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -166,6 +168,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 12,
+      "name": "天地否",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-012.json",
+      "sourceSha256": "a72ad8823b53374c048c8b1f83f7849a180be50dbf256b72e62b834ed26dc9c9",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-012.json",
+      "readingPath": "docs/exam/monthly-preview/hex-012.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
     }
   ],
   "checks": {
@@ -174,51 +190,32 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       451,
-      558
+      561
     ],
     "shortHanRange": [
-      70,
+      67,
       95
     ],
-    "independentChartComparisons": 21384,
+    "independentChartComparisons": 23328,
     "independentChartMismatches": 0,
-    "dateCases": 1584,
-    "judgmentCorrectionArticles": 250,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰十一卦。天地否已发布篇目的检查见其核读记录。"
+    "dateCases": 1728,
+    "judgmentCorrectionArticles": 322,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 68,
+    "open-priority": 74,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 52
+    "interpreted-with-limits": 58
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 12,
-    "movingLine": 6,
+    "primaryId": 13,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 12,
-      "name": "天地否",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-012.json",
-      "sourceSha256": "a2be8bd77ee0b7d1a2f5e0fa5bb55f1e7a4119e2d00a569876922dffd83dc1d5",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-012.json",
-      "readingPath": "docs/exam/monthly-preview/hex-012.md"
-    }
-  ]
+  }
 }
