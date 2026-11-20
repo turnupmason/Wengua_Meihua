@@ -63,6 +63,8 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
   if(!draft&&source.articles.length!==72)err(keyRoot,'coverage',`Expected 72, got ${source.articles.length}`);
   const keys=new Set(),sameQi=new Map();const counts=Object.fromEntries(outcomes.map(o=>[o,0]));
   const detail={primaryId:id,name:ctx.library.getHexagram(id).name,articles:source.articles.length,sourceSha256:sha256(bundle.raw),authorWholeArticlesRead:receipt?.wholeArticlesRead??0,bodyHanRange:[Infinity,0],outcomes:counts};
+  const hex = ctx.library.getHexagram(id);
+  const calendarLead = new RegExp(`^(?:(?:${hex.name}|${hex.shortName})卦?)?(?:初[六九]|[六九][二三四五]|上[六九])(?:动)?(?:行至|行到|进到|逢|临|值|遇|至|到|在|入)?[寅卯辰巳午未申酉戌亥子丑]月?[，。]`, 'u');
   if(!draft) {
    if(!receipt)err(keyRoot,'author-receipt','Missing receipt');
    else {
@@ -111,6 +113,8 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
    // 首段首句、摘要首句明说本篇结论，且不带与之相反的判词。
    const first=a.paragraphs[0].split(/[。！？]/u)[0],shortFirst=a.short.split(/[。！？]/u)[0];
+   if(name==='exam' && calendarLead.test(a.paragraphs[0]))
+    err(key,'exam-opening', '正文首句重复了标题中的爻位和月令');
    for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
     if(!c.verdict[a.outcome].test(sent))err(key,label,sent);
     if(c.contra){if(c.contra[a.outcome].test(sent))err(key,label,'含相反说法：'+sent);}
