@@ -150,6 +150,8 @@ test('remaining contact tensions have a traceable author recheck and matching re
  const directory='sources/editorial/missing-contact/';
  const ledger=await json(directory+'recheck/judgments.json');
  const edits=await json(directory+'recheck/edits.json');
+ const laterEdits=await json(directory+'recheck/application-edits.json');
+ const laterOutcomes=new Map(laterEdits.map(edit=>[edit.primaryId+':'+edit.movingLine+':'+edit.monthOrder,edit.after[2]]));
  const study=await json(directory+'source-study.json');
  const keys=new Set(ledger.priorLineCollationsExcluded);
  const entries=new Map();
@@ -181,7 +183,8 @@ test('remaining contact tensions have a traceable author recheck and matching re
   const rows=entries.get(key);
   assert.ok(rows?.length&&!keys.has(key)&&record.reason&&record.sources.length,key);
   keys.add(key);
-  assert.deepEqual(record.monthlyDecisions,rows.map(row=>({order:row.monthOrder,branches:row.monthBranches,outcome:row.decision.outcomeCode})),key);
+  const current=record.monthlyDecisions.map(month=>({...month,outcome:laterOutcomes.get(key+':'+month.order)??month.outcome}));
+  assert.deepEqual(current,rows.map(row=>({order:row.monthOrder,branches:row.monthBranches,outcome:row.decision.outcomeCode})),key);
   assert.equal(record.lineText,rows[0].movingLineText,key);
   for(const source of record.sources)assert.ok(source.startLine>=1&&source.endLine>=source.startLine,key);
  }
@@ -198,5 +201,67 @@ test('remaining contact tensions have a traceable author recheck and matching re
   assert.equal(row.copy.long.ending,edit.after[7]);
   if(Array.isArray(edit.before[10]))assert.deepEqual(edit.before[10],edit.after[10]);
   else assert.ok(row.timingOmission?.reason&&row.timingSlots.length===0);
+ }
+});
+
+test('contact follow-up checks each outstanding application case and preserves its stage windows',async()=>{
+ const source='sources/editorial/missing-contact/';
+ const prior=await json(source+'recheck/judgments.json');
+ const followup=await json(source+'recheck/application-followup.json');
+ const edited=await json(source+'recheck/application-edits.json');
+ const study=await json(source+'source-study.json');
+ const key=row=>row.primaryId+':'+row.movingLine;
+ const pending=prior.records.filter(row=>row.status==='application-still-open');
+ assert.deepEqual(followup.records.map(key).sort(),pending.map(key).sort());
+ assert.deepEqual(followup.records.slice(0,2).map(key),['55:6','60:5']);
+ assert.deepEqual(study.modernApplicationFollowup.totals,followup.totals);
+ assert.equal(followup.independentProfessionalReview,'pending');
+ assert.equal(followup.independentTimingInterpretationReview,'pending');
+ let articles=0,months=0;
+ for(const row of followup.records){
+  assert.equal(new Set(row.sources.map(e=>e.author)).size,3,key(row));
+  assert.ok(row.reason&&row.priorIssue,key(row));
+  const baseline=pending.find(e=>key(e)===key(row));
+  assert.deepEqual(row.monthlyDecisions.map(m=>({order:m.order,branches:m.branches,outcome:m.priorOutcome})),baseline.monthlyDecisions,key(row));
+  const shard=await json('data/authored-readings/missing-contact/'+row.caseSource.split('/').at(-1));
+  for(const month of row.monthlyDecisions){
+   const current=shard.rows.find(e=>e.movingLine===row.movingLine&&e.monthOrder===month.order);
+   assert.equal(current.decision.outcomeCode,month.outcome,key(row));
+   assert.deepEqual(current.facts.nodes.filter(n=>n.role!=='body_inherited').map(({role,trigram,qi})=>({role,trigram,qi})),month.states,key(row));
+   assert.deepEqual(current.facts.directRelations,row.chart.relations,key(row));
+   articles++;
+   months+=month.branches.length;
+  }
+ }
+ assert.equal(articles,followup.totals.articles);
+ assert.equal(months,followup.totals.monthKeys);
+ assert.deepEqual(edited.map(row=>key(row)+':'+row.monthOrder),[
+  '55:6:spring-wood','55:6:summer-fire','60:5:summer-fire','3:6:spring-wood',
+  '3:6:winter-water','51:6:winter-water','62:2:spring-wood','62:2:winter-water',
+ ]);
+ for(const edit of edited){
+  const record=followup.records.find(row=>key(row)===key(edit));
+  const month=record.monthlyDecisions.find(row=>row.order===edit.monthOrder);
+  const drafts=await json(source+record.caseSource.split('/').at(-1));
+  assert.deepEqual(drafts.find(r=>r[0]===edit.movingLine&&r[1]===edit.monthOrder),edit.after);
+  assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
+  assert.equal(edit.before[2],month.priorOutcome);
+  assert.equal(edit.after[2],month.outcome);
+  const oldTiming=edit.before[10],newTiming=edit.after[10];
+  if(Array.isArray(oldTiming))assert.deepEqual(oldTiming.map(slot=>slot.slice(0,4)),newTiming.map(slot=>slot.slice(0,4)));
+  else assert.equal(typeof newTiming,'string');
+  for(const monthBranch of month.branches){
+   const options={...context,questionId:id,primaryId:edit.primaryId,movingLine:edit.movingLine,monthBranch,castingDate:'2026-11-30'};
+   const result=await product.getContent(options);
+   const historical=await product.getContent({...options,viewDate:'2027-01-01'});
+   assert.equal(result.status,'ready');
+   assert.equal(result.decision.outcomeCode,month.outcome);
+   assert.equal(result.calculationExplanation.void,undefined);
+   assert.equal(result.timingSection.castingDate,historical.timingSection.castingDate);
+   const windowDates=({event,displayedDates})=>({event,displayedDates});
+   assert.deepEqual(result.timingSection.windows.map(windowDates),historical.timingSection.windows.map(windowDates));
+   assert.equal(result.timingSection.windows.length,Array.isArray(newTiming)?newTiming.length:0);
+   assert.ok(result.timingSection.windows.every(w=>w.displayedDates.length<=2&&w.displayedDates.every(d=>d>=options.castingDate)));
+  }
  }
 });
