@@ -2,14 +2,14 @@
   "primaryId": 2,
   "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T14:50:29.458Z",
-  "wholeArticlesRead": 48,
-  "sourceSha256": "c7d50adf4dd488213094b99fda5a17c3e90267027003f025e8ec478415af4b0d",
+  "reviewedAt": "2026-11-20T14:55:24.357Z",
+  "wholeArticlesRead": 60,
+  "sourceSha256": "dec8252bd702c409dc6a547208801a7f5f6676a1b7404f8bcccaeef3a1fd333d",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "坤初六至六四，逐爻分月写作并逐篇读回标题、简断、完整正文、主断依据与取期。"
+    "currentReadback": "坤卦已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -39,6 +39,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
       "scope": "六四经、《象》慎不害、王弼注括结否闭、孔颖达疏谨慎不与物竞及文言天地闭、盖言谨也。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "六五经文与小象、王注及孔疏对黄中、下裳的释义，《文言》黄中通理、发于事业一段。"
     }
   ],
   "lineReviews": [
@@ -78,6 +82,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "kun-fourth-earth-role"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "黄裳，元吉。",
+      "image": "黄裳元吉，文在中也。",
+      "reading": "六五动上坤为坎，原体下坤土制水。六五保留元吉，依王注与孔疏取中色下饰、内有文德而通物理，《文言》由内发于事业。春秋冬体力不济，吉辞不足以取代末段制用所需的力量。夏及土令仍依五气原判能过。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "kun-fifth-good-line"
       ]
     }
   ],
@@ -199,6 +213,32 @@
         "2/4/丑"
       ],
       "finding": "无咎取慎能避害，无誉表明谨慎不能直接替代所问之功。原取期中写成题序、空答、题末追问的内容，收束到可以核对的关键判断与答复范围。"
+    },
+    {
+      "id": "kun-fifth-good-line",
+      "status": "open-priority",
+      "keys": [
+        "2/5/寅",
+        "2/5/卯",
+        "2/5/申",
+        "2/5/酉",
+        "2/5/亥",
+        "2/5/子"
+      ],
+      "finding": "经文元吉且卦中无克体，现行考试规则仍就四处坤土皆弱而无生、末段无力制水断不成。爻辞吉利在正文保留，吉辞如何与盘势轻重共同裁定待独立复核。"
+    },
+    {
+      "id": "kun-fifth-timing-scope",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/5/辰",
+        "2/5/巳",
+        "2/5/午",
+        "2/5/未",
+        "2/5/戌",
+        "2/5/丑"
+      ],
+      "finding": "巳午用互相坤比和，参作答中途辨明要求。四土月保留原体坤未申看结果可核实。结果文案从通知媒介和证书申领缩回本场考试合格。"
     }
   ],
   "batchReadback": [
@@ -281,13 +321,33 @@
       ],
       "scope": "读回十二份全文，核原体下坤、末变上震、五气旺衰、括囊爻意和取期角色。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月稿，核土克末坎、坤土五气及夏令中途相应与土令结果两个不同取期。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "坤初六至六四，逐爻核对作者源与阅读页",
-    "chartComparisons": 1296,
+    "scope": "坤卦已写60篇，核对作者源与阅读页",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       467,
       522
