@@ -1,0 +1,25 @@
+# 跳槽逐月长稿：换人整卦通读（2026-11-20）
+
+每卦写完、过 `monthly-gate.sh` 之后，发布之前，由**没写过这一卦**的 Opus 作者把 72 篇从头到尾整篇读一遍。起因：比卦初六、六二补做整篇读回时，读出了脚本查不到的错——把「囚」说成全年最弱（死才是）、夏令把「火生土」说反、「吉就不会落空」「你不会吃亏」一类安慰、「精力足」「容易觉得自己到哪里都站得住」一类断人。写手自己读回有盲点，所以加这一道。这不是给写手加新规则，写作标准仍以 `JOBCHANGE_MONTHLY_BRIEF.md` 为准。
+
+## 先读
+
+`docs/review/JOBCHANGE_MONTHLY_BRIEF.md` 全文；`docs/review/JOBCHANGE_REJUDGE_20261119.md` 第二、六、七节；用户亲写面试稿 `git show origin/main:sources/editorial/interview-pass/monthly/hex-003.json` 读 6 篇定口吻。每卦先跑 `node scripts/review/packet.mjs job-change <卦序>` 拿到各气各卦的五态与生克，读稿时逐句对。
+
+## 逐篇查什么（每篇标题、简断、正文全读）
+
+1. **盘面说法**：每一句讲旺衰、生克、轻重、「最弱／最旺／最重／最轻」「此气之最」的话，与 packet 对：五态（旺相休囚死）不说错；「最」字要在本爻五气里真是最；生克方向不说反；一层间接作用（制、生）只按定稿第八节讲，不连环累计；互卦管中段、变卦管收尾不说乱。
+2. **结论**：首句、简断首句判词与 outcome 一致；全篇不出现相反的倾向；先准备的篇写明要先落定哪件实事；可走的篇写明日子按双方约定。
+3. **引文**：「」内逐字对原典（`sources/reference/zhouyi-zhengyi-hans/`、`sources/original/`），出处（王注、孔疏、程传、本义、小象、彖、大象、《梅花易数》各诀）不张冠李戴。
+4. **不该有的话**：安慰、许诺、预告好转（「不会落空」「不至于吃亏」「不会出岔子」「可以放心」之类在留、先准备的篇里尤其要看；用户面试稿 4,608 篇只有 4 处这类说法）；替人断心意、断性格（「你精力足」「你容易……」）；编出来的经过与场面写成读者实况（举例用「多是……这一类」）；写给作者的话、规则名目；他项用语。
+5. **文字**：段间、篇内意思重复；同一爻十二篇收尾成模子；不顺、过长、指代不明的句子。
+
+## 怎么改
+
+逐句手改，不许脚本批量替换；改后整篇再读一遍。结论、专业说明 `judgment`、取期 `timing` 一字不动（专业说明若有事实错，不改，写进回报）。正文改后仍须 ≥470 字、全卦中位 ≥500。
+
+## 收尾
+
+回执 `reviews-monthly/hex-NNN.json` 加一条 finding（id `I<卦序>-R01`，status `fixed-documentation-conflict`，keys 列改过的篇，finding 写明读出的问题类别与条数、改法举例），`independentReview` 改为 `{status:"ai-independent-read", reviewerIsHuman:false, scope:"换人整卦 72 篇通读，见 docs/review/JOBCHANGE_INDEPENDENT_READ.md"}`，重算 `sourceSha256`、更新 `reviewedAt`；`node scripts/build-monthly.mjs job-change --hex N`；`bash scripts/review/monthly-gate.sh job-change N` 最后一行须 `GATE PASSED`。
+
+不提交 git，只动分给你的卦。回报（中文，简短）：每卦读出几类问题各几处、举例、改了几篇、专业说明里发现的事实错、gate 结果。
