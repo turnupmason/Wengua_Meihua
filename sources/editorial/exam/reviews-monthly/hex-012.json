@@ -3,12 +3,12 @@
   "primaryId": 12,
   "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
   "editor": "Codex",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "天地否已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "天地否已发表的月份共48篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -90,6 +90,38 @@
     {
       "path": "sources/editorial/exam/hex-012.json",
       "scope": "否六三五气源断及变艮末助之应期。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02否.txt",
+      "scope": "第24–27行大往小来，第41–44行九四经注疏与志行。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02否"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "第124行朱熹以畴类三阳并获福、命为天命释九四。",
+      "url": "https://zh.wikisource.org/wiki/周易本義_(四庫全書本)/卷1"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06巽.txt",
+      "scope": "第38–39行随风与申命行事。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/06巽"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
+      "scope": "第31–32行风行地上与孔疏号令之象。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/03觀"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第42–45行无生有克，第134–139行制而无生的一层旁参。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第495、655、682、792、796–798、804行体生用、时令、受制、全局及末克。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-012.json",
+      "scope": "否九四五气源断、首乾泄和末巽克的过程取期。"
     }
   ],
   "lineReviews": [
@@ -121,6 +153,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "exam-012-line-3-three-soils-under-control"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "有命无咎。畴离祉。",
+      "image": "有命无咎，志行也。",
+      "reading": "王孔以九四命守正有应的初六得无咎，初六为畴，离通丽，初六受命而附祉。《象》之志行就初六守正应上说。朱熹以命为天命、畴为三阳之类，正文从王孔借题目明示的要求和卷上依要求所得之分。春借《巽》申命写同一种指定解法两见，冬借之卦《观》风行地上写编号与次序规定落实；秋以「大往小来」借写第一页时长与所得分之差。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-012-line-4-metal-restrains-two-woods"
       ]
     }
   ],
@@ -183,6 +225,26 @@
         "丑"
       ],
       "scope": "逐篇核读题名、短断、四段正文、专业断及应期，对照王孔、朱熹两读并核天山遁与三土受制。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回正文、简断、专业及应期，逐项核五气、原体、四用、变卦和引文。寅卯中末限同法，巳午另举例而末问空，申酉第一页耗时，亥子末问编号次序错，辰戌丑未长答遮没一项给分要点；十二篇文、证、日期与源断局面相合。",
       "status": "author-readback-complete"
     }
   ],
@@ -300,6 +362,44 @@
         "12/3/丑"
       ],
       "finding": "十二月只取末艮土辰戌丑未参过程助。春材料拆理，夏以末表核条件，秋重算惯用一步，冬补事实依据，四土按题给写陌生题已有的两步并回查熟问。包羞借作核无据之文，避免把经传的位不当直接断成没过。"
+    },
+    {
+      "id": "exam-012-line-4-metal-restrains-two-woods",
+      "status": "open-priority",
+      "keys": [
+        "12/4/寅",
+        "12/4/卯",
+        "12/4/辰",
+        "12/4/巳",
+        "12/4/午",
+        "12/4/未",
+        "12/4/申",
+        "12/4/酉",
+        "12/4/戌",
+        "12/4/亥",
+        "12/4/子",
+        "12/4/丑"
+      ],
+      "finding": "原体坤、体互艮比和，本用乾为泄，用互和变用两巽克坤。四用之间，本乾皆制两巽，余用无水生巽，在原旺衰之外以一层参有效克力偏弱。两处各自落在中、末，作用不作加总。本用泄、末仍克，无生体，仍取源断十二月难过，R3 弱克例不适用。秋应期按本乾金气取申酉，余月按末巽木取寅卯，原签名照录。"
+    },
+    {
+      "id": "exam-012-line-4-instructions-and-limits",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "12/4/寅",
+        "12/4/卯",
+        "12/4/辰",
+        "12/4/巳",
+        "12/4/午",
+        "12/4/未",
+        "12/4/申",
+        "12/4/酉",
+        "12/4/戌",
+        "12/4/亥",
+        "12/4/子",
+        "12/4/丑"
+      ],
+      "finding": "王孔本句重守正受命而相应。卷面以按题明文实写能得相应步骤分为借义，「无咎」不取为全卷合格。两处巽之间借重巽之大象来叙重复限定，未另立重巽卦。秋卦辞原义是阴阳消息，投入多而所得分少仅为考试类比。"
     }
   ],
   "independentReview": {
@@ -307,15 +407,15 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘各有记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T19:54:14.070Z",
-  "sourceSha256": "7f5d39d6d29a48e2eeee05b05ff4e515007707389ec83cdb530382a68f9f6f5f",
+  "reviewedAt": "2026-11-20T20:01:22.206Z",
+  "sourceSha256": "779bba368d5a4bb207195f8727db9c424a35c509b5b24ac8e3ac5ca819fe329b",
   "checks": {
-    "scope": "天地否已写36篇，核对作者源与阅读页",
-    "chartComparisons": 972,
+    "scope": "天地否已写48篇，核对作者源与阅读页",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
-      514,
+      509,
       561
     ]
   }
