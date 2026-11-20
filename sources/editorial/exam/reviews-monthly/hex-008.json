@@ -2,12 +2,12 @@
   "primaryId": 8,
   "baselineCommit": "bcf08d07e1f6735405d13cb1e9e574a22e5a38f5",
   "editor": "Codex",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水地比已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水地比已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、688、792、798、804行，求名、月令、体衰逢克、无生有克、变用比和及旺体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02比.txt",
+      "scope": "第41至42行，六三经、象、王注与孔疏，近不相得、远则无应。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02比"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第655、688、792、798、804行，时令、衰体逢克、有克无生、末克体及旺体。"
     }
   ],
   "lineReviews": [
@@ -48,6 +57,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "bi-second-three-controls-and-equal"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "比之匪人。",
+      "image": "比之匪人，不亦伤乎。",
+      "reading": "王注说二比五、四外比，六三近不相得而远无应；孔疏以所欲亲比皆非己亲释伤。应试取解法、原例与设问不相合，局中四处土克坎，无生体，依次分月读回。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "bi-third-four-controls-strength"
       ]
     }
   ],
@@ -90,6 +109,26 @@
         "丑"
       ],
       "scope": "十二个月逐篇读回。春秋从体互艮，夏冬四土从用互坤，皆取土日而逐项确认作用位置和当月轻重。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇核本用坤、用互坤、体互艮、末艮皆克体。夏取本用、秋取用互、春冬和四土取变艮，同属四土日而各有立意。",
       "status": "author-readback-complete"
     }
   ],
@@ -147,6 +186,38 @@
         "8/2/子"
       ],
       "finding": "六二不自失指所应未失。春月有前两问稳当之得，冬月有后半得分，爻中的所守没有扩到未答的反向证明或格式项目。"
+    },
+    {
+      "id": "bi-third-four-controls-strength",
+      "status": "open-priority",
+      "keys": [
+        "8/3/寅",
+        "8/3/卯",
+        "8/3/申",
+        "8/3/酉",
+        "8/3/亥",
+        "8/3/子"
+      ],
+      "finding": "四土全克上坎，春死、秋休、冬囚时原案仍取过不了，古文有无生有克、变用克体用法，未定多处弱克与有力原体相遇的过线边界。"
+    },
+    {
+      "id": "bi-third-match-of-method",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "8/3/寅",
+        "8/3/卯",
+        "8/3/辰",
+        "8/3/巳",
+        "8/3/午",
+        "8/3/未",
+        "8/3/申",
+        "8/3/酉",
+        "8/3/戌",
+        "8/3/亥",
+        "8/3/子",
+        "8/3/丑"
+      ],
+      "finding": "所比非亲借写题目条件和所选方法不匹配；月令差别分别落在取法、背答、遗漏新限制及返作，不把爻意改作人物评价或确切分数。"
     }
   ],
   "independentReview": {
@@ -154,13 +225,13 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:44:41.110Z",
-  "sourceSha256": "c17e5e7db162a978a687778554cbe6ac4af4f282c1b5e176029abb7451b9571c",
+  "reviewedAt": "2026-11-20T17:49:08.569Z",
+  "sourceSha256": "d2d8aaa99a7fb39f921394bf5f99d5e830a04585d3b29028483d176d8936a135",
   "checks": {
-    "scope": "水地比已写24篇，核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "水地比已写36篇，核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       492,
       533
