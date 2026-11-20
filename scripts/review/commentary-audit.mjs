@@ -32,8 +32,23 @@ function scan(item, where, s) {
     const r = res.get(k); r.n++; if (r.at.length < 4) r.at.push(item + ':' + where);
   }
 }
-for (const item of items) {
+// --monthly：核逐月长稿 sources/editorial/<问项>/monthly/hex-NNN.json（标题、简断、正文、专业说明、取期），2026-11-19 加。
+const monthly = items.includes('--monthly');
+for (const item of items.filter(a => a !== '--monthly')) {
   const dir = `sources/editorial/${item}/`;
+  if (monthly) {
+    const md = dir + 'monthly/';
+    for (const f of readdirSync(md).filter(f => /^hex-\d{3}\.json$/.test(f))) {
+      const id = f.slice(4, 7);
+      for (const a of JSON.parse(readFileSync(md + f, 'utf8')).articles) {
+        const k = `${id}/${a.movingLine}/${a.monthBranch}`;
+        scan(item, k + '/title', a.title); scan(item, k + '/short', a.short);
+        a.paragraphs.forEach((p, i) => scan(item, `${k}/p${i + 1}`, p));
+        scan(item, k + '/judgment', a.judgment); scan(item, k + '/timing', JSON.stringify(a.timing));
+      }
+    }
+    continue;
+  }
   for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
     const id = f.slice(4, 7);
     const src = JSON.parse(readFileSync(dir + f, 'utf8'));
