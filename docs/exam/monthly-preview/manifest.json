@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-636-20261120",
+  "batch": "exam-monthly-preview-648-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 636,
+  "uploadedArticles": 648,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    9
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3972,
-  "authorWholeArticleReadback": 636,
+  "remainingArticles": 3960,
+  "authorWholeArticleReadback": 648,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -124,6 +126,20 @@
         "favourable": 6,
         "difficult": 66
       }
+    },
+    {
+      "primaryId": 9,
+      "name": "风天小畜",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-009.json",
+      "sourceSha256": "95389407bca2e7b276fd89dc5a3b129d15827831be45764d1f5517fc1de3649f",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-009.json",
+      "readingPath": "docs/exam/monthly-preview/hex-009.md",
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
+      }
     }
   ],
   "checks": {
@@ -138,45 +154,26 @@
       70,
       95
     ],
-    "independentChartComparisons": 15552,
+    "independentChartComparisons": 17496,
     "independentChartMismatches": 0,
-    "dateCases": 1152,
-    "judgmentCorrectionArticles": 76,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比八卦。风天小畜已发布篇目的检查见其核读记录。"
+    "dateCases": 1296,
+    "judgmentCorrectionArticles": 104,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 50,
+    "open-priority": 56,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 34
+    "interpreted-with-limits": 40
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 9,
-    "movingLine": 6,
+    "primaryId": 10,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 9,
-      "name": "风天小畜",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-009.json",
-      "sourceSha256": "5fcc5bcb93a7f6c5c8c196a2458f108e08f08d51921edadbd01930ee364da867",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-009.json",
-      "readingPath": "docs/exam/monthly-preview/hex-009.md"
-    }
-  ]
+  }
 }
