@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-576-20261120",
+  "batch": "exam-monthly-preview-588-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 576,
+  "uploadedArticles": 588,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    8
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 4032,
-  "authorWholeArticleReadback": 576,
+  "remainingArticles": 4020,
+  "authorWholeArticleReadback": 588,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -144,7 +142,8 @@
     "independentChartMismatches": 0,
     "dateCases": 1152,
     "judgmentCorrectionArticles": 76,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比八卦。风天小畜已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 50,
@@ -156,10 +155,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 9,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 9,
+      "name": "风天小畜",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-009.json",
+      "sourceSha256": "a5d2d2d16f73911c11e2270ea267ebe70a86dfa90fff1a5245e2f7a3a78f0e92",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-009.json",
+      "readingPath": "docs/exam/monthly-preview/hex-009.md"
+    }
+  ]
 }
