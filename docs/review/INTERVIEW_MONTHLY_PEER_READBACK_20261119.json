@@ -2,9 +2,9 @@
   "schemaVersion": "1.0.0",
   "reviewer": "Multiple second AI readers; historical entries without reviewer are by /root",
   "reviewerIsHuman": false,
-  "reviewedAt": "2026-11-19T22:54:19.782389+00:00",
+  "reviewedAt": "2026-11-20T00:04:23.660838+00:00",
   "scope": "第二位AI作者对指定整篇文章的实读抽查；并非整库独立全文审核，不代替作者72篇全文读回。",
-  "wholeArticlesRead": 196,
+  "wholeArticlesRead": 202,
   "hexagramCounts": {
     "19": 27,
     "20": 27,
@@ -31,7 +31,8 @@
     "41": 6,
     "40": 6,
     "42": 6,
-    "61": 6
+    "61": 6,
+    "51": 6
   },
   "articleHashMethod": "SHA256 of UTF-8 JSON with ensure_ascii=false, sort_keys=true, separators=(comma,colon)",
   "sourceSha256": {
@@ -60,7 +61,8 @@
     "41": "e4a13b922ec91c4940ffb3352bfc168591d19ecf2bb4845e0714038f427d01cb",
     "40": "22be7b14d3c1ea426910260c981a5c40d8b1269cac95204bb2f93aef373abfa2",
     "42": "29a2a73b3fea75d885ca13894869fd05a68197c61a707dc8ed557dccf41ac3b0",
-    "61": "cc7c877a596e4d228208c87789c9871d62fff5f6f6c96cc5801a66107f9b104c"
+    "61": "cc7c877a596e4d228208c87789c9871d62fff5f6f6c96cc5801a66107f9b104c",
+    "51": "77a5335ead8f18524e0595e3b9f26ae72657617ae29b535348af98d92ef16ca5"
   },
   "articles": [
     {
@@ -1310,6 +1312,54 @@
       "scope": "实际从稳定源码读回指定六篇的标题、摘要、全部五段正文、完整judgment、timing及judgmentCorrection；随后完整实读《周易正义》中孚全文、《伊川易传》卷四中孚422–444行、《本义》卷二中孚188–192行；没有把脚本、哈希或检索当作其余66篇读回。",
       "finding": "相体、无克、中间生扶和死坎泄轻等有利反证均实际呈现，正文没有靠贬低求测者使不通过显得必然。 翰音的王孔声高实不随、程传固守不通、朱熹信非所信区分妥当，应用为检验主张而非断言读者夸大资历。 support/use_mutual仍为中段补益而非结果日期；末轻泄是否足以压过相体无克有生是实质开放问题，judgment已明确。",
       "status": "pass-with-open-rule-weight"
+    },
+    {
+      "key": "51/1/寅",
+      "articleSha256": "7d09c24c2ef8f3eee959c2bc1ab4af97272f4d3e4c9b9004670007c595e12ad3",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "旺震比和、休坎受两土制生体薄、两死土受克，无直接克体，事实相符。 初九吉与恐惧修省、后有则完整相接，未预设真实紧张或题数。 name-support保持body_mutual卦数方法；薄助作为结果节点的权重另审。",
+      "status": "pass-with-open-rule-weight"
+    },
+    {
+      "key": "51/2/亥",
+      "articleSha256": "10f1c7ca8c52e5922192ee5d94e5050855ed302276f8cac958304aee936124dd",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "相震、旺坎、囚艮、休兑得生末克均表达准确，有利正证保留。 程朱守中待复与王孔七日被获分列，七日没有改成通知日期。 末克优先及弱土生金的量级保持开放；抽读所见编辑自述已由作者改写并由根作者复读。",
+      "status": "pass-with-open-rule-weight"
+    },
+    {
+      "key": "51/3/子",
+      "articleSha256": "cc112785f1c71bf37658436da38888937fd78d0eaf9f98d248b0ff80003997a2",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "体相有生无克、末火死而轻泄的正反两面都有呈现，不借难判贬低所有条件。 震行无眚按修正行事解释，非保证全程答题零错。 support/body_mutual仍是过程，末轻泄压过强体生扶的优先级已列审计。",
+      "status": "pass-with-open-rule-weight"
+    },
+    {
+      "key": "51/4/申",
+      "articleSha256": "a9d70d23237f3d80baff87abbabf21edba690a9446da43339ff0bd05e8229aa1",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "体死比和、相水受两土制生薄、两休土待体克的关系齐全。 遂泥保留程朱无反难自奋的重戒，未改成马上走出小阻滞；与当前能过的张力公开列出。 抽读所见现有判断口吻已改为直接叙述；变更段落根作者再次实际读回。",
+      "status": "pass-with-open-rule-weight"
+    },
+    {
+      "key": "51/5/辰",
+      "articleSha256": "79befe14bc0e64fc78d351582a1f0d9f8d3553f07d3d5064b3b1b079b48f3c11",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "木囚土旺、死水薄助、相兑得土生末克未混同原态与调力。 中指中德中位，王孔任事建功与程传自守的不同范围均保留。 取期维持changed_use控制过程，没有指定通知、事故或题目。",
+      "status": "pass"
+    },
+    {
+      "key": "51/6/巳",
+      "articleSha256": "14a46846907bf89ec9b1485da30b897c32279b4211883097b7bb77b131c9750f",
+      "reviewer": "/root",
+      "scope": "根作者从稳定源完整输出并实际阅读指定六篇的标题、摘要、全部正文、judgment、timing及订正记录，复核三家经注。随后作者清理十一段编辑口吻，根作者从磁盘实际读回这十一段；不扩大为其余六十六篇独立全文审阅。",
+      "finding": "休木、囚水受制、相土待克、旺离末泄与难判相接。 征凶有极惧条件，畏邻戒有预戒改过的正义，不设真实邻人或亲属角色。 末泄取期仍是耗力过程，未写为拒绝结果日期。",
+      "status": "pass"
     }
   ],
   "independentFullCopyReview": "pending",
@@ -1424,6 +1474,13 @@
           "paragraph": 5
         }
       ]
+    },
+    {
+      "primaryId": 51,
+      "reviewer": "/root",
+      "paragraphsRead": 11,
+      "scope": "六篇独立抽读反馈后，作者末次十一处改段已由根作者完整读回；不另计整篇阅读。",
+      "sourceSha256": "77a5335ead8f18524e0595e3b9f26ae72657617ae29b535348af98d92ef16ca5"
     }
   ]
 }
