@@ -1,0 +1,4404 @@
+{
+  "baseline": "9e689622ceb203095b07f77446aaf2ea388b6572",
+  "questionId": "search.missing-contact.contact",
+  "actor": "assistant-author",
+  "reviewedAt": "2026-11-19",
+  "independentProfessionalReview": "pending",
+  "independentTimingInterpretationReview": "pending",
+  "baseRules": [
+    {
+      "id": "mh-056",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 474,
+      "endLine": 479,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二#占卜總決"
+    },
+    {
+      "id": "mh-070",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 549,
+      "endLine": 551,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二#求謀占第八"
+    },
+    {
+      "id": "mh-116",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 791,
+      "endLine": 794,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷三#占卦訣"
+    },
+    {
+      "id": "mh-117",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 795,
+      "endLine": 799,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷三#體用互變之訣"
+    },
+    {
+      "id": "mh-119",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 803,
+      "endLine": 805,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷三#體用衰旺之訣"
+    },
+    {
+      "id": "mh-061",
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "startLine": 492,
+      "endLine": 513,
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二#體用總訣"
+    }
+  ],
+  "totals": {
+    "lines": 20,
+    "articles": 86,
+    "monthKeys": 208,
+    "revised": 5,
+    "retained": 5,
+    "open": 10,
+    "revisedLineEvidence": 7,
+    "editedArticles": 13,
+    "editedMonthKeys": 34,
+    "changedOutcomes": 8
+  },
+  "records": [
+    {
+      "primaryId": 10,
+      "movingLine": 6,
+      "hexLine": "天泽履上九",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-010.json",
+      "status": "revised",
+      "reason": "申酉旺兑、四土相兑均有本乾和变兑之比，体互离火在囚、休仍克；用互弱巽可制而全盘无直生。元吉须根据已核明的实际行为，正文把秋、土的较有望改为有条件。春夏偏难、冬留缓成。",
+      "priorIssue": "秋土元吉之条件与首尾金比确强，但体互仍有火克而无生；较有望与只留条件的分界为现代类推问题。",
+      "priorLineText": "视履考祥，其旋元吉。",
+      "lineText": "视履考祥，其旋元吉。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "兑",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/02履.txt",
+          "startLine": 52,
+          "endLine": 52,
+          "url": "https://zh.wikisource.org/wiki/周易正義/02履"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷1.txt",
+          "startLine": 336,
+          "endLine": 338
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 114,
+          "endLine": 114
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "囚"
+            }
+          ],
+          "reason": "囚本末比弱、体互相火克、体克旺木用互难，无生；元吉有视履周全条件，与衰弱通则张力登记，不取旋为人归。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "死"
+            }
+          ],
+          "reason": "死本末比弱、旺火体互克、体克休木承办弱，无生，元吉保条件不省反证；不把整理齐全作事实已经回复。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "favourable",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "旺"
+            }
+          ],
+          "reason": "秋令乾、兑首尾旺比，死巽可制，体互囚离仍克而无直生。「元吉」有反观行履周全的条件；合宜渠道仍能核到本人时留接通机会。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "conditional",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "休"
+            }
+          ],
+          "reason": "休本末比、死火体互克仍在、相木受体克费力，无生与元吉条件张力登记，缓成非保证，旋不作真实返回。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "favourable",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "相"
+            }
+          ],
+          "reason": "土令乾兑本末相比，体能制囚巽；体互休离仍克，且无直接生体。周全之义适用于核查前后可回查，结论保本人独立凭证这一条件。"
+        }
+      ]
+    },
+    {
+      "primaryId": 54,
+      "movingLine": 5,
+      "hexLine": "雷泽归妹六五",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-054.json",
+      "status": "revised",
+      "reason": "秋旺兑、土相兑可办震木并有末兑比；体互离直接克仍存，用互坎仍受体泄，均无直生。六五吉系原礼配得中，不足将核验便利升为较有望；只在已有正当且可直查的渠道时留机会。",
+      "priorIssue": "原吉含尚德不尚饰、近望不过盈；秋土金体得末比确有利，有利强度和中克耗的相持保留。",
+      "priorLineText": "帝乙归妹，其君之袂，不如其娣之袂良；月几望，吉。",
+      "lineText": "帝乙归妹，其君之袂，不如其娣之袂良；月几望，吉。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "兑",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/05歸妹.txt",
+          "startLine": 50,
+          "endLine": 50,
+          "url": "https://zh.wikisource.org/wiki/周易正義/05歸妹"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 260,
+          "endLine": 264
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 154,
+          "endLine": 154
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "囚"
+            }
+          ],
+          "reason": "春五囚兑克旺震劳，中相离克休坎受生耗，末囚兑薄比无生。原吉正证留，尚难达标。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "死"
+            }
+          ],
+          "reason": "夏五死兑克休震劳，旺离体互克重、囚坎体生耗、末死兑比薄无生。原吉不掩重克。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "favourable",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "旺"
+            }
+          ],
+          "reason": "秋旺兑可制死震，体互囚离仍克、用互相坎受生有耗，末旺兑比而无直生。原礼配吉只取做法得中，以本人可靠来话定本轮。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "conditional",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "休"
+            }
+          ],
+          "reason": "冬五休兑克相震劳，中死离仍克、旺坎体生重耗，末休兑比无生。原近望吉留条件慢。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "favourable",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "兑",
+              "qi": "相"
+            }
+          ],
+          "reason": "土令相兑制囚震，仍受休离体互克；死坎泄轻，末相兑能续而不生。礼配得中用作分寸约束，可靠回话条件仍在。"
+        }
+      ]
+    },
+    {
+      "primaryId": 43,
+      "movingLine": 6,
+      "hexLine": "泽天夬上六",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-043.json",
+      "status": "open",
+      "reason": "王孔以孤阴势失而号咷不能延，程以变革其道而非灭其人，朱按占者之德分凶之所应。秋旺、土相，乾兑各阶段比和都实在，盘中并无克体；因这里既无敌我事实，也无所占之人德行判准，不能选定朱说所应。正文仍偏难，单独细化计算说明中的三家分歧。",
+      "priorIssue": "上终凶语境在终不得道；秋土五金实比虽无生也无直接克，古凶能否压过足以核实的正证保留。",
+      "priorLineText": "无号，终有凶。",
+      "lineText": "无号，终有凶。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "乾",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/05夬.txt",
+          "startLine": 58,
+          "endLine": 58,
+          "url": "https://zh.wikisource.org/wiki/周易正義/05夬"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt",
+          "startLine": 422,
+          "endLine": 426
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 88,
+          "endLine": 90
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "囚"
+            }
+          ],
+          "reason": "囚金本互变比薄无生，上终凶保难；道亡非人死，勿虚构伤害。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "死"
+            }
+          ],
+          "reason": "死金全盘比弱无生，上终凶保不读取人身事实，不因无号停止帮助。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "旺"
+            }
+          ],
+          "reason": "旺金本互变比强是明显反证保留，无生且上终凶不由强比单翻；不存在克体不虚造克。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "休"
+            }
+          ],
+          "reason": "休金全盘比缓无生上终凶保难，非金休全无力或断人物安全。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "相"
+            }
+          ],
+          "reason": "相金全盘比实为反证完整留，无生上终凶不独翻；不凭空增克或安危判断。"
+        }
+      ]
+    },
+    {
+      "primaryId": 9,
+      "movingLine": 2,
+      "hexLine": "风天小畜九二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-009.json",
+      "status": "open",
+      "reason": "王弼与程颐所系为二、五同道，朱熹则以初、二牵连解释。春令巽旺、冬令巽相，承乾、兑两克与中末离泄，有条件保留牵复之助；弱体三组仍难。两说均未提供如何从他人协作核到本人回应的判准，分歧保留。",
+      "priorIssue": "牵复相携支持仍有意义，春冬承办条件可以保留；本互双克兼双泄下是否仅凭体有气留机会，须核类推阈值。",
+      "priorLineText": "牵复，吉。",
+      "lineText": "牵复，吉。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "巽",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+          "startLine": 38,
+          "endLine": 38,
+          "url": "https://zh.wikisource.org/wiki/周易正義/02小畜"
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 104,
+          "endLine": 104
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷1.txt",
+          "startLine": 296,
+          "endLine": 298
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "conditional",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "相"
+            }
+          ],
+          "reason": "旺木承囚金克，过程末相火泄无生，牵复吉留条件性；吉爻与无生克体及末耗张力记录，不虚构帮手。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "旺"
+            }
+          ],
+          "reason": "休木本互死金克仍在，过程末旺火泄，无生；牵复吉保协同条件，承办不足偏难，分歧登记。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "囚"
+            }
+          ],
+          "reason": "死木受旺金本互克、过程末囚火泄，无生；牵复不取真实返回，吉意保条件并列适用张力。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "conditional",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "死"
+            }
+          ],
+          "reason": "相木承休金克，过程末死火仍泄，无生与牵复吉张力记录；条件性不只靠火弱翻吉。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "休"
+            }
+          ],
+          "reason": "囚木本互相金克、过程末休火泄，无生，保吉条件不以同伴数增力，现代适用具体登记。"
+        }
+      ]
+    },
+    {
+      "primaryId": 13,
+      "movingLine": 2,
+      "hexLine": "天火同人六二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-013.json",
+      "status": "retained",
+      "reason": "三家都把宗的吝意系在私狭用事；联系只问一人并非私狭。秋旺、土相乾确能接中末同金且制巽，但开头离克仍在，且各段均没有直接生体。互、变中的比和可用于查明消息来处，在没有直接渠道的已知条件下维持偏难，不用爻象把当事人定为偏私。",
+      "priorIssue": "私比失大同不能指责指定一人；秋冬体能承火克且前后金比，强体时是否只取偏难留具体对读。",
+      "priorLineText": "同人于宗，吝。",
+      "lineText": "同人于宗，吝。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "乾",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/02同人.txt",
+          "startLine": 42,
+          "endLine": 42,
+          "url": "https://zh.wikisource.org/wiki/周易正義/02同人"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷1.txt",
+          "startLine": 410,
+          "endLine": 410
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 128,
+          "endLine": 128
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "囚"
+            }
+          ],
+          "reason": "囚金相火本克、囚互末比弱、制旺巽难，无生，宗吝针对方法不把指定一人目标误当偏狭，前后比不翻成功。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "死"
+            }
+          ],
+          "reason": "死金受旺火本克、死互末比、制休木承办弱，无生；宗吝不指真实家属心理或拒联缘由。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "旺"
+            }
+          ],
+          "reason": "旺金能承囚火本用之克、旺互末比与制死巽有利反证完整，无生加宗吝保偏难，非以一个克字独判。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "休"
+            }
+          ],
+          "reason": "休金受死火克仍在、休互末比弱、制相木费力，无生，宗吝取渠道核验不指真实亲属或只联系一人有错。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "相"
+            }
+          ],
+          "reason": "相金承休火本克、相互末比、制囚巽有利，仍无生加宗吝保偏难；不以互变重复金数叠加支持。"
+        }
+      ]
+    },
+    {
+      "primaryId": 18,
+      "movingLine": 1,
+      "hexLine": "山风蛊初六",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-018.json",
+      "status": "open",
+      "reason": "本用巽、体互震克艮；用互兑与变用乾均受原体所生，无直接生体。夏、土承办有余，古注的终吉确实以能修成、知危为条件；核查进展之外缺能直达本人的证据，五组保留偏难，尤其夏、土保留可否由修查转为本人应答的现代适用分歧。",
+      "priorIssue": "厉终吉说明能修正积弊后见好；夏土艮相旺可受力，仍有双克双耗无生，修正到能否答复保留分歧。",
+      "priorLineText": "干父之蛊，有子考，无咎；厉终吉。",
+      "lineText": "干父之蛊，有子，考无咎，厉终吉。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "艮",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03蠱.txt",
+          "startLine": 34,
+          "endLine": 34,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03蠱"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 116,
+          "endLine": 120
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 156,
+          "endLine": 158
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "囚"
+            }
+          ],
+          "reason": "死艮受旺巽、旺震克，囚兑与囚乾耗体，全盘无生。考无咎有承事条件；谨慎修查可保，不能据此断本人回话。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "死"
+            }
+          ],
+          "reason": "相艮可承休巽、休震之克，死兑乾耗弱而仍在，无直生。原爻有承担可终吉的条件，是否落实为本人回复仍缺对应依据。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "旺"
+            }
+          ],
+          "reason": "休艮承死巽、死震之克，两旺金仍耗，盘无直生。按王注「考无咎」有具体所指，秋令保难并保全能任、知危之吉条件。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "休"
+            }
+          ],
+          "reason": "囚艮受相巽、相震克，休兑乾耗，盘中无直生。爻有戒慎可终吉，原「考无咎」不用于推本人处境或是否答复。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "乾",
+              "qi": "相"
+            }
+          ],
+          "reason": "旺艮较能承巽震之囚木克，兑乾相金耗仍在，无直生。义在承事而戒，有无通到本人的条件另待可验凭据。"
+        }
+      ]
+    },
+    {
+      "primaryId": 19,
+      "movingLine": 2,
+      "hexLine": "地泽临九二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-019.json",
+      "status": "retained",
+      "reason": "王弼的「未顺命」并非全顺或全逆，程颐看二五刚中相感而非顺上之命，朱熹直书「未详」。夏土坤相旺能承用互、变用两处震木的弱克，秋令木死而兑旺泄仍重。咸临的吉依双方相感，本盘五组仍是初耗、中末克且无直生；已知事况无可核的双向相感，不把承压当成对方回音，原判保留。",
+      "priorIssue": "九二吉无不利来自相感相与，不等同服从；本耗两木克即使夏秋土衰，也不足由原典直接判定一次本人回复。",
+      "priorLineText": "咸临，吉，无不利。",
+      "lineText": "咸临，吉，无不利。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "坤",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+          "startLine": 36,
+          "endLine": 36,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03臨"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 150,
+          "endLine": 152
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 162,
+          "endLine": 162
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "旺"
+            }
+          ],
+          "reason": "死土生囚兑耗、死坤互比、旺震用互末克无生，吉无不利完整仍难；未顺命王斟酌程非遽从朱未详异义保留。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "休"
+            }
+          ],
+          "reason": "相土生死兑本耗仍在、相坤比、休震用互末克无生，强吉与承办反证保，偏难；不以强体等同目标。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "死"
+            }
+          ],
+          "reason": "休土生旺兑耗、休坤比、死震用互末仍克无生，吉无不利完整而条件不足取难，死克未零，异义未伪统一。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "相"
+            }
+          ],
+          "reason": "囚土生休兑耗、囚坤比、相震用互末克无生，强吉条件与不足并读偏难；未推对方顺从或不顺从心理。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "囚"
+            }
+          ],
+          "reason": "旺土生相兑耗、旺坤比、囚震用互末克无生，强吉条件保留仍难，承压与目标区分；未顺命古义冲突独立待核。"
+        }
+      ]
+    },
+    {
+      "primaryId": 20,
+      "movingLine": 5,
+      "hexLine": "风地观九五",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-020.json",
+      "status": "retained",
+      "reason": "王弼与程颐以观民反察己行，朱熹明说自观又不止一己得失。夏土有比和可承初巽克，所能改善的是己方查看来路与问法；全盘无直接生体，爻辞的无咎也系己行，无证据推出本人答话，维持偏难。",
+      "priorIssue": "君子无咎以反观施行为限，夏土强比能承初弱木；这种条件能否支持一次回应而非现稿偏难，古义无专断。",
+      "priorLineText": "观我生，君子无咎。",
+      "lineText": "观我生，君子无咎。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "坤",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
+          "startLine": 46,
+          "endLine": 46,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03觀"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 182,
+          "endLine": 184
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 170,
+          "endLine": 170
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "死"
+            }
+          ],
+          "reason": "死坤旺巽本克、死坤艮两互末死艮比无生，君子无咎取自审条件仍难；观我生不推生命，也不责用户导致失联。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "相"
+            }
+          ],
+          "reason": "相土休巽本克、相坤艮两互末相艮比无生，强承办与末比反证保仍难；无咎非目标已成，自省不编道德过错。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "休"
+            }
+          ],
+          "reason": "休土死巽本克仍在、休坤艮两互末休艮比无生，偏难；休比不是死比，死克不零，无咎不代回复。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "囚"
+            }
+          ],
+          "reason": "囚土相巽本克、囚坤艮两互末囚艮比无生，偏难；观我生限所行，不推人身自省不责用户。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "旺"
+            }
+          ],
+          "reason": "旺土囚巽本克可承、旺坤艮两互末旺艮比无生，偏难；强比和不冒直接生体，无咎条件不免目标核实。"
+        }
+      ]
+    },
+    {
+      "primaryId": 23,
+      "movingLine": 2,
+      "hexLine": "山地剥六二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-023.json",
+      "status": "revised",
+      "reason": "夏相艮、土旺艮有本互同类实比，末囚／死坎可制，四节点无直接克且无直生。依程传未盛、有与可胜作明示类推，只有实际协助能直通本人且关键凭据仍可查时留缓成机会；已失出处时保剥渐重之戒。",
+      "priorIssue": "比承开头且体可制尾坎，无直接克体，古层层侵蚀之凶能否推到有效回话失败，夏土最需分辨。",
+      "priorLineText": "剥床以辨，蔑，贞凶。",
+      "lineText": "剥床以辨，蔑，贞凶。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "艮",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+          "startLine": 34,
+          "endLine": 34,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03剝"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 262,
+          "endLine": 264
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 184,
+          "endLine": 184
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坎",
+              "qi": "囚"
+            }
+          ],
+          "reason": "夏令艮、坤同相，本互能衔接，末坎囚受制可办，无直接生体或克体；程传有与犹可胜仅类推可验新助，贞凶保逐渐失据之戒。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坎",
+              "qi": "死"
+            }
+          ],
+          "reason": "土令艮、坤本互旺比，末死坎受旺艮所制，无直接生体或克体。剥渐长时仅取尚有可靠协助并能直查本人的条件。"
+        }
+      ]
+    },
+    {
+      "primaryId": 24,
+      "movingLine": 6,
+      "hexLine": "地雷复上六",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-024.json",
+      "status": "open",
+      "reason": "王孔说以迷求复，程颐说终迷不变，朱熹又将「以其国君」的以释为及。春、冬旺相震克各弱土，核查有办的能力；改变一条消息的来路是否已脱离迷复，要看能否提供可靠的新证。军败君凶与十年均有原义，范围与一次通信不同，保持作者判法及分歧。",
+      "priorIssue": "「迷复」的强凶有持续迷失正道的条件；春冬可制数土无克是实证，不能引十年排日期或既定绝联。",
+      "priorLineText": "迷复，凶，有灾眚。用行师，终有大败；以其国，君凶。至于十年不克征。",
+      "lineText": "迷复，凶，有灾眚。用行师，终有大败；以其国，君凶。至于十年不克征。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "震",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+          "startLine": 55,
+          "endLine": 55,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03復"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 300,
+          "endLine": 304
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 192,
+          "endLine": 192
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "死"
+            }
+          ],
+          "reason": "旺震制死坤本互及末死艮，可办迟为正证而无生，强凶取难；强体正证与源军事范围明示待核。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "囚"
+            }
+          ],
+          "reason": "相震制囚坤本互末囚艮可办迟、无生无克，与强凶冲突取难；较有力原体正证保且现代适用待核。"
+        }
+      ]
+    },
+    {
+      "primaryId": 27,
+      "movingLine": 3,
+      "hexLine": "山雷颐六三",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-027.json",
+      "status": "open",
+      "reason": "王注以不正求养为重，程指出根本养法大悖，朱明言即使守正不改亦凶。夏、土相旺艮可承震克，两互坤接续，末离还能直接生土，是实在的反证。是否已经换成妥当的渠道、仍会不会受原途径限制，缺可查事实，保原判和后助；十年不另取期。",
+      "priorIssue": "持续拂颐才受强凶与勿用之戒；未必已经失当，夏土末离与强坤艮是否足以抬档留核。",
+      "priorLineText": "拂颐，贞凶，十年勿用，无攸利。",
+      "lineText": "拂颐，贞凶，十年勿用，无攸利。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "艮",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03頤.txt",
+          "startLine": 37,
+          "endLine": 37,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03頤"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 380,
+          "endLine": 382
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 206,
+          "endLine": 208
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "相"
+            }
+          ],
+          "reason": "死艮受旺震本克、中死坤比、末相离生正证，强凶无攸利取难；十年不现实化，末生未抹。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "旺"
+            }
+          ],
+          "reason": "相艮承休震本克、中相坤比、末旺离生强正证，与强凶无攸利冲突取难；明确待核不伪称一致。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "囚"
+            }
+          ],
+          "reason": "休艮受死震本克缓、中休坤比、末囚离薄生，强凶无攸利取难，薄助正证保；休不当死。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "死"
+            }
+          ],
+          "reason": "囚艮受相震本克、中囚坤比、末死离仍薄生，强凶无攸利取难；死火不归零，十年不作失联年数。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "坤",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "休"
+            }
+          ],
+          "reason": "旺艮承囚震本克缓、中旺坤比、末休离生为强正证，与贞凶无攸利冲突取难并列待核；体强与末助不抹。"
+        }
+      ]
+    },
+    {
+      "primaryId": 28,
+      "movingLine": 3,
+      "hexLine": "泽风大过九三",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-028.json",
+      "status": "open",
+      "reason": "王孔重专系于一而不能救弱，程说过刚无辅，朱以刚过而不胜其重。秋土兑能处理本巽、两乾互比，末坎体泄秋较实、土较轻。失联核对能不能换到另一条独立来源关系重大，未见足以解除结构性阻节的凭据，两个原稿判法及其反证均保留。",
+      "priorIssue": "桡为承荷难支，秋土旺相金可制木又得中比；其限制是否足压过先中核验能力仍存。",
+      "priorLineText": "栋桡，凶。",
+      "lineText": "栋桡，凶。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "兑",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03大過.txt",
+          "startLine": 45,
+          "endLine": 45,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03大過"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 412,
+          "endLine": 416
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 212,
+          "endLine": 212
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坎",
+              "qi": "相"
+            }
+          ],
+          "reason": "旺兑制死巽可办、中旺乾比、末相坎受体生耗，无生无克，强正证与栋桡凶冲突取难待核。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坎",
+              "qi": "死"
+            }
+          ],
+          "reason": "相兑制囚巽可办、中相乾比、末死坎仍受体生耗轻，无生无克，强承办正证与凶冲突取难待核。"
+        }
+      ]
+    },
+    {
+      "primaryId": 30,
+      "movingLine": 4,
+      "hexLine": "离为火九四",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-030.json",
+      "status": "open",
+      "reason": "王孔侧重进而逼上、无所容，程说刚躁失善继，朱说刚迫后明。春、夏本比及巽在中段直接生离，与古爻强戒形成反证，末艮却仍耗，无末生或末比。问询是否真的急迫或越过界限，需要事实，保留原判与中段助力，不把原象用作人身事故。",
+      "priorIssue": "「突如」原以强来无所容类比，非实际人祸；春夏本离比、中巽生无克，能否仍一概偏难留具体分歧。",
+      "priorLineText": "突如其来如，焚如，死如，弃如。",
+      "lineText": "突如其来如，焚如，死如，弃如。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "离",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/03離.txt",
+          "startLine": 44,
+          "endLine": 44,
+          "url": "https://zh.wikisource.org/wiki/周易正義/03離"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+          "startLine": 476,
+          "endLine": 478
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+          "startLine": 222,
+          "endLine": 222
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "死"
+            }
+          ],
+          "reason": "相离本比、中旺巽生囚兑受体克、末死艮耗轻无克，强正证与九四强不利冲突作者取难待核，不推灾害。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "相"
+            }
+          ],
+          "reason": "旺离本比、中休巽生死兑受体克、末相艮耗可承无克；强承办生比反证保而取难待核。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "休"
+            }
+          ],
+          "reason": "囚离本比、中死巽仍生薄旺兑受体克费力、末休艮耗无克，九四戒与弱承办取难，正证薄生保。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "囚"
+            }
+          ],
+          "reason": "死离本比薄、中相巽生休兑受体克费力、末囚艮耗无克，九四强戒与后无克正证均保取难待核。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "旺"
+            }
+          ],
+          "reason": "休离本比、中囚巽生薄相兑受体克费力、末旺艮耗实无克，强戒取难无克正证保。"
+        }
+      ]
+    },
+    {
+      "primaryId": 32,
+      "movingLine": 2,
+      "hexLine": "雷风恒九二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-032.json",
+      "status": "retained",
+      "reason": "王弼、朱熹以守中消失位之悔，程又指出久中之德不止悔亡。春、冬首木比而可处理末土，但两个中间金位对原体各见直接克，全盘无生。爻中的悔亡可以落实在纠正查证方法，回话仍有中间障碍，维持偏难。",
+      "priorIssue": "悔亡在守中可消悔，春冬震可承弱金且末土可制；强体是否仍尽取难须留范围讨论。",
+      "priorLineText": "悔亡。",
+      "lineText": "悔亡。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "震",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/04恒.txt",
+          "startLine": 55,
+          "endLine": 55,
+          "url": "https://zh.wikisource.org/wiki/周易正義/04恒"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt",
+          "startLine": 66,
+          "endLine": 68
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 24,
+          "endLine": 24
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "死"
+            }
+          ],
+          "reason": "旺震本巽比、中囚兑乾克缓、末死艮受体克可办无生，悔亡非目标，强正证保取难待核。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "相"
+            }
+          ],
+          "reason": "休震本巽比、中死兑乾仍克缓、末相艮受体克费力无生，悔亡正面保取难，不抹死克。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "休"
+            }
+          ],
+          "reason": "死震本巽比薄、中旺兑乾克、末休艮受体克弱体承办有限无生，悔亡保取难；体克不自动全可成。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "囚"
+            }
+          ],
+          "reason": "相震本巽比、中休兑乾仍克、末囚艮受体克可办无生，悔亡强承办正证保仍难待核，休金克不抹。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "艮",
+              "qi": "旺"
+            }
+          ],
+          "reason": "囚震本巽比薄、中相兑乾克、末旺艮受体克费力无生，悔亡条件正面保取难，无间接通关。"
+        }
+      ]
+    },
+    {
+      "primaryId": 33,
+      "movingLine": 1,
+      "hexLine": "天山遁初六",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-033.json",
+      "status": "open",
+      "reason": "王孔重在后而险，程颐许晦藏以避灾，朱熹强调宜晦处静俟。秋、土初艮确生乾，中有实比，末离囚、休虽弱仍克乾。有无已经取得、不需冒进也能直接核对的正当渠道，是所禁之往能否避开的关键，原注未给出现代对应事实，保两端。",
+      "priorIssue": "厉且勿往戒高估贸然前进，秋土初生中比很实、末克轻；只限缩无据推进，保与偏难的分歧。",
+      "priorLineText": "遯尾；厉。勿用有攸往。",
+      "lineText": "遯尾；厉。勿用有攸往。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "乾",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/04遯.txt",
+          "startLine": 38,
+          "endLine": 38,
+          "url": "https://zh.wikisource.org/wiki/周易正義/04遯"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt",
+          "startLine": 88,
+          "endLine": 90
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 28,
+          "endLine": 28
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "相"
+            }
+          ],
+          "reason": "囚乾受死艮本生薄、中囚乾比旺巽受体克费力、末相离克，厉勿往取难，原体继承不加援。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "旺"
+            }
+          ],
+          "reason": "死乾受相艮本生、中死乾比休巽受体克费力、末旺离克，勿往与后重限取难，前生正证不删。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "囚"
+            }
+          ],
+          "reason": "旺乾受休艮本生、中旺乾比死巽受体克可办、末囚离克缓，厉勿往与强正证并存取难待核。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "死"
+            }
+          ],
+          "reason": "休乾受囚艮本生薄、中休乾比相巽受体克费力、末死离仍克缓，厉勿往取难，死克未抹。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "乾",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "休"
+            }
+          ],
+          "reason": "相乾受旺艮本生、中相乾比囚巽受体克可办、末休离仍克，厉勿往与强初中正证并存取难待核。"
+        }
+      ]
+    },
+    {
+      "primaryId": 52,
+      "movingLine": 3,
+      "hexLine": "艮为山九三",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-052.json",
+      "status": "open",
+      "reason": "王孔以止于上下关节致不得通为重，程以局限一处、行止失时释厉，朱重过刚致上下判隔。夏、土的艮体与坤末在各自月令俱相或俱旺、震克较弱，巳午的囚坎和土月的死坎也有可核的部分，仍缺生体。若没有证据识别通信卡在哪一环，强比和也不能用来判已经解开阻节，保留范围分歧。",
+      "priorIssue": "止于中隔而厉薰心，实际问事不能照字论病；夏土前后相旺比能否承办至答复尚待核。",
+      "priorLineText": "艮其限，列其夤，厉薰心。",
+      "lineText": "艮其限，列其夤，厉薰心。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "艮",
+        "relations": [
+          {
+            "role": "use",
+            "type": "equal"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/05艮.txt",
+          "startLine": 44,
+          "endLine": 44,
+          "url": "https://zh.wikisource.org/wiki/周易正義/05艮"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 194,
+          "endLine": 196
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 142,
+          "endLine": 142
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "死"
+            }
+          ],
+          "reason": "春三本死比，旺震克，休坎体克劳，末死坤比弱无生。原止失其所与中阻难，不作身体危险。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "相"
+            }
+          ],
+          "reason": "夏三相土本比，休震克缓，囚坎体克可办，末相坤较实比无生，原厉险与中阻相持暂难。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "休"
+            }
+          ],
+          "reason": "秋三本休比，死震仍克缓，相坎体克劳，末休坤比无生。原厉与薄承核劳难，无人体危险取义。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "囚"
+            }
+          ],
+          "reason": "冬三本囚比，相震克实，旺坎体克劳，末囚坤比薄无生。原分隔加实阻仍难，非人体病伤。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "旺"
+            }
+          ],
+          "reason": "土三本旺比，囚震克缓，死坎体克可办，末旺坤强比无生。强双比与原厉分隔正面冲突具体留待审，暂难。"
+        }
+      ]
+    },
+    {
+      "primaryId": 53,
+      "movingLine": 3,
+      "hexLine": "风山渐九三",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-053.json",
+      "status": "revised",
+      "reason": "亥子巽相可制本、变两囚土，死离所受体生较轻，用互旺坎直接生原体，无克。现代只问核到一次回复，已知可靠的新来路可用且仍按事实逐步查，改留有条件；春相离耗比冬重且休坎生较弱，保留旧判。",
+      "priorIssue": "原夫征不复、妇孕不育非核人返家或身体；春冬体可办且坎助，联系目标是否受强凶压制保留。",
+      "priorLineText": "鸿渐于陆，夫征不复，妇孕不育，凶；利御寇。",
+      "lineText": "鸿渐于陆，夫征不复，妇孕不育，凶；利御寇。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "巽",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/05漸.txt",
+          "startLine": 42,
+          "endLine": 42,
+          "url": "https://zh.wikisource.org/wiki/周易正義/05漸"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 222,
+          "endLine": 228
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 146,
+          "endLine": 148
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "死"
+            }
+          ],
+          "reason": "三春旺巽克死艮，中生相离耗、休坎生，末克死坤可办无克体。强反证保留，原凶限与御寇不等成事。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "相"
+            }
+          ],
+          "reason": "三夏休巽克相艮劳，中生旺离重耗、囚坎生薄，末克相坤劳无克体。凶与利御寇分义。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "休"
+            }
+          ],
+          "reason": "三秋死巽克休艮劳，中生囚离耗、相坎真生，末克休坤劳无克体。原凶与真扶反证并陈暂难。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "囚"
+            }
+          ],
+          "reason": "冬巽相克本、变囚土可办，中死离耗轻、用互旺坎直生；保进失渐正之凶，利御寇只用于守住证据来源。有真实可核本人的途径则留机会。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "坎",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "坤",
+              "qi": "旺"
+            }
+          ],
+          "reason": "三土囚巽克旺艮劳，中生休离耗、死坎仍生薄，末克旺坤劳。原利御寇限自守，本轮难。"
+        }
+      ]
+    },
+    {
+      "primaryId": 55,
+      "movingLine": 3,
+      "hexLine": "雷火丰九三",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-055.json",
+      "status": "open",
+      "reason": "王孔说比六二较明而不能任大事，程把所赖不足系于上六，朱重遮蔽更甚。春、冬中末木同类可衔接，离泄冬弱而兑克仍在。现代只问一次可确认的本人回复；能否绕出遮蔽取得独立凭据仍未知，保反证，原折肱不转作真人伤病。",
+      "priorIssue": "原折肱指施为不得用，非人伤；春冬中末木比且承中弱兑，无法由古注决定一次本人回复也难。",
+      "priorLineText": "丰其沛，日中见沬；折其右肱，无咎。",
+      "lineText": "丰其沛，日中见沬；折其右肱，无咎。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "震",
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/06豐.txt",
+          "startLine": 46,
+          "endLine": 46,
+          "url": "https://zh.wikisource.org/wiki/周易正義/06豐"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 288,
+          "endLine": 292
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 158,
+          "endLine": 160
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "相"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "旺"
+            }
+          ],
+          "reason": "春三旺震生相离耗，中囚兑克、旺巽强比，末旺震比无生。可承与双比强反证保留，原限难。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "休"
+            }
+          ],
+          "reason": "夏三休震生旺离耗重，中死兑仍克缓、休巽薄比，末休震比薄无生。无咎限自守，仍难。"
+        },
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "囚"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "死"
+            }
+          ],
+          "reason": "秋三死震生囚离耗，中旺兑克、死巽弱比，末死震弱比无生。原不可大事、无咎同留。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "死"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "相"
+            }
+          ],
+          "reason": "冬三相震生死离耗轻，中休兑仍克、相巽比实，末相震比实无生。双比与原无所赖相持具体待核。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "离",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "囚"
+            }
+          ],
+          "reason": "土三囚震生休离耗，中相兑克、囚巽比薄，末囚震比薄无生。原无咎非成事。"
+        }
+      ]
+    },
+    {
+      "primaryId": 60,
+      "movingLine": 2,
+      "hexLine": "水泽节九二",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-060.json",
+      "status": "retained",
+      "reason": "王孔重应宣而藏，程重处阴而不能合五，朱取当行而不知通。秋旺兑生相坎，冬休兑仍生旺坎，初助确有，但中艮克、用互与变用之震皆耗水。正文保起步助力与后段难，条件资料不足以说已错过某日或只此一次机会。",
+      "priorIssue": "门庭止得失时故凶，与初九知止不同；秋冬有初扶，中艮克与后泄如何压结论仍须区别。",
+      "priorLineText": "不出门庭，凶。",
+      "lineText": "不出门庭，凶。",
+      "sourceUpdate": false,
+      "chart": {
+        "body": "坎",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/06節.txt",
+          "startLine": 40,
+          "endLine": 40,
+          "url": "https://zh.wikisource.org/wiki/周易正義/06節"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 412,
+          "endLine": 414
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 184,
+          "endLine": 184
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "autumn-metal",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "旺"
+            },
+            {
+              "role": "body",
+              "trigram": "坎",
+              "qi": "相"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "死"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "艮",
+              "qi": "休"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "死"
+            }
+          ],
+          "reason": "旺兑生相坎是强异向，休艮克、死震两处轻耗仍在，九二凶保失时限。"
+        },
+        {
+          "order": "winter-water",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "use",
+              "trigram": "兑",
+              "qi": "休"
+            },
+            {
+              "role": "body",
+              "trigram": "坎",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "震",
+              "qi": "相"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "艮",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "震",
+              "qi": "相"
+            }
+          ],
+          "reason": "旺体初获休兑生可承，囚艮克轻，双相震出耗，原失时限成事，标独立适用复核。"
+        }
+      ]
+    },
+    {
+      "primaryId": 62,
+      "movingLine": 6,
+      "hexLine": "雷山小过上六",
+      "caseSource": "sources/editorial/missing-contact/cases/hex-062.json",
+      "status": "revised",
+      "reason": "巳午艮土相能承两休木之克，死兑受土生所费不重，末离当旺直生，确有能用的后援。已亢的古戒用于无据强查，后段另有善用的直接核验条件时留机会。春重克及土月相兑耗重要另保难。",
+      "priorIssue": "弗遇过之取过度而遭罹的警示；夏旺离生相艮、土旺体可承末生，正证保留且不能用飞鸟推失联地点。",
+      "priorLineText": "弗遇过之；飞鸟离之，凶，是谓灾眚。",
+      "lineText": "弗遇过之；飞鸟离之，凶，是谓灾眚。",
+      "sourceUpdate": true,
+      "chart": {
+        "body": "艮",
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "author": "王弼、孔颖达",
+          "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+          "startLine": 58,
+          "endLine": 58,
+          "url": "https://zh.wikisource.org/wiki/周易正義/06小過"
+        },
+        {
+          "author": "程颐",
+          "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",
+          "startLine": 470,
+          "endLine": 472
+        },
+        {
+          "author": "朱熹",
+          "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+          "startLine": 198,
+          "endLine": 200
+        }
+      ],
+      "monthlyDecisions": [
+        {
+          "order": "spring-wood",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "死"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "旺"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "旺"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "囚"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "相"
+            }
+          ],
+          "reason": "死艮受双旺木阶段重克，囚兑耗；相离真生为强反证，灾眚不推现实事故。"
+        },
+        {
+          "order": "summer-fire",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "conditional",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "相"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "休"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "休"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "死"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "旺"
+            }
+          ],
+          "reason": "相艮可承两休木克及死兑轻耗，末旺离直生。已亢只限越证强查；合宜渠道带回直接可复核的新来源时留接通机会。"
+        },
+        {
+          "order": "seasonal-earth",
+          "branches": [
+            "辰",
+            "未",
+            "戌",
+            "丑"
+          ],
+          "priorOutcome": "difficult",
+          "outcome": "difficult",
+          "states": [
+            {
+              "role": "body",
+              "trigram": "艮",
+              "qi": "旺"
+            },
+            {
+              "role": "use",
+              "trigram": "震",
+              "qi": "囚"
+            },
+            {
+              "role": "body_mutual",
+              "trigram": "巽",
+              "qi": "囚"
+            },
+            {
+              "role": "use_mutual",
+              "trigram": "兑",
+              "qi": "相"
+            },
+            {
+              "role": "changed_use",
+              "trigram": "离",
+              "qi": "休"
+            }
+          ],
+          "reason": "旺艮承囚木两小克，相兑耗实、休离后助可用，原凶限制应用保独审。"
+        }
+      ]
+    }
+  ]
+}
