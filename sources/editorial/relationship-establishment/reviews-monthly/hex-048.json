@@ -2,9 +2,9 @@
  "primaryId": 48,
  "baselineCommit": "a356fd7cc76e8f8e2a816f3a68163461d0a448f5",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T18:45:36.709Z",
+ "reviewedAt": "2026-11-20T19:33:04.242Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "81cbc76833bb2bcc24932c836a355c5d8f1d83dbbb793c0d4d22879e1e65e833",
+ "sourceSha256": "ef7bbf671b50aec696f8580b38efc4acf8958bd5ad9247dc3207c6dd9e046cd9",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -293,6 +293,14 @@
     "48/2/巳"
    ],
    "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」与《体用衰旺之诀》「而体卦气衰是不吉之占」之衰指死（READING_POLICY_V2 第十节），本卦体囚、体休之篇误引或直称体衰。正文改 1 处（1 篇），五气源第 9 栏改 1 处（经 agentfix，月稿专业说明同步）。改法：正文一处把「又说『而体卦气衰是不吉之占』」改为先引《体用衰旺之诀》「凡体卦宜乘旺」、再引「但不要克体之卦气旺」，说巳月你囚而克你的艮土得相；第 9 栏一处只留「但不要克体之卦气旺」。逐句手改，改到的段落整段读回；结论、取期一字未动。"
+  },
+  {
+   "id": "X048-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "48/1/午"
+   ],
+   "finding": "2026-11-20 跨卦相似订正（CROSS_SIM_FIX_BRIEF.md）：cross-sim 查出 48/1/午 与 47/6/午（泽水困上六午月）共用 8 字片段 8.8%，共用在首段（「死地，又被旺火克着，照应几乎看不见；要你……」）、第二段盘面讲法（「午月火旺，坎水为体而囚，本用……兑金、变用乾金都死，用生体，方向是相就；体互离火当令……为你所克，你囚它旺，《体用衰旺之诀》说……午月你偏偏不乘旺，料理……」）与末段（「那件理不动的事不硬……」）。两篇并排读后，按本卦初六午月重写第 1、2、5 段：首段从午月旺火同时压住体与两处生体之金讲起，接初六「井泥不食，旧井无禽」；第二段按开头巽木休泄轻、中段结局两金生体被离火「彼灭其吉」、离火旺而体囚制之吃力分三处讲；末段改写搁置那件料理不动之事的做法。标题、简断与第 3、4 段未动，整篇输出读回。结论、专业说明、取期一字未动。改后 48/1/午~47/6/午 0.7%，本卦 cross-sim 0（最高 6.5%）；check-monthly --docs passed、style-monthly passed、consolation-scan 0、tishuai-audit 0、intra-repeat 8 字 2 篇（改前 2，未增）；正文 585→630 字。"
   }
  ],
  "batchReadback": [

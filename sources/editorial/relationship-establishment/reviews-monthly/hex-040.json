@@ -2,9 +2,9 @@
  "primaryId": 40,
  "baselineCommit": "6f667bd2b14a277e6a72ccb9e1dfcd513b637de4",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T18:40:26.016Z",
+ "reviewedAt": "2026-11-20T19:31:29.343Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "6ede2c967ffebdefdbe5c518013b4b924a600a39cccae2f8705f8f631553a78d",
+ "sourceSha256": "4c969810c83408fe393b99a288140217100e65a881164e44593d7e3746497634",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -306,6 +306,14 @@
     "40/4/巳"
    ],
    "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」与《体用衰旺之诀》「而体卦气衰是不吉之占」之衰指死（READING_POLICY_V2 第十节），本卦体囚、体休之篇误引或直称体衰。正文改 4 处（1 篇），五气源第 9 栏改 1 处（经 agentfix，月稿专业说明同步）。改法：40/4/巳 标题「体衰逢克，先说清能与不能」改「力弱逢克，先说清能与不能」，简断「体衰逢克」改「你在囚中，正是力弱逢克」，正文首段《衰旺论》「若体衰而逢克」改引《体用衰旺之诀》「但不要克体之卦气旺」并删「这个甚字」一句，末段「此局体衰逢克」改「此局你力弱而结局逢克」；第 9 栏一处同改。逐句手改，改到的段落整段读回；结论、取期一字未动。"
+  },
+  {
+   "id": "X040-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "40/4/子"
+   ],
+   "finding": "2026-11-20 跨卦相似订正（CROSS_SIM_FIX_BRIEF.md）：cross-sim 查出 40/4/子 与 39/3/子（水山蹇九三子月）共用 8 字片段 10.7%，共用在简断与首段盘面（「你这一方坎水当令，中段两人合拍」「仲冬水最旺，你这一方坎水当令；用互坎水同旺，两人步调相近；体互离火死，中段……」）与第二段（「你这一方的力量是真的：坎水旺，《体用衰旺之诀》说……用互比和而旺……你说了算。只是这些都靠你这一边的力」）。两篇并排读后，按本卦九四子月重写简断与第 1、2 段：首段先讲解卦九四体坎用震、本用震木冬令得相而要你去生这一处要害，再讲其余几处你占上风（用互坎水比和、体互离火死受克、乘旺无大害），落到体生用与无生体之卦。标题与第 3–5 段未动，整篇输出读回。结论、专业说明、取期一字未动。改后 40/4/子~39/3/子 0%，本卦 cross-sim 0（最高 6.1%）；check-monthly --docs passed、style-monthly passed、consolation-scan 0、tishuai-audit 0、intra-repeat 8 字 5 篇（改前 5，未增）；正文 505→531 字。"
   }
  ],
  "batchReadback": [

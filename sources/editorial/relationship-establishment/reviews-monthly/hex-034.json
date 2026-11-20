@@ -2,9 +2,9 @@
  "primaryId": 34,
  "baselineCommit": "6f667bd2b14a277e6a72ccb9e1dfcd513b637de4",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T18:38:02.297Z",
+ "reviewedAt": "2026-11-20T20:09:35.715Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "12fc9ef6c6103e8c17f8f7cb238ac6cce33b65223e99f72f53008def7e8cd0ec",
+ "sourceSha256": "01dbc616e28b413f3a8d48b902573bad51e621bebec70e937dd1bbb25521b90e",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -289,6 +289,22 @@
     "34/3/戌"
    ],
    "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」与《体用衰旺之诀》「而体卦气衰是不吉之占」之衰指死（READING_POLICY_V2 第十节），本卦体囚、体休之篇误引或直称体衰。正文改 7 处（7 篇），五气源第 9 栏改 1 处（经 agentfix，月稿专业说明同步）。改法：正文一处删去《衰旺论》「体衰而有生体之卦，则衰稍解」，改说寅月体囚力弱、结局有一处生扶；六处《体用衰旺之诀》只留「但不要克体之卦气旺」（一处并留「凡体卦宜乘旺，克体之卦宜衰」），删「而体卦气衰是不吉之占」，改说体处囚、受月令所制而力弱，克体之金有气（「你衰」「你却无气」同改）；第 9 栏一处改引《体用衰旺之诀》「凡体卦宜乘旺」。逐句手改，改到的段落整段读回；结论、取期一字未动。"
+  },
+  {
+   "id": "X034-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "34/4/酉"
+   ],
+   "finding": "2026-11-20 跨卦相似订正（CROSS_SIM_FIX_BRIEF.md）：cross-sim 查出 34/4/酉 与 33/2/酉（天山遯六二酉月）共用 8 字片段 9.3%，共用在首段盘面（「金气最盛，乾金当令」「一处克你，《占卦诀》说」）、第三段生体讲法（「对方相就的意思落下来不重，所以酉月的进展主要是你……」）与末段做法（「酉月可以把关系往前带一步」「一回正式些的见面」「说完照常相处，对方要想一想就给时间，不宜因为自己顺……一口气把以后的事都定下」）。两篇并排读后，按本卦九四酉月重写第 1、3、6 段：首段从酉为兑金正位、体乾与两互乾兑同旺讲起；第三段按坤土休又受震木克、《体用》「彼灭其吉」讲结局照应之薄；末段扣取期「出去走走、配合得顺」与九四「贞吉」写做法。标题、简断与第 2、4、5 段未动，整篇输出读回。结论、专业说明、取期一字未动。改后 34/4/酉~33/2/酉 0.4%，本卦 cross-sim 0（最高 7.7%）；check-monthly --docs passed、style-monthly passed、consolation-scan 0、tishuai-audit 0、intra-repeat 8 字 2 篇（改前 2，未增）；正文 507→582 字。"
+  },
+  {
+   "id": "Z34-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "34/3/未"
+   ],
+   "finding": "2026-11-20 零散问题收尾（改写单 residue-task，体衰订正 docs/review/TISHUAI_FIX_BRIEF.md）：34/3/未 体震木囚而非死，第三段「未月正好反过来，你衰，克你的有气」把衰外推到囚，改为「你受月令所制、力弱，克你的却有气」（仍引《体用衰旺之诀》「凡体卦宜乘旺，克体之卦宜衰」）。「用党多则体势衰」照定稿第十四节保留，未接「体衰则凶」。整篇读回，正文 512→519 字。tishuai-audit 两问项全库 0。结论、专业说明、取期一字未动。"
   }
  ],
  "batchReadback": [

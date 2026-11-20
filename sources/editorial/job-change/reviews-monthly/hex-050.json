@@ -2,9 +2,9 @@
  "primaryId": 50,
  "baselineCommit": "4f09969a9f8bd8922748c0ddb5dea5677dbf204c",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T18:36:20.581Z",
+ "reviewedAt": "2026-11-20T19:59:05.416Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "2ef43ee060c01294b1bbae5a564d668aff528abb4293e27efc08c5fefb4426ea",
+ "sourceSha256": "d741658c91723e22f3616ffb80e9234d929d517eda4b45857ef65a9e2b28d383",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -217,6 +217,28 @@
     "50/3/酉"
    ],
    "finding": "2026-11-20 协调者：第 9 栏订正（体衰引文订正），本卦 4 篇的专业说明照新第 9 栏同步，失效的 judgmentCorrection 一并去掉；标题、简断、正文、取期一字未动，结论不变。"
+  },
+  {
+   "id": "X050-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "50/3/辰",
+    "50/3/巳",
+    "50/3/未"
+   ],
+   "finding": "跨卦相似订正（docs/review/CROSS_SIM_FIX_BRIEF.md）：九三辰、巳、未三篇与革卦九四同月篇（49/4/辰、49/4/巳、49/4/未）共用 8 字片段 12.1%、8.6%、8.3%，共用处在简断首句、首段体用引入（「离火为体，土月处休」）、变卦段坎水得两金生的讲法与收尾建议（「手头的工作排出完整结果，交付节点写清」「社保公积金的缴纳记录顺手核一遍」）。三篇改写：标题、简断全改；辰月改首段、变卦段、收尾，并修第二段「前段就已磨人」与中段说法不合；巳月改第二段（体旺扛克只管害的轻重）、变卦段、收尾；未月改首段、变卦段、收尾。改法按本卦：鼎《彖》「以木巽火，亨饪也」，巽木为灶下之柴生上卦离火，九三一动下卦巽变坎，柴化为水，克在收尾，与革卦本用兑金、体克用的讲法分开；盘面照 packet 五态（辰未火休木囚、两金相、坎水死得两相金生按有力论；巳火旺木休、两金死、坎水囚得两金生按有力论）。逐句手改，整篇读回；结论、judgment、timing 未动。改后本卦 cross-sim 0（最高 7.0%），第 49 卦同降为 0；正文 582–598 字，简断 77–82 字。",
+   "impact": {
+    "outcomeChanged": false,
+    "timingSignatureChanged": false
+   }
+  },
+  {
+   "id": "Z50-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "50/6/辰"
+   ],
+   "finding": "2026-11-20 零散问题收尾（改写单 residue-task）：50/6/辰 标题「相金被制，囚木无扶」与 50/5/未 全库重复，按本篇（上九鼎玉铉、体囚举不起，收尾恒卦「所贵变通」、守现职能久）重拟为「玉铉难举，守现职能久」，全库无重复；整篇读回与正文相符。简断、正文、结论、专业说明、取期未动。"
   }
  ],
  "batchReadback": [

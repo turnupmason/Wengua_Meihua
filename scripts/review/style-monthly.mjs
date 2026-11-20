@@ -18,11 +18,15 @@ const TICS = {
  'job-change':[[/最看重/u, 10, '「最看重的那一项」'], [/落在换工作上|落在去留上/u, 14, '「落在换工作上／落在去留上」'], [/照常做|照常推进/u, 14, '「现职照常做」'], [/不必急着回/u, 12, '「不必急着回绝」'], [/辞职申请不递|辞职申请先不递|辞呈先不递/u, 12, '「辞职申请不递」'], [/较合此局/u, 18, '「较合此局」'],
   [/新工作在这一项上|并不胜出|没有胜过现职|胜不过现职|不如现职/u, 0, '替读者断比较结果']],
 }[item] ?? [];
+// 2026-11-20：标题全库不重复、简断每篇 75–120 汉字（写作说明本有，原先只按卦均卡，跳槽查出 12 组重标题、115 篇简断不足 75）。面试稿为用户亲写，不卡单篇简断。
+const allTitles = {};
+for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) for (const a of JSON.parse(readFileSync(dir + f, 'utf8')).articles) allTitles[a.title] = (allTitles[a.title] ?? 0) + 1;
 const rows = [];
 for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const h = Number(f.slice(4, 7)); if (only && !only.has(h)) continue;
  const arts = JSON.parse(readFileSync(dir + f, 'utf8')).articles;
  const sents = [], heads = {}, hits = [];
+ let dupTitle = 0, shortOut = 0;
  let monthOpen = 0, monthShort = 0, shortHan = 0, light = 0, thisMonth = 0, yi = 0, note = 0, mind = 0;
  for (const a of arts) {
   const key = `${h}/${a.movingLine}/${a.monthBranch}`;
@@ -30,6 +34,8 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
   if (MONTH.test(a.short)) { monthShort++; hits.push(key + ' 简断以月开头'); }
   const head = a.paragraphs[0].replace(/[^\p{Script=Han}]/gu, '').slice(0, 8); heads[head] = (heads[head] ?? 0) + 1;
   shortHan += han(a.short);
+  if (allTitles[a.title] > 1) { dupTitle++; hits.push(key + ' 标题全库重复：' + a.title); }
+  if (han(a.short) < 75 || han(a.short) > 120) { shortOut++; hits.push(key + ' 简断字数 ' + han(a.short)); }
   const body = a.paragraphs.join('\n');
   for (const s of body.split(/[。！？\n]/u)) { const n = han(s); if (n) { sents.push(n); if (n <= 10) hits.push(key + ' 短句：' + s.trim()); } }
   for (const m of body.matchAll(LIGHT)) { light++; hits.push(key + ' 轻飘收尾：' + m[0]); }
@@ -44,7 +50,7 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const n = arts.length, avg = sents.reduce((x, y) => x + y, 0) / sents.length, short10 = sents.filter(x => x <= 10).length / sents.length;
  const maxHead = Math.max(...Object.values(heads));
  const r = {hex:h, articles:n, monthOpen:+(monthOpen / n).toFixed(2), monthShort:+(monthShort / n).toFixed(2), maxSameHead:maxHead,
-  avgSentence:+avg.toFixed(1), short10:+(short10 * 100).toFixed(1), light, thisMonth, yiPerMille:Math.round(yi / sents.length * 1000), shortAvg:Math.round(shortHan / n), bodyMedian, bodyMin, note, mind};
+  avgSentence:+avg.toFixed(1), short10:+(short10 * 100).toFixed(1), light, thisMonth, yiPerMille:Math.round(yi / sents.length * 1000), shortAvg:Math.round(shortHan / n), bodyMedian, bodyMin, note, mind, dupTitle, shortOut};
  const fail = [];
  // 门槛按用户亲写面试稿（origin/main，58 卦 4,176 篇）各卦分布定，取面试稿最低一档以下一点，使面试稿各卦全过：平均句长 ≥28.5（面试最低 28.5）、短句 ≤5.5%（最高 5.3%）、宜 ≥55‰（最低 57）、简断均 ≥75（最低 76）、就好与这个月每卦 ≤1；
  // 月份开头面试单卦两极（多数 0，少数近 1），只按全库卡：正文 ≤15%（面试 12%）、简断 ≤10%（面试 4%）。
@@ -62,6 +68,8 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  // 厚度（2026-11-20 用户「保持厚度跟完美程度，不要偷懒」）：用户夸过的确定关系蛊卦、需卦每卦正文中位 517、501，全库中位 506；后续问项每卦中位不低于 500、最短不低于 470（确定关系已验收推送，不回头卡，有 15 卦中位 480–494）。补厚只补有据的内容（盘面轻重、注疏取舍、对应做法），不许凑字。
  if (!['interview-pass', 'relationship-establishment'].includes(item) && bodyMedian < 500) fail.push('正文中位<500（偏薄）');
  if (!['interview-pass', 'relationship-establishment'].includes(item) && bodyMin < 470) fail.push('正文最短<470');
+ if (r.dupTitle) fail.push('标题全库重复');
+ if (item !== 'interview-pass' && r.shortOut) fail.push('简断不在 75–120 字');
  for (const [label, k, max] of tic) if (k > max) fail.push(`套话${label} ${k} 篇>${max}`);
  r.status = fail.length ? 'failed' : 'passed'; r.fail = fail.join('、');
  rows.push(r); if (list) for (const x of hits) console.log(x);

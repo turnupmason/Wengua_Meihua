@@ -71,4 +71,4 @@ style-monthly 须 passed，且正文以月份开头 ≤ 7 篇、「宜」每千�
 bash scripts/review/monthly-gate.sh job-change <卦序>
 ```
 
-它依次跑：结构与查重（check-monthly）、口吻厚度套话（style-monthly，含规则名目、套话上限、正文中位≥500）、安慰许诺（consolation-scan）、篇内重复（intra-repeat 8 字，须 0：补厚时不许把前文换个说法再讲一遍，用户面试稿 4,608 篇只有 3 篇）、高频短语（phrase-scan 18 篇，除「这份新工作」一类必要指称外须无）、引文（commentary-audit）。最后一行须为 `GATE PASSED`。写手每爻写完先跑一遍，全卦交稿前必须 GATE PASSED；协调者验收照跑同一条命令，再抽读。
+它依次跑：结构与查重（check-monthly）、口吻厚度套话（style-monthly，含规则名目、套话上限、正文中位≥500）、安慰许诺（consolation-scan）、篇内重复（intra-repeat 8 字，须 0：补厚时不许把前文换个说法再讲一遍，用户面试稿 4,608 篇只有 3 篇）、跨卦相似（cross-sim，与别卦单篇共用 8 字片段超 8% 的篇须 0；2026-11-20 未济照抄既济后补，用户面试稿 0 篇超 8%：成对卦盘面相近也要按本卦本爻另写）、高频短语（phrase-scan 18 篇，除「这份新工作」一类必要指称外须无）、引文（commentary-audit）。最后一行须为 `GATE PASSED`。写手每爻写完先跑一遍，全卦交稿前必须 GATE PASSED；协调者验收照跑同一条命令，再抽读。

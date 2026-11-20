@@ -2,9 +2,9 @@
  "primaryId": 7,
  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T18:37:22.493Z",
+ "reviewedAt": "2026-11-20T19:40:29.196Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "84e0f1038d26bea8d33984917bed0e9159a93755128f4ab8f40c0716804a7483",
+ "sourceSha256": "5e48775442d7924892f859ab76fcdaf0972ed1ef2dfee36b91b67f37d384d2a7",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -285,6 +285,20 @@
     "7/3/子"
    ],
    "finding": "2026-11-20 体衰引文订正（TISHUAI_FIX_BRIEF.md，定稿第十节：衰即死，体囚、体休不称体衰）：正文 3 篇 3 处、五气源第 9 栏 3 行（同步专业说明 6 篇）。体在囚的篇不再引《体用衰旺之诀》「而体卦气衰是不吉之占」：只引上半句「但不要克体之卦气旺」，或改引同诀「凡体卦宜乘旺，克体之卦宜衰」，并直说体受月令所制而囚、力弱，克体之木得相。 逐句手改，改到的段落整段读回，接得上、无重复、未添安慰许诺；结论、取期一字未动。"
+  },
+  {
+   "id": "X007-R01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "7/5/辰"
+   ],
+   "finding": "2026-11-20 跨卦相似订正（CROSS_SIM_FIX_BRIEF.md）：协调者清单本卦 1 篇——7/5/辰 与比卦 8/1/辰、8/2/辰 雷同（改前 9.8%），共用的是首句「此局关系还定不下来」、首段「辰月土旺，这段关系的……你这一方坎水处死，最没有力气。收尾虽有……也处死地，全盘没有一处来生你」、引《体用互变之诀》「用为占之即应」的讲法与末段「受约束的地方先接受，不硬碰；对方的安排由对方定」。先与两篇全文并排读，再按师卦六五辰月整篇重写标题、简断与五段正文：互卦改从地雷复大象「雷在地中，复」与王注「动复则静，行复则止」讲震木囚而解不动坤土；六五改从本义「柔顺而中，不为兵端者也」与程传小象「长子谓二，以中正之德合于上而受任以行」讲不开争端、守中而行；末段按复卦之静写不约谈名分、不设期限。体死逢两处旺土克（《衰旺论》体死可引）、震木「稍解其穷」、变用坎水比和而无力、《婚姻占》《占卦诀》依据全部保留。结论、专业说明、取期一字未动；正文 477→640 汉字。改后标题、简断、五段正文整篇输出读回，拆开 6 处过长的句子。新引文经 commentary-audit 逐字核过（0 处不符）。改后 cross-sim --hex 7 为 0（最高 7.6%；本卦其余超标篇随第 8 卦一侧订正已降下），check-monthly --docs passed、style-monthly passed、consolation-scan 0、tishuai-audit 0、intra-repeat(8) 0（改前 0）。",
+   "impact": {
+    "outcomeChanged": false,
+    "timingSignatureChanged": false,
+    "judgmentChanged": false,
+    "articles": 1
+   }
   }
  ],
  "batchReadback": [
