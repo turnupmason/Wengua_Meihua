@@ -12,6 +12,12 @@ const LIGHT = /就好|就够了|就行了|就是了/gu, THIS = /这个月/gu;
 const NOTE = /如实写|如实记下|写进正文|正文写|写给作者/gu;
 const MIND = /对方(?:心里(?!有数)|心中|觉得|以为|想着|在意|喜欢|不想|厌|烦|累了|乏了|提不起|没兴致|犹豫)|两边都(?:累|乏|提不起|没劲|松|轻松|在意)|彼此都(?:在意|喜欢|放不下)|(?:上级|上司|领导|老板|主管|东家|新单位|原单位|单位|公司|人事|招聘方|那边)(?:心里|觉得|以为|看重你|器重|赏识|想留|想压|有意|嫌|不满|舍不得|在画饼|画饼)/gu;
 const dir = `sources/editorial/${item}/monthly/`;
+// 套话上限（2026-11-20）：同一卦里同一句式篇篇都有，读着像模子（用户嫌过「这个月」「全是 XX 月开头」）。
+// 面试稿同卦非判词的六字短语最多见于约 18 篇，「落在面试上」一类每卦最多 14 篇（中位 2）；以下按卦计篇数。「新工作在这一项上没有胜过现职」是替读者断比较结果，为 0。
+const TICS = {
+ 'job-change':[[/最看重/u, 10, '「最看重的那一项」'], [/落在换工作上/u, 14, '「落在换工作上」'], [/辞职申请不递|辞职申请先不递|辞呈先不递/u, 12, '「辞职申请不递」'], [/较合此局/u, 18, '「较合此局」'],
+  [/新工作在这一项上|并不胜出|没有胜过现职|胜不过现职|不如现职/u, 0, '替读者断比较结果']],
+}[item] ?? [];
 const rows = [];
 for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const h = Number(f.slice(4, 7)); if (only && !only.has(h)) continue;
@@ -33,6 +39,7 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
   for (const m of all.matchAll(NOTE)) { note++; hits.push(key + ' 写给作者的话：' + m[0]); }
   for (const m of all.matchAll(MIND)) { mind++; hits.push(key + ' 疑似替对方断心意（人工判）：' + m[0]); }
  }
+ const tic = TICS.map(([re, max, label]) => { const keys = arts.filter(a => re.test([a.title, a.short, ...a.paragraphs].join('\n'))).map(a => `${h}/${a.movingLine}/${a.monthBranch}`); if (list && keys.length > max) for (const k of keys) hits.push(k + ' 套话' + label); return [label, keys.length, max]; });
  const n = arts.length, avg = sents.reduce((x, y) => x + y, 0) / sents.length, short10 = sents.filter(x => x <= 10).length / sents.length;
  const maxHead = Math.max(...Object.values(heads));
  const r = {hex:h, articles:n, monthOpen:+(monthOpen / n).toFixed(2), monthShort:+(monthShort / n).toFixed(2), maxSameHead:maxHead,
@@ -51,6 +58,7 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  if (r.yiPerMille < 55) fail.push('宜<55‰');
  if (r.yiPerMille > 220) fail.push('宜>220‰（面试最高 218，用得太密）');
  if (r.shortAvg < 75) fail.push('简断均<75');
+ for (const [label, k, max] of tic) if (k > max) fail.push(`套话${label} ${k} 篇>${max}`);
  r.status = fail.length ? 'failed' : 'passed'; r.fail = fail.join('、');
  rows.push(r); if (list) for (const x of hits) console.log(x);
  if (args.includes('--json')) continue;
