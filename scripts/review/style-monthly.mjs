@@ -47,6 +47,7 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  if (r.thisMonth > 1) fail.push('这个月>1');
 
  if (r.note) fail.push('写给作者的话');
+ if (r.maxSameHead > 10 && !args.includes('--calibrate')) fail.push('同一开头>10篇（用户嫌开头都一样）');
  if (r.yiPerMille < 55) fail.push('宜<55‰');
  if (r.yiPerMille > 220) fail.push('宜>220‰（面试最高 218，用得太密）');
  if (r.shortAvg < 75) fail.push('简断均<75');
