@@ -3,12 +3,12 @@
   "primaryId": 11,
   "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
   "editor": "Codex",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "地天泰已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "地天泰已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,23 @@
     {
       "path": "sources/editorial/exam/hex-011.json",
       "scope": "泰初九五气原断，取变用克或用互泄的应期。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02泰.txt",
+      "scope": "第34–37行九二经、王注、孔疏与象，尚为配，中行谓六五。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02泰"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第32–45行初判，第47–65行所问与逐篇定夺，第134–139行一层旁参。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、682、688、792、796–798行求名、受制、旺衰、全局和末生。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-011.json",
+      "scope": "泰九二五气原断及变用助、名成和体互所阻的应期。"
     }
   ],
   "lineReviews": [
@@ -38,6 +55,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "exam-011-line-1-two-wood-controlled"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "包荒，用冯河，不遐遗，朋亡。得尚于中行。",
+      "image": "包荒，得尚于中行，以光大也。",
+      "reading": "王注以乾健居中而能广大纳物，孔疏释冯河为无舟渡水之人，朋亡为不私朋党，尚为配，中行谓六五。借到考试为试出题路、逐类容纳、择合用之法。卷末有助依变离，爻辞本身未说试事一定过。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-011-line-2-rule-versus-final-aid"
       ]
     }
   ],
@@ -60,6 +87,26 @@
         "丑"
       ],
       "scope": "逐篇从最终作者源读回题名、简断、四段、专业断及应期，核五气各自所失并核同类相牵的爻义。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回标题、简断、四段完整正文、专业及应期，核九二的三类应期、末离生体、体互震所受制与古籍爻义。",
       "status": "author-readback-complete"
     }
   ],
@@ -101,6 +148,42 @@
         "11/1/丑"
       ],
       "finding": "寅卯、巳午与亥子取末巽木寅卯参卷尾改前提之阻，保留巽木受制的限制。申酉与辰未戌丑取用互兑金申酉参过程书写的投入，末段仍有题没答全，但未另取一日。"
+    },
+    {
+      "id": "exam-011-line-2-rule-versus-final-aid",
+      "status": "open-priority",
+      "keys": [
+        "11/2/寅",
+        "11/2/卯",
+        "11/2/辰",
+        "11/2/未",
+        "11/2/申",
+        "11/2/酉",
+        "11/2/戌",
+        "11/2/亥",
+        "11/2/子",
+        "11/2/丑"
+      ],
+      "finding": "两金制体互震而无水生，按一层参克弱，原月态保留。震可生末离，生体之离不据此升气。春体死、秋体休、冬体囚，四土虽体旺但末离休，均未满足R2↑的体与生体同时旺相，依表初判有条件。源断按中阻受制、末离有助及各月得分过程定能过，采用第三步保留逐篇裁决，待查末生跨档的限制，尤其四土的结果应期。"
+    },
+    {
+      "id": "exam-011-line-2-three-windows",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "11/2/寅",
+        "11/2/卯",
+        "11/2/辰",
+        "11/2/巳",
+        "11/2/午",
+        "11/2/未",
+        "11/2/申",
+        "11/2/酉",
+        "11/2/戌",
+        "11/2/亥",
+        "11/2/子",
+        "11/2/丑"
+      ],
+      "finding": "巳午体相、末离旺、体互震受制，合R2↑中变用生体可通本用泄。寅卯及申酉只取末离巳午过程之助，亥子只取体互震寅卯为中段分辨，巳午和四土按变用离取巳午名成，实际以考试方正式结果为准。"
     }
   ],
   "independentReview": {
@@ -108,15 +191,15 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘各有记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T19:12:46.077Z",
-  "sourceSha256": "303a90d06124df436f9754355eb37ef0ef6caf42a08ace5957418de21411dafe",
+  "reviewedAt": "2026-11-20T19:17:28.731Z",
+  "sourceSha256": "db0a4153d0eef006c188f2d68744bb84c28a63144c10e2b8d6185657033fb3c6",
   "checks": {
-    "scope": "地天泰已写12篇，核对作者源与阅读页",
-    "chartComparisons": 324,
+    "scope": "地天泰已写24篇，核对作者源与阅读页",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
-      517,
+      505,
       551
     ]
   }
