@@ -95,12 +95,13 @@ test('contact dates follow each casting date and never advance a saved historica
  }
 });
 
-test('小过九四 and 未济六三 use the reviewed text across their twelve month keys',async()=>{
+test('损上九, 小过九四 and 未济六三 use the reviewed text across their twelve month keys',async()=>{
  const cases=[
-  {primaryId:62,movingLine:4,adopted:'无咎，弗过遇之，往厉必戒，勿用永贞。',outcomes:['difficult','conditional','conditional','difficult','conditional'],notes:/姚舜牧.*分读/u},
-  {primaryId:64,movingLine:3,adopted:undefined,outcomes:['conditional','conditional','difficult','difficult','conditional'],notes:/简58.*脱「不」/u},
+  {primaryId:41,movingLine:6,adopted:'弗损，益之，无咎，贞吉，利有攸往。得臣无家。',archive:/贞吉，有攸往/u,outcomes:['conditional','conditional','favourable','conditional','favourable'],notes:/伊川易传.*周易本义.*同有「利」字/u},
+  {primaryId:62,movingLine:4,adopted:'无咎，弗过遇之，往厉必戒，勿用永贞。',archive:/勿用，永贞/u,outcomes:['difficult','conditional','conditional','difficult','conditional'],notes:/姚舜牧.*分读/u},
+  {primaryId:64,movingLine:3,adopted:undefined,archive:/利涉大川/u,outcomes:['conditional','conditional','difficult','difficult','conditional'],notes:/简58.*脱「不」/u},
  ];
- for(const {primaryId,movingLine,adopted,outcomes,notes} of cases){
+ for(const {primaryId,movingLine,adopted,archive,outcomes,notes} of cases){
   const stem='hex-'+String(primaryId).padStart(3,'0');
   const shard=await json('data/authored-readings/missing-contact/'+stem+'.json');
   const doc=await read('docs/missing-contact/'+stem+'.md');
@@ -114,7 +115,8 @@ test('小过九四 and 未济六三 use the reviewed text across their twelve mo
    assert.ok(doc.includes(canonical.versionDifference));
    if(adopted){
     assert.equal(row.facts.movingLine.referenceUrl,canonical.referenceUrl);
-    assert.equal(row.facts.movingLine.adoptedPunctuationFrom.sourcePath,canonical.sourcePath);
+    const witness=row.facts.movingLine.adoptedTextFrom??row.facts.movingLine.adoptedPunctuationFrom;
+    assert.equal(witness.sourcePath,canonical.sourcePath);
    }
    for(const monthBranch of row.monthBranches){
     for(const castingDate of ['2026-11-19','2026-11-30']){
@@ -126,8 +128,7 @@ test('小过九四 and 未济六三 use the reviewed text across their twelve mo
      assert.equal(row.facts.movingLine.fullText,row.movingLineText);
      assert.equal(row.lineApplication.evidence[0],row.movingLineText);
      assert.equal(content.calculationExplanation.void,undefined);
-     if(adopted)assert.match(content.reading.selectedMovingLine.text,/勿用，永贞/u);
-     else assert.match(content.reading.selectedMovingLine.text,/利涉大川/u);
+     assert.match(content.reading.selectedMovingLine.text,archive);
      const expectedDates=row.timingSlots.map(slot=>findUpcomingCivilDayMatches({castingDate,branches:slot.branches}).matches.slice(0,2).map(day=>day.date));
      assert.deepEqual(content.timingSection.windows.map(window=>window.displayedDates),expectedDates);
     }
@@ -143,4 +144,59 @@ test('现实寻人线索 remains a guidance entry without a second predictive ch
  assert.equal(q.provesLocation,false);
  assert.ok(q.guidanceParagraphs?.length||q.paragraphs?.length);
  assert.ok(!q.reading);
+});
+
+test('remaining contact tensions have a traceable author recheck and matching revisions',async()=>{
+ const directory='sources/editorial/missing-contact/';
+ const ledger=await json(directory+'recheck/judgments.json');
+ const edits=await json(directory+'recheck/edits.json');
+ const study=await json(directory+'source-study.json');
+ const keys=new Set(ledger.priorLineCollationsExcluded);
+ const entries=new Map();
+ let caseTensions=0,articles=0,monthKeys=0;
+ for(let primaryId=1;primaryId<=64;primaryId++){
+  const stem='hex-'+String(primaryId).padStart(3,'0');
+  const cases=await json(directory+'cases/'+stem+'.json');
+  const shard=await json('data/authored-readings/missing-contact/'+stem+'.json');
+  for(const source of cases.entries){
+   const key=primaryId+':'+source.movingLine;
+   if(keys.has(key)||!source.judgmentTensions?.length)continue;
+   const named=shard.rows.filter(row=>row.movingLine===source.movingLine&&source.judgmentTensions.some(t=>t.monthOrders.includes(row.monthOrder)));
+   entries.set(key,named);
+   caseTensions+=source.judgmentTensions.length;
+   articles+=named.length;
+   monthKeys+=named.reduce((n,row)=>n+row.monthBranches.length,0);
+  }
+ }
+ assert.equal(ledger.records.length,entries.size);
+ assert.equal(ledger.totals.lines,entries.size);
+ assert.equal(ledger.totals.caseTensions,caseTensions);
+ assert.equal(ledger.totals.articles,articles);
+ assert.equal(ledger.totals.monthKeys,monthKeys);
+ assert.deepEqual(study.judgmentRecheck.totals,ledger.totals);
+ assert.equal(ledger.independentProfessionalReview,'pending');
+ assert.equal(ledger.sourceCollations.length,study.unresolved.filter(x=>x.status==='source-collation-pending').length);
+ for(const record of ledger.records){
+  const key=record.primaryId+':'+record.movingLine;
+  const rows=entries.get(key);
+  assert.ok(rows?.length&&!keys.has(key)&&record.reason&&record.sources.length,key);
+  keys.add(key);
+  assert.deepEqual(record.monthlyDecisions,rows.map(row=>({order:row.monthOrder,branches:row.monthBranches,outcome:row.decision.outcomeCode})),key);
+  assert.equal(record.lineText,rows[0].movingLineText,key);
+  for(const source of record.sources)assert.ok(source.startLine>=1&&source.endLine>=source.startLine,key);
+ }
+ assert.equal(edits.length,ledger.totals.editedArticles);
+ const changed=edits.filter(edit=>edit.before[2]!==edit.after[2]);
+ assert.deepEqual(changed.map(edit=>[edit.primaryId,edit.movingLine,edit.monthOrder]),[
+  [11,6,'autumn-metal'],[11,6,'seasonal-earth'],[51,4,'spring-wood'],[51,4,'winter-water'],
+ ]);
+ assert.equal(changed.length,ledger.totals.changedOutcomes);
+ for(const edit of edits){
+  const row=entries.get(edit.primaryId+':'+edit.movingLine).find(r=>r.monthOrder===edit.monthOrder);
+  assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
+  assert.equal(row.decision.outcomeCode,edit.after[2]);
+  assert.equal(row.copy.long.ending,edit.after[7]);
+  if(Array.isArray(edit.before[10]))assert.deepEqual(edit.before[10],edit.after[10]);
+  else assert.ok(row.timingOmission?.reason&&row.timingSlots.length===0);
+ }
 });

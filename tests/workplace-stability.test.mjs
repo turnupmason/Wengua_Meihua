@@ -61,11 +61,17 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    const {title,short,long} = row.copy;
    checkChartFacts(library,row,key);
    const catalogLine=library.getLineReading(entry.primaryId,row.movingLine).text;
-   const adoptedPunctuation=row.contactApplication?.lineCommentary.adoptedPunctuation;
-   assert.equal(row.movingLineText,adoptedPunctuation??catalogLine,key);
+   const commentary=row.contactApplication?.lineCommentary;
+   const adoptedPunctuation=commentary?.adoptedPunctuation;
+   const variant=commentary?.adoptedVariant;
+   assert.equal(row.movingLineText,variant?.text??adoptedPunctuation??catalogLine,key);
    if(adoptedPunctuation){
     assert.equal(adoptedPunctuation.replace(/[\p{P}\s]/gu,''),catalogLine.replace(/[\p{P}\s]/gu,''),key);
-    assert.ok(row.contactApplication.lineCommentary.quote.startsWith(row.facts.movingLine.label+'：'+adoptedPunctuation+'〈'),key);
+    assert.ok(commentary.quote.startsWith(row.facts.movingLine.label+'：'+adoptedPunctuation+'〈'),key);
+   }
+   if(variant){
+    assert.equal(variant.archivedText,catalogLine,key);
+    assert.ok(commentary.quote.startsWith(row.facts.movingLine.label+'：'+variant.text+'〈'),key);
    }
    const expectedCopy = drafts[i].slice(3,9);
    if(slug==='lost-pet-recovery'){

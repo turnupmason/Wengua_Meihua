@@ -5,7 +5,7 @@ import {inspectMovingLine, validateStoryCopy} from '../src/story-editorial.js';
 import {resolveManuscriptDates} from '../src/prewritten-manuscripts.js';
 import {readingDocumentHeader, renderReadingDocumentEntry, READING_DOCUMENT_DEMO_DATE, READING_DOCUMENT_TIMING_CONTEXT} from './authored-reading-document.mjs';
 import {checkInterviewShort} from '../src/interview-decision-checks.js';
-import {createContextualReading, hasSameMovingLineText, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
+import {createContextualReading, resolveContactLineText, promotionTimingSlots, MISSING_CONTACT_PROFILE, LOST_PET_RECOVERY_PROFILE, LOST_OBJECT_RECOVERY_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE, RELATIONSHIP_ESTABLISHMENT_PROFILE, CONFESSION_DECISION_PROFILE, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, isExamLike, WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE} from '../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
@@ -150,9 +150,6 @@ for (const [batchIndex, filename] of batches.entries()) {
    const c=contactCase.lineCommentary;
    const raw=await readFile(new URL(c.sourcePath,root),'utf8');
    if(!raw.includes(c.quote)||!c.application||!c.referenceUrl||!c.locator)throw new Error('Contact line commentary mismatch: '+stem+'/'+movingLine);
-   if(c.adoptedPunctuation!==undefined &&
-    (!hasSameMovingLineText(c.adoptedPunctuation,r.selectedMovingLine.text)||
-     !c.quote.startsWith(r.selectedMovingLine.label+'：'+c.adoptedPunctuation+'〈')))throw new Error('Contact punctuation witness mismatch: '+stem+'/'+movingLine);
   }
   const contactApplication=contactCase?{...contactCase,sourcePath:contactCasesPath,ruleVersion:contactCases.ruleVersion,judgmentTensions:(contactCase.judgmentTensions??[]).filter(item=>item.monthOrders.includes(monthOrder)),personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false,returnHomeInferred:false}:null;
   const petCase = petCases?.entries.find(entry=>entry.movingLine===movingLine);
@@ -212,7 +209,7 @@ for (const [batchIndex, filename] of batches.entries()) {
   const decisionId = key + '/' + outcome;
   const stageIds = Object.values(r.stages).map(stage => stage.id);
   const commentary = contactCase?.lineCommentary;
-  const movingLineText = commentary?.adoptedPunctuation ?? r.selectedMovingLine.text;
+  const movingLineText = resolveContactLineText(commentary,r.selectedMovingLine);
   const lineApplication = {evidence: [movingLineText], conditions: [resolution], sourcePath};
   const counterevidence = [{fact: 'facts.directRelations; facts.nodes; facts.movingLine', resolution}];
   const copy = {title, short: {decisionId, text: short}, long: {decisionId, opening, process, ending:combinedEnding, summary}};
@@ -300,8 +297,9 @@ for (const [batchIndex, filename] of batches.entries()) {
    nodes: r.nodes.map(n => ({role:n.role, trigram:n.trigram, element:n.element, qi:n.strength.state})),
    directRelations: r.edges.map(e => ({role:e.targetRole, type:e.type})),
    movingLine: {...inspectMovingLine(movingLineText), label:r.selectedMovingLine.label, image:r.selectedMovingLine.image,
-    sourceRef:r.selectedMovingLine.sourceRef, referenceUrl:commentary?.adoptedPunctuation ? commentary.referenceUrl : r.selectedMovingLine.referenceUrl,
-    ...(commentary?.adoptedPunctuation ? {adoptedPunctuationFrom:{sourcePath:commentary.sourcePath,locator:commentary.locator}} : {})},
+    sourceRef:r.selectedMovingLine.sourceRef, referenceUrl:movingLineText!==r.selectedMovingLine.text ? commentary.referenceUrl : r.selectedMovingLine.referenceUrl,
+    ...(commentary?.adoptedPunctuation ? {adoptedPunctuationFrom:{sourcePath:commentary.sourcePath,locator:commentary.locator}} : {}),
+    ...(commentary?.adoptedVariant ? {adoptedTextFrom:{sourcePath:commentary.sourcePath,locator:commentary.locator}} : {})},
   };
   const sourceIds = [...new Set([...sourceEvidence.map(s => s.id), ...timingSourceIds, facts.movingLine.sourceRef.sourceId])];
   const decision = {id:decisionId, outcomeCode:outcome, question_type:question.question_type,
