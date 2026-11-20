@@ -39,6 +39,7 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  if (r.light > 1) fail.push('就好就够了>1');
  if (r.thisMonth > 1) fail.push('这个月>1');
  if (r.yiPerMille < 55) fail.push('宜<55‰');
+ if (r.yiPerMille > 220) fail.push('宜>220‰（面试最高 218，用得太密）');
  if (r.shortAvg < 75) fail.push('简断均<75');
  r.status = fail.length ? 'failed' : 'passed'; r.fail = fail.join('、');
  rows.push(r); if (list) for (const x of hits) console.log(x);
