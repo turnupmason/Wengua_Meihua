@@ -2,14 +2,14 @@
   "primaryId": 2,
   "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T14:35:38.616Z",
-  "wholeArticlesRead": 12,
-  "sourceSha256": "f80005fc5c0deb4393612c00dbed7aa0eaf27d8f162ed6908772aa38ed0acd50",
+  "reviewedAt": "2026-11-20T14:40:27.450Z",
+  "wholeArticlesRead": 24,
+  "sourceSha256": "8400cd3c252e66c9ab22e591c91752587838f483a730e72e92eb7d42b9f1243e",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "坤卦初六寅至丑分别写作，逐篇核定后从作者源读回全部题名、简断、正文、取期。"
+    "currentReadback": "坤卦初六、六二各自寅至丑十二月分别写作与读取最终作者源，核对题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,10 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第 792、798、804 行《占卦诀》《体用互变之诀》《体用衰旺之诀》，655 行辨来克气衰。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "六二经、象及文言。参王弼居中得正、任其自然及孔颖达对直、方、大三德的分解。"
     }
   ],
   "lineReviews": [
@@ -38,6 +42,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "kun-initial-earth-verdict"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "直方大，不习无不利。",
+      "image": "六二之动，直以方也。不习无不利，地道光也。",
+      "reading": "动下坤中爻得坎，变地水师，仍以上坤为体，土制水。春土死、秋土休、冬土囚，通盘无生，体难制事；夏土相、四土月土旺，变用坎弱，体克用可成。直方取循正合宜，不习取合道而自然，不能解释成考前不用准备。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "kun-second-good-line"
       ]
     }
   ],
@@ -71,6 +85,32 @@
         "2/1/丑"
       ],
       "finding": "原取期文案将题序、漏单位、抄错数、题面用字写为具体场面。此批依据角色保留八个月收束受制与四土月中段得力，正文以备考例说明如何早核前提。"
+    },
+    {
+      "id": "kun-second-good-line",
+      "status": "open-priority",
+      "keys": [
+        "2/2/寅",
+        "2/2/卯",
+        "2/2/申",
+        "2/2/酉",
+        "2/2/亥",
+        "2/2/子"
+      ],
+      "finding": "六二爻辞强吉，卦中又全盘无克体。依五气源，以坤土与同类均失令且无生体、末段制事力薄断不过。经注能支持合道而行自然，缺少直接论考试旺衰压过吉辞的判据，保留为考试定稿断法的解释取舍。"
+    },
+    {
+      "id": "kun-second-timing-scope",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/2/辰",
+        "2/2/巳",
+        "2/2/午",
+        "2/2/未",
+        "2/2/戌",
+        "2/2/丑"
+      ],
+      "finding": "夏令、土令能过，保留坤体未、申时序。事件是结果可以确认，原稿的名单、准考证号和登录方式并非卦中所指，改按考试方实际发布方式核对。"
     }
   ],
   "batchReadback": [
@@ -93,13 +133,37 @@
       ],
       "scope": "读回十二份完整稿件，确认轻重、角色及原结论。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "比对各月体克用与四处同土强弱，读回标题、简断、全文、原有结论和有期无期。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "坤初六十二月，逐爻核对作者源与阅读页",
-    "chartComparisons": 324,
+    "scope": "坤初六、六二二十四月，逐爻核对作者源与阅读页",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24
+    "dateCases": 48,
+    "bodyHanRange": [
+      467,
+      522
+    ]
   },
   "independentReview": {
     "status": "pending",
