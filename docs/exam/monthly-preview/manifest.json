@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-360-20261120",
+  "batch": "exam-monthly-preview-372-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 360,
+  "uploadedArticles": 372,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    5
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 4248,
-  "authorWholeArticleReadback": 360,
+  "remainingArticles": 4236,
+  "authorWholeArticleReadback": 372,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -102,7 +100,8 @@
     "independentChartMismatches": 0,
     "dateCases": 720,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需五卦。天水讼已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 30,
@@ -114,10 +113,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 6,
-    "movingLine": 1,
+    "primaryId": 5,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 5,
+      "name": "天水讼",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-006.json",
+      "sourceSha256": "a00ec88578abe8902f7d773a6060a6e8950dda34ce31b21495413e0e56be58d5",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-006.json",
+      "readingPath": "docs/exam/monthly-preview/hex-006.md"
+    }
+  ]
 }
