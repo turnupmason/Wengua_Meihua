@@ -3,12 +3,12 @@
   "primaryId": 12,
   "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
   "editor": "Codex",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "天地否已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "天地否已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -63,6 +63,33 @@
     {
       "path": "sources/editorial/exam/hex-012.json",
       "scope": "否六二五气源断、局部助与变坎末耗。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02否.txt",
+      "scope": "第38–40行六三经、王注、孔疏和《象》。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02否"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "第124行朱熹说有其志而未发，故未加凶咎之戒。",
+      "url": "https://zh.wikisource.org/wiki/周易本義_(四庫全書本)/卷1"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04遯.txt",
+      "scope": "第24–27行遁经彖疏的退义。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/04遯"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第34行无克有生，第134–139行生体受制一层。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第655、682、688、792、796–798、804行月令、受制、强弱、无克有生、阶段与体旺。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-012.json",
+      "scope": "否六三五气源断及变艮末助之应期。"
     }
   ],
   "lineReviews": [
@@ -84,6 +111,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "exam-012-line-2-drain-and-weak-help"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "包羞。",
+      "image": "包羞，位不当也。",
+      "reading": "王孔以六三失位、循小道承上而致羞释经，朱熹另取阴居阳而不中正、欲伤善未发，故经未著凶咎。卷面只借为没有证据的句子不应藏入已证过程。天山遁借取退义，巳午先回题干、图表核给定。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-012-line-3-three-soils-under-control"
       ]
     }
   ],
@@ -126,6 +163,26 @@
         "丑"
       ],
       "scope": "逐篇核题名、短断、四段正文、专业断及应期，核大人否亨异说、变讼及初中受制和末泄。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇核读题名、短断、四段正文、专业断及应期，对照王孔、朱熹两读并核天山遁与三土受制。",
       "status": "author-readback-complete"
     }
   ],
@@ -205,6 +262,44 @@
         "12/2/丑"
       ],
       "finding": "春木与冬水用末坎亥子参套错重写、压卷重列式之耗。巳午及四土取用互艮辰戌丑未参过程中已有给定所助，秋取本用坤同支参熟题起手。凡取助均为过程，无结果日。"
+    },
+    {
+      "id": "exam-012-line-3-three-soils-under-control",
+      "status": "open-priority",
+      "keys": [
+        "12/3/寅",
+        "12/3/卯",
+        "12/3/辰",
+        "12/3/巳",
+        "12/3/午",
+        "12/3/未",
+        "12/3/申",
+        "12/3/酉",
+        "12/3/戌",
+        "12/3/亥",
+        "12/3/子",
+        "12/3/丑"
+      ],
+      "finding": "上乾为原体，下坤本用、用互艮、变用艮土均生原乾，体互巽受乾所克，六三变天山遁。四用内巽克三土，无火生土，按一层参三处生薄，各自的原月态照记。原乾克体互巽不连算解土之克。无直接克体，R1a与源断同为能过。三处生助所受同一木克能减到何种程度，古籍没有定量，保留复核。"
+    },
+    {
+      "id": "exam-012-line-3-timing-and-shame",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "12/3/寅",
+        "12/3/卯",
+        "12/3/辰",
+        "12/3/巳",
+        "12/3/午",
+        "12/3/未",
+        "12/3/申",
+        "12/3/酉",
+        "12/3/戌",
+        "12/3/亥",
+        "12/3/子",
+        "12/3/丑"
+      ],
+      "finding": "十二月只取末艮土辰戌丑未参过程助。春材料拆理，夏以末表核条件，秋重算惯用一步，冬补事实依据，四土按题给写陌生题已有的两步并回查熟问。包羞借作核无据之文，避免把经传的位不当直接断成没过。"
     }
   ],
   "independentReview": {
@@ -212,13 +307,13 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘各有记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T19:49:00.579Z",
-  "sourceSha256": "993cb43ad7c95ef8a865072afb615dcb4cebb2fb677ff18a9852ea2d09aaf2e0",
+  "reviewedAt": "2026-11-20T19:54:14.070Z",
+  "sourceSha256": "7f5d39d6d29a48e2eeee05b05ff4e515007707389ec83cdb530382a68f9f6f5f",
   "checks": {
-    "scope": "天地否已写24篇，核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "天地否已写36篇，核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       514,
       561
