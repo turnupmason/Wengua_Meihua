@@ -38,7 +38,7 @@ node scripts/review/consolation-scan.mjs relationship-establishment --hex N
 2. `style-monthly --hex N` → passed，且全卦正文以月份开头 ≤ 7 篇、「宜」每千句 100–180；
 3. `consolation-scan --hex N` → 0（豁免写进 `sources/editorial/relationship-establishment/consolation-allow/v<卦序>.json`）；
 4. `node scripts/review/commentary-audit.mjs relationship-establishment --monthly --out <临时目录>/cite.json` → 本卦无未核实引文。
-另用 node 对比改前改后每篇正文字数，确认没有变薄。
+另用 node 对比改前改后每篇正文字数，确认没有变薄。全卦写完后若再为错开开头、去重、拆句等改动任何一篇（含只改首段或一句），该篇都要整篇输出再读一遍，回执照实写。
 
 回执 `reviews-monthly/hex-NNN.json`：加 findings `{id:"E0NN-V01", status:"corrected-unsupported-scenes", keys:["NN/*/*"], finding:"按用户亲写面试稿口吻重写标题、简断、正文 72 篇，结论、专业说明、取期与引文不动；改前→改后口吻指标：……；字数：……"}`，更新 `reviewedAt`、`sourceSha256`（定稿后算），`batchReadback` 照实写读回（每篇改后都要完整输出读过才能写已读）。然后 `node scripts/build-monthly.mjs relationship-establishment --hex N`。
 
