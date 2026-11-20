@@ -1,0 +1,277 @@
+{
+ "primaryId": 23,
+ "baselineCommit": "6f667bd2b14a277e6a72ccb9e1dfcd513b637de4",
+ "editor": "claude-opus-5-5",
+ "reviewedAt": "2026-11-20T00:36:30.591Z",
+ "wholeArticlesRead": 72,
+ "sourceSha256": "f11d886429a7ebe70bc8e451e5dae91d9bbb4c43353b58cf04c6e29a1e889cc2",
+ "reviewerIsHuman": false,
+ "userIndividuallyAccepted": false,
+ "status": "partially-reviewed",
+ "authorshipScope": {
+  "newlyWritten": "山地剥六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气新写（同气月份相同）；六二、六三、上九三爻十五气为卦象主断之篇，专业说明写明本卦山地剥、照录卦辞「剥：不利有攸往」、引《卦断遗论》487 行「不必拘体用也」。取期照抄五气源第10栏的种类与位置，事件、提示、依据与无期说明按相处场面重写。",
+  "currentReadback": "每写完一爻12篇即跑 check-monthly --draft，并把标题、简断、全部自然段输出读回；六批共72篇实读。读回后所作局部修改（补足厚度、改写与他卦及本卦他篇撞车的长句、去掉「伤」「病」字面与「不……也不……」句式、把「原书的规矩是」一类把定稿爻辞翻转条件说成原书条文的句子改为中性说法、删去含异文讹字的引句）另行输出核对并重跑检查。",
+  "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行翻判。"
+ },
+ "sourceEvidence": [
+  {
+   "path": "sources/editorial/relationship-establishment/hex-023.json",
+   "scope": "30 行五气源全字段：第 2 栏结论逐字照用；第 9 栏仍为考试同盘说明（「定为过不了／能过」「求名占」等），只作对照；第 10 栏取期种类与位置照抄；旧正文情节只作素材，不进月稿。"
+  },
+  {
+   "path": "sources/editorial/relationship-establishment/polish-v5/hex-023.json",
+   "scope": "30 条 establishmentRule、oldOutcome、calculationNotes，逐条对照结论来由。"
+  },
+  {
+   "path": "data/authored-readings/relationship-establishment/hex-023.json",
+   "scope": "经 scripts/review/packet.mjs 输出 30 盘本互变、六节点五行五态与四处直接关系，逐爻核对；运行数据未记一层间接作用，由作者按定稿第八节自行核算（见 findings）。"
+  },
+  {
+   "path": "docs/review/INTERVIEW_MONTHLY_REWRITE_20261118.md（分支 origin/editorial/interview-preview-216-20261118）",
+   "scope": "经 git show 读面试逐月长稿规范、核查方法，及 hex-001、003、017、052 范文各 6 篇以上与 hex-003 回执；只学写法，不抄句子。"
+  },
+  {
+   "path": "sources/editorial/relationship-establishment/monthly/hex-002.json、hex-013.json 及对应 reviews-monthly",
+   "scope": "已验收范例，学写法与回执格式（hex-002 上六变剥之卦象主断写法作对照，查重已避开其句子）。"
+  },
+  {
+   "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+   "url": "https://zh.wikisource.org/zh-hans/周易正義/03剝",
+   "scope": "剥卦辞、彖、大象、六爻爻辞与小象、王弼注、孔颖达疏全文阅读；正文所引王注孔疏按此本逐字核过。"
+  },
+  {
+   "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+   "scope": "剥卦辞及六爻本义（182–186 行）读过，引「剥自下起，灭正则凶」「阴祸切身，故不复言蔑贞而直言凶也」「五为众阴之长，当率其类受制于阳」「一阳在上，剥未尽而能复生」「取象既明而君子小人其占不同」等。"
+  },
+  {
+   "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+   "scope": "剥卦程传全文（254–268 行）读过，引「剥始自下」「唯其无与所以被蔑而凶」「其义为无咎耳」「言其无咎所以劝也」「将灭其身矣」「使群阴顺序如贯鱼然」「见君子之道不可亡也」「剥尽于上则复生于下矣」等。"
+  },
+  {
+   "path": "sources/revised/meihua-volumes-1-3.txt",
+   "scope": "实读 158–161《西林寺牌额占》、487《卦断遗论》（不必拘体用）、494《体用》（体党、用党）、531–532《婚姻占》两段、655《复明时令之应》、682《体用》（彼灭其吉、稍解其穷）、688《衰旺论》、792《占卦诀》、796–798《体用互变之诀》、804《体用衰旺之诀》。"
+  },
+  {
+   "path": "docs/review/ESTABLISHMENT_REJUDGE_20261119.md",
+   "scope": "第一节口径、第四节婚恋专属爻辞表（23·4 剥六四降档、23·5 剥六五升档、24·1 复初九升档、24·6 复上六降档）、第五节全部已有裁定（同类疑问按已裁定处理）。"
+  },
+  {
+   "path": "docs/review/ESTABLISHMENT_MONTHLY_BRIEF.md",
+   "scope": "判词、专业说明写法、取期重写、「卦象主断的篇」一节（剥「不利有攸往」须写明本卦、照录卦辞、引 487 行）。"
+  },
+  {
+   "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+   "scope": "通用写法、作者源字段、回执字段、检查与交付；第二节保持厚度与古籍核对。"
+  },
+  {
+   "path": "docs/READING_POLICY_V2.md",
+   "scope": "第二节判定步骤与爻辞调档、第八节一层间接生克、第十节休为无气、第十一节无生无克卦象主断、第十三节二分与爻辞只翻一次、第十四节用党多。"
+  }
+ ],
+ "lineReviews": [
+  {
+   "movingLine": 1,
+   "text": "剥床以足，蔑，贞凶。",
+   "image": "“剥床以足”，以灭下也。",
+   "reading": "王注「床者，人之所以安也」「下道始灭，刚陨柔长，则正削而凶来也」，孔疏「剥道从下而起」。读为来往的底子（约定、回复、彼此的节奏）先从小处变薄，不写成一件大事或具体变故。体艮与本用、两互坤土比和，变用震木克体，全盘无生体，五气皆不成：寅卯体死克旺最重，亥子体囚克相，申酉体休克死、无推力，巳午与四季体有力、克无气，按结局拆为不成。《大象》「上以厚下安宅」写成把底子做厚。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 2,
+   "text": "剥床以辨，蔑，贞凶。",
+   "image": "“剥床以辨”，未有与也。",
+   "reading": "孔疏「辨，谓床身之下，无足之上」「言无人与助之也」，程传「以阳未有应与故也」。读为想往前时盘中无一处接应，只讲形势，不替对方断心意。无生无克之盘，卦象主断：本卦剥「不利有攸往」，引 487 行；寅卯、申酉、亥子另有「皆是衰卦，终不吉」。变用坎水为体所克，写成要你出面料理的事，旺衰按月写轻重。五气皆不成。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 3,
+   "text": "剥之，无咎。",
+   "image": "“剥之无咎”，失上下也。",
+   "reading": "本盘即《西林寺牌额占》原盘（山地剥第三爻动，变艮，互见重坤），体用互变俱比和，原书断不吉。王注「群阴剥阳，我独协焉，虽处于剥，可以无咎」，程传「其义为无咎耳」「言其无咎所以劝也」。读为守住自己待人的正道、不随周遭起落，所以无过错；无咎不等于能成。「群阴剥阳」只借说时势消长，正文明写不评判任何人。五气皆不成。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 4,
+   "text": "剥床以肤，凶。",
+   "image": "“剥床以肤”，切近灾也。",
+   "reading": "王注「床既剥尽，以及人身」，孔疏「其灾已至」，《本义》「不复言蔑贞而直言凶」。在婚恋降档表；盘面有生无克（变用离火生体）本可成，盘中无克体之卦，凶辞直接主断，五气皆不成。正文把「剥及于肤」讲成那份不安已到两人跟前，不用伤病、灾祸比喻；离火生体写成后段对方接住你的实事，变卦晋「昼日三接」之吉意写进正文，说明它让这一回不难堪，但排在凶辞之后。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 5,
+   "text": "贯鱼，以宫人宠，无不利。",
+   "image": "“以宫人宠”，终无尤也。",
+   "reading": "王注「不害于正，则所宠虽众，终无尤也」，孔疏「骈头相次，似若贯穿之鱼」，程传「使群阴顺序如贯鱼然」，《本义》「当率其类受制于阳」。读为来往有先后、亲近而守分寸，所以终无怨尤；「宫人」「宠」不按字面搬进现代。在升档表，但全盘无生体之卦，不合升档条件（同谦六四 E015-A02），五气皆不成：变用巽木克体，寅卯最重、亥子有气、巳午与四季无气按结局拆、申酉克死而体无气。吉意写足，落在相处方式上。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  },
+  {
+   "movingLine": 6,
+   "text": "硕果不食，君子得舆，小人剥庐。",
+   "image": "“君子得舆”，民所载也；“小人剥庐”，终不可用也。",
+   "reading": "王注「独全不落，故果至于硕而不见食也」「君子居之，则为民覆荫；小人用之，则剥下所庇也」，《本义》「剥未尽而能复生」「君子小人其占不同」，程传「阳无可尽之理」。两面之辞：读为两人之间仍有一份完好的情分，宽厚护着则被这段来往托着，急于索取则自拆安身处。无生无克，本卦剥卦象主断，五气皆不成；复生之理写成往后时势的转机，明写不是这一回的许诺。「君子得舆」若算得用之辞，按定稿第二步须盘中有生体之卦旺相，本盘无生体，不升。",
+   "status": "partially-reviewed",
+   "openFindingIds": []
+  }
+ ],
+ "findings": [
+  {
+   "id": "E023-A01",
+   "status": "maintained-by-policy",
+   "keys": [
+    "23/2/*",
+    "23/3/*",
+    "23/6/*"
+   ],
+   "finding": "六二、六三、上九十五气为无生无克之盘，按定稿第十一节以本卦剥「不利有攸往」主断（487 行「不必拘体用也」）。其中巳午、四季体与同气之卦皆有力，单看体用本可成，与坤上六 E002-A01 同类（已裁定维持），不重报。六三即《西林寺牌额占》原盘，原书断语以「寺者纯阳之所」立论，用于两人关系属类推，正文只取「不利有攸往」「顺而止之」之意，不搬寺中阴阳之事。专业说明逐气写明本卦、卦辞与 487 行。"
+  },
+  {
+   "id": "E023-A02",
+   "status": "maintained-by-policy",
+   "keys": [
+    "23/4/*"
+   ],
+   "finding": "六四有生无克（变用离火生体），巳午离火当令、体相，盘面最强，仍因降档之辞「剥床以肤，凶」、盘中无克体之卦而直接主断为不成；与屯上六 E003-A02「全盘无克、有生而以凶辞主断」同类，已裁定维持，不重报。正文写足生体与晋「昼日三接」的吉意，说明凶辞排在其前。"
+  },
+  {
+   "id": "E023-A03",
+   "status": "maintained-by-policy",
+   "keys": [
+    "23/5/*"
+   ],
+   "finding": "六五「无不利」在升档表，全盘无生体之卦，不合升档条件，与谦六四、六五 E015-A02 同类，不重报。巳午、四季为 R3↑′（体党旺而末克弱）按结局拆为不成，同坤初六 E002-A03。"
+  },
+  {
+   "id": "E023-B01",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "23/1/*",
+    "23/2/*",
+    "23/4/*",
+    "23/5/*",
+    "23/6/*"
+   ],
+   "finding": "剥卦床、辨、肤、灾、宫人宠、剥庐等字面只留在引号内：床讲成安身之处与来往的底子，「切近灾」讲成不安已到两人跟前，「宫人宠」讲成有序而守分寸，「剥庐」讲成自拆安身之处；不用伤病、灾祸比喻，不写第三者，不断人品。读回后删去「伤不到根本」等字面。"
+  },
+  {
+   "id": "E023-B02",
+   "status": "corrected-classical-application",
+   "keys": [
+    "23/4/*",
+    "23/5/*"
+   ],
+   "finding": "初稿多处写「原书的规矩是：盘中有克体之卦，凶辞算作路上的坎；无克，凶辞直说结局」「原书要吉辞改变结局，须盘中至少一处生你且有气」，实为定稿第十三节第 3 步与第二步的项目规则，并非原书条文。读回后改为中性说法（「这一类爻辞的读法是」「要让吉辞落到结果上」），原书只引《占卦诀》《衰旺论》等实有原句。"
+  },
+  {
+   "id": "E023-C01",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "23/*/*"
+   ],
+   "finding": "五气源 hex-023.json 第9栏仍是考试同盘说明（「定为过不了」「漏读的限制条件」等），与专项说明所述一致。月稿专业说明按确定关系补判记录逐气新写，引《婚姻占》《占卦诀》《体用互变之诀》《体用衰旺之诀》《卦断遗论》原句，写明「定为不成」；30 条结论与五气源第2栏一致。五气源未改，待回写。",
+   "impact": {
+    "outcomeChanged": false,
+    "timingSignatureChanged": false
+   }
+  },
+  {
+   "id": "E023-D01",
+   "status": "corrected-unsupported-scenes",
+   "keys": [
+    "23/*/*"
+   ],
+   "finding": "取期事件改为看得见的相处场面（约好的一回见面照常办成、说到往后常见面时碰上一处限制、对方接过你提的一件安排），提示不再以「若」起句，去掉「属吉应／凶应」；无期说明去掉「日级」「比和偏死」一类内部说法，写成 40–60 字白话；种类、位置与依据结构不变。"
+  },
+  {
+   "id": "E023-E01",
+   "status": "interpreted-with-limits",
+   "keys": [
+    "23/1/*",
+    "23/5/*"
+   ],
+   "finding": "异文：库内爻辞作「剥床以足，蔑，贞凶」，《周易正义》本作「蔑贞凶」不断开，二读皆通，正文照库内断句引。《伊川易传》四库本「初六剥床以足蔑贞吉」作「吉」，与经文及程传下文「凶之道也」不合，系传本讹字，正文不引此句。王注六五「于宫人而己」之「己」为「已」之讹，正文不引含此字之句。"
+  }
+ ],
+ "batchReadback": [
+  {
+   "movingLine": 1,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 2,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 3,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 4,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 5,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  },
+  {
+   "movingLine": 6,
+   "wholeArticlesRead": 12,
+   "months": "寅卯辰巳午未申酉戌亥子丑",
+   "scope": "标题、简断、全部自然段与取期完整输出后实读；读回后为补足厚度、去掉重复长句、改掉「不……也不……」句式与伤病字面、改正把定稿规则说成原书条文的句子所作的局部修改，另行输出核对",
+   "status": "author-readback-complete"
+  }
+ ],
+ "checks": {
+  "monthlyStructure": "72 complete; check-monthly passed",
+  "bodyHanRange": [
+   480,
+   578
+  ],
+  "shortHanRange": [
+   65,
+   80
+  ],
+  "flexibleLengthWarnings": 0,
+  "lengthDecision": "初稿多篇在 450–480 汉字之间，读回后逐篇补入与本盘旺衰、爻义或相处分寸相关的句子，全部提到 480 汉字以上；不以通用建议凑字。",
+  "outcomes": {
+   "difficult": 72
+  },
+  "independentChart": {
+   "inputs": 72,
+   "comparisons": 1944,
+   "mismatches": 0,
+   "method": "check-monthly 独立文王上下卦表与六爻位运算，逐篇27项比较本互变、动爻、六节点五行五态与四处直接关系；不评价现实预测准确率。"
+  },
+  "dateCases": 144,
+  "dateErrors": 0,
+  "timing": "全部保留五气源第10栏的种类与位置（control/equal/support；changed_use、body_mutual、use、use_mutual），同气月份相同；30 气中 17 气有窗、13 气为无期说明（30–60 字），事件、提示、依据按相处场面重写。",
+  "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期完全相同，正文逐月分写，不加月支冲合。",
+  "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+  "crossHexDuplicateScope": "与库中已写的确定关系月稿（hex-001 至 hex-022 及同时写作中的其他卦）一并查重；写作中本卦各爻之间撞到若干长句，均已改写；终稿无整篇、整段及 24 汉字以上长句重复，72 个标题全库不重。"
+ },
+ "independentReview": {
+  "status": "pending",
+  "reviewerIsHuman": false,
+  "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+ },
+ "realWorldPredictionAccuracy": "not-validated"
+}
