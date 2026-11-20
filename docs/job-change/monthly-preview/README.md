@@ -1,6 +1,6 @@
-# 跳槽去留逐月长稿：3312 篇预览
+# 跳槽去留逐月长稿：4536 篇预览
 
-更新日期：2026-11-20（America/New_York）。本批新增天山遁、雷天大壮、水山蹇、雷水解、山泽损、风雷益、泽天夬、天风姤、泽地萃、地风升，共 720 篇；累计 3312 篇。完整目标为 4,608 篇，尚余 1296 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-20（America/New_York）。本批新增泽水困、水风井、泽火革、火风鼎、震为雷、艮为山、风山渐、雷泽归妹、雷火丰、火山旅、巽为风、兑为泽、风水涣、水泽节、风泽中孚、雷山小过、火水未济，共 1224 篇；累计 4536 篇。完整目标为 4,608 篇，尚余 72 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -50,6 +50,23 @@
 | 天风姤 | 72 | [打开全文](hex-044.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-044.json) |
 | 泽地萃 | 72 | [打开全文](hex-045.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-045.json) |
 | 地风升 | 72 | [打开全文](hex-046.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-046.json) |
+| 泽水困 | 72 | [打开全文](hex-047.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-047.json) |
+| 水风井 | 72 | [打开全文](hex-048.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-048.json) |
+| 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-049.json) |
+| 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-050.json) |
+| 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-051.json) |
+| 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-052.json) |
+| 风山渐 | 72 | [打开全文](hex-053.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-053.json) |
+| 雷泽归妹 | 72 | [打开全文](hex-054.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-054.json) |
+| 雷火丰 | 72 | [打开全文](hex-055.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-055.json) |
+| 火山旅 | 72 | [打开全文](hex-056.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-056.json) |
+| 巽为风 | 72 | [打开全文](hex-057.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-057.json) |
+| 兑为泽 | 72 | [打开全文](hex-058.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-058.json) |
+| 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-059.json) |
+| 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-061.json) |
+| 雷山小过 | 72 | [打开全文](hex-062.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-062.json) |
+| 火水未济 | 72 | [打开全文](hex-064.md) | [查看记录](../../../sources/editorial/job-change/reviews-monthly/hex-064.json) |
 
 
 
@@ -57,31 +74,45 @@
 
 ## 本批阅读入口
 
-- [天山遁：六爻十二月全文](hex-033.md)
+- [泽水困：六爻十二月全文](hex-047.md)
 
-- [雷天大壮：六爻十二月全文](hex-034.md)
+- [水风井：六爻十二月全文](hex-048.md)
 
-- [水山蹇：六爻十二月全文](hex-039.md)
+- [泽火革：六爻十二月全文](hex-049.md)
 
-- [雷水解：六爻十二月全文](hex-040.md)
+- [火风鼎：六爻十二月全文](hex-050.md)
 
-- [山泽损：六爻十二月全文](hex-041.md)
+- [震为雷：六爻十二月全文](hex-051.md)
 
-- [风雷益：六爻十二月全文](hex-042.md)
+- [艮为山：六爻十二月全文](hex-052.md)
 
-- [泽天夬：六爻十二月全文](hex-043.md)
+- [风山渐：六爻十二月全文](hex-053.md)
 
-- [天风姤：六爻十二月全文](hex-044.md)
+- [雷泽归妹：六爻十二月全文](hex-054.md)
 
-- [泽地萃：六爻十二月全文](hex-045.md)
+- [雷火丰：六爻十二月全文](hex-055.md)
 
-- [地风升：六爻十二月全文](hex-046.md)
+- [火山旅：六爻十二月全文](hex-056.md)
+
+- [巽为风：六爻十二月全文](hex-057.md)
+
+- [兑为泽：六爻十二月全文](hex-058.md)
+
+- [风水涣：六爻十二月全文](hex-059.md)
+
+- [水泽节：六爻十二月全文](hex-060.md)
+
+- [风泽中孚：六爻十二月全文](hex-061.md)
+
+- [雷山小过：六爻十二月全文](hex-062.md)
+
+- [火水未济：六爻十二月全文](hex-064.md)
 
 
 
 ## 检查与阅读状态
 
-3312 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 89,424 项，差异 0；日期用例 6,624 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 470–652 汉字。
+4536 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 122,472 项，差异 0；日期用例 9,072 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 470–652 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/JOB_CHANGE_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

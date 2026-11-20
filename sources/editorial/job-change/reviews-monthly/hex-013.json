@@ -4,7 +4,7 @@
  "editor": "claude-opus-5-5",
  "reviewedAt": "2026-11-20T17:56:48.755Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "6c562e0996890dbb470c12afb0665a3fb083ec41165d549d6aaa1bf5ef16c744",
+ "sourceSha256": "fcf65671663abb127d97992c63270671c5e90e1990df5fb161f2ae220ac82c8c",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -321,6 +321,24 @@
     "13/*/*"
    ],
    "finding": "2026-11-20 协调者：梅花各诀篇名按原书各节标题订正（scripts/review/meihua-attr-audit.cjs --fix）：494 行诸句（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，此前误标《体用》；只改篇名，引文与其余文字不动；五气源第 9 栏同改，专业说明保持一致。"
+  },
+  {
+   "id": "S013-J02",
+   "status": "fixed-documentation-conflict",
+   "keys": [
+    "13/6/申",
+    "13/6/酉"
+   ],
+   "finding": "2026-11-20 体衰引文订正：五气源第 9 栏把体囚、体休之盘误引《衰旺论》「若体衰而逢克，则其凶甚矣」「体衰而有生体之卦，则衰稍解」或直说「体衰」的句子，改为照实说体的五态，本卦 2 篇的专业说明照新第 9 栏同步；结论、取期不变，正文改动见 F013-T01。"
+  },
+  {
+   "id": "F013-T01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "13/1/卯",
+    "13/6/申"
+   ],
+   "finding": "2026-11-20 体衰引文订正（docs/review/TISHUAI_FIX_BRIEF.md）：《衰旺论》之「衰」与《体用衰旺之诀》「体卦气衰」都指死，定稿第十节体以囚、死为弱，休不算有力也不算弱，不外推。本卦体囚之篇误引 2 处：13/1/卯 引「而体卦气衰是不吉之占」，改引「凡体卦宜乘旺，克体之卦宜衰」；13/6/申 引「体衰而有生体之卦，则衰稍解」，改引「生体之卦气亦宜旺」，巽木死、生扶极有限。第 9 栏 1 行（#27）同改，专业说明同步。逐句手改，整段读回；结论、取期未动。"
   }
  ],
  "batchReadback": [
