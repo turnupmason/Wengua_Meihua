@@ -1,0 +1,118 @@
+{
+  "primaryId": 10,
+  "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
+  "editor": "Codex",
+  "wholeArticlesRead": 12,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "天泽履已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02履.txt",
+      "scope": "第32–35行，初九爻辞、王注、象辞与孔疏。经文「独行原也」与孔疏「独行愿」对读。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02履"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798、804行，求名、时令、制克及首中尾的实气。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第43–45行首尾可守与中段弱克的条件，第134–139行旁生旁克只取一层。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "素履往，无咎。",
+      "image": "素履之往，独行原也。",
+      "reading": "王弼、孔颖达以处履之始、质素而行、物无犯释无咎。象经作原，孔疏作愿，均如源记录。卷面能写实处有分，不把没写出的根据算入。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-010-line-1-weights-and-timing"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月逐篇读回题名、简断、正文、专业判断和应期。核天水讼的体用及体互巽生离、末用坎制离一层相抵，并看天泽履初九的经、注、疏、象。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "findings": [
+    {
+      "id": "exam-010-line-1-fire-cancel-and-ending-drain",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "10/1/寅",
+        "10/1/卯",
+        "10/1/辰",
+        "10/1/巳",
+        "10/1/午",
+        "10/1/未",
+        "10/1/申",
+        "10/1/酉",
+        "10/1/戌",
+        "10/1/亥",
+        "10/1/子",
+        "10/1/丑"
+      ],
+      "finding": "乾体与兑本用比和，体互巽受乾克，用互离克乾，变用坎受乾生。离火既被体互巽生，又被变用坎克，一层规则相抵，春相夏旺秋囚冬死土休均留原气。旧断秋冬只明载坎水弱化用互离，已补巽木生离及相抵，保留中段轻与末泄的区别。末用为泄，不能套用本变同向而只有中段一处弱克的例外。"
+    },
+    {
+      "id": "exam-010-line-1-weights-and-timing",
+      "status": "open-priority",
+      "keys": [
+        "10/1/寅",
+        "10/1/卯",
+        "10/1/辰",
+        "10/1/巳",
+        "10/1/午",
+        "10/1/未",
+        "10/1/申",
+        "10/1/酉",
+        "10/1/戌",
+        "10/1/亥",
+        "10/1/子",
+        "10/1/丑"
+      ],
+      "finding": "春夏 control/use_mutual 以离火巳午参中段，秋冬土 drain/changed_use 以坎水亥子参尾耗。弱离与末泄是否足以压过秋旺或土相乾、以古例论巽得体克后仍能生离的边界，保留原案待独立复核。"
+    }
+  ],
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
+  },
+  "reviewedAt": "2026-11-20T18:40:42.011Z",
+  "sourceSha256": "d8905fe0fad7e2a651eea2ff3ba7770ecadc43f590dd9a0784bb6edb92d07916",
+  "checks": {
+    "scope": "天泽履已写12篇，核对作者源与阅读页",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      505,
+      540
+    ]
+  }
+}

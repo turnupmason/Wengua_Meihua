@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-648-20261120",
+  "batch": "exam-monthly-preview-660-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 648,
+  "uploadedArticles": 660,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    9
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3960,
-  "authorWholeArticleReadback": 648,
+  "remainingArticles": 3948,
+  "authorWholeArticleReadback": 660,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -158,7 +156,8 @@
     "independentChartMismatches": 0,
     "dateCases": 1296,
     "judgmentCorrectionArticles": 104,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜九卦。天泽履已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 56,
@@ -170,10 +169,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 10,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 10,
+      "name": "天泽履",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-010.json",
+      "sourceSha256": "d8905fe0fad7e2a651eea2ff3ba7770ecadc43f590dd9a0784bb6edb92d07916",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-010.json",
+      "readingPath": "docs/exam/monthly-preview/hex-010.md"
+    }
+  ]
 }
