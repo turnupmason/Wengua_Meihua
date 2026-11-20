@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-132-20261120",
+  "batch": "exam-monthly-preview-144-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 132,
+  "uploadedArticles": 144,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    2
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4476,
-  "authorWholeArticleReadback": 132,
+  "remainingArticles": 4464,
+  "authorWholeArticleReadback": 144,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -26,6 +28,20 @@
         "favourable": 18,
         "difficult": 54
       }
+    },
+    {
+      "primaryId": 2,
+      "name": "坤为地",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-002.json",
+      "sourceSha256": "aa1665286a557780fe5428861217fed4eb284bc2313050e4bc35db959895f81f",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-002.json",
+      "readingPath": "docs/exam/monthly-preview/hex-002.md",
+      "outcomes": {
+        "favourable": 18,
+        "difficult": 54
+      }
     }
   ],
   "checks": {
@@ -34,46 +50,27 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       451,
-      490
+      522
     ],
     "shortHanRange": [
       70,
-      93
+      95
     ],
-    "independentChartComparisons": 1944,
+    "independentChartComparisons": 3888,
     "independentChartMismatches": 0,
-    "dateCases": 144,
+    "dateCases": 288,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "乾为天完整批次检查，坤卦部分批次见逐爻回执"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 3,
-    "corrected-unsupported-scenes": 2,
-    "interpreted-with-limits": 3
+    "open-priority": 8,
+    "corrected-unsupported-scenes": 3,
+    "interpreted-with-limits": 9
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 2,
-      "name": "坤为地",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-002.json",
-      "sourceSha256": "dec8252bd702c409dc6a547208801a7f5f6676a1b7404f8bcccaeef3a1fd333d",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-002.json",
-      "readingPath": "docs/exam/monthly-preview/hex-002.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }

@@ -2,14 +2,14 @@
   "primaryId": 2,
   "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T14:55:24.357Z",
-  "wholeArticlesRead": 60,
-  "sourceSha256": "dec8252bd702c409dc6a547208801a7f5f6676a1b7404f8bcccaeef3a1fd333d",
+  "reviewedAt": "2026-11-20T14:59:46.025Z",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "aa1665286a557780fe5428861217fed4eb284bc2313050e4bc35db959895f81f",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "坤卦已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "坤卦已发表的月份共72篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -43,6 +43,14 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
       "scope": "六五经文与小象、王注及孔疏对黄中、下裳的释义，《文言》黄中通理、发于事业一段。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "上六经、象与王注盛而不已，文言阴疑于阳，孔疏阴盛不肯退避。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "487 行《卦断遗论》西林寺额，诸卦俱比和而剥象见其不利。"
     }
   ],
   "lineReviews": [
@@ -92,6 +100,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "kun-fifth-good-line"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "龙战于野，其血玄黄。",
+      "image": "龙战于野，其道穷也。",
+      "reading": "上坤变艮，山地剥与原体下坤仍比和。上六依王注阴盛不已、小象其道穷，取强进到实际限处。《卦断遗论》西林寺额为本互变俱比和、剥象仍可定不利的书中实例。弱土时旺衰同向，夏相和土旺时仍有前中实利。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "kun-top-image-precedent"
       ]
     }
   ],
@@ -239,6 +257,30 @@
         "2/5/丑"
       ],
       "finding": "巳午用互相坤比和，参作答中途辨明要求。四土月保留原体坤未申看结果可核实。结果文案从通知媒介和证书申领缩回本场考试合格。"
+    },
+    {
+      "id": "kun-top-image-precedent",
+      "status": "open-priority",
+      "keys": [
+        "2/6/辰",
+        "2/6/巳",
+        "2/6/午",
+        "2/6/未",
+        "2/6/戌",
+        "2/6/丑"
+      ],
+      "finding": "夏土相、四土旺，盘中无生无克，同气含有实际优势。按五气源、《断语判断口径 V2》及《卦断遗论》取剥象与上六道穷同向，保留不成。西林寺额与考试所问不同，比和前中得力而剥在事终的类推权重待独立复核。"
+    },
+    {
+      "id": "kun-top-phase",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/6/辰",
+        "2/6/未",
+        "2/6/戌",
+        "2/6/丑"
+      ],
+      "finding": "四土月依体互与原体比和取中段自持。末卦艮与体同气，有别于六四末变震木克体，正文写明剥象的限制而不补造末克。"
     }
   ],
   "batchReadback": [
@@ -341,17 +383,33 @@
       ],
       "scope": "逐篇读回十二月稿，核土克末坎、坤土五气及夏令中途相应与土令结果两个不同取期。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月题名、简断、正文和取期，核实剥之不利、上六之穷极、同气的五种状态与四土月中段事件。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "坤卦已写60篇，核对作者源与阅读页",
-    "chartComparisons": 1620,
+    "scope": "坤卦已写72篇，核对作者源与阅读页",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
-    "bodyHanRange": [
-      467,
-      522
-    ]
+    "dateCases": 144
   },
   "independentReview": {
     "status": "pending",
