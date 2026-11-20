@@ -2,14 +2,14 @@
   "primaryId": 1,
   "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T04:22:26.845Z",
-  "wholeArticlesRead": 24,
-  "sourceSha256": "ee614a34ac0c31a176b13277c666e11bebaea31deaf27f7a5b869dca01596de8",
+  "reviewedAt": "2026-11-20T04:29:03.768Z",
+  "wholeArticlesRead": 36,
+  "sourceSha256": "1a2eeff2af4dee49ad827a6aa1d4eddbf2d66ef63221567b57c998a6ffa1952a",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "初九十二篇已于首批全文读回。本批另写并从落盘作者源读回九二十二个月的题名、简断、全文与应期。"
+    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计36篇。"
   },
   "sourceEvidence": [
     {
@@ -35,6 +35,14 @@
     {
       "path": "sources/editorial/exam/hex-001.json",
       "scope": "九二五气源第9、10栏，比对八月有末段事件、四土月不取期，以及夏旺火与秋囚火的分量。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "九三经文、小象反复道也、《文言》进德修业与知终终之、王注处一卦之尽。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "核九三五气的结论、时序法和事件范围。兑金比和的时段与原体乾的时序各有明确角色。"
     }
   ],
   "lineReviews": [
@@ -57,6 +65,14 @@
       "openFindingIds": [
         "qian-second-timing"
       ]
+    },
+    {
+      "movingLine": 3,
+      "text": "君子终日乾乾，夕惕若，厉无咎。",
+      "image": "终日乾乾，反复道也。",
+      "reading": "处下卦之极而勤惕。春夏冬诸金失时，免过不等于已经合格。秋、土令比和得力、末变兑金仍比和，判能过。无咎须连同行事合宜读，亦不能独自确立通过。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "findings": [
@@ -117,6 +133,19 @@
         "1/2/子"
       ],
       "finding": "去掉原应期中压轴题、漏写、第几问及实际扣分。保留 control / changed_use 与离火巳午日，事件限于作答收束受制，日期是参考窗口。"
+    },
+    {
+      "id": "qian-third-time",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "1/3/辰",
+        "1/3/未",
+        "1/3/申",
+        "1/3/酉",
+        "1/3/戌",
+        "1/3/丑"
+      ],
+      "finding": "六个月均判能过。秋令原体乾时序指合格可确认的候选，四土月申酉日取变兑金，只指核实作答的阶段。保留不同角色、取法与事件，没有把两种吉应都写成放榜。"
     }
   ],
   "batchReadback": [
@@ -159,13 +188,33 @@
       ],
       "scope": "核对十二篇合格判断、五气强弱、九二经象、变离相克、末段事件八键与无期四键。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "核对六篇成、六篇不成。申酉参原体乾时序看合格可确认，四土月取末变兑金看作答核实，春夏冬不另定日。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "初九、九二，共二十四篇。按逐爻草稿模式比对排盘、取期和阅读页。",
-    "chartComparisons": 648,
+    "scope": "初九至九三。逐爻核对排盘、日期与阅读页。",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48
+    "dateCases": 72
   },
   "independentReview": {
     "status": "pending",
