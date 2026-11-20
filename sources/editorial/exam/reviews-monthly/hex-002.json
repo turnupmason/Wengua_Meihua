@@ -2,14 +2,14 @@
   "primaryId": 2,
   "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T14:45:35.574Z",
-  "wholeArticlesRead": 36,
-  "sourceSha256": "a949465974b6f9ab27226379df3e27cfbe86f70545cb98a3e7af093110a83401",
+  "reviewedAt": "2026-11-20T14:50:29.458Z",
+  "wholeArticlesRead": 48,
+  "sourceSha256": "c7d50adf4dd488213094b99fda5a17c3e90267027003f025e8ec478415af4b0d",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "坤卦初六至六三，逐爻写作、分月核定并从最终作者源读回标题、简断、完整正文与取期。"
+    "currentReadback": "坤初六至六四，逐爻分月写作并逐篇读回标题、简断、完整正文、主断依据与取期。"
   },
   "sourceEvidence": [
     {
@@ -35,6 +35,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
       "scope": "六三经象、王注不为事主、孔颖达疏奉行其终、《文言》地道无成而代有终。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "六四经、《象》慎不害、王弼注括结否闭、孔颖达疏谨慎不与物竞及文言天地闭、盖言谨也。"
     }
   ],
   "lineReviews": [
@@ -65,6 +69,16 @@
       "reading": "上坤仍为体，下坤三爻动变艮。坤艮都是土，本互变前后比和。月令决定同类是否有力。含章取已有所学而应题发用，无成有终取从事而不居功、把所承之事做完，与合格有所对应。",
       "status": "author-readback-complete",
       "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "括囊，无咎无誉。",
+      "image": "括囊无咎，慎不害也。",
+      "reading": "上坤动而成震，原体下坤，与初六的体用位置有别。前中同土，末变震克体。六四宜谨以免失，无誉限制免咎的作用。所取的分寸是不给无据判断，也要把所问的理由照实答足。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "kun-fourth-earth-role"
+      ]
     }
   ],
   "findings": [
@@ -155,6 +169,36 @@
         "2/3/丑"
       ],
       "finding": "六个有期月均断成。巳午仍用原体坤未申时序看结果确认；四土月仍用艮土比和看作答收束，依五气源分别保留其事件范围。"
+    },
+    {
+      "id": "kun-fourth-earth-role",
+      "status": "open-priority",
+      "keys": [
+        "2/4/辰",
+        "2/4/未",
+        "2/4/戌",
+        "2/4/丑"
+      ],
+      "finding": "四土月本用旺坤比和下坤原体，按五气源参开局；初六对应土令用体互看事中，事件阶段不能互换。变震囚而克旺坤，原判不成仍保留。土令轻克权重及两个取期阶段的选择有待独立复核。"
+    },
+    {
+      "id": "kun-fourth-caution",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "2/4/寅",
+        "2/4/卯",
+        "2/4/辰",
+        "2/4/巳",
+        "2/4/午",
+        "2/4/未",
+        "2/4/申",
+        "2/4/酉",
+        "2/4/戌",
+        "2/4/亥",
+        "2/4/子",
+        "2/4/丑"
+      ],
+      "finding": "无咎取慎能避害，无誉表明谨慎不能直接替代所问之功。原取期中写成题序、空答、题末追问的内容，收束到可以核对的关键判断与答复范围。"
     }
   ],
   "batchReadback": [
@@ -217,13 +261,33 @@
       ],
       "scope": "读回六成六不成的十二份稿件，核有终释义、同土比和与夏土两套事件角色。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回十二份全文，核原体下坤、末变上震、五气旺衰、括囊爻意和取期角色。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "坤初六至六三，逐爻核对作者源与阅读页",
-    "chartComparisons": 972,
+    "scope": "坤初六至六四，逐爻核对作者源与阅读页",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       467,
       522
