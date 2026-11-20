@@ -2,14 +2,14 @@
   "primaryId": 1,
   "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T04:30:17.453Z",
-  "wholeArticlesRead": 36,
-  "sourceSha256": "5e1b2ad46f7c5fe5e57f6175114f58efa88d26e548a8d579358a8617f2a0c048",
+  "reviewedAt": "2026-11-20T04:35:36.329Z",
+  "wholeArticlesRead": 48,
+  "sourceSha256": "c335dc41943d0f2a5f1e8af4f205730467beb97fe3f7778a8f8d077faa99da84",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计36篇。"
+    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计48篇。"
   },
   "sourceEvidence": [
     {
@@ -43,6 +43,14 @@
     {
       "path": "sources/editorial/exam/hex-001.json",
       "scope": "核九三五气的结论、时序法和事件范围。兑金比和的时段与原体乾的时序各有明确角色。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "九四经、象、王注居上体之下、文言「自试也」「欲及时也」「或之者，疑之也」。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "九四五气源专业说明、无期与 name-body/body、equal/use 两类有期行。"
     }
   ],
   "lineReviews": [
@@ -71,6 +79,14 @@
       "text": "君子终日乾乾，夕惕若，厉无咎。",
       "image": "终日乾乾，反复道也。",
       "reading": "处下卦之极而勤惕。春夏冬诸金失时，免过不等于已经合格。秋、土令比和得力、末变兑金仍比和，判能过。无咎须连同行事合宜读，亦不能独自确立通过。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "或跃在渊，无咎。",
+      "image": "或跃在渊，进无咎也。",
+      "reading": "九四已入上卦，下乾为不变之体。依小象许其合时而进，参《文言》自试、欲及时、或之者疑之，辨可以试与能成其事。九四的渊与跃不对应具体题序、困局或考生性格。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -146,6 +162,17 @@
         "1/3/丑"
       ],
       "finding": "六个月均判能过。秋令原体乾时序指合格可确认的候选，四土月申酉日取变兑金，只指核实作答的阶段。保留不同角色、取法与事件，没有把两种吉应都写成放榜。"
+    },
+    {
+      "id": "qian-fourth-role",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "1/4/辰",
+        "1/4/未",
+        "1/4/戌",
+        "1/4/丑"
+      ],
+      "finding": "同取申酉日，九三四土月取末变兑金应收束，九四四土月取本用乾金应开局。九四虽有体克上巽，不能把该时段写成变用事件或公布成绩。"
     }
   ],
   "batchReadback": [
@@ -208,13 +235,33 @@
       ],
       "scope": "核对六篇成、六篇不成。申酉参原体乾时序看合格可确认，四土月取末变兑金看作答核实，春夏冬不另定日。按新增首句重复检查单独改写卯、午、亥三篇开头，再次读回三篇全文。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月六成六不成。比对下乾体、变上巽和五气强弱，审清土令开局比和与秋令合格确认的不同所指。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "初九至九三。逐爻核对排盘、日期与阅读页。",
-    "chartComparisons": 972,
+    "scope": "初九至九四。逐爻核对排盘、日期与阅读页。",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72
+    "dateCases": 96
   },
   "independentReview": {
     "status": "pending",
