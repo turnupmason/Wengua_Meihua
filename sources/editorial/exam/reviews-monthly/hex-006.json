@@ -2,12 +2,12 @@
   "primaryId": 6,
   "baselineCommit": "a66230e71c2ce02b3dfebc7e99f0b360c659a765",
   "editor": "Codex",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "天水讼已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "天水讼已发表的月份共72篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -54,6 +54,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、798行，求名、时令、他卦制生体之卦、衰而得生、占卦诀与互变。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02訟.txt",
+      "scope": "第54至57行，上九经、象、王注及孔疏，鞶带、受服与褫脱。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02訟"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行，求名、时令、他卦制生体、衰而有生、占卦诀及末生。"
     }
   ],
   "findings": [
@@ -221,6 +230,34 @@
         "6/5/丑"
       ],
       "finding": "源专业成字逐篇明确为能过，结论、取期及出处沿用源断并存档原新文字。"
+    },
+    {
+      "id": "song-top-summer-weak-support",
+      "status": "open-priority",
+      "keys": [
+        "6/6/巳",
+        "6/6/午"
+      ],
+      "finding": "乾兑死而离旺，囚坎前后得生都微，源案仍从无克体、变用生体取能过。占卦诀和变卦明文能证成向，未给弱生与旺体互由体去克相遇的定量尺度。"
+    },
+    {
+      "id": "song-top-comparison-and-evidence",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "6/6/寅",
+        "6/6/卯",
+        "6/6/辰",
+        "6/6/巳",
+        "6/6/午",
+        "6/6/未",
+        "6/6/申",
+        "6/6/酉",
+        "6/6/戌",
+        "6/6/亥",
+        "6/6/子",
+        "6/6/丑"
+      ],
+      "finding": "讼胜受服难保，用在答法与检查；末问若有同条件关系可回验，前题仍须写自身证据。专业成字按考试细化为能过，保存改前、改后和出处。"
     }
   ],
   "lineReviews": [
@@ -273,6 +310,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "song-fifth-summer-burden"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "或锡之鞶带，终朝三褫之。",
+      "image": "以讼受服，亦不足敬也。",
+      "reading": "正义鞶为大带，褫是夺其所获。王注、孔疏均以讼胜取荣而不保解之。考试取作答根据应写实、收卷改答须有实证；能过取初乾生下坎与变兑生体、无克体合看。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "song-top-summer-weak-support"
       ]
     }
   ],
@@ -376,6 +423,26 @@
       ],
       "scope": "十二篇逐篇读回，核春夏寅卯为中段耗、四土申酉为早段生助、秋冬申酉参传统求名成期，以及各月能过的实证和篇幅。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回上九十二月，夏两月取用互巽木的寅卯作中段耗，余十月取变用兑金的申酉参末助，各月验成向、实际举例与出处。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -384,13 +451,13 @@
     "scope": "旺体同气能够承受轻克时的结果权重，以及初耗、中克和末应同气的关系。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T17:02:14.995Z",
-  "sourceSha256": "ea49bf5074fb79760f1e66d69dd976343ad637575f119e00f4251e32efb0fc70",
+  "reviewedAt": "2026-11-20T17:06:59.944Z",
+  "sourceSha256": "4344f8fec9ae8b26441cb128efd32eadf27a935dd2dcaad23d55979c7dbe77fa",
   "checks": {
-    "scope": "天水讼已写60篇，核对作者源与阅读页",
-    "chartComparisons": 1620,
+    "scope": "天水讼已写72篇，核对作者源与阅读页",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       495,
       532

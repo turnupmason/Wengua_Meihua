@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-420-20261120",
+  "batch": "exam-monthly-preview-432-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 420,
+  "uploadedArticles": 432,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    6
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4188,
-  "authorWholeArticleReadback": 420,
+  "remainingArticles": 4176,
+  "authorWholeArticleReadback": 432,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -82,6 +84,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 6,
+      "name": "天水讼",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-006.json",
+      "sourceSha256": "4344f8fec9ae8b26441cb128efd32eadf27a935dd2dcaad23d55979c7dbe77fa",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-006.json",
+      "readingPath": "docs/exam/monthly-preview/hex-006.md",
+      "outcomes": {
+        "favourable": 34,
+        "difficult": 38
+      }
     }
   ],
   "checks": {
@@ -96,45 +112,26 @@
       70,
       95
     ],
-    "independentChartComparisons": 9720,
+    "independentChartComparisons": 11664,
     "independentChartMismatches": 0,
-    "dateCases": 720,
-    "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需五卦。天水讼已发布篇目的检查见其核读记录。"
+    "dateCases": 864,
+    "judgmentCorrectionArticles": 48,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 30,
+    "open-priority": 37,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 15
+    "interpreted-with-limits": 21
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 5,
-    "movingLine": 6,
+    "primaryId": 7,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 5,
-      "name": "天水讼",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-006.json",
-      "sourceSha256": "ea49bf5074fb79760f1e66d69dd976343ad637575f119e00f4251e32efb0fc70",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-006.json",
-      "readingPath": "docs/exam/monthly-preview/hex-006.md"
-    }
-  ]
+  }
 }
