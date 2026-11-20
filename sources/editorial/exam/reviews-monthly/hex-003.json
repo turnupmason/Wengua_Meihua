@@ -2,14 +2,14 @@
   "primaryId": 3,
   "baselineCommit": "628066b4b87f84e11b72410c7918a63e6a4bb9e7",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T15:22:41.966Z",
-  "wholeArticlesRead": 24,
-  "sourceSha256": "0ccbd348aa6c771e9a1ad738ce8e07d41f39dd30b47ba78aa3b8f4f286ad84fc",
+  "reviewedAt": "2026-11-20T15:27:31.320Z",
+  "wholeArticlesRead": 36,
+  "sourceSha256": "7bf8f3d224c01e098d0b6fe4af064bcb2319e9d9a136672804cdaf11b7423555",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水雷屯已发表的月份共24篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水雷屯已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,14 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第682、688、792、798、804行，减克、衰体得生、变卦晚生与体旺承克。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01屯.txt",
+      "scope": "六三经象、王注无虞从禽与孔疏虞官商度形势。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-003.json",
+      "scope": "五气结论、来克得生及取期角色。春冬取震耗，夏土取体互艮，秋取用互坤。"
     }
   ],
   "lineReviews": [
@@ -49,6 +57,14 @@
       "openFindingIds": [
         "zhun-second-summer-support"
       ]
+    },
+    {
+      "movingLine": 3,
+      "text": "即鹿无虞，惟入于林中。君子几，不如舍，往吝。",
+      "image": "即鹿无虞，以从禽也。君子舍之，往吝穷也。",
+      "reading": "六三下震变离，末为水火既济。原体坎水克变离，仍要看能否制用。中间艮、坤来克，夏旺离、土月休离依原稿另取生土一层。六三用虞官辨势的古意，落实为辨明适用条件并知舍，不落具体题型或人物。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "findings": [
@@ -111,6 +127,19 @@
         "3/2/丑"
       ],
       "finding": "春土取变兑生体只指末段得助，秋冬同取变兑而应合格可核实。巳午取用互坤为中段阻碍。各处保持五气源角色，古辞十年不移入公历。"
+    },
+    {
+      "id": "zhun-third-fire-earth",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/3/辰",
+        "3/3/巳",
+        "3/3/午",
+        "3/3/未",
+        "3/3/戌",
+        "3/3/丑"
+      ],
+      "finding": "末变离火受原体水克，同时按原稿取火生土一层。夏坎囚对旺离难制，四土月坎失令而土旺，离休仍有生土关系。用期仍取中段体互艮，不以变卦名既济作吉，也不将土得生写成坎体得生。"
     }
   ],
   "batchReadback": [
@@ -153,16 +182,36 @@
       ],
       "scope": "逐月核前耗、土克、木制缓解、末兑生扶及各期事件。读回十二份题名、简断、全文、取期。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回十二月全文与取期。核春冬开局耗、秋用互轻克、夏土体互受制和离火间接一层。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "水雷屯已写24篇，核对作者源与阅读页",
-    "chartComparisons": 648,
+    "scope": "水雷屯已写36篇，核对作者源与阅读页",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       477,
-      521
+      525
     ]
   },
   "independentReview": {
