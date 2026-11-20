@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-432-20261120",
+  "batch": "exam-monthly-preview-444-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 432,
+  "uploadedArticles": 444,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    6
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 4176,
-  "authorWholeArticleReadback": 432,
+  "remainingArticles": 4164,
+  "authorWholeArticleReadback": 444,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -116,7 +114,8 @@
     "independentChartMismatches": 0,
     "dateCases": 864,
     "judgmentCorrectionArticles": 48,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼六卦。地水师已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 37,
@@ -128,10 +127,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 7,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 7,
+      "name": "地水师",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-007.json",
+      "sourceSha256": "50ec5d8268283e2d687811632259b6262cbf3490f1cadd3f71967c2ec5e97b1c",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-007.json",
+      "readingPath": "docs/exam/monthly-preview/hex-007.md"
+    }
+  ]
 }

@@ -1,0 +1,98 @@
+{
+  "primaryId": 7,
+  "baselineCommit": "50d16bd72a16efaa29b8fefa1f63bca5375bbca0",
+  "editor": "Codex",
+  "wholeArticlesRead": 12,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "地水师已发表的月份共12篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02師.txt",
+      "scope": "第30至33行，师初六经、象、王注与孔疏。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02師"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、804行，求名、时令、生克、体衰遇克及占卦诀。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "师出以律，否臧凶。",
+      "image": "师出以律，失律凶也。",
+      "reading": "《正义》训律为法、否为败、臧为有功，重在即使见功，失律亦凶；孔疏另区别因事制宜和故违已有规范。考试取卷面明确的作答方法、步骤、书写范围与材料后文的规定，结合互变分五气核读。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "shi-first-mutual-cross-stage"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "按寅至丑逐篇读回正文、专业说明和应期。春夏冬取用互震的寅卯参制，秋取变兑的申酉参末耗，四土保留不另取日。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "findings": [
+    {
+      "id": "shi-first-mutual-cross-stage",
+      "status": "open-priority",
+      "keys": [
+        "7/1/寅",
+        "7/1/卯",
+        "7/1/亥",
+        "7/1/子"
+      ],
+      "finding": "原断另参坎生震，春月兼取末兑克震；《体用》有他卦解克之说，但休坎生与囚兑克相抵、仍按旺震的尺度没有固定量值。"
+    },
+    {
+      "id": "shi-first-earth-no-date",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "7/1/辰",
+        "7/1/未",
+        "7/1/戌",
+        "7/1/丑"
+      ],
+      "finding": "四土原应期为文字说明，不立日期，所指是作答位置与篇幅。虽同时出现相兑末泄，文稿沿用原应期形态，没有硬取申酉日期。体旺、比和与轻克末泄共同见时，以末泄压合格的边界留待横查。"
+    }
+  ],
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
+  },
+  "reviewedAt": "2026-11-20T17:12:25.522Z",
+  "sourceSha256": "50ec5d8268283e2d687811632259b6262cbf3490f1cadd3f71967c2ec5e97b1c",
+  "checks": {
+    "scope": "地水师已写12篇，核对作者源与阅读页",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      493,
+      533
+    ]
+  }
+}
