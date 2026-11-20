@@ -1,6 +1,6 @@
-# 确定关系逐月长稿：1872 篇预览
+# 确定关系逐月长稿：1944 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增山地剥、地雷复，共 144 篇；累计 1872 篇。完整目标为 4,608 篇，尚余 2736 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-19（America/New_York）。本批新增火泽睽，共 72 篇；累计 1944 篇。完整目标为 4,608 篇，尚余 2664 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -30,6 +30,7 @@
 | 地雷复 | 72 | [打开全文](hex-024.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-024.json) |
 | 山雷颐 | 72 | [打开全文](hex-027.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-027.json) |
 | 泽风大过 | 72 | [打开全文](hex-028.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-028.json) |
+| 火泽睽 | 72 | [打开全文](hex-038.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-038.json) |
 
 
 
@@ -37,15 +38,13 @@
 
 ## 本批阅读入口
 
-- [山地剥：六爻十二月全文](hex-023.md)
-
-- [地雷复：六爻十二月全文](hex-024.md)
+- [火泽睽：六爻十二月全文](hex-038.md)
 
 
 
 ## 检查与阅读状态
 
-1872 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 50,544 项，差异 0；日期用例 3,744 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
+1944 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 52,488 项，差异 0；日期用例 3,888 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/RELATIONSHIP_ESTABLISHMENT_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
