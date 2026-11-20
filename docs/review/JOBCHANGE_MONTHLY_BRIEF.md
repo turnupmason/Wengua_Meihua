@@ -62,3 +62,13 @@ node scripts/build-monthly.mjs job-change --hex N
 style-monthly 须 passed，且正文以月份开头 ≤ 7 篇、「宜」每千句 100–180；consolation-scan 须 0（只是日常安排的句子写进 `sources/editorial/job-change/consolation-allow/v<卦序>.json`，篇键＋原句全文＋理由）。等书面条件、交接一类实事再提辞职，是先准备的判词本身，扫描已放过。
 
 回执照通用说明第四节，`lineReviews.reading` 写跳槽读法（凶吉落在去、留还是自身做法上）；每爻写完都要把 12 篇的标题、简断、正文完整输出读一遍才能登记已读。
+
+## 七、定稿关口（2026-11-20 冻结，之后不再中途加规则）
+
+用户问「为什么不能一步到位，改来改去查来查去」。原因在协调者：关口是边验收边补的，每补一条就让写手返工一轮。现把全部要求合成一条命令，**以此为准，不再追加**：
+
+```bash
+bash scripts/review/monthly-gate.sh job-change <卦序>
+```
+
+它依次跑：结构与查重（check-monthly）、口吻厚度套话（style-monthly，含规则名目、套话上限、正文中位≥500）、安慰许诺（consolation-scan）、篇内重复（intra-repeat 8 字，须 0：补厚时不许把前文换个说法再讲一遍，用户面试稿 4,608 篇只有 3 篇）、高频短语（phrase-scan 18 篇，除「这份新工作」一类必要指称外须无）、引文（commentary-audit）。最后一行须为 `GATE PASSED`。写手每爻写完先跑一遍，全卦交稿前必须 GATE PASSED；协调者验收照跑同一条命令，再抽读。
