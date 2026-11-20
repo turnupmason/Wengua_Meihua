@@ -2,9 +2,9 @@
  "primaryId": 63,
  "baselineCommit": "56bc28d5c0dd6f6d75ce68909b0f91290a9e854e",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T05:02:46.723Z",
+ "reviewedAt": "2026-11-20T17:52:19.637Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "a234851bda492b4ac5ca2bc3d00cd533991f3e714cc36493708d0e006545652b",
+ "sourceSha256": "6077877b99ad959e6d7e140fc28293866a588857da487e942cbe95492a37bda8",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -235,6 +235,14 @@
     "63/6/丑"
    ],
    "finding": "简断不足 75 汉字，协调者逐条补足到 75 以上（补的是本篇已有的盘面依据与分寸，不新加引文；63/4/未 补全六四爻辞原句「繻有衣袽，终日戒」），各条已逐条读回。2026-11-20。"
+  },
+  {
+   "id": "T063-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "63/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [

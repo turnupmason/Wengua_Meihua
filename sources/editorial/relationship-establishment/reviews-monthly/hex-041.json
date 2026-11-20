@@ -2,9 +2,9 @@
  "primaryId": 41,
  "baselineCommit": "9570efaf0c3cef6820e53fd87b377989747cbce5",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T03:59:55.529Z",
+ "reviewedAt": "2026-11-20T17:52:19.592Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "2b97e091a44b5217520800149e36a10fb3481995ae8c546fdf1b57392a0ea0c1",
+ "sourceSha256": "4d47c4e104fcfd406a0ff623d8575556acac0adfdffc03346ba3ae9353a6f74f",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -215,6 +215,14 @@
     "41/*/*"
    ],
    "finding": "按用户亲写面试稿口吻（docs/review/VOICE_REWRITE_BRIEF.md、MONTHLY_VOICE_GUIDE.md，样稿 hex-018、hex-005）重写山泽损标题、简断、正文 72 篇，结论 outcome、专业说明 judgment、取期 timing 与古籍引文一字未动（逐篇比对为同）；依据（体用、各卦旺衰与生克轻重、一层间接作用、爻辞小象与王注孔疏程传本义原句、变卦卦辞、卦象与相处分寸）全数保留并重新组织，删去口头禅、重复、安慰许诺与替人设想的情节（约人数、车票行程、群聊、绕路来见等），只留看得见的相处事。改前→改后口吻指标：正文首句以月份开头 66/72（92%）→0、简断以月份开头 66/72（92%）→0；平均句长 26.0→32.0 汉字；十字以内短句 5.0%→0；「宜」每千句 19→115；简断平均 69→79 汉字；「就好／就够了」36→0、「这个月」94→0；同一开头最多 7 篇。字数：正文汉字 480–583（合计 35,733）→483–607（合计 36,468），72 篇逐篇不少于改前，无变薄；简断 62–76→75–91 汉字。每句人工写定，未用脚本批量断句或合句；开头措辞（判词）另逐篇改写以免雷同。"
+  },
+  {
+   "id": "T041-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "41/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [

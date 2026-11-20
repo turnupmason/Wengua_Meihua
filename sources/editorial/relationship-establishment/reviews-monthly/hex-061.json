@@ -2,9 +2,9 @@
  "primaryId": 61,
  "baselineCommit": "7287c6ea735f0d8673d23394290de810986a8419",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T04:54:23.690Z",
+ "reviewedAt": "2026-11-20T17:55:02.058Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "4f222ab065ca942776c0d384752c597d0a3ebcb0f098ad1e398c9c764509be35",
+ "sourceSha256": "5b9772c4ebb6b56670ab6423ecd6feab3a74823caf2162323be58cde57fef801",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -215,6 +215,14 @@
     "judgmentChanged": false,
     "articles": 72
    }
+  },
+  {
+   "id": "T061-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "61/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。 另：2026-11-20 协调者：梅花各诀篇名按原书各节标题订正（scripts/review/meihua-attr-audit.cjs --fix）：494 行诸句（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「用吉变凶者，先吉后凶」「体生用，有耗失之患」等）在【体用总诀】，「克体之卦气盛」在【观梅占】，此前误标《体用》；只改篇名，引文与其余文字不动。"
   }
  ],
  "batchReadback": [

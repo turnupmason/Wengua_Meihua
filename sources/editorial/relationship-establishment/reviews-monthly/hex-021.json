@@ -1,13 +1,13 @@
 {
  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T03:04:49.152Z",
+ "reviewedAt": "2026-11-20T17:52:19.550Z",
  "wholeArticlesRead": 72,
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
  "primaryId": 21,
- "sourceSha256": "ad477c50e8ca2eb924f9d1bc2c34a6ed4545208dc16d8f47fa44770af347c975",
+ "sourceSha256": "9d6a5be7039a632e111f1edb12ffb6fae82864222c31b42831d34bd9ad1d2ea0",
  "authorshipScope": {
   "newlyWritten": "火雷噬嗑六爻×十二月共72篇，逐篇直接撰写标题、简断与五段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气新写（同气月份相同），改引《婚姻占》原句并写明定为能成或不成；取期照抄五气源第10栏种类与位置，事件、提示、依据与无期说明按相处场面重写。",
   "currentReadback": "每写完一爻12篇即跑 check-monthly --draft，并把标题、简断、全部自然段与取期完整输出读回；六批共72篇实读。读回后为补足厚度（多篇加《体用》《占卦诀》、蹇彖、震卦、《本义》之语）、改正称谓（酉月「他」改「对方」，1/酉）、订正引文出处（5/酉「物亦不服」由孔疏改归王注）、删去无据断语（6/戌「积得最久」）、避开他项用语（1/丑「空档」）所作的局部修改，另行输出核对。",
@@ -240,6 +240,14 @@
     "judgmentChanged": false,
     "articles": 72
    }
+  },
+  {
+   "id": "T021-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "21/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [

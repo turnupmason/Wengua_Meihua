@@ -2,9 +2,9 @@
  "primaryId": 14,
  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T03:14:43.832Z",
+ "reviewedAt": "2026-11-20T17:52:19.537Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "5b4f6cf1b69faebcb72d873e7eb456075820e1ec065e18dd3da8a0fb730d133d",
+ "sourceSha256": "4f37a1b1930c11a5eefac256d2610e6a5fbc04ae810045dcfb918917e5402c49",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -270,6 +270,14 @@
     "14/*/*"
    ],
    "finding": "按用户亲写面试稿口吻重写标题、简断、正文 72 篇，结论、专业说明、取期与引文不动（judgment 与 timing 逐字未改；正文原有「」引文逐条保留，仅把与正文相近的旧情节、安慰与许诺句、口头禅删去或改写）；改前→改后口吻指标：正文以月开头 92%→0%、简断以月开头 92%→0%、平均句长 25.3→32.1 汉字、十字以内短句 7.1%→0.5%、「就好／就够了」9→0、「这个月」84→0、「宜」每千句 15→137、简断均 73→81 汉字；首句与简断首句均明说结论，72 篇开头不以月份起头且各不相同，标题 72 个全库不重复；字数：正文改前 451–560、改后 472–603 汉字（全卦合计 33726→35460），72 篇逐篇不少于改前，无变薄的篇。"
+  },
+  {
+   "id": "T014-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "14/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [

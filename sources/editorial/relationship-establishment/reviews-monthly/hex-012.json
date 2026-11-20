@@ -2,9 +2,9 @@
  "primaryId": 12,
  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T15:47:15.667Z",
+ "reviewedAt": "2026-11-20T17:52:19.533Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "3cd7a47c0ec783d63784c062869a027f8f290978af5ca45b0c8e3d653f74a4b2",
+ "sourceSha256": "71e138aad2287d8a3d2d29b0f05a98db3cb764c69b8630fd1b4d67100e525566",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -240,6 +240,14 @@
     "12/3/子"
    ],
    "finding": "2026-11-20 协调者复查：正文写了专业说明用语「定为能成／定为不成」（及「拆为难成」），属写给审稿看的话，逐句改为白话判词，结论、专业说明、取期不动；改动句所在段落已读回。"
+  },
+  {
+   "id": "T012-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "12/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [

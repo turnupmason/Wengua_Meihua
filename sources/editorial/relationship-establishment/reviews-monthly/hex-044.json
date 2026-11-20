@@ -2,9 +2,9 @@
  "primaryId": 44,
  "baselineCommit": "a5659cada856c2000660f9cb5694bb0dae770db5",
  "editor": "claude-opus-5-5",
- "reviewedAt": "2026-11-20T05:00:21.566Z",
+ "reviewedAt": "2026-11-20T17:52:19.599Z",
  "wholeArticlesRead": 72,
- "sourceSha256": "a3025ca1ae39bcdd451f283fe7e1147b1345d3274b6da6c1bd4e3b933f1c416b",
+ "sourceSha256": "0c8e18942f2f886596104e5b4cd1e6223cd765f612f0d94fd424cf182accd3c7",
  "reviewerIsHuman": false,
  "userIndividuallyAccepted": false,
  "status": "partially-reviewed",
@@ -311,6 +311,14 @@
     "44/6/丑"
    ],
    "finding": "2026-11-20 用户嫌简断开头雷同：改前简断前 8 字同头最多 34 篇（「这一回关系定不下来」）。逐篇读该篇简断与正文首段，人工改写 20 条简断的首句，错开简断开头 20 条：判词换着说（「这次难成」「两人这一回还走不到确定关系」「名分这一回还定不下来」「照这一盘，关系还定不下来」等），判词后半紧扣本篇盘面要害，各篇不同；简断首句以后的内容一字未动，标题、正文、outcome、judgment、timing 未动。改后同头最多 15 篇；改过的 20 条简断逐条整句输出读回，核对 75–120 汉字、不以月份起头、不与正文首句及简断后文重复、判词能被确定关系判词正则认出、无安慰许诺与写给作者的话。check-monthly、style-monthly、consolation-scan（0）均通过。"
+  },
+  {
+   "id": "T044-L01",
+   "status": "corrected-classical-application",
+   "keys": [
+    "44/*/*"
+   ],
+   "finding": "2026-11-20 协调者：原书 494 行（「体党多而体势盛」「用党多则体势衰」「体生用，为之泄气」「体宜受用卦之生」等）在【体用总诀】，库目 mh-061 亦作「体用总诀」，此前误标《体用》；以 scripts/review/fix-tiyong-label.cjs 只改篇名为《体用总诀》，引文与其余文字不动（682 行【体用】「彼灭其吉」「稍解其穷」照旧）。"
   }
  ],
  "batchReadback": [
