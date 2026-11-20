@@ -2,12 +2,12 @@
   "primaryId": 10,
   "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
   "editor": "Codex",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "天泽履已发表的月份共60篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "天泽履已发表的月份共72篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -74,6 +74,24 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第144行《观梅占》，第655、682、688、792、796–798、804行时令、旁生、旺衰、全局生克与走势"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02履.txt",
+      "scope": "第52–55行上九经注疏和《象》",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02履"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "第114行《本义》以视履之终、周旋无亏释上九。",
+      "url": "https://zh.wikisource.org/zh-hant/周易本義_(四庫全書本)/卷1"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第43–45行中途弱克特例及第134–139行一层旁参"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第144、655、682、688、792、798、804行观梅、月令、间接生克、旺衰、全局与末比和"
     }
   ],
   "lineReviews": [
@@ -125,6 +143,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "exam-010-line-5-two-fire-stages"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "视履考祥，其旋元吉。",
+      "image": "元吉，在上大有庆也。",
+      "reading": "王孔于履之极回视所履而考得失，释旋为旋反。朱熹以周旋无亏为元吉，祸福视其实履，卷面借作末后回看、已改所得，各季仍依中段欠处断全卷。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "exam-010-line-6-metal-controls-wood"
       ]
     }
   ],
@@ -227,6 +255,26 @@
         "丑"
       ],
       "scope": "逐篇核题、短断、四段、专业断和应期，核五气源断、火泽睽的变用两重克和每月所失。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇核题名、简断、四段完整正文、专业断、应期，区分卷中体互克体和卷末兑与原体比和。",
       "status": "author-readback-complete"
     }
   ],
@@ -420,6 +468,44 @@
         "10/5/丑"
       ],
       "finding": "十二支月仅以变用离的巳、午参末后一阻，体互离说明中阻与已有时间损失。早先有所决借夬履，危处按五气各自落在末段未改、漏项或未核，前卷所得依原断照留，合计均不过。"
+    },
+    {
+      "id": "exam-010-line-6-metal-controls-wood",
+      "status": "open-priority",
+      "keys": [
+        "10/6/寅",
+        "10/6/卯",
+        "10/6/辰",
+        "10/6/巳",
+        "10/6/午",
+        "10/6/未",
+        "10/6/申",
+        "10/6/酉",
+        "10/6/戌",
+        "10/6/亥",
+        "10/6/子",
+        "10/6/丑"
+      ],
+      "finding": "本用乾、末用兑与原兑比和，巽木用互为原兑所克，上九变兑为泽。巽生体互离，余用无水制离，按项目一层取有力。乾与末兑也克巽，与观梅见金伤巽之象可比照，现行规则不连作制生离，古籍未提供用来调整二层强弱的定量办法，保留优先复核。"
+    },
+    {
+      "id": "exam-010-line-6-turn-and-check",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "10/6/寅",
+        "10/6/卯",
+        "10/6/辰",
+        "10/6/巳",
+        "10/6/午",
+        "10/6/未",
+        "10/6/申",
+        "10/6/酉",
+        "10/6/戌",
+        "10/6/亥",
+        "10/6/子",
+        "10/6/丑"
+      ],
+      "finding": "元吉按王孔之旋反与朱熹之周旋无亏读，卷上只将已查、已改的几处照算，主要扣分按五气各自落在中段。变用兑同原体为末比和，有利于回查，十二月不改体互离火巳午过程所阻的应期。"
     }
   ],
   "independentReview": {
@@ -427,13 +513,13 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T19:02:55.410Z",
-  "sourceSha256": "0c13c9f516bd33a60dde389bf7c383b8231a0d7a6bcf523b061a5a96cfc95cd8",
+  "reviewedAt": "2026-11-20T19:07:49.173Z",
+  "sourceSha256": "b8c655ce4a2cd937a84a63656650a897021e05ec9cb8dafd2a05d09897891e49",
   "checks": {
-    "scope": "天泽履已写60篇，核对作者源与阅读页",
-    "chartComparisons": 1620,
+    "scope": "天泽履已写72篇，核对作者源与阅读页",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       494,
       540
