@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-720-20261120",
+  "batch": "exam-monthly-preview-732-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 720,
+  "uploadedArticles": 732,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    10
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3888,
-  "authorWholeArticleReadback": 720,
+  "remainingArticles": 3876,
+  "authorWholeArticleReadback": 732,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -172,7 +170,8 @@
     "independentChartMismatches": 0,
     "dateCases": 1440,
     "judgmentCorrectionArticles": 178,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜、履十卦。地天泰已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 62,
@@ -184,10 +183,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 11,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 11,
+      "name": "地天泰",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-011.json",
+      "sourceSha256": "303a90d06124df436f9754355eb37ef0ef6caf42a08ace5957418de21411dafe",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-011.json",
+      "readingPath": "docs/exam/monthly-preview/hex-011.md"
+    }
+  ]
 }
