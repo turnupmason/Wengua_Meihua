@@ -11,9 +11,10 @@ const names=new Set(secOf.filter(Boolean));
 const fix=args.includes('--fix');const out=[];const pairs={};let fixed=0;
 const pick=secs=>secs.length===1?secs[0]:secs.includes('体用总诀')?'体用总诀':null;
 const repl=t=>t.replace(/《([^》]+)》([^「《]{0,14})「([^」]+)」/g,(all,name,mid,q)=>{if(!names.has(name))return all;const nq=norm(q);if(nq.length<4)return all;const secs=[...new Set(nl.map((l,k)=>l.includes(nq)?secOf[k]:null).filter(Boolean))];if(!secs.length||secs.includes(name))return all;const to=pick(secs);if(!to)return all;fixed++;return '《'+to+'》'+mid+'「'+q+'」';});
-const scan=(key,text)=>{const re=/《([^》]+)》([^「《]{0,14})「([^」]+)」/g;let m;while((m=re.exec(text))){if(!names.has(m[1]))continue;const nq=norm(m[3]);if(nq.length<4)continue;
+// 一个篇名后紧跟第二段引文（「…」，「…」）时，第二段也按同一篇名核（2026-11-20 震卦第 9 栏查出）。
+const scan=(key,text)=>{const re=/《([^》]+)》([^「《]{0,14})「([^」]+)」(?:[，、]「([^」]+)」)?/g;let m;while((m=re.exec(text))){if(!names.has(m[1]))continue;for(const q of [m[3],m[4]].filter(Boolean)){const nq=norm(q);if(nq.length<4)continue;
  const secs=[...new Set(nl.map((l,k)=>l.includes(nq)?secOf[k]:null).filter(Boolean))];if(!secs.length||secs.includes(m[1]))continue;
- const pk=m[1]+'→'+secs.join('/');pairs[pk]=(pairs[pk]||0)+1;out.push(`${key}\t《${m[1]}》「${m[3]}」→ ${secs.join('/')}`);}};
+ const pk=m[1]+'→'+secs.join('/');pairs[pk]=(pairs[pk]||0)+1;out.push(`${key}\t《${m[1]}》「${q}」→ ${secs.join('/')}`);}}};
 for(let h=1;h<=64;h++){if(only&&!only.has(h))continue;const id=String(h).padStart(3,'0');
  const mp=`sources/editorial/${item}/monthly/hex-${id}.json`;
  if(!col9&&fs.existsSync(mp))for(const a of JSON.parse(fs.readFileSync(mp,'utf8')).articles)[a.title,a.short,...a.paragraphs,a.judgment].forEach(t=>scan(`${h}/${a.movingLine}/${a.monthBranch}`,t||''));
