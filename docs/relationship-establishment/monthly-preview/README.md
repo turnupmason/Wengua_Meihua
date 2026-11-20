@@ -1,6 +1,6 @@
-# 确定关系逐月长稿：2304 篇预览
+# 确定关系逐月长稿：2448 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增天雷无妄、山天大畜、风火家人、水山蹇、雷水解，共 360 篇；累计 2304 篇。完整目标为 4,608 篇，尚余 2304 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-19（America/New_York）。本批新增泽山咸、雷风恒，共 144 篇；累计 2448 篇。完整目标为 4,608 篇，尚余 2160 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -32,6 +32,8 @@
 | 山天大畜 | 72 | [打开全文](hex-026.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-026.json) |
 | 山雷颐 | 72 | [打开全文](hex-027.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-027.json) |
 | 泽风大过 | 72 | [打开全文](hex-028.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-028.json) |
+| 泽山咸 | 72 | [打开全文](hex-031.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-031.json) |
+| 雷风恒 | 72 | [打开全文](hex-032.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-032.json) |
 | 风火家人 | 72 | [打开全文](hex-037.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-037.json) |
 | 火泽睽 | 72 | [打开全文](hex-038.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-038.json) |
 | 水山蹇 | 72 | [打开全文](hex-039.md) | [查看记录](../../../sources/editorial/relationship-establishment/reviews-monthly/hex-039.json) |
@@ -43,21 +45,15 @@
 
 ## 本批阅读入口
 
-- [天雷无妄：六爻十二月全文](hex-025.md)
+- [泽山咸：六爻十二月全文](hex-031.md)
 
-- [山天大畜：六爻十二月全文](hex-026.md)
-
-- [风火家人：六爻十二月全文](hex-037.md)
-
-- [水山蹇：六爻十二月全文](hex-039.md)
-
-- [雷水解：六爻十二月全文](hex-040.md)
+- [雷风恒：六爻十二月全文](hex-032.md)
 
 
 
 ## 检查与阅读状态
 
-2304 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 62,208 项，差异 0；日期用例 4,608 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
+2448 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 66,096 项，差异 0；日期用例 4,896 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 430–659 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/RELATIONSHIP_ESTABLISHMENT_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
