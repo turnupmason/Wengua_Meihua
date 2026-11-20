@@ -1,0 +1,110 @@
+{
+  "primaryId": 2,
+  "baselineCommit": "e1154e14e077c6fe920800b486fddf3b66c69c87",
+  "editor": "Codex",
+  "reviewedAt": "2026-11-20T14:35:38.616Z",
+  "wholeArticlesRead": 12,
+  "sourceSha256": "f80005fc5c0deb4393612c00dbed7aa0eaf27d8f162ed6908772aa38ed0acd50",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "坤卦初六寅至丑分别写作，逐篇核定后从作者源读回全部题名、简断、正文、取期。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "初六经象，王弼以履霜明其始，参孔疏辨阴气由微至著。"
+    },
+    {
+      "url": "https://zh.wikisource.org/zh-hans/周易/坤",
+      "scope": "初六经、象与《文言》积渐、早辨一段。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-002.json",
+      "scope": "初六五气锁定结论、专业说明及取期角色，核实土令体互与其余四气末变的两种对应。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第 792、798、804 行《占卦诀》《体用互变之诀》《体用衰旺之诀》，655 行辨来克气衰。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "履霜，坚冰至。",
+      "image": "履霜坚冰，阴始凝也。驯致其道，至坚冰也。",
+      "reading": "原体上坤，三处坤土与体比和。地雷复下震木为末变用，仍克体。初六以始微积著提醒及早核实会牵动后续的条件。春土死遇旺木，冬土囚遇相木。夏土相、秋土休，克力较轻。四土月坤旺震囚，中途确有可承接之处。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "kun-initial-earth-verdict"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "kun-initial-earth-verdict",
+      "status": "open-priority",
+      "keys": [
+        "2/1/辰",
+        "2/1/未",
+        "2/1/戌",
+        "2/1/丑"
+      ],
+      "finding": "四土月体与比和均旺，末木弱仍克。保留五气源就末变且无生体断不过的取舍。土令事件用体互比和，参看中段承接，不能用以更动末克判断或定公布结果。经典支持分辨来克轻重，四土月轻克在考试合格上的权重仍待独立复核。"
+    },
+    {
+      "id": "kun-initial-event-wording",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "2/1/寅",
+        "2/1/卯",
+        "2/1/辰",
+        "2/1/巳",
+        "2/1/午",
+        "2/1/未",
+        "2/1/申",
+        "2/1/酉",
+        "2/1/戌",
+        "2/1/亥",
+        "2/1/子",
+        "2/1/丑"
+      ],
+      "finding": "原取期文案将题序、漏单位、抄错数、题面用字写为具体场面。此批依据角色保留八个月收束受制与四土月中段得力，正文以备考例说明如何早核前提。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回十二份完整稿件，确认轻重、角色及原结论。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "scope": "坤初六十二月，逐爻核对作者源与阅读页",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "用典及体旺末弱克的断法权重"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}
