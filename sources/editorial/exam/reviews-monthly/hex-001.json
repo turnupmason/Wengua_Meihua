@@ -1,0 +1,112 @@
+{
+  "primaryId": 1,
+  "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
+  "editor": "Codex",
+  "reviewedAt": "2026-11-20T04:16:44.890Z",
+  "wholeArticlesRead": 12,
+  "sourceSha256": "8fbfc0073a4b6cd1f841374ee628a199eaf7a300a3a429619a5bcf28e2b478d3",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "currentReadback": "初九十二个月逐篇写作、从落盘作者源通读，订正后的午、申、戌三篇又读全文。九二至上九尚未纳入本批。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "初九五气结论、专业说明及原不取期理由，逐月锁定对应行。"
+    },
+    {
+      "path": "sources/editorial/exam/review-v2/hex-001.json",
+      "scope": "初九以体用比和为有利旁证，以旺衰及潜龙时位辨能否见用于本场。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "初九经文、小象「阳在下也」及《文言》「隐而未见，行而未成」，库内第122行。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "《求名占》第553行、《体用衰旺之诀》第804行。问考试合格属现代类推。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "潜龙勿用。",
+      "image": "潜龙勿用，阳在下也。",
+      "reading": "凡见龙先辨时位。寅卯巳午亥子三组体与比和之卦同失令，潜而未用与盘势同向。秋金旺、土令金相，须写足比和与体克变用之利，保留项目以初九限制本次显效的读法。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "qian-initial-application"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "qian-initial-application",
+      "status": "open-priority",
+      "keys": [
+        "1/1/辰",
+        "1/1/未",
+        "1/1/申",
+        "1/1/酉",
+        "1/1/戌",
+        "1/1/丑"
+      ],
+      "finding": "秋、土六个月体旺相，无克，本用及两互比和，求名占可支持成。初九所说潜与勿用能否直接落实为考试未过，是从时位到现代问项的解释。遵循考试五气源，正文与专业说明均保留这一张力，待独立解释审核。"
+    },
+    {
+      "id": "qian-initial-events",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "1/1/寅",
+        "1/1/卯",
+        "1/1/辰",
+        "1/1/巳",
+        "1/1/午",
+        "1/1/未",
+        "1/1/申",
+        "1/1/酉",
+        "1/1/戌",
+        "1/1/亥",
+        "1/1/子",
+        "1/1/丑"
+      ],
+      "finding": "五气稿把铃响、题型、题序、扣分写成具体遭遇。各月改从学得与用得出的差别设例，删去应期栏对具体失分动作的预设，十二月均维持不单独取日。"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐月题名、简断、全文、爻辞与取期，同气五组结论与专业说明。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "scope": "初九十二篇，按逐爻草稿模式核查",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "独立古籍解释与断法审核"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}
