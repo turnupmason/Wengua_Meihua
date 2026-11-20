@@ -2,14 +2,14 @@
   "primaryId": 1,
   "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T04:35:36.329Z",
-  "wholeArticlesRead": 48,
-  "sourceSha256": "c335dc41943d0f2a5f1e8af4f205730467beb97fe3f7778a8f8d077faa99da84",
+  "reviewedAt": "2026-11-20T04:40:24.996Z",
+  "wholeArticlesRead": 60,
+  "sourceSha256": "a9626b2050989e871beecf3cc7a014905a9ba12c734e0df7052c54e9429d946c",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计48篇。"
+    "currentReadback": "按爻逐批撰写、校对并从最终作者源逐篇读回。本轮累计60篇。"
   },
   "sourceEvidence": [
     {
@@ -51,6 +51,14 @@
     {
       "path": "sources/editorial/exam/hex-001.json",
       "scope": "九四五气源专业说明、无期与 name-body/body、equal/use 两类有期行。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "九五经、小象大人造也、王注「位以德兴，德以位叙」，文言同声相应、圣人作而万物睹及乃位乎天德。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "九五五行判断和全部末变取期；土月有期，有别于九二土月。"
     }
   ],
   "lineReviews": [
@@ -89,6 +97,16 @@
       "reading": "九四已入上卦，下乾为不变之体。依小象许其合时而进，参《文言》自试、欲及时、或之者疑之，辨可以试与能成其事。九四的渊与跃不对应具体题序、困局或考生性格。",
       "status": "author-readback-complete",
       "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "飞龙在天，利见大人。",
+      "image": "飞龙在天，大人造也。",
+      "reading": "九五以阳居阳、居中得位，依王注德与位相称和《文言》同声相应，保留有为与充分显才之利；末变上离来克下乾，没有直接生体，按本问项保留不成。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "qian-fifth-strong-body"
+      ]
     }
   ],
   "findings": [
@@ -173,6 +191,19 @@
         "1/4/丑"
       ],
       "finding": "同取申酉日，九三四土月取末变兑金应收束，九四四土月取本用乾金应开局。九四虽有体克上巽，不能把该时段写成变用事件或公布成绩。"
+    },
+    {
+      "id": "qian-fifth-strong-body",
+      "status": "open-priority",
+      "keys": [
+        "1/5/辰",
+        "1/5/未",
+        "1/5/申",
+        "1/5/酉",
+        "1/5/戌",
+        "1/5/丑"
+      ],
+      "finding": "秋土六键本体得令或得相，九五爻辞又显著有利，上离克力轻。保留项目以无生且克落末变断不过的取舍；末克对本场合格的权重属解释待核。"
     }
   ],
   "batchReadback": [
@@ -255,13 +286,33 @@
       ],
       "scope": "十二月六成六不成。比对下乾体、变上巽和五气强弱，审清土令开局比和与秋令合格确认的不同所指。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "核十二篇飞龙的正面解释、春夏秋冬土令克力分别及同取末变离火十二键，未加固定扣分、成绩、名次。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "初九至九四。逐爻核对排盘、日期与阅读页。",
-    "chartComparisons": 1296,
+    "scope": "初九至九五。逐爻核对排盘、日期与阅读页。",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96
+    "dateCases": 120
   },
   "independentReview": {
     "status": "pending",
