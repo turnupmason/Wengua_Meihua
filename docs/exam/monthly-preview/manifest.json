@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-276-20261120",
+  "batch": "exam-monthly-preview-288-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 276,
+  "uploadedArticles": 288,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    4
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 4332,
-  "authorWholeArticleReadback": 276,
+  "remainingArticles": 4320,
+  "authorWholeArticleReadback": 288,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -54,6 +56,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 4,
+      "name": "山水蒙",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-004.json",
+      "sourceSha256": "c0f285597e397ba427cc820a4131e75304e03c48d11aa495fc417a6bd5ceb3a8",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-004.json",
+      "readingPath": "docs/exam/monthly-preview/hex-004.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -68,15 +84,14 @@
       70,
       95
     ],
-    "independentChartComparisons": 5832,
+    "independentChartComparisons": 7776,
     "independentChartMismatches": 0,
-    "dateCases": 432,
+    "dateCases": 576,
     "judgmentCorrectionArticles": 0,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯三卦。山水蒙已发布篇目的检查见其核读记录。"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 13,
+    "open-priority": 22,
     "corrected-unsupported-scenes": 3,
     "interpreted-with-limits": 12
   },
@@ -85,28 +100,10 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
+  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
-    "primaryId": 4,
-    "movingLine": 6,
+    "primaryId": 5,
+    "movingLine": 1,
     "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 4,
-      "name": "山水蒙",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-004.json",
-      "sourceSha256": "fd899bc7fb017d55dbcd543f6539f861025551f9366c00a0badd01e2879c8809",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-004.json",
-      "readingPath": "docs/exam/monthly-preview/hex-004.md"
-    }
-  ]
+  }
 }
