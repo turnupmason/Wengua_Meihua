@@ -2,12 +2,12 @@
   "primaryId": 4,
   "baselineCommit": "2c6e63585e5c1b90f67292604ee97609ebc1726b",
   "editor": "Codex",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "山水蒙已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "山水蒙已发表的月份共48篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -36,6 +36,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第655、682、688、792、798行比对体用旺衰、他卦生扶、无生有克、过程与变处的应事区别。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01蒙.txt",
+      "scope": "第53至56行六四经象、王弼注与孔疏。核困蒙、独远实、两阴与所远的九二。",
+      "url": "https://zh.wikisource.org/zh-hans/周易/蒙"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行，核求名用克体、乘克体之卦衰、体能承克、无生有克及起中末。"
     }
   ],
   "findings": [
@@ -101,6 +110,28 @@
         "4/3/酉"
       ],
       "finding": "五气均见同五行的两段克，秋月原断独选用互震为主要取期，其他气候取末巽。取期同为寅卯，角色和事件在秋只参过程。古籍可分过程与末应，但未明定两处同弱时的取舍，维持原有选择，读稿也保留末克。"
+    },
+    {
+      "id": "meng-fourth-spring-earth-offset",
+      "status": "open-priority",
+      "keys": [
+        "4/4/寅",
+        "4/4/卯"
+      ],
+      "finding": "源断按末离生艮坤与体互震木制艮坤相抵，仍以春土本气衡量先后两克。跨阶段的相离与旺震作用为何相抵，古籍无固定计量。正文以原断取法表述，中途旺震泄体为取期所参。"
+    },
+    {
+      "id": "meng-fourth-strong-body-and-timing",
+      "status": "open-priority",
+      "keys": [
+        "4/4/巳",
+        "4/4/午",
+        "4/4/申",
+        "4/4/酉",
+        "4/4/亥",
+        "4/4/子"
+      ],
+      "finding": "夏本用艮和用互坤同为相土，取开头本用。秋两者同休，取过程用互。冬体水旺、土克轻、末能制弱离，择中途泄体，维持有克无生难成。古籍能说明阶段与旺衰，未明强体、两处土克同气和水泄同时出现时统一取舍，保持原断。"
     }
   ],
   "lineReviews": [
@@ -134,6 +165,17 @@
       "openFindingIds": [
         "meng-third-water-to-two-wood",
         "meng-third-autumn-timing"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "困蒙，吝。",
+      "image": "困蒙之吝，独远实也。",
+      "reading": "六四全十二月的题名、简断、正文、取期均已逐篇读回。动位移到上艮，原体取下坎。核前段艮、中段坤均克水，体互震由原体生，未济之离为体水所克。春冬以体互中途耗用取寅卯，夏响应本用土克，秋及四土月取用互土克。古注的实是九二阳刚，应用层取远离实际可解疑的依据。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "meng-fourth-spring-earth-offset",
+        "meng-fourth-strong-body-and-timing"
       ]
     }
   ],
@@ -197,6 +239,26 @@
       ],
       "scope": "六三十二月已通读。逐月查阶段受克的实际强度、当令体之承受、金夫一词的古义以及秋月中段应事与其他月份末段应事的差别。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "六四逐月读回十二篇，确认上爻动后体用角色换侧，按源断核体互、用互、本用三种所取卦位。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -205,16 +267,16 @@
     "scope": "用互震受坎生、兑制之后的权重，以及中段制约与末段耗用并见时的取期。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T15:57:29.657Z",
-  "sourceSha256": "7490c164c083bc1008630ee65652d015fc2f6c0048c95848d0aa037870f32408",
+  "reviewedAt": "2026-11-20T16:01:34.445Z",
+  "sourceSha256": "e2323ac5e4311ca9252a9751142e54d03eae9ea30a511a68704bbec1f7dfaa0a",
   "checks": {
-    "scope": "山水蒙已写36篇，核对作者源与阅读页",
-    "chartComparisons": 972,
+    "scope": "山水蒙已写48篇，核对作者源与阅读页",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       456,
-      491
+      515
     ]
   }
 }
