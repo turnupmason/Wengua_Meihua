@@ -1,6 +1,6 @@
-# 面试逐月长稿：3888 篇预览
+# 面试逐月长稿：4032 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增泽天夬、泽地萃、水泽节，共 216 篇；累计 3888 篇。完整目标为 4,608 篇，尚余 720 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增地风升、泽水困，共 144 篇；累计 4032 篇。完整目标为 4,608 篇，尚余 576 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -48,6 +48,8 @@
 | 风雷益 | 72 | [打开全文](hex-042.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-042.json) |
 | 泽天夬 | 72 | [打开全文](hex-043.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-043.json) |
 | 泽地萃 | 72 | [打开全文](hex-045.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-045.json) |
+| 地风升 | 72 | [打开全文](hex-046.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-046.json) |
+| 泽水困 | 72 | [打开全文](hex-047.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-047.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-050.json) |
 | 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-051.json) |
@@ -65,11 +67,9 @@
 
 ## 本批阅读入口
 
-- [泽天夬：六爻十二月全文](hex-043.md)
+- [地风升：六爻十二月全文](hex-046.md)
 
-- [泽地萃：六爻十二月全文](hex-045.md)
-
-- [水泽节：六爻十二月全文](hex-060.md)
+- [泽水困：六爻十二月全文](hex-047.md)
 
 
 
@@ -77,7 +77,7 @@
 
 ## 检查与阅读状态
 
-3888 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 104,976 项，差异 0；日期用例 7,776 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–570 汉字。
+4032 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 108,864 项，差异 0；日期用例 8,064 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–570 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [续写与同步记录](../../review/INTERVIEW_MONTHLY_CONTINUATION_20261119.md) · [交付清单](manifest.json)
 
