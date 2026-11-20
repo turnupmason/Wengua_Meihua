@@ -1,6 +1,6 @@
-# 面试逐月长稿：4176 篇预览
+# 面试逐月长稿：4320 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增巽为风、兑为泽，共 144 篇；累计 4176 篇。完整目标为 4,608 篇，尚余 432 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增水风井、风水涣，共 144 篇；累计 4320 篇。完整目标为 4,608 篇，尚余 288 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -50,6 +50,7 @@
 | 泽地萃 | 72 | [打开全文](hex-045.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-045.json) |
 | 地风升 | 72 | [打开全文](hex-046.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-046.json) |
 | 泽水困 | 72 | [打开全文](hex-047.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-047.json) |
+| 水风井 | 72 | [打开全文](hex-048.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-048.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-050.json) |
 | 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-051.json) |
@@ -60,6 +61,7 @@
 | 火山旅 | 72 | [打开全文](hex-056.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-056.json) |
 | 巽为风 | 72 | [打开全文](hex-057.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-057.json) |
 | 兑为泽 | 72 | [打开全文](hex-058.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-058.json) |
+| 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-059.json) |
 | 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-060.json) |
 | 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-061.json) |
 
@@ -69,9 +71,9 @@
 
 ## 本批阅读入口
 
-- [巽为风：六爻十二月全文](hex-057.md)
+- [水风井：六爻十二月全文](hex-048.md)
 
-- [兑为泽：六爻十二月全文](hex-058.md)
+- [风水涣：六爻十二月全文](hex-059.md)
 
 
 
@@ -79,7 +81,7 @@
 
 ## 检查与阅读状态
 
-4176 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 112,752 项，差异 0；日期用例 8,352 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–570 汉字。
+4320 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 116,640 项，差异 0；日期用例 8,640 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–570 汉字。
 
 [逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [续写与同步记录](../../review/INTERVIEW_MONTHLY_CONTINUATION_20261119.md) · [交付清单](manifest.json)
 
