@@ -2,14 +2,14 @@
   "primaryId": 1,
   "baselineCommit": "10b2295aeec504396910c76819505e21e201eb53",
   "editor": "Codex",
-  "reviewedAt": "2026-11-20T04:16:44.890Z",
-  "wholeArticlesRead": 12,
-  "sourceSha256": "8fbfc0073a4b6cd1f841374ee628a199eaf7a300a3a429619a5bcf28e2b478d3",
+  "reviewedAt": "2026-11-20T04:22:26.845Z",
+  "wholeArticlesRead": 24,
+  "sourceSha256": "ee614a34ac0c31a176b13277c666e11bebaea31deaf27f7a5b869dca01596de8",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "初九十二个月逐篇写作、从落盘作者源通读，订正后的午、申、戌三篇又读全文。九二至上九尚未纳入本批。"
+    "currentReadback": "初九十二篇已于首批全文读回。本批另写并从落盘作者源读回九二十二个月的题名、简断、全文与应期。"
   },
   "sourceEvidence": [
     {
@@ -27,6 +27,14 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "《求名占》第553行、《体用衰旺之诀》第804行。问考试合格属现代类推。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01乾.txt",
+      "scope": "九二经、象、王弼注，及《文言》庸言之信、庸行之谨一段，对照出潜与已有成效的不同。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-001.json",
+      "scope": "九二五气源第9、10栏，比对八月有末段事件、四土月不取期，以及夏旺火与秋囚火的分量。"
     }
   ],
   "lineReviews": [
@@ -38,6 +46,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "qian-initial-application"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "见龙在田，利见大人。",
+      "image": "见龙在田，德施普也。",
+      "reading": "据王注出潜离隐、德施周普，承认有力发挥之处。与初九不同，失利所系在变离克乾、全盘无生体，不因见龙便断本场合格，也不将大人指定为考官。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "qian-second-timing"
       ]
     }
   ],
@@ -73,6 +91,32 @@
         "1/1/丑"
       ],
       "finding": "五气稿把铃响、题型、题序、扣分写成具体遭遇。各月改从学得与用得出的差别设例，删去应期栏对具体失分动作的预设，十二月均维持不单独取日。"
+    },
+    {
+      "id": "qian-second-timing",
+      "status": "open-priority",
+      "keys": [
+        "1/2/辰",
+        "1/2/未",
+        "1/2/戌",
+        "1/2/丑"
+      ],
+      "finding": "九二五组均有末变离火克体，但原五气只在春夏秋冬取变离之日，四个土月原为无期。保留源结构。经典支持辨克应和气的轻重，未据此确认这一组选取差异属经典定例。"
+    },
+    {
+      "id": "qian-second-event-scope",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "1/2/寅",
+        "1/2/卯",
+        "1/2/巳",
+        "1/2/午",
+        "1/2/申",
+        "1/2/酉",
+        "1/2/亥",
+        "1/2/子"
+      ],
+      "finding": "去掉原应期中压轴题、漏写、第几问及实际扣分。保留 control / changed_use 与离火巳午日，事件限于作答收束受制，日期是参考窗口。"
     }
   ],
   "batchReadback": [
@@ -95,13 +139,33 @@
       ],
       "scope": "逐月题名、简断、全文、爻辞与取期，同气五组结论与专业说明。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "核对十二篇合格判断、五气强弱、九二经象、变离相克、末段事件八键与无期四键。",
+      "status": "author-readback-complete"
     }
   ],
   "checks": {
-    "scope": "初九十二篇，按逐爻草稿模式核查",
-    "chartComparisons": 324,
+    "scope": "初九、九二，共二十四篇。按逐爻草稿模式比对排盘、取期和阅读页。",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24
+    "dateCases": 48
   },
   "independentReview": {
     "status": "pending",
