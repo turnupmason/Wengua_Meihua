@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-792-20261120",
+  "batch": "exam-monthly-preview-804-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 792,
+  "uploadedArticles": 804,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    11
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3816,
-  "authorWholeArticleReadback": 792,
+  "remainingArticles": 3804,
+  "authorWholeArticleReadback": 804,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -186,7 +184,8 @@
     "independentChartMismatches": 0,
     "dateCases": 1584,
     "judgmentCorrectionArticles": 250,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰十一卦。天地否已发布篇目的检查见其核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 68,
@@ -198,10 +197,24 @@
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 12,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 12,
+      "name": "天地否",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-012.json",
+      "sourceSha256": "d4bb7c448f7a8a074710a9a01e9dbd27c9e52b535a4bd3c17016bd8400e76d87",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-012.json",
+      "readingPath": "docs/exam/monthly-preview/hex-012.md"
+    }
+  ]
 }
