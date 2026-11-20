@@ -31,14 +31,16 @@ const names = new Map();
 for (let id = 1; id <= 64; id++) { const h = library.getHexagram(id); for (const n of [h.name, h.shortName, h.name?.slice(-1), h.name?.slice(-2)].filter(Boolean)) if (!names.has(n)) names.set(n, id); }
 const toId = n => { const s = String(n).replace(/卦$/u, '').trim(); return names.get(s) ?? names.get(s.slice(-2)) ?? names.get(s.slice(-1)); };
 const ITEM = {exam:'exam', admission:'exam', interview:'interview-pass', 'job-search':'interview-pass', promotion:'promotion-pay', probation:'workplace-probation',
- stability:'workplace-stability', reconciliation:'relationship-reconciliation', establishment:'relationship-establishment', 'new-partner':'new-relationship-opportunity', confession:'confession-decision'};
-const CODE = c => c == null ? null : ({favourable:'F', conditional:'C', difficult:'D', stable:'F', watch:'C', strained:'D'}[c] ?? (c.startsWith('pass-with') ? 'C' : c.startsWith('pass') ? 'F' : c.startsWith('not-pass') ? 'D' : null));
+ stability:'workplace-stability', 'job-change':'job-change', reconciliation:'relationship-reconciliation', establishment:'relationship-establishment', 'new-partner':'new-relationship-opportunity', confession:'confession-decision'};
+const CODE = c => c == null ? null : ({favourable:'F', conditional:'C', difficult:'D', stable:'F', watch:'C', strained:'D', switch:'F', prepare:'C', stay:'D'}[c] ?? (c.startsWith('pass-with') ? 'C' : c.startsWith('pass') ? 'F' : c.startsWith('not-pass') ? 'D' : null));
 const cache = new Map();
 const shard = async (item, id) => { const k = item + id; if (!cache.has(k)) cache.set(k, JSON.parse(await readFile(`data/authored-readings/${item}/hex-${String(id).padStart(3, '0')}.json`, 'utf8'))); return cache.get(k); };
 const score = (t, w) => t == null ? null : t === w ? 1 : (t === 'C' || w === 'C') ? 0.5 : 0;
 const rows = [];
 for (const f of (await readdir('docs/marketing/cases')).filter(n => n.endsWith('.json')))
  for (const c of JSON.parse(await readFile('docs/marketing/cases/' + f, 'utf8'))) {
+  // 六爻摇卦（castingMethod: liuyao）不是梅花先天起卦，判法不同，不进本回测（2026-11-19，见 PROBATION_REJUDGE_20261118.md 第七节）。
+  if (c.castingMethod === 'liuyao') continue;
   const id = toId(c.hexagram), qi = QI[c.monthBranch], line = Number(c.movingLine);
   if (!id || !qi || !(line >= 1)) continue;
   const ex = (await shard('exam', id)).rows.find(x => x.movingLine === line && x.monthOrder === qi);

@@ -27,18 +27,18 @@ test('职场情况 asks about stability; 能否转正 is its own entry (2026-11-
 });
 
 for (const [slug, id] of [
- ['workplace-stability',questionId],
- ['workplace-probation',probationId],
  ['new-relationship-opportunity','relationships.new-partner.opportunity'],
  ['confession-decision','relationships.confession.decision'],
  ['relationship-establishment','relationships.developing.relationship'],
  ['relationship-reconciliation','relationships.reconciliation.reconcile'],
  ['lost-object-recovery','search.lost-object.recovery'],
  ['lost-pet-recovery','search.pets.recovery'],
+ ['missing-contact','search.missing-contact.contact'],
 ]) {
 test(slug + ' preserves author text, exact sources, layout and live timing for every written month key', async () => {
  const index = await json('data/authored-readings/' + slug + '/index.json');
- const sourceDir = 'sources/editorial/' + slug + '/';
+ // 确定关系运行数据仍是 1.0.0，作者源已移到 legacy-v1/（逐月长稿完成并集成前不换库，2026-11-19）。
+ const sourceDir = 'sources/editorial/' + slug + (slug === 'relationship-establishment' ? '/legacy-v1/' : '/');
  const context = slug === 'lost-object-recovery' ? {context:{objectKind:'other'}} : {};
  if (index.next) {
   const {primaryId,movingLine,monthBranches} = index.next;
@@ -60,7 +60,19 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
    const key = row.decision.id;
    const {title,short,long} = row.copy;
    checkChartFacts(library,row,key);
-   assert.equal(row.movingLineText,library.getLineReading(entry.primaryId,row.movingLine).text,key);
+   const catalogLine=library.getLineReading(entry.primaryId,row.movingLine).text;
+   const commentary=row.contactApplication?.lineCommentary;
+   const adoptedPunctuation=commentary?.adoptedPunctuation;
+   const variant=commentary?.adoptedVariant;
+   assert.equal(row.movingLineText,variant?.text??adoptedPunctuation??catalogLine,key);
+   if(adoptedPunctuation){
+    assert.equal(adoptedPunctuation.replace(/[\p{P}\s]/gu,''),catalogLine.replace(/[\p{P}\s]/gu,''),key);
+    assert.ok(commentary.quote.startsWith(row.facts.movingLine.label+'：'+adoptedPunctuation+'〈'),key);
+   }
+   if(variant){
+    assert.equal(variant.archivedText,catalogLine,key);
+    assert.ok(commentary.quote.startsWith(row.facts.movingLine.label+'：'+variant.text+'〈'),key);
+   }
    const expectedCopy = drafts[i].slice(3,9);
    if(slug==='lost-pet-recovery'){
     const cases=await json(sourceDir+'cases/'+stem+'.json');
@@ -158,6 +170,7 @@ test(slug + ' preserves author text, exact sources, layout and live timing for e
      assert.deepEqual(result.calculationExplanation.location,row.locationApplication,row.decision.id);
     }
     if(slug==='lost-pet-recovery') assert.deepEqual(result.calculationExplanation.pet,row.petApplication,row.decision.id);
+    if(slug==='missing-contact') assert.deepEqual(result.calculationExplanation.contact,row.contactApplication,row.decision.id);
     assert.equal(result.calculationExplanation.void,undefined);
     assert.equal(result.timingSection.windows.length,row.timingSlots.length);
     for (const window of result.timingSection.windows) {

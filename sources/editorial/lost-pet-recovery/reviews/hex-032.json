@@ -2,10 +2,10 @@
   "primaryId": 32,
   "actor": "assistant-author",
   "fullArticlesRead": 30,
-  "reviewedAt": "2026-11-19T00:19:23.990Z",
+  "reviewedAt": "2026-11-19T13:27:30.392Z",
   "sourceSha256": "1d1663247a5a572122b97af63739155823d2b0dd3fb403000193beb998345371",
-  "casesSha256": "4ff606048021e39be55ae19871f6007042e3f2286917531c96f17d7c18a00d8d",
-  "reviewScope": "All thirty complete manuscripts read back in three groups of ten. Ten affected full articles reread in two groups of five after corrections. Whole project Heng chapter and public Wang/Kong original read, full selected lines/images checked. No extra AI literary-polish phase.",
+  "casesSha256": "41d965ba59dd1747dbd06bb464ba837ff8681b7f34cafe14f3c923fa00c680da",
+  "reviewScope": "All thirty complete manuscripts read back in three groups of ten. Ten affected full articles reread in two groups of five after corrections. Whole project Heng chapter and public Wang/Kong original read, full selected lines/images checked. No extra AI literary-polish phase. Final citation audit: this corrected source excerpt and its context were read, exact stored-source spelling/punctuation/annotation boundaries restored; authored reader copy and prior whole-article read count unchanged.",
   "corrections": [
     "九二土、九三土、上六夏秋土过程各与相邻动爻一整句重复，逐段重写同事实解释与对应查证，不编新含义。",
     "初六冬开局、九二夏结局、九三土开局、九四秋开局、六五秋开局及结局、六五冬开局的推动物歧义，分别整段重写，健康与事实边界清楚。",
@@ -16,5 +16,39 @@
   "imageryReview": "Actual wood/long/rope-shaped/green facilities and plants, metal/round/rigid fixtures, soil-stone/yellow/steps, water fittings/damp/dark surroundings, square/cloth/flatland, red-purple/bright windows only where actually observed. No guessed pet species, coat, sex, health, fate, captive place, movement/weather or human motive.浚非挖坑,田禽非必在田野或捕宠,妇夫古职分不迁动物雌雄,振非震伤. Versions悔亡自行消除、从一改嫁解释、立不易方与方道 traced, original uploads untouched.",
   "independentProfessionalReview": "pending",
   "userAcceptedEachArticle": false,
-  "extraLiteraryPolishPerformed": false
+  "extraLiteraryPolishPerformed": false,
+  "citationCorrections": [
+    {
+      "movingLine": 6,
+      "sourcePath": "sources/reference/zhouyi-zhengyi-hans/04恒.txt",
+      "before": "以振为恒，所以「凶」也。",
+      "after": "以振为恒，所以“凶”也。",
+      "reason": "对齐本地孔疏引号，不改振恒戒过动取义。",
+      "contextRead": true,
+      "readerCopyChanged": false,
+      "decisionChanged": false
+    }
+  ],
+  "targetedRechecks": [
+    {
+      "scope": "recorded-judgment-tension",
+      "path": "sources/editorial/lost-pet-recovery/recheck-20261119/judgment-rechecks.json",
+      "caseIndex": 7,
+      "movingLine": 2,
+      "disposition": "author-rechecked-retained",
+      "fullArticlesRead": 0,
+      "reviewedAt": "2026-11-19T13:27:30.377Z",
+      "independentProfessionalReview": "pending"
+    },
+    {
+      "scope": "recorded-judgment-tension",
+      "path": "sources/editorial/lost-pet-recovery/recheck-20261119/judgment-rechecks.json",
+      "caseIndex": 8,
+      "movingLine": 3,
+      "disposition": "author-rechecked-retained",
+      "fullArticlesRead": 0,
+      "reviewedAt": "2026-11-19T13:27:30.392Z",
+      "independentProfessionalReview": "pending"
+    }
+  ]
 }

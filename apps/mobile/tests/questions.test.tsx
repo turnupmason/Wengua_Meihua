@@ -113,10 +113,10 @@ describe('QuestionCatalog = the formal product catalog', () => {
     for (const s of allSubtypes()) expect(enabledQuestions(s)).toHaveLength(1);
     // Entries ask nothing finer: no fixed options, 跳槽去留 included.
     expect(allQuestions().filter((q) => q.conditions?.length).map(q => q.question_id)).toEqual([]);
-    // Health is traditional reference only; 失联寻人 is guidance (nothing written to cast for).
+    // Health is traditional reference only; 现实寻人线索 is the separate guidance entry.
     expect(allQuestions().filter((q) => q.domain_id === 'health').map((q) => q.mode)).toEqual(['reference', 'reference', 'reference', 'reference']);
     expect(readinessOf(questionById('search.direction.symbolism')!)).toBe('reference');
-    expect(readinessOf(questionById('search.missing-contact')!)).toBe('guidance');
+    expect(readinessOf(questionById('search.missing-contact')!)).toBe('written');
     expect(readinessOf(questionById('search.person-leads.guidance')!)).toBe('guidance');
     // Each written entry reads its own manuscript library.
     const written = [
@@ -129,6 +129,7 @@ describe('QuestionCatalog = the formal product catalog', () => {
       ['relationships.reconciliation', 'relationships.reconciliation.reconcile'],
       ['search.lost-object', 'search.lost-object.recovery'],
       ['search.pets', 'search.pets.recovery'],
+      ['search.missing-contact', 'search.missing-contact.contact'],
     ];
     expect(allQuestions().filter((q) => readinessOf(q) === 'written').map((q) => [q.question_id, q.content_id])).toEqual(written);
     expect(allQuestions().filter((q) => q.mode === 'narrative' && !written.some(([id]) => id === q.question_id)).every((q) => q.content_id === null)).toBe(true);
@@ -360,7 +361,7 @@ describe('click-only home', () => {
     expect(backs).toBe(1);
   });
 
-  it('shows real-world help with 失联寻人, which opens its guidance and casts nothing', () => {
+  it('shows real-world help before casting for 失联寻人', () => {
     let last: EntryForm = EMPTY_FORM;
     render(<Home onChange={(f) => (last = f)} />);
     toAsk();
@@ -368,7 +369,7 @@ describe('click-only home', () => {
     fireEvent.click(screen.getByRole('button', { name: /失联寻人/ }));
     expect(last.questionId).toBe('search.missing-contact');
     expect(screen.getByText(/911.*报警.*卦象不能说明真实位置或安全状况/)).toBeTruthy();
-    expect(screen.getByRole('button', { name: STRINGS.zh.readReference })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /确认，进入起卦/ })).toBeTruthy();
   });
 
   it('takes casting numbers on an in-app pad and no longer offers 字占', () => {

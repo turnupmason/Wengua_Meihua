@@ -1,6 +1,6 @@
-# 面试逐月长稿：3312 篇预览
+# 面试逐月长稿：4464 篇预览
 
-更新日期：2026-11-19（America/New_York）。本批新增水山蹇，共 72 篇；累计 3312 篇。完整目标为 4,608 篇，尚余 1296 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
+更新日期：2026-11-19（America/New_York）。本批新增水火既济，共 72 篇；累计 4464 篇。完整目标为 4,608 篇，尚余 144 篇未计入交付。继续以此前 576 篇的文风与厚度为参照。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -43,13 +43,29 @@
 | 风火家人 | 72 | [打开全文](hex-037.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-037.json) |
 | 火泽睽 | 72 | [打开全文](hex-038.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-038.json) |
 | 水山蹇 | 72 | [打开全文](hex-039.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-039.json) |
+| 雷水解 | 72 | [打开全文](hex-040.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-040.json) |
+| 山泽损 | 72 | [打开全文](hex-041.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-041.json) |
+| 风雷益 | 72 | [打开全文](hex-042.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-042.json) |
+| 泽天夬 | 72 | [打开全文](hex-043.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-043.json) |
+| 天风姤 | 72 | [打开全文](hex-044.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-044.json) |
+| 泽地萃 | 72 | [打开全文](hex-045.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-045.json) |
+| 地风升 | 72 | [打开全文](hex-046.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-046.json) |
+| 泽水困 | 72 | [打开全文](hex-047.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-047.json) |
+| 水风井 | 72 | [打开全文](hex-048.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-048.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-050.json) |
+| 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-051.json) |
 | 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-052.json) |
 | 风山渐 | 72 | [打开全文](hex-053.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-053.json) |
 | 雷泽归妹 | 72 | [打开全文](hex-054.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-054.json) |
 | 雷火丰 | 72 | [打开全文](hex-055.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-055.json) |
 | 火山旅 | 72 | [打开全文](hex-056.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-056.json) |
+| 巽为风 | 72 | [打开全文](hex-057.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-057.json) |
+| 兑为泽 | 72 | [打开全文](hex-058.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-058.json) |
+| 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-059.json) |
+| 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-061.json) |
+| 水火既济 | 72 | [打开全文](hex-063.md) | [查看记录](../../../sources/editorial/interview-pass/reviews-monthly/hex-063.json) |
 
 
 
@@ -57,7 +73,7 @@
 
 ## 本批阅读入口
 
-- [水山蹇：六爻十二月全文](hex-039.md)
+- [水火既济：六爻十二月全文](hex-063.md)
 
 
 
@@ -65,9 +81,9 @@
 
 ## 检查与阅读状态
 
-3312 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 89,424 项，差异 0；日期用例 6,624 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–536 汉字。
+4464 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 120,528 项，差异 0；日期用例 8,928 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 417–570 汉字。
 
-[逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
+[逐批核查方法](../../review/INTERVIEW_MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/INTERVIEW_MONTHLY_CHECKS.json) · [续写与同步记录](../../review/INTERVIEW_MONTHLY_CONTINUATION_20261119.md) · [交付清单](manifest.json)
 
 作者读回、独立排盘、古籍解释审计、独立全文复核和用户逐篇验收分别登记。机器通过不等于解释争议已经解决；用户对已看文风的认可，也不写成尚未查看稿件的逐篇验收。
 

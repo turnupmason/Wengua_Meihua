@@ -7,6 +7,19 @@ import {ELEMENT_DAY_BRANCHES,TRIGRAM_PERIOD_SPECS} from './timing-rules.js';
 import {resolveMonthSlot} from './month-slots.js';
 import {VOID_RULESET} from './void-policy.js';
 import {checkInterviewDecision,checkInterviewShort} from './interview-decision-checks.js';
+export function resolveContactLineText(commentary,line) {
+ const variant=commentary?.adoptedVariant;
+ const punctuation=commentary?.adoptedPunctuation;
+ if(variant===undefined && punctuation===undefined)return line.text;
+ const cited=variant?.text??punctuation;
+ const characters=text=>text.replace(/[\p{P}\s]/gu,'');
+ const validWitness=typeof cited==='string' && cited.length>0 && commentary.quote.startsWith(line.label+'：'+cited+'〈');
+ const matchesArchive=variant===undefined
+  ?validWitness&&characters(cited)===characters(line.text)
+  :variant.archivedText===line.text&&punctuation===undefined;
+ if(!validWitness||!matchesArchive)throw new Error('Contact line text witness mismatch');
+ return cited;
+}
 export const INTERVIEW_MANUSCRIPT_VERSION='interview-pass-2.0.0';
 export const INTERVIEW_QUESTION_ID='career.interview.interview-pass';
 export const PROMOTION_PAY_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',manuscriptVersion:'promotion-pay-1.0.2',directory:'promotion-pay'});
@@ -16,6 +29,14 @@ export const EXAM_PROFILE=Object.freeze({questionId:'career.exams.exam',question
 export const INTERVIEW_V3_PROFILE=Object.freeze({questionId:'career.interview.interview-pass',questionType:'interview_pass',questionScope:'result-of-this-interview-round',manuscriptVersion:'interview-pass-3.0.0',timingVersion:'interview-day-3.0.0',directory:'interview-pass',examLike:true});
 // 晋升加薪按考试定稿口径加《求名占》在任专条重写（2026-11-18）：作者源与考试同格式，第 12 栏为随岗薪资说明（仅能升的篇）。
 export const PROMOTION_V3_PROFILE=Object.freeze({questionId:'career.promotion-pay.promotion',questionType:'promotion',questionScope:'promotion-with-associated-pay',manuscriptVersion:'promotion-pay-3.0.0',timingVersion:'promotion-day-3.0.0',directory:'promotion-pay',examLike:true,payDetail:true});
+// 能否转正按考试定稿口径加《求名占》在任专条重写（2026-11-18），作者源与考试同格式。
+export const PROBATION_V3_PROFILE=Object.freeze({questionId:'career.job-stability.probation',questionType:'probation_completion',questionScope:'completion-of-current-probation',manuscriptVersion:'workplace-probation-3.0.0',timingVersion:'workplace-probation-day-3.0.0',directory:'workplace-probation',examLike:true});
+// 职场情况（状况类：稳／有隐患／风险大）按定稿口径加《求名占》在任条轻重重写（2026-11-19），作者源与考试同格式。
+export const STABILITY_V3_PROFILE=Object.freeze({questionId:'career.job-stability.layoff',questionType:'employment_stability',questionScope:'stability-of-current-work',manuscriptVersion:'workplace-stability-3.0.0',timingVersion:'workplace-stability-day-3.0.0',directory:'workplace-stability',examLike:true,stateOutcomes:true});
+// 跳槽去留按定稿口径重写（2026-11-19，docs/review/JOBCHANGE_REJUDGE_20261119.md）：选择类，留／先准备／可走；作者源格式与考试相同。
+export const JOB_CHANGE_V3_PROFILE=Object.freeze({questionId:'career.job-change.decision',questionType:'job_change_decision',questionScope:'compare-current-and-new-and-decide-resignation',manuscriptVersion:'job-change-3.0.0',timingVersion:'job-change-day-3.0.0',directory:'job-change',examLike:true,choiceOutcomes:true});
+// 确定关系按定稿口径重写（2026-11-19，docs/review/ESTABLISHMENT_REJUDGE_20261119.md）：能否类，成／不成；作者源格式与考试相同。
+export const ESTABLISHMENT_V3_PROFILE=Object.freeze({questionId:'relationships.developing.relationship',questionType:'relationship_establishment',questionScope:'whether-the-two-people-can-agree-to-form-a-relationship',manuscriptVersion:'relationship-establishment-3.0.0',timingVersion:'relationship-establishment-day-3.0.0',directory:'relationship-establishment',examLike:true});
 export const isExamLike=profile=>profile===EXAM_PROFILE||profile?.examLike===true;
 export const WORKPLACE_STABILITY_PROFILE=Object.freeze({
  questionId:'career.job-stability.layoff',questionType:'employment_stability',
@@ -52,7 +73,8 @@ export const LOST_OBJECT_RECOVERY_PROFILE=Object.freeze({
  questionScope:'recovery-prospect-with-traditional-direction-and-place-hints',manuscriptVersion:'lost-object-recovery-1.2.0',
  timingVersion:'lost-object-recovery-day-1.0.0',directory:'lost-object-recovery',namedStageEvents:true,
 });
-export const LOST_PET_RECOVERY_PROFILE=Object.freeze({questionId:'search.pets.recovery',questionType:'lost_pet_recovery',questionScope:'search-and-safe-reunion-with-a-specific-lost-pet',manuscriptVersion:'lost-pet-recovery-1.0.0',timingVersion:'lost-pet-stage-day-1.0.0',directory:'lost-pet-recovery',namedStageEvents:true});
+export const LOST_PET_RECOVERY_PROFILE=Object.freeze({questionId:'search.pets.recovery',questionType:'lost_pet_recovery',questionScope:'search-and-safe-reunion-with-a-specific-lost-pet',manuscriptVersion:'lost-pet-recovery-1.0.1',timingVersion:'lost-pet-stage-day-1.0.0',directory:'lost-pet-recovery',namedStageEvents:true});
+export const MISSING_CONTACT_PROFILE=Object.freeze({questionId:'search.missing-contact.contact',questionType:'missing_person_contact_restoration',questionScope:'verified-two-way-contact-with-a-specific-out-of-contact-person',manuscriptVersion:'missing-contact-1.0.0',timingVersion:'missing-contact-stage-day-1.0.0',directory:'missing-contact',namedStageEvents:true});
 export const HISTORICAL_JOB_CHANGE_PROFILES=Object.freeze([
  Object.freeze({questionId:'career.job-change.resign',questionType:'resignation_decision',questionScope:'timing-of-planned-resignation',manuscriptVersion:'job-resign-1.0.0',directory:'job-resign'}),
  Object.freeze({questionId:'career.job-change.compare-jobs',questionType:'job_option_comparison',questionScope:'new-job-against-current-for-selected-priority',manuscriptVersion:'job-compare-1.0.0',directory:'job-compare'}),
@@ -175,9 +197,9 @@ export function promotionTimingSlots(reading,specs,outcome,profile){
   const sourceIds=[...new Set(timingSources)];
   const ruleIds=[rule.rule,'method-order','horizon'];
   const id=kind+'-'+role;
-  const namedStageEvent=profile===JOB_CHANGE_PROFILE||isExamLike(profile)||profile?.namedStageEvents===true;
+  const namedStageEvent=profile===JOB_CHANGE_PROFILE||profile===JOB_CHANGE_V3_PROFILE||isExamLike(profile)||profile?.namedStageEvents===true;
   const valence=namedStageEvent&&kind==='drain'?'耗':rule.valence;
-  const eventEnd=(isExamLike(profile)||profile===LOST_PET_RECOVERY_PROFILE)?'，属'+valence+'应。':'。';
+  const eventEnd=(isExamLike(profile)||profile===LOST_PET_RECOVERY_PROFILE||profile===MISSING_CONTACT_PROFILE)?'，属'+valence+'应。':'。';
   const suffix=namedStageEvent?'前后，'+event+eventEnd+text:'前后，'+text;
   return {id,token:'{{date:'+id+'}}',kind,role,stage,event,text,reason,valence,
    eventScope:isResult?'positive-result-candidate':stage+'-'+kind,
@@ -233,7 +255,9 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
   else if(row.decision.question_type!==profile.questionType||row.decision.questionScope!==(profile.questionScope??'promotion-with-associated-pay'))throw new Error('Authored question scope mismatch');
   checkInterviewShort(row.copy.short.text);
   if(includeHistoricalVoid&&row.ruleVersions.void!==VOID_RULESET.id)throw new Error('Authored void ruleset version mismatch');
-  if(row.movingLineText!==reading.selectedMovingLine.text||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
+  const commentary=profile===MISSING_CONTACT_PROFILE?row.contactApplication?.lineCommentary:undefined;
+  const movingLineText=resolveContactLineText(commentary,reading.selectedMovingLine);
+  if(row.movingLineText!==movingLineText||row.stageIds.some((id,i)=>id!==Object.values(reading.stages)[i].id))throw new Error('Authored chart/source identity mismatch');
   if(row.timingSlots.some(s=>reading.nodes.find(n=>n.role===s.role)?.void.effective!=='active'))return pending();
   const actualSlots=usesStoredTimingSpecs?promotionTimingSlots(reading,row.timingSpecs,row.decision.outcomeCode,profile):interviewTimingSlots(reading,row.timingSlots);
   if(actualSlots.some((s,i)=>JSON.stringify(s.branches)!==JSON.stringify(row.timingSlots[i].branches)))throw new Error('Authored timing branch mismatch');
@@ -250,7 +274,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ? (hasTiming?'以下为传统推算的参考窗口，仅用于已进入近期流程的对应事项。':NO_WINDOW_NOTE)
    : isPromotion
    ? (hasTiming?'传统推算的参考窗口，适用于本次评定已进入近期流程。':row.timingOmission?NO_WINDOW_NOTE:'以下为这次评定各阶段的参考。')
-   : (hasTiming ? (profile===JOB_CHANGE_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
+   : (hasTiming ? (profile===JOB_CHANGE_PROFILE||profile===JOB_CHANGE_V3_PROFILE ? '传统推算的参考窗口，适用于换职已进入近期办理阶段。' : REFERENCE_WINDOW_NOTE) : NO_WINDOW_NOTE);
   const c=row.copy.long;
   const payRange=row.decision.pay?.range;
   const stages=['开局：'+c.opening,'过程：'+c.process,'结局：'+c.ending+(payRange?' '+payRange:'')];
@@ -280,6 +304,9 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
     `${labels[n.role]}${n.trigram}命中${n.void.matchedBranches.join('、')}，作用状态：${n.void.label}。`),
    ...(row.calculationNotes??row.counterevidence.map(c=>c.resolution)),
    ...(row.petApplication ? [row.petApplication.application,row.petApplication.boundaries,'宠物事项与类象作者源：'+row.petApplication.sourcePath+'，第 '+row.movingLine+' 爻。'] : []),
+   ...(row.contactApplication ? [row.contactApplication.application,row.contactApplication.boundaries,'恢复联系取义作者源：'+row.contactApplication.sourcePath+'，第 '+row.movingLine+' 爻。',row.contactApplication.lineCommentary.quote,row.contactApplication.lineCommentary.application] : []),
+   ...(row.contactApplication?.lineCommentary.parallelReadings??[]).map(source=>'对照注疏：'+source.sourcePath+'。“'+source.quote+'” '+source.application),
+   ...(row.contactApplication?.lineCommentary.versionDifference?[row.contactApplication.lineCommentary.versionDifference]:[]),
    ...(row.imageApplication ? ['形色器物对照取本用' + row.imageApplication.objectTrigram + '参原物已有特征，变用' + row.imageApplication.environmentTrigram + '参周边容器与实际环境。', '原件形状、材质、颜色及构造以原照片和记录核对。物象是条件性比对类目。', '形色器物作者源：' + row.imageApplication.sourcePath + '，第 ' + row.imageApplication.movingLine + ' 爻。'] : []),
    ...(row.imageApplication ? row.imageApplication.sourceEvidence.map(source => '类象依据 ' + source.id + '《' + source.title + '》，原文第 ' + source.locator.startLine + ' 行起。“' + source.quote + '” ' + source.reason) : []),
    ...(row.locationApplication ? ['方位取象取变用' + row.locationApplication.trigram + '，传统方向' + row.locationApplication.direction + '。依实际收放或已知行程作补查参照。', '《失物占第十五》原文：' + row.locationApplication.quote, '方位取象作者源：' + row.locationApplication.sourcePath + '，第 ' + row.locationApplication.movingLine + ' 爻。'] : []),
@@ -298,6 +325,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
    ...(includeHistoricalVoid?{void:{...VOID_RULESET,dayGanzhi:reading.dayGanzhi,emptyBranches:[...reading.nodes.find(n=>n.role==='body').void.xun.branches],
     nodes:reading.nodes.filter(n=>n.role!=='body_inherited').map(n=>({role:n.role,trigram:n.trigram,hitKind:n.void.hitKind,matchedBranches:[...n.void.matchedBranches],state:n.void.state,effective:n.void.effective})),notes:exactProfile?[...row.coreVoidNotes]:[]}}:{}),
    ...(row.petApplication?{pet:row.petApplication}:{}),
+   ...(row.contactApplication?{contact:row.contactApplication}:{}),
    timing:{independentInterpretationReview:'pending',windows:dateResolution.dateMatches,...(timingOmission?{omission:timingOmission}:{})},
    paragraphs:[...dateAndMonthNotes,
     ...detailLines,
@@ -315,6 +343,7 @@ export function createInterviewManuscriptRepository({library,readJSON,includeHis
      return `${d.valence}应 · ${d.event}：取${label}${d.calculationBasis.trigram}${d.calculationBasis.element}所应${d.targetBranches.join('、')}日；显示${d.displayedDates.join('、')}${round}。${methodNote}${ruleNote}`;
     })]};
   return freeze({status:'ready',reading,title:row.copy.title,short:row.copy.short.text,long:c,decision:row.decision,
+   ...(movingLineText===reading.selectedMovingLine.text?{}:{movingLineText}),
    paragraphs:dates.paragraphs,story:dates.paragraphs.join('\n\n'),narrativeParagraphs,timingSection,dateResolution,calculationExplanation,timingDecision:allSlots,
    review:row.review,sourceIds:row.sourceIds,monthBranch:reading.monthBranch,monthOrder:reading.monthOrder,voidMatch:!includeHistoricalVoid?'not-applied':exactProfile?'recorded-context':'base-with-no-core-change',manuscriptVersion:row.review.version,productionAllowed:true,predictionAllowed:true,
    interpretationScope:'traditional-symbolic;author-checked-exact-case;not-verified-real-world-outcome',reportedOutcome:null});

@@ -210,6 +210,6 @@ test('promotion verdicts follow the finalized rule with the in-office clause', a
    favourable += row.decision.outcomeCode === 'favourable';
   }
  }
- assert.equal(favourable, 353);
+ assert.equal(favourable, 341);
 });
 

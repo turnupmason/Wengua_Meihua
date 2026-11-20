@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-11-19T14:04:49.681Z",
+  "scope": "Observed command completions for this targeted recheck, not independent interpretation approval",
+  "runs": [
+    {
+      "command": "npm run build:lost-pet-recovery",
+      "exitCode": 0,
+      "manuscriptVersion": "lost-pet-recovery-1.0.1",
+      "charts": 384,
+      "monthKeys": 4608,
+      "versions": 1920,
+      "dated": 1865,
+      "undated": 55
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "passed": 121,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "npm run build:sqlite",
+      "exitCode": 0,
+      "integrity": "passed",
+      "foreignKeys": "passed"
+    },
+    {
+      "command": "node scripts/review/lost-pet-recheck-20261119.mjs",
+      "exitCode": 0,
+      "newRuleDateComputations": 68,
+      "commentaryMatches": 690,
+      "judgmentEvidenceMatches": 200
+    }
+  ],
+  "allLibrarySql": {
+    "versions": 23100,
+    "baseMonthSlots": 55440,
+    "exactContextLinks": 0
+  },
+  "limits": {
+    "professionalReview": "pending",
+    "timingInterpretationReview": "pending",
+    "noAdditionalLiteraryPolish": true,
+    "noVoid": true
+  }
+}

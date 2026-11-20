@@ -2,10 +2,10 @@
   "primaryId": 30,
   "actor": "assistant-author",
   "fullArticlesRead": 30,
-  "reviewedAt": "2026-11-18T23:52:43.464Z",
+  "reviewedAt": "2026-11-19T13:27:30.350Z",
   "sourceSha256": "18a37a8f81bc6e3e02d711e9cc7c20c5c1e4c4d9dd62f0a62dc6c5402c94e5e0",
-  "casesSha256": "04570bf96141a7157a9499b2f2987dabf4d230c0c91ce025abd934c49667d8da",
-  "reviewScope": "All thirty full manuscripts read back in three groups of ten. Ten affected complete articles reread in two groups of five after specific corrections. Whole Li chapter of project Yi and public Wang/Kong read; matching Benyi and Chengzhuan sections in project reference corpus compared, and public source pages checked. No extra AI polish phase.",
+  "casesSha256": "7ca556aae3bc4308d306de8a48ec27a1e4d130edc8cf801db0a553b0ea7a47cb",
+  "reviewScope": "All thirty full manuscripts read back in three groups of ten. Ten affected complete articles reread in two groups of five after specific corrections. Whole Li chapter of project Yi and public Wang/Kong read; matching Benyi and Chengzhuan sections in project reference corpus compared, and public source pages checked. No extra AI polish phase. Final citation audit: this corrected source excerpt and its context were read, exact stored-source spelling/punctuation/annotation boundaries restored; authored reader copy and prior whole-article read count unchanged.",
   "corrections": [
     "六五夏开局推动物歧义整段改写，明窗红色只实景，室内去向依目击。",
     "六二秋过程、九三土结局、六五秋及上九秋结局逐段改写，删除元吉字样、保留等内部审读口吻，明示实际办理条件。",
@@ -17,5 +17,39 @@
   "imageryReview": "Actual bright windows/red-purple fixtures, metal/round/rigid or white/notched background, long wood/rope-shaped structures, soil-stone/yellow facilities/steps, green plants only as appropriate visible context. No unknown species, coat, age, health, fate, location, fire, drowning, abandonment, custody or motive.畜牝牛 explicitly人事假喻, drum not animal-calling method,王公 not predicted authority,折首獲 not injury or force capture. Real chip registration only conditional on actually implanted/registered, no GPS. Original uploads unchanged, version differences in错然、日昃与嗟、王公、獲匪其醜 traced.",
   "independentProfessionalReview": "pending",
   "userAcceptedEachArticle": false,
-  "extraLiteraryPolishPerformed": false
+  "extraLiteraryPolishPerformed": false,
+  "citationCorrections": [
+    {
+      "movingLine": 1,
+      "sourcePath": "sources/reference/zhouyi-zhengyi-hans/03離.txt",
+      "before": "「错然」者，警慎之貌也。",
+      "after": "“错然”者，警慎之貌也。",
+      "reason": "与本地简体王注引号对齐，警慎与原判断不变。",
+      "contextRead": true,
+      "readerCopyChanged": false,
+      "decisionChanged": false
+    }
+  ],
+  "targetedRechecks": [
+    {
+      "scope": "recorded-judgment-tension",
+      "path": "sources/editorial/lost-pet-recovery/recheck-20261119/judgment-rechecks.json",
+      "caseIndex": 4,
+      "movingLine": 3,
+      "disposition": "author-rechecked-retained",
+      "fullArticlesRead": 0,
+      "reviewedAt": "2026-11-19T13:25:38.201Z",
+      "independentProfessionalReview": "pending"
+    },
+    {
+      "scope": "recorded-judgment-tension",
+      "path": "sources/editorial/lost-pet-recovery/recheck-20261119/judgment-rechecks.json",
+      "caseIndex": 5,
+      "movingLine": 4,
+      "disposition": "author-rechecked-retained-with-unresolved-application",
+      "fullArticlesRead": 0,
+      "reviewedAt": "2026-11-19T13:27:30.350Z",
+      "independentProfessionalReview": "pending"
+    }
+  ]
 }

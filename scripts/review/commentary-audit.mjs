@@ -6,7 +6,9 @@ const args = process.argv.slice(2); const oi = args.indexOf('--out'); const out 
 const items = args.filter((a, i) => a !== '--out' && i !== oi + 1);
 const T2S = {陽:'阳',陰:'阴',於:'于',無:'无',龍:'龙',戰:'战',
   // 异体与底本录入字（逐条对过原文）：巳已、絜潔洁、鄣障、㧑撝、陗峭、馀余、耽眈、闚窥、壊壞坏、徳德、夫夬（本义履九五）
-  巳:'已',絜:'洁',潔:'洁',潔:'洁',鄣:'障',㧑:'撝',峭:'陗',馀:'余',耽:'眈',窺:'窥',闚:'窥',壊:'坏',壞:'坏',徳:'德',己:'已',扞:'捍',脩:'修',給:'给',覲:'觐',為:'为',進:'进',仕:'仕',養:'养',朝:'朝'};
+  巳:'已',絜:'洁',潔:'洁',潔:'洁',鄣:'障',㧑:'撝',峭:'陗',馀:'余',耽:'眈',窺:'窥',闚:'窥',壊:'坏',壞:'坏',徳:'德',己:'已',扞:'捍',脩:'修',給:'给',覲:'觐',為:'为',進:'进',仕:'仕',養:'养',朝:'朝',
+  // 2026-11-19 逐月长稿核查确认的参考本录入异体（正文用通行字）：㢲巽、専专、頥颐、宼寇、甯宁、尢尤、暌睽；参考本把「乾」转成「干」，两侧同归「干」。
+  㢲:'巽',専:'专',頥:'颐',宼:'寇',甯:'宁',尢:'尤',暌:'睽',乾:'干',薰:'熏',薫:'熏',㫁:'断',𫉬:'获'};
 const han = s => [...String(s)].map(c => T2S[c] ?? c).join('').replace(/[^\p{Script=Han}]/gu, '').replace(/履干/gu, '履乾').replace(/夫决其履/gu, '夬决其履');
 const base = ['yijing64.txt','meihua-volumes-1-3.txt'].map(f => han(readFileSync('sources/original/' + f, 'utf8'))).join('|')
   + '|' + JSON.parse(readFileSync('data/editorial-patches.json', 'utf8')).map(p => han(p.after ?? '')).join('|');
@@ -32,8 +34,23 @@ function scan(item, where, s) {
     const r = res.get(k); r.n++; if (r.at.length < 4) r.at.push(item + ':' + where);
   }
 }
-for (const item of items) {
+// --monthly：核逐月长稿 sources/editorial/<问项>/monthly/hex-NNN.json（标题、简断、正文、专业说明、取期），2026-11-19 加。
+const monthly = items.includes('--monthly');
+for (const item of items.filter(a => a !== '--monthly')) {
   const dir = `sources/editorial/${item}/`;
+  if (monthly) {
+    const md = dir + 'monthly/';
+    for (const f of readdirSync(md).filter(f => /^hex-\d{3}\.json$/.test(f))) {
+      const id = f.slice(4, 7);
+      for (const a of JSON.parse(readFileSync(md + f, 'utf8')).articles) {
+        const k = `${id}/${a.movingLine}/${a.monthBranch}`;
+        scan(item, k + '/title', a.title); scan(item, k + '/short', a.short);
+        a.paragraphs.forEach((p, i) => scan(item, `${k}/p${i + 1}`, p));
+        scan(item, k + '/judgment', a.judgment); scan(item, k + '/timing', JSON.stringify(a.timing));
+      }
+    }
+    continue;
+  }
   for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
     const id = f.slice(4, 7);
     const src = JSON.parse(readFileSync(dir + f, 'utf8'));

@@ -1,5 +1,7 @@
 # 恋爱发展 · 我们能确定恋爱关系吗？
 
+> 2026-11-19 起按定稿口径重写为 `relationship-establishment-3.0.0`，只判成与不成，规则见 [确定关系补判记录](review/ESTABLISHMENT_REJUDGE_20261119.md)。下文为旧版（1.0.0）的取义说明，留档。
+
 正式问项为 `relationships.developing.relationship`，类型为 `relationship_establishment`。适用于已有明确对象、双方尚未确定关系，问现有来往能否走到双方自愿确认的阶段。约见、谈得来、表达好感和得到回应，分别用来判断进展。是否已经确定关系以双方明白而自由的同意为准。
 
 ## 古籍与应用边界

@@ -3,8 +3,8 @@
 const {tierV21} = require('./indirect-test.cjs');
 const {xiang} = require('./xiang-rule.cjs');
 // fx: {n, rel, text}；hexId 本卦卦序；changedId 变卦卦序；love 是否婚恋问项（姤「勿用取女」只对婚恋）。
-function tierFinal(fx, hexId, changedId, love = false) {
-  const t = tierV21(fx);
+function tierFinal(fx, hexId, changedId, love = false, opts = {}) {
+  const t = tierV21(fx, opts);
   const x = xiang(t, fx.rel, hexId, changedId, love, 'both');
   return x === t.t ? t : {...t, t:x, why:t.why + ' → 卦象主断（487 行「不必拘体用」）'};
 }

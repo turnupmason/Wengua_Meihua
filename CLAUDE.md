@@ -1,10 +1,16 @@
-宠物走失正在逐盘撰写，当前已完成乾为天至风火家人共1,110篇、222种基础盘、2,664个月令键；下一键火泽睽初九寅卯。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。
+失联寻人作者稿已写满：`search.missing-contact.contact` 只问恢复本人可确认的双向联系，采用明示人事／求谋现代类推。1,920 篇已逐篇写作并全文核读，覆盖 384 种基础盘、4,608 个月令键。由艮为山至火水未济补齐 390 篇、936 个键，前 51 卦稿件维持原记录。全库 1,588 篇保留动态阶段应期，332 篇记录具体不取期原因，1,493 篇（3,588 个键）保留具体断法适用问题。独立专业与应期审核仍待核。不看空亡，不做额外 AI 全文精修。见[作者目录](docs/missing-contact/README.md)、[专项政策](docs/MISSING_CONTACT_POLICY.md)及逐卦作者回执。
 
-`career.interview.interview-pass` 于 2026-11-18 按考试定稿口径补判重写为 `interview-pass-3.0.0`：1,920 篇只判能过 639、过不了 1,281，与考试同盘结论逐盘一致；作者源 `sources/editorial/interview-pass/`（含 polish-v5、review-v2），由 `build-promotion-pay.mjs interview-pass` 构建。口径、回测与逐条裁定见 [补判记录](docs/review/INTERVIEW_REJUDGE_20261118.md)，写法见 [写作说明](docs/review/INTERVIEW_WRITE_BRIEF.md)。空亡旧版（interview-pass-2.0.0、`interview-rewrites/`、`interview-void-*`）只留档，不进正文。问项只涉及本轮面试。
+宠物走失001乾至064未济已逐盘写定并作者全文核读，共1,920篇不同正文、384种基础盘、4,608个月令键，基础写作无剩余。问项 search.pets.recovery，以寻找并安全接回之事作明示求谋类推，不套失物章，不看空亡，不做额外AI全文精修。本轮原89篇未取期已逐篇重查，34篇补动态阶段阻节、55篇保留具体原因；现1,865篇有动态应期规则。146条原断法分歧已逐条查完，12篇实质改判为有条件，68条现代适用冲突仍具体待核；正文补丁lost-pet-recovery-1.0.1，独立专业与应期解释审核pending。实际进度见 [宠物目录](docs/lost-pet-recovery/README.md)，依据及限制见 [专项政策](docs/LOST_PET_RECOVERY_POLICY.md)。原完成核查与待审事项见 [收尾记录](docs/lost-pet-recovery/FINAL_AUDIT_20261119.md)。本轮取期及146条断法分歧专项进度见 [专项复核](docs/lost-pet-recovery/RECHECK_20261119.md)。
 
-`career.job-change.decision` 同篇比较现职与新工作并回答现在是否宜辞。已逐篇写作并作者核读 1,920 篇，覆盖 384 种基础盘和 4,608 个月令键。应期从实际起卦日换算。见[正文目录](docs/job-change/README.md)及[取义与复核记录](docs/JOB_CHANGE_POLICY.md)。
+`career.interview.interview-pass` 于 2026-11-18 按考试定稿口径补判重写为 `interview-pass-3.0.0`：1,920 篇只判能过 627、过不了 1,293（2026-11-19 用党多回改 12 篇），与考试同盘结论逐盘一致；作者源 `sources/editorial/interview-pass/`（含 polish-v5、review-v2），由 `build-promotion-pay.mjs interview-pass` 构建。口径、回测与逐条裁定见 [补判记录](docs/review/INTERVIEW_REJUDGE_20261118.md)，写法见 [写作说明](docs/review/INTERVIEW_WRITE_BRIEF.md)。空亡旧版（interview-pass-2.0.0、`interview-rewrites/`、`interview-void-*`）只留档，不进正文。问项只涉及本轮面试。
 
-`career.promotion-pay.promotion` 于 2026-11-18 补判重写为 `promotion-pay-3.0.0`：考试定稿口径加《求名占》在任专条（盘中有克体之卦一律升不了，用户定），另有屯九五、讼上九、泰上六、遯九三四条晋升专属降判；能升 353、升不了 1,567，能升的篇第 12 栏写随岗薪资说明。作者源与考试同格式，旧稿及 timing.json 留档于 `sources/editorial/promotion-pay/legacy-v1/`。口径、回测与裁定见 [晋升补判记录](docs/review/PROMOTION_REJUDGE_20261118.md)，结论规则在 `scripts/review/promotion-verdicts.cjs`。
+`career.job-change.decision`（跳槽去留，选择类）于 2026-11-19 补判重写为 `job-change-3.0.0`：体为问事人、用为换到这份新工作，依《求谋占》判成不成，有条件按结局拆，爻辞按定稿第十三节第 3 步只翻一次，另开「用党多则体势衰」（用户定，其余已定问项待回改）；成者依《占卦诀》分时机。三档：留 1,319、先准备 436、可走 165，去掉旧「待核」档。旧稿留档于 `sources/editorial/job-change/legacy-v1/`。口径、跳槽专属爻辞表、回测与逐条裁定见 [跳槽补判记录](docs/review/JOBCHANGE_REJUDGE_20261119.md)，结论规则在 `scripts/review/jobchange-verdicts.cjs`，测试在 `tests/job-change-v3.test.mjs`。
+
+`career.promotion-pay.promotion` 于 2026-11-18 补判重写为 `promotion-pay-3.0.0`：考试定稿口径加《求名占》在任专条（盘中有克体之卦一律升不了，用户定），另有屯九五、讼上九、泰上六、遯九三四条晋升专属降判；能升 341、升不了 1,579（2026-11-19 用党多回改 12 篇），能升的篇第 12 栏写随岗薪资说明。作者源与考试同格式，旧稿及 timing.json 留档于 `sources/editorial/promotion-pay/legacy-v1/`。口径、回测与裁定见 [晋升补判记录](docs/review/PROMOTION_REJUDGE_20261118.md)，结论规则在 `scripts/review/promotion-verdicts.cjs`。
+
+`career.job-stability.probation` 于 2026-11-18 补判重写为 `workplace-probation-3.0.0`：考试定稿口径加《求名占》在任专条（盘中有克体之卦一律转不了，用户定，与晋升一致），另有讼上九一条转正专属降判；能转正 356、转不了 1,564（2026-11-19 用党多回改 12 篇）。作者源与考试同格式，旧稿留档于 `sources/editorial/workplace-probation/legacy-v1/`。口径、回测、裁定与全稿复核见 [转正补判记录](docs/review/PROBATION_REJUDGE_20261118.md)，结论规则在 `scripts/review/probation-verdicts.cjs`，测试在 `tests/workplace-probation.test.mjs`。
+
+`career.job-stability.layoff`（职场情况，状况类）于 2026-11-19 补判重写为 `workplace-stability-3.0.0`：定稿三档初判加《求名占》在任条分轻重（有克体之卦不判稳；无生体而克有力、或体弱遇旺克为风险大；有生可救、或体有力而克体之卦无气为有隐患；无克体之卦最多有隐患），另 29 条职场专属爻辞降一档；稳 343、有隐患 873、风险大 704（2026-11-19 用党多回改 48 篇，「体有力」降档在用党多时不适用）。旧稿留档于 `sources/editorial/workplace-stability/legacy-v1/`。口径、回测与逐条裁定见 [职场补判记录](docs/review/STABILITY_REJUDGE_20261119.md)，结论规则在 `scripts/review/stability-verdicts.cjs`，测试在 `tests/workplace-stability-v3.test.mjs`。考试第 49–64 卦的收尾见 [考试收尾记录](docs/review/EXAM_49_64_FINAL_20261119.md)；其余七个已写领域的核查见 [七领域核查](docs/review/REMAINING_DOMAINS_AUDIT_20261119.md)。
 
 面试旧版（v2）原 60 篇及 1,860 篇重写稿的作者源留档于 `sources/editorial/interview-rewrites/`，`progress.json` 记的是旧版进度。独立专业审核仍为 pending。客户端读取预写字段。
 
@@ -96,7 +102,7 @@ npm run build:data；npm run validate；npm run validate:details；npm run valid
 
 ## 考试问项定稿（2026-11-18）
 
-`career.exams.exam` 已按 [断语判断口径 V2 定稿](docs/READING_POLICY_V2.md) 逐篇补判，1,920 篇只判能过或不能过：能过 639 篇，不能过 1,281 篇。定稿内容：
+`career.exams.exam` 已按 [断语判断口径 V2 定稿](docs/READING_POLICY_V2.md) 逐篇补判，1,920 篇只判能过或不能过：能过 627 篇，不能过 1,293 篇（2026-11-19 补「用党多则体势衰」，见 READING_POLICY_V2 第十四节与 [用党多回改说明](docs/review/USEPARTY_BACKFIX_20261119.md)）。定稿内容：
 - 一层间接生克，以《体用》「彼灭其吉」「稍解其穷」为据，写入 `decision.indirectEffectsApplied`；
 - 休为无气；
 - 本用泄体或克体；

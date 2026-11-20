@@ -38,6 +38,9 @@ manuscriptProgress.set(lostObject.questionId,{...lostObject,progressPath:lostObj
 const petPath='data/authored-readings/lost-pet-recovery/index.json';
 const pet=JSON.parse(await readFile(new URL(petPath,root),'utf8'));
 manuscriptProgress.set(pet.questionId,{...pet,progressPath:petPath});
+const contactPath='data/authored-readings/missing-contact/index.json';
+const contact=JSON.parse(await readFile(new URL(contactPath,root),'utf8'));
+manuscriptProgress.set(contact.questionId,{...contact,progressPath:contactPath});
 const current=[...manuscriptProgress.values()].find(index=>index.remainingBaseSlots)??[...manuscriptProgress.values()].at(-1);
 const samples=JSON.parse(await readFile(new URL('data/ten-readings-v3.json',root),'utf8'));
 for(const a of accepted.samples){const current=samples.items.find(s=>s.number===a.number);if(!current||current.artifactDigest!==a.artifactDigest)throw new Error('Accepted sample changed; do not silently carry acceptance onto revised text');}

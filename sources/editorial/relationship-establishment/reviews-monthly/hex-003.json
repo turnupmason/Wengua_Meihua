@@ -1,0 +1,277 @@
+{
+  "primaryId": 3,
+  "baselineCommit": "1fde116a8c4057a281bf00e530a0727e245ca768",
+  "editor": "claude-opus-5-5",
+  "reviewedAt": "2026-11-19T23:39:08.770Z",
+  "wholeArticlesRead": 72,
+  "sourceSha256": "6b5c2af4e74359a79f749fdaf0385ed8b85846bbd5975a1f235a291b16adb1f5",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "authorshipScope": {
+    "newlyWritten": "水雷屯六爻×十二月共72篇，逐篇直接撰写标题、简断与五至八段正文；未用句库、随机拼句或自动扩写。专业说明按确定关系补判记录为每一气写定（同气月份相同），取期照抄五气源第10栏的种类与位置，事件、提示、依据与无期说明按相处场面重写。",
+    "currentReadback": "每写完一爻12篇即跑 check-monthly --draft，并把标题、简断、全部自然段、专业说明与取期完整输出读回；六批共72篇实读。读回后所作修改：补足不到450汉字的篇、按王注改正六二「匪寇婚媾」读法（6篇）、删去暗示对方另有所应的一句（3/3/申）、去掉「说不定」等易生歧义的说法、改正「补判」「有条件」等内部用语，均另行输出核对。",
+    "notClaimed": "作者自读不冒充独立全文审稿，不冒充人工或用户逐篇验收；检查脚本通过不等于已读；古籍解释与现行判定规则之间的张力只登记，不据正文自行翻判。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/relationship-establishment/hex-003.json",
+      "scope": "30行五气源：第2栏结论逐字照用；第9栏说明逐气读过并作专业说明的底稿；第10栏取期种类与位置照抄，事件、提示、依据与无期说明逐条重写。旧正文情节不进月稿。"
+    },
+    {
+      "path": "sources/editorial/relationship-establishment/polish-v5/hex-003.json",
+      "scope": "30条 establishmentRule 与 oldOutcome 逐条对照结论来由。"
+    },
+    {
+      "path": "data/authored-readings/relationship-establishment/hex-003.json",
+      "scope": "经 scripts/review/packet.mjs relationship-establishment 3 输出30盘本互变、六节点五行五态与四处直接关系，逐爻逐气核对；一层间接生克（682 行）按 READING_POLICY_V2 第八节逐盘手算后写入说明。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01屯.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/01屯",
+      "scope": "卦辞、彖、大象、六爻爻辞与小象、王弼注、孔颖达疏全文阅读；正文所引注疏均按此本逐字核过（此本「已／己」多误作「巳」，引用时改回本字，「原发」一处未引）。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "屯上六本义「阴柔无应处屯之终进无所之忧惧而已」一段读过，登记在 findings；其余各爻本义未逐条读，不引。"
+    },
+    {
+      "path": "sources/revised/yijing64.txt",
+      "scope": "屯94、蒙133、师250、比289、随640、蛊679、剥874、复913、损1576、益1615、涣2278、节2317、既济2434、未济2473行卦辞，核本卦、互卦、变卦卦辞原文。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实读487卦断遗论、494体用（体党多、用党多）、531–533婚姻占两段、655复明时令之应、682体用（彼灭其吉、稍解其穷）、688衰旺论、792占卦诀、796–798体用互变之诀、804体用衰旺之诀。"
+    },
+    {
+      "path": "docs/review/ESTABLISHMENT_REJUDGE_20261119.md",
+      "scope": "口径、二分规则、婚恋专属爻辞表（降档：3·2、3·3、3·6、4·1、4·3；升档：3·4）、写作中的裁定。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第二节判定步骤与爻辞调整、第八节一层间接生克、第十三节二分与只翻一次、第十四节用党多（第3、4卦本用皆不成用党，未适用）。"
+    },
+    {
+      "path": "docs/review/ESTABLISHMENT_MONTHLY_BRIEF.md",
+      "scope": "专项说明全文；第3、4卦无「卦象主断」之篇。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "通用说明全文，含 2026-11-19 补充（保持面试厚度、可上网核对）。本卦未上网检索，只用库内原典。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "磐桓，利居贞，利建侯。",
+      "image": "虽磐桓，志行正也。以贵下贱，大得民也。",
+      "reading": "王注「动则难生，不可以进」「息乱以静，守静以侯」「安民在正，弘正在谦」，孔疏「不进之貌」「非苟求宴安」。读为相处之初宜静不宜进，把自己的位置站稳、放低身段，不把磐桓写成放弃。守正之辞不落在结果上，五气皆体生用、三土克体、无生体，定为不成；寅卯付出被旺木带走最重，巳午、四季体无气，申酉、亥子体有气而一头热，正文按此分轻重。",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "屯如邅如，乘马班如，匪寇婚媾。女子贞不字，十年乃字。",
+      "image": "六二之难，乘刚也。十年乃字，反常也。",
+      "reading": "按王注「无初之难，则与五婚矣」读「匪寇婚媾」：近处那层难处撤去便得相合；孔疏「十者数之极，数极则变」，「十年」不作真实年数。「寇」不附会成任何人，只写牵绊来往的事。变用兑金生体，按结局五气皆定为能成，申酉兑旺成得轻，巳午兑死成得紧，四季体死靠「衰稍解」。「女子贞不字」写成守住分寸、不仓促表态，不写性别角色。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E003-A03"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "即鹿无虞，惟入于林中。君子几，不如舍，往吝。",
+      "image": "即鹿无虞，以从禽也。君子舍之，往吝穷也。",
+      "reading": "孔疏「不自揆度彼五之情纳已以否」「几为语辞，不为义也」，王注「见路之易，不揆其志」。读为两人之间实情未清就一路追，「舍」是放下追赶的劲而不是放弃此人；不替对方断心意。读回时删去一处引孔疏「五自应二」而暗示对方另有所应的句子（3/3/申）。吝辞与无生有克同向，五气皆不成。",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "乘马班如，求婚媾，往吉，无不利。",
+      "image": "求而往，明也。",
+      "reading": "王注「求与合好，往必见纳矣」，孔疏「明识初与二之情状」。读为看清情状后主动去求，方法是对的，吉辞完整保留，不缩成小事。用生体写成开头对方有相就之意；变用兑金克体，五气皆不成，正文写明吉辞所需条件在各气何处不足（寅卯坎休、巳午坎囚、申酉体死而兑旺、亥子兑得两土生而无火制、四季体囚）。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E003-A01"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "屯其膏，小贞吉，大贞凶。",
+      "image": "屯其膏，施未光也。",
+      "reading": "王注「固志同好，不容他间」「小贞之吉，大贞之凶」，孔疏「出纳之吝谓之有司，是小正为吉」。取「小贞吉」一面：专心相待、守在两人之间，不在说定之初铺张、对外宣扬或一次许下过多。「不容他间」写成心思专一，不写他人插足。有生无克，五气皆能成，体弱只主迟与费力。",
+      "status": "partially-reviewed",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "乘马班如，泣血涟如。",
+      "image": "泣血涟如，何可长也？",
+      "reading": "王注「处险难之极，下无应援，进无所适」「居不获安，行无所适，穷困𬮱厄，无所委仰」，孔疏「何可长」为「穷困泣血，何可久长也」。读为求合走到尽头、进退无着；「泣血涟如」写成伤心不止，不用流血比喻。盘中有生无克，凶辞无过程可落，按补判记录与定稿第二步例直接主断，五气皆不成；正文写明体用本可成、结论由爻辞定。",
+      "status": "partially-reviewed",
+      "openFindingIds": [
+        "E003-A02"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "E003-A01",
+      "status": "open-priority",
+      "keys": [
+        "3/4/亥子",
+        "3/4/寅卯",
+        "3/4/申酉"
+      ],
+      "finding": "屯六四「乘马班如，求婚媾，往吉，无不利」是补判记录升档表所列、直接落在婚媾上的吉辞，王注「求与合好，往必见纳矣」。亥子两篇体震相、本用坎水旺而生体、两互囚土为体所克，唯变用兑金休而克体；按第八节一层作用，兑得两土生而无火制，作有力论，升档条件「变用克体时另有限制」不成立，定为不成。若不作一层调力，兑休无气、体相，按第二步「变用克体而克体之卦不旺相、体旺相」可升。寅卯体旺而坎休、申酉坎相而体死，亦属吉辞与末克相持。正文完整保留吉意并写明不翻之由，结论未改，待裁定。"
+    },
+    {
+      "id": "E003-A02",
+      "status": "open-priority",
+      "keys": [
+        "3/6/寅卯巳午申酉亥子辰未戌丑"
+      ],
+      "finding": "屯上六五气全盘无克体之卦，本用坎水生体、变用巽木比和（R1a），《婚姻占》「用生体，婚易成」「体用比和，婚姻吉利」、《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）皆指向成，亥子尤甚（体相、坎旺、巽相）。现行结论依补判记录降档表与定稿第二步例（屯上六之于确定关系），以「盘中无克体之卦，凶辞直接主断」定为不成。另朱熹《周易本义》解上六为「阴柔无应处屯之终进无所之忧惧而已」，偏重忧惧之状；小象「何可长也」孔疏读为困厄不能久长。凶辞是否必然落在结果上，与体用全吉之间的先后，待裁定；正文未改结论。"
+    },
+    {
+      "id": "E003-A03",
+      "status": "open-priority",
+      "keys": [
+        "3/2/辰未戌丑",
+        "3/2/*"
+      ],
+      "finding": "屯六二列在补判记录降档表（「女子贞不字，十年乃字」：当下不字）。现行五气皆定为能成：克体在两互而不在变用、盘中有克体之卦，降档三条件皆不合；四季体死，两互旺土按一层作用受震木所克而无生，作气弱，不算「体死而克体之卦有力」。若不作一层调力，四季即合降档条件而翻为不成。又「十年乃字」字面主迟，与「这一回能确定」之间的分寸，正文以「数极则变、难过而合」写，未写成很快能成。待裁定。"
+    },
+    {
+      "id": "E003-B01",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/2/*"
+      ],
+      "finding": "「匪寇婚媾」有两读：王注以「寇」为初九、无初之难则与五婚；另一常见读法为「来者非寇，乃求婚媾」。月稿按王注，读回时把六篇写成「挡路的不是来作对的」的句子改为王注读法；「寇」不附会成任何人，不写第三者。"
+    },
+    {
+      "id": "E003-B02",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/5/*"
+      ],
+      "finding": "「小贞吉，大贞凶」按王孔讲施泽广狭与有司之正，月稿类推为在两人之间专一相待为小贞、在说定之初急于铺开对外、一次许下太多为大贞；这是现代转用，不冒充古注唯一释义。凶在求大之法，不在所问结果，五气能成不变。"
+    },
+    {
+      "id": "E003-B03",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "3/6/*",
+        "3/3/*",
+        "3/1/*"
+      ],
+      "finding": "正文只写日常相处：上六「泣血」写成伤心不止；六三「即鹿」写成追赶而不写猎杀；初九「建侯」取把自己的日子安排出条理之意，不写治民。"
+    },
+    {
+      "id": "E003-C01",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "3/*/*"
+      ],
+      "finding": "五气源第10栏旧文的无据情节不进月稿：搬家、气话、每周一杯咖啡、对方带来点心、提前订位、对方说先缓一缓或说累了、朋友圈等。事件改为「约好的见面被别的事挤到了后头」「约定的事临到跟前又往后推了」「对方主动约你见面」「你提起往后的事，话没能接下去」一类看得见的事；无期说明重写为30–60字；种类、位置与依据结构不变。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    },
+    {
+      "id": "E003-C02",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "3/*/*"
+      ],
+      "finding": "专项说明称五气源第9栏仍是考试旧说明；实读第3卦第9栏已是确定关系补判后的说明，30条均写「定为能成／不成」且与第2栏一致。月稿专业说明以其为底按气重写，补入一层间接生克的具体判断（如六三巳午、四季两互土得离火生又受震木克、相抵按本气论）与《婚姻占》相关原句；结论无一改动。",
+      "impact": {
+        "outcomeChanged": false,
+        "timingSignatureChanged": false
+      }
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": "寅卯辰巳午未申酉戌亥子丑",
+      "scope": "标题、简断、全部自然段、专业说明与取期完整输出后实读；读回后的局部修改（补厚、改错引、去第三者暗示、去重复长句）另行输出核对",
+      "status": "author-readback-complete"
+    }
+  ],
+  "checks": {
+    "monthlyStructure": "72 complete; check-monthly --draft 每爻写完即跑，0 errors",
+    "bodyHanRange": [
+      451,
+      563
+    ],
+    "shortHanRange": [
+      62,
+      78
+    ],
+    "flexibleLengthWarnings": 0,
+    "lengthDecision": "读回时凡不足450汉字的篇，按用户「保持面试厚度」要求补写注疏或时令上的实在解释，不以重复结论凑字。",
+    "outcomes": {
+      "difficult": 48,
+      "favourable": 24
+    },
+    "independentChart": {
+      "inputs": 72,
+      "comparisons": 1944,
+      "mismatches": 0,
+      "method": "check-monthly 独立文王上下卦表与六爻位运算，逐篇27项比较本互变、动爻、六节点五行五态与四处直接关系；不评价现实预测准确率。"
+    },
+    "dateCases": 144,
+    "dateErrors": 0,
+    "timing": "全部保留五气源第10栏的种类与位置，同气月份相同；事件、提示、依据与无期说明按相处场面重写，提示不以「若、如、近期、要是」起句，无期说明30–60字且不用日级、节点、生体、克体等词。",
+    "sameQiMonths": "寅卯、巳午、申酉、亥子及辰未戌丑各组结论、专业说明与取期结构相同，正文逐月分写，不加月支冲合。",
+    "exactSentenceDuplicatesAtLeast24HanExcludingQuotedClassics": 0,
+    "crossHexDuplicateScope": "已与库中第1、2卦及同批第3、4卦月稿一并查重，无整篇、整段及24汉字以上长句重复。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "尚未由另一作者逐篇独立全文审阅；排盘、日期与查重只经检查脚本核对。"
+  },
+  "realWorldPredictionAccuracy": "not-validated"
+}

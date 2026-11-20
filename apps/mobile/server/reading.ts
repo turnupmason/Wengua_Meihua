@@ -127,6 +127,7 @@ const briefOf = (c: Content) => ({
 /** The whole 断语, as the app shows it. */
 const fullOf = (c: Content) => ({
   ...briefOf(c),
+  ...(c.movingLineText === undefined ? {} : { movingLineText: c.movingLineText }),
   paragraphs: [...(c.narrativeParagraphs ?? c.paragraphs ?? [])],
   timingSection: c.timingSection
     ? {

@@ -44,6 +44,8 @@ export interface ProductJudgment {
   manuscriptVersion: string | null;
   decisionId: string | null;
   title: string;
+  /** Source-backed punctuation selected for this 断语, when it differs from the archive. */
+  movingLineText?: string;
   /** 简断 */
   short: string;
   /** 详断, as written (e.g. 「开局：…」「过程：…」「结局：…」「总断：…」). */
@@ -244,6 +246,7 @@ export async function judgmentFor(product: Pick<ProductRepository, 'getContent'>
       manuscriptVersion: content.manuscriptVersion ?? null,
       decisionId: decision?.id ?? null,
       title: content.title ?? '',
+      ...(content.movingLineText === undefined ? {} : { movingLineText: content.movingLineText }),
       short: content.short ?? (access === 'brief' ? '' : content.paragraphs[0]) ?? '',
       paragraphs: [...(content.narrativeParagraphs ?? content.paragraphs)],
       timing: timing && timing.windows
