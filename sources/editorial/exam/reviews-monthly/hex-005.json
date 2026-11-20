@@ -2,12 +2,12 @@
   "primaryId": 5,
   "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
   "editor": "Codex",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
   "authorshipScope": {
-    "currentReadback": "水天需已发表的月份共36篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
+    "currentReadback": "水天需已发表的月份共48篇，按爻分月写作，逐篇从最终作者源读回题名、简断、完整正文和取期。"
   },
   "sourceEvidence": [
     {
@@ -36,6 +36,15 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "第553、655、682、688、792、798行，核直接生体、离火制金减助、衰体得生及末生。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02需.txt",
+      "scope": "第44至46行六四经象及王、孔注疏，核阴阳相伤、坎始、出穴以避及顺以听命。",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02需"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第553、655、682、688、792、798行，核求名体生用、用克体、制克稍解、体气与变用比和。"
     }
   ],
   "findings": [
@@ -111,6 +120,30 @@
         "5/3/丑"
       ],
       "finding": "夏三金失时，原断仍纳入三处生扶，写明离旺由弱水制、需自力，源断的中段受制不按离火反克坎解。秋和土令照原断，离火牵制分布于三阶段的金，生力虽减仍有。古籍明减助，不给一处离火制三金的程度、强弱分界或时位叠加尺度，保存原断。"
+    },
+    {
+      "id": "xu-fourth-water-mitigates-fire",
+      "status": "open-priority",
+      "keys": [
+        "5/4/寅",
+        "5/4/卯",
+        "5/4/巳",
+        "5/4/午",
+        "5/4/辰",
+        "5/4/未",
+        "5/4/戌",
+        "5/4/丑"
+      ],
+      "finding": "现有断语以本用坎制用互离减克，春坎休而离相，夏坎囚而离旺，土令坎死而离休。古籍支持克体者另受克可稍解，未明上述不同力差的定量判断。正文保留减克及过程中仍有牵制，与起头体生坎的耗用分别写明。"
+    },
+    {
+      "id": "xu-fourth-autumn-direction",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "5/4/申",
+        "5/4/酉"
+      ],
+      "finding": "秋金旺、离火囚。源断的体旺克衰结合两处明确的用互离火克体与取期，按体旺可承其克、火弱所克轻表述。盘内未写成乾金克离火，照原断仍离合格较近，未推断差多少分。"
     }
   ],
   "lineReviews": [
@@ -144,6 +177,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "xu-third-three-gold-supporting-water"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "需于血，出自穴。",
+      "image": "需于血，顺以听命也。",
+      "reading": "逐篇读回六四十二月题名、简断、正文与取期。上卦动，体转取下乾，本用坎由乾生。体互兑及泽天夬的变兑同为金，与乾相应。用互离克乾，春夏土令兼核本用坎水制火。冬开头坎旺尤泄。秋及土月离合格较近，保留前耗、中克及无生体的原断。冬取本用亥子参耗，其余取用互巳午参克。阴阳相伤与出穴避害分开解释，应用为及时离开不合题意的做法以减少损失。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "xu-fourth-water-mitigates-fire"
       ]
     }
   ],
@@ -207,6 +250,26 @@
       ],
       "scope": "读回九三共十二篇，校对节卦末兑、本互变三生、体克离火方向和春夏土令末助与秋冬结果窗口的差别。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "对最终源的十二月正文与取期逐篇读回，校下乾体的初耗、过程受克、互兑和夬变兑比和，以及经义能退以减害。",
+      "status": "author-readback-complete"
     }
   ],
   "independentReview": {
@@ -215,13 +278,13 @@
     "scope": "前中相生与终应泄体的相对分量，火制生体之金的月令边界。"
   },
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-20T16:23:59.145Z",
-  "sourceSha256": "317967200620110cb7147b66eaccbfafa47d9c216bae30b261f695aea3a00fee",
+  "reviewedAt": "2026-11-20T16:28:42.681Z",
+  "sourceSha256": "d8df320000ca3e52702a7c527d59ef40c9aed23cbeae8724a39bc0827569f8e4",
   "checks": {
-    "scope": "水天需已写36篇，核对作者源与阅读页",
-    "chartComparisons": 972,
+    "scope": "水天需已写48篇，核对作者源与阅读页",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       488,
       556
