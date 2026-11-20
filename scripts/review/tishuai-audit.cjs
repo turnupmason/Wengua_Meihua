@@ -4,7 +4,7 @@
 const fs=require('fs');const args=process.argv.slice(2),item=args[0],list=args.includes('--list');
 const hi=args.indexOf('--hex'),only=hi>=0?new Set(args[hi+1].split(',').map(Number)):null;
 const QI={寅:'spring-wood',卯:'spring-wood',辰:'seasonal-earth',巳:'summer-fire',午:'summer-fire',未:'seasonal-earth',申:'autumn-metal',酉:'autumn-metal',戌:'seasonal-earth',亥:'winter-water',子:'winter-water',丑:'seasonal-earth'};
-const RE=/体衰而有生体之卦|衰稍解|若体衰而逢克|体衰而逢克|体衰逢克|体衰[，、而之时]/u;
+const RE=/体衰而有生体之卦|衰稍解|若体衰而逢克|体衰而逢克|体衰逢克|体衰[，、而之时]|体卦气衰/u;
 const out=[];let mon=0,c9=0;
 for(let h=1;h<=64;h++){if(only&&!only.has(h))continue;const id=String(h).padStart(3,'0');const dp=`data/authored-readings/${item}/hex-${id}.json`;if(!fs.existsSync(dp))continue;
  const data=JSON.parse(fs.readFileSync(dp,'utf8'));const bodyQi=(l,qi)=>data.rows.find(r=>r.baseProse!==false&&r.movingLine===l&&r.monthOrder===qi)?.facts.nodes.find(n=>n.role==='body')?.qi;
