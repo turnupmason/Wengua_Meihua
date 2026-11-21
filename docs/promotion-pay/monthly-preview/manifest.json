@@ -2,19 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-720-20261120",
+  "batch": "promotion-pay-monthly-preview-792-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 720,
-  "newArticlesSincePrevious": 144,
+  "uploadedArticles": 792,
+  "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    8,
-    10
+    11
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3888,
-  "authorWholeArticleReadback": 720,
+  "remainingArticles": 3816,
+  "authorWholeArticleReadback": 792,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -155,6 +154,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 11,
+      "name": "地天泰",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-011.json",
+      "sourceSha256": "7943c7aba7f918d23699010e858936d0c3e8f3f3da1ba75cc3adccd1ac626656",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-011.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-011.md",
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
+      }
     }
   ],
   "checks": {
@@ -163,26 +176,26 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       472,
-      613
+      636
     ],
     "shortHanRange": [
       76,
-      105
+      107
     ],
-    "independentChartComparisons": 19440,
+    "independentChartComparisons": 21384,
     "independentChartMismatches": 0,
-    "dateCases": 1440,
-    "judgmentCorrectionArticles": 386,
+    "dateCases": 1584,
+    "judgmentCorrectionArticles": 450,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       40,
       67
     ],
-    "payCorrectionArticles": 720
+    "payCorrectionArticles": 792
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 11,
-    "open-priority": 27,
+    "open-priority": 28,
     "corrected-unsupported-scenes": 2,
     "corrected-classical-application": 8,
     "fixed-documentation-conflict": 1,
@@ -221,7 +234,12 @@
     "corrected-source-locator": 1,
     "author-read-passed-independent-delta-pending": 1,
     "resolved-after-complete-field-readback": 4,
-    "revised-and-complete-fields-reread": 4
+    "revised-and-complete-fields-reread": 8,
+    "open-interpretive-boundary": 1,
+    "corrected": 5,
+    "corrected-in-inherited-authorship": 1,
+    "wording-refined": 1,
+    "corrected-and-complete-fields-reread": 2
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -308,6 +326,14 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "原冻结源72篇全部字段实际读完，随后完整读最终87个old/new字段。差异整段阅读次数为第一轮81、措辞收顺5、门检高频修订21、最后收顺2，共109次；同一字段复读不计为新增全篇。不冒称最终hash再次从头完整阅读72篇。"
+    },
+    {
+      "primaryId": 11,
+      "sourceSha256": "7943c7aba7f918d23699010e858936d0c3e8f3f3da1ba75cc3adccd1ac626656",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "实际完整读完作者冻结源72篇全部字段；21批完整读138个旧新字段，再完整读10个二次顺句字段。最终覆盖由已读原全文与全部最终整字段变化组成，不冒称最终哈希又从头整篇重读72篇。最早上下文溢出未显示的输出未计阅读，首两篇已另完整显示读完。"
     }
   ],
   "independentHumanReview": "pending"
