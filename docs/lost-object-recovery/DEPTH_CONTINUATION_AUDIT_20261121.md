@@ -6,7 +6,7 @@
 
 ## 实际进度
 
-已完成 **360／1,020篇**，对应864个月令键；尚余660篇。这些是既有1,920篇中的再次精修，不新增总篇数，也不与001—003的90篇或038—064的810篇重复计算。
+已完成 **450／1,020篇**，对应1080个月令键；尚余570篇。这些是既有1,920篇中的再次精修，不新增总篇数，也不与001—003的90篇或038—064的810篇重复计算。
 
 | 卦 | 完整正文 | 四段汉字数 | 保留取权问题的篇数 | 本轮双读记录 |
 | --- | ---: | ---: | ---: | --- |
@@ -22,6 +22,9 @@
 | [013 天火同人](hex-013.md) | 30篇／72键 | 468—506 | 20 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-013.json) |
 | [014 火天大有](hex-014.md) | 30篇／72键 | 464—498 | 17 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-014.json) |
 | [015 地山谦](hex-015.md) | 30篇／72键 | 455—497 | 19 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-015.json) |
+| [016 雷地豫](hex-016.md) | 30篇／72键 | 451—489 | 21 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-016.json) |
+| [017 泽雷随](hex-017.md) | 30篇／72键 | 455—479 | 25 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-017.json) |
+| [018 山风蛊](hex-018.md) | 30篇／72键 | 452—501 | 19 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-018.json) |
 
 ## 正文与规则如何分别处理
 
@@ -37,7 +40,7 @@
 
 整合脚本只校验和合并两份已经存在的阅读报告，不生成意见，不把通过字数或摘要检查当成读过全文。修改某篇后，需要作者与第二读者重新读该篇最终全文，旧摘要不能自动改签。
 
-本轮共有203篇留有具体取权或用语问题；作者意见217条、第二读者意见221条。同一篇可以有多条意见，详见[逐篇问题](DEPTH_CONTINUATION_RULE_QUESTIONS_20261121.md)。这些记录保留分歧，不表示每条都是已确定的错误。
+本轮共有268篇留有具体取权或用语问题；作者意见289条、第二读者意见298条。同一篇可以有多条意见，详见[逐篇问题](DEPTH_CONTINUATION_RULE_QUESTIONS_20261121.md)。这些记录保留分歧，不表示每条都是已确定的错误。
 
 ## 古籍核查范围
 
