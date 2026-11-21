@@ -1,6 +1,6 @@
 # 失物精修：逐篇解释取舍索引
 
-本轮核查包含 420 篇精修正文；其中 124 篇的全文审读保留了 187 条具体解释意见。同一篇可以同时有作者及第二读者的意见，条数不等于互不相同的问题数。
+本轮核查包含 540 篇精修正文；其中 187 篇的全文审读保留了 284 条具体解释意见。同一篇可以同时有作者及第二读者的意见，条数不等于互不相同的问题数。
 
 这里汇总的内容来自已绑定正文版本的逐篇审读记录。各篇保持原结果码，并在正文说明正反依据；列出的取舍未因文字润色或程序检查通过而记作已经完成专业裁定。卦爻、五态、关系、导出和日期的可复算项目见[结构核查](POLISH_CHECKS_20261120.json)。
 
@@ -1086,3 +1086,549 @@
 - 强相比、旺中生、可制囚土和末死火轻耗而原conditional，完整上六征凶戒的优先范围及与六三冬favourable差异，须专业复核。
 
 [阅读正文](hex-051.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-051.json)
+
+## 第52卦
+
+### 第1爻 · 寅、卯月
+
+**起步不忙追远，转机留在后面的实查**。原结果：有条件寻回。
+
+- 末相离生死艮可缓衰，能否越过体互旺震之克而提高结论仍需专业裁决；本次保留有条件。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第1爻 · 申、酉月
+
+**先核最后的收起，慢处仍有寻回余地**。原结果：有条件寻回。
+
+- 本末薄助尚支持有条件，与实际费工之间的程度仍属既有裁断，未因扩写另判较有望。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第1爻 · 亥、子月
+
+**先止住没有实据的追赶，找回仍偏难**。原结果：偏难寻回。
+
+- 末生通则与冬死火援弱的轻重沿原difficult，未宣称古籍给出统一数值权重。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第2爻 · 寅、卯月
+
+**卡住的一步未能接续，原物仍偏难寻**。原结果：偏难寻回。
+
+- 参考腓腸字在四库录文亦存，未擅校或把它转为器物类别；正文只释明确的足上屈伸关系。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第2爻 · 巳、午月
+
+**原处查得动，接到原物仍缺一环**。原结果：偏难寻回。
+
+- 相艮本比、可制囚坎且末休巽克可承，是否仍应difficult存在权重问题；本次只润色保留原码。
+- 夏相体本比、可制水且互末木休轻克，六二不拯应否压至difficult仍需专业定权，现沿原码保留实查优势。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第2爻 · 申、酉月
+
+**阻力虽轻，费工的核验仍难接到实物**。原结果：偏难寻回。
+
+- 轻克而无强生是否足以决定难寻并非单条古文公式，保留原码与比和正证供复核。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第2爻 · 辰、未、戌、丑月
+
+**查清一处以后，仍要看有没有下一步实证**。原结果：偏难寻回。
+
+- 本旺比、体制死坎、末克囚弱之组合是否可取有条件，仍待规则层裁决；作者未因文学扩写改变difficult。
+- 土旺本比、制死水且互末木囚轻克，六二严限与原difficult之间权重未由独立核盘证明。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第3爻 · 寅、卯月
+
+**前后须认准同件，当前仍难取回**。原结果：偏难寻回。
+
+- 九三重戒与初末比和并存，整体沿难寻；吉凶权重未因比和出现即自动翻转。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第3爻 · 巳、午月
+
+**补上中途断处，旧范围仍有寻回条件**。原结果：有条件寻回。
+
+- 强两端比和与九三重戒如何权衡成conditional，仍属专业取舍；没有仅靠篇幅扩充解除爻戒。
+- 夏两端相比与九三厉熏心的权衡仍待专业审定，未因limited conditional而弱化危戒。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第3爻 · 申、酉月
+
+**线索各有一半，须先留下未接上的地方**。原结果：偏难寻回。
+
+- 末休坤比的可寻支持与九三严义、相坎难制并存；保留difficult而不自定吉凶权重。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第3爻 · 辰、未、戌、丑月
+
+**两端都有可查之处，中间仍须认准同件**。原结果：有条件寻回。
+
+- 强初末比和支持与九三爻义严戒使结果保留conditional；是否可上调仍需原规则裁决。
+- 土两端旺比、自身可制与九三重戒共同定conditional的程度仍待复核。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第4爻 · 寅、卯月
+
+**先把自己确知的事说准，后段仍有转机**。原结果：有条件寻回。
+
+- 相离末生可解几分春死体、中旺克，保留有条件并待专业权衡。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第4爻 · 申、酉月
+
+**先校准自己的记忆，再把未查的一步补实**。原结果：有条件寻回。
+
+- 薄末生与一般比和何以保留寻回机会而非难寻，原conditional暂存，未新定权重。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第5爻 · 寅、卯月
+
+**先把话问到实处，原件仍难落实**。原结果：偏难寻回。
+
+- 有序悔亡的吉义如何同弱体连续旺木克合断为难，沿原裁决，未把沟通正效偷换成已得物。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第5爻 · 巳、午月
+
+**经过可以问明，原物仍须另过认回这一关**。原结果：偏难寻回。
+
+- 相体本比、体制囚水、末休木克可承，又有六五悔亡，是否应有条件而非difficult需专业复裁。
+- 六五言有序悔亡、相体本比及制水有力而原difficult，轻克是否足以支持此结果需专业再核。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第5爻 · 申、酉月
+
+**分清亲见与印象，别把说顺当作找到了**。原结果：偏难寻回。
+
+- 弱克且有悔亡之吉与实查费工的轻重仍是既有判断取舍；不因无生体单项断必失。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第5爻 · 辰、未、戌、丑月
+
+**旧经过能核得清楚，原件仍待实际接上**。原结果：偏难寻回。
+
+- 旺体本比、能制死水、末囚克轻又爻悔亡，原difficult的保守程度须单独裁定，本次未改码。
+- 土旺体本比与六五悔亡同时成立，末囚巽轻克的权重能否维持difficult需专业复核。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第6爻 · 寅、卯月
+
+**有据的一轮认真查完，原物仍不易追回**。原结果：偏难寻回。
+
+- 上九吉与末比和对难寻结论构成正面证据；如何受春死体及中旺克限制仍待专业权衡。
+- 敦艮吉与春弱比中旺克共见，原difficult的综合取义仍需专业裁定。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第6爻 · 申、酉月
+
+**慢处查得仔细，旧范围仍留机会**。原结果：有条件寻回。
+
+- 上九吉与一般末比是否足以使有条件升级，原conditional保留，迟速无独立数值判断。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+### 第6爻 · 亥、子月
+
+**把这一轮查证收完整，取回仍偏难**。原结果：偏难寻回。
+
+- 敦艮吉及末比和与冬弱体、中段实克如何合断difficult仍是规则取舍，本次未新裁。
+- 敦艮吉与冬弱比中实克共见，原难码未以机器检查作为专业验证。
+
+[阅读正文](hex-052.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-052.json)
+
+## 第53卦
+
+### 第2爻 · 辰、未、戌、丑月
+
+**安稳的线索尚待建立，原物目前偏难取回**。原结果：偏难寻回。
+
+- 六二明确得安有获之吉，与囚体制旺土、末弱比相权衡仍沿原difficult；该取舍未因文字完善或复算通过而获得独立专业裁定。
+- 六二有应得安、得养而吉及末变比和俱在，原 difficult 取决于囚木制旺土与中援极弱的综合权重；此处保留原判，但原典没有提供可以机械量化这一权重的阈值。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+### 第3爻 · 寅、卯月
+
+**原来的线索查得动，别让新去向截断它**。原结果：有条件寻回。
+
+- 春旺体制本末死土、又有休水生仍只作conditional，九三凶戒对有利体用的约束尺度属综合解释。
+- 旺体制首末弱土有可办条件，九三贪进忘旧的凶警又强；conditional 是对现实查法仍可能转向的保留，不能声称爻辞本身给出固定概率。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+### 第3爻 · 亥、子月
+
+**条件可查，仍须守住已经证实的一路**。原结果：有条件寻回。
+
+- 冬相体可制本末囚土、旺坎实生、死火轻耗而仍保conditional，九三凶戒的权重须另由专业判断定量或裁定。
+- 冬令前中末的五行条件较好，九三凶仍使原结论保留 conditional；需要承认这一等级来自爻义与节点的综合裁量，并非旺相自动被凶辞抵消。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+### 第4爻 · 申、酉月
+
+**找到可问的地方，还未必撑得起最终取回**。原结果：偏难寻回。
+
+- 六四或得安而无咎的正面含义，与末旺乾耗的失物难寻判断如何定权，仍是原结果中的解释取舍。
+- 六四或得可安、无咎为真实有利证据，末变旺乾耗是当前偏难的主要依据；保留原 difficult 而不把或字本身等同无望。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+### 第5爻 · 亥、子月
+
+**正应虽留终通之意，眼下查证仍难接续**。原结果：偏难寻回。
+
+- 九五有终莫之胜、得所愿的明确吉义，冬令生扶微、初克实而保difficult，古爻吉与现行五态裁断的取舍仍待独立专业复核。
+- 九五终莫之胜、吉指向最终通合，但本条囚体受克、制旺水而中援及末比均弱，当前 difficult 与长向吉意需要共存，不能说经典已直接裁定失物不可得。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+### 第6爻 · 亥、子月
+
+**守得清楚可少走弯路，实物仍偏难到手**。原结果：偏难寻回。
+
+- 上九可为仪之吉与冬令初克重、中末难制的difficult分层采用，仍属本问中的类推权衡，不视为古籍已提供失物结果的固定公式。
+- 上九其羽为仪、吉的正面价值与本条体囚、木克及两处旺水难制并存；原 difficult 是对当前寻物执行条件的裁量，不应消去爻本有的吉义。
+
+[阅读正文](hex-053.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-053.json)
+
+## 第54卦
+
+### 第1爻 · 寅、卯月
+
+**一步有着落，才有后面的寻回**。原结果：有条件寻回。
+
+- 旺体受弱克又有两处休生，conditional与较高有利等级的界限属既有综合定权，本轮未裁定新阈值。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第1爻 · 巳、午月
+
+**做得到的小查验，尚撑不起原件归还**。原结果：偏难寻回。
+
+- 两处薄生与旺泄何者占主仍沿原difficult，古籍未给该组合量化权重。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第1爻 · 申、酉月
+
+**前面查不开，后援仍能接出一条路**。原结果：有条件寻回。
+
+- 秋初重克而双相生取conditional，生克综合尺度保留既有结果，未作现实准确率证明。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第2爻 · 寅、卯月
+
+**所见不必面面俱到，可靠的一角仍可追回**。原结果：有条件寻回。
+
+- 旺体、末旺比及薄生对照中耗保conditional，是否可上调仍待专业定权。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第2爻 · 巳、午月
+
+**认得清局部，尚难接到整件原物**。原结果：偏难寻回。
+
+- 夏休体且无强克而结果difficult，耗重薄援的权重沿旧，未以扩写冒称重判。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第2爻 · 申、酉月
+
+**中途能得实助，末后仍欠取回的力量**。原结果：偏难寻回。
+
+- 804弱体得生亦可减害，本稿仍依原difficult处理重初克与弱末比，这一成败权重留明。
+- 秋令中段相坎生体和九二守中保常都是实在正证；本次未重裁difficult与这些正证的定权，后续须与相同强弱组合统一复核。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第3爻 · 寅、卯月
+
+**退回可查的一处，寻回还有条件**。原结果：有条件寻回。
+
+- 前后弱克而旺体薄生取conditional属原综合取舍，未建立新成败公式。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第3爻 · 巳、午月
+
+**停下不具条件的追问，仍难取回原物**。原结果：偏难寻回。
+
+- 强耗与薄生综合difficult沿原，改善查法可减耗但不能据此自动修改结果等级。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第3爻 · 亥、子月
+
+**有力的中途协查，仍须接过最后一关**。原结果：有条件寻回。
+
+- 旺中生配相体而前后休克取conditional，权重沿旧，未把可承克视为必成。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第4爻 · 寅、卯月
+
+**等待尚未接上实物，寻回仍难**。原结果：偏难寻回。
+
+- 体克用可寻迟得与弱体中克末薄援的综合沿原difficult，不将一般迟得解释为必得。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第4爻 · 巳、午月
+
+**前面受阻，后段实助仍能转出机会**。原结果：有条件寻回。
+
+- 单一末相生对重中克能否支持conditional属现行解释，保留结果并列两面，未判为通则自动结论。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第4爻 · 申、酉月
+
+**前面能查实，后面还须慢一步核收**。原结果：有条件寻回。
+
+- 旺体、有薄生而conditional的保守尺度保持原值，未用文学扩写裁定权重。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第5爻 · 寅、卯月
+
+**外观说得再像，仍须原件上的实据**。原结果：偏难寻回。
+
+- 六五王孔明确往能合，五气结果与本爻吉义如何定权尚属专业解释；本轮留原difficult并把正反两端写全。
+- 六五王孔仍肯定居中贵盛、适配往合，但春令固定结论为difficult；本文明列古爻吉与弱体中克末弱比，跨规则的权重仍待统一裁定。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第5爻 · 巳、午月
+
+**能否实认原物，比答复完整更要紧**。原结果：偏难寻回。
+
+- 原difficult未因六五吉自动上调，旺克弱体与吉爻的成败权重保留审读问题。
+- 六五吉辞在夏令无生体、旺离中克及末死比下未推翻固定difficult；古爻与生克强弱的权重没有由本次润色证成，应保留专项核断。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第5爻 · 申、酉月
+
+**辨认标准守稳，原范围仍可找回**。原结果：有条件寻回。
+
+- 本旺末旺比配六五吉仍用conditional的边界沿原，未由文字审读替代专业取舍。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第5爻 · 亥、子月
+
+**寻查所费渐多，末后仍难落实归还**。原结果：偏难寻回。
+
+- 吉爻、无强克与旺泄无生的权重仍沿原difficult，明确未获独立专业裁定。
+- 六五贵中相配之吉与冬令前段难制、旺坎耗、末休比并存；固定difficult尚是既有定权，本文解释取舍而没有重新裁决该权重。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第5爻 · 辰、未、戌、丑月
+
+**收放能核稳，相似物须认成同一件**。原结果：有条件寻回。
+
+- 相体制囚木、轻耗、末相比与六五吉是否支持更高等级，沿原conditional留待专业定权。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第6爻 · 申、酉月
+
+**能查清旧处，仍须警惕有查无物**。原结果：偏难寻回。
+
+- 旺体制用且克轻仍difficult，主要依上六无实与无生、中耗的综合权重；此处留专业定权而不声称程序证明成败。
+- 上六无实之戒与秋旺体制弱用、前后轻克并存；固定difficult偏重爻戒与实耗，这一权重取舍需要后续和同类旺体盘统核。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+### 第6爻 · 辰、未、戌、丑月
+
+**一轮回查能做，原件归还仍需实应**。原结果：偏难寻回。
+
+- 相体、体克弱用及轻耗仍取difficult，依上六无实之重与终克无生；古爻与体用定权需专业复核，本轮未改原码。
+- 上六无实之戒与土令相体制弱用、轻耗可承克存在明显正反证；固定difficult在本次仅被解释，尚不能视为已重新解决这种权重冲突。
+
+[阅读正文](hex-054.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-054.json)
+
+## 第55卦
+
+### 第1爻 · 寅、卯月
+
+**两边的经过对得上，寻回才有着落**。原结果：有条件寻回。
+
+- 无生体与中克仍保conditional，旺体末可制的权重与完整爻义尚须专业复核。
+- 春旺体承弱克、得旺比和末可制能否抵全盘无直接生体而有克，仍是原conditional的专业定权问题；本文没有以文字审读代为裁决。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第1爻 · 巳、午月
+
+**协查仍可做，耗下去却未必接近原件**。原结果：偏难寻回。
+
+- 休体、普通比和与弱克属于可用的正面条件，和初九有条件之吉如何同旺泄、末制难定权，仍须专业复核原difficult。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第1爻 · 亥、子月
+
+**两边各补一段，较能沿原路找回**。原结果：较有希望寻回。
+
+- 原favourable如何综合无生与过程仍克，属定权复核，机器核盘不能证明取回。
+- 本篇原favourable建立在相体、相比、初泄轻和末可制，四节点仍无直接生体而有体互克；与梅花“无生有克”总则的轻重适用仍待专业定权。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第2爻 · 寅、卯月
+
+**把疑处照明，原物仍有机会认回**。原结果：有条件寻回。
+
+- 无直接生体且互末两克时仍保conditional，六二有孚吉与旺体承克的权重留审。
+- 六二有孚之吉、旺比与两弱克无生并见，保留conditional是否最合原法，属于未由此次文辞审阅解决的权重问题。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第2爻 · 巳、午月
+
+**问得更清楚，仍未必能拿回原件**。原结果：偏难寻回。
+
+- 吉爻、休体普通比与两弱克可承对旺耗无生，应如何定出原difficult，仍留专业复核；本文没有把休作囚死来强行解释。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第2爻 · 亥、子月
+
+**旧处有人能补证，疑而未明仍可转开**。原结果：有条件寻回。
+
+- 中后两休金克而保conditional，须复核旺衰和六二吉义共同权重。
+- 原conditional容许有限回查，然而无直接生体、末仍受克；强体相比同六二守孚之吉的取权仍须专业判断。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第3爻 · 寅、卯月
+
+**能查清一小处，仍留寻回的机会**。原结果：有条件寻回。
+
+- 旺体中末旺比是否足以在九三不可大事、终不可用之下保conditional，专业取义仍未关闭。
+- 九三王孔“不可大事”“终不可用”的严戒，能否允许旺体强比下以有限小处查验保留原conditional，尚有解释分歧，不能假称经注已直接支持寻回。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第3爻 · 亥、子月
+
+**把范围缩到能实看的地方，尚有一寻**。原结果：有条件寻回。
+
+- 相体中末相比与九三终不可用的适用权衡需专业复核，本文沿原结论保有限回查。
+- 九三终不可用的限制，同相体及两处相比支持小范围回查之间如何界定，决定原conditional的专业尺度；本次只确认两面都已如实表达。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第4爻 · 巳、午月
+
+**协助能把疑处查清，收尾还要自己落实**。原结果：有条件寻回。
+
+- 旺体、双休生与末相土泄之轻重关系如何定到原conditional，文本已说明依据但并非经注提供的唯一量化结论。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第4爻 · 亥、子月
+
+**前中可借协力，认回还须补最后一程**。原结果：有条件寻回。
+
+- 弱体得双实生的conditional与末耗如何分配权重仍需专业综合复核。
+- 弱体得两实生是否足以承受制用之难与末泄，保留原conditional有其依据，但具体轻重仍为解释权重，不能凭润色自动裁决。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第5爻 · 巳、午月
+
+**自己能查、旁人能补，较有望把原件找回**。原结果：较有希望寻回。
+
+- 原favourable主要由旺体、双普通生、死金可制及六五吉支持，生助强弱和体克迟得怎样综合定权仍属专业解释；文字本身未声称精确概率。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第5爻 · 申、酉月
+
+**答复再完整，也要过原件这一关**。原结果：偏难寻回。
+
+- 六五吉辞及两生与弱体难制的原difficult权重尚未专业裁定。
+- 六五章德致庆之吉与两个直接生扶，遇体囚、两旺用难制时是否足以改变原difficult，专业权重仍未决；审读仅确认正面证据没有被删。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第5爻 · 亥、子月
+
+**借来的实证有用，取回仍需慢慢落实**。原结果：有条件寻回。
+
+- 相木实生与弱体制用的共同作用保conditional，具体取回尺度仍待专业复核。
+- 死体得两实生而中末制难，与原conditional的适配仍需专业权衡，不能仅从生的数量自动计算结果。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第5爻 · 辰、未、戌、丑月
+
+**把一条线索查实，胜过继续添猜测**。原结果：偏难寻回。
+
+- 六五吉与双薄生在中末制难之下仍取difficult的裁决权重留审。
+- 休体双薄生与六五有庆之吉，面对中末相金难制，原difficult的轻重取舍仍留专业复核，本文不宣称该权重已被古文唯一确定。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第6爻 · 寅、卯月
+
+**查问若能走出蒙蔽，才有实物回来的机会**。原结果：有条件寻回。
+
+- 强前中生与末相比支持conditional的程度，面对上六深蔽凶仍须专业权衡。
+- 上六凶戒与春相体、双旺生、末相比并见，有限实查能否仍保原conditional而不违终局深藏之凶，尚需专业定权；正文明确没有许无条件复得。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第6爻 · 巳、午月
+
+**原范围还可查，须把最后认物做到实处**。原结果：有条件寻回。
+
+- 旺体旺比与上六凶的适用尺度未由自动检查裁定，沿原conditional列疑。
+- 上六之凶同旺体旺比及两普通生扶如何并用，原conditional只保有条件复查的尺度仍是开放解释，不能假称凶已被旺气抵消。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第6爻 · 亥、子月
+
+**前面有人能补证，最后仍难见原件**。原结果：偏难寻回。
+
+- 同为上六，冬有两实生仍difficult而春夏conditional的权重需专业复核，不能只因体死一票否决。
+- 同为上六，冬月双相木实生为何仍保difficult、春夏却保conditional，依赖自体及末比力量的定权；此差别已阐明但仍需专业复核，非古文的唯一数值结论。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
+
+### 第6爻 · 辰、未、戌、丑月
+
+**先把能查的补完，原物仍难落实到手**。原结果：偏难寻回。
+
+- 双薄生与末普通比在上六凶之下维持difficult的具体尺度尚需专业综合判断。
+- 上六凶戒对前中两生和末普通比和的限制权重，文本保守承继原difficult；这仍属专业解释，不代表独立人类易学审定。
+
+[阅读正文](hex-055.md) · [完整规则及全文审读](../../sources/editorial/lost-object-recovery/reviews-polish/hex-055.json)
