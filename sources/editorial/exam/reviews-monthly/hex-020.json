@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "authorshipScope": {
-    "currentReadback": "风地观已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "风地观已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -31,6 +31,14 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "体用第494行，用与互变同类、用党多则体势衰。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
+      "scope": "六四居近得位，明习国仪，利用宾于王。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/reviews-monthly/hex-020.json",
+      "scope": "同卦六四明确保留仕进利辞与取用优先的解释分歧。"
     }
   ],
   "findings": [
@@ -90,6 +98,25 @@
         "20/3/丑"
       ],
       "finding": "十二月原断皆不成，无特定取期。土与土同类贯穿初中末，自身得时与用党多须分层判断。"
+    },
+    {
+      "id": "hex-020-line-4",
+      "status": "open-interpretation",
+      "keys": [
+        "20/4/寅",
+        "20/4/卯",
+        "20/4/辰",
+        "20/4/巳",
+        "20/4/午",
+        "20/4/未",
+        "20/4/申",
+        "20/4/酉",
+        "20/4/戌",
+        "20/4/亥",
+        "20/4/子",
+        "20/4/丑"
+      ],
+      "finding": "初克受末乾制，末乾本身受土所生。寅卯亥子参初巽之阻，其余八月参末乾之耗。利于仕进与全局无生初克末泄的取舍，古注未给唯一裁决。"
     }
   ],
   "lineReviews": [
@@ -116,6 +143,16 @@
       "reading": "观己所行、时可则进，未失道不等于本次通过。依本用与互变同土判用党，木制土不作泄，秋令审体衰无生。",
       "status": "author-readback-complete",
       "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "观国之光，利用宾于王。",
+      "image": "“观国之光”，尚宾也。",
+      "reading": "近尊得位，利用宾于王确有仕进吉意。保留此义与体用优先级的解释疑点。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-020-line-4"
+      ]
     }
   ],
   "batchReadback": [
@@ -178,15 +215,35 @@
       ],
       "scope": "各篇写成即从作者源读回，逐月核查四土、巽木旺衰、无生比与无专日，修正冬月将艮止当作考场行为的旧说。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回并订正主客、减克与生扶、同类相应与末泄、两种取期，土旺及夏月的实质有利条件另行保留。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T22:09:31.469Z",
-  "sourceSha256": "959f70707bd8f3871bea6f8f5a79db4bb9444e6a2d77c46902a8425f6fac1c83",
+  "reviewedAt": "2026-11-21T22:19:05.791Z",
+  "sourceSha256": "f9441a2a571f64cccc7a83e84fd26e60cfacc17395d8f9e81bac7e244e4b25ee",
   "checks": {
-    "scope": "风地观已写36篇",
-    "chartComparisons": 972,
+    "scope": "风地观已写48篇",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       477,
       525
