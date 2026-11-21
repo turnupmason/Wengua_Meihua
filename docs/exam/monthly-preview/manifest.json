@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1356-20261121",
+  "batch": "exam-monthly-preview-1368-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1356,
-  "newArticlesSincePrevious": 0,
-  "newHexagrams": [],
+  "uploadedArticles": 1368,
+  "newArticlesSincePrevious": 12,
+  "newHexagrams": [
+    19
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3252,
-  "authorWholeArticleReadback": 1356,
+  "remainingArticles": 3240,
+  "authorWholeArticleReadback": 1368,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -264,6 +266,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 19,
+      "name": "地泽临",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-019.json",
+      "sourceSha256": "c5002252a400e6c96564ada07f94b47bf335fadc1d91a2848fe49d8fd635c919",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-019.json",
+      "readingPath": "docs/exam/monthly-preview/hex-019.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
     }
   ],
   "checks": {
@@ -278,17 +294,17 @@
       70,
       112
     ],
-    "independentChartComparisons": 34992,
+    "independentChartComparisons": 36936,
     "independentChartMismatches": 0,
-    "dateCases": 2592,
-    "judgmentCorrectionArticles": 592,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前18个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2736,
+    "judgmentCorrectionArticles": 664,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 94
+    "interpreted-with-limits": 99,
+    "open": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -830,27 +846,9 @@
     "articles": 516
   },
   "nextExpectedKey": {
-    "primaryId": 19,
-    "movingLine": 6,
+    "primaryId": 20,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 19,
-      "name": "地泽临",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-019.json",
-      "sourceSha256": "23e4502b4b5fb20c14cdaaec5cab26c9847ddeef1a71983f40942cb4a6088ae6",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-019.json",
-      "readingPath": "docs/exam/monthly-preview/hex-019.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
