@@ -460,8 +460,8 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T18:41:47.932Z",
-  "sourceSha256": "3ab2e4a4ddbc67d44a0bd053318d754954f98a619493f34e444c14fb3cbebc33",
+  "reviewedAt": "2026-11-21T00:55:13.104Z",
+  "sourceSha256": "e97dc20b4746329a14cd346a000bc4b2b4ffd56bf826bbbeb75d828ee4457ccc",
   "checks": {
     "scope": "水地比已写72篇，核对作者源与阅读页",
     "chartComparisons": 1944,
@@ -469,7 +469,7 @@
     "dateCases": 144,
     "bodyHanRange": [
       481,
-      551
+      552
     ]
   },
   "openingRevision": {
@@ -623,5 +623,45 @@
     ],
     "bodyTransitionKeys": [],
     "scope": "本次审读修订的开头、简断及段内衔接。前版整篇核读对应原哈希。本次逐项比对判词、取期与四段正文的改动范围。"
-  }
+  },
+  "proseRevisions": [
+    {
+      "keys": [
+        "8/1/寅",
+        "8/1/卯",
+        "8/1/辰",
+        "8/1/巳",
+        "8/1/午",
+        "8/1/未",
+        "8/1/申",
+        "8/1/酉",
+        "8/1/戌",
+        "8/1/亥",
+        "8/1/子",
+        "8/1/丑"
+      ],
+      "priorSourceSha256": "3ab2e4a4ddbc67d44a0bd053318d754954f98a619493f34e444c14fb3cbebc33",
+      "sourceSha256": "e97dc20b4746329a14cd346a000bc4b2b4ffd56bf826bbbeb75d828ee4457ccc",
+      "reviewedAt": "2026-11-21T00:55:13.104Z",
+      "scope": "对读考试乾至需及面试逐月稿。重写题名、简断和主要段落，并保留仍合题的原有解释；逐篇从落盘版本核读全文；另核本爻经、象、注疏，逐月对照五气原稿与应期。",
+      "ruleReview": "初六下坤变震，核春旺木与冬相木均取寅卯日参尾段，夏取中坤、秋取中艮、四土月取首坤之制，分别验土日。对勘王注与孔疏，孚盈缶、终来有它吉指亲比之诚终始如一，不凭吉辞替代无生与三土克水的考试判断。",
+      "comparisonSources": [
+        {
+          "tree": "60c03a9d9fc8528a4ec9be950c30446aef5214aa",
+          "path": "docs/interview-pass/monthly-preview",
+          "refs": [
+            "d3e942d8",
+            "be2afd72"
+          ]
+        },
+        {
+          "tree": "0ba8ca8becb65d2b162f4432a888bf0238f45d46",
+          "path": "docs/relationship-establishment/monthly-preview",
+          "refs": [
+            "be2afd72"
+          ]
+        }
+      ]
+    }
+  ]
 }
