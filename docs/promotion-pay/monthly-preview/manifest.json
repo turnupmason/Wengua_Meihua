@@ -2,18 +2,20 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-864-20261120",
+  "batch": "promotion-pay-monthly-preview-1080-20261120",
   "publicationDate": "2026-11-20",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 864,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 1080,
+  "newArticlesSincePrevious": 216,
   "newHexagrams": [
-    15
+    12,
+    13,
+    14
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3744,
-  "authorWholeArticleReadback": 864,
+  "remainingArticles": 3528,
+  "authorWholeArticleReadback": 1080,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -170,6 +172,48 @@
       }
     },
     {
+      "primaryId": 12,
+      "name": "天地否",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-012.json",
+      "sourceSha256": "51b4f8bc1d7fe5e226f0a55a2411af46d31e8aad9f43466805f2e071ee047b51",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-012.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-012.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
+    },
+    {
+      "primaryId": 13,
+      "name": "天火同人",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-013.json",
+      "sourceSha256": "ba8730ba57766c8aca39a0af347720690f02fd0f1c79a02375deb3878476e121",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-013.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-013.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
+    },
+    {
+      "primaryId": 14,
+      "name": "火天大有",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-014.json",
+      "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-014.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-014.md",
+      "outcomes": {
+        "favourable": 16,
+        "difficult": 56
+      }
+    },
+    {
       "primaryId": 15,
       "name": "地山谦",
       "articles": 72,
@@ -194,18 +238,18 @@
     ],
     "shortHanRange": [
       76,
-      107
+      112
     ],
-    "independentChartComparisons": 23328,
+    "independentChartComparisons": 29160,
     "independentChartMismatches": 0,
-    "dateCases": 1728,
-    "judgmentCorrectionArticles": 522,
+    "dateCases": 2160,
+    "judgmentCorrectionArticles": 698,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
-      40,
+      34,
       67
     ],
-    "payCorrectionArticles": 864
+    "payCorrectionArticles": 1080
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 11,
@@ -349,6 +393,30 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "实际完整读完作者冻结源72篇全部字段；21批完整读138个旧新字段，再完整读10个二次顺句字段。最终覆盖由已读原全文与全部最终整字段变化组成，不冒称最终哈希又从头整篇重读72篇。最早上下文溢出未显示的输出未计阅读，首两篇已另完整显示读完。"
+    },
+    {
+      "primaryId": 12,
+      "sourceSha256": "51b4f8bc1d7fe5e226f0a55a2411af46d31e8aad9f43466805f2e071ee047b51",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "见逐卦回执"
+    },
+    {
+      "primaryId": 13,
+      "sourceSha256": "ba8730ba57766c8aca39a0af347720690f02fd0f1c79a02375deb3878476e121",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "见逐卦回执"
+    },
+    {
+      "primaryId": 14,
+      "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "历史208343…版72篇全字段实际阅读＋本轮167个完整变化叶字段最终新值实际独立复读；旧值已在前轮全字段阅读，本轮未重复计阅读旧值。所有未变化字段逐值核对，最终绑定4024be64…；不宣称本轮重新整卦通读72篇。"
     },
     {
       "primaryId": 15,

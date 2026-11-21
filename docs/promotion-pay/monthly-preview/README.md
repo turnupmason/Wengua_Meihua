@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：864 篇预览
+# 晋升加薪逐月长稿：1080 篇预览
 
-更新日期：2026-11-20（America/New_York）。本批新增地山谦，共 72 篇；累计 864 篇。完整目标为 4,608 篇，尚余 3744 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-20（America/New_York）。本批新增天地否、天火同人、火天大有，共 216 篇；累计 1080 篇。完整目标为 4,608 篇，尚余 3528 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -15,6 +15,9 @@
 | 风天小畜 | 72 | [打开全文](hex-009.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-009.json) |
 | 天泽履 | 72 | [打开全文](hex-010.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-010.json) |
 | 地天泰 | 72 | [打开全文](hex-011.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-011.json) |
+| 天地否 | 72 | [打开全文](hex-012.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-012.json) |
+| 天火同人 | 72 | [打开全文](hex-013.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-013.json) |
+| 火天大有 | 72 | [打开全文](hex-014.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-014.json) |
 | 地山谦 | 72 | [打开全文](hex-015.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-015.json) |
 
 
@@ -27,13 +30,17 @@
 
 ## 本批阅读入口
 
-- [地山谦：六爻十二月全文](hex-015.md)
+- [天地否：六爻十二月全文](hex-012.md)
+
+- [天火同人：六爻十二月全文](hex-013.md)
+
+- [火天大有：六爻十二月全文](hex-014.md)
 
 
 
 ## 检查与阅读状态
 
-864 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 23,328 项，差异 0；日期用例 1,728 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+1080 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 29,160 项，差异 0；日期用例 2,160 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
