@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "风地观已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "风地观已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -47,6 +47,14 @@
     {
       "path": "sources/editorial/interview-pass/reviews-monthly/hex-020.json",
       "scope": "体党、末比和、无大害与本用克体无生的优先关系未有唯一裁决。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
+      "scope": "观其生与九五观我生之别，王、孔释为天下所观、德见乃无咎，小象志未平。"
+    },
+    {
+      "path": "sources/editorial/interview-pass/reviews-monthly/hex-020.json",
+      "scope": "上九一层作用不递归，衰水生木与旺土能制末水的反证。"
     }
   ],
   "findings": [
@@ -144,6 +152,25 @@
         "20/5/丑"
       ],
       "finding": "初克全盘无生与体党、末比和的优先解释仍待复核。春冬看初巽寅卯日，其余八月取体互坤辰戌丑未日。"
+    },
+    {
+      "id": "hex-020-line-6",
+      "status": "open-interpretation",
+      "keys": [
+        "20/6/寅",
+        "20/6/卯",
+        "20/6/辰",
+        "20/6/巳",
+        "20/6/午",
+        "20/6/未",
+        "20/6/申",
+        "20/6/酉",
+        "20/6/戌",
+        "20/6/亥",
+        "20/6/子",
+        "20/6/丑"
+      ],
+      "finding": "十二月取初巽寅卯日。末水生初木，亦须体土去制，源气衰与一层生克的优先级留审。"
     }
   ],
   "lineReviews": [
@@ -189,6 +216,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-020-line-5"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "观其生，君子无咎。",
+      "image": "“观其生”，志未平也。",
+      "reading": "上九观其生，虽不当事任而为天下所观，德见方无咎，志未平重慎省。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-020-line-6"
       ]
     }
   ],
@@ -292,18 +329,38 @@
       ],
       "scope": "逐篇核原断、初木不受制及不获生、三处同气强弱、择日所指；成稿后读回全文，修改后再读。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐月读回全篇，逐一校初巽受生及无金制，土月可任末水、冬令费力，保留君子无咎的积极条件。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T22:29:13.303Z",
-  "sourceSha256": "801573c0af8e1a1e72eee60978501f9bfa992dfe7d4a1ec4bdf4ecc221825c4e",
+  "reviewedAt": "2026-11-21T22:39:15.000Z",
+  "sourceSha256": "a0fe920efa8f8ce7ead77b7d1a7955e8b44c6ff8beaf6765b1827b774bf75b9b",
   "checks": {
-    "scope": "风地观已写60篇",
-    "chartComparisons": 1620,
+    "scope": "风地观已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       477,
-      525
+      535
     ]
   }
 }

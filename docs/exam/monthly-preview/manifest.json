@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1428-20261121",
+  "batch": "exam-monthly-preview-1440-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1428,
-  "newArticlesSincePrevious": 0,
-  "newHexagrams": [],
+  "uploadedArticles": 1440,
+  "newArticlesSincePrevious": 12,
+  "newHexagrams": [
+    20
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3180,
-  "authorWholeArticleReadback": 1428,
+  "remainingArticles": 3168,
+  "authorWholeArticleReadback": 1440,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -278,6 +280,20 @@
         "favourable": 24,
         "difficult": 48
       }
+    },
+    {
+      "primaryId": 20,
+      "name": "风地观",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-020.json",
+      "sourceSha256": "a0fe920efa8f8ce7ead77b7d1a7955e8b44c6ff8beaf6765b1827b774bf75b9b",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-020.json",
+      "readingPath": "docs/exam/monthly-preview/hex-020.md",
+      "outcomes": {
+        "favourable": 16,
+        "difficult": 56
+      }
     }
   ],
   "checks": {
@@ -292,18 +308,18 @@
       70,
       112
     ],
-    "independentChartComparisons": 36936,
+    "independentChartComparisons": 38880,
     "independentChartMismatches": 0,
-    "dateCases": 2736,
-    "judgmentCorrectionArticles": 724,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前19个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2880,
+    "judgmentCorrectionArticles": 796,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 99,
-    "open": 1
+    "interpreted-with-limits": 102,
+    "open": 1,
+    "open-interpretation": 3
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -881,27 +897,9 @@
     "articles": 552
   },
   "nextExpectedKey": {
-    "primaryId": 20,
-    "movingLine": 6,
+    "primaryId": 21,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 20,
-      "name": "风地观",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-020.json",
-      "sourceSha256": "801573c0af8e1a1e72eee60978501f9bfa992dfe7d4a1ec4bdf4ecc221825c4e",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-020.json",
-      "readingPath": "docs/exam/monthly-preview/hex-020.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
