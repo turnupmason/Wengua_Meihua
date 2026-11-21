@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "火天大有已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "火天大有已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -83,6 +83,18 @@
     {
       "path": "sources/editorial/exam/hex-014.json",
       "scope": "九四五气原断、应期次序及求名取期。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+      "scope": "48至51行六五经、王注、孔疏及小象。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "553、688、792、798、804行求名用克体、无生有克及旺衰、末变比和。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-014.json",
+      "scope": "六五五气原断所列卷首欠据、夏首题重写、秋失限定、冬复习范围偏窄及土月连问。"
     }
   ],
   "findings": [
@@ -161,6 +173,25 @@
         "14/4/丑"
       ],
       "finding": "下乾体、上离克，互乾兑比和，变山天大畜，取艮生体。春取巳午日看初阻，夏冬取土日看末助，夏助得力冬助薄。秋土月依土日参名成，秋体旺末助轻，土月末助实，不推固定放榜日。"
+    },
+    {
+      "id": "hex-014-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "14/5/寅",
+        "14/5/卯",
+        "14/5/辰",
+        "14/5/巳",
+        "14/5/午",
+        "14/5/未",
+        "14/5/申",
+        "14/5/酉",
+        "14/5/戌",
+        "14/5/亥",
+        "14/5/子",
+        "14/5/丑"
+      ],
+      "finding": "本离克下乾、互乾兑比和、变乾同气，全局无生。春夏取本离巳午日看初阻，秋冬及四土月按体互乾取申酉日看熟处，均不作放榜时间。申酉月虽体旺克轻只守熟分，不能据免害或末变比和判断全场能过。"
     }
   ],
   "lineReviews": [
@@ -193,6 +224,14 @@
       "text": "匪其彭，无咎。",
       "image": "“匪其彭，无咎”，明辨晢也。",
       "reading": "九四「匪其彭，无咎」，按王孔读彭为旁，九四斟酌所宜而承五。以明辨解释选法，大畜蓄德之象借说夏月所学至后程见功。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "厥孚交如，威如，吉。",
+      "image": "“厥孚交如”，信以发志也；“威如之吉”，易而无备也。",
+      "reading": "六五居中以诚交而上下应，威如之吉在简易无所猜防。爻义用以说明有据的实答可取。不得以威如指首问有威力，亦不得以无备指不用温书。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -277,18 +316,38 @@
       ],
       "scope": "逐月读回标题、短断、四段正文及取期，回查春选法、夏熟题、秋易辞、冬辨所问与四土月末题回验。校读删去录取一词，考试结果与招生录取分别处理。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "每篇写毕读回标题、简断、四段、应期；以五气底稿逐条对核，修正两篇经文引用不足、申酉限定范围及巳午用时表述。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T06:16:03.713Z",
-  "sourceSha256": "1d92d8344ad0274f6e831a7c0af47eabaa2c0291c0085cb6de1156de3bb63352",
+  "reviewedAt": "2026-11-21T06:27:12.283Z",
+  "sourceSha256": "b58f891f7da955099f9cb3090002056aa6ccc5dd99ae48cae81697f637d71029",
   "checks": {
-    "scope": "火天大有已写48篇",
-    "chartComparisons": 1296,
+    "scope": "火天大有已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       478,
-      518
+      535
     ]
   },
   "proseRevisions": [
