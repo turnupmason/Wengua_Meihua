@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "山风蛊已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "山风蛊已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -47,6 +47,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03蠱.txt",
       "scope": "六五及小象，王孔释柔处尊、用中而应、不任威力。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03蠱.txt",
+      "scope": "上九与小象，王注及孔疏论高尚其事"
     }
   ],
   "findings": [
@@ -144,6 +148,25 @@
         "18/5/丑"
       ],
       "finding": "逐月衡量木强弱和开局制艮难易，另看兑金原态、得艮生与卦内无火。十二月皆取中兑金日，未由末比和另辟结果日期。"
+    },
+    {
+      "id": "hex-018-line-6",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "18/6/寅",
+        "18/6/卯",
+        "18/6/辰",
+        "18/6/巳",
+        "18/6/午",
+        "18/6/未",
+        "18/6/申",
+        "18/6/酉",
+        "18/6/戌",
+        "18/6/亥",
+        "18/6/子",
+        "18/6/丑"
+      ],
+      "finding": "核清同一对土既为体所制又生中兑。春冬中震取木日只论过程；秋及四土月兑克取金日，夏难处分散不单取日。"
     }
   ],
   "lineReviews": [
@@ -184,6 +207,14 @@
       "text": "干父之蛊，用誉。",
       "image": "“干父用誉”，承以德也。",
       "reading": "六五用中而应，所获之誉指承先之德。初巽制艮、中震末巽比和、中兑有根无制；有同类不替代水生木，誉不越为合格。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "不事王侯，高尚其事。",
+      "image": "“不事王侯”，志可则也。",
+      "reading": "上九处蛊终，爻言志可则。体巽制艮与坤，互震比和，互兑受两土生而无火制，无直接生体者。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -288,17 +319,37 @@
       ],
       "scope": "六五十二篇简断、全文、专业说明与取期，完成后逐篇读回。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月各从作者源读回短断、四段长断、取期，移除五季旧断中具体题目或行为的假定。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T20:27:51.021Z",
-  "sourceSha256": "742850611b2a7e662cf57d0c7dc7db1e3f7b42942bfb0507258406f5e29ed9ba",
+  "reviewedAt": "2026-11-21T20:34:07.650Z",
+  "sourceSha256": "0ae91eb420646209ae66794fd4365fdb637608d696543e9fd98a75bd4218cf41",
   "checks": {
-    "scope": "山风蛊已写60篇",
-    "chartComparisons": 1620,
+    "scope": "山风蛊已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
-      482,
+      480,
       540
     ]
   }

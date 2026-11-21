@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1284-20261121",
+  "batch": "exam-monthly-preview-1296-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1284,
+  "uploadedArticles": 1296,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    18
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3324,
-  "authorWholeArticleReadback": 1284,
+  "remainingArticles": 3312,
+  "authorWholeArticleReadback": 1296,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -250,6 +252,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 18,
+      "name": "山风蛊",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-018.json",
+      "sourceSha256": "0ae91eb420646209ae66794fd4365fdb637608d696543e9fd98a75bd4218cf41",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-018.json",
+      "readingPath": "docs/exam/monthly-preview/hex-018.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -264,17 +280,16 @@
       70,
       112
     ],
-    "independentChartComparisons": 33048,
+    "independentChartComparisons": 34992,
     "independentChartMismatches": 0,
-    "dateCases": 2448,
-    "judgmentCorrectionArticles": 520,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前17个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2592,
+    "judgmentCorrectionArticles": 592,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 88
+    "interpreted-with-limits": 94
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -756,27 +771,9 @@
     "articles": 456
   },
   "nextExpectedKey": {
-    "primaryId": 18,
-    "movingLine": 6,
+    "primaryId": 19,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 18,
-      "name": "山风蛊",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-018.json",
-      "sourceSha256": "742850611b2a7e662cf57d0c7dc7db1e3f7b42942bfb0507258406f5e29ed9ba",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-018.json",
-      "readingPath": "docs/exam/monthly-preview/hex-018.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
