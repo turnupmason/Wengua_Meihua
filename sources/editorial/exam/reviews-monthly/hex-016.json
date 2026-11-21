@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "雷地豫已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "雷地豫已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -51,6 +51,14 @@
     {
       "path": "sources/editorial/exam/hex-016.json",
       "scope": "九四五气组，春冬取上震，夏秋及四季土取互艮。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "六五贞疾恒不死，王弼注与孔疏分别从乘刚、居中释两句。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-016.json",
+      "scope": "六五五气组，春冬取本震克土，夏、秋与季土取末兑受生。"
     }
   ],
   "findings": [
@@ -129,6 +137,25 @@
         "16/4/丑"
       ],
       "finding": "夏月专业说明把用卦位置当作卷首，改按本用震克坤并有坎水生震来解释。土本身得月气，与卦内真有生土之卦分别核查。"
+    },
+    {
+      "id": "hex-016-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "16/5/寅",
+        "16/5/卯",
+        "16/5/辰",
+        "16/5/巳",
+        "16/5/午",
+        "16/5/未",
+        "16/5/申",
+        "16/5/酉",
+        "16/5/戌",
+        "16/5/亥",
+        "16/5/子",
+        "16/5/丑"
+      ],
+      "finding": "原断中事例不入正文，疾、不死只参所处受制及可守，不据此断健康或考场经历；夏轻克轻泄，秋季末泄较重。"
     }
   ],
   "lineReviews": [
@@ -161,6 +188,14 @@
       "text": "由豫，大有得；勿疑，朋盍簪。",
       "image": "“由豫，大有得”，志大行也。",
       "reading": "九四一阳为群阴所从，得在众力相合；下坤体受上震克，中间互艮同体、互坎生震，末变纯坤。动后相合不能倒推出本用之克已解。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "贞疾，恒不死。",
+      "image": "六五“贞疾”，乘刚也；“恒不死”，中未亡也。",
+      "reading": "六五以柔乘刚，故有疾，居中未亡，故能久守。应考看受制而能持原有本领的分量，本震克坤、变兑受坤所生，能守没有转为有所得。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -245,15 +280,35 @@
       ],
       "scope": "逐月读回题名、简断、四段正文和取日；逐条对勘旺土能承而木克未解、秋金为月令不等同卦内有金制震。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇逐篇读回，从简断、正文到取期逐项核对月气、约束与支出分量。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T17:31:45.329Z",
-  "sourceSha256": "dc657ab4edd1177faa6a638a6354bf7a1ba3e7f1a3068b0f20aab269d0590941",
+  "reviewedAt": "2026-11-21T17:49:45.208Z",
+  "sourceSha256": "d8885142e9273811c745ad93eeb56901eed987cb63344085b3eb98ed724be17a",
   "checks": {
-    "scope": "雷地豫已写48篇",
-    "chartComparisons": 1296,
+    "scope": "雷地豫已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       474,
       537
