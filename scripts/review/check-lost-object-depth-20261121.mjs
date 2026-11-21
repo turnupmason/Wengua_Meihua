@@ -30,22 +30,22 @@ export const depthCopyOf = row => Object.fromEntries(FIELDS.map((field,i) => [fi
  * A root URL can be supplied for isolated verification fixtures. No files are written.
  * Reading attestations remain the responsibility of the named readers, not this function.
  */
-export async function inspectLostObjectDepthBatch({primaryId, root=ROOT, literaryReceipt}={}) {
+export async function inspectLostObjectDepthBatch({primaryId, root=ROOT, literaryReceipt, campaign=LOST_OBJECT_DEPTH_CAMPAIGN, reviewDir=REVIEW_DIR}={}) {
  const issues = [];
  const fail = (check,detail,rowIndex) => issues.push({primaryId,...(rowIndex===undefined?{}:{rowIndex}),check,detail});
  const check = (condition,label,detail,rowIndex) => { if (!condition) fail(label,detail,rowIndex); };
  const filename = filenameOf(primaryId);
  const sourcePath = SOURCE_DIR + '/' + filename;
  const polishPath = SOURCE_DIR + '/polish/' + filename;
- const reviewPath = REVIEW_DIR + '/' + filename;
- const baselinePath = REVIEW_DIR + '/baselines/' + filename;
+ const reviewPath = reviewDir + '/' + filename;
+ const baselinePath = reviewDir + '/baselines/' + filename;
  const directionPath = SOURCE_DIR + '/directions/' + filename;
  const imagePath = SOURCE_DIR + '/images/' + filename;
  const read = async path => {
   try { const bytes=await readFile(new URL(path,root)); return {bytes,value:JSON.parse(bytes.toString('utf8'))}; }
   catch (error) { fail('read-json',{path,message:error.message}); return null; }
  };
- check(LOST_OBJECT_DEPTH_CAMPAIGN.allowedHexagrams.includes(primaryId),'campaign-range','Only hexagrams 001–003 belong to this campaign');
+ check(campaign.allowedHexagrams.includes(primaryId),'campaign-range','Hexagram is outside the declared campaign range');
  if (issues.length) return {issues};
  const [source,baseline,direction,image,full,active] = await Promise.all([
   read(sourcePath),read(baselinePath),read(directionPath),read(imagePath),read(reviewPath),
@@ -71,11 +71,11 @@ export async function inspectLostObjectDepthBatch({primaryId, root=ROOT, literar
  const validReview=entries(review,'full-read-coverage',30,'rowIndex');
  const validDirection=entries(directions,'direction-coverage',6,'movingLine');
  const validImage=entries(images,'image-coverage',6,'movingLine');
- check(polish.campaign===LOST_OBJECT_DEPTH_CAMPAIGN.id && polish.standard==='V5.0' && polish.actor==='single-ai-literary-editor',
+ check(polish.campaign===campaign.id && polish.standard==='V5.0' && polish.actor==='single-ai-literary-editor',
   'active-campaign','Expected this campaign and the existing V5.0 actor interface');
  check(polish.sourcePath===sourcePath && polish.fullReviewPath===reviewPath && polish.monthKeyCount===72,
   'active-paths','Active receipt paths or 72-key coverage differ');
- check(review.campaign===LOST_OBJECT_DEPTH_CAMPAIGN.id && review.primaryId===primaryId && review.questionId===QUESTION,
+ check(review.campaign===campaign.id && review.primaryId===primaryId && review.questionId===QUESTION,
   'review-identity','Full read campaign, question or primaryId differs');
  check(review.sourcePath===sourcePath && review.baselinePath===baselinePath,'review-paths','Full read source/baseline paths differ');
  check(commit(polish.originalCommit) && commit(review.baselineCommit) && polish.originalCommit===review.baselineCommit,
@@ -109,7 +109,7 @@ export async function inspectLostObjectDepthBatch({primaryId, root=ROOT, literar
  const historical=safeHistoricalPath ? await read(historicalPath) : null;
  if (historical) {
   check(polish.previousReceiptSha256===sha(historical.bytes),'historical-receipt-bytes','The archived receipt is not the recorded original byte sequence');
-  check(historical.value?.sourcePath===sourcePath && historical.value?.campaign!==LOST_OBJECT_DEPTH_CAMPAIGN.id,
+  check(historical.value?.sourcePath===sourcePath && historical.value?.campaign!==campaign.id,
    'historical-receipt-identity','The archived receipt must be the pre-existing record for this source');
  }
  const validHistorical=historical ? entries(historical.value,'historical-receipt-coverage',30,'rowIndex') : false;
