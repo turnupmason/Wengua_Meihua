@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "passed",
+  "campaign": "lost-object-depth-20261121",
+  "scope": "all-authored-json-to-full-sql-and-all-application-tables-to-read-only-sqlite",
+  "sqlInputs": [
+    "data/knowledge.sql",
+    "data/timing-audit.sql",
+    "data/question-items.sql",
+    "dist/question-stories.sql",
+    "data/product-categories.sql",
+    "dist/authored-readings.sql"
+  ],
+  "sqlitePath": "dist/wengua.sqlite",
+  "authoredRecords": 25020,
+  "baseMonthSlots": 60048,
+  "exactContextMonthSlots": 0,
+  "allMonthKeys": 60048,
+  "lossDepthCampaignRecords": 90,
+  "lossPriorCampaignRecords": 810,
+  "campaignCounts": {
+    "lost-object-depth-20261121": {
+      "records": 90,
+      "monthKeys": 216
+    },
+    "lost-object-polish-20261120": {
+      "records": 810,
+      "monthKeys": 1944
+    }
+  },
+  "perQuestion": [
+    {
+      "questionId": "relationships.confession.decision",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.exams.exam",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.interview.interview-pass",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.job-change.decision",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.job-change.compare-jobs",
+      "records": 30,
+      "baseSlots": 72,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.job-change.resign",
+      "records": 30,
+      "baseSlots": 72,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "search.lost-object.recovery",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "search.pets.recovery",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "search.missing-contact.contact",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "relationships.new-partner.opportunity",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.promotion-pay.promotion",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "relationships.developing.relationship",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "relationships.reconciliation.reconcile",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.job-stability.probation",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    },
+    {
+      "questionId": "career.job-stability.layoff",
+      "records": 1920,
+      "baseSlots": 4608,
+      "exactSlots": 0
+    }
+  ],
+  "allSQLSQLiteTableCounts": {
+    "authored_product_manuscripts": 25020,
+    "authored_product_month_slots": 60048,
+    "classical_cases": 10,
+    "domain_narrative_rules": 18,
+    "domain_timing_profiles": 18,
+    "domains": 18,
+    "fixed_question_items": 90,
+    "fixed_question_metadata": 4,
+    "fixed_question_stories": 1920,
+    "fixed_question_story_profiles": 16617,
+    "fixed_question_story_resources": 11112,
+    "hexagrams": 64,
+    "line_details": 384,
+    "lines": 384,
+    "metadata": 5,
+    "month_orders": 5,
+    "monthly_narratives": 1920,
+    "product_categories": 6,
+    "product_metadata": 3,
+    "product_questions": 83,
+    "product_subcategories": 30,
+    "reference_commentary_links": 64,
+    "rule_profiles": 1,
+    "source_documents": 8,
+    "special_lines": 2,
+    "timing_audit_issues": 7,
+    "timing_audit_metadata": 3,
+    "timing_audit_rules": 27,
+    "trigram_timing_periods": 8,
+    "void_narrative_rules": 8
+  },
+  "integrityCheck": {
+    "SQL": "ok",
+    "SQLite": "ok"
+  },
+  "foreignKeyViolations": {
+    "SQL": 0,
+    "SQLite": 0
+  },
+  "semanticReview": "not-established-by-this-output-consistency-check",
+  "userAcceptedThisVersion": false
+}

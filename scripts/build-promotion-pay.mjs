@@ -9,6 +9,7 @@ import {createContextualReading, resolveContactLineText, promotionTimingSlots, M
 import {MONTH_SLOTS} from '../src/month-slots.js';
 import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
+import {LOST_OBJECT_DEPTH_CAMPAIGN, inspectLostObjectDepthBatch} from './review/check-lost-object-depth-20261121.mjs';
 import {createRequire} from 'node:module';
 // 口径 V2.1 间接生克（只算本用、两互、变用之间一层）：与复核记录同一实现，构建时如实记入 decision.indirectEffectsApplied。
 const {adjust:indirectAdjust} = createRequire(import.meta.url)('./review/indirect-test.cjs');
@@ -47,6 +48,9 @@ const literaryProgress = {standard:'V5.0', actor:'single-ai-literary-editor', co
 // 2026-11-20 用户重新要求继续精修。旧 1–37 卦回执保留原范围，
 // 本次 38–64 卦另外绑定合并方向、形色后的全文审读，不由构建程序签署审读。
 const lostPolishCampaign = {id:'lost-object-polish-20261120',baselineCompleted:1110,targetArticles:810,completed:0,monthKeyCount:0,hexagrams:[]};
+// 001–003 的补深另记一轮；回执绑定原稿、六字段、合并附文及最终整行的两位读者。
+// 既有 810 篇精修计数不吸收本轮，也不把同一篇重复计入总篇数。
+const lostDepthCampaign = {...LOST_OBJECT_DEPTH_CAMPAIGN,completed:0,monthKeyCount:0,hexagrams:[]};
 const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
 const directory = [];
@@ -105,6 +109,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  if (drafts.length !== 30) throw new Error('An authored batch needs 30 individually written versions');
  let literaryReceipt = null;
  let literaryFullReview = null;
+ let literaryDepthReview = null;
  const literaryReceiptPath = sourceDir + 'polish/' + filename;
  if (profile === LOST_OBJECT_RECOVERY_PROFILE) {
   try {
@@ -124,6 +129,10 @@ for (const [batchIndex, filename] of batches.entries()) {
    if (literaryFullReview.primaryId !== primaryId || literaryFullReview.authorAgent === literaryFullReview.peerAgent ||
        literaryFullReview.sourceSha256 !== createHash('sha256').update(await readFile(new URL(sourcePath, root))).digest('hex') ||
        literaryFullReview.entries?.length !== 30) throw new Error('Stale full-copy readback: ' + filename);
+  }
+  if (literaryReceipt?.campaign === lostDepthCampaign.id) {
+   literaryDepthReview = await inspectLostObjectDepthBatch({primaryId,root,literaryReceipt});
+   if (literaryDepthReview.issues.length) throw new Error('Invalid depth full-read receipt: ' + filename + '\n' + JSON.stringify(literaryDepthReview.issues,null,2));
   }
  }
  let directionBatch = null;
@@ -349,6 +358,23 @@ for (const [batchIndex, filename] of batches.entries()) {
     lostPolishCampaign.completed++;
     lostPolishCampaign.monthKeyCount += monthBranches.length;
     if (!lostPolishCampaign.hexagrams.includes(primaryId)) lostPolishCampaign.hexagrams.push(primaryId);
+   } else if (literaryReceipt.campaign === lostDepthCampaign.id) {
+    const bound = literaryDepthReview.bindings.find(entry => entry.rowIndex === i);
+    const assembledCopySha256 = createHash('sha256').update(JSON.stringify({title,short,opening,process,ending:combinedEnding,summary})).digest('hex');
+    const reviewedRowSha256 = createHash('sha256').update(JSON.stringify(draft)).digest('hex');
+    if (bound.copySha256 !== copyHash || bound.assembledCopySha256 !== assembledCopySha256 || bound.reviewedRowSha256 !== reviewedRowSha256) {
+     throw new Error('Depth copy changed between validation and assembly: ' + key);
+    }
+    const fullRead = literaryDepthReview.review;
+    authorship.currentLiteraryPolish = {campaign:lostDepthCampaign.id,scope:'full-author-row-and-existing-direction-image-supplements',
+     receiptPath:literaryReceipt.fullReviewPath,baselinePath:fullRead.baselinePath,baselineSha256:fullRead.baselineSha256,
+     sourceSha256:fullRead.sourceSha256,directionSourceSha256:fullRead.directionSourceSha256,imageSourceSha256:fullRead.imageSourceSha256,
+     copySha256:copyHash,assembledCopySha256,reviewedRowSha256,reviewedAt:literaryEntry.reviewedAt,
+     authorAgent:fullRead.authorAgent,peerAgent:fullRead.peerAgent,authorReviewedAt:fullRead.authorReviewedAt,peerReviewedAt:fullRead.peerReviewedAt,
+     previousReceiptPath:literaryReceipt.previousReceiptPath,previousReceiptSha256:literaryReceipt.previousReceiptSha256,reviewerIsHuman:false};
+    lostDepthCampaign.completed++;
+    lostDepthCampaign.monthKeyCount += monthBranches.length;
+    if (!lostDepthCampaign.hexagrams.includes(primaryId)) lostDepthCampaign.hexagrams.push(primaryId);
    }
   } else if (profile === LOST_OBJECT_RECOVERY_PROFILE && literaryProgress.next === null) {
    literaryProgress.next = {primaryId,movingLine,monthOrder,monthBranches};
@@ -458,7 +484,7 @@ const progress = {
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
  remainingBaseSlots:4608-counts.keys, authorWholeArticleReviewed:counts.bodies,
- ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {imageCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-images-1.0.0',facets:['shape','material','color','utensil','environment'],extraLiteraryPolishRequired:true},directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-copy-with-separately-bound-supplement-review',required:true,status:literaryProgress.completed===counts.bodies?'completed':'in-progress',unpolished:counts.bodies-literaryProgress.completed,remaining:counts.bodies-literaryProgress.completed},polishCampaign:{...lostPolishCampaign,remaining:lostPolishCampaign.targetArticles-lostPolishCampaign.completed,reviewMethod:'author-full-read-and-second-ai-full-read',userAcceptedThisVersion:false}} : {}),
+ ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? {imageCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-images-1.0.0',facets:['shape','material','color','utensil','environment'],extraLiteraryPolishRequired:true},directionCoverage:{charts:files.length*6,monthKeys:counts.keys,authoredSupplements:files.length*6,sourceRulesVersion:'lost-object-direction-1.0.0'},literaryPolish:{...literaryProgress,scope:'base-copy-with-separately-bound-supplement-review',required:true,status:literaryProgress.completed===counts.bodies?'completed':'in-progress',unpolished:counts.bodies-literaryProgress.completed,remaining:counts.bodies-literaryProgress.completed},polishCampaign:{...lostPolishCampaign,remaining:lostPolishCampaign.targetArticles-lostPolishCampaign.completed,reviewMethod:'author-full-read-and-second-ai-full-read',userAcceptedThisVersion:false},depthReviewCampaign:{...lostDepthCampaign,remaining:lostDepthCampaign.targetArticles-lostDepthCampaign.completed,reviewMethod:'author-full-read-and-second-ai-full-read-bound-to-final-row',userAcceptedThisVersion:false}} : {}),
  ...(isPromotion ? {favourable:outcomeCounts.favourable} : {outcomeCounts}),
  dated:counts.dated, undated:counts.bodies-counts.dated, timingWindowCount:counts.timingWindows, independentReview:counts.accepted === counts.bodies ? 'ai-delegated-approved' : 'pending', userAccepted:counts.accepted, files,
  next:files.length === 64 ? null : {primaryId:files.length+1, movingLine:1, monthOrder:orders[0], monthBranches:['寅','卯']},
@@ -473,6 +499,8 @@ await writeFile(new URL(docDir + 'README.md', root), [
   '2026-11-20 按用户新要求，以面试、确定关系的逐月长稿为文风标杆，继续精修第 38–64 卦原有的 810 篇。本次完成 ' + lostPolishCampaign.completed + ' 篇，覆盖 ' + lostPolishCampaign.monthKeyCount + ' 个月令键；尚余 ' + (lostPolishCampaign.targetArticles-lostPolishCampaign.completed) + ' 篇。',
   '本次已完成卦序：' + (lostPolishCampaign.hexagrams.length ? lostPolishCampaign.hexagrams.join('、') : '尚未发布') + '。作者逐篇核读、第二位 AI 全文复核及规则疑点见[本轮审计](POLISH_AUDIT_20261120.md)。这些记录不等于独立真人专业认可或用户逐篇验收。',
   '前 37 卦既有 V5.0 精修 1,110 篇保留原记录；累计精修 ' + literaryProgress.completed + ' 篇，对应 ' + literaryProgress.monthKeyCount + ' 个月令键。本轮保持每卦 30 篇五气正文与 72 个月令键的现有结构，同气共用不冒充十二份独立新稿。',
+  '2026-11-21 另开第 1–3 卦的正文补深，共计划 90 篇；本轮已完成 ' + lostDepthCampaign.completed + ' 篇，覆盖 ' + lostDepthCampaign.monthKeyCount + ' 个月令键，尚余 ' + (lostDepthCampaign.targetArticles-lostDepthCampaign.completed) + ' 篇。已完成卦序：' + (lostDepthCampaign.hexagrams.length ? lostDepthCampaign.hexagrams.join('、') : '尚未发布') + '。这批属于既有 1,920 篇的再次精修，不计入上轮 810 篇，也不新增总篇数。',
+  '本轮原稿、旧回执与作者及第二位 AI 的最终全文复读分别留档，见[补深审计](DEPTH_AUDIT_20261121.md)与[古籍后续复核](CLASSICAL_FOLLOWUP_20261121.md)。程序核验原档位、完整应期、六字段、合并附文和整行版本绑定；字数及哈希通过不代替逐篇内容审读。',
  ] : []),
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : hasPay ? ['其中能升 ' + outcomeCounts.favourable + ' 篇（随岗薪资一并说明），升不了 ' + outcomeCounts.difficult + ' 篇。'] : []),
  ...(profile===MISSING_CONTACT_PROFILE?['具体断法适用问题保留 '+counts.applicationQuestions+' 篇（'+counts.applicationQuestionMonthKeys+' 个月令键），逐条记录见作者 cases 与 source-study，不计作独立审核通过。']:[]),
