@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "authorshipScope": {
-    "currentReadback": "雷地豫已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "雷地豫已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -43,6 +43,14 @@
     {
       "path": "sources/editorial/exam/hex-016.json",
       "scope": "六三五季原盘，体震制三土，中互坎生体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "九四爻辞及象，王弼论众阴由之得豫、勿疑则朋合疾。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-016.json",
+      "scope": "九四五气组，春冬取上震，夏秋及四季土取互艮。"
     }
   ],
   "findings": [
@@ -102,6 +110,25 @@
         "16/3/丑"
       ],
       "finding": "春夏原据以「进退离悔」拼作连续引文，依王注校回完整连续句。初中末三土皆由震木掌握；中坎之助依季令与土克计，四土月分散，余月取亥子。"
+    },
+    {
+      "id": "hex-016-line-4",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "16/4/寅",
+        "16/4/卯",
+        "16/4/辰",
+        "16/4/巳",
+        "16/4/午",
+        "16/4/未",
+        "16/4/申",
+        "16/4/酉",
+        "16/4/戌",
+        "16/4/亥",
+        "16/4/子",
+        "16/4/丑"
+      ],
+      "finding": "夏月专业说明把用卦位置当作卷首，改按本用震克坤并有坎水生震来解释。土本身得月气，与卦内真有生土之卦分别核查。"
     }
   ],
   "lineReviews": [
@@ -126,6 +153,14 @@
       "text": "盱豫悔；迟有悔。",
       "image": "“盱豫有悔”，位不当也。",
       "reading": "六三居下体之极、上承九四，位非所据。孔疏分释盱与迟，两悔是处位与进退的警义，不能据以指定失误。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "由豫，大有得；勿疑，朋盍簪。",
+      "image": "“由豫，大有得”，志大行也。",
+      "reading": "九四一阳为群阴所从，得在众力相合；下坤体受上震克，中间互艮同体、互坎生震，末变纯坤。动后相合不能倒推出本用之克已解。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -190,18 +225,38 @@
       ],
       "scope": "逐篇写入读回，检查来源、同气断据、不同阶段的克用与生体、应期与不实情境。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐月读回题名、简断、四段正文和取日；逐条对勘旺土能承而木克未解、秋金为月令不等同卦内有金制震。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T17:12:00.663Z",
-  "sourceSha256": "68728ecc4b35d764fb0a1607a1a5e9b41721cc9c816cc1d264edb12c81796764",
+  "reviewedAt": "2026-11-21T17:31:45.329Z",
+  "sourceSha256": "dc657ab4edd1177faa6a638a6354bf7a1ba3e7f1a3068b0f20aab269d0590941",
   "checks": {
-    "scope": "雷地豫已写36篇",
-    "chartComparisons": 972,
+    "scope": "雷地豫已写48篇",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       474,
-      536
+      537
     ]
   }
 }
