@@ -600,15 +600,15 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘各有记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T23:45:06.494Z",
-  "sourceSha256": "7d657d2d673c6cda4077a09ef1043cb9cc92cad31423a29d688ff560b2e13253",
+  "reviewedAt": "2026-11-21T04:04:12.310Z",
+  "sourceSha256": "133d605b767cee2885c429d0883d1b6d6c55e3ee3681080b598ff92b44fa6675",
   "checks": {
     "scope": "天地否已写72篇，核对作者源与阅读页",
     "chartComparisons": 1944,
     "chartMismatches": 0,
     "dateCases": 144,
     "bodyHanRange": [
-      491,
+      485,
       565
     ]
   },
@@ -764,5 +764,45 @@
     ],
     "bodyTransitionKeys": [],
     "scope": "本次审读修订的开头、简断及段内衔接。前版整篇核读对应原哈希。本次逐项比对判词、取期与四段正文的改动范围。"
-  }
+  },
+  "proseRevisions": [
+    {
+      "keys": [
+        "12/1/寅",
+        "12/1/卯",
+        "12/1/辰",
+        "12/1/巳",
+        "12/1/午",
+        "12/1/未",
+        "12/1/申",
+        "12/1/酉",
+        "12/1/戌",
+        "12/1/亥",
+        "12/1/子",
+        "12/1/丑"
+      ],
+      "priorSourceSha256": "7d657d2d673c6cda4077a09ef1043cb9cc92cad31423a29d688ff560b2e13253",
+      "sourceSha256": "133d605b767cee2885c429d0883d1b6d6c55e3ee3681080b598ff92b44fa6675",
+      "reviewedAt": "2026-11-21T04:04:12.310Z",
+      "scope": "对读考试乾至需及面试逐月稿。重写题名、简断和主要段落，并保留仍合题的原有解释；逐篇从落盘版本核读全文；另核本爻经、象、注疏，逐月对照五气原稿与应期。",
+      "ruleReview": "初六逐月读回，对勘《周易正义》否初六经、王注、孔疏及象。否初守正不苟进与泰初征吉分别。乾体得坤艮生，巽震为体所克，又制两土，四用无火补土；照月态辨助力，不重复计算。寅卯巳午亥子据互艮参作答之助，其余取本坤参合格消息。复核同一条件在后问能否沿用及各道示例。",
+      "comparisonSources": [
+        {
+          "tree": "60c03a9d9fc8528a4ec9be950c30446aef5214aa",
+          "path": "docs/interview-pass/monthly-preview",
+          "refs": [
+            "d3e942d8",
+            "be2afd72"
+          ]
+        },
+        {
+          "tree": "0ba8ca8becb65d2b162f4432a888bf0238f45d46",
+          "path": "docs/relationship-establishment/monthly-preview",
+          "refs": [
+            "be2afd72"
+          ]
+        }
+      ]
+    }
+  ]
 }
