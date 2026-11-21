@@ -1,0 +1,727 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaign": "lost-object-depth-continuation-20261121",
+  "primaryId": 29,
+  "peerAgent": "/root/classical_audit",
+  "authorAgent": "/root",
+  "reviewerIsHuman": false,
+  "baselineCommit": "e46eebc1b4b48ebbb7bdb7788e2ab2606abf7e71",
+  "sourcePath": "sources/editorial/lost-object-recovery/hex-029.json",
+  "baselinePath": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/baselines/hex-029.json",
+  "peerFullRead": true,
+  "humanProfessionalReview": "pending",
+  "userAcceptedThisVersion": false,
+  "realWorldPredictionAccuracy": "not-validated",
+  "readSources": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "本轮任务开始时全文已读，文件归属、原体固定、真实逐篇审读及锁定字段沿用。"
+    },
+    {
+      "path": "docs/READING_LITERARY_POLISH_V5.md",
+      "scope": "本轮此前全文已读，按独立起笔、厚度、古义两面和正文不带审稿口吻复核。"
+    },
+    {
+      "path": "docs/LOST_OBJECT_RECOVERY_POLICY.md",
+      "scope": "总则与五关系五态本轮已读，本次坎为水专节完整实读；不宣称重读其余六十三卦专节。"
+    },
+    {
+      "path": "docs/lost-object-recovery/DEPTH_CONTINUATION_AUDIT_20261121.md",
+      "scope": "本轮全文已读，沿原结果及完整时机锁定、双读和逐篇开放问题要求。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03坎.txt",
+      "scope": "卦辞、彖象、全部六爻经文及王注孔疏全文实际读；九二小得、六三勿用、九五未平有咎、上六久拘与自修均完整核对。"
+    },
+    {
+      "path": "https://zh.wikisource.org/wiki/周易正義/03坎",
+      "scope": "网页126至205全经注疏实际打开并读，与本地全文核对；上六断句疑点不擅改。"
+    },
+    {
+      "path": "https://zh.wikisource.org/zh-hant/梅花易數/卷二",
+      "scope": "本轮独立古籍核查此前实际读失物全段、五关系与旺衰，不把数术预测说成现实已验证事实。"
+    },
+    {
+      "path": "https://zh.wikisource.org/zh-hant/梅花易數/卷三",
+      "scope": "本轮此前已实际读本卦当事、互中变末及体用互变相关原文。"
+    },
+    {
+      "path": "scripts/review/monthly-lib.mjs",
+      "scope": "independentFacts坎卦30组六节点、四条分别对原体关系全部实际读；六变节、比、井、困、师、涣逐组核准。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-029.json",
+      "ref": "e46eebc1b4b48ebbb7bdb7788e2ab2606abf7e71",
+      "scope": "30篇旧稿全部十一字段含完整时机，0至14及15至29两组实际全文读。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-029.json",
+      "scope": "作者69a1e2版30篇最终十一字段与两附文完整实际读；4、5首次输出中段截断后整篇补读。其后仅第2篇更改，6b45a3ae版该篇全部十一字段合装及完整时机又实际重读，其余29篇文字未变。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/directions/hex-029.json",
+      "scope": "六条方向文字、角色和全部元数据完整实读，再逐篇合装读。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/images/hex-029.json",
+      "scope": "六条本用原件、变用环境文字、适用范围与全部元数据完整实读，再逐篇合装读。"
+    }
+  ],
+  "manualReadbackEvidence": {
+    "baselineFullReadGroups": [
+      [
+        0,
+        14
+      ],
+      [
+        15,
+        29
+      ]
+    ],
+    "finalFullReadGroups": [
+      [
+        0,
+        3
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        15,
+        21
+      ],
+      [
+        22,
+        29
+      ]
+    ],
+    "truncationRecoveryWholeRows": [
+      4,
+      5
+    ],
+    "requestedCorrections": [
+      {
+        "rowIndex": 2,
+        "fieldIndex": 7,
+        "reason": "困陷的警戒应当完整看待偏向审读提示，请直接写困陷深重及后续查验须慎。",
+        "resolved": true
+      }
+    ],
+    "afterCorrectionWholeRows": [
+      2
+    ],
+    "readVersions": [
+      {
+        "sourceSha256": "69a1e2f2aab70368994d626bdec0bc44c639e34fc0b49e432ead352c488ccfa2",
+        "rows": "全部30篇已实际读完"
+      },
+      {
+        "sourceSha256": "6b45a3ae707585f4e49765a1132681d1225f2e730d13662aaf9eed7d0663737d",
+        "rows": "仅第2篇改变，整篇合装重读；其余29篇沿此前实际审读内容，未重新宣称阅读改版"
+      }
+    ],
+    "assertion": "原稿、原典、六条双附文元数据、30组独立事实及最终30篇均真实阅读；第2篇修后整篇再读。逐篇意见手写，后据已读版本绑定散列，机器检查只证长度、锁定与一致性，不代替审读或专业验准。"
+  },
+  "mechanicalChecks": {
+    "lockedFields": [
+      0,
+      1,
+      2,
+      10
+    ],
+    "allLockedFieldsPreserved": true,
+    "bodyHanRange": [
+      477,
+      504
+    ],
+    "shortHanRange": [
+      89,
+      96
+    ],
+    "internalLanguageHits": 0,
+    "cross64BuilderNormalizedSentenceDuplicatesAtLeast12Han": 0,
+    "cross64NormalizedSentenceDuplicatesAtLeast24Han": 0,
+    "authorAndPeerTripleHashesMatch": true
+  },
+  "unresolvedProfessionalQuestionRows": [
+    2,
+    3,
+    5,
+    7,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22,
+    23,
+    25,
+    27,
+    28
+  ],
+  "reviewedAt": "2026-11-21T21:02:04.855Z",
+  "sourceSha256": "6b45a3ae707585f4e49765a1132681d1225f2e730d13662aaf9eed7d0663737d",
+  "baselineSha256": "f9cf7fbe2c1f044f5f202390359fa95ea80d91b6bd39893fec6a5d641f493677",
+  "directionSourceSha256": "31275635e22603c380701d24cb31bf4c9aaf0c7298f845de27599bb618beff4f",
+  "imageSourceSha256": "cb7acdeec4e4fb5f87c4299cacdd450c8b257c9d9d2919b6d98b8f652d1364be",
+  "entries": [
+    {
+      "rowIndex": 0,
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "末次确见与后来转话分开起笔，春休坎本比正常、死艮克轻、旺震耗重及囚兑薄生四条均对原体。初六重险底部、失道而不能自济与无应援的凶义写实，未只归咎于查法。兑西方破壁只随真实原路参看，坎水具黑色只辨旧资料；难档与完整不取期均保留。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 485,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "540840319c3b33d79b7ec5c7a58e07390f2acd0c93a5ce62cf27df6780f2bb6d",
+      "copySha256": "5f03030cba7db3f5775b27d72eeb6ee55f5c7170db1d23bbe8d79cd37a62d275",
+      "assembledCopySha256": "014b40f90776ce195e795e8b5534e1a7b1eafb8ce83e43163465a9a728b1157f"
+    },
+    {
+      "rowIndex": 1,
+      "movingLine": 1,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "先核谁能打开原位置，囚坎与本用弱比、相艮克实、休震正常耗及死兑薄生准确。初六入窞失道无援的重凶没有缩成稍有不便，受理后仍待实看。中段体互凶应原文完整，兑金盛器属于已知周边，原件材质仍依实物记录。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 489,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "64bcc6ebb15720299f845d71c1844dd3cad23ae04ea9cd53eeaefc89699cc1f3",
+      "copySha256": "b72eb3100350e02d8208cbfe965e278f787aac4f497e5e98e60b7b6906548068",
+      "assembledCopySha256": "b9085bf34ceda229c11023460a4ea1d425b0a6f0391ab5a9942b08f38d216c9a"
+    },
+    {
+      "rowIndex": 2,
+      "movingLine": 1,
+      "monthOrder": "autumn-metal",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "相体初比、休艮正常克、死震轻泄与旺兑实生逐项明白，旧条件档与初六无援穷底的全凶并置。曾指出审读提示语，修成困陷深重、所听所见各留出处后已将本篇十一字段和双附文完整再读。末生吉应仍有原条件，未将换查法等同豁免爻凶，旧记号与真实收存相合才认物。",
+      "openQuestions": [
+        "初六全凶与相体本比、旺兑生助的有利条件并存，怎样权衡仍取原条件档，现有文字只能保留双方，专业取权尚待核定。",
+        "完整旧时机以停下旧找法且真实收存接手为末生吉应前提，其与初六不能自济之凶如何兼容尚缺明确边界；本轮没有据此新增改查即解凶规则。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 496,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "a1135e7736f0f4d3bfe57dd8b716eecfc4cacd9af90a9c742ad9eebc31828a3b",
+      "copySha256": "77abcc34ea2565b9619e071bc8ed945864ac17e1e562108bf05a7e63c97b875f",
+      "assembledCopySha256": "3b943cc05eca02a2fc9410f367eb3512c67f83896c67e5729c909068c5dce9f0"
+    },
+    {
+      "rowIndex": 3,
+      "movingLine": 1,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "同批确曾收放作为前提，旺坎初比足、囚艮克轻、相震耗实以及休兑正常生都未省。初六失道无援且陷最底的重凶完整，末生不被降为缓援。原初比近处实查吉应保持，兑环境与坎原物形色相分，所见批次不自动等同原件在场。",
+      "openQuestions": [
+        "将休兑恢复普通生助后，旺体初比、轻土克与初六全凶、相木耗的权重仍需核定，原条件档不应靠把普通生助再次写弱来解释。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 477,
+      "shortHan": 91,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "e5f4fea4dc2d4b3dc266ee2fb3f1b82b4475613e0a0cd58b734d961149fbc07f",
+      "copySha256": "8f848031b58bc1bfee9d2f2ef4740121a35b405725fb940d94c9f1d65f994ad2",
+      "assembledCopySha256": "2e8088e97e54878cedcccc352d5ff69f4d757986cc9216bee2eeec5631c8cbf7"
+    },
+    {
+      "rowIndex": 4,
+      "movingLine": 1,
+      "monthOrder": "seasonal-earth",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "土月死坎本比薄、旺艮重克、囚震轻耗及相兑实生齐全，末援可以实看，未被贬成只能登记。初六困底无援不能自济与难档相合，真正管理者能补哪处作为实际查验问题。中段克体凶应整段未改，西方破壁和金器缺角只随原路核对。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 490,
+      "shortHan": 89,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "74dfb77fd2abfbb65703dc312c29c221d4473b5b13fe41b23db08bfdeac2bb86",
+      "copySha256": "b994786d7a744d15c69d1b6504ce81a8c03ab513aad726a531a31aacc0c8db06",
+      "assembledCopySha256": "06d16574991a1462053ec0a7b384f764dc5baa3dbbc7ba0e98c24d75c483244b"
+    },
+    {
+      "rowIndex": 5,
+      "movingLine": 2,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "最后使用之后谁见放回为具体起点，春休同比作用正常，中末两死土各轻克而中途旺震耗重。九二失位无上应、居中得初三相附故有小得而未出险两面俱全，没有以无末生直接定难。原完整不取期已读，坤方盒布包属实用环境，原件仍按坎既知记号核认。",
+      "openQuestions": [
+        "普通初比、两处较轻土克和九二可小得均为正证，旺震耗与未出险为限制；原难档的相对权重尚需专业说明，不能另设末无生即不得物的规则。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 491,
+      "shortHan": 91,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "dac224bf8504ffa2e6c2c5761a9feea6a5fe2650629560a0fb4e3f6dd80ebe66",
+      "copySha256": "c1d105d92d70d4edd8f8b2cc7f01b1432132d6015c68eafb1b5782148c613ba7",
+      "assembledCopySha256": "f891a6b9faa11f5fbca318ca4d0cf2fb2edd619c67ce5166660471d5676d4e03"
+    },
+    {
+      "rowIndex": 6,
+      "movingLine": 2,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "管理处所说同批物件与亲眼见到原件明确分开，囚坎初比弱、相艮和相坤中末克实、休震普通耗皆准。九二小有所得的正义未抹掉，也保留初三不足为大援、尚未出险。末段验物受限凶应与正文相接，西南仓储只核确用盒格，坎原色仍取真实外观。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 482,
+      "shortHan": 91,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "2ea9102ddcbc74d79b5695b59aceadc288d2f5194c001eab996b40c1a862049f",
+      "copySha256": "64fea210aced11781b8d543a4cbc2bffec37279961bd49c7a99918623fc50d47",
+      "assembledCopySha256": "3c2a6e976f9d498f5173559704b0aa6e9726399c577ba3aa20bbf1e456286513"
+    },
+    {
+      "rowIndex": 7,
+      "movingLine": 2,
+      "monthOrder": "autumn-metal",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "先辨眼前同类实物再续收存，秋相初比与死震轻耗的条件明确，中末休土各按正常克解释。九二真能小得、失位无上应且援不足仍未出险完整。原初比阶段吉应不扩大为必归，坤软包方盒与坎原件构造在合装后仍各守其角色。",
+      "openQuestions": [
+        "中末两处休土均恢复普通克制后，初段相坎比和、轻木耗及九二小得应怎样抵取，才能保持原条件档，需补明确而一致的权衡依据。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 487,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "63400f983e0b824dc833be1f8a4a92c35981a21f713a4bdaf9ab41302a631a01",
+      "copySha256": "495df555fad8633b94fae0a2f1c03cb235e61cd4f058da14b78984b1433cfd88",
+      "assembledCopySha256": "c15f72614829e889b3f4dea0d64ea5e8615112fa91c683625a3fed4b3feee283"
+    },
+    {
+      "rowIndex": 8,
+      "movingLine": 2,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "简断以已找同批物件的假设起，正文要求辨独有标记，未把小得写成只得小物或已经得原件。旺坎比和、囚艮坤轻克及相震较实耗阶段清楚，九二居中相附与无大援俱在。完整初段实查吉应、坤实际盒格及坎原接口附文都已合读。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 479,
+      "shortHan": 95,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "7658fa174761e78c14e49897208f8a345172f4d460a5b9d7f67ef708a9c27da8",
+      "copySha256": "1552e565bc752481d5edf4c9564a1b7045e4968a7c9be750ae3bc12dcaa9b839",
+      "assembledCopySha256": "a5856e42729306fd1ae679941530990c1b99b4dedc696f02d488551da82c3143"
+    },
+    {
+      "rowIndex": 9,
+      "movingLine": 2,
+      "monthOrder": "seasonal-earth",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "一份回音究竟见过哪些物件先问清，死坎弱比、旺艮坤两段重克与囚震轻耗没有遗漏。九二所附可小成而未出险原义完整，已知同批去向不冒充原件在场。末段查验凶应保持原文，坤环境的少量线索只启实际补查，辨原件仍须坎旧痕与来路。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 493,
+      "shortHan": 91,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "b5f18a68a052a288e870bf843ccac3a467635992ee710b0b6df4df42251a29d0",
+      "copySha256": "9ee2c8ecde9bb93b565a0551f3de8e2fec4c97be8eb7afa963058251c923a7c0",
+      "assembledCopySha256": "6c7ebbebb0b637517082115793f86d76d2c1453b67ccead45a1f635ebb6cecca"
+    },
+    {
+      "rowIndex": 10,
+      "movingLine": 3,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "几个可能位置按记录与转述区分，春休比正常、死艮轻克，中途震与末巽皆旺耗。六三非位居两坎、出居俱险而不安、勿用终无功全义都在，后续谨慎并非仅戒无据绕路。原不取期未改，巽东南木器只对真实柜盒，坎黑色及弯构件仍核旧资料。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 492,
+      "shortHan": 90,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "186edf0efbbd01340d2cb610021db65862c62f47033509a1f9eb87b0a548bbec",
+      "copySha256": "c55f219f82443edd8694eb06f68dacb6ea9387e3d0c0423e76bd2e2bd3005490",
+      "assembledCopySha256": "6be2bb7e200f758b0f46741c0b7e2b573ddaab878f3414c769cc624ba2056d28"
+    },
+    {
+      "rowIndex": 11,
+      "movingLine": 3,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "两处均不能开看明确作为假设，囚坎比薄、相艮克实与中末休木正常耗列得准确。六三进退两险且枕不安、继续行事终无功保留，没有把勿用降为减少询问。原体互凶应连同双附文完整读过，转话不增加原件身份的证明。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 499,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "99142deff66e9372a7983bd77a50ded41ce1cb9fa1867d40b07d0a26ff46af7d",
+      "copySha256": "9f08cc77dda058ddc1e8afe20d2c0e0d9255084e217d81dbd59181ff786ec611",
+      "assembledCopySha256": "88822664dd505f74def6431c6ba218260b4b7fc988fe3dc5c74868c8d42db67f"
+    },
+    {
+      "rowIndex": 12,
+      "movingLine": 3,
+      "monthOrder": "autumn-metal",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "前次代查是否真开容器起笔有独立问题，相坎初比实、普通休艮克和两死木轻耗完整。六三出居皆险不安、勿用终无功没有被有力初比冲淡，原难档及阶段吉应并存。巽木器环境须确实用过，坎形色不推未知实际颜色，未完成查验与已看结果各自留明。",
+      "openQuestions": [
+        "初比有力、两木轻耗与六三勿用终无功如何合权仍定难，以及原初比吉应只许近处核查的适用边界，都需专业核定，不能从阶段可查直接推出整体得物。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 504,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "5f2983c5db041a94797618268535738c491251b2c50240d4afae0c403216c990",
+      "copySha256": "30e1154b3129bd9f4a57727c2be39ba7c63c4a70004fb8e7d9031d23781c7fcc",
+      "assembledCopySha256": "35bd8a121dede100c862dfb4bf395712f99f263ef68ca4c59807ec29da8721e7"
+    },
+    {
+      "rowIndex": 13,
+      "movingLine": 3,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "正文把已完成的原处查看和后来未知收存分开，冬旺坎初比足、囚艮克轻、中末相木耗实不混阶段。六三无安且终无功完整，后续实物消息亦须谨慎核实。原初段吉应未扩作物归，巽木柜内层只随已知收放，坎原构造与环境材质分开。",
+      "openQuestions": [
+        "旺体本比和较轻土克与两相木耗、六三重戒并存，原难档及原初段吉应各取何等权重尚待复核；不能另造有据查看即可解除勿用之戒的例外。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 490,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "6331d1b91989d9ad55cf13c56e432670d985db48eee1f0c9bc0e07cac1d1b3d5",
+      "copySha256": "bac2fa7ca7a0f72c101ff7306a8c1ef4e9999226c78c5906a1556d09b8c0c7f9",
+      "assembledCopySha256": "dc046f6aa8ae22d490de3f76aa564255a48fd49475d69e49676e9bb2e3eedada"
+    },
+    {
+      "rowIndex": 14,
+      "movingLine": 3,
+      "monthOrder": "seasonal-earth",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "时间位置不明时先保存真正用过的特征，场景没有写成已知实情。死坎弱比、旺艮重克、中末囚木轻耗完整，六三失位两险、出居不安及行则无功与难档同向。体互查验原凶应整段保存，巽方位木器附文仍从真实经手处补看。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 488,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "17e248a94fd440c25bcb7474f40b8bfef1d4fdfb3b03f2ef0947336a7447fbaa",
+      "copySha256": "5499e40643126a8956b5146c07c1a28f8e71203d105ceef8ba5e15de1ef4de8b",
+      "assembledCopySha256": "ddde882db0743e4195cfb67a5b1137b77fc50cd8af99e8e9871a02662f95a83d"
+    },
+    {
+      "rowIndex": 15,
+      "movingLine": 4,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "辨物说明是否足以让未见过原物的人认出，是本篇独立开端；休坎初比普通、旺震耗重、死艮克轻、囚兑薄生准确。六四刚柔各得位相承、明信无饰而终无咎的积极全义保留。末后薄助仍可核物，原不取期连西方旧墙环境及坎旧印附文完整读过。",
+      "openQuestions": [
+        "六四终无咎、正常初比及轻克为正证，旺木耗和薄生为限制，原难档如何权衡仍需专业说明，不能把无咎缩成只宜说明简短。",
+        "冻结不取期写末助无力，正文囚兑仍有薄生；该词若专指未达日级门槛应明确其依据，不能据旧词倒推末生为零。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 495,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "dbc7b202104ee0ba597d95dbf0bc37e7b31dc14270adfc5b775f6575babe105b",
+      "copySha256": "ca92f77dc1c6f2bd3c650648c2d175b613c93c7d1d22f087256eaf7c977aabaa",
+      "assembledCopySha256": "f8ca48c748749312a5c07e854141e9c3fc89446d94c1fa0f1c32671af4e91cc5"
+    },
+    {
+      "rowIndex": 16,
+      "movingLine": 4,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "可靠记号直接交给已知负责人，受理和看见原物分开记，现实前提清楚。囚坎初比薄、休震普通耗、相艮克实及死兑薄生皆对原体。六四明信相承、简约终无咎未缩为仅能受理，完整用互原凶应与兑环境、坎原件构造合装不冲突。",
+      "openQuestions": [
+        "六四刚柔各正、明信相承而终无咎，与弱体薄比、普通耗、实克、薄援的难档如何合权仍待专业核定，古吉不只肯定登记成功。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 480,
+      "shortHan": 96,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "75ac5fe5130952a929a553ff9868cc7c9d5574924627dacc595c701166839112",
+      "copySha256": "0d49bcfa96b5416669a03f38260fdf7c48986b2510f8c214ce4804fe0ec9d595",
+      "assembledCopySha256": "ec031f2c442764d8bb24c3cf3e2d5e3336343036b44680bdb87eb2f932332bf0"
+    },
+    {
+      "rowIndex": 17,
+      "movingLine": 4,
+      "monthOrder": "autumn-metal",
+      "outcome": "favourable",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "说明直接交到确能查看之处，秋相坎初比实、死震耗轻、休艮正常克和旺兑实生四段俱明。六四正位相承、明信无饰而简约通达的无咎义完整。原有利档和末生实际协查吉应相接，仍保留查看条件和认物步骤，兑金器周边未替换坎原物身份。",
+      "openQuestions": [
+        "休艮由缓克收准为正常克后，相体初比、轻耗、旺兑生及六四终无咎怎样合取原有利档，仍需一致权重说明，不能单取末生即承诺必得。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 485,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "128f7df7bda96a01e699f6ad67553266b2dfae80a3c195c960b6aa98612ebfe6",
+      "copySha256": "34c0f3b9d68c0fb2f46816215dcbc9eed69b433a6dd295158560c25d789bbe2d",
+      "assembledCopySha256": "ac3228a8ac25a042694ab2f39bcf00f5b5ddb54ce73139e1f8a76d004383772d"
+    },
+    {
+      "rowIndex": 18,
+      "movingLine": 4,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "同批收存已有真实依据为起点，一份资料前后核答复的行动连贯。冬旺坎本比足、相震耗实、囚艮轻克与休兑正常生写全，六四相承明信而终无咎没有降义。原条件档和初比吉应完整，双附文只给真实场所及既知原件特征作比较。",
+      "openQuestions": [
+        "普通休兑生、旺体本比、轻土克与六四终无咎正证较多，原条件档保留相木耗等限制的具体分寸仍待专业核定，不应用休态削弱末助。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 486,
+      "shortHan": 95,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "d88b1382dfbcd9024137d0c92d6167e1581e6719f2dfc4ca8f0db86ca5a4ebb1",
+      "copySha256": "a9572e0439d02f1f5f6306dd80ec9502565ad6234d708ef642758fc5e1eb0b7f",
+      "assembledCopySha256": "6f39837645ec7f64f32893b0038c26a0d62bc23d0f2d2370bb96bdf7110a57bf"
+    },
+    {
+      "rowIndex": 19,
+      "movingLine": 4,
+      "monthOrder": "seasonal-earth",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "亲自查不到时询真正保管者可补何处，死坎初比薄、囚震轻耗、旺艮重克与相兑实生各自归体。六四刚柔得位相亲、明信简约终无咎完整，后援仍须落实实物且未被写成间接消克。原末段吉应、兑方旧墙金器环境及坎既知形色均全读。",
+      "openQuestions": [
+        "弱体薄比与旺土重克并存，相兑实生和六四终无咎如何合取原条件档尚需核定；末生没有自动撤销中段克制的规则依据。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 499,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "341f524d8c10dd5e3468c2cbc1b79dc28694ac8395f2ec326e9693c59869b85d",
+      "copySha256": "e805ce1e8f20d918f99516f9dda7d604e7f166c8750106bd08700812868ad6bd",
+      "assembledCopySha256": "561d03b40a1ecba2399a6bb916f375f64ceaa8176980fe354728c991446c80e8"
+    },
+    {
+      "rowIndex": 20,
+      "movingLine": 5,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "已核使用而后来是否另收尚缺证明，正文把这一段单独留问。春休同比正常、旺震耗较重，中末死土各轻克，九五无应辅险未尽、未平尚未免咎和尽平乃无咎分清。完整不取期未动，坤仓储盒格只随实际使用，坎原件旧痕不由环境补造。",
+      "openQuestions": [
+        "正常初比与中末轻土克，遇旺木耗和九五未平尚有咎，原难档的相对权重仍待核定；缺少末生本身不能新设为不得原物的必要条件。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 482,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "bfc98877105316ba8bca1168d40807cf0768c8d4a193b9cb14be925061533709",
+      "copySha256": "275708088fb5709b00180ed1a80af404033ed150e7e16989d0dee495eac969a6",
+      "assembledCopySha256": "cb205a043d68198b2d52eb7c7385a4ac8b25cd30de737c1dbe91dae2fa673400"
+    },
+    {
+      "rowIndex": 21,
+      "movingLine": 5,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "能够说明同批收过什么以后仍须打开核物，弱坎本比、休震正常耗与相艮坤中末克实准确。九五未平时尚未免咎，险真正平尽才无咎，没有把未来条件提前当现成正证。原末段认物受限凶应未变，双附文的坤方器环境与坎原件用途构造各有所指。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 488,
+      "shortHan": 95,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "c923df1b6d5443dfb1596444ff8d33d77983375fdc43510c5901a51668ecc08b",
+      "copySha256": "65391c031170d464e3fa49365b44f77d16bc45d96228d4591180f53f4a0c8523",
+      "assembledCopySha256": "38d1a87a0aacd610eee4661f760eeda4fbebd4999c7586e6b1ea965cc907089a"
+    },
+    {
+      "rowIndex": 22,
+      "movingLine": 5,
+      "monthOrder": "autumn-metal",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "确有未打开位置才补查，秋相初比、死震轻耗和中末休土正常克都在。九五无应辅而险不尽、中未大，眼前未免咎与将来平尽无咎的先后写准。原条件档与初比阶段吉应保留，原处实际收存和坤环境建议相容，未将相似物件直接定为原件。",
+      "openQuestions": [
+        "两休土改按普通克制后，相体本比、轻木耗与九五未平尚有咎如何权衡为原条件档，仍需专业说明；条件性的无咎没有在当前先行成立。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 483,
+      "shortHan": 92,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "a578e49ff114491b1d16b153bc8defb8fff96baad3f7dc1f8d301eb39d01cb90",
+      "copySha256": "d0ac3d2bba943724be9fff034b5e6351326fb4f49dd7d289715ded8bf2aae185",
+      "assembledCopySha256": "f116684be162dcd48dc3772435f8fb207782652296b29b69db20e3ab713f1738"
+    },
+    {
+      "rowIndex": 23,
+      "movingLine": 5,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "末次使用到后来收存逐段核，冬旺坎比足、相震较实耗、两囚土轻克俱全。九五主坎无应辅、险未尽尚未免咎以及尽平才无咎没有相互吞没。初段实查原吉应完整，方盒布袋须确曾使用，原物则按坎实有结构与旧痕辨认后再办领取。",
+      "openQuestions": [
+        "旺体初比、轻土克与相木耗、九五未平尚有咎如何合取旧条件档，及初段吉应的阶段界限仍需专业核定，不得以未来平险的无咎代替现在已经得物。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 499,
+      "shortHan": 92,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "aeaaa762d18e0926b4e294038577b225d7ef23ef87755cb1d6d150eb6d2ef781",
+      "copySha256": "434e6c79abfdb7d88119d9d3102cb73c0765edd85485fe9a0df4c7dd1bc0733e",
+      "assembledCopySha256": "6761453616543b86fc579323ef29b008f2f483f2c5fc8bf7d7c36421d5ebc4e4"
+    },
+    {
+      "rowIndex": 24,
+      "movingLine": 5,
+      "monthOrder": "seasonal-earth",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "仅知询问处而无人实看写成假设，死坎本比薄、囚震轻耗、中末旺土重克准确。九五未平仍有咎和尽平方免咎的古义保持完整，受理与认物凭据区分清楚。原末段凶应和仓储方器双附文整段读回，原物黑色及构造均依旧资料。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 487,
+      "shortHan": 90,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "480a1566ba87932f2b1c64f6c0547d362369e64b56716d357556ccdd5f4f327c",
+      "copySha256": "01ac3ccb9fe2dd4b814f968247f16287b7185c1579e79dbc5ee4d719276f85a8",
+      "assembledCopySha256": "37b08298e3b4194b2e4e071dbb82ebb5804dce8f12a973e8844d4f32a3df81ed"
+    },
+    {
+      "rowIndex": 25,
+      "movingLine": 6,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "先留明尚缺哪些查验条件，春休坎比和正常、旺震和旺巽属中末两耗，死艮中克轻，旧说明首尾两泄已纠。上六险极犯峻威、失道受拘久不得之凶与险终且自修可求复全义俱全。三岁不作日历原文保持，巽柜箱权限只用于实际收存，坎原物仍辨旧图。",
+      "openQuestions": [
+        "王注三岁不得自修的标点与孔疏若能自修、三岁后可求复自新的衔接仍有校读空间；现按经注疏合读保留久凶和险终自修的条件，不折算现代寻物期限。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 499,
+      "shortHan": 92,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "b86498fb19835d57a7950b40a2158596d7fb0cf2eb70f72ecdf7b9526e45eada",
+      "copySha256": "cde76b6d8c71e4d33cc311ebfedc08a63ae1da86cb630b5239cb6ffd3c448f73",
+      "assembledCopySha256": "8ef34bd80749b07b147eb05e18dfedd39d9a44a8cb8623e7dc741aae644a0c39"
+    },
+    {
+      "rowIndex": 26,
+      "movingLine": 6,
+      "monthOrder": "summer-fire",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "转话者与实能查看者先分清，囚坎弱比、休震巽中末普通耗及相艮中克实未混。上六险极犯威、失道受拘久困，须险终又能自修才求复，没有把凶缩成仅手续受限。原用互凶应已完整读，巽木箱只指真实周边，坎形色与资料保持一致。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 493,
+      "shortHan": 91,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "0df0d03cca200d20beace3ca24dc44077595af04d20c2eca03c0324a8414caac",
+      "copySha256": "e2dca1ca0449eb24106d289d2b8767d7e924260b8d376d4aab8daca4508d6fce",
+      "assembledCopySha256": "0c3f3869e96615c94564b664a01ca0d6a3696b130fa803e7b141be0d3dd59ed2"
+    },
+    {
+      "rowIndex": 27,
+      "movingLine": 6,
+      "monthOrder": "autumn-metal",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "近处实看所得先保存，秋相坎本比实、两死木耗轻和休艮正常克均明确。上六受拘置棘、久不得凶与险终自修才可复完整，现有较好初比没有被略去。原初段吉应与整体难档分开，稍后处理只是回复状态，巽实际柜格和坎原记号附文均无越界。",
+      "openQuestions": [
+        "相体本比及中末轻耗，与普通休土克、上六久困重凶如何合取原难档，以及初段吉应允许何种程度的实查，仍待专业核定。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 486,
+      "shortHan": 92,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "2a14b256c3badddb3f90992f95d50ac4dbf0246546834fb385b9fc22ae6a1a32",
+      "copySha256": "63202fdd60c106ee04be58d24a97dcdcb597e127fc4320f2aee83820f5e990fb",
+      "assembledCopySha256": "81949180c7c46f82a6362cd29267b4d173051cd87896fa80ea5d31d0673bd88c"
+    },
+    {
+      "rowIndex": 28,
+      "movingLine": 6,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "已亲自复查的事实不因一句等待而改写，旺坎初比足、囚艮克轻和中末相木耗实准确。上六险极失道受拘的凶及险终后自修求复两层都在，没有把三岁写成取回期限。原初比吉应完整保留，巽环境的经手权限与坎既知原件核认前后相接。",
+      "openQuestions": [
+        "旺体同比、轻土克与两相木耗、上六重凶并存，原难档相对取权及初段阶段吉应的边界尚待专业说明，近处能查不等同整体可归物。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 487,
+      "shortHan": 94,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "55eb2fcc09a09f2fe26bdbb19b0a5556d8a5d9b39d7222d3700eb66eea8fc864",
+      "copySha256": "f117912a85fa156c61b35a0592d66adc7214a0e4fb527d081349969128dfa0a5",
+      "assembledCopySha256": "b33d0a2c5b7c26d330c6caa7f1ecf26b55c8d4910fbf89ba60afbb2aa84e47d3"
+    },
+    {
+      "rowIndex": 29,
+      "movingLine": 6,
+      "monthOrder": "seasonal-earth",
+      "outcome": "difficult",
+      "peerAgent": "/root/classical_audit",
+      "peerFullRead": true,
+      "peerFinding": "不清楚可查处时先问真实管理者，死坎本比薄、旺艮中克与中末囚木轻耗俱全。上六失道受拘久凶和险终且自修才可求复未减成泛泛困难，原完整用互凶应保持。巽木器绳带是实际周边，原物材质与黑色旧痕仍取本用坎对应的已知资料。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 486,
+      "shortHan": 93,
+      "reviewedAt": "2026-11-21T21:02:04.855Z",
+      "reviewedRowSha256": "168a451555d65e7a27550b5bf4a9ccc4b2a25b61010bf5a4b4ed86f865d7d8a4",
+      "copySha256": "b1bf2ee8fcc82f6c5b4d8c251927f6255fe600849d636b70037b147487320ac6",
+      "assembledCopySha256": "49b5e454ee399cf3ddd1a146308d05a84ceba595903b8dcbef3e30aa0990071d"
+    }
+  ]
+}
