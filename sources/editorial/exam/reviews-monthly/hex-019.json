@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "地泽临已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地泽临已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -23,6 +23,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
       "scope": "九二、未顺命之王注孔疏，感应而不尽从。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "scope": "六三及小象，王孔解释处位非当与改修其道。"
     }
   ],
   "findings": [
@@ -63,6 +67,25 @@
         "19/2/丑"
       ],
       "finding": "春冬受制后按轻克，夏与四土月中末克轻，秋旺兑初耗重。初耗不作扶持，同坤比和不代生体。"
+    },
+    {
+      "id": "hex-019-line-3",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/3/寅",
+        "19/3/卯",
+        "19/3/辰",
+        "19/3/巳",
+        "19/3/午",
+        "19/3/未",
+        "19/3/申",
+        "19/3/酉",
+        "19/3/戌",
+        "19/3/亥",
+        "19/3/子",
+        "19/3/丑"
+      ],
+      "finding": "首兑、末乾均耗土而同制中震；寅卯亥子取中震木日，其余八月取末乾金日，分别核查当令与实际作用。"
     }
   ],
   "lineReviews": [
@@ -79,6 +102,14 @@
       "text": "咸临，吉，无不利。",
       "image": "“咸临，吉，无不利”，未顺命也。",
       "reading": "九二与五相应，有从有否。两震中末俱克坤，有兑制而无水养木，月令本态与制后克力分记。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "甘临，无攸利；既忧之，无咎。",
+      "image": "“甘临”，位不当也。“既忧之”，咎不长也。",
+      "reading": "六三以甘临无利，既忧能改则咎不长，止其失而非直接断成。上坤生两金，两金又制中震，盘无水生震、无火生坤。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -123,18 +154,38 @@
       ],
       "scope": "读回十二篇全部内容，区分十个月用末震取木日、秋两月用初兑取金日，清除旧题型推演并复核朱墨措辞。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月四段正文、简断与应期，对照时令核清首末耗力的重轻，去除分差与具体作答推设。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T20:59:43.443Z",
-  "sourceSha256": "b6131822bb747713a20f70f1919b7b3e296829d3b6340813aa89fadebd52f5ba",
+  "reviewedAt": "2026-11-21T21:09:13.921Z",
+  "sourceSha256": "06b3b5282ceb6c860c5a332ed506e7e84ba9890d4ef13d47023649c65868096e",
   "checks": {
-    "scope": "地泽临已写24篇",
-    "chartComparisons": 648,
+    "scope": "地泽临已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       493,
-      532
+      534
     ]
   }
 }
