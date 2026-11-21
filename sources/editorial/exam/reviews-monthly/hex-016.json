@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "雷地豫已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "雷地豫已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -59,6 +59,14 @@
     {
       "path": "sources/editorial/exam/hex-016.json",
       "scope": "六五五气组，春冬取本震克土，夏、秋与季土取末兑受生。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "上六爻辞、小象与王孔注疏，豫极须渝。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-016.json",
+      "scope": "上六五组，春夏取求名生体时序，秋冬与季土仅参弱助。"
     }
   ],
   "findings": [
@@ -156,6 +164,25 @@
         "16/5/丑"
       ],
       "finding": "原断中事例不入正文，疾、不死只参所处受制及可守，不据此断健康或考场经历；夏轻克轻泄，秋季末泄较重。"
+    },
+    {
+      "id": "hex-016-line-6",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "16/6/寅",
+        "16/6/卯",
+        "16/6/辰",
+        "16/6/巳",
+        "16/6/午",
+        "16/6/未",
+        "16/6/申",
+        "16/6/酉",
+        "16/6/戌",
+        "16/6/亥",
+        "16/6/子",
+        "16/6/丑"
+      ],
+      "finding": "春、夏及四土月八篇修正本用等于卷首的失据说法。核对秋火受生受克兼具按月令原气，冬囚土受极弱离火之生，以过得紧解释，未把冬火写成旺助。"
     }
   ],
   "lineReviews": [
@@ -196,6 +223,14 @@
       "text": "贞疾，恒不死。",
       "image": "六五“贞疾”，乘刚也；“恒不死”，中未亡也。",
       "reading": "六五以柔乘刚，故有疾，居中未亡，故能久守。应考看受制而能持原有本领的分量，本震克坤、变兑受坤所生，能守没有转为有所得。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "冥豫成，有渝无咎。",
+      "image": "“冥豫”在上，何可长也？",
+      "reading": "上六动而成晋，外震木由克坤转为离火生坤。王孔释冥豫到极不可长、有渝方无咎，转机归于关系改变，不推定具体应试情形。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -300,15 +335,35 @@
       ],
       "scope": "十二篇逐篇读回，从简断、正文到取期逐项核对月气、约束与支出分量。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月简断与正文，逐项对照本震、互艮与坎、末离，核验巳午取期五气角色。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T17:49:45.208Z",
-  "sourceSha256": "d8885142e9273811c745ad93eeb56901eed987cb63344085b3eb98ed724be17a",
+  "reviewedAt": "2026-11-21T17:54:41.307Z",
+  "sourceSha256": "060e96602ffc371ac35e5cced87dd292bf5668a82008355b1cd1d0cddd2a35f1",
   "checks": {
-    "scope": "雷地豫已写60篇",
-    "chartComparisons": 1620,
+    "scope": "雷地豫已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       474,
       537

@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1140-20261121",
+  "batch": "exam-monthly-preview-1152-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1140,
+  "uploadedArticles": 1152,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    16
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3468,
-  "authorWholeArticleReadback": 1140,
+  "remainingArticles": 3456,
+  "authorWholeArticleReadback": 1152,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -222,6 +224,20 @@
         "favourable": 12,
         "difficult": 60
       }
+    },
+    {
+      "primaryId": 16,
+      "name": "雷地豫",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-016.json",
+      "sourceSha256": "060e96602ffc371ac35e5cced87dd292bf5668a82008355b1cd1d0cddd2a35f1",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-016.json",
+      "readingPath": "docs/exam/monthly-preview/hex-016.md",
+      "outcomes": {
+        "favourable": 48,
+        "difficult": 24
+      }
     }
   ],
   "checks": {
@@ -236,17 +252,16 @@
       70,
       112
     ],
-    "independentChartComparisons": 29160,
+    "independentChartComparisons": 31104,
     "independentChartMismatches": 0,
-    "dateCases": 2160,
-    "judgmentCorrectionArticles": 424,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前15个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2304,
+    "judgmentCorrectionArticles": 438,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 76
+    "interpreted-with-limits": 82
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -543,27 +558,9 @@
     "articles": 271
   },
   "nextExpectedKey": {
-    "primaryId": 16,
-    "movingLine": 6,
+    "primaryId": 17,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 16,
-      "name": "雷地豫",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-016.json",
-      "sourceSha256": "d8885142e9273811c745ad93eeb56901eed987cb63344085b3eb98ed724be17a",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-016.json",
-      "readingPath": "docs/exam/monthly-preview/hex-016.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
