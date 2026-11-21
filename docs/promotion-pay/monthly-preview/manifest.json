@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-1440-20261121",
+  "batch": "promotion-pay-monthly-preview-1512-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1440,
+  "uploadedArticles": 1512,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    21
+    22
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3168,
-  "authorWholeArticleReadback": 1440,
+  "remainingArticles": 3096,
+  "authorWholeArticleReadback": 1512,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -294,6 +294,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 22,
+      "name": "山火贲",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-022.json",
+      "sourceSha256": "dbde6840cc4f44d4e0abae51eb5861ee14a4e457a7ee6df3b7ae5ad1db0aab55",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-022.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-022.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -308,16 +322,16 @@
       76,
       112
     ],
-    "independentChartComparisons": 38880,
+    "independentChartComparisons": 40824,
     "independentChartMismatches": 0,
-    "dateCases": 2880,
-    "judgmentCorrectionArticles": 1058,
+    "dateCases": 3024,
+    "judgmentCorrectionArticles": 1130,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       34,
       67
     ],
-    "payCorrectionArticles": 1440
+    "payCorrectionArticles": 1512
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 11,
@@ -366,7 +380,7 @@
     "corrected-in-inherited-authorship": 1,
     "wording-refined": 1,
     "corrected-and-complete-fields-reread": 2,
-    "open": 24,
+    "open": 28,
     "closed-after-complete-field-reread": 3,
     "resolved-complete-delta-read": 3
   },
@@ -535,6 +549,14 @@
       "currentRevisionFullTextReadCount": 61,
       "currentRevisionChangedArticleReadCount": 11,
       "scope": "六爻逐批独立完整阅读72篇标题、简断、全部正文和各月薪资；逐爻五气共30组不同专业判断、应期、订正旧值与理由/impact及共同来源实际阅读。订正新值与已读判断/薪资严格绑定，同气重复技术实例逐字段验等。后续窄修仅复读全部改动字段，并保留整段旧新与回放验证，不将差异阅读说成终版72篇再次重读。"
+    },
+    {
+      "primaryId": 22,
+      "sourceSha256": "dbde6840cc4f44d4e0abae51eb5861ee14a4e457a7ee6df3b7ae5ad1db0aab55",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": 65,
+      "currentRevisionChangedArticleReadCount": 7,
+      "scope": "六爻逐批实际全文阅读72篇标题、简断、全部正文和各月独立薪资，逐爻5气共30组技术字段完整阅读。同气重复实例及旧新绑定另行机械核对。最终公开全文中65篇与独审全文已读版相同，7篇按记录复读完整改段并回放旧字段匹配前次哈希；不声称改后72篇又全篇重读。初九、六二新增取期订正元数据各5气另实际读回，不将这部分计为公开正文变更。"
     }
   ],
   "independentHumanReview": "pending"
