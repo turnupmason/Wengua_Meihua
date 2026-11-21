@@ -1,0 +1,2604 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 24,
+  "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+  "sourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+  "editor": "/root/classical_audit",
+  "reviewedAt": "2026-11-21T15:10:36.631563+00:00",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "六爻各十二月72篇标题、简断、完整正文与独立薪资逐篇写定，静态装载脚本只录入文字。作者逐爻实际全文读回，专业与应期每爻五气完整读取；同气重复实例严格验等。后续完整变化段落与字段另行实际读回，不把哈希、循环、门禁或独立代理报告冒充作者再次全文阅读。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "本轮相关写作、格式、权限和真实审读记录要求，全文实际读取。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "本轮全文读取；逐爻十二月独立写作、无期说明、真实核读回执。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "本轮全文读取；自然起句、厚度、句长与不编情节的边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "本轮全文读取；月稿预览、程序核对、古籍解释与独立阅读分别登记。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "前八节及本批晋升、随岗薪资与专业订正要求实际读取。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "全文核读；在任见克的现代晋升应用属于项目约定，不当作古籍唯一断法。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第八至十四节完整核读，并对一层作用、原体休中立、二分与用党多重点对照。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-024.json",
+      "scope": "六爻五气30条原作者全字段逐爻实际读取；结论、专业旧值、取期及薪资旧值为精确基线。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-024.json",
+      "scope": "30组reason、evidenceFor、evidenceAgainst、lineReading、timing、final实际读取；初次合并输出有截断，前15组、六四5组与六五春组已单独完整补读。历史考试遗留和旧取期记录不覆盖当前五气源。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-024.json",
+      "scope": "六爻春气各一条，共6条完整original/polished/计算与历史读回元数据实际抽读；不声称通读余24条，也不将旧readThrough继承给本批。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-024.json",
+      "scope": "30组facts.nodes、directRelations、stageIds和indirectEffectsApplied实际核读；不声称被截断或未输出的重复decision全文覆盖。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "复卦卦辞、彖象、六爻经文、小象及王注孔疏实际完整读取；后三爻再次核对。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "复卦及六爻完整相关段实际核读，尤其祗、频复、独复、自考与迷复异解；不声称通读全卷。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "复卦相关完整段实际核读，六四无可济与六五未能致亨吉的限制、上六数终义均保留；不声称通读全卷。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "体用总诀、求名、求财、体用、衰旺、占卦诀、体用互变和体用衰旺相关完整段实际读取；卷二与卷三分清，不称通读三卷。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/hex-021.json",
+      "scope": "已发布批回执结构、读回版本与开放问题字段作格式参考；大段独审重复报告曾截断，不称全文读取。"
+    },
+    {
+      "path": "docs/review/PROMOTION_SHIKE_RULE_AUDIT_20261121.md",
+      "scope": "已发布批审计全文实际读取，参照证据分层与真实覆盖记录。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "写作规范与核查方法全文读取；001、003、017、052各索引0、14、28、42、56、70六篇实际对照，共24篇；003、017首次合并输出截断，已各自完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04明夷.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05震.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01屯.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03頤.txt",
+      "scope": "卦辞、彖、大象与注疏完整读取至初爻前，仅作互变行动辅义，不声称全卦六爻读完。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "不远复，无祗悔，元吉。",
+      "image": "不远之复，以修身也。",
+      "reading": "早知返正、修身远患的元吉完整保留；祗王孔释大、朱程释抵或至，分别注明。本用震克、两互及末坤比和，无金制震，轻重按原月气，原体休居中。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "120a1bfe9b17c6250ca73215d41981791fea443f4093281f3e457b8547ef8019",
+      "finalCanonicalArticleArraySha256": "781946aacb3f7d64c0340614975cc8eb77d3f2070c9d6f0c31df0f3effb6277c",
+      "bodyHan": {
+        "min": 487,
+        "median": 503.0,
+        "max": 527
+      },
+      "openFindingIds": [
+        "FU24-INCUMBENT-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "休复，吉。",
+      "image": "休复之吉，以下仁也。",
+      "reading": "休为美，谦下亲仁而归善，不是赶回旧格式。兑制震且无水生震，克作用一层减轻；末兑泄仍在，旺相耗实、囚死休耗轻，不递推原体或末兑。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "5f323033681bf6bdf2a9969c788a49dc18dacb39be1b09d1148b4482a1aa280e",
+      "finalCanonicalArticleArraySha256": "fbb9b43f433709ef7f1d54986588f93826eee87a5b15eb79e842d61ae02ee4f8",
+      "bodyHan": {
+        "min": 502,
+        "median": 520.0,
+        "max": 525
+      },
+      "openFindingIds": [
+        "FU24-INCUMBENT-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "频复，厉无咎。",
+      "image": "频复之厉，义无咎也。",
+      "reading": "王孔频蹙求复、未至迷且它来难保，与朱程屡失屡复分列；危与无咎俱存，非正常查证次数过多。末离真生按原态，未为未升删去积极一面。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "5351c5e1616ee4f420833135e7f20530fd2ca4aa62fdb8eb09c0dbccc67b09ac",
+      "finalCanonicalArticleArraySha256": "7dd2b464a36afb49e36b2b714e4af0cba354edc5e56db22fabbaffbfb73d751d",
+      "bodyHan": {
+        "min": 500,
+        "median": 522.0,
+        "max": 528
+      },
+      "openFindingIds": [
+        "FU24-INCUMBENT-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "中行独复。",
+      "image": "中行独复，以从道也。",
+      "reading": "群阴中独应初而从道，不是事件中途或与同事唱反调。三土用党多，末震比和，寅卯亥子旺相保持能升，其余未升；朱程不言吉、未足有为及无可济作为反证。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+      "finalCanonicalArticleArraySha256": "df9039287bc12afafe0b68077f744c413f1251980d08bf6dc3a81343ef61cc5b",
+      "bodyHan": {
+        "min": 500,
+        "median": 515.5,
+        "max": 535
+      },
+      "openFindingIds": [
+        "FU24-FOUR-CLASSICAL-BOUNDARY",
+        "FU24-USEPARTY-AND-OMEN-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "敦复，无悔。",
+      "image": "敦复无悔，中以自考也。",
+      "reading": "敦厚归善、自考自成，不是一次查稿以后永不更改。三土用党多且制坎，无金救，末生原态仍列而作用减弱，不递推木克土救水；现行能升与古注止于无悔分别交代。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "7717d31be6eee1c3e3b6a81f599ca97a2f16144427830c08465951d8a57eb63c",
+      "finalCanonicalArticleArraySha256": "33bab87624195fb594ec855848cb82da53f677b613a05a4644cc1bd214068ae1",
+      "bodyHan": {
+        "min": 497,
+        "median": 511.5,
+        "max": 519
+      },
+      "openFindingIds": [
+        "FU24-FIVE-CLASSICAL-BOUNDARY",
+        "FU24-USEPARTY-AND-OMEN-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "迷复，凶，有灾眚。用行师，终有大败。以其国君凶，至于十年不克征。",
+      "image": "迷复之凶，反君道也。",
+      "reading": "四土用党多而无生扶比和；上六严戒不缩成小差错。王孔败后复而难征、朱程终迷不复分别说明；灾眚和国君凶不坐实现实事故或失德，十年不作现代等待年限。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "c95e143aff82f09c0df71d903a6ccb003e55d76e19d45ad7630ff3964c6bb7b0",
+      "finalCanonicalArticleArraySha256": "e679ec0bddcaba404e35efa915c58107006d6bf4cc0ca3add9295daa2adba44d",
+      "bodyHan": {
+        "min": 480,
+        "median": 490.5,
+        "max": 504
+      },
+      "openFindingIds": [
+        "FU24-USEPARTY-AND-OMEN-PRIORITY",
+        "FU24-REAL-WORLD-VALIDATION"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文及独立薪资逐篇实际读回；专业五气另记。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "authorReadbackVersions": {
+    "finalSourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+    "canonicalHashSerialization": "Python json.dumps(array, ensure_ascii=False, sort_keys=True, separators=(',',':')); UTF-8, no newline",
+    "publicFieldsActuallyRead": [
+      "title",
+      "short",
+      "paragraphs",
+      "payExplanation"
+    ],
+    "professionalDistinctGroupsActuallyRead": 30,
+    "professionalFieldsActuallyRead": [
+      "judgment",
+      "timing",
+      "judgmentCorrection.reason"
+    ],
+    "sameQiProfessionalFieldsEqualityVerified": true,
+    "allCorrectionOldFieldsExactlyBound": 72,
+    "allCorrectionNewFieldsExactlyBound": 72,
+    "allPayCorrectionOldFieldsExactlyBound": 72,
+    "allPayNewValuesExactlyBound": 72,
+    "allTimingSignaturesUnchanged": 72,
+    "perLineWholeReadAndDeltaVersions": {
+      "1": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "120a1bfe9b17c6250ca73215d41981791fea443f4093281f3e457b8547ef8019",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "punctuationReadback": {
+          "completeChangedParagraphsActuallyRead": 37,
+          "priorSnapshotSha256": "e60a4b5f7797d90173f37bca208c6bdc0c080e2579b7eaa16afda919d0986584",
+          "punctuationSnapshotSha256": "5e0fc87342f4cf47aa601d7b57af2486cedd0920a8b6845812122ee292010972",
+          "method": "从磁盘proposal逐一实际阅读所有完整替换段落，确认语意后应用；随后精确比较字段，只有分号换句号。未冒称此哈希又重新全读十二篇。",
+          "fields": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ]
+        },
+        "earlierCompleteFieldReadbacks": [
+          "作者初读后辰、巳、戌、丑四篇全部公开字段再次读回",
+          "独审后辰title、子short、未paragraphs[0]完整读回",
+          "新增五气timingWordingCorrection完整核读"
+        ],
+        "prePunctuationApprovedSnapshotSha256": "e60a4b5f7797d90173f37bca208c6bdc0c080e2579b7eaa16afda919d0986584"
+      },
+      "2": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "5f323033681bf6bdf2a9969c788a49dc18dacb39be1b09d1148b4482a1aa280e",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "punctuationReadback": {
+          "completeChangedParagraphsActuallyRead": 32,
+          "priorSnapshotSha256": "9823a20fc6e5f39dc0383bb0214fd1c3a5bcfd80d11097239582f551dedcc015",
+          "punctuationSnapshotSha256": "6910e0d23407e12789b10e9a43c614ef132e1ad4f2acfce9af3653d38756f6cb",
+          "method": "从磁盘proposal逐一实际阅读所有完整替换段落，确认语意后应用；随后精确比较字段，只有分号换句号。未冒称此哈希又重新全读十二篇。",
+          "fields": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ]
+        },
+        "earlierCompleteFieldReadbacks": [
+          "寅paragraphs[0]",
+          "巳short",
+          "巳paragraphs[0]",
+          "子paragraphs[0]"
+        ],
+        "prePunctuationApprovedSnapshotSha256": "9823a20fc6e5f39dc0383bb0214fd1c3a5bcfd80d11097239582f551dedcc015"
+      },
+      "3": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "5351c5e1616ee4f420833135e7f20530fd2ca4aa62fdb8eb09c0dbccc67b09ac",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "punctuationReadback": {
+          "completeChangedParagraphsActuallyRead": 30,
+          "priorSnapshotSha256": "02a4979cdcb8dd01aaab1b0103323c48547e52ec05759e892f5274e67990355b",
+          "punctuationSnapshotSha256": "cb778d21151867707ea7e1eff820a04b2a223188e0185c3224a5f0d462db9ab5",
+          "method": "从磁盘proposal逐一实际阅读所有完整替换段落，确认语意后应用；随后精确比较字段，只有分号换句号。未冒称此哈希又重新全读十二篇。",
+          "fields": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ]
+        },
+        "earlierCompleteFieldReadbacks": [
+          "作者初读后巳paragraphs[2]、未paragraphs[5]与子short完整读回",
+          "独审后辰paragraphs[2]完整读回"
+        ],
+        "prePunctuationApprovedSnapshotSha256": "02a4979cdcb8dd01aaab1b0103323c48547e52ec05759e892f5274e67990355b"
+      },
+      "4": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "punctuationReadback": {
+          "completeChangedParagraphsActuallyRead": 33,
+          "priorSnapshotSha256": "ffdf676a8e9be70b2433a38db6fac9326aa8f324aa2e1271b3019d033ce65dcd",
+          "punctuationSnapshotSha256": "29b0f3144df459fb71f1e579bc4bdeb59bb71901e3a8b63cf5a3be0f8bffa0b9",
+          "method": "从磁盘proposal逐一实际阅读所有完整替换段落，确认语意后应用；随后精确比较字段，只有分号换句号。未冒称此哈希又重新全读十二篇。",
+          "fields": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[4]"
+            }
+          ]
+        },
+        "wholePublicReadSnapshotSha256": "ffdf676a8e9be70b2433a38db6fac9326aa8f324aa2e1271b3019d033ce65dcd",
+        "postPunctuationCompleteFieldsRead": [
+          "巳title：有主动余地，末和仍薄",
+          "申paragraphs[0]：比和尚不能补足接续改相和仍不能补足接续，完整段实际读回"
+        ],
+        "noDateFieldReadback": {
+          "movingLine": 4,
+          "oldSha256": "a9438490d85adde8b017fe28d29cd589f8dbe3dfd53613feb3924389b1903e3a",
+          "newSha256": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+          "changedArticleCount": 8,
+          "changes": [
+            {
+              "qi": "seasonal-earth",
+              "oldTiming": "本组不列具体支日；前中用党多，原体经营所用需付出，末和又薄，宜依实际工作与任用反馈安排承担，不把时间预设为已被任务挤满，也不从卦象推出任命或薪资日期。",
+              "newTiming": "自行经营较费力，末段相接仍薄，尚不能据此推定任用的具体日期；宜依据真实职责与反馈安排承担，不预设任务已经挤满时间。",
+              "newTimingHan": 52,
+              "timingWordingCorrection": {
+                "old": "事务的厚度从第一项压到最后一项，没有哪一处能单独定到某一天，差在推得慢。",
+                "new": "自行经营较费力，末段相接仍薄，尚不能据此推定任用的具体日期；宜依据真实职责与反馈安排承担，不预设任务已经挤满时间。",
+                "reason": "删除旧稿预设的任务和时间经过，以实际经营与末段相接不足说明不能单列日期；无期说明改用自然语言，维持原字符串型不推期，不新增事件或取期方法。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "summer-fire",
+              "oldTiming": "本组仍不单列具体支日；前中多处待主体经营，末段相接偏轻，宜随真实反馈核实承担与任用条件，不从这一结构预设任务数量、截止时间或结果通知日期。",
+              "newTiming": "前中多须自行经营，末段相接又轻，尚不能从中单列任用日期；宜按真实进展确认责任，不预设任务数量或截止时间。",
+              "newTimingHan": 47,
+              "timingWordingCorrection": {
+                "old": "每一项都要自己拿主意，难处摊得匀，没有哪一件事能单独落到某一天；差在收尾那两项。",
+                "new": "前中多须自行经营，末段相接又轻，尚不能从中单列任用日期；宜按真实进展确认责任，不预设任务数量或截止时间。",
+                "reason": "删除旧稿预设的任务和时间经过，以实际经营与末段相接不足说明不能单列日期；无期说明改用自然语言，维持原字符串型不推期，不新增事件或取期方法。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "autumn-metal",
+              "oldTiming": "本组不另列具体支日；前中经营仍需承担，末和偏薄，宜依据明确进展核实责任条件，不预设所有判断都被追问，也不以难处分布推定某日必公布结果。",
+              "newTiming": "当前承接偏弱，仍须自行经营，末段相和也薄，暂不能单列具体日期；宜依据实际进展确认安排，不将某日断作结果公布之日。",
+              "newTimingHan": 50,
+              "timingWordingCorrection": {
+                "old": "判断每一项都要自己做，难处平摊在整轮评定里，找不出哪一天能单独拿出来说。",
+                "new": "当前承接偏弱，仍须自行经营，末段相和也薄，暂不能单列具体日期；宜依据实际进展确认安排，不将某日断作结果公布之日。",
+                "reason": "删除旧稿预设的任务和时间经过，以实际经营与末段相接不足说明不能单列日期；无期说明改用自然语言，维持原字符串型不推期，不新增事件或取期方法。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            }
+          ],
+          "allCompleteChangedFieldsActuallyRead": true,
+          "sameQiInstancesEqualityVerified": true
+        }
+      },
+      "5": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "7717d31be6eee1c3e3b6a81f599ca97a2f16144427830c08465951d8a57eb63c",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "wholePublicReadSnapshotSha256": "f36774bf2cd626c097c9e46efb6fec93410480daaf9f8005194740c46b109130"
+      },
+      "6": {
+        "wholePublicArticlesActuallyRead": 12,
+        "distinctProfessionalQiGroupsActuallyRead": 5,
+        "finalSnapshotFileSha256": "c95e143aff82f09c0df71d903a6ccb003e55d76e19d45ad7630ff3964c6bb7b0",
+        "scope": "首次逐篇完整读回标题、简断、全部正文与薪资；五气专业、应期和订正理由完整读。同气重复字段以验等绑定，不把程序比较算作阅读。",
+        "authorNarrowDelta": {
+          "oldSha256": "95539d514787a5449f1a02f071322520f03b4296d4281dd08b4b6b2a81f3cc54",
+          "newSha256": "fcdf787ad27804740a50111b23ea8faf504802cda6c1b45bb7dda3146a641da9",
+          "changes": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[5]",
+              "old": "保留旺木的能动，也正视四土经营的承担，才不至于把有力误作必成。上六要求认真面对失返的危险，落实到工作是肯查、肯听、肯改；这些行动有其价值，仍不构成本次名位已获认可的证明。",
+              "new": "旺木的能动仍在，也须正视四土经营的承担，才不至于把有力误作必成。上六要求认真面对失返的危险，落实到工作是肯查、肯听、肯改；这些行动有其价值，仍不构成本次名位已获认可的证明。"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "short",
+              "old": "肯用力不等于所行已经得当，晋升这回升不了。卯月原体旺而四土用党多，无生扶比和接续，迷复的凶戒仍然切要。宜核实职责与所求相合之处，听取有事实支持的不同意见，把返正落实于行动，不以坚持已久便认作应当获得任用。",
+              "new": "有力能行仍需辨明所向，晋升这回升不了。卯月原体旺而四土用党多，无生扶比和接续，迷复的凶戒仍然切要。宜核实职责与所求相合之处，听取有事实支持的不同意见，把返正落实于行动，不以坚持已久便认作应当获得任用。"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[0]",
+              "old": "先把所求与所行看清楚，这一次晋升升不了。卯月木旺，震体的能动应当保留；但本用、两互和末用俱为土，形成四处由体经营的格局。力量有所施，并不等于已经得到扶助，更不代表方向自会正确。",
+              "new": "先把所求与所行看清楚，这一次晋升升不了。卯月木旺，震体有主动任事的一面；但本用、两互和末用俱为土，形成四处由体经营的格局。力量有所施，并不等于已经得到扶助，更不代表方向自会正确。"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[4]",
+              "old": "互坤可取顺理承事，变颐可取养正，二者都重长期言行的根本。用于当前工作，宜让对外说明与实际能力相称，重要事项经过充分考虑再承接；不能把养正写成退下等候，也不能以谨慎为由放弃现有责任。",
+              "new": "互坤可取顺理承事，变颐可取养正，二者都重长期言行的根本。用于当前工作，宜让对外说明与实际能力相称，重要事项经过充分考虑再承接；不宜把养正理解为退下等候，也不能以谨慎为由放弃现有责任。"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[3]",
+              "old": "对于已经清楚的职责，宜实在承担；对于尚有疑问的关键主张，宜补足事实再作决定。发现偏差时，调整应触及原因而不止更换措辞；若没有证据证明出错，也不必为了迎合凶辞给自己编出一件既成失误。",
+              "new": "对于已经清楚的职责，宜实在承担；对于尚有疑问的关键主张，宜补足事实再作决定。发现偏差时，调整应触及原因而不止更换措辞；若没有证据证明出错，也不能仅凭爻辞便认定自己已经犯下某项过错。"
+            },
+            {
+              "monthBranch": "未",
+              "field": "short",
+              "old": "弱体经营旺土，晋升这回升不了。未月四土用党多而无生扶比和，上六迷复的严戒又在，不能凭继续承担就认定事情必成。宜核清责任所归、承诺所据和实际能力，发现不相应处依事实调整，不把未证实的猜测写成自己已有的过失。",
+              "new": "弱体经营旺土，晋升这回升不了。未月四土用党多而无生扶比和，上六迷复的严戒又在，不能凭继续承担就认定事情必成。宜核清责任所归、承诺所据和实际能力，发现不相应处依事实调整，不把未证实的猜测当作自己已有的过失。"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]",
+              "old": "「迷复」警戒不知返正，上六又以终有大败说明其严重性。用于任职之问，不宜轻写成少填一项内容，也不能直接断你犯了重大过错；宜认真核实所行是否符合职责、主张是否有根据，把辨向放在持续推进之前。",
+              "new": "「迷复」警戒不知返正，上六又以终有大败说明其严重性。用于任职之问，不能只理解为少填一项内容，也不能直接断你犯了重大过错；宜认真核实所行是否符合职责、主张是否有根据，把辨向放在持续推进之前。"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]",
+              "old": "宜把已经证实的工作事实与尚待弄清的疑点分开，重要主张应有充分依据。若发现做法与责任不符，就按实际问题调整；若并无这样的证据，也不宜为了套合爻辞编定自己沿用了旧数据，或假定已经连错数项。",
+              "new": "宜把已经证实的工作事实与尚待弄清的疑点分开，重要主张应有充分依据。若发现做法与责任不符，就按实际问题调整；若并无这样的证据，也不宜从爻辞猜定自己沿用了旧数据，或认定已经接连出现数项错误。"
+            }
+          ],
+          "completeChangedFieldsActuallyRead": 8
+        },
+        "wholePublicReadSnapshotSha256": "95539d514787a5449f1a02f071322520f03b4296d4281dd08b4b6b2a81f3cc54",
+        "noDateFieldReadback": {
+          "movingLine": 6,
+          "oldSha256": "fcdf787ad27804740a50111b23ea8faf504802cda6c1b45bb7dda3146a641da9",
+          "newSha256": "f950f82c60b4bfdd8ad92a93d96ba922381996aaeb61b2f6bfce6e332122c9d0",
+          "changedArticleCount": 12,
+          "changes": [
+            {
+              "qi": "spring-wood",
+              "oldTiming": "此爻取迷而失返、所为难成的整体警戒，盘内没有可以独立取期的生扶、比和或克体节点；维持不另推日期，不把十年不克征换算为晋升等待年限。",
+              "newTiming": "迷复所戒在于方向失正而难以返回，涉及整体行事，不能单列一个具体日期；本爻不另推期，也不把十年当作升职等待年限。",
+              "newTimingHan": 50,
+              "timingWordingCorrection": {
+                "old": "那一项从第一页就认错了方向，一路写下去没回头，这是做法上的事，落不到某一天上。",
+                "new": "迷复所戒在于方向失正而难以返回，涉及整体行事，不能单列一个具体日期；本爻不另推期，也不把十年当作升职等待年限。",
+                "reason": "删除旧稿预设的具体工作差错及先后经过，以迷复整体警戒说明不另推日期；无期说明用自然语言，不把原体月气或古辞十年换算成现代时限，原字符串类别不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "seasonal-earth",
+              "oldTiming": "囚体经营旺土且无支持，迷复强调不知返正的整体危险；继续不推单独日期，不虚设错误出现之日，也不将十年不克征用作现代升职年限。",
+              "newTiming": "自身承接有限，所经营又较重，迷复更戒失正难返，尚不能推定一个独立事件的日期；本爻不另取期，十年也不作升职期限。",
+              "newTimingHan": 49,
+              "timingWordingCorrection": {
+                "old": "错的前提一路沿用，连带几项一起偏，错是接连出的，挑不出哪一天来单独说。",
+                "new": "自身承接有限，所经营又较重，迷复更戒失正难返，尚不能推定一个独立事件的日期；本爻不另取期，十年也不作升职期限。",
+                "reason": "删除旧稿预设的具体工作差错及先后经过，以迷复整体警戒说明不另推日期；无期说明用自然语言，不把原体月气或古辞十年换算成现代时限，原字符串类别不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "summer-fire",
+              "oldTiming": "上六的警戒涉及方向与能否返正，不能由原体休推定拖延时长；无可另取期的支持或制约节点，保留不单列日期，十年也不作实际等待期。",
+              "newTiming": "上六警戒迷而难返，原体休不能用来推定拖延多久；本爻不另推具体日期，十年也不是现实中的升职等待期。",
+              "newTimingHan": 44,
+              "timingWordingCorrection": {
+                "old": "时间耗在一条走不通的路上，前后连成一片，没有能单独定日子的事，差在那项硬撑的任务。",
+                "new": "上六警戒迷而难返，原体休不能用来推定拖延多久；本爻不另推具体日期，十年也不是现实中的升职等待期。",
+                "reason": "删除旧稿预设的具体工作差错及先后经过，以迷复整体警戒说明不另推日期；无期说明用自然语言，不把原体月气或古辞十年换算成现代时限，原字符串类别不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "autumn-metal",
+              "oldTiming": "弱体无生扶相和，迷复又戒失道难返；这些共同限制不构成某个单日事件，仍不另推日期，尤其不将古辞十年换算为未来任职年数。",
+              "newTiming": "承接较弱而缺少帮助，又须警惕失道难返，不能据此确定某天会发生何事；此爻不另推期，十年也不折算实际任职年数。",
+              "newTimingHan": 48,
+              "timingWordingCorrection": {
+                "old": "猜错的地方一处牵一处，散在整轮评定里，定不到哪一天，差在找不到依据就猜。",
+                "new": "承接较弱而缺少帮助，又须警惕失道难返，不能据此确定某天会发生何事；此爻不另推期，十年也不折算实际任职年数。",
+                "reason": "删除旧稿预设的具体工作差错及先后经过，以迷复整体警戒说明不另推日期；无期说明用自然语言，不把原体月气或古辞十年换算成现代时限，原字符串类别不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "qi": "winter-water",
+              "oldTiming": "此爻重迷复的整体结果警戒，原体相不能另推出何时回头或何时截止；没有独立取期节点，仍不推具体日期，古辞十年不作现代等待年限。",
+              "newTiming": "迷复警戒整体所行，不能据原体有气推定何时回头或截止；本爻仍不单列具体日期，古辞十年不作现代等待年限。",
+              "newTimingHan": 46,
+              "timingWordingCorrection": {
+                "old": "那一项走偏后回头回得太晚，是先后次序上的事，挑不出哪一天能单独拿出来定。",
+                "new": "迷复警戒整体所行，不能据原体有气推定何时回头或截止；本爻仍不单列具体日期，古辞十年不作现代等待年限。",
+                "reason": "删除旧稿预设的具体工作差错及先后经过，以迷复整体警戒说明不另推日期；无期说明用自然语言，不把原体月气或古辞十年换算成现代时限，原字符串类别不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            }
+          ],
+          "allCompleteChangedFieldsActuallyRead": true,
+          "sameQiInstancesEqualityVerified": true
+        }
+      }
+    },
+    "scopeNote": "首次全文与完整变化字段分别登记，部分早期初读哈希未单独留存，后续已审快照及差分仍明确绑定；不声称最终总源哈希下又从头读72篇。",
+    "formalGateNarrowDeltaRead": {
+      "oldSourceSha256": "496a233e1ed3bc27ff82bb63bad31e750cea18d39ffdd6582bde40b67f21debe",
+      "newSourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+      "changes": [
+        {
+          "key": "24/1/卯",
+          "field": "paragraphs[2]",
+          "old": "王孔将无祗悔解释为没有大的悔失，朱熹则由祗的抵至义说明不至于悔。两种解释都把及时改正放在重要位置，不能读成只要认错就可以继续原来的承诺。用于求升，宜核查所言是否确有履责事实支撑，不把愿意承担当成已经完成。",
+          "new": "王孔将无祗悔解释为没有大的悔失，朱熹则由祗的抵至义说明不抵于悔。两种解释都把及时改正放在重要位置，不能读成只要认错就可以继续原来的承诺。用于求升，宜核查所言是否确有履责事实支撑，不把愿意承担当成已经完成。"
+        },
+        {
+          "key": "24/1/午",
+          "field": "paragraphs[2]",
+          "old": "放在求升之中，可从工作事实和自我评价之间的距离入手。哪些结果确由自己促成，哪些依赖共同条件，哪些只是将来的设想，宜逐层分明。若已经发现说法过宽，便据实际承担收正，不以更强的态度弥补证据缺口。",
+          "new": "放在求升之中，可从工作事实和自我评价之间的距离入手。哪些结果确由自己促成，哪些依赖共同条件，哪些只是尚未实行的设想，宜逐层分明。若已经发现说法过宽，便据实际承担收正，不以更强的态度弥补证据缺口。"
+        },
+        {
+          "key": "24/1/未",
+          "field": "paragraphs[2]",
+          "old": "王孔以无大悔释无祗悔，朱程则取不至于悔，解释虽有区别，皆强调返善应早。用于晋升，不可把它缩成补齐某行文字就够，也不可把元吉说成仅有一个无关紧要的好处。它指向对后续行事仍有影响的认真改正。",
+          "new": "王孔以无大悔释无祗悔，朱程则取不抵于悔，解释虽有区别，皆强调返善应早。用于晋升，不可把它缩成补齐某行文字就够，也不可把元吉说成仅有一个无关紧要的好处。它指向对后续行事仍有影响的认真改正。"
+        },
+        {
+          "key": "24/1/丑",
+          "field": "paragraphs[1]",
+          "old": "初九「不远复」讲失而早返，元吉来自及时回到正当的道路。王弼、孔颖达连着修身解此爻，贵在过失未扩大便真切改正。朱熹从不至于悔说明同一份早返之善，都不是把一次修改当作全部修身已经完成。",
+          "new": "初九「不远复」讲失而早返，元吉来自及时回到正当的道路。王弼、孔颖达连着修身解此爻，贵在过失未扩大便真切改正。朱熹从不抵于悔说明同一份早返之善，都不是把一次修改当作全部修身已经完成。"
+        },
+        {
+          "key": "24/2/亥",
+          "field": "paragraphs[2]",
+          "old": "用于求升，可从已经完成的责任查起，说明自己真正理解并运用过什么。若遇到更成熟的做法，宜问明其成立条件，再看如何服务于当前工作。不把别人完成的结果借来增加自身资历，也不因需要请教就否认已有实际贡献。",
+          "new": "用于求升，可从已经完成的责任查起，说明自己真正理解并运用过什么。若遇到更成熟的做法，宜问明其成立条件，并辨明如何服务于当前工作。不把别人完成的结果借来增加自身资历，也不因需要请教就否认已有实际贡献。"
+        },
+        {
+          "key": "24/2/子",
+          "field": "paragraphs[2]",
+          "old": "对准备晋升的人，可先辨认自己需要学习的是哪一种实际判断。遇到值得采用的经验，宜连同条件、限制和结果一起理解，再说明自己如何负责。已经能做的就讲具体，尚未做到的以计划交代，让学习与实绩各自保持真实分量。若一种意见需要尚未具备的条件，可以保留其启发，同时明确当前仍不能照行的原因。",
+          "new": "对准备晋升的人，可先辨认自己需要学习的是哪一种实际判断。遇到值得采用的经验，宜连同条件、限制和结果一起理解，据此说明自己如何负责。已经能做的就讲具体，尚未做到的以计划交代，让学习与实绩各自保持真实分量。若一种意见需要尚未具备的条件，可以保留其启发，同时明确当前仍不能照行的原因。"
+        },
+        {
+          "key": "24/3/辰",
+          "field": "paragraphs[1]",
+          "old": "六三「频复，厉无咎」不能只从改过几遍来理解。朱程以屡失屡复说明，所忧在回到善道以后还未守定，所可取在偏离之后仍肯复善。通常的核对与完善，只要依据事实，并不因次数多就成为此爻的危险。",
+          "new": "六三「频复，厉无咎」不能只从改过几遍来理解。朱程以屡失屡复说明，所忧在回到善道却未能守定，所可取在偏离之后仍肯复善。通常的核对与完善，只要依据事实，并不因次数多就成为此爻的危险。"
+        },
+        {
+          "key": "24/5/辰",
+          "field": "short",
+          "old": "经营较重而末助仍在，这次能升。辰月震囚、三坤旺，用党多使承担增加；末坎死受土制，生扶轻而不作全无。敦复贵在厚实归善，宜把任职依据和实际责任核清，能接到的帮助据实使用，不以一次核对保证无悔，也不由轻助预定来得迟早。",
+          "new": "经营较重而末助仍在，这次能升。辰月震囚、三坤旺，用党多使承担增加；末坎死受土制，生扶轻而不作全无。敦复贵在厚实归善，宜把任职依据和实际责任核清，能接到的帮助据实使用，不以一次核对保证无悔，也不由轻助预定落实的快慢。"
+        },
+        {
+          "key": "24/5/巳",
+          "field": "paragraphs[1]",
+          "old": "六五「敦复，无悔」并非只说每项条件先列清楚就不会后悔。王孔着眼居厚履中，能够检视自身、成其所行。小象「中以自考也」，朱熹与程颐又以成释考，强调中道应在行为中实现，归善之厚要超过一时整理的形式。",
+          "new": "六五「敦复，无悔」并非只说每项条件先列清楚便足以免悔。王孔着眼居厚履中，能够检视自身、成其所行。小象「中以自考也」，朱熹与程颐又以成释考，强调中道应在行为中实现，归善之厚要超过一时整理的形式。"
+        },
+        {
+          "key": "24/5/未",
+          "field": "short",
+          "old": "用多助薄仍有末生可接，这轮能升。未月震囚、三坤旺，主动经营较重；末坎死而受制，生扶偏轻，不凭强弱直接指定成事迟早。敦复贵在笃实归善、以中自成，宜让改进触及依据与行动，认真核准职责条件，不用核对记录代替持续担当。",
+          "new": "用多助薄仍有末生可接，这轮能升。未月震囚、三坤旺，主动经营较重；末坎死而受制，生扶偏轻，不凭强弱直接指定成事快慢。敦复贵在笃实归善、以中自成，宜让改进触及依据与行动，认真核准职责条件，不用核对记录代替持续担当。"
+        },
+        {
+          "key": "24/5/未",
+          "field": "paragraphs[0]",
+          "old": "用多而助薄，末生仍能接续所求，这次晋升能升。未月震木囚，前中三坤土旺，都要由原体主动经营。末坎水死，受土制而生助轻，过程需认真安排承担，不能从这份轻助直接量出任用迟早。",
+          "new": "用多而助薄，末生仍能接续所求，这次晋升能升。未月震木囚，前中三坤土旺，都要由原体主动经营。末坎水死，受土制而生助轻，过程需认真安排承担，不能从这份轻助直接量出任用快慢。"
+        },
+        {
+          "key": "24/5/酉",
+          "field": "paragraphs[2]",
+          "old": "古注对于无悔并不作无限许诺。王孔说未及休复之吉，程颐也强调尚不能致亨吉，所贵仍在敦笃返善。本月能升应靠末助落实实际承接，不能将名位当作此前所有行为都正确的证明，更不能把一时结果替代日后的修正。",
+          "new": "古注对于无悔并不作无限许诺。王孔说未及休复之吉，程颐也强调尚不能致亨吉，所贵仍在敦笃返善。本月能升应靠末助落实实际承接，不能将名位当作此前所有行为都正确的证明，更不能把一时结果替代应有的修正。"
+        },
+        {
+          "key": "24/5/戌",
+          "field": "paragraphs[2]",
+          "old": "王孔还指出此爻不足以及休复之吉，程颐亦强调尚未能致亨吉，所许只是敦复可以无悔。求升时宜保留这种分寸，不用爻辞给所有后果作保证。本月末生可成仍需实际确认，任用得到也不意味着可以省掉日后的据实检查。",
+          "new": "王孔还指出此爻不足以及休复之吉，程颐亦强调尚未能致亨吉，所许只是敦复可以无悔。求升时宜保留这种分寸，不用爻辞给所有后果作保证。本月末生可成仍需实际确认，任用得到也不意味着可以省掉持续的据实检查。"
+        },
+        {
+          "key": "24/6/巳",
+          "field": "paragraphs[3]",
+          "old": "盘中四土构成用党多，经营的承担来自这一关系，不能由原体休去猜精力、工时或迟早。一般体克用求名有可成而迟之意，上六的凶戒仍使本次不能据此许升。需要核实的事项宜按轻重推进，说明清楚而不过度承诺。",
+          "new": "盘中四土构成用党多，经营的承担来自这一关系，不能由原体休去猜精力、工时或进度。一般体克用求名有可成而迟之意，上六的凶戒仍使本次不能据此许升。需要核实的事项宜按轻重推进，说明清楚而不过度承诺。"
+        }
+      ],
+      "lineHashes": {
+        "1": "120a1bfe9b17c6250ca73215d41981791fea443f4093281f3e457b8547ef8019",
+        "2": "5f323033681bf6bdf2a9969c788a49dc18dacb39be1b09d1148b4482a1aa280e",
+        "3": "5351c5e1616ee4f420833135e7f20530fd2ca4aa62fdb8eb09c0dbccc67b09ac",
+        "4": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+        "5": "7717d31be6eee1c3e3b6a81f599ca97a2f16144427830c08465951d8a57eb63c",
+        "6": "c95e143aff82f09c0df71d903a6ccb003e55d76e19d45ad7630ff3964c6bb7b0"
+      },
+      "completeParagraphsActuallyRead": 12,
+      "completeShortFieldsActuallyRead": 2,
+      "distinctArticlesWithChangedFields": 13,
+      "allNewCompleteFieldsActuallyRead": true,
+      "sourceMeaningChanged": false,
+      "technicalFieldsChanged": false,
+      "independentReview": "passed-after-complete-fourteen-field-readback"
+    }
+  },
+  "independentReview": {
+    "hexagram": 24,
+    "sourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+    "wholeArticlesRead": 72,
+    "professionalGroupsRead": 30,
+    "currentRevisionFullTextReadCount": 30,
+    "currentRevisionChangedArticleReadCount": 42,
+    "scope": "72篇title/short/全部paragraphs/payExplanation曾逐篇实际全文读过。前3爻36篇后续99完整段标点改动已实际逐段复读；末轮门禁再改14个完整字段，涉及13篇，其中初三爻7篇已在36内，新增六五5篇和上六1篇。最终30篇公开全文原样保留、42篇有完整变化字段复读。六四3气和上六5气无期说明与订正另作完整字段读回，不冒称最终hash下重新读过72篇。",
+    "status": "ai-cross-reviewed-with-open-findings",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "lineReviews": [
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 1,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "bde335aab241e918d3d9ad9c9bb59204e3f3ec33d070862cf1237f3af35213f6",
+        "finalSourceSha256": "120a1bfe9b17c6250ca73215d41981791fea443f4093281f3e457b8547ef8019",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": [
+            "辰完整title",
+            "子完整short",
+            "未完整paragraphs[0]",
+            "5气timingWordingCorrection全文"
+          ]
+        },
+        "findingsResolved": [
+          {
+            "month": "辰",
+            "field": "title",
+            "issue": "不许任用措辞易读作规范性禁止。",
+            "resolution": "改早复有益，任用未成；完整字段复读通过。"
+          },
+          {
+            "month": "子",
+            "field": "short",
+            "issue": "不将受压写成是编辑视角。",
+            "resolution": "改不因受压便认作全无可为；完整字段复读通过。"
+          },
+          {
+            "month": "未",
+            "field": "paragraphs[0]",
+            "issue": "描成措辞带作者视角。",
+            "resolution": "改不宜将眼下处境看成四处失据；完整段复读通过。"
+          }
+        ],
+        "substantiveAssessment": "原体坤土、本用震克、中末三土比和、五气休体中立、无金制震与无水生震均正确。保留不远复与元吉积极含义，不把发现错误改说成错误已严重，也不由早改预言获任。任职结果与独立薪资边界分开。",
+        "status": "passed_after_targeted_revision",
+        "limitations": "这是独立AI逐篇审读与作者修订复读记录，不是用户验收或人工签字；未逐字阅读未变化的12份重复同气专业字段。",
+        "previousApprovedSourceSha256": "e60a4b5f7797d90173f37bca208c6bdc0c080e2579b7eaa16afda919d0986584",
+        "punctuationDeltaReview": {
+          "status": "passed_after_complete_changed_paragraph_readback",
+          "previousSourceSha256": "e60a4b5f7797d90173f37bca208c6bdc0c080e2579b7eaa16afda919d0986584",
+          "finalSourceSha256": "5e0fc87342f4cf47aa601d7b57af2486cedd0920a8b6845812122ee292010972",
+          "completeChangedParagraphsRead": 37,
+          "articleKeys": [
+            "24/1/寅",
+            "24/1/卯",
+            "24/1/辰",
+            "24/1/巳",
+            "24/1/午",
+            "24/1/未",
+            "24/1/申",
+            "24/1/酉",
+            "24/1/戌",
+            "24/1/亥",
+            "24/1/子",
+            "24/1/丑"
+          ],
+          "fieldsRead": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ],
+          "actualReading": "逐一输出并实际阅读每个完整新段；三爻分开输出均无截断。没有把机械差分核对充作全文审读。",
+          "mechanicalVerification": "仅分号改句号；逐段回放旧字段可精确重现此前已审快照 SHA；当前文件 SHA 与 delta 声明相符。",
+          "unaffectedFields": "title、short、payExplanation 与 5 气专业字段没有变化，不重复宣称已再次逐篇全读。"
+        },
+        "currentRevisionFullTextReadCount": 0,
+        "currentRevisionChangedArticleReadCount": 12,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0
+        },
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "5e0fc87342f4cf47aa601d7b57af2486cedd0920a8b6845812122ee292010972",
+          "finalSourceSha256": "120a1bfe9b17c6250ca73215d41981791fea443f4093281f3e457b8547ef8019",
+          "fullFieldsRead": 4,
+          "articleKeys": [
+            "24/1/丑",
+            "24/1/午",
+            "24/1/卯",
+            "24/1/未"
+          ],
+          "changes": [
+            {
+              "key": "24/1/卯",
+              "field": "paragraphs[2]",
+              "old": "王孔将无祗悔解释为没有大的悔失，朱熹则由祗的抵至义说明不至于悔。两种解释都把及时改正放在重要位置，不能读成只要认错就可以继续原来的承诺。用于求升，宜核查所言是否确有履责事实支撑，不把愿意承担当成已经完成。",
+              "new": "王孔将无祗悔解释为没有大的悔失，朱熹则由祗的抵至义说明不抵于悔。两种解释都把及时改正放在重要位置，不能读成只要认错就可以继续原来的承诺。用于求升，宜核查所言是否确有履责事实支撑，不把愿意承担当成已经完成。"
+            },
+            {
+              "key": "24/1/午",
+              "field": "paragraphs[2]",
+              "old": "放在求升之中，可从工作事实和自我评价之间的距离入手。哪些结果确由自己促成，哪些依赖共同条件，哪些只是将来的设想，宜逐层分明。若已经发现说法过宽，便据实际承担收正，不以更强的态度弥补证据缺口。",
+              "new": "放在求升之中，可从工作事实和自我评价之间的距离入手。哪些结果确由自己促成，哪些依赖共同条件，哪些只是尚未实行的设想，宜逐层分明。若已经发现说法过宽，便据实际承担收正，不以更强的态度弥补证据缺口。"
+            },
+            {
+              "key": "24/1/未",
+              "field": "paragraphs[2]",
+              "old": "王孔以无大悔释无祗悔，朱程则取不至于悔，解释虽有区别，皆强调返善应早。用于晋升，不可把它缩成补齐某行文字就够，也不可把元吉说成仅有一个无关紧要的好处。它指向对后续行事仍有影响的认真改正。",
+              "new": "王孔以无大悔释无祗悔，朱程则取不抵于悔，解释虽有区别，皆强调返善应早。用于晋升，不可把它缩成补齐某行文字就够，也不可把元吉说成仅有一个无关紧要的好处。它指向对后续行事仍有影响的认真改正。"
+            },
+            {
+              "key": "24/1/丑",
+              "field": "paragraphs[1]",
+              "old": "初九「不远复」讲失而早返，元吉来自及时回到正当的道路。王弼、孔颖达连着修身解此爻，贵在过失未扩大便真切改正。朱熹从不至于悔说明同一份早返之善，都不是把一次修改当作全部修身已经完成。",
+              "new": "初九「不远复」讲失而早返，元吉来自及时回到正当的道路。王弼、孔颖达连着修身解此爻，贵在过失未扩大便真切改正。朱熹从不抵于悔说明同一份早返之善，都不是把一次修改当作全部修身已经完成。"
+            }
+          ],
+          "actualReading": "所有14个完整old/new字段已无截断逐一实际读回；12段正文和2条简断仍保留原义，没有借机器命中另造事实或承诺。",
+          "mechanicalVerification": "回放本轮完整旧字段可精确重现此前已审分爻SHA，其余字段无暗改。",
+          "status": "passed_after_complete_changed_field_readback"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 2,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "7fb4c6e3334876692a22260a320b9e0d8681c09d085d41cae4b91d311612efab",
+        "finalSourceSha256": "5f323033681bf6bdf2a9969c788a49dc18dacb39be1b09d1148b4482a1aa280e",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": [
+            "寅完整paragraphs[0]",
+            "巳完整short",
+            "巳完整paragraphs[0]",
+            "子完整paragraphs[0]"
+          ]
+        },
+        "findingsResolved": [
+          {
+            "fields": [
+              "寅paragraphs[0]",
+              "巳short",
+              "巳paragraphs[0]",
+              "子paragraphs[0]"
+            ],
+            "issue": "把亲仁取善的所宜写成求占者已有意愿。",
+            "resolution": "改为取善有益或值得落实的义理建议，4完整字段复读通过。"
+          }
+        ],
+        "substantiveAssessment": "坤土原体、震木本用克、两互坤比和、末兑泄，以及兑制震而无水生震的一层减力均正确。原体休居中，末兑旺相耗实、囚死休耗轻均有分寸。保留休复吉与以下仁的谦下亲仁意义；王孔完整六二、本义六二实际对照。不存在回头太晚或截止改稿的旧预设。薪资边界独立。",
+        "status": "passed_after_targeted_revision",
+        "limitations": "独立AI逐篇审读，不是用户验收；同气重复专业字段以5气代表全读，重复一致性由机器另查。",
+        "previousApprovedSourceSha256": "9823a20fc6e5f39dc0383bb0214fd1c3a5bcfd80d11097239582f551dedcc015",
+        "punctuationDeltaReview": {
+          "status": "passed_after_complete_changed_paragraph_readback",
+          "previousSourceSha256": "9823a20fc6e5f39dc0383bb0214fd1c3a5bcfd80d11097239582f551dedcc015",
+          "finalSourceSha256": "6910e0d23407e12789b10e9a43c614ef132e1ad4f2acfce9af3653d38756f6cb",
+          "completeChangedParagraphsRead": 32,
+          "articleKeys": [
+            "24/2/寅",
+            "24/2/卯",
+            "24/2/辰",
+            "24/2/巳",
+            "24/2/午",
+            "24/2/未",
+            "24/2/申",
+            "24/2/酉",
+            "24/2/戌",
+            "24/2/亥",
+            "24/2/子",
+            "24/2/丑"
+          ],
+          "fieldsRead": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ],
+          "actualReading": "逐一输出并实际阅读每个完整新段；三爻分开输出均无截断。没有把机械差分核对充作全文审读。",
+          "mechanicalVerification": "仅分号改句号；逐段回放旧字段可精确重现此前已审快照 SHA；当前文件 SHA 与 delta 声明相符。",
+          "unaffectedFields": "title、short、payExplanation 与 5 气专业字段没有变化，不重复宣称已再次逐篇全读。"
+        },
+        "currentRevisionFullTextReadCount": 0,
+        "currentRevisionChangedArticleReadCount": 12,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0
+        },
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "6910e0d23407e12789b10e9a43c614ef132e1ad4f2acfce9af3653d38756f6cb",
+          "finalSourceSha256": "5f323033681bf6bdf2a9969c788a49dc18dacb39be1b09d1148b4482a1aa280e",
+          "fullFieldsRead": 2,
+          "articleKeys": [
+            "24/2/亥",
+            "24/2/子"
+          ],
+          "changes": [
+            {
+              "key": "24/2/亥",
+              "field": "paragraphs[2]",
+              "old": "用于求升，可从已经完成的责任查起，说明自己真正理解并运用过什么。若遇到更成熟的做法，宜问明其成立条件，再看如何服务于当前工作。不把别人完成的结果借来增加自身资历，也不因需要请教就否认已有实际贡献。",
+              "new": "用于求升，可从已经完成的责任查起，说明自己真正理解并运用过什么。若遇到更成熟的做法，宜问明其成立条件，并辨明如何服务于当前工作。不把别人完成的结果借来增加自身资历，也不因需要请教就否认已有实际贡献。"
+            },
+            {
+              "key": "24/2/子",
+              "field": "paragraphs[2]",
+              "old": "对准备晋升的人，可先辨认自己需要学习的是哪一种实际判断。遇到值得采用的经验，宜连同条件、限制和结果一起理解，再说明自己如何负责。已经能做的就讲具体，尚未做到的以计划交代，让学习与实绩各自保持真实分量。若一种意见需要尚未具备的条件，可以保留其启发，同时明确当前仍不能照行的原因。",
+              "new": "对准备晋升的人，可先辨认自己需要学习的是哪一种实际判断。遇到值得采用的经验，宜连同条件、限制和结果一起理解，据此说明自己如何负责。已经能做的就讲具体，尚未做到的以计划交代，让学习与实绩各自保持真实分量。若一种意见需要尚未具备的条件，可以保留其启发，同时明确当前仍不能照行的原因。"
+            }
+          ],
+          "actualReading": "所有14个完整old/new字段已无截断逐一实际读回；12段正文和2条简断仍保留原义，没有借机器命中另造事实或承诺。",
+          "mechanicalVerification": "回放本轮完整旧字段可精确重现此前已审分爻SHA，其余字段无暗改。",
+          "status": "passed_after_complete_changed_field_readback"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 3,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "cbb2e55568df1251b05da638605a2f1cde85a7678ff26235599f21f8383d52a1",
+        "finalSourceSha256": "5351c5e1616ee4f420833135e7f20530fd2ca4aa62fdb8eb09c0dbccc67b09ac",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": [
+            "辰完整paragraphs[2]"
+          ]
+        },
+        "findingsResolved": [
+          {
+            "month": "辰",
+            "field": "paragraphs[2]",
+            "issue": "已有条件包含门禁保留词子串有条件。",
+            "resolution": "改为既具基础，完整段复读通过，无实质意义改变。"
+          }
+        ],
+        "substantiveAssessment": "本用震木克原体坤土、两互坤比和、末离火生体均正确；无金制震或水生震、水克离的一层条件，木生火不递推额外加力。各气轻重及原体休中立符合规则，末生真实积极面完整保留。王孔频蹙、未至迷与它来难保，朱程屡失屡复分开；没有把正常核查直接当成失道，也未预设资格或履历差错。薪资边界独立。",
+        "status": "passed_after_targeted_revision",
+        "limitations": "独立AI全文审读并针对改段复读，非用户验收；同气技术以5气代表全读，重复一致性另作机械验证。",
+        "previousApprovedSourceSha256": "02a4979cdcb8dd01aaab1b0103323c48547e52ec05759e892f5274e67990355b",
+        "punctuationDeltaReview": {
+          "status": "passed_after_complete_changed_paragraph_readback",
+          "previousSourceSha256": "02a4979cdcb8dd01aaab1b0103323c48547e52ec05759e892f5274e67990355b",
+          "finalSourceSha256": "cb778d21151867707ea7e1eff820a04b2a223188e0185c3224a5f0d462db9ab5",
+          "completeChangedParagraphsRead": 30,
+          "articleKeys": [
+            "24/3/寅",
+            "24/3/卯",
+            "24/3/辰",
+            "24/3/巳",
+            "24/3/午",
+            "24/3/未",
+            "24/3/申",
+            "24/3/酉",
+            "24/3/戌",
+            "24/3/亥",
+            "24/3/子",
+            "24/3/丑"
+          ],
+          "fieldsRead": [
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[0]"
+            },
+            {
+              "monthBranch": "寅",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "卯",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "辰",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "巳",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "午",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "未",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "申",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[2]"
+            },
+            {
+              "monthBranch": "酉",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "戌",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[3]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[4]"
+            },
+            {
+              "monthBranch": "亥",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "子",
+              "field": "paragraphs[5]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[1]"
+            },
+            {
+              "monthBranch": "丑",
+              "field": "paragraphs[5]"
+            }
+          ],
+          "actualReading": "逐一输出并实际阅读每个完整新段；三爻分开输出均无截断。没有把机械差分核对充作全文审读。",
+          "mechanicalVerification": "仅分号改句号；逐段回放旧字段可精确重现此前已审快照 SHA；当前文件 SHA 与 delta 声明相符。",
+          "unaffectedFields": "title、short、payExplanation 与 5 气专业字段没有变化，不重复宣称已再次逐篇全读。"
+        },
+        "currentRevisionFullTextReadCount": 0,
+        "currentRevisionChangedArticleReadCount": 12,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0
+        },
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "cb778d21151867707ea7e1eff820a04b2a223188e0185c3224a5f0d462db9ab5",
+          "finalSourceSha256": "5351c5e1616ee4f420833135e7f20530fd2ca4aa62fdb8eb09c0dbccc67b09ac",
+          "fullFieldsRead": 1,
+          "articleKeys": [
+            "24/3/辰"
+          ],
+          "changes": [
+            {
+              "key": "24/3/辰",
+              "field": "paragraphs[1]",
+              "old": "六三「频复，厉无咎」不能只从改过几遍来理解。朱程以屡失屡复说明，所忧在回到善道以后还未守定，所可取在偏离之后仍肯复善。通常的核对与完善，只要依据事实，并不因次数多就成为此爻的危险。",
+              "new": "六三「频复，厉无咎」不能只从改过几遍来理解。朱程以屡失屡复说明，所忧在回到善道却未能守定，所可取在偏离之后仍肯复善。通常的核对与完善，只要依据事实，并不因次数多就成为此爻的危险。"
+            }
+          ],
+          "actualReading": "所有14个完整old/new字段已无截断逐一实际读回；12段正文和2条简断仍保留原义，没有借机器命中另造事实或承诺。",
+          "mechanicalVerification": "回放本轮完整旧字段可精确重现此前已审分爻SHA，其余字段无暗改。",
+          "status": "passed_after_complete_changed_field_readback"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 4,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "a9438490d85adde8b017fe28d29cd589f8dbe3dfd53613feb3924389b1903e3a",
+        "finalSourceSha256": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": []
+        },
+        "findingsResolved": [],
+        "substantiveAssessment": "十二篇正文和公开字段、五气全部专业及订正字段均实际全读，未发现必改项。三坤用党多、原体木克土而非土克木、夏令原体休居中、末震比和五气轻重正确；寅卯亥子末体党旺相保留能升，其余体党无旺相维持未升。王孔群阴中独应初、顺道而反，朱阳微未足有为不言吉，程无可济与终不克济的完整六四段均实际核读，现代规则成断与古注限制分别表达。独立不臆造孤立、分歧或既成任命，薪资边界独立。",
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0,
+          "bodyHanMin": 500,
+          "bodyHanMedian": 515.5,
+          "bodyHanMax": 535
+        },
+        "currentRevisionFullTextReadCount": 12,
+        "currentRevisionChangedArticleReadCount": 0,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "passed_no_new_blocking_findings",
+        "limitations": "独立 AI 全文审读，不是用户验收。五气专业以各气一篇代表实际全读；同气重复字段一致性与基线绑定另作机械核验，不冒称逐字重读全部重复内容。",
+        "previousApprovedSourceSha256": "a9438490d85adde8b017fe28d29cd589f8dbe3dfd53613feb3924389b1903e3a",
+        "timingDeltaReview": {
+          "status": "passed_after_full_changed_field_readback",
+          "previousSourceSha256": "a9438490d85adde8b017fe28d29cd589f8dbe3dfd53613feb3924389b1903e3a",
+          "finalSourceSha256": "b53f5bbc5bceb89f12ef9c5fc76d4c86c4bfa780bec2227a7276929f6a4fa785",
+          "distinctQiGroupsRead": 3,
+          "changedArticleCount": 8,
+          "months": [
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "丑"
+          ],
+          "fieldsRead": [
+            "timing完整新字符串",
+            "timingWordingCorrection完整old/new/reason/impact"
+          ],
+          "actualReading": "八组差分无截断输出，逐组实际阅读完整旧新无期说明及新订正字段，未把机器比较充作阅读。",
+          "mechanicalVerification": "before所存articles按原格式序列化可精确重现前次完整阅读快照SHA；逐字段差分仅timing与timingWordingCorrection；正文、标题、简断、薪资与judgment原样保留。同气各重复实例与完整新字段一致。",
+          "rangeHan": [
+            47,
+            52
+          ],
+          "readingCountScope": "currentRevisionFullTextReadCount仍指已经整篇实际读过且当前公开title/short/paragraphs/payExplanation原样保留的12篇；本次技术应期窄改以此分组完整字段读回另记，不冒称新hash下再读12全文。"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 5,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "f36774bf2cd626c097c9e46efb6fec93410480daaf9f8005194740c46b109130",
+        "finalSourceSha256": "7717d31be6eee1c3e3b6a81f599ca97a2f16144427830c08465951d8a57eb63c",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": []
+        },
+        "findingsResolved": [],
+        "substantiveAssessment": "十二篇公开字段与五气专业/应期/订正字段均实际完整读回，未见必改项。原体震木、前中三坤体克、末坎生木及三土用党多正确；三土制坎且无金生坎，原月气保留而生扶一层减弱，不借原体木制土递推恢复水力。原体休中立、秋冬旺相水作用减薄等分寸一致，现行有生无克末生判序保留十二篇能升。王孔六五不及休复吉、本义敦复与考成、程传未能致亨吉只能无悔的完整段均实际读过，反证与现代能升公开区分，敦复未简化成一次查稿。薪资独立，不由生扶强弱伪定速度或任命日期。",
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0,
+          "bodyHanMin": 497,
+          "bodyHanMedian": 511.5,
+          "bodyHanMax": 519
+        },
+        "currentRevisionFullTextReadCount": 7,
+        "currentRevisionChangedArticleReadCount": 5,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "passed_no_new_blocking_findings",
+        "limitations": "独立 AI 全文审读，不是用户验收。五气专业以各气一篇代表实际全读；同气重复字段一致性与基线绑定另作机械核验，不冒称逐字重读全部重复内容。",
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "f36774bf2cd626c097c9e46efb6fec93410480daaf9f8005194740c46b109130",
+          "finalSourceSha256": "7717d31be6eee1c3e3b6a81f599ca97a2f16144427830c08465951d8a57eb63c",
+          "fullFieldsRead": 6,
+          "articleKeys": [
+            "24/5/巳",
+            "24/5/戌",
+            "24/5/未",
+            "24/5/辰",
+            "24/5/酉"
+          ],
+          "changes": [
+            {
+              "key": "24/5/辰",
+              "field": "short",
+              "old": "经营较重而末助仍在，这次能升。辰月震囚、三坤旺，用党多使承担增加；末坎死受土制，生扶轻而不作全无。敦复贵在厚实归善，宜把任职依据和实际责任核清，能接到的帮助据实使用，不以一次核对保证无悔，也不由轻助预定来得迟早。",
+              "new": "经营较重而末助仍在，这次能升。辰月震囚、三坤旺，用党多使承担增加；末坎死受土制，生扶轻而不作全无。敦复贵在厚实归善，宜把任职依据和实际责任核清，能接到的帮助据实使用，不以一次核对保证无悔，也不由轻助预定落实的快慢。"
+            },
+            {
+              "key": "24/5/巳",
+              "field": "paragraphs[1]",
+              "old": "六五「敦复，无悔」并非只说每项条件先列清楚就不会后悔。王孔着眼居厚履中，能够检视自身、成其所行。小象「中以自考也」，朱熹与程颐又以成释考，强调中道应在行为中实现，归善之厚要超过一时整理的形式。",
+              "new": "六五「敦复，无悔」并非只说每项条件先列清楚便足以免悔。王孔着眼居厚履中，能够检视自身、成其所行。小象「中以自考也」，朱熹与程颐又以成释考，强调中道应在行为中实现，归善之厚要超过一时整理的形式。"
+            },
+            {
+              "key": "24/5/未",
+              "field": "short",
+              "old": "用多助薄仍有末生可接，这轮能升。未月震囚、三坤旺，主动经营较重；末坎死而受制，生扶偏轻，不凭强弱直接指定成事迟早。敦复贵在笃实归善、以中自成，宜让改进触及依据与行动，认真核准职责条件，不用核对记录代替持续担当。",
+              "new": "用多助薄仍有末生可接，这轮能升。未月震囚、三坤旺，主动经营较重；末坎死而受制，生扶偏轻，不凭强弱直接指定成事快慢。敦复贵在笃实归善、以中自成，宜让改进触及依据与行动，认真核准职责条件，不用核对记录代替持续担当。"
+            },
+            {
+              "key": "24/5/未",
+              "field": "paragraphs[0]",
+              "old": "用多而助薄，末生仍能接续所求，这次晋升能升。未月震木囚，前中三坤土旺，都要由原体主动经营。末坎水死，受土制而生助轻，过程需认真安排承担，不能从这份轻助直接量出任用迟早。",
+              "new": "用多而助薄，末生仍能接续所求，这次晋升能升。未月震木囚，前中三坤土旺，都要由原体主动经营。末坎水死，受土制而生助轻，过程需认真安排承担，不能从这份轻助直接量出任用快慢。"
+            },
+            {
+              "key": "24/5/酉",
+              "field": "paragraphs[2]",
+              "old": "古注对于无悔并不作无限许诺。王孔说未及休复之吉，程颐也强调尚不能致亨吉，所贵仍在敦笃返善。本月能升应靠末助落实实际承接，不能将名位当作此前所有行为都正确的证明，更不能把一时结果替代日后的修正。",
+              "new": "古注对于无悔并不作无限许诺。王孔说未及休复之吉，程颐也强调尚不能致亨吉，所贵仍在敦笃返善。本月能升应靠末助落实实际承接，不能将名位当作此前所有行为都正确的证明，更不能把一时结果替代应有的修正。"
+            },
+            {
+              "key": "24/5/戌",
+              "field": "paragraphs[2]",
+              "old": "王孔还指出此爻不足以及休复之吉，程颐亦强调尚未能致亨吉，所许只是敦复可以无悔。求升时宜保留这种分寸，不用爻辞给所有后果作保证。本月末生可成仍需实际确认，任用得到也不意味着可以省掉日后的据实检查。",
+              "new": "王孔还指出此爻不足以及休复之吉，程颐亦强调尚未能致亨吉，所许只是敦复可以无悔。求升时宜保留这种分寸，不用爻辞给所有后果作保证。本月末生可成仍需实际确认，任用得到也不意味着可以省掉持续的据实检查。"
+            }
+          ],
+          "actualReading": "所有14个完整old/new字段已无截断逐一实际读回；12段正文和2条简断仍保留原义，没有借机器命中另造事实或承诺。",
+          "mechanicalVerification": "回放本轮完整旧字段可精确重现此前已审分爻SHA，其余字段无暗改。",
+          "status": "passed_after_complete_changed_field_readback"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 24,
+        "movingLine": 6,
+        "reviewer": "write_bi22, independent AI reviewer",
+        "reviewedAt": "2026-11-21",
+        "initialSourceSha256": "fcdf787ad27804740a50111b23ea8faf504802cda6c1b45bb7dda3146a641da9",
+        "finalSourceSha256": "c95e143aff82f09c0df71d903a6ccb003e55d76e19d45ad7630ff3964c6bb7b0",
+        "readingScope": {
+          "wholeArticlesRead": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalGroupsRead": 5,
+          "professionalFields": [
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "subsequentRead": []
+        },
+        "findingsResolved": [],
+        "substantiveAssessment": "十二篇公开字段与五气专业/应期/订正字段在作者最终窄改之后实际全读，无新增必改项。原体震木，前中三坤与末艮四土均为体所克且用党多；没有生体、比和、克体节点，原体休中立，不把旺相说成体势自足，也不把土旺反说为克木。一般求名体克可成迟的相反证据与当前用党多、无扶及上六凶戒分别说明。王孔大败乃复、虽复十年仍难征，朱程终迷不复的完整段已实际核对，差异未混为一说；灾眚与国君凶保持严戒而不预言现实灾难，十年未换算现代等待期限。变颐养正不另许后来必成，薪资独立未扩大减薪预言。",
+        "mechanicalVerification": {
+          "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
+          "outcomeDifferences": 0,
+          "timingSignatureDifferences": 0,
+          "sameQiProfessionalDifferences": 0,
+          "exactOldNewCorrectionsChecked": 36,
+          "oldNewDifferences": 0,
+          "bodyHanMin": 480,
+          "bodyHanMedian": 490.5,
+          "bodyHanMax": 504
+        },
+        "currentRevisionFullTextReadCount": 11,
+        "currentRevisionChangedArticleReadCount": 1,
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "passed_no_new_blocking_findings",
+        "limitations": "独立 AI 全文审读，不是用户验收。首次独审即针对作者八处修改后的最终快照，不把作者前版阅读计入本次。五气专业以各气一篇代表实际全读；同气重复字段一致性与基线绑定另作机械核验。",
+        "previousApprovedSourceSha256": "fcdf787ad27804740a50111b23ea8faf504802cda6c1b45bb7dda3146a641da9",
+        "timingDeltaReview": {
+          "status": "passed_after_full_changed_field_readback",
+          "previousSourceSha256": "fcdf787ad27804740a50111b23ea8faf504802cda6c1b45bb7dda3146a641da9",
+          "finalSourceSha256": "f950f82c60b4bfdd8ad92a93d96ba922381996aaeb61b2f6bfce6e332122c9d0",
+          "distinctQiGroupsRead": 5,
+          "changedArticleCount": 12,
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "fieldsRead": [
+            "timing完整新字符串",
+            "timingWordingCorrection完整old/new/reason/impact"
+          ],
+          "actualReading": "八组差分无截断输出，逐组实际阅读完整旧新无期说明及新订正字段，未把机器比较充作阅读。",
+          "mechanicalVerification": "before所存articles按原格式序列化可精确重现前次完整阅读快照SHA；逐字段差分仅timing与timingWordingCorrection；正文、标题、简断、薪资与judgment原样保留。同气各重复实例与完整新字段一致。",
+          "rangeHan": [
+            44,
+            50
+          ],
+          "readingCountScope": "currentRevisionFullTextReadCount仍指已经整篇实际读过且当前公开title/short/paragraphs/payExplanation原样保留的12篇；本次技术应期窄改以此分组完整字段读回另记，不冒称新hash下再读12全文。"
+        },
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "f950f82c60b4bfdd8ad92a93d96ba922381996aaeb61b2f6bfce6e332122c9d0",
+          "finalSourceSha256": "c95e143aff82f09c0df71d903a6ccb003e55d76e19d45ad7630ff3964c6bb7b0",
+          "fullFieldsRead": 1,
+          "articleKeys": [
+            "24/6/巳"
+          ],
+          "changes": [
+            {
+              "key": "24/6/巳",
+              "field": "paragraphs[3]",
+              "old": "盘中四土构成用党多，经营的承担来自这一关系，不能由原体休去猜精力、工时或迟早。一般体克用求名有可成而迟之意，上六的凶戒仍使本次不能据此许升。需要核实的事项宜按轻重推进，说明清楚而不过度承诺。",
+              "new": "盘中四土构成用党多，经营的承担来自这一关系，不能由原体休去猜精力、工时或进度。一般体克用求名有可成而迟之意，上六的凶戒仍使本次不能据此许升。需要核实的事项宜按轻重推进，说明清楚而不过度承诺。"
+            }
+          ],
+          "actualReading": "所有14个完整old/new字段已无截断逐一实际读回；12段正文和2条简断仍保留原义，没有借机器命中另造事实或承诺。",
+          "mechanicalVerification": "回放本轮完整旧字段可精确重现此前已审分爻SHA，其余字段无暗改。",
+          "status": "passed_after_complete_changed_field_readback"
+        }
+      }
+    ],
+    "mechanicalVerification": {
+      "articles": 72,
+      "sameQiGroups": 30,
+      "exactOldNewCorrections": 216,
+      "outcomeDifferences": 0,
+      "timingSignatureDifferences": 0,
+      "sameQiProfessionalDifferences": 0,
+      "oldNewDifferences": 0,
+      "sourceMatchesLineSnapshots": true
+    },
+    "openInterpretiveBoundaries": [
+      "在任见克与初三爻积极古义的层级取舍",
+      "六四现代末和旺相可成与朱程不言吉/未足有为的张力",
+      "六五现行末生可成与古注无悔未达亨吉的张力",
+      "上六一般体克用求名可成迟与用党多/凶戒的取权",
+      "没有现实预测回验或用户逐篇验收"
+    ],
+    "formalGateDeltaReview": {
+      "fullFieldsRead": 14,
+      "paragraphsRead": 12,
+      "shortsRead": 2,
+      "articlesTouched": 13,
+      "sourceShaBefore": "496a233e1ed3bc27ff82bb63bad31e750cea18d39ffdd6582bde40b67f21debe",
+      "sourceShaAfter": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+      "replayPreviousSourceShaVerified": true
+    },
+    "reviewer": "/root/write_bi22",
+    "reviewerType": "independent-ai",
+    "wholeArticlesActuallyRead": 72,
+    "distinctQiTechnicalGroupsActuallyRead": 30,
+    "finalSourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741"
+  },
+  "openFindings": [
+    {
+      "id": "FU24-INCUMBENT-PRIORITY",
+      "status": "open-interpretation-boundary",
+      "detail": "初三爻见直接克体，现代在任专条保持未升；初九元吉、六二休复吉、六三无咎及真实末生不能因此缩小。古代在任条到现代升任的适用是项目选择。"
+    },
+    {
+      "id": "FU24-FOUR-CLASSICAL-BOUNDARY",
+      "status": "open-interpretation-boundary",
+      "detail": "六四寅卯亥子因末体党旺相保持能升；朱熹阳微未足有为、程颐无可济与终不克济，未由本次润色消除。"
+    },
+    {
+      "id": "FU24-FIVE-CLASSICAL-BOUNDARY",
+      "status": "open-interpretation-boundary",
+      "detail": "六五现行有生无克、末生判序保持十二月能升；王孔不及休复吉与程颐未能致亨吉、能无悔而已的限制完整保留。"
+    },
+    {
+      "id": "FU24-USEPARTY-AND-OMEN-PRIORITY",
+      "status": "open-interpretation-boundary",
+      "detail": "后三爻用党多按项目一层规则判体势，原旺相仍保留；上六一般体克用求名可成迟与迷复终败的取权属于现行次序，不冒称古籍唯一结论。"
+    },
+    {
+      "id": "FU24-REAL-WORLD-VALIDATION",
+      "status": "open-interpretation-boundary",
+      "detail": "作者读回、独立AI审读与程序通过均不验证现实预测准确率，也不等于真人或用户逐篇验收。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "FU24-INCUMBENT-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "24"
+      ],
+      "finding": "初三爻见直接克体，现代在任专条保持未升；初九元吉、六二休复吉、六三无咎及真实末生不能因此缩小。古代在任条到现代升任的适用是项目选择。"
+    },
+    {
+      "id": "FU24-FOUR-CLASSICAL-BOUNDARY",
+      "status": "open-priority",
+      "keys": [
+        "24"
+      ],
+      "finding": "六四寅卯亥子因末体党旺相保持能升；朱熹阳微未足有为、程颐无可济与终不克济，未由本次润色消除。"
+    },
+    {
+      "id": "FU24-FIVE-CLASSICAL-BOUNDARY",
+      "status": "open-priority",
+      "keys": [
+        "24"
+      ],
+      "finding": "六五现行有生无克、末生判序保持十二月能升；王孔不及休复吉与程颐未能致亨吉、能无悔而已的限制完整保留。"
+    },
+    {
+      "id": "FU24-USEPARTY-AND-OMEN-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "24"
+      ],
+      "finding": "后三爻用党多按项目一层规则判体势，原旺相仍保留；上六一般体克用求名可成迟与迷复终败的取权属于现行次序，不冒称古籍唯一结论。"
+    },
+    {
+      "id": "FU24-REAL-WORLD-VALIDATION",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "24"
+      ],
+      "finding": "作者读回、独立AI审读与程序通过均不验证现实预测准确率，也不等于真人或用户逐篇验收。"
+    },
+    {
+      "id": "FU24-ORIGINAL-QI-AND-USEPARTY",
+      "status": "corrected-classical-application",
+      "keys": [
+        "24/1–3/申酉",
+        "24/4–6/巳午",
+        "24/4–6/寅卯亥子"
+      ],
+      "finding": "原体休改中立，作用节点休仍轻而非无；后三爻补用党多，原旺相不改，却不径称体势自足。"
+    },
+    {
+      "id": "FU24-ANNOTATOR-DISTINCTIONS",
+      "status": "corrected-classical-application",
+      "keys": [
+        "24/1",
+        "24/3",
+        "24/4",
+        "24/5",
+        "24/6"
+      ],
+      "finding": "祗、频、自考、六四不言吉与迷复的古注异说分别署明，吉意及严戒不缩成稿件差错。"
+    },
+    {
+      "id": "FU24-UNSUPPORTED-STORIES",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "24"
+      ],
+      "finding": "清除预算年度、固定范例、在任零差错、被通报、集体意见一致、及时任命、错误编制及具体任务死路等未获事实支持的场景；逐组理由与完整旧新值存作者源。"
+    },
+    {
+      "id": "FU24-NO-DATE-WORDING",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "24/4/巳午申酉辰未戌丑",
+        "24/6"
+      ],
+      "finding": "无期说明八气二十实例改为44–52汉字的自然说明；不造日期，不把上六十年折成现代年限。作者与独审均完整读回。"
+    },
+    {
+      "id": "FU24-CONSOLATION-FALSE-POSITIVES",
+      "status": "fixed-documentation-conflict",
+      "keys": [
+        "24/1/卯",
+        "24/1/午",
+        "24/1/未",
+        "24/1/丑",
+        "24/2/亥",
+        "24/2/子",
+        "24/3/辰",
+        "24/5/辰",
+        "24/5/巳",
+        "24/5/未",
+        "24/5/未",
+        "24/5/酉",
+        "24/5/戌",
+        "24/6/巳"
+      ],
+      "finding": "扫描将不至于悔的古义释文、否定句里的迟早和普通查证后再说明等14处判作许诺；按原义窄修12整段与2简断，不改扫描器或增加豁免，作者和独审均完整读回。"
+    }
+  ],
+  "realWorldPredictionAccuracy": "not-validated",
+  "validation": {
+    "status": "passed",
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 24",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      480,
+      535
+    ],
+    "bodyHanMedian": 511,
+    "shortHanRange": [
+      83,
+      98
+    ],
+    "payHanRange": [
+      36,
+      45
+    ],
+    "style": "passed",
+    "averageSentenceHan": 32.2,
+    "maxSameOpeningHead": 1,
+    "intraArticleRepeatedEightCharacterFragments": 0,
+    "independentReadingNotPerformedByGate": true,
+    "validatedSourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+    "consolationHits": 0,
+    "consolationAllowlistUsed": false,
+    "crossHexOverEightPercent": 0,
+    "maxCrossHexSharePercent": 1.5,
+    "highFrequencyPhraseFindingsForThisHex": 0,
+    "unverifiedClassicalQuotes": 0,
+    "initialConsolationFalsePositiveCompleteFieldsRevisedAndRead": 14
+  }
+}
