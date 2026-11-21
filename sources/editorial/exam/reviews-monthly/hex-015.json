@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "地山谦已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地山谦已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -43,6 +43,14 @@
     {
       "path": "sources/editorial/exam/hex-015.json",
       "scope": "六二五气对中末两木、坎水与坤艮月势的判断，以及寅卯参末阻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "scope": "第38至41行对读九三经、小象、王注及孔疏，区分有终的德行与整场考试的结果。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-015.json",
+      "scope": "核对九三五季的坤土、艮土、震木与坎水，逐月核对应期。"
     }
   ],
   "findings": [
@@ -83,6 +91,25 @@
         "15/2/丑"
       ],
       "finding": "本艮比和，震巽中末克土，坎水一面受体所克，一面生木，全盘无火生体。春木旺土弱，夏土有气，秋体休而水相，冬土弱水旺，土月旺体能承受而无直接生扶。各月皆不通过。"
+    },
+    {
+      "id": "hex-015-line-3",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "15/3/寅",
+        "15/3/卯",
+        "15/3/辰",
+        "15/3/巳",
+        "15/3/午",
+        "15/3/未",
+        "15/3/申",
+        "15/3/酉",
+        "15/3/戌",
+        "15/3/亥",
+        "15/3/子",
+        "15/3/丑"
+      ],
+      "finding": "十二个月均无生体卦，中段震木又有坎水相生。旺土及收尾比和所保的是能发挥的部分。秋令无金卦制木，不从木死单判无碍，也不从坎水耗力指定考试用时。"
     }
   ],
   "lineReviews": [
@@ -99,6 +126,14 @@
       "text": "鸣谦，贞吉。",
       "image": "“鸣谦，贞吉”，中心得也。",
       "reading": "六二得位居中，所称许的是谦德真实而守正。爻辞的贞吉不直接许考试合格。谦变升，末用巽木克坤。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "劳谦君子，有终，吉。",
+      "image": "“劳谦君子”，万民服也。",
+      "reading": "九三上承下接，能劳而持谦，王弼与孔颖达的注疏均从爻位解释所任之重。变坤与体同气可稳住收束，中途震木克坤，坎水又生震，须按时令衡量土所能承受的分量。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -143,17 +178,37 @@
       ],
       "scope": "十二篇逐篇落盘读回，核对题名、简断、正文、专业判断和应期。删去底稿设想的试题、阅卷与得分。寅卯日均为末段受制的参考，未取结果日。比对已认可的谦六二面试及关系断语，另核六二古注。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇从作者稿读回标题、简断、正文、取期与专业判断，核对十二处引文修订。应期仅参中途受制，正文不设题目和考场事件。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T15:26:28.864Z",
-  "sourceSha256": "125623cfccb951a6bbf6a937fb3bad486f0ec75b83360486661b123e4df398c9",
+  "reviewedAt": "2026-11-21T15:35:02.451Z",
+  "sourceSha256": "391c00bbc6ee357966b733844ec0c9320796153ff88058011b1ae4252eb166c7",
   "checks": {
-    "scope": "地山谦已写24篇",
-    "chartComparisons": 648,
+    "scope": "地山谦已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
-      475,
+      470,
       537
     ]
   },
