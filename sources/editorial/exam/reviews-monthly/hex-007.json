@@ -471,16 +471,16 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T17:35:18.730Z",
-  "sourceSha256": "4488e6f2bafb6c06ba5cb9ba294b15bba763e780653dd98bd4cfbe3770d8888e",
+  "reviewedAt": "2026-11-21T00:30:56.331Z",
+  "sourceSha256": "c47afa5c418bc4f3ee1c8b0aff5d787d4a7ef49ff5b728d294d0106305a258a1",
   "checks": {
     "scope": "地水师已写72篇，核对作者源与阅读页",
     "chartComparisons": 1944,
     "chartMismatches": 0,
     "dateCases": 144,
     "bodyHanRange": [
-      485,
-      539
+      476,
+      531
     ]
   },
   "openingRevision": {
@@ -634,5 +634,45 @@
     ],
     "bodyTransitionKeys": [],
     "scope": "本次审读修订的开头、简断及段内衔接。前版整篇核读对应原哈希。本次逐项比对判词、取期与四段正文的改动范围。"
-  }
+  },
+  "proseRevisions": [
+    {
+      "keys": [
+        "7/1/寅",
+        "7/1/卯",
+        "7/1/辰",
+        "7/1/巳",
+        "7/1/午",
+        "7/1/未",
+        "7/1/申",
+        "7/1/酉",
+        "7/1/戌",
+        "7/1/亥",
+        "7/1/子",
+        "7/1/丑"
+      ],
+      "priorSourceSha256": "4488e6f2bafb6c06ba5cb9ba294b15bba763e780653dd98bd4cfbe3770d8888e",
+      "sourceSha256": "c47afa5c418bc4f3ee1c8b0aff5d787d4a7ef49ff5b728d294d0106305a258a1",
+      "reviewedAt": "2026-11-21T00:30:56.331Z",
+      "scope": "对读考试乾至需及面试逐月稿。重写题名、简断及全文，逐篇从落盘版本核读；另核本爻经、象、注疏，逐月对照五气原稿与应期。",
+      "ruleReview": "初六守律，孔疏区分因事制宜与故违明法。题目允许自由选法时不套失律。原判断保持不成，寅卯震得坎生又受兑制，生克相抵仍按月令；巳午中克轻，分问所缺累积；申酉从末兑旺泄辨尾段支出；亥子水生相震，中限重；四土体旺无生，末兑受生，原稿不取日。将能着手、能完成单项与能否完整交卷分别核对。",
+      "comparisonSources": [
+        {
+          "tree": "60c03a9d9fc8528a4ec9be950c30446aef5214aa",
+          "path": "docs/interview-pass/monthly-preview",
+          "refs": [
+            "d3e942d8",
+            "be2afd72"
+          ]
+        },
+        {
+          "tree": "0ba8ca8becb65d2b162f4432a888bf0238f45d46",
+          "path": "docs/relationship-establishment/monthly-preview",
+          "refs": [
+            "be2afd72"
+          ]
+        }
+      ]
+    }
+  ]
 }
