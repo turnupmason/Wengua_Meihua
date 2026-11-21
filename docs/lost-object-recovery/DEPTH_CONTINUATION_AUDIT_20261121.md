@@ -6,7 +6,7 @@
 
 ## 实际进度
 
-已完成 **120／1,020篇**，对应288个月令键；尚余900篇。这些是既有1,920篇中的再次精修，不新增总篇数，也不与001—003的90篇或038—064的810篇重复计算。
+已完成 **240／1,020篇**，对应576个月令键；尚余780篇。这些是既有1,920篇中的再次精修，不新增总篇数，也不与001—003的90篇或038—064的810篇重复计算。
 
 | 卦 | 完整正文 | 四段汉字数 | 保留取权问题的篇数 | 本轮双读记录 |
 | --- | ---: | ---: | ---: | --- |
@@ -14,6 +14,10 @@
 | [005 水天需](hex-005.md) | 30篇／72键 | 503—538 | 13 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-005.json) |
 | [006 天水讼](hex-006.md) | 30篇／72键 | 467—517 | 19 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-006.json) |
 | [007 地水师](hex-007.md) | 30篇／72键 | 452—507 | 10 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-007.json) |
+| [008 水地比](hex-008.md) | 30篇／72键 | 478—512 | 23 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-008.json) |
+| [009 风天小畜](hex-009.md) | 30篇／72键 | 467—518 | 16 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-009.json) |
+| [010 天泽履](hex-010.md) | 30篇／72键 | 480—508 | 18 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-010.json) |
+| [011 地天泰](hex-011.md) | 30篇／72键 | 464—506 | 18 | [最终版本](../../sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/hex-011.json) |
 
 ## 正文与规则如何分别处理
 
@@ -29,7 +33,7 @@
 
 整合脚本只校验和合并两份已经存在的阅读报告，不生成意见，不把通过字数或摘要检查当成读过全文。修改某篇后，需要作者与第二读者重新读该篇最终全文，旧摘要不能自动改签。
 
-本轮共有51篇留有具体取权或用语问题；作者意见51条、第二读者意见51条。同一篇可以有多条意见，详见[逐篇问题](DEPTH_CONTINUATION_RULE_QUESTIONS_20261121.md)。这些记录保留分歧，不表示每条都是已确定的错误。
+本轮共有126篇留有具体取权或用语问题；作者意见128条、第二读者意见128条。同一篇可以有多条意见，详见[逐篇问题](DEPTH_CONTINUATION_RULE_QUESTIONS_20261121.md)。这些记录保留分歧，不表示每条都是已确定的错误。
 
 ## 古籍核查范围
 
@@ -43,6 +47,6 @@
 
 ## 构建与检查
 
-正文以作者JSON为源，统一渲染器重建阅读页与应用分片。批次检查核对原结果、完整应期、四段字数、开头和长句重复、两位读者的最终整行绑定，另用独立六爻算法复核本互变、体用、月令节点与直接生克。结果见[本轮检查](DEPTH_CONTINUATION_CHECKS_20261121.json)与[全库检查](POLISH_CHECKS_20261120.json)。另重建问项SQL及SQLite，沿用全量输出核对程序比较全部作者JSON、月令映射和数据库各表，见[SQL与SQLite一致性](DEPTH_CONTINUATION_SQLITE_20261121.json)；该程序仍保留原90篇与810篇的独立计数，本轮120篇及后续进度由本轮检查另行核对。
+正文以作者JSON为源，统一渲染器重建阅读页与应用分片。批次检查核对原结果、完整应期、四段字数、开头和长句重复、两位读者的最终整行绑定，另用独立六爻算法复核本互变、体用、月令节点与直接生克。结果见[本轮检查](DEPTH_CONTINUATION_CHECKS_20261121.json)与[全库检查](POLISH_CHECKS_20261120.json)。另重建问项SQL及SQLite，沿用全量输出核对程序比较全部作者JSON、月令映射和数据库各表，见[SQL与SQLite一致性](DEPTH_CONTINUATION_SQLITE_20261121.json)；该程序仍保留原90篇与810篇的独立计数，本轮续写篇数与月令覆盖由本轮检查另行逐项核对。
 
 机器通过只说明所列对照一致，文学判断以实际全文审读为准。两位审读者均为AI；独立真人专业审核和用户逐篇验收分别保留pending与false。这里没有实证准确率的认证。
