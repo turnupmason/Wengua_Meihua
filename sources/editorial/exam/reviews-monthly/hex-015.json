@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "地山谦已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地山谦已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -59,6 +59,14 @@
     {
       "path": "sources/editorial/exam/hex-015.json",
       "scope": "核六四五季，互坎生震，十二月日期依末震取，其与初坤比和的作用分论。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "scope": "第46至48行，核六五经、象、注疏及不富以其邻的释义。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-015.json",
+      "scope": "六五五季各核两坎之强弱、互震受生。核四季土月取初坤比和应，其他八个月取互震克体应。"
     }
   ],
   "findings": [
@@ -137,6 +145,25 @@
         "15/4/丑"
       ],
       "finding": "春分清旺震与弱艮，夏月与土月分清自身有力与震木得水相生，秋令无金卦制木，冬水旺又滋木。本爻十二月均从末震取应，并未指定考试题目或收卷行为。"
+    },
+    {
+      "id": "hex-015-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "15/5/寅",
+        "15/5/卯",
+        "15/5/辰",
+        "15/5/巳",
+        "15/5/午",
+        "15/5/未",
+        "15/5/申",
+        "15/5/酉",
+        "15/5/戌",
+        "15/5/亥",
+        "15/5/子",
+        "15/5/丑"
+      ],
+      "finding": "末艮克坎是有主动，按五季各不相同的强弱说明能承担多少，不能指为末后修改错误。土月取辰戌丑未日仅指初段吉应，勿与整场能否合格混用；春夏秋冬取寅卯日指中段之阻。"
     }
   ],
   "lineReviews": [
@@ -169,6 +196,14 @@
       "text": "无不利，撝谦。",
       "image": "“无不利，撝谦”，不违则也。",
       "reading": "六四居九三之上仍肯下之，承六五而谦顺，王弼以奉上、下下解释撝谦。小象「不违则也」所许在处事得宜。初坤与艮同，互震与末震皆克艮，初时可用的相合至末已经改变。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "不富，以其邻利用侵伐，无不利。",
+      "image": "“利用侵伐”，征不服也。",
+      "reading": "六五不富而用其邻，王孔从居尊行谦、邻自归附解；侵伐有所指，小象曰征不服也。谦顺与决断是爻义，验本事仍看中震克艮、末坎受艮所制及两坎生木。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -253,15 +288,35 @@
       ],
       "scope": "各月落盘后核读题名、简断、四段正文及应期，校对六四的爻位和五季强弱，冬月两处专业说明删去收卷定象。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇落盘读回简断、题名、正文、应期及判断。另核同季技术说明一致性，校正十二处由体克变用推定改错的旧文。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T15:56:31.686Z",
-  "sourceSha256": "3b15ea7a21cbd4ccfd55188f8a763fe433b83d7eecf232170d3b2e3033122fc4",
+  "reviewedAt": "2026-11-21T16:11:24.473Z",
+  "sourceSha256": "93cc6442fbda9d8d354e683284940d782917be70bd522da9c6fe222dcf627782",
   "checks": {
-    "scope": "地山谦已写48篇",
-    "chartComparisons": 1296,
+    "scope": "地山谦已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       470,
       537
