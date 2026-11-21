@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "雷地豫已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "雷地豫已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -27,6 +27,14 @@
     {
       "path": "sources/editorial/exam/hex-016.json",
       "scope": "初六五季原盘与取期；不沿用临场与题型叙事。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "六二，第34至37行，王弼注与孔颖达疏。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-016.json",
+      "scope": "豫六二全年五气原断，体震克本用坤，互坎、变坎生体。"
     }
   ],
   "findings": [
@@ -48,6 +56,25 @@
         "16/1/丑"
       ],
       "finding": "体震木克坤艮，互坎虽生体，须按其月令及两土制水减力，末震比和，无金克体。初六凶在鸣豫而志穷，并非必有轻率之举。"
+    },
+    {
+      "id": "hex-016-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "16/2/寅",
+        "16/2/卯",
+        "16/2/辰",
+        "16/2/巳",
+        "16/2/午",
+        "16/2/未",
+        "16/2/申",
+        "16/2/酉",
+        "16/2/戌",
+        "16/2/亥",
+        "16/2/子",
+        "16/2/丑"
+      ],
+      "finding": "互、变坎水分别在中途与收束养木，力量需照季令及坤艮制水折算。各月均能过，春冬取求名末助、其余取末坎生体，均亥子日。"
     }
   ],
   "lineReviews": [
@@ -56,6 +83,14 @@
       "text": "鸣豫，凶。",
       "image": "初六，“鸣豫”，志穷凶也。",
       "reading": "初六处豫之初独得应于九四。王注孔疏从乐过志穷讲凶，爻为戒，实际成败按全盘体用。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "介于石，不终日，贞吉。",
+      "image": "“不终日，贞吉”，以中正也。",
+      "reading": "六二居中得正，王注以顺不苟从释其守，孔疏以见几之速释不终日。爻赞明辨守正，与本场结果同向，不以经文定应期。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -80,15 +115,35 @@
       ],
       "scope": "春夏冬参末震寅卯，秋木虽衰却得中途坎水取亥子。四季土月吃力贯穿全程难单指某日。独立撰写十二篇，修句后从作者源读回。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐月作者源落盘后核读，核对生扶先后、两处水强弱与受制，古注不终日不作一天内出结果。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T16:50:28.327Z",
-  "sourceSha256": "688a2e821d6132d7fa59afa10be31f094a953bb59f43c70d6d4d5f47f354a394",
+  "reviewedAt": "2026-11-21T17:01:31.578Z",
+  "sourceSha256": "f7945ff25d1faa3bbd881197c94ef6f7dc8bcf842be82812ce8bb8b779f9b51c",
   "checks": {
-    "scope": "雷地豫已写12篇",
-    "chartComparisons": 324,
+    "scope": "雷地豫已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       474,
       526
