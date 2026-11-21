@@ -1,5 +1,5 @@
 // 核验已写定的失物长稿与审读回执。此程序不生成正文，也不签署全文阅读。
-// node scripts/review/check-lost-object-polish.mjs [--json docs/lost-object-recovery/POLISH_CHECKS_20261120.json]
+// node scripts/review/check-lost-object-polish.mjs [--json path] [--questions-md path]
 import {readFile,writeFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {independentFacts,MONTHS,QI,han,normalize,stripQuotes} from './monthly-lib.mjs';
@@ -27,6 +27,7 @@ const compare=(key,check,a,b)=>{report.comparisons++;if(check.startsWith('indepe
 const library=await loadLibrary();
 const question={id:'search.lost-object.recovery',mode:'narrative',question_type:'lost_object_recovery',question:'丢失的这件物品还能找回来吗？',sourceDomainIds:['domain-15']};
 const allSentences=new Map(),allParagraphs=new Map(),openings=new Map();
+const interpretationRows=[];
 const files=(await readdir(sourceDir)).filter(f=>/^hex-\d{3}\.json$/.test(f)).sort();
 for(const filename of files){
  const id=Number(filename.slice(4,7)),sourcePath=`${sourceDir}/${filename}`;
@@ -65,8 +66,11 @@ for(const filename of files){
   const copyHash=sha(JSON.stringify(copy)),assembledHash=sha(JSON.stringify(assembled));
   if(entry?.afterCopySha256!==copyHash||entry?.assembledCopySha256!==assembledHash)err(key,'polish-hash','Base or assembled text changed since review');
   if(read?.copySha256!==copyHash||read?.assembledCopySha256!==assembledHash||read?.authorFullRead!==true||read?.peerFullRead!==true||!read?.reviewFinding||!read?.peerFinding)err(key,'full-read-receipt','Missing concrete author/peer review or stale text binding');
+  if(read?.reviewedRowSha256&&read.reviewedRowSha256!==sha(JSON.stringify(d)))err(key,'author-row-digest','Author whole-row readback no longer matches');
+  if(read?.authorFieldsSha256&&read.authorFieldsSha256!==sha(JSON.stringify(d.slice(3,10))))err(key,'author-fields-digest','Author copy-and-rule readback no longer matches');
   if(read?.outcome!==d[2]||read?.movingLine!==d[0]||read?.monthOrder!==d[1])err(key,'review-key','Review no longer matches this article');
   for(const q of read?.openQuestions??[])report.openInterpretationQuestions.push({key,question:q});
+  if(read?.openQuestions?.length)interpretationRows.push({key,id,movingLine:d[0],months:r.monthBranches,outcome:d[2],title:d[3],questions:[...new Set(read.openQuestions)],filename,reviewPath:polish.fullReviewPath});
   const body=d.slice(5,9).join('\n\n'),bodyLength=han(body),shortLength=han(d[4]);
   report.bodyHanRange=[Math.min(report.bodyHanRange[0],bodyLength),Math.max(report.bodyHanRange[1],bodyLength)];
   report.shortHanRange=[Math.min(report.shortHanRange[0],shortLength),Math.max(report.shortHanRange[1],shortLength)];
@@ -96,7 +100,24 @@ compare('index','campaign-count',report.polishedArticles,index.polishCampaign?.c
 compare('index','campaign-month-keys',report.polishedMonthKeys,index.polishCampaign?.monthKeyCount);
 compare('index','remaining',810-report.polishedArticles,index.polishCampaign?.remaining);
 report.status=report.errors.length?'failed':'passed';
+report.articlesWithInterpretationQuestions=interpretationRows.length;
 const args=process.argv.slice(2),out=args.includes('--json')?args[args.indexOf('--json')+1]:null;
 if(out)await writeFile(out,JSON.stringify(report,null,2)+'\n');
+const questionsOut=args.includes('--questions-md')?args[args.indexOf('--questions-md')+1]:null;
+if(questionsOut){
+ const resultNames={favourable:'较有希望寻回',conditional:'有条件寻回',difficult:'偏难寻回'};
+ const md=['# 失物精修：逐篇解释取舍索引','',
+  `本轮核查包含 ${report.polishedArticles} 篇精修正文；其中 ${interpretationRows.length} 篇的全文审读保留了 ${report.openInterpretationQuestions.length} 条具体解释意见。同一篇可以同时有作者及第二读者的意见，条数不等于互不相同的问题数。`,'',
+  '这里汇总的内容来自已绑定正文版本的逐篇审读记录。各篇保持原结果码，并在正文说明正反依据；列出的取舍未因文字润色或程序检查通过而记作已经完成专业裁定。卦爻、五态、关系、导出和日期的可复算项目见[结构核查](POLISH_CHECKS_20261120.json)。','',
+  '本索引只整理既有意见，不生成新断语，也不代替后续对古籍通则与具体爻义的定权。对应全文及完整审读材料在每项下方链接。',''];
+ let last=null;
+ for(const row of interpretationRows){
+  if(row.id!==last){md.push(`## 第${row.id}卦`,'');last=row.id;}
+  md.push(`### 第${row.movingLine}爻 · ${row.months.join('、')}月`,'',`**${row.title}**。原结果：${resultNames[row.outcome]}。`,'',
+   ...row.questions.map(q=>'- '+q),'',
+   `[阅读正文](${row.filename.replace('.json','.md')}) · [完整规则及全文审读](../../${row.reviewPath})`,'');
+ }
+ await writeFile(questionsOut,md.join('\n'));
+}
 console.log(JSON.stringify({...report,openInterpretationQuestions:report.openInterpretationQuestions.length,errors:report.errors.slice(0,40),warnings:report.warnings.slice(0,12)},null,2));
 if(report.errors.length)process.exitCode=1;
