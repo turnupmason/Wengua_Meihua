@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：1800 篇预览
+# 晋升加薪逐月长稿：1944 篇预览
 
-更新日期：2026-11-21（America/New_York）。本批新增天雷无妄，共 72 篇；累计 1800 篇。完整目标为 4,608 篇，尚余 2808 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-21（America/New_York）。本批新增山天大畜、山雷颐，共 144 篇；累计 1944 篇。完整目标为 4,608 篇，尚余 2664 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -29,6 +29,8 @@
 | 山地剥 | 72 | [打开全文](hex-023.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-023.json) |
 | 地雷复 | 72 | [打开全文](hex-024.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-024.json) |
 | 天雷无妄 | 72 | [打开全文](hex-025.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-025.json) |
+| 山天大畜 | 72 | [打开全文](hex-026.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-026.json) |
+| 山雷颐 | 72 | [打开全文](hex-027.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-027.json) |
 
 
 
@@ -40,13 +42,15 @@
 
 ## 本批阅读入口
 
-- [天雷无妄：六爻十二月全文](hex-025.md)
+- [山天大畜：六爻十二月全文](hex-026.md)
+
+- [山雷颐：六爻十二月全文](hex-027.md)
 
 
 
 ## 检查与阅读状态
 
-1800 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 48,600 项，差异 0；日期用例 3,600 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+1944 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 52,488 项，差异 0；日期用例 3,888 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
