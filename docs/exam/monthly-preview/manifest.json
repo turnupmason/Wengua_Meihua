@@ -2,16 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1224-20261121",
+  "batch": "exam-monthly-preview-1236-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1224,
-  "newArticlesSincePrevious": 0,
+  "uploadedArticles": 1236,
+  "newArticlesSincePrevious": 12,
   "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3384,
-  "authorWholeArticleReadback": 1224,
+  "remainingArticles": 3372,
+  "authorWholeArticleReadback": 1236,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -268,7 +268,8 @@
     "independentChartMismatches": 0,
     "dateCases": 2448,
     "judgmentCorrectionArticles": 520,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖前17个完整卦，本卦已发表篇目另见该卦核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
@@ -676,8 +677,22 @@
   },
   "nextExpectedKey": {
     "primaryId": 18,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
   },
-  "previouslyPublishedPartialArticles": 60
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 18,
+      "name": "山风蛊",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-018.json",
+      "sourceSha256": "054ab41751e36947c723eceaf84455eb6c8de6d1d37d61ba77a53b514d6d8401",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-018.json",
+      "readingPath": "docs/exam/monthly-preview/hex-018.md"
+    }
+  ]
 }
