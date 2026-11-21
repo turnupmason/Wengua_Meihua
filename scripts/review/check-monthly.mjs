@@ -111,8 +111,13 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    else if(bLen<450||bLen>650)warn(key,'flexible-body-length',bLen);
    if(sLen<60||sLen>120)err(key,'short-length',sLen);
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
-   // 首段首句、摘要首句明说本篇结论，且不带与之相反的判词。
-   const first=a.paragraphs[0].split(/[。！？]/u)[0],shortFirst=a.short.split(/[。！？]/u)[0];
+   // 考试可先点明决定成败的卦意，再于次句落断。其他问项仍查首句。
+   const verdictLead=paragraph=>{
+    const sentences=paragraph.split(/[。！？]/u);
+    if(name==='exam'&&!c.verdict[a.outcome].test(sentences[0]))return sentences.slice(0,2).join('。');
+    return sentences[0];
+   };
+   const first=verdictLead(a.paragraphs[0]),shortFirst=verdictLead(a.short);
    if(name==='exam' && calendarLead.test(a.paragraphs[0]))
     err(key,'exam-opening', '正文首句重复了标题中的爻位和月令');
    for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
