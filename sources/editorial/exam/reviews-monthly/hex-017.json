@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "泽雷随已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "泽雷随已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -51,6 +51,14 @@
     {
       "path": "docs/interview-pass/monthly-preview/hex-017.md",
       "scope": "九四逐月对照，先克后生，限制和有利依据并存。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03隨.txt",
+      "scope": "九五爻辞、小象、王弼注，核孚于嘉与居正得中。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-017.json",
+      "scope": "九五五气逐项核本互变、有生之兑、无水之局以及申酉日。"
     }
   ],
   "findings": [
@@ -129,6 +137,25 @@
         "17/4/丑"
       ],
       "finding": "原断将爻戒具体化为猜答案或省理由，改从所得位置与公诚明功的意义理解。艮生兑无火制，末坎受土克得金生，旺衰与间接作用分开。"
+    },
+    {
+      "id": "hex-017-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "17/5/寅",
+        "17/5/卯",
+        "17/5/辰",
+        "17/5/巳",
+        "17/5/午",
+        "17/5/未",
+        "17/5/申",
+        "17/5/酉",
+        "17/5/戌",
+        "17/5/亥",
+        "17/5/子",
+        "17/5/丑"
+      ],
+      "finding": "五气原专业说明均夹有未经卦证的题目、用时或得分，已改。春木、冬木自身有气不作第二重生扶；艮兼生兑、受木所制，按时令分别评轻重。"
     }
   ],
   "lineReviews": [
@@ -161,6 +188,14 @@
       "text": "随有获，贞凶；有孚在道，以明，何咎！",
       "image": "“随有获”，其义凶也。“有孚在道”，明功也。",
       "reading": "九四得众而不擅，公诚在道以明其功。卦从起初兑克震变结果坎生震，互巽同气、互艮受木克。秋和季土参本兑初制，春夏冬参末坎生助。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "孚于嘉，吉。",
+      "image": "“孚于嘉，吉”，位正中也。",
+      "reading": "王弼以居正得中、随时之宜释信善。九五的吉肯定所信及分寸，体震与巽互、末震同气可守，然而本兑克震又得艮生，无水生体。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -245,15 +280,35 @@
       ],
       "scope": "逐篇落盘读回，核起初与收束的取期分工，复读修改处并检查全卦已写稿。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇逐篇写后读取全文；校核标题、简断、正文、公开应期、专业说明与逐日资料。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T18:58:14.623Z",
-  "sourceSha256": "d6165934cf9c56084a3c88a6fda110e22b7b366d3d351871902f08e9254db8c8",
+  "reviewedAt": "2026-11-21T19:06:08.862Z",
+  "sourceSha256": "654be0daa63f38e3000e59adc369936fff582d0c81f405d0741006f3004bf0ae",
   "checks": {
-    "scope": "泽雷随已写48篇",
-    "chartComparisons": 1296,
+    "scope": "泽雷随已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       470,
       544
