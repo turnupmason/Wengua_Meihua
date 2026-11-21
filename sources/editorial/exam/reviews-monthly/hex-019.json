@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "地泽临已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地泽临已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -31,6 +31,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
       "scope": "六四爻辞及位当、应初之注疏"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "scope": "六五及象传，委物以能、行中"
     }
   ],
   "findings": [
@@ -109,6 +113,25 @@
         "19/4/丑"
       ],
       "finding": "寅卯巳午取用互坤参途中薄助；亥子取本用参初助；土月申酉取本用参合格消息。"
+    },
+    {
+      "id": "hex-019-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/5/寅",
+        "19/5/卯",
+        "19/5/辰",
+        "19/5/巳",
+        "19/5/午",
+        "19/5/未",
+        "19/5/申",
+        "19/5/酉",
+        "19/5/戌",
+        "19/5/亥",
+        "19/5/子",
+        "19/5/丑"
+      ],
+      "finding": "寅卯亥子取末坎亥子日参耗；其余取中途坤土参助。土月末耗轻，不推出分差。"
     }
   ],
   "lineReviews": [
@@ -141,6 +164,14 @@
       "text": "至临，无咎。",
       "image": "“至临，无咎”，位当也。",
       "reading": "六四以柔居正、下应初九，能尽临之善，故无咎。兑金为体，两坤生兑却受震克，不能照旺土全额算扶助。两震为兑所制，按月气定难易。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 5,
+      "text": "知临，大君之宜，吉。",
+      "image": "“大君之宜”，行中之谓也。",
+      "reading": "知临指处中纳刚、善任其能而事成。体兑得本用与用互坤土相生，全盘无克体；支持成事的爻义与规则均明列。当前原断优先取变坎泄体，求名本用条文参用于变用之权重留待审议。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -225,15 +256,35 @@
       ],
       "scope": "读回标题、简断、四段正文和取期，复读更正过的开头，核对弱助和制木的方向。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回，复辨双坤之生与变坎之泄，逐项核取期位置，复查改动的题名、开头及引文。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T21:20:16.741Z",
-  "sourceSha256": "2d575dde3d8c8056fbff2b3de44618883277008bc5ec2ce9dae674f4dde81ff5",
+  "reviewedAt": "2026-11-21T21:30:05.420Z",
+  "sourceSha256": "23e4502b4b5fb20c14cdaaec5cab26c9847ddeef1a71983f40942cb4a6088ae6",
   "checks": {
-    "scope": "地泽临已写48篇",
-    "chartComparisons": 1296,
+    "scope": "地泽临已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       479,
       534
