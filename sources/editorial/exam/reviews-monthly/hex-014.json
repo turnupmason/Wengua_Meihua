@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "火天大有已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "火天大有已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -31,6 +31,18 @@
     {
       "path": "sources/revised/meihua-volumes-1-3.txt",
       "scope": "553求名体克用、682生体者受克、688衰稍解、792无克体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+      "scope": "35–40行大车、可往、积中不败。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第35及255行，区分R1b初判与二档定稿。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "553、796–798、804行本用、变用及衰卦。"
     }
   ],
   "findings": [
@@ -52,6 +64,25 @@
         "14/1/丑"
       ],
       "finding": "原体上离火，本用乾、用互乾及体互兑均受体克，三金制变用巽木，末生有折。全盘无克离，春夏轻、秋三金旺而慢、冬体弱慢、四土限制须逐问料理。均取变巽寅卯，春夏看名成，其余看末段过程助益。"
+    },
+    {
+      "id": "hex-014-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "14/2/寅",
+        "14/2/卯",
+        "14/2/辰",
+        "14/2/巳",
+        "14/2/午",
+        "14/2/未",
+        "14/2/申",
+        "14/2/酉",
+        "14/2/戌",
+        "14/2/亥",
+        "14/2/子",
+        "14/2/丑"
+      ],
+      "finding": "本用及两互为三金，皆受原体离克。变用离始同气，无外生。春夏离体与变离有气定成，仅参巳午日收尾。其余八月二离俱衰，先取R1b条件，按第十三节仍定不成，不独取期。纠正春夏原注将变比援作本用比和；秋冬、四土另注明衰党条的适用范围。"
     }
   ],
   "lineReviews": [
@@ -60,6 +91,14 @@
       "text": "无交害，匪咎；艰则无咎。",
       "image": "大有初九，无交害也。",
       "reading": "王、孔释无交害，仍须知艰。朱熹以事初未涉害释之。取义在熟题知慎、难题肯下工夫，判合格须另审体用。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "大车以载，有攸往，无咎。",
+      "image": "“大车以载”，积中不败也。",
+      "reading": "王弼释大车可任重、致远，孔颖达以车材强壮说明能载。「积中不败」落在足以承当已积的内容，五气皆依同一义，已写的能稳、整卷是否足够则分月另审。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -84,15 +123,35 @@
       ],
       "scope": "逐篇读回十二篇，核清存在与全称、亲闻、收摊、单位、涂卡错位、书籍归属与可取阅、折边、台阶、原件、水位、折纸与散会在场。末问的条件仅验相应的一项。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "按月完整读回正文、简断、题目与有期无期。核裁料余数、移缸记录、视线位置、雪中脚印、牌匾净面积、修后查验、分段里程、同伴知情、委托范围、排座条件、对话时态和移交点收。原注修订另绑旧新全文与依据。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T05:13:37.721Z",
-  "sourceSha256": "c0ce9427df3bf7e2756a6f87356a369c2d937684ece60a33fc4bd4c8a8431c13",
+  "reviewedAt": "2026-11-21T05:19:39.583Z",
+  "sourceSha256": "afd86516a0ac540e3449c229dabd1c93fc1430c70af3400131440c9bee256243",
   "checks": {
-    "scope": "火天大有已写12篇",
-    "chartComparisons": 324,
+    "scope": "火天大有已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       491,
       545
