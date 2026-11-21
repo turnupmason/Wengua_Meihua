@@ -1,0 +1,734 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaign": "lost-object-depth-continuation-20261121",
+  "primaryId": 12,
+  "peerAgent": "/root/author_b",
+  "authorAgent": "/root/author_a",
+  "reviewerIsHuman": false,
+  "reviewedAt": "2026-11-21T19:35:31.233Z",
+  "baselineCommit": "e46eebc1b4b48ebbb7bdb7788e2ab2606abf7e71",
+  "sourcePath": "sources/editorial/lost-object-recovery/hex-012.json",
+  "sourceSha256": "b90aea935abac3c353ae0879db31dadf13e7cbc6f10fe58b0ef24c3039727554",
+  "baselinePath": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/baselines/hex-012.json",
+  "baselineSha256": "64682f45f504c33797eaddb87f580249c157a5e15ce455ae0a8514162b90b6f7",
+  "directionSourceSha256": "233fbaed42902a436278a0b0c96d2cf085463d70e737e7e34225f5655a28d319",
+  "imageSourceSha256": "431ff821784f4b8f6b843234e5d472f4980ab23caf2a61e62f12854f090a75df",
+  "peerFullRead": true,
+  "humanProfessionalReview": "pending",
+  "userAcceptedThisVersion": false,
+  "realWorldPredictionAccuracy": "not-validated",
+  "readSources": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "本轮已读全文，沿固定原体、直接关系、锁定结果与应期以及真实逐篇回读约束。"
+    },
+    {
+      "path": "docs/READING_LITERARY_POLISH_V5.md",
+      "scope": "本轮全文已读，按四段450至600汉字、短断厚度、独立手写与无固定开头要求复核。"
+    },
+    {
+      "path": "docs/LOST_OBJECT_RECOVERY_POLICY.md",
+      "scope": "本轮全文已读，沿直接体用互变及普通休态规则；本次核否卦相关方法边界。"
+    },
+    {
+      "path": "docs/lost-object-recovery/DEPTH_CONTINUATION_AUDIT_20261121.md",
+      "scope": "本轮全文已读，保持原档位、完整应期，疑义如实开放。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02否.txt",
+      "scope": "本地卦辞彖象、六爻经文王注孔疏全文；初六不苟进、六二否闭小人、六三承非失位、九四命初附福、九五休美、上九事通后喜全部核读。"
+    },
+    {
+      "path": "scripts/review/monthly-lib.mjs",
+      "scope": "本次全文打开，independentFacts独立计算否卦六爻乘寅巳申亥辰30组并全部读出，对照节点、五态、四直接关系及变卦。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-012.json",
+      "scope": "作者锁定稿30篇全部十一字段逐篇阅读，每篇同时读方向形色及完整应期；提出八行具体语言问题后，2、6、12、15、17、25、26、28行修后再整篇十一字段合双附文与完整应期复读。构建检查后21行转好之后仍须保持核查续修，该篇全部十一字段连双附文与时机另再全文读回。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/baselines/hex-012.json",
+      "scope": "身份、结果和完整应期以0..2及10逐项机械比对，未宣称全读该基线四段旧稿。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/directions/hex-012.json",
+      "scope": "六条全部文本及角色元数据，随后30篇逐一合装读回。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/images/hex-012.json",
+      "scope": "六条全部形色文本、原物本用及环境变用角色、适用条件均读，随后30篇逐一合装读回。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/author-reports/hex-012.json",
+      "scope": "作者报告来源范围、30条逐篇发现与开放问题全读，最终sourceSha256与当前源重新比对。"
+    }
+  ],
+  "manualReadbackEvidence": {
+    "initialFullReadGroups": [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        25,
+        29
+      ]
+    ],
+    "requestedCorrections": [
+      {
+        "rows": [
+          21
+        ],
+        "fields": [
+          6
+        ],
+        "reason": "构建门检查要求把转好之后的核查要求顺写为正向表述，作者修后该篇实际全读。"
+      },
+      {
+        "rows": [
+          2,
+          6,
+          12,
+          17,
+          26
+        ],
+        "fields": [
+          3
+        ],
+        "reason": "标题以现实条件或建议语表达查看与受理，不把卦中可用条件写成已经具备的现场事实。"
+      },
+      {
+        "rows": [
+          17
+        ],
+        "fields": [
+          5,
+          7
+        ],
+        "reason": "去掉前面较重投入已经存在的现实断言，作者一并撤第五栏已经付出的工夫之假定，保留旺乾受生而需投入的卦理。"
+      },
+      {
+        "rows": [
+          15,
+          25,
+          28
+        ],
+        "fields": [
+          8,
+          3,
+          6
+        ],
+        "reason": "将提前写成改为直接口吻，修顺若重能查看，消除倾否、是否道的歧读。"
+      }
+    ],
+    "afterCorrectionWholeRows": [
+      2,
+      6,
+      12,
+      15,
+      17,
+      21,
+      25,
+      26,
+      28
+    ],
+    "assertion": "实际阅读作者锁定30篇十一字段，逐篇合读双附文和完整时机；八篇修后再次完整回读，构建反馈后另对21行全篇合装再读。哈希、长度和锁定字段计算只核版本绑定，不替代全文审读。"
+  },
+  "unresolvedProfessionalQuestionRows": [
+    0,
+    2,
+    3,
+    7,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "entries": [
+    {
+      "rowIndex": 0,
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "初六同类相牵而守正不苟进、贞吉亨的完整方向已读；春囚乾只得坤艮双死土薄生，中末旺巽旺震各受原体克而难制，没有借木去间接打土。同批收放须真实有据，坤原件黄黑角边与震环境竹木分清，完整不取期理由保留。",
+      "openQuestions": [
+        "初六贞吉亨与春囚体、双薄生及两旺木难制并见，维持原条件档所需的古义与气势合权尚无唯一准则。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 476,
+      "shortHan": 96,
+      "reviewedRowSha256": "e61f1e65b3126a1f31d327e191832729215ba9807e76760b5f0909822ce157c7",
+      "copySha256": "e9b524a79a608dc77d15d651a43abf84bb5afba9a944a44acbd60993f0d61de6",
+      "assembledCopySha256": "a97f210297babdaac3b11bfde79b613da54c82178e48f515cb2d96bf836c4cdc"
+    },
+    {
+      "rowIndex": 1,
+      "movingLine": 1,
+      "monthOrder": "summer-fire",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏死乾不能轻易独核休巽休震，两木本身仍正常，坤艮双相土直生给出实助。正文明确同组在场不等于认出这一件，初六贞守吉亨没有缩成只有线索；震东向与木竹环境依实际停留，坤物件特征另认，原用互实查吉应完整。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 484,
+      "shortHan": 95,
+      "reviewedRowSha256": "94079019cfc29b11b80477c3f7a9cbd0fe07d44e4c07d01d3a9badc278fc01ab",
+      "copySha256": "b7a96e808d9170d29418203984cad4ad5b0bafe230f365ba25e0721c6cf19f15",
+      "assembledCopySha256": "472aa41c1790c981f6493b1c2c10a8111c2cea9e8262115e61946a8fbd26c250"
+    },
+    {
+      "rowIndex": 2,
+      "movingLine": 1,
+      "monthOrder": "autumn-metal",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋旺乾可制死木，坤艮两休土生均正常，未把普通休援降作慢或弱；初六守正得亨与有利结果相应。同收与后来分开分别核，震环境不替坤原件定材色。标题的现实查看条件已按第二读修订，整篇含无日窗与双附文复读。",
+      "openQuestions": [
+        "秋局外部生助皆休被原字段列为无可靠日级取期之由，休生正常作用与不取日的独立门槛需另作规则确认。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 479,
+      "shortHan": 91,
+      "reviewedRowSha256": "4d3be6072409a591c088e4a2282ec427fd1c1e817854276b496c53eda95646e6",
+      "copySha256": "d53e7f25e89e59315805154da781c04ef747cce41787905d38731da13f7eb90d",
+      "assembledCopySha256": "0d7e53d1606aaa19d1a5063fcfac6d818ccdb9dccc0b29b4f492f97be119adf1"
+    },
+    {
+      "rowIndex": 3,
+      "movingLine": 1,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬休乾以普通体气贯穿，坤艮囚土有薄生，巽震相木均由原体克而费工。初六的吉亨并未写成单有入口；同放要核当天依据，不按平日习惯补经手剧情。坤原件与震东向行程各有所属，完整薄生不排施援日仍在。",
+      "openQuestions": [
+        "两囚土薄生及两相木难制，与初六守正吉亨同参后取原条件档，现有材料仍未给唯一权重。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 476,
+      "shortHan": 90,
+      "reviewedRowSha256": "8ec06ebd8b4b748950d500e694d06dcb58800752f3d3302c3051787194712036",
+      "copySha256": "b8e6b082ceb69f80a291eb86289d311eb5e0d0b614598facc5f7da7ea267fcdf",
+      "assembledCopySha256": "13292285e4a251ad3a964b9b11a367568295aeba03c1d9de221fab1ec0bafdb3"
+    },
+    {
+      "rowIndex": 4,
+      "movingLine": 1,
+      "monthOrder": "seasonal-earth",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土令相乾得旺坤旺艮直生，囚巽囚震受体克较可核，前中末正证相接；初六不苟进之吉没有误作泰初征吉。共同收纳只在经手依据真实时采用，坤布帛瓦器与震环境分开，原本用旺坤经手实查吉应全项保持。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 485,
+      "shortHan": 92,
+      "reviewedRowSha256": "82d2e9a073c899f0cbe42e00c007f9d74521dd5ecce2c757df5c62357d16e45f",
+      "copySha256": "cf7a52f033a5dcaf5cb0a2295dc1aa44c136e4e903efc6eda465457131fee438",
+      "assembledCopySha256": "2c473d16d4e273138b3fa2e6597584bd426031adbad443c058b659a086361a7e"
+    },
+    {
+      "rowIndex": 5,
+      "movingLine": 2,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "春囚乾得双死土薄生、难制旺巽，末休坎由原体所生而是普通耗，方向没有倒置。六二小人顺承路通与大人否闭其道而亨分明，未给现代代查者贴小人标签；坤原件旧照与坎北向容器环境合读，完整无日窗保留。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 474,
+      "shortHan": 91,
+      "reviewedRowSha256": "55ae106d96b3442bc5b524c83538045218a5b4c0f7a73eec49d717601f5cdf4d",
+      "copySha256": "bc3841026cdc3e18b56602efe9e4382775d43430b2ca20373c215d06b671d4cf",
+      "assembledCopySha256": "0726475a130cb8083efae4d8526c693e6e613544d293be00ec7a8e3ca3764dfc"
+    },
+    {
+      "rowIndex": 6,
+      "movingLine": 2,
+      "monthOrder": "summer-fire",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏死乾获坤艮相土实助，休巽普通而弱体难制，末囚坎受生耗轻，阶段解释连贯。六二亨以否闭不正之道、不乱群为前提，记录与见物分清；标题已改成不预断现实接手条件的口吻，北方坎环境和坤物件及原中援吉应全篇复读。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 486,
+      "shortHan": 95,
+      "reviewedRowSha256": "5c24ac190091a41d909031fe4c155643e52ee4f907e31837854c6b6542c5845f",
+      "copySha256": "d3d8e5d44513fc8c9593ff2c874fcdfd1bae4d177b5e0b603292801ca3e52411",
+      "assembledCopySha256": "3175e9a605b84b74c0f07692f4a5a7e30879c43434fd04c2fdf0135a07ce32bb"
+    },
+    {
+      "rowIndex": 7,
+      "movingLine": 2,
+      "monthOrder": "autumn-metal",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋旺乾与双休土正常生扶可用，死巽可制，末相坎确由金体所生而耗实，前段查得明不自动办完交付。六二两类吉亨与守实借义无越界，坎水具环境非原物材色，原末耗不取归还日的完整文字保持。",
+      "openQuestions": [
+        "旺乾、两处正常休生和死巽可制与末相坎实耗相参，原条件档的具体轻重仍未统一。",
+        "原取期排除初互休生而保留末相水为耗，休助为何不够日级节点仍需独立依据。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 473,
+      "shortHan": 95,
+      "reviewedRowSha256": "6af00ce91f85ba8af7a6079f92f7b5352d7e08dae3ea1d57ba1ee0cd54804a21",
+      "copySha256": "a08f85551a395348eafbd29149825e572aaa6c101db592ec7451c2f1e18b89bd",
+      "assembledCopySha256": "a8e5e624f18ace09c639bca59611c305f706d341f58b20259e058363c0d4e428"
+    },
+    {
+      "rowIndex": 8,
+      "movingLine": 2,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬休乾未写成弱体，囚坤艮薄生、相巽制难及末旺坎实耗各自直对原体。六二否闭其道而亨、不乱群完整，转交人数不替代亲见这一建议有实际作用；坎北向卑湿只依真实场所，坤原件辨认与不取期原句一起读。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 479,
+      "shortHan": 90,
+      "reviewedRowSha256": "37d805eff0c777d3c95d4fd6ad592a4f4d8e2b2f7ffeaaf2c293bb18d893a4c1",
+      "copySha256": "208936a8378dcec3a3deddfc75c70c84f78ac8d926c0461ecdce656ed3f3d644",
+      "assembledCopySha256": "f761952d7c88487b0d4c360c1b00bfb8c245ad86ecf345d29a98eaf93aa14368"
+    },
+    {
+      "rowIndex": 9,
+      "movingLine": 2,
+      "monthOrder": "seasonal-earth",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土相乾得坤艮旺土双生，囚巽可制，死坎末耗较轻；六二没有把包承和大人否亨混成一声答应即吉。正文把归属确认接在独有细节之后，坤旧形色与坎环境水具分开，原开局经手实查支持节点不改。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 480,
+      "shortHan": 92,
+      "reviewedRowSha256": "52236518713cd4322fa23f7b05ebc2c74e466f67f520f18b0c8806b8f7fdbc22",
+      "copySha256": "e181db1dc6cc724017d054963306715e3a3482f199553c9f551269bdb4cd9d2e",
+      "assembledCopySha256": "99608b50b00228d17589787983f53103a234a4c2b152b37b4f21891621d46891"
+    },
+    {
+      "rowIndex": 10,
+      "movingLine": 3,
+      "monthOrder": "spring-wood",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "春囚乾受本用坤和互变艮三处死土薄生，次数没有堆成强援，旺巽仍难制。六三承非失位而包羞写出负义，未许纠错必吉；补查以查明真实遗漏为条件，坤原件与艮东北石面环境分清，原坤艮俱死不定日全文保持。",
+      "openQuestions": [
+        "六三失位承非的包羞没有自动转吉之许，春局三薄生与旺木难制如何支持旧条件档，仍缺明定的相权尺度。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 495,
+      "shortHan": 94,
+      "reviewedRowSha256": "3e64138b6df814b90f505f4e746c610a509fba94c0b24781b98449e7a19ac140",
+      "copySha256": "c6e59739e3475fcfeeaa1424288e83a3edb45d9b5eb9b97868d285e54ade336e",
+      "assembledCopySha256": "5eb990fca647b83c971b0cbd713e5e2165f38aaf577338b9cfcd484ea6de3da4"
+    },
+    {
+      "rowIndex": 11,
+      "movingLine": 3,
+      "monthOrder": "summer-fire",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏死乾获三相土各自直生，中休巽正常而制难出于体弱，正文没有间接生克。六三失当自取其羞与有利档的反证均写明，补查是实际建议并非古爻改过必吉；坤旧记号对艮石土环境分工清楚，末相艮实助时机全读。",
+      "openQuestions": [
+        "三相土生是实正证，六三包羞是爻戒，二者合取原有利档的规则权重尚待核定。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 500,
+      "shortHan": 90,
+      "reviewedRowSha256": "d5aad7ab88ea8f10259c8ff5eb52c59a7d3bc06f42b7d6af5605a9a959578ed9",
+      "copySha256": "ac8cee577577c5e87004aee06ec0ba78d4ec11b0336809d96aca8cc342c6af0e",
+      "assembledCopySha256": "c55547b3dfdecdfe9ea2f9ce7c9b96147e8e8b745296109d4c71ff5f20a83b9a"
+    },
+    {
+      "rowIndex": 12,
+      "movingLine": 3,
+      "monthOrder": "autumn-metal",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋旺乾有力、三休土直生均正常，死巽可制，未通过削弱休态解释原有利档。六三失位承非含义完整，辨物仍须独立于更正动作；复核标题已按现实条件修好并整篇复读，艮方向环境与坤原物、完整无日窗均在。",
+      "openQuestions": [
+        "旺乾与三休土常态生扶同六三包羞相参，原有利档的取权仍无唯一标准。",
+        "原无日窗把没有旺相节点作为限制，普通休生参与日期判断的边界尚需明确。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 484,
+      "shortHan": 92,
+      "reviewedRowSha256": "e8b83ef90be5a8b8756d53b10507a4a4ea0fe8f5074d1f9251751bbc304c82f2",
+      "copySha256": "7817ac50d8c18cc5d4b7f2740dd8dd396dfbfe4185d008f33d01f0d630e54c0b",
+      "assembledCopySha256": "4057d69b471d79e30bc5a50b57ddf92e85460c4da7f196fc23f700b5759e6711"
+    },
+    {
+      "rowIndex": 13,
+      "movingLine": 3,
+      "monthOrder": "winter-water",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬休乾仍为普通体，三囚土生而薄，相巽受体克难核，没有把三处薄生叠成旺援。六三所戒承事失当与现代有证据才改查法衔接，未知不改说亲见；艮东北取实际停留，坤材色归原件，不取期原句全留。",
+      "openQuestions": [
+        "六三包羞与冬局三薄生、相木制难并见，维持原条件档的正反权重尚不具唯一规则。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 494,
+      "shortHan": 89,
+      "reviewedRowSha256": "0e5a19ff120eb08d4c7adcf8b5c228917279cca87c8a51870c059919f271134d",
+      "copySha256": "e82b5f7ff44d393112ebf035685071f501998daa0c5fbb45692081c75467efa1",
+      "assembledCopySha256": "fe58864b666c81057b636d855146acf770b2c8912b75af19e82614788c0e86bc"
+    },
+    {
+      "rowIndex": 14,
+      "movingLine": 3,
+      "monthOrder": "seasonal-earth",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土相乾承三旺土直生而囚巽可制，阶段优势完整；六三位不当、小道承上的羞义未被有利结论吞掉。更正登记以某特征确不准确为条件，坤原件与艮门径石面不混，末段以纠正标记辨物的原应期原样保持。",
+      "openQuestions": [
+        "土月三旺土生扶与六三包羞并在，原有利档并非由纠错建议当然推出，二者合权仍待统一。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 497,
+      "shortHan": 89,
+      "reviewedRowSha256": "8621851286c6f6962a6b5335efb1cc9cc681ec58710e9cb3e9a33dc78fcc905f",
+      "copySha256": "e35440bbddabb9ff8134ac653477bac8e6db853d5a99d80fd91ec01da18db751",
+      "assembledCopySha256": "9171ef1035eec11b16238cfb66efadec8f9f4dafe4553bbefeeeca23ec779845"
+    },
+    {
+      "rowIndex": 15,
+      "movingLine": 4,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "春死坤生囚乾耗轻、比死艮薄，中末旺巽各直克原体，未设金木土间接解救。九四命初守正、四无咎而初附福、志得行完整，末句编辑动词已修为直接认定用语并整篇再读；乾物特征、巽木器环境与末凶应全留。",
+      "openQuestions": [
+        "九四志行、畴附福为完整吉证，春死坤受双旺巽克虽重，原难档所用合权标准尚待确认。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 497,
+      "shortHan": 90,
+      "reviewedRowSha256": "691765ccb6a42ef107e3869614986c4f87111361480fb75a0a66589fdf484416",
+      "copySha256": "174ddf041e3c567c3f9586d1d8c9ec1b52b765aa782780bf56479a7a62d6d08b",
+      "assembledCopySha256": "e7e9c53dbbd92a9070a93f27c75508ff793371eedf3eaf7920597a39aec609d3"
+    },
+    {
+      "rowIndex": 16,
+      "movingLine": 4,
+      "monthOrder": "summer-fire",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏相坤、相艮比和较实，死乾初耗轻，中末休巽都按普通直克处理。九四任事得正而获福没有缩成只受理，双方按确知范围核物是条件性建议；乾圆硬刻痕与巽木柜环境分开，原中段同比实查吉应全部保留。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 475,
+      "shortHan": 91,
+      "reviewedRowSha256": "6d7ac03b8bcdd53e8d1d284351375eb0ebd2826e8df6e314a08c66f0fbb08547",
+      "copySha256": "5fbcbf0b233a4aab777f7a2c7142c9a01e89fe7ff456e21c7517dafc220baedf",
+      "assembledCopySha256": "d8f0f057a6895db3a25fd46d048c3f5331a05c0fa5b02786b02bd4dc294b34cf"
+    },
+    {
+      "rowIndex": 17,
+      "movingLine": 4,
+      "monthOrder": "autumn-metal",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋休坤与艮比均正常，旺乾初受生耗重，双死巽克较轻但非零；九四志行得福完整作为反证。标题受理条件及正文已发生投入的假定均按建议修好后全文复读，乾原件、巽环境与原休比不取期一并核过。",
+      "openQuestions": [
+        "普通休坤休艮比、双死巽轻克及九四志行得福都是可用面，初旺乾耗与旧难档之间仍缺明定的取权。",
+        "原无日窗以熟处比和休为一项理由，普通休比同日期节点门槛的关系尚待确认。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 490,
+      "shortHan": 95,
+      "reviewedRowSha256": "c7ea393fd889e753a693e3d0aa762afd68202f3b984c80a7acc0b1822666778f",
+      "copySha256": "ea4604f72b1dcce92c29d06be51b64f8c7261d60f38e93a4d4f4c279f1d6c66c",
+      "assembledCopySha256": "4be03dd2d0d8e5c9ef9f422cdd621c5997753b7e6eadebe90d607e3e583ea693"
+    },
+    {
+      "rowIndex": 18,
+      "movingLine": 4,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬囚坤承休乾普通耗、囚艮比薄，互变相巽分别直克而较实，五态无倒置。九四正命初六、无咎附福与志行不是仅剩程序好处；缺口保留未知不由双方补猜，乾物与巽环境分明，原末段辨认受阻时机全读保持。",
+      "openQuestions": [
+        "九四正当任事、志行得福与冬囚坤受双相巽克形成相反证据，沿旧难档的合权仍需核定。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 485,
+      "shortHan": 90,
+      "reviewedRowSha256": "53af7b539d0bf01c6c0f03beb1cea79764a239590bc49c9195f0ffe769310111",
+      "copySha256": "383d91d4ce0b5247dd30b54f8aa05a3be3dcca3459d5525ae4c5c87c364faae9",
+      "assembledCopySha256": "ce65b828083b1f922dcf9b500b6c7161777dd5a4e6bf96aea465f6785a154a69"
+    },
+    {
+      "rowIndex": 19,
+      "movingLine": 4,
+      "monthOrder": "seasonal-earth",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土旺坤、旺艮比有力，相乾初耗实，双囚巽克轻仍在；九四命初得当而附福志行写全。现场按事先知道的细节认物，未预设已出现原件；乾圆刚与巽东南木柜环境分别有条件，原中段补漏实查吉应原样保持。",
+      "openQuestions": [
+        "旺体旺比、九四志行获福及双囚巽轻克，与初相乾实耗合为原条件档，其轻重尺度仍待专业核定。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 469,
+      "shortHan": 89,
+      "reviewedRowSha256": "53575e34de8f83e722b2182223efd2263352537be648635a80c0b348dc15b5b5",
+      "copySha256": "6dd80ae625627823b7fe74ef3728911078cff102dabe3702e3edd8731efedca2",
+      "assembledCopySha256": "97c001d28d9ffeecd7365bddd04c5022047dfebb5e8d8b12f41068d96b9eda5b"
+    },
+    {
+      "rowIndex": 20,
+      "movingLine": 5,
+      "monthOrder": "spring-wood",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "春死坤初轻耗、死艮比薄、旺巽中克较重，末相离直接生原体形成真后援，没有把火用来间接制木。九五休按休美、遏小人得吉与戒亡固本全读；乾原物和离文件台环境分开，末段可落实线索的原吉应不许必归还。",
+      "openQuestions": [
+        "九五休美之吉和末相离实生支持转好，前中旺巽克与薄比仍不利，原条件档的相权标准尚未闭合。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 491,
+      "shortHan": 93,
+      "reviewedRowSha256": "410f91d24a3baf64d74da87ebe3048070ea883d0dea5f41de0fe07ef8cfc81aa",
+      "copySha256": "47cd766cc028324b8796e8f613a833855a9d766feeb152c0ae453b1eec7aabf9",
+      "assembledCopySha256": "403cdc14071c9863cd210daca9c2fa0c78bf7f6ff77887bbfd48b7a0ea3db49f"
+    },
+    {
+      "rowIndex": 21,
+      "movingLine": 5,
+      "monthOrder": "summer-fire",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏相坤可承死乾轻耗，相艮比有实助，用互休巽普通克仍在，末旺离直生有力。九五得位遏小人行休美、居危常戒两义俱全，苞桑不定位；乾物材色与离实用文件台环境分开，原新实查处后援吉应限定未扩大。构建检查后作者将核查要求改为正向表述，本篇十一字段、双附文与完整时机再次实际读回。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 472,
+      "shortHan": 99,
+      "reviewedRowSha256": "4545391e3cc5382d125f1d22bb0691275a3886c8185b8b4ad7dbb71f6e3fd87d",
+      "copySha256": "ef8f95c189ad220f74e0495f2b17de374b18e7b91dc2a508c20a09a49bb0fe61",
+      "assembledCopySha256": "50c768c963f7c55eeadb3dcff1edd0f96a300892100d7890701972e1657403ef"
+    },
+    {
+      "rowIndex": 22,
+      "movingLine": 5,
+      "monthOrder": "autumn-metal",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋休坤、休艮比保持常态，旺乾初耗实、死巽中克轻、末囚离生薄，未靠休体虚弱支撑难断。九五休美得吉的积极义及戒亡固本完整，重复答复有无新增实查作条件核查；乾物与离环境合读，完整无日窗保留。",
+      "openQuestions": [
+        "九五休美之吉、普通休比与初旺乾耗重、末囚离薄助并存，旧难档仍缺唯一可复核的取权尺度。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 498,
+      "shortHan": 93,
+      "reviewedRowSha256": "e4940c9ca4e4fdcd8642a9a31774d3265c1eceea17adafd1020962fb775acc68",
+      "copySha256": "d0a75cd0d73e23f64324469fa550c36cb36fa18dffd26ee7a4ddc2a443ec451c",
+      "assembledCopySha256": "393a3288e3671bccdb5f707248dc88a3e8cd91589ce49f3b214eeeb9ebb7253f"
+    },
+    {
+      "rowIndex": 23,
+      "movingLine": 5,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬囚坤与艮比俱薄，休乾普通耗，相巽直克较实，末死离仍生而薄；原体和作用方向保持。九五有能力改善否境而得吉与戒慎都说明，旧照仍在才据它辨物，苞桑没有化成树旁地点，乾物/离环境及中凶应全读。",
+      "openQuestions": [
+        "九五大人吉为完整正证，冬局囚体、薄比、相巽克与死离薄生如何相权维持原难档，尚需规则层确认。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 498,
+      "shortHan": 89,
+      "reviewedRowSha256": "d6d2280756ae5febe9dfa0941092a86963f85bb30402df660cb9e5cbe8306bd0",
+      "copySha256": "d260106f3ec2de83217f8975f66350dee8700e805c1b2d7ce4fc17dae2a5d98e",
+      "assembledCopySha256": "77a22d7198377bd361dde6cce9ab92f4c339a7887d52e01a17fcef82b0f4e9a5"
+    },
+    {
+      "rowIndex": 24,
+      "movingLine": 5,
+      "monthOrder": "seasonal-earth",
+      "outcome": "favourable",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土旺坤得旺艮比，初相乾耗实，囚巽克轻，末休离直接生体按常态，未把末休援说缓弱。九五休美得吉和戒亡两义贯通，消息不同先核真实来源；乾原件与离明窗文件台环境分开，原中段旺比吉应保留而未另排末日期。",
+      "openQuestions": [],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 486,
+      "shortHan": 95,
+      "reviewedRowSha256": "bc2cced5e4b0ce4473af7cd7e39dae9349354cd3764858a9a17f4af19b136b7e",
+      "copySha256": "c38d3ca27e27c58c9feb50e304270bc975301396657c44ee84d2622fbda39a00",
+      "assembledCopySha256": "ec61fc2d0ee83e98f74626c9590314abc3acd8bece6e7681b10f50898d9f3bbd"
+    },
+    {
+      "rowIndex": 25,
+      "movingLine": 6,
+      "monthOrder": "spring-wood",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "春死坤比死艮薄，中旺巽直克，前囚乾末囚兑均受体生而轻耗。上九否极倾覆、其事得通后喜保留真实成事义，并非只剩开门受理；标题拗口已修后全篇再读，乾原件对兑西向环境，原中段受限不定最终的应期完整。",
+      "openQuestions": [
+        "上九倾否后事情得通的结果正证，与春死坤、旺巽克及薄比相权为原难档，现行文本尚无明定尺度。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 487,
+      "shortHan": 94,
+      "reviewedRowSha256": "046574ecc80ae8e47677431f369bd7cf4464b79bfafeb01967ef41b7b6bcc454",
+      "copySha256": "166b599d3ca31c5e3cfbe942bdf8b2b54833b1a33b66427a947d195d8e06c2b1",
+      "assembledCopySha256": "5e95121c9b4d9a018d6081d42cb22944891d445b38b7c11efda84db160a91644"
+    },
+    {
+      "rowIndex": 26,
+      "movingLine": 6,
+      "monthOrder": "summer-fire",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "夏相坤与相艮比实、前后死金耗轻，中休巽克仍为普通作用；上九倾否后其事得通的后喜未削窄。标题已改成使用条件的口吻，复核现能打开何处才补查，乾物与兑环境有别，原中段同比补看吉应合装再读。",
+      "openQuestions": [
+        "夏相体、相比和上九事通后喜为正证，前后轻耗与中普通木克使原结果留条件档，其权重仍未唯一明确。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 494,
+      "shortHan": 92,
+      "reviewedRowSha256": "5fa4545a897643086031906e06a2c2e5b6f7e88078ec63083124265caa3dc5f2",
+      "copySha256": "64ce653b674d8543b8ba43fce39c95718f04d1ca09d1c2c7e875ac1ba0782efe",
+      "assembledCopySha256": "a7eac735c15ee68d6ba2bdb06ff1a64653710ebb05d3d1859f6198ed3eeb7168"
+    },
+    {
+      "rowIndex": 27,
+      "movingLine": 6,
+      "monthOrder": "autumn-metal",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "秋休坤与艮比正常，前后旺乾旺兑受体生而耗重，死巽克轻非零。上九后喜明确在否倾之后事情通达，难档没有靠删吉义保持；兑西向败垣只核实际路线，乾原件另辨，完整近处照应只休不定日另留问题。",
+      "openQuestions": [
+        "上九事通后喜与秋月两旺金实耗并存，原难档的权重仍需明确，不能以休土弱作补充理由。",
+        "原无日窗将近处照应只休视作缺定日落点，休比正常作用与该门槛关系需另核。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 493,
+      "shortHan": 87,
+      "reviewedRowSha256": "3dbeb4fe35494198eaa18614c087f72fce40dc54c10e4c744fb22e571509128c",
+      "copySha256": "889992e9ce8e5d1938e2acadb4d2bc35b99a94f41804cf1a4d0f9ccddf6309cc",
+      "assembledCopySha256": "971f7ce5f0bcec539687b92ff4b62367f45aaed36fd83a67e1a14267c1671fcf"
+    },
+    {
+      "rowIndex": 28,
+      "movingLine": 6,
+      "monthOrder": "winter-water",
+      "outcome": "difficult",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "冬囚坤、囚艮比薄，前后休乾兑普通耗，中相巽直克较实，上九否倾后真正事通的正义完整。倾否释义的是否歧读已修并全篇再读，重新受理只是现实条件，非后喜全部含义；乾物/兑环境及原中段核证凶应完整。",
+      "openQuestions": [
+        "上九先否后喜含最终事通，冬局囚土、相巽克及前后正常耗仍限制寻回；旧难档如何合权尚未有统一尺度。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 499,
+      "shortHan": 96,
+      "reviewedRowSha256": "40bd1fc6f064a223e16d2edc08dddfb99a48948fae2fa2ea7aea4fdbfa6bd407",
+      "copySha256": "f8658d5f6a67ebe836c722d6aedbdc6d2339c3cc979eaacf6dc06df913bc5474",
+      "assembledCopySha256": "f8f49303361d4c8020e1250512a2df7a5cd7ec94294a645e4054f0b9521151bb"
+    },
+    {
+      "rowIndex": 29,
+      "movingLine": 6,
+      "monthOrder": "seasonal-earth",
+      "outcome": "conditional",
+      "peerAgent": "/root/author_b",
+      "reviewedAt": "2026-11-21T19:35:31.233Z",
+      "peerFullRead": true,
+      "peerFinding": "土旺坤与旺艮同比有力，前相乾末相兑各受原体生而实耗，中囚巽直克轻；上九否尽倾覆而事通后喜全说。新查看条件由实据核认，原物身份另辨，乾圆硬旧痕与兑环境缺口分清，原中段旺比吉应没有添末兑日期。",
+      "openQuestions": [
+        "旺坤旺比与上九事通后喜的正证，如何同前后相金实耗、囚木轻克合为旧条件档，权重仍待核定。"
+      ],
+      "lockedFieldsPreserved": true,
+      "bodyHan": 493,
+      "shortHan": 97,
+      "reviewedRowSha256": "c00920925c04a61c3fce96638d9173fcadf404ea622b171cc62f6432c059bcbd",
+      "copySha256": "9b377c59b60c436ef78cef1a8cdfe0da8cfc65f5e15d19319c48c985247b8fad",
+      "assembledCopySha256": "23ea0939746a9bad73a3764a6da987cfcafa0ac30886349388354055cf7213cb"
+    }
+  ]
+}

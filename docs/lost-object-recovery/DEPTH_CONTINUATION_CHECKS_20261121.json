@@ -13,7 +13,10 @@
     9,
     10,
     11,
-    13
+    12,
+    13,
+    14,
+    15
   ],
   "hexagrams": [
     4,
@@ -24,18 +27,21 @@
     9,
     10,
     11,
-    13
+    12,
+    13,
+    14,
+    15
   ],
-  "checkedArticles": 270,
-  "checkedMonthKeys": 648,
-  "comparisons": 9098,
-  "chartComparisons": 1944,
-  "byteBoundBatches": 9,
-  "sixFieldBoundArticles": 270,
-  "assembledBoundArticles": 270,
-  "dualReadBoundArticles": 270,
-  "originalOutcomePreserved": 270,
-  "originalTimingPreserved": 270,
+  "checkedArticles": 360,
+  "checkedMonthKeys": 864,
+  "comparisons": 12128,
+  "chartComparisons": 2592,
+  "byteBoundBatches": 12,
+  "sixFieldBoundArticles": 360,
+  "assembledBoundArticles": 360,
+  "dualReadBoundArticles": 360,
+  "originalOutcomePreserved": 360,
+  "originalTimingPreserved": 360,
   "bodyHanRange": [
     452,
     538
@@ -46,7 +52,7 @@
   ],
   "shortHanRange": [
     79,
-    97
+    103
   ],
   "bodyDefinition": "Han characters in opening/process/base ending/summary; excludes title, short and existing supplements",
   "requiredHanRanges": {
@@ -61,18 +67,18 @@
   },
   "duplicationChecks": {
     "scope": "all active 004–037 base bodies together; excludes shared direction/image supplements",
-    "openings": 270,
-    "paragraphs": 1080,
-    "longSentences": 3317,
+    "openings": 360,
+    "paragraphs": 1440,
+    "longSentences": 4368,
     "longSentenceMinimumHan": 24,
     "method": "Compare normalized first opening sentences and whole body fields; compare sentences of at least 24 Han characters after removing quoted text. Normalization retains letters and numbers only.",
     "meaning": "Exact text reuse checks only; length and uniqueness do not establish literary quality or replace either named reader."
   },
   "ordinaryRestBoundary": {
     "policy": "ordinary-rest-is-not-automatically-weak",
-    "articles": 178,
-    "monthKeys": 420,
-    "nodeOccurrences": 270,
+    "articles": 232,
+    "monthKeys": 544,
+    "nodeOccurrences": 360,
     "rows": [
       {
         "primaryId": 4,
@@ -3475,6 +3481,428 @@
         ]
       },
       {
+        "primaryId": 12,
+        "rowIndex": 1,
+        "movingLine": 1,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 2,
+        "movingLine": 1,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 3,
+        "movingLine": 1,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 5,
+        "movingLine": 2,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 6,
+        "movingLine": 2,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 7,
+        "movingLine": 2,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 8,
+        "movingLine": 2,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 11,
+        "movingLine": 3,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 12,
+        "movingLine": 3,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 13,
+        "movingLine": 3,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 16,
+        "movingLine": 4,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 17,
+        "movingLine": 4,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 18,
+        "movingLine": 4,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 21,
+        "movingLine": 5,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 22,
+        "movingLine": 5,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 23,
+        "movingLine": 5,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 24,
+        "movingLine": 5,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 26,
+        "movingLine": 6,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 27,
+        "movingLine": 6,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 28,
+        "movingLine": 6,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
         "primaryId": 13,
         "rowIndex": 1,
         "movingLine": 1,
@@ -3893,6 +4321,788 @@
             "qi": "休"
           }
         ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 1,
+        "movingLine": 1,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 3,
+        "movingLine": 1,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 4,
+        "movingLine": 1,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 8,
+        "movingLine": 2,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 9,
+        "movingLine": 2,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 13,
+        "movingLine": 3,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 14,
+        "movingLine": 3,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 17,
+        "movingLine": 4,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 18,
+        "movingLine": 4,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 19,
+        "movingLine": 4,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 23,
+        "movingLine": 5,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 24,
+        "movingLine": 5,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 26,
+        "movingLine": 6,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 28,
+        "movingLine": 6,
+        "monthOrder": "winter-water",
+        "months": [
+          "亥",
+          "子"
+        ],
+        "nodes": [
+          {
+            "role": "body",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 29,
+        "movingLine": 6,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 0,
+        "movingLine": 1,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 1,
+        "movingLine": 1,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 2,
+        "movingLine": 1,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 4,
+        "movingLine": 1,
+        "monthOrder": "seasonal-earth",
+        "months": [
+          "辰",
+          "未",
+          "戌",
+          "丑"
+        ],
+        "nodes": [
+          {
+            "role": "changed_use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 5,
+        "movingLine": 2,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 6,
+        "movingLine": 2,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 7,
+        "movingLine": 2,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 10,
+        "movingLine": 3,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 11,
+        "movingLine": 3,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 12,
+        "movingLine": 3,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 15,
+        "movingLine": 4,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 16,
+        "movingLine": 4,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 17,
+        "movingLine": 4,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 20,
+        "movingLine": 5,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 21,
+        "movingLine": 5,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 22,
+        "movingLine": 5,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 25,
+        "movingLine": 6,
+        "monthOrder": "spring-wood",
+        "months": [
+          "寅",
+          "卯"
+        ],
+        "nodes": [
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 26,
+        "movingLine": 6,
+        "monthOrder": "summer-fire",
+        "months": [
+          "巳",
+          "午"
+        ],
+        "nodes": [
+          {
+            "role": "use_mutual",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          }
+        ]
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 27,
+        "movingLine": 6,
+        "monthOrder": "autumn-metal",
+        "months": [
+          "申",
+          "酉"
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          }
+        ]
       }
     ],
     "literalReviewCandidates": [
@@ -4079,6 +5289,20 @@
         "requiresHumanOrNamedReaderInterpretation": true
       },
       {
+        "primaryId": 12,
+        "rowIndex": 18,
+        "field": "opening",
+        "excerpt": "冬月坤土体囚，本用乾金休，受体所生，开头有普通耗费，自身可推动的核验也偏弱。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 12,
+        "rowIndex": 28,
+        "field": "opening",
+        "excerpt": "冬月坤土体囚，本用乾金休，受体所生，开始有普通耗费，自身查验条件偏弱。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
         "primaryId": 13,
         "rowIndex": 1,
         "field": "process",
@@ -4098,6 +5322,76 @@
         "field": "judgment",
         "excerpt": "冬死离制本用及用互休乾、末休兑费力，体互相巽为实助，休金本身不作无气弱金。",
         "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 3,
+        "field": "judgment",
+        "excerpt": "冬死离制本用休乾、体互休兑、用互休乾较吃力，休金为普通作用而非无气。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 4,
+        "field": "short",
+        "excerpt": "土月离火休而有正常作用，前中三相金分量较实，末囚巽生助偏弱。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 4,
+        "field": "judgment",
+        "excerpt": "纠正旧稿休火力弱措辞，保留原难档并列取权疑问；",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 13,
+        "field": "judgment",
+        "excerpt": "休金按普通作用，不作无气。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 14,
+        "rowIndex": 14,
+        "field": "judgment",
+        "excerpt": "改旧休体力弱措辞，不另造必难公式；",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 1,
+        "field": "judgment",
+        "excerpt": "休震对体仍有普通克制，非轻微或无克；",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 2,
+        "field": "process",
+        "excerpt": "这里的问题来自相对气势，不是休土必然衰弱。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 7,
+        "field": "judgment",
+        "excerpt": "非休体衰弱。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 22,
+        "field": "judgment",
+        "excerpt": "不以休土薄弱立论。",
+        "requiresHumanOrNamedReaderInterpretation": true
+      },
+      {
+        "primaryId": 15,
+        "rowIndex": 27,
+        "field": "judgment",
+        "excerpt": "上六志未得和行事范围之限完整保留，沿条件档，不写休比薄弱；",
+        "requiresHumanOrNamedReaderInterpretation": true
       }
     ],
     "meaning": "Independent chart states and literal phrase candidates only. Wording and judgment weights require the named readers; a phrase hit is not a semantic verdict."
@@ -4108,6 +5402,6 @@
   "userAcceptedThisVersion": false,
   "semanticReview": "separate-author-and-peer-receipts;not-inferred-from-machine-checks",
   "realWorldPredictionAccuracy": "not-validated",
-  "remainingArticles": 750,
+  "remainingArticles": 660,
   "status": "passed"
 }
