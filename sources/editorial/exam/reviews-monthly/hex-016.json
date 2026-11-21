@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "雷地豫已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "雷地豫已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -35,6 +35,14 @@
     {
       "path": "sources/editorial/exam/hex-016.json",
       "scope": "豫六二全年五气原断，体震克本用坤，互坎、变坎生体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "scope": "六三第38至41行，王注进退、离悔原语与孔疏。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-016.json",
+      "scope": "六三五季原盘，体震制三土，中互坎生体。"
     }
   ],
   "findings": [
@@ -75,6 +83,25 @@
         "16/2/丑"
       ],
       "finding": "互、变坎水分别在中途与收束养木，力量需照季令及坤艮制水折算。各月均能过，春冬取求名末助、其余取末坎生体，均亥子日。"
+    },
+    {
+      "id": "hex-016-line-3",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "16/3/寅",
+        "16/3/卯",
+        "16/3/辰",
+        "16/3/巳",
+        "16/3/午",
+        "16/3/未",
+        "16/3/申",
+        "16/3/酉",
+        "16/3/戌",
+        "16/3/亥",
+        "16/3/子",
+        "16/3/丑"
+      ],
+      "finding": "春夏原据以「进退离悔」拼作连续引文，依王注校回完整连续句。初中末三土皆由震木掌握；中坎之助依季令与土克计，四土月分散，余月取亥子。"
     }
   ],
   "lineReviews": [
@@ -91,6 +118,14 @@
       "text": "介于石，不终日，贞吉。",
       "image": "“不终日，贞吉”，以中正也。",
       "reading": "六二居中得正，王注以顺不苟从释其守，孔疏以见几之速释不终日。爻赞明辨守正，与本场结果同向，不以经文定应期。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "盱豫悔；迟有悔。",
+      "image": "“盱豫有悔”，位不当也。",
+      "reading": "六三居下体之极、上承九四，位非所据。孔疏分释盱与迟，两悔是处位与进退的警义，不能据以指定失误。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -135,18 +170,38 @@
       ],
       "scope": "逐月作者源落盘后核读，核对生扶先后、两处水强弱与受制，古注不终日不作一天内出结果。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇写入读回，检查来源、同气断据、不同阶段的克用与生体、应期与不实情境。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T17:01:31.578Z",
-  "sourceSha256": "f7945ff25d1faa3bbd881197c94ef6f7dc8bcf842be82812ce8bb8b779f9b51c",
+  "reviewedAt": "2026-11-21T17:12:00.663Z",
+  "sourceSha256": "68728ecc4b35d764fb0a1607a1a5e9b41721cc9c816cc1d264edb12c81796764",
   "checks": {
-    "scope": "雷地豫已写24篇",
-    "chartComparisons": 648,
+    "scope": "雷地豫已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       474,
-      526
+      536
     ]
   }
 }
