@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "地泽临已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地泽临已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -19,6 +19,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
       "scope": "初九以刚感顺、四履正位与志行正之注疏"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "scope": "九二、未顺命之王注孔疏，感应而不尽从。"
     }
   ],
   "findings": [
@@ -40,6 +44,25 @@
         "19/1/丑"
       ],
       "finding": "按冬春、夏、秋与土月权衡中克、初耗、末制之别；春冬震处坎生兑制之间不减至无力，土旺受克害轻不等于有生助。"
+    },
+    {
+      "id": "hex-019-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/2/寅",
+        "19/2/卯",
+        "19/2/辰",
+        "19/2/巳",
+        "19/2/午",
+        "19/2/未",
+        "19/2/申",
+        "19/2/酉",
+        "19/2/戌",
+        "19/2/亥",
+        "19/2/子",
+        "19/2/丑"
+      ],
+      "finding": "春冬受制后按轻克，夏与四土月中末克轻，秋旺兑初耗重。初耗不作扶持，同坤比和不代生体。"
     }
   ],
   "lineReviews": [
@@ -48,6 +71,14 @@
       "text": "咸临，贞吉。",
       "image": "“咸临，贞吉”，志行正也。",
       "reading": "初九与六四相应，咸临之贞吉限志行正。坤体生兑，互坤相合，互震克身，末体克坎，盘内无火生体。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "咸临，吉，无不利。",
+      "image": "“咸临，吉，无不利”，未顺命也。",
+      "reading": "九二与五相应，有从有否。两震中末俱克坤，有兑制而无水养木，月令本态与制后克力分记。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -72,18 +103,38 @@
       ],
       "scope": "逐篇写入读回正文、简断、取期，并订正从作答方向推演的判断。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回十二篇全部内容，区分十个月用末震取木日、秋两月用初兑取金日，清除旧题型推演并复核朱墨措辞。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T20:49:58.241Z",
-  "sourceSha256": "69d38615a9bbcbf2df32f804c26895d3ba9b275bbe85147c80ae2d489158f772",
+  "reviewedAt": "2026-11-21T20:59:43.443Z",
+  "sourceSha256": "b6131822bb747713a20f70f1919b7b3e296829d3b6340813aa89fadebd52f5ba",
   "checks": {
-    "scope": "地泽临已写12篇",
-    "chartComparisons": 324,
+    "scope": "地泽临已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       493,
-      522
+      532
     ]
   }
 }
