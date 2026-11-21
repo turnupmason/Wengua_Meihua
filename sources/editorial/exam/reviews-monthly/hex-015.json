@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "地山谦已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地山谦已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -31,6 +31,18 @@
     {
       "path": "sources/editorial/exam/hex-015.json",
       "scope": "初六五气，按相同五态写十二月，考察中阻及末助的强弱。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "scope": "第34至37行六二经文、王弼注、孔颖达疏与小象。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "第688、792、798与804行，衰体受克、吉事无生有克、变卦末应与体旺受克。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-015.json",
+      "scope": "六二五气对中末两木、坎水与坤艮月势的判断，以及寅卯参末阻。"
     }
   ],
   "findings": [
@@ -52,6 +64,25 @@
         "15/1/丑"
       ],
       "finding": "体坤与本艮比和，中互震木克体、互坎水受体克兼生震，无金制震。变地火明夷，下离生坤。坎克离与震生离同在，保留月令强弱。春弱土中阻而后有相火，夏旺火足，秋火囚助薄，冬坤囚非死、尾火死仅贴线，土月体旺尾火休。均取巳午日参变离末助。"
+    },
+    {
+      "id": "hex-015-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "15/2/寅",
+        "15/2/卯",
+        "15/2/辰",
+        "15/2/巳",
+        "15/2/午",
+        "15/2/未",
+        "15/2/申",
+        "15/2/酉",
+        "15/2/戌",
+        "15/2/亥",
+        "15/2/子",
+        "15/2/丑"
+      ],
+      "finding": "本艮比和，震巽中末克土，坎水一面受体所克，一面生木，全盘无火生体。春木旺土弱，夏土有气，秋体休而水相，冬土弱水旺，土月旺体能承受而无直接生扶。各月皆不通过。"
     }
   ],
   "lineReviews": [
@@ -60,6 +91,14 @@
       "text": "谦谦君子，用涉大川，吉。",
       "image": "“谦谦君子”，卑以自牧也。",
       "reading": "王弼读处谦之下、谦而又谦，孔疏言用涉大川为假象，牧为养，卑以自养其德。正文借其意于肯承认暂缺的根据、读全所问，不将涉川实写成考题。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "鸣谦，贞吉。",
+      "image": "“鸣谦，贞吉”，中心得也。",
+      "reading": "六二得位居中，所称许的是谦德真实而守正。爻辞的贞吉不直接许考试合格。谦变升，末用巽木克坤。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -84,17 +123,37 @@
       ],
       "scope": "从作者源逐篇读回十二月全篇及所取日期，对照五气稿分别检查收尾的帮助是补全关系、补清一句、局部回验或只定方向，批内修改后再读。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇逐篇落盘读回，核对题名、简断、正文、专业判断和应期。删去底稿设想的试题、阅卷与得分。寅卯日均为末段受制的参考，未取结果日。比对已认可的谦六二面试及关系断语，另核六二古注。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T06:38:00.133Z",
-  "sourceSha256": "e4b23499b62b4e1c4e0d577cb9df26804d349de0407882e468f2fe36f0e460e9",
+  "reviewedAt": "2026-11-21T14:49:59.021Z",
+  "sourceSha256": "88c046c7b8feffce5db72841b602796f0b93461f19bb9ea29beeaa1456eec364",
   "checks": {
-    "scope": "地山谦已写12篇",
-    "chartComparisons": 324,
+    "scope": "地山谦已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
-      484,
+      479,
       556
     ]
   }
