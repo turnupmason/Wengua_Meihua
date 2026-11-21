@@ -155,6 +155,13 @@ export function renderHex(ctx,c,bundle) {
   const r=readingFor(ctx,c,id,a),row=rowFor(bundle,a),timing=resolveTiming(c,r,a);
   const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(x=>x[4]).join(' ');
   const effects=row?.decision?.indirectEffectsApplied||[];
+  // The promotion manuscript follows Wang/Kong's punctuation here; preserve inherited chart facts.
+  const guFirst=c.name==='promotion-pay'&&id===18&&a.movingLine===1;
+  const inheritedGuLine='干父之蛊，有子考，无咎；厉终吉。';
+  const collatedGuLine='干父之蛊，有子，考无咎，厉终吉。';
+  if(guFirst&&![inheritedGuLine,collatedGuLine].includes(r.selectedMovingLine.text))
+   throw new Error('Unexpected wording for promotion hex-18-line-1; recheck the punctuation witness');
+  const displayedLine=guFirst?collatedGuLine:r.selectedMovingLine.text;
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(x=>x.name).join(' → '),...a.paragraphs,
    ...(c.name==='promotion-pay'?['### 随岗薪资',a.payExplanation]:[]),
    '### 应期参考',...(timing.slots.length?['以下为传统推算的参考窗口。']:[]),...timing.paragraphs,
@@ -162,7 +169,8 @@ export function renderHex(ctx,c,bundle) {
    `判断：${c.verdictLabel[a.outcome]}。`+r.edges.map(e=>{const n=r.nodes.find(n=>n.role===e.targetRole);return LABELS[n.role]+n.trigram+n.element+REL_LABELS[e.type];}).join('；')+'。',
    `旺衰：${a.monthBranch}月，`+r.nodes.filter(n=>n.role!=='body_inherited').map(n=>LABELS[n.role]+n.trigram+n.element+n.strength.state).join('；')+'。',
    ...(effects.length?['间接作用：按本库所取的一层作用解释，'+effects.map(e=>{const n=r.nodes.find(n=>n.role===e.role);return LABELS[e.role]+n.trigram+n.element+'：'+e.label;}).join('；')+'。上列月令五态保持原值，不作连环累计。']:[]),
-   `爻辞：${r.selectedMovingLine.label}「${r.selectedMovingLine.text}」；象曰「${r.selectedMovingLine.image}」。`,
+   `爻辞：${r.selectedMovingLine.label}「${displayedLine}」；象曰「${r.selectedMovingLine.image}」。`,
+   ...(guFirst?['句读依据：本页依[《周易正义·蛊》](https://zh.wikisource.org/wiki/周易正義/03蠱)断作“有子，考无咎”。王孔释为有子堪任父事，父乃无咎；知危而能承事，故终吉。']:[]),
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
    ...(c.name==='promotion-pay'&&a.payCorrection?['薪资说明订正：'+a.payCorrection.reason+' 原文与新文保存在作者源的 payCorrection 中；本次未改变晋升结论或取期结构。']:[]),

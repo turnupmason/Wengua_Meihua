@@ -2,18 +2,19 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-1152-20261121",
+  "batch": "promotion-pay-monthly-preview-1296-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1152,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 1296,
+  "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    17
+    16,
+    18
   ],
   "fullTarget": 4608,
-  "remainingArticles": 3456,
-  "authorWholeArticleReadback": 1152,
+  "remainingArticles": 3312,
+  "authorWholeArticleReadback": 1296,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -226,6 +227,20 @@
       }
     },
     {
+      "primaryId": 16,
+      "name": "雷地豫",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-016.json",
+      "sourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-016.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-016.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
+    },
+    {
       "primaryId": 17,
       "name": "泽雷随",
       "articles": 72,
@@ -237,6 +252,20 @@
       "outcomes": {
         "favourable": 24,
         "difficult": 48
+      }
+    },
+    {
+      "primaryId": 18,
+      "name": "山风蛊",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-018.json",
+      "sourceSha256": "4520560801e459c0bde989484b949f70a3e262f9f9ea9ce00abd25ac99026bc1",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-018.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-018.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
       }
     }
   ],
@@ -252,16 +281,16 @@
       76,
       112
     ],
-    "independentChartComparisons": 31104,
+    "independentChartComparisons": 34992,
     "independentChartMismatches": 0,
-    "dateCases": 2304,
-    "judgmentCorrectionArticles": 770,
+    "dateCases": 2592,
+    "judgmentCorrectionArticles": 914,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       34,
       67
     ],
-    "payCorrectionArticles": 1152
+    "payCorrectionArticles": 1296
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 11,
@@ -279,7 +308,7 @@
     "corrected-in-prose": 1,
     "corrected-and-author-readback-complete": 4,
     "reviewed": 1,
-    "resolved": 10,
+    "resolved": 15,
     "resolved-with-exact-correction": 2,
     "corrected-and-read-back": 1,
     "reviewed-with-project-scope": 1,
@@ -310,7 +339,9 @@
     "corrected-in-inherited-authorship": 1,
     "wording-refined": 1,
     "corrected-and-complete-fields-reread": 2,
-    "open": 8
+    "open": 16,
+    "closed-after-complete-field-reread": 2,
+    "resolved-complete-delta-read": 3
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -439,12 +470,28 @@
       "scope": "见逐卦回执"
     },
     {
+      "primaryId": 16,
+      "sourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "根代理初六12篇全文加最终两段完整差异复读；source_audit六二至上六60篇全文加最终两条完整简断差异复读，组成72篇。不是声称同一人一次读完72篇，也不是每次窄改后重读全部正文。 初爻基准之后先读13个完整字段，再读末2段；六二至上六由另一编辑完整读回60篇及25组技术字段后，另读末2条简断。"
+    },
+    {
       "primaryId": 17,
       "sourceSha256": "48f1566fd0174105112810b65e61aeb2c6cd81b74452681f33d60072163ecff4",
       "wholeArticleCoverage": 72,
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "独立阅读覆盖六爻72篇全部标题、简断、正文及各月薪资；每爻五气30组不同判断、应期、judgmentCorrection旧新与元数据、payCorrection旧值和共同元数据均完整读过，同气重复实例与薪资新值绑定逐字段验等。基准完整阅读与后续完整字段差异阅读分别列版，不冒称最终哈希下重读72篇。"
+    },
+    {
+      "primaryId": 18,
+      "sourceSha256": "4520560801e459c0bde989484b949f70a3e262f9f9ea9ce00abd25ac99026bc1",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "根代理初六12篇完整独立阅读＋23个完整字段及四段引文/五气理由/共同证据的实际变化复读；write_sui九二至上九60篇完整独立阅读＋3个完整变化字段复读。五气技术共30组实际完整阅读，同气重复实例逐字段验等。不同版本的全文与差异覆盖分列，未声称单一审阅者在终版哈希下重读全卦。"
     }
   ],
   "independentHumanReview": "pending"

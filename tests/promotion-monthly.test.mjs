@@ -75,3 +75,23 @@ test('promotion-only salary fields do not affect another question reading docume
   assert.ok(!before.includes('### 随岗薪资'));
  }
 });
+
+test('promotion Gu quotation follows the cited punctuation without rewriting chart facts or other questions',async()=>{
+ const bundle=await loadHex(promotion,18),before=JSON.stringify(bundle);
+ const inherited='干父之蛊，有子考，无咎；厉终吉。';
+ const collated='干父之蛊，有子，考无咎，厉终吉。';
+ const first=bundle.source.articles.find(a=>a.movingLine===1);
+ const r=readingFor(ctx,promotion,18,first);
+ assert.equal(r.selectedMovingLine.text,inherited);
+ const rendered=renderHex(ctx,promotion,bundle);
+ assert.equal(rendered.split(`爻辞：初六「${collated}」`).length-1,12);
+ assert.ok(!rendered.includes(`爻辞：初六「${inherited}」`));
+ assert.equal(rendered.split('句读依据：本页依').length-1,12);
+ assert.equal(JSON.stringify(bundle),before,'rendering preserves the reviewed source and old correction evidence');
+ const other={...bundle,source:{...bundle.source,articles:[first]}};
+ assert.ok(renderHex(ctx,item('exam'),other).includes(`爻辞：初六「${inherited}」`));
+ for(const a of bundle.source.articles.filter(a=>a.monthBranch==='寅'&&a.movingLine!==1)) {
+  const line=readingFor(ctx,promotion,18,a).selectedMovingLine;
+  assert.ok(rendered.includes(`爻辞：${line.label}「${line.text}」`));
+ }
+});

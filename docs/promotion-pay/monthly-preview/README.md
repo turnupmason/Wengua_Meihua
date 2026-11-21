@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：1152 篇预览
+# 晋升加薪逐月长稿：1296 篇预览
 
-更新日期：2026-11-21（America/New_York）。本批新增泽雷随，共 72 篇；累计 1152 篇。完整目标为 4,608 篇，尚余 3456 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-21（America/New_York）。本批新增雷地豫、山风蛊，共 144 篇；累计 1296 篇。完整目标为 4,608 篇，尚余 3312 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -19,7 +19,9 @@
 | 天火同人 | 72 | [打开全文](hex-013.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-013.json) |
 | 火天大有 | 72 | [打开全文](hex-014.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-014.json) |
 | 地山谦 | 72 | [打开全文](hex-015.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-015.json) |
+| 雷地豫 | 72 | [打开全文](hex-016.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-016.json) |
 | 泽雷随 | 72 | [打开全文](hex-017.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-017.json) |
+| 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-018.json) |
 
 
 
@@ -31,13 +33,15 @@
 
 ## 本批阅读入口
 
-- [泽雷随：六爻十二月全文](hex-017.md)
+- [雷地豫：六爻十二月全文](hex-016.md)
+
+- [山风蛊：六爻十二月全文](hex-018.md)
 
 
 
 ## 检查与阅读状态
 
-1152 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 31,104 项，差异 0；日期用例 2,304 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+1296 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 34,992 项，差异 0；日期用例 2,592 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
