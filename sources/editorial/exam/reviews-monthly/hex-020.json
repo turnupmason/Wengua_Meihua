@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "风地观已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "风地观已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -19,6 +19,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
       "scope": "观初六童观、象小人道也及正义"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03觀.txt",
+      "scope": "六二闚观，利女贞及小象、王注孔疏"
     }
   ],
   "findings": [
@@ -40,6 +44,25 @@
         "20/1/丑"
       ],
       "finding": "寅卯亥子木有力、土弱，取末震木日参相合。其余体与同党俱衰且无生，从重取不成而不定日。保留无克和末比和的有利依据。"
+    },
+    {
+      "id": "hex-020-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "20/2/寅",
+        "20/2/卯",
+        "20/2/辰",
+        "20/2/巳",
+        "20/2/午",
+        "20/2/未",
+        "20/2/申",
+        "20/2/酉",
+        "20/2/戌",
+        "20/2/亥",
+        "20/2/子",
+        "20/2/丑"
+      ],
+      "finding": "十二月同依变用坎水取亥、子为助象所值之日。旺衰只分轻重，受制与相生同验。"
     }
   ],
   "lineReviews": [
@@ -48,6 +71,14 @@
       "text": "童观，小人无咎，君子吝。",
       "image": "初六，“童观”，小人道也。",
       "reading": "童观以初六远而阴柔、不能自进释之，小人无咎与君子吝随所任有别，不用来推断个人品行。三处体克、末比和、无生无克，月气区别所任轻重与自身能否接续。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 2,
+      "text": "闚观，利女贞。",
+      "image": "“闚观，女贞”，亦可丑也。",
+      "reading": "六二居内柔顺得正，虽与九五有应，所见犹窄。木制三土，得到三土所制的末水之生。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -72,15 +103,35 @@
       ],
       "scope": "逐篇读回，核夏、秋、土月分别所任之重与自身力弱，复核无日期月份的说明与四个相合月份的木日。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "简断与四段逐篇读回，复核三土同时制水、月令轻重与爻辞可丑所指，改后重读。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T21:48:54.654Z",
-  "sourceSha256": "dbfb13334ee4e8d97a22e7f85aad789b037878695b57455c35c087fc94ba9144",
+  "reviewedAt": "2026-11-21T21:59:15.838Z",
+  "sourceSha256": "a6ed2323a05e8c6d74bb8c6781f9c0d1968d90f640ea02edf882c9ddf5d98aca",
   "checks": {
-    "scope": "风地观已写12篇",
-    "chartComparisons": 324,
+    "scope": "风地观已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       493,
       519
