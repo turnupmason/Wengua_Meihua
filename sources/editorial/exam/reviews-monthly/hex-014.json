@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "火天大有已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "火天大有已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -95,6 +95,22 @@
     {
       "path": "sources/editorial/exam/hex-014.json",
       "scope": "六五五气原断所列卷首欠据、夏首题重写、秋失限定、冬复习范围偏窄及土月连问。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+      "scope": "52至54行上九经文、王注、孔疏、小象。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/07.11.txt",
+      "scope": "39、40行《系辞上》解大有上九，以信、顺、尚贤言助。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "144行观梅例取木生离之理，553、688、792行求名、旺衰和无生有克。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-014.json",
+      "scope": "上九五气。春卷尾新题沉重与开局火日分读，秋土两令过程应期，冬无单独日应。"
     }
   ],
   "findings": [
@@ -192,6 +208,25 @@
         "14/5/丑"
       ],
       "finding": "本离克下乾、互乾兑比和、变乾同气，全局无生。春夏取本离巳午日看初阻，秋冬及四土月按体互乾取申酉日看熟处，均不作放榜时间。申酉月虽体旺克轻只守熟分，不能据免害或末变比和判断全场能过。"
+    },
+    {
+      "id": "hex-014-line-6",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "14/6/寅",
+        "14/6/卯",
+        "14/6/辰",
+        "14/6/巳",
+        "14/6/午",
+        "14/6/未",
+        "14/6/申",
+        "14/6/酉",
+        "14/6/戌",
+        "14/6/亥",
+        "14/6/子",
+        "14/6/丑"
+      ],
+      "finding": "离克乾，互乾兑比和，末变震木受体所克又能生本离，无生体。春重问在尾，应期按本离巳午日参初阻，不混作震木日。夏巳午日参首题所定格式，秋与四土月取用互兑金之申酉日参能够写稳的内容。亥子两头耗时，按原断无独立日期。引用观梅例只取木能助火，未将其互巽卦位挪作本卦的变震。"
     }
   ],
   "lineReviews": [
@@ -232,6 +267,14 @@
       "text": "厥孚交如，威如，吉。",
       "image": "“厥孚交如”，信以发志也；“威如之吉”，易而无备也。",
       "reading": "六五居中以诚交而上下应，威如之吉在简易无所猜防。爻义用以说明有据的实答可取。不得以威如指首问有威力，亦不得以无备指不用温书。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "自天佑之，吉无不利。",
+      "image": "《大有》上吉，自天佑也。",
+      "reading": "《周易正义》经文作祐，底稿通作佑。《系辞上》说履信思顺、尚贤，王注孔疏以三德解爻吉。考试以做成且可查的部分参爻义，不能据全吉辞翻转无生有克的原断。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -336,15 +379,35 @@
       ],
       "scope": "每篇写毕读回标题、简断、四段、应期；以五气底稿逐条对核，修正两篇经文引用不足、申酉限定范围及巳午用时表述。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇写定并读回标题、短断、正文、应期；分清首尾得失、同气互卦和变震作用，特别核春月末题重而应期属开卷、冬季两月原为无日应。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T06:27:12.283Z",
-  "sourceSha256": "b58f891f7da955099f9cb3090002056aa6ccc5dd99ae48cae81697f637d71029",
+  "reviewedAt": "2026-11-21T06:32:38.952Z",
+  "sourceSha256": "d572c9ad7dd2d1d72a0d84f308765d2a96a24746bb90bdd31deb3fcb3388f674",
   "checks": {
-    "scope": "火天大有已写60篇",
-    "chartComparisons": 1620,
+    "scope": "火天大有已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       478,
       535

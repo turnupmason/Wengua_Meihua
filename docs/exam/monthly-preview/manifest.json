@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-996-20261121",
+  "batch": "exam-monthly-preview-1008-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 996,
+  "uploadedArticles": 1008,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    14
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3612,
-  "authorWholeArticleReadback": 996,
+  "remainingArticles": 3600,
+  "authorWholeArticleReadback": 1008,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -194,6 +196,20 @@
         "favourable": 48,
         "difficult": 24
       }
+    },
+    {
+      "primaryId": 14,
+      "name": "火天大有",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-014.json",
+      "sourceSha256": "d572c9ad7dd2d1d72a0d84f308765d2a96a24746bb90bdd31deb3fcb3388f674",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-014.json",
+      "readingPath": "docs/exam/monthly-preview/hex-014.md",
+      "outcomes": {
+        "favourable": 28,
+        "difficult": 44
+      }
     }
   ],
   "checks": {
@@ -206,19 +222,18 @@
     ],
     "shortHanRange": [
       70,
-      111
+      112
     ],
-    "independentChartComparisons": 25272,
+    "independentChartComparisons": 27216,
     "independentChartMismatches": 0,
-    "dateCases": 1872,
-    "judgmentCorrectionArticles": 334,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前13个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2016,
+    "judgmentCorrectionArticles": 358,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 64
+    "interpreted-with-limits": 70
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -238,30 +253,6 @@
     "reference": "考试001–005、已比读的讼稿、面试逐月稿两个版本、确定关系逐月稿。目录版本见师卦核读记录。",
     "lastKey": "13/1/丑"
   },
-  "nextExpectedKey": {
-    "primaryId": 14,
-    "movingLine": 6,
-    "monthBranch": "寅"
-  },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 14,
-      "name": "火天大有",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-014.json",
-      "sourceSha256": "b58f891f7da955099f9cb3090002056aa6ccc5dd99ae48cae81697f637d71029",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-014.json",
-      "readingPath": "docs/exam/monthly-preview/hex-014.md"
-    }
-  ],
   "styleRepairs": {
     "keys": [
       "13/1/寅",
@@ -357,5 +348,11 @@
       "11/6/丑"
     ],
     "articles": 91
+  },
+  "previouslyPublishedPartialArticles": 60,
+  "nextExpectedKey": {
+    "primaryId": 15,
+    "movingLine": 1,
+    "monthBranch": "寅"
   }
 }
