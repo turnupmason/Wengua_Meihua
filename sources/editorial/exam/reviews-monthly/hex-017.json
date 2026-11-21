@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "泽雷随已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "泽雷随已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -35,6 +35,14 @@
     {
       "path": "sources/editorial/exam/hex-017.json",
       "scope": "六二五气稿逐条比照，去掉题序、题型与考试时长的推想。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03隨.txt",
+      "scope": "六三注疏，初与四各自所指、相从而非正应、所得以守正为宜。"
+    },
+    {
+      "path": "docs/interview-pass/monthly-preview/hex-017.md",
+      "scope": "对照六三面试逐月稿，留住随有求得与土生金等有利反证。"
     }
   ],
   "findings": [
@@ -75,6 +83,25 @@
         "17/2/丑"
       ],
       "finding": "纠正五组原专业说明把小子丈夫指作题目。比较秋身旺、冬体休与春金囚，区分月令与实卦，夏互艮受制生衰兑。"
+    },
+    {
+      "id": "hex-017-line-3",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "17/3/寅",
+        "17/3/卯",
+        "17/3/辰",
+        "17/3/巳",
+        "17/3/午",
+        "17/3/未",
+        "17/3/申",
+        "17/3/酉",
+        "17/3/戌",
+        "17/3/亥",
+        "17/3/子",
+        "17/3/丑"
+      ],
+      "finding": "清除五气专业说明把得失预指题型和评分的叙述，冬火弱而得木生不改时令。区分火生互艮与火克体兑。"
     }
   ],
   "lineReviews": [
@@ -91,6 +118,14 @@
       "text": "係小子，失丈夫。",
       "image": "“係小子”，弗兼与也。",
       "reading": "六二近初而失应五，弗兼与为专系的代价。上兑任震巽，艮生兑，动成两兑。全年能过，夏重互艮、其余取末兑。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "係丈夫，失小子。随有求得，利居贞。",
+      "image": "“係丈夫”，志舍下也。",
+      "reading": "六三舍初从四，彼此求得仍利居贞。上兑任震巽，互艮生金、末离制金，离得两木生而无水制。春夏末离取火日，其他月因原断取互艮参过程之助。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -135,18 +170,38 @@
       ],
       "scope": "十二篇逐篇写后从源文件读回，订正係字及应期所取中末，六项批查通过。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "每篇写完从作者源读回并依卦理加实，纠正辰月应取过程用互而非末克之期。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T18:20:09.249Z",
-  "sourceSha256": "1f880495cad5d7b00f42b49f0919fee28f4bc365fbc9066f5a95cbc05a0154bf",
+  "reviewedAt": "2026-11-21T18:36:46.717Z",
+  "sourceSha256": "a115e272bdb6aacfe67463d130c2762201e35949d79fa7004c6ef11b2f156f24",
   "checks": {
-    "scope": "泽雷随已写24篇",
-    "chartComparisons": 648,
+    "scope": "泽雷随已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       470,
-      535
+      541
     ]
   }
 }
