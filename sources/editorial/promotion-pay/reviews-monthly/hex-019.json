@@ -3,21 +3,187 @@
   "primaryId": 19,
   "baselineCommit": "0468b6d3699a8afd6581a97ec48b9884df464166",
   "editor": "/root",
-  "reviewedAt": "2026-11-21T03:56:19.065510+00:00",
+  "reviewedAt": "2026-11-21T04:05:22.034082+00:00",
   "status": "partially-reviewed",
-  "wholeArticlesRead": 0,
+  "wholeArticlesRead": 12,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
-  "authorshipScope": "root逐月独立撰写；每爻十二篇检查后全字段实际读回。未读批次不登记完成，机检不替代阅读。",
-  "sourceSha256": "31f8fd45f5d9003a996dc06f1b6227fa6997d152c821c0a6149eb1682d3da668",
-  "sourceEvidence": [],
-  "lineReviews": [],
-  "batchReadback": [],
-  "findings": [],
-  "authorReadbackVersions": [],
+  "authorshipScope": "root逐月手写临初九十二篇；四组各三篇实际通读全部字段，读后11个公开字段和12个取期订正字段按完整旧新再次读回。56个写作中整段整理属于初读之前，不另计读回篇数。作者读回12，独立复核仍待；后续五爻尚未计入。",
+  "sourceSha256": "5c6175a953be999393be3f41ca3bd1afb03bde541c205988e102e7787845a4c5",
+  "sourceEvidence": [
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "完整读取，按逐爻十二篇写作、实读及证据订正要求执行；用户本轮明确授权提交main。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "完整读取；保持自然首句、完整句、逐月独立正文与薪资单列。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "本次完整重读第一至十四节相关规则；原体月气、一层作用、比和、体克、用党分别处理。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "实际完整读取在任专条、爻义取舍与薪资问项；正向随岗加薪、负向仅限本次所附加薪。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "保留此前真实阅读的24篇范文范围：001、003、017、052各六篇；本次不是重复声称新读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-019.json",
+      "scope": "六爻五气三十条全部十二字段，三次各两爻实际读完。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-019.json",
+      "scope": "三十条完整记录三次各十条实际读完。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-019.json",
+      "scope": "三十条仅读取key、outcome、reasons、calculationNotes、promotionRule；不冒称全部重复字段通读。"
+    },
+    {
+      "path": "scripts/review/monthly-lib.mjs",
+      "scope": "independentFacts(19,line,month)列出的六爻五气共三十组六节点与四处直接关系实际逐组读取。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/03臨",
+      "revision": "2692101",
+      "scope": "库内、在线临章全文均实际读完；含卦辞、彖、象、六爻王注孔疏和八月异说。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02師.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02泰.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05歸妹.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06節.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+      "scope": "卦辞、彖、象及王注孔疏读至初爻前；未读全篇六爻。"
+    },
+    {
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "scope": "实际读取141–143、483–495、551–554、653–655、680–688、790–805所在原本段落；不声称全部三卷，也不把观梅起卦141–143当作完整观梅案。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "咸临，贞吉。",
+      "image": "咸临贞吉，志行正也。",
+      "reading": "咸临为初四正应、以刚感顺、志行正而获吉，完整正面古义与项目本次未升并列；原体坤，本兑泄、体互比和、用互震克、末坎体克均按原体解释。震生制并见依原月气，夏休与秋死不可夸重，春冬旺相不可抹去；秋体休与囚死有别。变师统众守正、容民畜众只作有界的任事类推。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "LIN-L1-GOOD-VERSE-PRIORITY"
+      ],
+      "canonicalSha256": "06bad91f0949e55871a529cd77298792a246dca69df308c6402e5072ce28f0ad"
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文、专业判断、取期、薪资、judgmentCorrection与payCorrection完整旧新字段实际读回。",
+      "status": "author-readback-complete",
+      "canonicalSha256": "06bad91f0949e55871a529cd77298792a246dca69df308c6402e5072ce28f0ad",
+      "completedAt": "2026-11-21T04:05:22.034082+00:00"
+    }
+  ],
+  "findings": [
+    {
+      "id": "LIN-L1-GOOD-VERSE-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "19/1/*"
+      ],
+      "finding": "初九贞吉在王孔为守正相感得吉，不只做对小事；现行晋升全盘无生有克与在任专条先判未升。正文与判断均保留吉义，此解释优先次序仍是项目选择，不声称原典单独证明现实结果。"
+    },
+    {
+      "id": "LIN-L1-ONE-LAYER",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/1/*"
+      ],
+      "finding": "震木受兑制且得坎生，生制并见按原月气；不可用相抵暗示定量抵消。比和、泄与体克各按原态，体休不误归旺相或囚死。"
+    },
+    {
+      "id": "LIN-L1-UNSUPPORTED-SCENES",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "19/1/*"
+      ],
+      "finding": "原取期管理考察加项、当天补一条、两份长报告、团队冲突点名等全部清除，完整旧新留入timingTextCorrection；不改变种类、位置、方法、项数。"
+    },
+    {
+      "id": "LIN-ANCIENT-TIME-LIMITS",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/*/*"
+      ],
+      "finding": "临八月有凶留存注疏异说，只取盛不可终保之戒，不推公历八月、八个月或申月必败；复七日来复不生成七日后任用。"
+    }
+  ],
+  "authorReadbackVersions": [
+    {
+      "movingLine": 1,
+      "canonicalSha256": "06bad91f0949e55871a529cd77298792a246dca69df308c6402e5072ce28f0ad",
+      "sourceSha256": "5c6175a953be999393be3f41ca3bd1afb03bde541c205988e102e7787845a4c5",
+      "wholeArticlesRead": 12,
+      "readAt": "2026-11-21T04:05:22.034082+00:00",
+      "lineHashSerialization": "json.dumps(lineArticles,ensure_ascii=False,sort_keys=True,separators=(comma,colon)), UTF-8"
+    }
+  ],
   "independentReview": {
     "status": "pending",
     "reviewerIsHuman": false
   },
-  "realWorldPredictionAccuracy": "not-validated"
+  "realWorldPredictionAccuracy": "not-validated",
+  "readbackEvidence": [
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/l1-pre-read-edits.json",
+      "scope": "初读前56个整段old/new，记录写作整理，不计额外实读篇数。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-1-first-read.json",
+      "scope": "实际全字段初读的完整十二篇版本。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-1-post-read-deltas.json",
+      "scope": "23个读后完整变动字段已实际再次读回，五气相同值展示方法明确列入。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-1.json",
+      "scope": "作者读回及完整差异读回后的最终十二篇冻结快照。"
+    }
+  ]
 }
