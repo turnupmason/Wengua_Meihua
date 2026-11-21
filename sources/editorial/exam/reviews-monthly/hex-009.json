@@ -493,8 +493,8 @@
     "reviewerIsHuman": false,
     "scope": "作者逐篇读回、出处核查与机器排盘已有各自记录，独立全文和古籍解释复核待定。"
   },
-  "reviewedAt": "2026-11-20T18:41:47.935Z",
-  "sourceSha256": "b047f13a534ba7786b53864d9cf22c118f718ca7b0ab66600858d34c019e4f27",
+  "reviewedAt": "2026-11-21T02:34:33.598Z",
+  "sourceSha256": "846761182cbfcece84025cc855b50388632cfc8f06a5a52c55e49d17e07ac9b9",
   "checks": {
     "scope": "风天小畜已写72篇，核对作者源与阅读页",
     "chartComparisons": 1944,
@@ -502,7 +502,7 @@
     "dateCases": 144,
     "bodyHanRange": [
       478,
-      542
+      582
     ]
   },
   "openingRevision": {
@@ -657,5 +657,45 @@
     ],
     "bodyTransitionKeys": [],
     "scope": "本次审读修订的开头、简断及段内衔接。前版整篇核读对应原哈希。本次逐项比对判词、取期与四段正文的改动范围。"
-  }
+  },
+  "proseRevisions": [
+    {
+      "keys": [
+        "9/1/寅",
+        "9/1/卯",
+        "9/1/辰",
+        "9/1/巳",
+        "9/1/午",
+        "9/1/未",
+        "9/1/申",
+        "9/1/酉",
+        "9/1/戌",
+        "9/1/亥",
+        "9/1/子",
+        "9/1/丑"
+      ],
+      "priorSourceSha256": "b047f13a534ba7786b53864d9cf22c118f718ca7b0ab66600858d34c019e4f27",
+      "sourceSha256": "846761182cbfcece84025cc855b50388632cfc8f06a5a52c55e49d17e07ac9b9",
+      "reviewedAt": "2026-11-21T02:34:33.598Z",
+      "scope": "对读考试乾至需及面试逐月稿。重写题名、简断和主要段落，并保留仍合题的原有解释；逐篇从落盘版本核读全文；另核本爻经、象、注疏，逐月对照五气原稿与应期。",
+      "ruleReview": "逐月读回初四相应与复自道，爻吉落在循熟法有据。春核指定法、夏核试法耗时、土月核前提、秋核重题、冬核作答位置。逐篇对照离火日参耗、兑乾金日参阻。",
+      "comparisonSources": [
+        {
+          "tree": "60c03a9d9fc8528a4ec9be950c30446aef5214aa",
+          "path": "docs/interview-pass/monthly-preview",
+          "refs": [
+            "d3e942d8",
+            "be2afd72"
+          ]
+        },
+        {
+          "tree": "0ba8ca8becb65d2b162f4432a888bf0238f45d46",
+          "path": "docs/relationship-establishment/monthly-preview",
+          "refs": [
+            "be2afd72"
+          ]
+        }
+      ]
+    }
+  ]
 }
