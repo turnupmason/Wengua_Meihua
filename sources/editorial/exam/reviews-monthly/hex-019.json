@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "authorshipScope": {
-    "currentReadback": "地泽临已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地泽临已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -27,6 +27,10 @@
     {
       "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
       "scope": "六三及小象，王孔解释处位非当与改修其道。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03臨.txt",
+      "scope": "六四爻辞及位当、应初之注疏"
     }
   ],
   "findings": [
@@ -86,6 +90,25 @@
         "19/3/丑"
       ],
       "finding": "首兑、末乾均耗土而同制中震；寅卯亥子取中震木日，其余八月取末乾金日，分别核查当令与实际作用。"
+    },
+    {
+      "id": "hex-019-line-4",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "19/4/寅",
+        "19/4/卯",
+        "19/4/辰",
+        "19/4/巳",
+        "19/4/午",
+        "19/4/未",
+        "19/4/申",
+        "19/4/酉",
+        "19/4/戌",
+        "19/4/亥",
+        "19/4/子",
+        "19/4/丑"
+      ],
+      "finding": "寅卯巳午取用互坤参途中薄助；亥子取本用参初助；土月申酉取本用参合格消息。"
     }
   ],
   "lineReviews": [
@@ -110,6 +133,14 @@
       "text": "甘临，无攸利；既忧之，无咎。",
       "image": "“甘临”，位不当也。“既忧之”，咎不长也。",
       "reading": "六三以甘临无利，既忧能改则咎不长，止其失而非直接断成。上坤生两金，两金又制中震，盘无水生震、无火生坤。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 4,
+      "text": "至临，无咎。",
+      "image": "“至临，无咎”，位当也。",
+      "reading": "六四以柔居正、下应初九，能尽临之善，故无咎。兑金为体，两坤生兑却受震克，不能照旺土全额算扶助。两震为兑所制，按月气定难易。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -174,17 +205,37 @@
       ],
       "scope": "逐篇读回十二月四段正文、简断与应期，对照时令核清首末耗力的重轻，去除分差与具体作答推设。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "读回标题、简断、四段正文和取期，复读更正过的开头，核对弱助和制木的方向。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T21:09:13.921Z",
-  "sourceSha256": "06b3b5282ceb6c860c5a332ed506e7e84ba9890d4ef13d47023649c65868096e",
+  "reviewedAt": "2026-11-21T21:20:16.741Z",
+  "sourceSha256": "2d575dde3d8c8056fbff2b3de44618883277008bc5ec2ce9dae674f4dde81ff5",
   "checks": {
-    "scope": "地泽临已写36篇",
-    "chartComparisons": 972,
+    "scope": "地泽临已写48篇",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
-      493,
+      479,
       534
     ]
   }
