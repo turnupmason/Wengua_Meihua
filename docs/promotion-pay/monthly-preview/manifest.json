@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-1728-20261121",
+  "batch": "promotion-pay-monthly-preview-1800-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1728,
+  "uploadedArticles": 1800,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    23
+    25
   ],
   "fullTarget": 4608,
-  "remainingArticles": 2880,
-  "authorWholeArticleReadback": 1728,
+  "remainingArticles": 2808,
+  "authorWholeArticleReadback": 1800,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -350,6 +350,20 @@
         "favourable": 16,
         "difficult": 56
       }
+    },
+    {
+      "primaryId": 25,
+      "name": "天雷无妄",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-025.json",
+      "sourceSha256": "9ae61bcc5fd0268a906f6af3be1eee665ef579c3df470b5ae39872951e59c425",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-025.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-025.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
     }
   ],
   "checks": {
@@ -364,16 +378,16 @@
       76,
       112
     ],
-    "independentChartComparisons": 46656,
+    "independentChartComparisons": 48600,
     "independentChartMismatches": 0,
-    "dateCases": 3456,
-    "judgmentCorrectionArticles": 1346,
+    "dateCases": 3600,
+    "judgmentCorrectionArticles": 1418,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       33,
       67
     ],
-    "payCorrectionArticles": 1728
+    "payCorrectionArticles": 1800
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 14,
@@ -424,7 +438,9 @@
     "corrected-and-complete-fields-reread": 2,
     "open": 28,
     "closed-after-complete-field-reread": 3,
-    "resolved-complete-delta-read": 3
+    "resolved-complete-delta-read": 3,
+    "documented-open": 3,
+    "not-validated": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -623,6 +639,14 @@
       "currentRevisionFullTextReadCount": 30,
       "currentRevisionChangedArticleReadCount": 42,
       "scope": "72篇title/short/全部paragraphs/payExplanation曾逐篇实际全文读过。前3爻36篇后续99完整段标点改动已实际逐段复读；末轮门禁再改14个完整字段，涉及13篇，其中初三爻7篇已在36内，新增六五5篇和上六1篇。最终30篇公开全文原样保留、42篇有完整变化字段复读。六四3气和上六5气无期说明与订正另作完整字段读回，不冒称最终hash下重新读过72篇。"
+    },
+    {
+      "primaryId": 25,
+      "sourceSha256": "9ae61bcc5fd0268a906f6af3be1eee665ef579c3df470b5ae39872951e59c425",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": 54,
+      "currentRevisionChangedArticleReadCount": 18,
+      "scope": "六爻72篇公开字段曾逐篇完整实际阅读，30个不同五气专业及应期组实际读取。最终公开文本中未变部分与完整变化字段复读分开登记；同气重复专业以精确验等绑定。各分爻记录保存实际读取范围、修改事项与版本，不将程序核对或哈希计算冒称全文阅读。"
     }
   ],
   "independentHumanReview": "pending"
