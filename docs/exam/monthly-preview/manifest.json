@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-924-20261121",
-  "publicationDate": "2026-11-20",
+  "batch": "exam-monthly-preview-936-20261121",
+  "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 924,
+  "uploadedArticles": 936,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    13
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3684,
-  "authorWholeArticleReadback": 924,
+  "remainingArticles": 3672,
+  "authorWholeArticleReadback": 936,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -180,6 +182,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 13,
+      "name": "天火同人",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-013.json",
+      "sourceSha256": "eb955ecab9db3d9fbe24a8d3c403ae1b7d758bb60660014c45d59e84fdd3d09b",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-013.json",
+      "readingPath": "docs/exam/monthly-preview/hex-013.md",
+      "outcomes": {
+        "favourable": 48,
+        "difficult": 24
+      }
     }
   ],
   "checks": {
@@ -194,58 +210,39 @@
       70,
       111
     ],
-    "independentChartComparisons": 23328,
+    "independentChartComparisons": 25272,
     "independentChartMismatches": 0,
-    "dateCases": 1728,
-    "judgmentCorrectionArticles": 322,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖已完成的乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否十二卦。天火同人已发布篇目的检查见其核读记录。"
+    "dateCases": 1872,
+    "judgmentCorrectionArticles": 334,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
-    "open-priority": 74,
+    "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 58
+    "interpreted-with-limits": 64
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
   "classicalInterpretationReview": "partially-reviewed; see per-hexagram findings",
   "userPerArticleAcceptance": false,
   "runtimeChanged": false,
-  "nextExpectedKey": {
-    "primaryId": 13,
-    "movingLine": 6,
-    "monthBranch": "寅"
-  },
   "openingRevision": {
     "firstSentenceCount": 480,
     "firstHexagram": 6,
     "lastHexagram": 12,
     "summaryCount": 462
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 13,
-      "name": "天火同人",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-013.json",
-      "sourceSha256": "72f2cfe3d151d0b91da3671e33fea40820bb123655fdb4e324c42166e18fe8af",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-013.json",
-      "readingPath": "docs/exam/monthly-preview/hex-013.md"
-    }
-  ],
   "proseRevision": {
     "firstKey": "6/1/寅",
     "publishedArticlesToRevisit": 516,
     "revisedArticles": 480,
     "reference": "考试001–005、已比读的讼稿、面试逐月稿两个版本、确定关系逐月稿。目录版本见师卦核读记录。",
     "lastKey": "13/1/丑"
+  },
+  "previouslyPublishedPartialArticles": 60,
+  "nextExpectedKey": {
+    "primaryId": 14,
+    "movingLine": 1,
+    "monthBranch": "寅"
   }
 }
