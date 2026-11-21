@@ -3,13 +3,13 @@
   "primaryId": 19,
   "baselineCommit": "0468b6d3699a8afd6581a97ec48b9884df464166",
   "editor": "/root",
-  "reviewedAt": "2026-11-21T04:05:22.034082+00:00",
+  "reviewedAt": "2026-11-21T04:15:45.275586+00:00",
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
-  "authorshipScope": "root逐月手写临初九十二篇；四组各三篇实际通读全部字段，读后11个公开字段和12个取期订正字段按完整旧新再次读回。56个写作中整段整理属于初读之前，不另计读回篇数。作者读回12，独立复核仍待；后续五爻尚未计入。",
-  "sourceSha256": "5c6175a953be999393be3f41ca3bd1afb03bde541c205988e102e7787845a4c5",
+  "authorshipScope": "root逐月手写临初九、九二共24篇并全字段实际读回。初九读后23个完整变动字段、九二读后4个完整字段已再读，截断处明确补读；初读前整理不计新增阅读。全部初读、最终快照及完整旧新受控存档，独立复核尚待；后四爻未计入。",
+  "sourceSha256": "bf3e63c66501d72876b818f4aedb3c1e5069d94006968df016caf1649fbee52d",
   "sourceEvidence": [
     {
       "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
@@ -93,6 +93,17 @@
         "LIN-L1-GOOD-VERSE-PRIORITY"
       ],
       "canonicalSha256": "06bad91f0949e55871a529cd77298792a246dca69df308c6402e5072ce28f0ad"
+    },
+    {
+      "movingLine": 2,
+      "text": "咸临，吉，无不利。",
+      "image": "咸临，吉，无不利，未顺命也。",
+      "reading": "二五相应而刚柔各有所守，商量事宜、有从有否、献可替否既含刚正也含相感，吉无不利不缩为少附材料或不照旧法。两震均受本兑制且无水生，五气皆轻克，春旺冬相原气不被改名但作用不可夸重。无生而有克、末克与在任专条仍保原未升；互变复的返本得亨作为有界辅义，不生成七天任用。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "LIN-L2-CHOICE-AND-GOODNESS"
+      ],
+      "canonicalSha256": "3f006e637dc225463bdc1e5ec9031d536e9ad0d9bc9f268a09f3608c7f9645d8"
     }
   ],
   "batchReadback": [
@@ -117,6 +128,28 @@
       "status": "author-readback-complete",
       "canonicalSha256": "06bad91f0949e55871a529cd77298792a246dca69df308c6402e5072ce28f0ad",
       "completedAt": "2026-11-21T04:05:22.034082+00:00"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "标题、简断、全部正文、专业判断、取期、薪资、judgmentCorrection与payCorrection完整旧新字段实际读回。",
+      "status": "author-readback-complete",
+      "canonicalSha256": "3f006e637dc225463bdc1e5ec9031d536e9ad0d9bc9f268a09f3608c7f9645d8",
+      "completedAt": "2026-11-21T04:15:45.275586+00:00"
     }
   ],
   "findings": [
@@ -151,6 +184,14 @@
         "19/*/*"
       ],
       "finding": "临八月有凶留存注疏异说，只取盛不可终保之戒，不推公历八月、八个月或申月必败；复七日来复不生成七日后任用。"
+    },
+    {
+      "id": "LIN-L2-CHOICE-AND-GOODNESS",
+      "status": "open-priority",
+      "keys": [
+        "19/2/*"
+      ],
+      "finding": "王孔未顺命为二五相应中的刚柔斟酌、献可替否，获吉无不利不是小技巧。完整吉义与现行无生有克/末克/在任专条的未升结论分层保留，未以阴阳古位推定现实上下级个性或先前失误。"
     }
   ],
   "authorReadbackVersions": [
@@ -160,6 +201,14 @@
       "sourceSha256": "5c6175a953be999393be3f41ca3bd1afb03bde541c205988e102e7787845a4c5",
       "wholeArticlesRead": 12,
       "readAt": "2026-11-21T04:05:22.034082+00:00",
+      "lineHashSerialization": "json.dumps(lineArticles,ensure_ascii=False,sort_keys=True,separators=(comma,colon)), UTF-8"
+    },
+    {
+      "movingLine": 2,
+      "canonicalSha256": "3f006e637dc225463bdc1e5ec9031d536e9ad0d9bc9f268a09f3608c7f9645d8",
+      "sourceSha256": "bf3e63c66501d72876b818f4aedb3c1e5069d94006968df016caf1649fbee52d",
+      "wholeArticlesRead": 12,
+      "readAt": "2026-11-21T04:15:45.275586+00:00",
       "lineHashSerialization": "json.dumps(lineArticles,ensure_ascii=False,sort_keys=True,separators=(comma,colon)), UTF-8"
     }
   ],
@@ -184,6 +233,45 @@
     {
       "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-1.json",
       "scope": "作者读回及完整差异读回后的最终十二篇冻结快照。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/l2-pre-read-edits.json",
+      "scope": "初读前15处完整改动，只记写作深化，不冒称读后复核。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-2-first-read.json",
+      "scope": "实际通读的初版十二篇完整快照，午月曾截断字段已补读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-2-post-read-deltas.json",
+      "scope": "四个完整读后旧新字段已逐项实际复读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/evidence/hex-019/author-line-2.json",
+      "scope": "作者真实阅读与修改后最终十二篇冻结快照。"
     }
-  ]
+  ],
+  "checks": {
+    "scope": "初九、九二24篇draft关口，非整卦验收",
+    "structure": "passed",
+    "bodyHanRange": [
+      512,
+      543
+    ],
+    "shortHanRange": [
+      79,
+      92
+    ],
+    "payHanRange": [
+      41,
+      50
+    ],
+    "chartComparisons": 648,
+    "chartMismatches": 0,
+    "dateCases": 48,
+    "duplicateLongSentences": 0,
+    "style": "passed",
+    "avgSentence": 30.8,
+    "bodyMedianByStyleScript": 527
+  }
 }
