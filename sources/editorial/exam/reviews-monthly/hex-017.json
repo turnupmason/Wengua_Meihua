@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "泽雷随已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "泽雷随已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -59,6 +59,14 @@
     {
       "path": "sources/editorial/exam/hex-017.json",
       "scope": "九五五气逐项核本互变、有生之兑、无水之局以及申酉日。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03隨.txt",
+      "scope": "上六经传及注疏，核拘系、乃从、维之的先后与王通西山之主语。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-017.json",
+      "scope": "上六十二月所据五气，核末乾克期及本、变两金得艮生。"
     }
   ],
   "findings": [
@@ -156,6 +164,25 @@
         "17/5/丑"
       ],
       "finding": "五气原专业说明均夹有未经卦证的题目、用时或得分，已改。春木、冬木自身有气不作第二重生扶；艮兼生兑、受木所制，按时令分别评轻重。"
+    },
+    {
+      "id": "hex-017-line-6",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "17/6/寅",
+        "17/6/卯",
+        "17/6/辰",
+        "17/6/巳",
+        "17/6/午",
+        "17/6/未",
+        "17/6/申",
+        "17/6/酉",
+        "17/6/戌",
+        "17/6/亥",
+        "17/6/子",
+        "17/6/丑"
+      ],
+      "finding": "兑变乾并未解除金克木，勿把中间同木当作末段扶助，也不据上穷归咎考生。核五气的体强弱、艮与金木双方关系及末乾申酉日。"
     }
   ],
   "lineReviews": [
@@ -196,6 +223,14 @@
       "text": "孚于嘉，吉。",
       "image": "“孚于嘉，吉”，位正中也。",
       "reading": "王弼以居正得中、随时之宜释信善。九五的吉肯定所信及分寸，体震与巽互、末震同气可守，然而本兑克震又得艮生，无水生体。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "拘係之，乃从，维之；王用亨于西山。",
+      "image": "“拘係之”，上穷也。",
+      "reading": "据王弼、孔颖达，拘系而后从，小象「上穷也」先论爻位；王用亨于西山，王注释亨为通。互巽可守，本兑、末乾同克震，须分五气轻重。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -300,15 +335,35 @@
       ],
       "scope": "十二篇逐篇写后读取全文；校核标题、简断、正文、公开应期、专业说明与逐日资料。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "各篇单独写入后全文读回，复查公开时日与专业说明。已排除具体题目、时间不足等未经卦证的情节。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T19:06:08.862Z",
-  "sourceSha256": "654be0daa63f38e3000e59adc369936fff582d0c81f405d0741006f3004bf0ae",
+  "reviewedAt": "2026-11-21T19:16:46.828Z",
+  "sourceSha256": "0db9e4c7f82858b26f4cd23d1a41425df6c47f8cbbf0c9ed3a7615ccec744e01",
   "checks": {
-    "scope": "泽雷随已写60篇",
-    "chartComparisons": 1620,
+    "scope": "泽雷随已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       470,
       544

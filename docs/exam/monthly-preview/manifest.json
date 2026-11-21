@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1212-20261121",
+  "batch": "exam-monthly-preview-1224-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1212,
-  "newArticlesSincePrevious": 0,
-  "newHexagrams": [],
+  "uploadedArticles": 1224,
+  "newArticlesSincePrevious": 12,
+  "newHexagrams": [
+    17
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3396,
-  "authorWholeArticleReadback": 1212,
+  "remainingArticles": 3384,
+  "authorWholeArticleReadback": 1224,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -236,6 +238,20 @@
         "favourable": 48,
         "difficult": 24
       }
+    },
+    {
+      "primaryId": 17,
+      "name": "泽雷随",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-017.json",
+      "sourceSha256": "0db9e4c7f82858b26f4cd23d1a41425df6c47f8cbbf0c9ed3a7615ccec744e01",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-017.json",
+      "readingPath": "docs/exam/monthly-preview/hex-017.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
     }
   ],
   "checks": {
@@ -250,17 +266,16 @@
       70,
       112
     ],
-    "independentChartComparisons": 31104,
+    "independentChartComparisons": 33048,
     "independentChartMismatches": 0,
-    "dateCases": 2304,
-    "judgmentCorrectionArticles": 448,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前16个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 2448,
+    "judgmentCorrectionArticles": 520,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 82
+    "interpreted-with-limits": 88
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "pending",
@@ -653,27 +668,9 @@
     "articles": 367
   },
   "nextExpectedKey": {
-    "primaryId": 17,
-    "movingLine": 6,
+    "primaryId": 18,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 17,
-      "name": "泽雷随",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-017.json",
-      "sourceSha256": "654be0daa63f38e3000e59adc369936fff582d0c81f405d0741006f3004bf0ae",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-017.json",
-      "readingPath": "docs/exam/monthly-preview/hex-017.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
