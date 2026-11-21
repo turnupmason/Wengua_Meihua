@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：576 篇预览
+# 晋升加薪逐月长稿：720 篇预览
 
-更新日期：2026-11-20（America/New_York）。本批新增风天小畜，共 72 篇；累计 576 篇。完整目标为 4,608 篇，尚余 4032 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-20（America/New_York）。本批新增水地比、天泽履，共 144 篇；累计 720 篇。完整目标为 4,608 篇，尚余 3888 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -11,7 +11,9 @@
 | 水天需 | 72 | [打开全文](hex-005.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-005.json) |
 | 天水讼 | 72 | [打开全文](hex-006.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-006.json) |
 | 地水师 | 72 | [打开全文](hex-007.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-007.json) |
+| 水地比 | 72 | [打开全文](hex-008.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-008.json) |
 | 风天小畜 | 72 | [打开全文](hex-009.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-009.json) |
+| 天泽履 | 72 | [打开全文](hex-010.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-010.json) |
 
 
 
@@ -23,13 +25,15 @@
 
 ## 本批阅读入口
 
-- [风天小畜：六爻十二月全文](hex-009.md)
+- [水地比：六爻十二月全文](hex-008.md)
+
+- [天泽履：六爻十二月全文](hex-010.md)
 
 
 
 ## 检查与阅读状态
 
-576 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 15,552 项，差异 0；日期用例 1,152 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–613 汉字。
+720 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 19,440 项，差异 0；日期用例 1,440 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–613 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
