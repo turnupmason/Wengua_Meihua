@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "地山谦已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地山谦已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -67,6 +67,14 @@
     {
       "path": "sources/editorial/exam/hex-015.json",
       "scope": "六五五季各核两坎之强弱、互震受生。核四季土月取初坤比和应，其他八个月取互震克体应。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "scope": "上六王注孔疏及小象。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "谦上六，征邑国取自治其私。"
     }
   ],
   "findings": [
@@ -164,6 +172,25 @@
         "15/5/丑"
       ],
       "finding": "末艮克坎是有主动，按五季各不相同的强弱说明能承担多少，不能指为末后修改错误。土月取辰戌丑未日仅指初段吉应，勿与整场能否合格混用；春夏秋冬取寅卯日指中段之阻。"
+    },
+    {
+      "id": "hex-015-line-6",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "15/6/寅",
+        "15/6/卯",
+        "15/6/辰",
+        "15/6/巳",
+        "15/6/午",
+        "15/6/未",
+        "15/6/申",
+        "15/6/酉",
+        "15/6/戌",
+        "15/6/亥",
+        "15/6/子",
+        "15/6/丑"
+      ],
+      "finding": "首尾比和，中段震制艮，坎又生震。虽土旺亦无卦制木或生土。四季按土自身强弱分别判断末艮所能守者。原据中春、夏、土月末段所指收卷动作的词校为收束比和，结论取期均未改。"
     }
   ],
   "lineReviews": [
@@ -204,6 +231,14 @@
       "text": "不富，以其邻利用侵伐，无不利。",
       "image": "“利用侵伐”，征不服也。",
       "reading": "六五不富而用其邻，王孔从居尊行谦、邻自归附解；侵伐有所指，小象曰征不服也。谦顺与决断是爻义，验本事仍看中震克艮、末坎受艮所制及两坎生木。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "text": "鸣谦，利用行师，征邑国。",
+      "image": "“鸣谦”，志未得也；“可用行师”，征邑国也。",
+      "reading": "小象以志未得释鸣谦，王弼、孔颖达从上六处外解释有谦名而功志未遂，程颐以征邑国为自治其私。所能守住的范围与整场能否通过分别衡量。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -308,15 +343,35 @@
       ],
       "scope": "逐篇落盘读回简断、题名、正文、应期及判断。另核同季技术说明一致性，校正十二处由体克变用推定改错的旧文。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回长短断、应期与依据，区分季令得气与卦内实见。各月只从中途震木取寅卯日，删去虚拟作答情形。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T16:11:24.473Z",
-  "sourceSha256": "93cc6442fbda9d8d354e683284940d782917be70bd522da9c6fe222dcf627782",
+  "reviewedAt": "2026-11-21T16:26:07.330Z",
+  "sourceSha256": "6c239f63bb77c9ef399be64f8ac726061c4b7f06ba69dfc94eb325b380c3c5ee",
   "checks": {
-    "scope": "地山谦已写60篇",
-    "chartComparisons": 1620,
+    "scope": "地山谦已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       470,
       537
