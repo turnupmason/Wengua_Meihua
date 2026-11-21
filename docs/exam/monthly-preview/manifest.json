@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1008-20261121",
+  "batch": "exam-monthly-preview-1020-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1008,
+  "uploadedArticles": 1020,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    14
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3600,
-  "authorWholeArticleReadback": 1008,
+  "remainingArticles": 3588,
+  "authorWholeArticleReadback": 1020,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -228,7 +226,8 @@
     "independentChartMismatches": 0,
     "dateCases": 2016,
     "judgmentCorrectionArticles": 358,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖前14个完整卦，本卦已发表篇目另见该卦核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
@@ -349,10 +348,24 @@
     ],
     "articles": 91
   },
-  "previouslyPublishedPartialArticles": 60,
   "nextExpectedKey": {
     "primaryId": 15,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
-  }
+  },
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 15,
+      "name": "地山谦",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-015.json",
+      "sourceSha256": "e4b23499b62b4e1c4e0d577cb9df26804d349de0407882e468f2fe36f0e460e9",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-015.json",
+      "readingPath": "docs/exam/monthly-preview/hex-015.md"
+    }
+  ]
 }
