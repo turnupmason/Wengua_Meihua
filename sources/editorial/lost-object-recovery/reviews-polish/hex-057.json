@@ -1,0 +1,994 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaign": "lost-object-polish-20261120",
+  "primaryId": 57,
+  "questionId": "search.lost-object.recovery",
+  "baselineCommit": "950fd31b331aebd617cb6b0528afc1ea9ea2b9db",
+  "sourcePath": "sources/editorial/lost-object-recovery/hex-057.json",
+  "sourceSha256": "7eb382cefb0cb2b9803a6111b5e2ebefa2bfa4a79ed929327fdcc4c32ef48011",
+  "authorAgent": "lost_writer_b",
+  "peerAgent": "classical_source_audit",
+  "reviewerIsHuman": false,
+  "authorReviewedAt": "2026-11-21T04:19:43.832379+00:00",
+  "peerReviewedAt": "2026-11-21T04:19:43.832379+00:00",
+  "sourceRead": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06巽.txt",
+      "scope": "实际全文读24–65卦辞彖象、六爻及王弼注孔颖达疏；初六断句与己字疑误另对四库，九二神祇/威势、九三频蹙、六四三品、九五庚义、上九失威断全核",
+      "url": "https://zh.wikisource.org/wiki/周易正義/06巽"
+    },
+    {
+      "path": "online/周易注疏_(四庫全書本)/卷09",
+      "scope": "实际open并读取网页622–692巽整卦经注疏及770–780九五庚注考证；另644–650核初六法未宣著与惧罪及己。未声称全文核全卷或刻本图像",
+      "url": "https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09"
+    },
+    {
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "scope": "本轮53任务先前已实际读失物573–576、占卦诀791–794、体用互变795–799、衰旺803–805；57继续用其固定原体和失物五关系，不借其他问项裁断"
+    },
+    {
+      "path": "docs/LOST_OBJECT_RECOVERY_POLICY.md",
+      "scope": "再次实读通则、应期及057巽逐爻依据，原应期与结果固定"
+    },
+    {
+      "path": "docs/lost-object-recovery/POLISH_AUDIT_20261120.md",
+      "scope": "本轮厚度、作者与独立AI全读、真实分歧及合并全文范围要求实读"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-057.json",
+      "scope": "原30篇0–10实际分两次全文读，核完整五气结论和原应期；非仅取标题批量扩写"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/directions/hex-057.json",
+      "scope": "六条方向附文全文初读并在最终正文读回前再次逐条实读，分别同五气正文合并核边界"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/images/hex-057.json",
+      "scope": "六条形色器物环境附文全文初读及读回；本用巽原物与乾艮坎变用环境分离"
+    },
+    {
+      "path": "scripts/review/monthly-lib.mjs",
+      "scope": "independentFacts57六爻五气30组实际独立复算，本互变固定体、双互归侧与五态核对，不代替语义阅读"
+    },
+    {
+      "path": "src/story-editorial.js",
+      "scope": "实际读取现有INTERNAL_LANGUAGE及简断60–120汉字门槛，正文稿检查通过；没有改门槛"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-051.json",
+      "scope": "53任务中实读初九春与上六春精修样文，本57沿用已读厚度和正反推演尺度"
+    },
+    {
+      "path": "docs/interview-pass/monthly-preview/hex-001.md",
+      "scope": "53任务中已实读用户面试初九寅月正文，57沿用明结论及本互变五态的解释厚度，不套面试裁断"
+    },
+    {
+      "path": "docs/relationship-establishment/monthly-preview/hex-001.md",
+      "scope": "53任务中已实读初九寅月主体及折叠规则起段，本57沿用自然叙述，不套关系裁断"
+    },
+    {
+      "path": "lost-drafts/hex-057.json",
+      "scope": "保存后0–9、10–19、20–29三批将全部字段3–10实际全文读回；九二五段补全史巫纷若及五处自然语气变化另逐字段重读。收到独立审读后，row7[7]得中之吉、row18[3]仍有取回机会、row25[5]即使有人帮查、row27[5]若有实助四字段修改后再次实际逐字段全文读回。方向形色合并审读；后机器句段重复和门槛核查仅为补助"
+    }
+  ],
+  "peerSources": [
+    {
+      "path": "/workspace/scratch/2191eba3c3a5/lost-drafts/hex-057.json",
+      "scope": "30篇3–10按0–9、10–19、20–29完整实读；作者按peer意见修改4字段后逐字段再次实读，绑定本次原始字节与全行摘要。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06巽.txt",
+      "scope": "全篇卦辞、彖象、六爻经文与王孔注疏及校勘尾注全文读完。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/directions/hex-057.json",
+      "scope": "6动爻所有方向场所附文全文。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/images/hex-057.json",
+      "scope": "6动爻原物、环境形色与applicability全文，分别核对本用巽及变乾/艮/坎。"
+    },
+    {
+      "path": "scripts/review/monthly-lib.mjs",
+      "scope": "独立复算57六爻×寅巳申亥辰的节点、原体关系、五态及互变卦序，与30篇全量逐项核对。"
+    },
+    {
+      "path": "周易注疏（四库全书本）卷09",
+      "url": "https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09",
+      "scope": "亲自打开并实读622–692完整巽经注疏及770–780庚义考证；确认九二神祇/威势、九三频蹙、九五申命训受质疑、上九资斧喻威断。"
+    },
+    {
+      "path": "/workspace/scratch/2191eba3c3a5/lost-drafts/author-057.json",
+      "scope": "查阅九五5篇作者classicalLocator与openQuestions，核其是否如实保留自己实际读到的四库考证异议，未代作者签名。"
+    }
+  ],
+  "independentProfessionalReview": "pending",
+  "userAcceptedThisVersion": false,
+  "entries": [
+    {
+      "rowIndex": 0,
+      "movingLine": 1,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "旺初比与中末囚金轻克均有实查正面，偏难主因则为中相离泄、后无生援；开篇把能查清与能回物分开，末段保住武贞治疑的积极义，非只责犹豫。简断改成问清收放后仍须核当前原件，实际读回确认。",
+      "counterevidence": "旺巽本用比体与囚兑、囚乾克轻，是对difficult的明显正证；中相离泄及末无生体使现稿仍不径许归还。",
+      "lineMeaning": "初六40–45：处令之初、法未宣著而志疑进退；利武人之贞以正整齐使志治。利的正面和疑的限制均在，不转成现实武人或威逼。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:40–45; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原本旺比日窗只核最后收放的一项动作，局部吉应不改整体偏难。",
+      "imageDirectionBoundary": "变乾之西北、高处、圆器只用于实际收放内的容器层格；本用巽竹木、系带、长直、工巧及青碧洁白依原件资料对证，乾金玉硬质陈设另属环境，不反推材料位置。",
+      "openQuestions": [
+        "初六春旺初比、两囚金克轻，而武贞亦有志治之利，何以固定difficult，仍需与六四春令同生克而conditional统一核断；本次解释并未重定结果。",
+        "旺体本比、中末两克较轻且初六利武贞有从疑转治之利，原difficult与这些正证存在权衡；没有新的古典数值规则可证明必须偏难。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "b332b8392f4fe31547519265ed82997cc68cf1a5f68dd01f8fcf06b3f87b198a",
+      "authorFieldsSha256": "8c6d496c49a50fd3e6a547f7383191be4f75bc360edb7cef19592140330ceed5",
+      "peerFinding": "已实读全篇及附文：旺巽本体比和有力、相离体互生出、囚兑用互与末囚乾各克原巽，关系与五态正确；初六由志疑到武贞志治两面俱存，未借武人之象要求强催。原起比窗口仅核实际取放。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "b332b8392f4fe31547519265ed82997cc68cf1a5f68dd01f8fcf06b3f87b198a",
+      "copySha256": "9af6161ad154655b39487e28224b440b195089724e41f628f12b53fbc5c4e2e3",
+      "assembledCopySha256": "1986f221a5280a8c14a11d00df5f8e4b7f2abd6bfdf074aec2ec24c57de81fc0",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比，承相火耗、囚金中末克，无生援。爻武贞取明断有据。",
+        "new": "春旺巽体、本旺巽比；体互相离泄、用互囚兑克、末囚乾克各对原体，无生援。06巽40–45志疑与武贞致治并释，现代取有据定查不取强迫。574比和与804旺衰保difficult，旺初比和轻两克是反证，定权另留审。原旺本比窗仅为起段核收放。",
+        "reason": "旺初比与中末囚金轻克均有实查正面，偏难主因则为中相离泄、后无生援；开篇把能查清与能回物分开，末段保住武贞治疑的积极义，非只责犹豫。简断改成问清收放后仍须核当前原件，实际读回确认。"
+      }
+    },
+    {
+      "rowIndex": 1,
+      "movingLine": 1,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏木休按支持一般写，未作囚死；用互死兑与末死乾克轻，体互旺离泄才是主要耗费。全文从一轮查问是否有新内容起笔，不从月份断对方曾拒绝；志疑、依正整齐至治完整。",
+      "counterevidence": "两死金克力轻、原比休仍可复查，武贞利治亦非全无益；旺离实耗而无生援不能被这些正证完全抹去。",
+      "lineMeaning": "初六40–45：处令之初、法未宣著而志疑进退；利武人之贞以正整齐使志治。利的正面和疑的限制均在，不转成现实武人或威逼。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:40–45; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原字符串省略日窗；旺火为耗、克死和无生援不凑取回日。",
+      "imageDirectionBoundary": "变乾之西北、高处、圆器只用于实际收放内的容器层格；本用巽竹木、系带、长直、工巧及青碧洁白依原件资料对证，乾金玉硬质陈设另属环境，不反推材料位置。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "597d28d1c179307e76ef65a09a32f32d0491e60f87a7aac92e848eb4dc116928",
+      "authorFieldsSha256": "fb17deb0f703f557e4c2f0daff5302aebf5ceaee7aeedb279be5558c6dff1249",
+      "peerFinding": "全文复核：本体同休比和为一般，旺离中耗重，两处死金克轻仍无生援，未将轻克夸作强阻。初六定疑的积极作用保留，亲查与问过的区别有实际寻物语境；不取日理由与各节点一致。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "597d28d1c179307e76ef65a09a32f32d0491e60f87a7aac92e848eb4dc116928",
+      "copySha256": "5086c337dba021f6f2586f0b7bbeb4505c9e9c7d35821b437d41310d6e17c884",
+      "assembledCopySha256": "edde2dcf4aabe5bdd1c06728f99dc423a25d7d352baba46581d7e2bd4533f3c0",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休比、旺火耗、两死金克薄，无直接助力，初六戒疑不定。",
+        "new": "夏休巽体与本休巽比，体互旺离实泄、用互死兑轻克、变死乾轻克，无生体；休比不等囚死。06巽40–45完整释进退志疑及武贞志治，吉利限据实定查。574、804合看保difficult，原无日窗维持，不从轻克硬排取期。",
+        "reason": "夏木休按支持一般写，未作囚死；用互死兑与末死乾克轻，体互旺离泄才是主要耗费。全文从一轮查问是否有新内容起笔，不从月份断对方曾拒绝；志疑、依正整齐至治完整。"
+      }
+    },
+    {
+      "rowIndex": 2,
+      "movingLine": 1,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋死木的弱比仅解释查验支持薄，不虚构现实没有线索；体互囚离泄、用互旺兑克及末旺乾克均对原体。原物本身、包装、照片、转述分开核，初六的正当定志不转威压行为。",
+      "counterevidence": "初六利武贞有整疑使治的好处，囚火中耗也轻；仍不抵中末两旺金对死木之实克。",
+      "lineMeaning": "初六40–45：处令之初、法未宣著而志疑进退；利武人之贞以正整齐使志治。利的正面和疑的限制均在，不转成现实武人或威逼。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:40–45; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末旺乾克窗仅限定确认原件时辨认依据不足，不指遗失时刻或永失。",
+      "imageDirectionBoundary": "变乾之西北、高处、圆器只用于实际收放内的容器层格；本用巽竹木、系带、长直、工巧及青碧洁白依原件资料对证，乾金玉硬质陈设另属环境，不反推材料位置。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "280ad139d773c43af26f1b545cc5fc2a33bfdc7f38fc608e759461ba503bbbed",
+      "authorFieldsSha256": "81c8c77525ec8e31588a4e0151d0aaa4cdcee6be70c714bcf247e296c9ed199f",
+      "peerFinding": "全文复核：死木本比弱、旺兑中克与旺乾末克均对原体，囚离耗未遗漏。初六利武贞不被偏难抹去，建议以实看标准整齐疑问；末克事件只指疑似物辨认材料不足，没有扩大成永久失落。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "280ad139d773c43af26f1b545cc5fc2a33bfdc7f38fc608e759461ba503bbbed",
+      "copySha256": "8fc1eaaf06093c74f5647bb4e08a3bb7b5f7be1b0fbbea32a18690c75f42b177",
+      "assembledCopySha256": "1c095ec952235d99df7e9c04ad1b83e868a82cfac7461819d83c14adbd42efc2",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "初死比薄，中末旺金克实、囚火耗。爻利定志不等得物。",
+        "new": "秋死巽体、本死巽弱比，体互囚离泄，用互旺兑及变旺乾分别直克体，无生援。06巽40–45志疑、武贞致治双面完整，非武人身份或强催。574、804两实克保difficult；原末旺乾窗限认物依据不足，非永失或确切遗失时间。",
+        "reason": "秋死木的弱比仅解释查验支持薄，不虚构现实没有线索；体互囚离泄、用互旺兑克及末旺乾克均对原体。原物本身、包装、照片、转述分开核，初六的正当定志不转威压行为。"
+      }
+    },
+    {
+      "rowIndex": 3,
+      "movingLine": 1,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相木与本用相比给原处查一轮的条件，死离耗轻、休兑和休乾克一般；写明可以核清经过而原件仍须出现。志治为正面，不把无生扶当作毫无帮助，原体全程不变。",
+      "counterevidence": "相比、轻耗、两休金克可承连同利武贞俱是正证，固定difficult与这些正证形成需明确的权衡。",
+      "lineMeaning": "初六40–45：处令之初、法未宣著而志疑进退；利武人之贞以正整齐使志治。利的正面和疑的限制均在，不转成现实武人或威逼。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:40–45; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原相巽本比窗只确认起段一项实际取放，与最终可领分开。",
+      "imageDirectionBoundary": "变乾之西北、高处、圆器只用于实际收放内的容器层格；本用巽竹木、系带、长直、工巧及青碧洁白依原件资料对证，乾金玉硬质陈设另属环境，不反推材料位置。",
+      "openQuestions": [
+        "冬令相体初比、轻耗、可承中末克同时有利，初六仍定difficult；与六四冬令同关系取conditional的爻权差别应继续统核，未由增厚文字关闭。",
+        "相体相比、中耗极轻及两休金可承仍定difficult，主要倚无直接生援和末克；原典未给出这一组合必然难取回的固定阈值。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "ae48d894e30ffd3194562941e80fc346ae95da2f052d69a8cdbb2b18ea8e2f27",
+      "authorFieldsSha256": "a4d88e5646e1858b765cb5397c1db7a92556627f38e6ce0dddea1b01dd330c84",
+      "peerFinding": "全文复核：相巽初比、死离轻耗及中末休金可承均得到明确保留，困难没有靠伪造旺克得出。志疑与志治完整，原初比应期仍仅为回查动作；整体difficult的强弱取舍值得公开保留。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "ae48d894e30ffd3194562941e80fc346ae95da2f052d69a8cdbb2b18ea8e2f27",
+      "copySha256": "d53a61bcb6b0bc7311b1d263b7c8b1bd180fb0866b43a6c7a55edc3e714d6f20",
+      "assembledCopySha256": "f2de70cab2d6a7ce8eb5377989d417b918f46b14d41a276618293af1d95827a4",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相初比、死火耗轻、两休金克可承，无新增助，爻利定查而已。",
+        "new": "冬相巽体、本相巽比，体互死离耗轻、用互休兑及变休乾各克可承，无生体。06巽40–45武贞致治不削成只有戒；574初比与804轻耗两可承克是明显正证，固定difficult的权衡留审。原本相比窗只落起段核动作。",
+        "reason": "冬相木与本用相比给原处查一轮的条件，死离耗轻、休兑和休乾克一般；写明可以核清经过而原件仍须出现。志治为正面，不把无生扶当作毫无帮助，原体全程不变。"
+      }
+    },
+    {
+      "rowIndex": 4,
+      "movingLine": 1,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚木初弱比，体互休离泄、用互相兑与变相乾分别实克，全局没有生体。用常放与当次实放区分建立事实核查，初六定疑仍有可用之处，不由卦象推失物是否被人持有。",
+      "counterevidence": "武贞以正整齐有明确益处，原处弱比仍可回问；相金双克与休火耗决定现局缺把查询接成原件的支持。",
+      "lineMeaning": "初六40–45：处令之初、法未宣著而志疑进退；利武人之贞以正整齐使志治。利的正面和疑的限制均在，不转成现实武人或威逼。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:40–45; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末相乾克窗只核辨原物时关键细节仍缺，未扩为确定找不到。",
+      "imageDirectionBoundary": "变乾之西北、高处、圆器只用于实际收放内的容器层格；本用巽竹木、系带、长直、工巧及青碧洁白依原件资料对证，乾金玉硬质陈设另属环境，不反推材料位置。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "a9937b27d15ddb02b28db4a92c5e445d8089e0982fc185c8d2ed90645599940f",
+      "authorFieldsSha256": "ca1a89ee2d767050698a8c211a5df3a16c9324e00836069c965b50af5dea5114",
+      "peerFinding": "全文复核：囚巽弱比，休离生出及中末相金实克方向准确。初六肯定据正而定，未止于批评犹豫；实放与常放分清，方位高圆仅是附文候选，末相乾窗口没有变成失物既定坐标。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "a9937b27d15ddb02b28db4a92c5e445d8089e0982fc185c8d2ed90645599940f",
+      "copySha256": "8053eebf9677139ea1090325d6e09e6172efcc55ae3a684c20270bf75b180358",
+      "assembledCopySha256": "13d264e1ba3f143bfaf3d8c7e6330d0b781ef57e437aa373ee1066f17f49678c",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚初比，休火耗，过程和末相金各克实，利武贞仅理疑。",
+        "new": "土囚巽体、本囚巽弱比，体互休离泄，用互相兑与变相乾各克实，无生体。06巽40–45志疑与志治俱在；失物574和衰旺804合保difficult，不由囚态猜实际无人协查。原末相乾窗仍只指关键辨认依据缺。",
+        "reason": "土囚木初弱比，体互休离泄、用互相兑与变相乾分别实克，全局没有生体。用常放与当次实放区分建立事实核查，初六定疑仍有可用之处，不由卦象推失物是否被人持有。"
+      }
+    },
+    {
+      "rowIndex": 5,
+      "movingLine": 2,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "春旺比、相离耗、囚兑克与末死艮受旺体制完整；九二从原稿笼统向低位者下求改为王孔敬慎得中、敬神祇而不趋威势。读回后补史巫接事神祇与纷若盛多，整段再次实读，吉与无咎同时保存。",
+      "counterevidence": "相离中耗、囚兑仍克且无直接生体，细问与同件实认之间仍有工夫；旺初比与末可制是conditional的支持。",
+      "lineMeaning": "九二46–49：床下象卑甚，卑甚失正原有咎；史巫接事神祇、纷若为盛多，居中而施至卑于神祇不用之于威势，乃吉无咎。古义与现代诚恳查证类推分明。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:46–49; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原本旺巽比窗只核旧处经手细节，不把得中之吉直接换取回日。",
+      "imageDirectionBoundary": "变艮东北、路边岩石及门径、石面、黄色陈设须对应最后确认携物的路线或实际临存；本用巽原材质轮廓色块与环境分开，九二床下不作另一个定位。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "4fda5e44ed412ed37394959e00e2b6fe641e45c6782b8efb5f1bfea809dcb927",
+      "authorFieldsSha256": "1d93a353e4f48adce88e717cb2658df8ab5af5716635ce3b9032a3d9f57ff4f8",
+      "peerFinding": "全文复核：旺初比、囚兑轻克、相离实耗、末死艮受旺木制可寻均准确。九二卑甚可能失正、居中敬神祇而不趋威势、纷若盛多及吉无咎前提齐全，床下和史巫未变现实找物地点或仪式。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "4fda5e44ed412ed37394959e00e2b6fe641e45c6782b8efb5f1bfea809dcb927",
+      "copySha256": "c075995c7c42a5b782a5f7fc0950e160007e1bb70211e68216ceb803005353c9",
+      "assembledCopySha256": "43e567e830dd273c10f72893b573e9ac80916eff769f801270bc59e776ed790b",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比，承相火耗和囚兑克，末制死土有条件，九二下求而得中。",
+        "new": "春旺巽本体比，体互相离泄、用互囚兑克、变死艮受体制，无生体。06巽46–49卑甚失正与居中施敬神祇、不用威势而吉无咎俱全，修正原稿单说下求低位者。574比和、体克可寻与804保conditional；原旺本比窗只核收放，不将古祭仪转为操作。",
+        "reason": "春旺比、相离耗、囚兑克与末死艮受旺体制完整；九二从原稿笼统向低位者下求改为王孔敬慎得中、敬神祇而不趋威势。读回后补史巫接事神祇与纷若盛多，整段再次实读，吉与无咎同时保存。"
+      }
+    },
+    {
+      "rowIndex": 6,
+      "movingLine": 2,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏休木比一般、旺离实耗、死兑轻克与末相艮难制按同一原体解释。九二神祇与威势之辨和史巫、纷若的古义补齐重读；得中吉没有被缩成仅无咎，现局偏难仍来自耗费和末制困难。",
+      "counterevidence": "九二吉无咎与死兑轻克均为有利面，休比亦非绝；旺离实耗及休木制相土费使实际得物仍受限。",
+      "lineMeaning": "九二46–49：床下象卑甚，卑甚失正原有咎；史巫接事神祇、纷若为盛多，居中而施至卑于神祇不用之于威势，乃吉无咎。古义与现代诚恳查证类推分明。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:46–49; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原无日窗：旺火泄体，末相土须休木主动制，未定领取日。",
+      "imageDirectionBoundary": "变艮东北、路边岩石及门径、石面、黄色陈设须对应最后确认携物的路线或实际临存；本用巽原材质轮廓色块与环境分开，九二床下不作另一个定位。",
+      "openQuestions": [
+        "九二明确吉无咎，而夏令依旺火耗实、末相土难制保留difficult；吉意已保留，综合等级仍属解释裁量。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "8fe3c358fc58367c098b3816ef161777804d5b92905ac530d9f372f5db6cdfa6",
+      "authorFieldsSha256": "918c9c0409e48719e3ac25b0f58cbe1190bdd2f64003d6b2dd2b3e0473163606",
+      "peerFinding": "全文复核：休木本比一般、旺火耗实、死兑克轻，末相艮是体克用而费，未因土相误写克体。九二敬慎得中之吉保留，现实转为求实不盲从；原不定日与弱体制相土相符。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "8fe3c358fc58367c098b3816ef161777804d5b92905ac530d9f372f5db6cdfa6",
+      "copySha256": "1a924aa36b480b812db23a0e9abfd5aa4d8a9506739e7ed0331fa41a6f0c8dad",
+      "assembledCopySha256": "673613369afa1bc1bc7d7f9da184a6b96099b9c00a6d6a8715515be6148b6b13",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休比初、旺火中耗、死金轻克、末相艮难制，无直接助。",
+        "new": "夏休巽体与本休巽比，体互旺离泄实、用互死兑克轻，变相艮受休体克而难制。06巽46–49吉无咎在敬慎得中、不屈威势，非仅低头求助；574、804保difficult而列吉爻正证。原无日窗不变，弱克不夸重阻。",
+        "reason": "夏休木比一般、旺离实耗、死兑轻克与末相艮难制按同一原体解释。九二神祇与威势之辨和史巫、纷若的古义补齐重读；得中吉没有被缩成仅无咎，现局偏难仍来自耗费和末制困难。"
+      }
+    },
+    {
+      "rowIndex": 7,
+      "movingLine": 2,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋死体、初死比、囚离泄、旺兑实克与末休艮受弱体克完整。取先问谁亲见的判断，避免把确定语气当物证；九二史巫、纷若、卑甚失正与敬神不屈威的得中吉整段增订后重读。独立审读后将爻中的善意改为爻中得中之吉，修改后的整个末段已实际读回，避免拟人化古义。",
+      "counterevidence": "九二得中可吉且末艮只休不是旺，仍留细查的积极处；死体在中旺克之后主动制土不轻松，未由爻吉翻为必获。",
+      "lineMeaning": "九二46–49：床下象卑甚，卑甚失正原有咎；史巫接事神祇、纷若为盛多，居中而施至卑于神祇不用之于威势，乃吉无咎。古义与现代诚恳查证类推分明。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:46–49; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原中旺兑用互克窗限原物独有细节无法验证，不指证经手人拒绝或隐瞒。",
+      "imageDirectionBoundary": "变艮东北、路边岩石及门径、石面、黄色陈设须对应最后确认携物的路线或实际临存；本用巽原材质轮廓色块与环境分开，九二床下不作另一个定位。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "bddea855e916af6a2489c031625391f67aae440cabec3bb530536f614b78395b",
+      "authorFieldsSha256": "15f5c8097d72c447933a3d1a68fde30e7512ea27ec019233b962535b9b76eb51",
+      "peerFinding": "全文复核：死巽比薄、旺兑克实、囚离耗及末休艮难制无错位。九二神祇与威势的原注区别明确，床下未定位；“善意”已按审读意见改为“得中之吉”，使爻义表达更准确。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "bddea855e916af6a2489c031625391f67aae440cabec3bb530536f614b78395b",
+      "copySha256": "735ba9df4e11c8defadf81a96b16dcd1700ff85fcc495049b0e97b77097cf64d",
+      "assembledCopySha256": "37cff1c15ba3cd9e5d375a7d15fce63df4b42ce04c008e6e3f60d5571512c090",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "死初比薄，囚火耗，中旺兑克，末休土弱体难制，九二吉局部。",
+        "new": "秋死巽、本死巽比薄，体互囚离泄、用互旺兑克实，末休艮受弱体克仍难制。06巽46–49卑甚失正与得中吉无咎全读，床下不定位，史巫不作仪式。574、804保difficult；原中旺兑克窗只核独有细节无法验证，非指人为阻拦。",
+        "reason": "秋死体、初死比、囚离泄、旺兑实克与末休艮受弱体克完整。取先问谁亲见的判断，避免把确定语气当物证；九二史巫、纷若、卑甚失正与敬神不屈威的得中吉整段增订后重读。独立审读后将爻中的善意改为爻中得中之吉，修改后的整个末段已实际读回，避免拟人化古义。"
+      }
+    },
+    {
+      "rowIndex": 8,
+      "movingLine": 2,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相体与本相比、死离耗轻、休兑克可承、末囚艮受相体制，前后有条件相接。九二全过程为诚恳求实又不弃辨认标准，史巫纷若解释补全后实际重读；能核收放与能交还各保一步。",
+      "counterevidence": "过程仍有休兑克，末体克用取可寻迟得而非立得，且四节点没有生体；这些条件限制相比与得中之吉的兑现。",
+      "lineMeaning": "九二46–49：床下象卑甚，卑甚失正原有咎；史巫接事神祇、纷若为盛多，居中而施至卑于神祇不用之于威势，乃吉无咎。古义与现代诚恳查证类推分明。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:46–49; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原本相比窗只核早段原经手处的收放次序，不能扩成当天领回。",
+      "imageDirectionBoundary": "变艮东北、路边岩石及门径、石面、黄色陈设须对应最后确认携物的路线或实际临存；本用巽原材质轮廓色块与环境分开，九二床下不作另一个定位。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "c7badf0b42f5b6d2577baa419cc5847bcc963e1cd7a0691b6718c73756de9c85",
+      "authorFieldsSha256": "fce94e5e393260d91aa506566f7b1ee95d832a1a17c7755928866f9825344d3f",
+      "peerFinding": "全文复核：相巽本比、死离轻耗、休兑可承与末囚艮可制都支持有条件可寻，未新增生体节点。九二得中之吉和卑甚失正的戒兼顾，实际查看与领取分开，原起比事件没有被改成末制用应日。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "c7badf0b42f5b6d2577baa419cc5847bcc963e1cd7a0691b6718c73756de9c85",
+      "copySha256": "3fa20ddbcbed4195abcf097718a5b02981fe739fc36cac464b173857cbca35a9",
+      "assembledCopySha256": "f17846e8bad604eb7aa46d24d0c0a60bda183a2ad11c1ed30f764b869905afb6",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相初比，死火耗、休兑克能承，末制囚土可寻，九二得中。",
+        "new": "冬相巽体、本相比，体互死离泄轻、用互休兑克可承、末囚艮受相体克可寻，无新增生体。06巽46–49全文吉条件为敬慎得中而非趋威；574比和及体克用、804合保conditional。原本相比窗只取早段复核收放，不报已经领回。",
+        "reason": "冬相体与本相比、死离耗轻、休兑克可承、末囚艮受相体制，前后有条件相接。九二全过程为诚恳求实又不弃辨认标准，史巫纷若解释补全后实际重读；能核收放与能交还各保一步。"
+      }
+    },
+    {
+      "rowIndex": 9,
+      "movingLine": 2,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚体弱比、休离泄、相兑实克、末旺艮弱体难制全核；将“可能收过”与当前是否可见分开，清除门槛中的审稿句。九二史巫盛多之义及敬慎得中完整补入并读回，未要求现实祭祀。",
+      "counterevidence": "九二得中仍吉而无咎，是difficult的实在反向证据；现有结果依过程中实克及弱体难制旺土，未否认爻吉。",
+      "lineMeaning": "九二46–49：床下象卑甚，卑甚失正原有咎；史巫接事神祇、纷若为盛多，居中而施至卑于神祇不用之于威势，乃吉无咎。古义与现代诚恳查证类推分明。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:46–49; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原相兑用互克窗只说明中段实际经手证明欠缺，与末艮难制不混为同一节点。",
+      "imageDirectionBoundary": "变艮东北、路边岩石及门径、石面、黄色陈设须对应最后确认携物的路线或实际临存；本用巽原材质轮廓色块与环境分开，九二床下不作另一个定位。",
+      "openQuestions": [
+        "九二吉无咎的完整条件已保留，但土令仍依相金实克、弱木制旺土难而定difficult；吉爻与月气、末势的权重仍属未重裁问题。",
+        "九二得中之吉与囚体中克、末旺土难制并存，原difficult的权衡未因润色重新裁定。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "7bb19e30e2ea800e6439924f36f893461fba0b7735ad1744cc1d6ff2150d1f34",
+      "authorFieldsSha256": "d437f9d5c6a9fcb28765e29efca76c30016c24fdde87f172493705241559c619",
+      "peerFinding": "全文复核：囚木弱比，休火耗、相兑克及末旺艮难制均正确；体克旺土的困难没有倒转五行。九二吉无咎仍保留敬慎得中的前提，过程克应只指经手证据缺，未由史巫指定协查者身份。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "7bb19e30e2ea800e6439924f36f893461fba0b7735ad1744cc1d6ff2150d1f34",
+      "copySha256": "33fe1ab36143e7f569001db6a0bd0218d46fc4ae0e49cce687a35c8ba94abce8",
+      "assembledCopySha256": "b3ebbed879b3b70c0ef76eee2f5e070f4ee6cf39d055164f5dbd4758cde4eeb0",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚比初薄，休火耗，相兑中克，末旺土难制；得中不消回收障碍。",
+        "new": "土囚巽体、本囚比薄，体互休离泄、用互相兑克，变旺艮受弱体克难制。06巽46–49卑甚失正之戒与敬神不屈威、得中吉无咎俱明；574、804保difficult，吉爻和盘阻取舍留审。原相兑用互窗限实际经手证明缺，不据史巫虚造协查者。",
+        "reason": "土囚体弱比、休离泄、相兑实克、末旺艮弱体难制全核；将“可能收过”与当前是否可见分开，清除门槛中的审稿句。九二史巫盛多之义及敬慎得中完整补入并读回，未要求现实祭祀。"
+      }
+    },
+    {
+      "rowIndex": 10,
+      "movingLine": 3,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "春旺比起步、相离实耗与囚兑轻克分列，末休坎直接生木按一般援助写，不当囚死。九三频巽依王孔作颦蹙受屈、刚正受四乘而志穷，不再等同多次询问；末帮助用在实际核物。",
+      "counterevidence": "频巽之吝及相离实耗仍在，末休水生只是一般；旺体本比与后段直接生扶支持有条件续查，非凶戒已消。",
+      "lineMeaning": "九三50–53：频依王孔为颦蹙忧戚，不仅频繁；刚正受四所乘而志穷不得申遂，勉巽之吝保全，不推出现实失主性格或谁故意为难。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:50–53; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原日期仍取起段旺巽本比核最后用途，未因末坎生而私改事件槽。",
+      "imageDirectionBoundary": "变坎北、水边及酒醋器处限真实场所与收拾经过；本用巽长直竹木绳带及原色纹理只认原件。附文反复询查是现实条件，不拿它替代王孔频蹙志穷之释。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "5f315ce52078532f6488e60061f04c586d711da001a390acdf8f93957153663c",
+      "authorFieldsSha256": "9a5800c979fae1fab17da7ab9672f6d9a57ca9109fc3ad2fc137c884e77b5870",
+      "peerFinding": "全文复核：旺巽初比、相离中耗、囚兑克轻和末休坎直接生体分别判于原巽，休生为一般支援。九三频作颦蹙、刚正受四乘而志穷完整，未误作单纯问得频繁；原时序仍取起比。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "5f315ce52078532f6488e60061f04c586d711da001a390acdf8f93957153663c",
+      "copySha256": "24763ef7ed08ec1a2dc010c5f9dacc578cc424b0aed0bb274c6f4258aff61a58",
+      "assembledCopySha256": "b6a5e6eb793859002bad415a776cd28bb649dd3210bc1659e4210a679946302a",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比、相火耗、囚金克，末休水薄助；频巽吝依不屈从失实说法。",
+        "new": "春旺巽体、本旺比；体互相离泄、用互囚兑克，末休坎直接生体，休援为一般非囚死。06巽50–53频作颦蹙、刚正受四乘而志穷，非只反复询问。574、804前比末生保conditional，吝与中耗列反证。原起本旺比窗未改为末水日期。",
+        "reason": "春旺比起步、相离实耗与囚兑轻克分列，末休坎直接生木按一般援助写，不当囚死。九三频巽依王孔作颦蹙受屈、刚正受四乘而志穷，不再等同多次询问；末帮助用在实际核物。"
+      }
+    },
+    {
+      "rowIndex": 11,
+      "movingLine": 3,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏休比原处可查，旺离泄重、死兑克轻，末囚坎仍生而薄。九三完整颦蹙忧戚、志穷不得申解释为不迁就失实答复，避免将失主焦虑或性格断成既成事实；末薄助未被遗漏。",
+      "counterevidence": "死兑轻克、休比仍可查与末坎尚能生都是正证；旺火实耗及志穷之吝仍使归还难落实。",
+      "lineMeaning": "九三50–53：频依王孔为颦蹙忧戚，不仅频繁；刚正受四所乘而志穷不得申遂，勉巽之吝保全，不推出现实失主性格或谁故意为难。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:50–53; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原无日窗，旺火为耗，援囚克死比休不凑日期。",
+      "imageDirectionBoundary": "变坎北、水边及酒醋器处限真实场所与收拾经过；本用巽长直竹木绳带及原色纹理只认原件。附文反复询查是现实条件，不拿它替代王孔频蹙志穷之释。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "ad9bce8b47375023bd91bd6125903a95231c35a9693ac9e00440121ac9fbb434",
+      "authorFieldsSha256": "17cacbbdb6a5f89c6f5d30164a637d866f3d8a0caa79e3fc82d9c45b078bef39",
+      "peerFinding": "全文复核：休巽本比，旺离实耗、死兑轻克及末囚水薄生准确，尾援没有被删成全无。九三受屈勉从的吝用到辨事实而非批评失主性格；不定日既有原因保留。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "ad9bce8b47375023bd91bd6125903a95231c35a9693ac9e00440121ac9fbb434",
+      "copySha256": "e1afe804412584b30984d009109fdcf0362798ba8a1d1193abb71a0ac977c1bf",
+      "assembledCopySha256": "9aee4d1d0ea16ea01371678084194dd56d32746c7fa5fb0be12c45d01cb56029",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休初比、旺离实泄、死兑轻克、末囚生小，爻吝保持。",
+        "new": "夏休巽、本休比，体互旺离泄实、用互死兑轻克，末囚坎生薄未作无生。06巽50–53频蹙志穷、受四乘而勉从之吝完整，现代不归咎失主性格。574、804旺耗薄援保difficult；原无日窗，未凭九三字义排重复次数。",
+        "reason": "夏休比原处可查，旺离泄重、死兑克轻，末囚坎仍生而薄。九三完整颦蹙忧戚、志穷不得申解释为不迁就失实答复，避免将失主焦虑或性格断成既成事实；末薄助未被遗漏。"
+      }
+    },
+    {
+      "rowIndex": 12,
+      "movingLine": 3,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋初死比、囚离耗、旺兑中克与末相坎生同时完整；全篇不掩中实阻，收尾真实协查需落到原件细节及当前收存。九三吝保受屈志穷，未以生水作间接制金通关。",
+      "counterevidence": "死木中遭旺兑克且九三吝，是conditional的重要反证；末相坎直接生体属实助，不因此自动解除前克。",
+      "lineMeaning": "九三50–53：频依王孔为颦蹙忧戚，不仅频繁；刚正受四所乘而志穷不得申遂，勉巽之吝保全，不推出现实失主性格或谁故意为难。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:50–53; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末相坎生窗限亲见经手者补辨物细节，消息、同件认定、交还分开。",
+      "imageDirectionBoundary": "变坎北、水边及酒醋器处限真实场所与收拾经过；本用巽长直竹木绳带及原色纹理只认原件。附文反复询查是现实条件，不拿它替代王孔频蹙志穷之释。",
+      "openQuestions": [
+        "九三秋令弱体受旺克且有志穷之吝，既定conditional偏重末相坎生；上九同月同类末援却difficult，两爻用意差别如何定权仍需统一裁定。",
+        "本条死体、旺金中克而末相水生，原conditional；上九秋令相同五态与关系而为difficult，差别依爻吝与贞凶的权重，未有量化阈值。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "a24a6d8bcdb04a35c56acc9b18d00fa887d7560a6f5a7090ac0d046b73c2f6dd",
+      "authorFieldsSha256": "145ea5eec30718b3a9e5416b8f240e2efe15d34ada728d850cb76aba558f7627",
+      "peerFinding": "全文复核：死体弱比、中旺兑克重与末相坎实生两面均写明，未以金生水绕回原体另作间接救助。九三颦蹙志穷未因末生抹去，后段所应只提供辨原件细节；同样五态上九较难的裁量需保持可讨论。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "a24a6d8bcdb04a35c56acc9b18d00fa887d7560a6f5a7090ac0d046b73c2f6dd",
+      "copySha256": "c5cab778df88164267329249976b86e28c56b610d59169738040d5ede6eef78e",
+      "assembledCopySha256": "2316ecf36c18a5fa77d79c4ac47ebf697c05ee11e866631d173efdee054f2510",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "死初比薄、囚火耗、中旺金克强，末相坎生实。爻吝不抹末援。",
+        "new": "秋死巽体、本死比，体互囚离泄、用互旺兑克，末相坎直接生体实援。06巽50–53九三受屈志穷之吝不被末生抹掉，574、804保conditional的定权留审。原末相坎窗限亲见者提供辨物细节，不是吉期保证交还。",
+        "reason": "秋初死比、囚离耗、旺兑中克与末相坎生同时完整；全篇不掩中实阻，收尾真实协查需落到原件细节及当前收存。九三吝保受屈志穷，未以生水作间接制金通关。"
+      }
+    },
+    {
+      "rowIndex": 13,
+      "movingLine": 3,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相巽与本相比、死离轻耗、休兑可承克及末旺坎生实援完整。九三受四乘而颦蹙志穷的戒意使认物保持独立依据，前段记录未因新猜测全盘推翻，最终认件与交还未合并。",
+      "counterevidence": "九三吝仍是实限制，休金仍克，并非所有阶段皆吉；起相比、轻耗与末旺生提供有条件查通的基础。",
+      "lineMeaning": "九三50–53：频依王孔为颦蹙忧戚，不仅频繁；刚正受四所乘而志穷不得申遂，勉巽之吝保全，不推出现实失主性格或谁故意为难。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:50–53; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末旺坎生窗只是取得足以辨原件的证明，未保证领取完成。",
+      "imageDirectionBoundary": "变坎北、水边及酒醋器处限真实场所与收拾经过；本用巽长直竹木绳带及原色纹理只认原件。附文反复询查是现实条件，不拿它替代王孔频蹙志穷之释。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "a03ef718521c8be401c6a14e10739e856e70a9a76ab0a160bc07344f06658ca9",
+      "authorFieldsSha256": "0705b2658e671e93cba1921f544ad8463b7f3bcf22870dbc141366f040771bfc",
+      "peerFinding": "全文复核：相木初比、死火耗轻、休金克可承及末旺坎直生形成有利条件，九三吝仍限过度迁就。各项帮助都落在实际见物与交还，原末旺生窗口只为取得证明，没有保证物品当日回来。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "a03ef718521c8be401c6a14e10739e856e70a9a76ab0a160bc07344f06658ca9",
+      "copySha256": "c6aa3b2846f8f245118ee6ecf612a8c35b0b1c6ec14212c1d72960a9a6740180",
+      "assembledCopySha256": "9cbc0f78c209c635c080ae7fd4b9fe863af5fba295a90d721ff254f9d08dc8f8",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相初比、死离耗轻、休金克可承，末旺水实助，爻吝限委屈迁就。",
+        "new": "冬相巽体、本相巽比，体互死离泄轻、用互休兑克可承，变旺坎直接生体。06巽50–53频蹙受屈志穷，现代取不勉从失实认物；574、804前比末生保conditional，爻吝列限制。原末旺生窗仅取得足以辨原件的证明。",
+        "reason": "冬相巽与本相比、死离轻耗、休兑可承克及末旺坎生实援完整。九三受四乘而颦蹙志穷的戒意使认物保持独立依据，前段记录未因新猜测全盘推翻，最终认件与交还未合并。"
+      }
+    },
+    {
+      "rowIndex": 14,
+      "movingLine": 3,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚体初弱比，中休离耗、相兑实克、末死坎薄生按固定原体完整呈现。两段真实经过不由猜测相连，九三受屈志穷不化为他人隐瞒；薄助虽难补阻，仍可补一项证据。",
+      "counterevidence": "末死坎仍有直接生体关系，不等全无帮助，原比也留一点复查余地；相金克与囚体、中耗及爻吝使现局偏难。",
+      "lineMeaning": "九三50–53：频依王孔为颦蹙忧戚，不仅频繁；刚正受四所乘而志穷不得申遂，勉巽之吝保全，不推出现实失主性格或谁故意为难。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:50–53; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原中相兑用互克窗只核可见记号无法证实，不移到末死水排时。",
+      "imageDirectionBoundary": "变坎北、水边及酒醋器处限真实场所与收拾经过；本用巽长直竹木绳带及原色纹理只认原件。附文反复询查是现实条件，不拿它替代王孔频蹙志穷之释。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "18a733b63a4e7c98beb6053b965efa9cfe65d29a90b6091f9ae17bc3f604173e",
+      "authorFieldsSha256": "436b87aaa80578bf94b5890fdbbd935749160d1a188f5ba98171876431f50a4c",
+      "peerFinding": "全文复核：囚体弱比、休火耗、相兑克及末死坎微生都准确。末生弱而未被否认，频巽按受四乘、志穷颦蹙完整解释；未核到的回答未变成他人隐瞒的指控，过程克窗也只指记号缺证。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "18a733b63a4e7c98beb6053b965efa9cfe65d29a90b6091f9ae17bc3f604173e",
+      "copySha256": "f24bf8544b63cbb2a582c3fe17c6bebb95cc784c47e1511ca853929c4ef973cb",
+      "assembledCopySha256": "284367160693f5b12a124870a305bab085e22e9db013d341c6efa4f1f39e6363",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚初比薄、休火耗、相金中克，末死水薄生，爻吝未解。",
+        "new": "土囚巽、本囚比薄，体互休离泄、用互相兑克实，末死坎仍生而极薄。06巽50–53刚正受四乘、频蹙志穷之吝完整；574、804实阻薄援保difficult，不删末生、不据爻义指认他人隐瞒。原中相兑克窗仅核可见记号未得证。",
+        "reason": "土囚体初弱比，中休离耗、相兑实克、末死坎薄生按固定原体完整呈现。两段真实经过不由猜测相连，九三受屈志穷不化为他人隐瞒；薄助虽难补阻，仍可补一项证据。"
+      }
+    },
+    {
+      "rowIndex": 15,
+      "movingLine": 4,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "六四春令双囚金轻克与相离耗均在，旺巽本比支持起查。完整解释柔乘刚之悔、得位承五、依尊履正而行命有功、悔亡，三品说明有益用途而非找回件数，实际查得仍需认件。",
+      "counterevidence": "无生体且相离实耗、中末两处金克未消，故田获有功与旺比仍不能直接等同已得原物。",
+      "lineMeaning": "六四54–57：柔乘刚本有悔，得位承五、依尊履正而行命有功，遂悔亡；田猎三品为祭豆、宾客、庖厨的有益所得，非失物数量。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:54–57; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原本旺比窗只核开头旧范围一项实际使用，不把田猎三品变三件或三日。",
+      "imageDirectionBoundary": "变乾西北、高处圆器或硬质陈设只在实际容器层格内补核；本用巽原木竹长直系带细接合依旧照认物。六四有获不使环境候选成为确定所在地。",
+      "openQuestions": [
+        "初六春令同一组本比、火耗及中末金克而为difficult，六四春令conditional依有功悔亡的正面爻义；此权重可保留但不能称为统一机械公式。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "5942a62f4a0ea014854b8ef51215bd61312a15abf8a33375b2d74b83cb02dcb8",
+      "authorFieldsSha256": "823dc4e386dcb476240eda5eaf374d65cded34c590d5f3f9bbd54a046d2d804a",
+      "peerFinding": "全文复核：旺初比、中囚兑克轻、相离耗实、末囚乾克轻固定原巽。六四先乘刚有悔，后得位承五、依尊履正而有功悔亡，三品释有益用途而非失物件数；吉爻如何使同五行区别初六保留裁量。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "5942a62f4a0ea014854b8ef51215bd61312a15abf8a33375b2d74b83cb02dcb8",
+      "copySha256": "a1d2164cdfaa741bf19b657d4388d4e13140d2f49a382ab76552d7cc9595f222",
+      "assembledCopySha256": "90d6419fb7b0a38b4c1ab4f3266ff2d82f5d9e031ac97f0f715af331177f040b",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比、承互末囚金克和相火耗，爻得获须实际核准，不以三作数。",
+        "new": "春旺巽体、本旺比，体互囚兑克、用互相离泄，末囚乾仍克，无生体。06巽54–57乘刚之悔与得位承五、履正有功而悔亡俱全，三品为所获用途非件数。574、804合爻有功保conditional，两克和实耗为反证。原旺本比窗仅起段查明使用。",
+        "reason": "六四春令双囚金轻克与相离耗均在，旺巽本比支持起查。完整解释柔乘刚之悔、得位承五、依尊履正而行命有功、悔亡，三品说明有益用途而非找回件数，实际查得仍需认件。"
+      }
+    },
+    {
+      "rowIndex": 16,
+      "movingLine": 4,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏休比支撑一般，中死兑克轻、旺离耗重、末死乾仍克而轻，完整说明偏难主因在耗与无生援。六四田获悔亡是合宜办理的实效，不压成空泛无害，实查成果与原件归还分清。",
+      "counterevidence": "田获有功、悔亡和两处死金轻克均有利，休比尚可复查；旺火耗及末无新援限制归还。",
+      "lineMeaning": "六四54–57：柔乘刚本有悔，得位承五、依尊履正而行命有功，遂悔亡；田猎三品为祭豆、宾客、庖厨的有益所得，非失物数量。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:54–57; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原无有效日窗，休比和两死克不凑取物时间，三品不报数。",
+      "imageDirectionBoundary": "变乾西北、高处圆器或硬质陈设只在实际容器层格内补核；本用巽原木竹长直系带细接合依旧照认物。六四有获不使环境候选成为确定所在地。",
+      "openQuestions": [
+        "六四有功悔亡与轻中末克仍为difficult，作者依旺离重耗及缺生援限制；有功不是无效，成果与取回的区别需继续成立。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "bc3e3b6e46cc6c120392ea5b3c9dafc031cb1616d70f66b0668f759351327420",
+      "authorFieldsSha256": "32e269defe039e52aeaf898a6c585aac02724b1359455ad8c86abcba5f8ad48b",
+      "peerFinding": "全文复核：休比、两处死金克轻、旺离生出耗实均正确。六四有功悔亡的真实正面没有被difficult删去，查看结果与原件归还分层，未因轻克把当前耗费判成不存在。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "bc3e3b6e46cc6c120392ea5b3c9dafc031cb1616d70f66b0668f759351327420",
+      "copySha256": "0009952c295ca51a8db7c4ed951d65b687daf6eb0188802c28e976a1dad8b4d6",
+      "assembledCopySha256": "605248293de6ef6b8b15d883ebab6d4a18d9e0978d44563d2fe56308f6e084fb",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休比、死金两克薄、旺火中耗，田获仅取有功前提，不独判回物。",
+        "new": "夏休巽体、本休比，体互死兑及变死乾各轻克，用互旺离实泄，无生体。06巽54–57乘刚之悔、得位承尊履正、田获有功与悔亡完整；574、804保difficult，吉爻与轻克为正证，不以无援抹去有功。原日窗省略，休不作衰绝。",
+        "reason": "夏休比支撑一般，中死兑克轻、旺离耗重、末死乾仍克而轻，完整说明偏难主因在耗与无生援。六四田获悔亡是合宜办理的实效，不压成空泛无害，实查成果与原件归还分清。"
+      }
+    },
+    {
+      "rowIndex": 17,
+      "movingLine": 4,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋死木原比薄，体互旺兑与末旺乾各自克体，用互囚离耗，没有漏掉中末任一强克。六四乘刚本悔和得位承五履正有功并读，吉意鼓励实查可见处，不以田获二字跳到已获。",
+      "counterevidence": "六四有功悔亡、囚火耗轻是有利证据，未被两旺克解释掩去；仍需当前原件可认可交。",
+      "lineMeaning": "六四54–57：柔乘刚本有悔，得位承五、依尊履正而行命有功，遂悔亡；田猎三品为祭豆、宾客、庖厨的有益所得，非失物数量。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:54–57; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末旺乾克窗只取关键标记未能确认，非确定持有人或遗失位置。",
+      "imageDirectionBoundary": "变乾西北、高处圆器或硬质陈设只在实际容器层格内补核；本用巽原木竹长直系带细接合依旧照认物。六四有获不使环境候选成为确定所在地。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "545fb2e3a86cdc4f3046b6aa5cdf90c7399d48dcc99f63221dc898664836c463",
+      "authorFieldsSha256": "f861e50ad3c3ea619f3996f43ef6aa5bd06562832cd5a4ad0f72065a8951410c",
+      "peerFinding": "全文复核：死巽弱比、中旺兑和末旺乾两处实克、囚离生出完整。六四从乘刚之悔到履正行命有功的过程保留，三品未按三件解释；末克受阻仍只针对关键标记未能确认。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "545fb2e3a86cdc4f3046b6aa5cdf90c7399d48dcc99f63221dc898664836c463",
+      "copySha256": "c5875e3c59de80a2b917b13bdb70d2335fa820e548a600532c5cb46de6738472",
+      "assembledCopySha256": "6ab8db5a2f57255d17e584a9a7dd281bb6f36101e7e9b34c205170223c3b9af8",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺金中末克死木，囚火耗、死比薄，田获需要实得。",
+        "new": "秋死巽体、本死比，体互旺兑与变旺乾各直克，用互囚离泄，无生援。06巽54–57乘刚本悔、得位承五而履正有功、悔亡皆在，三品不报件数。574、804两强克保difficult，有功正证不隐。原末旺乾窗止于关键记号未能确认。",
+        "reason": "秋死木原比薄，体互旺兑与末旺乾各自克体，用互囚离耗，没有漏掉中末任一强克。六四乘刚本悔和得位承五履正有功并读，吉意鼓励实查可见处，不以田获二字跳到已获。"
+      }
+    },
+    {
+      "rowIndex": 18,
+      "movingLine": 4,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相体初相比、体互休兑克可承、用互死离耗轻、末休乾克一般均明。六四先悔后依正有功、悔亡完整，原处查出实事实后继续接当前可看物件，未把休克夸大为重阻。独立审读后标题改为仍有取回机会，已实际读回，使标题与conditional以及尚待认件的正文一致。",
+      "counterevidence": "无直接生体且中末休金仍克，旧处查通不直接证明物在；这些限制与有功之爻共同构成conditional。",
+      "lineMeaning": "六四54–57：柔乘刚本有悔，得位承五、依尊履正而行命有功，遂悔亡；田猎三品为祭豆、宾客、庖厨的有益所得，非失物数量。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:54–57; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原起相比窗核漏查取放，不因六四田获另定成获日。",
+      "imageDirectionBoundary": "变乾西北、高处圆器或硬质陈设只在实际容器层格内补核；本用巽原木竹长直系带细接合依旧照认物。六四有获不使环境候选成为确定所在地。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "bacb40043aecefbb615e6d8ab6fb82f8a4e70985f35c296ba2ffa5e7433222f2",
+      "authorFieldsSha256": "786a038aaefce4623b99474b7a2755236c5fa5f6c85a4d23bdfdd9af09472c91",
+      "peerFinding": "全文复核：相巽初比，休兑克可承、死离耗轻、末休乾仍克而不强，条件性寻回与诸事实相合。六四有功之吉与原来的乘刚悔均在；标题已改为“仍有取回机会”，避免读成保证取回。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "bacb40043aecefbb615e6d8ab6fb82f8a4e70985f35c296ba2ffa5e7433222f2",
+      "copySha256": "67d2c5112ad0a70d111880d964b15578bd28c788aa84a14e10200492ab5bb9b7",
+      "assembledCopySha256": "01a237995b4b8b39cdc06e74f6da6c3a58fa34d07d445d54d956e17ad1b51fd5",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相木初比，承两休金克死火耗，爻田获支持有证后核实。",
+        "new": "冬相巽体、本相比，体互休兑克、用互死离泄轻，末休乾克可承，无直接生体。06巽54–57乘刚之悔因得位承五、履正行命有功而亡，正反俱在。574、804及有功保conditional，末克仍须实核。原起相比窗只核漏查取放。",
+        "reason": "冬相体初相比、体互休兑克可承、用互死离耗轻、末休乾克一般均明。六四先悔后依正有功、悔亡完整，原处查出实事实后继续接当前可看物件，未把休克夸大为重阻。独立审读后标题改为仍有取回机会，已实际读回，使标题与conditional以及尚待认件的正文一致。"
+      }
+    },
+    {
+      "rowIndex": 19,
+      "movingLine": 4,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚体初比薄，中相兑及末相乾各克实，休离耗独立对原体。六四本悔、得位承五履正、行命有功、悔亡均解释；查一处确有所得仍与同件、归还分层，未用三品生造数量。",
+      "counterevidence": "田获而有功、悔亡是偏难判断的真正反证；月气双实克无生援与爻吉并存，现稿不消去其中一面。",
+      "lineMeaning": "六四54–57：柔乘刚本有悔，得位承五、依尊履正而行命有功，遂悔亡；田猎三品为祭豆、宾客、庖厨的有益所得，非失物数量。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:54–57; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末相乾克窗只指比对实物标记仍不足，不改为初段查放或中途转述。",
+      "imageDirectionBoundary": "变乾西北、高处圆器或硬质陈设只在实际容器层格内补核；本用巽原木竹长直系带细接合依旧照认物。六四有获不使环境候选成为确定所在地。",
+      "openQuestions": [
+        "六四田获有功、悔亡的积极爻义与土令中末相金实克并存；固定difficult依后者较重，结果权重本次未作独立专业裁定。",
+        "六四履正有功的吉意与囚体两相金克的偏难条件共存；现行结果保留，不把吉爻强行解释成只会失败。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "116cb13e6f022ef0e3b343cb6af4bbef8aeca55ca4be9dacf7c0cf8c39387d38",
+      "authorFieldsSha256": "5189ceb3e5e1d5ea067ef06c07a716c4bb2d5433e6602ea2454249fbcff0b3cb",
+      "peerFinding": "全文复核：囚比、相兑体互克、休离用互耗、相乾末克均固定原巽。六四有功正证保留，但原件证据与领取仍缺承接；附文乾高圆只与实际收存比对，末克窗口未扩成真实侵占事实。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "116cb13e6f022ef0e3b343cb6af4bbef8aeca55ca4be9dacf7c0cf8c39387d38",
+      "copySha256": "950a8516278d2ae0418c859e200f113cbe1feddabb79b7c1fa281183939293b6",
+      "assembledCopySha256": "728334c776781d7f272187264e8aa28040121fc2e31fb15e485559be46755de1",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚比薄、休离耗、互末相金实克，爻有功条件不足。",
+        "new": "土囚巽体、本囚比，体互相兑与变相乾分别克实，用互休离泄，无生体。06巽54–57完整解释乘刚本悔、得位承五履正有功而悔亡，田获为有益譬不报数。574、804保difficult，吉爻与盘阻的权衡仍留审。原末相乾窗限标记不足。",
+        "reason": "土囚体初比薄，中相兑及末相乾各克实，休离耗独立对原体。六四本悔、得位承五履正、行命有功、悔亡均解释；查一处确有所得仍与同件、归还分层，未用三品生造数量。"
+      }
+    },
+    {
+      "rowIndex": 20,
+      "movingLine": 5,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "春旺比、囚兑轻克、相离实耗、末死艮受旺体制完整。九五全吉辞、初猝刚而不悦、终于中正和前后申明俱讲，现代理解为问题说明及据实补正，未据月令虚构已经发生错记。root预检后将简断中的日期换算语改为前后查证相接仍须有据，修改后的整个简断已实际读回；庚义分歧与不可据此定日期仍留在正文及本审计，不在简断混入计算口径。",
+      "counterevidence": "中相离耗且囚兑仍克，末可制是查找机会不是已控制现实失物；无直接生体仍需实际交还。",
+      "lineMeaning": "九五58–61：居中正得贞吉悔亡无不利；猝刚使初不悦、终于中正而有终，先后庚按王孔取前后申命不可仓卒。四库考证对庚训另有异议，未讳而未擅改经文。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:58–61; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原旺本比窗只核起段旧记忆；先后庚和三日不另算日窗。",
+      "imageDirectionBoundary": "变艮东北、路边岩石、门径石面及临存格由真实路线限定，本用巽原接口纹理青碧洁白等只比较已知原件。九五申明前后不由方位或庚义编造新行程。",
+      "openQuestions": [
+        "九五庚义采用王孔“申命令谓之庚”。四库卷09考证770–780质疑此训，并引十干之首甲、过中庚及更事说；解释分歧真实存在，本文不裁成唯一古义，也不据两说生成领取日期。",
+        "王孔训庚为申命，四库卷09考证770–780质疑此训并另取十干过中与更事义。本文明确所取，分歧不能以润色消除，两说均不直接生成本问日级日期。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "964734dae14d674b5802e98a00e90d17d0c86d60a4f4937b536990a3a9d68b92",
+      "authorFieldsSha256": "303dbce4165a0405d6220c93524d593baf842f6948bf678da40f8fa513984ee9",
+      "peerFinding": "全文复核：旺初比、囚兑轻克、相离耗及末死艮可制无误。九五贞吉悔亡无不利、无初有终与先后申明都完整；王孔庚训被明确标为所取注家，四库考证的异议已实核，未由庚日另设领取日期。 再次实读简断最后分句“前后查证相接仍须有据，最后再核同件与交还”，改后与九五中正申明、先后核实的正文一致，未增日期或领取承诺。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "964734dae14d674b5802e98a00e90d17d0c86d60a4f4937b536990a3a9d68b92",
+      "copySha256": "a9362d18a7150eac1b18d437bea992d04cfb80cadf316f96dfb5c48d431e57cc",
+      "assembledCopySha256": "19de100d3380fcea34f7b84ffe35ebfb94a2fffa7a3d0f3c96e7947ccfe6782d",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比、囚兑克、相离耗、末制死艮；九五终吉系贞正申明，现代类推须实证。",
+        "new": "春旺巽体、本旺比，体互囚兑克、用互相离泄，变死艮受体制，无生体。06巽58–61贞吉悔亡无不利、初不悦而终正、先后庚申明俱释，采用王孔；四库卷09考证770–780异议留审，不造庚日。574、804保conditional，原本旺比窗只核旧记忆。",
+        "reason": "春旺比、囚兑轻克、相离实耗、末死艮受旺体制完整。九五全吉辞、初猝刚而不悦、终于中正和前后申明俱讲，现代理解为问题说明及据实补正，未据月令虚构已经发生错记。root预检后将简断中的日期换算语改为前后查证相接仍须有据，修改后的整个简断已实际读回；庚义分歧与不可据此定日期仍留在正文及本审计，不在简断混入计算口径。"
+      }
+    },
+    {
+      "rowIndex": 21,
+      "movingLine": 5,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏休体初休比、中死兑克轻而旺离耗重、末相艮由休体制费，所有角色一致。九五贞吉悔亡无不利及无初有终保全，先后申明取不仓卒；读回后将否定吉意式审稿句改成合宜行事价值与实物确认。",
+      "counterevidence": "九五全吉辞、死兑克轻和旧处一般比和都是正面；旺离实耗及末相土难制尚阻实际回收。",
+      "lineMeaning": "九五58–61：居中正得贞吉悔亡无不利；猝刚使初不悦、终于中正而有终，先后庚按王孔取前后申命不可仓卒。四库考证对庚训另有异议，未讳而未擅改经文。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:58–61; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原不排时保持，爻先后庚不转为现成庚日或若干天后必得。",
+      "imageDirectionBoundary": "变艮东北、路边岩石、门径石面及临存格由真实路线限定，本用巽原接口纹理青碧洁白等只比较已知原件。九五申明前后不由方位或庚义编造新行程。",
+      "openQuestions": [
+        "九五庚释在王孔与四库考证之间有真实分歧，本稿明取王孔申明说而不派生日期；完整吉爻在夏令仍固定difficult，亦保留吉辞与耗重末难制的定权问题。",
+        "庚义有王孔与四库考证更事说的真实分歧；此外九五全吉在夏令仍为difficult，爻义与耗重末难制之间的权重没有重新裁决。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "c576bf15a808aadd76b44ae58b634ea7577164364799af92d0efa8f3d423fc0f",
+      "authorFieldsSha256": "920970da0265e7f53022ce3573f3bdc8cc8238aa04245c1c94d1e2264daa5881",
+      "peerFinding": "全文复核：休木比一般，死兑克轻、旺离耗实及末相艮受弱木制费力准确。九五完整吉辞没有被偏难取消，初急后正与前后申命都解释；王孔庚义争议及爻吉和五行困难的权衡已留审。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "c576bf15a808aadd76b44ae58b634ea7577164364799af92d0efa8f3d423fc0f",
+      "copySha256": "cd83c8c43b6350fdfc2676ac856aea0143f230bb7520fa0950a57e28c5045551",
+      "assembledCopySha256": "e8922cf6359edebf85f9a8e077dee81d4140263945e6e1e983b0bbcf139d3718",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休初比、死兑轻克、旺离实耗，末相土难制；贞吉保留纠正条件，不以善终替代回物。",
+        "new": "夏休巽体与本休比，体互死兑克轻、用互旺离泄实，变相艮受休体克而难制。06巽58–61完整吉辞、初不悦终正及申明条件齐；庚从王孔并列四库考证异议。574、804保difficult，吉爻定权未重裁，原日窗省略。",
+        "reason": "夏休体初休比、中死兑克轻而旺离耗重、末相艮由休体制费，所有角色一致。九五贞吉悔亡无不利及无初有终保全，先后申明取不仓卒；读回后将否定吉意式审稿句改成合宜行事价值与实物确认。"
+      }
+    },
+    {
+      "rowIndex": 22,
+      "movingLine": 5,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋死比基础薄，中旺兑实克、囚离耗、末休艮受弱体克难逐项完整。九五初不悦与终中正全说，说明查问改明仍需实见内容，终吉不变成所有答复相合就已得。",
+      "counterevidence": "贞吉悔亡无不利、无初有终肯定妥善实行的正面，末休艮并非旺土重阻；死体中遭旺金克仍使末查困难。",
+      "lineMeaning": "九五58–61：居中正得贞吉悔亡无不利；猝刚使初不悦、终于中正而有终，先后庚按王孔取前后申命不可仓卒。四库考证对庚训另有异议，未讳而未擅改经文。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:58–61; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原中旺兑体互克窗核说法无法对应原物，先后庚不替换此事件。",
+      "imageDirectionBoundary": "变艮东北、路边岩石、门径石面及临存格由真实路线限定，本用巽原接口纹理青碧洁白等只比较已知原件。九五申明前后不由方位或庚义编造新行程。",
+      "openQuestions": [
+        "先后庚从王孔作前后申命，四库卷09考证认为以庚训申命依据不足、另取更事义；本文保存解释分歧，且未因九五全吉重裁秋令difficult的既有权重。",
+        "先后庚采用王孔申命而考证提出训义无据、以更事解之，来源分歧保留；九五吉与秋令中实克及末难制并列，而不被倒写成凶辞。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "932f5bd7216d613cf9f613927f07b781ecea3b8a4095eef7b6fb4f6993b496d2",
+      "authorFieldsSha256": "5d55cd99b56c8767f8807a332e6bb4979151df356b22356fcf68fae71e6ea252",
+      "peerFinding": "全文复核：死巽弱比、中旺兑克、囚离耗和末休艮难制关系正确。九五无初有终仍被肯定为中正而得从，先后庚不派生时限；原中克事件仅说描述不能对应同件，未指人为阻拦。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "932f5bd7216d613cf9f613927f07b781ecea3b8a4095eef7b6fb4f6993b496d2",
+      "copySha256": "0095db026edccb3ba152e1e533234f82e10c5daf3b857a010ea4d9a119d04915",
+      "assembledCopySha256": "398d66c04a4d70f6be7e9f623e14e9f5c2bf286f7cb13c7cb8fe74638052b297",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "死比薄、中旺兑克、囚离耗、末休艮弱体难制，回应九五终吉所需实证。",
+        "new": "秋死巽体、本死比，体互旺兑实克、用互囚离泄、末休艮受弱体克难制。06巽58–61中正得吉悔亡无不利及无初有终均保留，先后庚从王孔申明说、异解在审计。574、804保difficult，原旺兑体互窗仅核描述与原件无法对应。",
+        "reason": "秋死比基础薄，中旺兑实克、囚离耗、末休艮受弱体克难逐项完整。九五初不悦与终中正全说，说明查问改明仍需实见内容，终吉不变成所有答复相合就已得。"
+      }
+    },
+    {
+      "rowIndex": 23,
+      "movingLine": 5,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相初比、休兑可承克、死离耗轻、末囚艮受相体制，支持按事实渐次查验。九五中正全吉、无初有终与不可仓卒的申明条件俱在，每次修正须新事实而非语气变化。",
+      "counterevidence": "无生体且中休兑仍克，末体克用也只是可寻迟得；比和及吉爻不能免去同件和交还核实。",
+      "lineMeaning": "九五58–61：居中正得贞吉悔亡无不利；猝刚使初不悦、终于中正而有终，先后庚按王孔取前后申命不可仓卒。四库考证对庚训另有异议，未讳而未擅改经文。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:58–61; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原起相比窗限纠正一段实际取放，不将庚或三日当作领取期限。",
+      "imageDirectionBoundary": "变艮东北、路边岩石、门径石面及临存格由真实路线限定，本用巽原接口纹理青碧洁白等只比较已知原件。九五申明前后不由方位或庚义编造新行程。",
+      "openQuestions": [
+        "九五先后庚按王孔申命说解释，四库卷09考证另以庚在干序过中、取更事义批评该训；两说未合并为无争议结论，此问均不由之定日。",
+        "庚训申命与考证以干序过中、更事论的异解都已实际读到，不能把现用解释写成唯一古义；当前日窗仍来自本用比和。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "69eabc41e43dbeb3a3dc88c74c876439fb7d85f1fa820e70187d7e0b38899be9",
+      "authorFieldsSha256": "c99eefdb4b9d8927c4f0ad09b7d7280c5678160548d28521c29a91c75f074fd9",
+      "peerFinding": "全文复核：相体相比、中休兑可承、死离耗轻与末囚艮可制支持继续查得。九五初急后正、全吉辞与申明前后兼具，原起比窗口未从庚三日扩成期限；对照考证所见训义分歧真实存在。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "69eabc41e43dbeb3a3dc88c74c876439fb7d85f1fa820e70187d7e0b38899be9",
+      "copySha256": "a6948a024307536dfdb022cb29e4c7e56e869cf57cb34ab589d7d8e0f2f11476",
+      "assembledCopySha256": "9450b30810d400ef540abcdfa09bcc1b91004e2ee737b3124862f24ef384b1af",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相初比、休金克可承、死火耗轻，末制囚土，九五纠正得终条件较足。",
+        "new": "冬相巽体、本相巽比，体互休兑克、用互死离泄，变囚艮受相体制，无生援。06巽58–61中正全吉、初不悦终正、申明先后完整，从王孔且庚义争议留审。574、804保conditional，原本相比窗限纠正实际取放。",
+        "reason": "冬相初比、休兑可承克、死离耗轻、末囚艮受相体制，支持按事实渐次查验。九五中正全吉、无初有终与不可仓卒的申明条件俱在，每次修正须新事实而非语气变化。"
+      }
+    },
+    {
+      "rowIndex": 24,
+      "movingLine": 5,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚比薄、中相兑克实、休离耗、末旺艮弱体难制俱明。九五吉辞及初不悦而终正完整，不将无初当既发生坏事；读回把“不能只剩判断”改为起初不顺有纠正余地，语气直达读者。",
+      "counterevidence": "九五贞吉悔亡无不利与有终是difficult的反向证据；中实克、末难制和弱比解释现实查力不足，未声称爻吉作废。",
+      "lineMeaning": "九五58–61：居中正得贞吉悔亡无不利；猝刚使初不悦、终于中正而有终，先后庚按王孔取前后申命不可仓卒。四库考证对庚训另有异议，未讳而未擅改经文。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:58–61; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原中相兑体互克窗只限实际交接缺证，庚三日均不取日数。",
+      "imageDirectionBoundary": "变艮东北、路边岩石、门径石面及临存格由真实路线限定，本用巽原接口纹理青碧洁白等只比较已知原件。九五申明前后不由方位或庚义编造新行程。",
+      "openQuestions": [
+        "王孔将庚训申命而四库考证提出更事义与训义质疑，正文注明所取注家、审计保留分歧；九五完整吉辞与土令固定difficult的权重也未由润色重新证成。",
+        "九五完整吉辞与土令原difficult存在合判取舍，且庚义两说未统一；正文注明王孔路径，审计继续保留异议。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "607960c8cebe2537117902acc74de8aa23a842516f85ca7a84698e6f2ae6a0ff",
+      "authorFieldsSha256": "3ab3c16347c1e7434ac0ac9a63b2915484ee7b021fb615de6738ce206d3838b8",
+      "peerFinding": "全文复核：囚巽比薄、中相兑克实、休离耗和末旺艮体克困难无误。九五贞吉、悔亡、无不利及有终的好处保留，然而当前补证弱；庚字的王孔训和更事说没有混成无争议古义。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "607960c8cebe2537117902acc74de8aa23a842516f85ca7a84698e6f2ae6a0ff",
+      "copySha256": "012c220adcc51e028cc49de77d7f8d935f9168d462c53d8706a255a2cc833264",
+      "assembledCopySha256": "9e7d310ad7b30b19cc44fdbb5b66a2f16863179dd572b4f4dc76aa87df5d5da7",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚比、相金中克、休离耗、末旺土难制；九五终吉不离贞，未消实阻。",
+        "new": "土囚巽体、本囚比，体互相兑克实、用互休离泄，变旺艮受弱体克难制。06巽58–61完整保留贞吉悔亡无不利、无初有终及先后申明；庚注与四库考证分歧明列。574、804保difficult且保吉爻反证，原相兑体互窗只取关键收放缺证。",
+        "reason": "土囚比薄、中相兑克实、休离耗、末旺艮弱体难制俱明。九五吉辞及初不悦而终正完整，不将无初当既发生坏事；读回把“不能只剩判断”改为起初不顺有纠正余地，语气直达读者。"
+      }
+    },
+    {
+      "rowIndex": 25,
+      "movingLine": 6,
+      "monthOrder": "spring-wood",
+      "reviewFinding": "春旺比起查、囚兑轻克、相离实耗和末休坎直接生都保留，休援写一般。上九床下为过巽至穷、资斧为威断、失正而贞凶完整；读回将“改断”审稿语改为回应尚不足认定易取。独立审读后首句改为末后即使有人愿意帮查，整个开局已实际读回，取消现实必定有人出现的预设。",
+      "counterevidence": "旺初比、中克轻及末休坎生是显著正证，固定difficult并非全盘皆不利；相离耗与上九失断贞凶同存。",
+      "lineMeaning": "上九62–65：巽极而床下，上穷；过巽失正，斧喻威断，丧所断遂贞凶。非物件必为斧、必在床下，末坎生扶另对固定原体实论。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:62–65; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原起旺本比窗仅核最后确知取放，未改用末休水排吉期。",
+      "imageDirectionBoundary": "变坎北、近水鱼盐、水具酒器环境仅限确曾去处；本用巽竹木长直绳工巧与原色由资料核，环境色材不转移为原物事实。床和斧古象不得叠为实际位置品类。",
+      "openQuestions": [
+        "上九春令旺比、轻克且末休坎生，固定difficult较重取贞凶；与九三同月同类末助取conditional的爻戒权重差别须继续核断。",
+        "春令旺比、轻克、末休水生而仍为difficult，与九三春令conditional不同，主要取上九贞凶及失断之戒；两者权重不能被冒称已经精确证明。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "ab9d1ca9ed253ab8c92ec88757fffa88eda3bf44c6223e89d6cbc4955693b07e",
+      "authorFieldsSha256": "4f0b669fc9f1c50e0eecec961bd996775952dddf462fe81dd7502223db7283ca",
+      "peerFinding": "全文复核：旺巽比、囚兑克轻、相离耗与末休坎生的一般援力均写明；上九上穷过巽、失威断而贞凶完整。开头已改为“末后即使有人愿意帮查”，消去实际必有帮手的预设，原起比应期保持。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "ab9d1ca9ed253ab8c92ec88757fffa88eda3bf44c6223e89d6cbc4955693b07e",
+      "copySha256": "44c1e1fe5b28d2e994976577d85b6a7df5f040545158c106a845b9751e1ba7cc",
+      "assembledCopySha256": "78d82fb975d8daa84c3cfa76b917f0b3f094cb138745c6763eb66cdfade5b1c6",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "旺初比承囚兑克、相离耗，末休坎薄生。全录上九贞凶，保留末援不独翻吉。",
+        "new": "春旺巽体、本旺比，体互囚兑克、用互相离泄，末休坎直接生体一般。06巽62–65上穷过巽失正、丧决断而贞凶完整，不作床斧实物定位。574、804合爻凶保difficult，但旺比轻克末生为强正证，定权留审；原本旺比窗只核初段取放。",
+        "reason": "春旺比起查、囚兑轻克、相离实耗和末休坎直接生都保留，休援写一般。上九床下为过巽至穷、资斧为威断、失正而贞凶完整；读回将“改断”审稿语改为回应尚不足认定易取。独立审读后首句改为末后即使有人愿意帮查，整个开局已实际读回，取消现实必定有人出现的预设。"
+      }
+    },
+    {
+      "rowIndex": 26,
+      "movingLine": 6,
+      "monthOrder": "summer-fire",
+      "reviewFinding": "夏休初比未当绝，中死兑克轻、旺离耗重和末囚坎生薄均对原体。上九过卑至穷、失威断贞凶不是字面床下遗斧，也不声称失主已失判断；实见与愿助两种信息分开。",
+      "counterevidence": "死兑轻克、原休比可用、末坎仍有生体关系，均为正面，未被贞凶删去；重耗薄援限制取物。",
+      "lineMeaning": "上九62–65：巽极而床下，上穷；过巽失正，斧喻威断，丧所断遂贞凶。非物件必为斧、必在床下，末坎生扶另对固定原体实论。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:62–65; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原无日期依据，不因末有生就忽略囚态造日窗。",
+      "imageDirectionBoundary": "变坎北、近水鱼盐、水具酒器环境仅限确曾去处；本用巽竹木长直绳工巧与原色由资料核，环境色材不转移为原物事实。床和斧古象不得叠为实际位置品类。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "fa310cc87d3b456c7a2f00e2c4c5247f5ddb1f2770c27b4c3555aa04890a0fd3",
+      "authorFieldsSha256": "de31776fc66fa42002af8896e37370e1e19104041b04f9939d3dfc85a74b37c5",
+      "peerFinding": "全文复核：休比、死兑轻克、旺离耗实、末囚坎薄生皆对原巽，未误作无生。上九床下与资斧解释为过巽失断而非位置材质，帮助和实看分层，原无日段未被人为补出。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "fa310cc87d3b456c7a2f00e2c4c5247f5ddb1f2770c27b4c3555aa04890a0fd3",
+      "copySha256": "ff040c4ccfc2ef62562f01056b37205f81837ac85bd3af93b97fd7a523a7cb90",
+      "assembledCopySha256": "dca14497e029e60a6cc52e03088070f3859b2e5d35aa1afe8220a3741ccd9417",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "休比初、死金轻克、旺离中泄、末囚水薄生，上九贞凶实保。",
+        "new": "夏休巽体、本休比，体互死兑克轻、用互旺离泄实、末囚坎薄生。06巽62–65上穷过顺失正、资斧决断与贞凶全释；574、804旺耗薄援合爻戒保difficult。休不等绝、末生不删，原无日期依据照留。",
+        "reason": "夏休初比未当绝，中死兑克轻、旺离耗重和末囚坎生薄均对原体。上九过卑至穷、失威断贞凶不是字面床下遗斧，也不声称失主已失判断；实见与愿助两种信息分开。"
+      }
+    },
+    {
+      "rowIndex": 27,
+      "movingLine": 6,
+      "monthOrder": "autumn-metal",
+      "reviewFinding": "秋死体、初弱比、旺兑中克及囚离耗完整，末相坎实生明确写值得使用。上九过巽失断的贞凶与九三志穷之吝不混，消息只能先补一项实证，不能越过当前认物。独立审读后首句改为末后若有实助，值得认真接住，整个开局已实际读回，末相水生只给条件，不预设帮助已来。",
+      "counterevidence": "末相水直接生体确有较实援助，是difficult的重要反证；中旺克与贞凶仍保留，未用金生水等间接连生化解。",
+      "lineMeaning": "上九62–65：巽极而床下，上穷；过巽失正，斧喻威断，丧所断遂贞凶。非物件必为斧、必在床下，末坎生扶另对固定原体实论。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:62–65; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末相坎生窗只补亲见可核细节，仍不保证辨出原件或完成交还。",
+      "imageDirectionBoundary": "变坎北、近水鱼盐、水具酒器环境仅限确曾去处；本用巽竹木长直绳工巧与原色由资料核，环境色材不转移为原物事实。床和斧古象不得叠为实际位置品类。",
+      "openQuestions": [
+        "九三秋令与上九秋令同有弱体中旺克、末相坎援，但一为conditional、一为difficult；本稿完整区分吝与贞凶，仍不把这种爻权差异记成已通过专业裁决。",
+        "相同五态及生克下，九三秋令conditional而上九秋令difficult，依吝与贞凶不同爻义合断；末相水实助必须同样保留，结果差别仍属可讨论权衡。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "0b110a1ebdd25b3a8167d16be6ba49d496e6ed3bf25cb527549bb16256481fcd",
+      "authorFieldsSha256": "065092749eea242a384cfbe506249f9982a17d62595c11bb9b35198168e18f10",
+      "peerFinding": "全文复核：死巽弱比、中旺兑克与末相坎实生两端完整，末有助没有被贞凶吞没。开头改为“末后若有实助”后已重读，语气与未知现实相称；与九三同五态异结论的爻权差别应继续留明。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "0b110a1ebdd25b3a8167d16be6ba49d496e6ed3bf25cb527549bb16256481fcd",
+      "copySha256": "1c953e257d412d2a9307f61ffbbc5b5e4cc21862e400cf3215fe47095f75bf8c",
+      "assembledCopySha256": "dfb44fda8e3ac8d66cf20a1644648947bb01e8cfe3b64f9a0aad419b88e679ae",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "死初比、旺兑中克、囚离耗，末相坎生实。末助保留为核查条件，上九凶与中实阻使结果仍难。",
+        "new": "秋死巽体、本死比，体互旺兑克、用互囚离泄，末相坎实生。06巽62–65过巽失断贞凶完整，末实援未被凶辞吞没；574、804合保difficult，与九三同五态末援却conditional的爻权差异留审。原末相坎窗仅补亲见物件细节。",
+        "reason": "秋死体、初弱比、旺兑中克及囚离耗完整，末相坎实生明确写值得使用。上九过巽失断的贞凶与九三志穷之吝不混，消息只能先补一项实证，不能越过当前认物。独立审读后首句改为末后若有实助，值得认真接住，整个开局已实际读回，末相水生只给条件，不预设帮助已来。"
+      }
+    },
+    {
+      "rowIndex": 28,
+      "movingLine": 6,
+      "monthOrder": "winter-water",
+      "reviewFinding": "冬相初比、中休兑克可承、死离耗轻、末旺坎生实，原条件局保留；上九凶戒全讲为过顺失正、失威断，必须恢复确据、核认原物并实际交还。读回将“戒意减去”改为失据直接妨碍认物。",
+      "counterevidence": "上九明确贞凶是conditional的重大反证；末旺生及轻中耗虽有利，不能只用泛泛注意便抹去失断限制。",
+      "lineMeaning": "上九62–65：巽极而床下，上穷；过巽失正，斧喻威断，丧所断遂贞凶。非物件必为斧、必在床下，末坎生扶另对固定原体实论。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:62–65; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原末旺坎生窗只提供足以辨物的说明，实物交还不自动包含在吉应中。",
+      "imageDirectionBoundary": "变坎北、近水鱼盐、水具酒器环境仅限确曾去处；本用巽竹木长直绳工巧与原色由资料核，环境色材不转移为原物事实。床和斧古象不得叠为实际位置品类。",
+      "openQuestions": [
+        "上九贞凶与冬令旺坎末生、相体初比并存，既定conditional偏重援强及现实核证条件；文学精修未重新裁定吉凶爻与月令末援的优先权。",
+        "上九贞凶而冬令保留conditional，依相体初比、轻耗与旺末生提供可寻条件。原典没有给出凶爻何时自动被旺援抵销的规则，正文已保留凶戒。"
+      ],
+      "authorFullRead": true,
+      "reviewedRowSha256": "11c94bace00f7c6607d29021221f9d72d0bdda97454629be10b7772c43d1fc7a",
+      "authorFieldsSha256": "b8ab3fadc7746849ac1e6e31abb2081ec47d90dd235f6a1b5cd47598c1241b45",
+      "peerFinding": "全文复核：相巽本比、休兑可承、死离耗轻、末旺坎生强均正确，未把旺水改作体旺。上九过巽失正、丧威断而贞凶仍在，原有条件可寻须借真援恢复认物依据，末生窗只给明确说明。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "11c94bace00f7c6607d29021221f9d72d0bdda97454629be10b7772c43d1fc7a",
+      "copySha256": "241ac869d8a62a6a27bcd07424d8a1b25bca07d88d530bf86e7d979a9faad7c1",
+      "assembledCopySha256": "4894c45c9636305cd4fc1b6a33fe92759bdc1d40bde8161277e475bb162a566e",
+      "outcome": "conditional",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "相初比、休金克可承、死离耗轻、末旺水生实，正面末援可争取；上九贞凶限盲从失据，必须实证。",
+        "new": "冬相巽体、本相比，体互休兑克可承、用互死离泄轻，变旺坎实生。06巽62–65上穷过顺失正、丧威断贞凶完整；574、804末援强保conditional，但与凶爻的权重是未重裁问题。原末旺生窗只给足以辨物的说明，非保证到手。",
+        "reason": "冬相初比、中休兑克可承、死离耗轻、末旺坎生实，原条件局保留；上九凶戒全讲为过顺失正、失威断，必须恢复确据、核认原物并实际交还。读回将“戒意减去”改为失据直接妨碍认物。"
+      }
+    },
+    {
+      "rowIndex": 29,
+      "movingLine": 6,
+      "monthOrder": "seasonal-earth",
+      "reviewFinding": "土囚比、相兑实克、休离耗及末死坎仍生俱明；过卑至穷、失其威断、贞凶不转为床斧字面身份。薄援先用来补证，保存确见经过，不为拼路线虚构转放。",
+      "counterevidence": "死坎仍直接生木，薄助并非全无价值，初比也留局部回查空间；中实克、弱体与失据凶戒使固定difficult得到解释。",
+      "lineMeaning": "上九62–65：巽极而床下，上穷；过巽失正，斧喻威断，丧所断遂贞凶。非物件必为斧、必在床下，末坎生扶另对固定原体实论。",
+      "classicalLocator": "sources/reference/zhouyi-zhengyi-hans/06巽.txt:62–65; sources/original/meihua-volumes-1-3.txt:573–576,795–799,803–805",
+      "timingBoundary": "原中相兑体互克窗仅限实际经手证据欠缺，不将末死水拿来凑期。",
+      "imageDirectionBoundary": "变坎北、近水鱼盐、水具酒器环境仅限确曾去处；本用巽竹木长直绳工巧与原色由资料核，环境色材不转移为原物事实。床和斧古象不得叠为实际位置品类。",
+      "openQuestions": [],
+      "authorFullRead": true,
+      "reviewedRowSha256": "50ce705eb47366a2b710a98ea8b86628cc218a698d86153e5f1b61ede52bc2cb",
+      "authorFieldsSha256": "6fe04952ca5e328915563a05b1050a5efe0f3512686af6c7ea45c73a6aa9667f",
+      "peerFinding": "全文复核：囚体弱比、中相兑克、休离生出与末死坎微生均保留。上九决断之失与贞凶原义完整，床斧未被当现场；对各种亲见分段保存的建议可执行，原中克时序没有转成永无所得。",
+      "peerFullRead": true,
+      "peerReviewedRowSha256": "50ce705eb47366a2b710a98ea8b86628cc218a698d86153e5f1b61ede52bc2cb",
+      "copySha256": "6d82537965f80439d2958856693388ce048b70a763e8e24a93ea8d46d303251d",
+      "assembledCopySha256": "4965b9d478c10c51e6d0863fc0e38a4f692ad42126d165f3a6a3cc3517907e29",
+      "outcome": "difficult",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false,
+      "judgmentCorrection": {
+        "old": "囚初比、相兑克实、休离耗，末死水薄生；上九凶与末援均保留。",
+        "new": "土囚巽体、本囚比，体互相兑克实、用互休离泄，变死坎仍生极薄。06巽62–65上穷过顺失正、资斧决断及贞凶完整；574、804实阻薄援合爻戒保difficult，末生未删。原中相兑克窗限经手凭据无法补出，不说永无所获。",
+        "reason": "土囚比、相兑实克、休离耗及末死坎仍生俱明；过卑至穷、失其威断、贞凶不转为床斧字面身份。薄援先用来补证，保存确见经过，不为拼路线虚构转放。"
+      }
+    }
+  ]
+}
