@@ -2,7 +2,7 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 504 / 4,608 篇，7 / 64 卦；尚余 4104 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 576 / 4,608 篇，8 / 64 卦；尚余 4032 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
@@ -17,6 +17,7 @@
 | [005 水天需](hex-005.md) | 72 | 504–544 | 496–538 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-005.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-005.json) |
 | [006 天水讼](hex-006.md) | 72 | 500–542 | 487–533 | 512 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-006.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-006.json) |
 | [007 地水师](hex-007.md) | 72 | 520–561 | 510–549 | 537 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-007.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-007.json) |
+| [008 水地比](hex-008.md) | 72 | 521–579 | 508–574 | 553.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-008.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-008.json) |
 
 ## 本轮的写作与判读
 
@@ -34,4 +35,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：8 · 水地比。
+下一待完成卦：9 · 风天小畜。
