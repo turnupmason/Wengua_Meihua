@@ -4,9 +4,9 @@
   "questionId": "search.missing-contact.locate-preview",
   "demoDate": "2026-11-21",
   "plannedArticles": 4608,
-  "articleCount": 1512,
-  "authorReadbackArticles": 1512,
-  "secondReadArticles": 1512,
+  "articleCount": 1584,
+  "authorReadbackArticles": 1584,
+  "secondReadArticles": 1584,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -423,6 +423,27 @@
       "outcomes": {
         "favourable": 12,
         "conditional": 22,
+        "difficult": 38
+      },
+      "authorReadback": 72,
+      "secondReadback": 72
+    },
+    {
+      "primaryId": 35,
+      "name": "火地晋",
+      "articles": 72,
+      "sourceSha256": "78cc65efba2a236d7057c50c57babfa3b12c947122627be9af2f5127175803ec",
+      "bodyHanRange": [
+        500,
+        555
+      ],
+      "bodyHanExcludingQuotesRange": [
+        490,
+        551
+      ],
+      "outcomes": {
+        "favourable": 6,
+        "conditional": 28,
         "difficult": 38
       },
       "authorReadback": 72,
@@ -130786,6 +130807,6102 @@
       "referenceDates": []
     },
     {
+      "key": "35/1/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "20889c78b27c911ad4b8257c55917327dbde0c925b2b88f8fec3fab5548396d6",
+      "bodyHan": 508,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 91,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "后段得到可回查原始出处的资料补充",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-support"
+        }
+      ]
+    },
+    {
+      "key": "35/1/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "882ea9e2236bcc4da60420be5eec0bacadb32e1c8c5bcdbb84d551bf5149b6d7",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 501,
+      "shortHan": 88,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "后段得到可回查原始出处的资料补充",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-support"
+        }
+      ]
+    },
+    {
+      "key": "35/1/辰",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e604551a23e901b2cce71777813cf1d6868da0b91bd284e5fa558023510be851",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 501,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "8d91363768769d7dede3900a9b795ebade84bb84baae4f5fd92ebc000abadce7",
+      "bodyHan": 504,
+      "bodyHanExcludingQuotes": 496,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "3f2e01a785ae9ddc7ae84b05a36260da90445dac30d16e3a611c5d00ecaa2507",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 496,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/未",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6d7b20fe08edaee9c66ae7b22821832f23ff8154fc15472d2616debb44c69979",
+      "bodyHan": 503,
+      "bodyHanExcludingQuotes": 492,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6185c9a521fa0a76cfeba84beb1f68dcd0e2ecb2738411a4a349679b720a50c1",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 494,
+      "shortHan": 88,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e3d1cceb3d93d029ed319155b2001787d1abb1a78f159048c8b2b5e54176def8",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 88,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/戌",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "79505b996cf8e6f2444f6b44cc6b6448de5d98ed7a6fd81d4947d6791e3b6c03",
+      "bodyHan": 503,
+      "bodyHanExcludingQuotes": 495,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "15f5dbea9d2f4be36cf1414e1cf6e10c41bdc8e3a0895ff63d1312edfa0ea610",
+      "bodyHan": 518,
+      "bodyHanExcludingQuotes": 507,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "4da80215434a7fbca5b66df1575cd73e235666bc00f7052014baf743ebe2a173",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 490,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/1/丑",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "1bddee4fd2eb6c115fcf64e84735658b3ca4f2437201c4e7b75650f96cba0815",
+      "bodyHan": 507,
+      "bodyHanExcludingQuotes": 499,
+      "shortHan": 88,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          21
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_generates_body"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/寅",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c176a798dc7eeb544c0950cbf60be8d6ec258263d2ba84e1c5872d1066c7dd0f",
+      "bodyHan": 518,
+      "bodyHanExcludingQuotes": 504,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/卯",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "4e007b7fca1fed346e6ae9b3d5a5ebc2300925f44c03828cf7d2c4d718cab49a",
+      "bodyHan": 502,
+      "bodyHanExcludingQuotes": 492,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f37a91aa6f7b0df6041dce023fb87cd338a28a6a1a24925ccc991d543d96084d",
+      "bodyHan": 511,
+      "bodyHanExcludingQuotes": 503,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/巳",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "464535dbc512108abc95d5efe187c6dd0af0f9b04b8e79cb46a51e5a5796105a",
+      "bodyHan": 508,
+      "bodyHanExcludingQuotes": 494,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/午",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "36ba9473d1c7fdda68e2b8c08c227eab4ecdbc0d8eade248485e7e2da2b54afd",
+      "bodyHan": 518,
+      "bodyHanExcludingQuotes": 512,
+      "shortHan": 89,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e0970fef0df9778c635b454f6242aa579b7cd078fbe6cb642894b68a8535e19b",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 502,
+      "shortHan": 89,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2b14f44ac82bb17994057fe3aa2159885bd7fba0efd62c4ede45803ac49f1b19",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 496,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6e04692d5ccf699be1d1e3517edcb738230be35fdd518a226cc4176d2eb4c75f",
+      "bodyHan": 515,
+      "bodyHanExcludingQuotes": 501,
+      "shortHan": 90,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2fb77beb2563e892519ab490b8185540f6b8f2b737fed0303ec17d1ee01d3e4e",
+      "bodyHan": 510,
+      "bodyHanExcludingQuotes": 500,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "731c261ebaa456125381834ce7905dbd3e5c9e8c1a11e005d51ed4476f6b59cb",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 493,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "297983376e051639fb2cdb492bb8b2f3a15835adacc33670a26ecadfd941c5fe",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 505,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/2/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "47841ccfb6c7b99c1a334ce7c4dfa65e4ef01a0f1927d57f2b124824d9e8f26d",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 495,
+      "shortHan": 89,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六二"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "1405683e3bfc84cae8957e85e2eb317d3278bffbe7336ff8e33be302c6dfa463",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 508,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "46ba1348ac57e28865d5bae5f80bd51b55c33b78042bc7c9ad3da039442bd182",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 508,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c4c1b17556dfa04eff3444dffeecf9ebaaf050002950899271d7e582cd26bc9c",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 499,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a0fb333914213ec1e9f87c010c93f3d03725992f5eff0b689bf26b4bde7e97ef",
+      "bodyHan": 511,
+      "bodyHanExcludingQuotes": 507,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "4982c4390ff56e5fa9b890ccde150e743f5c74feca85e3e4d7c82a3d6dbe03dc",
+      "bodyHan": 515,
+      "bodyHanExcludingQuotes": 513,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "077008f1a1d20e34904f5b24045ba65be229a081b9749d57b759ac5eafffb854",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 501,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0dccb0145bb9c840c9cdbadb4c8d652cd5bf40ec1095d828c87d74f63df7aad3",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 89,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "bd74c7a2cb5d6f95930412735f6509e1c964e25b1181a1337f8111e79c95e3d9",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 510,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c790c66cd25e8ff9ad94fca4ab4c18679e64647f5422af92729f409742ac9126",
+      "bodyHan": 507,
+      "bodyHanExcludingQuotes": 503,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "016297a29abb8a7f4bf8fb1e3af464ce31a37d4f1dd75553a105e9f0903ddc60",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 517,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "27bd0295349b3aa9e7b892080886a3a853816a18d007f6097373ea01bdaa7444",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 515,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/3/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "fb00a46063396cd8e61aa924f982c107b18b9188e6e5c83e8f59d6b76584ffc4",
+      "bodyHan": 525,
+      "bodyHanExcludingQuotes": 521,
+      "shortHan": 87,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六三"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "7bf23357a49601bfa20dff07fbe6c592bfbb1b6706b6cfacc6ac010d3e02fa0c",
+      "bodyHan": 511,
+      "bodyHanExcludingQuotes": 505,
+      "shortHan": 86,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2fef402b15b00bb91fc39d2eedca9eb1b2596f6d0a8c06fdabd7356a50e5e990",
+      "bodyHan": 508,
+      "bodyHanExcludingQuotes": 504,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/辰",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6593ce4e80f8e6f306e92f5fafbcb850b83b64cede560bb7cb6f48365f31cd4c",
+      "bodyHan": 503,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c002602feb7538c2832c50c56835786794afaa0a051b224ae1d554c63201bbac",
+      "bodyHan": 507,
+      "bodyHanExcludingQuotes": 501,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "1cf8de0c62986677417373898a13f9f87456f7ff4666b75de7d2de31eda25b8f",
+      "bodyHan": 508,
+      "bodyHanExcludingQuotes": 504,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/未",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c4640ea4d9ac6e3ebf8e7e25a837407c46ef7fd4e4879d01126dad9f255b3d7a",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 500,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "8fec057d027d6461b4e5de813691a7226baf1ca84bc872ae00146f97649c6d03",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 495,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0c5d8b033df16a2b81dc0005b5b9f2832ba04e3fc77c8d42efc8725ba08f7093",
+      "bodyHan": 513,
+      "bodyHanExcludingQuotes": 509,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/戌",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "3ef2db69274883fcc8ce7646e3ad87125bd6e6d797e8258049817f6f2369a5d1",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 499,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9ba29286974106ca9e13a1432551ed05685b888c660d233e341872fb4804472f",
+      "bodyHan": 514,
+      "bodyHanExcludingQuotes": 510,
+      "shortHan": 79,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9d20e259f39d350bf5d98863d8d6790f03a09c655f8bf60d923c88aec11d0b7a",
+      "bodyHan": 514,
+      "bodyHanExcludingQuotes": 508,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/4/丑",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2831a7b786fd53a401a7491d52b3c8a04464175b2142345e6988ff15401bd0ff",
+      "bodyHan": 516,
+      "bodyHanExcludingQuotes": 510,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          23
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "21dffda3345d9a205197a3400449d4ed5363f45642fe6a73534350f5a8634d0a",
+      "bodyHan": 537,
+      "bodyHanExcludingQuotes": 528,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "b110f6e081dcf6f86899bfc82726f561cb4543a85c2926285baee68855e2e0cc",
+      "bodyHan": 539,
+      "bodyHanExcludingQuotes": 535,
+      "shortHan": 85,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/辰",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "298c262b9aec832199504466520fcb2f588f5e4c2ad4e336ce7ee09646850ebc",
+      "bodyHan": 541,
+      "bodyHanExcludingQuotes": 535,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/5/巳",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "dea3b7f78e6425eecc5f519de33d51310d99c2a5b570b211917a331bb8145204",
+      "bodyHan": 545,
+      "bodyHanExcludingQuotes": 536,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/5/午",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c3848bd9d5bb14b947cf236e7899c3574b9cbbb9bd818f746c7c2fb60e19ac1c",
+      "bodyHan": 552,
+      "bodyHanExcludingQuotes": 546,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/5/未",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "3702d329894be9903f4feae72c1c39e0f2f66c891c9a3595caef0f0d91cc0981",
+      "bodyHan": 541,
+      "bodyHanExcludingQuotes": 537,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/5/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "7517add34a2ee3fbc3e0fcdb2f3e9419cd5470252364a4a83104f094296648fa",
+      "bodyHan": 548,
+      "bodyHanExcludingQuotes": 539,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "bfd47d6951f49c7246cc98d1cd8487f35bd852326e80c0853893cdd89f14d860",
+      "bodyHan": 538,
+      "bodyHanExcludingQuotes": 534,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/戌",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0308a76951c89e5a99f265d455febf7e6702e68c5c380e8bdc3af44482bab737",
+      "bodyHan": 541,
+      "bodyHanExcludingQuotes": 535,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/5/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "3be57cdc498da3272b890ef5b68de6088aafccec01bc99ad17bda002f2144e07",
+      "bodyHan": 555,
+      "bodyHanExcludingQuotes": 551,
+      "shortHan": 79,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "aeab8a92fbbd98cf13e3efccf5e403ba5d6f8d3ba8bc86714bc6b29e42c99a16",
+      "bodyHan": 544,
+      "bodyHanExcludingQuotes": 540,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/5/丑",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e5ccf553bd083e4f4e2e0bc783403f3b66b401031dff2c60fd9764a25eab97c5",
+      "bodyHan": 546,
+      "bodyHanExcludingQuotes": 542,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          12
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "已有渠道补入能核对本人身份的直接接触资料",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "巳",
+            "午"
+          ],
+          "displayedDates": [
+            "2026-11-27",
+            "2026-11-28"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "35/6/寅",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "cd144987fdb376c36d08ca31e8c0df23192ab2768704a0743ab29f895470bbcc",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 499,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/卯",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9011a8ce4a0eeec14b41c3c0302b910cd4e839ccba9f3524440bf90b0a8562d9",
+      "bodyHan": 509,
+      "bodyHanExcludingQuotes": 502,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/辰",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a91283992862a923d20024558872da71d55ccf035b9393286e587504e7a10964",
+      "bodyHan": 510,
+      "bodyHanExcludingQuotes": 504,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9eee87acb551e0f5b3a1a59b24719e8ec681f5767a8e45d794a0f492d48b7733",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 79,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "319cf2805979b6415b48cd200f6d36128f6ead55e1ded88fb767f317fe27014d",
+      "bodyHan": 509,
+      "bodyHanExcludingQuotes": 503,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/未",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2cffff432986e0243b4e116a8669c2d9cdc8847027e02a600060b18913e95dea",
+      "bodyHan": 504,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 79,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "212c2f7c17ef26a38924bc9768349e5782f150669a741d9dc4ce98310f4128c6",
+      "bodyHan": 502,
+      "bodyHanExcludingQuotes": 496,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "84cbd27c8fe6cd8debc08d9eb430ee9e49bf0f59f038a79a656f134d3cc85b8e",
+      "bodyHan": 510,
+      "bodyHanExcludingQuotes": 503,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/戌",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "cc4c88ec4564f1613ea92b0bb6440e68ab6c365dd155dd56e07de39684c27163",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 499,
+      "shortHan": 82,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "23ab7d10dd1dfa3ce16349057e27075f23e61aac7967f804af27e95358fe8ef7",
+      "bodyHan": 508,
+      "bodyHanExcludingQuotes": 502,
+      "shortHan": 81,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6330868d108d22507063ee18113e645446894c2f951fb17ff3d843972e6917a9",
+      "bodyHan": 500,
+      "bodyHanExcludingQuotes": 493,
+      "shortHan": 83,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
+      "key": "35/6/丑",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0a4ad41b88becc6099748016105cd659d3015e2e38ba271e6669229ae1a5b5ff",
+      "bodyHan": 518,
+      "bodyHanExcludingQuotes": 512,
+      "shortHan": 84,
+      "facts": {
+        "bits": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          35,
+          39,
+          16
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "坤",
+            "element": "土",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "equal"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": []
+    },
+    {
       "key": "64/1/寅",
       "outcome": "difficult",
       "legacyContactOutcome": "conditional",
@@ -137370,8 +143487,8 @@
   "warnings": [],
   "duplicates": [],
   "nearDuplicates": [],
-  "chartComparisons": 37800,
-  "dateCases": 4536,
+  "chartComparisons": 39600,
+  "dateCases": 4752,
   "bodyHanRange": [
     500,
     640
