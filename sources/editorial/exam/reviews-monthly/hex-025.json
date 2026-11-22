@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "authorshipScope": {
-    "currentReadback": "天雷无妄已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "天雷无妄已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -71,6 +71,22 @@
     {
       "path": "sources/editorial/exam/hex-025.json",
       "scope": "六三原判及分组应期，冬月取过程艮土而非末火"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "49–52 行，九四可贞无咎、王弼刚乘柔和孔颖达固守贞正"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "324 行以下，九四刚而无私、不尚刚及固守无妄"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§8 克体得生无制的一层作用，§10 休气有作用且照原态，卦理先后和直克全局无生"
+    },
+    {
+      "path": "sources/editorial/exam/hex-025.json",
+      "scope": "九四五气原断、春月取过程巽木、余月取早段乾金"
     }
   ],
   "findings": [
@@ -114,6 +130,17 @@
         "25/3/丑"
       ],
       "finding": "中艮同时见震巽木制与离火生，按一层生克并见仍保留原季节分量。末离克乾，得木生而全卦无水制，寅卯相火与巳午旺火的压力较明，亥子死火受相木扶持，中段囚土原断取期仍另记。申酉旺乾、两死木生囚离，辰未戌丑相乾、两囚木生休离且中艮旺，按现行单层与末克规则保留原断不成。弱木给末火的实际分量与有力之乾能减害至何处，列为解释边界。"
+    },
+    {
+      "id": "hex-025-line-4",
+      "status": "open-interpretation",
+      "keys": [
+        "25/4/寅",
+        "25/4/卯",
+        "25/4/亥",
+        "25/4/子"
+      ],
+      "finding": "乾初克震，艮可生乾，局中无火克乾。震可制艮，是中段自力关系，不递推以取消艮生乾。中巽和变巽均与震比和，无水直接生体，照季节分辨比和的实际力度。寅卯、亥子震有力且两巽相应，须保留减害；春囚乾得死艮且冬休乾得囚艮，都按原月态与一层生克分记，初克到底减至何处为解释边界。余月原判过不了，春参中段比和，其余参开头克制。"
     }
   ],
   "lineReviews": [
@@ -143,6 +170,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-025-line-3"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "可贞，无咎。",
+      "image": "“可贞，无咎”，固有之也。",
+      "reading": "九四「可贞，无咎」，王孔取刚履柔而守贞，程传讲刚而无私、固守无妄，小象「固有之也」着眼已具备且能稳住的凭借。用于此盘，后两处同木可保住所长，成败另由初克与全卦无生判。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-025-line-4"
       ]
     }
   ],
@@ -206,15 +243,35 @@
       ],
       "scope": "由寅至丑逐篇对读正文和两套参照稿，写入后读回题名、简断、正文、应期，核对艮、离各自的季节轻重、断语成败及出处，再逐段检查改稿。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇逐一读回题名、简断、正文、应期，校对比和与真正生扶各自位置，删除旧应期说明里的题型和作答猜测，重写简断、开头及中后段后复读。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T03:18:09.584Z",
-  "sourceSha256": "91399c0f9d204327f8de768c265a1efdda7acfe38fcff0f7ef14c3b0bef063f9",
+  "reviewedAt": "2026-11-22T03:25:46.364Z",
+  "sourceSha256": "2ee695ae352e55f6e080267e80425b664ee681527ea1fc0015b7ee740df53b40",
   "checks": {
-    "scope": "天雷无妄已写36篇",
-    "chartComparisons": 972,
+    "scope": "天雷无妄已写48篇",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       477,
       574
