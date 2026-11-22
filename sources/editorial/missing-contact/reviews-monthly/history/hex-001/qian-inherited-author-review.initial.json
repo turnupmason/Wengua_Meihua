@@ -1,0 +1,451 @@
+{
+  "schemaVersion": "1.0.0",
+  "scopeVersion": "missing-person-search-preview-1.0.0",
+  "primaryId": 1,
+  "status": "inherited-editor-readback-complete-with-findings",
+  "reviewScope": "inherited-editor-readback only 36 articles: moving lines 1–3; not a 72-article receipt",
+  "editor": "/root/source_audit",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "realWorldPredictionAccuracy": "not-validated",
+  "wholeArticlesRead": 36,
+  "movingLinesRead": [
+    1,
+    2,
+    3
+  ],
+  "sourcePathAtRead": "sources/editorial/missing-contact/monthly/hex-001.json",
+  "sourceSha256AtRead": "10263a08b9cf5a0f086bac34efe2564642655fd0652b5b53c5e3714fc9548908",
+  "readAt": "2026-11-22T02:48:56.582Z",
+  "articleHashAlgorithm": "SHA-256 of UTF-8 JSON.stringify(article), preserving source property order",
+  "authorship": "First editorial readback of inherited drafts. This reader did not write the 36 source articles and does not claim to be their original author. Root will merge only after resolving findings and reading changed text. Not the final independent second reading of 72 articles.",
+  "fieldsRead": [
+    "title",
+    "short",
+    "paragraphs (complete)",
+    "judgment",
+    "placeHint",
+    "circumstanceHint",
+    "reasonHint",
+    "timing (complete event and basis)",
+    "sourceRefs"
+  ],
+  "sourceEvidence": [
+    {
+      "title": "梅花易数卷一：五行、卦气旺衰、互卦起例与八卦地理屋舍",
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷一",
+      "finding": "实际打开核对八卦与五行、各季旺衰、二三四/三四五及乾坤另一互法、乾西北与高处公署驿舍类象；项目采用inner-lines而不临篇换法。"
+    },
+    {
+      "title": "梅花易数卷二：行人占、谒见占、求谋及体用",
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二",
+      "finding": "实际打开核对行人与求见事项区别；体克用归迟与可见不可混用；本用为在外所寻之人，实际处境与寻找一方受制分开。"
+    },
+    {
+      "title": "梅花易数卷三：体用互变、旺衰、克应与日应",
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷三",
+      "finding": "实际打开核对过程与末应；日应原指本日，未来候选窗口是编辑迁移而非确定发生。原书未在体用衰旺节列全旺相休囚死五态。"
+    },
+    {
+      "title": "周易正义乾卦：初九、九二、九三及文言注疏",
+      "url": "https://zh.wikisource.org/wiki/周易正義/01乾",
+      "localEvidence": "sources/reference/zhouyi-zhengyi/01乾.wiki",
+      "finding": "同时打开网页并读取本地原文。初九隐而未见行而未成有文言依据；九二出潜离隐居中不偏在王注，田为地上可营为之处在孔疏；九三因时而惕不失其几、虽危而劳与勤惕免咎条件在王注及孔疏。"
+    },
+    {
+      "title": "季本易学四同别录梅花数",
+      "url": "https://www.shidianguji.com/zh/book/7398438943139561524/chapter/1kbmc0gwj26fv",
+      "finding": "实际打开核对动爻为用、静爻为体，互为中应变为末应以及卦气和卦数取期的区别；可作POLICY所用独立文本对照。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "finding": "十二月均为乾之姤，原体上乾、本用下乾、两互乾、末巽。前中比和，后段体克木；金相或旺给conditional，囚死休给difficult，且潜而未显限制直接定成。逐月正文没有更换作用方向或编造地点事实。具体待修包括最早接触点、接开病句与姤婚娶卦辞的名目。"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "finding": "十二月均为乾之同人，末离火克原体乾金。春夏克重而体弱取difficult，土秋有力比和及利见吉意取conditional，冬仍不足承接取difficult；作者已将无生有克通则与旺比和的解释张力留在judgment，不冒称原典寻人专法。九二王孔注核对无误，未据田、大人设定现实地理或知情人。"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "finding": "十二月均为乾之履，末兑与原体比和，前中后无直接克体。土秋相旺支持favourable，春夏冬仍以弱承接取difficult；九三勤惕为免咎条件没有改成已安全。原爻文言、王注孔疏实际核对有据；未由终日夕惕或履虎尾编造时刻事故。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "QIAN-I01",
+      "status": "open-blocking",
+      "severity": "editorial-correctness",
+      "keys": [
+        "1/1/寅"
+      ],
+      "field": "paragraphs[4]",
+      "finding": "最早能够证实的接触点会把寻人主线引回过旧信息，与本套最后确证行程原则冲突。",
+      "proposedChange": "最早能够证实的接触点 → 最后能够证实的接触点"
+    },
+    {
+      "id": "QIAN-I02",
+      "status": "open-blocking",
+      "severity": "copy-error",
+      "keys": [
+        "1/1/午"
+      ],
+      "field": "paragraphs[4]",
+      "finding": "清楚接开为病句。",
+      "proposedChange": "清楚接开 → 清楚分开"
+    },
+    {
+      "id": "QIAN-I03",
+      "status": "open-blocking",
+      "severity": "citation-label",
+      "keys": [
+        "1/1/未"
+      ],
+      "field": "paragraphs[3]",
+      "finding": "姤勿用取女属于卦辞；该段婚娶爻义所指名目错。",
+      "proposedChange": "婚娶爻义 → 婚娶卦辞"
+    },
+    {
+      "id": "QIAN-I04",
+      "status": "open-editorial",
+      "severity": "literary-density",
+      "keys": [
+        "1/1/寅",
+        "1/1/卯",
+        "1/1/巳",
+        "1/1/午",
+        "1/1/酉",
+        "1/1/戌",
+        "1/1/子",
+        "1/2/卯",
+        "1/2/巳",
+        "1/2/酉",
+        "1/2/戌",
+        "1/2/丑",
+        "1/3/卯",
+        "1/3/巳",
+        "1/3/午",
+        "1/3/酉",
+        "1/3/子",
+        "1/3/丑"
+      ],
+      "finding": "多篇正文在五段中反复说明不能把消息当寻获、无咎不是安全证明、方位不能当地址；又与三类提示、应期和页头重复，厚度有一部分由边界提醒支撑。没有硬造危害事实，但成稿读感有审计腔，未宜称完美。",
+      "proposedChange": "保留本爻特有的必要辨析，将一般风险与位置边界集中在页头/POLICY/专栏；正文用更自然的本用状态、互卦承接、变卦收尾和主要困难叙述替换重复否定，修改后仍保持真实内容字数门槛。"
+    },
+    {
+      "id": "QIAN-I05",
+      "status": "open-editorial",
+      "severity": "scenario-assumption",
+      "keys": [
+        "1/2/卯",
+        "1/2/亥",
+        "1/3/亥"
+      ],
+      "finding": "少数语句直接说已有联系可问、帮助可以继续使用，用户实际问题只有人找不到，未必给过任何可联渠道。多数篇已有若引入，三处可再一致化；这不构成捏造具体人物地点，但存在预设情境。",
+      "proposedChange": "将无条件的已有联系可继续改为若还留有可追查的联系/若已得到一项可核实消息，避免把模板场景当已知事实。"
+    }
+  ],
+  "articleReviews": [
+    {
+      "key": "1/1/寅",
+      "articleSha256AtRead": "8fb89a928a52335eeea6d5f84d7688edb56973fff217d0ccd4c0e25ddd342e7a",
+      "editorialStatus": "须修定位表述",
+      "finding": "春金囚、末巽木旺而受体克写对；潜龙取未显而不认定藏身，判寻获困难有据。末段最早能够证实的接触点容易把行动引回过旧线索，宜改最后能够证实；几处否定性提醒与附栏重复，可凝练。",
+      "findingIds": [
+        "QIAN-I01",
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/卯",
+      "articleSha256AtRead": "9d1ab6a83ab60566c2eddd7770ba40b2758682177de9206c9b2756113526f52c",
+      "editorialStatus": "内容可保留，文风可收紧",
+      "finding": "主互皆乾、末巽与体克关系及卯月强弱正确；同一来源不能重复算成独立实据的提醒有用。潜意与缺口的关系说明完整，但第二至第五段反复重说不可认定找到，读感偏向规则说明，正文可用正向过程叙述替换一处。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/辰",
+      "articleSha256AtRead": "1ab38ce30fb8ffb4eb5a4f5011395eca9dccd6d828873c2b8a746dc67d39cd96",
+      "editorialStatus": "内容可保留",
+      "finding": "土月金相、巽木囚正确，未把月令虚增为盘内土卦；体克变用的主动核实及迟缓并存已写明。申酉窗口仅指既有消息核实，未许诺回家；初九限制使conditional与较强比和并存，前后一致。",
+      "findingIds": []
+    },
+    {
+      "key": "1/1/巳",
+      "articleSha256AtRead": "fe02059bcef5035d8a8e1fae4da441f7da3a89516bb05b130308a030b08faf78",
+      "editorialStatus": "内容可保留，提示可合并",
+      "finding": "夏令乾金死与末巽木休相区分，未由木休误断体必能克成；此篇保留比和正证又说明全局弱承接。无实际伤亡断言。金死不是生命判断在正文、简断、处境栏重复，可把正文一处转为承接难处的解释。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/午",
+      "articleSha256AtRead": "0c962ce3745f0d7b1735dfcf3c7f9b97980edf6f99b7c46def14050e49836a4c",
+      "editorialStatus": "须修病句",
+      "finding": "末巽木休、体金死，前中同气而弱的证据链一致；转述同源不等于新目击写得清楚。末段清楚接开是病句，须改清楚分开；不另按午月加重到强于巳月，符合相同五态约束。",
+      "findingIds": [
+        "QIAN-I02",
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/未",
+      "articleSha256AtRead": "d2d410a731828c2680194d060ce00a4bfd75b5e8dc57ce7829112a8de351d0ee",
+      "editorialStatus": "须修古籍名目",
+      "finding": "土令金相、末巽囚及主动处理有余地成立；将归家与寻获区分，候选期指中段消息核实。第4段婚娶爻义名目不准，所指姤勿用取女为卦辞，应改婚娶卦辞；原体及处境角色未错位。",
+      "findingIds": [
+        "QIAN-I03"
+      ]
+    },
+    {
+      "key": "1/1/申",
+      "articleSha256AtRead": "ed86fec556f81705baaf3dd30c731545ad8c439b16dffe00f1067739c01d7d6a",
+      "editorialStatus": "内容可保留",
+      "finding": "秋金旺、末巽死受体克，仍由潜龙限制直接定成，conditional有清楚理由。未把巽死当地点失效，未把姤当实际偶遇。位置只参原用乾，申酉日指用互比和的信息核实，未偷换为返家日期。",
+      "findingIds": []
+    },
+    {
+      "key": "1/1/酉",
+      "articleSha256AtRead": "ce1b02285cf258fab422c8bd76b72804dc3e6f478aae70d2959ee1ce19181503",
+      "editorialStatus": "内容可保留，结尾可更自然",
+      "finding": "旺比和贯通但消息未显，初九与后段核实的关系完整；没有指定亲友已知情、没有虚造具体地址。末段误收了寻人这件事略生硬，宜改提前结束寻找；否定句密度可降低。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/戌",
+      "articleSha256AtRead": "c4125d54db2f7c0c07c0a681d2b3eb9727e8ae1b5ddc055122b6a991989d4093",
+      "editorialStatus": "内容可保留",
+      "finding": "土令金相而末木囚、体克变用兼迟意都写出；明确有气不等于已经找到援手，未把古籍术语当现实记录。近期核实窗口与conditional一致；全篇主要在真实资料的递进，可减少方位不可定址的再说明。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/亥",
+      "articleSha256AtRead": "c414885df08887d81e07329d548f3f97113c13df5e019459eb706982d938dfd1",
+      "editorialStatus": "内容可保留",
+      "finding": "冬金休、巽木相、后段体克而费力正确，未把休降成死绝；潜意贯穿主断且不据此给日。本人处境仍回到本用乾，未以末巽的方位捏造东南移动。可保留消息未显与支持不足的双重限制。",
+      "findingIds": []
+    },
+    {
+      "key": "1/1/子",
+      "articleSha256AtRead": "488a0c33d126d37abbf1d654274f34680e925535860608232d02b38b97d6a81c",
+      "editorialStatus": "内容可保留",
+      "finding": "子月诸乾休，末巽相而受体克正确；对多次转述出于同源的处理贴近本问，并明确姤不构成偶遇场面。difficult与暂不列期一致，未从弱克或比和推伤害。末段比给联系日更能保住准确范围稍偏编辑解释。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/1/丑",
+      "articleSha256AtRead": "9c440de5a6ca4d4720943bd6344b23479f1442f462315aefb50d6d7615ffe199",
+      "editorialStatus": "内容可保留",
+      "finding": "相金承接与潜而未成同时保留，变姤巽囚受体克，且寻获、安危、是否归来分开。未将土月支持说成盘内生体。应期只写信息进一步核实，仍有实际渠道前提；无硬编码现实行程。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/寅",
+      "articleSha256AtRead": "27cea113d25efc2a22f4118f87ead288755794a0ec7b8fa0fef3ad053054e181",
+      "editorialStatus": "内容可保留",
+      "finding": "九二利见正证与相离火克囚金的末阻合看，difficult无冲突；王弼出潜离隐、居中不偏出处可核。未把田当现处田野、大人当已知情长者。火日窗口名为收尾受阻，未据此编人身事故，角色仍归寻找方。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/卯",
+      "articleSha256AtRead": "c419266ad663110924bb78168933f6e0eb08e07c530d6b0cb96542e5c123ecac",
+      "editorialStatus": "内容可保留，语气可简化",
+      "finding": "本用和两互皆囚金，末离火相克体，难成与利见仍有益的区分成立；孔疏田为地上可营为之处已核。消息增量一词较技术化，末段可直说多查清了什么；若渠道、答复存在的表述加条件会更适用于无线索问案。",
+      "findingIds": [
+        "QIAN-I04",
+        "QIAN-I05"
+      ]
+    },
+    {
+      "key": "1/2/辰",
+      "articleSha256AtRead": "122d2de8ffea0d9766a2fde01c63fbeaa3268a2138b245e922ba895b9b4da48c",
+      "editorialStatus": "内容可保留，边界理由已明",
+      "finding": "相金比和与休火末克同时呈现，未把火休算成无克；conditional对应前中可接、最后仍缺确认。judgment已承认无生有克通则与吉爻有力比和的取舍，属编辑解释而非原书独立寻人公式；候选期只取体互消息承接。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/巳",
+      "articleSha256AtRead": "8746a626010567a3fa2875547d6366a5c436860101d9cf88224afb4321eed914",
+      "editorialStatus": "内容可保留",
+      "finding": "夏金死、末离火旺克体，全盘无直接土生体，difficult有一致支撑；九二吉辞只保留适任协助方向。安危未知与寻找困难分开，处境没有凭变火断火灾。正文两段重复保证与不能认定，可略收紧。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/2/午",
+      "articleSha256AtRead": "2351ca7e4c2400deb0b4c9f67d44494fc30746b49e83a7d4d1d69d8fd085bfbb",
+      "editorialStatus": "内容可保留",
+      "finding": "午夏金弱、末火强克，没有借同人卦名编出合力找回。九二居中不偏转成核实有据属于明示现代解释，不冒作古注断失踪。本人受伤与寻找受阻分开；应期为阻隔窗口，未说当日失踪或当日失败。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/未",
+      "articleSha256AtRead": "885545fab1181aa77c53a94b0e7469fab94eb95dacac48d42f16db2c330a8e45",
+      "editorialStatus": "内容可保留",
+      "finding": "前中相金比和、末休火仍克的层次清楚，见龙在田没有直取田间地址；寻见仍有条件而不放弃利见吉意。只有位置猜测时不因已投入多便强认正确，这一段较具体。支持同月气辰戌丑的专业结论。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/申",
+      "articleSha256AtRead": "eaf8ed95b5341bdee2c31cf38446705f00073d5836602a2cd2b67db81ac3da8d",
+      "editorialStatus": "内容可保留",
+      "finding": "秋金旺、离囚末克正确，正文不因弱克而抹掉阻隔，也不因末克而抹掉前段有力比和；conditional与体互金气窗口相符。未用本人愿归或多人参与作既定事实；与原典通则的解释差异已留在judgment。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/酉",
+      "articleSha256AtRead": "fa35dc324049657906f9d0fd6625c40508548a8f47f299ee38ad97d19dc6dd09",
+      "editorialStatus": "内容可保留",
+      "finding": "同人末离囚克体、主互旺比和俱存，寻获仍待最后确认的理由成立；目击记录用若引入，未断言真有此类记录。王孔德施、居中引用对应乾九二。末段可删重复不许当当前所在的句子，让行文收在所问判断。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/2/戌",
+      "articleSha256AtRead": "0352641022e67b6560d9d0eb77ca247fc7a9fdea5c96e741f4a146ca157e8151",
+      "editorialStatus": "内容可保留",
+      "finding": "土令相金与休火末克合看，未将月令当新增土节点；区分不同时点的答复与当前所在，来源举例未写成事实。结论与候选期均保留条件，未承诺真实日期。反复提醒不保证和不抹末克可合并为一处。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/2/亥",
+      "articleSha256AtRead": "e5c2236ca675a7858f64f9d31f7b2b327109dd3eb496ed317b097e44acae8ecb",
+      "editorialStatus": "内容可保留",
+      "finding": "休金仍比和、死火仍克的方向和力度分开，未把死火夸成重灾；没有直接生扶，所以保留difficult并不机械定日。王弼释九二的出处准确。已知联系尚可问等表述宜读作有此渠道时的条件，不视作已确认有人可问。",
+      "findingIds": [
+        "QIAN-I05"
+      ]
+    },
+    {
+      "key": "1/2/子",
+      "articleSha256AtRead": "e0d91a51f13f09c0bbcfafee56227497e17dc16defa3769499f7fb26844989d4",
+      "editorialStatus": "内容可保留",
+      "finding": "原体上乾、本用下乾、变用下离与冬气休金死火均对；没有转移原体来避开末克。吉辞显明与最终难落地并述，暂无日期的理由明确。处境与原因仍只作推断，未虚构人员、地点或失联经过。",
+      "findingIds": []
+    },
+    {
+      "key": "1/2/丑",
+      "articleSha256AtRead": "fda22d67cb653726b755243566c19df8df88e5081e3ce6ee2d2bc8adf2422a37",
+      "editorialStatus": "内容可保留",
+      "finding": "前中金相、末火休仍克，conditional与末段核实未足对应；相气不等于新增生体，正文也没有这样偷增。现实时间线用可把引出作为核实方法，未讲成既有事实。末段肯定语气与肯定结果的对比稍显审计腔。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/寅",
+      "articleSha256AtRead": "139c1fe1219d1a891e0bb463a2364ea0ddcd53353cee50a538aa318bc69b9a1f",
+      "editorialStatus": "内容可保留",
+      "finding": "乾变履、末兑金囚与全程比和写对；九三勤惕为免咎条件，不偷换为已平安或已寻获。王注因时而惕、虽危而劳与孔疏解释均有原文支持。无日期理由与全盘弱承接相符，未据终日夕惕强定白天夜里。",
+      "findingIds": []
+    },
+    {
+      "key": "1/3/卯",
+      "articleSha256AtRead": "10702831d67af6fa69b089aa36ec1bf69a26fbebe47ffba8c352e37fd7350128",
+      "editorialStatus": "内容可保留",
+      "finding": "主互金囚、末兑亦囚，前后无直接克却缺生扶，判寻获困难与月气一致；正文把勤与惕分别落到持续跟进、纠错两面。没有凭履虎尾指定危险路段。最后金囚与无咎的排除性提醒可移到处境栏，正文少重复。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/辰",
+      "articleSha256AtRead": "b9d7df2259e83c13f161f5bcbb81c20a6c8b42e092dc69d5df9b3ce7685b7b4e",
+      "editorialStatus": "内容可保留",
+      "finding": "土令诸金相，末兑比和收尾，favourable由全程承接而非仅摘无咎成立；体互用互不混，未把回家与寻见等同。时间事件仅为关键线索直接核实，未自动升为本人归来。正文正面证据较清楚，可作前36篇较好的参照。",
+      "findingIds": []
+    },
+    {
+      "key": "1/3/巳",
+      "articleSha256AtRead": "1f04133666d0caac52435279fa4e8959d3970c30ea959aa108bb99013d02ccc3",
+      "editorialStatus": "内容可保留，重复可压缩",
+      "finding": "夏令原体本用两互和末兑都弱，未因无克而断顺利；勤惕免失误与寻获支持分开合理。没有凭履虎尾论事故。最后三段各有不能的边界说明，加上提示栏显冗长，可将一段转为为何末比和不足转强。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/午",
+      "articleSha256AtRead": "7e86054a7fef216925a7d869b87e1ef512100dcdd6e7006334d9480066f4216b",
+      "editorialStatus": "内容可保留",
+      "finding": "全程弱比和、无生克的事实和difficult一致；九三勤惕未被误作昼夜应期。末兑与体相合仍无力的说明完整；具体事故、旧地址等仅为排除或条件举例，没有宣告现实发生。可减少同篇反复纠错式语气。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/未",
+      "articleSha256AtRead": "1f30b8a58bf61fc5ba135f7f8868aee45e887772c10e55850111a6a0f69f8a4e",
+      "editorialStatus": "内容可保留",
+      "finding": "土月乾兑皆相，全程比和支持寻见，favourable与九三慎行条件并存；两章相接之义借用有明示。曾联络、本人确认、安危和归家分层准确，不制造已知回返意愿；金气窗口命名为直接核实。",
+      "findingIds": []
+    },
+    {
+      "key": "1/3/申",
+      "articleSha256AtRead": "c224763ab75f5caeffb3649aa1bfc2bcc5b084456266380f212a7d7c67ebc7d8",
+      "editorialStatus": "内容可保留",
+      "finding": "旺乾、旺兑比和贯通，正证比初九与九二更完整，favourable等级有分辨；九三无咎仍依勤惕，不当现实安全结论。已有连续近况以若引入，未当给定。全文收在持续准确把线索落实，正向表达较好。",
+      "findingIds": []
+    },
+    {
+      "key": "1/3/酉",
+      "articleSha256AtRead": "35b1443741d20ab3743e2b37b63405eb2f39504067d4fb8ddaac84ba480fce45",
+      "editorialStatus": "内容可保留",
+      "finding": "旺比和到末兑、无直接克体，较有利判断成立；相似姓名地点仍需确认的例子贴合现实核查，不凭古象指定人。末段直接宣布结局的许可属于对作者说话的口吻，宜换回给问事人的自然结尾。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/戌",
+      "articleSha256AtRead": "854b2c0a7fb5f2d8742da5dcf1430d53036517036f7bf04468ea9b66d719abca",
+      "editorialStatus": "内容可保留",
+      "finding": "乾兑相气与前后同气正确，未编造独立生扶；未把是否愿意归来代替寻获，现实证据层次分明。此篇将勤对应查深、惕对应辨别，解释比纯禁令自然。末段是有条件的行动建议而非事实报道。",
+      "findingIds": []
+    },
+    {
+      "key": "1/3/亥",
+      "articleSha256AtRead": "b91282ba9a2b022f68c5ee03b0aff089ca7e628b86486fb576f6bbff1f5b73b2",
+      "editorialStatus": "内容可保留",
+      "finding": "冬金休而不死绝，末兑休比和没有凭空转强，difficult与不另列日期相符；九三无咎始终带警惕条件。已有联系可用一句略预设用户仍有渠道，建议改若还留有可追查的联系，以兼容完全无新线索场景。",
+      "findingIds": [
+        "QIAN-I05"
+      ]
+    },
+    {
+      "key": "1/3/子",
+      "articleSha256AtRead": "d1f318c089a3f6958cd4c32de308e2bb3bbabecda3a14c8ded058715fa4ec8b3",
+      "editorialStatus": "内容可保留",
+      "finding": "全程休金比和、无直接生扶并非无作用，判暂难有专业区分；没有从原用休推体力衰竭，避免了角色错置。日夜词不定时、无咎不报安均正确，但与附栏的提醒重复，可让正文多留勤惕的过程意义。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    },
+    {
+      "key": "1/3/丑",
+      "articleSha256AtRead": "284f383256acc316133cf3d70ea849fdb97cd8bbe2558872edcbbf0b7b73e744",
+      "editorialStatus": "内容可保留",
+      "finding": "金相比和贯通至兑，favourable有前中后完整正证，九三勤惕保留；并未以相气代现实实据。应期为末段线索核实，不误作回家日。终段有利不提供保证及非每项线索真两层提醒可凝成一句，避免削弱结尾力度。",
+      "findingIds": [
+        "QIAN-I04"
+      ]
+    }
+  ]
+}
