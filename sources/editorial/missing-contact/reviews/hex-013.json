@@ -3,223 +3,267 @@
   "questionId": "search.missing-contact.contact",
   "actor": "assistant-author",
   "fullArticlesRead": 30,
-  "reviewedAt": "2026-11-19T16:41:42.195Z",
-  "sourceSha256": "97b7ee6591f9f7b0cf7024b612072b0b5468ce1f596fb8c6813865d7657f126e",
-  "casesSha256": "6eb7c283f6853b71c8f6441189fdffd707615eb4fb3578b0d28f058617ffc2fc",
-  "scope": "facts-source-applicability-full-body-counterevidence-timing-layout",
-  "extraLiteraryPolish": false,
+  "reviewedAt": "2026-11-22T03:26:13.429Z",
+  "sourceSha256": "1d94dccc8519295e97b2b576bd370b9a748805f06b5fd639ffbffe35f6f2c6a7",
+  "casesSha256": "b8067ff5aced8b7cb65eddd5a62c73ac8e9b0a0f6fcddb10444a2fae5c4e696e",
+  "scope": "facts-source-applicability-full-body-counterevidence-timing-layout-and-literary-full-read",
+  "extraLiteraryPolish": true,
   "independentProfessionalReview": "pending",
   "independentTimingInterpretationReview": "pending",
+  "literaryPolishVersion": "missing-contact-literary-v1-20261121",
+  "authorAgent": "/root/write_meng",
+  "readbackNotes": {
+    "initialFullArticlesRead": 30,
+    "wholeArticlesRereadAfterAuthorEdits": [
+      3,
+      10,
+      12,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "outcomeAndCompleteTimingUnchanged": true,
+    "scope": "作者实际逐篇完整读回标题、简断、四段正文、规则取舍与完整应期；另读六爻cases、王孔同人全章及所引程朱段落，核对指定面试与关系参考稿。机器只统计和绑定，不替代实际阅读。",
+    "changes": "修顺一句新内容的语法，明确九三春末段是自身承办弱，展开九三秋可办条件；九四夏冬改为依事实更正的自然表述，秋令收准标题；九五去除解释写作约束的口吻而直接说明核查条件，上九简断更自然，夏令不预设是否同心、秋令直接说明依核查争取。所有改动整篇再读。",
+    "baselineCommit": "40227bd2cee5653742e60eb671fdc0b663905455",
+    "baselineVerification": "原source/cases/review三文件与历史提交逐字节一致后留档，未覆盖旧基线。",
+    "integrationOpeningWholeArticlesReread": [
+      4,
+      20,
+      28
+    ],
+    "integrationOpeningChanges": "主代理整库逐句查重定位三处重复的结果句后，按初九土令相金承休火、九五春令相火制囚金、上九冬令死火制休金的具体起步条件各自重写开局，逐篇整文再读；结果与完整应期不改。",
+    "peerRequestedWholeArticlesReread": [
+      28
+    ]
+  },
+  "approvedCaseCorrection": {
+    "approvedBy": "/root",
+    "path": "entries[1].lineCommentary.application",
+    "before": "但本用受克无生及宗吝方法警戒仍取难",
+    "after": "但本用克体、无直接生体及宗吝方法警戒仍取难",
+    "reason": "本用离火实际克原体乾金，原描述受克为施受方向笔误；仅订正此片段，原节点、判断及完整应期不动，历史基线原样。"
+  },
   "entries": [
     {
       "movingLine": 1,
       "monthOrder": "spring-wood",
       "outcome": "conditional",
-      "reviewFinding": "初九春：囚金相火本克、囚互比、制旺巽费力，末死土仍生弱，留条件性慢成；门不作所在无咎非回复保证。",
-      "copySha256": "bffc9ce307c26857a8b9345fdbad12ce4d3090f66c400b4c55c5ec31c49f7867"
+      "reviewFinding": "初九春全文读回：囚金受相火克、体互囚比、制旺巽费力及末死艮仍生齐全。薄助用于补核记录，保留较缓机会；无咎讲不偏私，门不取位置，末土日支持事件原样。",
+      "copySha256": "02e4d7c4fe73c3a29a506bb6f2dcb912c2f9ee7c63774241fb19ea039062b300"
     },
     {
       "movingLine": 1,
       "monthOrder": "summer-fire",
       "outcome": "difficult",
-      "reviewFinding": "初九夏：死金旺火本克、死互比、制休巽弱，末相土生有助仍难补初中；正证完整偏难，末吉窗不改全文。",
-      "copySha256": "d71fbab6e60aa62611278e03b25d775d4c97435d65729587e41ebee1abd15944"
+      "reviewFinding": "初九夏全文读回：死金承旺火克，中途弱比及制休木的承办困难明确；末相艮有力生体正证充分呈现，未抹助也未翻原偏难。无咎不等已通，原收尾得助全部字段保留。",
+      "copySha256": "6b70484f6b52e1f6d799ebce76ecbc474efb71143c7fe22ae65eb12fbf96a4d5"
     },
     {
       "movingLine": 1,
       "monthOrder": "autumn-metal",
       "outcome": "conditional",
-      "reviewFinding": "初九秋：旺金承囚火本克、旺互比、制死巽易，末休土生可续，留接通条件；无咎只给做法不保证。",
-      "copySha256": "e41f263de465e95ee1dcd7d89eb1d42ab276dc27fbafd9ef270a7ce06c13dd8d"
+      "reviewFinding": "初九秋全文读回：旺乾承囚离克，先读旺乾体互再读死巽用互，末休艮生体接续。原条件性与本克反证同在，公允核验不扩大所找之人，接通验当次双向，原末土日完整。",
+      "copySha256": "aa3aa22956a11f20efbe25dea5b32fbc84afbc20f3c3d7bc3d58bbf05e688c5a"
     },
     {
       "movingLine": 1,
       "monthOrder": "winter-water",
       "outcome": "conditional",
-      "reviewFinding": "初九冬：休金受死火本克仍在、休比、制相巽费力，末囚土仍生薄，条件性慢成，未抹弱生或死克。",
-      "copySha256": "61110c03dc3f24c8e50d2eb07c6447d2c5a6ee5d4ad3008634b98e6cc6b5df06"
+      "reviewFinding": "初九冬全文及修后整篇读回：休金受死火克仍在，休比可续，制相巽费力，末囚艮薄生未归零。修顺取得新内容后一句，原缓慢机会及收尾有限得助全应期不变。",
+      "copySha256": "29977f06537cbb35919dda23c937e9cb054138c5a939a3d34b6edb31e2249c63"
     },
     {
       "movingLine": 1,
       "monthOrder": "seasonal-earth",
       "outcome": "conditional",
-      "reviewFinding": "初九土：相金休火本克、相比、制囚巽可办，末旺土生，留机会但初阻反证不删，不只看变生。",
-      "copySha256": "855c74c1ec151c1667761fdccc9e65935b6e61f42a167ebb8194d381d2b7faca"
+      "reviewFinding": "初九土令全文读回：相乾承休离克、体互相比、制囚巽和末旺艮生体均准确，强后助未替本人作答。无咎仍有方法条件且门不定位，原conditional及末support全部字段保留。 整库查重后据本篇真实起步条件重写开局，作者已再读整篇。",
+      "copySha256": "2e6ce99d5162cde99958e028f7094bf471608324b22ebc5dc330a6cca917bea5"
     },
     {
       "movingLine": 2,
       "monthOrder": "spring-wood",
       "outcome": "difficult",
-      "reviewFinding": "六二春：囚金相火本克、囚互末比、制旺木难，无生宗吝取方法核验，不把指定一个人误当偏狭。",
-      "copySha256": "3bc4048a54a01d566c698121d188dabeaac41f1ba1655a9be3d800b95b389088"
+      "reviewFinding": "六二春全文读回：相火克囚金，体互和末乾的弱比在中后，制旺巽吃力，无直接生体。宗吝限核验偏听而不责指定一人，真实亲属未实指，初火日核熟悉渠道的原期不动。",
+      "copySha256": "9850e5a1d953dbfed60996272d41cd5b9ad7c3be1919ba05e3b222da2686b62f"
     },
     {
       "movingLine": 2,
       "monthOrder": "summer-fire",
       "outcome": "difficult",
-      "reviewFinding": "六二夏：死金旺火本克、死互末比弱、制休木难，无生偏难，宗不指家属已阻拦或真实心理。",
-      "copySha256": "99576eec4860f706ec9ea618cc49005efa0e6a98491944c62cfbd119175f2170"
+      "reviewFinding": "六二夏全文读回：旺离克死乾，体互与末死比薄，制休巽仍需办理；熟人承接与本人回应分别核实。宗吝不推熟人拒联心理，偏难及初段火日原样，采用已批准订正的cases方向。",
+      "copySha256": "0f1661a8fb9859b5ed22aecfe8bc4908073a12268892d5d2364e36430e0b1634"
     },
     {
       "movingLine": 2,
       "monthOrder": "autumn-metal",
       "outcome": "difficult",
-      "reviewFinding": "六二秋：旺金能承囚火本克，旺互末比、制死木有利反证完整，无生宗吝限方法而偏难，不只见克。",
-      "copySha256": "38497474e8f3903747c9157990072e6b8d10329a2a20e4bcbdea7d7609703fee"
+      "reviewFinding": "六二秋全文读回：旺体承囚火、旺体互和末比及制死巽为正证，中后阶段无错；无直接生体与方法戒并论原偏难。指定一人不被作偏狭，过程旺金日只核原话来源。",
+      "copySha256": "e03460d4ba77309927f2273d7e6f1dea5b126dd1129a0d23f8fde993a6b72b86"
     },
     {
       "movingLine": 2,
       "monthOrder": "winter-water",
       "outcome": "difficult",
-      "reviewFinding": "六二冬：休金死火本克仍在、休互末比、制相木费力，无生偏难，熟悉和直接证据分开，无强排期。",
-      "copySha256": "acaa8e3e244bcc504b83bd58154c00cad51d5820251d6a5f3f87d32bd0d7e24c"
+      "reviewFinding": "六二冬全文读回：休乾受死离克、休互末比、制相巽费力准确，弱克不归零。多路同源转述不冒充独立证据，原无合格回复节点的整段不取期保留，接通未加持续条件。",
+      "copySha256": "5bb5e08525cb4a08bfba2f646c1bd2c5f4f63472bccc24f0672fa2e7c436885c"
     },
     {
       "movingLine": 2,
       "monthOrder": "seasonal-earth",
       "outcome": "difficult",
-      "reviewFinding": "六二土：相金承休火克、相互末比、制囚巽可办，无生宗吝仍偏难；原体不重复累计，原始来源先核。",
-      "copySha256": "9b7026d30560edc11cd3e1e8ca90e11d5b8d09e5d865444d5c723705dafda020"
+      "reviewFinding": "六二土令全文读回：相体承休火克、中后相比和制囚木的有利条件写足，未用金数叠支持。宗吝只取核验方法，原偏难及过程equal/body_mutual完整应期未改。",
+      "copySha256": "939539c21d8d6ea3d2436a8e875c43841a8887189536df395cd8f7f50b629e78"
     },
     {
       "movingLine": 3,
       "monthOrder": "spring-wood",
       "outcome": "difficult",
-      "reviewFinding": "九三春：囚金相火本克、囚比、制旺巽震难，无生不兴难成，兵戎莽陵非位置人物事实，三岁不定时。",
-      "copySha256": "e9ee42e52836e1c5092f93d8c0761be85e7fc02ee22cb9af8b9d51e25684cc85"
+      "reviewFinding": "九三春全文与修后整篇读回：囚金克旺巽及末旺震明确是自身承办弱，非将旺木写弱；相火本克、囚比无生完整。全爻不兴不增凶字、不定位或设三年等待，初control全期保留。",
+      "copySha256": "68952b6266e1897c37fd923b1674abd544b58d19b017df133af315db69b7168f"
     },
     {
       "movingLine": 3,
       "monthOrder": "summer-fire",
       "outcome": "difficult",
-      "reviewFinding": "九三夏：死金旺火本克、死比、制休巽震弱，无生不兴，必要实际核查不延迟，火日仅初段核实受阻。",
-      "copySha256": "a1a0cc0686de59966a8eecfbfadf7b29e9b43f564fe444dc96829ed9da6243db"
+      "reviewFinding": "九三夏全文读回：死乾受旺离克，死比、制休巽震的承办困难完整。王注不敢进与程传未言凶因未敢发同读，必要核查未延期，军旅不成人身情节，原初火日保持。",
+      "copySha256": "c765eb65e0d91b17d6aaddd9a1f166d53e7d627432b0698389fa84b4439825ba"
     },
     {
       "movingLine": 3,
       "monthOrder": "autumn-metal",
       "outcome": "difficult",
-      "reviewFinding": "九三秋：旺体承囚火本克、旺比、制死木用互末可办反证留，无生不兴仍难；年数未缩成日数。",
-      "copySha256": "e46e9216351d506bd90bfe43081c0df5c2c3d32255192881ee19e3b6cac24882"
+      "reviewFinding": "九三秋全文与修后整篇读回：旺体承轻克，旺比及制死巽震的正面办理展开，改为直接说可认真查下去。无直接生体与不兴戒仍在，程不曰凶不作人身论，原偏难及初火日不变。",
+      "copySha256": "1c20953e61b5c4bf295a5529b0fdec237e0c2e31be245ceee86fc04ce8c6be55"
     },
     {
       "movingLine": 3,
       "monthOrder": "winter-water",
       "outcome": "difficult",
-      "reviewFinding": "九三冬：休金死火本克、休比、制相巽震费力，无生不兴，缺回复节点不编期，不阻必要现实求助。",
-      "copySha256": "414f23465940a2f79337349eab5099e9bd1a365e3120e14e13065fc4ab3fc300"
+      "reviewFinding": "九三冬全文读回：休体受死火克仍在，休比有限、制相巽震费力，无直接生体。不兴只缓无据追加而保必要核查，三岁不缩日月，原完整不取期理由及偏难不动。",
+      "copySha256": "b375bd5324557ced3ebe8dccd435b5e3b05a289f1c6f65d560c199c87138447c"
     },
     {
       "movingLine": 3,
       "monthOrder": "seasonal-earth",
       "outcome": "difficult",
-      "reviewFinding": "九三土：相金休火本克、相比、制囚巽震有余地，无生不兴偏难，不以体强或末可办直接翻吉。",
-      "copySha256": "ac3a3774cf2f61d0ad6d8a0aed914011a876a1b2546a49b8f5095e2e8332d166"
+      "reviewFinding": "九三土令全文读回：相乾承休离克、相比和制囚巽震可办正证齐全，未凭体强独许成。全爻未增凶字，莽陵不定位、三岁不机械取期，原开局control/use全字段保持。",
+      "copySha256": "7fa7d8f0f6cfe6a8a1e75bc682a5c30c6c6b0e14c7bcdc38257ea65560056ef3"
     },
     {
       "movingLine": 4,
       "monthOrder": "spring-wood",
       "outcome": "favourable",
-      "reviewFinding": "九四春：相火制囚金本用互可办迟，旺巽体互末生无克，反则吉条件较好；若有不当才修正不预设现实错误。",
-      "copySha256": "5016252fbf4f8162f8b0cfc85ca20046eb72aa88c9484954fcd18fcb5b59c05b"
+      "reviewFinding": "九四春全文读回：相离制本互囚乾可办，体互与末旺巽直接生体，无克体。吉依王注不克而反归法则，方法有失准才调整，不预设过错；较好原判及末木日全部字段保留。",
+      "copySha256": "8589fb100f85f9fd5c241c8acbe80d3108168034e739dbf1f4a7d48f555d4ece"
     },
     {
       "movingLine": 4,
       "monthOrder": "summer-fire",
       "outcome": "favourable",
-      "reviewFinding": "九四夏：旺火制死金本用互可办，休巽体互末仍生，无克且反则吉较好，未把弗克攻直接等同失败。",
-      "copySha256": "3e0ffd394ba7471c6e402104a7e3ba91865424d836778e1de57093c4b48cf98a"
+      "reviewFinding": "九四夏全文与修后整篇读回：旺离制死乾，体互末休巽仍生而无克体，未链式削木。王朱反则、能改过条件写成依事实修正的正文，较好及末support应期不变。",
+      "copySha256": "e23680b1928488eb80bf649f8b071230aa21f0bf5866d66ff17d61dfff5daa22"
     },
     {
       "movingLine": 4,
       "monthOrder": "autumn-metal",
       "outcome": "conditional",
-      "reviewFinding": "九四秋：囚火制旺金本用互难，死巽体互末仍生薄，无克留慢成；吉条件在归正不在强行，木日有限支持。",
-      "copySha256": "7073065b7319043345673da2737a2558da1ecf986581c42a91b8feb5fd346cd1"
+      "reviewFinding": "九四秋全文与改题后整篇读回：囚离制旺乾费力，体互末死巽仍生助弱而未失效，全盘无克体。标题收准为问询范围，反归得当条件明确，原慢而有条件及末木日全留。",
+      "copySha256": "2eac6698d7155ebf59de12f80b94ba75a3203183b9a8883c668b07a346caa3d0"
     },
     {
       "movingLine": 4,
       "monthOrder": "winter-water",
       "outcome": "conditional",
-      "reviewFinding": "九四冬：死火制休金本用互承办弱，相巽体互末生，无克留机会，不把死视完全失效，修正条件保留。",
-      "copySha256": "a0be20bd1ca4c902b4b37fdc350814786089177b5dfc6dc0d0c1f1ae00a90179"
+      "reviewFinding": "九四冬全文与修后整篇读回：死离承办弱，制休乾仍要办理，中后相巽生体实助写足。去掉解释未要求做错的语气，直接说核事实、据实调整，条件性与收尾support完整不动。",
+      "copySha256": "d5b6616637980666f344111841418bac73264e73a15fb4ac771141f6659f11e7"
     },
     {
       "movingLine": 4,
       "monthOrder": "seasonal-earth",
       "outcome": "conditional",
-      "reviewFinding": "九四土：休火制相金本用互费力，囚巽体互末仍生弱，无克留缓成；强求与有据核查分清。",
-      "copySha256": "22a46518ca36c7eaca47f7cdf92a5c47c8757590e7ebbe12958ad1a569a701c6"
+      "reviewFinding": "九四土令全文读回：休离制相乾费力，体互和末囚巽生体虽薄仍可续，无克体。反则吉不变为强求得吉，有限帮助落具体缺项，原conditional和末木日不作力量打分。",
+      "copySha256": "ecef5b2528969fdc357996ba4b402f1a46cbc3c3c4ca1ccd1fb516edc5614976"
     },
     {
       "movingLine": 5,
       "monthOrder": "spring-wood",
       "outcome": "favourable",
-      "reviewFinding": "九五春：相火制囚金本用互可办迟、旺巽生、末相比无克，先难后合条件较好；不虚构真实阻拦者。",
-      "copySha256": "e9df41b2b364cd61d5a4c95bdc503cf31809511e69761b5c21fa94780a545364"
+      "reviewFinding": "九五春全文与修后整篇读回：相离制囚乾、旺巽体互生、末相离比和且无克体准确。先难后合须办理，改以记录查明困难所在，不造阻拦者、情绪或见面门槛，原较好及末火日保持。 整库查重后据本篇真实起步条件重写开局，作者已再读整篇。",
+      "copySha256": "c0e03855e7336d4b008263d43247fc8d89e9d08c83d240125b501959bedfc454"
     },
     {
       "movingLine": 5,
       "monthOrder": "summer-fire",
       "outcome": "favourable",
-      "reviewFinding": "九五夏：旺火制死金本用互可办、休巽生、末旺火比无克，前难条件留仍较好；大师不取人数与动员。",
-      "copySha256": "272e086d8e3027d8d550b16bb3a6dfb1ef91672acc67bf69cd3f23591d051ed2"
+      "reviewFinding": "九五夏全文与修后整篇读回：旺火制死金可办，休巽仍生，末旺比接续；程传二人同心与天下大同不转为回复须同心。军旅哭笑留原爻叙事，现实帮助依渠道安排，原较好及收尾equal全期不变。",
+      "copySha256": "ae34fad60a7db90ae91b8cbdfe94e221ee3e313d5c6bbd67c610d441d38eade1"
     },
     {
       "movingLine": 5,
       "monthOrder": "autumn-metal",
       "outcome": "conditional",
-      "reviewFinding": "九五秋：囚火制旺金本用互难、死巽仍生、末囚比弱，无克留慢成；不只摘后笑，相遇为明示现代类推。",
-      "copySha256": "6214f5ec2088562ab0f16d9637a8bf5efb8698b866f5e5255ea75f85ee51cfa3"
+      "reviewFinding": "九五秋全文与修后整篇读回：囚离制旺乾费力，死巽仍生薄、末囚离比弱，无克体。前难与后合俱留，具体缺项据实查明、不附加见面，原conditional及过程support/body_mutual全期保持。",
+      "copySha256": "800aeda8229aad828eff7dafaa6acf61387bed94f5ea1aae2e67daedc8878699"
     },
     {
       "movingLine": 5,
       "monthOrder": "winter-water",
       "outcome": "conditional",
-      "reviewFinding": "九五冬：死火制休金本用互弱、相巽生、末死比弱，无克留条件性，原体状态不推任何人身状况。",
-      "copySha256": "07711c1c13a408cab976e310558cfae9b6139c554f9358e2e60d99011bf542d8"
+      "reviewFinding": "九五冬全文与修后整篇读回：死火承办弱，体互相巽生为实助，末死离比弱仍可续，无克体。先难后合不化成等待帮手或要求关系相投，原过程木日与条件性完整。",
+      "copySha256": "3372c670417efa0bef363a232d14335cc7814fe86fa1c36443269d403ff0134b"
     },
     {
       "movingLine": 5,
       "monthOrder": "seasonal-earth",
       "outcome": "conditional",
-      "reviewFinding": "九五土：休火制相金本用互费力、囚巽仍生、末休比有限，无克先难后合留缓成，不随意数字取日。",
-      "copySha256": "521e9d60377b2e1bbbf44c2c96147d4dd86e87ea47d63f838ca8e1dec15c00a1"
+      "reviewFinding": "九五土令全文与修后整篇读回：休离制相乾费力，囚巽体互薄生、末休离比可续，无克体。改为直接核查阻节与现实感受边界，未删后合正意或前难要求，原过程support全字段不动。",
+      "copySha256": "4e74b39bc9c9b23881eea371c17a346e7dc5c05c6e88bf76fba5633421bd9350"
     },
     {
       "movingLine": 6,
       "monthOrder": "spring-wood",
       "outcome": "conditional",
-      "reviewFinding": "上九春：作者纠正旧草稿，求同志未得不等于一次通联必难；相火制囚金本用互末可办、旺木生无克，条件性。",
-      "copySha256": "a6447166f05bd78dd75f286b193a6e83d21f85a63d970be25324097b911f5d10"
+      "reviewFinding": "上九春全文与简断修后整篇读回：相离制前中末囚金可办，体互旺巽生体，无克体。无悔与未获同志原义俱全，所问仅当次双向不加同心见面，原conditional及过程旺木日保持。",
+      "copySha256": "93dd76ebd432e93742f13f9951f7a690518dd721c1a536468ae6f3322f9817c4"
     },
     {
       "movingLine": 6,
       "monthOrder": "summer-fire",
       "outcome": "conditional",
-      "reviewFinding": "上九夏：范围修正后，旺火制死金本用互末可办、休巽生无克，留机会不以无悔保成，不附同心或长期关系门槛。",
-      "copySha256": "60d12f426202945ee2125cf8001251cf24d78059adf1387348e64f589f72d972"
+      "reviewFinding": "上九夏全文与修后整篇读回：旺离制前中末死金较能办，体互休巽仍生，无克体。彼此是否同心写成未预断的范围区别，无同无悔原义未删，送达与本人回复分开，原条件性及过程木日不动。",
+      "copySha256": "1f9d309f8fc7d5e6d1ff3f962e6b4f038a429268268f2cf47e617c20db4dc2db"
     },
     {
       "movingLine": 6,
       "monthOrder": "autumn-metal",
       "outcome": "conditional",
-      "reviewFinding": "上九秋：囚火制旺金本用互末吃力、死巽仍生弱无克，留缓成；已纠正志未得直接替通联失败的范围错误。",
-      "copySha256": "0a47ee66d201583280843df2a8db2263aef24c696f4f4aee84151b3025e01955"
+      "reviewFinding": "上九秋全文与修后整篇读回：囚火制三处旺金费力，死巽体互生薄而非无助，无克体。去掉判必败的解释口吻，直接依核查争取当次答复，仍留求同未遂与无悔，原慢成及过程support全期保持。",
+      "copySha256": "bb5de33a5bd427dfb1eafe9397a42e1c675d054afc4c00aff74696e895cae04d"
     },
     {
       "movingLine": 6,
       "monthOrder": "winter-water",
       "outcome": "conditional",
-      "reviewFinding": "上九冬：死火制休金本用互末弱、相巽生体无克，条件性；原体死非全失效，无悔不作现实安全。",
-      "copySha256": "4f7129944c2049dc7c6de97018f68fb51740b838269c4ac9c8570efcf81b5d41"
+      "reviewFinding": "上九冬全文与简断修后整篇读回：死离制前中末休金承办弱，相巽体互直接生为可用支持，无克体。王程无同无悔及志未遂完整，不推心意位置或另加同心要求，原conditional与过程木日全留。 整库查重后据本篇真实起步条件重写开局，作者已再读整篇。 独立读者指出开局与过程末句同义近复后，过程改为分别记录代转进度与仍缺的本人原话，作者再次整篇读回。",
+      "copySha256": "21c38a237c75280d7bdbeaec2420fee8d1858a7d87d9ac9f1b0f5b4da1d17a0d"
     },
     {
       "movingLine": 6,
       "monthOrder": "seasonal-earth",
       "outcome": "conditional",
-      "reviewFinding": "上九土：休火制相金本用互末费力、囚巽仍生弱无克，缓成条件性；作者范围修正、直接生克未改，过程木日不定位。",
-      "copySha256": "d250240fe299344a9849d64064fd15097492cf182233443396aa6a0877d1d474"
+      "reviewFinding": "上九土令全文与简断修后整篇读回：休离制前中末相金费力，体互囚巽生薄，无克体。无悔守分寸和未遂求同志并陈，当次可核双向即完成，不把原义套作必败，原条件性与过程有限得助全期不动。",
+      "copySha256": "4bd61b72732f7827d75d61eec503c8bf3b246f12ee1db739c8ab91b6c049ebe5"
     }
   ]
 }

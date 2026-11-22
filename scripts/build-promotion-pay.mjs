@@ -518,7 +518,9 @@ const progress = {
 };
 await saveJSON(base + 'index.json', progress);
 await writeFile(new URL(docDir + 'README.md', root), [
- '# ' + config.title + '断语', '', hasPay ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
+ '# ' + config.title + '断语', '',
+ ...(profile===MISSING_CONTACT_PROFILE?['> **人找不到了：新版逐月寻人稿见 [monthly-preview](monthly-preview/README.md)。** 新稿按本次要求写寻获、位置线索、处境安危、可能缘由和应期，独立统计逐月正文。下文为旧版“恢复双向联系”稿的范围与进度。','']:[]),
+ hasPay ? '问项为本次晋升及随岗加薪。' : config.scopeNote + '。', '',
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条按卦爻写定的方位场所补充已合入结局，覆盖全部 4,608 个月令键，原典定位与取象位置在计算说明中展开。'] : []),
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条形状、材质、颜色、器物与环境补充已写定并作者核读，逐条区分本用所参的原物特征与变用所参的周边场所，合入全部 1,920 篇正文。'] : []),
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
