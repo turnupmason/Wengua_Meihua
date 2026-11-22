@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **252 / 4,608 篇**。乾、坤、屯三卦已齐，山水蒙已发布初六、九二、六三共三十六篇。下一组为蒙六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **264 / 4,608 篇**。乾、坤、屯三卦已齐，山水蒙已发布初六至六四共四十八篇。下一组为蒙六五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -25,6 +25,7 @@
 | [山水蒙 · 初六](hex-004.md#初六动--寅月) | 12 | 494–537 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [山水蒙 · 九二](hex-004.md#九二动--寅月) | 12 | 499–542 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [山水蒙 · 六三](hex-004.md#六三动--寅月) | 12 | 495–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
+| [山水蒙 · 六四](hex-004.md#六四动--寅月) | 12 | 490–525 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
