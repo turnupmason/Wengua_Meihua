@@ -76,9 +76,10 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const r = {hex:h, articles:n, monthOpen:+(monthOpen / n).toFixed(2), monthShort:+(monthShort / n).toFixed(2), maxSameHead:maxHead,
   avgSentence:+avg.toFixed(1), short10:+(short10 * 100).toFixed(1), light, thisMonth, yiPerMille:Math.round(yi / sents.length * 1000), shortAvg:Math.round(shortHan / n), bodyMedian, bodyMin, note, mind, dupTitle, shortOut};
  const fail = [];
+ const cadence = [];
  // 门槛按用户亲写面试稿（origin/main，58 卦 4,176 篇）各卦分布定，取面试稿最低一档以下一点，使面试稿各卦全过：平均句长 ≥28.5（面试最低 28.5）、短句 ≤5.5%（最高 5.3%）、宜 ≥55‰（最低 57）、简断均 ≥75（最低 76）、就好与这个月每卦 ≤1；
  // 月份开头面试单卦两极（多数 0，少数近 1），只按全库卡：正文 ≤15%（面试 12%）、简断 ≤10%（面试 4%）。
- if (r.avgSentence < 28.5) fail.push('平均句长<28.5');
+ if (r.avgSentence < 28.5) cadence.push('平均句长<28.5');
  if (r.avgSentence > 34) fail.push('平均句长>34（面试最长 33.1，读着偏沉）');
  if (r.short10 > 5.5) fail.push('短句>5.5%');
  if (r.light > 1) fail.push('就好就够了>1');
@@ -86,7 +87,10 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
 
  if (r.note) fail.push('写给作者的话');
  if (r.maxSameHead > 10 && !args.includes('--calibrate')) fail.push('同一开头>10篇（用户嫌开头都一样）');
- if (r.yiPerMille < 55) fail.push('宜<55‰');
+ if (r.yiPerMille < 55) cadence.push('宜<55‰');
+ // 考试只断本场成否与缘由。句长及建议词频供对读，无须拉长句子或添建议。
+ if (item === 'exam') r.cadence = cadence;
+ else fail.push(...cadence);
  if (r.yiPerMille > 220) fail.push('宜>220‰（面试最高 218，用得太密）');
  if (r.shortAvg < 75) fail.push('简断均<75');
  // 厚度（2026-11-20 用户「保持厚度跟完美程度，不要偷懒」）：用户夸过的确定关系蛊卦、需卦每卦正文中位 517、501，全库中位 506；后续问项每卦中位不低于 500、最短不低于 470（确定关系已验收推送，不回头卡，有 15 卦中位 480–494）。补厚只补有据的内容（盘面轻重、注疏取舍、对应做法），不许凑字。

@@ -51,6 +51,6 @@
     "app:test": "npm --prefix apps/mobile test",
     "app:build": "npm --prefix apps/mobile run build",
     "build:lost-pet-recovery": "node scripts/build-promotion-pay.mjs lost-pet-recovery && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py",
-    "build:missing-contact": "node scripts/build-promotion-pay.mjs missing-contact && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py"
+    "build:missing-contact": "node scripts/build-promotion-pay.mjs missing-contact && node scripts/review/audit-missing-contact-literary-20261121.mjs && npm run build:product && node scripts/run-python.mjs scripts/export-authored-readings.py"
   }
 }

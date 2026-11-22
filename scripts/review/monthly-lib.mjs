@@ -172,10 +172,11 @@ export function timingSignature(timing) {return typeof timing==='string'?'not-de
 
 export function renderHex(ctx,c,bundle) {
  const id=bundle.source.primaryId,name=ctx.library.getHexagram(id).name,s=stem(id);
+ const foldTiming = c.name === 'exam' && id >= 7;
  const out=[`# ${id} · ${name}：六动爻与十二月令`,
  `本页为「${c.title}」逐月长稿预览中的${name}，共 ${bundle.source.articles.length} 篇：六个动爻各写十二个月。作者全文读回及古籍解释分歧见[核读记录](../../../${c.RECEIPT_DIR}/${s}.json)。`,
  `[返回预览目录](README.md) · [查看五气版作对照](../${s}.md)`,
- `应期日期以 ${DEMO_DATE} 为演示基准，实际使用按起卦日换算。${c.scopeNote}`];
+ foldTiming ? c.scopeNote : `应期日期以 ${DEMO_DATE} 为演示基准，实际使用按起卦日换算。${c.scopeNote}`];
  for(const a of bundle.source.articles) {
   const r=readingFor(ctx,c,id,a),row=rowFor(bundle,a),timing=resolveTiming(c,r,a);
   const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(x=>x[4]).join(' ');
@@ -187,10 +188,13 @@ export function renderHex(ctx,c,bundle) {
   if(guFirst&&![inheritedGuLine,collatedGuLine].includes(r.selectedMovingLine.text))
    throw new Error('Unexpected wording for promotion hex-18-line-1; recheck the punctuation witness');
   const displayedLine=guFirst?collatedGuLine:r.selectedMovingLine.text;
+  const timingNotes=['### 应期参考',...(timing.slots.length?[
+   foldTiming ? `以下以 ${DEMO_DATE} 演示传统推算的参考窗口，实际使用按起卦日换算。` : '以下为传统推算的参考窗口。',
+  ]:[]),...timing.paragraphs];
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(x=>x.name).join(' → '),...a.paragraphs,
    ...(c.name==='promotion-pay'?['### 随岗薪资',a.payExplanation]:[]),
-   '### 应期参考',...(timing.slots.length?['以下为传统推算的参考窗口。']:[]),...timing.paragraphs,
-   '<details>\n<summary>卦理与出处</summary>',
+   ...(!foldTiming?timingNotes:[]),
+   foldTiming ? '<details>\n<summary>卦理、出处与应期</summary>' : '<details>\n<summary>卦理与出处</summary>',
    `判断：${c.verdictLabel[a.outcome]}。`+r.edges.map(e=>{const n=r.nodes.find(n=>n.role===e.targetRole);return LABELS[n.role]+n.trigram+n.element+REL_LABELS[e.type];}).join('；')+'。',
    `旺衰：${a.monthBranch}月，`+r.nodes.filter(n=>n.role!=='body_inherited').map(n=>LABELS[n.role]+n.trigram+n.element+n.strength.state).join('；')+'。',
    ...(effects.length?['间接作用：按本库所取的一层作用解释，'+effects.map(e=>{const n=r.nodes.find(n=>n.role===e.role);return LABELS[e.role]+n.trigram+n.element+'：'+e.label;}).join('；')+'。上列月令五态保持原值，不作连环累计。']:[]),
@@ -199,7 +203,7 @@ export function renderHex(ctx,c,bundle) {
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
    ...(c.name==='promotion-pay'&&a.payCorrection?['薪资说明订正：'+a.payCorrection.reason+' 原文与新文保存在作者源的 payCorrection 中；本次未改变晋升结论或取期结构。']:[]),
-   '取期依据：'+timingReason,
+   ...(foldTiming?timingNotes:[]), '取期依据：'+timingReason,
    ...(row?.decision?.sourceEvidence?.length?['条文对照：以下保留相关判读原文，供核对条件；并非每条都适用于本盘。具体采用、反证与尚待复核的权重，见上方专业说明及本卦核读记录。',
     row.decision.sourceEvidence.map(x=>`- 《梅花易数·${x.title}》：“${x.quote}”`).join('\n')]:[]),
    `稿件键：\`${c.questionId}/${id}/${a.movingLine}/${a.monthBranch}/${a.outcome}\`。作者源：[${s}.json](../../../${c.SOURCE_DIR}/${s}.json)。`,
