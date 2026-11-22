@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **348 / 4,608 篇**。乾、坤、屯、蒙四卦已齐，水天需已发布初九至九五共六十篇。下一组为需上六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **360 / 4,608 篇**。乾、坤、屯、蒙、需五卦已齐。下一组为天水讼初六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -33,6 +33,7 @@
 | [水天需 · 九三](hex-005.md#九三动--寅月) | 12 | 484–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
 | [水天需 · 六四](hex-005.md#六四动--寅月) | 12 | 490–525 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
 | [水天需 · 九五](hex-005.md#九五动--寅月) | 12 | 490–515 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
+| [水天需 · 上六](hex-005.md#上六动--寅月) | 12 | 475–526 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
