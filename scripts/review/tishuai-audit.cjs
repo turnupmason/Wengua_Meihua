@@ -7,10 +7,12 @@ const QI={寅:'spring-wood',卯:'spring-wood',辰:'seasonal-earth',巳:'summer-f
 const RE=/体衰而有生体之卦|衰稍解|若体衰而逢克|体衰而逢克|体衰逢克|体衰[，、而之时]|体卦气衰|体衰则凶|体衰得|衰而稍解|稍解其衰|衰处稍解|衰不得解|你衰|体已衰|体正衰|体气衰/u;
 // 2026-11-20 补：《体用总诀》「体盛则吉，体衰则凶」的衰同 493 行（春坤艮、秋震巽、夏乾兑、冬离、四季坎，皆死地），只在体死时引；体旺相单引「体盛则吉」；用党多只引「用党多则体势衰」，不接「体衰则凶」。
 const out=[];let mon=0,c9=0;
-for(let h=1;h<=64;h++){if(only&&!only.has(h))continue;const id=String(h).padStart(3,'0');const dp=`data/authored-readings/${item}/hex-${id}.json`;if(!fs.existsSync(dp))continue;
+for(let h=1;h<=64;h++){if(only&&!only.has(h))continue;const id=String(h).padStart(3,'0');const dp=`data/authored-readings/${['relationship-establishment','relationship-reconciliation','new-relationship-opportunity'].includes(item)?'exam':item}/hex-${id}.json`;if(!fs.existsSync(dp))continue;
  const data=JSON.parse(fs.readFileSync(dp,'utf8'));const bodyQi=(l,qi)=>data.rows.find(r=>r.baseProse!==false&&r.movingLine===l&&r.monthOrder===qi)?.facts.nodes.find(n=>n.role==='body')?.qi;
  const base=JSON.parse(fs.readFileSync(`sources/editorial/${item}/hex-${id}.json`,'utf8'));
  base.forEach((d,i)=>{const q=bodyQi(d[0],d[1]);if(q&&q!=='死'&&RE.test(String(d[9]))){c9++;out.push(`${h}#${i}\t体${q}\t第9栏`);}});
+ // 2026-11-21：计算说明（polish-v5 calculationNotes，上线后界面显示）同查。
+ const pp=`sources/editorial/${item}/polish-v5/hex-${id}.json`;if(fs.existsSync(pp))JSON.parse(fs.readFileSync(pp,'utf8')).forEach((r,i)=>{const d=base[i];const q=d&&bodyQi(d[0],d[1]);if(q&&q!=='死'&&RE.test((r.calculationNotes||[]).join(''))){c9++;out.push(`${h}#${i}\t体${q}\t计算说明`);}});
  const mp=`sources/editorial/${item}/monthly/hex-${id}.json`;if(fs.existsSync(mp))for(const a of JSON.parse(fs.readFileSync(mp,'utf8')).articles){const q=bodyQi(a.movingLine,QI[a.monthBranch]);const t=[a.title,a.short,...a.paragraphs].join('');if(q&&q!=='死'&&RE.test(t)){mon++;out.push(`${h}/${a.movingLine}/${a.monthBranch}\t体${q}\t正文`);}}}
 if(list)for(const o of out)console.log(o);
 console.log(JSON.stringify({item,monthlyArticles:mon,col9Rows:c9}));

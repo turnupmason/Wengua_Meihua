@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 import {loadLibrary} from '../../src/index.js';
 import {validateStoryCopy} from '../../src/story-editorial.js';
 import {checkInterviewShort} from '../../src/interview-decision-checks.js';
-import {createContextualReading, promotionTimingSlots, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
+import {createContextualReading, promotionTimingSlots, JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, RECONCILIATION_V3_PROFILE, NEW_PARTNER_V3_PROFILE, EXAM_PROFILE, INTERVIEW_V3_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE, isExamLike, PROMOTION_PAY_PROFILE, JOB_CHANGE_PROFILE,
  WORKPLACE_STABILITY_PROFILE, WORKPLACE_PROBATION_PROFILE, NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, CONFESSION_DECISION_PROFILE,
  RELATIONSHIP_ESTABLISHMENT_PROFILE, RELATIONSHIP_RECONCILIATION_PROFILE} from '../../src/interview-manuscripts.js';
 import {MONTH_SLOTS} from '../../src/month-slots.js';
@@ -15,11 +15,11 @@ import {VOCAB} from './state-vocab.mjs';
 const [item, hexArg, flag] = process.argv.slice(2);
 const profiles = {exam:EXAM_PROFILE, 'interview-pass':INTERVIEW_V3_PROFILE, 'promotion-pay':PROMOTION_V3_PROFILE, 'job-change':JOB_CHANGE_V3_PROFILE,
  'workplace-stability':STABILITY_V3_PROFILE, 'workplace-probation':PROBATION_V3_PROFILE,
- 'new-relationship-opportunity':NEW_RELATIONSHIP_OPPORTUNITY_PROFILE, 'confession-decision':CONFESSION_DECISION_PROFILE,
- 'relationship-establishment':ESTABLISHMENT_V3_PROFILE, 'relationship-reconciliation':RELATIONSHIP_RECONCILIATION_PROFILE};
+ 'new-relationship-opportunity':NEW_PARTNER_V3_PROFILE, 'confession-decision':CONFESSION_DECISION_PROFILE,
+ 'relationship-establishment':ESTABLISHMENT_V3_PROFILE, 'relationship-reconciliation':RECONCILIATION_V3_PROFILE};
 const outcomes = {exam:['favourable','conditional','difficult'], 'interview-pass':['favourable','difficult'], 'promotion-pay':['favourable','difficult'],
  'workplace-probation':['favourable','difficult'], 'workplace-stability':['stable','watch','strained'],
- 'job-change':['stay','prepare','switch'], 'relationship-establishment':['favourable','difficult']};
+ 'job-change':['stay','prepare','switch'], 'relationship-establishment':['favourable','difficult'], 'relationship-reconciliation':['favourable','difficult'], 'new-relationship-opportunity':['favourable','difficult']};
 const profile = profiles[item];
 if (!profile) throw new Error('Unknown item ' + item);
 const allowed = outcomes[item] ?? ['favourable','conditional','difficult'];
@@ -63,8 +63,8 @@ for (const [i, d] of drafts.entries()) {
   for (const re of VOICE) if (re.test(value)) warn(`${field} 含「不…，也不…」句式`);
  }
  const V = VOCAB[item];
- if (item === 'relationship-establishment') {
-  // 确定关系 v3：不出现他项用语；依据与计算说明须写「定为能成／定为不成」，与本篇结论一致（docs/review/ESTABLISHMENT_REJUDGE_20261119.md）。
+ if (['relationship-establishment', 'relationship-reconciliation', 'new-relationship-opportunity'].includes(item)) {
+  // 确定关系 v3（2026-11-21 复合、新桃花同此）：不出现他项用语；依据与计算说明须写「定为能成／定为不成」，与本篇结论一致（docs/review/ESTABLISHMENT_REJUDGE_20261119.md）。
   const notes = (polishRecs?.[i]?.calculationNotes ?? []).join('');
   const all = [title, short, opening, process, ending, summary, resolution, JSON.stringify(topicDetail ?? ''), notes].join('');
   const OTHER = /考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员|能过|过不了/u;
@@ -133,9 +133,9 @@ for (const [i, d] of drafts.entries()) {
   r.edges.find(e => e.targetRole === 'use').type === 'use_controls_body' && !r.edges.some(e => e.type === 'use_generates_body')) err('本用克体且无生体，不能 favourable');
 }
 // 职场情况 v3：爻辞读法从考试搬来，须改成职场读法（不留考试、面试、转正、晋升字眼）。
-if (item === 'workplace-stability' || item === 'job-change' || item === 'relationship-establishment') {
+if (['workplace-stability', 'job-change', 'relationship-establishment', 'relationship-reconciliation', 'new-relationship-opportunity'].includes(item)) {
  const rv = await readFile(dir + 'review-v2/' + stem + '.json', 'utf8').then(JSON.parse).catch(() => []);
- const OTHERL = item === 'relationship-establishment' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|晋升|升职|辞职|跳槽|能过|过不了/u : item === 'job-change' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|转正|晋升|升职|能过|过不了|裁员|被裁|稳得住|有隐患|风险大/u : /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u;
+ const OTHERL = ['relationship-establishment', 'relationship-reconciliation', 'new-relationship-opportunity'].includes(item) ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|晋升|升职|辞职|跳槽|能过|过不了/u : item === 'job-change' ? /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|转正|晋升|升职|能过|过不了|裁员|被裁|稳得住|有隐患|风险大/u : /考试|考场|考生|卷面|试卷|阅卷|合格线|分数|面试|转正|试用期|晋升|升职|能过|过不了/u;
  rv.forEach((r, i) => { const m = String(r.lineReading ?? '').match(OTHERL); if (m) errors.push(`${hexArg}/${r.key?.split('/').slice(-2).join('/')}: 爻辞读法仍是他项读法「${m[0]}」`); });
 }
 // Sentence-level duplicates inside this file and against every other author file of the item.

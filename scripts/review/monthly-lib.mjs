@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {loadLibrary} from '../../src/index.js';
 import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE,
- JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE} from '../../src/interview-manuscripts.js';
+ JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, RECONCILIATION_V3_PROFILE, NEW_PARTNER_V3_PROFILE} from '../../src/interview-manuscripts.js';
 import {resolveManuscriptDates} from '../../src/prewritten-manuscripts.js';
 import {CHOICE_WORDS, CHOICE_CONTRA} from './state-vocab.mjs';
 
@@ -26,6 +26,31 @@ export const ITEMS = {
   },
   note:{favourable:/定为能成/u, difficult:/定为不成/u},
   forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员/u,
+ },
+ // 2026-11-21：复合、新桃花，口径同确定关系（docs/review/LOVE_RECON_NEWPARTNER_POLICY_DRAFT_20261121.md）。第 9 栏先按本问项改写定稿，再写月稿（strict）。
+ 'relationship-reconciliation':{
+  title:'复合', questionId:'relationships.reconciliation.reconcile', profile:RECONCILIATION_V3_PROFILE, judgmentBaseline:'strict',
+  question:{mode:'narrative', question_type:'relationship_reconciliation', question:'这段已经结束的感情能复合吗？', sourceDomainIds:['domain-05']},
+  scopeNote:'本页的“复合”只指这段已经结束的感情，能否由两人都愿意而重新在一起。',
+  verdictLabel:{favourable:'这段感情能复合', difficult:'这一回复合不了'},
+  verdict:{
+   favourable:/(?<!不)(?:能|能够|可以)(?:复合|和好|重新在一起|回到一起|走回一处)|复合得了|复合能成|合得回去|回得到一起/u,
+   difficult:/复合不了|复合不成|没能复合|不能复合|难以复合|合不回去|回不到一起|和好不了|走不回一处|这一回合不上/u,
+  },
+  note:{favourable:/定为能成/u, difficult:/定为不成/u},
+  forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员/u,
+ },
+ 'new-relationship-opportunity':{
+  title:'新桃花', questionId:'relationships.new-partner.opportunity', profile:NEW_PARTNER_V3_PROFILE, judgmentBaseline:'strict',
+  question:{mode:'narrative', question_type:'new_relationship_opportunity', question:'近期有开始新感情的机会吗？何时可能遇到适合发展关系的人？', sourceDomainIds:['domain-02','domain-05']},
+  scopeNote:'本页只看尚无确定对象的人，近期有没有开始一段新感情的机会、大致何时遇到。',
+  verdictLabel:{favourable:'近期有开始新感情的机会', difficult:'近期还遇不到合适的人'},
+  verdict:{
+   favourable:/有(?:开始)?(?:一段)?新感情的机会|有机会遇到|遇得到|(?<!不)能遇到|会遇到合适|新感情能开始|能开始一段新感情/u,
+   difficult:/遇不到|遇不上|没有(?:开始)?(?:一段)?新感情的机会|没有机会遇到|还没有合适的人|新感情还开始不了|开始不了新感情/u,
+  },
+  note:{favourable:/定为能成/u, difficult:/定为不成/u},
+  forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员|复合|前任/u,
  },
  'job-change':{
   title:'跳槽去留', questionId:'career.job-change.decision', profile:JOB_CHANGE_V3_PROFILE, judgmentBaseline:'strict',

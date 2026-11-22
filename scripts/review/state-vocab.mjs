@@ -50,3 +50,18 @@ export const ESTABLISH_BLUNT = /没戏|别想了|死心|不可能在一起|他�
 export const ESTABLISH_LABEL = {favourable:'能成', difficult:'不成'};
 export const ESTABLISH_NOTE = {favourable:/定为能成/u, difficult:/定为不成/u};
 VOCAB['relationship-establishment'] = {WORDS:ESTABLISH_WORDS, CONTRA:ESTABLISH_CONTRA, HEDGE:STATE_HEDGE, BLUNT:ESTABLISH_BLUNT, LABEL:ESTABLISH_LABEL, NOTE:ESTABLISH_NOTE};
+// 2026-11-21：复合、新桃花（口径同确定关系，docs/review/LOVE_RECON_NEWPARTNER_POLICY_DRAFT_20261121.md）。
+export const RECON_WORDS = {
+ favourable:/能复合|复合得了|复合能成|能和好|能重新在一起|能回到一起|合得回去|回得到一起|走回一处/u,
+ difficult:/复合不了|复合不成|没能复合|不能复合|难以复合|合不回去|回不到一起|和好不了|走不回一处|这一回合不上/u,
+};
+export const RECON_CONTRA = {favourable:RECON_WORDS.difficult, difficult:RECON_WORDS.favourable};
+export const RECON_BLUNT = /没戏|别想了|死心|不可能复合|他不爱你|她不爱你|对方不爱你|他根本|她根本|渣|备胎|彻底完了/u;
+export const NEWP_WORDS = {
+ favourable:/有(?:开始)?(?:一段)?新感情的机会|有机会遇到|遇得到|能遇到|会遇到合适|新感情能开始|能开始一段新感情/u,
+ difficult:/遇不到|遇不上|没有(?:开始)?(?:一段)?新感情的机会|没有机会遇到|还没有合适的人|新感情还开始不了|开始不了新感情/u,
+};
+export const NEWP_CONTRA = {favourable:NEWP_WORDS.difficult, difficult:/有(?:开始)?(?:一段)?新感情的机会|有机会遇到|遇得到|会遇到合适|新感情能开始/u};
+export const NEWP_BLUNT = /没人要|嫁不出去|娶不到|注定单身|孤独终老|没戏|别想了|死心/u;
+VOCAB['relationship-reconciliation'] = {WORDS:RECON_WORDS, CONTRA:RECON_CONTRA, HEDGE:STATE_HEDGE, BLUNT:RECON_BLUNT, LABEL:ESTABLISH_LABEL, NOTE:ESTABLISH_NOTE};
+VOCAB['new-relationship-opportunity'] = {WORDS:NEWP_WORDS, CONTRA:NEWP_CONTRA, HEDGE:STATE_HEDGE, BLUNT:NEWP_BLUNT, LABEL:ESTABLISH_LABEL, NOTE:ESTABLISH_NOTE};
