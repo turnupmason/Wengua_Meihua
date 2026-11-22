@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "山火贲已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "山火贲已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -47,6 +47,22 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第八节相抵，第十三节终应泄体。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03賁.txt",
+      "scope": "九三经象及王孔相润、长保其正。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "240行，两阴之间相贲，贲饰难乎常。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "180行不可溺于所安。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第八节及第十三节末克。"
     }
   ],
   "findings": [
@@ -87,6 +103,25 @@
         "22/2/丑"
       ],
       "finding": "春冬中途约束重，夏月初离旺而末乾死，土月体旺而末乾相。夏月末泄分量弱仍据二分口径定难，实际能否以强生承轻泄保留分歧。秋震极弱，中段重在体制相坎，末耗最重。"
+    },
+    {
+      "id": "hex-022-line-3",
+      "status": "open-interpretation",
+      "keys": [
+        "22/3/寅",
+        "22/3/卯",
+        "22/3/辰",
+        "22/3/巳",
+        "22/3/午",
+        "22/3/未",
+        "22/3/申",
+        "22/3/酉",
+        "22/3/戌",
+        "22/3/亥",
+        "22/3/子",
+        "22/3/丑"
+      ],
+      "finding": "土月两震受极弱坎水相生，夏月两震休而有囚坎相生。规则以关系取间接增强，实际分量不当同于春旺木和冬旺水生相木。土月旺体及夏月强生能否承末克，保留权重分歧。"
     }
   ],
   "lineReviews": [
@@ -108,6 +143,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-022-line-2"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "贲如，濡如，永贞吉。",
+      "image": "“永贞之吉”，终莫之陵也。",
+      "reading": "王孔从得位与近二相润释贲濡，程颐取九三在两阴之间相贲而难常，朱熹戒溺于安。永贞为吉之所凭。初离生艮，中震与末震均克艮，坎能生两震又须由艮制。以末克定难。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-022-line-3"
       ]
     }
   ],
@@ -151,18 +196,38 @@
       ],
       "scope": "逐篇读回十二月正文及简断，逐月查技术说明和应期。春秋参末乾申酉日，夏及四土月参初离巳午日，冬参震寅卯日。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月逐篇读回，核对春秋冬取末震寅卯日，夏土月参初离巳午日。查清过程两处难为体制坎与体受震克，末另见克，专业说明及修订段再读。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T00:46:47.754Z",
-  "sourceSha256": "54b872eccc8186cf3ea82f656634c990df9b668eeb9fc95770150b8ec4b4b090",
+  "reviewedAt": "2026-11-22T00:51:00.733Z",
+  "sourceSha256": "019d89eca9efcf4aa88b54582ae8debb5adafb11adfa9e9910f4ffc29fd655e0",
   "checks": {
-    "scope": "山火贲已写24篇",
-    "chartComparisons": 648,
+    "scope": "山火贲已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       487,
-      542
+      560
     ]
   }
 }
