@@ -111,11 +111,12 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    else if(bLen<450||bLen>650)warn(key,'flexible-body-length',bLen);
    if(sLen<60||sLen>120)err(key,'short-length',sLen);
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
-   // 考试可先点明决定成败的卦意，再于次句落断。其他问项仍查首句。
+   // 考试首段须让读者知道成否，容许先把本篇缘由讲出来。其他问项仍查首句。
    const verdictLead=paragraph=>{
-    const sentences=paragraph.split(/[。！？]/u);
-    if(name==='exam'&&!c.verdict[a.outcome].test(sentences[0]))return sentences.slice(0,2).join('。');
-    return sentences[0];
+    const sentences=paragraph.split(/[。！？]/u),verdict=c.verdict[a.outcome];
+    if(name!=='exam'||verdict.test(sentences[0]))return sentences[0];
+    const opening=sentences.slice(0,2).join('。');
+    return verdict.test(opening)?opening:sentences.slice(2).find(sentence=>verdict.test(sentence))??opening;
    };
    const first=verdictLead(a.paragraphs[0]),shortFirst=verdictLead(a.short);
    if(name==='exam' && calendarLead.test(a.paragraphs[0]))
