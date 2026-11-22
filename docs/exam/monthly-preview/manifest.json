@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1788-20261121",
+  "batch": "exam-monthly-preview-1800-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1788,
+  "uploadedArticles": 1800,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    25
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 2820,
-  "authorWholeArticleReadback": 1788,
+  "remainingArticles": 2808,
+  "authorWholeArticleReadback": 1800,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -348,6 +350,20 @@
         "favourable": 28,
         "difficult": 44
       }
+    },
+    {
+      "primaryId": 25,
+      "name": "天雷无妄",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-025.json",
+      "sourceSha256": "b90b78c366ccb60f4ebfe378a2583e615707362d9ab43aa1683c823b1bdd4071",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-025.json",
+      "readingPath": "docs/exam/monthly-preview/hex-025.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
     }
   ],
   "checks": {
@@ -362,18 +378,17 @@
       70,
       112
     ],
-    "independentChartComparisons": 46656,
+    "independentChartComparisons": 48600,
     "independentChartMismatches": 0,
-    "dateCases": 3456,
-    "judgmentCorrectionArticles": 1168,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前24个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 3600,
+    "judgmentCorrectionArticles": 1192,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 106,
-    "open-interpretation": 23,
+    "interpreted-with-limits": 107,
+    "open-interpretation": 28,
     "open": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
@@ -1097,27 +1112,9 @@
     "articles": 697
   },
   "nextExpectedKey": {
-    "primaryId": 25,
-    "movingLine": 6,
+    "primaryId": 26,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 25,
-      "name": "天雷无妄",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-025.json",
-      "sourceSha256": "7d463439b1cedf063c5ea2cb6fc3b31d096643bb0ae77ade9f2350edbce49906",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-025.json",
-      "readingPath": "docs/exam/monthly-preview/hex-025.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }

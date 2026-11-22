@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "天雷无妄已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "天雷无妄已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -103,6 +103,26 @@
     {
       "path": "sources/editorial/exam/hex-025.json",
       "scope": "九五五气原断与原取期，移除旧判说明对考试内容、分数和时长的推断"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "57–59 行，上九「无妄行，有眚，无攸利」，王注静保、孔疏穷极之行"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "198 行，上九非有妄，但穷极不可行"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "无妄上九，穷极再行便过于理"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "本用、变用均克体且无生，旺衰及一层有生无制的权重"
+    },
+    {
+      "path": "sources/editorial/exam/hex-025.json",
+      "scope": "上九五气原判、原应期皆取末段兑"
     }
   ],
   "findings": [
@@ -166,6 +186,17 @@
         "25/5/子"
       ],
       "finding": "初乾受互艮生与变离制，生、制并见照原月态。艮由震所克，单记为中段自力；巽比和作用不能另当生助。寅卯有力之木而末离相，巳午末离旺，耗力在末；申酉旺乾对死震，重在初克；土月初克实而中段制土费；亥子初克轻、末耗轻，木相且中巽相合，原判仍以首克、末耗且无生取难，列解释边界。"
+    },
+    {
+      "id": "hex-025-line-6",
+      "status": "open-interpretation",
+      "keys": [
+        "25/6/寅",
+        "25/6/卯",
+        "25/6/亥",
+        "25/6/子"
+      ],
+      "finding": "本乾、末兑同受互艮所生，分别落实开头、收尾的直接克；艮又由震克，仍非生震之卦。木在春冬有力且中巽同类是减损事实，春死艮、冬囚艮扶金的分量保留解释边界；夏令旺火不作实有火来制金。申酉两金旺而木最弱，土月两金有气且旺艮扶金，首末均实际受制。各月依原取末兑，不另猜考试内容。"
     }
   ],
   "lineReviews": [
@@ -215,6 +246,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-025-line-5"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "无妄，行有眚，无攸利。",
+      "image": "“无妄之行”，穷之灾也。",
+      "reading": "《正义》取无妄之极，宜静守，行再有灾；朱熹明说上九非有妄，所戒在穷极不可行。用在考试，承认中间能发挥的范围，首末两次直接克制与缺生另按卦盘。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-025-line-6"
       ]
     }
   ],
@@ -318,15 +359,35 @@
       ],
       "scope": "按寅至丑逐篇对读两套范稿与五气底稿，写后读回题名、简断、正文和应期，修订长短、逐月语序、所付轻重及出处后复核一遍。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇从稿件读回题名、简断、四段正文与应期；对照认可范稿复读起笔，检查一艮两生、两处受克和中段相合，并逐项核原断。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T03:37:43.944Z",
-  "sourceSha256": "7d463439b1cedf063c5ea2cb6fc3b31d096643bb0ae77ade9f2350edbce49906",
+  "reviewedAt": "2026-11-22T03:43:26.437Z",
+  "sourceSha256": "b90b78c366ccb60f4ebfe378a2583e615707362d9ab43aa1683c823b1bdd4071",
   "checks": {
-    "scope": "天雷无妄已写60篇",
-    "chartComparisons": 1620,
+    "scope": "天雷无妄已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
       477,
       574
