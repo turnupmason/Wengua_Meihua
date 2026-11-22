@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "火雷噬嗑已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "火雷噬嗑已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -27,6 +27,22 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "R2以及第十三节变泄定稿。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03噬嗑.txt",
+      "scope": "六二经、象、王注、孔疏。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "174行六二所治易、乘刚仍有伤而终无咎。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "553行求名生体取期及体克用成迟，688行体衰得生，796行终应。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "R2及第八节和第十三节。"
     }
   ],
   "findings": [
@@ -48,6 +64,25 @@
         "21/1/丑"
       ],
       "finding": "春季初震旺生、离相、末土虽弱仍据终应取难，此项是本库综合权重，并非古籍明言相同结果。秋冬坎水得令又受两土所制，采一层关系减其克，尤须保留冬土弱与冬水旺的轻重分歧。初九无咎是断辞，过止而免咎，不直接升档。"
+    },
+    {
+      "id": "hex-021-line-2",
+      "status": "open-interpretation",
+      "keys": [
+        "21/2/寅",
+        "21/2/卯",
+        "21/2/辰",
+        "21/2/巳",
+        "21/2/午",
+        "21/2/未",
+        "21/2/申",
+        "21/2/酉",
+        "21/2/戌",
+        "21/2/亥",
+        "21/2/子",
+        "21/2/丑"
+      ],
+      "finding": "秋月震木死、离囚，末兑旺而仍取体克用成迟。冬月离死、旺坎克，依木相仍有生扶保留条件盘，末兑休只说所任较轻。两季收尾能否制得住的权重仍有解释余地。巳午取休震应期只依关系取，不以应期反推生扶有力。"
     }
   ],
   "lineReviews": [
@@ -59,6 +94,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-021-line-1"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "噬肤，灭鼻，无咎。",
+      "image": "“噬肤，灭鼻”，乘刚也。",
+      "reading": "王孔以柔脆释所治中当，以乘刚释用刑过深，以得其理释无咎。朱熹保留所治易而仍有伤。震木初生离，艮土耗火，坎水制火，末兑仍为离所制。初有生，中有克，依第十三节末体克用取可成，兼录当月迟难。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-021-line-2"
       ]
     }
   ],
@@ -82,18 +127,38 @@
       ],
       "scope": "十二篇逐篇读回开头、全文、简断与应期，检查春取初木、夏土月取末坤、秋冬取中坎。修订题境式应期及将变泄误成本用泄的说明，重读改段。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月标题、简断、正文与应期逐篇读回。春夏寅卯日所取为通过之参考，土月参艮所耗，秋冬参坎所克，修后再读。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-21T22:51:02.562Z",
-  "sourceSha256": "335f3a7ed88de2fbf377e2f82f1104aca8cb18db49bbc93cb4a531eb2caf4645",
+  "reviewedAt": "2026-11-22T00:04:31.008Z",
+  "sourceSha256": "85dafe33fef53830dc34279968ec7511a370ce1abe1be273ddfb2ffa37d9d7b1",
   "checks": {
-    "scope": "火雷噬嗑已写12篇",
-    "chartComparisons": 324,
+    "scope": "火雷噬嗑已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
-      494,
-      526
+      479,
+      529
     ]
   }
 }
