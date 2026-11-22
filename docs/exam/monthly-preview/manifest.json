@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1644-20261121",
+  "batch": "exam-monthly-preview-1656-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1644,
+  "uploadedArticles": 1656,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [],
+  "newHexagrams": [
+    23
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 2964,
-  "authorWholeArticleReadback": 1644,
+  "remainingArticles": 2952,
+  "authorWholeArticleReadback": 1656,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -320,6 +322,20 @@
         "favourable": 36,
         "difficult": 36
       }
+    },
+    {
+      "primaryId": 23,
+      "name": "山地剥",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-023.json",
+      "sourceSha256": "e45e8614eb24b9039462dfff37fc031fda869969de3d2568be278b8d341ea5f9",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-023.json",
+      "readingPath": "docs/exam/monthly-preview/hex-023.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -328,24 +344,23 @@
     "exactSentences24HanOrMoreExcludingQuotedClassics": 0,
     "bodyHanRange": [
       451,
-      562
+      578
     ],
     "shortHanRange": [
       70,
       112
     ],
-    "independentChartComparisons": 42768,
+    "independentChartComparisons": 44712,
     "independentChartMismatches": 0,
-    "dateCases": 3168,
-    "judgmentCorrectionArticles": 976,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前22个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 3312,
+    "judgmentCorrectionArticles": 1048,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 100,
-    "open-interpretation": 17,
+    "interpreted-with-limits": 105,
+    "open-interpretation": 18,
     "open": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
@@ -1001,27 +1016,9 @@
     "articles": 629
   },
   "nextExpectedKey": {
-    "primaryId": 23,
-    "movingLine": 6,
+    "primaryId": 24,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 23,
-      "name": "山地剥",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-023.json",
-      "sourceSha256": "152bca7996312435ef6368a2cb815bbb66e5d4e4bc951690e8eb8daff0373a46",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-023.json",
-      "readingPath": "docs/exam/monthly-preview/hex-023.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
