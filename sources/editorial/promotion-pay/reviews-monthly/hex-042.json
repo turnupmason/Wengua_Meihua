@@ -1,0 +1,918 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 42,
+  "baselineCommit": "c72493736390627ce9ec8bcf1dd65c376c2d88f1",
+  "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88",
+  "editor": "/root/author_042",
+  "reviewedAt": "2026-11-22T11:04:47.116219+00:00",
+  "workDate": "2026-11-22",
+  "workTimezone": "America/New_York",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "72 篇标题、简断、六段正文、独立薪资及应期叙述逐篇撰写。作者实际读回全部 72 篇公开字段，30 组不同五气判断/原文订正和完整取期字段，以及 72 项薪资订正。程序仅装载手写草稿和核对绑定，不用句库扩写正文。返改后读取完整变化字段，不将哈希、通过脚本或局部返改虚计为重新全文阅读。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "已读本次相关写作、逐月优先、来源、审核及问项界限要求；末尾全领域与考试专条另读，未将考试专条直接搬作晋升规则。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "已读逐月独写、身份冻结、订正记录、完整应期和正文厚度要求。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "已读自然独立起笔、明确结论、完整句与禁止编造经过。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "已读机器验等、作者全文读回与独立审读的分工及真实记录要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "已读在任见克、晋升专项以及后续用党多版本要求；保留原结论不因润色自行改判。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "已读相关后续修订；重点复读一层间接生克、原体休与作用节点休、无生无克、二分与用党多，区别原五态及有效作用。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04益.txt",
+      "scope": "益卦卦辞、彖象、六爻及王注孔疏全文实际读取；上九偏辞与自外来、六三固有之、六四志得益特别核对。"
+    },
+    {
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/04益",
+      "scope": "已联网打开古注原文；本地完整文本为六爻释义主要对照。"
+    },
+    {
+      "url": "https://zh.wikisource.org/zh-hans/梅花易數/卷二",
+      "scope": "已联网打开卷二原典；古典条文与项目的现代晋升操作定义分别记录。"
+    },
+    {
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "scope": "实际读取占卜总决、先天后天论、卦断遗论、体用总诀、求名及相邻求谋求财、体用与衰旺、互卦变卦及占卦诀的有关段落；不声称全三卷逐字读尽。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-042.json",
+      "scope": "六爻三十组旧五气公开叙事、判断、完整取期及薪资按爻实际读取；各项 old 精确绑定此原值。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-042.json",
+      "scope": "三十组 calculationNotes 实读，用于核对旧推理而非把旧假设当作已证事实。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-042.json",
+      "scope": "三十组原复核 reason 与 lineReading 实读；上九非自身做法所致明确订正，原记录未覆盖。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-042.json",
+      "scope": "三十组本互变、节点原气、直接生克关系和一层记录实际对读；不声称每条重复 decision/source 大对象逐字全读。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "paths": [
+        "sources/editorial/interview-pass/monthly/hex-001.json",
+        "sources/editorial/interview-pass/monthly/hex-003.json",
+        "sources/editorial/interview-pass/monthly/hex-017.json",
+        "sources/editorial/interview-pass/monthly/hex-052.json"
+      ],
+      "scope": "已选读指定分支示范：001 与 052 所选篇完整读，003 与 017 合并输出中部分文字截断，不虚计为全部所选篇均全文实读；只取解释厚度、自然组织和审读方法，不移植面试句子。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/hex-041.json",
+      "scope": "已查看作者回执 schema、lineReviews 和相关字段，参考记录严谨程度；未宣称全文读取其全部历史独审附件。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "利用为大作，元吉，无咎。",
+      "image": "元吉，无咎，下不厚事也。",
+      "reading": "有刚德而得大作之时，能建大功；处下任重，须元吉乃无咎。下不厚事不作禁止兴作，也不能把大功当成已发生的事实。三土受体克，正面成迟保留。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "a8cb3de47822e8649bb0a9d05ecbe25fb09d335a0f29e95f56c6ee6d0b500ea9",
+      "bodyHan": {
+        "min": 503,
+        "median": 516.5,
+        "max": 533
+      },
+      "actualReadbackScope": "初九十二篇全部公开字段实际读回，五气新旧判断、完整取期及订正理由实读，十二项薪资订正实读。最终戌月第二段普通表述改写后，完整新段另读。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    },
+    {
+      "movingLine": 2,
+      "text": "或益之十朋之龟，弗克违，永贞吉。王用享于帝，吉。",
+      "image": "或益之，自外来也。",
+      "reading": "柔中当位、以谦冲受外益、永贞吉与祭享之吉完整保留；不是资源到账或任命确认。末兑得两土生而克实，原金五态不被改写。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "ad27f79bd46940f5865432279fb5ec57c74c40576941b236617f4b3a955c7c94",
+      "bodyHan": {
+        "min": 475,
+        "median": 490.0,
+        "max": 500
+      },
+      "actualReadbackScope": "十二篇公开字段实际完整读取；第一次合并输出末尾截断后，戌亥子丑四篇另行完整读回。五气新旧判断和取期、十二项薪资订正均实读；未月第二段、亥月第一段、子月简断返改后逐字段完整另读。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    },
+    {
+      "movingLine": 3,
+      "text": "益之，用凶事，无咎。有孚中行，告公用圭。",
+      "image": "益用凶事，固有之也。",
+      "reading": "求益为己不合谦道，救衰危为物所恃而无咎；信实中行、告公得任救难、施救乃得固有其功均有积极实义。末离泄体不编成疲惫或准备耽误。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "355c309fc3205a1c2ce9a802bdb4b9d3c547fd25ccd2088abbf73c8b61f1d2c3",
+      "bodyHan": {
+        "min": 512,
+        "median": 534.5,
+        "max": 550
+      },
+      "actualReadbackScope": "十二篇以两个六篇区块完整实读；五气全部新旧技术、取期及十二项薪资订正实读。作者修辞及独审返改的完整字段另读，包括寅月第二段、亥子完整技术判断与 correction.new。最终巳月第四段改写后完整另读。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    },
+    {
+      "movingLine": 4,
+      "text": "中行，告公从，利用为依迁国。",
+      "image": "告公从，以益志也。",
+      "reading": "虽位不中而用中行，告公得从、依迁受纳、重大事务亦利及志得益均保留；不用来证明组织已调动或职级被上级压住。末乾得两土生而克实。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "ff702bad00738c0dd91b8dedbbec31c3676fa23ffdebc3b54680cf22a8253b93",
+      "bodyHan": {
+        "min": 510,
+        "median": 522.5,
+        "max": 533
+      },
+      "actualReadbackScope": "十二篇以两个六篇区块完整实读，五气全部技术与取期新旧文、十二项薪资订正实读。卯月末段、夏气取期理由、冬气判断和亥子订正理由的完整变化字段另读；明确旧冬气判断没有虽不重一语。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    },
+    {
+      "movingLine": 5,
+      "text": "有孚惠心，勿问元吉。有孚，惠我德。",
+      "image": "有孚惠心，勿问之矣。惠我德，大得志也。",
+      "reading": "诚信惠物、因民所利而利之、惠而不费、彼此以信惠相应与大得志保留；不缩成待人友善，不说任命已签发。末体克用可成但迟不被旺木制弱土抹去。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "1eddcee9f4ea1b9dcc88e3bde0c1698fc066d38e9623c545c3257243f9668eda",
+      "bodyHan": {
+        "min": 501,
+        "median": 518.5,
+        "max": 554
+      },
+      "actualReadbackScope": "十二篇以两个六篇区块完整实读；五气全部技术和取期新旧字段、十二项薪资订正实读，包括四篇有原薪资文本的精确订正。辰月标题、子月简断和申亥丑第二段变化字段已另读；最终酉月第五段普通表述改写后完整另读。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    },
+    {
+      "movingLine": 6,
+      "text": "莫益之，或击之，立心勿恒，凶。",
+      "image": "莫益之，偏辞也。或击之，自外来也。",
+      "reading": "王孔以求益无厌、过盈、无恒解释失相与及或击。偏辞是此有求而彼不应，自外来也不表示自身毫无缘由；不据爻义断言来问者贪求或他人已拒绝。末坎受土制，弱生仍有生，原有生无克与凶辞优先的冲突明记。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "6afd2e1b9e846eb2477c885e39423cb2bce67171a68a3afced2c48dcfcba2b9f",
+      "bodyHan": {
+        "min": 516,
+        "median": 534.0,
+        "max": 549
+      },
+      "actualReadbackScope": "十二篇全部公开字段以两个六篇区块完整实读；五气全部判断新旧文、五组完整取期及十二项薪资订正实读，新增原稿与 review-v2 来源证据完整读过。辰午酉亥子五个完整变化段、夏气完整新判断及 correction.new 已逐字段另读。",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline. Hash binds the actually read content and does not count as reading."
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "初九十二篇全部公开字段实际读回，五气新旧判断、完整取期及订正理由实读，十二项薪资订正实读。最终戌月第二段普通表述改写后，完整新段另读。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "a8cb3de47822e8649bb0a9d05ecbe25fb09d335a0f29e95f56c6ee6d0b500ea9"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇公开字段实际完整读取；第一次合并输出末尾截断后，戌亥子丑四篇另行完整读回。五气新旧判断和取期、十二项薪资订正均实读；未月第二段、亥月第一段、子月简断返改后逐字段完整另读。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "ad27f79bd46940f5865432279fb5ec57c74c40576941b236617f4b3a955c7c94"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇以两个六篇区块完整实读；五气全部新旧技术、取期及十二项薪资订正实读。作者修辞及独审返改的完整字段另读，包括寅月第二段、亥子完整技术判断与 correction.new。最终巳月第四段改写后完整另读。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "355c309fc3205a1c2ce9a802bdb4b9d3c547fd25ccd2088abbf73c8b61f1d2c3"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇以两个六篇区块完整实读，五气全部技术与取期新旧文、十二项薪资订正实读。卯月末段、夏气取期理由、冬气判断和亥子订正理由的完整变化字段另读；明确旧冬气判断没有虽不重一语。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "ff702bad00738c0dd91b8dedbbec31c3676fa23ffdebc3b54680cf22a8253b93"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇以两个六篇区块完整实读；五气全部技术和取期新旧字段、十二项薪资订正实读，包括四篇有原薪资文本的精确订正。辰月标题、子月简断和申亥丑第二段变化字段已另读；最终酉月第五段普通表述改写后完整另读。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "1eddcee9f4ea1b9dcc88e3bde0c1698fc066d38e9623c545c3257243f9668eda"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇全部公开字段以两个六篇区块完整实读；五气全部判断新旧文、五组完整取期及十二项薪资订正实读，新增原稿与 review-v2 来源证据完整读过。辰午酉亥子五个完整变化段、夏气完整新判断及 correction.new 已逐字段另读。",
+      "status": "author-readback-complete",
+      "professionalDistinctGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "6afd2e1b9e846eb2477c885e39423cb2bce67171a68a3afced2c48dcfcba2b9f"
+    }
+  ],
+  "findings": [
+    {
+      "id": "YI42-IN-POST-CONTROL",
+      "status": "applied-with-outcome-frozen",
+      "keys": "42/2/*,42/4/*",
+      "finding": "六二兑、六四乾均为直接克原体节点，得两土生而无火制，一层按克实论。五气原金态继续保留；在任任一见克的专项判据不因原金囚死休消失。"
+    },
+    {
+      "id": "YI42-NO-RECURSION",
+      "status": "applied",
+      "keys": "42/2/*,42/4/*,42/6/*",
+      "finding": "木克两土不递归取消土生金或土克水。月令不是第五个非体节点；一层不把节点生克原体的方向翻转。"
+    },
+    {
+      "id": "YI42-POSITIVE-CLASSICAL-MEANING",
+      "status": "corrected-with-outcome-frozen",
+      "keys": "42/1/*,42/2/*,42/3/*,42/4/*,42/5/*",
+      "finding": "完整保留大作元吉、永贞享帝之吉、救难无咎与得任固功、中行见从依迁受纳、惠心元吉大得志。没有把积极爻义贬成空泛建议来迁就不成结论，也未用吉义证明现实已发生。"
+    },
+    {
+      "id": "YI42-UPPER-LINE-MISREADING",
+      "status": "corrected-with-outcome-frozen",
+      "keys": "42/6/*",
+      "finding": "原 review-v2 将自外来解成非自身做法所致，原正文亦含外部变故与本人无关等断言；依王孔纠正为求益无厌与无恒致失相与。偏辞为此求彼不应，不是只记一面；不据此替现实人物定性。"
+    },
+    {
+      "id": "YI42-UPPER-LINE-PRIORITY",
+      "status": "open-policy-priority",
+      "keys": "42/6/*",
+      "finding": "末坎弱生仍为有生，且无直接克体，体用层有成事依据；原案以末上凶辞优先裁难。本次保留原不成和原取期，不伪造克体或说生扶归零，不宣称古书已经给出此现代统一优先级的唯一算法。"
+    },
+    {
+      "id": "YI42-CONTROL-DELAY",
+      "status": "applied-with-open-policy-boundary",
+      "keys": "42/1/*,42/5/*",
+      "finding": "体克用的求名可成而迟是正面条文，春冬有利稿完整保留。弱气不成稿依据体党皆无气等项目既定条件，不能仅凭末土非生非和定败。原二分优先级未另行改判。"
+    },
+    {
+      "id": "YI42-TIMING-AND-PAY",
+      "status": "corrected-with-signatures-frozen",
+      "keys": "42/*/*",
+      "finding": "72 项取期文与 72 项薪资文均绑定旧值；取期 kind/node/地支结构不变。提示只说所参事件及核实办法，不承诺任命、统一批次或到账；不成仅限制本次随岗增薪，不外推现薪下降或任何独立调薪必无。"
+    }
+  ],
+  "articleStatistics": {
+    "articles": 72,
+    "paragraphCounts": [
+      6
+    ],
+    "bodyHan": {
+      "min": 475,
+      "median": 521.0,
+      "max": 554
+    },
+    "shortHan": {
+      "min": 79,
+      "max": 93
+    },
+    "payHan": {
+      "min": 38,
+      "max": 43
+    },
+    "outcomes": {
+      "favourable": 8,
+      "difficult": 64
+    },
+    "windowArticles": 68,
+    "noWindowArticles": 4
+  },
+  "correctionVerification": {
+    "judgmentCorrections": 72,
+    "timingWordingCorrections": 72,
+    "payCorrections": 72,
+    "total": 216,
+    "authorActuallyReadDistinctTechnicalGroups": 30,
+    "authorActuallyReadPayCorrections": 72,
+    "bindingSource": "sources/editorial/promotion-pay/hex-042.json",
+    "machineOldNewBinding": "checked by check-monthly.mjs; machine checks are not reading",
+    "outcomeChanged": 0,
+    "timingSignatureChanged": 0,
+    "sameQiFullJudgmentAndTiming": "identical within every line and qi group",
+    "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88"
+  },
+  "machineChecks": {
+    "draftStructure": "passed",
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "finalGate": "passed",
+    "thresholdsUnchanged": true,
+    "doesNotEstablish": "Independent semantic review, human acceptance, or real-world prediction accuracy.",
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 42",
+    "structureErrors": 0,
+    "consolationFlags": 0,
+    "intraArticleRepeatedEightCharacterPassages": 0,
+    "crossArticleOverThreshold": 0,
+    "crossArticleMaxSharePercent": 4,
+    "sameLineOverThreshold": 0,
+    "sameLineMaxSharePercent": 4.4,
+    "highFrequencyPhrases": 0,
+    "unverifiedQuotations": 0,
+    "averageSentenceHan": 32.3,
+    "monthOpeningTemplates": 0,
+    "maximumSameOpening": 1,
+    "gateLogSha256": "88124371a453aeeed85d9e87ebabd9e73c9a7b5ac74dd4df708bc9ebc7a777fa",
+    "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88"
+  },
+  "independentReview": {
+    "status": "ai-cross-reviewed-with-open-findings",
+    "wholeArticlesRead": 72,
+    "professionalGroupsRead": 30,
+    "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88",
+    "reviewer": "/root",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "currentRevisionFullTextReadCount": 55,
+    "currentRevisionChangedArticleReadCount": 17,
+    "scope": "协调者独立实际阅读72篇全部公开文字及30组五气完整新旧专业、完整应期、薪资及订正；返改另读全部完整变化字段。最终55篇全部字段与初读本相同，17篇由原全文及完整变化字段覆盖；六爻记录和实际变化如下。程序哈希及验等仅绑定读本，不计作语义阅读。",
+    "lineReviews": [
+      {
+        "hexagram": 42,
+        "movingLine": 1,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-full-changed-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:03:08.569919+00:00",
+        "scope": "12篇标题、简断、全部六段正文、薪资说明与取期逐篇完整实读；五气盘面、原判断与新判断、取期及订正原因全文读取，夏气被输出截断部分另行完整补读；12条薪资订正旧新与理由实际读过。原典益卦王孔完整文本此前实读。程序验等不计为全文阅读。 最终关口因普通措辞触发宽泛扫描，作者自然改写一个完整段，本协调者将旧新整段再次实读；未记作再次整篇阅读。",
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-1-a8cb3de47822.json",
+        "finalCanonicalArticleArraySha256": "a8cb3de47822e8649bb0a9d05ecbe25fb09d335a0f29e95f56c6ee6d0b500ea9",
+        "snapshotFileSha256": "5cd09a8fd2841b12d4c48166c19c2d523bf20c705a0677d826f2e9d17fded2d0",
+        "findings": [
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "最终关口对普通措辞的宽泛扫描命中",
+            "resolution": "保持原义自然改写，完整变化段作者与独审者分别实际读回，未改变扫描器或阈值。"
+          }
+        ],
+        "reviewNotes": [
+          "体克用仍保留名可成而迟之义，三土旺弱不变成克体；夏木休居中，秋木死没有另造金节点，冬木相没有另造水节点。",
+          "初九大作、元吉、下不厚事以处下任重须建大功相连，不视为项目已经完成，也未反推未升者一定未完成工作。",
+          "旧正文中的项目、预算、核查、结算与延迟次数已清理；无结果日月份仍无结果日，比和窗口未改成任命结果。",
+          "现行弱体党无气判据与元吉、迟成古义存在取权边界，须整卦审计明列，不借润色改结论。"
+        ],
+        "priorReviewSnapshots": [
+          {
+            "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-1-753a96d15ab8.json",
+            "canonicalSha256": "753a96d15ab88d83f4baa6ea59040e57d966e697eed8df38803bc5f408898643",
+            "scope": "12篇标题、简断、全部六段正文、薪资说明与取期逐篇完整实读；五气盘面、原判断与新判断、取期及订正原因全文读取，夏气被输出截断部分另行完整补读；12条薪资订正旧新与理由实际读过。原典益卦王孔完整文本此前实读。程序验等不计为全文阅读。"
+          }
+        ],
+        "changedFieldsReread": [
+          {
+            "monthBranch": "戌",
+            "field": "paragraphs[1]",
+            "old": "木克土保持主动关系，土旺并不会倒过来变成对木之克。此局没有直接受克，却也没有直接生体，不能把未成简单归到外部阻拦。较需重视的是，现有根基与同气之助都薄，持续承担仍缺有力接续。",
+            "new": "木克土保持主动关系，土虽当旺，所示仍是体木经营所问，并非反向克身。此局没有直接受克，却也没有直接生体，不能把未成简单归到外部阻拦。较需重视的是，现有根基与同气之助都薄，持续承担仍缺有力接续。",
+            "fullChangedFieldActuallyReread": true,
+            "phase": "final-gate-wording-readback"
+          }
+        ],
+        "currentRevisionFullTextReadCount": 11,
+        "currentRevisionChangedArticleReadCount": 1
+      },
+      {
+        "hexagram": 42,
+        "movingLine": 2,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-three-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "currentRevisionFullTextReadCount": 9,
+        "currentRevisionChangedArticleReadCount": 3,
+        "readAtUtc": "2026-11-22T10:40:09.785553+00:00",
+        "scope": "12篇标题、简断、全部正文、薪资与取期逐篇完整实读；五气盘面与新旧判断、完整取期及订正理由按组读完，旧五气公开叙事另外全文核对。随后未正文2、亥正文1和子简断三个完整旧新字段实际复读，未把差异复读计为再次12篇全文阅读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-2-8cbd9daea2bd.json",
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-2-ad27f79bd469.json",
+        "finalCanonicalArticleArraySha256": "ad27f79bd46940f5865432279fb5ec57c74c40576941b236617f4b3a955c7c94",
+        "snapshotFileSha256": "adc5506832b6382d2f39c7e5432b9ca8f6fabf56a2182683a30803931c227349",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "未",
+            "field": "paragraphs[1]",
+            "old": "变用兑金相而克木，又得两旺土生、无火来制，收尾不能只凭开头相合就看定。两土受木所克，表示中间主动处理的关系，并不递归抹掉其生金之力。无直接生体也使这层约束缺少相应续补。",
+            "new": "变用兑金相而克木，又得两旺土生、无火来制，收尾不能只凭开头相合就看定。两土受木所克，表示中间主动处理的关系。土生金的关系仍在，不能因体能克土就将末金所得的支持一并消去。无直接生体也使这层约束缺少相应续补。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[0]",
+            "old": "有力量发挥所长，却仍受末后条件牵制，这一轮不能晋升。亥月巽木相，震木本用也相，比和能够形成有分量的承接。已有经验可以稳稳说明，不必为迁就不利结果便把自身根基一概说弱。",
+            "new": "有力量发挥所长，却仍受末后条件牵制，这一轮不能晋升。亥月巽木相，震木本用也相，比和能够形成有分量的承接。本月仍有可用的实力，已有经验可以稳稳说明，任用未成也不表示已有能力全然不足。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "子",
+            "field": "short",
+            "old": "本轮升不了，子月巽震得相，已有能力与初段相合都可用，末金得土生仍克体。六二肯定谦冲外益，永贞又重在前后一致，宜把所获支持用于可靠承担；不以一处相合或吉意跳过任职收束仍受制的事实。",
+            "new": "本轮升不了，子月巽震得相，已有能力与初段相合都可用，末金得土生仍克体。六二肯定谦冲外益，永贞又重在前后一致，宜把所获支持用于可靠承担；不以一处相合或吉意跳过任职收束仍受制的关系。",
+            "fullChangedFieldActuallyReread": true
+          }
+        ],
+        "findings": [
+          {
+            "id": "YI42-R2-EDITORIAL-VOICE",
+            "status": "resolved-and-complete-field-reread",
+            "issue": "未月递归、亥月为迁就结果说弱属编辑或算法口吻，子简断将盘面关系称作现实事实。",
+            "resolution": "三字段分别自然改述，原规则、结论、取期及厚度保留。"
+          }
+        ],
+        "reviewNotes": [
+          "末兑五气均有两土生而无火制，原囚死休与有效克实分层，未以体克土递归取消土生金。",
+          "夏木休居中，冬木相未另加水节点；在任见克原未升保持。",
+          "柔中当位、谦冲受外益、永贞吉与王用享帝两项吉义均保留；未知签字、挂账、任职年限、成本数等旧情节已清理。",
+          "12条薪资明确本次随岗增加未落实，不扩到现薪与独立待遇；过程control窗口未转为任命结果日。"
+        ]
+      },
+      {
+        "hexagram": 42,
+        "movingLine": 3,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-full-changed-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:03:08.571866+00:00",
+        "scope": "12篇全部公开字段与五气新旧完整专业、完整取期及订正理由实际读完；对应旧五气公开叙事与本地王孔相应爻经注疏亦全文核对。作者返改后，逐一读取全部变化字段的完整内容；未把变化字段复读计为再次全文阅读。 最终关口因普通措辞触发宽泛扫描，作者自然改写一个完整段，本协调者将旧新整段再次实读；未记作再次整篇阅读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-3-27ddb342ce08.json",
+        "initialCanonicalArticleArraySha256": "27ddb342ce08842af6e55f6e9802f10e5aa106ffaa615f753faba8abea1f6ff0",
+        "currentRevisionFullTextReadCount": 8,
+        "currentRevisionChangedArticleReadCount": 4,
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-3-355c309fc320.json",
+        "finalCanonicalArticleArraySha256": "355c309fc3205a1c2ce9a802bdb4b9d3c547fd25ccd2088abbf73c8b61f1d2c3",
+        "snapshotFileSha256": "9fcdfeed4d49c734b6c25e6aebc4bc9868b765ba233173fc93d615bf9edaf1a0",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "寅",
+            "field": "paragraphs[1]",
+            "old": "末变离火为相，受木所生，投入在收尾继续向外，未形成对自身的回补。这里没有直接克体之卦，难处由末泄而来，并非一定有人压制。离火泄实也不说明精力已经耗尽，更不能据此认定述职因此失去准备。",
+            "new": "末变离火为相，受木所生，投入在收尾继续向外，未形成对自身的回补。这里没有直接克体之卦，难处由末泄而来，并非一定有人压制。离火泄实不说明精力已经耗尽，也不能据此推断述职准备已经耽误。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "亥",
+            "field": "judgmentCorrection.new",
+            "old": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前和和轻耗都保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "new": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前段比和与末后轻耗的分别均保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "亥",
+            "field": "judgment",
+            "old": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前和和轻耗都保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "new": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前段比和与末后轻耗的分别均保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "子",
+            "field": "judgmentCorrection.new",
+            "old": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前和和轻耗都保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "new": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前段比和与末后轻耗的分别均保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "子",
+            "field": "judgment",
+            "old": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前和和轻耗都保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "new": "益六三互剥、变家人。原体巽木相，本用震木相而比和，艮体互和坤用互土囚，受体克；末离火死，受木生而有轻泄。无直接生体、无直接克体，本用同木不成用党多，无需一层调级。依求名体生用与末泄定为升不了，但体有气、前段比和与末后轻耗的分别均保留，不凭轻耗便称差在线边。六三以益救难、不为私己、信实中行，告公任救衰危而固有其功；不改作整改不算实绩，也不把固有之简化为经验归己。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "巳",
+            "field": "paragraphs[3]",
+            "old": "爻辞继以「有孚中行」，要求信实、适时、不过亢。用于眼前承担，宜先弄清问题到什么程度，自己能决定什么，再说明怎样处置；未掌握的情况不能用更满的保证盖过去，必要的配合也应在行动前核清。",
+            "new": "爻辞继以「有孚中行」，要求信实、适时、不过亢。用于眼前承担，宜弄清问题程度与自己的权限，说明具体处置办法；未掌握的情况不能用更满的保证盖过去，必要的配合也应在行动前核清。",
+            "fullChangedFieldActuallyReread": true,
+            "phase": "final-gate-wording-readback"
+          }
+        ],
+        "findings": [
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "六三寅正文末句及冬气专业句不顺",
+            "resolution": "改顺两处表述并同步完整专业new，规则与结论保留。"
+          },
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "最终关口对普通措辞的宽泛扫描命中",
+            "resolution": "保持原义自然改写，完整变化段作者与独审者分别实际读回，未改变扫描器或阈值。"
+          }
+        ],
+        "reviewNotes": [
+          "救难固有其功、告公得任及有孚中行正面古义保留；无事故既成事实，末离轻泄不解释为只差一点。",
+          "原体与一层作用、同气完整判断及应期、随岗薪资边界均读。"
+        ],
+        "priorReviewSnapshots": [
+          {
+            "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-3-8503548fde5e.json",
+            "canonicalSha256": "8503548fde5e0f5a4a75e6f9ca0870b28085db7ffdd992b75dafd1068d846b53",
+            "scope": "12篇全部公开字段与五气新旧完整专业、完整取期及订正理由实际读完；对应旧五气公开叙事与本地王孔相应爻经注疏亦全文核对。作者返改后，逐一读取全部变化字段的完整内容；未把变化字段复读计为再次全文阅读。"
+          }
+        ]
+      },
+      {
+        "hexagram": 42,
+        "movingLine": 4,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-full-changed-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T10:52:54.897892+00:00",
+        "scope": "12篇全部公开字段与五气新旧完整专业、完整取期及订正理由实际读完；对应旧五气公开叙事与本地王孔相应爻经注疏亦全文核对。作者返改后，逐一读取全部变化字段的完整内容；未把变化字段复读计为再次全文阅读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-4-836576edaf29.json",
+        "initialCanonicalArticleArraySha256": "836576edaf29125ce2cb9d330bf5deb00b30027e9d3a99f0dfff13cc1ab6977b",
+        "currentRevisionFullTextReadCount": 10,
+        "currentRevisionChangedArticleReadCount": 2,
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-4-ff702bad0073.json",
+        "finalCanonicalArticleArraySha256": "ff702bad00738c0dd91b8dedbbec31c3676fa23ffdebc3b54680cf22a8253b93",
+        "snapshotFileSha256": "09d9e6b4f128cc4c283ba5f5b4d3a851afe6fdc9e01a355cde92eecfc3bc57f3",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "亥",
+            "field": "judgmentCorrection.reason",
+            "old": "订正原休乾有力却不重及差在线边的无据评估，保留有效克实；完整保留六四积极古义，清除迁后数据未出、等待周期和审批层级的臆断。",
+            "new": "订正原休乾已按有力论却又称差在线边的无据评估，保留有效克实；完整保留六四积极古义，清除迁后数据未出、等待周期和审批层级的臆断。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "子",
+            "field": "judgmentCorrection.reason",
+            "old": "订正原休乾有力却不重及差在线边的无据评估，保留有效克实；完整保留六四积极古义，清除迁后数据未出、等待周期和审批层级的臆断。",
+            "new": "订正原休乾已按有力论却又称差在线边的无据评估，保留有效克实；完整保留六四积极古义，清除迁后数据未出、等待周期和审批层级的臆断。",
+            "fullChangedFieldActuallyReread": true
+          }
+        ],
+        "findings": [
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "冬气订正理由误将春气旧文的不重归入冬气",
+            "resolution": "改为原休乾已按有力论却又称差在线边，准确对应冬气旧文。"
+          }
+        ],
+        "reviewNotes": [
+          "中行告公见从、依迁受纳及志得益完整保留，不臆造现实搬迁或审批事实。",
+          "末乾有两土生无火制，原五态不改，有效克实；体克土不递归抹去土生金。"
+        ]
+      },
+      {
+        "hexagram": 42,
+        "movingLine": 5,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-full-changed-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "currentRevisionFullTextReadCount": 11,
+        "currentRevisionChangedArticleReadCount": 1,
+        "readAtUtc": "2026-11-22T11:03:08.573856+00:00",
+        "scope": "逐篇实读12篇标题、简断、六段正文、薪资及完整应期；五气盘面与旧新完整判断、应期、薪资及订正理由逐组核读；旧五气公开叙事与王孔九五经注疏全文核对。技术输出合并后曾截断，已经单独重读全部五气完整内容，不以截断输出算覆盖。 最终关口因普通措辞触发宽泛扫描，作者自然改写一个完整段，本协调者将旧新整段再次实读；未记作再次整篇阅读。",
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-5-1eddcee9f4ea.json",
+        "finalCanonicalArticleArraySha256": "1eddcee9f4ea1b9dcc88e3bde0c1698fc066d38e9623c545c3257243f9668eda",
+        "snapshotFileSha256": "0a3fa3b17227a63f6b12d4bcf170f1beb9be9d5ec9d07a162d83287c87e31502",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[4]",
+            "old": "宜把一项最有代表性的工作讲清，从实际需求说到关键取舍，再说明结果与个人承担。若成果依靠协作，便把他方作用一并交代，不因求进就争占全部成绩。新的职责若尚不明确，先核清范围，再提出能负责的安排。",
+            "new": "宜把一项最有代表性的工作讲清，连贯交代实际需求、关键取舍、结果与个人承担。若成果依靠协作，便把他方作用一并交代，不因求进就争占全部成绩。新的职责若尚不明确，先核清范围，再提出能负责的安排。",
+            "fullChangedFieldActuallyReread": true,
+            "phase": "final-gate-wording-readback"
+          }
+        ],
+        "findings": [
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "最终关口对普通措辞的宽泛扫描命中",
+            "resolution": "保持原义自然改写，完整变化段作者与独审者分别实际读回，未改变扫描器或阈值。"
+          }
+        ],
+        "reviewNotes": [
+          "九五信惠之元吉、惠德相应、大得志完整保留；难案不缩成只有好心或感念无用。",
+          "三土皆受木体克，不是土克木；本用同木不触发用党多，盘内无直接生克体节点，不增季节元素。",
+          "春冬能升仍含体克用成迟；夏体休居中，弱月体党无气维持原判，末非生非和不独立倒推失败。",
+          "旧带组记录、个人实绩全年空白、复杂老项目与逐级签批均无据，正文已删除既成情节。",
+          "全12条薪资与原两组正薪资文核对，删薪带/同日起算预设；过程equal窗口与无日期性质保持，正向name-body卯日不改。"
+        ],
+        "priorReviewSnapshots": [
+          {
+            "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-5-98b83d7b8de0.json",
+            "canonicalSha256": "98b83d7b8de093911b77d0e739f5851eed1ba779b030e10edc8b94b4feca9bfc",
+            "scope": "逐篇实读12篇标题、简断、六段正文、薪资及完整应期；五气盘面与旧新完整判断、应期、薪资及订正理由逐组核读；旧五气公开叙事与王孔九五经注疏全文核对。技术输出合并后曾截断，已经单独重读全部五气完整内容，不以截断输出算覆盖。"
+          }
+        ]
+      },
+      {
+        "hexagram": 42,
+        "movingLine": 6,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-full-changed-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "currentRevisionFullTextReadCount": 6,
+        "currentRevisionChangedArticleReadCount": 6,
+        "readAtUtc": "2026-11-22T11:01:20.113332+00:00",
+        "scope": "12篇标题、简断、全部正文、薪资与完整应期实际全文读回，五气盘面、新旧完整专业、完整取期、薪资与订正理由逐组核读，旧公开五气叙事及王孔上九经注疏完整对照。返改后实际读取5个完整正文段、夏气两个月完整专业及其correction.new，不把差异复读算作再次整篇阅读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-6-f6daa22e82b5.json",
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/042-line-6-6afd2e1b9e84.json",
+        "initialCanonicalArticleArraySha256": "f6daa22e82b5c7ddf2e5d6b7824c2ea35118cd6bf7884d2aac1508033b148218",
+        "finalCanonicalArticleArraySha256": "6afd2e1b9e846eb2477c885e39423cb2bce67171a68a3afced2c48dcfcba2b9f",
+        "snapshotFileSha256": "bd8a08ad3a441f6792810b2b19a6ea1a5a883336ec4e0066101b6a668a5ea6e1",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "辰",
+            "field": "paragraphs[5]",
+            "old": "有限力量更应放在能够负责的内容上，完成情况如实交代，设想则说明前提。末后薄助可用，也须辨明实际落点，不把它放大成已经能够承托任用。上九提醒知止守恒，宜使所求与所能相称，认真尽责而不不断抬高索求。",
+            "new": "有限力量更应放在能够负责的内容上，完成情况如实交代，设想则说明前提。末后薄助可用，也须辨明实际落点，不把它放大成已经能够承托任用。上九提醒知止守恒，宜使所求与所能相称，认真尽责，不以不断抬高所求代替实际办理。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "巳",
+            "field": "judgment",
+            "old": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，不是已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "new": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，立心勿恒不能简化为已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "巳",
+            "field": "judgmentCorrection.new",
+            "old": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，不是已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "new": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，立心勿恒不能简化为已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "午",
+            "field": "paragraphs[5]",
+            "old": "眼前未升，认真办好所任仍是可以落实的事，宜让每项承诺到可负责的范围。薄助若有现实对应，也按实际用途运用，不继续放大为必然回应全部所求。上九之戒重在知止守恒，以可信的承担维持尺度，少让任职愿望推动无边际的追加。",
+            "new": "眼前未升，认真办好所任仍是可以落实的事，宜让每项承诺落在可负责的范围。薄助若有现实对应，也按实际用途运用，不继续放大为必然回应全部所求。上九之戒重在知止守恒，以可信的承担维持尺度，少让任职愿望推动无边际的追加。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "午",
+            "field": "judgment",
+            "old": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，不是已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "new": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，立心勿恒不能简化为已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "午",
+            "field": "judgmentCorrection.new",
+            "old": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，不是已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "new": "益上九互剥、变屯。震木原体休，巽木本用休而比和，两互坤艮土相而受体克；末坎水原囚、生木，另受两土克而无金生，一层仍为弱生，帮助存在但薄。体休居中，无直接克体，本用同木不成用党多，木克土不连环消去土克水。有生无克本有可成依据，依原上九求益无已、无恒而凶的裁断定为升不了，规则优先级单列。偏辞须据王孔理解为此求彼不应，立心勿恒不能简化为已经改了两回方向；自外来也不能替现实断言全然无责。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[1]",
+            "old": "末变坎水本为相，受两土克又无金生，一层看帮助偏薄，水生木的作用并未消失。木能制土不能再推成土已不制水，秋金当旺也不是盘内另外出现的生扶。此局无直接克体，有利处与上九所戒同在，不能只取一面便将结局定成任用。",
+            "new": "末变坎水本为相，受两土克又无金生，续助因而偏薄，水生木的作用并未消失。木能制土不能再推成土已不制水，秋金当旺也不是盘内另外出现的生扶。此局无直接克体，有利处与上九所戒同在，不能只取一面便认为任职已经明确。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[0]",
+            "old": "自身有力量，任用这一轮不能晋升，末后也并非全无帮助。亥月震木相，巽木本用同相比和，前段相接有力。两互坤艮土囚，受体木所克，主动料理较有余地，已有优势值得认真运用，不必因结果未成便全部否定。",
+            "new": "自身有力量，末后也并非全无帮助，这一轮仍不能晋升。亥月震木相，巽木本用同相比和，前段相接有力。两互坤艮土囚，受体木所克，主动料理较有余地，已有优势值得认真运用，不必因结果未成便全部否定。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "子",
+            "field": "paragraphs[5]",
+            "old": "有力之处仍可用于认真负责的办理，末后薄助也应按实际范围使用，不能扩成所求必获回应。宜让每项承诺到能负责的程度，已完成和未完成各有明确交代。知止守恒，是把主动求进安放在可承担的职责中，不必因未升便忽然转向或无限加重索求。",
+            "new": "有力之处仍可用于认真负责的办理，末后薄助也应按实际范围使用，不能扩成所求必获回应。宜将所作承诺限于能负责的范围，已完成和未完成各有明确交代。知止守恒，是把主动求进安放在可承担的职责中，不必因未升便忽然转向或无限加重索求。",
+            "fullChangedFieldActuallyReread": true
+          }
+        ],
+        "findings": [
+          {
+            "status": "resolved-and-complete-field-reread",
+            "issue": "辰双不、亥首句不顺、午子承诺到范围不顺，酉公开段算法编辑口吻，夏气误将改向两次挂在偏辞释义后。",
+            "resolution": "五完整段自然收顺，夏气明确偏辞属此求彼不应、改向须归立心勿恒；相同专业同步两个实例，全文变化已实读。"
+          }
+        ],
+        "reviewNotes": [
+          "本用同木不成用党多；原旺相坎与受两土制且无金生的弱生分开，弱生不归零，木克土不递归消土制水。",
+          "有生无克正面盘据保留，未升按原上九凶辞裁断，其优先序开放写入审计，未错用在任见克。",
+          "无厌、过盈、无恒语境完整；偏辞为此求彼不应，自外来不能解释成与自身无关或现实已遭无端打击。",
+          "旧客户撤约、改向次数、政策突变、统一停升及评议片面记录均撤销事实断定；薪资仅指本次随岗增加未落实。",
+          "30组完整同气判断和应期由机械验等绑定，各月公开文独立阅读。"
+        ]
+      }
+    ],
+    "finalLineCanonicalSha256": {
+      "1": "a8cb3de47822e8649bb0a9d05ecbe25fb09d335a0f29e95f56c6ee6d0b500ea9",
+      "2": "ad27f79bd46940f5865432279fb5ec57c74c40576941b236617f4b3a955c7c94",
+      "3": "355c309fc3205a1c2ce9a802bdb4b9d3c547fd25ccd2088abbf73c8b61f1d2c3",
+      "4": "ff702bad00738c0dd91b8dedbbec31c3676fa23ffdebc3b54680cf22a8253b93",
+      "5": "1eddcee9f4ea1b9dcc88e3bde0c1698fc066d38e9623c545c3257243f9668eda",
+      "6": "6afd2e1b9e846eb2477c885e39423cb2bce67171a68a3afced2c48dcfcba2b9f"
+    }
+  },
+  "independentProfessionalHumanReview": "pending",
+  "realWorldPredictionAccuracy": "not-validated",
+  "ruleAuditPath": "docs/review/PROMOTION_YI42_RULE_AUDIT_20261122.md",
+  "preCoordinatorIndependentStatus": {
+    "status": "awaiting-coordinator-final-binding",
+    "reviewer": "/root",
+    "reviewerIsHuman": false,
+    "scope": "Coordinator reports all 72 public articles and 30 technical groups actually read, with all final changed fields reread: 55 articles unchanged after complete read; 17 covered by original whole read plus complete changed fields. Six final snapshots bound to current source. Coordinator will insert its own detailed review record; author does not sign on its behalf."
+  },
+  "releaseVerification": {
+    "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88",
+    "checkedAtUtc": "2026-11-22T11:08:18.309973+00:00",
+    "gateCommand": "bash scripts/review/monthly-gate.sh promotion-pay 42",
+    "gateStatus": "passed",
+    "gateLogSha256": "88124371a453aeeed85d9e87ebabd9e73c9a7b5ac74dd4df708bc9ebc7a777fa",
+    "bindings": {
+      "hex": 42,
+      "articles": 72,
+      "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88",
+      "exactOldNewBindings": true,
+      "sameQiCompleteJudgmentAndTimingGroups": 30,
+      "outcomeChanges": 0,
+      "corrections": {
+        "judgmentCorrection": 72,
+        "timingWordingCorrection": 72,
+        "payCorrection": 72
+      },
+      "bodyHan": {
+        "min": 475,
+        "median": 521.0,
+        "max": 554
+      },
+      "outcomes": {
+        "favourable": 8,
+        "difficult": 64
+      },
+      "rootIndependentSnapshotsBound": [
+        {
+          "movingLine": 1,
+          "canonicalSha256": "a8cb3de47822e8649bb0a9d05ecbe25fb09d335a0f29e95f56c6ee6d0b500ea9",
+          "status": "independent-AI-read-complete-after-full-changed-field-reread"
+        },
+        {
+          "movingLine": 2,
+          "canonicalSha256": "ad27f79bd46940f5865432279fb5ec57c74c40576941b236617f4b3a955c7c94",
+          "status": "independent-AI-read-complete-after-three-field-reread"
+        },
+        {
+          "movingLine": 3,
+          "canonicalSha256": "355c309fc3205a1c2ce9a802bdb4b9d3c547fd25ccd2088abbf73c8b61f1d2c3",
+          "status": "independent-AI-read-complete-after-full-changed-field-reread"
+        },
+        {
+          "movingLine": 4,
+          "canonicalSha256": "ff702bad00738c0dd91b8dedbbec31c3676fa23ffdebc3b54680cf22a8253b93",
+          "status": "independent-AI-read-complete-after-full-changed-field-reread"
+        },
+        {
+          "movingLine": 5,
+          "canonicalSha256": "1eddcee9f4ea1b9dcc88e3bde0c1698fc066d38e9623c545c3257243f9668eda",
+          "status": "independent-AI-read-complete-after-full-changed-field-reread"
+        },
+        {
+          "movingLine": 6,
+          "canonicalSha256": "6afd2e1b9e846eb2477c885e39423cb2bce67171a68a3afced2c48dcfcba2b9f",
+          "status": "independent-AI-read-complete-after-full-changed-field-reread"
+        }
+      ],
+      "scope": "Mechanical equality and coverage binding only; not additional reading and not prediction validation."
+    },
+    "generatedPage": {
+      "hex": 42,
+      "articles": 72,
+      "ownArticleSectionsVerified": 72,
+      "publicFieldsVerifiedInOwnSection": 648,
+      "professionalJudgmentsVerifiedInOwnSection": 72,
+      "sourceSha256": "b1342b65fb3683c50c2e7ad5560724c735617be577da2ffac6c353f27f7c9a88",
+      "readingPageSha256": "c33d64953a4e8ca188e9e293ce6da208318cf4368030f5e558e7b58da4185bb3",
+      "scope": "Mechanical per-article equality verification only; no additional semantic reading claimed."
+    },
+    "generatedPageActuallyRead": "协调者实际完整读回初九寅、卯两篇生成页，含六段正文、薪资、应期、展开专业、订正、引用及简断；不宣称额外完整读了72篇生成页。",
+    "doesNotEstablish": "Human professional review, user acceptance or real-world prediction accuracy."
+  }
+}
