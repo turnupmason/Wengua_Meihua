@@ -1,6 +1,6 @@
 # 失联寻人长版精修与规则审计（2026-11-21）
 
-本轮实际完成 **90 / 1920 篇**，覆盖 216 个月令键，尚余 1830 篇。原有全部 1920 篇、4608 键的基础覆盖与本轮长版精修分别统计。
+本轮实际完成 **120 / 1920 篇**，覆盖 288 个月令键，尚余 1800 篇。原有全部 1920 篇、4608 键的基础覆盖与本轮长版精修分别统计。
 
 参考稿为用户指定 [面试逐月稿](https://github.com/turnupmason/Wengua_Meihua/tree/editorial/interview-preview-216-20261118/docs/interview-pass/monthly-preview) 和 [main 关系确定逐月稿](../relationship-establishment/monthly-preview/README.md)。本轮按开局、过程、结局、总断四段统计汉字，简断、应期、原典引文和审计不计入厚度。每篇至少470字、整卦中位数至少500字；字数达标不能替代文笔与论证审读。
 
@@ -9,6 +9,7 @@
 | [乾为天](hex-001.md) | 30／72 | 533–579 | 546.5 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-001.json) |
 | [坤为地](hex-002.md) | 30／72 | 504–552 | 524 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-002.json) |
 | [水雷屯](hex-003.md) | 30／72 | 507–557 | 531 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-003.json) |
+| [山水蒙](hex-004.md) | 30／72 | 501–548 | 522 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-004.json) |
 
 ## 本轮写作与审读
 
@@ -30,6 +31,8 @@
 
 屯初九保留磐桓、居贞、建侯的完整脉络，六二不将婚媾与十年直接写成失联动机或日期。另修正 cases 中上六春、冬两组的一处旧问题描述：正文及既有作者修订已取 conditional，issue 却仍写取偏难。本轮仅将该说明与原采用的“有助可济、存在正当可回查渠道”对齐，结果不变，独立适用分歧继续 pending。
 
+第4卦起的续写另按实际发布批次记录古籍取义、现代应用边界、全文复核发现及修订。见[后续逐批规则与文字审计](LITERARY_CONTINUATION_20261121.md)；完成数仍只来自绑定最终稿的作者与第二读者回执。
+
 原稿全部结果档位及完整应期逐字段对照保存；不取期原因也保持完整。原典不同取权、现代适用与应期解释的既存疑点，继续见各卦 cases 与作者第十栏，未通过文笔润色宣称解决。
 
 卷三在线转录存在“内外并也生体”的异文，本轮没有据此覆写库内“内外并无生体”；原典校勘与现代解释分开处理。
@@ -40,6 +43,6 @@
 
 每批原稿、cases和旧作者回执保存在 [literary-baseline-20261121](../../sources/editorial/missing-contact/literary-baseline-20261121)，均来自提交 40227bd2cee5653742e60eb671fdc0b663905455。本轮[作者记录](../../sources/editorial/missing-contact/reviews)与[第二读者记录](../../sources/editorial/missing-contact/literary-reviews)逐篇保留，不覆盖基线档案。
 
-本轮[机器检查](LITERARY_CHECKS_20261121.json)独立从六爻位重算 1920 组本互变、9600 个体用月令节点及 7680 项直接生克；对照 1920 篇作者源与应用完整正文，以及阅读页和月令映射。已精修 90 篇另外核对最终作者与第二读者版本、原结果、完整应期与正文厚度。检查通过只表示这些具体对照一致。
+本轮[机器检查](LITERARY_CHECKS_20261121.json)独立从六爻位重算 1920 组本互变、9600 个体用月令节点及 7680 项直接生克；对照 1920 篇作者源与应用完整正文，以及阅读页和月令映射。已精修 120 篇另外核对最终作者与第二读者版本、原结果、完整应期与正文厚度。检查通过只表示这些具体对照一致。
 
 重现命令：`node scripts/build-promotion-pay.mjs missing-contact`；`node scripts/review/audit-missing-contact-literary-20261121.mjs`；`node --test tests/missing-contact.test.mjs`。应用导出沿用 `npm run build:missing-contact`。
