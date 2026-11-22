@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "地雷复已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地雷复已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -95,6 +95,30 @@
     {
       "path": "sources/editorial/exam/hex-024.json",
       "scope": "六四五气原判、各处角色与取期种类"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "六五敦复无悔、王弼居厚履中、孔疏自考成其行"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "六五以中顺敦厚于复，小象考字释成"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "六五自成其中顺之德与戒在其中"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§2 R1a、§8 生体受克按气弱论、§10 体休按中性、§13 考试二分"
+    },
+    {
+      "path": "data/authored-readings/exam/hex-024.json",
+      "scope": "六五五气变用坎水生体及 support-weakened，一层制化不改五态"
+    },
+    {
+      "path": "sources/editorial/exam/hex-024.json",
+      "scope": "六五原断、判据与原取期规格"
     }
   ],
   "findings": [
@@ -153,6 +177,17 @@
         "24/4/午"
       ],
       "finding": "《占卦诀》无克体吉事可成与《求名占》体克用则名可成而迟，均须与《体用衰旺之诀》的同类皆衰例一并读。按项目第二节 R1b 与第十三节，用于体不旺相、比和诸卦无气且无生体；夏令原体休不应表述为囚死，候裁的分歧在无克与只有休气比和何者应先。注疏中初阳甚微所以未许吉，也不构成一条独立的凶断。"
+    },
+    {
+      "id": "hex-024-line-5",
+      "status": "open-interpretation",
+      "keys": [
+        "24/5/辰",
+        "24/5/未",
+        "24/5/戌",
+        "24/5/丑"
+      ],
+      "finding": "辰、未、戌、丑：三坤得令，原体囚，末坎死又受土制。按项目 R1a 只要无直接克体而仍有生体，不将受制之生归零，故取过。若读《体用》「彼灭其吉」为抹去实助或以衰旺优先，这四月权重有分歧；现行并不这么处理。春冬的求名结果取期与夏秋土月过程薄助取期均在原结构内，旧稿试题和通知方式已从公开稿与注栏所呈取期移除。"
     }
   ],
   "lineReviews": [
@@ -192,6 +227,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-024-line-4"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "敦复，无悔。",
+      "image": "“敦复，无悔”，中以自考也。",
+      "reading": "六五动上坤为坎，原体下震不动，本用、两互皆坤土，三处由木克。无一处直接克木。末坎水生震木，受三坤制，五气均有一层受制而薄，坎月势不被改写。寅卯、亥子取体旺相可承担，末助即使减薄仍有用。巳午体休、申酉体死、土月体囚，前中须本人应对，末助按现行无克有生定成，轻重只按原气与受制取。王孔居厚履中自考成其行，程朱自成守中，限于返善与持守，不独断考试。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-024-line-5"
       ]
     }
   ],
@@ -275,15 +320,35 @@
       ],
       "scope": "十二月对同卦面试、确定关系和考试原判，连读落盘后的题名、简断、自然段及应期说明。办到多少用已有发挥说明，未取期的三组写为整场持续承担，避免虚构题量与具体题目。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇标题、简断、自然段连同取期说明从作者源逐篇读回。对照同爻面试与确定关系示例及考试五气判断。正文说初中如何凭原有本领，末坎受坤制后为何仍有用，并把具体日支留给折叠的规则出处。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T02:29:29.974Z",
-  "sourceSha256": "1c96355d06db3e472e5a1ff61c534d05d12bf355bb9b7b5fce877ec2c4f28b4a",
+  "reviewedAt": "2026-11-22T02:40:03.235Z",
+  "sourceSha256": "1f5d1dcca2ace4e9c42fc07eeaa4de20c12c31302853f03342aa921a535290fd",
   "checks": {
-    "scope": "地雷复已写48篇",
-    "chartComparisons": 1296,
+    "scope": "地雷复已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       474,
       577
