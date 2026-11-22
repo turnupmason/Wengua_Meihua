@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "地雷复已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地雷复已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -51,6 +51,30 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第八节变用等各位之间的间接关系只计一层，以及第十三节末泄与吉辞升档。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "复六三爻辞、小象、王注频蹙及孔疏义无咎和它来难保"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "复六三屡失屡复与复之不固"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "复六三危其屡失而与其复"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04明夷.txt",
+      "scope": "明夷卦辞利艰贞及孔颖达释艰固其贞"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第八、十、十三节。一层制化、休气参与区分及有生有克的考试二分取法。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-024.json",
+      "scope": "六三五气原判、当时取期及对照旧文。"
     }
   ],
   "findings": [
@@ -91,6 +115,15 @@
         "24/2/丑"
       ],
       "finding": "上坤为体，下震本用克土，互坤二处同土。六二使下震变兑，地雷复之地泽临。末兑制初震、无水生震，按第八节合盘仅计一层，三阶段叙述不把末兑当成早已发生的事情。春令震旺金囚，冬令震相金休，土分别死、囚，照受制后取轻并保留来克的实处。何以无气之兑能给得气之震减去多大分量，留作权重复核。夏兑死末耗轻，秋兑旺末耗重，土令兑相且旺坤有力可任，三种均按末泄取不成。春冬按初震参寅卯日，其余参末兑申酉日。"
+    },
+    {
+      "id": "hex-024-line-3",
+      "status": "open-interpretation",
+      "keys": [
+        "24/3/亥",
+        "24/3/子"
+      ],
+      "finding": "亥、子：原体坤囚，初震相，末离死。本项目 §13 仍照有生有克且变用生体取成；若提高初克与衰旺的权重，末边只有极轻实际扶助，是否足以抵前克有分歧。寅、卯另有旺克死土的困难，但末生相，符合第十三节未触发全无气援的底线。末离受生关系不被用来调高离的五态或放大好处。王孔无咎有守义范围，古注没有替这场考试单独给出结论。"
     }
   ],
   "lineReviews": [
@@ -110,6 +143,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-024-line-2"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "频复，厉无咎。",
+      "image": "“频复之厉”，义无咎也。",
+      "reading": "初震木克上坤；两互坤保持所能；末离火生坤。春令开始最重但末火相，夏令末火旺，土月体旺且末火休，秋初克轻而末火少力。亥子按考试二分以末生方向取成，未将冬火作旺援。王孔以频蹙、困而求复解六三，程朱以屡失屡复说明厉。爻意落在回正仍可为；考试能过另由末生取，变明夷「利艰贞」说明阻中守正。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-024-line-3"
       ]
     }
   ],
@@ -153,17 +196,37 @@
       ],
       "scope": "逐篇读回十二月题名、简断、五段正文、核断及应期。将兑牵制初震与末兑受坤所生分开核，过程所受的轻重、末耗的厚薄按月令取。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇各从作者源读回。按同卦面试与确定关系样稿对照起笔和爻义，核每月实际强弱与结尾有助的来源。题名、简断与正文只讲本次考试成否、缘由和可发挥的范围，日期依据在折叠栏。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T02:10:03.934Z",
-  "sourceSha256": "690c3ceda04ab3b1e55c8fba933c96cef21930f79da8df176e1972ba8ecbc9d7",
+  "reviewedAt": "2026-11-22T02:17:31.919Z",
+  "sourceSha256": "d4b841039e197b96b3bda627ecadcd9b6803fae3edc7c62634f1d4888a1542d8",
   "checks": {
-    "scope": "地雷复已写24篇",
-    "chartComparisons": 648,
+    "scope": "地雷复已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
-      518,
+      474,
       577
     ],
     "publicProseExplicitDayBranchMentions": 0
