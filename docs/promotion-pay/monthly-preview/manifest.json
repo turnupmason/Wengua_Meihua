@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-2088-20261121",
+  "batch": "promotion-pay-monthly-preview-2232-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 2088,
+  "uploadedArticles": 2232,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    29
+    31
   ],
   "fullTarget": 4608,
-  "remainingArticles": 2520,
-  "authorWholeArticleReadback": 2088,
+  "remainingArticles": 2376,
+  "authorWholeArticleReadback": 2232,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -420,6 +420,34 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 30,
+      "name": "离为火",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-030.json",
+      "sourceSha256": "01e04b4ba716c28737793a6e9fc3495837837ba0c966992951f476a45df12caf",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-030.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-030.md",
+      "outcomes": {
+        "favourable": 48,
+        "difficult": 24
+      }
+    },
+    {
+      "primaryId": 31,
+      "name": "泽山咸",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-031.json",
+      "sourceSha256": "cc516a8d50a3c032b35b612d8d10744d6a434c4b55f29f66a4c8c4f5247c9d19",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-031.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-031.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
     }
   ],
   "checks": {
@@ -434,16 +462,16 @@
       76,
       112
     ],
-    "independentChartComparisons": 56376,
+    "independentChartComparisons": 60264,
     "independentChartMismatches": 0,
-    "dateCases": 4176,
-    "judgmentCorrectionArticles": 1690,
+    "dateCases": 4464,
+    "judgmentCorrectionArticles": 1834,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 2088
+    "payCorrectionArticles": 2232
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 16,
@@ -500,7 +528,9 @@
     "open-interpretation-boundary": 1,
     "corrected-substantive-rule-omission": 1,
     "corrected-wording": 1,
-    "author-corrected-awaiting-independent-delta-read": 1
+    "author-corrected-awaiting-independent-delta-read": 1,
+    "resolved-in-text": 2,
+    "resolved-in-text-with-open-priority": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -739,6 +769,22 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "见逐卦回执"
+    },
+    {
+      "primaryId": 30,
+      "sourceSha256": "01e04b4ba716c28737793a6e9fc3495837837ba0c966992951f476a45df12caf",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "见逐卦回执"
+    },
+    {
+      "primaryId": 31,
+      "sourceSha256": "cc516a8d50a3c032b35b612d8d10744d6a434c4b55f29f66a4c8c4f5247c9d19",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": 48,
+      "currentRevisionChangedArticleReadCount": 24,
+      "scope": "六爻72篇公开字段曾逐篇完整实际阅读，30个不同五气专业及应期组实际读取。最终公开文本中未变部分与完整变化字段复读分开登记；同气重复专业以精确验等绑定。各分爻记录保存实际读取范围、修改事项与版本，不将程序核对或哈希计算冒称全文阅读。"
     }
   ],
   "independentHumanReview": "pending"
