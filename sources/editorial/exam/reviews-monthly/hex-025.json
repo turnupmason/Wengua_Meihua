@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "天雷无妄已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "天雷无妄已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -51,6 +51,26 @@
     {
       "path": "sources/editorial/exam/hex-025.json",
       "scope": "六二五气原断及分组应期规格，去除旧说明对具体考试内容的推断"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "45–48 行，六三「无妄之灾」与王孔关于位不正、行违谦顺的解释"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "196–197 行，六三「无故而有灾」以及牵牛意象"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "320–324 行，六三从妄得妄失和「有得则有失」读，与朱熹之无故受累分记"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§8 生克并见的抵销与单层作用，§10 休气仍起较轻作用；末克体的规则与观梅例"
+    },
+    {
+      "path": "sources/editorial/exam/hex-025.json",
+      "scope": "六三原判及分组应期，冬月取过程艮土而非末火"
     }
   ],
   "findings": [
@@ -81,6 +101,19 @@
         "25/2/丑"
       ],
       "finding": "本震、体互巽为乾所克，按各月金木强弱分开计算前、中段自力所费。互艮受震、巽制且无火扶，保留土原月态，只折减实际生助。变兑比和着眼能否用所长完成收尾，不计为另一处生体。寅卯弱乾制旺木且末兑囚，巳午乾兑同死：这两组都以仍有艮土所生和全局无克为据取能过，不能把微助或薄比和说成宽裕。申酉、土月和冬水月分开落笔。应期保留原角色和阶段，移除具体考试情节。"
+    },
+    {
+      "id": "hex-025-line-3",
+      "status": "open-interpretation",
+      "keys": [
+        "25/3/辰",
+        "25/3/未",
+        "25/3/申",
+        "25/3/酉",
+        "25/3/戌",
+        "25/3/丑"
+      ],
+      "finding": "中艮同时见震巽木制与离火生，按一层生克并见仍保留原季节分量。末离克乾，得木生而全卦无水制，寅卯相火与巳午旺火的压力较明，亥子死火受相木扶持，中段囚土原断取期仍另记。申酉旺乾、两死木生囚离，辰未戌丑相乾、两囚木生休离且中艮旺，按现行单层与末克规则保留原断不成。弱木给末火的实际分量与有力之乾能减害至何处，列为解释边界。"
     }
   ],
   "lineReviews": [
@@ -101,6 +134,16 @@
       "reading": "王孔取在已有开端上承接而完成，程朱重因时顺理、不图私利。与全卦无克、互艮生乾、末兑与乾相合一起说明何以可成。",
       "status": "author-readback-complete",
       "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "无妄之灾，或系之牛，行人之得，邑人之灾。",
+      "image": "行人得牛，邑人灾也。",
+      "reading": "《本义》从无故受累解六三；王孔从六三位不正、行违谦顺读，程传重妄得与失相随。正文以朱熹的读法照见前有所获、末仍受制，只取爻义与实际卦变相合之处。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-025-line-3"
+      ]
     }
   ],
   "batchReadback": [
@@ -143,15 +186,35 @@
       ],
       "scope": "寅至丑逐篇读回标题、简断、四段正文与应期，较春木旺、夏金弱、秋金旺、土月金相与冬木相的差别，修订出处与技术判断后复查。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "由寅至丑逐篇对读正文和两套参照稿，写入后读回题名、简断、正文、应期，核对艮、离各自的季节轻重、断语成败及出处，再逐段检查改稿。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T03:09:41.711Z",
-  "sourceSha256": "9d4343aa32ebf94ba23a95ceaac82eca02b2bd4be96a727368c0462976458242",
+  "reviewedAt": "2026-11-22T03:18:09.584Z",
+  "sourceSha256": "91399c0f9d204327f8de768c265a1efdda7acfe38fcff0f7ef14c3b0bef063f9",
   "checks": {
-    "scope": "天雷无妄已写24篇",
-    "chartComparisons": 648,
+    "scope": "天雷无妄已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       477,
       574
