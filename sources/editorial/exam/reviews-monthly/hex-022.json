@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "山火贲已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "山火贲已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -31,6 +31,22 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第八节及第十三节。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03賁.txt",
+      "scope": "六二经、象及王孔解释。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "238行六二因质而加饰。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "553行求名占及796–798行终应。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第八节相抵，第十三节终应泄体。"
     }
   ],
   "findings": [
@@ -52,6 +68,25 @@
         "22/1/丑"
       ],
       "finding": "冬令初离死而中坎旺生相震，末艮与体同囚。强克落中，仍取末比和。春令旺木克死土而离火相，合有生条件。弱体所得的生扶是否足以接到同弱末位，以及土月死坎生囚震时克力该取多大，均登记为解释分歧。"
+    },
+    {
+      "id": "hex-022-line-2",
+      "status": "open-interpretation",
+      "keys": [
+        "22/2/寅",
+        "22/2/卯",
+        "22/2/辰",
+        "22/2/巳",
+        "22/2/午",
+        "22/2/未",
+        "22/2/申",
+        "22/2/酉",
+        "22/2/戌",
+        "22/2/亥",
+        "22/2/子",
+        "22/2/丑"
+      ],
+      "finding": "春冬中途约束重，夏月初离旺而末乾死，土月体旺而末乾相。夏月末泄分量弱仍据二分口径定难，实际能否以强生承轻泄保留分歧。秋震极弱，中段重在体制相坎，末耗最重。"
     }
   ],
   "lineReviews": [
@@ -63,6 +98,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-022-line-1"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "贲其须。",
+      "image": "“贲其须”，与上兴也。",
+      "reading": "六二之须依面，王孔取就近附九三，程颐由须随颐释贲饰有其本质。初离生艮，中震克体，中坎受体制，末乾耗体。坎水生震、乾金制震依第八节相抵，按震原五态。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-022-line-2"
       ]
     }
   ],
@@ -86,18 +131,38 @@
       ],
       "scope": "按篇读回题名、简断、正文、应期与专业说明。春冬取中震，秋取末艮，夏土月取初离。复核结论、旺衰与应期签名。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月正文及简断，逐月查技术说明和应期。春秋参末乾申酉日，夏及四土月参初离巳午日，冬参震寅卯日。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T00:42:27.832Z",
-  "sourceSha256": "75cfd34d4bddb9cd29747e11ff0177b56c4c7a137b5f0a019cbbe7dca1d68967",
+  "reviewedAt": "2026-11-22T00:46:47.754Z",
+  "sourceSha256": "54b872eccc8186cf3ea82f656634c990df9b668eeb9fc95770150b8ec4b4b090",
   "checks": {
-    "scope": "山火贲已写12篇",
-    "chartComparisons": 324,
+    "scope": "山火贲已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       487,
-      534
+      542
     ]
   }
 }
