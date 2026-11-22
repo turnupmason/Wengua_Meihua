@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 24,
+  "wholeArticlesRead": 36,
   "authorshipScope": {
-    "currentReadback": "山地剥已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "山地剥已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -51,6 +51,26 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第十一节无生无克时剥卦取难及第十三节二分。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+      "scope": "六三经象，王孔释正应在上九，失上下为离上下群阴之所从，故免咎。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "184行，六三去其党而从正，得无咎之道。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "264行，三虽然从正，势孤且所应在无位，何以无咎而不言吉。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "158–161行西林寺牌额占，487行《卦断遗论》，804行体党皆衰。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第十一节取卦象的适用范围，卦例之事与考试所求分别照其问项。"
     }
   ],
   "findings": [
@@ -91,6 +111,25 @@
         "23/2/丑"
       ],
       "finding": "本用、体互、用互皆坤土，与上艮同类。下坤变坎，山地剥之山水蒙。末坎受艮土所制，由自己任事，不能当成坎克体或体泄，盘中无生无克。依第十一节取剥「不利有攸往」，西林寺原例问寺额且动六三，依据在取象通则而非把原例当应试验证。六二未有与，与卦象同向。春、秋、冬无单列日应，末坎分别休、相、旺，春土死、秋土休、冬土囚，所任轻重有别。巳午取有气的本用坤，土令四月取旺用互坤，辰戌丑未日皆只参相应的所在。"
+    },
+    {
+      "id": "hex-023-line-3",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "23/3/寅",
+        "23/3/卯",
+        "23/3/辰",
+        "23/3/巳",
+        "23/3/午",
+        "23/3/未",
+        "23/3/申",
+        "23/3/酉",
+        "23/3/戌",
+        "23/3/亥",
+        "23/3/子",
+        "23/3/丑"
+      ],
+      "finding": "上艮为体，本用及两互为坤，末用下艮。四处与原体同属土，不见火生体、木克体，适用第十一节剥「不利有攸往」。西林寺牌额例同卦同爻同互变。书中验寺额之事，考试处只取无生无克时理可胜体用的门径。春土死、冬土囚，无独立日应。夏土相、秋土休，从本用坤参开头相应，分量照时令。四土令旺，以用互坤参中间相应。六三无咎与最终能否过有别，程传对不言吉的解释与此合。"
     }
   ],
   "lineReviews": [
@@ -107,6 +146,14 @@
       "text": "剥床以辨，蔑，贞凶。",
       "image": "“剥床以辨”，未有与也。",
       "reading": "辨在足上与床身相接处，剥较初六更进，孔疏释未有与。此处按前中同土、末由体制水与所凭递减读。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "text": "剥之，无咎。",
+      "image": "“剥之无咎”，失上下也。",
+      "reading": "六三独应上九而异于上下，因所守无咎。程传明说处势孤弱而不言吉。应试以本卦处境和四处同气的实有分量判断。",
       "status": "author-readback-complete",
       "openFindingIds": []
     }
@@ -151,15 +198,35 @@
       ],
       "scope": "寅卯辰巳午未申酉戌亥子丑分别写作并读回全文。复核辰未戌丑取中间用互坤，巳午取开头本用坤，其他六个月不另定日。逐月查坎是体所克、非克体，及各处旺衰与原断一致。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月各自落稿并读回标题、简断、五段正文、原断复核及日应。复核两艮、三坤同土，关系可相接和当时能用多少各照位置。日应只参相应阶段，未当作所问通过的日子。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T01:21:15.362Z",
-  "sourceSha256": "f826654b5a748418430d9d189c16a50e461dc5eeec2bd491c4ea85592fbda21b",
+  "reviewedAt": "2026-11-22T01:29:03.213Z",
+  "sourceSha256": "95ffbfc5f704edbbfc7ea77452516f92361ddac8cb2fb6e5e5450c4df324a2d6",
   "checks": {
-    "scope": "山地剥已写24篇",
-    "chartComparisons": 648,
+    "scope": "山地剥已写36篇",
+    "chartComparisons": 972,
     "chartMismatches": 0,
-    "dateCases": 48,
+    "dateCases": 72,
     "bodyHanRange": [
       494,
       553
