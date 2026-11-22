@@ -2,7 +2,7 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 2016 / 4,608 篇，28 / 64 卦；尚余 2592 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 2088 / 4,608 篇，29 / 64 卦；尚余 2520 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
@@ -21,6 +21,7 @@
 | [009 风天小畜](hex-009.md) | 72 | 501–574 | 494–566 | 537 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-009.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-009.json) |
 | [010 天泽履](hex-010.md) | 72 | 504–554 | 499–546 | 535.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-010.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-010.json) |
 | [011 地天泰](hex-011.md) | 72 | 526–588 | 518–584 | 563 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-011.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-011.json) |
+| [012 天地否](hex-012.md) | 72 | 501–538 | 492–535 | 520 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-012.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-012.json) |
 | [014 火天大有](hex-014.md) | 72 | 511–553 | 502–543 | 534 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-014.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-014.json) |
 | [027 山雷颐](hex-027.md) | 72 | 502–559 | 493–551 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-027.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-027.json) |
 | [028 泽风大过](hex-028.md) | 72 | 517–570 | 511–563 | 545 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-028.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-028.json) |
@@ -55,4 +56,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：12 · 天地否。
+下一待完成卦：13 · 天火同人。
