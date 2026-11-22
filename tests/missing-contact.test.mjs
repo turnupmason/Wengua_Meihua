@@ -221,7 +221,19 @@ test('remaining contact tensions have a traceable author recheck and matching re
   const row=entries.get(edit.primaryId+':'+edit.movingLine).find(r=>r.monthOrder===edit.monthOrder);
   assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
   assert.equal(row.decision.outcomeCode,edit.after[2]);
-  assert.equal(row.copy.long.ending,edit.after[7]);
+  const filename='hex-'+String(edit.primaryId).padStart(3,'0')+'.json';
+  const drafts=await json(directory+filename);
+  const currentDraft=drafts.find(d=>d[0]===edit.movingLine&&d[1]===edit.monthOrder);
+  const receipt=await json(directory+'reviews/'+filename);
+  if(receipt.extraLiteraryPolish===true){
+   const baseline=await json(directory+'literary-baseline-20261121/'+filename);
+   assert.deepEqual(baseline.find(d=>d[0]===edit.movingLine&&d[1]===edit.monthOrder),edit.after);
+   const checked=await inspectContactLiteraryBatch({root,primaryId:edit.primaryId,drafts,authorReview:receipt});
+   assert.equal(checked?.bindings.length,30);
+  }else{
+   assert.equal(currentDraft[7],edit.after[7]);
+  }
+  assert.equal(row.copy.long.ending,currentDraft[7]);
   if(Array.isArray(edit.before[10]))assert.deepEqual(edit.before[10],edit.after[10]);
   else assert.ok(row.timingOmission?.reason&&row.timingSlots.length===0);
  }
