@@ -1,6 +1,6 @@
 # 失联寻人长版精修与规则审计（2026-11-21）
 
-本轮实际完成 **420 / 1920 篇**，覆盖 1008 个月令键，尚余 1500 篇。原有全部 1920 篇、4608 键的基础覆盖与本轮长版精修分别统计。
+本轮实际完成 **480 / 1920 篇**，覆盖 1152 个月令键，尚余 1440 篇。原有全部 1920 篇、4608 键的基础覆盖与本轮长版精修分别统计。
 
 参考稿为用户指定 [面试逐月稿](https://github.com/turnupmason/Wengua_Meihua/tree/editorial/interview-preview-216-20261118/docs/interview-pass/monthly-preview) 和 [main 关系确定逐月稿](../relationship-establishment/monthly-preview/README.md)。本轮按开局、过程、结局、总断四段统计汉字，简断、应期、原典引文和审计不计入厚度。每篇至少470字、整卦中位数至少500字；字数达标不能替代文笔与论证审读。
 
@@ -19,6 +19,8 @@
 | [地天泰](hex-011.md) | 30／72 | 515–551 | 527.5 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-011.json) |
 | [天地否](hex-012.md) | 30／72 | 511–542 | 526.5 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-012.json) |
 | [天火同人](hex-013.md) | 30／72 | 507–555 | 534 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-013.json) |
+| [火天大有](hex-014.md) | 30／72 | 510–544 | 519 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-014.json) |
+| [地山谦](hex-015.md) | 30／72 | 511–544 | 527 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-015.json) |
 | [泽雷随](hex-017.md) | 30／72 | 511–543 | 526.5 | [全文复核](../../sources/editorial/missing-contact/literary-reviews/hex-017.json) |
 
 ## 本轮写作与审读
@@ -53,6 +55,6 @@
 
 每批原稿、cases和旧作者回执保存在 [literary-baseline-20261121](../../sources/editorial/missing-contact/literary-baseline-20261121)，均来自提交 40227bd2cee5653742e60eb671fdc0b663905455。本轮[作者记录](../../sources/editorial/missing-contact/reviews)与[第二读者记录](../../sources/editorial/missing-contact/literary-reviews)逐篇保留，不覆盖基线档案。
 
-本轮[机器检查](LITERARY_CHECKS_20261121.json)独立从六爻位重算 1920 组本互变、9600 个体用月令节点及 7680 项直接生克；对照 1920 篇作者源与应用完整正文，以及阅读页和月令映射。已精修 420 篇另外核对最终作者与第二读者版本、原结果、完整应期与正文厚度。检查通过只表示这些具体对照一致。
+本轮[机器检查](LITERARY_CHECKS_20261121.json)独立从六爻位重算 1920 组本互变、9600 个体用月令节点及 7680 项直接生克；对照 1920 篇作者源与应用完整正文，以及阅读页和月令映射。已精修 480 篇另外核对最终作者与第二读者版本、原结果、完整应期与正文厚度。检查通过只表示这些具体对照一致。
 
 重现命令：`node scripts/build-promotion-pay.mjs missing-contact`；`node scripts/review/audit-missing-contact-literary-20261121.mjs`；`node --test tests/missing-contact.test.mjs`。应用导出沿用 `npm run build:missing-contact`。
