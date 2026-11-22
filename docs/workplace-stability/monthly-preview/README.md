@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **540 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师七卦已齐，水地比已发布初六、六二、六三共三十六篇。下一组为比六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **552 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师七卦已齐，水地比已发布初六至六四，共四十八篇。下一组为比九五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -49,6 +49,7 @@
 | [水地比 · 初六](hex-008.md#初六动--寅月) | 12 | 482–535 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 | [水地比 · 六二](hex-008.md#六二动--寅月) | 12 | 479–532 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 | [水地比 · 六三](hex-008.md#六三动--寅月) | 12 | 483–538 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
+| [水地比 · 六四](hex-008.md#六四动--寅月) | 12 | 483–521 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
