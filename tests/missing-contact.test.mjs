@@ -351,9 +351,20 @@ test('twenty historical contact disputes record their sources, manuscript change
    if(!edit)continue;
    if(newestEdit)assert.deepEqual(newestEdit.before,edit.after);
    const currentEdit=newestEdit??edit;
-   assert.deepEqual(currentEdit.after,drafts.find(d=>d[0]===record.movingLine&&d[1]===month.order));
+   const currentDraft=drafts.find(d=>d[0]===record.movingLine&&d[1]===month.order);
+   const receipt=await json(base+'reviews/'+name);
+   if(receipt.extraLiteraryPolish===true){
+    // Keep historical dispute edits immutable while checking the signed literary
+    // successor against that baseline, including its complete original timing.
+    const baseline=await json(base+'literary-baseline-20261121/'+name);
+    assert.deepEqual(currentEdit.after,baseline.find(d=>d[0]===record.movingLine&&d[1]===month.order));
+    const checked=await inspectContactLiteraryBatch({root,primaryId:record.primaryId,drafts,authorReview:receipt});
+    assert.equal(checked?.bindings.length,30);
+   }else{
+    assert.deepEqual(currentEdit.after,currentDraft);
+   }
    assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
-   assert.equal(row.copy.long.ending,currentEdit.after[7]);
+   assert.equal(row.copy.long.ending,currentDraft[7]);
    const slots=timing=>Array.isArray(timing)?timing.map(slot=>slot.slice(0,2)):timing;
    assert.deepEqual(slots(edit.before[10]),slots(edit.after[10]));
    for(const monthBranch of month.branches){
@@ -413,10 +424,19 @@ test('the ten remaining contact disputes have traceable dispositions and preserv
    keys+=month.branches.length;
    const edit=edits.find(e=>key(e)===key(record)&&e.monthOrder===month.order);
    if(!edit){assert.equal(month.outcome,month.priorOutcome);continue;}
-   assert.deepEqual(edit.after,drafts.find(d=>d[0]===record.movingLine&&d[1]===month.order));
+   const currentDraft=drafts.find(d=>d[0]===record.movingLine&&d[1]===month.order);
+   const receipt=await json(base+'reviews/'+filename);
+   if(receipt.extraLiteraryPolish===true){
+    const baseline=await json(base+'literary-baseline-20261121/'+filename);
+    assert.deepEqual(edit.after,baseline.find(d=>d[0]===record.movingLine&&d[1]===month.order));
+    const checked=await inspectContactLiteraryBatch({root,primaryId:record.primaryId,drafts,authorReview:receipt});
+    assert.equal(checked?.bindings.length,30);
+   }else{
+    assert.deepEqual(edit.after,currentDraft);
+   }
    assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
    assert.deepEqual(edit.after[10],edit.before[10]);
-   assert.equal(row.copy.long.ending,edit.after[7]);
+   assert.equal(row.copy.long.ending,currentDraft[7]);
    if(record.primaryId===43){
     assert.equal(row.timingSlots.length,0);
     assert.ok(row.timingOmission?.reason);
