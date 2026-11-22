@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 25,
+  "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
+  "editor": "Codex",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "wholeArticlesRead": 12,
+  "authorshipScope": {
+    "currentReadback": "天雷无妄已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "逐篇作者读回与机器排盘已另记。独立全文复核待定。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "初九「无妄往，吉」，王弼行不犯妄与孔颖达得志"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "初九刚在内为诚之主"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "无妄初九内诚不妄及修身、治事各得其理"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§2 R1a、§8 受制生体薄、§10 休气体卦居中、§13 无克有生与爻辞关系"
+    },
+    {
+      "path": "sources/editorial/exam/hex-025.json",
+      "scope": "初九五气原判、传统应期规格及待修的场景"
+    }
+  ],
+  "findings": [
+    {
+      "id": "hex-025-line-1",
+      "status": "open-interpretation",
+      "keys": [
+        "25/1/寅",
+        "25/1/卯"
+      ],
+      "finding": "寅卯乾囚、所克两木旺，两个生体土死且受制。按无直接克体且有生体，沿用 R1a 取成；若以受制全失其吉或提高前半程自身承担分量的权重，寅卯解释易有分歧，记录此限。巳午体死，艮坤的原气相与受制后按薄分别核准，所克木休，不照春旺之重。结论与原定应期结构一致。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "无妄，往吉。",
+      "image": "“无妄之往”，得志也。",
+      "reading": "初九动下震为坤，原体上乾金。初震和互巽木为乾金所克，互艮和末坤生乾，整卦无克金。艮与坤均受原卦两木所制，按一层制化取实际扶助较薄，原有五态仍保持。寅卯两木旺、自己囚，先费力；巳午原体死，两木休，互艮取过程中微助；申酉体旺、两木死，辰未戌丑体相、两木囚，都有本身承担之力，按末坤参所求有成。亥子体休，两木相，仍须多费力，结尾少量助益。初九往吉以依实而行解，王孔取行不犯妄，程朱取内诚，未拿爻辞杜撰试题。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-025-line-1"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇逐一读回，与面试、确定关系同卦范文及考试原断对读。按每月的应对、受助与末处变化说明成因，改去原稿中题干、具体考题、分数和通知渠道的想象。正文不引日支，取期单列在卦理说明。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "reviewedAt": "2026-11-22T02:59:41.689Z",
+  "sourceSha256": "e38da5452715001c41ab8132ae003dd999ed90b77ecb4460b4e46bea3d47981d",
+  "checks": {
+    "scope": "天雷无妄已写12篇",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      477,
+      520
+    ],
+    "publicProseExplicitDayBranchMentions": 0
+  }
+}
