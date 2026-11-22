@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **168 / 4,608 篇**。乾为天、坤为地均已齐，水雷屯初九、六二各十二篇。下一组为屯六三。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **180 / 4,608 篇**。乾为天、坤为地均已齐，水雷屯初九至六三已发布，每爻十二篇。下一组为屯六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -18,6 +18,7 @@
 | [坤为地 · 上六](hex-002.md#上六动--寅月) | 12 | 453–482 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-002.json) |
 | [水雷屯 · 初九](hex-003.md#初九动--寅月) | 12 | 454–477 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-003.json) |
 | [水雷屯 · 六二](hex-003.md#六二动--寅月) | 12 | 450–473 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-003.json) |
+| [水雷屯 · 六三](hex-003.md#六三动--寅月) | 12 | 480–518 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-003.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
