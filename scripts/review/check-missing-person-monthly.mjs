@@ -33,7 +33,7 @@ function independentDates(castingDate,branches){
 }
 export async function auditMissingMonthly({ids,draft=false,docs=false,requireSecond=false}={}){
  ids=ids||await listIds();const ctx=await context(),all=await listIds();
- const report={schemaVersion:'1.0.0',scopeVersion:SCOPE,questionId:QUESTION_ID,demoDate:DEMO_DATE,plannedArticles:4608,articleCount:0,authorReadbackArticles:0,secondReadArticles:0,hexagrams:[],articleChecks:[],errors:[],warnings:[],duplicates:[],nearDuplicates:[],chartComparisons:0,dateCases:0,bodyHanRange:[null,null],shortHanRange:[null,null],humanProfessionalReview:'pending',userIndividuallyAccepted:false,realWorldPredictionAccuracy:'not-validated',reviewGeneratedByScript:false};
+ const report={schemaVersion:'1.0.0',scopeVersion:SCOPE,questionId:QUESTION_ID,demoDate:DEMO_DATE,plannedArticles:4608,articleCount:0,authorReadbackArticles:0,secondReadArticles:0,hexagrams:[],articleChecks:[],errors:[],warnings:[],duplicates:[],nearDuplicates:[],chartComparisons:0,dateCases:0,bodyHanRange:[null,null],bodyHanExcludingQuotesRange:[null,null],shortHanRange:[null,null],humanProfessionalReview:'pending',userIndividuallyAccepted:false,realWorldPredictionAccuracy:'not-validated',reviewGeneratedByScript:false};
  const error=(key,check,detail)=>report.errors.push({key,check,detail});
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
  const compare=(key,check,a,b)=>{report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b))error(key,check,{independent:a,engine:b});};
@@ -63,7 +63,7 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
   if(!/^[0-9a-f]{40}$/.test(source.baselineCommit||''))error(String(id),'baseline-commit','Missing exact source commit');
   if(!Array.isArray(source.articles)){error(String(id),'articles','Expected array');continue;}
   if(!draft&&source.articles.length!==72)error(String(id),'coverage',`Expected 72 independently authored monthly articles; got ${source.articles.length}`);
-  const detail={primaryId:id,name:ctx.library.getHexagram(id).name,articles:source.articles.length,sourceSha256:digest,bodyHanRange:[null,null],outcomes:{favourable:0,conditional:0,difficult:0},authorReadback:0,secondReadback:0};
+  const detail={primaryId:id,name:ctx.library.getHexagram(id).name,articles:source.articles.length,sourceSha256:digest,bodyHanRange:[null,null],bodyHanExcludingQuotesRange:[null,null],outcomes:{favourable:0,conditional:0,difficult:0},authorReadback:0,secondReadback:0};
   const expected=new Set(source.articles.map(a=>`${id}/${a.movingLine}/${a.monthBranch}`));
   const expectedArticleHashes=new Map(source.articles.map(a=>[`${id}/${a.movingLine}/${a.monthBranch}`,sha256(JSON.stringify(a))]));
   if(!draft){
@@ -102,8 +102,8 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
    if(!QI[a.monthBranch]||!Number.isInteger(a.movingLine)||a.movingLine<1||a.movingLine>6){error(key,'identity','Invalid month or moving line');continue;}
    if(!(a.outcome in VERDICTS))error(key,'outcome','Unknown search judgment');else detail.outcomes[a.outcome]++;
    if(!Array.isArray(a.paragraphs)||a.paragraphs.length<3||a.paragraphs.some(x=>typeof x!=='string'||!x.trim())){error(key,'paragraphs','Missing authored natural paragraphs');continue;}
-   const body=a.paragraphs.join('\n\n'),bodyHan=han(body),shortHan=han(a.short||'');
-   for(const [object,field,count] of [[report,'bodyHanRange',bodyHan],[detail,'bodyHanRange',bodyHan],[report,'shortHanRange',shortHan]])object[field]=[Math.min(object[field][0]??Infinity,count),Math.max(object[field][1]??0,count)];
+   const body=a.paragraphs.join('\n\n'),bodyHan=han(body),bodyHanExcludingQuotes=han(stripQuotes(body)),shortHan=han(a.short||'');
+   for(const [object,field,count] of [[report,'bodyHanRange',bodyHan],[detail,'bodyHanRange',bodyHan],[report,'bodyHanExcludingQuotesRange',bodyHanExcludingQuotes],[detail,'bodyHanExcludingQuotesRange',bodyHanExcludingQuotes],[report,'shortHanRange',shortHan]])object[field]=[Math.min(object[field][0]??Infinity,count),Math.max(object[field][1]??0,count)];
    if(bodyHan<500||bodyHan>700)error(key,'body-length',{bodyHan,target:'500–650 Han, excluding hints/timing/audit'});else if(bodyHan>650)warn(key,'long-body',bodyHan);
    if(shortHan<60||shortHan>120)error(key,'short-length',shortHan);
    if(typeof a.title!=='string'||han(a.title)<5||han(a.title)>24)error(key,'title','Expected meaningful concise authored title');
@@ -148,7 +148,7 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
      }
     }
    }catch(e){error(key,'timing',e.message);}
-   report.articleChecks.push({key,outcome:a.outcome,legacyContactOutcome:oldRow?.[2]??null,legacyOutcomeIsNotSearchEvidence:true,articleSha256:sha256(JSON.stringify(a)),bodyHan,shortHan,facts:independent,referenceDates:dateEvidence});
+   report.articleChecks.push({key,outcome:a.outcome,legacyContactOutcome:oldRow?.[2]??null,legacyOutcomeIsNotSearchEvidence:true,articleSha256:sha256(JSON.stringify(a)),bodyHan,bodyHanExcludingQuotes,shortHan,facts:independent,referenceDates:dateEvidence});
   }
   if(!draft)for(let line=1;line<=6;line++)for(const month of MONTHS)if(!keys.has(`${id}/${line}/${month}`))error(`${id}/${line}/${month}`,'coverage','Missing monthly article');
   if(docs){try{const actual=await readFile(`${DOC_DIR}/${stem(id)}.md`,'utf8');if(actual!==renderHex(ctx,source))error(String(id),'render-parity','Markdown is not the exact rendering of final author source');}catch(e){error(String(id),'reading-document',e.message);}}
@@ -163,6 +163,6 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  const args=process.argv.slice(2),value=flag=>args.includes(flag)?args[args.indexOf(flag)+1]:null;
  const report=await auditMissingMonthly({ids:value('--hex')?.split(',').map(Number),draft:args.includes('--draft'),docs:args.includes('--docs'),requireSecond:args.includes('--require-second')});
  if(value('--json'))await writeFile(value('--json'),JSON.stringify(report,null,2)+'\n');
- console.log(JSON.stringify({status:report.status,articles:report.articleCount,authorReadback:report.authorReadbackArticles,secondRead:report.secondReadArticles,bodyHanRange:report.bodyHanRange,shortHanRange:report.shortHanRange,chartComparisons:report.chartComparisons,dateCases:report.dateCases,errors:report.errors.slice(0,40),duplicates:report.duplicates.slice(0,15),warnings:report.warnings.slice(0,20)},null,2));
+ console.log(JSON.stringify({status:report.status,articles:report.articleCount,authorReadback:report.authorReadbackArticles,secondRead:report.secondReadArticles,bodyHanRange:report.bodyHanRange,bodyHanExcludingQuotesRange:report.bodyHanExcludingQuotesRange,shortHanRange:report.shortHanRange,chartComparisons:report.chartComparisons,dateCases:report.dateCases,errors:report.errors.slice(0,40),duplicates:report.duplicates.slice(0,15),warnings:report.warnings.slice(0,20)},null,2));
  process.exitCode=report.errors.length?1:0;
 }
