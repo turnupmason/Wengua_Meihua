@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 36,
+  "wholeArticlesRead": 48,
   "authorshipScope": {
-    "currentReadback": "地雷复已写36篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地雷复已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -75,6 +75,26 @@
     {
       "path": "sources/editorial/exam/hex-024.json",
       "scope": "六三五气原判、当时取期及对照旧文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "复六四与王孔独应初、顺道而复之注疏"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "六四阳气甚微未足以有为、不言吉"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "六四其志善而初微不可相援，何以不言吉凶"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§2 R1b、§10 体休与比和休分组、§13 考试二分及《占卦诀》《求名占》反证。"
+    },
+    {
+      "path": "sources/editorial/exam/hex-024.json",
+      "scope": "六四五气原判、各处角色与取期种类"
     }
   ],
   "findings": [
@@ -124,6 +144,15 @@
         "24/3/子"
       ],
       "finding": "亥、子：原体坤囚，初震相，末离死。本项目 §13 仍照有生有克且变用生体取成；若提高初克与衰旺的权重，末边只有极轻实际扶助，是否足以抵前克有分歧。寅、卯另有旺克死土的困难，但末生相，符合第十三节未触发全无气援的底线。末离受生关系不被用来调高离的五态或放大好处。王孔无咎有守义范围，古注没有替这场考试单独给出结论。"
+    },
+    {
+      "id": "hex-024-line-4",
+      "status": "open-interpretation",
+      "keys": [
+        "24/4/巳",
+        "24/4/午"
+      ],
+      "finding": "《占卦诀》无克体吉事可成与《求名占》体克用则名可成而迟，均须与《体用衰旺之诀》的同类皆衰例一并读。按项目第二节 R1b 与第十三节，用于体不旺相、比和诸卦无气且无生体；夏令原体休不应表述为囚死，候裁的分歧在无克与只有休气比和何者应先。注疏中初阳甚微所以未许吉，也不构成一条独立的凶断。"
     }
   ],
   "lineReviews": [
@@ -153,6 +182,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-024-line-3"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "中行独复。",
+      "image": "“中行独复”，以从道也。",
+      "reading": "六四动上坤，原体下震不动，开头及两互均坤土，三处都由原体震木所克；变上震和体比和。开头与中间要自身承担，末后同木维持已有发挥。寅卯两震旺，三土死；亥子两震相，三土囚，均取成。巳午两震休、三土相，申酉两震死、三土休，土月两震囚、三土旺，项目皆按体不旺相且比和无气、无生无克而取不成。王孔释中行独复为在群阴中独应初九、顺道而反；程朱称其志可取，初阳甚微不足以有为，爻无断辞。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-024-line-4"
       ]
     }
   ],
@@ -216,15 +255,35 @@
       ],
       "scope": "十二篇各从作者源读回。按同卦面试与确定关系样稿对照起笔和爻义，核每月实际强弱与结尾有助的来源。题名、简断与正文只讲本次考试成否、缘由和可发挥的范围，日期依据在折叠栏。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月对同卦面试、确定关系和考试原判，连读落盘后的题名、简断、自然段及应期说明。办到多少用已有发挥说明，未取期的三组写为整场持续承担，避免虚构题量与具体题目。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T02:17:31.919Z",
-  "sourceSha256": "d4b841039e197b96b3bda627ecadcd9b6803fae3edc7c62634f1d4888a1542d8",
+  "reviewedAt": "2026-11-22T02:29:29.974Z",
+  "sourceSha256": "1c96355d06db3e472e5a1ff61c534d05d12bf355bb9b7b5fce877ec2c4f28b4a",
   "checks": {
-    "scope": "地雷复已写36篇",
-    "chartComparisons": 972,
+    "scope": "地雷复已写48篇",
+    "chartComparisons": 1296,
     "chartMismatches": 0,
-    "dateCases": 72,
+    "dateCases": 96,
     "bodyHanRange": [
       474,
       577
