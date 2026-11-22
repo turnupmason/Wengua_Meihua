@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {loadLibrary,createProductRepository,findUpcomingCivilDayMatches} from '../src/index.js';
+import {inspectContactLiteraryBatch} from '../scripts/review/check-missing-contact-literary-20261121.mjs';
 
 const root=new URL('../',import.meta.url);
 const read=p=>readFile(new URL(p,root),'utf8');
@@ -15,7 +16,7 @@ const context={timingScale:'day',timingContext:{castingMethod:'pre-heaven',perio
 
 test('恢复联系 preserves distinct scope, source-applicability records and actual full-read receipts',async()=>{
  const index=await json('data/authored-readings/missing-contact/index.json');
- let articles=0,keys=0,questions=0,questionKeys=0;
+ let articles=0,keys=0,questions=0,questionKeys=0,polished=0,polishedKeys=0;
  for(const file of index.files){
   const name=file.path.split('/').at(-1);
   const source='sources/editorial/missing-contact/';
@@ -37,6 +38,20 @@ test('恢复联系 preserves distinct scope, source-applicability records and ac
    assert.equal(row.decision.questionScope,'verified-two-way-contact-with-a-specific-out-of-contact-person',key);
    assert.equal(row.ruleVersions.scope,'missing-contact-modern-analogy-1.0.0',key);
    assert.equal(row.authorship.wholeArticleReadReceipt.sourceSha256,receipt.sourceSha256,key);
+   if(receipt.extraLiteraryPolish===true){
+    const literary=row.authorship.literaryPolish;
+    assert.equal(literary.campaign,'missing-contact-literary-v1-20261121',key);
+    assert.equal(literary.copySha256,digest(JSON.stringify(drafts[i])),key);
+    assert.equal(literary.authorAgent,receipt.authorAgent,key);
+    assert.notEqual(literary.authorAgent,literary.peerAgent,key);
+    assert.equal(literary.reviewerIsHuman,false,key);
+    const bodyHan=drafts[i].slice(5,9).join('').match(/\p{Script=Han}/gu)?.length??0;
+    assert.equal(literary.bodyHan,bodyHan,key);
+    assert.ok(bodyHan>=470,key);
+    polished++;polishedKeys+=row.monthBranches.length;
+   }else{
+    assert.equal(row.authorship.literaryPolish,undefined,key);
+   }
    assert.ok(['mh-075','mh-076','mh-077'].every(id=>!row.sourceIds.includes(id)),key);
    assert.equal(row.contactApplication.personLocationInferred,false,key);
    assert.equal(row.contactApplication.healthOrFateInferred,false,key);
@@ -67,7 +82,11 @@ test('恢复联系 preserves distinct scope, source-applicability records and ac
  }
  assert.equal(articles,index.authorWholeArticleReviewed);
  assert.equal(keys,index.baseCaseCount);
- assert.equal(index.literaryPolish.required,false);
+ assert.equal(index.literaryPolish.required,true);
+ assert.equal(index.literaryPolish.completed,polished);
+ assert.equal(index.literaryPolish.monthKeyCount,polishedKeys);
+ assert.equal(index.literaryPolish.remaining,articles-polished);
+ assert.equal(index.literaryPolish.status,polished===articles?'completed':'in-progress');
  assert.equal(index.specificApplicationQuestions.articles,questions);
  assert.equal(index.specificApplicationQuestions.monthKeys,questionKeys);
  const plan=await json('data/product-authoring-plan.json');
@@ -248,8 +267,19 @@ test('contact follow-up checks each outstanding application case and preserves i
  for(const edit of edited){
   const record=followup.records.find(row=>key(row)===key(edit));
   const month=record.monthlyDecisions.find(row=>row.order===edit.monthOrder);
-  const drafts=await json(source+record.caseSource.split('/').at(-1));
-  assert.deepEqual(drafts.find(r=>r[0]===edit.movingLine&&r[1]===edit.monthOrder),edit.after);
+  const filename=record.caseSource.split('/').at(-1);
+  const drafts=await json(source+filename);
+  const receipt=await json(source+'reviews/'+filename);
+  if(receipt.extraLiteraryPolish===true){
+   // The historical edit remains exact in the archived source. Its successor
+   // must have final author/peer receipts and identical outcome and full timing.
+   const baseline=await json(source+'literary-baseline-20261121/'+filename);
+   assert.deepEqual(baseline.find(r=>r[0]===edit.movingLine&&r[1]===edit.monthOrder),edit.after);
+   const checked=await inspectContactLiteraryBatch({root,primaryId:edit.primaryId,drafts,authorReview:receipt});
+   assert.ok(checked?.bindings.length===30);
+  }else{
+   assert.deepEqual(drafts.find(r=>r[0]===edit.movingLine&&r[1]===edit.monthOrder),edit.after);
+  }
   assert.equal(digest(JSON.stringify(edit.after)),edit.contentSha256);
   assert.equal(edit.before[2],month.priorOutcome);
   assert.equal(edit.after[2],month.outcome);

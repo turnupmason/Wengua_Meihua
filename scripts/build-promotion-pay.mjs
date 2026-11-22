@@ -11,6 +11,7 @@ import {TRIGRAM_PERIOD_SPECS} from '../src/timing-rules.js';
 import {PRODUCT_TAXONOMY} from '../sources/editorial/product-taxonomy.mjs';
 import {LOST_OBJECT_DEPTH_CAMPAIGN, inspectLostObjectDepthBatch} from './review/check-lost-object-depth-20261121.mjs';
 import {LOST_OBJECT_CONTINUATION_CAMPAIGN, inspectLostObjectContinuationBatch} from './review/check-lost-object-continuation-20261121.mjs';
+import {CONTACT_LITERARY_CAMPAIGN, inspectContactLiteraryBatch} from './review/check-missing-contact-literary-20261121.mjs';
 import {createRequire} from 'node:module';
 // 口径 V2.1 间接生克（只算本用、两互、变用之间一层）：与复核记录同一实现，构建时如实记入 decision.indirectEffectsApplied。
 const {adjust:indirectAdjust} = createRequire(import.meta.url)('./review/indirect-test.cjs');
@@ -53,6 +54,7 @@ const lostPolishCampaign = {id:'lost-object-polish-20261120',baselineCompleted:1
 // 既有 810 篇精修计数不吸收本轮，也不把同一篇重复计入总篇数。
 const lostDepthCampaign = {...LOST_OBJECT_DEPTH_CAMPAIGN,completed:0,monthKeyCount:0,hexagrams:[]};
 const lostContinuationCampaign = {...LOST_OBJECT_CONTINUATION_CAMPAIGN,completed:0,monthKeyCount:0,hexagrams:[]};
+const contactLiteraryCampaign = {...CONTACT_LITERARY_CAMPAIGN,required:true,completed:0,monthKeyCount:0,hexagrams:[],bodyHanByHexagram:[],next:null};
 const outcomeCounts = Object.fromEntries(config.outcomes.map(outcome => [outcome, 0]));
 const files = [];
 const directory = [];
@@ -97,6 +99,13 @@ for (const [batchIndex, filename] of batches.entries()) {
  if(contactCases && (contactCases.primaryId!==primaryId || contactCases.entries.length!==6 || contactCases.ruleVersion!=='missing-contact-modern-analogy-1.0.0'))throw new Error('Invalid contact cases: '+stem);
  if(contactReview && (contactReview.questionId!==questionId || !Array.isArray(contactReview.entries) || contactReview.entries.length!==30 || contactReview.entries.some((entry,i)=>entry.movingLine!==drafts[i]?.[0] || entry.monthOrder!==drafts[i]?.[1] || entry.outcome!==drafts[i]?.[2] || !entry.reviewFinding || entry.copySha256!==createHash('sha256').update(JSON.stringify(drafts[i])).digest('hex'))))throw new Error('Contact per-article full-read receipts mismatch: '+stem);
  if(contactReview && (contactReview.actor!=='assistant-author' || contactReview.primaryId!==primaryId || contactReview.fullArticlesRead!==30 || !contactReview.reviewedAt || contactReview.sourceSha256!==createHash('sha256').update(await readFile(new URL(sourcePath,root))).digest('hex') || contactReview.casesSha256!==createHash('sha256').update(await readFile(new URL(contactCasesPath,root))).digest('hex')))throw new Error('Missing or stale contact full-read receipt: '+stem);
+ const contactLiteraryReview = contactReview ? await inspectContactLiteraryBatch({root,primaryId,drafts,authorReview:contactReview}) : null;
+ if (contactLiteraryReview) {
+  contactLiteraryCampaign.hexagrams.push(primaryId);
+  contactLiteraryCampaign.bodyHanByHexagram.push({primaryId,...contactLiteraryReview.bodyHan});
+ } else if (contactReview && contactLiteraryCampaign.next===null) {
+  contactLiteraryCampaign.next={primaryId,movingLine:1,monthOrder:orders[0]};
+ }
  const petCasesPath = sourceDir + 'cases/' + filename;
  const petCases = profile === LOST_PET_RECOVERY_PROFILE ? JSON.parse(await readFile(new URL(petCasesPath,root),'utf8')) : null;
  const petReviewPath=sourceDir+'reviews/'+filename;
@@ -338,6 +347,17 @@ for (const [batchIndex, filename] of batches.entries()) {
     })};
   const authorship = {method:'individually-written-and-reviewed', version:manuscriptVersion, sourcePath, manualWholeArticleReview:true};
   if(contactReview) authorship.wholeArticleReadReceipt={path:contactReviewPath,sourceSha256:contactReview.sourceSha256,casesSha256:contactReview.casesSha256,reviewedAt:contactReview.reviewedAt,actor:contactReview.actor};
+  if(contactLiteraryReview) {
+   const binding=contactLiteraryReview.bindings[i];
+   authorship.literaryPolish={campaign:contactLiteraryCampaign.id,status:'completed',
+    scope:contactLiteraryCampaign.scope,receiptPath:contactLiteraryReview.receiptPath,
+    receiptSha256:contactLiteraryReview.receiptSha256,copySha256:binding.copySha256,bodyHan:binding.bodyHan,
+    authorAgent:contactLiteraryReview.authorAgent,peerAgent:contactLiteraryReview.peerAgent,
+    authorReviewedAt:contactLiteraryReview.authorReviewedAt,peerReviewedAt:contactLiteraryReview.peerReviewedAt,
+    reviewerIsHuman:false,userAcceptedThisVersion:false};
+   contactLiteraryCampaign.completed++;
+   contactLiteraryCampaign.monthKeyCount+=monthBranches.length;
+  }
   if(petReview) authorship.wholeArticleReadReceipt={path:petReviewPath,sourceSha256:petReview.sourceSha256,casesSha256:petReview.casesSha256,reviewedAt:petReview.reviewedAt,actor:petReview.actor};
   const literaryEntry = literaryReceipt?.entries.find(entry => entry.rowIndex === i);
   if (literaryEntry?.status === 'POLISH_COMPLETED') {
@@ -486,7 +506,7 @@ for (const [batchIndex, filename] of batches.entries()) {
  directory.push('- [' + name + '](' + stem + '.md) · ' + rows.length + ' 篇');
 }
 const progress = {
- ...(profile===MISSING_CONTACT_PROFILE?{literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'missing-contact-modern-analogy-1.0.0',specificApplicationQuestions:{articles:counts.applicationQuestions,monthKeys:counts.applicationQuestionMonthKeys,status:'pending-independent-application-review'},personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false}:{}),
+ ...(profile===MISSING_CONTACT_PROFILE?{literaryPolish:{...contactLiteraryCampaign,status:contactLiteraryCampaign.completed===counts.bodies?'completed':'in-progress',remaining:counts.bodies-contactLiteraryCampaign.completed},scopePolicy:'missing-contact-modern-analogy-1.0.0',specificApplicationQuestions:{articles:counts.applicationQuestions,monthKeys:counts.applicationQuestionMonthKeys,status:'pending-independent-application-review'},personLocationInferred:false,healthOrFateInferred:false,privateIntentInferred:false}:{}),
  ...(profile === LOST_PET_RECOVERY_PROFILE ? {literaryPolish:{required:false,status:'not-required-by-user',completed:0},scopePolicy:'pet-search-modern-analogy-1.0.0',locationClaimsVerified:false,animalHealthOrFateInferred:false} : {}),
  ...common, baseCaseCount:counts.keys, baseVersionCount:counts.bodies, authoredVersionCount:counts.bodies,
  contextProfileCount:counts.bodies, totalBaseCases:4608, totalCharts:384, fullTwelveMonthCharts:files.length * 6,
@@ -502,6 +522,11 @@ await writeFile(new URL(docDir + 'README.md', root), [
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条按卦爻写定的方位场所补充已合入结局，覆盖全部 4,608 个月令键，原典定位与取象位置在计算说明中展开。'] : []),
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? ['384 条形状、材质、颜色、器物与环境补充已写定并作者核读，逐条区分本用所参的原物特征与变用所参的周边场所，合入全部 1,920 篇正文。'] : []),
  '已逐篇写作并由作者核读 ' + counts.bodies + ' 篇，覆盖 ' + progress.fullTwelveMonthCharts + ' / 384 种基础盘、' + counts.keys + ' / 4,608 个月令检索位置。',
+ ...(profile===MISSING_CONTACT_PROFILE?[
+  '2026-11-21 按本轮用户要求，参照指定分支的面试逐月稿与 main 关系确定逐月稿，逐篇补足长版正文。原始覆盖数与这轮精修数分别统计：本轮已完成 '+contactLiteraryCampaign.completed+' / '+counts.bodies+' 篇，覆盖 '+contactLiteraryCampaign.monthKeyCount+' 个月令键，尚余 '+(counts.bodies-contactLiteraryCampaign.completed)+' 篇。',
+  '已完成卦序：'+(contactLiteraryCampaign.hexagrams.length?contactLiteraryCampaign.hexagrams.join('、'):'尚未发布')+'。四段正文每篇至少 470 汉字，整卦中位数至少 500；简断、应期、古籍引文与审计附文另计。每卦仍为 30 篇五气正文、72 个月令键，不把检索键当作独立新稿。',
+  '完成计数要求作者逐篇读回与另一位 AI 全文复核均绑定最终稿；原稿、旧回执与逐篇意见保留。详见[本轮规则与写作审计](LITERARY_AUDIT_20261121.md)。这些核查不等于真人专业验收、用户逐篇认可或现实预测效度验证。',
+ ]:[]),
  ...(profile === LOST_OBJECT_RECOVERY_PROFILE ? [
   '2026-11-20 按用户新要求，以面试、确定关系的逐月长稿为文风标杆，继续精修第 38–64 卦原有的 810 篇。本次完成 ' + lostPolishCampaign.completed + ' 篇，覆盖 ' + lostPolishCampaign.monthKeyCount + ' 个月令键；尚余 ' + (lostPolishCampaign.targetArticles-lostPolishCampaign.completed) + ' 篇。',
   '本次已完成卦序：' + (lostPolishCampaign.hexagrams.length ? lostPolishCampaign.hexagrams.join('、') : '尚未发布') + '。作者逐篇核读、第二位 AI 全文复核及规则疑点见[本轮审计](POLISH_AUDIT_20261120.md)。这些记录不等于独立真人专业认可或用户逐篇验收。',
@@ -513,7 +538,9 @@ await writeFile(new URL(docDir + 'README.md', root), [
  ...(isPromotion ? ['其中 ' + outcomeCounts.favourable + ' 篇倾向晋升并随岗加薪，' + outcomeCounts.difficult + ' 篇倾向本次难以落实。'] : hasPay ? ['其中能升 ' + outcomeCounts.favourable + ' 篇（随岗薪资一并说明），升不了 ' + outcomeCounts.difficult + ' 篇。'] : []),
  ...(profile===MISSING_CONTACT_PROFILE?['具体断法适用问题保留 '+counts.applicationQuestions+' 篇（'+counts.applicationQuestionMonthKeys+' 个月令键），逐条记录见作者 cases 与 source-study，不计作独立审核通过。']:[]),
  '已写入应期规则 ' + progress.dated + (profile===MISSING_CONTACT_PROFILE?' 篇，保留具体不取期原因 ':' 篇，待取期 ') + progress.undated + ' 篇。阅读文档使用 ' + READING_DOCUMENT_DEMO_DATE + ' 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。',
- '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
+ profile===MISSING_CONTACT_PROFILE
+  ? '下一篇待润色：'+(contactLiteraryCampaign.next?[questionId,contactLiteraryCampaign.next.primaryId,contactLiteraryCampaign.next.movingLine,contactLiteraryCampaign.next.monthOrder].join(' / '):'本轮已全部完成')
+  : '下一键 ' + (progress.next ? [questionId,progress.next.primaryId,progress.next.movingLine,progress.next.monthOrder].join(' / ') : '已写满'),
  '', '[断法与古籍出处](../' + config.policy + ')', '', ...directory, '',
 ].join('\n'));
 console.log({...progress,files:files.length});
