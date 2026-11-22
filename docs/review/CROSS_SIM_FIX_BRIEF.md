@@ -1,4 +1,4 @@
-# 跨卦相似订正说明（2026-11-20）
+# 篇间相似订正说明（2026-11-20）
 
 ## 起因
 
@@ -11,6 +11,22 @@
 | 确定关系 | 307 | 39.0% |
 
 超标的多在成对卦（需／讼、师／比、泰／否、夬／姤、既济／未济等）：两卦体用、五行相近，写手拿前一卦的句子换字。读者只要连问两卦就会读到同一段话。门槛照面试稿定为 8%，已加进 `monthly-gate.sh`。
+
+## 第二轮：同卦异爻、同爻异月（2026-11-20 用户定「两项都全改」）
+
+跨卦改完后再量：同一卦不同爻同月的篇也大段共用（如艮初六与六四酉月，首句只差几字，盘面段把「上卦」「下卦」对调，其余相同）。用户亲写面试稿同卦异爻无一篇超 8%（最高 7.8%）、同爻异月无一篇超 15%（最高 13.6%）；跳槽同卦异爻 1,737 篇超 8%、同爻异月 333 篇超 15%，确定关系 1,566、446。用户定两个问项全改，标准与面试稿同：
+
+| 对照范围 | 门槛 | 面试稿 |
+|---|---|---|
+| 别卦 | 8% | 最高 3.9% |
+| 同卦异爻 | 8% | 最高 7.8% |
+| 同爻异月 | 15% | 最高 13.6% |
+
+`cross-sim.cjs` 默认查前两类（`--scope line --max 0.15` 查第三类），三类都已加进 monthly-gate。改法同上：每对改一侧，清单由协调者给出。
+
+- **同卦异爻**：本卦相同、体用往往相同，写手便沿用前一爻。改时从**本爻**入手：爻位（初、二、三……在卦中的位置与时义）、本爻爻辞与小象、本爻专属的注疏、本爻动后变成的卦（变卦不同，结局一段本就不同）、互卦与体用在本爻下的轻重；盘面段换讲法与次序，不把「上卦／下卦」「体互／用互」对调了事。
+- **同爻异月**：同一爻十二个月体用相同，只有旺衰不同。每篇要讲清本月旺衰让哪一处生克变轻变重、落到哪件实事上；同气两月（寅卯、巳午、申酉、亥子、辰未戌丑）的篇骨架、首句、收尾都不能相同，挑爻辞、小象、注疏里不同的部分来讲。
+- 重写的篇照 `docs/review/JOBCHANGE_INDEPENDENT_READ.md`（确定关系同样适用其第 1、3、4、5 条）逐篇自查：盘面五态与生克、「最」字、间接作用、引文逐字与出处、安慰许诺、断人、编造经过写成实况、规则名目。
 
 ## 改什么
 
@@ -26,9 +42,9 @@
 ## 收尾
 
 每卦改完：
-- `node scripts/review/cross-sim.cjs <问项> --hex <卦序> --list` 须 0（改了这一侧，对侧也会随之降下来）；
+- `node scripts/review/cross-sim.cjs <问项> --hex <卦序> --list` 须 0，`node scripts/review/cross-sim.cjs <问项> --hex <卦序> --scope line --max 0.15 --list` 须 0（改了这一侧，对侧也会随之降下来）；
 - 跳槽：`bash scripts/review/monthly-gate.sh job-change <卦序>` 最后一行 GATE PASSED；
 - 确定关系：`node scripts/review/check-monthly.mjs relationship-establishment --hex <卦序> --docs` passed、`style-monthly` passed、`consolation-scan` 0、`tishuai-audit` 0、`intra-repeat.cjs relationship-establishment 8 --hex <卦序>` 不比改前多；**绝不跑 `npm run build:relationship-establishment`**；
-- 回执 `reviews-monthly/hex-NNN.json` 加一条 finding（id `X<卦序>-R01`，status `fixed-documentation-conflict`，keys 列改过的篇，写明与哪几篇雷同、改了哪几段），重算 `sourceSha256`、更新 `reviewedAt`；`node scripts/build-monthly.mjs <问项> --hex <卦序>`。
+- 回执 `reviews-monthly/hex-NNN.json` 加一条 finding（id 第一轮 `X<卦序>-R01`、第二轮 `Y<卦序>-R01`，status `fixed-documentation-conflict`，keys 列改过的篇，写明与哪几篇雷同、改了哪几段），重算 `sourceSha256`、更新 `reviewedAt`；`node scripts/build-monthly.mjs <问项> --hex <卦序>`。
 
 不提交 git，只动分给你的卦。

@@ -37,26 +37,27 @@ const LINE_UP = {
   '59-1':'涣初六「用拯马壮吉」', '59-4':'涣六四「元吉」',
 };
 const ORDERS = ['spring-wood', 'summer-fire', 'autumn-metal', 'winter-water', 'seasonal-earth'];
-function lineFlip(t, done, fx, key) {
+function lineFlip(t, done, fx, key, DOWN = LINE_DOWN, UP = LINE_UP) {
   const a = adjust(fx), q = k => a.n[k].slice(-1), bq = fx.n.body.slice(-1);
   const G = P4.filter(k => fx.rel[k] === 'use_generates_body'), K = P4.filter(k => fx.rel[k] === 'use_controls_body');
-  if (LINE_DOWN[key] && done === 'F') {
+  if (DOWN[key] && done === 'F') {
     const hit = K.includes('changed_use') ? '克体在变用' : (bq === '死' && K.some(k => strong(q(k)))) ? '体死而克体之卦有力' : !K.length ? '盘中无克体之卦，凶辞直接主断' : null;
-    return hit ? {done:'D', note:'爻辞翻为不成（' + hit + '）：' + LINE_DOWN[key]} : {done, note:'爻辞作要过的坎：' + LINE_DOWN[key]};
+    return hit ? {done:'D', note:'爻辞翻为不成（' + hit + '）：' + DOWN[key]} : {done, note:'爻辞作要过的坎：' + DOWN[key]};
   }
-  if (LINE_UP[key] && done === 'D') {
+  if (UP[key] && done === 'D') {
     const end = fx.rel.changed_use;
     const ok = G.some(k => strong(q(k))) && bq !== '囚' && bq !== '死' && !/^R3/.test(t.why) && (t.t !== 'D' || fx.rel.use !== 'use_controls_body')
       && (end !== 'use_controls_body' || (!strong(q('changed_use')) && strong(bq)) || q('changed_use') === '死');
-    if (ok) return {done:'F', note:'爻辞翻为成：' + LINE_UP[key]};
+    if (ok) return {done:'F', note:'爻辞翻为成：' + UP[key]};
   }
   return {done, note:''};
 }
-function establishmentOf(fx, hexId, changedId, line) {
+// 2026-11-21：复合、新桃花沿用本口径，按问项换爻辞表（tables = {down, up}），确定关系不传 tables，结果不变。
+function establishmentOf(fx, hexId, changedId, line, tables) {
   const key = hexId + '-' + line;
   const t = tierFinal(fx, hexId, changedId, true);
   const d0 = split(t, fx, 'end');
-  const s = lineFlip(t, d0, fx, key);
+  const s = tables ? lineFlip(t, d0, fx, key, tables.down, tables.up) : lineFlip(t, d0, fx, key);
   const why = t.why + (t.t === 'C' ? ' → 有条件按结局拆为' + (d0 === 'F' ? '成' : '不成') : '') + (s.note ? ' → ' + s.note : '');
   return {v:s.done === 'F' ? 'favourable' : 'difficult', tier:t.t, split:d0, final:s.done, why};
 }

@@ -7,7 +7,7 @@ run 结构与查重 node scripts/review/check-monthly.mjs "$item" --hex "$h"
 run 口吻厚度套话 node scripts/review/style-monthly.mjs "$item" --hex "$h" --list
 run 安慰许诺 node scripts/review/consolation-scan.mjs "$item" --hex "$h" --list
 echo "== 篇内重复（8 字，须 0）"; r=$(node scripts/review/intra-repeat.cjs "$item" 8 --hex "$h" --list); echo "$r"; echo "$r" | tail -1 | grep -q '"articlesWithRepeat":0' || fail=1
-echo "== 跨卦相似（与别卦单篇共用 8 字片段超 8% 的篇，须 0；2026-11-20 未济照抄既济后补）"; node scripts/review/cross-sim.cjs "$item" --hex "$h" --list || fail=1
+echo "== 篇间相似（别卦、同卦异爻：共用 8 字片段超 8% 的篇须 0；同爻异月超 15% 须 0；2026-11-20 未济照抄既济后补，用户定按面试稿全改）"; node scripts/review/cross-sim.cjs "$item" --hex "$h" --list || fail=1; node scripts/review/cross-sim.cjs "$item" --hex "$h" --scope line --max 0.15 --list || fail=1
 echo "== 高频短语（见于 18 篇以上，除必要指称外须无）"; node scripts/review/phrase-scan.cjs "sources/editorial/$item/monthly" 18 | grep "hex-$(printf %03d "$h")" || echo 无
 echo "== 引文"; tmp=$(mktemp); tmp=$(cygpath -m "$tmp" 2>/dev/null || echo "$tmp"); node scripts/review/commentary-audit.mjs "$item" --monthly --out "$tmp" >/dev/null 2>&1; node -e "const r=require('$tmp');const a=Array.isArray(r)?r:(r.findings||[]);const k=a.filter(x=>JSON.stringify(x).includes('\"hex\":$h,')||JSON.stringify(x).includes('/$h/')||JSON.stringify(x).includes('hex-$(printf %03d "$h")'));console.log('本卦未核实',k.length);process.exit(k.length?1:0)" || fail=1
 [ $fail = 0 ] && echo "GATE PASSED $item $h" || { echo "GATE FAILED $item $h"; exit 1; }
