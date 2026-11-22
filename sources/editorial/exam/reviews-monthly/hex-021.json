@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "火雷噬嗑已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "火雷噬嗑已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -75,6 +75,22 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第八节间接作用、第十三节本用泄且末用不生。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03噬嗑.txt",
+      "scope": "六五经象，物不服而得中胜。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "176行钧金、得中而人无不服、贞厉乃免咎。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "655行克体宜衰、798行末克、804行体旺与克衰。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第八节相抵，第十三节取末克。"
     }
   ],
   "findings": [
@@ -153,6 +169,25 @@
         "21/4/丑"
       ],
       "finding": "冬木相，初火死，旺水在中途虽受两土制，所减的幅度及起头轻泄是否仍足以定难，有解释余地。按现行口径取不成，正文仍说实际水木有气、末土不强。秋月取中坎为局部受助的应，和本次难成并存。"
+    },
+    {
+      "id": "hex-021-line-5",
+      "status": "open-interpretation",
+      "keys": [
+        "21/5/寅",
+        "21/5/卯",
+        "21/5/辰",
+        "21/5/巳",
+        "21/5/午",
+        "21/5/未",
+        "21/5/申",
+        "21/5/酉",
+        "21/5/戌",
+        "21/5/亥",
+        "21/5/子",
+        "21/5/丑"
+      ],
+      "finding": "春震旺而末乾囚，冬震相、中坎旺、末乾休，末克虽轻仍按终应判难。古籍说旺体遇克无大害，能否据此许成留为解释分歧。夏取初耗不把末克说重，秋及土月末乾有力，收尾克势更显。"
     }
   ],
   "lineReviews": [
@@ -194,6 +229,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-021-line-4"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "噬干肉，得黄金；贞厉，无咎。",
+      "image": "“贞厉，无咎”，得当也。",
+      "reading": "王孔以黄为中、金为刚，联系得中而所治得当。朱熹兼取钧金，重贞厉而后免咎，与王孔对所治是否服从的说法有异。初离泄震，途中坎生、艮受制，末乾克震。坎受艮制又受乾生，在一层作用下按当月旺衰。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-021-line-5"
       ]
     }
   ],
@@ -277,18 +322,38 @@
       ],
       "scope": "逐读十二篇标题、简断、正文及应期，核春夏冬及土月从初离取巳午日，秋从中坎取亥子日。古注及专业说明订正后再读。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月正文及简断。寅卯、申酉及土月取末乾申酉日，夏取初离巳午日，冬取中坎亥子日。核读专业说明及取期与正文的轻重相合。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T00:29:29.305Z",
-  "sourceSha256": "86ce23f0c2428c8bf401391dd7d05d1a39310cfd64917897440ee0d46eea65cb",
+  "reviewedAt": "2026-11-22T00:33:57.396Z",
+  "sourceSha256": "de1fcf9e38b8e4aebcacd7560255e600247b8d041caf709bdeb1c8a9a65a8b22",
   "checks": {
-    "scope": "火雷噬嗑已写48篇",
-    "chartComparisons": 1296,
+    "scope": "火雷噬嗑已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
       479,
-      529
+      535
     ]
   }
 }
