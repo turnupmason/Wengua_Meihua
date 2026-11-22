@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **864 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否十二卦已齐。下一组为天火同人初九。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **876 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否十二卦已齐。天火同人已发布初九十二篇。下一组为同人六二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -76,6 +76,7 @@
 | [天地否 · 九四](hex-012.md#九四动--寅月) | 12 | 489–514 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 九五](hex-012.md#九五动--寅月) | 12 | 485–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 上九](hex-012.md#上九动--寅月) | 12 | 484–515 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
+| [天火同人 · 初九](hex-013.md#初九动--寅月) | 12 | 509–543 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
