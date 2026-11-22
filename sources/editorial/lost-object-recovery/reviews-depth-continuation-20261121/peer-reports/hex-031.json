@@ -8,12 +8,12 @@
   "baselineCommit": "5bf1453f1bf33ed13333b19ecc8271e5915723c0",
   "sourcePath": "sources/editorial/lost-object-recovery/hex-031.json",
   "baselinePath": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/baselines/hex-031.json",
-  "sourceSha256": "abb73fa53940cb75eae0099bd5e14d5957fac52717fbf7200f3511fda806a655",
+  "sourceSha256": "c49750b5b130800ed88ad871cf7bb80264eb126a7bac9dc765f296ee89d26815",
   "peerFullRead": true,
   "humanProfessionalReview": "pending",
   "userAcceptedThisVersion": false,
   "realWorldPredictionAccuracy": "not-validated",
-  "reviewedAt": "2026-11-21T23:07:36.688Z",
+  "reviewedAt": "2026-11-22T00:40:16.577Z",
   "readSources": [
     {
       "path": "CLAUDE.md",
@@ -78,6 +78,10 @@
     {
       "path": "sources/editorial/lost-object-recovery/hex-031.json",
       "scope": "abb73fa5版仅row17回应人数一处改为自然直述。该篇全部十一字段、双附文完整文本元数据、原时机独立再次实读，其余29篇未变且保持原审读时间。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-031.json",
+      "scope": "2026-11-22按无固定模板起句收尾，最终c49750b5版本仅2、4、26三篇r4变更。上述三篇十一字段、完整方向与形色附文（含全部角色适用元数据）、完整原应期均独立实际再次读完；其他27条peer记录及时间完全保持。不将本次三篇复读称为重新读完全30或全90篇。"
     }
   ],
   "manualReadbackEvidence": {
@@ -132,6 +136,16 @@
       {
         "sourceSha256": "abb73fa53940cb75eae0099bd5e14d5957fac52717fbf7200f3511fda806a655",
         "rows": "仅17行改动，整篇全字段两附文时机再读，其他29行不变"
+      },
+      {
+        "sourceSha256": "c49750b5b130800ed88ad871cf7bb80264eb126a7bac9dc765f296ee89d26815",
+        "rows": [
+          2,
+          4,
+          26
+        ],
+        "scope": "最终简断起句修订后独立整篇复读三行，十一字段、双附文全文及元数据、全时机；其余27行沿已读不变稿。",
+        "reviewedAt": "2026-11-22T00:40:16.577Z"
       }
     ],
     "requestedCorrections": [
@@ -191,7 +205,12 @@
         "reason": "正文审校语言改为直接说明正常关系及实际核查后果。"
       }
     ],
-    "assertion": "逐篇意见为独立实读后手写，字数、散列、锁定及重复检查不代替阅读，不代表预测实证验证或人工专业签准。"
+    "assertion": "逐篇意见为独立实读后手写，字数、散列、锁定及重复检查不代替阅读，不代表预测实证验证或人工专业签准。",
+    "afterShortOpeningCorrectionWholeRows": [
+      2,
+      4,
+      26
+    ]
   },
   "mechanicalChecks": {
     "allLockedFieldsPreserved": true,
@@ -207,13 +226,18 @@
     ],
     "shortHanRange": [
       76,
-      89
+      93
     ],
     "cross64OpeningFirstSentenceDuplicateHits": 0,
     "cross64ParagraphDuplicateHits": 0,
     "cross64NormalizedSentenceDuplicatesAtLeast24Han": 0,
     "authorAndPeerTripleHashesMatch": true,
-    "validateStoryCopyWithActualSupplements": "passed all 30 rows"
+    "validateStoryCopyWithActualSupplements": "passed all 30 rows",
+    "latestChangedRowsValidateStoryCopyWithActualSupplements": [
+      2,
+      4,
+      26
+    ]
   },
   "unresolvedProfessionalQuestionRows": [
     3,
@@ -271,15 +295,15 @@
       "monthOrder": "autumn-metal",
       "outcome": "conditional",
       "peerFullRead": true,
-      "peerFinding": "秋旺兑、休艮正常生、旺乾比、死巽可制与囚离末轻克准确。两件同用仅作实查联系，不推出物必在旁；初六浅感不许直接认领，中段比和吉应与双附文全。正文首段审校语气已提出修订。 作者依反馈直述化后，本篇十一字段、两附文及完整时机已独立再次读完，改动无损原义与强弱。",
+      "peerFinding": "秋旺兑、休艮正常生、旺乾比、死巽可制与囚离末轻克准确。两件同用仅作实查联系，不推出物必在旁；初六浅感不许直接认领，中段比和吉应与双附文全。正文首段审校语气已提出修订。 作者依反馈直述化后，本篇十一字段、两附文及完整时机已独立再次读完，改动无损原义与强弱。 简断自然起句修订后独立复读：新简断先设确知两物同用的前提，从另一物怎样收回接实际收存，未因相邻物或初感断定原件所在；秋旺兑、旺乾实比和与末囚离轻克俱全，起句由本篇路径自然展开。 本篇全部十一字段、双附文全文及角色适用元数据、完整原时机再次实际读完，仅r4变动。",
       "lineMeaningReview": "初六咸其拇为感应刚起，所感在末，脚指微动而未移足，有志而未伤静，故无吉凶悔吝之辞。志在外是应四的结构，不能指失物在户外或脚边。",
       "supplementReview": "本用艮只比已知原件石纹陶面黄色边缘质感；变离另参南、明窗文书与文彩环境。真实文件台取放才可续查，未从初六志在外定位置。",
       "counterevidenceResolution": "秋旺兑得本用休艮正常生扶，体互旺乾比和较实，用互死巽可制，变囚离仍有较轻克制。初六所见是初感，尚未涉及深入行动，不能只凭消息下结论。中段补查有基础，末段仍须把原件辨清；有条件寻回，以能核验并交接为准。",
       "openQuestions": [],
-      "reviewedRowSha256": "7447acc48733216a34836179a0c9ee7e39466b200d460a1655e9ed4e4c43b021",
-      "copySha256": "f34c1dcfe7d08196b828a23b2efdc2c5e9bc1be221b8056f2eb93da5221b49b7",
-      "assembledCopySha256": "a82d3c130df8221398d220243737a1f79fe994c16ae842b8d9e5d5fde9a39419",
-      "reviewedAt": "2026-11-21T23:01:07.071Z"
+      "reviewedRowSha256": "2ba3b521bba8b882c1a5e871b0dc0d2201f3c33e43092d079a052ceed5859f5d",
+      "copySha256": "bfedf9c51f5ad654f3409746e7e666322af80bb65eb392a97906709c4e58b779",
+      "assembledCopySha256": "328baf3487a5c57f7de72d7094e3fd07c46e2e778519b58026ba0560e8a418f6",
+      "reviewedAt": "2026-11-22T00:40:16.577Z"
     },
     {
       "rowIndex": 3,
@@ -306,17 +330,17 @@
       "monthOrder": "seasonal-earth",
       "outcome": "favourable",
       "peerFullRead": true,
-      "peerFinding": "土月相兑承旺艮生、相乾比，能制囚巽，末休离正常克仍在。浅感与方位不混，开头能核的有利只是阶段条件；原favourable同末克如何取权独立留疑，初段吉应及双附文完整。",
+      "peerFinding": "土月相兑承旺艮生、相乾比，能制囚巽，末休离正常克仍在。浅感与方位不混，开头能核的有利只是阶段条件；原favourable同末克如何取权独立留疑，初段吉应及双附文完整。 简断自然起句修订后独立复读：新简断先核最初印象是否有收放记录印证，再请原处补看；旺艮初助、相兑相乾能查与休离末正常克保持，初六浅感未被写成已获物，当前实物和原标记仍须相认。 本篇全部十一字段、双附文全文及角色适用元数据、完整原时机再次实际读完，仅r4变动。",
       "lineMeaningReview": "初六咸其拇为感应刚起，所感在末，脚指微动而未移足，有志而未伤静，故无吉凶悔吝之辞。志在外是应四的结构，不能指失物在户外或脚边。",
       "supplementReview": "本用艮只比已知原件石纹陶面黄色边缘质感；变离另参南、明窗文书与文彩环境。真实文件台取放才可续查，未从初六志在外定位置。",
       "counterevidenceResolution": "土月相兑得旺艮本用生扶，体互相乾比和有力，用互囚巽可制；变休离仍按正常克体论。初六只是浅感未躁，未许物已归来。前中较好的协查与控制条件使本次偏有希望，末段的辨认关口仍须认真完成，不能因起头顺利省去验物。",
       "openQuestions": [
         "相体、旺艮初生、相乾比及囚巽可制较有利，末休离仍正常克体；原favourable与末克的合权尺度尚待专业说明。"
       ],
-      "reviewedRowSha256": "d02f61bfe02b61f2fc1d0eb1367d301433b65a6d6a5bf2fccc3db5d297b1595d",
-      "copySha256": "5a9b29c342c6ba47195bca8345061be389b34f63be1ca209b57dfe3dc9d85605",
-      "assembledCopySha256": "e5d46d94b6491683d74747820495bfeec40515208f726a91f5fdb23d824ed208",
-      "reviewedAt": "2026-11-21T23:01:07.071Z"
+      "reviewedRowSha256": "4b259e42ec415a9021b9ec41226fc564be27ac77a12fd028fc498746f4ab17b8",
+      "copySha256": "5155cdfa7949fa177f38b0c53529854bee9c797d6cf8b66cd4853aae26be49f2",
+      "assembledCopySha256": "6b9eb69baaad88e6fd3a845d69e2d54482925ee52ec3096079cf74854f1d4936",
+      "reviewedAt": "2026-11-22T00:40:16.577Z"
     },
     {
       "rowIndex": 5,
@@ -684,17 +708,17 @@
       "monthOrder": "summer-fire",
       "outcome": "difficult",
       "peerFullRead": true,
-      "peerFinding": "夏相艮有力、三死金耗轻、休巽正常克俱在。上六口舌之末而实处不足，不指某人撒谎；查外层与开内部区分。原difficult与有力轻耗如何取权留问，耗不可改称援的文字改直述后复核。 作者依反馈直述化后，本篇十一字段、两附文及完整时机已独立再次读完，改动无损原义与强弱。",
+      "peerFinding": "夏相艮有力、三死金耗轻、休巽正常克俱在。上六口舌之末而实处不足，不指某人撒谎；查外层与开内部区分。原difficult与有力轻耗如何取权留问，耗不可改称援的文字改直述后复核。 作者依反馈直述化后，本篇十一字段、两附文及完整时机已独立再次读完，改动无损原义与强弱。 简断自然起句修订后独立复读：新简断从收到代查答复后追问真正开看范围切入，夏相艮有力、三处死金轻泄和休巽正常克俱留；口舌有感实处不足仍落在需要实际核物，不推现实人物说谎。 本篇全部十一字段、双附文全文及角色适用元数据、完整原时机再次实际读完，仅r4变动。",
       "lineMeaningReview": "上六辅颊舌皆言语之具，咸道转末，滕口说而实意不足；滕与媵有异解，均不提供现实撒谎者或持物人身份。口头答复须另有查验。",
       "supplementReview": "本用兑仅核既知金属开口白面接口缺角，变乾另参西北圆器高处金玉周边；相关收纳有真实口头线索才请人实看，不推实物必为金属。",
       "counterevidenceResolution": "夏相艮受休巽体互正常克制，本用死兑、用互死乾及变死乾分别泄体较轻。上六所言止于辅颊舌，须察言语背后有无实据。自身有力、所耗较轻，足以安排核查，却并未形成直接生扶；回话尚不能代替交接，本次仍偏难寻回。",
       "openQuestions": [
         "夏相体、三死金轻耗和休巽正常克，配上六言语实处不足仍取difficult，需明确权重；少耗不等于生助，但也不能作为必须难的自动规则。"
       ],
-      "reviewedRowSha256": "81019e1bacc31fe4cb70d00e96fa0ba362b4d7e7a289ec01bafc8c317720ad6e",
-      "copySha256": "58cf175f720d36aeded3edb28fbef1fce4ae4c1c5b8b29efb65120b255cc0f94",
-      "assembledCopySha256": "2ef9f97e40d1b3f56a42e8eee922790ad4362ed5958d7fd698cdb6e48812c84a",
-      "reviewedAt": "2026-11-21T23:01:07.071Z"
+      "reviewedRowSha256": "612013e21a82a297d5a7c5c6931f2d8e2e9e127b3fc7cc6b707d3c9296192f63",
+      "copySha256": "bf41893454423d784428546e08afe72f8cdef1d98895bc5e50f9281f22040ea2",
+      "assembledCopySha256": "8b5767f0429ed6a35845c0baf322e9995b56791eef8d54233087cf9f2f553ded",
+      "reviewedAt": "2026-11-22T00:40:16.577Z"
     },
     {
       "rowIndex": 27,
@@ -745,6 +769,47 @@
       "copySha256": "3ce744a9fbf05a3ff5fda8526cdbad60141fe853b7d27cdb65b839db317e3f8b",
       "assembledCopySha256": "a283f95cc58f6883f1c234881b5309526f41ccbc1d9dae208d90664989764c34",
       "reviewedAt": "2026-11-21T23:01:07.071Z"
+    }
+  ],
+  "shortOpeningRevisions": [
+    {
+      "reviewedAt": "2026-11-22T00:40:16.577Z",
+      "priorSourceSha256": "abb73fa53940cb75eae0099bd5e14d5957fac52717fbf7200f3511fda806a655",
+      "sourceSha256": "c49750b5b130800ed88ad871cf7bb80264eb126a7bac9dc765f296ee89d26815",
+      "authorReportSha256": "4109e225a18893b353f14de5ff0d65c6518ae5f194ee69132cb2156436ecbbb2",
+      "rows": [
+        2,
+        4,
+        26
+      ],
+      "onlyField4Changed": true,
+      "unchangedPeerEntries": 27,
+      "entries": [
+        {
+          "rowIndex": 2,
+          "oldShort": "原物还有找回机会。秋金得势，熟悉位置与后续补查都有可用条件，最先的线索值得查深。若物品曾与另一件同用，可追到实际收存的一步；末后仍有核验阻力，须让独有记号与原经过相合，再落实领取。",
+          "newShort": "若确知原物曾与另一件东西同用，宜从那件物品怎样收回查起，原件仍有寻回机会。自身与熟处配合较足，后续也能继续补看，但初来迹象还须落实为实据；末后仍有较轻限制，认准独有旧痕与真实经过，再安排领取。",
+          "priorReviewedRowSha256": "7447acc48733216a34836179a0c9ee7e39466b200d460a1655e9ed4e4c43b021",
+          "peerFinding": "新简断先设确知两物同用的前提，从另一物怎样收回接实际收存，未因相邻物或初感断定原件所在；秋旺兑、旺乾实比和与末囚离轻克俱全，起句由本篇路径自然展开。",
+          "peerWholeReadAt": "2026-11-22T00:40:16.577Z"
+        },
+        {
+          "rowIndex": 4,
+          "oldShort": "原物较有希望找回。土月起头有力相助，自己和熟悉处也有条件把经过查清，最初印象可以认真核实。末后仍有直接限制，不能省去辨物手续；拿旧照片与真实收放对证，认准是原来那件，再安排取回。",
+          "newShort": "最早那处印象若有收放记录印证，可据此请原处补看，原物找回的希望较好。起头援助较足，自身与熟悉范围能接着查清经过；初见迹象仍浅，收尾的核验限制也在，旧照片和独有标记对准当前实物后，再办理取回。",
+          "priorReviewedRowSha256": "d02f61bfe02b61f2fc1d0eb1367d301433b65a6d6a5bf2fccc3db5d297b1595d",
+          "peerFinding": "新简断先核最初印象是否有收放记录印证，再请原处补看；旺艮初助、相兑相乾能查与休离末正常克保持，初六浅感未被写成已获物，当前实物和原标记仍须相认。",
+          "peerWholeReadAt": "2026-11-22T00:40:16.577Z"
+        },
+        {
+          "rowIndex": 26,
+          "oldShort": "原物眼下偏难找回。夏令自己仍能核近处，查询耗费较轻，但中段仍有正常阻力，答复又容易停在口头。对方说查过了，可问具体看了哪一层、有没有原记号；说不上来的先按未验保存，有实际细节再继续辨物。",
+          "newShort": "若收到代查答复，可以追问实际打开了哪处、看到了什么，再依原记号核物，本次仍偏难取回。夏令自身有力复查，几处查询耗费较轻，休巽带来的中段阻力仍在。上六口舌相感而实处不足，宜记清查过的范围，见到原件以后再接领取。",
+          "priorReviewedRowSha256": "81019e1bacc31fe4cb70d00e96fa0ba362b4d7e7a289ec01bafc8c317720ad6e",
+          "peerFinding": "新简断从收到代查答复后追问真正开看范围切入，夏相艮有力、三处死金轻泄和休巽正常克俱留；口舌有感实处不足仍落在需要实际核物，不推现实人物说谎。",
+          "peerWholeReadAt": "2026-11-22T00:40:16.577Z"
+        }
+      ]
     }
   ]
 }

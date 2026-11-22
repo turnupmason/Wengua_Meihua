@@ -64,6 +64,14 @@
     {
       "path": "sources/editorial/lost-object-recovery/reviews-depth-continuation-20261121/author-reports/hex-030.json",
       "scope": "独立正文审读后读取作者19行具体openQuestions及基线信息，用于比较疑问是否同指原判权重，未代替独立阅读。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-030.json",
+      "scope": "2026-11-22仅0、5、11行简断自然化，独立完整再读这三篇十一字段、双附文和全部应期；0行发现既有格式门所拦禁令句后，作者改为直接说明实看条件，本篇又全量再读。其余27篇文字与实际读时未变。"
+    },
+    {
+      "path": "sources/editorial/lost-object-recovery/hex-030.json",
+      "scope": "跨全64卦另识别row29旧简断起句重复后，仅该行short改动；独立再次实际阅读本篇全部十一字段、双附文和完整未取期说明。此前0、5、11三篇改后实读记录与时间保持，其他26篇未改，未将此次一篇复读记作全30篇新审。"
     }
   ],
   "manualReadbackEvidence": {
@@ -157,7 +165,16 @@
         "rows": "9篇改变者全字段双附文与完整时机再次实读，其余21篇未变"
       }
     ],
-    "assertion": "原典、全部旧稿、最终30篇十一字段与两附文完整应期均实际阅读；修改9篇全文再读后才绑定哈希。机器统计不能代替语义审读、专业判定或用户验收。"
+    "assertion": "原典、全部旧稿、最终30篇十一字段与两附文完整应期均实际阅读；修改9篇全文再读后才绑定哈希。机器统计不能代替语义审读、专业判定或用户验收。",
+    "afterShortOpeningRevisionWholeRows": [
+      0,
+      5,
+      11,
+      29
+    ],
+    "afterShortFormatCorrectionWholeRows": [
+      0
+    ]
   },
   "mechanicalChecks": {
     "lockedFields": [
@@ -173,7 +190,7 @@
     ],
     "shortHanRange": [
       82,
-      91
+      101
     ],
     "exactOpeningParagraphAndUnquotedSentenceDuplicatesAtLeast24HanWithOtherCompletedLongProse": 0,
     "authorAndPeerTripleHashesMatch": true
@@ -199,8 +216,8 @@
     28,
     29
   ],
-  "reviewedAt": "2026-11-21T23:03:01.308Z",
-  "sourceSha256": "1caa3af1b4c8a4f50cd7783971ff9b649916576adf9cb4392f620095fbc4638e",
+  "reviewedAt": "2026-11-22T00:28:08.718Z",
+  "sourceSha256": "a5e787d60d57c24678e30958c93ec0aaf337b05e83f8360abcaf4fce74a390b8",
   "baselineSha256": "429db19b6fcb6366cd06d83bc9773b39bd739b12522a5c4fc8c24e146e5e119a",
   "directionSourceSha256": "24646345d619f08d5ba8a3221565836fa5fe2b086ec8e78f95704678428580bd",
   "imageSourceSha256": "0da510c8993dfbc5015c85a766c5122a5a9d9b2b10495671ad3add1af6ccbf23",
@@ -212,17 +229,17 @@
       "outcome": "conditional",
       "peerAgent": "/root/write_31_32_34",
       "peerFullRead": true,
-      "peerFinding": "从最后实据收放起笔，春相离本比、囚兑体互可制、旺巽用互直生和死艮变耗轻均准确。初九履错然按警慎未济解释，非已走错路，无咎不替代得物；过程中协查吉应与艮东北真实停留、离原件已知字纹红紫附文合读，无锁字段改动。",
+      "peerFinding": "从最后实据收放起笔，春相离本比、囚兑体互可制、旺巽用互直生和死艮变耗轻均准确。初九履错然按警慎未济解释，非已走错路，无咎不替代得物；过程中协查吉应与艮东北真实停留、离原件已知字纹红紫附文合读，无锁字段改动。 本次新简断从最后使用后的收放接续起笔，春相比、旺巽直助与轻末耗均保留，初九警慎落到实际翻看和认痕。三篇完整合装已读，随后本行禁令句改为熟悉之处仍须实看后，又将本篇全部十一字段、两附文与全时机再次读回；新短文100汉字。",
       "lineMeaningReview": "初九全经注疏小象：错然是警慎之貌，离始将进未济，以敬慎避咎；不把错然作已经走错路，亦不把无咎等同于得物。",
       "supplementReview": "本用离仅比原物已有字样文彩红紫、壳面封口标识；变艮为东北近路石旁、土石门径黄色环境，限定真实停留和存放，未转为原件新增性质。",
       "openQuestions": [],
       "lockedFieldsPreserved": true,
       "bodyHan": 474,
-      "shortHan": 85,
-      "reviewedAt": "2026-11-21T23:03:01.308Z",
-      "reviewedRowSha256": "0cf55c950904a6a112f10ccfac1e936d7ee6a77c9b6473160e7e565fcfeccb3f",
-      "copySha256": "c1b015da7eefdb760c935054ad25ac24267b276ede63c17ea1854d2fe686871f",
-      "assembledCopySha256": "d835faa4b30bb1a8c1d7cb947e2b69f7c3303e5f9979ae8dfc04e62d2e585050"
+      "shortHan": 100,
+      "reviewedAt": "2026-11-22T00:13:48.698Z",
+      "reviewedRowSha256": "c35874d50461ae811437bf8b6fe3e7cb66f0dd1ed40b7171bd8aa0614857f061",
+      "copySha256": "61f9f5c34c789a712b0e243458600afd0ea370032c2c59fd8a49adc066f290ee",
+      "assembledCopySha256": "289effdebec1c77aff761b69e5bbb7d13145ecc5ae3099b4eae7fa5c5f63792e"
     },
     {
       "rowIndex": 1,
@@ -311,17 +328,17 @@
       "outcome": "favourable",
       "peerAgent": "/root/write_31_32_34",
       "peerFullRead": true,
-      "peerFinding": "春相离初比、囚兑体互可制、旺巽用互生与末囚乾可制同向；六二居中得位、文明得中之元吉完整，黄字不转物色。原协查吉应和乾西北圆器环境、离本有纹色附文全读，偏有希望仍要求见物交接。",
+      "peerFinding": "春相离初比、囚兑体互可制、旺巽用互生与末囚乾可制同向；六二居中得位、文明得中之元吉完整，黄字不转物色。原协查吉应和乾西北圆器环境、离本有纹色附文全读，偏有希望仍要求见物交接。 简断现从原处复查、经手协查到末后辨物的连续条件起笔，仍为较有希望，不以黄离强定颜色；独立整篇重读确认元吉得中、末可制、两附文角色和原过程吉应均相容，短文96汉字。",
       "lineMeaningReview": "六二全经注疏小象：黄为中色，居中得位，以柔处柔、文明得中而元吉；吉义完整，黄不用于强定失物颜色。",
       "supplementReview": "离为原件书文字纹色块及封口既有特征，乾为西北金石圆器高处环境；实际用过盒格才补核，不以六二黄字或变乾金器强定失物本体。",
       "openQuestions": [],
       "lockedFieldsPreserved": true,
       "bodyHan": 469,
-      "shortHan": 83,
-      "reviewedAt": "2026-11-21T23:03:01.308Z",
-      "reviewedRowSha256": "f3dafdc5ce64b94258b0b154764ef4ea57efb826a0a00d6332c0a2f4e723cc79",
-      "copySha256": "de8096e909d7691f08b12e0f1f8274293ed75f82bc3813e712a05e2fcd8a98b2",
-      "assembledCopySha256": "41c9182aa4f9c37e6161144306b022a7c4eb6a1ce5a1627b17f237074c3cfedc"
+      "shortHan": 96,
+      "reviewedAt": "2026-11-22T00:13:48.698Z",
+      "reviewedRowSha256": "9958dea1d61ff3e04ae45af22f693249bc1a4137c6d97ad4d58b563b2be43a63",
+      "copySha256": "961fa1c891663068d3face758a0d637167a4d360e047e5bffe18f7b1423e1098",
+      "assembledCopySha256": "9347ca885b732e5fbc7130c2f50ce19ec774c79bcc9466cc0ddb550690bc580a"
     },
     {
       "rowIndex": 6,
@@ -433,7 +450,7 @@
       "outcome": "conditional",
       "peerAgent": "/root/write_31_32_34",
       "peerFullRead": true,
-      "peerFinding": "夏旺离本比、死兑可制和中末两休木正常生，未沿旧稿降低休生作用。九三旧明不可久恃与适时任人接续都清楚，已查/未查交代有具体目的；初段仍开放原处吉应和两附文完整，条件级的古义权重保留待审。",
+      "peerFinding": "夏旺离本比、死兑可制和中末两休木正常生，未沿旧稿降低休生作用。九三旧明不可久恃与适时任人接续都清楚，已查/未查交代有具体目的；初段仍开放原处吉应和两附文完整，条件级的古义权重保留待审。 短文以能实看的范围及换人续查须交明资料起句，旧势不可久恃与委任接续仍完整；新短文97汉字。全篇再次实读确认夏旺本比、两处休木正常直生和初段原处窗口未改变，原权重疑问继续保留。",
       "lineMeaningReview": "九三全经注疏小象：下离将终、明将没、何可久；当委事任人养志，无此转接则至耋嗟而凶，不取日落时刻、人物年龄或物品损坏。",
       "supplementReview": "离原件独有文字文彩红紫按旧图辨，震的东、闹市大途竹木青碧另属实际经过处；真停留和真实收拾前提完整，未用日昃推实际时刻。",
       "openQuestions": [
@@ -441,11 +458,11 @@
       ],
       "lockedFieldsPreserved": true,
       "bodyHan": 471,
-      "shortHan": 89,
-      "reviewedAt": "2026-11-21T23:03:01.308Z",
-      "reviewedRowSha256": "c6857abd962e57468de25caf81f784d83884a730625194ed3516bedbac14d144",
-      "copySha256": "73862ad460be9159196d2540b23e548234efd7b9ad948ab82cda1a16def51e4a",
-      "assembledCopySha256": "f0df5d2ba43fe81e154a3d9b0700735a6338b2645e15fac72b042e70fef4022d"
+      "shortHan": 97,
+      "reviewedAt": "2026-11-22T00:13:48.698Z",
+      "reviewedRowSha256": "8fe7952d9a4ba596cfd7e797fd20dcc9aff296f6e74212d84a996a707cf303d3",
+      "copySha256": "539edc815703bd39da298de660edaa33f71bb3f322fae1340eea40e40aff3605",
+      "assembledCopySha256": "ce4afe01185932416dd0642d60ce2ac77152a0bdd82e6b16e267056587e7d584"
     },
     {
       "rowIndex": 12,
@@ -799,7 +816,7 @@
       "outcome": "difficult",
       "peerAgent": "/root/write_31_32_34",
       "peerFullRead": true,
-      "peerFinding": "土月休离初比正常、相兑需实核、中末囚巽囚震生薄都保留。上九已补有嘉去害才能免咎、当为不为仍有咎，原吉义没有因难档消失；最终全部字段、两附文与不取期重读，具体联系人与实物资料的类推不杜撰人物。",
+      "peerFinding": "土月休离初比正常、相兑需实核、中末囚巽囚震生薄都保留。上九已补有嘉去害才能免咎、当为不为仍有咎，原吉义没有因难档消失；最终全部字段、两附文与不取期重读，具体联系人与实物资料的类推不杜撰人物。 本次仅简断改从原记录可续、协查开看条件不易接齐自然起笔；已独立再次完整阅读十一字段、两附文及原不取期整句，休离比和正常、囚巽囚震援少、相兑验物需实据与上九有功方无咎均接续正文，未把明确方向或联系人等同已经领回。",
       "lineMeaningReview": "上九全经注疏小象：离道既成，出征除其非类以去民害、正邦；有嘉折首获匪其丑乃无咎，若应除害而不为则有咎。作者已依建议补足正反条件，现代只类推实际核验缺口，不影射现实人物。",
       "supplementReview": "离本用核旧字样彩面保护构造与赤色，变震另参东向闹市道路竹木花草青碧；真实行程和相应收拾记录限制明确，不凭征伐推盗贼或同行者。",
       "openQuestions": [
@@ -807,11 +824,86 @@
       ],
       "lockedFieldsPreserved": true,
       "bodyHan": 526,
-      "shortHan": 88,
-      "reviewedAt": "2026-11-21T23:03:01.308Z",
-      "reviewedRowSha256": "29f57b8688ac636d9df82aefe2a9d3d6e6171321ba9596058e186e0cef3ee2c0",
-      "copySha256": "f4ad27e69b898944081ea7256c479a91723cbd26085891a49bb1b937798184d2",
-      "assembledCopySha256": "94303575d650c39ab7ff6dcf977350d519f30252ee0fcea6dba10998410b8a3b"
+      "shortHan": 101,
+      "reviewedAt": "2026-11-22T00:28:08.718Z",
+      "reviewedRowSha256": "5c43089499dab5cedc963ba54926118e880a57fcfeaa9f46e30ff3c1e7282113",
+      "copySha256": "7975cd4386c22de77f3a7e76a09a78e05d2010fdcf9691911589e707baa34cdc",
+      "assembledCopySha256": "d20704745f9b262462efed171f691933ef0dd3e75bdf56d91052dcebdef218a6"
+    }
+  ],
+  "shortOpeningRevisions": [
+    {
+      "reviewedAt": "2026-11-22T00:13:48.698Z",
+      "beforeSourceSha256": "1caa3af1b4c8a4f50cd7783971ff9b649916576adf9cb4392f620095fbc4638e",
+      "afterSourceSha256": "79b05e93c8c182620d3c1d8073ca0269f02ad3d9d4e0555f30b2626cc08a1428",
+      "beforePeerReportSha256": "76c4db1beb0cd8fe7da6ca56d9c7f5421c63fa0c1cff71acd149def89418fb92",
+      "wholeRowsRead": [
+        0,
+        5,
+        11
+      ],
+      "additionalWholeRowsRead": [
+        0
+      ],
+      "onlyChangedField": 4,
+      "otherFieldsPreserved": true,
+      "formatGateWithActualSupplements": "passed-three-changed-rows",
+      "entries": [
+        {
+          "rowIndex": 0,
+          "beforeShort": "这件东西还有找回机会。春令离火得相，原范围可查，过程中又有旺木相助，值得把最后一次使用后的收放逐项接清。初九重在起步谨慎，若曾托人代看，要确认真正翻到了哪里；认出独有痕迹以后，才算接近领回。",
+          "afterShort": "先把最后一次使用后的收放接清，寻回原件仍有可用的机会。春令离火得相，原范围有条件复查，过程中旺木相助，末段耗费较轻。初九要求起步警慎；若托人代看，须问清实际翻到了哪里，再以独有痕迹认物，熟悉之处也须实看，才知道物件是否还在。",
+          "shortHan": 100,
+          "previousReviewedRowSha256": "0cf55c950904a6a112f10ccfac1e936d7ee6a77c9b6473160e7e565fcfeccb3f",
+          "previousCopySha256": "c1b015da7eefdb760c935054ad25ac24267b276ede63c17ea1854d2fe686871f",
+          "previousAssembledCopySha256": "d835faa4b30bb1a8c1d7cb947e2b69f7c3303e5f9979ae8dfc04e62d2e585050",
+          "previousReviewedAt": "2026-11-21T23:03:01.308Z"
+        },
+        {
+          "rowIndex": 5,
+          "beforeShort": "原物较有希望找回。春令离火得相，原处可查，旺巽又能助你接续经手线索，末后的辨认也有力完成。六二黄离得中，宜沿真正使用和收放的范围查，不为模糊消息四处改向；同款按旧标记核准，再把认领接好。",
+          "afterShort": "从原处复查到经手协助，再到最后辨物，本次均有可用条件，原物较有希望找回。春相离火有力，旺巽又能直接生助，宜把有凭据的收放查到认领。六二黄离得中，所查范围须合实情；遇到同款物，核准旧标记再接领取，不为模糊消息四处改向。",
+          "shortHan": 96,
+          "previousReviewedRowSha256": "f3dafdc5ce64b94258b0b154764ef4ea57efb826a0a00d6332c0a2f4e723cc79",
+          "previousCopySha256": "de8096e909d7691f08b12e0f1f8274293ed75f82bc3813e712a05e2fcd8a98b2",
+          "previousAssembledCopySha256": "41c9182aa4f9c37e6161144306b022a7c4eb6a1ce5a1627b17f237074c3cfedc",
+          "previousReviewedAt": "2026-11-21T23:03:01.308Z"
+        },
+        {
+          "rowIndex": 11,
+          "beforeShort": "原物还有找回机会。夏令离火旺，手边可查的条件较好，中后两处休木也仍正常生助。九三戒旧势难久，若查看已经受限，宜把实际查过的范围交给能续办的人。交接时一并留下原痕迹，见物以后再核，而不是从头重复询问。",
+          "afterShort": "能够实际查看的范围宜先查清，若须换人接续，记录和原痕迹应一并交明；这次仍有找回机会。夏令离火旺，前段有力，中后休木也正常生助。九三提醒旧势不可久恃，查验条件一旦改变，应交给能续办者；见物以后再认，别用反复询问代替查看。",
+          "shortHan": 97,
+          "previousReviewedRowSha256": "c6857abd962e57468de25caf81f784d83884a730625194ed3516bedbac14d144",
+          "previousCopySha256": "73862ad460be9159196d2540b23e548234efd7b9ad948ab82cda1a16def51e4a",
+          "previousAssembledCopySha256": "f0df5d2ba43fe81e154a3d9b0700735a6338b2645e15fac72b042e70fef4022d",
+          "previousReviewedAt": "2026-11-21T23:03:01.308Z"
+        }
+      ]
+    },
+    {
+      "reviewedAt": "2026-11-22T00:28:08.718Z",
+      "beforeSourceSha256": "79b05e93c8c182620d3c1d8073ca0269f02ad3d9d4e0555f30b2626cc08a1428",
+      "afterSourceSha256": "a5e787d60d57c24678e30958c93ec0aaf337b05e83f8360abcaf4fce74a390b8",
+      "beforePeerReportSha256": "c75b04583459d451f48c11c9ee32996d7bc6d3f6c33425e02ea19d13064716c3",
+      "wholeRowsRead": [
+        29
+      ],
+      "onlyChangedField": 4,
+      "otherFieldsPreserved": true,
+      "formatGateWithActualSupplements": "passed-one-changed-row",
+      "entries": [
+        {
+          "rowIndex": 29,
+          "beforeShort": "原物目前偏难找回。土月离火休，原处仍有正常照应，但中后两处囚木援少，自己核有气之金也要实据。若后面的位置打不开，就先问谁能按原标记进去看。上九重处理所当，查找宜集中在真实缺口，有新实物信息再续接。",
+          "afterShort": "原处记录虽可继续用，后面的协查和开看条件却不易接齐，这次取回物品偏难。土月休离有正常比和，囚木的中后援助较少，验物又须实据；若存放处暂时打不开，先问清谁能查看并交好原标记。上九贵在处理所当，宜补真实缺口，等新物件信息再续接。",
+          "shortHan": 101,
+          "previousReviewedRowSha256": "29f57b8688ac636d9df82aefe2a9d3d6e6171321ba9596058e186e0cef3ee2c0",
+          "previousCopySha256": "f4ad27e69b898944081ea7256c479a91723cbd26085891a49bb1b937798184d2",
+          "previousAssembledCopySha256": "94303575d650c39ab7ff6dcf977350d519f30252ee0fcea6dba10998410b8a3b",
+          "previousReviewedAt": "2026-11-21T23:03:01.308Z"
+        }
+      ]
     }
   ]
 }
