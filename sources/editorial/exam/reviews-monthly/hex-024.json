@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 60,
+  "wholeArticlesRead": 72,
   "authorshipScope": {
-    "currentReadback": "地雷复已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "地雷复已写72篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -119,6 +119,26 @@
     {
       "path": "sources/editorial/exam/hex-024.json",
       "scope": "六五原断、判据与原取期规格"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03復.txt",
+      "scope": "上六完整爻辞、小象、王弼以迷求复及孔颖达终败的释义"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "复上六居复终、终迷不复"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "迷而不复与十年为数之终，久无复正之义"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§2 R1b 原取，§13 无比和体死且无援及结果凶辞对最终结论的适用边界"
+    },
+    {
+      "path": "sources/editorial/exam/hex-024.json",
+      "scope": "上六五气原判及未取期的规格。"
     }
   ],
   "findings": [
@@ -188,6 +208,17 @@
         "24/5/丑"
       ],
       "finding": "辰、未、戌、丑：三坤得令，原体囚，末坎死又受土制。按项目 R1a 只要无直接克体而仍有生体，不将受制之生归零，故取过。若读《体用》「彼灭其吉」为抹去实助或以衰旺优先，这四月权重有分歧；现行并不这么处理。春冬的求名结果取期与夏秋土月过程薄助取期均在原结构内，旧稿试题和通知方式已从公开稿与注栏所呈取期移除。"
+    },
+    {
+      "id": "hex-024-line-6",
+      "status": "open-interpretation",
+      "keys": [
+        "24/6/寅",
+        "24/6/卯",
+        "24/6/亥",
+        "24/6/子"
+      ],
+      "finding": "寅卯与亥子最明显：原体能担、四土少力，体用可按《求名占》取成。第十三节在无克体且有直接落在所问结果的凶辞时据此改断，故四篇仍过不了。如果将上六之凶限于原文行师为国，不将其取成一般所求不成，优先级会不同。巳午、土月也依现行裁决，审计保留前中末由自身担当的困难。秋月体死无援，盘上的不成并不依赖爻辞单项裁决。"
     }
   ],
   "lineReviews": [
@@ -237,6 +268,16 @@
       "status": "author-readback-complete",
       "openFindingIds": [
         "hex-024-line-5"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "迷复，凶，有灾眚。用行师，终有大败；以其国，君凶。至于十年不克征。",
+      "image": "“迷复之凶”，反君道也。",
+      "reading": "上六动上坤变艮，原体下震不动，初与两互为坤，末艮，四处土都为震木所克。全盘无克体、生体与比和。寅卯木旺土死、亥子木相土囚，体用面可成。巳午体休土相、土月体囚土旺，按无比和条不以皆衰径判不成，前中末须自担。申酉体死，所遇土同样退气，原局无援已不足；爻辞同向。上六「迷复，凶」后言所为终败，王孔从以迷求复、难得克胜看，程朱重迷不返。依已定考试规则，其意落在所问结果。十年照程颐读为久而难复，不换成期限。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-024-line-6"
       ]
     }
   ],
@@ -340,17 +381,37 @@
       ],
       "scope": "十二篇标题、简断、自然段连同取期说明从作者源逐篇读回。对照同爻面试与确定关系示例及考试五气判断。正文说初中如何凭原有本领，末坎受坤制后为何仍有用，并把具体日支留给折叠的规则出处。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二篇各按同卦面试与确定关系的语气和解释厚度对读，已读回题名、简断、完整正文和无期说明。写明已有本领、耗力在何处和上六的结果义，删除底稿试题与具体失误推演，不取爻辞年数作时间。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T02:40:03.235Z",
-  "sourceSha256": "1f5d1dcca2ace4e9c42fc07eeaa4de20c12c31302853f03342aa921a535290fd",
+  "reviewedAt": "2026-11-22T02:48:19.999Z",
+  "sourceSha256": "a95e733789b2f1df0f9757183bba6a74999747bf84b12c5b8bf6e70d2f133895",
   "checks": {
-    "scope": "地雷复已写60篇",
-    "chartComparisons": 1620,
+    "scope": "地雷复已写72篇",
+    "chartComparisons": 1944,
     "chartMismatches": 0,
-    "dateCases": 120,
+    "dateCases": 144,
     "bodyHanRange": [
-      474,
+      471,
       577
     ],
     "publicProseExplicitDayBranchMentions": 0

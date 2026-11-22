@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1716-20261121",
+  "batch": "exam-monthly-preview-1728-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1716,
-  "newArticlesSincePrevious": 0,
-  "newHexagrams": [],
+  "uploadedArticles": 1728,
+  "newArticlesSincePrevious": 12,
+  "newHexagrams": [
+    24
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 2892,
-  "authorWholeArticleReadback": 1716,
+  "remainingArticles": 2880,
+  "authorWholeArticleReadback": 1728,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -334,6 +336,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 24,
+      "name": "地雷复",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-024.json",
+      "sourceSha256": "a95e733789b2f1df0f9757183bba6a74999747bf84b12c5b8bf6e70d2f133895",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-024.json",
+      "readingPath": "docs/exam/monthly-preview/hex-024.md",
+      "outcomes": {
+        "favourable": 28,
+        "difficult": 44
+      }
     }
   ],
   "checks": {
@@ -348,18 +364,17 @@
       70,
       112
     ],
-    "independentChartComparisons": 44712,
+    "independentChartComparisons": 46656,
     "independentChartMismatches": 0,
-    "dateCases": 3312,
-    "judgmentCorrectionArticles": 1048,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前23个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 3456,
+    "judgmentCorrectionArticles": 1120,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 105,
-    "open-interpretation": 18,
+    "interpreted-with-limits": 106,
+    "open-interpretation": 23,
     "open": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
@@ -1083,27 +1098,9 @@
     "articles": 697
   },
   "nextExpectedKey": {
-    "primaryId": 24,
-    "movingLine": 6,
+    "primaryId": 25,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 24,
-      "name": "地雷复",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-024.json",
-      "sourceSha256": "1f5d1dcca2ace4e9c42fc07eeaa4de20c12c31302853f03342aa921a535290fd",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-024.json",
-      "readingPath": "docs/exam/monthly-preview/hex-024.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
