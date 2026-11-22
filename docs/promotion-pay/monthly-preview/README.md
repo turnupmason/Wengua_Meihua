@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：3600 篇预览
+# 晋升加薪逐月长稿：3744 篇预览
 
-更新日期：2026-11-22（America/New_York）。本批新增泽火革，共 72 篇；累计 3600 篇。完整目标为 4,608 篇，尚余 1008 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-22（America/New_York）。本批新增震为雷、艮为山，共 144 篇；累计 3744 篇。完整目标为 4,608 篇，尚余 864 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -54,6 +54,8 @@
 | 水风井 | 72 | [打开全文](hex-048.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-048.json) |
 | 泽火革 | 72 | [打开全文](hex-049.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-049.json) |
 | 火风鼎 | 72 | [打开全文](hex-050.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-050.json) |
+| 震为雷 | 72 | [打开全文](hex-051.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-051.json) |
+| 艮为山 | 72 | [打开全文](hex-052.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-052.json) |
 
 
 
@@ -65,13 +67,15 @@
 
 ## 本批阅读入口
 
-- [泽火革：六爻十二月全文](hex-049.md)
+- [震为雷：六爻十二月全文](hex-051.md)
+
+- [艮为山：六爻十二月全文](hex-052.md)
 
 
 
 ## 检查与阅读状态
 
-3600 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 97,200 项，差异 0；日期用例 7,200 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+3744 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 101,088 项，差异 0；日期用例 7,488 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

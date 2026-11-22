@@ -2,18 +2,19 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-3600-20261122",
+  "batch": "promotion-pay-monthly-preview-3744-20261122",
   "publicationDate": "2026-11-22",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 3600,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 3744,
+  "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    49
+    51,
+    52
   ],
   "fullTarget": 4608,
-  "remainingArticles": 1008,
-  "authorWholeArticleReadback": 3600,
+  "remainingArticles": 864,
+  "authorWholeArticleReadback": 3744,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -714,6 +715,34 @@
         "favourable": 12,
         "difficult": 60
       }
+    },
+    {
+      "primaryId": 51,
+      "name": "震为雷",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-051.json",
+      "sourceSha256": "c2071a634f01ea545f658382075e51baff93f7b88e77c9d08b392356888584b1",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-051.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-051.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
+    },
+    {
+      "primaryId": 52,
+      "name": "艮为山",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-052.json",
+      "sourceSha256": "b12369a35e5e6006c37b486faac0706453809bb4dc3107884626e5a417c6073f",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-052.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-052.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -728,20 +757,20 @@
       76,
       112
     ],
-    "independentChartComparisons": 97200,
+    "independentChartComparisons": 101088,
     "independentChartMismatches": 0,
-    "dateCases": 7200,
-    "judgmentCorrectionArticles": 3170,
+    "dateCases": 7488,
+    "judgmentCorrectionArticles": 3314,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 3600
+    "payCorrectionArticles": 3744
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 25,
-    "open-priority": 70,
+    "open-priority": 74,
     "corrected-unsupported-scenes": 9,
     "corrected-classical-application": 18,
     "fixed-documentation-conflict": 3,
@@ -836,7 +865,8 @@
     "existing-corrections-preserved": 1,
     "open-source-boundary": 1,
     "resolved-in-exact-changes": 1,
-    "resolved-independent-reviewed": 4
+    "resolved-independent-reviewed": 4,
+    "open-commentary-divergence": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -1243,6 +1273,22 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "初六最终12篇由/root/author_ding独立全文重读；后五爻由/root逐爻完整独读，退修的公开全文及末次变化按各自回执实际覆盖。每爻独读者均非该爻作者。此处核对已出具的独审回执及对象绑定，完整汇总由协调者接续。"
+    },
+    {
+      "primaryId": 51,
+      "sourceSha256": "c2071a634f01ea545f658382075e51baff93f7b88e77c9d08b392356888584b1",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "六爻各十二篇全部公开、独立薪资、完整应期与五气全旧新技术由未参与初稿的/source_rules实际独立阅读；六二、六三及整卦门禁初九/六二/九四的返改，按完整旧新字段另行实读并核其余未变。没有把程序核验或差异复读计作重复全文阅读。"
+    },
+    {
+      "primaryId": 52,
+      "sourceSha256": "b12369a35e5e6006c37b486faac0706453809bb4dc3107884626e5a417c6073f",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "见逐卦回执"
     }
   ],
   "independentHumanReview": "pending"
