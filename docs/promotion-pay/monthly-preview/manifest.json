@@ -2,18 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-3096-20261122",
+  "batch": "promotion-pay-monthly-preview-3168-20261122",
   "publicationDate": "2026-11-22",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 3096,
+  "uploadedArticles": 3168,
   "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    43
+    44
   ],
   "fullTarget": 4608,
-  "remainingArticles": 1512,
-  "authorWholeArticleReadback": 3096,
+  "remainingArticles": 1440,
+  "authorWholeArticleReadback": 3168,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -616,6 +616,20 @@
         "favourable": 12,
         "difficult": 60
       }
+    },
+    {
+      "primaryId": 44,
+      "name": "天风姤",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-044.json",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-044.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-044.md",
+      "outcomes": {
+        "favourable": 18,
+        "difficult": 54
+      }
     }
   ],
   "checks": {
@@ -630,21 +644,21 @@
       76,
       112
     ],
-    "independentChartComparisons": 83592,
+    "independentChartComparisons": 85536,
     "independentChartMismatches": 0,
-    "dateCases": 6192,
-    "judgmentCorrectionArticles": 2666,
+    "dateCases": 6336,
+    "judgmentCorrectionArticles": 2738,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 3096
+    "payCorrectionArticles": 3168
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 25,
-    "open-priority": 59,
-    "corrected-unsupported-scenes": 8,
+    "open-priority": 60,
+    "corrected-unsupported-scenes": 9,
     "corrected-classical-application": 18,
     "fixed-documentation-conflict": 3,
     "corrected-unsupported-pay-assumptions": 1,
@@ -684,7 +698,7 @@
     "resolved-after-complete-field-readback": 4,
     "revised-and-complete-fields-reread": 8,
     "open-interpretive-boundary": 1,
-    "corrected": 9,
+    "corrected": 10,
     "corrected-in-inherited-authorship": 1,
     "wording-refined": 1,
     "corrected-and-complete-fields-reread": 2,
@@ -692,7 +706,7 @@
     "closed-after-complete-field-reread": 3,
     "resolved-complete-delta-read": 3,
     "documented-open": 7,
-    "not-validated": 5,
+    "not-validated": 6,
     "open-interpretation-boundary": 1,
     "corrected-substantive-rule-omission": 1,
     "corrected-wording": 1,
@@ -714,7 +728,7 @@
     "open-review": 1,
     "open-source-variant": 1,
     "corrected-with-open-boundary": 1,
-    "corrected-with-limits": 1,
+    "corrected-with-limits": 2,
     "applied-with-outcome-frozen": 1,
     "applied": 1,
     "corrected-with-outcome-frozen": 2,
@@ -722,7 +736,11 @@
     "applied-with-open-policy-boundary": 1,
     "corrected-with-signatures-frozen": 1,
     "frozen-project-rule-with-open-classical-scope": 1,
-    "ai-cross-read-complete-human-review-and-user-acceptance-not-claimed": 1
+    "ai-cross-read-complete-human-review-and-user-acceptance-not-claimed": 1,
+    "open-priority-with-technical-correction": 1,
+    "open-priority-with-source-correction": 1,
+    "corrected-with-policy-limits": 1,
+    "open-priority-with-classical-variants": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -1073,6 +1091,14 @@
       "currentRevisionFullTextReadCount": 71,
       "currentRevisionChangedArticleReadCount": 1,
       "scope": "初九12篇与5组完整新旧专业及取期由/root实际独立全读；后五爻60篇与25组完整新旧专业及取期由/root/classical_audit实际独立全读。各篇薪资及订正分别实读。最终71篇全部字段与独审初读本相同，上六申月由原全文加完整首段改文复读覆盖；协调者另实读该完整旧新段及全部独审记录。未将改段复读计为再次全卦阅读，未将程序验等或哈希计算计为语义阅读。"
+    },
+    {
+      "primaryId": 44,
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": 29,
+      "currentRevisionChangedArticleReadCount": 43,
+      "scope": "初六12篇及5组完整新旧专业、取期由协调者/root独立全文实读；九二至上九60篇及25组由/root/author_042独立全文实读，逐篇薪资及订正一并核读。初六四处完整改段由原作者与独审者实读；后五爻51项公开标题、简断或整段及6份取期变化、技术理由与新增来源均按完整字段复读。完全相同的来源数组、取期和理由只实读完整不同值，再对重复绑定验等，细节保留在原记录。最终29篇全对象未变、43篇由原全文及完整变化范围覆盖；若仅计公开字段则31篇未变、41篇改字段覆盖。程序比较不充当语义阅读，不虚称全部修改稿又全文重读。 发布页初六寅与亥两段编辑语气自然化，作者与独审者分别完整读回；末后五爻对象未变，其原独审整文件哈希保留为当时记录。"
     }
   ],
   "independentHumanReview": "pending"

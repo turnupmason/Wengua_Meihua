@@ -1,0 +1,3866 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 44,
+  "baselineCommit": "c72493736390627ce9ec8bcf1dd65c376c2d88f1",
+  "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+  "editor": "/root/classical_audit",
+  "reviewedAt": "2026-11-22T11:19:45.970369+00:00",
+  "workDate": "2026-11-22",
+  "workTimezone": "America/New_York",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "72篇标题、简断、六段正文和独立薪资逐篇手写。作者实际完整读回全部公开字段，并逐组读取30个不同五气的完整新旧判断、应期事件提示依据、薪资及订正理由；少量读后修订的完整变化字段另读，详见各爻记录，不虚称每次都重读全篇。程序仅装载手写文字、绑定old/new与作结构检查，没有使用句库或替换模板生成正文。程序验等和源哈希不作为全文审读。 独审返改后51个公开字段、6份完整应期和2份订正理由已逐项完整实读；九五新增完整来源列表实际读1份，其余11份逐值验同，不增加全文阅读篇数。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "任务相关写作、来源与审核记录要求实际读取；不声称整份长文件全文读取。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "任务相关开头约72行实际读取，包括正文最低470汉字、中位500、独立薪资和逐批检查；未声称长日志全读。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "全文实际读取。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "全文实际读取。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "全文实际读取，区分程序核验、作者读回、独立审读与用户验收。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "全文实际读取，保留已定晋升二分，不因润色私改结论。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "实际读取第一、二及第八、十、十三、十四节，重点一层生克、原体休与作用节点休、二分和用党多；不冒称全文读取。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+      "scope": "姤卦经传与六爻王弼注、孔颖达疏全文实际读取并重读；九二、九三、九五、上九释义重点对照。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/周易正義/05姤",
+      "scope": "联网打开正义源页并完整读取九五、上九相关段；本地同版全文为全卦释义主要依据。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/周易本義_(四庫全書本)/卷2",
+      "scope": "实际读取姤卦段，尤九五含晦章美、静制而回造化之异解；不声称全卷通读。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183",
+      "scope": "实际读取该页九五本义、程传及相邻段，程传取降屈求贤、内积至诚终有遇；该转录页标记尚未校对，仅作异义旁证，不冒称影印校勘完成。"
+    },
+    {
+      "path": "sources/original/meihua-volumes-1-3.txt",
+      "scope": "实际读取老人有忧色占160–170及474–500、550–558、676–692、786–808相关完整段；未声称三卷全文通读。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷二",
+      "scope": "联网核看求名、求财及体用相关条文，与本地原文对读。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/梅花易數/卷三",
+      "scope": "联网核看占卦诀、体用互变、衰旺与克应取期相关段，列吉例不误说成排他许可。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-044.json",
+      "scope": "30组原有正文、专业判断、完整应期和薪资按爻实读；对应old逐值绑定。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-044.json",
+      "scope": "30组calculationNotes实际读取，不将既有叙事当作现实事实。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-044.json",
+      "scope": "30组reason与lineReading实际读取。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-044.json",
+      "scope": "30组本互变、六节点原气、四直接关系实际读取和对照；未声称完整重复的全部决策元数据逐字阅读。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "paths": [
+        "sources/editorial/interview-pass/monthly/hex-001.json",
+        "sources/editorial/interview-pass/monthly/hex-003.json",
+        "sources/editorial/interview-pass/monthly/hex-017.json",
+        "sources/editorial/interview-pass/monthly/hex-052.json"
+      ],
+      "scope": "各前6篇（初爻寅卯辰巳午未）标题、简断与完整正文实际读过，共24篇；曾被长输出截断的屯午未、随寅卯已单独补读，不以截断输出计全文。只参考厚度和自然解释，不套用录用判向。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/monthly/hex-041.json",
+      "scope": "读取首2篇示范及相关回执结构，未声称损全卦实读。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "系于金柅，贞吉；有攸往，见凶，羸豕孚蹢躅。",
+      "image": "系于金柅，柔道牵也。",
+      "reading": "系于正应守正可吉，失牵躁往有凶；不把守正变成所有做法一概照旧。体克用与中末三乾比和的方向分清，无生无克的有利向与体党失令的既定未升权重并列。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇标题、简断、全部正文与独立薪资实际读回；五气完整新旧专业判断、取期、薪资及订正理由逐组读取。初六丑第二段、申第四段在协调者返改后已经分别完整读回，本轮全读回再次包含其终值。",
+      "finalSnapshotFileSha256": "03909ddd6da7ffd495c564ec9e5c24f324aa8354fa0ff66eb85074139f2be2a5",
+      "finalCanonicalArticleArraySha256": "fe2c0ff852f824d6d355850ad86011f2e2532f0d0886c3de375e0db02bcce32c",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 503,
+        "median": 512.5,
+        "max": 537
+      }
+    },
+    {
+      "movingLine": 2,
+      "text": "包有鱼，无咎；不利宾。",
+      "image": "包有鱼，义不及宾也。",
+      "reading": "依王孔，得遇非犯夺而无咎；不利宾戒擅人之物作己惠，不误作所得已独属自己。末艮均受巽制而无火生，五气助薄，原旺相不改；无克、末生的成向与弱体薄助仍成的取权并列。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇全部公开字段实际完整读回；五气完整新旧判断、取期事件提示依据与订正理由实际读取。王孔得遇无夺与不得擅用的两面、末艮一层减助均对照原文。",
+      "finalSnapshotFileSha256": "f519991e606afcdca5b1ac7df3fc3747ca10e186e75a7d1ef4b2b94457c568d8",
+      "finalCanonicalArticleArraySha256": "0abb4a8bb99a090e50a46ba879a9729d1da4f10af91d8204e0557c0261866815",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 510,
+        "median": 524.5,
+        "max": 540
+      }
+    },
+    {
+      "movingLine": 3,
+      "text": "臀无肤，其行次且；厉，无大咎。",
+      "image": "其行次且，行未牵也。",
+      "reading": "依王孔为未能牵据以固所处，所履得位而未遇其时，危厉并非自招所以无大咎；不读作无牵制。前中体克用及比和的好处、全盘无克须保留，末坎泄体依现行取权定未升，不把互变条文改成排他许可。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇全部公开字段实际完整读回；五气完整新旧判断、应期和订正理由逐组读取。巳月第三段“正文所取”清理为直接的承接提醒后，完整变化段另行实读；未把该段差异复读算成全12篇再读。",
+      "finalSnapshotFileSha256": "cb4907d4f1ab85e02ef8fae7ab2ce982e14f48a247b9253d219fee8b75cf774a",
+      "finalCanonicalArticleArraySha256": "7c485168865dd27d05a6761fcc5158b17a5a7f712e294ba2427a3a1ee32aba9f",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 514,
+        "median": 524.5,
+        "max": 538
+      }
+    },
+    {
+      "movingLine": 4,
+      "text": "包无鱼，起凶。",
+      "image": "无鱼之凶，远民也。",
+      "reading": "依王孔为失正应、无所依应而动；远民不直接等于缺基层成绩。三乾克木而末巽比和，前中轻重与末和实际作用分清，五气均补用党多，春旺冬相仍保留原气。老人例只用于同盘关系旁证，不移用其灾情、后天取数或时限。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇公开字段及五气完整新旧技术、应期和订正理由实际读回。随后寅第五段、巳第二段、亥第五段完整改段实读；丑标题“少生”改为“无生”，土气专业删一处病句，完整新标题及完整土气新专业另读。同气四月逐值一致另作程序绑定，不虚称逐字再读四份重复技术。",
+      "finalSnapshotFileSha256": "29960b1a4db41668773d4dad6d4b7bb64e56aefc79734cc3ddb2f07357240a6a",
+      "finalCanonicalArticleArraySha256": "fb6c1d4d30fbeef9d81c8f4d67e58a2bae806bb412efc4156e61b4ef0d849cd9",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 521,
+        "median": 531.0,
+        "max": 538
+      }
+    },
+    {
+      "movingLine": 5,
+      "text": "以杞包瓜，含章，有陨自天。",
+      "image": "九五含章，中正也；有陨自天，志不舍命也。",
+      "reading": "正文依王孔含美未发、处中守志不可倾陨，完整保留积极面；朱本义静以制之、可回造化与程传降屈求贤终有遇另列，不拼成单一古义。三金均受离制且无土生，五气实际克轻；原旺相、用党多与末离泄体各自保留。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇标题、简断、六段正文和独立薪资全部实读；五气完整新旧专业、取期事件提示依据、薪资与三类订正理由实读。联网重开正义九五完整段、本义姤段及集注所引程传九五段，明确读到的异义与未校对页限制。",
+      "finalSnapshotFileSha256": "75b02824fbdfd51551cb5bdda535dfa365fc1b550c6ac414e316a9f693898c89",
+      "finalCanonicalArticleArraySha256": "0ce2f80cbc5b241a168ef4b02b4839d7a80d1dbf8e1b68516b51a6a60882592b",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 518,
+        "median": 532.0,
+        "max": 543
+      }
+    },
+    {
+      "movingLine": 6,
+      "text": "姤其角，吝，无咎。",
+      "image": "姤其角，上穷吝也。",
+      "reading": "王孔以进极无遇释吝，以不与物争、其道不害释无凶咎；不把吝倒写成已争执，无咎不缩成事后收手。四金直接克木，无生体、无制金节点，用党多限制体势，原月气保留；不将节点相加为扣分或固定次数。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "actualReadbackScope": "12篇全部公开字段实读，包含亥第二段去分数与第三段消除“未升以后”扫描命中的终值；五气完整新旧判断、取期、薪资与订正理由逐组实读。无咎与不遇各自成立，不另编争职级、人员去留、汇报线或授权故事。",
+      "finalSnapshotFileSha256": "4d0210bb21df4cbd41fdbf6f0e91c27ac87b271de7691433447345e1a0c4d103",
+      "finalCanonicalArticleArraySha256": "0d67f103b10e147e5680a0d9fa1295f2b3d39da506c96d111078a5de217f34e9",
+      "canonicalSerialization": "UTF-8 JSON sorted keys, ensure_ascii=false, compact comma/colon, no trailing newline.",
+      "bodyHan": {
+        "min": 535,
+        "median": 549.0,
+        "max": 562
+      }
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "31239948462b67e2fc9b33570e500993048b33e79564ecd743a309da2fb6a906",
+      "scope": "12篇标题、简断、全部正文与独立薪资实际读回；五气完整新旧专业判断、取期、薪资及订正理由逐组读取。初六丑第二段、申第四段在协调者返改后已经分别完整读回，本轮全读回再次包含其终值。 发布页读回又收寅第四段、亥第二段的编辑措辞，两段完整旧新值已另行作者实读；其余字段按已读原全文及既有改段覆盖，不记作再次12篇全读。",
+      "priorCanonicalArticleArraySha256": "fe2c0ff852f824d6d355850ad86011f2e2532f0d0886c3de375e0db02bcce32c",
+      "independentReturnChangedFields": [],
+      "coordinatorRenderChangedFields": [
+        {
+          "monthBranch": "寅",
+          "field": "paragraphs[3]",
+          "completeFieldActuallyReread": true
+        },
+        {
+          "monthBranch": "亥",
+          "field": "paragraphs[1]",
+          "completeFieldActuallyReread": true
+        }
+      ]
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "e24fc1b4230349b2c5d57a5a4801433a2edad1444405cec800f561b0d90d1924",
+      "scope": "12篇全部公开字段实际完整读回；五气完整新旧判断、取期事件提示依据与订正理由实际读取。王孔得遇无夺与不得擅用的两面、末艮一层减助均对照原文。",
+      "priorCanonicalArticleArraySha256": "0abb4a8bb99a090e50a46ba879a9729d1da4f10af91d8204e0557c0261866815",
+      "independentReturnChangedFields": [
+        {
+          "monthBranch": "子",
+          "field": "title"
+        },
+        {
+          "monthBranch": "未",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "子",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "short"
+        }
+      ]
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "f1ebbde5d1c615298d489c9025f0b8fae355345b13c0f6a169419325af88ba98",
+      "scope": "12篇全部公开字段实际完整读回；五气完整新旧判断、应期和订正理由逐组读取。巳月第三段“正文所取”清理为直接的承接提醒后，完整变化段另行实读；未把该段差异复读算成全12篇再读。",
+      "priorCanonicalArticleArraySha256": "7c485168865dd27d05a6761fcc5158b17a5a7f712e294ba2427a3a1ee32aba9f",
+      "independentReturnChangedFields": [
+        {
+          "monthBranch": "寅",
+          "field": "short"
+        },
+        {
+          "monthBranch": "寅",
+          "field": "paragraphs[1]"
+        },
+        {
+          "monthBranch": "辰",
+          "field": "paragraphs[0]"
+        },
+        {
+          "monthBranch": "辰",
+          "field": "paragraphs[1]"
+        },
+        {
+          "monthBranch": "午",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "未",
+          "field": "short"
+        },
+        {
+          "monthBranch": "申",
+          "field": "short"
+        },
+        {
+          "monthBranch": "申",
+          "field": "paragraphs[1]"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "short"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "paragraphs[1]"
+        },
+        {
+          "monthBranch": "子",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "paragraphs[1]"
+        }
+      ]
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "e45e00ccfe50d291598a6cfe9c40e04cce516e330a1340d8eaed602725f62a41",
+      "scope": "12篇公开字段及五气完整新旧技术、应期和订正理由实际读回。随后寅第五段、巳第二段、亥第五段完整改段实读；丑标题“少生”改为“无生”，土气专业删一处病句，完整新标题及完整土气新专业另读。同气四月逐值一致另作程序绑定，不虚称逐字再读四份重复技术。",
+      "priorCanonicalArticleArraySha256": "fb6c1d4d30fbeef9d81c8f4d67e58a2bae806bb412efc4156e61b4ef0d849cd9",
+      "independentReturnChangedFields": [
+        {
+          "monthBranch": "未",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "申",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "paragraphs[3]"
+        },
+        {
+          "monthBranch": "子",
+          "field": "short"
+        },
+        {
+          "monthBranch": "子",
+          "field": "paragraphs[5]"
+        }
+      ]
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "fca23b6eced5949026915649bfe583dc6a73f67f8c9b2875e473dbb05de9f0e5",
+      "scope": "12篇标题、简断、六段正文和独立薪资全部实读；五气完整新旧专业、取期事件提示依据、薪资与三类订正理由实读。联网重开正义九五完整段、本义姤段及集注所引程传九五段，明确读到的异义与未校对页限制。",
+      "priorCanonicalArticleArraySha256": "0ce2f80cbc5b241a168ef4b02b4839d7a80d1dbf8e1b68516b51a6a60882592b",
+      "independentReturnChangedFields": [
+        {
+          "monthBranch": "午",
+          "field": "short"
+        },
+        {
+          "monthBranch": "巳",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "午",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "午",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "申",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "寅",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "卯",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "辰",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "辰",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "巳",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "午",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "未",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "未",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "申",
+          "field": "judgmentCorrection.reason"
+        },
+        {
+          "monthBranch": "申",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "judgmentCorrection.reason"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "子",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "子",
+          "field": "judgmentCorrection.sourceEvidence"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "timing"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "judgmentCorrection.sourceEvidence"
+        }
+      ]
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "status": "author-full-fields-read",
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "finalCanonicalArticleArraySha256": "ac0ed5d211f04742f5da7c2106fe41c1af4e25387eb7fc047f6e2e50c04df667",
+      "scope": "12篇全部公开字段实读，包含亥第二段去分数与第三段消除“未升以后”扫描命中的终值；五气完整新旧判断、取期、薪资与订正理由逐组实读。无咎与不遇各自成立，不另编争职级、人员去留、汇报线或授权故事。",
+      "priorCanonicalArticleArraySha256": "0d67f103b10e147e5680a0d9fa1295f2b3d39da506c96d111078a5de217f34e9",
+      "independentReturnChangedFields": [
+        {
+          "monthBranch": "寅",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "卯",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "卯",
+          "field": "paragraphs[4]"
+        },
+        {
+          "monthBranch": "辰",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "巳",
+          "field": "short"
+        },
+        {
+          "monthBranch": "巳",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "巳",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "未",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "未",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "申",
+          "field": "short"
+        },
+        {
+          "monthBranch": "申",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "paragraphs[2]"
+        },
+        {
+          "monthBranch": "酉",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "title"
+        },
+        {
+          "monthBranch": "戌",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "亥",
+          "field": "paragraphs[5]"
+        },
+        {
+          "monthBranch": "子",
+          "field": "short"
+        },
+        {
+          "monthBranch": "丑",
+          "field": "short"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "GOU44-L1-WEAK-EQUAL-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "44/1/spring-wood",
+        "44/1/summer-fire",
+        "44/1/winter-water"
+      ],
+      "finding": "无克、体克用可成而迟及末比和均有吉向；本轮仍按既定体与比和皆不旺相取未升。原体休不直接归囚死，贞吉完整保留，不能将现行取权冒称古籍唯一结论。"
+    },
+    {
+      "id": "GOU44-L2-THIN-SUPPORT",
+      "status": "open-priority-with-technical-correction",
+      "keys": [
+        "44/2/*"
+      ],
+      "finding": "艮被巽制且无火生，五气皆助薄；体弱薄助仍能升按既定有生无克判据保留。王孔不利宾戒擅人之物作己惠，旧所得独归自己已纠正。"
+    },
+    {
+      "id": "GOU44-L3-END-DRAIN",
+      "status": "open-priority-with-source-correction",
+      "keys": [
+        "44/3/*"
+      ],
+      "finding": "全盘无克且秋土有力比和，仍依现行末泄优先未升。互变原文仅列生体比和之吉，不是只准两类吉。行未牵依王孔为未能牵据，危厉非自招而无大咎完整保留。"
+    },
+    {
+      "id": "GOU44-L4-L6-USE-PARTY",
+      "status": "corrected-with-policy-limits",
+      "keys": [
+        "44/4/*",
+        "44/5/*",
+        "44/6/*"
+      ],
+      "finding": "用金复见达到用党多，按现行第十四节体势受限，原旺相休囚死不改；不能把节点数量加为分数、失误次数或现实条款。九四春冬末厚和及上九无咎均保留。"
+    },
+    {
+      "id": "GOU44-L5-INTERPRETATIONS",
+      "status": "open-priority-with-classical-variants",
+      "keys": [
+        "44/5/*"
+      ],
+      "finding": "正文采用王孔含美未发、守中正而不可倾陨。朱本义含晦静制可回造化，程传降屈求贤终遇另列为积极异义，不合并成天降硬规定或取消吉意。依现行在任见克维持未升，三金受离制的实际轻克五气均写明。"
+    },
+    {
+      "id": "GOU44-L6-NO-BLAME",
+      "status": "corrected",
+      "keys": [
+        "44/6/*"
+      ],
+      "finding": "吝在进极无遇，无咎在不与物争、其道不害；不是已经争执后收手才免责。真实职责建议不等于必须放弃全部正当表达。"
+    },
+    {
+      "id": "GOU44-PAY-TIMING",
+      "status": "corrected-with-limits",
+      "keys": [
+        "44/*/*"
+      ],
+      "finding": "72篇独立薪资，54篇补原空白，18篇去固定薪带、同步办理及补差预设。应期kind/role/candidates/method/count及无期身份保持；事件文去已有流程事实，不承诺现实任命或到账。"
+    },
+    {
+      "id": "GOU44-REAL-WORLD",
+      "status": "not-validated",
+      "keys": [
+        "44/*/*"
+      ],
+      "finding": "文字与规则一致性不证明现实预测准确率，本轮没有冒称真人专业审校或用户逐篇验收。"
+    },
+    {
+      "id": "GOU44-INDEPENDENT-PUBLIC-VOICE",
+      "status": "corrected-unsupported-scenes",
+      "keys": "九二至上九独审所列51公开字段、九五2气取期依据6月及2月理由",
+      "finding": "将给作者看的编写、删改措辞改为求问者可直接读的事实边界，古义正面、盘理及结论不动；补九五本义与程传实际阅读范围绑定，未校对转录边界保留。完整变动字段作者已实读，独审复读另记。"
+    }
+  ],
+  "articleStatistics": {
+    "articles": 72,
+    "bodyHan": {
+      "min": 503,
+      "median": 529.0,
+      "max": 562
+    },
+    "shortHan": {
+      "min": 81,
+      "median": 87.0,
+      "max": 94
+    },
+    "payHan": {
+      "min": 38,
+      "median": 42.0,
+      "max": 46
+    },
+    "outcomes": {
+      "difficult": 54,
+      "favourable": 18
+    }
+  },
+  "correctionVerification": {
+    "judgmentCorrectionArticles": 72,
+    "timingWordingCorrectionArticles": 72,
+    "payCorrectionArticles": 72,
+    "oldValuesExactlyMatchBaseline": true,
+    "newValuesExactlyMatchCurrent": true,
+    "sameQiJudgmentAndCompleteTimingGroups": 30,
+    "outcomeChanges": 0,
+    "timingSignatureChanges": 0,
+    "mechanicalBindingOnly": true,
+    "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3"
+  },
+  "machineChecks": {
+    "status": "passed",
+    "checkedAtUtc": "2026-11-22T11:20:21.386595+00:00",
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 44",
+    "sourceSha256": "208485d8bd3a53dee9479a5ccbc38a4a858b0864bbc98f6319133ce04226c73d",
+    "fullMonthlyGate": "passed",
+    "structuralCheck": {
+      "status": "passed",
+      "articles": 72,
+      "chartComparisons": 1944,
+      "chartMismatches": 0,
+      "dateCases": 144,
+      "errors": 0,
+      "duplicateLongSentences": 0,
+      "flexibleLengthWarnings": 0
+    },
+    "style": {
+      "status": "passed",
+      "bodyMedianDisplayed": 529,
+      "bodyMedianExact": 529.0,
+      "bodyMin": 503,
+      "avgSentence": 31.9,
+      "monthOpen": 0,
+      "monthShort": 0,
+      "maxSameHead": 3,
+      "shortOut": 0
+    },
+    "consolationOrPromises": 0,
+    "intraRepeat8": 0,
+    "crossHexOrDifferentLine": {
+      "over": 0,
+      "maxSharePercent": 2.8,
+      "thresholdPercent": 8
+    },
+    "sameLineOtherMonth": {
+      "over": 0,
+      "maxSharePercent": 3.9,
+      "thresholdPercent": 15
+    },
+    "highFrequencyPhraseWarnings": 0,
+    "unverifiedQuotations": 0,
+    "logPath": "/workspace/scratch/34014d64f2eb/drafts-044/gate-independent-return.log",
+    "note": "独立全文审读返改的完整变化字段作者读回后，按未改动的原阈值再运行全量关口通过；程序检查不计为全文审读。 本记录严格绑定其sourceSha256，末后两处完整公开字段的措辞复改另由协调者对终值运行发布关口，未把前一哈希的测试冒记为新哈希已通过。"
+  },
+  "independentReview": {
+    "status": "ai-cross-reviewed-with-open-findings",
+    "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+    "wholeArticlesRead": 72,
+    "professionalGroupsRead": 30,
+    "reviewers": [
+      "/root",
+      "/root/author_042"
+    ],
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "currentRevisionFullTextReadCount": 29,
+    "currentRevisionChangedArticleReadCount": 43,
+    "publicArticlesEntirelyUnchangedSinceFullRead": 31,
+    "publicArticlesWithChangedFieldsCovered": 41,
+    "scope": "初六12篇及5组完整新旧专业、取期由协调者/root独立全文实读；九二至上九60篇及25组由/root/author_042独立全文实读，逐篇薪资及订正一并核读。初六四处完整改段由原作者与独审者实读；后五爻51项公开标题、简断或整段及6份取期变化、技术理由与新增来源均按完整字段复读。完全相同的来源数组、取期和理由只实读完整不同值，再对重复绑定验等，细节保留在原记录。最终29篇全对象未变、43篇由原全文及完整变化范围覆盖；若仅计公开字段则31篇未变、41篇改字段覆盖。程序比较不充当语义阅读，不虚称全部修改稿又全文重读。 发布页初六寅与亥两段编辑语气自然化，作者与独审者分别完整读回；末后五爻对象未变，其原独审整文件哈希保留为当时记录。",
+    "lineReviews": [
+      {
+        "hexagram": 44,
+        "movingLine": 1,
+        "reviewer": "/root",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-AI-read-complete-after-four-field-reread",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "currentRevisionFullTextReadCount": 8,
+        "currentRevisionChangedArticleReadCount": 4,
+        "readAtUtc": "2026-11-22T10:34:24.629268+00:00",
+        "scope": "12篇标题、简断、全部正文、薪资与取期逐篇完整实读；五气盘面与新旧判断、新旧完整取期及订正理由按组读完。随后实际读取申正文4与丑正文2两处完整旧新段，未把差异复读计为再次12篇全文阅读。王孔姤卦全篇此前实读。 发布阅读页再读发现寅正文4仍有给编辑的保留提醒，窄扫已完整读过的初爻另见亥正文2编稿语气；两整段旧新实际读取并自然化，未改技术或其他字段。最终8篇全部字段与初读本相同，4篇由原全文及完整改段覆盖。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/044-line-1-f386f5f270ed.json",
+        "snapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/044-line-1-31239948462b.json",
+        "finalCanonicalArticleArraySha256": "31239948462b67e2fc9b33570e500993048b33e79564ecd743a309da2fb6a906",
+        "snapshotFileSha256": "b7232fbbbb6118ff0884e28ad2e27ac5c704c63a02c80638159b5f9d96231109",
+        "changedFieldsReread": [
+          {
+            "monthBranch": "申",
+            "field": "paragraphs[3]",
+            "old": "小象「柔道牵也」所示的牵制，应用到求职任上，是让每项承诺都接回实际责任。讲到成果，可说明自己怎样作判断、怎样把工作完成，以及结果受哪些条件支持；涉及未来承担，则清楚交代经验能够覆盖的范围，不靠包揽显得有力。",
+            "new": "小象「柔道牵也」所示的牵制，用于谋求晋升，是让每项承诺都接回实际责任。讲到成果，可说明自己怎样作判断、怎样把工作完成，以及结果受哪些条件支持；涉及未来承担，则清楚交代经验能够覆盖的范围，不靠包揽显得有力。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "丑",
+            "field": "paragraphs[1]",
+            "old": "体互、用互和变用皆乾金相，比和在三个阶段都有承托作用。此盘虽无直接生金之卦，仍有同类相接的好处；又不见克体，前后的关系较为连贯。好处在于能承、能接，并不由此推出每一项任职细节都已办妥。",
+            "new": "体互、用互和变用皆乾金相，比和在中途和末段都有承托作用。此盘虽无直接生金之卦，仍有同类相接的好处；又不见克体，前后的关系较为连贯。好处在于能承、能接，并不由此推出每一项任职细节都已办妥。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "寅",
+            "field": "paragraphs[3]",
+            "old": "小象「柔道牵也」使这份约束有了着落。用于任职准备，可先确定真实承担的范围，再说明相关成果如何得到验证；事情需要调整时，交代调整的理由，不为显得积极而频繁换一套说法。守正的好处应当保留，不能因未升便否定它。",
+            "new": "小象「柔道牵也」使这份约束有了着落。用于任职准备，可先确定真实承担的范围，再说明相关成果如何得到验证；事情需要调整时，交代调整的理由，不为显得积极而频繁换一套说法。守正仍有其益，未升不意味着有据的准备全无价值。",
+            "fullChangedFieldActuallyReread": true
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[1]",
+            "old": "体互、用互与末变皆为休乾，比和带来的相接仍在，只是作用轻，不能与旺相同气的承托等量看。全盘不见直接克体，也无另来生金之助，故无需把未升编成受人排斥；相合能够帮助交流，尚不足以独自推动本次任用。",
+            "new": "体互、用互与末变皆为休乾，比和带来的相接仍在，只是作用轻，不能与旺相同气的承托等量看。全盘不见直接克体，也无另来生金之助，未升并不表示已经受人排斥；相合能够帮助交流，尚不足以独自推动本次任用。",
+            "fullChangedFieldActuallyReread": true
+          }
+        ],
+        "findings": [
+          {
+            "id": "GOU44-R1-NODES-STAGES",
+            "status": "resolved-and-complete-field-reread",
+            "issue": "丑月将两互及变卦三个乾节点说成三个阶段均比和，实际本用巽为体克用。",
+            "resolution": "改为中途和末段都有承托作用，作者与独审者分别实读完整变化段。"
+          },
+          {
+            "id": "GOU44-R1-TOPIC-WORD",
+            "status": "resolved-and-complete-field-reread",
+            "issue": "申月求职任措辞不自然且可能换题。",
+            "resolution": "改为用于谋求晋升。"
+          },
+          {
+            "id": "GOU44-R1-PUBLIC-VOICE",
+            "status": "resolved-and-complete-field-reread",
+            "issue": "寅正文4保留提醒与亥正文2编成用语仍带作者指令口吻。",
+            "resolution": "改为守正仍有益及未升不表示已受排斥，两段旧新全文实际读回。"
+          }
+        ],
+        "reviewNotes": [
+          "原体休居中、比和休助薄分别保留，原金旺相未抹掉；本用木未复见，不误作金用党。",
+          "系于正应而守正有吉与躁往之戒同时保留，戒不局限任后，也不反推现实已换法催促。",
+          "body_mutual或use_mutual的过程窗口及body结果窗口没有互换，结果日期不作薪资到账日。"
+        ],
+        "previousFinalSnapshotFile": "/workspace/scratch/34014d64f2eb/independent-snapshots/044-line-1-fe2c0ff852f8.json",
+        "sourceFileSha256AtReview": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+        "finalFieldReadAtUtc": "2026-11-22T11:36:40.295481+00:00"
+      },
+      {
+        "hexagram": 44,
+        "movingLine": 2,
+        "reviewer": "/root/author_042",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-full-read-and-return-field-reread-complete",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:10:22.266150+00:00",
+        "scope": "十二篇标题、简断、六段全部正文、薪资与完整应期实际阅读；五气原盘、五气旧公开全文、完整新旧判断与理由/证据/影响、完整取期订正、十二项薪资订正及旧polish-v5/review-v2逐组实读。王孔姤全篇重新完整读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line2-initial.json",
+        "initialCanonicalArticleArraySha256": "0abb4a8bb99a090e50a46ba879a9729d1da4f10af91d8204e0557c0261866815",
+        "pendingChanges": [],
+        "reviewNotes": [
+          "艮受本用巽制且无火生，一层弱生，夏土相/土令旺原态完整保留；乾克巽不递归取消巽制艮。",
+          "五气有生无克保留能升，并明记弱体薄生取权。",
+          "王孔无咎在非犯夺，不利宾戒擅他人之物为己惠；不把鱼解作自己独有成果或已批岗位。",
+          "support/name-support和changed_use及辰戌丑未支日保持；薪资逐值原稿绑定，未保证同步或固定薪带。"
+        ],
+        "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+        "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+        "finalSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line2-final.json",
+        "finalCanonicalArticleArraySha256": "e24fc1b4230349b2c5d57a5a4801433a2edad1444405cec800f561b0d90d1924",
+        "finalVersionCoverage": {
+          "wholeArticleObjectsUnchangedSinceFullRead": 9,
+          "originalWholeArticlePlusCompleteChangedFieldRead": 3,
+          "publicArticlesEntirelyUnchangedSinceFullRead": 9,
+          "publicArticlesWithFullChangedFieldsReread": 3
+        },
+        "completeChangedFieldsReread": [
+          {
+            "monthBranch": "未",
+            "field": "paragraphs[5]",
+            "old": "变成遁卦可取留有进退之度，不需由此另编退职情节。对于有依据的部分，应主动完成说明；超出个人可决定范围的部分，应明确共同安排。得遇而不擅用，才使九二的无咎与此盘有根、有补的成势相互照应。",
+            "new": "变为遁卦，可取进退有度的提醒，并不表示需要退出当前岗位。对于有依据的部分，应主动完成说明；超出个人可决定范围的部分，应明确共同安排。得遇而不擅用，才使九二的无咎与此盘有根、有补的成势相互照应。"
+          },
+          {
+            "monthBranch": "亥",
+            "field": "short",
+            "old": "这一回能晋升。亥月乾体休、巽木相，经营须耐心，两互同气轻，末艮囚又受木制，生助薄而不绝。九二肯定得遇无咎，也戒擅作处置，宜把成果来由与职责边界说明完整，不编定岗时必有某项条件恰好补齐。",
+            "new": "这一回能晋升。亥月乾体休、巽木相，经营须耐心，两互同气轻，末艮囚又受木制，生助薄而不绝。九二肯定得遇无咎，也戒擅作处置，宜把成果来由与职责边界说明完整，不把末后薄助看成任职条件已经齐备。"
+          },
+          {
+            "monthBranch": "子",
+            "field": "title",
+            "old": "轻助有来，守明使用之界",
+            "new": "轻助仍在，使用有界"
+          },
+          {
+            "monthBranch": "子",
+            "field": "paragraphs[5]",
+            "old": "末卦遁可以借作止于合宜范围的提醒，不需据此另添离任或退让的故事。可承担的认真承接，尚不能决定的及时询明，得到的帮助在约定内使用。这样保持所说与所做相应，既不缩小九二无咎的益处，也不越过不利宾的限制。",
+            "new": "末卦遁可以借作止于合宜范围的提醒，不表示必须离任，也不要求放弃正当争取。可承担的认真承接，尚不能决定的及时询明，得到的帮助在约定内使用。这样保持所说与所做相应，既不缩小九二无咎的益处，也不越过不利宾的限制。"
+          }
+        ],
+        "changedPublicFieldCount": 4,
+        "allChangedFieldBindingCount": 4,
+        "rereadMethod": "最初十二篇公开全文及五气完整技术实读；返修后逐项读取完整旧新字段。完全相同的完整取期、理由和来源数组只实读一次，再验同其余绑定；不把验哈希或验同冒称再次阅读全文。",
+        "finalBindingVerification": {
+          "exactOldAndNewCorrectionBindings": 36,
+          "sameQiJudgmentAndFullTimingGroups": 5,
+          "outcomeChanges": 0,
+          "timingSignatureChanges": 0,
+          "branchSetChanges": 0
+        }
+      },
+      {
+        "hexagram": 44,
+        "movingLine": 3,
+        "reviewer": "/root/author_042",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-full-read-and-return-field-reread-complete",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:11:50.522326+00:00",
+        "scope": "十二篇标题、简断、六段全部正文、薪资与完整应期实际阅读；五气原盘、五气旧公开全文、完整新旧判断与理由/证据/影响、完整取期订正、十二项薪资订正及旧polish-v5/review-v2逐组实读。王孔九三经注疏对读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line3-initial.json",
+        "initialCanonicalArticleArraySha256": "7c485168865dd27d05a6761fcc5158b17a5a7f712e294ba2427a3a1ee32aba9f",
+        "pendingChanges": [],
+        "reviewNotes": [
+          "五气无直接生体与克体，末坎受金生而泄；春休、夏囚、土死轻泄，秋相冬旺有气泄实，体休与作用节点休区分。",
+          "旺体厚和或无克的积极盘据未抹去；不成按现行末泄权重，规则开放注明。",
+          "原互变只许生和的排他解读已订正；原行未牵释未被牵制已按王孔未能牵据修正。",
+          "危厉与履位非妄处、灾非己招、无大咎一并说明；不把未升证明现实失责。",
+          "五气drain/changed_use/亥子日完全保持；旧交接、借调、事故和时长故事撤销事实断定，pay旧空值准确。"
+        ],
+        "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+        "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+        "finalSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line3-final.json",
+        "finalCanonicalArticleArraySha256": "f1ebbde5d1c615298d489c9025f0b8fae355345b13c0f6a169419325af88ba98",
+        "finalVersionCoverage": {
+          "wholeArticleObjectsUnchangedSinceFullRead": 4,
+          "originalWholeArticlePlusCompleteChangedFieldRead": 8,
+          "publicArticlesEntirelyUnchangedSinceFullRead": 4,
+          "publicArticlesWithFullChangedFieldsReread": 8
+        },
+        "completeChangedFieldsReread": [
+          {
+            "monthBranch": "寅",
+            "field": "short",
+            "old": "这轮升不了，寅月乾金囚而经营旺木较费力，中途虽有同气相接，末坎仍受体生，支撑没有转成补益。九三处境危厉而无大咎，宜先稳住职责依据，保留能做的部分，不把行进迟滞编成自己已有失误，也不靠追加承诺催求任用。",
+            "new": "这轮升不了，寅月乾金囚而经营旺木较费力，中途虽有同气相接，末坎仍受体生，支撑没有转成补益。九三处境危厉而无大咎，宜先稳住职责依据，保留能做的部分，不因行进迟滞就认定自己已有失误，也不靠追加承诺催求任用。"
+          },
+          {
+            "monthBranch": "寅",
+            "field": "paragraphs[1]",
+            "old": "体互、用互都是囚乾，比和仍有协调之处，但同样失令，承托较薄。末变天水讼，坎水处休而受乾金所生，付出在结尾继续，并无直接生金的力量补入。全盘没有克体，应保留相通的好处，不必据未升另编外来的强硬压制。",
+            "new": "体互、用互都是囚乾，比和仍有协调之处，但同样失令，承托较薄。末变天水讼，坎水处休而受乾金所生，付出在结尾继续，并无直接生金的力量补入。全盘没有克体，应保留相通的好处，不因未升就认定外来约束必然强硬。"
+          },
+          {
+            "monthBranch": "辰",
+            "field": "paragraphs[0]",
+            "old": "此次升不了，但前中段的能力与承托应当充分看见，不能把整盘写成一片薄弱。辰月乾金相，本用巽木囚而受体克，自身有经营余地；两互乾金也相，同气相接较实，说明已有工作可以有根有据地展开。",
+            "new": "此次升不了，但前中段的能力与承托应当充分看见，不能据未升认定各处条件都很薄弱。辰月乾金相，本用巽木囚而受体克，自身有经营余地；两互乾金也相，同气相接较实，说明已有工作可以有根有据地展开。"
+          },
+          {
+            "monthBranch": "辰",
+            "field": "paragraphs[1]",
+            "old": "末变坎水处死，受乾金所生，耗泄较轻而仍是向外付出。结尾没有新增克制，也未转成直接生扶，前面的有力不宜被末耗全部抹掉。这里未升与首中有利并存，不必编成评议挑不出亮点、没有成果，或某项交接占了时间。",
+            "new": "末变坎水处死，受乾金所生，耗泄较轻而仍是向外付出。结尾没有新增克制，也未转成直接生扶，前面的有力不宜被末耗全部抹掉。这里未升与首中有利并存，不表示评议已认定没有亮点或成果，也不表示某项交接已经占去所需时间。"
+          },
+          {
+            "monthBranch": "午",
+            "field": "paragraphs[2]",
+            "old": "「臀无肤，其行次且；厉，无大咎」先写难以安定，又明确保留无大过咎。王孔认为九三得位而非妄处，危厉来自未遇其时，不能牵据以固所处。这里的处境并不等于履职错误，不应据此给真实经历添上已经失责的故事。",
+            "new": "「臀无肤，其行次且；厉，无大咎」先写难以安定，又明确保留无大过咎。王孔认为九三得位而非妄处，危厉来自未遇其时，不能牵据以固所处。这里的处境并不等于履职错误，不应据此认定真实工作中已经发生失责。"
+          },
+          {
+            "monthBranch": "未",
+            "field": "short",
+            "old": "本轮升不了，未月乾金相，两互同气有力，前中并不缺承托；末坎死而轻泄，后势仍为自身付出。九三危厉而无大咎，宜分清处境与过失，讲足真实适任依据，保持承担的界限，不把轻耗编成某项零碎工作已经耽误晋升。",
+            "new": "本轮升不了，未月乾金相，两互同气有力，前中并不缺承托；末坎死而轻泄，后势仍为自身付出。九三危厉而无大咎，宜分清处境与过失，讲足真实适任依据，保持承担的界限，不因轻耗便认定某项零碎工作已经耽误晋升。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "short",
+            "old": "这一次不能晋升，申月乾体与两互皆旺，首中经营和相接有力；末坎相而受体生，收束仍见付出。九三厉而无大咎，宜保留已有本领与正当承担，核清新增任务的范围，不把末泄变成已经借调或实际耗掉数周的故事。",
+            "new": "这一次不能晋升，申月乾体与两互皆旺，首中经营和相接有力；末坎相而受体生，收束仍见付出。九三厉而无大咎，宜保留已有本领与正当承担，核清新增任务的范围，不因末泄就认定已经借调或实际耗掉数周。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "paragraphs[1]",
+            "old": "末变坎水相而为金所生，结尾仍由原体付出，并未转成帮助体卦的相生。旺金能承受，不能被说成稍有投入就耗尽，但所泄的水亦有气，末段耗用也不能略去。全盘无克体，未升不是必须靠编出一项强迫借调才说得通。",
+            "new": "末变坎水相而为金所生，结尾仍由原体付出，并未转成帮助体卦的相生。旺金能承受，不能被说成稍有投入就耗尽，但所泄的水亦有气，末段耗用也不能略去。全盘无克体，不能由未升就认定自己已经被强迫借调，真实任职条件仍需查明。"
+          },
+          {
+            "monthBranch": "亥",
+            "field": "short",
+            "old": "这回升不了，亥月乾体休而经营相木，两互同气帮助轻，末坎当旺又受体生，后段付出较明显。九三危厉不等于自身有大过，宜核实职责和投入的界限，不将末泄编成突发险事，也不把休金说成完全没有余力。",
+            "new": "这回升不了，亥月乾体休而经营相木，两互同气帮助轻，末坎当旺又受体生，后段付出较明显。九三危厉不等于自身有大过，宜核实职责和投入的界限，不因末泄就认定已有突发险事，也不把休金说成完全没有余力。"
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[1]",
+            "old": "两互乾金同休，比和能够保持协调，帮助却轻。末用坎水当旺，为乾所生，使结尾的耗泄较为显著；并没有哪一处直接生体，也没有克体。应说明的是投入与补充的关系，不能只见坎便替现实添一桩突发险事或断定某项工作吞去所有时间。",
+            "new": "两互乾金同休，比和能够保持协调，帮助却轻。末用坎水当旺，为乾所生，使结尾的耗泄较为显著；并没有哪一处直接生体，也没有克体。这里须分清投入与补充的关系，不能只见坎便认定现实已有突发险事，或某项工作吞去所有时间。"
+          },
+          {
+            "monthBranch": "子",
+            "field": "paragraphs[5]",
+            "old": "变讼可以提醒人有据陈述且适当收束，不需添出具体争执。对已做成的事保持准确，对尚未落实的安排保留确认空间，既不自责过度，也不扩大许诺。九三无大咎所留的自持之地，正可使眼前不遇仍有清楚而正当的应对。",
+            "new": "变讼可以提醒人有据陈述且适当收束，不表示现实已经发生争执。对已做成的事保持准确，对尚未落实的安排保留确认空间，既不自责过度，也不扩大许诺。九三无大咎所留的自持之地，正可使眼前不遇仍有清楚而正当的应对。"
+          },
+          {
+            "monthBranch": "丑",
+            "field": "paragraphs[1]",
+            "old": "末用坎水死而受金生，耗泄较轻，但后段仍需付出，并非新的相生来助体。全盘不见克体，首中有利与末耗并存，要同时看清。由轻耗不能推成差一点便升，更不能据此编出某次交接只耽误了半天而影响结局。",
+            "new": "末用坎水死而受金生，耗泄较轻，但后段仍需付出，并非新的相生来助体。全盘不见克体，首中有利与末耗并存，要同时看清。由轻耗不能推成差一点便升，也不能据此认定某次交接耽误了确定时长，从而影响结局。"
+          }
+        ],
+        "changedPublicFieldCount": 12,
+        "allChangedFieldBindingCount": 12,
+        "rereadMethod": "最初十二篇公开全文及五气完整技术实读；返修后逐项读取完整旧新字段。完全相同的完整取期、理由和来源数组只实读一次，再验同其余绑定；不把验哈希或验同冒称再次阅读全文。",
+        "finalBindingVerification": {
+          "exactOldAndNewCorrectionBindings": 36,
+          "sameQiJudgmentAndFullTimingGroups": 5,
+          "outcomeChanges": 0,
+          "timingSignatureChanges": 0,
+          "branchSetChanges": 0
+        }
+      },
+      {
+        "hexagram": 44,
+        "movingLine": 4,
+        "reviewer": "/root/author_042",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-full-read-and-return-field-reread-complete",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:13:00.583960+00:00",
+        "scope": "十二篇标题、简断、六段全部正文、薪资与完整应期实际阅读；五气原盘、五气旧公开全文、完整新旧判断与理由/证据/影响、完整取期订正、十二项薪资订正及旧polish-v5/review-v2逐组实读。王孔九四经注疏及原书老人有忧色完整例实际对读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line4-initial.json",
+        "initialCanonicalArticleArraySha256": "fb6c1d4d30fbeef9d81c8f4d67e58a2bae806bb412efc4156e61b4ef0d849cd9",
+        "pendingChanges": [],
+        "reviewNotes": [
+          "本用与两互三乾克巽，末巽比和，无生；原春旺冬相不改，用党多仍限整体体势。",
+          "三金原囚死休轻克、秋旺土相克实；末春冬实和/夏秋土薄和全部保留，未按数量编实际考核。",
+          "王孔无鱼与远民是失应，不能证明基层经历/成果缺失或指认失职。",
+          "老人有忧色只旁证三乾克巽，无移植原例灾情、后天数或时限。",
+          "春冬control/use申酉，夏秋土control/use_mutual申酉原签名保留；pay仅本次未升所附增薪未落实。"
+        ],
+        "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+        "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+        "finalSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line4-final.json",
+        "finalCanonicalArticleArraySha256": "e45e00ccfe50d291598a6cfe9c40e04cce516e330a1340d8eaed602725f62a41",
+        "finalVersionCoverage": {
+          "wholeArticleObjectsUnchangedSinceFullRead": 7,
+          "originalWholeArticlePlusCompleteChangedFieldRead": 5,
+          "publicArticlesEntirelyUnchangedSinceFullRead": 7,
+          "publicArticlesWithFullChangedFieldsReread": 5
+        },
+        "completeChangedFieldsReread": [
+          {
+            "monthBranch": "未",
+            "field": "paragraphs[5]",
+            "old": "九四的凶戒并不授权把不利归成个人已经失职，它强调的是无所依应时不能任意起事。先弄清责任和权限，再安排能够承担的部分，比凭更多许诺催定名位更稳妥。此盘宜以这样的分寸守住实际工作，不让前中受制演成无根的自我加码。",
+            "new": "九四的凶戒并不表示个人已经失职，它强调的是无所依应时不能任意起事。先弄清责任和权限，再安排能够承担的部分，比凭更多许诺催定名位更稳妥。此盘宜以这样的分寸守住实际工作，不让前中受制演成无根的自我加码。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "paragraphs[5]",
+            "old": "九四提醒先有依应再求动作，宜核清权限、资源与责任如何相接，再决定自己承接到哪里。处境受制时保持事实准确，也给必要的询问留余地，比仓促催求结果更合此意。本轮未升，仍应以真实关系安排工作，不由卦象另添处罚或争夺。",
+            "new": "九四提醒先有依应再求动作，宜核清权限、资源与责任如何相接，再决定自己承接到哪里。处境受制时保持事实准确，也给必要的询问留余地，比仓促催求结果更合此意。本轮未升，仍应以真实关系安排工作，不能由卦象认定已有处罚或争夺。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[5]",
+            "old": "九四起凶的提醒在先明所依，行动不应只由希望得到的名位推动。核清责任边界、准确呈现实绩、询明未定事项，都是可以实际完成的工作。眼前不升也不需编成已有处罚，把判断限定在本轮承接，较能保留事实与象意各自应有的范围。",
+            "new": "九四起凶的提醒在先明所依，行动不应只由希望得到的名位推动。核清责任边界、准确呈现实绩、询明未定事项，都是可以实际完成的工作。眼前不升并不表示已经受到处罚，宜把注意力放在本轮承接，具体任职条件仍须据实确认。"
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[3]",
+            "old": "准备可以先核清目标职责与已有经验怎样相接。个人承担的工作，宜说明所面对的要求、作出的判断和可确认的结果；共同完成的部分则交代配合条件。这样既看得见自身作用，也能辨明哪些承接还需要现实信息，而非凭想象补成完整故事。",
+            "new": "准备可以先核清目标职责与已有经验怎样相接。个人承担的工作，宜说明所面对的要求、作出的判断和可确认的结果；共同完成的部分则交代配合条件。这样既看得见自身作用，也能辨明哪些承接还需要现实信息，尚不明确的条件则继续据实确认。"
+          },
+          {
+            "monthBranch": "子",
+            "field": "short",
+            "old": "这一轮升不了，子月巽体相，前中休乾之克较轻，但用方复见仍限制体势；末相巽比和有力，支持不应抹去。九四无鱼着眼失应，宜核清职责和成果所能证明的范围，不编具体缺口，也不拿相合直接代替尚未落实的任职确认。",
+            "new": "这一轮升不了，子月巽体相，前中休乾之克较轻，但用方复见仍限制体势；末相巽比和有力，支持不应抹去。九四无鱼着眼失应，宜核清职责和成果所能证明的范围，未明条件据实确认，也不拿相合直接代替尚未落实的任职确认。"
+          },
+          {
+            "monthBranch": "子",
+            "field": "paragraphs[5]",
+            "old": "九四所戒的是失所依而动，宜让行动先有真实条件相接。核清职责关系、说明可靠成果、确认权限边界，都是求进中有意义的工作。眼前仍按未升处理，不以一个象意替自己编出失败经过，也不因仍有后助就省略必要的现实确认。",
+            "new": "九四所戒的是失所依而动，宜让行动先有真实条件相接。核清职责关系、说明可靠成果、确认权限边界，都是求进中有意义的工作。眼前仍按未升处理，不凭一处象意认定自己已经有过某项失误，也不因仍有后助就省略必要的现实确认。"
+          }
+        ],
+        "changedPublicFieldCount": 6,
+        "allChangedFieldBindingCount": 6,
+        "rereadMethod": "最初十二篇公开全文及五气完整技术实读；返修后逐项读取完整旧新字段。完全相同的完整取期、理由和来源数组只实读一次，再验同其余绑定；不把验哈希或验同冒称再次阅读全文。",
+        "finalBindingVerification": {
+          "exactOldAndNewCorrectionBindings": 36,
+          "sameQiJudgmentAndFullTimingGroups": 5,
+          "outcomeChanges": 0,
+          "timingSignatureChanges": 0,
+          "branchSetChanges": 0
+        },
+        "secondReturnRead": {
+          "monthBranch": "子",
+          "field": "paragraphs[5]",
+          "scope": "返修整段再次实际读取，遭遇具体失误改为有过某项失误，其余不变。"
+        }
+      },
+      {
+        "hexagram": 44,
+        "movingLine": 5,
+        "reviewer": "/root/author_042",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-full-read-and-return-field-reread-complete",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:15:40.365468+00:00",
+        "scope": "十二篇标题、简断、六段全部正文、薪资与完整应期实际阅读；五气原盘、五气旧公开全文、完整新旧判断与理由/证据/影响、完整取期订正、十二项薪资订正及旧polish-v5/review-v2逐组实读。王孔九五经注疏、本义卷二姤段、联网四库转录九五本义程传段独立实读；转录页尚未校对，不冒称影印校勘。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line5-initial.json",
+        "initialCanonicalArticleArraySha256": "0ce2f80cbc5b241a168ef4b02b4839d7a80d1dbf8e1b68516b51a6a60882592b",
+        "pendingChanges": [],
+        "reviewNotes": [
+          "末离一层制三乾且无土生金，三金五气按弱克；原秋旺土相不改、方向不消，木生火泄与火制金减克分别保留。",
+          "用党多不因克力轻而删去，春木旺冬木相只作原气；冬水当令不是盘内新增生体节点。",
+          "王孔含章为含美未发，守中正不可轻倾，有陨唯天能陨；朱本义静制回造化、程传屈己求贤终得遇明确区分，没有拼成上级突降新规。",
+          "春夏冬drain/changed_use巳午，秋土control/use_mutual申酉均冻结；应期两组说明只需去编辑口吻。",
+          "公开正面爻义不因未升削弱，旧公开展示/年度报告/保密项目/长线项目等无据具体事件已撤销。"
+        ],
+        "additionalSourceActuallyRead": [
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "姤卦段，尤其九五"
+          },
+          {
+            "url": "https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183",
+            "scope": "九五本义程传完整转录段，页面自标尚未校对；未声称影印比对。",
+            "retrievalRef": "turn612534283view0"
+          }
+        ],
+        "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+        "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+        "finalSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line5-final.json",
+        "finalCanonicalArticleArraySha256": "fca23b6eced5949026915649bfe583dc6a73f67f8c9b2875e473dbb05de9f0e5",
+        "finalVersionCoverage": {
+          "wholeArticleObjectsUnchangedSinceFullRead": 0,
+          "originalWholeArticlePlusCompleteChangedFieldRead": 12,
+          "publicArticlesEntirelyUnchangedSinceFullRead": 2,
+          "publicArticlesWithFullChangedFieldsReread": 10
+        },
+        "completeChangedFieldsReread": [
+          {
+            "monthBranch": "寅",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "卯",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "辰",
+            "field": "timing",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "辰",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "辰",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "巳",
+            "field": "paragraphs[2]",
+            "old": "爻辞「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。依王孔，所含之美尚未发用，但九五守中而志不舍命，因而不可轻易倾陨。这层好处应当保留，不需要为解释未升而编成已经漏讲成果，或某份事务夺走全部时间。",
+            "new": "爻辞「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。依王孔，所含之美尚未发用，但九五守中而志不舍命，因而不可轻易倾陨。这层好处依然存在，未升不等于已经漏讲成果，也不表示某项事务夺走了全部时间。"
+          },
+          {
+            "monthBranch": "巳",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "午",
+            "field": "short",
+            "old": "这次升不了，午月巽木休，三乾克力轻且受离制，前中约束减而未绝；用方同气复见，末旺离又泄体，仍无生扶。九五守中正而不轻倾的积极意思不能删去，宜据实说明积累，把精力用在关键承接上，不把更多投入当成任用的凭据。",
+            "new": "这次升不了，午月巽木休，三乾克力轻且受离制，前中约束减而未绝；用方同气复见，末旺离又泄体，仍无生扶。九五守中正而不轻倾的长处仍在，宜据实说明积累，把精力用在关键承接上，不把更多投入当成任用的凭据。"
+          },
+          {
+            "monthBranch": "午",
+            "field": "paragraphs[2]",
+            "old": "九五「以杞包瓜，含章，有陨自天」，小象称中正、志不舍命。王孔所释是美质含藏而尚未发用，居中守正，不可轻易倾陨。这一层是爻义真正的长处，应与本盘克泄并看，不能为使结果显得一致，就把含章改成已经失误的证据。",
+            "new": "九五「以杞包瓜，含章，有陨自天」，小象称中正、志不舍命。王孔所释是美质含藏而尚未发用，居中守正，不可轻易倾陨。这份长处与本盘克泄同时存在，不能因结果未成就认定含章有失；已经具备的积累仍有其真实价值。"
+          },
+          {
+            "monthBranch": "午",
+            "field": "paragraphs[5]",
+            "old": "本盘没有生扶续入，克体关系又尚在，九五之善主要可取于守志与尺度。对真实长处保持清楚认识，对未明确的安排保持核实态度，就能使行动有据。眼前任用未成，仍宜循实际职责做事，不由末耗自行添出报告、工期或他人的安排。",
+            "new": "本盘没有生扶续入，克体关系又尚在，九五之善主要可取于守志与尺度。对真实长处保持清楚认识，对未明确的安排保持核实态度，就能使行动有据。眼前任用未成，仍宜循实际职责做事，不因末耗就认定报告、工期或他人安排已有具体变故。"
+          },
+          {
+            "monthBranch": "午",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "未",
+            "field": "timing",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "未",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "未",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "申",
+            "field": "paragraphs[2]",
+            "old": "九五「以杞包瓜，含章，有陨自天」，小象以中正、志不舍命释之。王孔说九五含美而未发，居中守志，不可轻易倾陨；这层正面意思必须保留。有陨自天在这一路解释中，不能直接换作现实中忽然落下的新规定或资格门槛。",
+            "new": "九五「以杞包瓜，含章，有陨自天」，小象以中正、志不舍命释之。王孔说九五含美而未发，居中守志，不可轻易倾陨；这份守中不失的长处仍在。有陨自天在这一路解释中，不能直接换作现实中忽然落下的新规定或资格门槛。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "judgmentCorrection.reason",
+            "old": "纠正文气重克与既有间接规则相矛盾，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+            "new": "纠正旧正文将秋金写成重克、与既有间接规则相矛盾的叙述，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[2]",
+            "old": "爻辞「以杞包瓜，含章，有陨自天」，小象说中正，又说志不舍命。依王孔，含章是有美而未发，九五处得其所、守志不舍，所以不可轻易倾陨。这样的积极意思不可因未升而删去，更不能从未发便断定当事人表达不善或实绩空乏。",
+            "new": "爻辞「以杞包瓜，含章，有陨自天」，小象说中正，又说志不舍命。依王孔，含章是有美而未发，九五处得其所、守志不舍，所以不可轻易倾陨。这一长处不因本次未升而失去价值，更不能从未发便断定当事人表达不善或实绩空乏。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[5]",
+            "old": "末段耗力较薄，也无需据此安排一套必然发生的忙乱情节。将精力放在主要依据上，能够完成的认真完成，需要共同确认的保持询明，便是可用的分寸。此轮名位未落实，仍可守住所长与所责，不将有陨自天化作对未来突发事件的预断。",
+            "new": "末段耗力较薄，并不意味着现实中已经出现忙乱或无法收束的事务。将精力放在主要依据上，能够完成的认真完成，需要共同确认的保持询明，便是可用的分寸。此轮名位未落实，仍可守住所长与所责，不将有陨自天化作对未来突发事件的预断。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "judgmentCorrection.reason",
+            "old": "纠正文气重克与既有间接规则相矛盾，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+            "new": "纠正旧正文将秋金写成重克、与既有间接规则相矛盾的叙述，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "戌",
+            "field": "paragraphs[2]",
+            "old": "九五「以杞包瓜，含章，有陨自天」，小象以中正和志不舍命说明。王孔解释九五含有章美而尚未发用，居中守正，故不可轻易倾陨。爻义保有实质而不失其守的好处，与眼前任用未成并不矛盾，不能为求一致而反说含章全是问题。",
+            "new": "九五「以杞包瓜，含章，有陨自天」，小象以中正和志不舍命说明。王孔解释九五含有章美而尚未发用，居中守正，故不可轻易倾陨。爻义保有实质而不失其守的好处，与眼前任用未成并不矛盾，不能因结果未成就认定含章所示积累全是问题。"
+          },
+          {
+            "monthBranch": "戌",
+            "field": "paragraphs[5]",
+            "old": "九五所保全的中正，可用于稳住责任与承诺的尺度。有根据的长处不必缩小，尚未得到的名位也不能先作承接。此盘轻克仍在、无生扶续入，宜以查明事实为行动起点，把能完成的工作做好，不从未升另添自身已经犯错的故事。",
+            "new": "九五所保全的中正，可用于稳住责任与承诺的尺度。有根据的长处不必缩小，尚未得到的名位也不能先作承接。此盘轻克仍在、无生扶续入，宜以查明事实为行动起点，把能完成的工作做好，不因未升便认定自身已经犯错。"
+          },
+          {
+            "monthBranch": "戌",
+            "field": "timing",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "戌",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "戌",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "亥",
+            "field": "timing",
+            "old": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+              ]
+            ],
+            "new": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "亥",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "亥",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+              ]
+            ],
+            "new": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "子",
+            "field": "timing",
+            "old": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+              ]
+            ],
+            "new": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "子",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "子",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+              ]
+            ],
+            "new": [
+              [
+                "drain",
+                "changed_use",
+                "末段仍需分配心力的参考时段",
+                "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+                "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "丑",
+            "field": "paragraphs[2]",
+            "old": "九五「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。王孔认为九五含美而尚未发用，处得其所、守志不舍，所以不可轻易倾陨。这里明明保有好的分寸，不应为适应未升的结果，就把含章改成缺乏表达、成果失去价值的缺点。",
+            "new": "九五「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。王孔认为九五含美而尚未发用，处得其所、守志不舍，所以不可轻易倾陨。这里仍有守正不失的分寸，未升不等于表达欠缺，也不表示真实成果已经失去价值。"
+          },
+          {
+            "monthBranch": "丑",
+            "field": "paragraphs[5]",
+            "old": "本轮名位未落实，九五所示守中正仍可用于日常行动：所言有据、所任有界，未知之处先核清。这样的分寸保留真实积累，也使求进不失其守。轻克尚在而生扶未入，不能将认真准备直接当成任用已经获准，更无须据此添加惩处或损失。",
+            "new": "本轮名位未落实，九五所示守中正仍可用于日常行动：所言有据、所任有界，未知之处先核清。这样的分寸保留真实积累，也使求进不失其守。轻克尚在而生扶未入，不能将认真准备直接当成任用已经获准，也不能据此认定已有惩处或损失。"
+          },
+          {
+            "monthBranch": "丑",
+            "field": "timing",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          },
+          {
+            "monthBranch": "丑",
+            "field": "judgmentCorrection.sourceEvidence",
+            "old": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              }
+            ],
+            "new": [
+              {
+                "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+                "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+              },
+              {
+                "path": "docs/READING_POLICY_V2.md",
+                "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+              },
+              {
+                "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+              },
+              {
+                "path": "sources/editorial/promotion-pay/hex-044.json",
+                "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+              },
+              {
+                "path": "data/authored-readings/promotion-pay/hex-044.json",
+                "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+              },
+              {
+                "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+                "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+              },
+              {
+                "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+                "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+              }
+            ]
+          },
+          {
+            "monthBranch": "丑",
+            "field": "timingWordingCorrection.new",
+            "old": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+              ]
+            ],
+            "new": [
+              [
+                "control",
+                "use_mutual",
+                "中途承接受约束的参考时段",
+                "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+                "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+              ]
+            ]
+          }
+        ],
+        "changedPublicFieldCount": 17,
+        "allChangedFieldBindingCount": 37,
+        "rereadMethod": "最初十二篇公开全文及五气完整技术实读；返修后逐项读取完整旧新字段。完全相同的完整取期、理由和来源数组只实读一次，再验同其余绑定；不把验哈希或验同冒称再次阅读全文。",
+        "finalBindingVerification": {
+          "exactOldAndNewCorrectionBindings": 36,
+          "sameQiJudgmentAndFullTimingGroups": 5,
+          "outcomeChanges": 0,
+          "timingSignatureChanges": 0,
+          "branchSetChanges": 0
+        },
+        "commonRevisedFieldsRead": {
+          "fullTimingArraysActuallyRead": 2,
+          "articleTimingBindingsVerifiedIdentical": 6,
+          "correctionNewTimingBindingsVerifiedIdentical": 6,
+          "completeAutumnReasonActuallyRead": 1,
+          "reasonBindingsVerifiedIdentical": 2,
+          "completeSourceEvidenceArrayActuallyRead": 1,
+          "sourceEvidenceBindingsVerifiedIdentical": 12
+        }
+      },
+      {
+        "hexagram": 44,
+        "movingLine": 6,
+        "reviewer": "/root/author_042",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "status": "independent-full-read-and-return-field-reread-complete",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "readAtUtc": "2026-11-22T11:17:50.283651+00:00",
+        "scope": "十二篇标题、简断、六段全部正文、薪资与完整应期实际阅读；五气原盘、五气旧公开全文、完整新旧判断与理由/证据/影响、完整取期订正、十二项薪资订正及旧polish-v5/review-v2逐组实读。王孔上九经注疏实际对读。",
+        "initialSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line6-initial.json",
+        "initialCanonicalArticleArraySha256": "0d67f103b10e147e5680a0d9fa1295f2b3d39da506c96d111078a5de217f34e9",
+        "pendingChanges": [],
+        "reviewNotes": [
+          "本用两互乾及末兑四金皆克体，无生无制金节点；原春旺冬相木与用党多整体受限分别记，不拿夏火冬水月令作盘内节点。",
+          "秋旺土相克实，春囚夏死冬休克轻；不按节点数加成实际损失、指标或拒绝次数。",
+          "王孔进极无遇导致吝，不争不害故无凶咎，两层完整；无咎不需要先假定已有争执，再局限为收手补救。",
+          "五气control/changed_use/申酉完全冻结；原谈崩、骨干去留、岗位不补人、汇报线争议、签约授权等事件撤销事实断定。",
+          "十二pay旧空值准确，只说本次晋升所附增加未落实，不推出现薪/奖金结果。"
+        ],
+        "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+        "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+        "finalSnapshotFile": "/workspace/scratch/34014d64f2eb/review-044-author042/line6-final.json",
+        "finalCanonicalArticleArraySha256": "ac0ed5d211f04742f5da7c2106fe41c1af4e25387eb7fc047f6e2e50c04df667",
+        "finalVersionCoverage": {
+          "wholeArticleObjectsUnchangedSinceFullRead": 1,
+          "originalWholeArticlePlusCompleteChangedFieldRead": 11,
+          "publicArticlesEntirelyUnchangedSinceFullRead": 1,
+          "publicArticlesWithFullChangedFieldsReread": 11
+        },
+        "completeChangedFieldsReread": [
+          {
+            "monthBranch": "寅",
+            "field": "paragraphs[2]",
+            "old": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进至极处、无所再遇说明吝，是不遇而有遗憾；又因不与物争、其道不害而无凶咎。无咎本来就是爻义的一面，不能写成当事人已争执失败，只剩及时收手可补过。",
+            "new": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进至极处、无所再遇说明吝，是不遇而有遗憾；又因不与物争、其道不害而无凶咎。无咎的好处仍在，不表示当事人已争执失败，也不以先有过失、再收手补救为前提。"
+          },
+          {
+            "monthBranch": "卯",
+            "field": "paragraphs[2]",
+            "old": "爻辞「姤其角，吝，无咎」，小象言上穷吝。王孔解释，上九进至极处，无所再遇，故有独恨之吝；不与物争，其道不害，所以无凶咎。所说遗憾并非指责已经有过争执，无咎也不能从完整爻辞中删掉，只留下不得遇的不利。",
+            "new": "爻辞「姤其角，吝，无咎」，小象言上穷吝。王孔解释，上九进至极处，无所再遇，故有独恨之吝；不与物争，其道不害，所以无凶咎。所说遗憾并非指责已经有过争执，无咎仍有行事不害的好处，不得遇的遗憾并不取消这一面。"
+          },
+          {
+            "monthBranch": "卯",
+            "field": "paragraphs[4]",
+            "old": "上九不争的分寸，可用于在表达诉求时尊重事实与实际程序。有根据的内容不必退缩，仍不清楚的要求先询明；遇到尚未得到确认的部分，保持准确说明即可。求进可以认真，不能由急切替代承接，更无需从一个角字编出双方必会顶撞的场面。",
+            "new": "上九不争的分寸，可用于在表达诉求时尊重事实与实际程序。有根据的内容不必退缩，仍不清楚的要求先询明；遇到尚未得到确认的部分，保持准确说明即可。求进可以认真，不能由急切替代承接，也不能只凭一个角字便认定双方必会发生顶撞。"
+          },
+          {
+            "monthBranch": "辰",
+            "field": "paragraphs[5]",
+            "old": "本轮任用未成，吝所示不遇也不等于人的全部努力失去价值。无咎留下行事不害的分寸，可以让当前工作与后续准备仍有清楚依据。先把责任、条件与成果对应准确，再安排能够做到的部分，不用更多承诺催定名位，也不从未升另添其他损害。",
+            "new": "本轮任用未成，吝所示不遇也不等于人的全部努力失去价值。无咎留下行事不害的分寸，可以让当前工作与后续准备仍有清楚依据。先把责任、条件与成果对应准确，再安排能够做到的部分，不用更多承诺催定名位，也不因未升就认定另有其他损害。"
+          },
+          {
+            "monthBranch": "巳",
+            "field": "short",
+            "old": "这次升不了，巳月巽体休，前中死乾与末死兑都在克体，作用轻而未绝，用方重复仍限制体势。上九吝在进极无遇，不争而无咎的好处应保留，宜按实际要求说明承担，不把休体说成精力枯竭，也不凭爻象编出人员去留的僵局。",
+            "new": "这次升不了，巳月巽体休，前中死乾与末死兑都在克体，作用轻而未绝，用方重复仍限制体势。上九吝在进极无遇，不争而无咎的分寸仍在，宜按实际要求说明承担，不把休体说成精力枯竭，也不凭爻象认定人员去留已有僵局。"
+          },
+          {
+            "monthBranch": "巳",
+            "field": "paragraphs[2]",
+            "old": "上九「姤其角，吝，无咎」，小象以居上穷极解释吝。王孔说进至极处，无所复遇，是以不遇而有遗憾；又说不与物争，其道不害，所以无凶咎。后半的好处不可省略，也不能把吝改写成当事人已与他人争到无法收场。",
+            "new": "上九「姤其角，吝，无咎」，小象以居上穷极解释吝。王孔说进至极处，无所复遇，是以不遇而有遗憾；又说不与物争，其道不害，所以无凶咎。不争不害的好处仍在，吝也不表示当事人已与他人争到无法收场。"
+          },
+          {
+            "monthBranch": "巳",
+            "field": "paragraphs[5]",
+            "old": "无咎所保留的是不争不害的分寸，与本轮未得名位可以同时成立。把责任说清，把应有工作完成，仍是可用的行动；求遇未得也无需另添过失来解释。保持主动而不强求，承认未知而不附会，较能使这次准备建立在可以查明的事实之上。",
+            "new": "无咎所保留的是不争不害的分寸，与本轮未得名位可以同时成立。把责任说清，把应有工作完成，仍是可用的行动；求遇未得并不意味着自己已有过失。保持主动而不强求，承认未知而不附会，较能使这次准备建立在可以查明的事实之上。"
+          },
+          {
+            "monthBranch": "未",
+            "field": "paragraphs[2]",
+            "old": "上九「姤其角，吝，无咎」，小象说上穷吝。依王孔，已经进至极处，无所复遇，于是有不遇之恨；但不与物争，其道不害，所以无凶咎。吝的根由是穷极无遇，无咎的根据是不争不害，不能只留下不得遇的不足，删掉另一面的好处。",
+            "new": "上九「姤其角，吝，无咎」，小象说上穷吝。依王孔，已经进至极处，无所复遇，于是有不遇之恨；但不与物争，其道不害，所以无凶咎。吝的根由是穷极无遇，无咎的根据是不争不害，二者各有所指，不得遇的不足并不取消行事不害的好处。"
+          },
+          {
+            "monthBranch": "未",
+            "field": "paragraphs[5]",
+            "old": "本次名位未落实，仍应区分处境不利与个人已犯过错。没有证据指向的授权缺失或争例外，不需从爻象补造出来；可核清的责任关系则认真核清。继续完成现有工作，准确呈现积累，能够保留无咎所示的分寸，也让求进不脱离真实条件。",
+            "new": "本次名位未落实，仍应区分处境不利与个人已犯过错。不能仅凭爻象认定已有授权缺失或争取例外的事情；可核清的责任关系则认真核清。继续完成现有工作，准确呈现积累，能够保留无咎所示的分寸，也让求进不脱离真实条件。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "short",
+            "old": "这一回不能晋升，申月巽木死，前中旺乾与末旺兑都在克体，用方复见，约束较实而无生扶。上九穷极无遇有吝，不争不害仍能无咎，宜据实际岗位信息核清承接，不将旺克编成上级取消名额，也不从未升推定必有处分或损失。",
+            "new": "这一回不能晋升，申月巽木死，前中旺乾与末旺兑都在克体，用方复见，约束较实而无生扶。上九穷极无遇有吝，不争不害仍能无咎，宜据实际岗位信息核清承接，不因旺克认定上级已取消名额，也不从未升推定必有处分或损失。"
+          },
+          {
+            "monthBranch": "申",
+            "field": "paragraphs[2]",
+            "old": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进极而无所遇说明吝，是求遇未得的遗憾；又以不与物争、其道不害说明无凶咎。两层意思都须保留，不能因为盘中克重，就把爻辞只剩下穷困与不利。",
+            "new": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进极而无所遇说明吝，是求遇未得的遗憾；又以不与物争、其道不害说明无凶咎。不遇与不害各有根据，盘中约束虽重，仍不取消行事有分寸所能保有的无咎。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[2]",
+            "old": "爻辞「姤其角，吝，无咎」，小象以居上而穷说明吝。王孔解释，进至极处，无所复遇，所以独有不遇的遗憾；同时不与物争，其道不害，故无凶咎。无咎并非可有可无的附语，应与不遇同读，不必先编成争执才使这一爻显得贴合。",
+            "new": "爻辞「姤其角，吝，无咎」，小象以居上而穷说明吝。王孔解释，进至极处，无所复遇，所以独有不遇的遗憾；同时不与物争，其道不害，故无凶咎。无咎有明确的不害之义，与不遇同时存在，并不以现实已经发生争执为前提。"
+          },
+          {
+            "monthBranch": "酉",
+            "field": "paragraphs[5]",
+            "old": "本轮名位未成，仍可以把现有职责完成得准确，让经验得到清楚整理。吝只说明这一处未遇，不宜延伸为对个人全部价值的否定；无咎则留下行事不害的空间。将行动建立在查明的事实之上，不由不利另添惩处或损失，才能守住爻义与现实各自的边界。",
+            "new": "本轮名位未成，仍可以把现有职责完成得准确，让经验得到清楚整理。吝只说明这一处未遇，不宜延伸为对个人全部价值的否定；无咎则留下行事不害的空间。将行动建立在查明的事实之上，不因不利就认定已有惩处或损失，才能守住爻义与现实各自的边界。"
+          },
+          {
+            "monthBranch": "戌",
+            "field": "title",
+            "old": "相克尚在，无咎不可删",
+            "new": "相克尚在，无咎仍可守"
+          },
+          {
+            "monthBranch": "戌",
+            "field": "paragraphs[5]",
+            "old": "本次任用未成，仍应守住结论的范围，不另添已有失职或处罚。把实际工作做好、把积累整理明白，有其可用的价值；无咎也提醒不遇不必转成自责。求进应循查明的条件安排，所言有据、所任有界，才能在受制之中保持准确而稳妥的行动。",
+            "new": "本次任用未成，仍应守住结论的范围，不由未升认定已有失职或处罚。把实际工作做好、把积累整理明白，有其可用的价值；无咎也提醒不遇不必转成自责。求进应循查明的条件安排，所言有据、所任有界，才能在受制之中保持准确而稳妥的行动。"
+          },
+          {
+            "monthBranch": "亥",
+            "field": "paragraphs[5]",
+            "old": "本盘尚无生扶续入，前中末克体未解，所以本轮名位未成。相木的根基与无咎的分寸仍可用于完成现有职责，整理可验证的经验。不遇不必变成自责，也无需编出汇报关系之争；将行动立在查明的事实之上，才能使求进保持清楚而有据。",
+            "new": "本盘尚无生扶续入，前中末克体未解，所以本轮名位未成。相木的根基与无咎的分寸仍可用于完成现有职责，整理可验证的经验。不遇不必变成自责，也不表示汇报关系已经发生争执；将行动立在查明的事实之上，才能使求进保持清楚而有据。"
+          },
+          {
+            "monthBranch": "子",
+            "field": "short",
+            "old": "本轮升不了，子月巽体相，前中休乾及末休兑克力较轻，却以用方同气复见使体势受限，后段无生扶。上九有不遇之吝，也有不争不害之无咎，宜把承担范围与真实依据讲明，不因轻阻便先认名位可得，也不把未升编作双方已谈不拢。",
+            "new": "本轮升不了，子月巽体相，前中休乾及末休兑克力较轻，却以用方同气复见使体势受限，后段无生扶。上九有不遇之吝，也有不争不害之无咎，宜把承担范围与真实依据讲明，不因轻阻便先认名位可得，也不因未升认定双方已经谈不拢。"
+          },
+          {
+            "monthBranch": "丑",
+            "field": "short",
+            "old": "这一回不能晋升，丑月巽木囚，前中相乾与末相兑都克体，用方复见，约束较实而缺生扶。上九穷极无遇有吝，不争不害仍保有无咎，宜核清职责与权限，将真实成果说明完整，不自行添出缺授权的事实，也不把未升解释成已经犯错。",
+            "new": "这一回不能晋升，丑月巽木囚，前中相乾与末相兑都克体，用方复见，约束较实而缺生扶。上九穷极无遇有吝，不争不害仍保有无咎，宜核清职责与权限，将真实成果说明完整，不因受制认定已经缺少授权，也不把未升解释成已经犯错。"
+          }
+        ],
+        "changedPublicFieldCount": 18,
+        "allChangedFieldBindingCount": 18,
+        "rereadMethod": "最初十二篇公开全文及五气完整技术实读；返修后逐项读取完整旧新字段。完全相同的完整取期、理由和来源数组只实读一次，再验同其余绑定；不把验哈希或验同冒称再次阅读全文。",
+        "finalBindingVerification": {
+          "exactOldAndNewCorrectionBindings": 36,
+          "sameQiJudgmentAndFullTimingGroups": 5,
+          "outcomeChanges": 0,
+          "timingSignatureChanges": 0,
+          "branchSetChanges": 0
+        },
+        "secondReturnRead": {
+          "monthBranch": "巳",
+          "field": "short",
+          "scope": "返修完整简断再次实际读取，好处应保留改为分寸仍在，其余不变。"
+        }
+      }
+    ],
+    "finalLineCanonicalSha256": {
+      "1": "31239948462b67e2fc9b33570e500993048b33e79564ecd743a309da2fb6a906",
+      "2": "e24fc1b4230349b2c5d57a5a4801433a2edad1444405cec800f561b0d90d1924",
+      "3": "f1ebbde5d1c615298d489c9025f0b8fae355345b13c0f6a169419325af88ba98",
+      "4": "e45e00ccfe50d291598a6cfe9c40e04cce516e330a1340d8eaed602725f62a41",
+      "5": "fca23b6eced5949026915649bfe583dc6a73f67f8c9b2875e473dbb05de9f0e5",
+      "6": "ac0ed5d211f04742f5da7c2106fe41c1af4e25387eb7fc047f6e2e50c04df667"
+    },
+    "peerSummary": {
+      "primaryId": 44,
+      "reviewer": "/root/author_042",
+      "reviewerIsHuman": false,
+      "userIndividuallyAccepted": false,
+      "scope": "只负责九二至上九后五爻；初六由root独审，不计入本记录。",
+      "status": "complete",
+      "completedAtUtc": "2026-11-22T11:33:46.310828+00:00",
+      "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+      "wholeArticlesInitiallyActuallyRead": 60,
+      "distinctProfessionalGroupsActuallyRead": 25,
+      "payCorrectionTriplesActuallyRead": 60,
+      "oldPublicQiRowsActuallyRead": 25,
+      "oldPolishAndReviewGroupsActuallyRead": 25,
+      "finalVersionCoverage": {
+        "wholeArticleObjectsUnchangedSinceFullRead": 21,
+        "originalWholeArticlePlusCompleteChangedFieldsRead": 39,
+        "publicArticlesEntirelyUnchangedSinceFullRead": 23,
+        "publicArticlesWithFullChangedFieldsReread": 37
+      },
+      "completeChangedPublicFieldBindings": 57,
+      "completeChangedFieldBindingsTotal": 77,
+      "lineReviews": [
+        {
+          "movingLine": 2,
+          "record": "/workspace/scratch/34014d64f2eb/review-044-author042/line2-review.json",
+          "finalSnapshot": "/workspace/scratch/34014d64f2eb/review-044-author042/line2-final.json",
+          "canonicalArticleArraySha256": "e24fc1b4230349b2c5d57a5a4801433a2edad1444405cec800f561b0d90d1924",
+          "coverage": {
+            "wholeArticleObjectsUnchangedSinceFullRead": 9,
+            "originalWholeArticlePlusCompleteChangedFieldRead": 3,
+            "publicArticlesEntirelyUnchangedSinceFullRead": 9,
+            "publicArticlesWithFullChangedFieldsReread": 3
+          },
+          "changedPublicFieldCount": 4,
+          "allChangedFieldBindingCount": 4
+        },
+        {
+          "movingLine": 3,
+          "record": "/workspace/scratch/34014d64f2eb/review-044-author042/line3-review.json",
+          "finalSnapshot": "/workspace/scratch/34014d64f2eb/review-044-author042/line3-final.json",
+          "canonicalArticleArraySha256": "f1ebbde5d1c615298d489c9025f0b8fae355345b13c0f6a169419325af88ba98",
+          "coverage": {
+            "wholeArticleObjectsUnchangedSinceFullRead": 4,
+            "originalWholeArticlePlusCompleteChangedFieldRead": 8,
+            "publicArticlesEntirelyUnchangedSinceFullRead": 4,
+            "publicArticlesWithFullChangedFieldsReread": 8
+          },
+          "changedPublicFieldCount": 12,
+          "allChangedFieldBindingCount": 12
+        },
+        {
+          "movingLine": 4,
+          "record": "/workspace/scratch/34014d64f2eb/review-044-author042/line4-review.json",
+          "finalSnapshot": "/workspace/scratch/34014d64f2eb/review-044-author042/line4-final.json",
+          "canonicalArticleArraySha256": "e45e00ccfe50d291598a6cfe9c40e04cce516e330a1340d8eaed602725f62a41",
+          "coverage": {
+            "wholeArticleObjectsUnchangedSinceFullRead": 7,
+            "originalWholeArticlePlusCompleteChangedFieldRead": 5,
+            "publicArticlesEntirelyUnchangedSinceFullRead": 7,
+            "publicArticlesWithFullChangedFieldsReread": 5
+          },
+          "changedPublicFieldCount": 6,
+          "allChangedFieldBindingCount": 6
+        },
+        {
+          "movingLine": 5,
+          "record": "/workspace/scratch/34014d64f2eb/review-044-author042/line5-review.json",
+          "finalSnapshot": "/workspace/scratch/34014d64f2eb/review-044-author042/line5-final.json",
+          "canonicalArticleArraySha256": "fca23b6eced5949026915649bfe583dc6a73f67f8c9b2875e473dbb05de9f0e5",
+          "coverage": {
+            "wholeArticleObjectsUnchangedSinceFullRead": 0,
+            "originalWholeArticlePlusCompleteChangedFieldRead": 12,
+            "publicArticlesEntirelyUnchangedSinceFullRead": 2,
+            "publicArticlesWithFullChangedFieldsReread": 10
+          },
+          "changedPublicFieldCount": 17,
+          "allChangedFieldBindingCount": 37
+        },
+        {
+          "movingLine": 6,
+          "record": "/workspace/scratch/34014d64f2eb/review-044-author042/line6-review.json",
+          "finalSnapshot": "/workspace/scratch/34014d64f2eb/review-044-author042/line6-final.json",
+          "canonicalArticleArraySha256": "ac0ed5d211f04742f5da7c2106fe41c1af4e25387eb7fc047f6e2e50c04df667",
+          "coverage": {
+            "wholeArticleObjectsUnchangedSinceFullRead": 1,
+            "originalWholeArticlePlusCompleteChangedFieldRead": 11,
+            "publicArticlesEntirelyUnchangedSinceFullRead": 1,
+            "publicArticlesWithFullChangedFieldsReread": 11
+          },
+          "changedPublicFieldCount": 18,
+          "allChangedFieldBindingCount": 18
+        }
+      ],
+      "machineBindingVerification": {
+        "exactOldAndNewCorrections": 180,
+        "sameQiFullJudgmentAndTimingGroups": 25,
+        "outcomeChanges": 0,
+        "timingSignatureChanges": 0,
+        "branchSetChanges": 0,
+        "readingSubstitution": false
+      },
+      "classicalReading": "王弼注孔颖达疏姤卦全文实际对读；九五另读本义卷二姤段和文渊阁四库转录九五本义程传段，页面自标尚未校对，未冒称影印校勘。原书老人有忧色完整例实读仅核盘理，不移用其灾情与时限。",
+      "accuracyScope": "完成文本、原盘及项目既定规则的独立校核，不代表真实晋升预测准确率已经实证，也不是人工验收或用户逐篇认可。"
+    }
+  },
+  "independentReturnAuthorReadback": {
+    "readAtUtc": "2026-11-22T11:32:28.196164+00:00",
+    "previousSourceSha256": "1a431c1e268702d76ea2e2ffcd665a543bebfcd35fae735fecd942b212365b02",
+    "sourceSha256": "848554890bd4e052bdf2898a3d15ef3b4cf7bf1cc65005e7c60feddb3c43c807",
+    "completePublicFieldsActuallyReread": 51,
+    "completeTimingFieldsActuallyReread": 6,
+    "completeCorrectionReasonsActuallyReread": 2,
+    "completeEvidenceListsActuallyRead": 1,
+    "identicalEvidenceListsMechanicallyVerified": 11,
+    "changes": [
+      {
+        "movingLine": 2,
+        "monthBranch": "子",
+        "field": "title",
+        "old": "轻助有来，守明使用之界",
+        "new": "轻助仍在，使用有界",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "未",
+        "field": "paragraphs[5]",
+        "old": "变成遁卦可取留有进退之度，不需由此另编退职情节。对于有依据的部分，应主动完成说明；超出个人可决定范围的部分，应明确共同安排。得遇而不擅用，才使九二的无咎与此盘有根、有补的成势相互照应。",
+        "new": "变为遁卦，可取进退有度的提醒，并不表示需要退出当前岗位。对于有依据的部分，应主动完成说明；超出个人可决定范围的部分，应明确共同安排。得遇而不擅用，才使九二的无咎与此盘有根、有补的成势相互照应。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "子",
+        "field": "paragraphs[5]",
+        "old": "末卦遁可以借作止于合宜范围的提醒，不需据此另添离任或退让的故事。可承担的认真承接，尚不能决定的及时询明，得到的帮助在约定内使用。这样保持所说与所做相应，既不缩小九二无咎的益处，也不越过不利宾的限制。",
+        "new": "末卦遁可以借作止于合宜范围的提醒，不表示必须离任，也不要求放弃正当争取。可承担的认真承接，尚不能决定的及时询明，得到的帮助在约定内使用。这样保持所说与所做相应，既不缩小九二无咎的益处，也不越过不利宾的限制。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 2,
+        "monthBranch": "亥",
+        "field": "short",
+        "old": "这一回能晋升。亥月乾体休、巽木相，经营须耐心，两互同气轻，末艮囚又受木制，生助薄而不绝。九二肯定得遇无咎，也戒擅作处置，宜把成果来由与职责边界说明完整，不编定岗时必有某项条件恰好补齐。",
+        "new": "这一回能晋升。亥月乾体休、巽木相，经营须耐心，两互同气轻，末艮囚又受木制，生助薄而不绝。九二肯定得遇无咎，也戒擅作处置，宜把成果来由与职责边界说明完整，不把末后薄助看成任职条件已经齐备。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "寅",
+        "field": "short",
+        "old": "这轮升不了，寅月乾金囚而经营旺木较费力，中途虽有同气相接，末坎仍受体生，支撑没有转成补益。九三处境危厉而无大咎，宜先稳住职责依据，保留能做的部分，不把行进迟滞编成自己已有失误，也不靠追加承诺催求任用。",
+        "new": "这轮升不了，寅月乾金囚而经营旺木较费力，中途虽有同气相接，末坎仍受体生，支撑没有转成补益。九三处境危厉而无大咎，宜先稳住职责依据，保留能做的部分，不因行进迟滞就认定自己已有失误，也不靠追加承诺催求任用。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "寅",
+        "field": "paragraphs[1]",
+        "old": "体互、用互都是囚乾，比和仍有协调之处，但同样失令，承托较薄。末变天水讼，坎水处休而受乾金所生，付出在结尾继续，并无直接生金的力量补入。全盘没有克体，应保留相通的好处，不必据未升另编外来的强硬压制。",
+        "new": "体互、用互都是囚乾，比和仍有协调之处，但同样失令，承托较薄。末变天水讼，坎水处休而受乾金所生，付出在结尾继续，并无直接生金的力量补入。全盘没有克体，应保留相通的好处，不因未升就认定外来约束必然强硬。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "辰",
+        "field": "paragraphs[0]",
+        "old": "此次升不了，但前中段的能力与承托应当充分看见，不能把整盘写成一片薄弱。辰月乾金相，本用巽木囚而受体克，自身有经营余地；两互乾金也相，同气相接较实，说明已有工作可以有根有据地展开。",
+        "new": "此次升不了，但前中段的能力与承托应当充分看见，不能据未升认定各处条件都很薄弱。辰月乾金相，本用巽木囚而受体克，自身有经营余地；两互乾金也相，同气相接较实，说明已有工作可以有根有据地展开。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "辰",
+        "field": "paragraphs[1]",
+        "old": "末变坎水处死，受乾金所生，耗泄较轻而仍是向外付出。结尾没有新增克制，也未转成直接生扶，前面的有力不宜被末耗全部抹掉。这里未升与首中有利并存，不必编成评议挑不出亮点、没有成果，或某项交接占了时间。",
+        "new": "末变坎水处死，受乾金所生，耗泄较轻而仍是向外付出。结尾没有新增克制，也未转成直接生扶，前面的有力不宜被末耗全部抹掉。这里未升与首中有利并存，不表示评议已认定没有亮点或成果，也不表示某项交接已经占去所需时间。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "午",
+        "field": "paragraphs[2]",
+        "old": "「臀无肤，其行次且；厉，无大咎」先写难以安定，又明确保留无大过咎。王孔认为九三得位而非妄处，危厉来自未遇其时，不能牵据以固所处。这里的处境并不等于履职错误，不应据此给真实经历添上已经失责的故事。",
+        "new": "「臀无肤，其行次且；厉，无大咎」先写难以安定，又明确保留无大过咎。王孔认为九三得位而非妄处，危厉来自未遇其时，不能牵据以固所处。这里的处境并不等于履职错误，不应据此认定真实工作中已经发生失责。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "未",
+        "field": "short",
+        "old": "本轮升不了，未月乾金相，两互同气有力，前中并不缺承托；末坎死而轻泄，后势仍为自身付出。九三危厉而无大咎，宜分清处境与过失，讲足真实适任依据，保持承担的界限，不把轻耗编成某项零碎工作已经耽误晋升。",
+        "new": "本轮升不了，未月乾金相，两互同气有力，前中并不缺承托；末坎死而轻泄，后势仍为自身付出。九三危厉而无大咎，宜分清处境与过失，讲足真实适任依据，保持承担的界限，不因轻耗便认定某项零碎工作已经耽误晋升。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "申",
+        "field": "short",
+        "old": "这一次不能晋升，申月乾体与两互皆旺，首中经营和相接有力；末坎相而受体生，收束仍见付出。九三厉而无大咎，宜保留已有本领与正当承担，核清新增任务的范围，不把末泄变成已经借调或实际耗掉数周的故事。",
+        "new": "这一次不能晋升，申月乾体与两互皆旺，首中经营和相接有力；末坎相而受体生，收束仍见付出。九三厉而无大咎，宜保留已有本领与正当承担，核清新增任务的范围，不因末泄就认定已经借调或实际耗掉数周。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "申",
+        "field": "paragraphs[1]",
+        "old": "末变坎水相而为金所生，结尾仍由原体付出，并未转成帮助体卦的相生。旺金能承受，不能被说成稍有投入就耗尽，但所泄的水亦有气，末段耗用也不能略去。全盘无克体，未升不是必须靠编出一项强迫借调才说得通。",
+        "new": "末变坎水相而为金所生，结尾仍由原体付出，并未转成帮助体卦的相生。旺金能承受，不能被说成稍有投入就耗尽，但所泄的水亦有气，末段耗用也不能略去。全盘无克体，不能由未升就认定自己已经被强迫借调，真实任职条件仍需查明。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "亥",
+        "field": "short",
+        "old": "这回升不了，亥月乾体休而经营相木，两互同气帮助轻，末坎当旺又受体生，后段付出较明显。九三危厉不等于自身有大过，宜核实职责和投入的界限，不将末泄编成突发险事，也不把休金说成完全没有余力。",
+        "new": "这回升不了，亥月乾体休而经营相木，两互同气帮助轻，末坎当旺又受体生，后段付出较明显。九三危厉不等于自身有大过，宜核实职责和投入的界限，不因末泄就认定已有突发险事，也不把休金说成完全没有余力。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "亥",
+        "field": "paragraphs[1]",
+        "old": "两互乾金同休，比和能够保持协调，帮助却轻。末用坎水当旺，为乾所生，使结尾的耗泄较为显著；并没有哪一处直接生体，也没有克体。应说明的是投入与补充的关系，不能只见坎便替现实添一桩突发险事或断定某项工作吞去所有时间。",
+        "new": "两互乾金同休，比和能够保持协调，帮助却轻。末用坎水当旺，为乾所生，使结尾的耗泄较为显著；并没有哪一处直接生体，也没有克体。这里须分清投入与补充的关系，不能只见坎便认定现实已有突发险事，或某项工作吞去所有时间。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "子",
+        "field": "paragraphs[5]",
+        "old": "变讼可以提醒人有据陈述且适当收束，不需添出具体争执。对已做成的事保持准确，对尚未落实的安排保留确认空间，既不自责过度，也不扩大许诺。九三无大咎所留的自持之地，正可使眼前不遇仍有清楚而正当的应对。",
+        "new": "变讼可以提醒人有据陈述且适当收束，不表示现实已经发生争执。对已做成的事保持准确，对尚未落实的安排保留确认空间，既不自责过度，也不扩大许诺。九三无大咎所留的自持之地，正可使眼前不遇仍有清楚而正当的应对。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 3,
+        "monthBranch": "丑",
+        "field": "paragraphs[1]",
+        "old": "末用坎水死而受金生，耗泄较轻，但后段仍需付出，并非新的相生来助体。全盘不见克体，首中有利与末耗并存，要同时看清。由轻耗不能推成差一点便升，更不能据此编出某次交接只耽误了半天而影响结局。",
+        "new": "末用坎水死而受金生，耗泄较轻，但后段仍需付出，并非新的相生来助体。全盘不见克体，首中有利与末耗并存，要同时看清。由轻耗不能推成差一点便升，也不能据此认定某次交接耽误了确定时长，从而影响结局。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "未",
+        "field": "paragraphs[5]",
+        "old": "九四的凶戒并不授权把不利归成个人已经失职，它强调的是无所依应时不能任意起事。先弄清责任和权限，再安排能够承担的部分，比凭更多许诺催定名位更稳妥。此盘宜以这样的分寸守住实际工作，不让前中受制演成无根的自我加码。",
+        "new": "九四的凶戒并不表示个人已经失职，它强调的是无所依应时不能任意起事。先弄清责任和权限，再安排能够承担的部分，比凭更多许诺催定名位更稳妥。此盘宜以这样的分寸守住实际工作，不让前中受制演成无根的自我加码。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "申",
+        "field": "paragraphs[5]",
+        "old": "九四提醒先有依应再求动作，宜核清权限、资源与责任如何相接，再决定自己承接到哪里。处境受制时保持事实准确，也给必要的询问留余地，比仓促催求结果更合此意。本轮未升，仍应以真实关系安排工作，不由卦象另添处罚或争夺。",
+        "new": "九四提醒先有依应再求动作，宜核清权限、资源与责任如何相接，再决定自己承接到哪里。处境受制时保持事实准确，也给必要的询问留余地，比仓促催求结果更合此意。本轮未升，仍应以真实关系安排工作，不能由卦象认定已有处罚或争夺。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "酉",
+        "field": "paragraphs[5]",
+        "old": "九四起凶的提醒在先明所依，行动不应只由希望得到的名位推动。核清责任边界、准确呈现实绩、询明未定事项，都是可以实际完成的工作。眼前不升也不需编成已有处罚，把判断限定在本轮承接，较能保留事实与象意各自应有的范围。",
+        "new": "九四起凶的提醒在先明所依，行动不应只由希望得到的名位推动。核清责任边界、准确呈现实绩、询明未定事项，都是可以实际完成的工作。眼前不升并不表示已经受到处罚，宜把注意力放在本轮承接，具体任职条件仍须据实确认。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "亥",
+        "field": "paragraphs[3]",
+        "old": "准备可以先核清目标职责与已有经验怎样相接。个人承担的工作，宜说明所面对的要求、作出的判断和可确认的结果；共同完成的部分则交代配合条件。这样既看得见自身作用，也能辨明哪些承接还需要现实信息，而非凭想象补成完整故事。",
+        "new": "准备可以先核清目标职责与已有经验怎样相接。个人承担的工作，宜说明所面对的要求、作出的判断和可确认的结果；共同完成的部分则交代配合条件。这样既看得见自身作用，也能辨明哪些承接还需要现实信息，尚不明确的条件则继续据实确认。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "子",
+        "field": "short",
+        "old": "这一轮升不了，子月巽体相，前中休乾之克较轻，但用方复见仍限制体势；末相巽比和有力，支持不应抹去。九四无鱼着眼失应，宜核清职责和成果所能证明的范围，不编具体缺口，也不拿相合直接代替尚未落实的任职确认。",
+        "new": "这一轮升不了，子月巽体相，前中休乾之克较轻，但用方复见仍限制体势；末相巽比和有力，支持不应抹去。九四无鱼着眼失应，宜核清职责和成果所能证明的范围，未明条件据实确认，也不拿相合直接代替尚未落实的任职确认。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 4,
+        "monthBranch": "子",
+        "field": "paragraphs[5]",
+        "old": "九四所戒的是失所依而动，宜让行动先有真实条件相接。核清职责关系、说明可靠成果、确认权限边界，都是求进中有意义的工作。眼前仍按未升处理，不以一个象意替自己编出失败经过，也不因仍有后助就省略必要的现实确认。",
+        "new": "九四所戒的是失所依而动，宜让行动先有真实条件相接。核清职责关系、说明可靠成果、确认权限边界，都是求进中有意义的工作。眼前仍按未升处理，不凭一处象意认定自己已经有过某项失误，也不因仍有后助就省略必要的现实确认。",
+        "authorCompleteFieldReread": true,
+        "previousReturnValue": "九四所戒的是失所依而动，宜让行动先有真实条件相接。核清职责关系、说明可靠成果、确认权限边界，都是求进中有意义的工作。眼前仍按未升处理，不凭一处象意认定自己已经遭遇具体失误，也不因仍有后助就省略必要的现实确认。",
+        "secondReturnCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "午",
+        "field": "short",
+        "old": "这次升不了，午月巽木休，三乾克力轻且受离制，前中约束减而未绝；用方同气复见，末旺离又泄体，仍无生扶。九五守中正而不轻倾的积极意思不能删去，宜据实说明积累，把精力用在关键承接上，不把更多投入当成任用的凭据。",
+        "new": "这次升不了，午月巽木休，三乾克力轻且受离制，前中约束减而未绝；用方同气复见，末旺离又泄体，仍无生扶。九五守中正而不轻倾的长处仍在，宜据实说明积累，把精力用在关键承接上，不把更多投入当成任用的凭据。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "巳",
+        "field": "paragraphs[2]",
+        "old": "爻辞「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。依王孔，所含之美尚未发用，但九五守中而志不舍命，因而不可轻易倾陨。这层好处应当保留，不需要为解释未升而编成已经漏讲成果，或某份事务夺走全部时间。",
+        "new": "爻辞「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。依王孔，所含之美尚未发用，但九五守中而志不舍命，因而不可轻易倾陨。这层好处依然存在，未升不等于已经漏讲成果，也不表示某项事务夺走了全部时间。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "午",
+        "field": "paragraphs[2]",
+        "old": "九五「以杞包瓜，含章，有陨自天」，小象称中正、志不舍命。王孔所释是美质含藏而尚未发用，居中守正，不可轻易倾陨。这一层是爻义真正的长处，应与本盘克泄并看，不能为使结果显得一致，就把含章改成已经失误的证据。",
+        "new": "九五「以杞包瓜，含章，有陨自天」，小象称中正、志不舍命。王孔所释是美质含藏而尚未发用，居中守正，不可轻易倾陨。这份长处与本盘克泄同时存在，不能因结果未成就认定含章有失；已经具备的积累仍有其真实价值。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "午",
+        "field": "paragraphs[5]",
+        "old": "本盘没有生扶续入，克体关系又尚在，九五之善主要可取于守志与尺度。对真实长处保持清楚认识，对未明确的安排保持核实态度，就能使行动有据。眼前任用未成，仍宜循实际职责做事，不由末耗自行添出报告、工期或他人的安排。",
+        "new": "本盘没有生扶续入，克体关系又尚在，九五之善主要可取于守志与尺度。对真实长处保持清楚认识，对未明确的安排保持核实态度，就能使行动有据。眼前任用未成，仍宜循实际职责做事，不因末耗就认定报告、工期或他人安排已有具体变故。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "申",
+        "field": "paragraphs[2]",
+        "old": "九五「以杞包瓜，含章，有陨自天」，小象以中正、志不舍命释之。王孔说九五含美而未发，居中守志，不可轻易倾陨；这层正面意思必须保留。有陨自天在这一路解释中，不能直接换作现实中忽然落下的新规定或资格门槛。",
+        "new": "九五「以杞包瓜，含章，有陨自天」，小象以中正、志不舍命释之。王孔说九五含美而未发，居中守志，不可轻易倾陨；这份守中不失的长处仍在。有陨自天在这一路解释中，不能直接换作现实中忽然落下的新规定或资格门槛。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "酉",
+        "field": "paragraphs[2]",
+        "old": "爻辞「以杞包瓜，含章，有陨自天」，小象说中正，又说志不舍命。依王孔，含章是有美而未发，九五处得其所、守志不舍，所以不可轻易倾陨。这样的积极意思不可因未升而删去，更不能从未发便断定当事人表达不善或实绩空乏。",
+        "new": "爻辞「以杞包瓜，含章，有陨自天」，小象说中正，又说志不舍命。依王孔，含章是有美而未发，九五处得其所、守志不舍，所以不可轻易倾陨。这一长处不因本次未升而失去价值，更不能从未发便断定当事人表达不善或实绩空乏。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "酉",
+        "field": "paragraphs[5]",
+        "old": "末段耗力较薄，也无需据此安排一套必然发生的忙乱情节。将精力放在主要依据上，能够完成的认真完成，需要共同确认的保持询明，便是可用的分寸。此轮名位未落实，仍可守住所长与所责，不将有陨自天化作对未来突发事件的预断。",
+        "new": "末段耗力较薄，并不意味着现实中已经出现忙乱或无法收束的事务。将精力放在主要依据上，能够完成的认真完成，需要共同确认的保持询明，便是可用的分寸。此轮名位未落实，仍可守住所长与所责，不将有陨自天化作对未来突发事件的预断。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "戌",
+        "field": "paragraphs[2]",
+        "old": "九五「以杞包瓜，含章，有陨自天」，小象以中正和志不舍命说明。王孔解释九五含有章美而尚未发用，居中守正，故不可轻易倾陨。爻义保有实质而不失其守的好处，与眼前任用未成并不矛盾，不能为求一致而反说含章全是问题。",
+        "new": "九五「以杞包瓜，含章，有陨自天」，小象以中正和志不舍命说明。王孔解释九五含有章美而尚未发用，居中守正，故不可轻易倾陨。爻义保有实质而不失其守的好处，与眼前任用未成并不矛盾，不能因结果未成就认定含章所示积累全是问题。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "戌",
+        "field": "paragraphs[5]",
+        "old": "九五所保全的中正，可用于稳住责任与承诺的尺度。有根据的长处不必缩小，尚未得到的名位也不能先作承接。此盘轻克仍在、无生扶续入，宜以查明事实为行动起点，把能完成的工作做好，不从未升另添自身已经犯错的故事。",
+        "new": "九五所保全的中正，可用于稳住责任与承诺的尺度。有根据的长处不必缩小，尚未得到的名位也不能先作承接。此盘轻克仍在、无生扶续入，宜以查明事实为行动起点，把能完成的工作做好，不因未升便认定自身已经犯错。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "丑",
+        "field": "paragraphs[2]",
+        "old": "九五「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。王孔认为九五含美而尚未发用，处得其所、守志不舍，所以不可轻易倾陨。这里明明保有好的分寸，不应为适应未升的结果，就把含章改成缺乏表达、成果失去价值的缺点。",
+        "new": "九五「以杞包瓜，含章，有陨自天」，小象言中正、志不舍命。王孔认为九五含美而尚未发用，处得其所、守志不舍，所以不可轻易倾陨。这里仍有守正不失的分寸，未升不等于表达欠缺，也不表示真实成果已经失去价值。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "丑",
+        "field": "paragraphs[5]",
+        "old": "本轮名位未落实，九五所示守中正仍可用于日常行动：所言有据、所任有界，未知之处先核清。这样的分寸保留真实积累，也使求进不失其守。轻克尚在而生扶未入，不能将认真准备直接当成任用已经获准，更无须据此添加惩处或损失。",
+        "new": "本轮名位未落实，九五所示守中正仍可用于日常行动：所言有据、所任有界，未知之处先核清。这样的分寸保留真实积累，也使求进不失其守。轻克尚在而生扶未入，不能将认真准备直接当成任用已经获准，也不能据此认定已有惩处或损失。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "寅",
+        "field": "paragraphs[2]",
+        "old": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进至极处、无所再遇说明吝，是不遇而有遗憾；又因不与物争、其道不害而无凶咎。无咎本来就是爻义的一面，不能写成当事人已争执失败，只剩及时收手可补过。",
+        "new": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进至极处、无所再遇说明吝，是不遇而有遗憾；又因不与物争、其道不害而无凶咎。无咎的好处仍在，不表示当事人已争执失败，也不以先有过失、再收手补救为前提。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "卯",
+        "field": "paragraphs[2]",
+        "old": "爻辞「姤其角，吝，无咎」，小象言上穷吝。王孔解释，上九进至极处，无所再遇，故有独恨之吝；不与物争，其道不害，所以无凶咎。所说遗憾并非指责已经有过争执，无咎也不能从完整爻辞中删掉，只留下不得遇的不利。",
+        "new": "爻辞「姤其角，吝，无咎」，小象言上穷吝。王孔解释，上九进至极处，无所再遇，故有独恨之吝；不与物争，其道不害，所以无凶咎。所说遗憾并非指责已经有过争执，无咎仍有行事不害的好处，不得遇的遗憾并不取消这一面。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "卯",
+        "field": "paragraphs[4]",
+        "old": "上九不争的分寸，可用于在表达诉求时尊重事实与实际程序。有根据的内容不必退缩，仍不清楚的要求先询明；遇到尚未得到确认的部分，保持准确说明即可。求进可以认真，不能由急切替代承接，更无需从一个角字编出双方必会顶撞的场面。",
+        "new": "上九不争的分寸，可用于在表达诉求时尊重事实与实际程序。有根据的内容不必退缩，仍不清楚的要求先询明；遇到尚未得到确认的部分，保持准确说明即可。求进可以认真，不能由急切替代承接，也不能只凭一个角字便认定双方必会发生顶撞。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "辰",
+        "field": "paragraphs[5]",
+        "old": "本轮任用未成，吝所示不遇也不等于人的全部努力失去价值。无咎留下行事不害的分寸，可以让当前工作与后续准备仍有清楚依据。先把责任、条件与成果对应准确，再安排能够做到的部分，不用更多承诺催定名位，也不从未升另添其他损害。",
+        "new": "本轮任用未成，吝所示不遇也不等于人的全部努力失去价值。无咎留下行事不害的分寸，可以让当前工作与后续准备仍有清楚依据。先把责任、条件与成果对应准确，再安排能够做到的部分，不用更多承诺催定名位，也不因未升就认定另有其他损害。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "巳",
+        "field": "short",
+        "old": "这次升不了，巳月巽体休，前中死乾与末死兑都在克体，作用轻而未绝，用方重复仍限制体势。上九吝在进极无遇，不争而无咎的好处应保留，宜按实际要求说明承担，不把休体说成精力枯竭，也不凭爻象编出人员去留的僵局。",
+        "new": "这次升不了，巳月巽体休，前中死乾与末死兑都在克体，作用轻而未绝，用方重复仍限制体势。上九吝在进极无遇，不争而无咎的分寸仍在，宜按实际要求说明承担，不把休体说成精力枯竭，也不凭爻象认定人员去留已有僵局。",
+        "authorCompleteFieldReread": true,
+        "previousReturnValue": "这次升不了，巳月巽体休，前中死乾与末死兑都在克体，作用轻而未绝，用方重复仍限制体势。上九吝在进极无遇，不争而无咎的好处应保留，宜按实际要求说明承担，不把休体说成精力枯竭，也不凭爻象认定人员去留已有僵局。",
+        "secondReturnCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "巳",
+        "field": "paragraphs[2]",
+        "old": "上九「姤其角，吝，无咎」，小象以居上穷极解释吝。王孔说进至极处，无所复遇，是以不遇而有遗憾；又说不与物争，其道不害，所以无凶咎。后半的好处不可省略，也不能把吝改写成当事人已与他人争到无法收场。",
+        "new": "上九「姤其角，吝，无咎」，小象以居上穷极解释吝。王孔说进至极处，无所复遇，是以不遇而有遗憾；又说不与物争，其道不害，所以无凶咎。不争不害的好处仍在，吝也不表示当事人已与他人争到无法收场。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "巳",
+        "field": "paragraphs[5]",
+        "old": "无咎所保留的是不争不害的分寸，与本轮未得名位可以同时成立。把责任说清，把应有工作完成，仍是可用的行动；求遇未得也无需另添过失来解释。保持主动而不强求，承认未知而不附会，较能使这次准备建立在可以查明的事实之上。",
+        "new": "无咎所保留的是不争不害的分寸，与本轮未得名位可以同时成立。把责任说清，把应有工作完成，仍是可用的行动；求遇未得并不意味着自己已有过失。保持主动而不强求，承认未知而不附会，较能使这次准备建立在可以查明的事实之上。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "未",
+        "field": "paragraphs[2]",
+        "old": "上九「姤其角，吝，无咎」，小象说上穷吝。依王孔，已经进至极处，无所复遇，于是有不遇之恨；但不与物争，其道不害，所以无凶咎。吝的根由是穷极无遇，无咎的根据是不争不害，不能只留下不得遇的不足，删掉另一面的好处。",
+        "new": "上九「姤其角，吝，无咎」，小象说上穷吝。依王孔，已经进至极处，无所复遇，于是有不遇之恨；但不与物争，其道不害，所以无凶咎。吝的根由是穷极无遇，无咎的根据是不争不害，二者各有所指，不得遇的不足并不取消行事不害的好处。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "未",
+        "field": "paragraphs[5]",
+        "old": "本次名位未落实，仍应区分处境不利与个人已犯过错。没有证据指向的授权缺失或争例外，不需从爻象补造出来；可核清的责任关系则认真核清。继续完成现有工作，准确呈现积累，能够保留无咎所示的分寸，也让求进不脱离真实条件。",
+        "new": "本次名位未落实，仍应区分处境不利与个人已犯过错。不能仅凭爻象认定已有授权缺失或争取例外的事情；可核清的责任关系则认真核清。继续完成现有工作，准确呈现积累，能够保留无咎所示的分寸，也让求进不脱离真实条件。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "申",
+        "field": "short",
+        "old": "这一回不能晋升，申月巽木死，前中旺乾与末旺兑都在克体，用方复见，约束较实而无生扶。上九穷极无遇有吝，不争不害仍能无咎，宜据实际岗位信息核清承接，不将旺克编成上级取消名额，也不从未升推定必有处分或损失。",
+        "new": "这一回不能晋升，申月巽木死，前中旺乾与末旺兑都在克体，用方复见，约束较实而无生扶。上九穷极无遇有吝，不争不害仍能无咎，宜据实际岗位信息核清承接，不因旺克认定上级已取消名额，也不从未升推定必有处分或损失。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "申",
+        "field": "paragraphs[2]",
+        "old": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进极而无所遇说明吝，是求遇未得的遗憾；又以不与物争、其道不害说明无凶咎。两层意思都须保留，不能因为盘中克重，就把爻辞只剩下穷困与不利。",
+        "new": "上九「姤其角，吝，无咎」，小象「姤其角，上穷吝也」。王孔以进极而无所遇说明吝，是求遇未得的遗憾；又以不与物争、其道不害说明无凶咎。不遇与不害各有根据，盘中约束虽重，仍不取消行事有分寸所能保有的无咎。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "酉",
+        "field": "paragraphs[2]",
+        "old": "爻辞「姤其角，吝，无咎」，小象以居上而穷说明吝。王孔解释，进至极处，无所复遇，所以独有不遇的遗憾；同时不与物争，其道不害，故无凶咎。无咎并非可有可无的附语，应与不遇同读，不必先编成争执才使这一爻显得贴合。",
+        "new": "爻辞「姤其角，吝，无咎」，小象以居上而穷说明吝。王孔解释，进至极处，无所复遇，所以独有不遇的遗憾；同时不与物争，其道不害，故无凶咎。无咎有明确的不害之义，与不遇同时存在，并不以现实已经发生争执为前提。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "酉",
+        "field": "paragraphs[5]",
+        "old": "本轮名位未成，仍可以把现有职责完成得准确，让经验得到清楚整理。吝只说明这一处未遇，不宜延伸为对个人全部价值的否定；无咎则留下行事不害的空间。将行动建立在查明的事实之上，不由不利另添惩处或损失，才能守住爻义与现实各自的边界。",
+        "new": "本轮名位未成，仍可以把现有职责完成得准确，让经验得到清楚整理。吝只说明这一处未遇，不宜延伸为对个人全部价值的否定；无咎则留下行事不害的空间。将行动建立在查明的事实之上，不因不利就认定已有惩处或损失，才能守住爻义与现实各自的边界。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "戌",
+        "field": "title",
+        "old": "相克尚在，无咎不可删",
+        "new": "相克尚在，无咎仍可守",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "戌",
+        "field": "paragraphs[5]",
+        "old": "本次任用未成，仍应守住结论的范围，不另添已有失职或处罚。把实际工作做好、把积累整理明白，有其可用的价值；无咎也提醒不遇不必转成自责。求进应循查明的条件安排，所言有据、所任有界，才能在受制之中保持准确而稳妥的行动。",
+        "new": "本次任用未成，仍应守住结论的范围，不由未升认定已有失职或处罚。把实际工作做好、把积累整理明白，有其可用的价值；无咎也提醒不遇不必转成自责。求进应循查明的条件安排，所言有据、所任有界，才能在受制之中保持准确而稳妥的行动。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "亥",
+        "field": "paragraphs[5]",
+        "old": "本盘尚无生扶续入，前中末克体未解，所以本轮名位未成。相木的根基与无咎的分寸仍可用于完成现有职责，整理可验证的经验。不遇不必变成自责，也无需编出汇报关系之争；将行动立在查明的事实之上，才能使求进保持清楚而有据。",
+        "new": "本盘尚无生扶续入，前中末克体未解，所以本轮名位未成。相木的根基与无咎的分寸仍可用于完成现有职责，整理可验证的经验。不遇不必变成自责，也不表示汇报关系已经发生争执；将行动立在查明的事实之上，才能使求进保持清楚而有据。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "子",
+        "field": "short",
+        "old": "本轮升不了，子月巽体相，前中休乾及末休兑克力较轻，却以用方同气复见使体势受限，后段无生扶。上九有不遇之吝，也有不争不害之无咎，宜把承担范围与真实依据讲明，不因轻阻便先认名位可得，也不把未升编作双方已谈不拢。",
+        "new": "本轮升不了，子月巽体相，前中休乾及末休兑克力较轻，却以用方同气复见使体势受限，后段无生扶。上九有不遇之吝，也有不争不害之无咎，宜把承担范围与真实依据讲明，不因轻阻便先认名位可得，也不因未升认定双方已经谈不拢。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 6,
+        "monthBranch": "丑",
+        "field": "short",
+        "old": "这一回不能晋升，丑月巽木囚，前中相乾与末相兑都克体，用方复见，约束较实而缺生扶。上九穷极无遇有吝，不争不害仍保有无咎，宜核清职责与权限，将真实成果说明完整，不自行添出缺授权的事实，也不把未升解释成已经犯错。",
+        "new": "这一回不能晋升，丑月巽木囚，前中相乾与末相兑都克体，用方复见，约束较实而缺生扶。上九穷极无遇有吝，不争不害仍保有无咎，宜核清职责与权限，将真实成果说明完整，不因受制认定已经缺少授权，也不把未升解释成已经犯错。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "寅",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "卯",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "辰",
+        "field": "timing",
+        "old": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "辰",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "巳",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "午",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "未",
+        "field": "timing",
+        "old": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "未",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "申",
+        "field": "judgmentCorrection.reason",
+        "old": "纠正文气重克与既有间接规则相矛盾，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+        "new": "纠正旧正文将秋金写成重克、与既有间接规则相矛盾的叙述，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "申",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "酉",
+        "field": "judgmentCorrection.reason",
+        "old": "纠正文气重克与既有间接规则相矛盾，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+        "new": "纠正旧正文将秋金写成重克、与既有间接规则相矛盾的叙述，补用党多；删除跨部门资格、临时新规及本人缺记录的事实预设，按王孔保留九五之善。",
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "酉",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "戌",
+        "field": "timing",
+        "old": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "戌",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "亥",
+        "field": "timing",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍需分配心力的参考时段",
+            "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+            "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍需分配心力的参考时段",
+            "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+            "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "亥",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "子",
+        "field": "timing",
+        "old": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍需分配心力的参考时段",
+            "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+            "死离变用受相巽生，参巳、午日。末段泄力轻，不据此增加零碎事件；轻克复见仍须另行看待。"
+          ]
+        ],
+        "new": [
+          [
+            "drain",
+            "changed_use",
+            "末段仍需分配心力的参考时段",
+            "按实际承担安排精力，能说明的成果如实展开，需要共同确认的责任先核清，不预设某项工作必须立即交出。",
+            "死离变用受相巽生，参巳、午日。末段泄力轻，不表示必有零碎事务增多；轻克复见仍须另行看待。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "子",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "丑",
+        "field": "timing",
+        "old": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不能据此虚构某种公开成果要求。"
+          ]
+        ],
+        "new": [
+          [
+            "control",
+            "use_mutual",
+            "中途承接受约束的参考时段",
+            "把已知任职要求与真实成果逐一相接，个人承担和共同条件分别说明，尚不明确的信息先核实。",
+            "相乾用互克囚巽，取申、酉日。乾原相而受离火制，作用轻而未绝，不表示已经新增公开成果的要求。"
+          ]
+        ],
+        "authorCompleteFieldReread": true
+      },
+      {
+        "movingLine": 5,
+        "monthBranch": "丑",
+        "field": "judgmentCorrection.sourceEvidence",
+        "old": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          }
+        ],
+        "new": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/05姤.txt",
+            "scope": "本卦对应动爻完整经传及王弼注、孔颖达疏；古注与现代晋升类推分开。"
+          },
+          {
+            "path": "docs/READING_POLICY_V2.md",
+            "scope": "第八、十、十三、十四节：一层生克、原体休与作用节点休、二分与用党多。"
+          },
+          {
+            "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+            "scope": "晋升在任专条和现行二分结论，任一直接克体即未升，不以文字润色改结果。"
+          },
+          {
+            "path": "sources/editorial/promotion-pay/hex-044.json",
+            "scope": "对应动爻五气旧判断、完整应期及第十二栏薪资，订正逐值保存。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-044.json",
+            "scope": "本互变、六节点原五态与四直接关系，不由卦名编出现实细节。"
+          },
+          {
+            "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt",
+            "scope": "实际读取姤卦九五及相邻完整段，含晦章美、静以制之与有陨自天本无倏有；与王孔、程传解释分列，未称全卷校读。"
+          },
+          {
+            "path": "docs/review/PROMOTION_GOU_RULE_AUDIT_20261122.md",
+            "scope": "第一节来源边界及第三节九五，包含程传所见转录 https://zh.wikisource.org/wiki/Page:文淵閣四庫全書_0038冊.djvu/183 的九五段；页面尚未校对，仅记录尊位降屈、内蓄至诚而终遇的所见异义，未作影印校勘。"
+          }
+        ],
+        "authorCompleteFieldReread": false,
+        "verifiedIdenticalToActuallyReadEvidenceField": "5/寅/judgmentCorrection.sourceEvidence"
+      }
+    ],
+    "notClaimed": "返改完整字段阅读覆盖原全文，未记作第二次72篇全文审读；独立审者记录由协调者并入。",
+    "additionalCompleteFieldRereads": 2,
+    "additionalReadScope": "九四子第六段与上九巳完整简断在独审再次指出搭配或编辑口吻后，作者分别完整读回；仍属原51个不同公开字段，不增加整篇阅读计数。"
+  },
+  "priorMachineChecks": [
+    {
+      "status": "passed",
+      "checkedAtUtc": "2026-11-22T11:00:16.832348+00:00",
+      "command": "bash scripts/review/monthly-gate.sh promotion-pay 44",
+      "sourceSha256": "1a431c1e268702d76ea2e2ffcd665a543bebfcd35fae735fecd942b212365b02",
+      "fullMonthlyGate": "passed",
+      "structuralCheck": {
+        "status": "passed",
+        "articles": 72,
+        "chartComparisons": 1944,
+        "chartMismatches": 0,
+        "dateCases": 144,
+        "errors": 0,
+        "duplicateLongSentences": 0,
+        "flexibleLengthWarnings": 0
+      },
+      "style": {
+        "status": "passed",
+        "bodyMedianDisplayed": 528,
+        "bodyMedianExact": 527.5,
+        "bodyMin": 503,
+        "avgSentence": 31.9,
+        "monthOpen": 0,
+        "monthShort": 0,
+        "maxSameHead": 3,
+        "shortOut": 0
+      },
+      "consolationOrPromises": 0,
+      "intraRepeat8": 0,
+      "crossHexOrDifferentLine": {
+        "over": 0,
+        "maxSharePercent": 2.8,
+        "thresholdPercent": 8
+      },
+      "sameLineOtherMonth": {
+        "over": 0,
+        "maxSharePercent": 3.9,
+        "thresholdPercent": 15
+      },
+      "highFrequencyPhraseWarnings": 0,
+      "unverifiedQuotations": 0,
+      "logPath": "/workspace/scratch/34014d64f2eb/drafts-044/gate-final.log",
+      "note": "每爻12篇draft完成后检查。整卦首次因缺待写回执和一处否定句含未升以后命中；回执基于实际阅读填写，句子窄改后实读终值，按原阈值整卦再次运行通过。程序通过不替代独立全文审读。"
+    }
+  ],
+  "finalSourcePublicationCheck": {
+    "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+    "status": "passed",
+    "gateLogSha256": "2afa28f3f14dcb85c79248101ebfe40ea91c8a0662a3495a75f3eade6f406d39",
+    "scope": "末次初六两段以及此前全部返改的最终源上，发布工作区完整关口通过；作者旧版关口继续保留原哈希，未追改其历史。"
+  },
+  "preCoordinatorIndependentStatus": {
+    "status": "coordinator-records-pending-merge",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "协调者已通知初六12篇独审完成，正式逐爻快照记录由协调者并入；九二至上九交另一作者独审。本作者不代填其他审者计数或预先写通过。"
+  },
+  "coordinatorRenderAuthorReadback": {
+    "author": "/root/classical_audit",
+    "readAtUtc": "2026-11-22T11:40:38.916928+00:00",
+    "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+    "movingLine": 1,
+    "completePublicFieldsActuallyRead": 2,
+    "wholeArticlesAddedToReadCount": 0,
+    "canonicalArticleArraySha256": "31239948462b67e2fc9b33570e500993048b33e79564ecd743a309da2fb6a906",
+    "changes": [
+      {
+        "monthBranch": "寅",
+        "field": "paragraphs[3]",
+        "old": "小象「柔道牵也」使这份约束有了着落。用于任职准备，可先确定真实承担的范围，再说明相关成果如何得到验证；事情需要调整时，交代调整的理由，不为显得积极而频繁换一套说法。守正的好处应当保留，不能因未升便否定它。",
+        "new": "小象「柔道牵也」使这份约束有了着落。用于任职准备，可先确定真实承担的范围，再说明相关成果如何得到验证；事情需要调整时，交代调整的理由，不为显得积极而频繁换一套说法。守正仍有其益，未升不意味着有据的准备全无价值。"
+      },
+      {
+        "monthBranch": "亥",
+        "field": "paragraphs[1]",
+        "old": "体互、用互与末变皆为休乾，比和带来的相接仍在，只是作用轻，不能与旺相同气的承托等量看。全盘不见直接克体，也无另来生金之助，故无需把未升编成受人排斥；相合能够帮助交流，尚不足以独自推动本次任用。",
+        "new": "体互、用互与末变皆为休乾，比和带来的相接仍在，只是作用轻，不能与旺相同气的承托等量看。全盘不见直接克体，也无另来生金之助，未升并不表示已经受人排斥；相合能够帮助交流，尚不足以独自推动本次任用。"
+      }
+    ],
+    "scope": "作者从root-final-render-voice-changes.json完整实读两段旧新值；逐值核对当前源终值一致。此项不改变独立审者记录。"
+  },
+  "releaseVerification": {
+    "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+    "checkedAtUtc": "2026-11-22T11:43:38.179304+00:00",
+    "gateCommand": "bash scripts/review/monthly-gate.sh promotion-pay 44",
+    "gateStatus": "passed",
+    "gateLogSha256": "2afa28f3f14dcb85c79248101ebfe40ea91c8a0662a3495a75f3eade6f406d39",
+    "bindings": {
+      "hex": 44,
+      "articles": 72,
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "exactOldNewBindings": true,
+      "sameQiCompleteJudgmentAndTimingGroups": 30,
+      "outcomeChanges": 0,
+      "corrections": {
+        "judgmentCorrection": 72,
+        "timingWordingCorrection": 72,
+        "payCorrection": 72
+      },
+      "bodyHan": {
+        "min": 503,
+        "median": 529.0,
+        "max": 562
+      },
+      "outcomes": {
+        "difficult": 54,
+        "favourable": 18
+      },
+      "rootIndependentSnapshotsBound": [],
+      "scope": "Mechanical equality and coverage binding only; not additional reading and not prediction validation."
+    },
+    "generatedPage": {
+      "hex": 44,
+      "articles": 72,
+      "ownArticleSectionsVerified": 72,
+      "publicFieldsVerifiedInOwnSection": 648,
+      "professionalJudgmentsVerifiedInOwnSection": 72,
+      "sourceSha256": "1f92a578207acd0fc68384f8a6ab74ed0398491e8378359156c60c8ed4459ee3",
+      "readingPageSha256": "3bb5ebb5a83f56f402957071d65fdd6ab3a256a45076111ebfa0b62dedf505cf",
+      "scope": "Mechanical per-article equality verification only; no additional semantic reading claimed."
+    },
+    "generatedPageActuallyRead": "协调者实际完整读回初六寅月最终生成页，含全部正文、薪资、应期、专业、订正与引用及简断；另实际读取初六亥月变动的完整生成段。不宣称额外通读全72篇阅读页。",
+    "doesNotEstablish": "Human professional review, user acceptance or real-world prediction accuracy."
+  }
+}
