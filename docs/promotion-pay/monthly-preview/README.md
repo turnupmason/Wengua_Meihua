@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：2304 篇预览
+# 晋升加薪逐月长稿：2448 篇预览
 
-更新日期：2026-11-21（America/New_York）。本批新增雷风恒，共 72 篇；累计 2304 篇。完整目标为 4,608 篇，尚余 2304 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-21（America/New_York）。本批新增天山遁、雷天大壮，共 144 篇；累计 2448 篇。完整目标为 4,608 篇，尚余 2160 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -36,6 +36,8 @@
 | 离为火 | 72 | [打开全文](hex-030.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-030.json) |
 | 泽山咸 | 72 | [打开全文](hex-031.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-031.json) |
 | 雷风恒 | 72 | [打开全文](hex-032.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-032.json) |
+| 天山遁 | 72 | [打开全文](hex-033.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-033.json) |
+| 雷天大壮 | 72 | [打开全文](hex-034.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-034.json) |
 
 
 
@@ -47,13 +49,15 @@
 
 ## 本批阅读入口
 
-- [雷风恒：六爻十二月全文](hex-032.md)
+- [天山遁：六爻十二月全文](hex-033.md)
+
+- [雷天大壮：六爻十二月全文](hex-034.md)
 
 
 
 ## 检查与阅读状态
 
-2304 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 62,208 项，差异 0；日期用例 4,608 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+2448 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 66,096 项，差异 0；日期用例 4,896 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
