@@ -1,0 +1,13 @@
+# 当前工作稳定性逐月长稿
+
+首批已发布 **12 / 4,608 篇**。乾初九的十二个月令各有一篇完整正文，乾九二是下一组。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+
+| 已覆盖 | 篇数 | 正文篇幅 | 核读 |
+| --- | ---: | ---: | --- |
+| [乾为天 · 初九](hex-001.md#初九动--寅月) | 12 | 487–522 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
+
+[本批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
+
+正文以[面试篇](https://github.com/turnupmason/Wengua_Meihua/tree/editorial/interview-preview-216-20261118/docs/interview-pass/monthly-preview)和[确定关系篇](../../relationship-establishment/monthly-preview/README.md)为文风参照。每个月令分别写清结论、决定轻重的盘面证据和动爻的分寸。用「稳」「有隐患」「风险大」回答职场稳定性。每篇的「卦理与出处」和简断可展开查看。
+
+应期以具体工作事项为前提。进入近期流程、具备可观察事件时，才旁参传统窗口。岗位安排以实际通知和分工为准。此目录收录 GitHub 阅读稿，独立全文审读和用户逐篇验收尚待完成。

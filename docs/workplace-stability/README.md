@@ -8,6 +8,8 @@
 
 [断法与古籍出处](../review/STABILITY_REJUDGE_20261119.md)
 
+[逐月长稿预览与规则审计](monthly-preview/README.md)
+
 - [乾为天](hex-001.md) · 30 篇
 - [坤为地](hex-002.md) · 30 篇
 - [水雷屯](hex-003.md) · 30 篇
