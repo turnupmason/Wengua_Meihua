@@ -1,0 +1,871 @@
+{
+  "primaryId": 15,
+  "editor": "/root/write_tongren_013",
+  "method": "独立由001000原爻位及八卦位串复排，二三四与三四五取互，只翻动一爻；不调用项目卦库、体用或关系函数。六盘角色先手写expected逐一比较，再以独立五行表列全部20非自身方向。全部72篇实读时逐盘核对角色、月气与正反取舍。",
+  "original": {
+    "bits": "001000",
+    "lower": "艮",
+    "upper": "坤"
+  },
+  "mutual": {
+    "bits": "010100",
+    "lower": "坎",
+    "upper": "震",
+    "id": 40
+  },
+  "charts": [
+    {
+      "movingLine": 1,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "101000",
+      "changedId": 36,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "bits": "101",
+          "name": "离",
+          "element": "火"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "generated_by"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "generated_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "generates"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "generates"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "generates"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        }
+      ]
+    },
+    {
+      "movingLine": 2,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "011000",
+      "changedId": 46,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "bits": "011",
+          "name": "巽",
+          "element": "木"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "generates"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "generated_by"
+        }
+      ]
+    },
+    {
+      "movingLine": 3,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "000000",
+      "changedId": 2,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "controls"
+        }
+      ]
+    },
+    {
+      "movingLine": 4,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "001100",
+      "changedId": 62,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "generates"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "same"
+        }
+      ]
+    },
+    {
+      "movingLine": 5,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "001010",
+      "changedId": 39,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "controls"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "generated_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "generates"
+        }
+      ]
+    },
+    {
+      "movingLine": 6,
+      "primaryBits": "001000",
+      "mutualBits": "010100",
+      "changedBits": "001001",
+      "changedId": 52,
+      "nodes": [
+        {
+          "role": "body",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "bits": "000",
+          "name": "坤",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "bits": "010",
+          "name": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "bits": "100",
+          "name": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "bits": "001",
+          "name": "艮",
+          "element": "土"
+        }
+      ],
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "same"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "generates"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "controlled_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "controls"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "generated_by"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "same"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "controls"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "controlled_by"
+        }
+      ]
+    }
+  ],
+  "interpretiveFindings": [
+    "初六独有末离直生土；震既克土又生离，坎既生震又克离。春相离使弱体受旺木克仍保条件，夏旺离与土相、土令旺土且末休离保有利，秋弱末生保条件，冬死火受旺水制仍难。",
+    "六二与六四均两土、一坎、两木，体互用互顺序不同。中末木克齐在，夏相土/土令旺土可承轻克保条件，秋木弱反证较轻但休土制相水费力无后生和，仍判难，未把弱木抬旺。",
+    "九三与上六均三土比和、一坎、一震，原体及互位不同。九三劳谦有终与土令前后旺和共取有利、夏秋条件；上六最外有名志功未得，土夏保条件而秋仍难。这是古义与盘面共同取舍，正证未删，非唯一公式或现实准确率宣称。",
+    "六五末坎受原艮克，不为水生土、不是主动来归。两坎同气且生震，坤/艮制坎不取消木克土。夏土令有力可理而条件，春秋冬难。",
+    "人物始终本用，前三艮东北，后三坤西南；须有参照与现实路线，末卦不挪人员方位。安危单看人物所受关系并同步凭事实核实，身份现处可靠确认就足以寻获。"
+  ]
+}
