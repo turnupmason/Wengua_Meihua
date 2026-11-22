@@ -69,7 +69,7 @@ export function renderHex(ctx,source){
    '取用：体为寻找与核实一方，本用为所寻的失联者；其余节点说明过程与收尾。'+r.edges.map(e=>{const n=r.nodes.find(n=>n.role===e.targetRole);return `${LABELS[n.role]}${n.trigram}${n.element}${REL_LABELS[e.type]}`;}).join('；')+'。',
    `旺衰：${a.monthBranch}月，`+r.nodes.filter(n=>n.role!=='body_inherited').map(n=>`${LABELS[n.role]}${n.trigram}${n.element}${n.strength.state}`).join('；')+'。',
    `爻辞：${line.label}「${line.text.replace(/。$/u,'')}」；象曰「${line.image.replace(/。$/u,'')}」。`,
-   '专业说明：'+a.judgment,
+   '专业说明：'+a.judgment.replace(/\b(favourable|conditional|difficult)\b/g,code=>'「'+VERDICTS[code]+'」'),
    '取期依据：'+(typeof a.timing==='string'?a.timing:a.timing.map(t=>t[4]).join(' ')),
    '出处：'+referencesFor(ctx,id,a).map(ref=>`[${ref.title}](${ref.url})`).join('；')+'。各出处的适用范围与现代迁移说明见[规则页](POLICY.md)。',
    `稿件键：\`${QUESTION_ID}/${id}/${a.movingLine}/${a.monthBranch}/${a.outcome}\`。作者源：[${s}.json](../../../${SOURCE_DIR}/${s}.json)。`,
