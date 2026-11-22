@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 48,
+  "wholeArticlesRead": 60,
   "authorshipScope": {
-    "currentReadback": "山地剥已写48篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "山地剥已写60篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -87,6 +87,22 @@
     {
       "path": "docs/READING_POLICY_V2.md",
       "scope": "第十三节第三步，凶义落所问结果且盘根本无克体，凶辞直接主断。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+      "scope": "六五经象，王弼施宠有度不害正，孔疏以众阴相次释贯鱼。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "268行，五为群阴之主，能使群阴顺序如贯鱼而上从。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "186行，众阴之长率其类受制于阳，得此象则无不利。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第二节R3及R3↑′，第八节间接生克，第十三节末克与吉辞升档。"
     }
   ],
   "findings": [
@@ -165,6 +181,25 @@
         "23/4/丑"
       ],
       "finding": "下坤体，上艮及互坤两处均同土，无克体。六四使上艮变离，山地剥变火地晋，末离生坤。体用初判可成，依第十三节凶辞落在所求结果且无克体，六四「切近灾也」主断过不了。尤其巳午末离旺、坤土有气时，解释必须保留有力的扶助及前中可为；凶义是否一定要直落考试结果，而非事已迫近、所求未定的过程，留作独立复核。春、秋均取体互，夏及四土令取用互，冬取本用上艮，土日仅参相应时段。"
+    },
+    {
+      "id": "hex-023-line-5",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "23/5/寅",
+        "23/5/卯",
+        "23/5/辰",
+        "23/5/巳",
+        "23/5/午",
+        "23/5/未",
+        "23/5/申",
+        "23/5/酉",
+        "23/5/戌",
+        "23/5/亥",
+        "23/5/子",
+        "23/5/丑"
+      ],
+      "finding": "下坤为体，上艮及两互坤同土，六五使上艮变巽，山地剥之风地观。木克土在末处，局无火生体，无金制巽、水续生巽，按原五态。寅卯旺巽克死坤，亥子相巽克囚坤。巳午巽休、土旺四月巽囚，前中同类有力，初档属R3↑′，二分按末克取难。申酉巽死，虽轻克亦在末处。无不利与终无尤确有其义，局无生体，不能升档。土令先参本用旺艮辰戌丑未日，其他八月依末巽取寅卯日。"
     }
   ],
   "lineReviews": [
@@ -201,6 +236,14 @@
       "openFindingIds": [
         "hex-023-line-4"
       ]
+    },
+    {
+      "movingLine": 5,
+      "text": "贯鱼，以宫人宠，无不利。",
+      "image": "“以宫人宠”，终无尤也。",
+      "reading": "贯鱼取群阴有次第，王孔说宠有分际不害正，程朱取众阴依序上从。所利据此落实到早中照应，不盖过末巽克体。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "batchReadback": [
@@ -283,17 +326,37 @@
       ],
       "scope": "十二月逐篇写作及读回，核正文、原断、句读和日应。寅卯晚火有气，巳午旺，土令休，秋囚，冬死。早中照应与最后火生土分开，核无克体后记录凶辞主断。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "逐篇读回十二月标题、简断、全文、核断及日应。辨巽为木和上艮仍土在不同阶段，四土令只参早段相应，余月照末克的轻重和实际阶段取。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T01:33:36.575Z",
-  "sourceSha256": "adfd582a194d54fc627e542157b673d3117f059648472f813897cbf636a9c193",
+  "reviewedAt": "2026-11-22T01:38:11.890Z",
+  "sourceSha256": "152bca7996312435ef6368a2cb815bbb66e5d4e4bc951690e8eb8daff0373a46",
   "checks": {
-    "scope": "山地剥已写48篇",
-    "chartComparisons": 1296,
+    "scope": "山地剥已写60篇",
+    "chartComparisons": 1620,
     "chartMismatches": 0,
-    "dateCases": 96,
+    "dateCases": 120,
     "bodyHanRange": [
-      493,
+      491,
       578
     ]
   }
