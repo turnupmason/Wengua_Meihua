@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 23,
+  "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
+  "editor": "Codex",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "wholeArticlesRead": 12,
+  "authorshipScope": {
+    "currentReadback": "山地剥已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "逐篇作者读回与机器排盘已另记。独立全文复核待定。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03剝.txt",
+      "scope": "初六「剥床以足，蔑贞凶」，王注以床为人所安，孔疏训蔑为削、贞为正，小象言以灭下也。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "184行，剥自下起，蔑灭也，灭正则凶。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "258与260行，录文初六句末作吉，下注仍明说凶。经辞按正义及本义，不据程传该录本异字改断。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "655行取克衰，792、798行无生有克及末克。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "第二节 R3 与 R3↑′，第八节间接生克，第十三节二分时末克不成。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "hex-023-line-1",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "23/1/寅",
+        "23/1/卯",
+        "23/1/辰",
+        "23/1/巳",
+        "23/1/午",
+        "23/1/未",
+        "23/1/申",
+        "23/1/酉",
+        "23/1/戌",
+        "23/1/亥",
+        "23/1/子",
+        "23/1/丑"
+      ],
+      "finding": "本用坤、体互坤、用互坤与上艮同土。初六使下坤变震，山地剥变山雷颐，木克土在末应。无火生体，也无金制震、水生震，照五态本身取。寅卯木旺土死，亥子木相土囚，末制有实。申酉土休木死，照轻克记，仍属无生有末克。巳午土相、土令四月土旺，三处比和有力而末震无气，初当R3↑′，二分以末克判过不了。初六凶辞与末克同向。程传录文作吉与其注凶相异，据正义、本义核文。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "剥床以足，蔑，贞凶。",
+      "image": "“剥床以足”，以灭下也。",
+      "reading": "初六所削为安处之本，王孔训蔑削，朱熹训灭，皆取自下而剥。前中土比，末处由坤转震，原先照应到了结果变为来制。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "十二月逐篇写作和读回题名、简断、五段正文、底断和应期。前中同土在五令的厚薄、五令末震克艮的分量分开写，寅卯日按末震取，轻与重不互换。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "reviewedAt": "2026-11-22T01:15:09.030Z",
+  "sourceSha256": "9b2321be24a5e2f02dba13cf5487b73f912bd54c9ef2b016105945cfebe91361",
+  "checks": {
+    "scope": "山地剥已写12篇",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      495,
+      546
+    ]
+  }
+}

@@ -2,16 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1584-20261121",
+  "batch": "exam-monthly-preview-1596-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1584,
-  "newArticlesSincePrevious": 0,
+  "uploadedArticles": 1596,
+  "newArticlesSincePrevious": 12,
   "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 3024,
-  "authorWholeArticleReadback": 1584,
+  "remainingArticles": 3012,
+  "authorWholeArticleReadback": 1596,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -338,7 +338,8 @@
     "independentChartMismatches": 0,
     "dateCases": 3168,
     "judgmentCorrectionArticles": 976,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖前22个完整卦，本卦已发表篇目另见该卦核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
@@ -972,8 +973,22 @@
   },
   "nextExpectedKey": {
     "primaryId": 23,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
   },
-  "previouslyPublishedPartialArticles": 60
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 23,
+      "name": "山地剥",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-023.json",
+      "sourceSha256": "9b2321be24a5e2f02dba13cf5487b73f912bd54c9ef2b016105945cfebe91361",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-023.json",
+      "readingPath": "docs/exam/monthly-preview/hex-023.md"
+    }
+  ]
 }
