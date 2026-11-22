@@ -2,18 +2,16 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1800-20261121",
+  "batch": "exam-monthly-preview-1812-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1800,
+  "uploadedArticles": 1812,
   "newArticlesSincePrevious": 12,
-  "newHexagrams": [
-    25
-  ],
+  "newHexagrams": [],
   "fullTarget": 4608,
-  "remainingArticles": 2808,
-  "authorWholeArticleReadback": 1800,
+  "remainingArticles": 2796,
+  "authorWholeArticleReadback": 1812,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -382,7 +380,8 @@
     "independentChartMismatches": 0,
     "dateCases": 3600,
     "judgmentCorrectionArticles": 1192,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
+    "scope": "机器报告覆盖前25个完整卦，本卦已发表篇目另见该卦核读记录。"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
@@ -1113,8 +1112,22 @@
   },
   "nextExpectedKey": {
     "primaryId": 26,
-    "movingLine": 1,
+    "movingLine": 2,
     "monthBranch": "寅"
   },
-  "previouslyPublishedPartialArticles": 60
+  "partiallyPublishedHexagrams": [
+    {
+      "primaryId": 26,
+      "name": "山天大畜",
+      "articles": 12,
+      "fullArticleReadback": 12,
+      "completedMovingLines": [
+        1
+      ],
+      "sourcePath": "sources/editorial/exam/monthly/hex-026.json",
+      "sourceSha256": "6b0b274a2185437bc6e87548475995c33db6a6503d29e54bb68240f367742fc3",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-026.json",
+      "readingPath": "docs/exam/monthly-preview/hex-026.md"
+    }
+  ]
 }

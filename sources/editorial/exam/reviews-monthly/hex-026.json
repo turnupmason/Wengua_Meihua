@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 26,
+  "baselineCommit": "f4eeb9e4e4f96dfad0f41e79bc61ad46f8cdc488",
+  "editor": "Codex",
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "status": "partially-reviewed",
+  "wholeArticlesRead": 12,
+  "authorshipScope": {
+    "currentReadback": "山天大畜已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+  },
+  "independentReview": {
+    "status": "pending",
+    "reviewerIsHuman": false,
+    "scope": "逐篇作者读回与机器排盘已另记。独立全文复核待定。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+      "scope": "36–38 行，王弼四乃畜己，孔颖达利休已；该简本利巳字形异文，以本义经文和释音定本页「利已」"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "200–202 行，「有厉利已」与「已夷止反」，初九为六四所止"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "342 行，平时初四相援，在大畜为相止畜"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "§8 至一层，乾兑制震巽仅减克，不变为生体；末克及初泄综合"
+    },
+    {
+      "path": "sources/editorial/exam/hex-026.json",
+      "scope": "初九五气原断与原取期，按各月原态分辨耗与压"
+    }
+  ],
+  "findings": [
+    {
+      "id": "hex-026-line-1",
+      "status": "open-interpretation",
+      "keys": [
+        "26/1/寅",
+        "26/1/卯",
+        "26/1/亥",
+        "26/1/子"
+      ],
+      "finding": "乾兑由艮土而生，另有制震巽之力，前中消耗与中末减克各按一个关系算，不转作生体。寅卯原木旺及亥子原木相，虽受制仍作用，减到多轻列解释边界。秋金当旺，主耗在前中；土月艮旺可以承当，末段轻克与全局无生仍在。巳午土有气与金原死、木原休须分别，火旺仅月令，卦中无火。原应期按春夏冬末巽、秋土月中兑，不添考题和日期断语。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "有厉，利已。",
+      "image": "“有厉，利已”，不犯灾也。",
+      "reading": "王孔、程朱均从六四畜止初九言「有厉，利已」，所取是能止免灾。依《本义》释音定「已」为停止，简单转录中的「巳」照其异形记。原判以两处泄艮、中末克艮、全卦无生判难。",
+      "status": "author-readback-complete",
+      "openFindingIds": [
+        "hex-026-line-1"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "寅至丑十二篇由作者逐篇读回，坚持保留季节轻重及两阶段分别，复读标题、简断、正文、取期。以两套认可稿及底稿核校，改写起笔、爻义与末段后再核。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "reviewedAt": "2026-11-22T03:49:13.514Z",
+  "sourceSha256": "6b0b274a2185437bc6e87548475995c33db6a6503d29e54bb68240f367742fc3",
+  "checks": {
+    "scope": "山天大畜已写12篇",
+    "chartComparisons": 324,
+    "chartMismatches": 0,
+    "dateCases": 24,
+    "bodyHanRange": [
+      494,
+      540
+    ],
+    "publicProseExplicitDayBranchMentions": 0
+  }
+}
