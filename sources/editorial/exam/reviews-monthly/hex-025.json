@@ -6,9 +6,9 @@
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "status": "partially-reviewed",
-  "wholeArticlesRead": 12,
+  "wholeArticlesRead": 24,
   "authorshipScope": {
-    "currentReadback": "天雷无妄已写12篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
+    "currentReadback": "天雷无妄已写24篇，按篇从作者源读回标题、简断、正文、取期，修订处再读。"
   },
   "independentReview": {
     "status": "pending",
@@ -35,6 +35,22 @@
     {
       "path": "sources/editorial/exam/hex-025.json",
       "scope": "初九五气原判、传统应期规格及待修的场景"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "41–44 行，六二不耕获，王弼「代终已成」、孔颖达「不为其始而成其末」"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "196 行，六二因时顺理及小象「未富」"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "按月令定轻重，生体受制不改原始五态，互变分段，末段比和不算另一处生体"
+    },
+    {
+      "path": "sources/editorial/exam/hex-025.json",
+      "scope": "六二五气原断及分组应期规格，去除旧说明对具体考试内容的推断"
     }
   ],
   "findings": [
@@ -46,6 +62,25 @@
         "25/1/卯"
       ],
       "finding": "寅卯乾囚、所克两木旺，两个生体土死且受制。按无直接克体且有生体，沿用 R1a 取成；若以受制全失其吉或提高前半程自身承担分量的权重，寅卯解释易有分歧，记录此限。巳午体死，艮坤的原气相与受制后按薄分别核准，所克木休，不照春旺之重。结论与原定应期结构一致。"
+    },
+    {
+      "id": "hex-025-line-2",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "25/2/寅",
+        "25/2/卯",
+        "25/2/辰",
+        "25/2/巳",
+        "25/2/午",
+        "25/2/未",
+        "25/2/申",
+        "25/2/酉",
+        "25/2/戌",
+        "25/2/亥",
+        "25/2/子",
+        "25/2/丑"
+      ],
+      "finding": "本震、体互巽为乾所克，按各月金木强弱分开计算前、中段自力所费。互艮受震、巽制且无火扶，保留土原月态，只折减实际生助。变兑比和着眼能否用所长完成收尾，不计为另一处生体。寅卯弱乾制旺木且末兑囚，巳午乾兑同死：这两组都以仍有艮土所生和全局无克为据取能过，不能把微助或薄比和说成宽裕。申酉、土月和冬水月分开落笔。应期保留原角色和阶段，移除具体考试情节。"
     }
   ],
   "lineReviews": [
@@ -58,6 +93,14 @@
       "openFindingIds": [
         "hex-025-line-1"
       ]
+    },
+    {
+      "movingLine": 2,
+      "text": "不耕获，不菑畬，则利有攸往。",
+      "image": "“不耕获”，未富也。",
+      "reading": "王孔取在已有开端上承接而完成，程朱重因时顺理、不图私利。与全卦无克、互艮生乾、末兑与乾相合一起说明何以可成。",
+      "status": "author-readback-complete",
+      "openFindingIds": []
     }
   ],
   "batchReadback": [
@@ -80,18 +123,38 @@
       ],
       "scope": "十二篇逐一读回，与面试、确定关系同卦范文及考试原断对读。按每月的应对、受助与末处变化说明成因，改去原稿中题干、具体考题、分数和通知渠道的想象。正文不引日支，取期单列在卦理说明。",
       "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "寅至丑逐篇读回标题、简断、四段正文与应期，较春木旺、夏金弱、秋金旺、土月金相与冬木相的差别，修订出处与技术判断后复查。",
+      "status": "author-readback-complete"
     }
   ],
-  "reviewedAt": "2026-11-22T02:59:41.689Z",
-  "sourceSha256": "e38da5452715001c41ab8132ae003dd999ed90b77ecb4460b4e46bea3d47981d",
+  "reviewedAt": "2026-11-22T03:09:41.711Z",
+  "sourceSha256": "9d4343aa32ebf94ba23a95ceaac82eca02b2bd4be96a727368c0462976458242",
   "checks": {
-    "scope": "天雷无妄已写12篇",
-    "chartComparisons": 324,
+    "scope": "天雷无妄已写24篇",
+    "chartComparisons": 648,
     "chartMismatches": 0,
-    "dateCases": 24,
+    "dateCases": 48,
     "bodyHanRange": [
       477,
-      520
+      574
     ],
     "publicProseExplicitDayBranchMentions": 0
   }
