@@ -1,0 +1,379 @@
+{
+  "schemaVersion": "1.0.0",
+  "task": "weiji-independent-source-preparation",
+  "primaryId": 64,
+  "status": "source-preparation-complete",
+  "editor": "/root/source_audit",
+  "preparedAt": "2026-11-22T03:54:35.494Z",
+  "scope": "仅作未济经、王注、孔疏及既有数字校记的来源准备；未打开未济作者稿，未参与正文、提纲、结果分级或首轮编辑。冻结小批到达后才开始独立第二全文阅读。",
+  "wholeArticlesRead": 0,
+  "articleReviews": [],
+  "secondReadCompleted": false,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "realWorldPredictionAccuracy": "not-validated",
+  "independence": {
+    "articleSourceOpened": false,
+    "authorDraftsRead": false,
+    "authorOutlineProvided": false,
+    "outcomeGradesChosen": false,
+    "waitingForFrozenBatchFrom": "/root",
+    "note": "来源准备不能计入正文阅读数量，也不替将来的全文审读签署。"
+  },
+  "sources": [
+    {
+      "id": "ZY-WEIJI-10647450",
+      "title": "《周易·未济》经、彖、象数字本",
+      "url": "https://zh.wikisource.org/wiki/周易/未濟",
+      "stableUrl": "https://zh.wikisource.org/w/index.php?title=周易/未濟&oldid=10647450",
+      "revisionId": 10647450,
+      "onlineLastEdited": "2026-09-27T04:23:00Z",
+      "webRef": "turn565467198view0",
+      "actualReading": "本次实际打开并完整读完经、彖、大象及六小象，非由作者稿反查。",
+      "limits": "数字转录；九四大国旁标一作邦，未据此完成版本考定。"
+    },
+    {
+      "id": "ZY-ZHENGYI-WEIJI-2414136",
+      "title": "《周易正义》下经丰传卷六·未济",
+      "url": "https://zh.wikisource.org/wiki/周易正義/06未濟",
+      "stableUrl": "https://zh.wikisource.org/w/index.php?title=周易正義/06未濟&oldid=2414136",
+      "revisionId": 2414136,
+      "onlineLastEdited": "2024-05-29T03:42:00Z",
+      "webRef": "turn565467198view1",
+      "localPath": "sources/reference/zhouyi-zhengyi/06未濟.wiki",
+      "localSha256": "0f49d5a66a2ead3d7ae60e83016ea69c45847264b5459be919938e944c9050ff",
+      "actualReading": "网页与本地 .wiki 均完整阅读卦辞、彖、大象、六爻、各小象及王注孔疏。原始 .wiki 首行同为 revid 2414136，保留旧录字样。",
+      "limits": "未以本页单独判定刻本真伪；此页九二王注与孔疏都作靖难，与另一数字版本不同。"
+    },
+    {
+      "id": "ZY-ZHUSHU-SIKU-10-9685967",
+      "title": "《周易注疏（四库全书本）》卷十网页录文",
+      "url": "https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷10",
+      "stableUrl": "https://zh.wikisource.org/w/index.php?title=周易注疏_(四庫全書本)/卷10&oldid=9685967",
+      "revisionId": 9685967,
+      "onlineLastEdited": "2026-09-16T05:39:00Z",
+      "webRefs": [
+        "turn705500331view0",
+        "turn646353084view0",
+        "turn482805858view0"
+      ],
+      "actualReading": "本次实际打开未济完整段（检索渲染行536–612）、有关未济考证（665–672）及页尾版本信息。重点逐字核570–575的王注、陆德明音义与孔疏。未声称完整研究卷十其余六卦或看过影印原页。",
+      "limits": "本次仍是网页录文比较，不是影印本校验。考证段属于后世编纂考证，不误署为王弼或孔颖达本人之言。"
+    },
+    {
+      "id": "WEIJI-HANS-COLLATED-LOCAL",
+      "title": "项目简体校订未济原文及2026-11-20校记",
+      "localPath": "sources/reference/zhouyi-zhengyi-hans/06未濟.txt",
+      "localSha256": "47e31b470e1e617e9f5c38eeeae59a46c867192161b27b0cdefb598d669fbc5b",
+      "actualReading": "全文实际读完，包括末尾既有校勘说明；与本次实际打开四库网页对应处逐项核对。",
+      "limits": "项目校订派生文件，不是独立古籍见证。raw原始快照与派生校字分开保存，不能把派生文字冒作旧正义网页逐字原文。"
+    },
+    {
+      "id": "POLICY-CURRENT-READ",
+      "title": "失联寻人逐月稿：取用、线索与应期",
+      "localPath": "docs/missing-contact/monthly-preview/POLICY.md",
+      "localSha256": "087369bab835fe55eef9bb590ba33f9322921f8566eb95e20e5437184eee10e4",
+      "version": "missing-person-search-preview-1.0.0",
+      "actualReading": "本次重新完整读取当前POLICY，已见蒙异文及小象注文归属补充，厚度说明为分别报告正文总字与去中文引号字数、沿用总正文500–650目标。",
+      "limits": "不把去引号字数另立≥500验收门槛；本次来源准备没有对未济稿件判定是否通过。"
+    }
+  ],
+  "collationChecks": [
+    {
+      "topic": "九二王注循难／孔疏靖难",
+      "oldSnapshot": {
+        "source": "ZY-ZHENGYI-WEIJI-2414136",
+        "wangBi": "用健拯難，靖難在正，而不違中",
+        "kongYingda": "靖難在正，然後得吉"
+      },
+      "sikuDigital": {
+        "source": "ZY-ZHUSHU-SIKU-10-9685967",
+        "wangBi": "用健拯難循難在正而不違中",
+        "luDeming": "循似遵反猶履也",
+        "kongYingda": "靖難在正然後得吉"
+      },
+      "localDerived": {
+        "source": "WEIJI-HANS-COLLATED-LOCAL",
+        "wangBi": "循难在正",
+        "kongYingda": "靖难在正"
+      },
+      "assessment": "本次独立复核支持既有校记按四库网页把王注校循、孔疏仍保靖，并有音义犹履的内证。引用须标来源与作者，不把王、孔统一替换为同字，也不称已经完成刻本校勘。"
+    },
+    {
+      "topic": "卦辞疏小狐虽难／能渡水",
+      "oldSnapshot": "小狐雖難渡水",
+      "sikuDigital": "小狐雖能渡水",
+      "localDerived": "小狐虽能渡水",
+      "assessment": "四库网页540行实见能，支持项目派生校能；原始 .wiki 仍留难。均有无余力、未登岸而濡尾的上下文，不能割去承接不足只断小狐能渡。"
+    },
+    {
+      "topic": "初六事在已量／己量",
+      "oldSnapshot": "事在已量",
+      "sikuDigital": "事在己量",
+      "localDerived": "事在己量",
+      "assessment": "四库网页562行实见己，支持派生校己；原快照保留已，引用时不混称。"
+    },
+    {
+      "topic": "初六孔疏豫昭／豫照",
+      "oldSnapshot": "不能豫昭事之幾萌",
+      "sikuDigital": "不能豫照事之幾萌",
+      "localDerived": "不能豫昭事之几萌",
+      "assessment": "本次实见565行照，项目仍保留旧录昭并以校记列待校。近义异字已记录，不擅静默统一，更不由此改变爻义。"
+    },
+    {
+      "topic": "六三利涉之前无不字",
+      "jingDigital": "未濟，征凶，利涉大川",
+      "wangKongBranch": "不能自济而自进为征凶；弃己委二、载二而行则利涉",
+      "sikuLaterKaozheng": "卷十考证引程传兼具征凶与利涉，批评有本在利字上增不字。",
+      "assessment": "本次所读经及王孔注疏明确保留利涉，无新增不字；后世考证另据其作者层次记录，不混作孔疏原话。不能为了抹平表面张力改爻辞为不利涉。"
+    },
+    {
+      "topic": "九四大国／邦",
+      "jingPageVariant": "《周易/未濟》大國旁注一作邦",
+      "zhengyiAndSiku": "本次所读均为大國",
+      "assessment": "只记录数字页面所列异文，不据一页旁注宣告早期本字；赏的王孔语境须从所引版本完整解释。"
+    }
+  ],
+  "lineEvidence": [
+    {
+      "movingLine": 1,
+      "name": "初六",
+      "jing": "濡其尾，吝。",
+      "wangBi": {
+        "anchors": [
+          "最居險下",
+          "困則能反，故不曰凶",
+          "事在己量（四库网页与项目校订）"
+        ],
+        "meaning": "处险下而贸然趋其应会陷难，但阴处下非一味亢进，困后能反，所以称吝而非凶。王注借既济上六连接未济之初。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "不能豫昭〔四库网页作照〕事之幾萌",
+          "困而後反"
+        ],
+        "meaning": "重在未能预量而困后才反；不是一切前行都被永远禁止，也不是否认返正余地。"
+      },
+      "supports": [
+        "核对时应保留困后能反、故不曰凶的区别，不能只摘溺身把整爻写成绝断。",
+        "迁入寻人只能作为行动是否超出已知与承接的反省，不是当事人身体事实。"
+      ],
+      "doesNotSupport": [
+        "濡尾、溺身就是本人落水、溺亡或已发现尸体。",
+        "由既济上六的引用把当篇真动爻改成既济上六，或省掉实际本互变。",
+        "己量或不知极直接给出寻找距离、时间或已知现场。"
+      ],
+      "sources": [
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "name": "九二",
+      "jing": "曳其輪，貞吉。",
+      "wangBi": {
+        "anchors": [
+          "體剛履中，而應於五",
+          "拯救危難，經綸屯蹇",
+          "循難在正，而不違中（四库网页）"
+        ],
+        "meaning": "刚中而受六五委任，能处理险难；用健而循难仍行正不违中。原正义快照王注作靖难，已另记校字。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "五體陰柔，委任於二",
+          "任重憂深",
+          "曳其輪者，言其勞也",
+          "靖難在正"
+        ],
+        "meaning": "曳轮在孔疏明确解释任重忧深的劳，非仅仅止车不行；六五任二的条件与行正才得吉不可省。"
+      },
+      "supports": [
+        "可引王注四库循难、陆氏音义犹履、孔疏靖难三者各自位置。",
+        "受任、能任、行正的三层能作为出处审读依据，现代核实分工须另作迁移说明。"
+      ],
+      "doesNotSupport": [
+        "将王注循难与孔疏靖难混成同一句逐字引文。",
+        "把王孔曳轮单独归结为停止所有现实查找，或认定失联者有车辆故障。",
+        "九二吉等于本人已回、已安全，或现实一定出现某位能救人者。"
+      ],
+      "sources": [
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "name": "六三",
+      "jing": "未濟，征凶。利涉大川。",
+      "wangBi": {
+        "anchors": [
+          "力不能自濟，而求進焉",
+          "二能拯難，而已比之",
+          "棄已委二，載二而行"
+        ],
+        "meaning": "无法自济却独自求进为凶；六三比九二，若舍自任、委任能拯难之二，则利涉。原录已/己字形不在本次静默改定。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "而欲自進求濟",
+          "若能棄已委二，則沒溺可免"
+        ],
+        "meaning": "两种结论各有行为条件，并非先凶后吉自然发生的时间序列。"
+      },
+      "supports": [
+        "征凶与利涉的条件分支须同时读，改变的是是否自进和是否委二。",
+        "在现代迁移里，委任必须有现实适任与核实条件，不只由经文预填帮助已在。"
+      ],
+      "doesNotSupport": [
+        "删除利涉、擅补不利涉，或只取利涉许无条件成事。",
+        "把征凶写作一切寻找都不可进行。",
+        "由大川推人在河中、岸边或要穿越河流，由丧身认定本人已经死亡。",
+        "把九二这一爻位自动变成第二天、第二人、两名救援者或盘外新增生体节点。"
+      ],
+      "sources": [
+        "ZY-WEIJI-10647450",
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "name": "九四",
+      "jing": "貞吉，悔亡。震用伐鬼方，三年有賞於大國。",
+      "wangBi": {
+        "anchors": [
+          "志在乎正，則吉而悔亡",
+          "處文明之初，始出於難，其德未盛",
+          "五居尊以柔……不奪物功"
+        ],
+        "meaning": "出险入文明之初，虽失位而志正可吉；德尚未盛，故事情不能立刻成，三年之辞与此相连。六五不夺其功，所以受赏。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "不能即勝，故曰三年",
+          "九四既克而還",
+          "百里大國之賞"
+        ],
+        "meaning": "在古文征伐功成而受赏、受封的语境解释三年与大国；不是现代找人日历或赏金承诺。"
+      },
+      "supports": [
+        "审读时应保留渐能有功、正志得行、不能即胜及不夺功的上下文。",
+        "三年是经文的原来数词，不将其静默删改；现代取义可说明需过程，但不能据此换算寻获日。"
+      ],
+      "doesNotSupport": [
+        "三年直接算三天、三个月、某公历日或要求现实等待三年。",
+        "鬼方就是鬼神、当前嫌疑人、某现代地区或已知犯罪地点。",
+        "震用一字即证明本盘新增震木，或产生真实车辆/地震事件。",
+        "赏即承诺会有寻人赏金、国家介入或百里范围内找到。"
+      ],
+      "sources": [
+        "ZY-WEIJI-10647450",
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "name": "六五",
+      "jing": "貞吉，無悔。君子之光，有孚，吉。",
+      "wangBi": {
+        "anchors": [
+          "必正然後乃吉",
+          "付與於能，而不自役",
+          "付物以能，而不疑"
+        ],
+        "meaning": "柔顺文明居尊，守正、任能而信任，使所任者竭力而成功；吉不是脱离适任与守正条件的空断。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "有應於二",
+          "付物以能而無疑焉",
+          "則物竭其誠"
+        ],
+        "meaning": "明确应九二并委能，无疑信任建立在付事于能的前提上。"
+      },
+      "supports": [
+        "有孚在此可由王孔说明适任与委任的可信关系。",
+        "如稿件移作现实协助，不能省掉有条件、有能力及具体所任之事。"
+      ],
+      "doesNotSupport": [
+        "有孚证明对方已发真实消息、所有转述可信或本人一定诚信。",
+        "君子之光就是特定亮处、灯光现场或已知男性身份。",
+        "吉与无悔直接核实平安、找到或某日期会归家。",
+        "委二让程序把另一爻或变体改成新的原体。"
+      ],
+      "sources": [
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "name": "上九",
+      "jing": "有孚於飲酒，無咎。濡其首，有孚，失是。",
+      "wangBi": {
+        "anchors": [
+          "所任者當，則可信之無疑",
+          "能信於物，故得逸豫",
+          "耽於樂之甚，則至於失節"
+        ],
+        "meaning": "所任得当可放心而逸，无咎有条件；若因信任便过度逸乐、不再虑事，则失节。不是信任本身有罪，也不是整爻只剩无咎或只剩灾难。"
+      },
+      "kongYingda": {
+        "anchors": [
+          "信任得人，不憂事廢",
+          "而不知其節",
+          "濡首之難，還復及之"
+        ],
+        "meaning": "正确任人后仍要有节，因自逸失节而再受难，前后两层相因而非互相抹掉。"
+      },
+      "supports": [
+        "把任当可信与不可过度松懈分开，才能保留无咎和失是两面。",
+        "小象亦不知节针对饮酒濡首的失度，不提供某一天转好或转坏的预言。"
+      ],
+      "doesNotSupport": [
+        "饮酒认定本人正在酒吧、醉酒、因酒失联；濡首认定落水或头部受伤。",
+        "未济之极反于既济的义理说明，直接替代本盘真实动爻计算的变卦名称。",
+        "有孚自动取消后半失节之戒，或用后半全面否定适任信任的正面。",
+        "无需核实即可信任任何自称知情者；反之也不意味着禁止必要协作。"
+      ],
+      "sources": [
+        "ZY-ZHENGYI-WEIJI-2414136",
+        "ZY-ZHUSHU-SIKU-10-9685967"
+      ]
+    }
+  ],
+  "wholeHexEvidence": [
+    {
+      "topic": "未济不等于永不济",
+      "supported": "孔疏以今日未济而复有可济之理，说明未与不之别；刚柔应使有相拯条件，柔得中而纳刚是亨的解释。",
+      "notSupported": "不论盘面、动爻、月令与实际条件，所有未济都必有确定寻获结果。"
+    },
+    {
+      "topic": "不续终与余力",
+      "supported": "王注以将济而余力不足、不续终解释濡尾，并提出济未济者必有余力；可以检查稿件是否只写开头帮助而漏掉末段承接。",
+      "notSupported": "据不续终断本人已发生具体身体危险，或把余力自动加作五行生体节点。"
+    },
+    {
+      "topic": "慎辨物居方",
+      "supported": "王注令物各当其所，孔疏各居其方安其所，是辨别安置之义。",
+      "notSupported": "该大象本身给出失联者的地图坐标、明确参照点或交通路线。"
+    }
+  ],
+  "policyCheckpoint": {
+    "path": "docs/missing-contact/monthly-preview/POLICY.md",
+    "sha256": "087369bab835fe55eef9bb590ba33f9322921f8566eb95e20e5437184eee10e4",
+    "readInFull": true,
+    "bodyCountRule": "正文总汉字沿用500–650目标；去中文引号字数另报引用篇幅，不新增该指标≥500门槛。",
+    "quoteRule": "逐字引文与作者/版本归属分别核；古典经注、项目校订及现代迁移分层。",
+    "reviewRule": "等待冻结小批后由未参与写作/首轮者逐篇全读，真实阅读意见绑定对应最终摘要；来源准备不冒充正文审读。",
+    "predictionScope": "消息、本人回复、所在地、寻获、归家分开；方位类象、动机、安危、候选日期均不作未经核实的现实事实。"
+  },
+  "unresolvedLimits": [
+    "本次未核影印原刻，网页录文字样及项目校记足以支持数字文本差异记录，尚不足宣布所有版本学问题已定。",
+    "没有读取任何未济新稿，尚无稿件通过/不通过、文学质量或结果分级意见。",
+    "即使以后文章经注、盘面、文字皆一致，也不等于现代失联寻获、定位、安危或日期预测经过现实验证。"
+  ]
+}

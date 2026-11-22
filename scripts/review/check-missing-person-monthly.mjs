@@ -9,7 +9,7 @@ const PUBLIC_INTERNAL=/口径|定档|原稿|审计|稿件|待核|R\d|TODO|\[待(
 const OUTCOME_WORDS={
  favourable:/寻得|寻回|找到|找回|寻见|找到本人|寻获/u,
  conditional:/机会|余地|仍可|尚可|可望|有望|可寻|能寻|能够寻|找得|可以找到|有条件|若|只要|前提/u,
- difficult:/难|不易|找不到|寻不到|未能|不能|寻不回|找不回/u,
+ difficult:/难|不易|不容易|找不到|寻不到|未能|不能|寻不回|找不回/u,
 };
 const maybeJSON=async path=>{try{return JSON.parse(await readFile(path,'utf8'));}catch(e){if(e.code==='ENOENT')return null;throw e;}};
 const grams=text=>{const s=normalize(stripQuotes(text)),set=new Set();for(let i=0;i<s.length-2;i++)set.add(s.slice(i,i+3));return set;};
