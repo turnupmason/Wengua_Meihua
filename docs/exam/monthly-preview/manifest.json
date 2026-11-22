@@ -2,16 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "exam",
   "questionId": "career.exams.exam",
-  "batch": "exam-monthly-preview-1572-20261121",
+  "batch": "exam-monthly-preview-1584-20261121",
   "publicationDate": "2026-11-21",
   "publicationTimeZone": "America/New_York",
   "scope": "copy-preview-only",
-  "uploadedArticles": 1572,
-  "newArticlesSincePrevious": 0,
-  "newHexagrams": [],
+  "uploadedArticles": 1584,
+  "newArticlesSincePrevious": 12,
+  "newHexagrams": [
+    22
+  ],
   "fullTarget": 4608,
-  "remainingArticles": 3036,
-  "authorWholeArticleReadback": 1572,
+  "remainingArticles": 3024,
+  "authorWholeArticleReadback": 1584,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -306,6 +308,20 @@
         "favourable": 24,
         "difficult": 48
       }
+    },
+    {
+      "primaryId": 22,
+      "name": "山火贲",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/exam/monthly/hex-022.json",
+      "sourceSha256": "5ca32a654a852ddd7fdbc31a7993da9b4815ece449bb7b49b820660e9fd9791b",
+      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-022.json",
+      "readingPath": "docs/exam/monthly-preview/hex-022.md",
+      "outcomes": {
+        "favourable": 36,
+        "difficult": 36
+      }
     }
   ],
   "checks": {
@@ -320,18 +336,17 @@
       70,
       112
     ],
-    "independentChartComparisons": 40824,
+    "independentChartComparisons": 42768,
     "independentChartMismatches": 0,
-    "dateCases": 3024,
-    "judgmentCorrectionArticles": 904,
-    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json",
-    "scope": "机器报告覆盖前21个完整卦，本卦已发表篇目另见该卦核读记录。"
+    "dateCases": 3168,
+    "judgmentCorrectionArticles": 976,
+    "machineReport": "docs/review/EXAM_MONTHLY_CHECKS.json"
   },
   "ruleFindingStatuses": {
     "open-priority": 75,
     "corrected-unsupported-scenes": 3,
-    "interpreted-with-limits": 99,
-    "open-interpretation": 12,
+    "interpreted-with-limits": 100,
+    "open-interpretation": 17,
     "open": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
@@ -958,27 +973,9 @@
     "articles": 600
   },
   "nextExpectedKey": {
-    "primaryId": 22,
-    "movingLine": 6,
+    "primaryId": 23,
+    "movingLine": 1,
     "monthBranch": "寅"
   },
-  "partiallyPublishedHexagrams": [
-    {
-      "primaryId": 22,
-      "name": "山火贲",
-      "articles": 60,
-      "fullArticleReadback": 60,
-      "completedMovingLines": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "sourcePath": "sources/editorial/exam/monthly/hex-022.json",
-      "sourceSha256": "b572ea244de71c2b05f8e6a6efc48bc3a81fcb5d3f6d28a8beff767469e63b7c",
-      "receiptPath": "sources/editorial/exam/reviews-monthly/hex-022.json",
-      "readingPath": "docs/exam/monthly-preview/hex-022.md"
-    }
-  ]
+  "previouslyPublishedPartialArticles": 60
 }
