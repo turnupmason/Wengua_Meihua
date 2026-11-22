@@ -1,0 +1,3862 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 9,
+  "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
+  "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+  "editor": "/root/standards_audit",
+  "reviewedAt": "2026-11-20T19:39:05.223415+00:00",
+  "status": "ai-cross-reviewed-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "sourceEvidence": [
+    {
+      "path": "sources/editorial/promotion-pay/hex-009.json",
+      "sha256": "e99110db4f6d3d7ec8b3b2b0955d7e87762f9871e4eb29b58f5e7d081fd26cb6",
+      "scope": "三十条五气原稿全部字段实际读取；结论、专业说明与取期方法为精确对照基准。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-009.json",
+      "scope": "三十条旧复核全部字段实际读取；旧 passed 与过往修改说明不替代当前文章读取。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/monthly/hex-009.json",
+      "scope": "本轮七十二篇全部字段逐篇实际读回，所有后续改动完整字段再读；逐爻最终快照与当前源逐值相等。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "原体五态、生克节点一层作用及生克同见回原态；不递归，比和按原月令；休不与囚死混称弱体。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "问项 career.promotion-pay.promotion 的直接克体优先；本卦七十二篇原结论未升不变。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "逐月厚稿、每篇至少470汉字且整卦中位至少500、薪资另列、精确old/new订正。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "以具体处境或爻义自然入首句，不机械替换月份和代词；公开文字直接面向读者。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "作者全文读回、独立全文复核、盘面脚本与用户验收分开记录；未读不签。"
+    },
+    {
+      "path": "docs/review/interview-approved-writing-examples-20261118.json",
+      "scope": "本轮已实际完整读取52/1/寅、52/1/巳两篇指定正文，以解释厚度为参照；不冒称整份范文清单全部读过。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/周易正義/02小畜",
+      "accessed": "2026-11-20",
+      "scope": "卦辞、彖、大象及六爻经象王注孔疏全章实际完整读取，包括末段小畜与大畜区别。"
+    },
+    {
+      "path": "docs/review/PROMOTION_XIAOXU_RULE_AUDIT_20261120.md",
+      "scope": "本卦五气事实、一层作用、六爻古义、七十二条判断订正和薪资说明、实际批次阅读及开放边界。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+      "scope": "本轮返修再次实际读取上九全部经象王注孔疏，核准虽贞近危及虽复君子之行亦凶；不另记为第二次全章阅读。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "label": "初九",
+      "text": "复自道，何其咎？吉。",
+      "image": "“复自道”，其义吉也。",
+      "reading": "复自道依王孔含循道向上应四、顺而无违、得义之吉，不缩为只能退回旧岗。直接金克仍依项目判序未升，古吉和本问结论分别解释。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "180bafa26a7c4bcd7b3eb827719471029b5cbabc9bb34885dd3defa91d7874c5",
+      "baselineArticlesCanonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+      "completePeerRevisionFieldsActuallyRead": 1
+    },
+    {
+      "movingLine": 2,
+      "label": "九二",
+      "text": "牵复，吉。",
+      "image": "牵复在中，亦不自失也。",
+      "reading": "牵复依王孔为向五相牵而复、居中不自失，保留相连而上的积极义；不能只说纠正错误或退回熟悉处，更不虚构被退表、偏题。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+      "baselineArticlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 3,
+      "label": "九三",
+      "text": "舆说辐，夫妻反目。",
+      "image": "夫妻反目，不能正室也。",
+      "reading": "舆说辐与夫妻反目为进受畜止、阴阳失协的比喻；孔疏明言假象以喻人事，不断现实争吵，不以三处克体推出实际三次失败。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "7173477221a282f7634b9c006f23715b413467d43850803cda8beebfded430bb",
+      "baselineArticlesCanonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+      "completePeerRevisionFieldsActuallyRead": 3
+    },
+    {
+      "movingLine": 4,
+      "label": "六四",
+      "text": "有孚；血去惕出，无咎。",
+      "image": "“有孚惕出”，上合志也。",
+      "reading": "诚孚、与上九合志、危害得去与惧意得除完整保留；上合志不换成现实上司已支持，血象不作伤情，无咎不只缩为没有说错。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+      "baselineArticlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 5,
+      "label": "九五",
+      "text": "有孚挛如，富以其邻。",
+      "image": "“有孚挛如”，不独富也。",
+      "reading": "王孔二牵五接、志意合同、居实不专固而与邻分享；邻指九二，富实不等同现实一起加薪。末艮生体价值与中克优先并列说明。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+      "baselineArticlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 6,
+      "label": "上九",
+      "text": "既雨既处，尚德载；妇贞厉，月几望；君子征凶。",
+      "image": "“既雨既处”，德积载也；“君子征凶”，有所疑也。",
+      "reading": "先保留既雨既处与德积载的成畜安处，再解释妇贞厉、月象盈盛、征凶的盛满再进之戒；小畜积极乃能畜，不套大畜畜极则通。",
+      "wholeArticlesRead": 12,
+      "status": "author-full-readback-plus-complete-peer-revision-fields",
+      "finalArticlesCanonicalSha256": "8f6766bf891a977e90317867164ce29184f6ee441ba9a4ad2a5583c88a2aac7e",
+      "baselineArticlesCanonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+      "completePeerRevisionFieldsActuallyRead": 3
+    }
+  ],
+  "findings": [
+    {
+      "id": "xiaoxu-return-good-and-control-priority",
+      "status": "open-interpretive-priority",
+      "scope": "初九九二二十四篇",
+      "finding": "复自道之吉、牵复之吉在王孔中含循道向上及相连获复，不能据项目未升倒改为古吉绝不及名位。",
+      "treatment": "公开正文完整解释积极古义，结论依既定直接克体判序保留；不声称古籍已证明该应用为唯一解释。",
+      "outcomeChanged": false
+    },
+    {
+      "id": "xiaoxu-trust-and-ending-support",
+      "status": "open-project-application-boundary",
+      "scope": "六四九五二十四篇",
+      "finding": "诚孚合志去害释惧、富实相与与末段比和或生体都有积极作用；项目仍以直接克体判未升。",
+      "treatment": "不抹去吉义及末助，不从上合志推上司心理，不从富推实际共同加薪；应用优先张力继续保留。",
+      "outcomeChanged": false
+    },
+    {
+      "id": "xiaoxu-top-accumulation-and-advance",
+      "status": "open-project-application-boundary",
+      "scope": "上九十二篇",
+      "finding": "既雨既处、德积载先肯定成畜安处；君子征凶戒满后再进，不能将前半改成积累无用，也不套大畜畜极则通。",
+      "treatment": "先写完整古义，再依中克及末泄说明本问未升；妇、月象、疑辞不换成现实人物、日期或猜疑。",
+      "outcomeChanged": false
+    },
+    {
+      "id": "xiaoxu-native-qi-inherited-timing",
+      "status": "open-inherited-timing-boundary",
+      "scope": "各爻五气取期",
+      "finding": "原取期方法有旺金、相金等原月令用语；一层受离制后，克体金的有效作用仍轻。原态和实际作用必须区分。",
+      "treatment": "取期数量、种类、节点与方法字符串逐值沿用；正文与专业说明补足一层关系，日期仅作相应观察参考，不保证现代任命日。",
+      "timingSignatureChanged": false
+    },
+    {
+      "id": "XX009-L1-SUMMER-BALANCE",
+      "status": "resolved-after-complete-field-readback",
+      "scope": "9/1/巳",
+      "finding": "末休巽比和助薄与旺离中泄较重可分别说明，但力量尚不足以补上过程中的负担将其量化为实际助耗净差，欠现实总量依据。",
+      "treatment": "巳初九完整第二段已读，保留休巽薄助与旺离泄重；末句改为支持按具体承担、范围和安排核实，去实际净量必不足推断。",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false
+    },
+    {
+      "id": "XX009-L3-READER-VOICE",
+      "status": "resolved-after-complete-field-readback",
+      "scope": [
+        "9/3/申",
+        "9/3/申",
+        "9/3/亥"
+      ],
+      "finding": "九三三处公开语句使用判稿或编辑人物映射口吻，已直接说明未升及真实责任配合。",
+      "treatment": "申两完整段及亥一完整段已读，直接说明此次未升和责任配合，不再用作成论、把人物放入爻中或安排冲突的编辑口吻；欲进受畜与假象喻义保留。",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false
+    },
+    {
+      "id": "XX009-L6-GENUINE-RECTITUDE",
+      "status": "resolved-after-complete-field-readback",
+      "scope": [
+        "9/6/卯",
+        "9/6/午",
+        "9/6/戌"
+      ],
+      "finding": "上九三处把虽贞、虽君子之行收窄为主观自认或看似正确，已恢复真正守正仍须戒满后再进。",
+      "treatment": "卯午戌三完整古义段已读，明确即使真正守正、君子之行仍须戒盛满再进，成畜安处前半积极义并存，无现实品行或性别指认。",
+      "outcomeChanged": false,
+      "timingSignatureChanged": false
+    }
+  ],
+  "batchReadback": {
+    "author": "/root/standards_audit",
+    "publicAndAuditArticlesReadInFull": 72,
+    "scope": "六爻各十二篇原全文及作者初次修订完整字段；本轮又实际读回七个完整old/new段落，重复文章不另计数。",
+    "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "status": "author-readback-complete",
+    "baselineSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+    "completePeerRevisionFieldsActuallyRead": 7
+  },
+  "articleReadback": [
+    {
+      "key": "9/1/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "530b47918efefb1a8a21ae8ed14a495b7b09f60d45e8471c0bdff6b04f63e71e",
+      "readingAnchor": "循着有据之路准备，名分仍未落定",
+      "bodyHan": 549,
+      "shortHan": 95,
+      "payHan": 47,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "530b47918efefb1a8a21ae8ed14a495b7b09f60d45e8471c0bdff6b04f63e71e",
+      "baselineHan": {
+        "bodyHan": 549,
+        "shortHan": 95,
+        "payHan": 47
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "822889b9d6fe287e151d798c3bde8fe77e55666a1899fedabfed9816dc3ce576",
+      "readingAnchor": "循道可以继续，所求名位仍未成立",
+      "bodyHan": 577,
+      "shortHan": 95,
+      "payHan": 45,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "822889b9d6fe287e151d798c3bde8fe77e55666a1899fedabfed9816dc3ce576",
+      "baselineHan": {
+        "bodyHan": 577,
+        "shortHan": 95,
+        "payHan": 45
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "4bb6e0e446e8349c45d147afbd933d97ac801609180c176d0df60e2ea87dd45a",
+      "readingAnchor": "承接偏薄，循道仍须落实在实际承担",
+      "bodyHan": 590,
+      "shortHan": 96,
+      "payHan": 44,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "4bb6e0e446e8349c45d147afbd933d97ac801609180c176d0df60e2ea87dd45a",
+      "baselineHan": {
+        "bodyHan": 590,
+        "shortHan": 96,
+        "payHan": 44
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "7e9fbf56a2507f03754210482cee104388a5cab193ede8467fe98e98d3bc9424",
+      "readingAnchor": "过程投入较重，循道不等于只换说法",
+      "bodyHan": 556,
+      "shortHan": 105,
+      "payHan": 43,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "a9b4c25c557dc67370105be1b82aecbbb64da4dfaede18fbdc6f124df7a60580",
+      "baselineHan": {
+        "bodyHan": 541,
+        "shortHan": 105,
+        "payHan": 43
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "9/1/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "9fb04665862072dbf98e6fad58676aa3e6888100d99737d4e3b7e46be7c6499d",
+      "readingAnchor": "中段耗费仍实，末后相接尚薄",
+      "bodyHan": 608,
+      "shortHan": 97,
+      "payHan": 45,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "9fb04665862072dbf98e6fad58676aa3e6888100d99737d4e3b7e46be7c6499d",
+      "baselineHan": {
+        "bodyHan": 608,
+        "shortHan": 97,
+        "payHan": 45
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "06366283612d07520659372950d92480468dfe93a9cb31fec487d450e49b61b9",
+      "readingAnchor": "循道准备仍有意义，名位尚欠承接",
+      "bodyHan": 596,
+      "shortHan": 95,
+      "payHan": 45,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "06366283612d07520659372950d92480468dfe93a9cb31fec487d450e49b61b9",
+      "baselineHan": {
+        "bodyHan": 596,
+        "shortHan": 95,
+        "payHan": 45
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "73fa9d240c7443f19c11261b3c18d7841aea8d01cf2fb1d143cccb3ba36b3749",
+      "readingAnchor": "牵制虽轻，自身承接仍须顾及",
+      "bodyHan": 592,
+      "shortHan": 89,
+      "payHan": 47,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "73fa9d240c7443f19c11261b3c18d7841aea8d01cf2fb1d143cccb3ba36b3749",
+      "baselineHan": {
+        "bodyHan": 592,
+        "shortHan": 89,
+        "payHan": 47
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "6424ccbcb7defe4f5459e04e48c976266f5ea8687d905def664f13a5f7314570",
+      "readingAnchor": "把真实承担做稳，名分仍未到位",
+      "bodyHan": 567,
+      "shortHan": 97,
+      "payHan": 42,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "6424ccbcb7defe4f5459e04e48c976266f5ea8687d905def664f13a5f7314570",
+      "baselineHan": {
+        "bodyHan": 567,
+        "shortHan": 97,
+        "payHan": 42
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "68683c24c21a01d9b378eaf57a370444058dcb0fe18481fb3e7bf2d02b244b23",
+      "readingAnchor": "方向须与承担相接，名位尚不能落实",
+      "bodyHan": 585,
+      "shortHan": 98,
+      "payHan": 45,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "68683c24c21a01d9b378eaf57a370444058dcb0fe18481fb3e7bf2d02b244b23",
+      "baselineHan": {
+        "bodyHan": 585,
+        "shortHan": 98,
+        "payHan": 45
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "22c3fec335f9366fbff7e53196538e0412f28a76fa517fa1148a096de1d8b188",
+      "readingAnchor": "自身与末后有力，轻制仍未解除",
+      "bodyHan": 580,
+      "shortHan": 100,
+      "payHan": 46,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "22c3fec335f9366fbff7e53196538e0412f28a76fa517fa1148a096de1d8b188",
+      "baselineHan": {
+        "bodyHan": 580,
+        "shortHan": 100,
+        "payHan": 46
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "5165183b0d6d7b751b963a943556c8bb9e92e27faa398ca410064c865b3a1a28",
+      "readingAnchor": "有力相接仍须据实，不能先定名成",
+      "bodyHan": 577,
+      "shortHan": 95,
+      "payHan": 46,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "5165183b0d6d7b751b963a943556c8bb9e92e27faa398ca410064c865b3a1a28",
+      "baselineHan": {
+        "bodyHan": 577,
+        "shortHan": 95,
+        "payHan": 46
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/1/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "ad74d6fd2ba72522a95a63592f2e4ee49cf05d42dc9d74aecc0f54119462460f",
+      "readingAnchor": "轻制仍在，末后接续也需要力量",
+      "bodyHan": 585,
+      "shortHan": 94,
+      "payHan": 48,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=1 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "ad74d6fd2ba72522a95a63592f2e4ee49cf05d42dc9d74aecc0f54119462460f",
+      "baselineHan": {
+        "bodyHan": 585,
+        "shortHan": 94,
+        "payHan": 48
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "4cbf1252f11e65acd5e5046e3606282b32c343dfca8eccea840a6ff1ec7e56a1",
+      "readingAnchor": "有力相连，仍须守中",
+      "bodyHan": 516,
+      "shortHan": 93,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "4cbf1252f11e65acd5e5046e3606282b32c343dfca8eccea840a6ff1ec7e56a1",
+      "baselineHan": {
+        "bodyHan": 516,
+        "shortHan": 93,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "192ae895ac804e04e44ee4b9d1f3291c391c87d7266a077d59cca26ab078beec",
+      "readingAnchor": "相连向上，不失所守",
+      "bodyHan": 510,
+      "shortHan": 91,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "192ae895ac804e04e44ee4b9d1f3291c391c87d7266a077d59cca26ab078beec",
+      "baselineHan": {
+        "bodyHan": 510,
+        "shortHan": 91,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "ed16d445b2cb03d20143aac6f8e25d05e8a03749eb55741391ff17b1eb2a4fc0",
+      "readingAnchor": "承接偏薄，连接要实",
+      "bodyHan": 513,
+      "shortHan": 93,
+      "payHan": 46,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "ed16d445b2cb03d20143aac6f8e25d05e8a03749eb55741391ff17b1eb2a4fc0",
+      "baselineHan": {
+        "bodyHan": 513,
+        "shortHan": 93,
+        "payHan": 46
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "9517dc741fe96d3f44c3dede81c4bf634910892765a33a07c316c554c8f66291",
+      "readingAnchor": "两段需投入，守中而进",
+      "bodyHan": 526,
+      "shortHan": 90,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "9517dc741fe96d3f44c3dede81c4bf634910892765a33a07c316c554c8f66291",
+      "baselineHan": {
+        "bodyHan": 526,
+        "shortHan": 90,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "8c29c2b19087ae5ef0b949650922c81a0777899abbc77ccf2e3798eab9d5cd77",
+      "readingAnchor": "相连有道，投入有界",
+      "bodyHan": 522,
+      "shortHan": 90,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "8c29c2b19087ae5ef0b949650922c81a0777899abbc77ccf2e3798eab9d5cd77",
+      "baselineHan": {
+        "bodyHan": 522,
+        "shortHan": 90,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "06f9d20beeff9015911b0635f4e164378dec966d56f7fb80601689b04c84ee64",
+      "readingAnchor": "联结须有承担作据",
+      "bodyHan": 526,
+      "shortHan": 90,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "06f9d20beeff9015911b0635f4e164378dec966d56f7fb80601689b04c84ee64",
+      "baselineHan": {
+        "bodyHan": 526,
+        "shortHan": 90,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "c2937ef8f5af36c09d0736c5ab2162a94a3b3c89e48a18f6d27ab9c10bec30a8",
+      "readingAnchor": "轻制仍在，守清责任",
+      "bodyHan": 523,
+      "shortHan": 91,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "c2937ef8f5af36c09d0736c5ab2162a94a3b3c89e48a18f6d27ab9c10bec30a8",
+      "baselineHan": {
+        "bodyHan": 523,
+        "shortHan": 91,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "7f1787373ed0beb8ada1c78e5d9ab7daac53c0724d327fb20ec8ae080a17b0a0",
+      "readingAnchor": "相连不失，名分未立",
+      "bodyHan": 541,
+      "shortHan": 94,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "7f1787373ed0beb8ada1c78e5d9ab7daac53c0724d327fb20ec8ae080a17b0a0",
+      "baselineHan": {
+        "bodyHan": 541,
+        "shortHan": 94,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "6eaa48e40301c1ae2ba37c25994f5de604f09432693a77aad079138553412d01",
+      "readingAnchor": "量力相接，守中有据",
+      "bodyHan": 536,
+      "shortHan": 93,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "6eaa48e40301c1ae2ba37c25994f5de604f09432693a77aad079138553412d01",
+      "baselineHan": {
+        "bodyHan": 536,
+        "shortHan": 93,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "e9936aa497ed166ff99a9124de483cc909312773cdff5961a7edb3cce1c510e0",
+      "readingAnchor": "自身有力，相接仍有界",
+      "bodyHan": 538,
+      "shortHan": 93,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "e9936aa497ed166ff99a9124de483cc909312773cdff5961a7edb3cce1c510e0",
+      "baselineHan": {
+        "bodyHan": 538,
+        "shortHan": 93,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "0138d862ec0c628cea384bd32b79a587ea7296d5727eaa91827a8c873279aecb",
+      "readingAnchor": "守中而连，任职未定",
+      "bodyHan": 534,
+      "shortHan": 93,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "0138d862ec0c628cea384bd32b79a587ea7296d5727eaa91827a8c873279aecb",
+      "baselineHan": {
+        "bodyHan": 534,
+        "shortHan": 93,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/2/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "40d3eb645fd9972f8121dcf238fca64f8a3712c853d3ee1aefe4e45bed5b1160",
+      "readingAnchor": "相连有分，承诺有据",
+      "bodyHan": 540,
+      "shortHan": 94,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=2 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "40d3eb645fd9972f8121dcf238fca64f8a3712c853d3ee1aefe4e45bed5b1160",
+      "baselineHan": {
+        "bodyHan": 540,
+        "shortHan": 94,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "fa031cc91e19293708b652d58873a136c0a887a62eab2009cd556a5c517f029a",
+      "readingAnchor": "有力欲进，承接未全",
+      "bodyHan": 535,
+      "shortHan": 91,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "fa031cc91e19293708b652d58873a136c0a887a62eab2009cd556a5c517f029a",
+      "baselineHan": {
+        "bodyHan": 535,
+        "shortHan": 91,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "11bba43e7eccb21c49870621c0f6c89e608ef1c8838acb2bd35cf3ae2b2ba802",
+      "readingAnchor": "欲进有据，尚需相济",
+      "bodyHan": 514,
+      "shortHan": 91,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "11bba43e7eccb21c49870621c0f6c89e608ef1c8838acb2bd35cf3ae2b2ba802",
+      "baselineHan": {
+        "bodyHan": 514,
+        "shortHan": 91,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "c62a9815b8fef13710fc6c4ed83b89f6c2c6b5f1201569969b9994706431332e",
+      "readingAnchor": "先明承接，量力准备",
+      "bodyHan": 516,
+      "shortHan": 88,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "c62a9815b8fef13710fc6c4ed83b89f6c2c6b5f1201569969b9994706431332e",
+      "baselineHan": {
+        "bodyHan": 516,
+        "shortHan": 88,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "3aa6f956692b34c260452eb6d72d21819e2e4f983d5ce97b5a632a8e685e5631",
+      "readingAnchor": "耗费较重，不以强进补承接",
+      "bodyHan": 523,
+      "shortHan": 90,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "3aa6f956692b34c260452eb6d72d21819e2e4f983d5ce97b5a632a8e685e5631",
+      "baselineHan": {
+        "bodyHan": 523,
+        "shortHan": 90,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "c7352bed3a350966d6c0841a1192e2e7229b5774400961ba13434c5499a7887d",
+      "readingAnchor": "先接实责任，再安排投入",
+      "bodyHan": 510,
+      "shortHan": 85,
+      "payHan": 48,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "c7352bed3a350966d6c0841a1192e2e7229b5774400961ba13434c5499a7887d",
+      "baselineHan": {
+        "bodyHan": 510,
+        "shortHan": 85,
+        "payHan": 48
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "3b19b4071af5b4ef0fc603bef4911eb840782d4a730d3fe2343074e808d6c615",
+      "readingAnchor": "量力核明，承接要有据",
+      "bodyHan": 516,
+      "shortHan": 89,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "3b19b4071af5b4ef0fc603bef4911eb840782d4a730d3fe2343074e808d6c615",
+      "baselineHan": {
+        "bodyHan": 516,
+        "shortHan": 89,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "1ae7dc0be5a2eae5272389cbe3e93863d61320d6ca285be19e41a6e823888a23",
+      "readingAnchor": "轻制未去，守实核明",
+      "bodyHan": 538,
+      "shortHan": 90,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "fff4a837a876fbb96ab4978f1c6a7be145efe7c20575b608343635ec3234d1e8",
+      "baselineHan": {
+        "bodyHan": 531,
+        "shortHan": 90,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[1]",
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "9/3/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "94384948d3247ae32dcb4a2883dd16e69db1fdfb0506988143cec77ecb12909d",
+      "readingAnchor": "收尾轻制，名位未立",
+      "bodyHan": 533,
+      "shortHan": 91,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "94384948d3247ae32dcb4a2883dd16e69db1fdfb0506988143cec77ecb12909d",
+      "baselineHan": {
+        "bodyHan": 533,
+        "shortHan": 91,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "7f6eccea0bd47d0a52f3284533b869a8e1882828ac9200873e98ced00f179184",
+      "readingAnchor": "支持偏薄，先明相接",
+      "bodyHan": 508,
+      "shortHan": 89,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "7f6eccea0bd47d0a52f3284533b869a8e1882828ac9200873e98ced00f179184",
+      "baselineHan": {
+        "bodyHan": 508,
+        "shortHan": 89,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "769d6f8e94d5ce88e669c9f126dc274e3d009b44366b484d07864cdcc3a3d19f",
+      "readingAnchor": "自身有力，轻制仍在",
+      "bodyHan": 526,
+      "shortHan": 95,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "d9321a99f5f6f9a0dc5630571da2d2eed118d328266d3b0e9f5d666be88ea7ec",
+      "baselineHan": {
+        "bodyHan": 517,
+        "shortHan": 95,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "9/3/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "c3c12cbe07bc0c43abe1f2c896e536270179ac1683b2b6022bea5da9b63d3d71",
+      "readingAnchor": "能做之处做实，名分不预用",
+      "bodyHan": 532,
+      "shortHan": 92,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "c3c12cbe07bc0c43abe1f2c896e536270179ac1683b2b6022bea5da9b63d3d71",
+      "baselineHan": {
+        "bodyHan": 532,
+        "shortHan": 92,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/3/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "271a5ff869f49be8c93369ee49c34e28f358625135f45e976737f43628a90338",
+      "readingAnchor": "承接偏薄，先把责任接稳",
+      "bodyHan": 523,
+      "shortHan": 92,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=3 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "271a5ff869f49be8c93369ee49c34e28f358625135f45e976737f43628a90338",
+      "baselineHan": {
+        "bodyHan": 523,
+        "shortHan": 92,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "72ad7f74c3a30acf42466ed1bb731742bfd719210dd45f43a6199ae9d1462e80",
+      "readingAnchor": "诚孚可免患，名位未立",
+      "bodyHan": 554,
+      "shortHan": 93,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "72ad7f74c3a30acf42466ed1bb731742bfd719210dd45f43a6199ae9d1462e80",
+      "baselineHan": {
+        "bodyHan": 554,
+        "shortHan": 93,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "299bc1bfa8f3545cd5279c29043458e931764fb693ca2bef54ca29e57a1393ac",
+      "readingAnchor": "同气助薄，守信履责",
+      "bodyHan": 544,
+      "shortHan": 93,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "299bc1bfa8f3545cd5279c29043458e931764fb693ca2bef54ca29e57a1393ac",
+      "baselineHan": {
+        "bodyHan": 544,
+        "shortHan": 93,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "19c57e457c27d58daac0812ab3be66a5b93d3123d2663c2b2e4cdecee25347ea",
+      "readingAnchor": "相接有力，中克仍实",
+      "bodyHan": 550,
+      "shortHan": 91,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "19c57e457c27d58daac0812ab3be66a5b93d3123d2663c2b2e4cdecee25347ea",
+      "baselineHan": {
+        "bodyHan": 550,
+        "shortHan": 91,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "e636d50a06796b7ef501ec608c9099ffa1accc9351b32f499784ebeb66187326",
+      "readingAnchor": "承接偏弱，诚实量力",
+      "bodyHan": 560,
+      "shortHan": 92,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "e636d50a06796b7ef501ec608c9099ffa1accc9351b32f499784ebeb66187326",
+      "baselineHan": {
+        "bodyHan": 560,
+        "shortHan": 92,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "2bec00d5727db6e49f46eec8f4b54d3a6dfccc5a4b1aae25fa064939409a4a7d",
+      "readingAnchor": "克力较实，信实有分寸",
+      "bodyHan": 544,
+      "shortHan": 88,
+      "payHan": 50,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "2bec00d5727db6e49f46eec8f4b54d3a6dfccc5a4b1aae25fa064939409a4a7d",
+      "baselineHan": {
+        "bodyHan": 544,
+        "shortHan": 88,
+        "payHan": 50
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "6c7408ff5186627292a0c45ea42f29fec48399fdbf808e75221ccdb422ea1842",
+      "readingAnchor": "有力能做，中制须明",
+      "bodyHan": 555,
+      "shortHan": 92,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "6c7408ff5186627292a0c45ea42f29fec48399fdbf808e75221ccdb422ea1842",
+      "baselineHan": {
+        "bodyHan": 555,
+        "shortHan": 92,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "2d175224df0ebac6052f2ac7a44b07491a5ea3708d0ce28469bb4f0bce6f6d7b",
+      "readingAnchor": "同气有力，中段仍受制",
+      "bodyHan": 553,
+      "shortHan": 92,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "2d175224df0ebac6052f2ac7a44b07491a5ea3708d0ce28469bb4f0bce6f6d7b",
+      "baselineHan": {
+        "bodyHan": 553,
+        "shortHan": 92,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "4db30d7ce2466ad8ee0c0c8f4207262e66225a152f2248f85007c2fe2c794cbd",
+      "readingAnchor": "能力有据，信实不逾分",
+      "bodyHan": 557,
+      "shortHan": 91,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "4db30d7ce2466ad8ee0c0c8f4207262e66225a152f2248f85007c2fe2c794cbd",
+      "baselineHan": {
+        "bodyHan": 557,
+        "shortHan": 91,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "4023c69d553a57c667e2cfef80ce0dbb8baedd85ccdeb6fce80e489d0843aca3",
+      "readingAnchor": "前后有助，中制未除",
+      "bodyHan": 554,
+      "shortHan": 91,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "4023c69d553a57c667e2cfef80ce0dbb8baedd85ccdeb6fce80e489d0843aca3",
+      "baselineHan": {
+        "bodyHan": 554,
+        "shortHan": 91,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "3a25b2fa7db19abc6e2ae21ee6a2b625cd2a20453edfb347fc477ddb0c771d74",
+      "readingAnchor": "休体需承接，中克仍有力",
+      "bodyHan": 543,
+      "shortHan": 91,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "3a25b2fa7db19abc6e2ae21ee6a2b625cd2a20453edfb347fc477ddb0c771d74",
+      "baselineHan": {
+        "bodyHan": 543,
+        "shortHan": 91,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "d7d16ca91645c3f629a2922798a8e35fcb16f87a35cfeeb0cdde413226224f83",
+      "readingAnchor": "信实相接，量力守责",
+      "bodyHan": 564,
+      "shortHan": 93,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "d7d16ca91645c3f629a2922798a8e35fcb16f87a35cfeeb0cdde413226224f83",
+      "baselineHan": {
+        "bodyHan": 564,
+        "shortHan": 93,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/4/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "599165fa42daba022f6d92c7750922843420d55190842ce06500e3108fd16791",
+      "readingAnchor": "同气可助，信实履责",
+      "bodyHan": 544,
+      "shortHan": 92,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=4 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "599165fa42daba022f6d92c7750922843420d55190842ce06500e3108fd16791",
+      "baselineHan": {
+        "bodyHan": 544,
+        "shortHan": 92,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "06faf9f097b330068978aa1a2479747a96f646d53be5d1f55effe7dc67968182",
+      "readingAnchor": "薄助仍有，诚信相接",
+      "bodyHan": 542,
+      "shortHan": 88,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "06faf9f097b330068978aa1a2479747a96f646d53be5d1f55effe7dc67968182",
+      "baselineHan": {
+        "bodyHan": 542,
+        "shortHan": 88,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "7dbfb2a105b27a23f74bf401cbba7916b10e70c3ca8bcfe1311f75ecd61aedac",
+      "readingAnchor": "诚信有实，相接不独占",
+      "bodyHan": 558,
+      "shortHan": 89,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "7dbfb2a105b27a23f74bf401cbba7916b10e70c3ca8bcfe1311f75ecd61aedac",
+      "baselineHan": {
+        "bodyHan": 558,
+        "shortHan": 89,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "20e4fa75be0194ef9b077e1567f2033b123a4f4bf7355cee0d969a4fbebcd63e",
+      "readingAnchor": "末助有力，中制仍在",
+      "bodyHan": 562,
+      "shortHan": 87,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "20e4fa75be0194ef9b077e1567f2033b123a4f4bf7355cee0d969a4fbebcd63e",
+      "baselineHan": {
+        "bodyHan": 562,
+        "shortHan": 87,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "934689c42d8a03c3d4cb432e72e7dfb80485b064eedd3af8c42d7b1d7ca2db61",
+      "readingAnchor": "后段有助，先把承担做实",
+      "bodyHan": 564,
+      "shortHan": 88,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "934689c42d8a03c3d4cb432e72e7dfb80485b064eedd3af8c42d7b1d7ca2db61",
+      "baselineHan": {
+        "bodyHan": 564,
+        "shortHan": 88,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "7bc7877771cdb25303c89ec1c65fc0941f46bb2837880eb6792f760cd6872f04",
+      "readingAnchor": "生体有力，名分另有依据",
+      "bodyHan": 548,
+      "shortHan": 88,
+      "payHan": 49,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "7bc7877771cdb25303c89ec1c65fc0941f46bb2837880eb6792f760cd6872f04",
+      "baselineHan": {
+        "bodyHan": 548,
+        "shortHan": 88,
+        "payHan": 49
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "b6ae7c9d615140a060e691d4598580aa3368c09153c9bdc1929109fe07399e48",
+      "readingAnchor": "支持可用，诚信有实",
+      "bodyHan": 565,
+      "shortHan": 92,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "b6ae7c9d615140a060e691d4598580aa3368c09153c9bdc1929109fe07399e48",
+      "baselineHan": {
+        "bodyHan": 565,
+        "shortHan": 92,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "3a146d7d477e35bcde3e13159a231d8053cb42d4c771e8963b0fbf2b629b4729",
+      "readingAnchor": "自身有力，末助偏薄",
+      "bodyHan": 551,
+      "shortHan": 89,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "3a146d7d477e35bcde3e13159a231d8053cb42d4c771e8963b0fbf2b629b4729",
+      "baselineHan": {
+        "bodyHan": 551,
+        "shortHan": 89,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "32c45cfcc0cc4e85e36bfd790fea849c2b95c0198f947feb47e97ab026dc3856",
+      "readingAnchor": "相与有实，不先认名成",
+      "bodyHan": 558,
+      "shortHan": 91,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "32c45cfcc0cc4e85e36bfd790fea849c2b95c0198f947feb47e97ab026dc3856",
+      "baselineHan": {
+        "bodyHan": 558,
+        "shortHan": 91,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "2be3dd60df2c2709358d12be9bb6c5e2b108572d9db7fddf50e0f0ed473ea5f3",
+      "readingAnchor": "旺助可用，中克须明",
+      "bodyHan": 552,
+      "shortHan": 91,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "2be3dd60df2c2709358d12be9bb6c5e2b108572d9db7fddf50e0f0ed473ea5f3",
+      "baselineHan": {
+        "bodyHan": 552,
+        "shortHan": 91,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "ac89323eac2f1c2f174ee70eaa92c4b613a9ea5744ec1da4344aea8906c4d672",
+      "readingAnchor": "休体费力，薄助仍有",
+      "bodyHan": 551,
+      "shortHan": 93,
+      "payHan": 55,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "ac89323eac2f1c2f174ee70eaa92c4b613a9ea5744ec1da4344aea8906c4d672",
+      "baselineHan": {
+        "bodyHan": 551,
+        "shortHan": 93,
+        "payHan": 55
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "9b2e1bcde83828b7c85b9b224bd3653df2dffe700e6f848ecfbfa78a1c24a87a",
+      "readingAnchor": "相与有据，名位未定",
+      "bodyHan": 554,
+      "shortHan": 91,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "9b2e1bcde83828b7c85b9b224bd3653df2dffe700e6f848ecfbfa78a1c24a87a",
+      "baselineHan": {
+        "bodyHan": 554,
+        "shortHan": 91,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/5/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "10689d2b36f9d2f95f33ee24494e24101cb21cfd803cb68b6b2459740bd6035c",
+      "readingAnchor": "末助实在，守信相与",
+      "bodyHan": 561,
+      "shortHan": 90,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=5 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "10689d2b36f9d2f95f33ee24494e24101cb21cfd803cb68b6b2459740bd6035c",
+      "baselineHan": {
+        "bodyHan": 561,
+        "shortHan": 90,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/寅",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "20ee77c784957642af55cf115d788a73fdd348506026f1eb0e4a74315de60c0f",
+      "readingAnchor": "已有之实宜守，进取须有界",
+      "bodyHan": 553,
+      "shortHan": 94,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "20ee77c784957642af55cf115d788a73fdd348506026f1eb0e4a74315de60c0f",
+      "baselineHan": {
+        "bodyHan": 553,
+        "shortHan": 94,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/卯",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "e9b89e377f9196d8e28c5934bbeeb1aa152f6ce8d3b78e3d19eef9b4dd3a7358",
+      "readingAnchor": "循实收稳，不以满进求名",
+      "bodyHan": 557,
+      "shortHan": 91,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "c85ccfb0b601c91811c536ca15f15e6db0c7c3d6c1b7edbad148be6bfd0c92ab",
+      "baselineHan": {
+        "bodyHan": 550,
+        "shortHan": 91,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "9/6/辰",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "f98833b63b679c8afee133d342b5d5e85a0cf9fc4c34f4e4ec6300b3a3510fa0",
+      "readingAnchor": "局部轻缓，名位仍未定",
+      "bodyHan": 556,
+      "shortHan": 88,
+      "payHan": 51,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "f98833b63b679c8afee133d342b5d5e85a0cf9fc4c34f4e4ec6300b3a3510fa0",
+      "baselineHan": {
+        "bodyHan": 556,
+        "shortHan": 88,
+        "payHan": 51
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/巳",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "07642cf150b3a629bc420cc5d9dd78d57208a0071cee1bb6d8871f5bc9a7e005",
+      "readingAnchor": "中制较重，量力守实",
+      "bodyHan": 546,
+      "shortHan": 93,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "07642cf150b3a629bc420cc5d9dd78d57208a0071cee1bb6d8871f5bc9a7e005",
+      "baselineHan": {
+        "bodyHan": 546,
+        "shortHan": 93,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/午",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "aedb5ca8ad1679c694d3cd9eb45b2e55b28ef27fadca98c3cb2ee6f413b06608",
+      "readingAnchor": "守稳已有，不以强进求任",
+      "bodyHan": 536,
+      "shortHan": 92,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "ff6df93f860fb8a0018109c815309954faec9ffae435a05b1a53388cd8ebb8df",
+      "baselineHan": {
+        "bodyHan": 534,
+        "shortHan": 92,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[1]"
+      ]
+    },
+    {
+      "key": "9/6/未",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "fea336189485f68a8b16b58590aab592e3dcaa57c0d7526724e4e0f060b56adf",
+      "readingAnchor": "有力可为，止于实据",
+      "bodyHan": 558,
+      "shortHan": 95,
+      "payHan": 53,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "fea336189485f68a8b16b58590aab592e3dcaa57c0d7526724e4e0f060b56adf",
+      "baselineHan": {
+        "bodyHan": 558,
+        "shortHan": 95,
+        "payHan": 53
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/申",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "b092f28f8538018bb09d44cbdbdde27f29fb112a5bf461e39f1447644a302049",
+      "readingAnchor": "末泄较实，收稳已有",
+      "bodyHan": 541,
+      "shortHan": 89,
+      "payHan": 52,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "b092f28f8538018bb09d44cbdbdde27f29fb112a5bf461e39f1447644a302049",
+      "baselineHan": {
+        "bodyHan": 541,
+        "shortHan": 89,
+        "payHan": 52
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/酉",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "8018fa3638f37565cd5b4ef828462464eca2aa82b25a0989f537751c4f140fa5",
+      "readingAnchor": "有力仍须节制，末段有耗",
+      "bodyHan": 568,
+      "shortHan": 90,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "8018fa3638f37565cd5b4ef828462464eca2aa82b25a0989f537751c4f140fa5",
+      "baselineHan": {
+        "bodyHan": 568,
+        "shortHan": 90,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/戌",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "734a31d4efd8768a1867e30d0cd4450e3e7583de684e7197b025b1cb6bc6a15e",
+      "readingAnchor": "守成有据，名位不预支",
+      "bodyHan": 542,
+      "shortHan": 88,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "00b08fb4d7949f1bc9c68888f57b332022aec3273eaff59e04e3409d92dcdea1",
+      "baselineHan": {
+        "bodyHan": 543,
+        "shortHan": 88,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": [
+        "paragraphs[2]"
+      ]
+    },
+    {
+      "key": "9/6/亥",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "d487f3dd9ae2045942edd9583a6f3c479a19634361d37b06dcadf9d828c55df0",
+      "readingAnchor": "末耗较重，量力收束",
+      "bodyHan": 554,
+      "shortHan": 92,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "d487f3dd9ae2045942edd9583a6f3c479a19634361d37b06dcadf9d828c55df0",
+      "baselineHan": {
+        "bodyHan": 554,
+        "shortHan": 92,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/子",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "31abea224ec0c36ddfd4de55bcc5d693a65c5a90baa18a67b8a7d33d29540672",
+      "readingAnchor": "付出有分寸，已有宜收稳",
+      "bodyHan": 573,
+      "shortHan": 87,
+      "payHan": 55,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "31abea224ec0c36ddfd4de55bcc5d693a65c5a90baa18a67b8a7d33d29540672",
+      "baselineHan": {
+        "bodyHan": 573,
+        "shortHan": 87,
+        "payHan": 55
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    },
+    {
+      "key": "9/6/丑",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "articleCanonicalSha256": "f890da169a030fd62e4c83695cf574b199fc0a638a04d756f931bbbd01400dba",
+      "readingAnchor": "已有做稳，后续须据实",
+      "bodyHan": 554,
+      "shortHan": 92,
+      "payHan": 54,
+      "fullArticleRead": true,
+      "fieldsRead": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection.old/new/reason/sourceEvidence/impact",
+        "all timing fields",
+        "payExplanation",
+        "payCorrection.old/new/reason/impact"
+      ],
+      "evidence": "authorReadbacks movingLine=6 plus complete changed fields",
+      "readMethod": "原全文实际读回与原爻快照绑定；本轮仅有列出的完整段落改变，作者和独立审读者均完整复读。未改变字段沿用原全文阅读，重复阅读不另计文章。",
+      "status": "author-complete-and-independent-cross-reviewed",
+      "baselineFullReadSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticleCanonicalSha256": "f890da169a030fd62e4c83695cf574b199fc0a638a04d756f931bbbd01400dba",
+      "baselineHan": {
+        "bodyHan": 554,
+        "shortHan": 92,
+        "payHan": 54
+      },
+      "lengthsSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "peerRevisionCompleteFieldsActuallyRead": []
+    }
+  ],
+  "authorReadbacks": [
+    {
+      "movingLine": 1,
+      "reportSha256": "3e85fa1313e7e6f63932d6ae7e400ad8fd6c9caa19ed614db40ee2f2728fc2f7",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 1,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "0762d45d0f1277b09e54ca2fb4513e82c4ce25e8779b655f25e8d53944e6b59a",
+        "snapshotSha256": "d7b5348b7c5cf6ddb0c56d8ab77bf3b5bec62439fe323b488069b9ee24b48cbd",
+        "articlesCanonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 541,
+          "median": 582.5,
+          "max": 608
+        },
+        "notes": [
+          "十二篇初稿在三个每批四篇的完整输出中实际全文读完，涵盖全部专业订正与取期字段；随后46个完整修订字段读回，并再次单独读完申月摘要最后修订。",
+          "乾、兑金受离克无土生，五气有效克力均轻；原体旺相/休/囚死与末巽比和分别保留。",
+          "初九王孔之复含向上循道，合义得吉完整保留；晋升仍按直接克体未升，古吉与项目判序张力保持开放。",
+          "取期种类、节点、方法与结论未变；无现实漏表、刁难或资格不足的预设。",
+          "正文541–608汉字，12篇常规中位582.5（style脚本取上中位为585）；句首无固定月份结构；最后结构检查324盘面比较和24日期用例均通过。"
+        ],
+        "fieldDeltaFiles": [
+          "line1-author-refinements.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    },
+    {
+      "movingLine": 2,
+      "reportSha256": "398bc6d5a5c1e486192cc5e2b184bc1776709575d2ef0f0a9472fcaa14ea4b4e",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 2,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "cd1e40075503f49d85ede9a579b530338b974183fd6d17a3d810a72bd20ca0cd",
+        "snapshotSha256": "274cb974f52de908165678d316283b752cfb45986b554a9ad1e7dc02cbe000fb",
+        "articlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 510,
+          "median": 526.0,
+          "max": 541
+        },
+        "notes": [
+          "十二篇初稿各全部字段已在三个四篇完整输出中实际读完，再完整读回四个修订条目（其中两条各同步薪资订正新文）。",
+          "前中金受离制无土生，五气有效克轻；中末离火泄体按原五态，两个位置不折成现实次数或倍数。",
+          "王孔牵连获复于上、居中不自失完整保留，不限为纠偏或退回旧岗位；与项目直接克体未升的判序分别说明。",
+          "十二篇结论及取期数量、类型、节点、方法未变；没有旧稿表格退回、材料偏题和固定考核缺陷的现实预设。",
+          "累计二十四篇结构648项盘面对比、48日期用例通过，style通过；九二正文全部超过510汉字。"
+        ],
+        "fieldDeltaFiles": [
+          "line2-author-refinements.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    },
+    {
+      "movingLine": 3,
+      "reportSha256": "b60b0d92b385d350fbbae46c9cfa072684986f1c0e5f88c5855c8843a84aee66",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 3,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "ccd104e1ef19be96a1b48313d84043de2e688e762fe24f9d5f5c85fff925abd7",
+        "snapshotSha256": "b5af85fa4c830714c5418ce71c4123512f12b308404957c6c0f3ca2d4521fdd3",
+        "articlesCanonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 508,
+          "median": 520.0,
+          "max": 535
+        },
+        "notes": [
+          "十二篇初稿全部字段已在三个四篇完整输出中实际逐篇读完，随后完整读回28个修订字段。",
+          "本乾、用互兑、变用兑受离制而无土生，五气有效克力均轻；三处关系保留，不折算真实错误次数。",
+          "夏休体与旺泄分清，秋旺金经一层后克轻，冬前中末轻制不收窄为中段一项缺陷。",
+          "王孔九三欲进受畜、夫妻假象喻事完整交代，不认定现实夫妻同事冲突；末兑克体与未升结论不改。",
+          "累计三十六篇972项盘面比较、72日期用例通过，style通过；取期数量、类型、节点与方法全部绑定原稿。"
+        ],
+        "fieldDeltaFiles": [
+          "line3-author-refinements.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    },
+    {
+      "movingLine": 4,
+      "reportSha256": "4973b4958428ff99e713a208c1c32d0eaa45ac55422b7fe8ecb6586ff7b9f747",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 4,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "a7fcebfd1c510b8d6bd8f71191906beefadd5242c8cf904fa2e9a75b09d5ae6b",
+        "snapshotSha256": "53760981d06c41c032dbd3b49e07caaf105a7c9d16994824cc402d555ab04816",
+        "articlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 543,
+          "median": 553.5,
+          "max": 564
+        },
+        "notes": [
+          "十二篇初稿全部字段在三个四篇完整输出中实际逐篇读完；随后完整读回14个修订字段及末轮7个完整段落。",
+          "原体改为下乾金；春囚、夏死、秋旺、冬休、四土相；体克巽木的方向不倒置，比和兑乾按原态。",
+          "用互离火得巽生而无水克，一层克力均有力，不递归以体克木取消木生火；原体休不并入囚死。",
+          "六四有孚、合志、去害释惧、无咎的积极链完整，不只防措辞失误；上合志指上九，不断现实上司心理和伤情。",
+          "累计四十八篇1296项盘面比较与96个日期用例通过，style通过；12篇结论与取期数量、类型、节点、方法保留。"
+        ],
+        "fieldDeltaFiles": [
+          "line4-author-refinements.json",
+          "line4-author-refinements-final.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    },
+    {
+      "movingLine": 5,
+      "reportSha256": "14fcca517682b3fc6faf89af2013ede455492b8594198e98264749083b34fc87",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 5,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "5b8ae3417b95dfe725b724a2c28168721ea016dd97cb91c08eb6ec81c52c5b5f",
+        "snapshotSha256": "e31ab01207e27c397c8c35112d90e5683357ee607f67a6a14538c3a5ab9d0fb5",
+        "articlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 542,
+          "median": 556.0,
+          "max": 565
+        },
+        "notes": [
+          "十二篇初稿全部字段已在三个四篇完整输出中实际逐篇读完；随后12个修订字段完整读回，午月末段又就相气生体表述整段再次读回。",
+          "九五全盘生克并见，末艮生体不误作无生体；离得巽生无水克而有力，末艮受生受克相抵回原土五态。",
+          "夏土相与四土旺的有力末助、春死秋休冬囚的薄助分别保留，兑比和按原态，冬休体不混囚死。",
+          "九五王孔二牵五接、诚信相连、居实不专固、邻指九二与不独富全部写明，不限为积累，不推现实共同加薪。",
+          "累计六十篇1620项盘面比较、120日期用例与style通过；全部结论与原取期种类、节点、方法未变。"
+        ],
+        "fieldDeltaFiles": [
+          "line5-author-refinements.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    },
+    {
+      "movingLine": 6,
+      "reportSha256": "7990ea1753561bda9fa28ced1338e4724270cd37ccc53a73f30b355451f2aa0b",
+      "report": {
+        "schemaVersion": "1.0.0",
+        "primaryId": 9,
+        "movingLine": 6,
+        "reviewer": "standards_audit",
+        "reviewType": "author-whole-article-readback",
+        "status": "author-read-with-open-findings",
+        "wholeArticlesRead": 12,
+        "months": [
+          "寅",
+          "卯",
+          "辰",
+          "巳",
+          "午",
+          "未",
+          "申",
+          "酉",
+          "戌",
+          "亥",
+          "子",
+          "丑"
+        ],
+        "sourceSha256AtFreeze": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+        "snapshotSha256": "328d0348d9d63f15153e22067e835a5d434e0df90df82011833004fafaa9a396",
+        "articlesCanonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+        "fieldsRead": [
+          "title",
+          "short",
+          "all paragraphs",
+          "judgment",
+          "judgmentCorrection.old/new/reason/sourceEvidence/impact when present",
+          "all timing fields",
+          "payExplanation",
+          "payCorrection.old/new/reason/impact"
+        ],
+        "readMethod": "实际逐篇完整阅读初稿全部字段，再完整读回日志所列修订字段；程序检查不计为阅读。",
+        "bodyHan": {
+          "min": 534,
+          "median": 553.5,
+          "max": 573
+        },
+        "notes": [
+          "上九十二篇初稿全部字段在三个每批四篇的完整输出中实际读回，随后六个完整改动字段的原文与新文再次完整阅读；不把脚本检查或重复字段累计为新增文章。",
+          "离火得巽生且受末坎克，回原火态：春相夏旺中克实、秋囚冬死土休中克轻；末坎泄体按原水态，秋实冬重其余轻，休乾不混同囚死。",
+          "王孔成畜安处、德积载先完整肯定，再讲妇贞厉、月象盈盛、君子征凶；小畜积至极乃能畜不同于大畜畜极则通，月象不作现代日期。",
+          "未、酉两条盘面长句依准确关系重写，未仅改标点避检；子月语病及两处作者口吻已修并完整读回。",
+          "原结论和取期数量、种类、节点、方法字符串完全保留。全卦结构检查1944项盘面比对、144个日期样例通过，零重复长句；句首和句长检查通过。"
+        ],
+        "fieldDeltaFiles": [
+          "line6-author-refinements.json"
+        ],
+        "independentReview": "pending separate reviewer full reading; author record is not independent or human approval"
+      }
+    }
+  ],
+  "authorReadbacksScope": "逐爻原全文作者记录与原固定快照原样保留；原七十二篇全字段已实际读完，本轮另实际读回七个完整old/new段落。最终整源等于原全文加这些完整差异，不冒称最终hash又从头阅读七十二篇。历史报告中的独立待审仅表示当时状态，当前独立签署见independentReview。",
+  "changedFieldReadbacks": [
+    {
+      "movingLine": 1,
+      "file": "line1-author-refinements.json",
+      "sha256": "f2f511a692b418c6b381aebb4e6e32328a9e93533f86e34b21f5069038cbb8e3",
+      "changesRecorded": 46,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 2,
+      "file": "line2-author-refinements.json",
+      "sha256": "cbea53c89574c6e416b5cae735e6a8337fa2469674350db5e9bb4d84d112438d",
+      "changesRecorded": 4,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 3,
+      "file": "line3-author-refinements.json",
+      "sha256": "be0ec0a78b99afc44b7eaaa793fd9fb48a160b7bd6804db2dbc4a153c7c83aee",
+      "changesRecorded": 28,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 4,
+      "file": "line4-author-refinements.json",
+      "sha256": "2f703d91402e5f3f13ddc1ad68dbbdd3bc9df70e03d4139c103695295c78062d",
+      "changesRecorded": 14,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 4,
+      "file": "line4-author-refinements-final.json",
+      "sha256": "0ebbbf1bf7316934ab811a3c9e56d3ca6b77aa6981f64e5ed661e7af3001acb8",
+      "changesRecorded": 7,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 5,
+      "file": "line5-author-refinements.json",
+      "sha256": "686fc256140ce071b5cf351f2be1595afde5c5327ae8ca3846753911af43d662",
+      "changesRecorded": 12,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLine": 6,
+      "file": "line6-author-refinements.json",
+      "sha256": "3402d6e6dd7375defff6fabb3b0e86fb9f9a8e63e9a1b2c97df6829b1d75c7f1",
+      "changesRecorded": 6,
+      "readStatus": "all complete changed fields actually read by author; repeated fields not extra articles"
+    },
+    {
+      "movingLines": [
+        1,
+        3,
+        6
+      ],
+      "file": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/peer-revision-delta-009.json",
+      "sha256": "cc3a1bca9cfff1e1c651dd4497051839a98a3e5545cc6460491d6e442cb74741",
+      "changesRecorded": 7,
+      "readStatus": "all seven complete old/new paragraphs actually read by author; same seven complete fields subsequently read by independent reviewer"
+    }
+  ],
+  "finalSnapshotBindings": [
+    {
+      "movingLine": 1,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line1-after-peer-review.json",
+      "snapshotSha256": "2477c6ad3a526d1b7c9a9299a1b21da085ef1cbe8766a91663d7f814ec04c891",
+      "articlesCanonicalSha256": "180bafa26a7c4bcd7b3eb827719471029b5cbabc9bb34885dd3defa91d7874c5",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 1
+    },
+    {
+      "movingLine": 2,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line2-after-peer-review.json",
+      "snapshotSha256": "274cb974f52de908165678d316283b752cfb45986b554a9ad1e7dc02cbe000fb",
+      "articlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 3,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line3-after-peer-review.json",
+      "snapshotSha256": "ed7062cf160a52074620fd01f9a741e86a0b420b53bea1cde1586835ba988bc2",
+      "articlesCanonicalSha256": "7173477221a282f7634b9c006f23715b413467d43850803cda8beebfded430bb",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 3
+    },
+    {
+      "movingLine": 4,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line4-after-peer-review.json",
+      "snapshotSha256": "53760981d06c41c032dbd3b49e07caaf105a7c9d16994824cc402d555ab04816",
+      "articlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 5,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line5-after-peer-review.json",
+      "snapshotSha256": "e31ab01207e27c397c8c35112d90e5683357ee607f67a6a14538c3a5ab9d0fb5",
+      "articlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 0
+    },
+    {
+      "movingLine": 6,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line6-after-peer-review.json",
+      "snapshotSha256": "518e929b8e51b221cf511ae8b14c8d5c0d64d1a5d083e35a28f7bfbccee2456d",
+      "articlesCanonicalSha256": "8f6766bf891a977e90317867164ce29184f6ee441ba9a4ad2a5583c88a2aac7e",
+      "sourceValuesEqualSnapshot": true,
+      "baselineArticlesCanonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+      "actualCoverage": "original twelve complete articles plus all listed complete changed paragraphs",
+      "completePeerRevisionFieldsActuallyRead": 3
+    }
+  ],
+  "independentReview": {
+    "status": "ai-cross-reviewed-with-open-findings",
+    "reviewer": "/root/write_meng",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "baselineSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+    "wholeArticlesRead": 72,
+    "completeDeltaFieldsActuallyRead": 7,
+    "affectedArticlesInDelta": 6,
+    "scope": "实际独立完整读原冻结源72篇所有字段，再完整读回最终7个old/new整段（涉及6篇）。逐值证明原基线加这7个完整段落恰等于最终源；未冒称最终hash再次从头整卦阅读。",
+    "reportPath": "/workspace/scratch/4c8efee30d23/drafts/xiaoxu_peer/independent-meng-full-read.json",
+    "reportSha256": "731089341ada3115f3cff7368334ac347bbe5bf05a472f15f0aa91b4ab755e13",
+    "report": {
+      "primaryId": 9,
+      "reviewer": "/root/write_meng",
+      "status": "passed",
+      "baselineSourcePath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/full-submitted.json",
+      "baselineSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "wholeArticlesRead": 72,
+      "fieldsRequired": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection complete old/new/reason/sourceEvidence/impact",
+        "timing all fields",
+        "payExplanation",
+        "payCorrection complete object"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/02小畜",
+          "webRef": "turn664937992view0",
+          "oldid": 2404941,
+          "scope": "实际在线完整读卦辞彖象、六爻经文王注孔疏及小象；不只摘短爻辞。"
+        },
+        {
+          "path": "/workspace/scratch/4c8efee30d23/drafts/xiaoxu_peer/prepared-30.json",
+          "scope": "三批各10条实际完整读取原五气30行全部12栏，同时读取原节点/关系及一层调整节点与notes；生成和哈希本身不算阅读。"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "本持续会话作者/交叉审任务先前实际读过，当前继承其一层规则，未声称此次重新通读。"
+        },
+        {
+          "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+          "scope": "在线全章阅读之后，为复核尚德载和妇贞厉，在上九审读中再次实际读取上九全部经象王注孔疏，并连读前接九五经象与六四末疏；未冒称本次又重读全章。"
+        }
+      ],
+      "foundationObservations": [
+        "初九循本道向上得义之吉，九二牵连获复在中不失，不能改为古义只是撤退或纠错；现盘结论与古义分层。",
+        "九三被上九闭固而不可进，夫妻反目为取象喻事，不指认现实婚姻、人际争执或材料差错。",
+        "六四有孚与上九合志去害释惧，非单纯无误，也不由上字指认现代上司心理。",
+        "九五居尊不拒九二、以实与邻而不独富，富不直接指现实加薪；末艮生体得离生又受巽克相抵按原土气，不把得生一概升强。",
+        "上九既雨既处、德积载有成畜安处的正面义，妇贞厉/月几望与满后征凶的警戒须全，不套大畜畜极通或现代女性/月份日期/猜忌。",
+        "初至三两金或三金受离制无土生均有效轻克，原秋旺/土月相保留；离为泄体按原气，不因体木生又额外叠强。",
+        "四五离克乾得巽生无水制，五气皆有力且原火态不改；上九另有末坎制离与巽生相抵，火恢复原气。",
+        "四五六本巽受原体乾所克，春囚乾制旺巽与冬休乾制相巽费力；不能反写木直接克金，亦不能以体克巽递归切断木生火。",
+        "原取期结构逐值沿用；九五春夏冬末生体support可作过程助益、不替名位结果，须保留项目应用边界。"
+      ],
+      "allSixSnapshotsEqualFullSource": true,
+      "lineReviews": [
+        {
+          "movingLine": 1,
+          "articleCount": 12,
+          "canonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+          "actualReadScope": "逐篇实际读取标题、完整简断、全部自然段、完整 judgment 与 judgmentCorrection.old/new/reason/sourceEvidence/impact、全部 timing、payExplanation 与完整 payCorrection。分寅至巳、午至酉、戌至丑三批读取；未用字符扫描代替阅读全文。",
+          "observations": [
+            "两处克体金均有离火制而无土生，有效克轻与原旺相休囚死分开；没有将秋月旺金仍判重克。",
+            "体与末巽比和按原木五气，春旺、冬相有力；夏休、秋死、土囚助薄。泄离按原火五气，春相夏旺作用实，其他气轻。",
+            "初九循道向上、初应四且顺无所违的积极本义保留，未只缩为退守旧路或免咎；与直接克体仍判未升的优先序张力明列在判断。",
+            "冬月两处轻克未硬指现实单一差错。各五气原选取期位置和干支仍保留；薪资仅依附此次晋升，未覆盖既有工资和其他待遇。",
+            "简断和正文由不同具体处境入句，未以这次、本次轮换固定开头。"
+          ],
+          "findings": [
+            "XX009-L1-SUMMER-BALANCE"
+          ],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "baselineStatus": "changes-requested-one-field",
+          "baselineArticlesCanonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+          "finalArticlesCanonicalSha256": "180bafa26a7c4bcd7b3eb827719471029b5cbabc9bb34885dd3defa91d7874c5",
+          "completeDeltaFieldsActuallyRead": 1
+        },
+        {
+          "movingLine": 2,
+          "articleCount": 12,
+          "canonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+          "actualReadScope": "寅至巳、午至酉、戌至丑三批逐篇完整读取标题、简断、所有段落、judgment及全部old/new理由来源影响、完整timing和薪资及订正。",
+          "observations": [
+            "两金受离制无土生，前中克轻与原月令各气分开。中末两离泄体只按各自原火气，不由两节点推现实次数或耗量倍数。",
+            "牵复按九二欲往五、五未畜极不闭拒、牵连获复于上及居中不自失完整说明，吉义没有只缩为纠偏或退回旧处。",
+            "春旺木与冬相木有力明确；夏木休未混成囚死弱体。秋体死与金有效轻克分别交代，冬未升没有指定零碎现实缺漏。",
+            "春夏末火泄期、秋土中兑克期、冬本乾克期沿用；全十二薪资限定随此次晋升，不从协作或投入推涨幅。",
+            "各篇首句均从具体情况入句并明说未升，专业订正均与正文一致，本爻未发现需新返修的内容问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "baselineStatus": "baseline-full-read-accepted",
+          "baselineArticlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+          "finalArticlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+          "completeDeltaFieldsActuallyRead": 0
+        },
+        {
+          "movingLine": 3,
+          "articleCount": 12,
+          "canonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+          "actualReadScope": "按寅至巳、午至酉、戌至丑三批实际完整读十二篇所有字段；全部专业old/new订正及来源理由、应期和薪资订正均在阅读范围。",
+          "observations": [
+            "本乾、中兑、末兑均受离制无土生，有效克力五气皆轻，各自原金气不改；未由三处克推现实三次错误或倍增阻力。",
+            "春旺木冬相木的任事力量明确，夏休体与旺火中泄较重分开；秋死土囚的体弱和有效轻克并存。",
+            "舆说辐按三欲进而上九固畜、不得其行说明；夫妻反目依孔疏假象喻人事，未当已发生家庭/同事争执。两处表述仍可收成读者语言。",
+            "冬仍原用互金期、夏仍体互火期、其余末兑金期，未将末克专条强改所有月份取期；薪资范围保持本次附随增加。",
+            "十二篇判断订正旧新绑定精准。无新增盘面或古义规则错误，仅申两整段与亥一整段公开口吻需定点收口。"
+          ],
+          "findings": [
+            "XX009-L3-READER-VOICE"
+          ],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "baselineStatus": "changes-requested-three-fields",
+          "baselineArticlesCanonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+          "finalArticlesCanonicalSha256": "7173477221a282f7634b9c006f23715b413467d43850803cda8beebfded430bb",
+          "completeDeltaFieldsActuallyRead": 3
+        },
+        {
+          "movingLine": 4,
+          "articleCount": 12,
+          "canonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+          "actualReadScope": "三批各四篇实际完整读取十二篇全部正文、标题、摘要、专业与完整old/new订正、所有应期字段及薪资订正。",
+          "observations": [
+            "体改为下乾金，本巽受体克；春囚金制旺木、夏死金制休木、冬休金制相木费力，秋旺金制死木与土相金制囚木较易，方向没有倒置。",
+            "用互离得巽生无水克，五气有效克皆有力，原火囚死休不改旺；没有由乾金克木递归取消木生火。",
+            "体互兑和末乾的比和按原金气，秋旺/土相有力、春囚夏死冬休薄助，冬休没有混称囚死弱体。",
+            "有孚血去惕出完整保留去害释惧、免患得安，不只无过；上合志明确王孔上九，不指现代上司已认可，也不造已发生伤情。",
+            "全部应期保留原中离火日，正式任职与工资日期不据此虚定。十二篇原新专业订正、薪资限定本次附随增加均一致；未发现新增返修问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "baselineStatus": "baseline-full-read-accepted",
+          "baselineArticlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+          "finalArticlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+          "completeDeltaFieldsActuallyRead": 0
+        },
+        {
+          "movingLine": 5,
+          "articleCount": 12,
+          "canonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+          "actualReadScope": "寅至巳、午至酉、戌至丑三批逐篇完整读取全部正文、摘要、标题、judgment及完整correction、timing各字段、薪资与完整订正。",
+          "observations": [
+            "原体乾与本巽体克方向、主动处理各气难易和兑比和均准确。用互离得巽生无水克，五气克效皆有力，原火气保留。",
+            "末艮同时得离生受巽克，同层相抵回原土气，春死薄/夏相实/秋休薄/冬囚薄/四土旺实；未自动由生体得生升强，也未只取木克将相旺土削轻。",
+            "全盘生克并见，末生有力或薄均保留其实际助益，不以未升抹去；在任直接克体优先是既定应用选择，不包装为古籍只有此解。",
+            "九五居实不专固、二牵五攣、有孚相与及不独富的分享积极义完整，邻按王孔指九二，不作现实邻人、共同获任或共同加薪。",
+            "春夏冬保持原support/changed_use土日观察末助，秋和四土仍control/use_mutual火日；这些原结构不是任职兑现或工资日。薪资和完整专业订正范围准确，无新增返修问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "openInterpretiveBoundary": "保留原五气support过程时点与整体未升的并存，不暗改取期结构，不将其读成末后能升。",
+          "baselineStatus": "baseline-full-read-accepted",
+          "baselineArticlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+          "finalArticlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+          "completeDeltaFieldsActuallyRead": 0
+        },
+        {
+          "movingLine": 6,
+          "articleCount": 12,
+          "canonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+          "actualReadScope": "三批各四篇逐篇完整实际阅读所有字段；上九经象王注孔疏又独立完整对读一次，未以字段计数代替全文。",
+          "observations": [
+            "用互离得巽生又受末坎克，相抵回原火气：春相实/夏旺重/秋囚轻/冬死轻/土休轻；没有沿六四九五无水盘的单边得生升强。",
+            "末坎泄按原水气，春休夏囚土死轻、秋相实、冬旺重。原乾体与兑比和五气一致，冬休主动制相木费力且不混囚死弱。",
+            "既雨既处、尚德载的积德成畜和安处完整存在，后接妇贞厉、盈盛月象与君子征凶，不只摘末句压过正面本义；小畜与大畜的畜极区别分清。",
+            "月几望未套现代日期，阴阳疑忌未指认现实有人怀疑当事人。三处将虽正收成自认/看似正确的段落须恢复完整古义限定。",
+            "夏原中离克期，其余原末坎泄期保持；全部专业订正与薪资范围正确，无新增盘面错误。"
+          ],
+          "findings": [
+            "XX009-L6-GENUINE-RECTITUDE"
+          ],
+          "status": "baseline-full-read-plus-final-complete-deltas-accepted",
+          "baselineStatus": "changes-requested-three-fields",
+          "baselineArticlesCanonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+          "finalArticlesCanonicalSha256": "8f6766bf891a977e90317867164ce29184f6ee441ba9a4ad2a5583c88a2aac7e",
+          "completeDeltaFieldsActuallyRead": 3
+        }
+      ],
+      "findings": [
+        {
+          "id": "XX009-L1-SUMMER-BALANCE",
+          "status": "resolved-after-complete-field-readback",
+          "articleKey": "9/1/巳",
+          "field": "paragraphs[1]",
+          "severity": "rule-precision",
+          "old": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后虽有同向接续，力量尚不足以补上过程中的负担。",
+          "issue": "末休巽比和助薄与旺离中泄较重可分别说明，但力量尚不足以补上过程中的负担将其量化为实际助耗净差，欠现实总量依据。",
+          "requestedRevision": "保留整段厚度、休体与旺火泄耗、两金轻克、末休巽薄助；末句直接说明有限接续仍需依具体承担与支持安排，不断实际助力必补不上总负担。",
+          "baselineStatus": "requested",
+          "resolution": "巳初九完整第二段已读，保留休巽薄助与旺离泄重；末句改为支持按具体承担、范围和安排核实，去实际净量必不足推断。"
+        },
+        {
+          "id": "XX009-L3-READER-VOICE",
+          "status": "resolved-after-complete-field-readback",
+          "severity": "reader-voice",
+          "targets": [
+            {
+              "articleKey": "9/3/申",
+              "field": "paragraphs[1]",
+              "old": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在；自身所需的支持没有补足，收尾也仍受克，本轮晋升不能据过程平缓便作成论。",
+              "issue": "末句“作成论”偏判稿术语，改直接向读者说此次晋升未落实或不能据过程平缓认定获任。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            },
+            {
+              "articleKey": "9/3/申",
+              "field": "paragraphs[2]",
+              "old": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，不把现实夫妻、同事或上级自动放进爻中。用于工作，宜留意承担需要怎样的衔接。个人的意愿应有具体条件支持，不能只靠坚持推进便认定配合自然到位。",
+              "issue": "“不把现实夫妻、同事或上级自动放进爻中”仍是编辑处理说明；保留夫妻为譬喻及真实关系须据实确认的边界，用职责配合、责任条件的读者语言接下文。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            },
+            {
+              "articleKey": "9/3/亥",
+              "field": "paragraphs[2]",
+              "old": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏明确假象以喻人事，不据此安排现实人物的冲突。用于工作，更合适的是辨明能力与条件如何相济。自己能够做成一段，不等于其余承接已齐，继续推进仍需明确配合与责任。",
+              "issue": "“不据此安排现实人物的冲突”像写作边界，改直接说明实际协作应据责任、条件核实；保留王孔譬喻与不能由一方有力预定全部承接。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            }
+          ],
+          "baselineStatus": "requested",
+          "resolution": "申两完整段及亥一完整段已读，直接说明此次未升和责任配合，不再用作成论、把人物放入爻中或安排冲突的编辑口吻；欲进受畜与假象喻义保留。"
+        },
+        {
+          "id": "XX009-L6-GENUINE-RECTITUDE",
+          "status": "resolved-after-complete-field-readback",
+          "severity": "classical-precision",
+          "sourceEvidence": {
+            "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+            "url": "https://zh.wikisource.org/wiki/周易正義/02小畜",
+            "scope": "上九王注及孔疏说虽贞近危、虽复贞正而近危厉、虽复君子之行而亦凶；不止主观自认正确。"
+          },
+          "targets": [
+            {
+              "articleKey": "9/6/卯",
+              "field": "paragraphs[1]",
+              "old": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使所行自以为正，满而又进也会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。",
+              "issue": "“即使所行自以为正”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            },
+            {
+              "articleKey": "9/6/午",
+              "field": "paragraphs[1]",
+              "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，君子也不能仅凭自认所行正确便免于征凶之戒。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。",
+              "issue": "“君子也不能仅凭自认所行正确”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            },
+            {
+              "articleKey": "9/6/戌",
+              "field": "paragraphs[2]",
+              "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，不能只据所行看似正确便无限前推；用于工作，应使下一步与真实承接和责任范围相称。",
+              "issue": "“不能只据所行看似正确”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            }
+          ],
+          "baselineStatus": "requested",
+          "resolution": "卯午戌三完整古义段已读，明确即使真正守正、君子之行仍须戒盛满再进，成畜安处前半积极义并存，无现实品行或性别指认。"
+        }
+      ],
+      "reviewerIsHuman": false,
+      "userIndividuallyAccepted": false,
+      "realWorldPredictionAccuracy": "not-validated",
+      "preparedAt": "2026-11-20T19:22:34.012215+00:00",
+      "nextAssignedTaskAfterClosure": "按root安排闭合009后编写014大有72篇，仅014四文件和专属scratch，先原盘30组与完整王孔古义。",
+      "baselineFullReadCompletedAt": "2026-11-20T19:34:59.755144+00:00",
+      "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+      "baselineArticlesCanonicalSha256": "d6ecb02562ef276bb9a99dbf00d5c94c57aad3b8ce7216fd754e1dd102ad5d02",
+      "actualCoverageStatement": "实际独立完整读原冻结源72篇所有字段，再完整读回最终7个old/new整段（涉及6篇）。逐值证明原基线加这7个完整段落恰等于最终源；未冒称最终hash再次从头整卦阅读。",
+      "requestedRevisionSummary": {
+        "groups": 3,
+        "completeParagraphFields": 7,
+        "affectedArticles": 6,
+        "locations": [
+          "9/1/巳 paragraphs[1]",
+          "9/3/申 paragraphs[1]",
+          "9/3/申 paragraphs[2]",
+          "9/3/亥 paragraphs[2]",
+          "9/6/卯 paragraphs[1]",
+          "9/6/午 paragraphs[1]",
+          "9/6/戌 paragraphs[2]"
+        ],
+        "judgmentChangeRequested": false,
+        "timingChangeRequested": false,
+        "payChangeRequested": false,
+        "outcomeChangeRequested": false,
+        "status": "all-requested-fields-read-and-resolved"
+      },
+      "openInterpretiveBoundaries": [
+        "初九循道向上与九二牵连获复的吉义完整存在，仍依项目在任直接克体优先保持未升；不称古籍只有这一应用判序。",
+        "六四诚孚免患、九五诚信相与及末生的积极作用不抵消本项目中克优先；支持存在不按既定未升抹去。",
+        "九五春夏冬原support/changed_use日级过程窗口与整体未升并存，沿原结构保留，不当任命或薪资日期。",
+        "上九成畜安处后接盛满再进之戒，并不指现实功劳不存在、品行有过或现代女性角色应如何；真实预测准确率未经验证。"
+      ],
+      "valueVerification": {
+        "baselineSourceHashStillMatchesFrozenSubmission": true,
+        "baselinePlusSevenActuallyReadCompleteParagraphsExactlyEqualsFinalSource": true,
+        "allOtherSourceValuesUnchanged": true,
+        "wholeArticleCountsSumTo72": true,
+        "verificationDoesNotReplaceActualReading": true,
+        "bodyHanRange": [
+          508,
+          608
+        ],
+        "bodyHanMedian": 550.5,
+        "shortHanRange": [
+          85,
+          105
+        ],
+        "payHanRange": [
+          42,
+          55
+        ],
+        "judgmentCorrectionArticles": 72,
+        "payCorrectionArticles": 72
+      },
+      "finalSourcePath": "/workspace/scratch/4c8efee30d23/Wengua_Meihua/sources/editorial/promotion-pay/monthly/hex-009.json",
+      "reviewedAt": "2026-11-20T19:37:34.187196+00:00",
+      "baselineReviewReportPath": "/workspace/scratch/4c8efee30d23/drafts/xiaoxu_peer/independent-meng-baseline-full-read.json",
+      "baselineReviewReportSha256": "611bbbc2b87200923296912cb3bbc7a3f174f4d580d791a7cc1df441a3cd0148",
+      "finalDeltaReadback": {
+        "path": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/peer-revision-delta-009.json",
+        "sha256": "cc3a1bca9cfff1e1c651dd4497051839a98a3e5545cc6460491d6e442cb74741",
+        "beforeSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+        "afterSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+        "completeFieldsActuallyRead": 7,
+        "affectedArticles": 6,
+        "method": "一次完整输出7个old/new整段后逐段实际阅读全文；全部旧段与此前全文读版吻合，新段已按问题、上下文与古义核实，非只读改动句。",
+        "status": "all-seven-complete-old-new-fields-read-and-accepted",
+        "changes": [
+          {
+            "key": "9/1/巳",
+            "field": "paragraphs[1]",
+            "old": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后虽有同向接续，力量尚不足以补上过程中的负担。",
+            "new": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后仍有同向接续，可用的帮助应接到具体承担上，所需支持的范围与安排也宜逐项核清。"
+          },
+          {
+            "key": "9/3/申",
+            "field": "paragraphs[1]",
+            "old": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在；自身所需的支持没有补足，收尾也仍受克，本轮晋升不能据过程平缓便作成论。",
+            "new": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在，收尾也仍受克。此次晋升未落实，已有成果宜依事实说明，后续承担所需的支持也须核明。"
+          },
+          {
+            "key": "9/3/申",
+            "field": "paragraphs[2]",
+            "old": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，不把现实夫妻、同事或上级自动放进爻中。用于工作，宜留意承担需要怎样的衔接。个人的意愿应有具体条件支持，不能只靠坚持推进便认定配合自然到位。",
+            "new": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，所说是相协所需的关系与分寸。放到工作中，宜核清各自责任、可用条件和实际衔接，让个人意愿接到能够履行的安排；继续推进需要怎样的配合，也应有明确根据。"
+          },
+          {
+            "key": "9/3/亥",
+            "field": "paragraphs[2]",
+            "old": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏明确假象以喻人事，不据此安排现实人物的冲突。用于工作，更合适的是辨明能力与条件如何相济。自己能够做成一段，不等于其余承接已齐，继续推进仍需明确配合与责任。",
+            "new": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏以假象喻人事，实际协作则须核清各自责任与可用条件，使能力与配合有具体衔接。自己能够做成一段，其余承接仍须据实确认，继续推进所需的安排也要逐项讲明，才能使担当与现实所需相称。"
+          },
+          {
+            "key": "9/6/卯",
+            "field": "paragraphs[1]",
+            "old": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使所行自以为正，满而又进也会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。",
+            "new": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使行事确能守正，处盛满也须戒慎，满而又进仍会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。"
+          },
+          {
+            "key": "9/6/午",
+            "field": "paragraphs[1]",
+            "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，君子也不能仅凭自认所行正确便免于征凶之戒。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。",
+            "new": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，即使所行合乎君子之道，也仍在再进为凶的警戒之中。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。"
+          },
+          {
+            "key": "9/6/戌",
+            "field": "paragraphs[2]",
+            "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，不能只据所行看似正确便无限前推；用于工作，应使下一步与真实承接和责任范围相称。",
+            "new": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，即使行事守正，继续前进也须戒惧；用于工作，应使下一步与真实承接和责任范围相称。"
+          }
+        ],
+        "unchangedFieldsVerified": [
+          "all outcomes",
+          "all judgments and judgmentCorrection objects",
+          "all timing fields",
+          "all payExplanation and payCorrection fields",
+          "all titles and shorts",
+          "all other paragraphs"
+        ],
+        "allOtherSourceValuesUnchanged": true
+      },
+      "blockingContentFindingsRemaining": []
+    },
+    "baselineReportPath": "/workspace/scratch/4c8efee30d23/drafts/xiaoxu_peer/independent-meng-baseline-full-read.json",
+    "baselineReportSha256": "611bbbc2b87200923296912cb3bbc7a3f174f4d580d791a7cc1df441a3cd0148",
+    "baselineReport": {
+      "primaryId": 9,
+      "reviewer": "/root/write_meng",
+      "status": "changes-requested",
+      "baselineSourcePath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/full-submitted.json",
+      "baselineSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "wholeArticlesRead": 72,
+      "fieldsRequired": [
+        "title",
+        "short",
+        "all paragraphs",
+        "judgment",
+        "judgmentCorrection complete old/new/reason/sourceEvidence/impact",
+        "timing all fields",
+        "payExplanation",
+        "payCorrection complete object"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://zh.wikisource.org/wiki/周易正義/02小畜",
+          "webRef": "turn664937992view0",
+          "oldid": 2404941,
+          "scope": "实际在线完整读卦辞彖象、六爻经文王注孔疏及小象；不只摘短爻辞。"
+        },
+        {
+          "path": "/workspace/scratch/4c8efee30d23/drafts/xiaoxu_peer/prepared-30.json",
+          "scope": "三批各10条实际完整读取原五气30行全部12栏，同时读取原节点/关系及一层调整节点与notes；生成和哈希本身不算阅读。"
+        },
+        {
+          "path": "docs/READING_POLICY_V2.md",
+          "scope": "本持续会话作者/交叉审任务先前实际读过，当前继承其一层规则，未声称此次重新通读。"
+        },
+        {
+          "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+          "scope": "在线全章阅读之后，为复核尚德载和妇贞厉，在上九审读中再次实际读取上九全部经象王注孔疏，并连读前接九五经象与六四末疏；未冒称本次又重读全章。"
+        }
+      ],
+      "foundationObservations": [
+        "初九循本道向上得义之吉，九二牵连获复在中不失，不能改为古义只是撤退或纠错；现盘结论与古义分层。",
+        "九三被上九闭固而不可进，夫妻反目为取象喻事，不指认现实婚姻、人际争执或材料差错。",
+        "六四有孚与上九合志去害释惧，非单纯无误，也不由上字指认现代上司心理。",
+        "九五居尊不拒九二、以实与邻而不独富，富不直接指现实加薪；末艮生体得离生又受巽克相抵按原土气，不把得生一概升强。",
+        "上九既雨既处、德积载有成畜安处的正面义，妇贞厉/月几望与满后征凶的警戒须全，不套大畜畜极通或现代女性/月份日期/猜忌。",
+        "初至三两金或三金受离制无土生均有效轻克，原秋旺/土月相保留；离为泄体按原气，不因体木生又额外叠强。",
+        "四五离克乾得巽生无水制，五气皆有力且原火态不改；上九另有末坎制离与巽生相抵，火恢复原气。",
+        "四五六本巽受原体乾所克，春囚乾制旺巽与冬休乾制相巽费力；不能反写木直接克金，亦不能以体克巽递归切断木生火。",
+        "原取期结构逐值沿用；九五春夏冬末生体support可作过程助益、不替名位结果，须保留项目应用边界。"
+      ],
+      "allSixSnapshotsEqualFullSource": true,
+      "lineReviews": [
+        {
+          "movingLine": 1,
+          "articleCount": 12,
+          "canonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+          "actualReadScope": "逐篇实际读取标题、完整简断、全部自然段、完整 judgment 与 judgmentCorrection.old/new/reason/sourceEvidence/impact、全部 timing、payExplanation 与完整 payCorrection。分寅至巳、午至酉、戌至丑三批读取；未用字符扫描代替阅读全文。",
+          "observations": [
+            "两处克体金均有离火制而无土生，有效克轻与原旺相休囚死分开；没有将秋月旺金仍判重克。",
+            "体与末巽比和按原木五气，春旺、冬相有力；夏休、秋死、土囚助薄。泄离按原火五气，春相夏旺作用实，其他气轻。",
+            "初九循道向上、初应四且顺无所违的积极本义保留，未只缩为退守旧路或免咎；与直接克体仍判未升的优先序张力明列在判断。",
+            "冬月两处轻克未硬指现实单一差错。各五气原选取期位置和干支仍保留；薪资仅依附此次晋升，未覆盖既有工资和其他待遇。",
+            "简断和正文由不同具体处境入句，未以这次、本次轮换固定开头。"
+          ],
+          "findings": [
+            "XX009-L1-SUMMER-BALANCE"
+          ],
+          "status": "changes-requested-one-field"
+        },
+        {
+          "movingLine": 2,
+          "articleCount": 12,
+          "canonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+          "actualReadScope": "寅至巳、午至酉、戌至丑三批逐篇完整读取标题、简断、所有段落、judgment及全部old/new理由来源影响、完整timing和薪资及订正。",
+          "observations": [
+            "两金受离制无土生，前中克轻与原月令各气分开。中末两离泄体只按各自原火气，不由两节点推现实次数或耗量倍数。",
+            "牵复按九二欲往五、五未畜极不闭拒、牵连获复于上及居中不自失完整说明，吉义没有只缩为纠偏或退回旧处。",
+            "春旺木与冬相木有力明确；夏木休未混成囚死弱体。秋体死与金有效轻克分别交代，冬未升没有指定零碎现实缺漏。",
+            "春夏末火泄期、秋土中兑克期、冬本乾克期沿用；全十二薪资限定随此次晋升，不从协作或投入推涨幅。",
+            "各篇首句均从具体情况入句并明说未升，专业订正均与正文一致，本爻未发现需新返修的内容问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-accepted"
+        },
+        {
+          "movingLine": 3,
+          "articleCount": 12,
+          "canonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+          "actualReadScope": "按寅至巳、午至酉、戌至丑三批实际完整读十二篇所有字段；全部专业old/new订正及来源理由、应期和薪资订正均在阅读范围。",
+          "observations": [
+            "本乾、中兑、末兑均受离制无土生，有效克力五气皆轻，各自原金气不改；未由三处克推现实三次错误或倍增阻力。",
+            "春旺木冬相木的任事力量明确，夏休体与旺火中泄较重分开；秋死土囚的体弱和有效轻克并存。",
+            "舆说辐按三欲进而上九固畜、不得其行说明；夫妻反目依孔疏假象喻人事，未当已发生家庭/同事争执。两处表述仍可收成读者语言。",
+            "冬仍原用互金期、夏仍体互火期、其余末兑金期，未将末克专条强改所有月份取期；薪资范围保持本次附随增加。",
+            "十二篇判断订正旧新绑定精准。无新增盘面或古义规则错误，仅申两整段与亥一整段公开口吻需定点收口。"
+          ],
+          "findings": [
+            "XX009-L3-READER-VOICE"
+          ],
+          "status": "changes-requested-three-fields"
+        },
+        {
+          "movingLine": 4,
+          "articleCount": 12,
+          "canonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+          "actualReadScope": "三批各四篇实际完整读取十二篇全部正文、标题、摘要、专业与完整old/new订正、所有应期字段及薪资订正。",
+          "observations": [
+            "体改为下乾金，本巽受体克；春囚金制旺木、夏死金制休木、冬休金制相木费力，秋旺金制死木与土相金制囚木较易，方向没有倒置。",
+            "用互离得巽生无水克，五气有效克皆有力，原火囚死休不改旺；没有由乾金克木递归取消木生火。",
+            "体互兑和末乾的比和按原金气，秋旺/土相有力、春囚夏死冬休薄助，冬休没有混称囚死弱体。",
+            "有孚血去惕出完整保留去害释惧、免患得安，不只无过；上合志明确王孔上九，不指现代上司已认可，也不造已发生伤情。",
+            "全部应期保留原中离火日，正式任职与工资日期不据此虚定。十二篇原新专业订正、薪资限定本次附随增加均一致；未发现新增返修问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-accepted"
+        },
+        {
+          "movingLine": 5,
+          "articleCount": 12,
+          "canonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+          "actualReadScope": "寅至巳、午至酉、戌至丑三批逐篇完整读取全部正文、摘要、标题、judgment及完整correction、timing各字段、薪资与完整订正。",
+          "observations": [
+            "原体乾与本巽体克方向、主动处理各气难易和兑比和均准确。用互离得巽生无水克，五气克效皆有力，原火气保留。",
+            "末艮同时得离生受巽克，同层相抵回原土气，春死薄/夏相实/秋休薄/冬囚薄/四土旺实；未自动由生体得生升强，也未只取木克将相旺土削轻。",
+            "全盘生克并见，末生有力或薄均保留其实际助益，不以未升抹去；在任直接克体优先是既定应用选择，不包装为古籍只有此解。",
+            "九五居实不专固、二牵五攣、有孚相与及不独富的分享积极义完整，邻按王孔指九二，不作现实邻人、共同获任或共同加薪。",
+            "春夏冬保持原support/changed_use土日观察末助，秋和四土仍control/use_mutual火日；这些原结构不是任职兑现或工资日。薪资和完整专业订正范围准确，无新增返修问题。"
+          ],
+          "findings": [],
+          "status": "baseline-full-read-accepted",
+          "openInterpretiveBoundary": "保留原五气support过程时点与整体未升的并存，不暗改取期结构，不将其读成末后能升。"
+        },
+        {
+          "movingLine": 6,
+          "articleCount": 12,
+          "canonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+          "actualReadScope": "三批各四篇逐篇完整实际阅读所有字段；上九经象王注孔疏又独立完整对读一次，未以字段计数代替全文。",
+          "observations": [
+            "用互离得巽生又受末坎克，相抵回原火气：春相实/夏旺重/秋囚轻/冬死轻/土休轻；没有沿六四九五无水盘的单边得生升强。",
+            "末坎泄按原水气，春休夏囚土死轻、秋相实、冬旺重。原乾体与兑比和五气一致，冬休主动制相木费力且不混囚死弱。",
+            "既雨既处、尚德载的积德成畜和安处完整存在，后接妇贞厉、盈盛月象与君子征凶，不只摘末句压过正面本义；小畜与大畜的畜极区别分清。",
+            "月几望未套现代日期，阴阳疑忌未指认现实有人怀疑当事人。三处将虽正收成自认/看似正确的段落须恢复完整古义限定。",
+            "夏原中离克期，其余原末坎泄期保持；全部专业订正与薪资范围正确，无新增盘面错误。"
+          ],
+          "findings": [
+            "XX009-L6-GENUINE-RECTITUDE"
+          ],
+          "status": "changes-requested-three-fields"
+        }
+      ],
+      "findings": [
+        {
+          "id": "XX009-L1-SUMMER-BALANCE",
+          "status": "requested",
+          "articleKey": "9/1/巳",
+          "field": "paragraphs[1]",
+          "severity": "rule-precision",
+          "old": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后虽有同向接续，力量尚不足以补上过程中的负担。",
+          "issue": "末休巽比和助薄与旺离中泄较重可分别说明，但力量尚不足以补上过程中的负担将其量化为实际助耗净差，欠现实总量依据。",
+          "requestedRevision": "保留整段厚度、休体与旺火泄耗、两金轻克、末休巽薄助；末句直接说明有限接续仍需依具体承担与支持安排，不断实际助力必补不上总负担。"
+        },
+        {
+          "id": "XX009-L3-READER-VOICE",
+          "status": "requested",
+          "severity": "reader-voice",
+          "targets": [
+            {
+              "articleKey": "9/3/申",
+              "field": "paragraphs[1]",
+              "old": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在；自身所需的支持没有补足，收尾也仍受克，本轮晋升不能据过程平缓便作成论。",
+              "issue": "末句“作成论”偏判稿术语，改直接向读者说此次晋升未落实或不能据过程平缓认定获任。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            },
+            {
+              "articleKey": "9/3/申",
+              "field": "paragraphs[2]",
+              "old": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，不把现实夫妻、同事或上级自动放进爻中。用于工作，宜留意承担需要怎样的衔接。个人的意愿应有具体条件支持，不能只靠坚持推进便认定配合自然到位。",
+              "issue": "“不把现实夫妻、同事或上级自动放进爻中”仍是编辑处理说明；保留夫妻为譬喻及真实关系须据实确认的边界，用职责配合、责任条件的读者语言接下文。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            },
+            {
+              "articleKey": "9/3/亥",
+              "field": "paragraphs[2]",
+              "old": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏明确假象以喻人事，不据此安排现实人物的冲突。用于工作，更合适的是辨明能力与条件如何相济。自己能够做成一段，不等于其余承接已齐，继续推进仍需明确配合与责任。",
+              "issue": "“不据此安排现实人物的冲突”像写作边界，改直接说明实际协作应据责任、条件核实；保留王孔譬喻与不能由一方有力预定全部承接。",
+              "requestedRevision": "完整段落自然改写相关句，保留厚度、爻义、具体作用方向与原结论。"
+            }
+          ]
+        },
+        {
+          "id": "XX009-L6-GENUINE-RECTITUDE",
+          "status": "requested",
+          "severity": "classical-precision",
+          "sourceEvidence": {
+            "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+            "url": "https://zh.wikisource.org/wiki/周易正義/02小畜",
+            "scope": "上九王注及孔疏说虽贞近危、虽复贞正而近危厉、虽复君子之行而亦凶；不止主观自认正确。"
+          },
+          "targets": [
+            {
+              "articleKey": "9/6/卯",
+              "field": "paragraphs[1]",
+              "old": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使所行自以为正，满而又进也会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。",
+              "issue": "“即使所行自以为正”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            },
+            {
+              "articleKey": "9/6/午",
+              "field": "paragraphs[1]",
+              "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，君子也不能仅凭自认所行正确便免于征凶之戒。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。",
+              "issue": "“君子也不能仅凭自认所行正确”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            },
+            {
+              "articleKey": "9/6/戌",
+              "field": "paragraphs[2]",
+              "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，不能只据所行看似正确便无限前推；用于工作，应使下一步与真实承接和责任范围相称。",
+              "issue": "“不能只据所行看似正确”将原虽正、君子之行收成主观自认或表面正确，弱化古义“即使守正也须戒满后再进”的完整限定。",
+              "requestedRevision": "完整段落将该处改为即使行事守正/君子之行仍须留意盈盛再进的危厉，保留成畜安处的前半积极义及段落厚度，不由此指认现实品行或妇女问题。"
+            }
+          ]
+        }
+      ],
+      "reviewerIsHuman": false,
+      "userIndividuallyAccepted": false,
+      "realWorldPredictionAccuracy": "not-validated",
+      "preparedAt": "2026-11-20T19:22:34.012215+00:00",
+      "nextAssignedTaskAfterClosure": "按root安排闭合009后编写014大有72篇，仅014四文件和专属scratch，先原盘30组与完整王孔古义。",
+      "baselineFullReadCompletedAt": "2026-11-20T19:34:59.755144+00:00",
+      "sourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "baselineArticlesCanonicalSha256": "d6ecb02562ef276bb9a99dbf00d5c94c57aad3b8ce7216fd754e1dd102ad5d02",
+      "actualCoverageStatement": "原冻结源六爻各12篇共72篇，所有字段逐篇实际阅读全文。待修7个完整段落；未读修改后的字段不记为已审。后续仅将真实完整差异复读绑定最终源，不冒称新hash另一次整卦全文。",
+      "requestedRevisionSummary": {
+        "groups": 3,
+        "completeParagraphFields": 7,
+        "affectedArticles": 6,
+        "locations": [
+          "9/1/巳 paragraphs[1]",
+          "9/3/申 paragraphs[1]",
+          "9/3/申 paragraphs[2]",
+          "9/3/亥 paragraphs[2]",
+          "9/6/卯 paragraphs[1]",
+          "9/6/午 paragraphs[1]",
+          "9/6/戌 paragraphs[2]"
+        ],
+        "judgmentChangeRequested": false,
+        "timingChangeRequested": false,
+        "payChangeRequested": false,
+        "outcomeChangeRequested": false
+      },
+      "openInterpretiveBoundaries": [
+        "初九循道向上与九二牵连获复的吉义完整存在，仍依项目在任直接克体优先保持未升；不称古籍只有这一应用判序。",
+        "六四诚孚免患、九五诚信相与及末生的积极作用不抵消本项目中克优先；支持存在不按既定未升抹去。",
+        "九五春夏冬原support/changed_use日级过程窗口与整体未升并存，沿原结构保留，不当任命或薪资日期。",
+        "上九成畜安处后接盛满再进之戒，并不指现实功劳不存在、品行有过或现代女性角色应如何；真实预测准确率未经验证。"
+      ],
+      "valueVerification": {
+        "baselineSourceHashStillMatchesFrozenSubmission": true,
+        "dynamicSourceExactlyEqualsFrozenSubmission": true,
+        "wholeArticleCountsSumTo72": true,
+        "verificationDoesNotReplaceActualReading": true
+      }
+    },
+    "openFindings": [
+      "初九循道向上与九二牵连获复的吉义完整存在，仍依项目在任直接克体优先保持未升；不称古籍只有这一应用判序。",
+      "六四诚孚免患、九五诚信相与及末生的积极作用不抵消本项目中克优先；支持存在不按既定未升抹去。",
+      "九五春夏冬原support/changed_use日级过程窗口与整体未升并存，沿原结构保留，不当任命或薪资日期。",
+      "上九成畜安处后接盛满再进之戒，并不指现实功劳不存在、品行有过或现代女性角色应如何；真实预测准确率未经验证。"
+    ],
+    "blockingContentFindingsRemaining": []
+  },
+  "verification": {
+    "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "structuralStatus": "passed",
+    "articleCount": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "judgmentCorrectionArticles": 72,
+    "payCorrectionArticles": 72,
+    "bodyHanRange": [
+      508,
+      608
+    ],
+    "bodyHanMedian": 550.5,
+    "bodyHanUpperMedian": 551,
+    "shortHanRange": [
+      85,
+      105
+    ],
+    "payHanRange": [
+      42,
+      55
+    ],
+    "duplicateWholeArticles": 0,
+    "duplicateParagraphs": 0,
+    "duplicateLongSentences": 0,
+    "scriptIndependentFullCopyReview": "not-performed-by-script",
+    "docsVerification": "passed",
+    "style": {
+      "status": "passed",
+      "monthOpen": 0,
+      "monthShort": 0,
+      "maxSameHead": 1,
+      "avgSentence": 31.8,
+      "short10": 1.1,
+      "yiPerMille": 204,
+      "bodyMedian": 551,
+      "bodyMin": 508
+    },
+    "docsCheckSourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "renderedPreviewSha256": "a0855b2685b85fabac61f042b0c7cfbe9fa1d35eced596c91deb4d73863d9e45",
+    "auditReadback": "本轮完整规则审计已实际全文读回，最终作者回执的新范围、独立签署、全部新增findings及统计已读回；原全文与七整段差异分别记证。阅读页首篇与结构已实际查看，全部源文渲染一致性由--docs核对通过。",
+    "baselinePlusSevenCompleteFieldsExactlyEqualsFinalSource": true
+  },
+  "integration": {
+    "applicationRuntimeChanged": false,
+    "monthlyPreviewOnly": true,
+    "gitPushByAuthor": false
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "baselineAuthorReceiptSha256": "25594d3c531411cf6763637945cf7457e7e039f1aa2a1774c59cf1379ad80843",
+  "baselineAuthorReceiptPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/author-receipt-before-peer.json",
+  "peerRevisionReadback": {
+    "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "baselineSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+    "deltaPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/peer-revision-delta-009.json",
+    "deltaSha256": "cc3a1bca9cfff1e1c651dd4497051839a98a3e5545cc6460491d6e442cb74741",
+    "completeFieldsActuallyRead": 7,
+    "affectedArticles": 6,
+    "author": "/root/standards_audit",
+    "method": "收到独立全文反馈后，作者实际逐项完整阅读七个old/new整段，包括上九三段的完整经义与应用；全段复读，不只看替换短句。",
+    "completedAt": "2026-11-20T19:36:22.165640+00:00",
+    "changes": [
+      {
+        "key": "9/1/巳",
+        "field": "paragraphs[1]",
+        "old": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后虽有同向接续，力量尚不足以补上过程中的负担。",
+        "new": "本用乾金、用互兑金都死而克巽，又受离火所制、无土相生，前中限制较轻。体互离火旺，巽木生火，中段耗费有分量；末用巽木休而比和，仍有相接，帮助却不厚。休木的承接仍需耐心，旺火所需付出也不能省略。末后仍有同向接续，可用的帮助应接到具体承担上，所需支持的范围与安排也宜逐项核清。"
+      },
+      {
+        "key": "9/3/申",
+        "field": "paragraphs[1]",
+        "old": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在；自身所需的支持没有补足，收尾也仍受克，本轮晋升不能据过程平缓便作成论。",
+        "new": "本用乾金、用互兑金和末用兑金原都旺，受囚离制而无土相生，克力均削轻。体互离火囚，受巽木生，中段耗费较轻。原体失令，盘中又无生体，前中末的轻制尚在，收尾也仍受克。此次晋升未落实，已有成果宜依事实说明，后续承担所需的支持也须核明。"
+      },
+      {
+        "key": "9/3/申",
+        "field": "paragraphs[2]",
+        "old": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，不把现实夫妻、同事或上级自动放进爻中。用于工作，宜留意承担需要怎样的衔接。个人的意愿应有具体条件支持，不能只靠坚持推进便认定配合自然到位。",
+        "new": "九三「舆说辐，夫妻反目」，注疏说三欲进而受上九固畜，车失其行；夫妻则假借阴阳相失，说明不能相协。孔疏特明是假象喻人事，所说是相协所需的关系与分寸。放到工作中，宜核清各自责任、可用条件和实际衔接，让个人意愿接到能够履行的安排；继续推进需要怎样的配合，也应有明确根据。"
+      },
+      {
+        "key": "9/3/亥",
+        "field": "paragraphs[2]",
+        "old": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏明确假象以喻人事，不据此安排现实人物的冲突。用于工作，更合适的是辨明能力与条件如何相济。自己能够做成一段，不等于其余承接已齐，继续推进仍需明确配合与责任。",
+        "new": "「舆说辐，夫妻反目」，王孔说九三欲进而上九固畜，因不能行而见车象，又借阴阳失协作夫妻之喻。孔疏以假象喻人事，实际协作则须核清各自责任与可用条件，使能力与配合有具体衔接。自己能够做成一段，其余承接仍须据实确认，继续推进所需的安排也要逐项讲明，才能使担当与现实所需相称。"
+      },
+      {
+        "key": "9/6/卯",
+        "field": "paragraphs[1]",
+        "old": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使所行自以为正，满而又进也会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。",
+        "new": "「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从上九足以固止九三、得安于上解释前半，积德能畜而受慕尚。妇贞厉与月象盈盛继而提示近危，即使行事确能守正，处盛满也须戒慎，满而又进仍会失其道。这里既有积累的价值，也有守成的分寸。用于工作，应让已经做实的基础安顿下来，下一步仍按真实条件决定。"
+      },
+      {
+        "key": "9/6/午",
+        "field": "paragraphs[1]",
+        "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，君子也不能仅凭自认所行正确便免于征凶之戒。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。",
+        "new": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔说能固九三而得既雨既处，积德足以成畜，故受到慕尚。妇贞厉与月象继而提示盛中近危，满而又进会失其道，即使所行合乎君子之道，也仍在再进为凶的警戒之中。用于工作，应使已有之实安顿下来，下一步的承诺仍以真实能力与可用条件为据。"
+      },
+      {
+        "key": "9/6/戌",
+        "field": "paragraphs[2]",
+        "old": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，不能只据所行看似正确便无限前推；用于工作，应使下一步与真实承接和责任范围相称。",
+        "new": "上九「既雨既处，尚德载，妇贞厉，月几望，君子征凶」，王孔从能固九三、积德足以成畜解释既雨既处和德积载，先肯定安处与积累的价值。随后以妇贞厉、月象盈盛说近危，以征凶戒满而又进。月象所重是盛满中的分寸，即使行事守正，继续前进也须戒惧；用于工作，应使下一步与真实承接和责任范围相称。"
+      }
+    ],
+    "allOtherSourceValuesUnchanged": true,
+    "independentStatus": "same-seven-complete-fields-actually-read-and-accepted"
+  },
+  "baselineSnapshotBindings": [
+    {
+      "movingLine": 1,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line1-submitted.json",
+      "snapshotSha256": "d7b5348b7c5cf6ddb0c56d8ab77bf3b5bec62439fe323b488069b9ee24b48cbd",
+      "articlesCanonicalSha256": "78d2be1092a1847ad6d2feddc8fd57081f7b9b0d3c2742084bd9ad0de146b874",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    },
+    {
+      "movingLine": 2,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line2-submitted.json",
+      "snapshotSha256": "274cb974f52de908165678d316283b752cfb45986b554a9ad1e7dc02cbe000fb",
+      "articlesCanonicalSha256": "017c14d506f811e4dd68ee5b5e8de10fe6627d93da16681cac19f217e64935fa",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    },
+    {
+      "movingLine": 3,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line3-submitted.json",
+      "snapshotSha256": "b5af85fa4c830714c5418ce71c4123512f12b308404957c6c0f3ca2d4521fdd3",
+      "articlesCanonicalSha256": "15cb5a45e47c1af4c87cf9413c660ecb08ddf978ef5f548652d52d9130e48f95",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    },
+    {
+      "movingLine": 4,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line4-submitted.json",
+      "snapshotSha256": "53760981d06c41c032dbd3b49e07caaf105a7c9d16994824cc402d555ab04816",
+      "articlesCanonicalSha256": "adae3e502c419752acbda242c16d6bfd24380cc17afd8423cfdbb8c24a5b49ed",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    },
+    {
+      "movingLine": 5,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line5-submitted.json",
+      "snapshotSha256": "e31ab01207e27c397c8c35112d90e5683357ee607f67a6a14538c3a5ab9d0fb5",
+      "articlesCanonicalSha256": "dfab2a72c420fd302acf6976c5979009f29886a9d636cabd662eeef656bd1cc1",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    },
+    {
+      "movingLine": 6,
+      "articleCount": 12,
+      "snapshotPath": "/workspace/scratch/4c8efee30d23/xiaoxu_monthly/line6-submitted.json",
+      "snapshotSha256": "328d0348d9d63f15153e22067e835a5d434e0df90df82011833004fafaa9a396",
+      "articlesCanonicalSha256": "a7d867dee5a19ff86f2fc3ef6e766a9a5c7c329dbda34e24d8f8f7fd6f5cc8a9",
+      "sourceValuesEqualSnapshot": true,
+      "boundSourceSha256": "2d9e708ab3b69efd797d2f397d153618110973a8852b01ef73e808577d3c76a9",
+      "scope": "原送审全文基线逐值绑定，不指当前已修改源。"
+    }
+  ],
+  "continuationVerification": {
+    "date": "2026-11-20",
+    "baseMainCommit": "4d0fc0427a57e919feac79a93f40d7abfe69b526",
+    "sourceSha256": "42060d70575c2e090c162ee685b815977540629066f2585fb858e95aa5579332",
+    "sourceChanged": false,
+    "priorAuthorAndIndependentSourceBindingsMatch": true,
+    "additionalWholePublicArticlesSpotRead": [
+      "9/1/寅",
+      "9/2/子",
+      "9/3/午",
+      "9/4/亥",
+      "9/5/亥",
+      "9/6/戌"
+    ],
+    "scope": "接续核验原真实全文与完整差异回执；另抽读所列六篇完整公开字段并核对原典，不声称本次重新读完七十二篇。",
+    "monthlyGate": "passed",
+    "crossHexMaxSharePercent": 1.5,
+    "intraArticleRepeatedEightHanArticles": 0,
+    "runtimeChanged": false
+  }
+}

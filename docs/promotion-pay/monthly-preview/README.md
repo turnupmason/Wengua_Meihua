@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：504 篇预览
+# 晋升加薪逐月长稿：2088 篇预览
 
-更新日期：2026-11-20（America/New_York）。本批新增地水师，共 72 篇；累计 504 篇。完整目标为 4,608 篇，尚余 4104 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-21（America/New_York）。本批新增坎为水，共 72 篇；累计 2088 篇。完整目标为 4,608 篇，尚余 2520 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -11,6 +11,28 @@
 | 水天需 | 72 | [打开全文](hex-005.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-005.json) |
 | 天水讼 | 72 | [打开全文](hex-006.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-006.json) |
 | 地水师 | 72 | [打开全文](hex-007.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-007.json) |
+| 水地比 | 72 | [打开全文](hex-008.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-008.json) |
+| 风天小畜 | 72 | [打开全文](hex-009.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-009.json) |
+| 天泽履 | 72 | [打开全文](hex-010.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-010.json) |
+| 地天泰 | 72 | [打开全文](hex-011.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-011.json) |
+| 天地否 | 72 | [打开全文](hex-012.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-012.json) |
+| 天火同人 | 72 | [打开全文](hex-013.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-013.json) |
+| 火天大有 | 72 | [打开全文](hex-014.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-014.json) |
+| 地山谦 | 72 | [打开全文](hex-015.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-015.json) |
+| 雷地豫 | 72 | [打开全文](hex-016.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-016.json) |
+| 泽雷随 | 72 | [打开全文](hex-017.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-017.json) |
+| 山风蛊 | 72 | [打开全文](hex-018.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-018.json) |
+| 地泽临 | 72 | [打开全文](hex-019.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-019.json) |
+| 风地观 | 72 | [打开全文](hex-020.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-020.json) |
+| 火雷噬嗑 | 72 | [打开全文](hex-021.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-021.json) |
+| 山火贲 | 72 | [打开全文](hex-022.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-022.json) |
+| 山地剥 | 72 | [打开全文](hex-023.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-023.json) |
+| 地雷复 | 72 | [打开全文](hex-024.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-024.json) |
+| 天雷无妄 | 72 | [打开全文](hex-025.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-025.json) |
+| 山天大畜 | 72 | [打开全文](hex-026.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-026.json) |
+| 山雷颐 | 72 | [打开全文](hex-027.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-027.json) |
+| 泽风大过 | 72 | [打开全文](hex-028.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-028.json) |
+| 坎为水 | 72 | [打开全文](hex-029.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-029.json) |
 
 
 
@@ -22,13 +44,13 @@
 
 ## 本批阅读入口
 
-- [地水师：六爻十二月全文](hex-007.md)
+- [坎为水：六爻十二月全文](hex-029.md)
 
 
 
 ## 检查与阅读状态
 
-504 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 13,608 项，差异 0；日期用例 1,008 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–613 汉字。
+2088 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 56,376 项，差异 0；日期用例 4,176 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

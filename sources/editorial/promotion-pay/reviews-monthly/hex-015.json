@@ -1,0 +1,542 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 15,
+  "baselineCommit": "be2afd7294e104e80bc8ed0eefed0fb294e0974f",
+  "sourceSha256": "087ad94948e4bfcb0fd3b513db0c13980f9980a3b5f604fba98fd4cd84f0fca6",
+  "editor": "/root",
+  "reviewedAt": "2026-11-21T01:09:11.637083+00:00",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "六爻各十二篇标题、简断及正文均逐篇独立写定；脚本只把已写定的静态文本与审定元数据装入JSON，不生成、拼装或扩写正文。作者全文读回72篇，专业字段每爻五气各完整读回一次，所有同气重复实例逐字段相等性核对；之后完整复读52个变化字段（其中24个是九三十二月相同薪资及绑定订正字段），不把字数或结构检查冒充阅读全文。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "本轮完整读取仓库协作、编辑与提交约定。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "完整读取逐月独立手写、禁止模板拼装及真实全文读回要求。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "完整读取自然起句、简断正文厚度、内部审稿话与无据细节的边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "完整读取分爻十二月检查与读回要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "读取晋升问项当前厚度和已完成批的审计规范，不把机器关口视为真人逐篇验收。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "重点完整核读第八、十、十三、十四节，一层生克、原体休、二分结论、吉辞及用党多条件。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "晋升在任直接克体的项目判断次序及古义应用边界；同轮另标明大有九三历史表的版本差异。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-015.json",
+      "scope": "六爻五气共30条原稿全字段实际读取，结论和取期角色作为既定基线；旧正文情节不作真实职场事实。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-015.json",
+      "scope": "30条证据与爻义说明实际读取；曾有问项及成败理由遗留，不径直继承为本轮结论。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/02謙",
+      "scope": "全卦卦辞、彖、象、六爻经文与王弼注孔颖达疏全文实际读取，在线同页亦已打开。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实际核读求名求财、体用衰旺、占卦诀及体用互变相关段落，未声称通读全三卷。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "完整选读面试001、003、017、052各六篇辰月稿，共24篇，并读该问项的重写与审计规范。"
+    },
+    {
+      "path": "docs/relationship-establishment/monthly-preview/hex-012.md",
+      "scope": "完整选读初爻两个月的正文，用于对照阐释厚度与自然叙述，未声称重读整个问项。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/01坤",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04明夷.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/04明夷",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05升.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/05升",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/06小過",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04蹇.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/04蹇",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05艮.txt",
+      "url": "https://zh.wikisource.org/wiki/周易正義/05艮",
+      "scope": "完整读取卦辞、彖、大象及对应王孔注疏，止于初爻前；只据其作变卦辅义，不冒称全文读过六爻。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "fef0e538c9a09ee480f55a908706899445034e270dc0e2e9b346b75041e4edc2",
+      "bodyHan": {
+        "min": 518,
+        "median": 525.0,
+        "max": 536
+      },
+      "observations": [
+        "完整保留谦谦、自牧与涉越大难而得吉；坎生震且无金制，中克有力；末离同时受震生、坎克，仍依原五态看助力，春夏较实、秋冬四土较薄。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION",
+        "QIAN15-GOOD-OMEN-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "6310fe5df055e71bb1907679b9b99dcedf2261b9ff67a430d96263ba0b1465d1",
+      "bodyHan": {
+        "min": 509,
+        "median": 517.5,
+        "max": 528
+      },
+      "observations": [
+        "完整保留处正得中、中心有得、谦行广远而声名可闻；不编现实声誉，升卦辅义不直接改定任职。震巽均得坎生无金制，原体秋休不混为囚死。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION",
+        "QIAN15-GOOD-OMEN-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "bf6903988e83307ac25fd5525ba80829d9ed9589b9cc22b983002d07e127048f",
+      "bodyHan": {
+        "min": 492,
+        "median": 509.5,
+        "max": 515
+      },
+      "observations": [
+        "劳谦、有终得吉与万民服完整保留；首尾比和有其真实长处，但不把比和说成已稳住现实收尾，不把劳苦、德行或同气直接换成任命。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION",
+        "QIAN15-GOOD-OMEN-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "de597de1956446de82ef4bc43aec3244fcdbfdfe575f5a269eb458f15919b8cc",
+      "bodyHan": {
+        "min": 490,
+        "median": 505.5,
+        "max": 518
+      },
+      "observations": [
+        "撝谦保留奉上而下下、动合于理的无不利之义；撝与㧑字形差异记录。两处震得坎生皆克体，未以旺相土自动抵消末克，正文未编具体格式或遗漏环节。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION",
+        "QIAN15-GOOD-OMEN-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "550c5666eae0657ec24adf5179e5b34f0c0aa1ec47f48c1e7117fa14f3261fbe",
+      "bodyHan": {
+        "min": 496,
+        "median": 503.5,
+        "max": 511
+      },
+      "observations": [
+        "不富得邻与正当征治并存，既不滥罚无罪，也不指认现实同事为骄逆者；体克两坎的主动意义未缩成改小错。土月保留equal/use的初始参照，其余四气control/use_mutual，未换作任命日期。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION",
+        "QIAN15-GOOD-OMEN-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "finalCanonicalArticleArraySha256": "79532c560316ec6cbc4f727332b7207e2e7d2be567dd5024ef6447ab0f07b89c",
+      "bodyHan": {
+        "min": 501,
+        "median": 505.5,
+        "max": 513
+      },
+      "observations": [
+        "志未得保留内志功未遂，亦保留处外可行动的正面一层；不把虚名声闻外推成现实人品结论。末艮同气不保证具体结果，艮的止行只作职责分寸的辅义。"
+      ],
+      "openFindingIds": [
+        "QIAN15-IN-OFFICE-PRIORITY",
+        "QIAN15-REAL-WORLD-VALIDATION"
+      ]
+    }
+  ],
+  "authorReadbackVersions": {
+    "wholeReadCoveredSourceSha256": "fe1abc8c138cd4c6ae6827832d2b0717496e5fdebc0d6d3c3888acb39a96cf75",
+    "line1InitialReadSourceSha256": "b8b20374f7473b40abd02bb809b1712c2787a126c7ab8b2d2ba33e9beef39422",
+    "line1Completion": "初爻首次输出中段被截断，补读亥子丑三篇及春气全字段；四个修订段落亦完整读回后覆盖到wholeReadCoveredSourceSha256，未将截断输出算作完整阅读。",
+    "finalSourceSha256": "087ad94948e4bfcb0fd3b513db0c13980f9980a3b5f604fba98fd4cd84f0fca6",
+    "completeDeltaFieldsActuallyRead": 52,
+    "completeDeltaFieldKeys": [
+      "15/1/卯 title",
+      "15/2/寅 title",
+      "15/2/巳 title",
+      "15/2/巳 paragraphs[0]",
+      "15/2/巳 paragraphs[1]",
+      "15/2/未 paragraphs[1]",
+      "15/2/亥 paragraphs[2]",
+      "15/2/丑 paragraphs[2]",
+      "15/3/寅 payExplanation",
+      "15/3/寅 payCorrection",
+      "15/3/卯 payExplanation",
+      "15/3/卯 payCorrection",
+      "15/3/辰 payExplanation",
+      "15/3/辰 payCorrection",
+      "15/3/巳 payExplanation",
+      "15/3/巳 payCorrection",
+      "15/3/午 payExplanation",
+      "15/3/午 payCorrection",
+      "15/3/未 payExplanation",
+      "15/3/未 payCorrection",
+      "15/3/申 payExplanation",
+      "15/3/申 payCorrection",
+      "15/3/酉 payExplanation",
+      "15/3/酉 payCorrection",
+      "15/3/戌 payExplanation",
+      "15/3/戌 payCorrection",
+      "15/3/亥 payExplanation",
+      "15/3/亥 payCorrection",
+      "15/3/子 payExplanation",
+      "15/3/子 payCorrection",
+      "15/3/丑 payExplanation",
+      "15/3/丑 payCorrection",
+      "15/4/寅 title",
+      "15/4/酉 paragraphs[3]",
+      "15/5/寅 paragraphs[2]",
+      "15/5/卯 short",
+      "15/5/卯 paragraphs[0]",
+      "15/5/卯 paragraphs[1]",
+      "15/5/辰 paragraphs[2]",
+      "15/5/巳 short",
+      "15/5/巳 paragraphs[2]",
+      "15/5/巳 paragraphs[4]",
+      "15/5/戌 paragraphs[2]",
+      "15/5/子 paragraphs[1]",
+      "15/5/丑 paragraphs[3]",
+      "15/5/丑 paragraphs[4]",
+      "15/6/卯 short",
+      "15/6/辰 paragraphs[2]",
+      "15/6/巳 title",
+      "15/6/午 paragraphs[2]",
+      "15/6/酉 paragraphs[1]",
+      "15/6/丑 short"
+    ]
+  },
+  "batchReadback": [
+    {
+      "batch": 1,
+      "movingLine": 1,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "fef0e538c9a09ee480f55a908706899445034e270dc0e2e9b346b75041e4edc2"
+    },
+    {
+      "batch": 2,
+      "movingLine": 2,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "6310fe5df055e71bb1907679b9b99dcedf2261b9ff67a430d96263ba0b1465d1"
+    },
+    {
+      "batch": 3,
+      "movingLine": 3,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "bf6903988e83307ac25fd5525ba80829d9ed9589b9cc22b983002d07e127048f"
+    },
+    {
+      "batch": 4,
+      "movingLine": 4,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "de597de1956446de82ef4bc43aec3244fcdbfdfe575f5a269eb458f15919b8cc"
+    },
+    {
+      "batch": 5,
+      "movingLine": 5,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "550c5666eae0657ec24adf5179e5b34f0c0aa1ec47f48c1e7117fa14f3261fbe"
+    },
+    {
+      "batch": 6,
+      "movingLine": 6,
+      "articles": 12,
+      "wholeArticlesActuallyRead": 12,
+      "method": "逐篇完整读回标题、简断、正文；五气专业栏、取期、薪资及精确纠错全文核读，同气相同字段逐项验等。",
+      "finalCanonicalArticleArraySha256": "79532c560316ec6cbc4f727332b7207e2e7d2be567dd5024ef6447ab0f07b89c"
+    }
+  ],
+  "findings": [
+    {
+      "id": "QIAN15-IN-OFFICE-PRIORITY",
+      "status": "open",
+      "scope": "72篇",
+      "finding": "项目把求名占在任见克体映射为现代晋升不取成功，是已采用的操作次序；原文居官见祸与现代组织任职之间仍有解释边界。",
+      "resolution": "本轮保持原判与原取期，不冒称古籍仅允许这一种解释。"
+    },
+    {
+      "id": "QIAN15-GOOD-OMEN-PRIORITY",
+      "status": "open",
+      "scope": "初六至六五60篇",
+      "finding": "涉川吉、鸣谦贞吉、劳谦有终吉及两处无不利均具有完整积极古义，与在任见克优先二分存在取舍。",
+      "resolution": "正文保留完整古义与有利关系，专业栏明示现行判断次序；不得把吉意缩为改小错来消除张力。"
+    },
+    {
+      "id": "QIAN15-REAL-WORLD-VALIDATION",
+      "status": "open",
+      "scope": "72篇",
+      "finding": "此次验证文本、来源、盘面与项目规则一致性，不构成现实晋升预测准确率验证。",
+      "resolution": "标明未验证，不冒称百分百命中或用户逐篇验收。"
+    },
+    {
+      "id": "QIAN15-NARROWED-CLASSICAL-MEANING",
+      "status": "resolved",
+      "finding": "旧稿以具体材料、一道要求、修改小处限缩谦德与主动关系。",
+      "resolution": "已补全六爻王孔释义，改成有据的职责建议，原判不改。"
+    },
+    {
+      "id": "QIAN15-END-EQUAL-GUARANTEE",
+      "status": "resolved",
+      "finding": "旧稿比和只保收尾、守得住不多等将关系当作具体职场结果保证。",
+      "resolution": "九三、上六保留比和方向与实际强弱，不保证收尾或结果。"
+    },
+    {
+      "id": "QIAN15-TIMING-STORIES",
+      "status": "resolved",
+      "finding": "旧取期事件含具体问法变化、做几步、拖走一半时间等无据情节。",
+      "resolution": "改为过程支持或约束的观察参照，保留kind、role、method及数量；六五土月equal/use单独保留。"
+    },
+    {
+      "id": "QIAN15-EDITORIAL-VOICE",
+      "status": "resolved",
+      "finding": "作者复读发现少量打通约束、外行等病句，正文残留完整保留或缩成小处的审稿说明。",
+      "resolution": "逐处重写完整字段，变化字段已读回并与最终源绑定。"
+    }
+  ],
+  "independentReview": {
+    "reviewer": "/root/write_tongren13",
+    "reviewerType": "independent-ai",
+    "reviewerIsHuman": false,
+    "status": "ai-cross-reviewed-with-open-findings",
+    "baseSourceSha256": "8af8c6f371d930ddb70bbaeba7907abc700b505a3a15899bcbd13fa707279a04",
+    "wholeArticlesActuallyRead": 72,
+    "readMethod": "每爻分两批各六个完整 JSON 对象逐篇实际阅读；包括标题、简断、全部正文、判据、取期、薪资与所有 correction 元数据。未把作者自述或机检当作阅读。",
+    "completedLines": [
+      {
+        "movingLine": 1,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "ca7f30786b25c3679d56cdc01b8fa43d5e263c6e13a51941f73cca70907ba6f4",
+        "blockingFindings": [],
+        "notes": "初六以谦涉难的积极意义完整；离火生克并见按原气、震木得水生的实克与秋土休分层明确。"
+      },
+      {
+        "movingLine": 2,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "8cab89b4fa6537a3406af98e4db5aa100aa241969390f37632a6d85c14b2d9f3",
+        "blockingFindings": [],
+        "notes": "全字段逐篇完整阅读；鸣谦的内实外显与守正吉义、中末双木得水生、初土比和及秋土休层次清楚。"
+      },
+      {
+        "movingLine": 3,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "8dd6c66d76dd9550734d91fdac02c2f3654c134d69d91f35e585e1a15c7f7015",
+        "blockingFindings": [],
+        "notes": "全字段逐篇完整阅读；劳谦有终不限工作结尾，万民服未臆定现实支持；首尾比和分季保留，中震克体得坎生层次清楚。"
+      },
+      {
+        "movingLine": 4,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "8617bb2ff849ba597f3347ac96fac66adbc588f8be76a0bb60c23515411bcb88",
+        "blockingFindings": [],
+        "notes": "全字段逐篇完整阅读；撝与㧑差异如实注明，奉上与下下、动合于理均保留；互卦角色随上爻为用明确，中末双震得坎生的实克不随木原月气递归取消。"
+      },
+      {
+        "movingLine": 5,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "532f0c853bfa5431d7bc0b62b94bfd3ca6cf0b1f89ebfb940a508f565865f5ae",
+        "blockingFindings": [],
+        "notes": "全字段逐篇完整阅读；两坎受体克而生中震，中后主动处理保留正面意义；六五不富以邻与正当征治未降为改小错、不据征不服指定现实同事；土月比和取期角色与阶段明确。"
+      },
+      {
+        "movingLine": 6,
+        "articlesActuallyRead": 12,
+        "canonicalSha256": "79b8c240b14343d3896c6472f5af0a2dceb6d1d9c8a6235aadac91e003430686",
+        "blockingFindings": [],
+        "notes": "全字段逐篇完整阅读；内志功未得与处外可有为并存，首尾土气分季明确，不把艮止缩成卡在小处或末比和保证具体收尾。"
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/02謙.txt",
+        "actualReadScope": "完整本卦卦辞、彖、象及六爻经文与王孔注疏，全文读毕。"
+      },
+      {
+        "path": "data/authored-readings/promotion-pay/hex-015.json",
+        "actualReadScope": "六爻春气 facts 完整对象，含本互变、角色、五行关系、经象原文；未称三十组全原稿读毕。"
+      },
+      {
+        "path": "docs/review/PROMOTION_QIAN15_RULE_AUDIT_20261120.md",
+        "actualReadScope": "专项审计全文读毕。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/01坤.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/04明夷.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/05升.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/04蹇.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      },
+      {
+        "path": "sources/reference/zhouyi-zhengyi-hans/05艮.txt",
+        "actualReadScope": "本篇卦辞、彖、大象及王弼注孔颖达疏，完整实际阅读至初爻前；未称通读全部爻文。"
+      }
+    ],
+    "observations": [
+      {
+        "scope": "专项审计第五节九三行",
+        "issue": "中段震木受制措辞主客反转，应改中段震木克体的限制。",
+        "status": "resolved-after-complete-field-read",
+        "sourceProseAffected": false,
+        "resolution": "作者改成以寅、卯日参中段震木克体的限制，不计算耗时；独立审阅者实际读取修订后审计全文并确认。"
+      },
+      {
+        "scope": "15/2/申 short",
+        "issue": "主动处理水事可能误读现实涉水工作，建议主动经营；非阻断措辞建议。",
+        "status": "resolved-after-complete-field-read",
+        "sourceProseAffected": true,
+        "resolution": "作者将短语改成主动经营又费承接，独立审阅者完整阅读最终旧新简断，判断与取期无变化。"
+      }
+    ],
+    "wholeArticlesRead": 72,
+    "completedAt": "2026-11-21T01:21:04.948896+00:00",
+    "finalSourceSha256": "087ad94948e4bfcb0fd3b513db0c13980f9980a3b5f604fba98fd4cd84f0fca6",
+    "sourceSha256": "087ad94948e4bfcb0fd3b513db0c13980f9980a3b5f604fba98fd4cd84f0fca6",
+    "userIndividuallyAccepted": false,
+    "fullArticleFieldsActuallyRead": [
+      "movingLine",
+      "monthBranch",
+      "outcome",
+      "title",
+      "short",
+      "paragraphs",
+      "judgment",
+      "timing",
+      "judgmentCorrection",
+      "payExplanation",
+      "payCorrection"
+    ],
+    "finalDeltaFieldsActuallyRead": [
+      {
+        "key": "15/2/申",
+        "field": "short",
+        "old": "中末约束较实，这次升不了。申月体土休，初始比和轻；震巽木虽死，得相坎生，克体仍有力，主动处理水事又费承接。鸣谦肯定内有谦德而外有所闻，宜以真实工作说明能力，把所需条件讲明，名声与实际任职各据其所。",
+        "new": "中末约束较实，这次升不了。申月体土休，初始比和轻；震巽木虽死，得相坎生，克体仍有力，主动经营又费承接。鸣谦肯定内有谦德而外有所闻，宜以真实工作说明能力，把所需条件讲明，名声与实际任职各据其所。"
+      }
+    ],
+    "deltaReadMethod": "完整阅读基准8af8c6f...的72篇全部字段；最后完整读回六二申月short唯一变化字段旧新，逐值核对其余源字段不变，覆盖最终087ad949...版本。",
+    "lineHashSerialization": "Python json.dumps(lineArticles, ensure_ascii=False, sort_keys=True, indent=2) + newline, UTF-8",
+    "finalLineCanonicalSha256": {
+      "1": "ca7f30786b25c3679d56cdc01b8fa43d5e263c6e13a51941f73cca70907ba6f4",
+      "2": "930136803b5291246a660e5bdc005f4e7f3a2750c6376892937175b97d5a8bc8",
+      "3": "8dd6c66d76dd9550734d91fdac02c2f3654c134d69d91f35e585e1a15c7f7015",
+      "4": "8617bb2ff849ba597f3347ac96fac66adbc588f8be76a0bb60c23515411bcb88",
+      "5": "532f0c853bfa5431d7bc0b62b94bfd3ca6cf0b1f89ebfb940a508f565865f5ae",
+      "6": "79b8c240b14343d3896c6472f5af0a2dceb6d1d9c8a6235aadac91e003430686"
+    },
+    "openBlockingFindings": [],
+    "retainedOpenFindingIds": [
+      "QIAN15-IN-OFFICE-PRIORITY",
+      "QIAN15-GOOD-OMEN-PRIORITY",
+      "QIAN15-REAL-WORLD-VALIDATION"
+    ],
+    "scopeLimits": [
+      "本回执只记录另一位 AI 的实际独立全文阅读，不代称用户或人类验收。",
+      "机检、字数、来源清单、作者自述与哈希匹配均未代替阅读。",
+      "本代理未编辑谦源稿、作者阅读范围、共享索引或脚本，现代在任规则与古义的解释取舍仍开放，现实准确率未验证。"
+    ]
+  },
+  "realWorldPredictionAccuracy": "not-validated",
+  "postIndependentSuggestionAuthorReadback": {
+    "baseSourceSha256": "8af8c6f371d930ddb70bbaeba7907abc700b505a3a15899bcbd13fa707279a04",
+    "finalSourceSha256": "087ad94948e4bfcb0fd3b513db0c13980f9980a3b5f604fba98fd4cd84f0fca6",
+    "wholeArticleRereadCount": 0,
+    "completeFieldsActuallyRead": 1,
+    "changes": [
+      {
+        "key": "15/2/申",
+        "field": "short",
+        "old": "中末约束较实，这次升不了。申月体土休，初始比和轻；震巽木虽死，得相坎生，克体仍有力，主动处理水事又费承接。鸣谦肯定内有谦德而外有所闻，宜以真实工作说明能力，把所需条件讲明，名声与实际任职各据其所。",
+        "new": "中末约束较实，这次升不了。申月体土休，初始比和轻；震巽木虽死，得相坎生，克体仍有力，主动经营又费承接。鸣谦肯定内有谦德而外有所闻，宜以真实工作说明能力，把所需条件讲明，名声与实际任职各据其所。",
+        "reason": "将含混的水事改成主动经营，避免读作现实涉水工作；卦理与判断不变。"
+      }
+    ],
+    "method": "作者完整阅读修改前后简断，其他源值逐项不变；保留原72篇覆盖与52个变化字段阅读。"
+  }
+}

@@ -1,0 +1,797 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 16,
+  "baselineCommit": "dd766c3b92a22e567352fb6bbdf1e07bb028d021",
+  "sourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+  "editor": "/root/write_yu",
+  "reviewedAt": "2026-11-21T05:45:06.472395+00:00",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "六爻各十二篇标题、简断、正文与独立薪资说明均逐篇写定，脚本仅装配已写定静态文本和同气技术字段，不生成或拼装正文。作者实际完整读回72篇读者字段；六爻五气共30组原基准、review-v2、polish-v5与事实节点/关系核读，30组新专业说明、订正理由及取期全文读回。同气重复的outcome、judgment、timing、judgmentCorrection已逐值验等；通用来源和impact结构另作字段核读。先前输出截断处已分批补读，不把字数或机检计作全文阅读。终稿窄改的十个完整正文段落又分别读回，其中上六五段、初六两段、九四三段，不冒称每次小改均重新读72篇。 独审返回后仅修订九四巳月与上六酉月两条简断，作者和独审者均完整复读旧新；其余全文逐值不变。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "已读当前仓库协作及晋升逐月相关现行条款。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "完整读取独立写作、篇幅、逐批检查与真实读回要求。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "完整读取自然起句、正文厚度、简断要求与内部审稿话语边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "完整读取逐爻十二月、作者读回与独立审核的区分。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "读取逐月独立写作、引用及真实审读记录要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "完整读取前八节当前晋升月稿目标、语气与验收规范。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "完整读取晋升在任专条、体用二分与各爻应用裁定，保留解释优先边界。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "完整读取并重点核对第二、八、十、十一、十三、十四节；原五态、一层有效作用、原体休、吉凶及用党多。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-016.json",
+      "scope": "六爻五气30条原稿完整读取，outcome与timing结构作为不变基准，旧第12栏逐条绑定。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-016.json",
+      "scope": "六爻五气30条证据与说明完整读取；无据职场情节和不同口径未直接继承。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-016.json",
+      "scope": "六爻五气30条完整读取；六三初次被截断的三条已单独补读。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-016.json",
+      "scope": "30组facts中的本互变、体用角色、原五态、节点、关系、indirectEffects及calculationNotes逐组核读，不把重复嵌套技术字段的自动展开算成新的人工阅读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/02豫",
+      "scope": "卦辞、彖、大象及六爻经、象、王弼注和孔颖达疏全文实际读取，尤其六三两悔、六五受制而存、上六条件性无咎。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "实际读取体用493–498、求谋/求名547–557、遗论/体用/衰旺678–690、占卦/互变/衰旺787–805原文段落；用党多、在任见克、互变角色和末生并列核对。"
+    },
+    {
+      "path": "docs/interview-pass/monthly-preview",
+      "branch": "origin/editorial/interview-preview-216-20261118",
+      "scope": "001、003、017、052各六爻巳月范文共24篇完整阅读；初次输出截断的003六五/上六、017初九/六二随后单篇补读。只借自然层次与厚度，不移植面试情节。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/monthly/hex-015.json",
+      "scope": "读取初爻样篇体会已完成晋升月稿厚度；不声称全文读过72篇。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line1-complete.json",
+      "snapshotFileSha256": "b06203640ed3e2284acacd779e17d51a02ef149227c78541488f04bb61b53637",
+      "canonicalArticleArraySha256": "2f1ab3b9a5e523fe12628122f6d1c98fbfb21b3360e0493147db33fccaee7f22",
+      "bodyHan": {
+        "min": 492,
+        "median": 519.0,
+        "max": 558
+      },
+      "observations": [
+        "鸣豫的凶意落实在初得上应而过乐、志穷，不缩成说话音量，也不编定求测者已经张扬。",
+        "坎水受两土制且无金生，仍有生而薄；无直接克体，沿五气基准能升，行为凶戒与有生无克的优先解释留有公开问题。",
+        "原体夏木休单独处理，不并入囚死弱；四土月木囚、土旺，不给无窗口的取期补造日期。"
+      ],
+      "openFindingIds": [
+        "YU16-L1-FIERCE-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "status": "author-read",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line2-complete.json",
+      "snapshotFileSha256": "2942516b7428b2322232d5ccd0f65a6d175cad0cf6f32a525efa9ba387a63d86",
+      "canonicalArticleArraySha256": "9af4bccdc820a4a0537cf35fe1ed2fa64394ea09936693ccf96d96c44a023864",
+      "bodyHan": {
+        "min": 496,
+        "median": 511.0,
+        "max": 521
+      },
+      "observations": [
+        "介于石、不终日、贞吉完整解释为得中守正、知几之速，不将介石写成拒绝调整，也不将不终日换成一天出通知。",
+        "体互与变用两坎均受两土制，逐处有生而薄，不把两处薄助相加说成强助。",
+        "雷水解的后段生扶保留，结论取能升而不提前预定具体薪档、到岗日。"
+      ],
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 3,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line3-complete.json",
+      "snapshotFileSha256": "7f18a735944ca84e02709256787c05c88577717630b17ea7af706b9fdf79533a",
+      "canonicalArticleArraySha256": "08e03bae60e832d87b135f1309d5dadadc82087224c80ba698f7bd4cc7af976e",
+      "bodyHan": {
+        "min": 483,
+        "median": 501.5,
+        "max": 521
+      },
+      "observations": [
+        "本用坤、用互艮、变用艮已满足本用之外再见两处同元素的用党多，体势衰；寅卯木旺、亥子木相原气照存，但正文不径称有力好制。",
+        "盱豫与迟有悔的两面均说明，未改成只要赶快行动就可无悔。",
+        "坎受三土制而薄助尚存，全盘无直接克原体，沿基准能升；双悔与行为应用优先次序的张力留审。"
+      ],
+      "openFindingIds": [
+        "YU16-L3-DOUBLE-REGRET-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line4-complete.json",
+      "snapshotFileSha256": "0958de3c480f1f788c90ad791bc3958c803e820ba45619f6be7d06c90396d142",
+      "canonicalArticleArraySha256": "cd96d5329142229135286120cec9d7bf208e8c77dfaca8aa2348627d08ca838e",
+      "bodyHan": {
+        "min": 491,
+        "median": 505.5,
+        "max": 532
+      },
+      "observations": [
+        "由豫、大有得、勿疑、朋盍簪及志大行的积极意义完整展开，不转给竞争者、不缩成一点信息或未成中的小方便。",
+        "本用震获坎生且无金制，五气原态不改、有效克力取强；中末比和可用而不是生体。",
+        "无生体并有直接克体，沿基准未升；完整吉义与在任专条的优先取舍公开记录。"
+      ],
+      "openFindingIds": [
+        "YU16-L4-POSITIVE-PRIORITY"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "status": "author-read",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line5-complete.json",
+      "snapshotFileSha256": "717ed7d6faa1a400a79850bdc1f2b9b868b27ce1923c2f77d94ab2f18b3db53d",
+      "canonicalArticleArraySha256": "1f235e853511393e00212b2e4b01e60042100570d75d2404a6546014286a527e",
+      "bodyHan": {
+        "min": 498,
+        "median": 509.5,
+        "max": 519
+      },
+      "observations": [
+        "贞疾、恒不死与乘刚、中未亡并读，指受强者所制而居中未亡，不指真实疾病，不保证现实职位永久不变。",
+        "震同时获坎生与受兑制，按木原五态；尤其亥子原相仍有力，不漏兑制而再提高克力。",
+        "本体土生末兑为泄，按金原五态分轻重；全盘无生体，原未升结论保持。"
+      ],
+      "openFindingIds": []
+    },
+    {
+      "movingLine": 6,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "technicalQiGroupsActuallyRead": 5,
+      "sameQiOutcomeJudgmentTimingAndCorrectionEqualityVerified": true,
+      "snapshotFile": "yu_work/line6-complete.json",
+      "snapshotFileSha256": "01f73b98eae1fe0cb103ac12d6f4fdf5d0f501841937de0474d4734499f32b59",
+      "canonicalArticleArraySha256": "8b67d855791257991edba9b3fcebbf6e23df178b51785e14a40f9533cbc093f4",
+      "bodyHan": {
+        "min": 497,
+        "median": 511.0,
+        "max": 532
+      },
+      "observations": [
+        "冥豫成的成不释作职位已成，有渝无咎以自思改过为条件，何可长也的警戒完整保留，不预断当事人已错或已改。",
+        "震得水生无金制而克力强；离得木生又受水克，按原相、旺、囚、死、休分别论实助、实助、薄助、甚薄助、轻助。",
+        "后生与晋卦名均不取消直接克体，仍未升；积极转变的价值完整保留，不许下一次晋升。"
+      ],
+      "openFindingIds": [
+        "YU16-L6-IN-OFFICE-PRIORITY"
+      ]
+    }
+  ],
+  "authorReadbackVersions": {
+    "method": "每爻先写定十二月，再分批输出完整标题、简断、全部正文与薪资；技术五气各完整阅读一次并验证同气实例逐值相等。终稿后仅完整复读实际修改的字段，并保留旧新差异。",
+    "wholeArticlesRead": 72,
+    "uniqueTechnicalQiGroupsRead": 30,
+    "finalDeltaFieldsActuallyRead": 12,
+    "finalDeltaFieldKeys": [
+      "16/6/寅 paragraphs[3]",
+      "16/6/卯 paragraphs[1]",
+      "16/6/巳 paragraphs[1]",
+      "16/6/午 paragraphs[1]",
+      "16/6/午 paragraphs[2]",
+      "16/1/寅 paragraphs[2]",
+      "16/1/戌 paragraphs[4]",
+      "16/4/午 paragraphs[4]",
+      "16/4/未 paragraphs[4]",
+      "16/4/子 paragraphs[4]",
+      "16/4/巳 short",
+      "16/6/酉 short"
+    ],
+    "finalSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+    "priorLine1ParentSnapshotSha256": "69270d60142c4925c5a76239deb87dd871ea8e05a3abaa663eb2d7f8ac791265",
+    "finalNarrowDeltaScratchFile": "yu_work/final-narrow-delta.json",
+    "snapshotSerialization": "每爻快照为十二篇数组，UTF-8、ensure_ascii=false、indent=1、末尾换行；canonicalArticleArraySha256另按无多余空格JSON计算。",
+    "independentReviewDeltaScratchFile": "yu_work/independent-short-delta.json"
+  },
+  "findings": [
+    {
+      "id": "YU16-L1-FIERCE-PRIORITY",
+      "status": "open",
+      "scope": "初六12篇",
+      "finding": "鸣豫明确有凶与志穷之意，现行项目按可改行为之戒应用，再沿有生无克保持能升。",
+      "resolution": "古义完整呈现，专业栏明示该优先取舍；不声称古籍本无凶意或只有此一种解释。"
+    },
+    {
+      "id": "YU16-L3-DOUBLE-REGRET-PRIORITY",
+      "status": "open",
+      "scope": "六三12篇",
+      "finding": "王孔解释趋乐与迟停两面有悔，现行有生无克与行为应用规则仍保留能升，尤其用党多使体势衰时存在解释边界。",
+      "resolution": "正文完整保留两悔与体势衰，不许只要快动即可免悔；outcome沿既定基准不动。"
+    },
+    {
+      "id": "YU16-L4-POSITIVE-PRIORITY",
+      "status": "open",
+      "scope": "九四12篇",
+      "finding": "大有得、志大行、朋合具有完整积极意义；现行在任直接克体优先仍取未升。",
+      "resolution": "不将所得缩为小便利、不转给竞争者，古义与项目任职判据并列，取舍不伪装成无张力。"
+    },
+    {
+      "id": "YU16-L6-IN-OFFICE-PRIORITY",
+      "status": "open",
+      "scope": "上六12篇",
+      "finding": "末离生体与有渝无咎均为有利因素，而现行在任直接克体规则仍判未升；梅花互变末吉与专条之间存在应用次序。",
+      "resolution": "完整说明条件性无咎及分季后助，不把末生抵销起克，也不以晋卦名代判。"
+    },
+    {
+      "id": "YU16-L3-USE-PARTY",
+      "status": "resolved",
+      "scope": "六三12篇",
+      "finding": "本用坤、用互艮、变用艮满足用党多，旧文易将春冬原旺相直接等同有力。",
+      "resolution": "五态原值保留，体势衰另行落实，正文与judgment同时订正。"
+    },
+    {
+      "id": "YU16-L5-PAIRED-EFFECT",
+      "status": "resolved",
+      "scope": "六五12篇，尤亥子2篇",
+      "finding": "旧冬月说明只写震得旺坎生，遗漏休兑制震。",
+      "resolution": "准确绑定旧新，震生制并见取原木相，克仍实但不另加力，结论与取期不变。"
+    },
+    {
+      "id": "YU16-REST-AND-ONE-LAYER",
+      "status": "resolved",
+      "scope": "72篇",
+      "finding": "原体休与作用节点休不能合为一个弱类；受制之生不能直接删成无生，生克也不可递归相抵。",
+      "resolution": "按原体/作用节点分别论轻重，六二两薄助不相加，六五/上六双路作用取原态，四土月不递归取消震的得水生。"
+    },
+    {
+      "id": "YU16-UNSUPPORTED-STORIES",
+      "status": "resolved",
+      "scope": "72篇",
+      "finding": "旧稿证书过期、编制取消、外招替代、迟交总结、连续两年资格等无盘面与外证支持。",
+      "resolution": "删除断作已发生的现代情节，改成有古义依据且以真实条件为前提的任职建议；不预认当事人已错或已改。"
+    },
+    {
+      "id": "YU16-PAY-AND-TIMING",
+      "status": "resolved",
+      "scope": "72篇",
+      "finding": "随岗薪资需单独限定；过程信号不能变成保证任命、精确期限或到账日期。",
+      "resolution": "72篇payCorrection绑定旧第12栏，36篇原空栏如实保留为空old；全部timing种类、角色、method、数量与无窗口状态不变。"
+    },
+    {
+      "id": "YU16-REAL-WORLD-VALIDATION",
+      "status": "open",
+      "scope": "72篇",
+      "finding": "本轮验证文本、来源、盘面和项目规则的一致性，并无现实晋升结果样本可验证命中率。",
+      "resolution": "不称真人逐篇验收，不称预测百分百准确。"
+    },
+    {
+      "id": "YU16-4-SI-QI-TERM",
+      "key": "16/4/巳",
+      "field": "short",
+      "severity": "minor-accuracy",
+      "status": "closed-after-complete-field-reread",
+      "old": "本次升不了，虽有得令与比和，起处受制仍然有力。巳月坤土相，震木休而得坎水生，不能只按休木轻看；两处土同气可用。九四以信聚朋，使志意能够推行，宜把实际组织与承担讲透，也把协作价值和本轮提级结果分清。",
+      "issue": "巳月土相并非当令旺，首句虽有得令与比和将相气称得令；下文月态本身正确。",
+      "proposedChange": "将虽有得令与比和改为虽有相气与比和，保留其他全文、结论、取期。",
+      "new": "本次升不了，虽有相气与比和，起处受制仍然有力。巳月坤土相，震木休而得坎水生，不能只按休木轻看；两处土同气可用。九四以信聚朋，使志意能够推行，宜把实际组织与承担讲透，也把协作价值和本轮提级结果分清。",
+      "closureSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e"
+    },
+    {
+      "id": "YU16-6-YOU-PHRASE",
+      "key": "16/6/酉",
+      "field": "short",
+      "severity": "minor-readability",
+      "status": "closed-after-complete-field-reread",
+      "old": "本次升不了，起克较实，后段只有有限生扶。酉月土休木死，震得坎生而无金制，克势仍强；离火囚，兼受木生水克，仍作薄助。上六要求自省而转变，宜使熟悉经验接受事实检验，需改之处真正落实，尚未发生的改正不能预算完成，任用仍依实际确认。",
+      "issue": "尚未发生的改正不能预算完成的预算完成搭配不通，拟表达不能预先把未发生改变当作已经完成。",
+      "proposedChange": "改为尚未发生的改正不能预作已成，或自然等义的准确句子。",
+      "new": "本次升不了，起克较实，后段只有有限生扶。酉月土休木死，震得坎生而无金制，克势仍强；离火囚，兼受木生水克，仍作薄助。上六要求自省而转变，宜使熟悉经验接受事实检验，需改之处真正落实，尚未发生的改正不能预作已成，任用仍依实际确认。",
+      "closureSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e"
+    }
+  ],
+  "independentReview": {
+    "status": "ai-cross-reviewed-with-open-findings",
+    "reviewerIsHuman": false,
+    "wholeArticlesActuallyRead": 72,
+    "finalSourceFullyReviewed": true,
+    "finalSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+    "coverageMethod": "根代理初六12篇全文加最终两段完整差异复读；source_audit六二至上六60篇全文加最终两条完整简断差异复读，组成72篇。不是声称同一人一次读完72篇，也不是每次窄改后重读全部正文。",
+    "line1Review": {
+      "reviewer": "/root",
+      "reviewerIsHuman": false,
+      "coveredMovingLines": [
+        1
+      ],
+      "wholeArticlesActuallyRead": 12,
+      "professionalDistinctGroupsActuallyRead": 5,
+      "completedCoverage": "/root已完整独立阅读初六12篇并核对五气专业与取期；终版寅月第三段、戌月第五段完整旧新实际复读并重放，确认与终版初爻逐值相同。另读九四三个修改段，不计作该爻全文独审。",
+      "reviewedLine1SnapshotSha256": "b06203640ed3e2284acacd779e17d51a02ef149227c78541488f04bb61b53637",
+      "priorReviewedLine1SnapshotSha256": "69270d60142c4925c5a76239deb87dd871ea8e05a3abaa663eb2d7f8ac791265",
+      "finalDeltaCompleteFieldsActuallyRead": 2,
+      "finalContentCovered": true,
+      "openBlockingFindings": 0,
+      "baseReadRecord": {
+        "primaryId": 16,
+        "movingLine": 1,
+        "months": "寅卯辰巳午未申酉戌亥子丑",
+        "wholeReaderArticlesRead": 12,
+        "sourceSnapshot": "/workspace/scratch/c117bd7cc934/root-review/16-line1-base.json",
+        "sourceSnapshotSha256": "bb8a9c67964ba7a7f89724b55749b4a8798d4ac8c20af4b880d5dafabb8ec40e",
+        "readerFieldsRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsRead": "Five distinct qi judgments and timing structures fully read; equality across same-qi months mechanically confirmed. Correction reason/evidence/impact inspected; older text is not counted as a separate full-article review.",
+        "status": "initial-line-reviewed-with-open-classical-scope-findings",
+        "reviewedAtUtc": "2026-11-21T05:19:40.854053+00:00",
+        "deltaReview": {
+          "status": "required-changes-read-and-accepted",
+          "changedArticlesRead": 9,
+          "changedParagraphsRead": 12,
+          "changedShortsRead": 1,
+          "snapshotSha256": "69270d60142c4925c5a76239deb87dd871ea8e05a3abaa663eb2d7f8ac791265",
+          "reviewedAtUtc": "2026-11-21T05:21:19.549555+00:00",
+          "changes": [
+            {
+              "key": "1/寅",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                4
+              ]
+            },
+            {
+              "key": "1/辰",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                1,
+                3
+              ]
+            },
+            {
+              "key": "1/午",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                2
+              ]
+            },
+            {
+              "key": "1/未",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                1,
+                3
+              ]
+            },
+            {
+              "key": "1/酉",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                3
+              ]
+            },
+            {
+              "key": "1/戌",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                1,
+                3
+              ]
+            },
+            {
+              "key": "1/亥",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                3
+              ]
+            },
+            {
+              "key": "1/子",
+              "field": "short",
+              "paragraphIndices": null
+            },
+            {
+              "key": "1/丑",
+              "field": "paragraphs",
+              "paragraphIndices": [
+                1,
+                3
+              ]
+            }
+          ]
+        }
+      },
+      "completeDeltaReadbacks": [
+        {
+          "completeFieldsActuallyRead": 13,
+          "changes": [
+            {
+              "key": "16/1/寅",
+              "field": "paragraphs/4",
+              "old": "末变震为雷，震木仍旺而与原体比和，后段相接有力，成事的方向得到承续。此时宜把注意力放在职责如何落实，既不急着替尚未确认的安排作主，也不因已有有利条件便松去必要核实。能把喜意收在尽责之中，才更合初六所要提醒的分寸。",
+              "new": "末变震为雷，震木仍旺而与原体比和，后段相接有力，成事的方向得到承续。此时宜把注意力放在职责如何落实，既不急着替尚未确认的安排作主，也不因已有有利条件便放松应有的核实。能把喜意收在尽责之中，才更合初六所要提醒的分寸。"
+            },
+            {
+              "key": "16/1/辰",
+              "field": "paragraphs/1",
+              "old": "用互艮土也旺，过程中的处理同样需要力量；体互坎水处死，生木的关系仍在，但它受两土制约而无金生，辅助甚薄。此处说的是推进与帮助的轻重，不能据此认定现实中必有许多任务，或某一项已经拖延。可先辨工作的主次，把有限承接用在与任职要求直接相连的部分。",
+              "new": "用互艮土也旺，过程中的处理同样需要力量；体互坎水处死，生木的关系仍在，但它受两土制约而无金生，辅助甚薄。争取任用应先辨工作的主次，把有限承接用在与任职要求直接相连的部分。遇到需要协同的事项，可将所需支持说明白，自己的责任则仍须稳妥承担，不宜仅凭愿望扩大承诺。"
+            },
+            {
+              "key": "16/1/辰",
+              "field": "paragraphs/3",
+              "old": "展示工作宜把目标、实际行动与可确认的效果连成一条线，尤其说明自己作取舍的理由。若需要协同，可明确提出所需资料或配合，而不是先许下超出权限的结果。对已有的长处保持信心，也对新职责所需的条件保持耐心，这两者可以同时做到。",
+              "new": "展示工作宜把目标、实际行动与可确认的效果连成一条线，尤其说明自己作取舍的理由。若需要协同，可明确提出所需资料或配合，而不是先许下超出权限的结果。对已有的长处保持信心，也对新职责所需的条件保持耐心，这两者可以同时做到。现有权限能够完成的部分先厘清，需要另行授权的部分则保留具体问题，方便逐项确认。"
+            },
+            {
+              "key": "16/1/午",
+              "field": "paragraphs/2",
+              "old": "体互坎水处囚，虽生震木，另受坤、艮土克而无金相生，过程所得辅助有限。用互艮土与坤土同相，都须原体主动处理；两处关系相似，不等于现实中恰有两件固定工作。宜结合实际安排主次，重要职责先说透，相关细节再按需要补充，避免准备散而无所归。",
+              "new": "体互坎水处囚，虽生震木，另受坤、艮土克而无金相生，过程所得辅助有限。用互艮土与坤土同相，都须原体主动处理；处理之中尤其要分清主次，重要职责先说透，相关细节再按需要补充。可把所得信息用来查明关键条件，核实以后再承诺相应结果，使准备有所归属，也能避免把精力分散在无关之处。"
+            },
+            {
+              "key": "16/1/未",
+              "field": "paragraphs/1",
+              "old": "体互坎水处死而生木，另被本用与用互两土克制，没有金来续生，帮助只能作薄看。用互艮土也旺，过程仍要由自己作判断、负责任。这些作用说明有待亲自经营之处，不能量成现实工作的数量或需要付出的几倍时间，也不表示现有努力已经白费。",
+              "new": "体互坎水处死而生木，另被本用与用互两土克制，没有金来续生，帮助只能作薄看。用互艮土也旺，过程仍要由自己作判断、负责任。准备时可将任务要求与现有经验对照，先把能够亲自完成的部分落实。对于需要支持的环节，宜提出清楚的问题，让有限帮助接在关键处，而不把成事全托给外力。"
+            },
+            {
+              "key": "16/1/未",
+              "field": "paragraphs/3",
+              "old": "可先整理最能体现任事能力的工作，讲明遇到分歧或资源限制时如何选择，以及选择以后怎样落实。谈到新的责任，则把自己能够决定的部分与需要协同的部分分清。宜用清楚的根据表达信心，少用没有范围的保证；这样留下的承担空间，才能接得住后续的实际要求。",
+              "new": "可先整理最能体现任事能力的工作，讲明遇到分歧或资源限制时如何选择，以及选择以后怎样落实。谈到新的责任，则把自己能够决定的部分与需要协同的部分分清。宜用清楚的根据表达信心，少用没有范围的保证；这样留下的承担空间，才能接得住后续的实际要求。沟通中如有补充意见，可先辨它改变了什么前提，再决定方案怎样调整，免于求快而反复。"
+            },
+            {
+              "key": "16/1/酉",
+              "field": "paragraphs/3",
+              "old": "可围绕一项关键成果说明当时的限制、个人所作选择及结果如何被确认。共同参与的部分讲明依赖关系，需要继续学习的地方也给出实际准备，不把愿意投入说成已经熟练。宜将这类内容组织成可理解的承担过程，让有效辅助有明确落点，也让自己的能力边界保持清楚。",
+              "new": "可围绕一项关键成果说明当时的限制、个人所作选择及结果如何被确认。共同参与的部分讲明依赖关系，需要继续学习的地方也给出实际准备，不把愿意投入说成已经熟练。宜将这类内容组织成可理解的承担过程，让有效辅助有明确落点，也让自己的能力边界保持清楚。原有成绩与新岗位所需不完全重合时，还应解释经验如何迁移，不能只罗列名称。"
+            },
+            {
+              "key": "16/1/戌",
+              "field": "paragraphs/1",
+              "old": "互卦里艮土同旺，仍受震木所克，说明过程也离不开自身经营。坎水死而生体，虽留有补益，另受两土克且无金生，力量很薄；这样的帮助可用来澄清具体问题，不能预设它足以替代个人承担。各处作用有轻重，却没有给出真实工作的项数与难度清单。",
+              "new": "互卦里艮土同旺，仍受震木所克，说明过程也离不开自身经营。坎水死而生体，虽留有补益，另受两土克且无金生，力量很薄；这样的帮助可用来澄清具体问题，不能预设它足以替代个人承担。可先认清任职最需证明的能力，把已有成果与责任相对照；缺少依据的部分继续查明，避免以笼统的积极表态掩盖尚待落实的条件。"
+            },
+            {
+              "key": "16/1/戌",
+              "field": "paragraphs/3",
+              "old": "宜把关键经历中的判断过程讲透，既说明采用了什么办法，也交代为什么在当时条件下可行。需要他人配合的部分，可以提出明确问题与所需材料，让沟通围绕实事展开。对新职责尚不熟悉之处，应说清学习与确认的次序，而不是用笼统的信心代替实际准备。",
+              "new": "宜把关键经历中的判断过程讲透，既说明采用了什么办法，也交代为什么在当时条件下可行。需要他人配合的部分，可以提出明确问题与所需材料，让沟通围绕实事展开。对新职责尚不熟悉之处，应说清学习与确认的次序，而不是用笼统的信心代替实际准备。已有经验无法直接覆盖的要求，应把分析思路与亲历事实分开，使所知与所能各有根据。"
+            },
+            {
+              "key": "16/1/亥",
+              "field": "paragraphs/3",
+              "old": "宜从关键职责的承接来组织说明，讲清自己曾经怎样作判断，如何与有关环节配合，最后由什么事实确认完成。若计划中的权限尚未明确，可以先列出所需条件，避免为了显得能任便包揽全部安排。可确认的内容说肯定，需要共同落实的部分也应有明确范围。",
+              "new": "宜从关键职责的承接来组织说明，讲清自己曾经怎样作判断，如何与有关环节配合，最后由什么事实确认完成。若计划中的权限尚未明确，可以先列出所需条件，避免为了显得能任便包揽全部安排。可确认的内容说肯定，需要共同落实的部分也应有明确范围。遇到尚不明确的交接事项，可列出需要谁确认及确认什么，让职责承担有实际依据。"
+            },
+            {
+              "key": "16/1/子",
+              "field": "short",
+              "old": "这一回能升，主动推进与后段相接均有力量。子月震木相、两土囚，坎水旺而受制，中段所得帮助仍须量实。初六提醒称意后继续持守，宜把成绩的根据说透，新职责所需的权限也明确确认，不能让好进展代替完整的交接。",
+              "new": "这一回能升，主动推进与后段相接均有力量。子月震木相、两土囚，坎水旺而受制，中段所得帮助仍较有限。初六提醒称意后继续持守，宜把成绩的根据说透，新职责所需的权限也明确确认，不能让好进展代替完整的交接。"
+            },
+            {
+              "key": "16/1/丑",
+              "field": "paragraphs/1",
+              "old": "体互坎水处死，生木之意尚存，却受坤、艮土制而无金来相生，辅助很薄；用互艮土又旺，过程仍须由自身处理。这里可以借鉴的是有次序地承担，先辨关键条件，再安排与之相连的准备，不必将作用较重直接理解为现实中任务堆积或别人有意阻挡。",
+              "new": "体互坎水处死，生木之意尚存，却受坤、艮土制而无金来相生，辅助很薄；用互艮土又旺，过程仍须由自身处理。准备可有次序地展开，先辨关键条件，再将实际承担与之对照。对已经能够证明的长处，可据实说明；尚待补足的部分则留出核实与请益的余地，稳住自己的节奏。"
+            },
+            {
+              "key": "16/1/丑",
+              "field": "paragraphs/3",
+              "old": "可用一项完整成果说明自己怎样理解目标、如何作取舍，以及最后怎样确认工作达到要求。对需要协作的环节，宜把希望得到的支持具体说明，避免含糊地等待帮助。尚未实际承担的新内容，也可交代已有认识与需要查明之处，使能力的表达与真实准备互相对应。",
+              "new": "可用一项完整成果说明自己怎样理解目标、如何作取舍，以及最后怎样确认工作达到要求。对需要协作的环节，宜把希望得到的支持具体说明，避免含糊地等待帮助。尚未实际承担的新内容，也可交代已有认识与需要查明之处，使能力的表达与真实准备互相对应。对合作成果还可说明自己在其中解决了什么问题，让贡献得到恰当呈现，又不夸大实际权限。"
+            }
+          ]
+        },
+        {
+          "completeFieldsActuallyRead": 2,
+          "changes": [
+            {
+              "key": "16/1/寅",
+              "field": "paragraphs/2",
+              "old": "中途体互坎水处休而生木，本有补益，却受本用坤土与用互艮土所制，又无金来生水，能借的力量偏薄。艮土同样处死，仍由震体主动处理；它与坤土都不是来克木的阻力。这一段虽可借助，核心职责仍须自己承担，求得支持以后也要持续跟进。",
+              "new": "中途体互坎水处休而生木，本有补益，却受本用坤土与用互艮土所制，又无金来生水，能借的力量偏薄。艮土同样处死，仍由震体主动处理；它与坤土都不是来克木的阻力。这一段虽可借助，核心职责仍须自己承担，得到支持也需把相应责任跟进到底。"
+            },
+            {
+              "key": "16/1/戌",
+              "field": "paragraphs/4",
+              "old": "末变震为雷，囚木与体同气，后段仍可相接，助力却不能说厚。全盘不见直接克体并保留生扶，故取可成而迟；这一方向需要以认真承接来回应。宜把每次进展落到已完成的内容上，先尽其责再谈其名，避免喜意走在实际任事之前。",
+              "new": "末变震为雷，囚木与体同气，后段仍可相接，助力却不能说厚。全盘不见直接克体并保留生扶，故取可成而迟；这一方向需要以认真承接来回应。宜把每次进展落到已完成的内容上，以实际担当说明任职所据，避免喜意走在实际任事之前。"
+            }
+          ]
+        }
+      ],
+      "canonicalHashSerialization": "Python json.dumps(array,ensure_ascii=False,sort_keys=True,separators=(',',':')); no newline; UTF-8"
+    },
+    "line2To6FullReview": {
+      "reviewer": "/root/source_audit",
+      "reviewerIsHuman": false,
+      "sourceSha256": "6ca3690ee74416d8a1dd1e13cae994d499103254e34622f861b65a80cf8dce31",
+      "coveredMovingLines": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "publicFieldsActuallyRead": [
+        "16/2/寅 title,short,paragraphs,payExplanation",
+        "16/2/卯 title,short,paragraphs,payExplanation",
+        "16/2/辰 title,short,paragraphs,payExplanation",
+        "16/2/巳 title,short,paragraphs,payExplanation",
+        "16/2/午 title,short,paragraphs,payExplanation",
+        "16/2/未 title,short,paragraphs,payExplanation",
+        "16/2/申 title,short,paragraphs,payExplanation",
+        "16/2/酉 title,short,paragraphs,payExplanation",
+        "16/2/戌 title,short,paragraphs,payExplanation",
+        "16/2/亥 title,short,paragraphs,payExplanation",
+        "16/2/子 title,short,paragraphs,payExplanation",
+        "16/2/丑 title,short,paragraphs,payExplanation",
+        "16/3/寅 title,short,paragraphs,payExplanation",
+        "16/3/卯 title,short,paragraphs,payExplanation",
+        "16/3/辰 title,short,paragraphs,payExplanation",
+        "16/3/巳 title,short,paragraphs,payExplanation",
+        "16/3/午 title,short,paragraphs,payExplanation",
+        "16/3/未 title,short,paragraphs,payExplanation",
+        "16/3/申 title,short,paragraphs,payExplanation",
+        "16/3/酉 title,short,paragraphs,payExplanation",
+        "16/3/戌 title,short,paragraphs,payExplanation",
+        "16/3/亥 title,short,paragraphs,payExplanation",
+        "16/3/子 title,short,paragraphs,payExplanation",
+        "16/3/丑 title,short,paragraphs,payExplanation",
+        "16/4/寅 title,short,paragraphs,payExplanation",
+        "16/4/卯 title,short,paragraphs,payExplanation",
+        "16/4/辰 title,short,paragraphs,payExplanation",
+        "16/4/巳 title,short,paragraphs,payExplanation",
+        "16/4/午 title,short,paragraphs,payExplanation",
+        "16/4/未 title,short,paragraphs,payExplanation",
+        "16/4/申 title,short,paragraphs,payExplanation",
+        "16/4/酉 title,short,paragraphs,payExplanation",
+        "16/4/戌 title,short,paragraphs,payExplanation",
+        "16/4/亥 title,short,paragraphs,payExplanation",
+        "16/4/子 title,short,paragraphs,payExplanation",
+        "16/4/丑 title,short,paragraphs,payExplanation",
+        "16/5/寅 title,short,paragraphs,payExplanation",
+        "16/5/卯 title,short,paragraphs,payExplanation",
+        "16/5/辰 title,short,paragraphs,payExplanation",
+        "16/5/巳 title,short,paragraphs,payExplanation",
+        "16/5/午 title,short,paragraphs,payExplanation",
+        "16/5/未 title,short,paragraphs,payExplanation",
+        "16/5/申 title,short,paragraphs,payExplanation",
+        "16/5/酉 title,short,paragraphs,payExplanation",
+        "16/5/戌 title,short,paragraphs,payExplanation",
+        "16/5/亥 title,short,paragraphs,payExplanation",
+        "16/5/子 title,short,paragraphs,payExplanation",
+        "16/5/丑 title,short,paragraphs,payExplanation",
+        "16/6/寅 title,short,paragraphs,payExplanation",
+        "16/6/卯 title,short,paragraphs,payExplanation",
+        "16/6/辰 title,short,paragraphs,payExplanation",
+        "16/6/巳 title,short,paragraphs,payExplanation",
+        "16/6/午 title,short,paragraphs,payExplanation",
+        "16/6/未 title,short,paragraphs,payExplanation",
+        "16/6/申 title,short,paragraphs,payExplanation",
+        "16/6/酉 title,short,paragraphs,payExplanation",
+        "16/6/戌 title,short,paragraphs,payExplanation",
+        "16/6/亥 title,short,paragraphs,payExplanation",
+        "16/6/子 title,short,paragraphs,payExplanation",
+        "16/6/丑 title,short,paragraphs,payExplanation"
+      ],
+      "professionalGroupsActuallyRead": [
+        "16/2/spring-wood",
+        "16/2/summer-fire",
+        "16/2/autumn-metal",
+        "16/2/winter-water",
+        "16/2/seasonal-earth",
+        "16/3/spring-wood",
+        "16/3/summer-fire",
+        "16/3/autumn-metal",
+        "16/3/winter-water",
+        "16/3/seasonal-earth",
+        "16/4/spring-wood",
+        "16/4/summer-fire",
+        "16/4/autumn-metal",
+        "16/4/winter-water",
+        "16/4/seasonal-earth",
+        "16/5/spring-wood",
+        "16/5/summer-fire",
+        "16/5/autumn-metal",
+        "16/5/winter-water",
+        "16/5/seasonal-earth",
+        "16/6/spring-wood",
+        "16/6/summer-fire",
+        "16/6/autumn-metal",
+        "16/6/winter-water",
+        "16/6/seasonal-earth"
+      ],
+      "sourceSnapshot": "yu_independent_review/source-base.json",
+      "lineMetadata": [
+        {
+          "movingLine": 2,
+          "canonicalArraySha256": "6b63b08143226410474b3d718cf3527ba9e81f344ec887d958c0dbff35fe1244",
+          "articleCount": 12,
+          "sameQiMetadataExact": true,
+          "finalCanonicalArraySha256": "6b63b08143226410474b3d718cf3527ba9e81f344ec887d958c0dbff35fe1244"
+        },
+        {
+          "movingLine": 3,
+          "canonicalArraySha256": "c018abe9da8fb935dfe016bb223dfd152916fef5003cc82a82fc206002b882a0",
+          "articleCount": 12,
+          "sameQiMetadataExact": true,
+          "finalCanonicalArraySha256": "c018abe9da8fb935dfe016bb223dfd152916fef5003cc82a82fc206002b882a0"
+        },
+        {
+          "movingLine": 4,
+          "canonicalArraySha256": "facc9a79cd9ed8d2b9345223ab363bdd469b006debde181e992d0a0fd0bc3ef1",
+          "articleCount": 12,
+          "sameQiMetadataExact": true,
+          "finalCanonicalArraySha256": "e114580976cf0d715efeb484045435da6f6bad47f94ad58ab054fcd6e99330f0"
+        },
+        {
+          "movingLine": 5,
+          "canonicalArraySha256": "0e32c4732712b21431b6c5aa80529b99e82f36731004fb70219267935199993b",
+          "articleCount": 12,
+          "sameQiMetadataExact": true,
+          "finalCanonicalArraySha256": "0e32c4732712b21431b6c5aa80529b99e82f36731004fb70219267935199993b"
+        },
+        {
+          "movingLine": 6,
+          "canonicalArraySha256": "5b7db51e7bafae1338c5f56d13f4c2a58d4f5a215c0b8182ddf41c107eb52c66",
+          "articleCount": 12,
+          "sameQiMetadataExact": true,
+          "finalCanonicalArraySha256": "3bfd5d3a1a338edc561bcc00aa52e71877f5a1f941a5d29eb3d9da967737a43b"
+        }
+      ],
+      "findings": [
+        {
+          "id": "YU16-4-SI-QI-TERM",
+          "key": "16/4/巳",
+          "field": "short",
+          "severity": "minor-accuracy",
+          "status": "closed-after-complete-field-reread",
+          "old": "本次升不了，虽有得令与比和，起处受制仍然有力。巳月坤土相，震木休而得坎水生，不能只按休木轻看；两处土同气可用。九四以信聚朋，使志意能够推行，宜把实际组织与承担讲透，也把协作价值和本轮提级结果分清。",
+          "issue": "巳月土相并非当令旺，首句虽有得令与比和将相气称得令；下文月态本身正确。",
+          "proposedChange": "将虽有得令与比和改为虽有相气与比和，保留其他全文、结论、取期。",
+          "new": "本次升不了，虽有相气与比和，起处受制仍然有力。巳月坤土相，震木休而得坎水生，不能只按休木轻看；两处土同气可用。九四以信聚朋，使志意能够推行，宜把实际组织与承担讲透，也把协作价值和本轮提级结果分清。",
+          "closureSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e"
+        },
+        {
+          "id": "YU16-6-YOU-PHRASE",
+          "key": "16/6/酉",
+          "field": "short",
+          "severity": "minor-readability",
+          "status": "closed-after-complete-field-reread",
+          "old": "本次升不了，起克较实，后段只有有限生扶。酉月土休木死，震得坎生而无金制，克势仍强；离火囚，兼受木生水克，仍作薄助。上六要求自省而转变，宜使熟悉经验接受事实检验，需改之处真正落实，尚未发生的改正不能预算完成，任用仍依实际确认。",
+          "issue": "尚未发生的改正不能预算完成的预算完成搭配不通，拟表达不能预先把未发生改变当作已经完成。",
+          "proposedChange": "改为尚未发生的改正不能预作已成，或自然等义的准确句子。",
+          "new": "本次升不了，起克较实，后段只有有限生扶。酉月土休木死，震得坎生而无金制，克势仍强；离火囚，兼受木生水克，仍作薄助。上六要求自省而转变，宜使熟悉经验接受事实检验，需改之处真正落实，尚未发生的改正不能预作已成，任用仍依实际确认。",
+          "closureSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e"
+        }
+      ],
+      "lineObservations": {
+        "2": "十二篇读者字段及五气完整专业字段实际阅读，无阻断项。六二中正知几与不终日非任命期限讲明，两坎受两土制无金生按薄助，木休不混囚死，薪资不量涨幅或到账日期。",
+        "3": "十二篇读者字段及五气完整专业字段实际阅读，无阻断项。三土：本用坤之外用互/变用艮二处同党，体势衰但不改五态；坎受三土制无金生为薄助。春冬未再径言旺相体易制，夏休独立保留。两悔不缩为迟疑几分钟或仅催快，位不当及项目行为之戒的解释优先张力明确；四土月取期仍字符串。",
+        "4": "十二篇读者字段及五气完整专业字段实际阅读。九四大有得、朋聚、志大行的积极意义完整保留；震得坎生无金制五气有力，秋休土独立分组；夏/秋/土月equal/body_mutual仅过程相接。发现巳月short误称相土得令，已送作者窄修，其他无阻断。",
+        "5": "十二篇读者字段及五气完整专业字段实际阅读，无新增阻断项。震得坎生又受兑制各月守原气，特别冬月原相克实不因旺坎再加重。贞疾/恒不死据乘刚、中未亡合读，受制与存续并存，不断真实疾病、不许永久保职，也不缩成某处小错；末兑泄体非实际扣薪。",
+        "6": "十二篇读者字段及五气完整专业字段实际阅读。震获坎生无金制有力；末离得震生兼受坎克，各守原五态，春相夏旺后助有力、其余薄助不删除。冥豫不可长、有渝方无咎条件完整，不预认已改，晋卦名不代任命；在任见克优先与后生之张力明示。发现酉月short预算完成搭配不通，已送作者窄修，余无阻断。"
+      },
+      "wholeArticlesActuallyRead": 60,
+      "professionalDistinctGroupsActuallyRead": 25,
+      "status": "independent-full-read-completed-with-closed-narrow-findings",
+      "baselineBindingsIndependentlyVerified": {
+        "articleCount": 60,
+        "oldJudgmentExact": 60,
+        "newJudgmentExact": 60,
+        "oldPayExact": 60,
+        "newPayExact": 60,
+        "outcomeAndTimingSignatureUnchanged": 60
+      },
+      "reviewCompletedAt": "2026-11-21T05:52:00.928541+00:00",
+      "finalSourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+      "finalDeltaFieldsActuallyRead": [
+        "16/4/巳 short",
+        "16/6/酉 short"
+      ],
+      "deltaCheck": "独立从冻结源逐字段对比终版，仅两条short变化；完整旧新字段实际读回，两项均已关闭，其余60篇字段由原全文阅读和逐值不变证明覆盖。",
+      "userIndividuallyAccepted": false,
+      "realWorldPredictionAccuracy": "not-validated",
+      "openBlockingFindings": 0,
+      "interpretationBoundariesPreserved": [
+        "古代在任见克条应用于现代晋升的项目优先次序不是唯一古义。",
+        "六三两悔与体势衰仍保留既定能升；九四完整大有得、上六后生与改则无咎仍保留既定未升。古义未被缩小来掩盖这种解释取舍。",
+        "没有真实晋升结果统计验证；程序关口及本次独审不构成现实准确率证据。"
+      ],
+      "canonicalHashSerialization": "Python json.dumps(array,ensure_ascii=False,sort_keys=True,indent=2) + newline; UTF-8"
+    },
+    "openBlockingFindings": [],
+    "userIndividuallyAccepted": false,
+    "realWorldPredictionAccuracy": "not-validated",
+    "originalAggregateStatus": "ai-cross-reviewed-with-open-interpretation-findings",
+    "reviewer": "/root + /root/source_audit",
+    "reviewerType": "independent-ai",
+    "wholeArticlesRead": 72,
+    "sourceSha256": "bd795fb167bfe32f232e145bb97244c8b8cc5a91eef1363f361a3a762bff8c2e",
+    "scope": "根代理初六12篇全文加最终两段完整差异复读；source_audit六二至上六60篇全文加最终两条完整简断差异复读，组成72篇。不是声称同一人一次读完72篇，也不是每次窄改后重读全部正文。 初爻基准之后先读13个完整字段，再读末2段；六二至上六由另一编辑完整读回60篇及25组技术字段后，另读末2条简断。"
+  },
+  "mechanicalChecks": {
+    "status": "passed",
+    "structureAndChart": "72篇；1944次盘面比对，差异0；144个日期算例；errors0；全部结论与取期签名沿基准。",
+    "bodyHan": {
+      "min": 483,
+      "median": 509.0,
+      "max": 558
+    },
+    "shortHan": [
+      84,
+      108
+    ],
+    "payHan": [
+      46,
+      53
+    ],
+    "style": "passed；相同句头最高1；平均句长33.9；无机械月令开头、轻薄篇、重复标题。",
+    "consolation": "0命中，0豁免。",
+    "intraArticleEightHanRepeat": 0,
+    "crossHexEightHanShare": {
+      "overThresholdArticles": 0,
+      "maxPercent": 1.6,
+      "thresholdPercent": 8
+    },
+    "frequentNontechnicalFiveHanPhrasesOver18Articles": 0,
+    "unmatchedClassicalQuotes": 0,
+    "machineCheckLimits": "机检不能证明古义唯一、现代类推必然成立，不能代替独立全文审读。",
+    "finalGateCommand": "bash scripts/review/monthly-gate.sh promotion-pay 16",
+    "finalGateResult": "GATE PASSED promotion-pay 16",
+    "checkedAt": "2026-11-21T05:53:04.618910+00:00",
+    "gateLogScratchFile": "yu_work/final-gate.log"
+  },
+  "auditPath": "docs/review/PROMOTION_YU_RULE_AUDIT_20261121.md"
+}

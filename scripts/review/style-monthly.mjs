@@ -7,6 +7,12 @@ const parse = s => new Set(s.split(',').flatMap(p => { const [a, b] = p.split('-
 const only = hi >= 0 ? parse(args[hi + 1]) : null;
 const han = s => (s.match(/\p{Script=Han}/gu) || []).length;
 const MONTH = /^[寅卯辰巳午未申酉戌亥子丑]月/u;
+// 只标记尚未讲本篇理由的通用判词，供同爻相邻月份对读。
+const EXAM_FRAME = /^(?:问(?:这|本)?一?[次场](?:考试)?(?:能否合格|能否通过)?|按(?:这一?卦|卦象?)(?:看|断)?|论这次考试)[，、]?/u;
+const EXAM_LEAD_WORDS = /^(?:[寅卯辰巳午未申酉戌亥子丑]月(?:所问的)?|这一?[场次]|本次|考试|的|卦断|断为|判断是|仍断为|仍是|仍|能否通过|问|[，、])+/u;
+const genericExamLead = text => /^(?:能过|能通过|过不了|不能通过)(?=[。，！？])/u.test(
+  text.replace(EXAM_FRAME, '').replace(EXAM_LEAD_WORDS, '')
+);
 const LIGHT = /就好|就够了|就行了|就是了/gu, THIS = /这个月/gu;
 // 写给作者的话（必须为 0）与替对方断心意的疑似句（列出供人工判，不计失败）。
 const NOTE = /如实写|如实记下|写进正文|正文写|写给作者/gu;
@@ -26,10 +32,28 @@ for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
  const h = Number(f.slice(4, 7)); if (only && !only.has(h)) continue;
  const arts = JSON.parse(readFileSync(dir + f, 'utf8')).articles;
  const sents = [], heads = {}, hits = [];
+ if (list && item === 'exam') {
+  for (const [label, field] of [['简断', a => a.short], ['正文', a => a.paragraphs[0]]]) {
+   let previous = null;
+   for (const a of arts) {
+    if (genericExamLead(field(a))) {
+     if (previous?.movingLine === a.movingLine)
+      hits.push(`${h}/${a.movingLine}/${previous.monthBranch}、${a.monthBranch} ${label}相邻两篇均以通用判词起笔，需对读`);
+     previous = a;
+    } else previous = null;
+   }
+  }
+ }
  let dupTitle = 0, shortOut = 0;
  let monthOpen = 0, monthShort = 0, shortHan = 0, light = 0, thisMonth = 0, yi = 0, note = 0, mind = 0;
  for (const a of arts) {
   const key = `${h}/${a.movingLine}/${a.monthBranch}`;
+  if (args.includes('--openings') && !args.includes('--json')) {
+   const lead = text => text.match(/^[^。！？]*[。！？]?[^。！？]*[。！？]?/u)?.[0];
+   const opening = lead(a.paragraphs[0]), short = lead(a.short);
+   const formula = item === 'exam' ? {short:genericExamLead(short), body:genericExamLead(opening)} : undefined;
+   console.log(JSON.stringify({key, title:a.title, short, opening, formula}));
+  }
   if (MONTH.test(a.paragraphs[0])) { monthOpen++; hits.push(key + ' 正文以月开头'); }
   if (MONTH.test(a.short)) { monthShort++; hits.push(key + ' 简断以月开头'); }
   const head = a.paragraphs[0].replace(/[^\p{Script=Han}]/gu, '').slice(0, 8); heads[head] = (heads[head] ?? 0) + 1;

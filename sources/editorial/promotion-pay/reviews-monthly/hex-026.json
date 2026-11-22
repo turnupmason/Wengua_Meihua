@@ -1,0 +1,3703 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 26,
+  "baselineCommit": "5bf1453f1bf33ed13333b19ecc8271e5915723c0",
+  "sourceSha256": "2a681a0c145c5d510f0cbf0654a8340daa6d9005fed0e29c5c7556c8fbec1dd0",
+  "editor": "/root/write_dachu",
+  "reviewedAt": "2026-11-21T23:18:41.548460+00:00",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "72篇标题、简断、五段正文及独立薪资逐篇手写，静态脚本只装载文本、绑定旧值并检查。作者分六批实际全文读回公开字段；30组五气专业、应期与订正理由逐组实际阅读，同气重复实例验等。后续完整变化段落及字段另行实读并绑定，不把哈希或门禁当作重新全文阅读，也不自签独立审阅。",
+  "sourceEvidence": [
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "全文实际读取，独立逐月写作与真实读回边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "全文实际读取，自然开门断事、正文厚度、句长与不编情节要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "全文实际核读，在任见克的晋升专用取权及冻结结果。"
+    },
+    {
+      "path": "docs/review/INTERVIEW_MONTHLY_AUDIT_METHOD.md",
+      "scope": "全文实际读取，程序检查、作者阅读、古籍判断和独立审阅分层记录。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "初次实际核读第八至十三节；独审指出九三用党多遗漏后，实际补读第十四节完整内容并按其明确例子更正，不声称此前已经读到此节。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-026.json",
+      "scope": "六爻五气30条基线的公开旧文、判断、应期与薪资实际逐爻读取；作为全部correction的精确old值。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-026.json",
+      "scope": "30组stageIds、facts.nodes、directRelations及decision.indirectEffectsApplied精简逐组实际核对，不称被截断的大文件全部decision全文已读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-026.json",
+      "scope": "仅首爻春木条完整实际读取作既有解释参考，不继承旧审读状态，不称30组全文阅读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+      "scope": "全卦经传、六爻王弼注孔颖达疏完整实际读取；相关段再核，对应豮牙与曰闲等异说。"
+    },
+    {
+      "url": "https://zh.wikisource.org/wiki/周易正義/03大畜",
+      "scope": "网页实际打开并与本地原典对照，非仅搜索摘要。"
+    },
+    {
+      "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+      "scope": "大畜卦及六爻完整相关段实际读取，九三日常闲习、六五察机持要及上九何字异说分别归属，不称全卷阅读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "大畜卦及六爻相关完整段实际读取，曰当为日与何其通达分别核对，不称全卷阅读。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "卦断遗论、体用总诀、求名占、求财占、体用、衰旺论、占卦诀、体用互变之诀、体用衰旺之诀相关完整段实际读取；独审后再次完整补核494行体用总诀的用党多，不误署为682行体用篇。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "面试逐月源001、003、017、052各索引0、2、14、30、50、64六篇，共24篇实际读取；首次017/052合并输出截断后分别补读完整。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/monthly/hex-023.json",
+      "scope": "索引0、14、30、50四篇完整实际抽读，参照厚度和口吻，不称全卦阅读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/monthly/hex-024.json",
+      "scope": "代表篇抽读与结构对照，未称全卦72篇阅读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/hex-024.json",
+      "scope": "回执根字段及分爻格式参考，大段独审历史输出截断，不称完整读取。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03蠱.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03賁.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02小畜.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02泰.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05歸妹.txt",
+      "scope": "卦辞、彖、大象及相应注疏完整实际读取至初爻前，只用于本卦或互变行事辅义，不称六爻全文。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "text": "有厉，利已。",
+      "image": "有厉利已，不犯灾也。",
+      "reading": "辨危知止与两木克减、两金泄体并列；不将有厉换成现实新规、旧账、退回或期限故事。蛊整饬仅为辅义。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "5d5129ee8ec97209732aa652753104742ad35e9dfad8f055da636a88e0d3e004",
+      "finalCanonicalArticleArraySha256": "61538b99e3df06246230aca9c418696050b3a509c19f06af08d0ffbb902edc4a",
+      "bodyHan": {
+        "min": 497,
+        "median": 523.0,
+        "max": 532
+      },
+      "openFindingIds": [
+        "DACHU26-INCUMBENT-PRIORITY",
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "text": "舆说輹。",
+      "image": "舆说輹，中无尤也。",
+      "reading": "自止得中与真实末生并读，春相夏旺后助保持；现行在任见克取权保未升，不推现实责任全无。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "b87a2d9c80700314fe900e108a2e2389371c1a440ae07f5917ccb09289a1dbeb",
+      "finalCanonicalArticleArraySha256": "0c88d05f67ebfad3cecb7dd2827b70dd1b4f1b40d6a7ab0d8a3e34ff002f0528",
+      "bodyHan": {
+        "min": 501,
+        "median": 507.5,
+        "max": 514
+      },
+      "openFindingIds": [
+        "DACHU26-INCUMBENT-PRIORITY",
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "text": "良马逐，利艰贞。日闲舆卫，利有攸往。",
+      "image": "利有攸往，上合志也。",
+      "reading": "王孔曰闲/阂/卫护与程朱日常习备分署；利往全义保留。独审发现三金用党多遗漏后，补核第十四节和体用总诀，五气体势按衰、原月气不变。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "780627a073a48cea2adc5c920ba88311009b7ce9e3f8363000168157431b8d64",
+      "finalCanonicalArticleArraySha256": "5dac6c390487f8eeadb583bb6f71e1cd2c378ef9d9eb80b84aac02d6f457cde9",
+      "bodyHan": {
+        "min": 490,
+        "median": 508.0,
+        "max": 527
+      },
+      "openFindingIds": [
+        "DACHU26-INCUMBENT-PRIORITY",
+        "DACHU26-USEPARTY-APPLICATION",
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "text": "童牛之牿，元吉。",
+      "image": "六四元吉，有喜也。",
+      "reading": "元吉为柔以止刚、息强争的完整大吉；艮生克并见仍依原气，末离得震生而克强；冬乾休居中，末克取权保未升。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "ab19980a71ab9cacd2a605c3f4dca91d095f78862c2357e61c0d38aa13918257",
+      "finalCanonicalArticleArraySha256": "1f2d3116bba4c568bd2d45271a388e72bd93da02a268eded5ac7d17d56a88be3",
+      "bodyHan": {
+        "min": 479,
+        "median": 488.0,
+        "max": 499
+      },
+      "openFindingIds": [
+        "DACHU26-INCUMBENT-PRIORITY",
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "text": "豮豕之牙，吉。",
+      "image": "六五之吉，有庆也。",
+      "reading": "王孔禁制防止与程氏去势/察机持要分清；艮受两木制而减助，木克土不改成克乾，吉有庆不止固位，十二月能升。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "d424f27ea767a5cbf24fe17bc32f685f1b4f52e1862bb92b174faa08c02273ef",
+      "finalCanonicalArticleArraySha256": "2b5f5145689bbf9877ce1c896474b690990368c41a7b28dda76a5f682d5f9f7e",
+      "bodyHan": {
+        "min": 510,
+        "median": 518.0,
+        "max": 524
+      },
+      "openFindingIds": [
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "text": "何天之衢，亨。",
+      "image": "何天之衢，道大行也。",
+      "reading": "畜极则通、道路大行保持积极全义；艮坤均受震克而减助，土月原旺、实际减生及相乾相兑可承分层订正；何字异说不改经文。",
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalSnapshotFileSha256": "ac29ab2140ea5933663e6c1124dd61c6371b21cd52fcab2c61fd3028bb94640c",
+      "finalCanonicalArticleArraySha256": "78f74d8d2681561b80a7e1b1e74e232b962f840d39bc8e15b6b359db621d9f6d",
+      "bodyHan": {
+        "min": 508,
+        "median": 515.0,
+        "max": 526
+      },
+      "openFindingIds": [
+        "DACHU26-REAL-WORLD-VALIDATION"
+      ]
+    }
+  ],
+  "batchReadback": [
+    {
+      "movingLine": 1,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 2,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 3,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 4,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 5,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    },
+    {
+      "movingLine": 6,
+      "wholeArticlesRead": 12,
+      "months": [
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥",
+        "子",
+        "丑"
+      ],
+      "scope": "title、short、全部paragraphs、payExplanation实际逐篇完整阅读；五气judgment、timing、correction理由另读。",
+      "status": "author-readback-complete"
+    }
+  ],
+  "authorReadbackVersions": {
+    "finalSourceSha256": "2a681a0c145c5d510f0cbf0654a8340daa6d9005fed0e29c5c7556c8fbec1dd0",
+    "canonicalHashSerialization": "Python json.dumps(array, ensure_ascii=False, sort_keys=True, separators=(',',':')); UTF-8, no newline",
+    "publicFieldsActuallyRead": [
+      "title",
+      "short",
+      "paragraphs",
+      "payExplanation"
+    ],
+    "professionalDistinctGroupsActuallyRead": 30,
+    "professionalFieldsActuallyRead": [
+      "judgment",
+      "timing",
+      "judgmentCorrection.reason",
+      "judgmentCorrection.sourceEvidence"
+    ],
+    "sameQiProfessionalFieldsEqualityVerified": true,
+    "allCorrectionOldFieldsExactlyBound": 72,
+    "allCorrectionNewFieldsExactlyBound": 72,
+    "allPayCorrectionOldFieldsExactlyBound": 72,
+    "allPayNewValuesExactlyBound": 72,
+    "allTimingSignaturesUnchanged": 72,
+    "readingVersionBoundary": "wholeArticlesRead72表示各篇实际全文阅读覆盖，最终绑定由已读原文加已实际复读的完整差异组成；不冒称最终哈希下又重读72篇。",
+    "deltaReadbacks": [
+      {
+        "movingLine": 1,
+        "scope": "初次12篇完整阅读后，开头与说明用语整段实际读回；根代理定点反馈后的5气judgment/timing/reason及辰p2全部变化字段另实读。",
+        "snapshot": "5d5129ee8ec97209732aa652753104742ad35e9dfad8f055da636a88e0d3e004"
+      },
+      {
+        "movingLine": 2,
+        "scope": "初次12篇完整阅读后，卯巳午申short、5气judgment与秋timing basis完整字段实读；申p5因门禁提示改为清楚动作后整段实读。",
+        "snapshot": "b87a2d9c80700314fe900e108a2e2389371c1a440ae07f5917ccb09289a1dbeb"
+      },
+      {
+        "movingLine": 3,
+        "scope": "初次12篇完整阅读后，申酉两个段落直述修正实际读；独审发现用党多，补核第十四节与494行后，8篇变化公开字段、5气judgment/correction与土气timing逐个完整读回；末轮戌丑pay及payCorrection完整读取。",
+        "substantiveCorrection": "用党多体势衰初稿漏用，已如实写入审计与correction，非一般文字润色。",
+        "snapshotBeforeUseParty": "c6a717d1fc585ce60ed23de84676e2e2ccdd8f0c9a8c2442a055d6c9bc469513",
+        "snapshot": "780627a073a48cea2adc5c920ba88311009b7ce9e3f8363000168157431b8d64"
+      },
+      {
+        "movingLine": 4,
+        "scope": "12篇当前公开全文与5气专业/应期/理由完整读回，原体休与末离得生分别核明。",
+        "snapshot": "ab19980a71ab9cacd2a605c3f4dca91d095f78862c2357e61c0d38aa13918257"
+      },
+      {
+        "movingLine": 5,
+        "scope": "12篇公开全文与5气专业/应期/理由完整读回；巳pay清楚表述生效计发边界后，完整新pay及correction实际读回。",
+        "snapshot": "d424f27ea767a5cbf24fe17bc32f685f1b4f52e1862bb92b174faa08c02273ef"
+      },
+      {
+        "movingLine": 6,
+        "scope": "长复句自然断开后12篇当前公开全文与5气专业/应期/理由完整读回，土气原旺/减助/相体分层核明。",
+        "snapshot": "ac29ab2140ea5933663e6c1124dd61c6371b21cd52fcab2c61fd3028bb94640c"
+      }
+    ],
+    "mechanicalVerification": {
+      "articles": 72,
+      "sameQiGroups": 30,
+      "exactOldNewCorrections": 216,
+      "outcomeDifferences": 0,
+      "timingSignatureDifferences": 0,
+      "sameQiProfessionalDifferences": 0,
+      "oldNewDifferences": 0,
+      "sourceMatchesLineSnapshots": true
+    }
+  },
+  "independentReview": {
+    "hexagram": 26,
+    "reviewer": "/root, /root/source_audit",
+    "reviewerType": "independent-ai",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "sourceSha256": "2a681a0c145c5d510f0cbf0654a8340daa6d9005fed0e29c5c7556c8fbec1dd0",
+    "status": "ai-cross-reviewed-with-open-findings",
+    "wholeArticlesRead": 72,
+    "professionalGroupsRead": 30,
+    "currentRevisionFullTextReadCount": 65,
+    "currentRevisionChangedArticleReadCount": 7,
+    "scope": "六爻72篇公开字段曾逐篇完整实际阅读，30个不同五气专业及应期组实际读取。最终公开文本中未变部分与完整变化字段复读分开登记；同气重复专业以精确验等绑定。各分爻记录保存实际读取范围、修改事项与版本，不将程序核对或哈希计算冒称全文阅读。",
+    "lineReviews": [
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 1,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "eef8d1d10f6256d7d85baeaab9386930c313eadb14c1d3054cd9a366171eae27",
+        "status": "passed_after_targeted_revision",
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "months": [
+            "寅",
+            "卯",
+            "辰",
+            "巳",
+            "午",
+            "未",
+            "申",
+            "酉",
+            "戌",
+            "亥",
+            "子",
+            "丑"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "sourceRead": [
+            "sources/reference/zhouyi-zhengyi-hans/03大畜.txt 全卦经文、彖象与王弼注孔颖达疏实际完整读回"
+          ],
+          "method": "十二篇公开全文分六篇两次实际读取；五气专业及全部订正字段另次完整读取，输出均未截断。程序统计和哈希不计入阅读。",
+          "rawFactsRead": "data/authored-readings/promotion-pay/hex-026.json 初九五气 stageIds、nodes、directRelations、decision.indirectEffectsApplied完整实际核读"
+        },
+        "findings": [
+          {
+            "id": "DA26-L1-PUBLIC-EDITORIAL-VOICE",
+            "scope": "辰正文paragraphs[1]、五气judgment/timing",
+            "issue": "辰正文使用描画；部分专业与应期以否定句重提现已删除的故事，应将具体旧问题放入订正和审计。"
+          },
+          {
+            "id": "DA26-L1-CORRECTION-SCOPE",
+            "scope": "judgmentCorrection.reason",
+            "issue": "删除故事的说明须区分原专业与原应期字段，明确实际变更所属字段。"
+          }
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "finalSourceSha256": "5d5129ee8ec97209732aa652753104742ad35e9dfad8f055da636a88e0d3e004",
+        "finalCanonicalArticleArraySha256": "61538b99e3df06246230aca9c418696050b3a509c19f06af08d0ffbb902edc4a",
+        "currentRevisionFullTextReadCount": 11,
+        "currentRevisionChangedArticleReadCount": 1,
+        "deltaReview": {
+          "fieldsReadOrSameQiBound": [
+            {
+              "month": "寅",
+              "field": "judgment"
+            },
+            {
+              "month": "寅",
+              "field": "timing"
+            },
+            {
+              "month": "寅",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "寅",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "卯",
+              "field": "judgment"
+            },
+            {
+              "month": "卯",
+              "field": "timing"
+            },
+            {
+              "month": "卯",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "卯",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "辰",
+              "field": "judgment"
+            },
+            {
+              "month": "辰",
+              "field": "timing"
+            },
+            {
+              "month": "辰",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "辰",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "辰",
+              "field": "paragraphs[1]"
+            },
+            {
+              "month": "巳",
+              "field": "judgment"
+            },
+            {
+              "month": "巳",
+              "field": "timing"
+            },
+            {
+              "month": "巳",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "巳",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "午",
+              "field": "judgment"
+            },
+            {
+              "month": "午",
+              "field": "timing"
+            },
+            {
+              "month": "午",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "午",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "未",
+              "field": "judgment"
+            },
+            {
+              "month": "未",
+              "field": "timing"
+            },
+            {
+              "month": "未",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "未",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "申",
+              "field": "judgment"
+            },
+            {
+              "month": "申",
+              "field": "timing"
+            },
+            {
+              "month": "申",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "申",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "酉",
+              "field": "judgment"
+            },
+            {
+              "month": "酉",
+              "field": "timing"
+            },
+            {
+              "month": "酉",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "酉",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "戌",
+              "field": "judgment"
+            },
+            {
+              "month": "戌",
+              "field": "timing"
+            },
+            {
+              "month": "戌",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "戌",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "亥",
+              "field": "judgment"
+            },
+            {
+              "month": "亥",
+              "field": "timing"
+            },
+            {
+              "month": "亥",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "亥",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "子",
+              "field": "judgment"
+            },
+            {
+              "month": "子",
+              "field": "timing"
+            },
+            {
+              "month": "子",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "子",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "丑",
+              "field": "judgment"
+            },
+            {
+              "month": "丑",
+              "field": "timing"
+            },
+            {
+              "month": "丑",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "丑",
+              "field": "timingWordingCorrection"
+            }
+          ],
+          "publicCompleteChangedParagraphsActuallyRead": 1,
+          "distinctProfessionalJudgmentsActuallyRead": 5,
+          "distinctTimingArraysActuallyRead": 5,
+          "distinctJudgmentCorrectionReasonsActuallyRead": 5,
+          "timingCorrectionCommonReasonActuallyRead": true,
+          "scope": "辰完整改段、五气完整新专业/取期及新订正理由实际输出复读；重复同气以精确验等绑定。title、short、pay与其余正文原样沿用先前实际全文读取。",
+          "findingsResolved": [
+            "辰正文编辑措辞已直接表述轻重",
+            "专业及取期中否定式旧故事移入订正和审计",
+            "订正理由说明各自专业补充与原取期场景清理所属字段"
+          ]
+        },
+        "substantiveAssessment": "土为原体，乾兑为泄，震巽为克且受金制，原月态不被一层作用覆写。体休居中、弱金仍能制木和强体轻克有利反证保留。初九有厉利已及不犯灾用于审时知止，与无直接生扶、前泄末克及项目晋升规则相接；不扩展为现实处分或薪资损失。",
+        "reproducibleInitialToFinalDelta": {
+          "scope": "纯差异留档；完整变化字段已经按既有deltaReview/formalGateDeltaReview实际读过。此次序列化不声称新增阅读。",
+          "initialSnapshotSha256": "eef8d1d10f6256d7d85baeaab9386930c313eadb14c1d3054cd9a366171eae27",
+          "finalCanonicalArticleArraySha256": "61538b99e3df06246230aca9c418696050b3a509c19f06af08d0ffbb902edc4a",
+          "groups": [
+            {
+              "field": "timing",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": [
+                [
+                  "control",
+                  "changed_use",
+                  "收束阶段仍受限制的参考窗口",
+                  "先查明所求所需的条件和可承担范围，收住没有事实支持的推进，不预设方案被退。",
+                  "变用巽木原旺，受乾兑制而克力减轻；保留寅卯木气日参末段受制，不作未升通知日。"
+                ]
+              ],
+              "new": [
+                [
+                  "control",
+                  "changed_use",
+                  "收束阶段仍受限制的参考窗口",
+                  "先查明所求所需的条件和可承担范围，收住没有事实支持的推进，使每项申述都有明确依据。",
+                  "变用巽木原旺，受乾兑制而克力减轻；保留寅卯木气日参末段受制，不作未升通知日。"
+                ]
+              ]
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "那份硬推的方案又被搁了回来",
+                    "记下方案停在哪一步，把精力收回到本职。",
+                    "旺巽变用克死艮，取寅、卯日参末阻。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "收束阶段仍受限制的参考窗口",
+                    "先查明所求所需的条件和可承担范围，收住没有事实支持的推进，不预设方案被退。",
+                    "变用巽木原旺，受乾兑制而克力减轻；保留寅卯木气日参末段受制，不作未升通知日。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "那份硬推的方案又被搁了回来",
+                    "记下方案停在哪一步，把精力收回到本职。",
+                    "旺巽变用克死艮，取寅、卯日参末阻。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "收束阶段仍受限制的参考窗口",
+                    "先查明所求所需的条件和可承担范围，收住没有事实支持的推进，使每项申述都有明确依据。",
+                    "变用巽木原旺，受乾兑制而克力减轻；保留寅卯木气日参末段受制，不作未升通知日。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦。本用乾金、用互兑金泄体艮土；体互震木、变用巽木克体。寅卯月艮土死，乾兑金囚；震巽木当令，受乾兑金克而无水生，按气弱论，《体用》「稍解其穷」（682 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；本用泄体，《求名占》「体生用，名不可就」（553 行）。难在体死无生、一路耗泄，定为升不了。初九「有厉，利已」，止以免灾，不翻。",
+                "new": "原体艮土死，本用乾金与用互兑金囚而受体生；体互震木及变用巽木旺而克体，两木受乾兑制而无水生，按一层作用减轻克力，原旺态不改。全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。体死、轻泄与克力缓和分别看，不推出额外项目或实际精力总量。初九有厉利已，小象不犯灾，王孔重初健而未可径进，取知止之义，不据此预测处分、失职或某项方案遭退。",
+                "reason": "补明原月态与金制木一层作用的区别，删去旧稿由无生与耗泄推出额外工作、力量耗尽及方案退回的具体故事；结果与取期结构不变。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦。本用乾金、用互兑金泄体艮土；体互震木、变用巽木克体。寅卯月艮土死，乾兑金囚；震巽木当令，受乾兑金克而无水生，按气弱论，《体用》「稍解其穷」（682 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；本用泄体，《求名占》「体生用，名不可就」（553 行）。难在体死无生、一路耗泄，定为升不了。初九「有厉，利已」，止以免灾，不翻。",
+                "new": "原体艮土死，本用乾金与用互兑金囚而受体生；体互震木及变用巽木旺而克体，两木受乾兑制而无水生，按一层作用减轻克力，原旺态不改。全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。体死、前中轻泄与中末克力缓和分别看。初九有厉利已，小象不犯灾，王孔重初健而未可径进，取审时知止、使主张与真实承担相称之义。",
+                "reason": "明确耗泄发生在本用与用互而非每个阶段，并列月令原态与一层减克；原取期的无据场景由timingWordingCorrection另行删除，结果和取期结构不变。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": "原体艮土死，本用乾金与用互兑金囚而受体生；体互震木及变用巽木旺而克体，两木受乾兑制而无水生，按一层作用减轻克力，原旺态不改。全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。体死、轻泄与克力缓和分别看，不推出额外项目或实际精力总量。初九有厉利已，小象不犯灾，王孔重初健而未可径进，取知止之义，不据此预测处分、失职或某项方案遭退。",
+              "new": "原体艮土死，本用乾金与用互兑金囚而受体生；体互震木及变用巽木旺而克体，两木受乾兑制而无水生，按一层作用减轻克力，原旺态不改。全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。体死、前中轻泄与中末克力缓和分别看。初九有厉利已，小象不犯灾，王孔重初健而未可径进，取审时知止、使主张与真实承担相称之义。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "过程中投入与承担的参考窗口",
+                  "核清实绩、责任和任职要求之间的联系，已有依据准确交代，未确定的条件先求澄清。",
+                  "用互兑金相而受旺艮土所生，保留申酉金气日参中段付出，不预设重核旧账或期限不足。"
+                ]
+              ],
+              "new": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "过程中投入与承担的参考窗口",
+                  "核清实绩、责任和任职要求之间的联系，已有依据准确交代，未确定的条件先求澄清。",
+                  "用互兑金相而受旺艮土所生，保留申酉金气日参中段付出；这一窗口用于过程观察，不作为任命或薪资日期。"
+                ]
+              ]
+            },
+            {
+              "field": "paragraphs[1]",
+              "months": [
+                "辰"
+              ],
+              "old": "本用乾金和用互兑金在辰月得相，土生金，意味着前中段都有自身付出。体互震木与末变巽木囚，克土之势本轻，又受两金制约，不能描画成压倒性的重阻。整盘没有火来直接生艮，主体虽旺，耗泄与末克的方向仍在，尚不足以形成这次晋升的完整进展。",
+              "new": "本用乾金和用互兑金在辰月得相，土生金，意味着前中段都有自身付出。体互震木与末变巽木囚，克土之势本轻，又受两金制约，约束并不重。整盘没有火来直接生艮，主体虽旺，耗泄与末克的方向仍在，尚不足以形成这次晋升的完整进展。"
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "已验收的成果又被拿出来重核一遍",
+                    "旧成果核过一遍就封存，剩下的工夫给新规划。",
+                    "相兑用互受旺艮生，取申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "过程中投入与承担的参考窗口",
+                    "核清实绩、责任和任职要求之间的联系，已有依据准确交代，未确定的条件先求澄清。",
+                    "用互兑金相而受旺艮土所生，保留申酉金气日参中段付出，不预设重核旧账或期限不足。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "已验收的成果又被拿出来重核一遍",
+                    "旧成果核过一遍就封存，剩下的工夫给新规划。",
+                    "相兑用互受旺艮生，取申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "过程中投入与承担的参考窗口",
+                    "核清实绩、责任和任职要求之间的联系，已有依据准确交代，未确定的条件先求澄清。",
+                    "用互兑金相而受旺艮土所生，保留申酉金气日参中段付出；这一窗口用于过程观察，不作为任命或薪资日期。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦。辰戌丑未月艮土旺，可承囚震、囚巽之克；本用、用互泄于相金，变用巽木克体，无生体之卦。本用泄、变用克，不属本用变用比和或体克用之例。《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）只讲免害，不作吉事能成之据，定为升不了。初九「有厉，利已」，不翻。",
+                "new": "原体艮土旺，本用乾金、用互兑金相而受体生；震木体互和巽木变用囚而克土，又受金制而无水生，克力轻。体旺能承与耗泄有气均保留，全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。乘旺虽受克亦无大害是有利反证，不直接等同职位落实。初九利已是审时知止，不能推出硬指标已达标、旧成果重核挤占新规划或剩余时限不足。",
+                "reason": "补充两金制木的一层关系，完整保留旺体可承和相金受生；删除已达指标、重核旧账及时间被挤占的场景，结论取期不变。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦。辰戌丑未月艮土旺，可承囚震、囚巽之克；本用、用互泄于相金，变用巽木克体，无生体之卦。本用泄、变用克，不属本用变用比和或体克用之例。《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）只讲免害，不作吉事能成之据，定为升不了。初九「有厉，利已」，不翻。",
+                "new": "原体艮土旺，本用乾金、用互兑金相而受体生；震木体互和巽木变用囚而克土，又受金制且无水生，克力轻。体旺能承与耗泄有气均保留，全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。乘旺虽受克亦无大害是有利反证，与职位落实分别看待。初九利已重在审时知止，宜使所称成绩与实际责任保持对应。",
+                "reason": "补充旧专业说明未列明的两金制木关系，完整保留旺体可承和相金受生；旧取期重核成果的故事由timingWordingCorrection处理，结论取期结构未改。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": "原体艮土旺，本用乾金、用互兑金相而受体生；震木体互和巽木变用囚而克土，又受金制而无水生，克力轻。体旺能承与耗泄有气均保留，全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。乘旺虽受克亦无大害是有利反证，不直接等同职位落实。初九利已是审时知止，不能推出硬指标已达标、旧成果重核挤占新规划或剩余时限不足。",
+              "new": "原体艮土旺，本用乾金、用互兑金相而受体生；震木体互和巽木变用囚而克土，又受金制且无水生，克力轻。体旺能承与耗泄有气均保留，全盘无火直接生土，本用泄、末用克，依现行求名及在任见克的晋升应用定为升不了。乘旺虽受克亦无大害是有利反证，与职位落实分别看待。初九利已重在审时知止，宜使所称成绩与实际责任保持对应。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": [
+                [
+                  "control",
+                  "changed_use",
+                  "末段限制尚待厘清的参考阶段",
+                  "核对实际职责和升任条件，把需要确认之处讲清，不因已有承受力而扩大保证。",
+                  "巽木原休且受金制，克力较轻但方向仍在；沿寅卯木气日参末阻，不指称现实新规出台。"
+                ]
+              ],
+              "new": [
+                [
+                  "control",
+                  "changed_use",
+                  "末段限制尚待厘清的参考阶段",
+                  "核对实际职责和升任条件，把需要确认之处讲清，不因已有承受力而扩大保证。",
+                  "巽木原休且受金制，克力较轻而方向仍在；沿寅卯木气日参末段受制，实际定夺时间以现实安排为准。"
+                ]
+              ]
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "定夺前出了一条新规定，老路径被限死",
+                    "新规定原文存一份，看清哪几类岗位受限。",
+                    "休巽变用克相艮，按寅、卯日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "末段限制尚待厘清的参考阶段",
+                    "核对实际职责和升任条件，把需要确认之处讲清，不因已有承受力而扩大保证。",
+                    "巽木原休且受金制，克力较轻但方向仍在；沿寅卯木气日参末阻，不指称现实新规出台。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "定夺前出了一条新规定，老路径被限死",
+                    "新规定原文存一份，看清哪几类岗位受限。",
+                    "休巽变用克相艮，按寅、卯日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "末段限制尚待厘清的参考阶段",
+                    "核对实际职责和升任条件，把需要确认之处讲清，不因已有承受力而扩大保证。",
+                    "巽木原休且受金制，克力较轻而方向仍在；沿寅卯木气日参末段受制，实际定夺时间以现实安排为准。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦。巳午月艮土相，泄体之乾兑金死，泄轻；体互震木、变用巽木本休，又受乾兑金克而无生，按气弱论，克轻。《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行）；本用泄体，《求名占》「体生用，名不可就」（553 行）。本用泄、变用克，不属本用变用比和或体克用之例；体相只减其难，定为升不了。初九「有厉，利已」，不翻。",
+                "new": "艮土原体相，本用乾金、用互兑金死而受体生，耗泄较轻；震木体互及巽木变用休而克体，又受乾兑制而无水生，克力减轻。全盘无直接生体，本用泄而末用克，依现行晋升在任见克及求名应用定为升不了；体相与轻泄轻克的有利处完整保留。初九利已重在未宜进时知止，不能变成已知新规定阻断路径，亦不据未升判断原岗位稳定或受处分。",
+                "reason": "删除新规限死路径及原岗位必稳等跨界推断，明确轻克仍在而体相可承；保留原结论、control种类、末用位置及木气取日。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦。巳午月艮土相，泄体之乾兑金死，泄轻；体互震木、变用巽木本休，又受乾兑金克而无生，按气弱论，克轻。《体用互变之诀》「变卦克体，事于末后，必有不吉」（798 行）；本用泄体，《求名占》「体生用，名不可就」（553 行）。本用泄、变用克，不属本用变用比和或体克用之例；体相只减其难，定为升不了。初九「有厉，利已」，不翻。",
+                "new": "艮土原体相，本用乾金、用互兑金死而受体生，耗泄较轻；震木体互及巽木变用休而克体，又受乾兑制且无水生，克力减轻。全盘无直接生体，本用泄而末用克，依现行晋升在任见克及求名应用定为升不了；体相与轻泄轻克的有利处完整保留。初九利已重在未宜进时知止，工作上取审清职责与升任条件、让积极有据的分寸。",
+                "reason": "补明在任见克的领域应用与体相、轻克轻泄并存；新规及岗位稳定属于配套旧稿故事，在取期订正另清理，不据润色改变结果。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": "艮土原体相，本用乾金、用互兑金死而受体生，耗泄较轻；震木体互及巽木变用休而克体，又受乾兑制而无水生，克力减轻。全盘无直接生体，本用泄而末用克，依现行晋升在任见克及求名应用定为升不了；体相与轻泄轻克的有利处完整保留。初九利已重在未宜进时知止，不能变成已知新规定阻断路径，亦不据未升判断原岗位稳定或受处分。",
+              "new": "艮土原体相，本用乾金、用互兑金死而受体生，耗泄较轻；震木体互及巽木变用休而克体，又受乾兑制且无水生，克力减轻。全盘无直接生体，本用泄而末用克，依现行晋升在任见克及求名应用定为升不了；体相与轻泄轻克的有利处完整保留。初九利已重在未宜进时知止，工作上取审清职责与升任条件、让积极有据的分寸。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "中段持续付出的参考窗口",
+                  "围绕与任职要求直接相关的实绩组织说明，核明个人贡献与共同成果，不以不断添项加重承担。",
+                  "用互兑金旺而受艮土所生，沿申酉金气日参过程中付出；体休居中，不据此推定已经耗尽时间。"
+                ]
+              ],
+              "new": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "中段持续付出的参考窗口",
+                  "围绕与任职要求直接相关的实绩组织说明，核明个人贡献与共同成果，不以不断添项加重承担。",
+                  "用互兑金旺而受艮土所生，沿申酉金气日参过程中付出；原体休居中，窗口只供观察中段投入的参考。"
+                ]
+              ]
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "述职材料又添了十几页",
+                    "把关键三条提到最前面，其余一律放附件。",
+                    "旺兑用互由休艮生，取申、酉日参过程投入。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "中段持续付出的参考窗口",
+                    "围绕与任职要求直接相关的实绩组织说明，核明个人贡献与共同成果，不以不断添项加重承担。",
+                    "用互兑金旺而受艮土所生，沿申酉金气日参过程中付出；体休居中，不据此推定已经耗尽时间。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "述职材料又添了十几页",
+                    "把关键三条提到最前面，其余一律放附件。",
+                    "旺兑用互由休艮生，取申、酉日参过程投入。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "中段持续付出的参考窗口",
+                    "围绕与任职要求直接相关的实绩组织说明，核明个人贡献与共同成果，不以不断添项加重承担。",
+                    "用互兑金旺而受艮土所生，沿申酉金气日参过程中付出；原体休居中，窗口只供观察中段投入的参考。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦。申酉月乾兑金旺，泄休艮最重；震巽木死，分在中末克体，《复明时令之应》「如克体卦气，则宜乘衰」（655 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；本用泄而变用克，定为升不了，难在消耗。初九「有厉，利已」，止以免多失，不翻。",
+                "new": "原体艮土休居中，不能归作囚死弱体；乾金本用及兑金用互旺，受体生而耗泄较重。震、巽木死而克土，又受金制，约束轻而非不存在；全盘没有火直接生体。依本用泄、末用克及在任见克的晋升取用，定为升不了。初九有厉利已取审势知止，不将旺泄折算成材料页数、现实精力耗尽或已漏交内容，也不因无生抹掉正常应事基础。",
+                "reason": "收准原体休与作用轻重，删除几十页材料、遗漏关键条目及精力耗干的现实断定；中段耗泄窗口类别及取日未变。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦。申酉月乾兑金旺，泄休艮最重；震巽木死，分在中末克体，《复明时令之应》「如克体卦气，则宜乘衰」（655 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；本用泄而变用克，定为升不了，难在消耗。初九「有厉，利已」，止以免多失，不翻。",
+                "new": "原体艮土休居中，乾金本用及兑金用互旺，受体生而耗泄较重。震、巽木死而克土，又受金制，约束轻而方向仍在；全盘没有火直接生体。依本用泄、末用克及在任见克的晋升取用，定为升不了。原体休保留正常应事基础，旺泄说明承担较重的方向，不提供实际投入总量。初九有厉利已取审势知止，宜使准备围绕任职相关的实据与责任。",
+                "reason": "补足两金制木和原体休居中的区分，收准旺泄只表示相对关系而不提供现实总量；原取期页数与条数另在timingWordingCorrection清除。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": "原体艮土休居中，不能归作囚死弱体；乾金本用及兑金用互旺，受体生而耗泄较重。震、巽木死而克土，又受金制，约束轻而非不存在；全盘没有火直接生体。依本用泄、末用克及在任见克的晋升取用，定为升不了。初九有厉利已取审势知止，不将旺泄折算成材料页数、现实精力耗尽或已漏交内容，也不因无生抹掉正常应事基础。",
+              "new": "原体艮土休居中，乾金本用及兑金用互旺，受体生而耗泄较重。震、巽木死而克土，又受金制，约束轻而方向仍在；全盘没有火直接生体。依本用泄、末用克及在任见克的晋升取用，定为升不了。原体休保留正常应事基础，旺泄说明承担较重的方向，不提供实际投入总量。初九有厉利已取审势知止，宜使准备围绕任职相关的实据与责任。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": [
+                [
+                  "control",
+                  "changed_use",
+                  "末后承接受制的参考阶段",
+                  "把能够证实的贡献与仍待确认的条件分开说明，谨慎增加承诺，不用反复加码催求升任。",
+                  "变用巽木相而受乾兑制，仍克囚艮；沿寅卯木气日参末段限制，不预报具体稿件版本。"
+                ]
+              ],
+              "new": [
+                [
+                  "control",
+                  "changed_use",
+                  "末后承接受制的参考阶段",
+                  "把能够证实的贡献与仍待确认的条件分开说明，谨慎增加承诺，不用反复加码催求升任。",
+                  "变用巽木相而受乾兑制，仍克囚艮；沿寅卯木气日参末段限制，具体安排以现实信息确认。"
+                ]
+              ]
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "述职方案改到第三稿，还没定下",
+                    "第三稿就定稿，在封面写上日期，不再改。",
+                    "巽木变用克囚艮（受金制，克轻），参寅、卯日看末段受制。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "末后承接受制的参考阶段",
+                    "把能够证实的贡献与仍待确认的条件分开说明，谨慎增加承诺，不用反复加码催求升任。",
+                    "变用巽木相而受乾兑制，仍克囚艮；沿寅卯木气日参末段限制，不预报具体稿件版本。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "control",
+                    "changed_use",
+                    "述职方案改到第三稿，还没定下",
+                    "第三稿就定稿，在封面写上日期，不再改。",
+                    "巽木变用克囚艮（受金制，克轻），参寅、卯日看末段受制。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "control",
+                    "changed_use",
+                    "末后承接受制的参考阶段",
+                    "把能够证实的贡献与仍待确认的条件分开说明，谨慎增加承诺，不用反复加码催求升任。",
+                    "变用巽木相而受乾兑制，仍克囚艮；沿寅卯木气日参末段限制，具体安排以现实信息确认。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦。亥子月艮土囚，乾兑金休；震巽木相，受乾兑金克而无水生，按气弱论，《体用》「稍解其穷」（682 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；体囚而本用泄，定为升不了，难在体弱无生。初九「有厉，利已」，不翻。",
+                "new": "艮土原体囚，本用乾金、用互兑金休而受体生，耗泄有而较轻；震木体互及巽木变用相而克体，受两金制而无水生，按一层作用克力减轻。全盘没有直接生土之火，前泄末克且主体失令，依现行晋升应用定为升不了。休金仍能制木，不由原态休推作用归零。初九有厉利已可取先审进止，不预设述职反复改稿、已有矛盾或停在某一版才可免失。",
+                "reason": "去除第三稿、反复改方案的无据过程，保留体囚、休金有作用、木受制减力三层事实；原末阻取期结构不改。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦。亥子月艮土囚，乾兑金休；震巽木相，受乾兑金克而无水生，按气弱论，《体用》「稍解其穷」（682 行），克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；体囚而本用泄，定为升不了，难在体弱无生。初九「有厉，利已」，不翻。",
+                "new": "艮土原体囚，本用乾金、用互兑金休而受体生，耗泄有而较轻；震木体互及巽木变用相而克体，受两金制而无水生，按一层作用克力减轻。全盘没有直接生土之火，前泄末克且主体失令，依现行晋升应用定为升不了。休金仍能制木，原月态与作用方向分别保留。初九有厉利已，可取先审进止、核明所能承担与仍需支持的条件之义。",
+                "reason": "明确休金仍有制木作用与前中轻泄，并将初九解释收回审时知止；改稿次数等原取期场景在独立timingWordingCorrection处理。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": "艮土原体囚，本用乾金、用互兑金休而受体生，耗泄有而较轻；震木体互及巽木变用相而克体，受两金制而无水生，按一层作用克力减轻。全盘没有直接生土之火，前泄末克且主体失令，依现行晋升应用定为升不了。休金仍能制木，不由原态休推作用归零。初九有厉利已可取先审进止，不预设述职反复改稿、已有矛盾或停在某一版才可免失。",
+              "new": "艮土原体囚，本用乾金、用互兑金休而受体生，耗泄有而较轻；震木体互及巽木变用相而克体，受两金制而无水生，按一层作用克力减轻。全盘没有直接生土之火，前泄末克且主体失令，依现行晋升应用定为升不了。休金仍能制木，原月态与作用方向分别保留。初九有厉利已，可取先审进止、核明所能承担与仍需支持的条件之义。"
+            }
+          ]
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 2,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "1dca27415a84438b427fcdc9ca29532022706b48885b9ac17419e31ce9fcc278",
+        "finalSourceSha256": "b87a2d9c80700314fe900e108a2e2389371c1a440ae07f5917ccb09289a1dbeb",
+        "finalCanonicalArticleArraySha256": "0c88d05f67ebfad3cecb7dd2827b70dd1b4f1b40d6a7ab0d8a3e34ff002f0528",
+        "status": "passed_after_targeted_revision",
+        "currentRevisionFullTextReadCount": 8,
+        "currentRevisionChangedArticleReadCount": 4,
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "rawFacts": "stageIds、nodes、directRelations、decision.indirectEffectsApplied五气完整实际读取",
+          "method": "十二篇公开全文分两批六篇实际读取；五气专业和所有订正字段另次实际读取，均无截断。随后完整读回4条简断、5条新专业和1组新取期，其他字段经差异核对未变，重复同气绑定不计重复阅读。"
+        },
+        "deltaReview": {
+          "fieldsReadOrSameQiBound": [
+            {
+              "month": "寅",
+              "field": "judgment"
+            },
+            {
+              "month": "寅",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "卯",
+              "field": "short"
+            },
+            {
+              "month": "卯",
+              "field": "judgment"
+            },
+            {
+              "month": "卯",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "辰",
+              "field": "judgment"
+            },
+            {
+              "month": "辰",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "巳",
+              "field": "short"
+            },
+            {
+              "month": "巳",
+              "field": "judgment"
+            },
+            {
+              "month": "巳",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "午",
+              "field": "short"
+            },
+            {
+              "month": "午",
+              "field": "judgment"
+            },
+            {
+              "month": "午",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "未",
+              "field": "judgment"
+            },
+            {
+              "month": "未",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "申",
+              "field": "short"
+            },
+            {
+              "month": "申",
+              "field": "judgment"
+            },
+            {
+              "month": "申",
+              "field": "timing"
+            },
+            {
+              "month": "申",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "申",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "酉",
+              "field": "judgment"
+            },
+            {
+              "month": "酉",
+              "field": "timing"
+            },
+            {
+              "month": "酉",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "酉",
+              "field": "timingWordingCorrection"
+            },
+            {
+              "month": "戌",
+              "field": "judgment"
+            },
+            {
+              "month": "戌",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "亥",
+              "field": "judgment"
+            },
+            {
+              "month": "亥",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "子",
+              "field": "judgment"
+            },
+            {
+              "month": "子",
+              "field": "judgmentCorrection"
+            },
+            {
+              "month": "丑",
+              "field": "judgment"
+            },
+            {
+              "month": "丑",
+              "field": "judgmentCorrection"
+            }
+          ],
+          "findingsResolved": [
+            "简断中的编者保留/并读措辞转为真实后助与未升并存的直接说明",
+            "专业中的编辑性否定与旧故事去除，保留在任见克同强末助的规则张力",
+            "秋气应期基于中段付出的直接解释"
+          ]
+        },
+        "substantiveAssessment": "土为原体、乾兑泄体、互震克体而受制、变离生体完整并列。夏相体旺火真实强助不缩成微助，其他月态轻重正确，体休居中。现行在任见克优先与末生常法有利的张力明确留在专业和审计；舆说輹、中无尤取审时自止，与停止一切准备有区别。",
+        "openInterpretiveBoundaries": [
+          "在任见克优先于强末生的项目取权不等同古籍唯一解释",
+          "没有现实预测回验或用户逐篇验收"
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "formalGateDeltaReview": {
+          "previousSourceSha256": "6132406995c5084a5c481f375eb6e7b229c367f30e9d82b8a3d6e3fdc1e8f6ec",
+          "finalSourceSha256": "b87a2d9c80700314fe900e108a2e2389371c1a440ae07f5917ccb09289a1dbeb",
+          "completeChangedParagraphsActuallyRead": 1,
+          "fieldsRead": [
+            {
+              "month": "申",
+              "field": "paragraphs[4]"
+            }
+          ],
+          "scope": "完整新段实际从磁盘读回；其余所有字段逐值比较未变。将原长句中的工作次序分清，继续保持真实任职要求、责任边界与末助接续。consolation-scan已为0，未改扫描器或加豁免。申月已列入此前4篇公开字段复读，因此最终覆盖仍为8篇原样全文、4篇完整变化字段复读。"
+        },
+        "reproducibleInitialToFinalDelta": {
+          "scope": "纯差异留档；完整变化字段已经按既有deltaReview/formalGateDeltaReview实际读过。此次序列化不声称新增阅读。",
+          "initialSnapshotSha256": "1dca27415a84438b427fcdc9ca29532022706b48885b9ac17419e31ce9fcc278",
+          "finalCanonicalArticleArraySha256": "0c88d05f67ebfad3cecb7dd2827b70dd1b4f1b40d6a7ab0d8a3e34ff002f0528",
+          "groups": [
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": {
+                "old": "有生体之卦，又有克体之卦：体互震木克死艮于中，月令旺而受乾兑金克、无水生，按气弱论；变用离火相，生体于末；本用、用互体生用。盘面按结局本可成，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土死，本用乾金、用互兑金囚而受体生，体互震木旺而克土，受乾兑制且无水生，依一层规则克力减轻。末变离火相而生体，具有得令的真实补益；体用互变之诀末生有利的正面证据完整保留。现行晋升在任见克优先，故定为升不了，末助不削成仅够补一句说明。九二舆说輹，中无尤也，取审时自止、进退得中；此爻的无尤是行止义，不用来判定现实责任归属。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "有生体之卦，又有克体之卦：体互震木克死艮于中，月令旺而受乾兑金克、无水生，按气弱论；变用离火相，生体于末；本用、用互体生用。盘面按结局本可成，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行）。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土死，本用乾金、用互兑金囚而受体生，体互震木旺而克土，受乾兑制且无水生，依一层规则克力减轻。末变离火相而生体，具有得令的真实补益；体用互变之诀末生有利，是此盘积极的后势。现行晋升在任见克取先，故定为升不了，过程仍可认真承接相火生扶。九二舆说輹，中无尤也，取审时自止、进退得中，工作上的争取宜与能够确认的承担相称。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": "原体艮土死，本用乾金、用互兑金囚而受体生，体互震木旺而克土，受乾兑制且无水生，依一层规则克力减轻。末变离火相而生体，具有得令的真实补益；体用互变之诀末生有利的正面证据完整保留。现行晋升在任见克优先，故定为升不了，末助不削成仅够补一句说明。九二舆说輹，中无尤也，取审时自止、进退得中；此爻的无尤是行止义，不用来判定现实责任归属。",
+              "new": "原体艮土死，本用乾金、用互兑金囚而受体生，体互震木旺而克土，受乾兑制且无水生，依一层规则克力减轻。末变离火相而生体，具有得令的真实补益；体用互变之诀末生有利，是此盘积极的后势。现行晋升在任见克取先，故定为升不了，过程仍可认真承接相火生扶。九二舆说輹，中无尤也，取审时自止、进退得中，工作上的争取宜与能够确认的承担相称。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "卯"
+              ],
+              "old": "末后离火相生，晋升这次仍未成，不能晋升的判断须与后助并读。艮土死，乾兑囚而泄体，互震旺克又受金制，前中仍有付出与限制。九二重中而能止，宜让申述有清楚证据，尚需确认的任职条件据实列明，保留积极准备与适当等待。",
+              "new": "末后离火相生，这次仍不能晋升，宜在已有帮助之中审清进止。艮土死，乾兑囚而泄体，互震旺克又受金制，前中仍有付出与限制。九二重中而能止，宜让申述有清楚证据，尚需确认的任职条件据实列明，保留积极准备与适当等待。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": {
+                "old": "有生体之卦，又有克体之卦：旺艮承囚震之克，震又受乾兑金克，按气弱论；休离变用生体，休为无气，助轻；本用、用互泄于相金。体旺，《体用衰旺之诀》「凡体卦宜乘旺，克体之卦宜衰」（804 行）；变用生体（798 行），盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土旺，乾金本用与兑金用互相而受体生，前中付出有气；震木体互囚而克土，又受两金制，压力轻。末变离火休而生体，助有而不重；体旺可承与末生的有利关系完整保留。现行晋升在任见克应用仍取先，定为升不了，不能据此反说旺体无力或末火无助。九二舆说輹、中无尤是审势自止之义，所取工作分寸是申述与承担均有现实根据。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "有生体之卦，又有克体之卦：旺艮承囚震之克，震又受乾兑金克，按气弱论；休离变用生体，休为无气，助轻；本用、用互泄于相金。体旺，《体用衰旺之诀》「凡体卦宜乘旺，克体之卦宜衰」（804 行）；变用生体（798 行），盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土旺，乾金本用与兑金用互相而受体生，前中付出有气；震木体互囚而克土，又受两金制，压力轻。末变离火休而生体，助有而不重；旺体可承，末生也给后段留下补益。现行晋升在任见克应用仍取先，定为升不了，较能承受的过程与轻助保持各自分量。九二舆说輹、中无尤是审势自止之义，可将工作分寸落在准确说明贡献、核清责任与条件上。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": "原体艮土旺，乾金本用与兑金用互相而受体生，前中付出有气；震木体互囚而克土，又受两金制，压力轻。末变离火休而生体，助有而不重；体旺可承与末生的有利关系完整保留。现行晋升在任见克应用仍取先，定为升不了，不能据此反说旺体无力或末火无助。九二舆说輹、中无尤是审势自止之义，所取工作分寸是申述与承担均有现实根据。",
+              "new": "原体艮土旺，乾金本用与兑金用互相而受体生，前中付出有气；震木体互囚而克土，又受两金制，压力轻。末变离火休而生体，助有而不重；旺体可承，末生也给后段留下补益。现行晋升在任见克应用仍取先，定为升不了，较能承受的过程与轻助保持各自分量。九二舆说輹、中无尤是审势自止之义，可将工作分寸落在准确说明贡献、核清责任与条件上。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": {
+                "old": "有生体之卦，又有克体之卦：休震体互克相艮，又受乾兑金克而无生，按气弱论；旺离变用生体。体有气，《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）；变用生体，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土相，本用乾金与用互兑金死而受体生，泄轻；体互震木休而克土，又受乾兑制且无水生，克力轻。末变离火旺而生体，体相、旺生与轻阻均须完整保留；按末生常法有利。依本库现行在任见克的晋升应用，定为升不了，属于中克与强后助的取权问题，不把强生改成无助。九二舆说輹、小象中无尤重在居中能止，正文取进止与承担条件相称。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "有生体之卦，又有克体之卦：休震体互克相艮，又受乾兑金克而无生，按气弱论；旺离变用生体。体有气，《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）；变用生体，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土相，本用乾金与用互兑金死而受体生，泄轻；体互震木休而克土，又受乾兑制且无水生，克力轻。末变离火旺而生体，自身可承、过程轻阻、后助有力；按末生常法具有明显的有利方向。依本库现行在任见克的晋升应用，定为升不了，判定取中克为先而保留强后助。九二舆说輹、小象中无尤重在居中能止，工作上的进止应与承担条件相称。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "short",
+              "months": [
+                "巳"
+              ],
+              "old": "末离当旺而生相艮，本次仍不能晋升，积极后势须完整保留。本用与用互死金耗泄轻，互震休克且受金制，过程较能承受，尚存的克体关系仍参与全局。九二教人在未宜进处自止，宜据实说明职责和成果，使有利帮助接在清楚的承担范围上。",
+              "new": "末离当旺而生相艮，本次仍不能晋升，后段仍有得力的帮助。本用与用互死金耗泄轻，互震休克且受金制，过程较能承受，尚存的克体关系仍参与全局。九二教人在未宜进处自止，宜据实说明职责和成果，使有利帮助接在清楚的承担范围上。"
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": "原体艮土相，本用乾金与用互兑金死而受体生，泄轻；体互震木休而克土，又受乾兑制且无水生，克力轻。末变离火旺而生体，体相、旺生与轻阻均须完整保留；按末生常法有利。依本库现行在任见克的晋升应用，定为升不了，属于中克与强后助的取权问题，不把强生改成无助。九二舆说輹、小象中无尤重在居中能止，正文取进止与承担条件相称。",
+              "new": "原体艮土相，本用乾金与用互兑金死而受体生，泄轻；体互震木休而克土，又受乾兑制且无水生，克力轻。末变离火旺而生体，自身可承、过程轻阻、后助有力；按末生常法具有明显的有利方向。依本库现行在任见克的晋升应用，定为升不了，判定取中克为先而保留强后助。九二舆说輹、小象中无尤重在居中能止，工作上的进止应与承担条件相称。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "午"
+              ],
+              "old": "后段旺火确能生扶，这次升不上去的判断也仍须面对。艮土相，本用和用互死金泄轻，互震休克又被金制，过程不宜尽作重难。九二重在能止而守中，宜把已有成绩与新增职责所需条件分别说清，认真利用可用支持，不以有助替代任命落实。",
+              "new": "后段旺火确能生扶，这次升不上去的判断也仍须面对。艮土相，本用和用互死金泄轻，互震休克又被金制，过程压力较轻而后助有力。九二重在能止而守中，宜把已有成绩与新增职责所需条件分别说清，认真利用可用支持，不以有助替代任命落实。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "中段投入较重的参考窗口",
+                  "选取与任职要求直接相关的事实，把个人责任和共同成果交代清楚，使补充有明确用途。",
+                  "用互兑金旺而受休艮所生，保留申酉金气日参中段付出；不据此决定现实投入数量或时限。"
+                ]
+              ],
+              "new": [
+                [
+                  "drain",
+                  "use_mutual",
+                  "中段投入较重的参考窗口",
+                  "选取与任职要求直接相关的事实，把个人责任和共同成果交代清楚，使补充有明确用途。",
+                  "用互兑金旺而受休艮所生，保留申酉金气日参中段付出；所需投入与现实要求相接，日期只作过程参考。"
+                ]
+              ]
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "申"
+              ],
+              "old": "此局的准备宜讲究取舍，也给事实留出准确的边界。遇到需要补充的要求，先判断它与所求职责的联系，再提供能够证明的内容，不必为了显得配合而不断添入无关承担。九二之止使行动不被一味求进带走，末段的薄助也可据实承接，让说明保持稳妥而完整。",
+              "new": "此局宜围绕任职要求安排准备，先核明需要说明哪些事实，再判断已有材料能支持到哪里。与所求职责直接相关的内容可以展开，其余经历只补充必要背景，未确认的责任则暂不作承诺。九二的守中使主动有尺度，面对末段薄助也应按实际条件接续，认真完成能够负责的部分。"
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "赶出来的材料又返工一轮",
+                    "返工只改被点到的那一页，其余不动。",
+                    "旺兑用互受休艮生，按申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "中段投入较重的参考窗口",
+                    "选取与任职要求直接相关的事实，把个人责任和共同成果交代清楚，使补充有明确用途。",
+                    "用互兑金旺而受休艮所生，保留申酉金气日参中段付出；不据此决定现实投入数量或时限。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "赶出来的材料又返工一轮",
+                    "返工只改被点到的那一页，其余不动。",
+                    "旺兑用互受休艮生，按申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "use_mutual",
+                    "中段投入较重的参考窗口",
+                    "选取与任职要求直接相关的事实，把个人责任和共同成果交代清楚，使补充有明确用途。",
+                    "用互兑金旺而受休艮所生，保留申酉金气日参中段付出；所需投入与现实要求相接，日期只作过程参考。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": {
+                "old": "有生体之卦，又有克体之卦：死震体互轻克，又受金制；囚离变用薄生；旺乾、旺兑泄休艮。变用生体，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），盘面按结局本可成；泄重、生薄，《占卦诀》「生体是变卦，则稍迟耳」（792 行）。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "艮土原体休居中，乾金本用与兑金用互旺而受体生，前中耗泄较重；震木体互死而克土又受金制，约束轻。末变离火囚而生体，助有而薄；一层关系不递推为金制尽失或火生为零。末生有利与生体在变稍迟均保留，现行晋升在任见克取先，定为升不了。九二守中能止，可据此审察承担边界，不把休体或旺泄换成现实精力已耗尽。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "有生体之卦，又有克体之卦：死震体互轻克，又受金制；囚离变用薄生；旺乾、旺兑泄休艮。变用生体，《体用互变之诀》「变生体及比和，则事事临终有吉利」（798 行），盘面按结局本可成；泄重、生薄，《占卦诀》「生体是变卦，则稍迟耳」（792 行）。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "艮土原体休居中，乾金本用与兑金用互旺而受体生，前中耗泄较重；震木体互死而克土又受金制，约束轻。末变离火囚而生体，助有而薄；一层关系保留金制木与火生土各自的方向。末生有利与生体在变稍迟，说明后段仍有接续；现行晋升在任见克取先，定为升不了。九二守中能止，适合审察承担边界，使准备集中在与任职要求相接的真实成果上。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "short",
+              "months": [
+                "申"
+              ],
+              "old": "前中耗泄较重，这次升不了，末离囚而生体的帮助仍应保留。艮土休居中，乾兑旺受体生，互震死克且被金制，所难在付出与接续未能顺畅相连。九二中无尤强调审势自止，宜择与职级最相关的实绩讲清，减少失据的延伸，保留准确承担的分寸。",
+              "new": "前中耗泄较重，这次升不了，末离囚而生体仍有偏薄的帮助。艮土休居中，乾兑旺受体生，互震死克且被金制，所难在付出与接续未能顺畅相连。九二中无尤强调审势自止，宜择与职级最相关的实绩讲清，减少失据的延伸，保留准确承担的分寸。"
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": "艮土原体休居中，乾金本用与兑金用互旺而受体生，前中耗泄较重；震木体互死而克土又受金制，约束轻。末变离火囚而生体，助有而薄；一层关系不递推为金制尽失或火生为零。末生有利与生体在变稍迟均保留，现行晋升在任见克取先，定为升不了。九二守中能止，可据此审察承担边界，不把休体或旺泄换成现实精力已耗尽。",
+              "new": "艮土原体休居中，乾金本用与兑金用互旺而受体生，前中耗泄较重；震木体互死而克土又受金制，约束轻。末变离火囚而生体，助有而薄；一层关系保留金制木与火生土各自的方向。末生有利与生体在变稍迟，说明后段仍有接续；现行晋升在任见克取先，定为升不了。九二守中能止，适合审察承担边界，使准备集中在与任职要求相接的真实成果上。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": {
+                "old": "有生体之卦，又有克体之卦：体互震木克囚艮，月令相而受乾兑金克、无水生，按气弱论；死离变用生体，力薄；本用、用互泄于休金。《占卦诀》「若有生体之卦，又有克体之卦，则事有阻节」（792 行）；变用生体，盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土囚，乾金本用与兑金用互休而受体生，付出较轻；震木体互相而克土，受两金制且无水生，克力减轻。末变离火死而生体，后助偏薄而方向仍在。依现行晋升在任见克专用解释定为升不了；有生有克的阻节与末生有利条文分层保留，不以结论删去补益。九二中无尤取知进知止，未就现实职位、项目主责或当事人过错作断定。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "有生体之卦，又有克体之卦：体互震木克囚艮，月令相而受乾兑金克、无水生，按气弱论；死离变用生体，力薄；本用、用互泄于休金。《占卦诀》「若有生体之卦，又有克体之卦，则事有阻节」（792 行）；变用生体，盘面按结局本可成。然问晋升者在任，盘中有体互震木克体，《求名占》「若在任占卜，最忌见克体之卦，如卦有克体者，即居官见祸，轻则上司责罚，重则削官退居」（553 行），定为升不了。九二「舆说輹」自止无尤，不翻。",
+                "new": "原体艮土囚，乾金本用与兑金用互休而受体生，付出较轻；震木体互相而克土，受两金制且无水生，克力减轻。末变离火死而生体，后助偏薄而方向仍在。依现行晋升在任见克专用解释定为升不了；有生有克对应过程阻节，末生有利则留下后段接续，两者并存。九二中无尤取知进知止，宜核明实际经验与新增职责的联系，使申述和承诺都立足于能够确认的条件。",
+                "reason": "补明原月气、一层减克及在任见克优先于末生的判断层次，完整保留真实后助与九二守中自止之义；原取期的具体故事另由timingWordingCorrection清理，结果与窗口结构保持。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": "原体艮土囚，乾金本用与兑金用互休而受体生，付出较轻；震木体互相而克土，受两金制且无水生，克力减轻。末变离火死而生体，后助偏薄而方向仍在。依现行晋升在任见克专用解释定为升不了；有生有克的阻节与末生有利条文分层保留，不以结论删去补益。九二中无尤取知进知止，未就现实职位、项目主责或当事人过错作断定。",
+              "new": "原体艮土囚，乾金本用与兑金用互休而受体生，付出较轻；震木体互相而克土，受两金制且无水生，克力减轻。末变离火死而生体，后助偏薄而方向仍在。依现行晋升在任见克专用解释定为升不了；有生有克对应过程阻节，末生有利则留下后段接续，两者并存。九二中无尤取知进知止，宜核明实际经验与新增职责的联系，使申述和承诺都立足于能够确认的条件。"
+            }
+          ]
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 3,
+        "reviewer": "/root/source_audit",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "c6a717d1fc585ce60ed23de84676e2e2ccdd8f0c9a8c2442a055d6c9bc469513",
+        "status": "passed_after_targeted_revision",
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "rawFacts": "stageIds、nodes、directRelations、decision.indirectEffectsApplied五气完整实际读取",
+          "sources": [
+            "docs/READING_POLICY_V2.md 第十四节定义、作用与大畜九三例证完整实际核读",
+            "sources/revised/meihua-volumes-1-3.txt 494行体用总诀用党多相关完整段实际核读，区别682行体用",
+            "sources/reference/zhouyi-zhengyi-hans/03大畜.txt 全卦经传与王孔注疏完整实际读取，九三曰闲、阂卫、得时合志与利往全义",
+            "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt 九三经文爻释小象完整实际核读，日常闲习与艰贞",
+            "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt 九三完整段与小象实际核读，曰当为日与畜极俱进",
+            "sources/reference/zhouyi-zhengyi-hans/04損.txt 卦辞彖象及注疏相关完整段实际读取"
+          ],
+          "method": "首轮实际通读十二篇全部公开字段及五气专业和全部订正，其余七篇payCorrection另次完整读取。用党多修订后再次完整读取十二篇全部公开字段、五气专业及全部订正；最后戌丑两个payExplanation和payCorrection完整旧新字段再读。各次均无截断。"
+        },
+        "findings": [
+          {
+            "id": "DACHU26-L3-USEPARTY-OMITTED",
+            "severity": "substantive-rule",
+            "scope": "五气judgment及夏土秋相关公开字段、土气timing",
+            "issue": "初稿遗漏乾用金、兑用互金、兑变用金构成用党多，仍由夏相、土旺或秋休直接写有效承受。第十四节按处数不分有气无气，各气均应体势衰；原月气与一层减克关系保留，既定未升不变。",
+            "resolution": "五气专业全部补明用党多；夏土秋八篇针对会误读为有效体有力的标题、简断或完整段修订，土气timing的体能承同步收准。公开正文不机械遍加术语；完整变化字段与初终快照保留。"
+          },
+          {
+            "id": "DACHU26-L3-PAY-RESIDUAL-BODY-STRENGTH",
+            "severity": "consistency",
+            "scope": "戌及丑payExplanation/payCorrection",
+            "issue": "首轮用党多修订后，戌薪资说明仍有旺体可承，丑仍以旺体带出薪资边界。",
+            "resolution": "两条完整薪资字段改为只论本次晋升随岗薪资，并同步payCorrection.new；作者交完整delta后独审实际复读。"
+          }
+        ],
+        "substantiveAssessment": "大畜九三三金泄艮、震木克艮被金制而减、无直接生体均与五气facts一致。用党多为独立结构层，按现行规则体势衰，原体死相休囚旺不被改动，也不将三金写成耗泄数量倍率或递推消除轻克。无生有克、体生用与用党多同向保留未升，首尾泄未伪装为补益。良马逐、利有攸往与上合志的得时积极义完整保留，艰贞守正与程朱习备分别说明；王孔曰闲、阂卫异读并未混署为日常训练。正文有清楚结论、实质解释与行事方法，薪资和应期未构造确定的现实事件。",
+        "openInterpretiveBoundaries": [
+          "用党多按本库第十四节作用于体势，不能据原体旺相或原休居中直接取实际体有力；该层并未改原月气。",
+          "九三利往、上合志与既定未升之间的取权是现行问项解释，保留爻义积极面，不声称古籍只允许唯一结论。",
+          "王孔曰闲阂卫与程朱日习有训诂分歧，正文分署，其现代工作应用只是行事启发。",
+          "没有现实预测回验、真人审校或用户逐篇验收。"
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "finalCanonicalArticleArraySha256": "5dac6c390487f8eeadb583bb6f71e1cd2c378ef9d9eb80b84aac02d6f457cde9",
+        "currentRevisionFullTextReadCount": 10,
+        "currentRevisionChangedArticleReadCount": 2,
+        "deltaReview": {
+          "method": "用党多修订后的第二版十二篇公开全文及五气专业已再次实际通读。第二版至最终版只有戌、丑两个薪资字段和对应订正，完整旧新字段已实际复读；其余十篇保持第二版完整全文阅读。两份作者delta逐字段与独立保存的初读、中间及最终快照程序核对，差异完整无遗漏。",
+          "fullPublicArticleReadEvents": 24,
+          "secondReadSnapshot": "rootreviews/026-line3-read2.json",
+          "secondReadSnapshotSha256": "0d3a15a807bef7a66d11be63d349ddd1a33fccdb9f6e7ff6a739d55e4eac7e7d",
+          "lastChangedArticles": [
+            "戌",
+            "丑"
+          ],
+          "resolvedFindings": [
+            "DACHU26-L3-USEPARTY-OMITTED",
+            "DACHU26-L3-PAY-RESIDUAL-BODY-STRENGTH"
+          ],
+          "finalSnapshotSha256": "780627a073a48cea2adc5c920ba88311009b7ce9e3f8363000168157431b8d64",
+          "reviewerIsHuman": false
+        },
+        "mechanicalCrossChecks": {
+          "sameQiProfessionalFieldsIdentical": true,
+          "allCorrectionNewFieldsMatchCurrentFields": true,
+          "correctionOldMatchesFrozenFiveQiSource": true,
+          "outcomesUnchanged": true,
+          "timingWindowKindRoleAndCountUnchanged": true,
+          "authorDeltaExactlyMatchesSavedRevisionDifferences": true,
+          "scope": "该爻全部12篇，基准 sources/editorial/promotion-pay/hex-026.json；程序比较不是额外人工阅读。"
+        },
+        "reproducibleInitialToFinalDelta": {
+          "scope": "完整初读版至最终批准版差异；公开正文以完整改段保存，其他字段完整旧新，同值实例合并列月份。中间版已另存并实读。",
+          "initialCanonicalArticleArraySha256": "2b8893c35a6d1c68cf791f848403595036322c3f542dcec6287668f98f96063a",
+          "finalCanonicalArticleArraySha256": "5dac6c390487f8eeadb583bb6f71e1cd2c378ef9d9eb80b84aac02d6f457cde9",
+          "changes": [
+            {
+              "field": "judgment",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": "原体艮土死，本用乾金、用互兑金、变用兑金皆囚而受体生，三段耗泄较轻。体互震木旺克土，受金制而无水生，按一层规则克力减轻。盘中无直接生体，依无生有克及求名体生用之义定为升不了。九三良马逐、利有攸往有得时合志的正面意义，艰贞要求行进守正；程朱所释日常习备，可用于审清方法与承担条件。积极爻义与盘面限制并存，准备宜专力而有据。",
+              "new": "原体艮土死，本用乾金、用互兑金、变用兑金皆囚而受体生，单处耗泄较轻；三金构成用党多，依体用总诀与本库规则体势衰。体互震木旺克土，受金制无水生而克减，仍无直接生体。依无生有克、求名体生用及用聚之势，定为升不了。九三良马逐、利有攸往有得时合志的正面意义，艰贞要求行进守正；程朱日常习备另供方法与承担条件的启发，准备宜专力有据。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "寅",
+                "卯"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦：死艮泄于本用乾、用互兑、变用兑三处囚金；体互震木月令旺，受乾兑金克而无水生，按气弱论，克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），体死而一路泄，定为升不了。九三「良马逐，利艰贞。日闲舆卫，利有攸往」，利往在艰贞、日习舆卫之后，盘中无生体之卦，吉辞不翻。",
+                "new": "原体艮土死，本用乾金、用互兑金、变用兑金皆囚而受体生，三段耗泄较轻。体互震木旺克土，受金制而无水生，按一层规则克力减轻。盘中无直接生体，依无生有克及求名体生用之义定为升不了。九三良马逐、利有攸往有得时合志的正面意义，艰贞要求行进守正；程朱所释日常习备，可用于审清方法与承担条件。积极爻义与盘面限制并存，准备宜专力而有据。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦：死艮泄于本用乾、用互兑、变用兑三处囚金；体互震木月令旺，受乾兑金克而无水生，按气弱论，克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），体死而一路泄，定为升不了。九三「良马逐，利艰贞。日闲舆卫，利有攸往」，利往在艰贞、日习舆卫之后，盘中无生体之卦，吉辞不翻。",
+                "new": "原体艮土死，本用乾金、用互兑金、变用兑金皆囚而受体生，单处耗泄较轻；三金构成用党多，依体用总诀与本库规则体势衰。体互震木旺克土，受金制无水生而克减，仍无直接生体。依无生有克、求名体生用及用聚之势，定为升不了。九三良马逐、利有攸往有得时合志的正面意义，艰贞要求行进守正；程朱日常习备另供方法与承担条件的启发，准备宜专力有据。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。独审补核第十四节后补入三金用党多：原月气不改，实际体势按衰看，不再把夏相、土旺或秋休直接写成有效承受有力。此层按处数而不分各金有气无气，也不改一层金制木的关系。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十四节；第十四节定义用党多并明确以大畜九三三金为例，原月气与实际体势分层。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "494行体用总诀完整段：体党多而体势盛、用党多则体势衰；不误署为682行体用篇。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": "原体艮土旺，本用乾金、用互兑金、变用兑金俱相而受体生，初中末付出有气；体互震木囚克土，又受金制，约束轻。旺体能承且受克无大害是有利基础，前后仍皆泄体、没有直接生扶，依求名体生用及无生有克定为升不了。九三得时合志、利有攸往的正面意义保持，艰贞要求行动有准；程朱习备之义可用于熟悉方法与核清承担，积极准备宜有主次。",
+              "new": "原体艮土旺，本用乾金、用互兑金、变用兑金俱相而受体生，初中末付出有气；三金构成用党多，依体用总诀与本库规则体势衰，不能仅凭原土旺取实际体有力或旺体免害。体互震木囚克土又受金制，约束轻；无直接生扶，依求名体生用、无生有克与用聚之势定为升不了。九三得时合志、利有攸往的积极义保持，艰贞与程朱习备分别用于守正行进、熟悉方法及核清承担。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦：旺艮承囚震之克，本用、用互、变用三处泄于相金。本用、变用皆泄，不属比和或体克用之例；《求名占》「体生用，名不可就」（553 行），定为升不了。《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）只保免害。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土旺，本用乾金、用互兑金、变用兑金俱相而受体生，初中末付出有气；体互震木囚克土，又受金制，约束轻。旺体能承且受克无大害是有利基础，前后仍皆泄体、没有直接生扶，依求名体生用及无生有克定为升不了。九三得时合志、利有攸往的正面意义保持，艰贞要求行动有准；程朱习备之义可用于熟悉方法与核清承担，积极准备宜有主次。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦：旺艮承囚震之克，本用、用互、变用三处泄于相金。本用、变用皆泄，不属比和或体克用之例；《求名占》「体生用，名不可就」（553 行），定为升不了。《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」（804 行）只保免害。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土旺，本用乾金、用互兑金、变用兑金俱相而受体生，初中末付出有气；三金构成用党多，依体用总诀与本库规则体势衰，不能仅凭原土旺取实际体有力或旺体免害。体互震木囚克土又受金制，约束轻；无直接生扶，依求名体生用、无生有克与用聚之势定为升不了。九三得时合志、利有攸往的积极义保持，艰贞与程朱习备分别用于守正行进、熟悉方法及核清承担。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。独审补核第十四节后补入三金用党多：原月气不改，实际体势按衰看，不再把夏相、土旺或秋休直接写成有效承受有力。此层按处数而不分各金有气无气，也不改一层金制木的关系。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十四节；第十四节定义用党多并明确以大畜九三三金为例，原月气与实际体势分层。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "494行体用总诀完整段：体党多而体势盛、用党多则体势衰；不误署为682行体用篇。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "辰"
+              ],
+              "old": "旺体足以承受眼前事务，这次仍升不上去，准备宜发挥扎实而有主次的长处。辰月艮土旺，能够处理过程中的付出与轻阻，但前后并无直接生土的卦。自身有力值得运用，也需要辨认力量向何处使用，才使所做之事真正支持所求职责。",
+              "new": "原体虽旺而用聚牵动体势，这次仍升不上去，准备宜扎实而有主次。辰月艮土原气为旺，乾兑三处金受土所生，聚成用党，实际承受另有趋衰之处。前后没有直接生扶，宜辨明每项付出与所求职责的联系，使重要内容有充分依据，也让承担有清楚范围。"
+            },
+            {
+              "field": "paragraphs[2]",
+              "months": [
+                "辰"
+              ],
+              "old": "盘中本用乾金、用互兑金和变用兑金都相，受旺土所生，初中末各有付出。体互震木囚而克土，再受金制，牵制较轻；旺体能承是这一局的有利基础。末后仍是兑金泄体，尚未转为补益，故过程可应对与职位已落实之间，仍有需要认真分辨的距离。",
+              "new": "盘中本用乾金、用互兑金和变用兑金都相，受旺土所生，初中末各有付出。体互震木囚而克土，再受金制，牵制较轻；原气之旺与用党多的体势须分别理解。末后仍是兑金泄体，尚未转为补益，轻克也没有解除三金聚泄，故准备更应有清楚的取舍，职位所求仍未成局。"
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "辰"
+              ],
+              "old": "当前不必凭增加事项来证明自己足够能干，更适合把重要内容做完整，使贡献、理由和可核对结果彼此相接。程传所说的习备，也可落实为审察方法是否可靠、配合条件是否明白。保持这种准备，便能让旺体的从容用于实事，进取有章法，所言有根据。",
+              "new": "当前不必凭增加事项来证明自己足够能干，更适合把重要内容做完整，使贡献、理由和可核对结果彼此相接。程传所说的习备，也可落实为审察方法是否可靠、配合条件是否明白。保持这种准备，可使有限投入用于要处，已有事实得到准确说明，进取有章法，所言有根据。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "辰"
+              ],
+              "old": "根基较足，这次仍升不上去。辰月旺艮受乾兑三处相金之泄，互震囚克且受金制，轻阻可承而直接生扶未见。九三良马逐、上合志有进取之利，艰贞则要求守住承担的依据，宜把成绩与职级责任讲透，让有力准备保持主次，不靠增添事项求成。",
+              "new": "原体虽旺，这次仍升不上去。辰月艮土生乾兑三处相金，用党聚而体势趋衰，互震囚克且受金制，直接生扶未见。九三良马逐、上合志有进取之利，艰贞要求守住承担依据，宜把成绩与职级责任讲透，准备保持主次，不靠增添事项求成。"
+            },
+            {
+              "field": "timing",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": [
+                [
+                  "drain",
+                  "changed_use",
+                  "收尾仍须付出的参考窗口",
+                  "围绕职级要求说明最相关的成果，把本人作用、方法和适用条件交代清楚。",
+                  "末变兑金相而受旺艮所生，体能承而泄仍在；沿申酉金气日参末段付出，实际期限另据现实安排。"
+                ]
+              ],
+              "new": [
+                [
+                  "drain",
+                  "changed_use",
+                  "收尾仍须付出的参考窗口",
+                  "围绕职级要求说明最相关的成果，把本人作用、方法和适用条件交代清楚。",
+                  "末变兑金相而受原旺艮所生，用聚牵动体势，泄仍在；沿申酉金气日参末段付出，实际期限另据现实安排。"
+                ]
+              ]
+            },
+            {
+              "field": "timingWordingCorrection",
+              "months": [
+                "辰",
+                "未",
+                "戌",
+                "丑"
+              ],
+              "old": {
+                "old": [
+                  [
+                    "drain",
+                    "changed_use",
+                    "日常管理成绩的整理一拖再拖",
+                    "日常成绩每周整理一页，别等到最后。",
+                    "相兑末用受旺艮生，按申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "changed_use",
+                    "收尾仍须付出的参考窗口",
+                    "围绕职级要求说明最相关的成果，把本人作用、方法和适用条件交代清楚。",
+                    "末变兑金相而受旺艮所生，体能承而泄仍在；沿申酉金气日参末段付出，实际期限另据现实安排。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": [
+                  [
+                    "drain",
+                    "changed_use",
+                    "日常管理成绩的整理一拖再拖",
+                    "日常成绩每周整理一页，别等到最后。",
+                    "相兑末用受旺艮生，按申、酉日。"
+                  ]
+                ],
+                "new": [
+                  [
+                    "drain",
+                    "changed_use",
+                    "收尾仍须付出的参考窗口",
+                    "围绕职级要求说明最相关的成果，把本人作用、方法和适用条件交代清楚。",
+                    "末变兑金相而受原旺艮所生，用聚牵动体势，泄仍在；沿申酉金气日参末段付出，实际期限另据现实安排。"
+                  ]
+                ],
+                "reason": "删除原取期中没有盘面依据的具体评议、材料或通知经过，改述相同作用位置的过程或结果参考；种类、位置、方法与窗口数量不变。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "title",
+              "months": [
+                "辰"
+              ],
+              "old": "旺体可承却无生扶接续",
+              "new": "原体虽旺仍须审清付出"
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": "原体艮土相，本用乾金、用互兑金、变用兑金皆死，受体生而泄轻；体互震木休克土，又受金制无水生，约束轻。体相可承，前中末仍皆泄体且无直接生扶，依求名体生用与无生有克定为升不了。九三良马逐、利有攸往取得时合志的积极方向，艰贞使前行有正当尺度；程朱习备之义可用于核清条件。过程较能承受与职位未成各有层次。",
+              "new": "原体艮土相，本用乾金、用互兑金、变用兑金皆死而受体生，单处泄轻；三金构成用党多，体势衰，原体相不直接作实际体有力。体互震木休克土，受金制无水生而克减。前中末皆泄且无直接生扶，依求名体生用、无生有克及用聚之势定为升不了。九三得时合志、利有攸往有积极前行之义，艰贞使行动有准；程朱习备之义可用于核清方法与条件，准备宜有主次。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "巳",
+                "午"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦：相艮泄于本用、用互、变用三处死金，泄轻；休震体互克体，又受乾兑金克而无生，按气弱论。本用、变用皆泄，不属比和或体克用之例；《求名占》「体生用，名不可就，或因名有丧」（553 行），定为升不了。体相只减其难。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土相，本用乾金、用互兑金、变用兑金皆死，受体生而泄轻；体互震木休克土，又受金制无水生，约束轻。体相可承，前中末仍皆泄体且无直接生扶，依求名体生用与无生有克定为升不了。九三良马逐、利有攸往取得时合志的积极方向，艰贞使前行有正当尺度；程朱习备之义可用于核清条件。过程较能承受与职位未成各有层次。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦：相艮泄于本用、用互、变用三处死金，泄轻；休震体互克体，又受乾兑金克而无生，按气弱论。本用、变用皆泄，不属比和或体克用之例；《求名占》「体生用，名不可就，或因名有丧」（553 行），定为升不了。体相只减其难。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土相，本用乾金、用互兑金、变用兑金皆死而受体生，单处泄轻；三金构成用党多，体势衰，原体相不直接作实际体有力。体互震木休克土，受金制无水生而克减。前中末皆泄且无直接生扶，依求名体生用、无生有克及用聚之势定为升不了。九三得时合志、利有攸往有积极前行之义，艰贞使行动有准；程朱习备之义可用于核清方法与条件，准备宜有主次。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。独审补核第十四节后补入三金用党多：原月气不改，实际体势按衰看，不再把夏相、土旺或秋休直接写成有效承受有力。此层按处数而不分各金有气无气，也不改一层金制木的关系。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十四节；第十四节定义用党多并明确以大畜九三三金为例，原月气与实际体势分层。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "494行体用总诀完整段：体党多而体势盛、用党多则体势衰；不误署为682行体用篇。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "巳"
+              ],
+              "old": "耗泄与牵制都较轻，本次仍不能晋升，已有承受基础却可用于认真准备。巳月艮土相，主体较能应事，九三又有良马相逐、向前有利的积极意思。这里宜把行动做得清楚稳健，使实绩、方法与责任能够互相说明，不因过程较顺便提前认定职位落定。",
+              "new": "单处耗泄和牵制较轻，本次仍不能晋升，三金聚泄所带来的承担需要合看。巳月艮土原气为相，用与互变金同类相聚，使实际体势趋衰。九三仍有良马相逐、向前有利的积极意思，宜据此保持认真准备，使实绩、方法与责任互相说明，行动有清楚依据。"
+            },
+            {
+              "field": "paragraphs[1]",
+              "months": [
+                "巳"
+              ],
+              "old": "本用乾金以及用互、变用两兑金都死，受体所生而耗泄轻；体互震木休而克土，也因乾兑制约而减轻压力。末后仍为土生金，前中末没有直接生土的关系。自身能承与全程有耗同时存在，中段之克也在，所以过程的轻重与本次结果需要分别看清。",
+              "new": "本用乾金以及用互、变用两兑金都死，受体所生而耗泄轻；体互震木休而克土，也因乾兑制约而减轻压力。末后仍为土生金，前中末没有直接生土的关系。金在本用、用互和末变同聚，体势受其牵动，中段之克也在。单一关系虽轻，合看仍须审察主体的承担，使准备的重点和范围各有根据。"
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "巳"
+              ],
+              "old": "程传习备之说的启发，可落在事先熟悉方法、检查条件和保持负责的节奏上。已有事实不妨充分呈现，尚未确定的范围则继续查明，让准备始终与实际要求相接。这样使用相体的承受力与轻阻的条件，能使事情做得稳实，也让一次未升不致掩去真实积累的价值。",
+              "new": "程传习备之说的启发，可落在事先熟悉方法、检查条件和保持负责的节奏上。已有事实不妨充分呈现，尚未确定的范围则继续查明，让准备始终与实际要求相接。把有限投入放在关键事实与必要条件上，可使说明更稳实，也让一次未升不致掩去真实积累的价值。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "巳"
+              ],
+              "old": "过程较能承受，本次仍不能晋升。巳月艮土相，乾兑三处死金泄轻，互震休克又受金制，直接生扶则未出现。九三利往与艰贞相随，宜积极呈现真实成绩，并把方法与承担条件说清；有利的基础可以利用，职位之成仍须看全局关系。",
+              "new": "单处耗泄与牵制较轻，本次仍不能晋升。巳月艮土原相，乾兑三处死金聚泄，体势受牵动；互震休克又受金制，直接生扶未见。九三利往与艰贞相随，宜积极呈现真实成绩，把方法与承担条件说清，让准备有序，也让所言有据。"
+            },
+            {
+              "field": "title",
+              "months": [
+                "巳"
+              ],
+              "old": "轻耗可承仍未得升",
+              "new": "泄轻仍有用聚之难"
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "午"
+              ],
+              "old": "主体可承而所求未成，这次升不了，宜把积极准备放在完整说明真实贡献上。午月艮土相，三处死金受体生，付出较轻；过程约束也有缓和。九三仍给出向前的正面爻意，值得保有明确方向，同时让每项主张都有足够的事实与条件支撑。",
+              "new": "原体有气而用党多，这次升不了，宜把积极准备放在完整说明真实贡献上。午月艮土原相，三处死金受体生，单处耗泄轻，金聚却使体势趋衰；过程约束虽缓，仍无生扶。九三给出向前的正面爻意，值得保有明确方向，也应让每项主张有足够的事实与条件支撑。"
+            },
+            {
+              "field": "paragraphs[2]",
+              "months": [
+                "午"
+              ],
+              "old": "本用乾金、用互兑金、变用兑金俱死，泄体较轻而首尾相连；体互震木休而克土，受到金制后克力又轻。此处有较能应付的条件，但三段都没有转成生土的助力，中段之克仍存。故可发挥自身基础，尚不能以局部轻松代替整个晋升结果的落实。",
+              "new": "本用乾金、用互兑金、变用兑金俱死，泄体较轻而首尾相连；体互震木休而克土，受到金制后克力又轻。克力与单处泄力虽轻，三金用聚仍牵动整体承受，三个阶段又没有转成生土的助力。中段之克尚存，故准备宜有重点，使所做与实际要求相接，不以一处轻阻代表全程轻松。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "午"
+              ],
+              "old": "轻阻之中有进取余地，这次仍升不了。相艮生三处死金，付出较轻；互震休克且受金制，中段约束未尽而全盘无直接生扶。九三上合志、利有攸往可取积极合作之义，艰贞要求所言有据，宜把结果、个人判断与承担范围连贯说明，保持准备的实质。",
+              "new": "中段约束虽轻，这次仍升不了。艮土原相，受三处死金聚泄，用党多而体势趋衰；互震休克且受金制，全盘无直接生扶。九三上合志、利有攸往有积极前行之义，艰贞要求所言有据，宜把结果、个人判断与承担范围连贯说明，保持准备的实质。"
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "未"
+              ],
+              "old": "自身能承，这次却不能晋升，宜让有力的准备围绕明确的职责展开。未月艮土旺，面对轻阻不至于全无余地，九三也有合志而进的积极意思。当前较适合说明已经做成的工作怎样支持新的承担，使经验和所求之间形成可核实的联系。",
+              "new": "用聚而体势趋衰，这次不能晋升，准备宜围绕明确的职责展开。未月艮土原旺，仍受乾兑三金聚泄，原气并未改动，实际承受却须另加审察。九三有合志而进的积极意思，可据此认真说明已经做成的工作怎样支持新的承担，使经验和所求之间形成可核实的联系。"
+            },
+            {
+              "field": "paragraphs[1]",
+              "months": [
+                "未"
+              ],
+              "old": "本用乾金、用互兑金与末变兑金都相，受土生而使前中末持续有所付出。体互震木囚克，又受乾兑约束，压力较轻；旺体能够承受，是可用的长处。只是末段依然泄体，直接生扶没有出现，过程可应付与晋升之事成局，仍分属不同层面。",
+              "new": "本用乾金、用互兑金与末变兑金都相，受土生而使前中末持续有所付出。体互震木囚克，又受乾兑约束，压力较轻；三金构成用党，主体承受因而受牵动，不能只由土旺看定全程有力。末段仍然泄体，直接生扶没有出现，宜把准备做在关键处，也让陈述与实际经验相称。"
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "未"
+              ],
+              "old": "程传日常习备的意思，可落在熟悉职责和反省方法上，使经验不只停在结果，也能解释过程。现实要求若有变化，就据此调整说明的重点，已有事实则保持一致。这样使用旺体的力量，既不因未升而轻弃积累，也不因能承而不断加码，使工作继续有章法、有凭据。",
+              "new": "程传日常习备的意思，可落在熟悉职责和反省方法上，使经验不只停在结果，也能解释过程。现实要求若有变化，就据此调整说明的重点，已有事实则保持一致。这样安排准备，既不因未升而轻弃积累，也不在条件未明时不断加码，使工作继续有章法、有凭据。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "未"
+              ],
+              "old": "承受有根，这次不能晋升，宜使付出保持明确用途。未月旺艮生乾兑三处相金，互震囚克且被金制，轻阻可承但没有直接生扶。九三利往之意与艰贞并在，准备可围绕真实成果和方法展开，准确说明责任扩大的条件，使积极有序而不过度铺陈。",
+              "new": "原体虽旺，这次不能晋升，宜使付出保持明确用途。未月艮土生乾兑三处相金，用聚使体势趋衰，互震囚克且被金制，直接生扶未见。九三利往之意与艰贞并在，准备可围绕真实成果和方法展开，准确说明责任扩大的条件，使积极有序而不过度铺陈。"
+            },
+            {
+              "field": "title",
+              "months": [
+                "未"
+              ],
+              "old": "根基有力须分清付出",
+              "new": "三金聚泄宜分清付出"
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": "原体艮土休居中，本用乾金、用互兑金、变用兑金俱旺而受体生，三段耗泄较重；体互震木死克土，又受旺金制，约束轻。无直接生体，依无生有克及求名体生用定为升不了，主要负担在连续付出。九三得时与上合志、利有攸往具有真实前行之利，艰贞为行进的守正要求；程朱所释习备可用于审清方法与条件。准备宜聚焦关键事实，休体保持居中而非囚死之弱。",
+              "new": "原体艮土休居中，本用乾金、用互兑金、变用兑金俱旺而受体生，三段耗泄较重；金为用党多，实际体势衰另由用聚解释，不由休字归弱。体互震木死克土又受金制，约束轻；全盘无直接生体，依无生有克、求名体生用和用聚之势定为升不了。九三得时与上合志、利有攸往具有前行之利，艰贞为守正要求；程朱习备另可用于审清方法与条件，使准备聚焦关键事实。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "申",
+                "酉"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦：休艮于初、中、末三处泄于旺金，泄最重；死震体互轻克，《复明时令之应》「如克体卦气，则宜乘衰」（655 行）。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），定为升不了，难在耗。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土休居中，本用乾金、用互兑金、变用兑金俱旺而受体生，三段耗泄较重；体互震木死克土，又受旺金制，约束轻。无直接生体，依无生有克及求名体生用定为升不了，主要负担在连续付出。九三得时与上合志、利有攸往具有真实前行之利，艰贞为行进的守正要求；程朱所释习备可用于审清方法与条件。准备宜聚焦关键事实，休体保持居中而非囚死之弱。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦：休艮于初、中、末三处泄于旺金，泄最重；死震体互轻克，《复明时令之应》「如克体卦气，则宜乘衰」（655 行）。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行），定为升不了，难在耗。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土休居中，本用乾金、用互兑金、变用兑金俱旺而受体生，三段耗泄较重；金为用党多，实际体势衰另由用聚解释，不由休字归弱。体互震木死克土又受金制，约束轻；全盘无直接生体，依无生有克、求名体生用和用聚之势定为升不了。九三得时与上合志、利有攸往具有前行之利，艰贞为守正要求；程朱习备另可用于审清方法与条件，使准备聚焦关键事实。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。独审补核第十四节后补入三金用党多：原月气不改，实际体势按衰看，不再把夏相、土旺或秋休直接写成有效承受有力。此层按处数而不分各金有气无气，也不改一层金制木的关系。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十四节；第十四节定义用党多并明确以大畜九三三金为例，原月气与实际体势分层。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "494行体用总诀完整段：体党多而体势盛、用党多则体势衰；不误署为682行体用篇。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "申"
+              ],
+              "old": "三段付出较重，这次升不了，宜先分清哪些内容真正有助于说明任职能力。申月艮土休，主体处于正常应事的状态，乾兑旺金受土所生，使初中末的耗泄都有分量。准备需要认真，也需要取舍，让关键事实得到足够展开，避免内容越多而职责越不清楚。",
+              "new": "三段付出较重，这次升不了，宜先分清哪些内容真正有助于说明任职能力。申月艮土原气为休，乾兑旺金聚而受土生，用党多使体势趋衰，初中末的耗泄也都有分量。准备需要认真，也需要取舍，让关键事实得到足够展开，避免内容越多而职责越不清楚。"
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "酉"
+              ],
+              "old": "投入较重而未见直接生扶，这次不能晋升，宜让准备的分量来自事实本身。酉月艮土休，仍有应事基础，前中末旺金泄体却使付出持续。九三的向前之意值得保有，眼前更须使目标与投入相称，充分解释关键贡献，而不把所有经历平均铺开。",
+              "new": "投入较重而未见直接生扶，这次不能晋升，宜让准备的分量来自事实本身。酉月艮土原为休，旺金在初中末受土所生，耗泄较重而贯穿过程。九三的向前之意值得保有，眼前更须使目标与投入相称，充分解释关键贡献，而不把所有经历平均铺开。"
+            },
+            {
+              "field": "paragraphs[2]",
+              "months": [
+                "酉"
+              ],
+              "old": "盘面本用乾金、用互兑金、变用兑金俱旺，受土所生，耗泄较重；体互震木死而克土，金制又使牵制减轻。主体仍有应事之力，中段压力相对较轻。所难在付出贯穿过程，末端仍没有转成生扶，尚不足以将本次职位所求取为已成。",
+              "new": "盘面本用乾金、用互兑金、变用兑金俱旺，受土所生，耗泄较重；体互震木死而克土，金制又使牵制减轻。原体休居中，中段压力相对较轻，三金用聚却使实际体势趋衰。付出贯穿过程，末端仍没有转成生扶，职位所求尚未取成，宜把精力放在真正相关的事实与条件上。"
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "戌"
+              ],
+              "old": "旺体能承而缺少生扶，本次仍升不了，准备宜在充分与有序之间取得分寸。戌月艮土旺，面对过程的轻阻有承受基础，能够把既有经验作清楚说明。九三又有向前的爻意，适合保持认真参与的姿态，让实际贡献支持所求，不必用过满表态替代事实。",
+              "new": "原体旺而用聚牵动承受，本次仍升不了，准备宜在充分与有序之间取得分寸。戌月艮土原气为旺，乾兑三金聚为用党，实际体势仍趋衰，轻阻也未转成补益。九三有向前的爻意，适合保持认真参与的姿态，让实际贡献支持所求，不必用过满表态替代事实。"
+            },
+            {
+              "field": "paragraphs[1]",
+              "months": [
+                "戌"
+              ],
+              "old": "本用乾金、用互兑金与末后兑金都相，土生金，初中末各有自身付出。体互震木囚而克土，受乾兑制约，牵制进一步减轻；这些条件使过程较可承受。末用仍为泄体，整盘却未补入相生，故有力准备可以推进，职位是否落实仍不能仅凭承受能力断定。",
+              "new": "本用乾金、用互兑金与末后兑金都相，土生金，初中末各有自身付出。体互震木囚而克土，受乾兑制约，牵制进一步减轻；单处约束较轻，三金用聚所带来的体势变化却仍在。末用继续泄体，整盘未补入相生，故准备宜围绕真正相关的成绩展开，让事实与所求职责清楚相接。"
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "戌"
+              ],
+              "old": "程传所说习备的分寸，在于熟悉所用方法并了解它的边界。可以依现实反馈检查表述是否准确、条件是否交代充分，已有结论则随事实调整。这样既保留旺体可以发挥的力量，也尊重九三艰贞之意，让进取落在可靠的工作上，过程认真，收束也有根据。",
+              "new": "程传所说习备的分寸，在于熟悉所用方法并了解它的边界。可以依现实反馈检查表述是否准确、条件是否交代充分，已有结论则随事实调整。这样尊重实际承担的条件，也合于九三艰贞之意，让进取落在可靠的工作上，过程认真，收束也有根据。"
+            },
+            {
+              "field": "payCorrection",
+              "months": [
+                "戌"
+              ],
+              "old": {
+                "old": "",
+                "new": "这次晋升未落实，随新岗位增加的薪资也未落实；旺体可承不另推独立加薪，原有工资及奖励仍按现实信息确认。",
+                "reason": "只论本次晋升所附薪酬调整，不据卦象预定薪档、金额、计薪或到账日期，也不扩展为独立收入变化。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "",
+                "new": "本次未获升任，随新岗位增加的薪资也未落实；原有工资及其他独立奖励，仍须按实际确认的信息分别判断。",
+                "reason": "只论本次晋升所附薪酬调整，不据卦象预定薪档、金额、计薪或到账日期，也不扩展为独立收入变化。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "payExplanation",
+              "months": [
+                "戌"
+              ],
+              "old": "这次晋升未落实，随新岗位增加的薪资也未落实；旺体可承不另推独立加薪，原有工资及奖励仍按现实信息确认。",
+              "new": "本次未获升任，随新岗位增加的薪资也未落实；原有工资及其他独立奖励，仍须按实际确认的信息分别判断。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "戌"
+              ],
+              "old": "旺体较能承担，本次仍升不了。戌月艮土旺，乾兑三处相金受体生，互震囚克且受金制，轻阻在而生扶未见。九三合志利往有积极方向，艰贞提醒行动不失尺度，宜把真正支持职责的成绩与方法讲全，其余内容依实际需要安排，保持有据的主动。",
+              "new": "原体旺而体势仍受牵动，本次升不了。戌月乾兑三处相金聚泄，互震囚克且受金制，轻阻在而生扶未见。九三合志利往有积极方向，艰贞提醒行动不失尺度，宜把真正支持职责的成绩与方法讲全，其余内容依实际需要安排，保持有据的主动。"
+            },
+            {
+              "field": "title",
+              "months": [
+                "戌"
+              ],
+              "old": "能承轻阻仍应收束主次",
+              "new": "轻阻之中更须顾及体势"
+            },
+            {
+              "field": "judgment",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": "原体艮土囚，本用乾金、用互兑金与变用兑金休而受体生，前中末耗泄较轻；体互震木相克土，受金制而无水生，克力减轻。体囚且无直接生扶，依无生有克及体生用的求名关系定为升不了。九三良马逐、利有攸往有得时合志的积极意思，艰贞取守正慎行；日常习备沿程朱之读，可用于查明经验、方法与职责条件，使有限力量集中在有据的承担上。",
+              "new": "原体艮土囚，本用乾金、用互兑金与变用兑金休而受体生，单处耗泄较轻；三金聚为用党，体势亦衰。体互震木相克土，受金制无水生而克减，前后无直接生扶。依无生有克、体生用求名与用聚之势，定为升不了。九三良马逐、利有攸往有得时合志的积极意思，艰贞取守正慎行；日常习备沿程朱之读，可用于查明经验、方法和职责条件，使有限投入集中在有据的承担上。"
+            },
+            {
+              "field": "judgmentCorrection",
+              "months": [
+                "亥",
+                "子"
+              ],
+              "old": {
+                "old": "无生体之卦，有克体之卦：囚艮泄于三处休金；体互震木月令相，受乾兑金克而无水生，按气弱论，克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；体囚无生，中间一处断开便补不回，定为升不了。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土囚，本用乾金、用互兑金与变用兑金休而受体生，前中末耗泄较轻；体互震木相克土，受金制而无水生，克力减轻。体囚且无直接生扶，依无生有克及体生用的求名关系定为升不了。九三良马逐、利有攸往有得时合志的积极意思，艰贞取守正慎行；日常习备沿程朱之读，可用于查明经验、方法与职责条件，使有限力量集中在有据的承担上。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。删除旧专业中一处断开便补不回的绝对情节；卦内只有体囚无生及受克，不能推出唯一断点或不可补救的现实经过。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十三节，一层间接作用、原体休居中、二分优先次序。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "无生体之卦，有克体之卦：囚艮泄于三处休金；体互震木月令相，受乾兑金克而无水生，按气弱论，克轻。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」（792 行）；体囚无生，中间一处断开便补不回，定为升不了。九三利往须艰贞、日习舆卫，吉辞不翻。",
+                "new": "原体艮土囚，本用乾金、用互兑金与变用兑金休而受体生，单处耗泄较轻；三金聚为用党，体势亦衰。体互震木相克土，受金制无水生而克减，前后无直接生扶。依无生有克、体生用求名与用聚之势，定为升不了。九三良马逐、利有攸往有得时合志的积极意思，艰贞取守正慎行；日常习备沿程朱之读，可用于查明经验、方法和职责条件，使有限投入集中在有据的承担上。",
+                "reason": "补明原月气及一层减克，完整保留良马逐、得时合志与利往的积极义；习备采用程朱日闲读法，王孔闲为阂、卫为护的异解另见审计，二者不作同一训诂。保留无生有克及体生用的冻结判定；原取期无据场景另由timingWordingCorrection清理。删除旧专业中一处断开便补不回的绝对情节；体囚无生、受克和用聚均不能推出唯一断点或不可补救的现实经过。独审补核第十四节后补入三金用党多：原月气不改，实际体势按衰看，不再把夏相、土旺或秋休直接写成有效承受有力。此层按处数而不分各金有气无气，也不改一层金制木的关系。",
+                "sourceEvidence": [
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/03大畜.txt",
+                    "scope": "大畜相应动爻经文、小象与王弼注孔颖达疏；不将爻象直接当成现代经过。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "求名占、体用、体用互变之诀、体用衰旺之诀的相应整段；分清方向与力度。"
+                  },
+                  {
+                    "path": "docs/READING_POLICY_V2.md",
+                    "scope": "第八至十四节；第十四节定义用党多并明确以大畜九三三金为例，原月气与实际体势分层。"
+                  },
+                  {
+                    "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+                    "scope": "在任见克的晋升专用解释及冻结结果。"
+                  },
+                  {
+                    "path": "data/authored-readings/promotion-pay/hex-026.json",
+                    "scope": "本动爻五气facts与indirectEffectsApplied，保留原态并列一层作用。"
+                  },
+                  {
+                    "path": "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt",
+                    "scope": "大畜九三整段及小象解释：进速而艰贞，日常闲习舆卫；与王孔闲为阂、卫为护之读区分。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+                    "scope": "大畜九三整段：畜极而通、俱进，并戒艰贞闲习，曰当为日；不改经文库。"
+                  },
+                  {
+                    "path": "sources/reference/zhouyi-zhengyi-hans/04損.txt",
+                    "scope": "卦辞、彖、象完整段，有孚与损益随时只用于行事辅义。"
+                  },
+                  {
+                    "path": "sources/revised/meihua-volumes-1-3.txt",
+                    "scope": "494行体用总诀完整段：体党多而体势盛、用党多则体势衰；不误署为682行体用篇。"
+                  }
+                ],
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "paragraphs[0]",
+              "months": [
+                "丑"
+              ],
+              "old": "准备有力量可用，这次仍不能晋升，宜让已有积累得到完整而准确的说明。丑月艮土旺，能够承受相金耗泄与轻度牵制，九三也有合志而进的积极方向。此时适合把成果背后的判断讲透，使能力有具体依据，责任的扩展则随实际条件确认。",
+              "new": "原体有气而用党聚泄，这次仍不能晋升，宜让已有积累得到完整而准确的说明。丑月艮土原旺，乾兑三金同聚受生，体势因而趋衰，前后也无直接生扶。九三有合志而进的积极方向，准备可把成果背后的判断讲透，使能力有具体依据，责任扩展则随实际条件确认。"
+            },
+            {
+              "field": "paragraphs[2]",
+              "months": [
+                "丑"
+              ],
+              "old": "本用乾金、用互兑金及末变兑金都相，受旺土所生，初中末持续有所付出。体互震木囚而克土，又受金制，约束轻；旺体可承是重要的有利基础。只是末后仍然泄体，直接生土的卦并未出现，过程可应对的长处尚未将整次职位所求一并取成。",
+              "new": "本用乾金、用互兑金及末变兑金都相，受旺土所生，初中末持续有所付出。体互震木囚而克土，又受金制，约束轻；三金聚而为用党，原土旺并不直接代表实际体势充足。末后仍然泄体，直接生土的卦未见，轻克也不能补回生扶，故职位所求尚未成局，准备更需主次清楚。"
+            },
+            {
+              "field": "paragraphs[4]",
+              "months": [
+                "丑"
+              ],
+              "old": "程传所释的习备，可以用于检视方法是否熟悉、协作前提是否明白以及承担范围是否适当。已有事实稳定陈述，新增认识据实补充，不须用夸大的确定性表示自信。使旺体之力用于这些具体工夫，进取便有章法，未成也不妨碍既有经验继续成为可靠的工作基础。",
+              "new": "程传所释的习备，可以用于检视方法是否熟悉、协作前提是否明白以及承担范围是否适当。已有事实稳定陈述，新增认识据实补充，不须用夸大的确定性表示自信。把准备集中在这些具体工夫上，进取便有章法，未成也不妨碍既有经验继续成为可靠的工作基础。"
+            },
+            {
+              "field": "payCorrection",
+              "months": [
+                "丑"
+              ],
+              "old": {
+                "old": "",
+                "new": "本次升任及随岗加薪未落实；旺体与持续付出只用于解释本次所求，其他薪酬是否调整及执行日期另依实际文件。",
+                "reason": "只论本次晋升所附薪酬调整，不据卦象预定薪档、金额、计薪或到账日期，也不扩展为独立收入变化。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              },
+              "new": {
+                "old": "",
+                "new": "本次升任及随岗加薪未落实；本处只论所求职级对应的薪酬，其他调整及执行日期，仍须按实际文件分别确认。",
+                "reason": "只论本次晋升所附薪酬调整，不据卦象预定薪档、金额、计薪或到账日期，也不扩展为独立收入变化。",
+                "impact": {
+                  "outcomeChanged": false,
+                  "timingSignatureChanged": false
+                }
+              }
+            },
+            {
+              "field": "payExplanation",
+              "months": [
+                "丑"
+              ],
+              "old": "本次升任及随岗加薪未落实；旺体与持续付出只用于解释本次所求，其他薪酬是否调整及执行日期另依实际文件。",
+              "new": "本次升任及随岗加薪未落实；本处只论所求职级对应的薪酬，其他调整及执行日期，仍须按实际文件分别确认。"
+            },
+            {
+              "field": "short",
+              "months": [
+                "丑"
+              ],
+              "old": "体旺能承，这次仍不能晋升。丑月乾兑三处相金泄体，互震囚克且受金制，过程轻阻未消而直接生扶未见。九三的利往与上合志有积极意义，艰贞要求行进有准，宜用真实成果解释承担能力，审清经验延伸的条件，稳住主次而不扩大未明责任。",
+              "new": "原体旺而用党多，这次仍不能晋升。丑月乾兑三处相金聚泄，体势趋衰，互震囚克且受金制，直接生扶未见。九三的利往与上合志有积极意义，艰贞要求行进有准，宜用真实成果解释承担能力，审清经验延伸的条件，稳住主次而不扩大未明责任。"
+            },
+            {
+              "field": "title",
+              "months": [
+                "丑"
+              ],
+              "old": "有力准备仍须守准",
+              "new": "原体有气行进仍须守准"
+            }
+          ]
+        },
+        "authorAuditReadback": {
+          "path": "docs/review/PROMOTION_DACHU_RULE_AUDIT_20261121.md",
+          "actualWholeFileRead": true,
+          "assessment": "作者审计全文已实际读取，九三首次遗漏、独审发现、原气与体势分层及两条薪资再校均公开说明。初九引文笔误利己经提示改为利已，修改后的完整段已另次实际读取通过；此更正仅在audit，不改变已审文章。"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 4,
+        "reviewer": "/root/source_audit",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "ab19980a71ab9cacd2a605c3f4dca91d095f78862c2357e61c0d38aa13918257",
+        "status": "passed",
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "rawFacts": "stageIds、nodes、directRelations、decision.indirectEffectsApplied五气完整实际读取",
+          "sources": [
+            "sources/reference/zhouyi-zhengyi-hans/03大畜.txt 全卦经传与王孔注疏实际读取，六四取柔止刚、息强争、元吉有喜",
+            "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt 六四完整爻释及小象实际核读",
+            "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt 六四完整爻释实际核读",
+            "sources/reference/zhouyi-zhengyi-hans/02大有.txt 卦辞彖象及王孔注疏完整实际核读"
+          ],
+          "method": "十二篇公开全文一次无截断实际读取；五气专业及订正完整另次实际读取，其余七篇payCorrection全字段也已实际读取。相同气组专业全字段程序验等，订正new与当前字段逐条验等。"
+        },
+        "findings": [],
+        "substantiveAssessment": "六四乾金为原体，本艮生、体互兑和、用互震受体克、末离克体方向无误。艮土同时受震克与离生，依一层规则保原气；末离得震生且无水制，各月原旺衰不改而克力加强。冬月原体休居中，未混同作用节点休或囚死。六四元吉、有喜、柔止刚与早防强争的积极古义被完整保留，未缩为只有避免犯错；前中生和与末克取权并列，既定未升未改。薪资限于本次晋升附随调整，应期清楚标注过程或末段参考。",
+        "openInterpretiveBoundaries": [
+          "在任见克和末变克体优先，是现行晋升专项取权，与六四元吉及秋旺体生和并列保留。",
+          "大有刚健文明、时行只为行事辅义，不能当作现实任命或收入证据。",
+          "未进行现实预测回验，未声称人工审校或用户逐篇验收。"
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "finalCanonicalArticleArraySha256": "1f2d3116bba4c568bd2d45271a388e72bd93da02a268eded5ac7d17d56a88be3",
+        "currentRevisionFullTextReadCount": 12,
+        "currentRevisionChangedArticleReadCount": 0,
+        "deltaReview": {
+          "method": "当前冻结快照与初读快照及源文件该爻articles完全相同，无修订字段需复读。",
+          "resolvedFindings": [],
+          "finalSnapshotSha256": "ab19980a71ab9cacd2a605c3f4dca91d095f78862c2357e61c0d38aa13918257",
+          "reviewerIsHuman": false
+        },
+        "mechanicalCrossChecks": {
+          "sameQiProfessionalFieldsIdentical": true,
+          "allCorrectionNewFieldsMatchCurrentFields": true,
+          "correctionOldMatchesFrozenFiveQiSource": true,
+          "outcomesUnchanged": true,
+          "timingWindowKindRoleAndCountUnchanged": true,
+          "scope": "该爻全部12篇，基准 sources/editorial/promotion-pay/hex-026.json。此项是程序核对，不充作阅读或独立人工审校。"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 5,
+        "reviewer": "/root/source_audit",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "d424f27ea767a5cbf24fe17bc32f685f1b4f52e1862bb92b174faa08c02273ef",
+        "status": "passed",
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "rawFacts": "stageIds、nodes、directRelations、decision.indirectEffectsApplied五气完整实际读取",
+          "sources": [
+            "sources/reference/zhouyi-zhengyi-hans/03大畜.txt 全卦王孔经传注疏实际读取，六五完整豮牙与有庆释义",
+            "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt 六五经文、全部爻释、小象完整实际核读，豮去其势与察机持要另释",
+            "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt 六五相关完整段已实际核读",
+            "sources/reference/zhouyi-zhengyi-hans/02小畜.txt 卦辞彖象及王孔注疏完整实际核读"
+          ],
+          "method": "十二篇公开全文无截断实际读取；五气专业及订正完整另次实际读取，其余七篇payCorrection完整读取。相同气组专业全字段及订正new与当前值程序验等。"
+        },
+        "findings": [],
+        "substantiveAssessment": "六五乾金为原体，艮土生、兑金和、震巽木受体克，四节点无直接克体。艮同时受两木克且无火生的一层减生已经完整保留，未只写用互震，也未改原土旺相等月气。土月原旺与实际生轻分开，秋体旺和旺、冬体休居中均准确。王孔禁制防牙、柔能制健与程氏豮去其势、察机持要分别归属；吉、有庆的成就义保留，未只说固位。可成与体克用成迟按现行规则并列，不将过程支持窗口替换成必然任命日期。薪资仅论本次晋升附随调整。",
+        "openInterpretiveBoundaries": [
+          "有生无克优先保留既定可成，生扶虽受制并非方向消失；无现实回验支撑。",
+          "王孔制牙与程传去势为不同读法，正文只分署借用其治理启发。",
+          "小畜懿文德是行事辅义，未把施未行另作改变现行结果的依据。",
+          "未声称人工审校或用户逐篇验收。"
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "finalCanonicalArticleArraySha256": "2b5f5145689bbf9877ce1c896474b690990368c41a7b28dda76a5f682d5f9f7e",
+        "currentRevisionFullTextReadCount": 12,
+        "currentRevisionChangedArticleReadCount": 0,
+        "deltaReview": {
+          "method": "初读冻结快照与当前源文件该爻articles完全相同，无后续改字段。",
+          "resolvedFindings": [],
+          "finalSnapshotSha256": "d424f27ea767a5cbf24fe17bc32f685f1b4f52e1862bb92b174faa08c02273ef",
+          "reviewerIsHuman": false
+        },
+        "mechanicalCrossChecks": {
+          "sameQiProfessionalFieldsIdentical": true,
+          "allCorrectionNewFieldsMatchCurrentFields": true,
+          "correctionOldMatchesFrozenFiveQiSource": true,
+          "outcomesUnchanged": true,
+          "timingWindowKindRoleAndCountUnchanged": true,
+          "scope": "该爻全部12篇，基准 sources/editorial/promotion-pay/hex-026.json。此项是程序核对，不充作阅读或独立人工审校。"
+        }
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "hexagram": 26,
+        "movingLine": 6,
+        "reviewer": "/root/source_audit",
+        "reviewerType": "independent-ai",
+        "reviewedAt": "2026-11-21",
+        "wholeArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "initialSourceSha256": "ac29ab2140ea5933663e6c1124dd61c6371b21cd52fcab2c61fd3028bb94640c",
+        "status": "passed",
+        "readingScope": {
+          "publicFields": [
+            "title",
+            "short",
+            "paragraphs",
+            "payExplanation"
+          ],
+          "professionalFields": [
+            "outcome",
+            "judgment",
+            "timing",
+            "judgmentCorrection",
+            "timingWordingCorrection",
+            "payCorrection"
+          ],
+          "professionalRepresentativeMonths": [
+            "寅",
+            "辰",
+            "巳",
+            "申",
+            "亥"
+          ],
+          "rawFacts": "stageIds、nodes、directRelations、decision.indirectEffectsApplied五气完整实际读取",
+          "sources": [
+            "sources/reference/zhouyi-zhengyi-hans/03大畜.txt 全卦王孔经传注疏实际读取，上九畜极则通与道大行完整段",
+            "sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷2.txt 上九完整经传解释实际核读，包括胡氏何字说",
+            "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt 上九何其通达之甚、畜极而通完整段实际核读",
+            "sources/reference/zhouyi-zhengyi-hans/02泰.txt 卦辞彖象及王孔注疏完整实际核读"
+          ],
+          "method": "十二篇公开全文无截断实际读取；五气专业及订正完整另次实际读取，其余七篇payCorrection完整读取。相同气组专业全字段及订正new与当前值程序验等。"
+        },
+        "findings": [],
+        "substantiveAssessment": "上九原体乾金，本艮和末坤生体、体互兑和、用互震受体克，四节点无直接克体。首尾两土均受震克且无火生，有效助力减轻、原月气未改；土月原旺与实际减助，以及相乾相兑承接基础明确分层。冬体休居中、春体囚和夏体死承接较薄、秋旺体与旺和均与原facts一致。上九亨、道大行、畜极则通保留积极施用和职责展开，未捏造已完成的项目或任命形式；正文采用王孔，程朱与何字异说另留审核来源。薪资限于晋升附随调整，土气取期保留既定位置与过程/落实参考边界。",
+        "openInterpretiveBoundaries": [
+          "有生无克与末生同向是现行可成依据，有效助轻并未消去原生体方向。",
+          "何字王孔语辞、程传引胡氏误字说与朱子何其说互异，未无署名混解，也未改经文。",
+          "泰上下交而志同仅提供协作辅义，非现实任命和组织关系实录。",
+          "没有现实回验、人工审校或用户逐篇验收。"
+        ],
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "finalCanonicalArticleArraySha256": "78f74d8d2681561b80a7e1b1e74e232b962f840d39bc8e15b6b359db621d9f6d",
+        "currentRevisionFullTextReadCount": 12,
+        "currentRevisionChangedArticleReadCount": 0,
+        "deltaReview": {
+          "method": "初读冻结快照与当前源文件该爻articles完全相同，无后续改字段。",
+          "resolvedFindings": [],
+          "finalSnapshotSha256": "ac29ab2140ea5933663e6c1124dd61c6371b21cd52fcab2c61fd3028bb94640c",
+          "reviewerIsHuman": false
+        },
+        "mechanicalCrossChecks": {
+          "sameQiProfessionalFieldsIdentical": true,
+          "allCorrectionNewFieldsMatchCurrentFields": true,
+          "correctionOldMatchesFrozenFiveQiSource": true,
+          "outcomesUnchanged": true,
+          "timingWindowKindRoleAndCountUnchanged": true,
+          "scope": "该爻全部12篇，基准 sources/editorial/promotion-pay/hex-026.json。此项是程序核对，不充作阅读或独立人工审校。"
+        }
+      }
+    ],
+    "openInterpretiveBoundaries": [
+      "九三利往、上合志与既定未升之间的取权是现行问项解释，保留爻义积极面，不声称古籍只允许唯一结论。",
+      "何字王孔语辞、程传引胡氏误字说与朱子何其说互异，未无署名混解，也未改经文。",
+      "在任见克优先于强末生的项目取权不等同古籍唯一解释",
+      "在任见克和末变克体优先，是现行晋升专项取权，与六四元吉及秋旺体生和并列保留。",
+      "大有刚健文明、时行只为行事辅义，不能当作现实任命或收入证据。",
+      "小畜懿文德是行事辅义，未把施未行另作改变现行结果的依据。",
+      "有生无克与末生同向是现行可成依据，有效助轻并未消去原生体方向。",
+      "有生无克优先保留既定可成，生扶虽受制并非方向消失；无现实回验支撑。",
+      "未声称人工审校或用户逐篇验收。",
+      "未进行现实预测回验，未声称人工审校或用户逐篇验收。",
+      "没有现实回验、人工审校或用户逐篇验收。",
+      "没有现实预测回验、真人审校或用户逐篇验收。",
+      "没有现实预测回验或用户逐篇验收",
+      "泰上下交而志同仅提供协作辅义，非现实任命和组织关系实录。",
+      "王孔制牙与程传去势为不同读法，正文只分署借用其治理启发。",
+      "王孔曰闲阂卫与程朱日习有训诂分歧，正文分署，其现代工作应用只是行事启发。",
+      "用党多按本库第十四节作用于体势，不能据原体旺相或原休居中直接取实际体有力；该层并未改原月气。",
+      "规则一致性和古籍解释核查不构成现实预测准确性验证，也不代表用户逐篇验收。"
+    ],
+    "bindingVerification": {
+      "allSixLineCanonicalHashesMatchFinalManuscript": true,
+      "authorSourceHashMatchesFinalManuscript": true,
+      "notAFullTextReview": true
+    }
+  },
+  "openFindings": [
+    {
+      "id": "DACHU26-INCUMBENT-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "26/1",
+        "26/2",
+        "26/3",
+        "26/4"
+      ],
+      "finding": "在任见克用于现代晋升是项目解释；九二真实末生、九三利往与六四元吉等正向证据完整保留，不称唯一古籍结论。"
+    },
+    {
+      "id": "DACHU26-USEPARTY-APPLICATION",
+      "status": "open-interpretation-boundary",
+      "keys": [
+        "26/3"
+      ],
+      "finding": "用党多的处数定义与体势衰按现行第十四节应用；初稿实质遗漏由独审发现并完整订正，原月气与一层金制木均保留。"
+    },
+    {
+      "id": "DACHU26-REAL-WORLD-VALIDATION",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "26"
+      ],
+      "finding": "未进行现实预测效度回验；作者读回、独立AI阅读和程序通过不等于真人审阅或用户逐篇验收。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "DACHU26-INCUMBENT-PRIORITY",
+      "status": "open-priority",
+      "keys": [
+        "26/1",
+        "26/2",
+        "26/3",
+        "26/4"
+      ],
+      "finding": "在任见克用于现代晋升是项目解释；九二真实末生、九三利往与六四元吉等正向证据完整保留，不称唯一古籍结论。"
+    },
+    {
+      "id": "DACHU26-USEPARTY-APPLICATION",
+      "status": "open-interpretation-boundary",
+      "keys": [
+        "26/3"
+      ],
+      "finding": "用党多的处数定义与体势衰按现行第十四节应用；初稿实质遗漏由独审发现并完整订正，原月气与一层金制木均保留。"
+    },
+    {
+      "id": "DACHU26-REAL-WORLD-VALIDATION",
+      "status": "interpreted-with-limits",
+      "keys": [
+        "26"
+      ],
+      "finding": "未进行现实预测效度回验；作者读回、独立AI阅读和程序通过不等于真人审阅或用户逐篇验收。"
+    },
+    {
+      "id": "DACHU26-USEPARTY-OMISSION",
+      "status": "corrected-substantive-rule-omission",
+      "keys": [
+        "26/3"
+      ],
+      "finding": "独审发现三金用党多漏用；补核后修五气专业、夏土秋相关公开及戌丑pay，保原气、轻克、利往和未升，保留改前快照和完整差异。"
+    },
+    {
+      "id": "DACHU26-QI-AND-ONE-LAYER",
+      "status": "corrected-classical-application",
+      "keys": [
+        "26/4/亥子",
+        "26/5",
+        "26/6"
+      ],
+      "finding": "原体休居中，六四艮生克并见依原气；六五两木减生；上九两土减生与土月原旺矛盾公开分层订正。"
+    },
+    {
+      "id": "DACHU26-ANNOTATOR-DISTINCTIONS",
+      "status": "corrected-classical-application",
+      "keys": [
+        "26/3",
+        "26/5",
+        "26/6"
+      ],
+      "finding": "九三曰闲/日习、六五禁制/去势、上九何字异说分别归属，积极爻义完整保留，不冒改经文。"
+    },
+    {
+      "id": "DACHU26-UNSUPPORTED-STORIES",
+      "status": "corrected-unsupported-scenes",
+      "keys": [
+        "26"
+      ],
+      "finding": "旧稿材料、审批、旧规、证明、项目、通知与确定薪酬执行故事均收准；对工作做法提出建议，不写成已发生事实。"
+    }
+  ],
+  "realWorldPredictionAccuracy": "not-validated",
+  "validation": {
+    "status": "passed",
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 26",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      479,
+      532
+    ],
+    "bodyHanMedian": 511,
+    "shortHanRange": [
+      85,
+      103
+    ],
+    "payHanRange": [
+      38,
+      47
+    ],
+    "style": "passed",
+    "averageSentenceHan": 33.9,
+    "maxSameOpeningHead": 1,
+    "intraArticleRepeatedEightCharacterFragments": 0,
+    "consolationHits": 0,
+    "consolationAllowlistUsed": false,
+    "crossHexOverEightPercent": 0,
+    "maxCrossHexSharePercent": 1.4,
+    "highFrequencyPhraseFindingsForThisHex": 0,
+    "unverifiedClassicalQuotes": 0,
+    "validatedSourceSha256": "2a681a0c145c5d510f0cbf0654a8340daa6d9005fed0e29c5c7556c8fbec1dd0",
+    "independentReadingNotPerformedByGate": true
+  },
+  "publicationValidation": {
+    "reviewer": "/root",
+    "sourceSha256": "2a681a0c145c5d510f0cbf0654a8340daa6d9005fed0e29c5c7556c8fbec1dd0",
+    "status": "passed",
+    "commands": [
+      "bash scripts/review/monthly-gate.sh promotion-pay 26",
+      "node scripts/review/check-monthly.mjs promotion-pay --hex 26 --docs",
+      "supplementary-depth-title-same-qi-and-review-binding",
+      "node scripts/update-monthly-index.mjs promotion-pay --hex 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 --added 26,27 --publication-date 2026-11-21"
+    ],
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      479,
+      532
+    ],
+    "bodyHanMedian": 511,
+    "averageSentenceHan": 33.9,
+    "maxSameOpeningHead": 1,
+    "monthOpeningCount": 0,
+    "intraArticleRepeatedEightCharacterFragments": 0,
+    "crossHexOverEightPercent": 0,
+    "maxCrossHexSharePercent": 1.4,
+    "consolationHits": 0,
+    "unverifiedClassicalQuotes": 0,
+    "exactCorrectionBindings": {
+      "judgment": 72,
+      "timing": 72,
+      "payExplanation": 72
+    },
+    "generatedPageActualReading": "初九寅月完整生成页实际阅读，卯月开头段另读；72篇公开字段程序逐值核齐。",
+    "independentReadingNotPerformedByGate": true
+  }
+}

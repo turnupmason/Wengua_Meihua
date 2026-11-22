@@ -1,0 +1,1873 @@
+{
+  "schemaVersion": "lost-object-review-worklog/v1",
+  "reviewer": "/root/review_final_60_62",
+  "reviewerType": "AI assistant",
+  "reviewerIsHuman": false,
+  "userAcceptedThisVersion": false,
+  "professionalOutcomeReadjudication": false,
+  "dateUTC": "2026-11-21",
+  "purpose": "本次工作区中第060–062卦共90篇五态稿的真实全文审读、061简断自然化及060改后独立第二读；本记录只陈述本轮实际工作，不把旧审核或历史改写计成本轮新完成。",
+  "actualReadScope": {
+    "primaryArticles": 90,
+    "monthKeysCoveredByFiveStateArticles": 216,
+    "initialReading": "060、061、062各30篇，分10篇一批完整输出并实际读完每篇row[3]标题、row[4]简断、row[5:9]四段正文、row[9]判断和row[10]应期。",
+    "final060SecondReading": "root改完060后，按最终deef9d摘要的当前稿再分10篇一批完整读30篇所有文字字段；包含row24标题与开局首句，以及row20/22/24、row11/26的最后细修。",
+    "final061AuthorReading": "本人逐篇自然化30条简断后，分10篇一批完整读回30篇所有文字字段；随后只再改14条简断的阶段或措辞，最终30条简断全量输出逐句读回。正文、判断、应期在后一轮未改。",
+    "final062Reading": "完整读完全部30篇；简断原已自然，正文与两附加层读毕未作源稿修改。",
+    "layers": "实际读完每卦6条directions正文与6条images正文，共36条附加文；对相应五态稿检查合并后的义理和现实条件。没有把全部重复的元数据字段声称为逐项人工读过。",
+    "legacyReview": "读既有reviews-polish结构及90条openQuestions，作为待解决问题来源；不把旧authorFullRead或peerFullRead标记当成本轮自己完成的阅读。"
+  },
+  "instructionsAndModelsRead": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "全文"
+    },
+    {
+      "path": "docs/READING_LITERARY_POLISH_V5.md",
+      "scope": "全文"
+    },
+    {
+      "path": "docs/LOST_OBJECT_RECOVERY_POLICY.md",
+      "scope": "总则、五态与应期边界及060、061、062具体政策"
+    },
+    {
+      "path": "docs/interview-pass/monthly-preview/hex-060.md",
+      "scope": "初九寅月整篇，作为自然简断、起承与厚度对照"
+    },
+    {
+      "path": "docs/relationship-establishment/monthly-preview/hex-060.md",
+      "scope": "初九寅月正文完整提取阅读，作为厚度及连续叙述对照"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06節.txt",
+      "scope": "本地完整经、象、王注孔疏文本"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06中孚.txt",
+      "scope": "本地完整经、象、王注孔疏文本"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/06小過.txt",
+      "scope": "本地完整经、象、王注孔疏文本，孰知疑句保持未决"
+    }
+  ],
+  "editingScope": {
+    "editedByThisReviewer": [
+      "sources/editorial/lost-object-recovery/hex-061.json"
+    ],
+    "fieldsChangedByThisReviewer": [
+      {
+        "hexagram": 61,
+        "rowIndices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "field": 4,
+        "fieldName": "shortVerdict"
+      }
+    ],
+    "unchangedByThisReviewer": [
+      "060 primary source (root authored the new edits)",
+      "062 primary source",
+      "all directions/images layers",
+      "all repository audit/hash/rendered files"
+    ],
+    "outcomesChanged": false,
+    "timingChanged": false,
+    "classicSourceChanged": false,
+    "commitOrPushPerformed": false
+  },
+  "literaryAssessment": "061原简断含春木旺、初金克轻、中末薄生等压缩计算腔，故30篇逐一自然化；全部保留结论、主要正反条件和该爻行动重点。060经root逐篇改写后完成独立第二读，阶段指代与正文一致。062简断已有自然起承，未为形式上的改动重写。正文四段的古义与实际核验层次足够展开，未发现需在本轮删减厚度的问题；这不等于主张文本或结果已经完美、已获真人专业验收。",
+  "keyRemainingQuestions": [
+    "060初九土、九二土与上六夏：弱体、重克或中末主动核验费力、凶戒并存，既定有条件结论对单一实援的权重未重新专业裁断。",
+    "060六四秋与九五秋：可用正证均强而等级不同，爻意和末比/末生的档位阈值尚待统一专业复核。",
+    "061六三春冬与上九土：强查力、较实比助或旺生与困难结果形成明显冲突，古注戒意的定权不能由文学润色替代。",
+    "061初九秋：末实援如何承接初旺克弱体、中弱比仍是实质问题；六四/九五秋土的强正证而止有条件亦保留等级问题。",
+    "061六四夏有条件、上九夏困难：相同中实援与末比/末泄、两爻戒意的综合尺度尚待核断。",
+    "062初六、九三春冬及九四夏土：强体、可制或可承轻克、实比与困难结果并存，未建立无直接生体必难的新增门槛。",
+    "062六五夏：普通克可承、轻耗及局部有得，如何与未施一起限定困难等级需专业定权。",
+    "062上六夏有条件与土令困难之间，末旺生/普通生、体势、中耗及凶戒的尺度须再核。",
+    "062初六疏孰知不可自取凶咎的疑字句维持待校；本轮只依清楚的进逆无所措足作解释，未借疑句加断。"
+  ],
+  "machineChecksAreNotReading": {
+    "baselineCommit": "68632f3",
+    "061OnlyChangedFields": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        11,
+        4
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        15,
+        4
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        17,
+        4
+      ],
+      [
+        18,
+        4
+      ],
+      [
+        19,
+        4
+      ],
+      [
+        20,
+        4
+      ],
+      [
+        21,
+        4
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        23,
+        4
+      ],
+      [
+        24,
+        4
+      ],
+      [
+        25,
+        4
+      ],
+      [
+        26,
+        4
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        28,
+        4
+      ],
+      [
+        29,
+        4
+      ]
+    ],
+    "061BeforeByteSha256": "e4806e2470648339d0b0dcaacde521cb30efc276a16f4fe95ccdeffb2d841b80",
+    "061ShortHanCharacterRange": [
+      96,
+      107
+    ],
+    "note": "以上仅为确定字段范围、摘要和字数的程序检查；90条意见来自逐篇实际阅读，不由脚本生成或批量签署。"
+  },
+  "hexagrams": [
+    {
+      "hexagram": 60,
+      "sourcePath": "sources/editorial/lost-object-recovery/hex-060.json",
+      "snapshotSourceSha256": "deef9dbbf0ca903a028fede370808d77eb757615c1b292c19d16843ad52997c0",
+      "rowCount": 30,
+      "layerSnapshots": {
+        "directions": {
+          "path": "sources/editorial/lost-object-recovery/directions/hex-060.json",
+          "snapshotSha256": "514bb1d862f65ca90af2e76529b9b5198c2a412d08dbf57ea254c196aacf2fe4",
+          "textEntriesRead": 6
+        },
+        "images": {
+          "path": "sources/editorial/lost-object-recovery/images/hex-060.json",
+          "snapshotSha256": "fdda7077cd530684e997cb470f07264577b04e3d7b77663734f820b3271ba1d3",
+          "textEntriesRead": 6
+        }
+      },
+      "entries": [
+        {
+          "rowIndex": 0,
+          "movingLine": 1,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "留住可辨原件的依据，查问不急着铺开",
+          "readingNote": "新简断将初援薄、过程中旺木之耗和轻阻连成完整因果，未把末休比写成实助；正文辨真伪与初九立制慎密、知通塞相接。建议围绕最后一次实用与消息来源展开，未预设物件去向。",
+          "finalCopyOpinion": "第二读接受新简断；起助与末比仍有正面作用，原困难等级的权重继续开放。",
+          "snapshotRowSha256": "84e258d4e5af577eb8aa0a531e6162a988808327297f920cb81607583b7bdb61",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初用生体、末比和及中克衰均为正证，仍判difficult是对囚援和旺木生出之耗的权衡，古籍未给这种组合唯一阈值。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 1,
+          "movingLine": 1,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "先核一项亲见，模糊答复暂留待查",
+          "readingNote": "简断分别保留自身弱、初援微与中间相土实克，未以所有阶段一概不利代替详细情况。先问亲见与平常习惯的差异，是正文查证建议，初九无咎未被写成必得物。",
+          "finalCopyOpinion": "第二读接受；辨认资料与实际收放相接，末薄比仍由正文说明。",
+          "snapshotRowSha256": "f24f70793f70175ed923437a2e1a9abb800d01c5eb168752bd0dce4b594a272a",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 2,
+          "movingLine": 1,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "有实助可接，先让所见与原件对上",
+          "readingNote": "简断以起步强援、自身能核细节和可承担的中阻解释可寻，随后落到独有记号与真实来路。全文保留初九慎密的成立条件，末相比较实而没有写成到手。",
+          "finalCopyOpinion": "第二读接受；秋令普通克可承和死木轻耗没有被压成完全无阻。",
+          "snapshotRowSha256": "5060931cf9d62ea2120969ca69633f7d192d61488976a8dd3d8ebdc6a7abfbfa",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "相体、旺初生、末相比与中轻耗已有多项正证，仍沿conditional而不升favourable，保留中克与慎密条件的原有权衡。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 3,
+          "movingLine": 1,
+          "monthOrder": "winter-water",
+          "outcome": "conditional",
+          "title": "把能查的旧范围查透，机会在实物核对",
+          "readingNote": "新简断把旺体、末旺比写成能查证与原范围复核有支撑，并保留相木耗实。全文明确慎密并不等于封闭搜寻，真实查看与回忆印象分开，四段推进连贯。",
+          "finalCopyOpinion": "第二读接受；不再出现旺坎初得休兑等计算速记。",
+          "snapshotRowSha256": "a90d307d0595877b06ed425fb88cdc2cc163fee12b8faab57f7a50f113de5709",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体、弱克和末旺同比较强，原conditional主要仍顾中相木耗及初助普通；古注无按这种气势分级的唯一表，保留解释取舍。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 4,
+          "movingLine": 1,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "抓住起头的实助，把中途缺证逐一补齐",
+          "readingNote": "简断把初实助作为可寻支点，同时直写自力弱、中阻重和末承接薄，未将初生说成抵消全程困难。初九慎密落实为逐项证据与未知保留，方向没有变成地址断言。",
+          "finalCopyOpinion": "第二读接受；体死中旺克而只凭初相生仍判有条件，其专业权重尚未解决。",
+          "snapshotRowSha256": "ff30f58b9138d70f320b5cff24309c02ea74177ce2b154c6e1012f58860238c4",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "体死承旺艮重克而末比亦死，仅初相生却仍取conditional，正反冲突较强；现沿原结果并显式保留此权衡，没有古典公式宣布已抵消中阻。",
+            "初九土令弱体中受旺克、末死比薄，既定conditional主要依初相兑生和谨慎办事；初生如何跨越后两阶段的困难仍属专业定权问题，全文完整列反证而未以文学润色关闭。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 5,
+          "movingLine": 2,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "可以查的一步及时去查，别让线索停在准备里",
+          "readingNote": "新简断留下起援有限和中末持续耗力，九二行动建议明确限定在已经有实查条件的一步。正文完整区分初九宜慎密与九二应宣未宣失时，未把及时查问写成改凶为吉。",
+          "finalCopyOpinion": "第二读接受；先有可核对象再请求查看，未制造催促日期。",
+          "snapshotRowSha256": "6b8416113b1364b53b6aa6dedb9b83bd3663203eb15217d2362546fc16905d95",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 6,
+          "movingLine": 2,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "把查验请求落到实处，缺证处逐项留明",
+          "readingNote": "简断起协微、中阻实、后需自己接续的三段关系清楚；核谁实际接手与缺哪项资料，与正文将准备接到查看相合。九二之凶仍属条件未施行的爻戒，不断现实已耽误。",
+          "finalCopyOpinion": "第二读接受；没有把愿意转达当作查验已办成。",
+          "snapshotRowSha256": "8ea1ddb700b392a1befdb4e4756bd3acebf8311dee1db0f9cc760de6918bc354",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 7,
+          "movingLine": 2,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "趁实查能够接通，将辨认推进到原物",
+          "readingNote": "强初援、相体可承中阻及中末轻耗，均被新简断自然写成可实行的查验条件。九二及时之戒用于能办即办，认件与当前实物仍分开核准，简详结论一致。",
+          "finalCopyOpinion": "第二读接受；九二凶爻与有条件等级的综合尺度继续留审。",
+          "snapshotRowSha256": "687de28cc935a01f4df92616c550f425232ea7b7c9fe81d0cc76b06558897ae7",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九二经文明确凶，而原conditional依旺初生、相体和轻耗；以条件已具便及时核验回应爻戒，不主张一次行动已自动翻凶。",
+            "九二有明确失时之凶，秋令conditional取强初援与中末轻耗；爻戒的条件性与现实及时实查如何共同决定寻回档位，仍应由专业裁断统核，不以文字说明等同结果已重审。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 8,
+          "movingLine": 2,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "查得动也要查得实，取回尚需更多承接",
+          "readingNote": "简断开头直接承认自己查得动而归还仍难，保留旺体与轻克正证，困难落在中末两处实耗。九二空等之戒与每次答复须增加事实相接，未臆断物件已被转移。",
+          "finalCopyOpinion": "第二读接受；没有借缺生一词创设一概难回的硬规则。",
+          "snapshotRowSha256": "2c1c206af7ec779d8f2f6009c51ca10ed5c604eb3565f4389c26b2ea7a51b1c7",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体与弱克、普通初生本能支持较多行动，仍判difficult主要权衡中末两实耗及九二失时凶戒；此处不声称双耗有固定压过旺体的数值权重。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 9,
+          "movingLine": 2,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "先让可用的协助办成一项查验",
+          "readingNote": "新简断的机会来源限定为初相生，自力弱、中旺克与后续补查均未省略；九二既有条件先办的建议与原物核验并行。正文没有从一次好答复跳到实际交还。",
+          "finalCopyOpinion": "第二读接受；凶爻、死体与中重克并存仍判有条件，是本篇实质未决问题。",
+          "snapshotRowSha256": "88bff1d320942a4b39b845c203aabd3a623699f8d29447233262fca49d6bc75c",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九二爻凶、体死中旺克与末耗形成强反证，原conditional仅有起段相生较实；依原码保留且单列分歧，不把初助宣布为全程回物保证。",
+            "九二土令既有失时凶戒，又有弱体中旺克和末耗，却固定conditional；较重依初相兑生的阈值仍需专业核断，现稿已列清强反证而未改结果。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 10,
+          "movingLine": 3,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "线索按实据取舍，原物眼下仍难认回",
+          "readingNote": "前后两薄生与中旺木耗被写成协助有限、追查费力，六三无咎仍按无所怨咎解释。相似消息即使增多也先核独立来源，属于条件讨论，未宣称现实确有多份假消息。",
+          "finalCopyOpinion": "第二读接受；薄生正证与不节之戒各有位置。",
+          "snapshotRowSha256": "586881730da0103f5196e89fcb2a238f377f98c1c132ad4134267826d726515b",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初末均生体且中克衰，本可论仍有相助；本篇difficult重在两援囚和旺木耗，未声称无咎已为吉证，也未把弱生取消。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 11,
+          "movingLine": 3,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "先查清消息从何而来，困难处留待实证",
+          "readingNote": "新简断用寻回困难与中间辨认阻力来表达盘势，未硬说现实一定缺了物证。要求未知处留待补查，贴合正文不强令他人猜完整答案及六三不节之戒。",
+          "finalCopyOpinion": "第二读接受本轮修订；初末微生仍在，不以无咎消去困难。",
+          "snapshotRowSha256": "b3c3dfbf21ba1a98a32a4f6bbeade9bcd005ee0d474a08a8f547754662237439",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 12,
+          "movingLine": 3,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "两段实助可用，让原件辨认始终有据",
+          "readingNote": "双旺生、可承中克与轻耗转成前后有强协助、可完整认件的自然叙述。六三无咎未误释为吉，逐件区分相似物与来路的建议能承接两段援助，厚度完整。",
+          "finalCopyOpinion": "第二读接受；有利盘面为何止于有条件而非较易，仍属爻盘权重问题。",
+          "snapshotRowSha256": "2d9baac8efd2687e4815d1fdaa97e235056ac376b43f436cceda65af6c4d957a",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "相体、两旺生、轻耗和可承之克较有利，仍保留conditional而未升favourable；六三爻戒如何限制有利盘面是实质取舍，不能拿无咎作升格理由。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 13,
+          "movingLine": 3,
+          "monthOrder": "winter-water",
+          "outcome": "conditional",
+          "title": "有能力核清细节，也要守住查找的分寸",
+          "readingNote": "新简断旺体能查、轻阻、前后普通协助与中相木耗均有表达，保持可寻而需查问有度。六三不节之戒限制的是无据扩张，未禁止真实新证推动查找。",
+          "finalCopyOpinion": "第二读接受；一般生助未夸为强援，未另添日期。",
+          "snapshotRowSha256": "29812394457614a7f1fd70c7cb45daa707b21bb6df8944fd4f6d4eccc9ab1c86",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 14,
+          "movingLine": 3,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "前后实助值得接住，中间一环尤其要核真",
+          "readingNote": "两段实助和中间难接的反差明确，简断没有把前后好答复直接拼成同件。六三无所怨咎完整，实际失物原因仍待事实查证；弱体承中旺克的强反证留存。",
+          "finalCopyOpinion": "第二读接受；双相生与死体重克的等级权衡未被润色关闭。",
+          "snapshotRowSha256": "8cf3ec64716ae87d3698fd4cbcb83bdb2cdb6310af0177f01826cc2c0a23d376",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "两相生与体死承旺土重克明显相争，原conditional保留双实援作支点；弱体能否承接并无独一古典阈值，留待专业权衡。",
+            "六三土令双相生与弱体中旺克并存，conditional如何衡量前后援助及不节之戒仍非简单生克句可决定；本稿保原结果，强反证存在，专业权重继续待审。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 15,
+          "movingLine": 4,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "让查找有稳妥次序，原件仍待实助相接",
+          "readingNote": "简断将体弱、主动核强木费力和微援概括为实查难处，六四安节之亨仍保留方法合宜可行的正面。正文允许真实新证纠正原范围，安节未成固守猜想。",
+          "finalCopyOpinion": "第二读接受；没有因为困难等级删去吉爻的实质意义。",
+          "snapshotRowSha256": "0cb055602f917e596040873a6ebb6b1c944c0a4ab6072f3d79f6ae9194038c4f",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "六四明确亨而当前difficult，按弱体难制旺木、微援弱比作限制；爻利完整保留，现有文字修订不替该权衡给出唯一新裁决。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 16,
+          "movingLine": 4,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "借中途实查补证，原件仍有认回机会",
+          "readingNote": "中相土实助是新简断可寻的支点，弱体、主动辨物费力和末弱比同时说明。六四安节落实为资料准备、一次查验办完与可交接记录，未将合宜方法当找回保证。",
+          "finalCopyOpinion": "第二读接受；中援是否足以支撑有条件等级仍保留专业取舍。",
+          "snapshotRowSha256": "395647866ff0207276519c0ea551801b842f31558d96a278c1a2d8d063748a88",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "体死、末同比亦死而仍conditional，主要依中相生与六四亨；这是一项有条件承接的权衡，不能解释成相土已全面补足弱体。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 17,
+          "movingLine": 4,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "按实据把查找做完，收尾仍能共同核物",
+          "readingNote": "新简断旺体可核、末旺比可共查及初相水耗实均准确，正文中休土普通援助没有被改强。六四按一贯标准辨物、遇新证可调整，和简断稳定查找次序相合。",
+          "finalCopyOpinion": "第二读接受；与九五秋令较易等级的差别未自行统一。",
+          "snapshotRowSha256": "d35950e34676fe80ac1abb91347b4decd55428270a1345563d218c87095b192d",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体、末旺比、死木可制及六四亨都利，仍取conditional而九五秋为favourable，两者是既有结果差异；保留初实耗及爻末关系的解释取舍，不自行统一结果。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 18,
+          "movingLine": 4,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "把有限协助接在实处，稳查仍需耐住耗费",
+          "readingNote": "初旺水耗重、中制相木费、援薄及末普通比在简详中位置一致。安节之亨作为能继续推进的益处保留，最终仍需同件与来路相合，没有缩薄为一句等候。",
+          "finalCopyOpinion": "第二读接受；普通支持与薄援已经分开表达。",
+          "snapshotRowSha256": "54ca864405e459c8a37b1908c6564cf6fc4c88781e5737c53b267273078e80da",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "安节亨与difficult并置，重在初旺耗、制相木费和薄援，仍保留末休比的普通助势；吉爻与实际取回等级的权重未假称已由机器裁定。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 19,
+          "movingLine": 4,
+          "monthOrder": "seasonal-earth",
+          "outcome": "favourable",
+          "title": "稳妥查清收放，原件较有希望回手",
+          "readingNote": "新简断起耗轻、中强援与末较实复核配合较有希望的结论，六四得位顺承而亨完整解释。按特征、来路、交还逐步落实，未因好断跳过认同件。",
+          "finalCopyOpinion": "第二读接受；较有希望不写成现实已找到，正文厚度足。",
+          "snapshotRowSha256": "65a79799fd0b4398686b672a2b1b2541d11c4c0b392c29e57c89bb66da10e7ec",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 20,
+          "movingLine": 5,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "求查宜清楚适度，原物目前仍难追回",
+          "readingNote": "新简断将原来可能含混的前后帮助明确为中途与收尾，因本用坎是生出耗而非初援。九五甘节之吉保留，弱体制旺木困难与双微生并列，求助适度而证据要求清楚。",
+          "finalCopyOpinion": "第二读接受本轮中末阶段精确化；不把吉辞改成无益。",
+          "snapshotRowSha256": "3afaa2c555808e363f7402c4e16f30a4a68b4a59a406996edf9e0e34551d3706",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九五吉往有尚明确有利，原difficult仍重体囚、制旺木费及两死援；吉辞与取回等级的权衡保留在审计，正文没有把吉辞打压成无益。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 21,
+          "movingLine": 5,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "让帮助各有着落，原件仍有认回的机会",
+          "readingNote": "新简断自然说明自查吃力而中末有实助，双相土生的正证与死体难制休木的反证均在正文。九五不苦人用于合理分配现场核验，与温和但不含糊认件相接。",
+          "finalCopyOpinion": "第二读接受；两次答复仍需共同指向同一物件。",
+          "snapshotRowSha256": "ced72874d5e23765bac625c0da018b888feb2e60e3816410d330b7a2227dd124",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "双相土生死兑与九五吉支持conditional，但体死及核休木费力仍需承接；未将两处实生简单相加宣称已使体转旺。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 22,
+          "movingLine": 5,
+          "monthOrder": "autumn-metal",
+          "outcome": "favourable",
+          "title": "核验有力，按合宜次序可望将原件接回",
+          "readingNote": "新简断明确中间和收尾只有普通帮助，自身旺、疑点易处理和初段投入实则分别陈明。九五中正甘节的吉意完整，及时交还限定为已认准原件之后。",
+          "finalCopyOpinion": "第二读接受阶段订正；与六四秋的等级比较继续列为专业待核。",
+          "snapshotRowSha256": "71ba1f87db836e83f3224a1cb58e1bb792c7278edad2e21e393206a955426c68",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初生相坎耗实而双援仅休，仍favourable依旺体、死木可制与九五吉；该综合高于六四秋conditional的原有取舍保留，未擅用同气势统一结果。",
+            "九五秋令favourable以旺体、可制弱木、双休生与全吉辞合判，初相水实耗仍在；与六四秋令末旺比而conditional之间的爻权与档位阈值未由全文润色重新专业裁决，保留比较核断问题。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 23,
+          "movingLine": 5,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "让每次协查都有实得，取回仍待后续证据",
+          "readingNote": "初耗重、制相木费和中末囚援薄解释当前难回，简断仍肯定合宜协查值得做。九五甘节保持请求具体、对方可办的原义，并要求每次查问增加事实。",
+          "finalCopyOpinion": "第二读接受；没有用吉爻抹去薄援，也未要求无限补问。",
+          "snapshotRowSha256": "2c6216db39658cede81fb84938a5a071cc12dfe4020233198731bfea94363550",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九五强正面吉辞与difficult同存，原判主要取旺耗、制相木费和双囚援；正文说明吉意能用于合宜协查，审计保留等级的专业取舍。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 24,
+          "movingLine": 5,
+          "monthOrder": "seasonal-earth",
+          "outcome": "favourable",
+          "title": "借足有力协助，原件较易得到实核",
+          "readingNote": "标题与开局首句均已把有力协助明确到中途及收尾，和本用死坎轻耗的事实相合。新简断起耗轻、能处理疑点、双旺生与九五吉同向，较有希望等级表达稳妥。",
+          "finalCopyOpinion": "第二读接受本轮标题、首句及简断的阶段精确化；我实际读过这些最终变化。",
+          "snapshotRowSha256": "0428d882de7c54df0aac89ee27111406042dcdb1a4b317bbdb793a8f23d794b7",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 25,
+          "movingLine": 6,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "辨认要查足，求助范围须合宜",
+          "readingNote": "简断中末核验费、微援和上六分清自我约束与苛求他人的两面相合。正文贞凶属苦刻施人、悔亡属自俭无妄，各有条件，未写成时间顺序自动转吉。",
+          "finalCopyOpinion": "第二读接受；继续查必要证据与不强逼未知经过并行。",
+          "snapshotRowSha256": "b4bbb10047d0d80c4a2f48f05bc717a3793a3fcb39f727b769506a90f2bd383a",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 26,
+          "movingLine": 6,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "借实助核准原件，求查不强求未知经过",
+          "readingNote": "新简断明确中途与收尾辨认不轻松，中段相土实援才是可寻支点。上六贞凶、悔亡的不同适用完整，合理求助没有变成对他人保证全程的要求。",
+          "finalCopyOpinion": "第二读接受本轮阶段订正；死体中末制休木费且有凶戒仍判有条件，继续待核权重。",
+          "snapshotRowSha256": "68cd00bce9ae3791c351ec34ccd15b12ce76844a5c94ce5b8f776da7acb3b3cf",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "体死、中末核验费且上六贞凶，原conditional依中相艮实生；不能借悔亡简单抵消凶戒，这一正反冲突如实留作权衡。",
+            "上六夏令弱体、中末制休木费与过苦施人之凶并存，conditional依中相艮生及自守无妄的正面；中援足以支撑何种档位仍需专业定权，文案未替代结果审核。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 27,
+          "movingLine": 6,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "自己能核的先核，协查只求亲见",
+          "readingNote": "旺体可制中末死木、普通中援和初实耗都被完整接入短长两段。上六之分寸用于自我准备与只问亲见，证据齐全后不因无关细节拖延交还，未降低同件标准。",
+          "finalCopyOpinion": "第二读接受；自俭悔亡仍是处事条件而非原物已经回手。",
+          "snapshotRowSha256": "3e75ee0bc4aaec34d7dd74cc1820b12ea9ed34959ed39dd66d357ce3203846cb",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体能制中末死木有较强正证，但上六贞凶与初实耗仍在，原conditional沿用；自俭悔亡属于处事条件，不等于已满足原物回手。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 28,
+          "movingLine": 6,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "保存已经查实的部分，余下困难靠实证补齐",
+          "readingNote": "简断前耗重、中末辨认费力、外援薄清楚，正文保留一项薄生仍能核清或排除的正面。上六自守与过苦施人的差异没有被困难结论吞没，待查缺口保持真实。",
+          "finalCopyOpinion": "第二读接受；未从凶辞推人际冲突或盗窃。",
+          "snapshotRowSha256": "4d0d46d26eddecdac6dd8462b905180662c07daada6895bc43ce279dd6e8f968",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 29,
+          "movingLine": 6,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "实助能够补强，认回仍凭实据",
+          "readingNote": "初耗轻、中旺生与中末可制在新简断中形成可寻理由，上六过苦之戒亦保留。真正缺的证明继续补、无关细节不妨碍交还，全文对证据边界的分寸一致。",
+          "finalCopyOpinion": "第二读接受；条件等级与自守悔亡并非唯一古典算法，仍保留权衡说明。",
+          "snapshotRowSha256": "ba66991f6aaef04363170df1c3f5c06e55d2e36543c57a1c6dd4dab384d46247",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "轻初耗、强中援与中末可制均利，原conditional仍受上六过苦施人之戒约束；自俭悔亡又是正面条件，综合等级不是古籍唯一算式。"
+          ],
+          "editedByThisReviewer": false
+        }
+      ]
+    },
+    {
+      "hexagram": 61,
+      "sourcePath": "sources/editorial/lost-object-recovery/hex-061.json",
+      "snapshotSourceSha256": "782e4beda68b993ed9f04623d5dd3ac207b46651deab1e65cc618ed8d65eaec1",
+      "rowCount": 30,
+      "layerSnapshots": {
+        "directions": {
+          "path": "sources/editorial/lost-object-recovery/directions/hex-061.json",
+          "snapshotSha256": "619b90a3de14499637e56fe7dd60029530dd2c98d1f007177259dbe81d593913",
+          "textEntriesRead": 6
+        },
+        "images": {
+          "path": "sources/editorial/lost-object-recovery/images/hex-061.json",
+          "snapshotSha256": "44ca96adf490fd2ac7fb380e73a8c05b2b0d25a39c9ceffacad88d4c1c5dcc3d",
+          "textEntriesRead": 6
+        }
+      },
+      "entries": [
+        {
+          "rowIndex": 0,
+          "movingLine": 1,
+          "monthOrder": "spring-wood",
+          "outcome": "conditional",
+          "title": "守住一段确实经过，原件仍有寻回机会",
+          "readingNote": "重写简断把春旺木、初轻克、中有力比及末普通生援转成能做的查证过程；专一必须专在真实依据，可靠反证可以调整，未写成固守一处。全文初九虞专燕安与有它不安完整。",
+          "finalCopyOpinion": "作者完整读回接受；原有条件等级、三项查验行动与正文一致。",
+          "snapshotRowSha256": "9e4b326708b4f3ac8e3103d8858abe8c4aa2a714e924e229b762da08d3f6a2d0",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体、中旺比、轻初克且末休水生仍为conditional，保留专信吉意及原等级，不将一般末生自动升为全程易得。"
+          ],
+          "edit": {
+            "rowIndex": 0,
+            "movingLine": 1,
+            "monthOrder": "spring-wood",
+            "before": "这件物品有条件找回，宜先把最后确知的一段收放查透。春木旺，初金克轻，中间可主动核证又有旺木比助，末水虽休仍能生体。初九专一有吉，须专在真实依据上；若有新的亲见事实，就据实调整，原件认准后才谈领取。",
+            "after": "守住最后一次确知的收放认真查，原件仍有找回机会。起头阻碍较轻，中途有力核证，也能借协查补细节，后段还有一般帮助。初九重在专心于真实依据，先把有据的一处查透；若有可靠反证便据实调整，不必固守原先猜想，认准同一件后再办领取。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 1,
+          "movingLine": 1,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "先查完可信的一处，原物仍较难回手",
+          "readingNote": "简断精确区分中途普通配合和末后薄援，避免原修改稿把两者统称有限。初轻克保留，自查制相土费力是主要难处；初九吉意仍用于已知事实查扎实。",
+          "finalCopyOpinion": "作者完整读回后再订正并逐句读回；休比不再被含混降为弱援。",
+          "snapshotRowSha256": "e4d490654f8ef8f6e9cc02b97773907daea32b34f622f3ff1a01cac451dd6058",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初九完整虞吉与轻初克、一般互比、末薄生并存，夏令固定difficult仍较倚重制相土费力及援薄；此次润色不视为重新裁定了吉爻和四节点的权重。"
+          ],
+          "edit": {
+            "rowIndex": 1,
+            "movingLine": 1,
+            "monthOrder": "summer-fire",
+            "before": "原物偏难找回，但仍可沿确知的一处完成复查。夏木休，初金克力轻，中间主动核证较费力，比和支持一般，末水生体也薄。初九专一之吉在于守真实查，不为一条模糊消息重开全程；若没有新见物依据，反复追问难补成归还。",
+            "after": "原物眼下较难回手，但可信的一处仍值得查完。开头阻力不重，中途自行核证费力，配合普通，末后帮助又薄。初九的专一，是把已知事实查扎实，不为模糊消息反复重开路线；有人能亲看便核独有特征，暂时没有新见物依据，就先留好已查结果。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "中途自行核证却费力，配合与后援也有限。",
+              "after": "中途自行核证费力，配合普通，末后帮助又薄。",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "movingLine": 1,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "前路难核，末后的实查仍值得接续",
+          "readingNote": "简断先说前面的经过难查，再给末相水实助的有条件机会，没有省掉秋死木受旺金克与中弱比。初九专信与原件核验相接，后来的帮助只确认其实际可证部分。",
+          "finalCopyOpinion": "作者完整读回接受；晚助能否跨越早中难处的权重仍待专业核断。",
+          "snapshotRowSha256": "50cc78dd3582093e7ea6f3031b0c7fa860eb945dcc4243274824cb29be1aebcd",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初旺金实克弱木且中助薄，既定conditional较重取末相坎生与初九专信之吉；末援何以足以越过起中之难仍保留为专业定权问题，未由加厚叙述宣布解决。",
+            "初旺金克死木、中弱比且自查费，与末相水实生相争，原conditional主要依收尾实助；古籍无明确数值阈值证明末助已全面克服起阻。"
+          ],
+          "edit": {
+            "rowIndex": 2,
+            "movingLine": 1,
+            "monthOrder": "autumn-metal",
+            "before": "这件东西有条件找回，机会较倚重末后能直接看物的帮助。秋木弱而初金旺克，中途自查不轻松，比和也薄；末水相而生体，才有较实援助。初九专一于真据，宜把来路问清，再核原件特征，后来的好消息仍须有实物相应。",
+            "after": "前面的经过难查，末后若接上能直接看物的帮助，原件仍有寻回机会。自己查证较吃力，中途配合也薄，更要把后来的实助用在独有特征上。初九宜专于真据，先核来路再认同件；一份好消息能够补到哪一步，就确认到哪一步，随后再落实交还。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 3,
+          "movingLine": 1,
+          "monthOrder": "winter-water",
+          "outcome": "conditional",
+          "title": "沿确知经过查下去，后段有助认回原件",
+          "readingNote": "新简断沿已证线索继续，保留相体可查、中相比和末旺生，不把专一解释成禁止新证。初九完整爻义与当前收存、交还另验相接，语句有起伏而非排列节点。",
+          "finalCopyOpinion": "作者完整读回接受；结论仍有条件，未擅升较易。",
+          "snapshotRowSha256": "d27310b9faa00948135732ea19bfaa10ce97b1695ace788236e6deb968b98d57",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "相体、中相比、末旺生以及可承初克均有利，仍保conditional；专信与原物交还的条件并非证明该等级唯一的古典公式。"
+          ],
+          "edit": {
+            "rowIndex": 3,
+            "movingLine": 1,
+            "monthOrder": "winter-water",
+            "before": "原件有条件寻回，前中可以把经过查实，后段也有较强协助。冬木相，初金休克可承，中土可制、木互相比，末旺水直接生体。初九专一得吉，适合沿有据线索连续查；认物标准仍要守住，亲见过和现在能够交还须分别确认。",
+            "after": "一条已经证实的线索值得查下去，原物仍有条件找回。自己能够处理前面的疑点，中途可共同核验，后段也较有条件得到实助。初九的专一须有事实作底：有人补来新见闻，就与原记录相对；认出同一件以后，还要确认当前收存和交还办法。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 4,
+          "movingLine": 1,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "线索宜专而有据，原物仍难顺利找回",
+          "readingNote": "起相金实克、囚木制旺土费、中弱比与末死水薄生被自然概括成有限查力宜留真据。正文初九专吉未因困难等级删去，短句也拒绝把反复坚信当证实。",
+          "finalCopyOpinion": "作者完整读回接受；吉爻与困难结果的权重保留。",
+          "snapshotRowSha256": "b2b16eb41b36e9fa8ed84de453eb93162c916fba457a8e8940ac2ddc839f7ae1",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初九虞吉的完整条件已经保留，土令仍固定difficult；吉爻与初中强难、末薄援如何定权尚非本次文字精修所能独立专业证成。"
+          ],
+          "edit": {
+            "rowIndex": 4,
+            "movingLine": 1,
+            "monthOrder": "seasonal-earth",
+            "before": "这件物品偏难取回，宜把有限查力留给确有根据的一处。土令木囚，初相金实克，中间制旺土吃力，比和支持弱，末水虽生却薄。初九专一之吉仍可用于减少误查；一条线若始终没有实见，就保留未明，不靠反复坚信补足原物证据。",
+            "after": "目前仍难把原件顺利找回，宜将有限查力留给确有依据的一处。起头阻力实，中途自行核证费力，配合与末后帮助又薄。初九的专一可以减少误查，却不是反复坚信某个去向；一条线若始终没有亲见支持，就保留未明，待新证据出现再接续。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 5,
+          "movingLine": 2,
+          "monthOrder": "spring-wood",
+          "outcome": "conditional",
+          "title": "把实情讲准确，回应仍可能接到原物",
+          "readingNote": "新简断以真实说明得到亲见回应开头，旺体核疑点及中末两旺比落到共同查看。九二任真相应、靡散共享的两面在正文均有交代，短句互通所知未压缩成只求响应。",
+          "finalCopyOpinion": "作者完整读回接受；说法相合与同一件实际交还仍分开。",
+          "snapshotRowSha256": "4bcb78d5f6dd9401accd23bf1ba74c047eee7a1b647511ff74bad191e5e832cd",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 5,
+            "movingLine": 2,
+            "monthOrder": "spring-wood",
+            "before": "原件有条件找回，机会在于真实说明得到可验证的回应。春木旺，初金克轻，中土可制，过程和末后的木比都有力。九二既有守中诚信而相应，也有好爵与人共享之义；寻物宜把认物依据讲准，让回复落到实见，再核同件与交还。",
+            "after": "真实说明若能得到亲见的回应，原件便仍有找回机会。起初阻力较轻，自己有能力核疑点，中后段也能借共同查看推进。九二重在守真相应、互通所知，宜先把认物资料讲准，再核对方实际见到什么；说法相合以后，仍须认清同一件并落实交还。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 6,
+          "movingLine": 2,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "诚恳的回复还须实见，原件偏难落实",
+          "readingNote": "简断将中途和收尾的两休比明确为一般配合，未沿用笼统前后而误含初段克。初轻克与自查吃力共同解释难处，九二诚实相应落实为亲见细节，未预设现实已有人回复。",
+          "finalCopyOpinion": "作者完整读回后再精确阶段并读回；普通比不写成无用。",
+          "snapshotRowSha256": "270029b9f7e4abde9bcc33ade4a800e87d988da9964b5d0b048a51791e73eede",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [
+            "轻初克与两处普通比并非无用，但原difficult主要取休体制相土费及无生援；一般比和不足回物是此篇综合解释，不泛化为休比皆不利。"
+          ],
+          "edit": {
+            "rowIndex": 6,
+            "movingLine": 2,
+            "monthOrder": "summer-fire",
+            "before": "这件物品较难找回，准确沟通仍能减少白费的查问。夏木休，初金克轻，但主动制相土吃力，中末木比只是一般支持，缺少直接生扶。九二的诚实相应与共享之义，可用于互通可核资料；愿意回答尚不等于已有物可认、可领。",
+            "after": "有人愿意认真回答，仍不等于已经有原物可认，这一局取回偏难。开头阻力轻，中途主动核证却吃力，中途和收尾的配合都属一般。九二的诚实相应可用来互通准确资料：请对方说清亲见细节，再与原件比认；只有相似印象时，先留出处，别急着认领。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前后配合都只属一般",
+              "after": "中途和收尾的配合都属一般",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "movingLine": 2,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "回复须落到亲见，原物仍较难找回",
+          "readingNote": "新简断保留秋令起旺金重克、弱体难查与中末死木弱比，没有以九二正面爻义许回物。肯定消息仍需追到见物者，是条件式建议，未把转述者定为欺骗。",
+          "finalCopyOpinion": "作者完整读回接受；亲见、独有特征与当前实物顺序清楚。",
+          "snapshotRowSha256": "e1bfc287556f5071670611be0fa3753cf81dca52ffdb1afe46764bea3b99a699",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 7,
+            "movingLine": 2,
+            "monthOrder": "autumn-metal",
+            "before": "原件偏难找回，若有消息，应先问它来自亲见还是层层转述。秋木弱，初旺金实克，中间主动核证吃力，中末比和也薄，缺少后援。九二任真而相应、好爵共享，肯定真诚通达之益；寻物则仍须有可认的物件，不能只凭彼此信任。",
+            "after": "即使收到很肯定的消息，原件仍较难找回，宜先追到直接见物的一方。起段阻力重，自己查证吃力，中后段支持也薄。九二肯定守真相应的益处，可将准确资料交给实际经手者核对；彼此信任值得保留，认准同一件则还须独有特征与当前实物相合。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 8,
+          "movingLine": 2,
+          "monthOrder": "winter-water",
+          "outcome": "conditional",
+          "title": "真实说明能相接，旧处仍有寻回机会",
+          "readingNote": "新简断前面疑点可办、中后较实共查与冬令相体、两相比相合。九二任真而应与共同补所知完整，允许各人所见不必完全相同，认原件之后才办理交还。",
+          "finalCopyOpinion": "作者完整读回接受；没有因为无直接生体新增必难规则。",
+          "snapshotRowSha256": "8596b8bb732dc2ff998c5548fc8660f4baaddd0ef6e7580fc6810c21d8fa55b6",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 8,
+            "movingLine": 2,
+            "monthOrder": "winter-water",
+            "before": "这件东西有条件取回，可把准确说明交到能实际复看的经手处。冬木相，初休金之克可承，中土可制，中末木比都有较实支持。九二从居中任真说相应，又有不私共享之意；沟通宜让双方各据所见补充，核准同一件后再办交还。",
+            "after": "顺着真实经手的经过查下去，原件还有取回机会。前面的疑点能够处理，中后段也有较实的共同核验条件。九二重在诚实相应，双方各按所见补充，不必先求一份完全相同的说法；若原件特征已经对上，继续确认当前收存与交还，别停在愿意帮忙的答复上。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 9,
+          "movingLine": 2,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "信任可以留住，原件还须另有实证",
+          "readingNote": "新简断把薄配合准确放在中途和收尾，起段受阻与囚体制旺土困难均有解释。九二信实仍有价值，熟悉彼此不能补全记忆，短长两文未互相冲突。",
+          "finalCopyOpinion": "作者完整读回后精确阶段再读回；困难等级未变。",
+          "snapshotRowSha256": "442f9d93b48bdda8e7efb276e0b50e79715225f3155b3084b70b225eb8526cb4",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 9,
+            "movingLine": 2,
+            "monthOrder": "seasonal-earth",
+            "before": "原物较难找回，诚恳沟通仍宜围绕可核的细节。土令木囚，初相金实克，过程制旺土困难，中末木比也弱，没有直接生扶。九二相应与共享的积极义可帮助准确传递所知；对方愿意配合以后，还需确认是否亲见原件、现在能否查看。",
+            "after": "这次仍较难找回，诚恳沟通可以继续，重点应放在可核的细节。起头受阻，中途自行查证困难，中途和收尾的配合又偏薄，尚欠能够接到原件的帮助。九二所重的信实，宜落实为准确传递所知；对方愿意配合以后，再问是否亲见、现在能否查看，不凭熟悉彼此补全记忆。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前后配合又偏薄",
+              "after": "中途和收尾的配合又偏薄",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "movingLine": 3,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "查得动也须守住事实，原件仍偏难回手",
+          "readingNote": "简断明确旺体复查力、中旺比和前后囚金轻克，强正证未被困难结论遮住。六三鼓罢泣歌的四态因果在正文完整，短句只戒无据反复，不认定现实已经妄进。",
+          "finalCopyOpinion": "作者完整读回接受；强正证为何仍难回是未决权重，不以一般认件步骤补造门槛。",
+          "snapshotRowSha256": "e94fa28e285a4813e3973d5bb20158b9a566b53e1941aca41d5ba47c986476d0",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "六三春令旺体、中旺比、可制死土且初末囚克轻，仍固定difficult；正文完整陈列正证，爻的失位妄进之戒在何程度上压过这些条件，仍需专业统核，不因句文完整即视为已解决。",
+            "旺体、中旺比、初末轻克与死土可制相当有利，原difficult仍依六三失位妄进和末克无生，属于明确强正证冲突，不能把戒意说成现实已经妄进。"
+          ],
+          "edit": {
+            "rowIndex": 10,
+            "movingLine": 3,
+            "monthOrder": "spring-wood",
+            "before": "这件物品偏难取回，旧范围却仍值得认真核一轮。春木旺，初末金克都轻，中间可制土、得木比，能用的查力不弱。六三所戒在失位妄进、进退无恒，宜让每次改查都有新事实支持；问明一段经过以后，仍须找到可辨可交的原物。",
+            "after": "旧处虽有力复查，原件目前仍偏难回手。前后阻力都较轻，中途也有实在配合，可把确定的一段认真查完。六三警戒的是没有依据便忽进忽退，换一条路线应当有新事实支持；问清经过以后，还须核当前物件，不能只因说法终于通顺就认定已经找到。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 11,
+          "movingLine": 3,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "反复改查更费力，原物仍较难取回",
+          "readingNote": "简断前后轻克、中自查费与普通比并列，行动先完成一轮有据查问再决定下一步。六三四态并非情绪诊断，正文有三四关系和失位妄进背景，未用艰难结果倒改休比。",
+          "finalCopyOpinion": "作者完整读回接受；问新消息增加何种亲见内容，能接上正文。",
+          "snapshotRowSha256": "7dcf836d53bb755ae6ccd7c117f6d3af30171f888ec2bc114c351ebc6be4e950",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 11,
+            "movingLine": 3,
+            "monthOrder": "summer-fire",
+            "before": "原物较难找回，宜把一轮可行的查问做完再决定下一步。夏木休，初末死金克轻，中土较难制，木互支持一般，查找缺少新援。六三鼓罢泣歌由妄进无恒而疲，不宜随每份猜想重开路线；留下实际查到的内容，再等可核的新证据。",
+            "after": "原物目前较难取回，宜先完成一轮有依据的查问，再决定下一步。前后阻力不重，中途取证却费力，配合也普通，尚缺承接到原件的帮助。六三戒进退无恒，不必随每份猜想推翻旧记录；新消息增加了什么亲见内容，核清这一点再改查，能少耗一轮工夫。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 12,
+          "movingLine": 3,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "起末核物都有阻，别随转述来回改认",
+          "readingNote": "简断从起查到末认物的双重阻力写起，秋死体、前后旺金实克和中薄比的困难完整。六三进退反复以不随消息任意改认为建议，并未声称必有物品损毁。",
+          "finalCopyOpinion": "作者完整读回接受；独有特征与当前收存先于领取。",
+          "snapshotRowSha256": "d17e399fe3c1354c093cafe392bab1b9878604e966503d07c54c69d815c822e0",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 12,
+            "movingLine": 3,
+            "monthOrder": "autumn-metal",
+            "before": "原件较难找回，初段与收尾的辨认都须面对实在阻力。秋木弱，前后旺金各克体，中途主动制土费力，比和也薄。六三四态反复出于失位妄进，查问宜凭亲见推进；一条消息忽好忽坏时，先核它增加了什么事实，再决定是否继续。",
+            "after": "从起头核消息到最后认物，这一局都较困难，原件偏难找回。自己查证吃力，中途支持薄，前后又有实在阻力，宜先守住亲见依据。六三所戒在妄进反复，不宜随消息忽好忽坏便来回改认；有人能实看时，核独有特征与当前收存，再判断是否可以领取。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 13,
+          "movingLine": 3,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "共同查清经过以后，仍须等到原件可认",
+          "readingNote": "新简断先承认经过有机会查清，明列相体能核、中相比、前后普通克可承的正面。六三戒无据进退，并不否认已具查力；过去亲见与当前可领的区别未变成盘中特有事实。",
+          "finalCopyOpinion": "作者完整读回接受；难回档位与多项正证的尺度继续待审。",
+          "snapshotRowSha256": "251b3c23d12562ab2754c8c9128be9a0c86f64793235e104a8bed24dba636472",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "六三冬令相体中比、有力制囚土、初末休克可承，现结果仍difficult；如何与正证及同类较强比和局统一爻权，属于仍待专业核断的权衡，不能由文学润色关闭。",
+            "相体、中相比、囚土可制与前后休克可承形成较强可办条件；原difficult仍重六三进退无恒及末克无援，保留取舍而不声称古注有唯一等级。"
+          ],
+          "edit": {
+            "rowIndex": 13,
+            "movingLine": 3,
+            "monthOrder": "winter-water",
+            "before": "这件东西仍偏难回手，前中却有可用的核查条件。冬木相，初末休金之克可承，中土可制，木互相比，能把具体经过问实。六三戒失位妄进与进退无恒，宜让每一步都有事实承接；查通路线之后，还须当前原物及实际交还的证明。",
+            "after": "经过有机会查清，原件仍偏难真正取回。自己有力处理疑点，中途也能借共同复看推进，前后的阻碍尚可承受；这些条件值得用足。六三戒无据的进退反复，宜让每一步都有新事实相接，查通旧路线之后，再核现在的物件和交还条件，不把过去亲见当作当前可领。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 14,
+          "movingLine": 3,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "先核新消息的来由，原物依然难回手",
+          "readingNote": "简断起末相金实克、中制旺土费和弱配合均体现，六三的重点落在新事实而非答复语气。正文四态完整，单条消息更肯定也未被擅推成有人刻意隐瞒。",
+          "finalCopyOpinion": "作者完整读回接受；比原计算速记更连贯，结论未变。",
+          "snapshotRowSha256": "872079c7819338ef241d01186191a43d17a1fa7b5c716a35993fcf03854ab83e",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 14,
+            "movingLine": 3,
+            "monthOrder": "seasonal-earth",
+            "before": "原件偏难找回，查问宜按亲见事实逐步推进。土令木囚，初末相金各有实克，中间制旺土困难，木比也弱。六三进退反复由失位妄进而来，宜先辨每份消息有没有新增所见；能确认的留下，未明的另问，不随肯定语气反复改认。",
+            "after": "新消息先问清来由，原件在这一局仍偏难找回。起头与收尾阻力较实，中途自行取证困难，配合也弱，反复换方向更容易白费查力。六三宜戒妄进无恒，亲见过什么就确认什么；一份答复只有语气变得肯定，却没有新增所见，暂不据此改认或延伸去向。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 15,
+          "movingLine": 4,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "少争一份说法，原件仍须凭实物核回",
+          "readingNote": "新简断将起中制旺木吃力、中死土薄生及末囚比弱写成查证负担，六四守正弃争未被写成争出胜负。正文月几望的德盛、承五与弃三争完整，未借月象算日期。",
+          "finalCopyOpinion": "作者完整读回接受；几份回忆不同时是条件而非已发生争执。",
+          "snapshotRowSha256": "dbfd476af731f3cb5db2a9be3a0ea8edfd49e027eb51395d42c35cf3d9819873",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 15,
+            "movingLine": 4,
+            "monthOrder": "spring-wood",
+            "before": "这件物品偏难找回，先让不同回忆各有自己的依据。春金囚，初中制旺木费力，中土生体薄，末金比和也弱。六四德盛而不与同类争，履正承上才无咎；寻物可放下求同的争执，把工夫交给能直接核物的一处，原件归还仍待实证。",
+            "after": "原件目前较难取回，几份回忆不同时，可以先各留亲见依据。起头与中途查证都吃力，援助和收尾配合又薄，争出谁记得更准未必能推进找物。六四贵在守正而不争，宜将工夫交给能直接查看的一处，核清原件独有特征；说法平息以后，仍须有实物可认。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 16,
+          "movingLine": 4,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "把分歧放在一旁，中段实查仍有机会",
+          "readingNote": "简断中途实看为主要机会，起中自查费与末弱比未省；六四既有阴德盛正面，也有弃争承五条件。不同回忆各留所据，能够实际看物的协助才用于认件。",
+          "finalCopyOpinion": "作者完整读回接受；与上九夏令同中援而不同档位的问题继续开放。",
+          "snapshotRowSha256": "6da3fd3de78820359b9a0d640c96392f2d9b0d450ba1e772cde1fe244d980e0a",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "夏令弱金初中制休木费、末死金比薄，既定conditional主要依中相土实生与六四弃争守正；相同中援在上九夏令仍difficult，两爻及末势如何定权需保留统核问题。",
+            "中相土实生而体死、末死比薄，原conditional依中途可用帮助；不将相生视为已使原体改旺。"
+          ],
+          "edit": {
+            "rowIndex": 16,
+            "movingLine": 4,
+            "monthOrder": "summer-fire",
+            "before": "原件有条件找回，较需中间真正能看物的帮助。夏金弱，初中制休木不轻松，但相土直接生体，协查有实用；末金比薄，不能只等末后顺利。六四德盛而弃争守正，宜让各份亲见分别留下，把中途实助用于原件辨认，再核能否交还。",
+            "after": "寻回机会更倚重中途的一次实际查看，原件仍有条件认回。起初和中途靠自己查证都较费力，收尾配合也薄，宜把较实的协助用在关键特征上。六四既有守正之美，也要求放下无据争执；不同回忆各留所据，请能看物的人核原件，再确认当前是否可交还。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己前中查证较费力",
+              "after": "起初和中途靠自己查证都较费力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 17,
+          "movingLine": 4,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "旧处仍能查实，不必先让回忆全都相同",
+          "readingNote": "新简断旺体可查、中普通生及末旺比均自然表达，六四不争不等于强迫回忆统一。正文德盛、守正承五与无咎完整，可靠新事实可纠正旧说，没有删去好条件。",
+          "finalCopyOpinion": "作者完整读回接受；多项强正证为何仍止有条件，未冒称由通用认件步骤解决。",
+          "snapshotRowSha256": "5caf23fbfb6c3b7bf597dc257e0820b84be7ee10e248ba5b19bd5b612c968f2e",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体制两死木、中休土生与末旺比俱利，六四又有德盛和无咎；原conditional而非favourable的等级取舍保留，不以补齐证据的通用条件冒称充分裁决。"
+          ],
+          "edit": {
+            "rowIndex": 17,
+            "movingLine": 4,
+            "monthOrder": "autumn-metal",
+            "before": "这件东西有条件取回，可先把自己能核的收放做实。秋金旺，初中死木可制，中土休而生体，末金旺比，原范围的复查条件较足。六四月几望有德盛之美，弃同类之争才无咎；有物可看时应直接认件，不必先使所有转述一致。",
+            "after": "原物还有找回机会，旧处较有条件查实，不必先让每份回忆完全一致。自己能够核清疑点，中途有一般帮助，收尾共同辨认也较有力。六四重在守正而不争，有物可看便按旧资料核同一件；真正足够认领的证据齐了，再落实交还，别让转述分歧拖住实查。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 18,
+          "movingLine": 4,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "不再争谁记得准，原物仍较难回手",
+          "readingNote": "简断把初中制相木费、中囚土薄生与末休比普通明确区分，弃争是节省查力。六四的无咎不等于物归，没人能实看时保留缺口，属于条件建议，未凭空断现实无人帮忙。",
+          "finalCopyOpinion": "作者完整读回接受；普通比未混入援薄。",
+          "snapshotRowSha256": "188e00609068a5eea31b70402f7d79ef1ea950e1071fb27eb3b6212fc0668b60",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 18,
+            "movingLine": 4,
+            "monthOrder": "winter-water",
+            "before": "原件偏难找回，宜将每个人确知的一段保留下来。冬金休，初中制相木费力，中土生体薄，末金比和只是一般，尚难补齐查证之难。六四德盛而不争、守正才无咎；少争能保住实查机会，实物未见时仍不能由说法平息便认定找回。",
+            "after": "少争一份旧说法，能保住有限查力，原件却仍偏难回手。从追查收放到中途辨物都费力，中途援助薄，后段配合也只是一般。六四宜守正弃争，将各人确知的一段分别留下，再请能看物者补证；暂时没人能够实看，就保留缺口，不因大家不再争论便认定已经找回。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前中主动核证费力",
+              "after": "从追查收放到中途辨物都费力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 19,
+          "movingLine": 4,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "让实际查看推进寻找，原件还有回手的机会",
+          "readingNote": "新简断相体可核、中旺生与末相比支持先查能实看的一处；六四守正不争用于核新实见，不丢弃真证据。月几望、马匹亡在正文未被实体化为日期或第二件失物。",
+          "finalCopyOpinion": "作者完整读回接受；强有利组合仍有条件的等级问题留审。",
+          "snapshotRowSha256": "2c2b1e076856ce76b1eb62e696787ec97e0f2af6347c2f987a42ec6ac48565a0",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "相体制两囚木、中旺土强援与末相比实都利，原conditional仍保六四弃争守正条件；没有为此气势强行统一成易得。"
+          ],
+          "edit": {
+            "rowIndex": 19,
+            "movingLine": 4,
+            "monthOrder": "seasonal-earth",
+            "before": "这件物品有条件找回，前中可查，协助和末后配合也较实。土令金相，初中囚木可制，中旺土生体，末金相比，宜把照片记号交到能看物的人手上。六四德盛却不与同类争，守正方无咎；不必为统一旧说法耽误眼前可做的辨认。",
+            "after": "先把能够实际查看的一处查明，原件仍有取回机会。自己有力量核疑点，中途助力较实，后段也有可用的共同复查条件。六四的无咎须守正而不争，宜将准确照片与记号交到能看物的人手中；新实见与旧说法不同时，先据实辨物，再接好当前收存和交还。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 20,
+          "movingLine": 5,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "留住能对证的联系，原物仍偏难取回",
+          "readingNote": "新简断将初中查证吃力、中末两微生写成联系尚难接成归还，九五系信不绝用于准确资料连续传递。正文尊位意味着责任而非自动免责，反复催旧答复不被当新证。",
+          "finalCopyOpinion": "作者完整读回接受；真实联系是可保存的条件，不编造现实协作已经发生。",
+          "snapshotRowSha256": "b4391ee803cd00e1ee3e8a373a0e4e124abc4365b8e0b08374e252ad5958a922",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 20,
+            "movingLine": 5,
+            "monthOrder": "spring-wood",
+            "before": "原件较难找回，已有的真实经手联系仍宜保存准确。春金囚，初中制旺木吃力，中末土生虽在而援薄，尚难接成回物。九五挛如是持续以诚信相系，正当其位也须守信才无咎；联系不必靠重复催问维持，下一次应接的是新见物依据。",
+            "after": "原物仍偏难回手，已经接上的真实经手联系可以留准。从追溯收放到中途取证都吃力，中后段虽有帮助，力量都薄，尚难把消息接成归还。九五贵在诚信不断，宜让每次传递都守住准确资料；下一次联系应补新的亲见内容，重复催同一句答复，并未增加原件的证明。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前中主动查证吃力",
+              "after": "从追溯收放到中途取证都吃力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 21,
+          "movingLine": 5,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "让可靠协查接着做，原件仍有取回机会",
+          "readingNote": "简断起中自行核证费与中末两实生形成清楚的借助条件，九五恒诚用于接查时说明已知和待核。原物特征确认、当前收存与交还顺次推进，保留死体限制。",
+          "finalCopyOpinion": "作者完整读回接受；两相生未简单相加为体已转旺。",
+          "snapshotRowSha256": "abf2215d272bc0518435d4495da1c630dcf1753622d10131d4a6903446f2f5d6",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 21,
+            "movingLine": 5,
+            "monthOrder": "summer-fire",
+            "before": "这件物品有条件找回，较需把实际协查连续接到原件。夏金弱，初中制休木费力，中末相土却都直接生体，帮助较实。九五系信不绝，要求前后真实相接；把准确特征交给能看的人，每次确认都留有依据，认准以后再安排交还。",
+            "after": "把一次真实协查接着做，原件仍有找回机会。起初与中途靠自己核证都费力，中后段却较有条件获得实助，宜请能看物的人补关键特征。九五的系信不绝，重在准确依据前后相接；换人接查时也把已知与待核说清，认准同一件以后，再确认现存与交还办法。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己前中核证费力",
+              "after": "起初与中途靠自己核证都费力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 22,
+          "movingLine": 5,
+          "monthOrder": "autumn-metal",
+          "outcome": "conditional",
+          "title": "沿真实联系核下去，原件仍有寻回余地",
+          "readingNote": "新简断将旺体可制死木与中末普通生写成可核疑点及一般帮助，九五守真允许新事实改正记忆。原码有条件保留，未因无咎自动升格。",
+          "finalCopyOpinion": "作者完整读回后把前中展开为起头和中途再读回；无计算速记。",
+          "snapshotRowSha256": "5faf47d41bef729a7494ee9c9433e6a94ae4c258bbe4059269289db1a7b624ba",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体可制初中死木且中末普通生，无咎又有可取条件；原conditional的等级与这些正证间仍有解释权衡，休生未降为薄绝。"
+          ],
+          "edit": {
+            "rowIndex": 22,
+            "movingLine": 5,
+            "monthOrder": "autumn-metal",
+            "before": "原物有条件取回，宜让前后每次回复都增加可核的内容。秋金旺，初中死木可制，中末休土直接生体，援助程度一般而非全无。九五挛如贵在诚信不断，可靠联系可继续留用；事实需要修正时据实修正，原件认定标准则应始终准确。",
+            "after": "沿着能够对证的联系继续查，原件仍有寻回余地。自己有力核清起头和中途的疑点，后面也有一般帮助可用，宜让每次回复增加可核的内容。九五贵在持续守真，不是固守旧猜想；可靠的新事实可以更正记忆，认件标准始终留准，确认现在有物可交再办领取。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己有力核清前中疑点",
+              "after": "自己有力核清起头和中途的疑点",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 23,
+          "movingLine": 5,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "下一次联系要有新事实，原件仍难回手",
+          "readingNote": "简断以旧答案未增加实见开头，初中制相木费与两囚援薄解释难处，九五信实联系仍可保留。愿帮、曾见、现可交三种事实各自确认，与正文恒诚不断相合。",
+          "finalCopyOpinion": "作者完整读回接受；未把信任直接当同件证明。",
+          "snapshotRowSha256": "895ab883757893ac5059306326a3804e4d0e6ffe2fa85e68260e521afb168d19",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 23,
+            "movingLine": 5,
+            "monthOrder": "winter-water",
+            "before": "这件物品较难找回，真正经手的联系可以保留，重复催问却难补证。冬金休，初中制相木吃力，中末囚土虽生而援薄。九五守信相系才无咎，寻物宜保持准确资料与真实回复；愿意继续帮查和当前已有物可交，应分别确认。",
+            "after": "下一次联系若仍只有旧答案，原件就尚未更接近回手，这一局取回偏难。此前自行核证吃力，中后段帮助又薄，宜先问清谁能实际查看。九五要求诚信相系，可保留准确资料与真实经手的联系；愿意继续帮忙、亲见过原物和现在能够交还，须分别确认。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前中核证吃力",
+              "after": "此前自行核证吃力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 24,
+          "movingLine": 5,
+          "monthOrder": "seasonal-earth",
+          "outcome": "conditional",
+          "title": "实查前后接得上，原件仍有找回机会",
+          "readingNote": "新简断相体有力核疑点、中末旺生与持续实查相接，九五恒诚不舍完整，交接资料保留缺口。曾被看见仍要核现在同一件，未把通用事实标准包装为新的断法阈值。",
+          "finalCopyOpinion": "作者完整读回后展开起头和中途再读回；强正证的档位权重保留。",
+          "snapshotRowSha256": "fa764c0f159bbb6bd10eabee721e7e3cd7193c7218d11eb6de4752fb4034af22",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "相体、两囚木可制、中末双旺生较强，仍保conditional；九五无咎以恒诚为条件，但古注未给足以唯一界定此回物等级的算法。"
+          ],
+          "edit": {
+            "rowIndex": 24,
+            "movingLine": 5,
+            "monthOrder": "seasonal-earth",
+            "before": "原件有条件找回，较实的协助适合连续用于查物。土令金相，初中囚木可制，中末旺土直接生体，前后的帮助有力。九五挛如取诚信相系不绝，每次所知都应准确传下去；物品曾被看见以后，还要确认当前同件与交还条件。",
+            "after": "原件仍有找回机会，较有力的协助宜连续用在实查上。自己能够处理起头和中途的疑点，中后段也有实助，关键是让各次所见准确相接。九五贵在守信不绝，交接资料时把已知与缺口讲清；物品曾被看见以后，还须核准当前同一件及交还条件，才能把帮助接成结果。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己能够处理前中疑点",
+              "after": "自己能够处理起头和中途的疑点",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 25,
+          "movingLine": 6,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "传得广仍须有人实看，原件偏难取回",
+          "readingNote": "新简断以消息传播仍须追实际见物来源起笔，起中难制旺木、中薄生和末普通耗均有依据。上九信终衰、外声内失实的戒意不指认现实某人说谎，重复同源不算多份证据。",
+          "finalCopyOpinion": "作者完整读回接受；正文仍把贞凶何可长讲全。",
+          "snapshotRowSha256": "33f1f570384c7a8eb74727e8994327550b1ec10e8da116ace1bb91ad152a7197",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 25,
+            "movingLine": 6,
+            "monthOrder": "spring-wood",
+            "before": "这件物品偏难找回，消息若多，应先找到真正见物的来源。春金囚，初中制旺木吃力，中土生体薄，末水又由体生而费力。上九声扬而实不随，正亦受损，宜让回复各有实见依据；多人听说同一件事，并不等于多了几份原物证明。",
+            "after": "消息传得广，原件也仍偏难取回，宜先找到真正见物的来源。从起查到中途核物都吃力，援助薄，收尾还需继续投入，反复转告难补这一缺口。上九戒声扬而实不随，回复应各有亲见所据；多人听过同一句话，只能保留原来那一份消息，不能多算几份认物证明。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己前中查证吃力",
+              "after": "从起查到中途核物都吃力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 26,
+          "movingLine": 6,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "中途实助要用到物上，原件仍偏难回手",
+          "readingNote": "简断保留中相土实助及末轻耗的正面，同时说明自身取证仍费力，上九不能预认寻物完成。分项证实、现存与交还相接，未因凶爻把实助说成全无价值。",
+          "finalCopyOpinion": "作者完整读回接受；夏令与六四不同结果的专业阈值继续待审。",
+          "snapshotRowSha256": "1889b69436c22b48167bbdedaa9a2f956e331149e6a6eb882530dd7d21015ee9",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "上九夏令中相艮实援、末囚坎耗轻，却保difficult；六四夏令同中实援取conditional，两爻戒及末比与末泄的差别如何决定阈值，仍留专业权衡而不以文案已厚替代。",
+            "死体与上九贞凶为负，中相土实援及末轻耗为正，原difficult仍保局部吉应；不以爻凶宣称中实助毫无价值。"
+          ],
+          "edit": {
+            "rowIndex": 26,
+            "movingLine": 6,
+            "monthOrder": "summer-fire",
+            "before": "原件较难取回，中间却有值得使用的实际帮助。夏金弱，初中制休木费力，相土生体较实，末水泄体之耗虽轻，仍未带来新援。上九戒虚声无实、外扬内失，协查宜核亲见的细节；一句好消息须接到同件与交还，才真正推进寻找。",
+            "after": "中途若有人能够实看，应认真用好这份帮助，原件整体仍偏难回手。靠自己查证仍费力，后段耗费虽轻，却未再添援助。上九戒好听的消息失去事实承当，宜让协查核到原件独有细节；一项得到证实便留下一项，再查现存与交还，不能提前把寻物当作完成。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己前中核证费力",
+              "after": "靠自己查证仍费力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 27,
+          "movingLine": 6,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "旧处能查，反复听说仍须回到原件",
+          "readingNote": "新简断明确旧处可主动查，中援普通，困难更多在后段相水实耗。上九虚声无实是核原始亲见的警戒，未断现实已有虚报；旺体能查的正证完整保留。",
+          "finalCopyOpinion": "作者完整读回接受；口吻自然，末耗未误写末阻或末生。",
+          "snapshotRowSha256": "8aeb1dacd837b886ccf0a3e93d71053abeea12171ac03faa3314f8cdacfd00e5",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "旺体能制初中死木、普通中生支持实查，原difficult重末相水实耗与上九虚声失实戒；事实表本身不证明现实正在虚报，等级保留原解释。"
+          ],
+          "edit": {
+            "rowIndex": 27,
+            "movingLine": 6,
+            "monthOrder": "autumn-metal",
+            "before": "这件东西偏难取回，前中有查力也须落实在原物上。秋金旺，初中死木可制，中土休而生体，末相水泄体较实。上九虚声远闻而实不随，戒在外扬失真；已经传得很肯定的消息，也宜核到最初实看者，再辨同件和现存状态。",
+            "after": "旧处能够主动查清，原件仍偏难落实归还，难处更多留在后段的耗费。中途一般帮助可用，宜请实际看物者补细节。上九戒声闻远而实不随，传得很肯定的消息也要追到原始亲见；先核独有特征，再问当前是否可交，不必靠扩大传话来证明已经找到。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。"
+          }
+        },
+        {
+          "rowIndex": 28,
+          "movingLine": 6,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "先找亲眼所见的依据，原物仍难回手",
+          "readingNote": "简断前面自查费、中薄助及末旺水耗重支撑难回，下一次询问应增加一项所见的建议具体。上九声扬失实不等于任何人故意欺骗，准确资料可以保存等待核验。",
+          "finalCopyOpinion": "作者完整读回接受；不凭重复语气确认原件。",
+          "snapshotRowSha256": "5185c7609be954b4a460f24b33b281263c270643ec7cadc236d60c9b3b31c97e",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "edit": {
+            "rowIndex": 28,
+            "movingLine": 6,
+            "monthOrder": "winter-water",
+            "before": "原件较难找回，继续追问须能增加真实所见。冬金休，初中制相木困难，中土生体薄，末旺水又实耗，寻找易费力而难落物。上九声闻太远、实在不随而凶，宜把转告追到亲见来源；没有对应物件时，多一份肯定仍不是多一分确证。",
+            "after": "这次仍较难找回，下一次询问最好能增加一项真正所见。前面查证费力，中途帮助薄，收尾耗费又较重，重复转述难使原物落到手中。上九警戒声扬失实，宜把消息追到亲见来源；没有对应物件时，肯定的语气仍不足认件，先保存准确资料，待实证再接续。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "前中查证费力",
+              "after": "前面查证费力",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        },
+        {
+          "rowIndex": 29,
+          "movingLine": 6,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "实助值得用好，原件仍难凭传话回手",
+          "readingNote": "新简断明确相体可制弱木、中旺援与末轻耗，强正证直接写出并鼓励用足，上九的凶戒没有掩去这一面。核到哪步确认哪步而不虚造已失信事件，原困难档位仍保留。",
+          "finalCopyOpinion": "作者完整读回接受；本卦最明显的强正证与凶爻权重分歧仍未专业重裁。",
+          "snapshotRowSha256": "4eaa05b6f9c1e64d01636e595a7a4d21ad6cc77dff2df4c4a50777892b20538a",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "上九土令初中可制、中旺艮实生、末死水轻耗，仍固定difficult；凶爻之戒如何压过这组强正证，以及现实已据实核物时结论如何适用，尚属未重裁的专业权重问题。",
+            "相体可制初中囚木、中旺土强生且末耗轻，强正证与difficult冲突最明显；原判断取上九贞凶之戒，审计留出这一实质分歧，正文不因凶否认可用帮助。"
+          ],
+          "edit": {
+            "rowIndex": 29,
+            "movingLine": 6,
+            "monthOrder": "seasonal-earth",
+            "before": "这件物品偏难取回，中段却有很值得用好的实助。土令金相，初中囚木可制，旺土直接生体，末水耗轻，查物条件并非全差。上九所戒是内失真实而外扬声势，宜把帮助落实到原件证明；消息讲得圆满以后，仍须实际核认与交还。",
+            "after": "能实看的一处值得认真查，原件却仍偏难取回。自己有力处理前面的疑点，中途帮助强，收尾耗费也轻，这些有利条件应当用足。上九尤其戒消息越传越满而失去实据，宜把帮助落实为原件证明；核到哪一步便确认哪一步，当前收存与实际交还仍须接着查明。",
+            "reason": "逐篇将压缩的经卦五态及生克速记改为完整自然中文；保留原结论、主要正反条件与本爻行动重点，事实仍由正文和判断字段完整展开。",
+            "readbackRefinement": {
+              "before": "自己有力处理前中疑点",
+              "after": "自己有力处理前面的疑点",
+              "reason": "读回后分清中段与末段、普通与薄助，或展开压缩阶段称谓。"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hexagram": 62,
+      "sourcePath": "sources/editorial/lost-object-recovery/hex-062.json",
+      "snapshotSourceSha256": "75ae54f64f36b3bdd33009df8c64098bfaa5a47de9abcc53cf32f640ed1ba1e9",
+      "rowCount": 30,
+      "layerSnapshots": {
+        "directions": {
+          "path": "sources/editorial/lost-object-recovery/directions/hex-062.json",
+          "snapshotSha256": "6a7287a24b6f916498c46e8d32fddd4d2593215f0482a1a148e76e413349a324",
+          "textEntriesRead": 6
+        },
+        "images": {
+          "path": "sources/editorial/lost-object-recovery/images/hex-062.json",
+          "snapshotSha256": "6576c179765b6c304864780b7e39afbdd594fc621e39063aee86cf6c0ff0753d",
+          "textEntriesRead": 6
+        }
+      },
+      "entries": [
+        {
+          "rowIndex": 0,
+          "movingLine": 1,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "先把确实用过的一处查完，原物仍难回手",
+          "readingNote": "简断本身已自然，无计算速记；旺体制死土与中旺比的查力直接保留，末相火耗实也说明。初六所戒在违宜急进，正文没有由飞鸟造交通事故或实际物品位置。",
+          "finalCopyOpinion": "全文实读后保留原文；强正证仍难回及孰知疑句两项未决问题原样保留。",
+          "snapshotRowSha256": "2a3cf2b46c98a380a71b1d69691d1fae20df841a57808c2102bc57b78cbe8639",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "初六春令强体制弱土、中旺比与原difficult如何定权，尚需专业解释，正文未以物证这一通用要求充作新增硬门槛。",
+            "初六小象疏孰知不可自取凶咎句语义仍待校；根代理四库同录已记录，本人未据疑字追加判断。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 1,
+          "movingLine": 1,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "先接上实际查验，少把工夫花在新猜测上",
+          "readingNote": "夏休体制相土费、中休比普通、末旺火耗重在简详中强弱清楚，未把休比压成薄绝。初六不据模糊消息另走一路、确有新见再接续，语句自然且行动有条件。",
+          "finalCopyOpinion": "全文实读后不改；困难程度与五态没有矛盾。",
+          "snapshotRowSha256": "914b85ec2d1d67ae84e0bf219e81c5399e0a071039f17202533c02542276af0c",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 2,
+          "movingLine": 1,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "相似消息先查来源，原件仍较难认回",
+          "readingNote": "秋弱体自查难、中旺金实克与末轻耗分别交代，轻耗并未改成生助。初六违宜而进只作查法警戒，正文没有从体死推物毁，收存去向仍待实证。",
+          "finalCopyOpinion": "全文实读后不改；原件标记与真实经手相接。",
+          "snapshotRowSha256": "8e56a2b5a13072290b47f00291cee97dd06d5533077dae5dd528b6ed74c866b2",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 3,
+          "movingLine": 1,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "能共同查清旧处，仍须防无据转向",
+          "readingNote": "简断保留冬相体可制囚土、中实比和末死火轻耗，正证丰富而困难结论仍明示。初六戒急进并不否定还能复查的一处，未造无直接生体必然难回的规则。",
+          "finalCopyOpinion": "全文实读后不改；爻凶与强查力的尺度仍是专业未决。",
+          "snapshotRowSha256": "5422afab1e2819d9b32dacba21c2f3bd809c72a69344d93e162a1b23d9b50fa5",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [
+            "冬令初六强自查、实比和轻末耗仍判difficult，爻凶与盘面正证适用尺度须专业复核。",
+            "孰知疑句保持待校，采用的是清楚的进逆无所措足，不据疑句追加凶事。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 4,
+          "movingLine": 1,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "先核最后确见，少让传话接成新路线",
+          "readingNote": "土囚木制旺土费、中相金实克及末普通耗的困难完整，简断从最后真实使用接到可查看者。初六无据急进的戒意贯穿，传话与原件之间的缺口没有用想象填补。",
+          "finalCopyOpinion": "全文实读后不改；方向形色另受真实行程限制。",
+          "snapshotRowSha256": "27603156f9183de6b0cc1acdbf9c96d7f1f4cfbf4d8c8f03009cfb0e681cee39",
+          "directionAndImageEntryRead": 1,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 5,
+          "movingLine": 2,
+          "monthOrder": "spring-wood",
+          "outcome": "conditional",
+          "title": "把查验交到实际经手的一步，仍有寻回机会",
+          "readingNote": "自然简断春旺体可查、中末旺比与六二中正不越位形成可寻理由。祖为初、妣为居内中正、不过君而守臣分在正文完整，未落实为真实亲属或层层职级关系。",
+          "finalCopyOpinion": "全文实读后不改；已见物特征与现存、交还仍逐步落实。",
+          "snapshotRowSha256": "342a49d2106e437f1d413216969817a33e37009e5ebfcfac3c1588d40d455704",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 6,
+          "movingLine": 2,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "合宜问查仍可推进，原件回手却较困难",
+          "readingNote": "简断明确中后段一般配合，纠正了把休比当薄的旧问题，自查制相土费仍有分量。六二得中不越的无咎没有等同物归，实见与认同件的建议自然。",
+          "finalCopyOpinion": "全文实读后不改；普通双比加吉爻而仍难回的权重继续待审，未改结果。",
+          "snapshotRowSha256": "741ec15928ed1cb2d460671c690369301ea384d93fbe673509ea2bc9b5b16102",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [
+            "纠正旧稿休比薄以后，中末普通支持加六二无咎与原difficult的权重须专业复核，不能以缺直接生体作为统一判难条件。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 7,
+          "movingLine": 2,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "答复要落到亲眼所见，原件仍难核回",
+          "readingNote": "秋弱体、旺金中克与末弱比在简详中对应，六二无咎以得中不僭为条件保留。对实际经手者分清亲见和转述是合宜行动，未假定现实有人处于特定社会身份。",
+          "finalCopyOpinion": "全文实读后不改；愿意回应并非已确认眼前原件。",
+          "snapshotRowSha256": "a4c56b139b3faf219a706bce10d5a9f02b5ce65e39606be1905e28a123d17fe5",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 8,
+          "movingLine": 2,
+          "monthOrder": "winter-water",
+          "outcome": "conditional",
+          "title": "顺着真实经手查到现物，还有寻回机会",
+          "readingNote": "冬相体可制囚土，中末相巽比实，简断仍有寻回机会与正文相合。六二不越之义用于请求实际可核范围，不禁正当协查，顺着真实经手到现物的顺序完整。",
+          "finalCopyOpinion": "全文实读后不改；无咎没有被改成到手承诺。",
+          "snapshotRowSha256": "e5c307d19e874453f38c9b50ae2ec0a76e2cc28db28cb42fb2710afd892a6b07",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 9,
+          "movingLine": 2,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "先辨亲见与转述，原物仍较难取回",
+          "readingNote": "土囚体自查费、中相金实克、末弱比的难处清楚，六二得中不越继续保留正面。简断只让问题止于可证部分，没有将多次转述拼成完整去向。",
+          "finalCopyOpinion": "全文实读后不改；亲属与君臣皆未实体化。",
+          "snapshotRowSha256": "82e6561edef2f9231c76f2f345578e7cb3593eafbe8598819bf8108aea361094",
+          "directionAndImageEntryRead": 2,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 10,
+          "movingLine": 3,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "自己查得动，也要守住认同一件的依据",
+          "readingNote": "春旺体能制初末死土、中旺比与轻中克全列，简断不隐藏强查力。九三当位而未先过防、应上六而从及或为不必俱全，戕未落为必然伤害或失窃。",
+          "finalCopyOpinion": "全文实读后不改；强盘正证与困难等级的实质分歧仍开放。",
+          "snapshotRowSha256": "110b724531cbea15f0d129a0f841d9c509de53c58a2dfc7c57488ad6dfc32fca",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九三春令盘面强正证而仍difficult的尺度尚待专业审议，不能把一般认物步骤偷换成此盘特有的缺证事实。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 11,
+          "movingLine": 3,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "先把辨认依据问实，别随近似答复认领",
+          "readingNote": "夏令初末制相土费、中休比普通与轻克并存，简断仍肯定可补实细节。九三未防便从的戒意与或非必然的限定均清楚，不把风险叙成已经发生。",
+          "finalCopyOpinion": "全文实读后不改；一般配合未误写薄援，未另造迟得日。",
+          "snapshotRowSha256": "e7d5f9fda136a5ba3d19b67b84026e7173ad3ee45f6bad6dfe07d4f74a0cef16",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 12,
+          "movingLine": 3,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "原件资料先守准，相似物仍须逐项核认",
+          "readingNote": "秋弱体初末自查难、中旺克与弱比解释困难，原件旧图记号作为核验凭据。九三或字的不必然性保留，不能为让近似答复成立反改记忆的建议与正文相接。",
+          "finalCopyOpinion": "全文实读后不改；没有由凶推物毁、盗窃或人身灾害。",
+          "snapshotRowSha256": "a61a029ad58f21bbafc4a8ea158f6552fd4b6980b28e80b5d06fa874d03e3768",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 13,
+          "movingLine": 3,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "协查有力也须先辨，原件仍宜谨慎求回",
+          "readingNote": "冬相体可制初末囚土、中相比和可承普通克构成较强正证，简断明确保留。九三先辨后取的戒意仍有全文依据，或并不必然败坏也未删。",
+          "finalCopyOpinion": "全文实读后不改；困难档位的爻盘取舍待专业解释。",
+          "snapshotRowSha256": "a12133eade7fbadff838b8e3d14a9a91d66c62687cac14f16145af701432d90f",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九三冬令强自查、实比而原difficult的爻盘取舍待专业解释；正文未以无生体或笼统无实物证据构造额外规则。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 14,
+          "movingLine": 3,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "别为赶快认领而放宽原件的辨认",
+          "readingNote": "土囚体初末制旺土费、中实克与弱比的多重难处一致，简断守辨认而不接受笼统说明。九三疏防、应从与或非必然完整，凶辞没有扩大成现实灾害。",
+          "finalCopyOpinion": "全文实读后不改；未根据体克迟得擅加日期。",
+          "snapshotRowSha256": "524f5ff073bf5f142ea8305e20a86eb946d6cd9aacd5a2f5bfb4ce9b3e13601a",
+          "directionAndImageEntryRead": 3,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 15,
+          "movingLine": 4,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "无据追问先收住，原件仍较难查回",
+          "readingNote": "春死土受初中双旺木实克、末弱比，简断困难关系准确。九四非责主自守可免咎、往厉须戒、无援旧法不能永用三层俱在，未写成永远守一处不动。",
+          "finalCopyOpinion": "全文实读后不改；有真实新证才调整查法，未借金制木通关。",
+          "snapshotRowSha256": "6efca8c6580437cdb80c1398e38ce05c6cae5f11d2567a78cd32198f7c2edac9",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 16,
+          "movingLine": 4,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "能稳住并继续核查，原物回手仍偏难",
+          "readingNote": "夏相土承普通木克、轻中耗与末相比实在简断中明确作为可用条件。九四自守免咎与往厉、勿用永贞全释，古注无援未用来否定盘面末比。",
+          "finalCopyOpinion": "全文实读后不改；较强正证与困难等级的阈值留审。",
+          "snapshotRowSha256": "4be71a90aaa2d82b708752d43296957420211eb3d206f44f8535de13dbc38575",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九四夏令较强正证与原difficult间的权重需专业复核，不能仅以九四古注无援否定末比，亦不能设无直接生体必难。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 17,
+          "movingLine": 4,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "前面阻力较轻，后续仍须节省无效追问",
+          "readingNote": "秋前中死木克轻、旺金耗实与末休比普通各有位置，简断侧重节省无效追问而非放弃。九四无咎、往厉、旧法不可永守的意义齐全，普通比没有夸大。",
+          "finalCopyOpinion": "全文实读后不改；没把实际协查一律说成无援。",
+          "snapshotRowSha256": "c4fb77e88367e9d12b5df649a81d11f39cb3005bfb13955735be30f51922bdf5",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 18,
+          "movingLine": 4,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "保住确知的一段，等实证接续查验",
+          "readingNote": "冬囚土受两相木实克，中普通泄、末薄比与困难相符；简断保留确知一段并待真实新证。九四无援之义限制在爻的处境，未虚构现实求助遭拒或无人响应。",
+          "finalCopyOpinion": "全文实读后不改；未能认物之前未知保持待查。",
+          "snapshotRowSha256": "fbe9b3e27cdc9eab1e7d00765a59eafe81c66fb3edfa74a47b49587152556a7b",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 19,
+          "movingLine": 4,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "原处有力可查，认物仍须留足最后一步",
+          "readingNote": "土旺体承轻克、末旺比和中相金实耗全列，简断肯定已有范围值得查完整。九四所能以内自守与谨慎调整俱在，强末比没有被古注无援抹除。",
+          "finalCopyOpinion": "全文实读后不改；强正证仍困难继续待专业核断。",
+          "snapshotRowSha256": "ad989ef4c044f912a258b22fd6606887ca61702c277f01b84a2d1c9a3abebb19",
+          "directionAndImageEntryRead": 4,
+          "inheritedOpenQuestionsReadThisRound": [
+            "九四土令强体轻克末旺比仍difficult的专业尺度待复核，与夏令同需避免以缺生作新增硬门槛。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 20,
+          "movingLine": 5,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "细查一个真实疑点，原物仍较难回手",
+          "readingNote": "春死土受双旺克、中末轻泄，简断困难与局部细查可能并列。六五公弋察隐有取、密云未施及文德怀服优于尚威取之俱全，未将穴或西郊指定为地址。",
+          "finalCopyOpinion": "全文实读后不改；局部所得不直接认作物已归。",
+          "snapshotRowSha256": "36d8a032316fb57d809d567a7e6cbde1bde92f73608ac38d1554aad2683580e9",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 21,
+          "movingLine": 5,
+          "monthOrder": "summer-fire",
+          "outcome": "difficult",
+          "title": "局部细节可以补清，原件仍难直接认回",
+          "readingNote": "夏相体承普通克、中末轻泄的可办条件明确，六五局部所得的正面没有因困难而删。简断把新发现核到同一件，正文同时解释未施与不尚威，未凭空推有人隐匿。",
+          "finalCopyOpinion": "全文实读后不改；局部得与最终难回如何定权仍留审。",
+          "snapshotRowSha256": "ea260354dc10f83a10e5b07927035e408ddf51874a91c1f0e80667eb02b3dba1",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [
+            "六五夏令可承普通克、轻中末耗与局部有得之义，如何仍限原difficult，须专业定权；未施的应用边界不能被通用认物要求替代。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 22,
+          "movingLine": 5,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "查出一点以后，先看是否真能认到原件",
+          "readingNote": "秋前轻克而中末旺金实耗的轻重关系清楚，简断让新发现先证明其与原件的关系。六五察微有取和密云未施完整，少派生无据查询的建议有上下文支撑。",
+          "finalCopyOpinion": "全文实读后不改；旺金属于泄耗，未误作吉期。",
+          "snapshotRowSha256": "d8046abdd4452c25203e7ec5e752bcf800ffdc5ba63002a5bcffd19d42b7e6f5",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 23,
+          "movingLine": 5,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "隐约的细节继续核实，原件仍偏难取回",
+          "readingNote": "冬前中相木实克、中末普通泄解释难回，简断只在确有相合细节时请实际经手者补看。六五察隐、未施和文德怀服均保留，强迫补全未知不是替代证据。",
+          "finalCopyOpinion": "全文实读后不改；穴未实化为物品所在洞穴。",
+          "snapshotRowSha256": "aea5584b0bc6dc16fd560239f9bb467a92fef3da660d68b27da25f641029e278",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 24,
+          "movingLine": 5,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "有力把细节查准，仍须让线索接到现物",
+          "readingNote": "土旺体承初中轻克而中末实泄，简断同时肯定查细能力与耗费。六五公弋局部取得不等于全程施用，所求止于对方能查看的内容，合乎正文不尚威取之。",
+          "finalCopyOpinion": "全文实读后不改；没有新增现实藏匿者断言。",
+          "snapshotRowSha256": "bb9a89639f775a844334b54b2559c34c613c538995ec06f91312328044da0f67",
+          "directionAndImageEntryRead": 5,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 25,
+          "movingLine": 6,
+          "monthOrder": "spring-wood",
+          "outcome": "difficult",
+          "title": "晚来的帮助仍可用，原物回手却偏难",
+          "readingNote": "春死土受前中双旺克，末相火实生并未因困难等级删去，简断要求将后援落到真正可见对象。上六过亢无遇、飞无所托、自致灾眚全义不作现实人身灾害。",
+          "finalCopyOpinion": "全文实读后不改；末实生与强前中克、凶爻权重继续待核。",
+          "snapshotRowSha256": "dd45b4098f22d8fbd4109e31dd5e4044778eab3fe95ed643217eddf1ccd4f131",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "上六春令末实生与前中双旺克、失限凶的相对权重需专业确认，原difficult保留而正证没有被隐藏。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 26,
+          "movingLine": 6,
+          "monthOrder": "summer-fire",
+          "outcome": "conditional",
+          "title": "让末后的实助核准原件，仍有寻回机会",
+          "readingNote": "夏相体可承普通克、轻中耗与旺末生支持原有条件等级，简断把末援用于原件身份核实。上六过亢失限的凶戒没有反写成吉，收住无证延伸只是行动条件。",
+          "finalCopyOpinion": "全文实读后不改；与土令普通末生仍难回的尺度问题保留。",
+          "snapshotRowSha256": "f3af875d16620bbbfff3ddb3de419646fc65ac49fba87c4f9c49f8e807aa1378",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "本爻原conditional如何由旺末生支持而不抹过亢凶，及与土令普通末生而difficult的差距，仍保留专业定权问题。"
+          ],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 27,
+          "movingLine": 6,
+          "monthOrder": "autumn-metal",
+          "outcome": "difficult",
+          "title": "少延伸没有新证的路线，原件仍难找回",
+          "readingNote": "秋前轻克、中旺金重耗、末囚火薄生均自然说明，简断留已查结果和真实新见。上六过求不止的戒意用于查法，重复转述不能凭次数当新增原件依据。",
+          "finalCopyOpinion": "全文实读后不改；无实际灾伤、永失断言。",
+          "snapshotRowSha256": "7ec1ce00136ba9b7e65ac87d2aef8d4ecf1241e6fa5fd43c922ecdb440cdcd3c",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 28,
+          "movingLine": 6,
+          "monthOrder": "winter-water",
+          "outcome": "difficult",
+          "title": "先保留能证明的经过，原物回手仍较困难",
+          "readingNote": "冬前中实克、末死火薄生与中普通耗关系清楚，末生没有删成无助也未夸实。简断先存最后亲见、再接新证，和上六过亢无托之义一致。",
+          "finalCopyOpinion": "全文实读后不改；没有由凶辞推出盗窃或物毁。",
+          "snapshotRowSha256": "824fedb41db1692e1fc87495d216ff4d810e84425ab128361b8d7e8dbe84847c",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [],
+          "editedByThisReviewer": false
+        },
+        {
+          "rowIndex": 29,
+          "movingLine": 6,
+          "monthOrder": "seasonal-earth",
+          "outcome": "difficult",
+          "title": "援手尚可补查，仍须收住没有实证的延伸",
+          "readingNote": "土旺体、双轻克、末休火普通直生的正证全在，简断精确称一般帮助而非薄生；中相金耗实和上六失限之戒仍存。正文未造必须已有现物才可判可寻的统一门槛。",
+          "finalCopyOpinion": "全文实读后不改；与夏令有条件结果的比较待专业核断。",
+          "snapshotRowSha256": "1cf4d98eafd55a1da51d3529a44a750b0d9d1c96d956d02d4dffb7789159c43d",
+          "directionAndImageEntryRead": 6,
+          "inheritedOpenQuestionsReadThisRound": [
+            "上六土令旺体、双轻克、末普通直接生仍为difficult，与夏令conditional间的尺度须专业复核；本次只纠正文案力度，保留原码。"
+          ],
+          "editedByThisReviewer": false
+        }
+      ]
+    }
+  ]
+}

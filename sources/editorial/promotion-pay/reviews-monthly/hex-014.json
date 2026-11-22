@@ -1,0 +1,2361 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 14,
+  "baselineCommit": "be2afd7294e104e80bc8ed0eefed0fb294e0974f",
+  "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+  "editor": "/root/classical_audit",
+  "reviewedAt": "2026-11-21",
+  "status": "author-and-independent-ai-full-review-passed",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "六爻十二月72篇由作者逐篇写定，五段正文手写；脚本只装配已写内容、同步订正结构、统计和校验，不以句块拼接生成正文。仅记录本作者真实读回，独立同行复读另记。",
+  "currentSessionReadScope": {
+    "newlyAuthoredWholeArticlesRead": 72,
+    "fullObjectBatches": 18,
+    "articlesPerBatch": 4,
+    "readbackSnapshotSha256": "0e4d21e09da0914193b9528544835d972bccab5e3a24fee538955f03b7c12c7a",
+    "readbackClarification": "原完整快照分18批各4篇实际全字段读回。同气字段未去重，old/new等附栏全部展开。第02/03批合并显示曾截断26 tokens，初九戌 identity/title/short另行完整补读，其余显示完整。其后21个变化字段分别完整输出旧新并实际阅读，最终哈希绑定现稿，不冒称更改后重新整卦通读第二遍。随后发现初九与九二用党多的体势后果遗漏，重新审查初三爻，并清理公开审稿口吻；对208343…至4024be64…的167个完整变化叶字段另分34批实际读取全部旧新值，judgment及correction.new/reason逐条展开，未去重，未变字段逐字核对。"
+  },
+  "sourceEvidence": [
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "完整阅读逐月独立写作、厚度、返工与实际全文回执要求。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "完整阅读首句有结论但无固定模板、自然完整句、逐月独立展开及具体建议要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "实际阅读主要求与当前写作边界；目标正文510–600汉字、最低470、全卦中位不低于500。历史尾部未完整读取，不声称通读全部历史记录。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "实际核读第八、十、十三、十四节及相关判序、旺衰和取期规则，区分原体休、节点休与一层作用，不追递归链。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "原稿及当前含历史覆盖补注的完整文件实际读回；九三秋旧能升保留作历史，现行用党多补定优先。"
+    },
+    {
+      "path": "scripts/review/promotion-verdicts.cjs",
+      "scope": "实际阅读现行判序与专属爻辞集合；本卦没有专属爻辞否决，不把在任直接克体或用党多误写为专属爻凶。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-014.json",
+      "scope": "六爻五气30条旧稿完整展开读取，逐月72条继承outcome与取期签名，专业栏和薪资订正均留精确旧值。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-014.json",
+      "scope": "实际核各爻lineReading全文及代表性理由；未逐条通读全部30组旧审计，不声称完整通读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+      "url": "https://zh.wikisource.org/zh-hans/周易正義/02大有",
+      "scope": "实际完整读取本地全篇王注孔疏并网上核验原文；对应修订号2386341。底本祐与项目常用佑为字形差异，公开正文与项目固定爻辞保持佑字。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "url": "https://zh.wikisource.org/zh-hans/梅花易數/卷二",
+      "scope": "实际读取《体用总诀》《体用》《求名占》《占卦诀》《衰旺论》相关完整段落，网上复核求名在任条；未声称通读三卷全书。"
+    },
+    {
+      "url": "https://zh.wikisource.org/zh-hant/周易本義_(四庫全書本)/全覽",
+      "scope": "检索核对九四彭字音义未详、程氏盛貌异说所在段落，作为异说说明，未声称全文读遍本义。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "实际阅读面试重写与审计规范，并选读001、003、017、052每卦六爻各寅月文章，共24篇标题、简断和完整正文，作厚度与语气参考。"
+    },
+    {
+      "path": "sources/editorial/relationship-establishment/monthly/hex-014.json",
+      "scope": "六爻寅月共6篇标题、简断与完整正文实际选读，参考厚度，未将恋情问项或原稿具体故事带入晋升。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "e91e7b8e0a42b833abcbca177771f6184e9de16d3ee5f34e9aa3c4eb9127cfe9",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 523,
+        "median": 538.0,
+        "max": 551
+      },
+      "observations": [
+        "初九知艰防盈的完整古义保持。三金用党使全年整体体势衰，春相夏旺只保留原月令，不再称主体有力；末巽生体受三金克而薄，无克体有生体仍十二月能升。全部12月专业和必要公开字段已补准。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 61
+    },
+    {
+      "movingLine": 2,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "6cd05dabcbfbca0f5e1b05fa276af9b8256a1d2fc0fa44c88132543354824663",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 535,
+        "median": 547.5,
+        "max": 578
+      },
+      "observations": [
+        "九二大车任重不危、致远不泥的积极原义完整，不以未升虚构车坏或半程。全年三金用党使整体体势衰；春夏仅末离旺相比和节点有力，未满足体党无旺相的降判组合，仍能升；其余八月无旺相体党，依现行规则未成。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 66
+    },
+    {
+      "movingLine": 3,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "9791000d38067117f461ba0728f9b2284caf804cda0f55e9d04da6092cd9b80b",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 537,
+        "median": 546.5,
+        "max": 560
+      },
+      "observations": [
+        "九三公用亨于天子含尊位重任及德量相称，小人弗克是不能胜任其位的条件性警戒，不给求测人贴人格标签。四处金受离体所克，未见直接生体及比和，依现行用党多全月未成；保留春相夏旺，未把原体改成囚死。第494行篇名订正为《体用总诀》。",
+        "春夏原月令与整体体势再次分清：四金用党下不再以原旺相称主体有力；全月既定不升、无结果日期均保持。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 25
+    },
+    {
+      "movingLine": 4,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "d77abff13f8c9f3ca57ea162babac3638dd8de9dc891b22ce5efada05d422099",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 514,
+        "median": 530.5,
+        "max": 540
+      },
+      "observations": [
+        "九四匪其彭按本项目王孔底本以彭为旁，说明不附九三而专心承五及明辨所从，区别程氏盛貌等异说。直接离克乾触在任条，末艮生金仍完整保留：夏相土及四土旺土补益较实，春死秋休冬囚较薄，不以未成削平善处。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 7
+    },
+    {
+      "movingLine": 5,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "2e369cb142f8b144f5585fef325d8f35bfc9f01e5bd218368797f1c515bfe672",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 518,
+        "median": 525.0,
+        "max": 539
+      },
+      "observations": [
+        "六五孚交威如以信发志，易而无备按王孔简易无所疑防，不解释成准备不充分或刻意摆威。两互及末乾比和照气保留力量，无直接生体、本离克体，十二月未成；不虚构上级或同事已有态度。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 1
+    },
+    {
+      "movingLine": 6,
+      "status": "author-original-whole-readback-plus-complete-final-deltas",
+      "wholeArticlesActuallyRead": 12,
+      "canonicalArticleArraySha256": "11c15cd4e5e688e08c9fff4959ad567f384b10aa06fddb374f51ad03d4447f3a",
+      "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+      "bodyHan": {
+        "min": 520,
+        "median": 530.0,
+        "max": 543
+      },
+      "observations": [
+        "上九履信、思顺、尚贤三德而尽相助之道，完整保留自天佑之吉无不利，不把吉仅限中间步骤或少犯错。震木直接生离，四处一层得生无水制，秋囚冬死四土休的离火按有力克体；不递归用互金克震取消其生火，也不改掉原月令。"
+      ],
+      "postUsePartyChangedLeafFieldsActuallyRead": 7
+    }
+  ],
+  "postReadbackDeltaRead": {
+    "completeFieldsActuallyRead": 21,
+    "method": "11项作者用语校正和10项交叉审稿/上九末批修改，分别全文输出旧新并逐项读回；21指字段数，九三午薪资与其payCorrection各计一字段。",
+    "fields": [
+      {
+        "key": "14/1/申",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/2/午",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/2/申",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "short"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/2/子",
+        "field": "short"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/3/午",
+        "field": "payExplanation"
+      },
+      {
+        "key": "14/3/午",
+        "field": "payCorrection"
+      },
+      {
+        "key": "14/3/丑",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/4/申",
+        "field": "short"
+      },
+      {
+        "key": "14/4/戌",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/4/丑",
+        "field": "paragraphs[3]"
+      },
+      {
+        "key": "14/6/午",
+        "field": "paragraphs[4]"
+      },
+      {
+        "key": "14/6/申",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/6/申",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/6/酉",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/6/亥",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/6/子",
+        "field": "paragraphs[4]"
+      }
+    ],
+    "independentFindingAddressed": "九三午「升任未定」改「升任未成」，避免把明确未成弱化为尚未决定；初九申补旺金制巽，亥段移除回应旧稿式句子。"
+  },
+  "independentReview": {
+    "reviewer": "/root/write_tongren13",
+    "reviewerType": "independent-ai",
+    "reviewerIsHuman": false,
+    "userAccepted": false,
+    "status": "ai-cross-reviewed-with-open-findings",
+    "completedAt": "2026-11-21T01:40:36.526444+00:00",
+    "baseSourceSha256": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+    "finalSourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+    "priorFullReview": {
+      "report": "work/tongren13/review14-final-report.json",
+      "wholeArticlesActuallyRead": 72,
+      "allArticleFieldsActuallyRead": true,
+      "finalSourceSha256": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+      "scope": "此前分批完整阅读72篇全部JSON字段，原最终4个变化完整字段另已实际读回；该旧版本的通过不能自动覆盖此次修正。",
+      "embeddedHistoricalRecord": {
+        "reviewer": "/root/write_tongren13",
+        "reviewerIsHuman": false,
+        "status": "historical-review-superseded-by-useparty-correction",
+        "wholeArticlesActuallyRead": 72,
+        "baseSourceSha256": "0e4d21e09da0914193b9528544835d972bccab5e3a24fee538955f03b7c12c7a",
+        "completedLines": [
+          {
+            "movingLine": 1,
+            "wholeArticlesActuallyRead": 12,
+            "allFieldsActuallyRead": true,
+            "canonicalArticleArraySha256": "ac40ba7f604ec2f7f650ec3b0d54a1713da8c2912b250e05f64fcdf8d72df9cd",
+            "blockingFindings": [],
+            "observations": [
+              "初九无交害与知艰免咎保留完整，主动承事而末木生薄，春夏有力与冬弱体分别说明；无虚构获任场景。",
+              "两项不阻断建议已发作者：申p4可补旺金制木，亥p4可消除针对旧稿添柴故事的审稿语。"
+            ]
+          },
+          {
+            "movingLine": 2,
+            "articlesActuallyRead": 12,
+            "canonicalSha256": "605a8c2e638070b4dc97aeaac46aa3c2f9b810485b01bc6cc55e1deecfd8a5a2",
+            "blockingFindings": [],
+            "notes": "已逐篇完整阅读所有 JSON 字段；可载可行正面古义保留，体休与囚死、金旺与直接克体均分清。"
+          },
+          {
+            "movingLine": 3,
+            "articlesActuallyRead": 12,
+            "canonicalSha256": "449586a517bd84c363fac101ed6a4c0a17bbc54fedf50449413c11c0ba330322",
+            "blockingFindings": [
+              {
+                "article": "14/3/午",
+                "fields": [
+                  "payExplanation",
+                  "payCorrection.new"
+                ],
+                "issue": "未定应明确为未成，以免将既定不升弱化为待定。",
+                "status": "resolved-after-final-field-read",
+                "resolution": "升任未定已改升任未成；最终payExplanation及完整payCorrection旧新均经独立审阅者实际全文复读，见同节resolvedFindings及finalDeltaFieldsActuallyRead。"
+              }
+            ],
+            "notes": "已逐篇完整阅读所有 JSON 字段；用党多按处数定义、原体旺相与体势分层、德位相称及不人格定性均已核对。"
+          },
+          {
+            "movingLine": 4,
+            "articlesActuallyRead": 12,
+            "canonicalSha256": "51b687383c91d44c37ec3b523c49e23c3b0434d9d7c6e3c4a6d9ecc1ed01f052",
+            "blockingFindings": [],
+            "notes": "已逐篇完整阅读所有 JSON 字段；彭为旁王孔训释、初克轻重及后段旺相艮土实助、原体休和节点休分层均核对。"
+          },
+          {
+            "movingLine": 5,
+            "articlesActuallyRead": 12,
+            "canonicalSha256": "be236703cab35f4f2e82925c58896335fe770a0d6ae875c41c2bd7d8766290cb",
+            "blockingFindings": [],
+            "notes": "已逐篇完整阅读所有 JSON 字段；厥孚交如、公信立威完整，易而无备未误解为缺准备；初克/旺相同气/无生层次清楚。"
+          },
+          {
+            "movingLine": 6,
+            "articlesActuallyRead": 12,
+            "canonicalSha256": "7a0d4da0f9cdea1660c90368eda12183e1ef82d25b9529bf4a809ae7f521c7f9",
+            "blockingFindings": [],
+            "notes": "已从最终冻结稿逐篇完整阅读所有 JSON 字段；履信思顺尚贤与充分吉义保留，一层震木生离不递归消去，囚死/休体及旺相同气分别表达。"
+          }
+        ],
+        "readMethod": "每爻分两批六篇打印完整JSON对象，实际读取全部字段；对未读爻不登记完成。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi-hans/02大有.txt",
+            "scope": "本次独立完整读取卦辞彖象与六爻王孔；据其核初九知艰、九二任重、九三公用、九四彭读旁、六五信威、上九履信思顺尚贤。"
+          },
+          {
+            "path": "data/authored-readings/promotion-pay/hex-014.json",
+            "scope": "实际读六爻本互变、节点直接关系与一层作用，结合各月源稿核实旺衰。"
+          }
+        ],
+        "reviewerType": "independent-ai",
+        "finalSourceSha256": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+        "completedAt": "2026-11-21",
+        "fullArticleFieldsActuallyRead": [
+          "movingLine",
+          "monthBranch",
+          "outcome",
+          "title",
+          "short",
+          "paragraphs",
+          "judgment",
+          "timing",
+          "payExplanation",
+          "payCorrection",
+          "judgmentCorrection"
+        ],
+        "finalDeltaFieldsActuallyRead": [
+          {
+            "article": "14/1/申",
+            "field": "paragraphs[3]",
+            "old": "变火风鼎，巽木生离而气弱，末助尚在，却不够让前中经营完全省去。可以先核清目标职务究竟要求承担什么，再用已经完成的工作说明自己能够接到哪一步。宜在实际可行的条件上争取支持，不预设某位人物会来解围，也不把提请配合写成已经获得的帮助。",
+            "new": "变火风鼎，巽木生离而气弱，又受旺金制，末助尚在，却不够让前中经营完全省去。可以先核清目标职务究竟要求承担什么，再用已经完成的工作说明自己能够接到哪一步。宜在实际可行的条件上争取支持，不预设某位人物会来解围，也不把提请配合写成已经获得的帮助。"
+          },
+          {
+            "article": "14/1/亥",
+            "field": "paragraphs[3]",
+            "old": "末变鼎，巽木生离有帮助，不能因为冬木相就直接写成强大接应；诸金对木的削制仍应顾及。可以先把需要协作的条件说明白，已经能够完成的部分则独立做实，使有限支持有承接之处。鼎的卦名也不提供添柴或人员来援的现实情节，具体安排仍依实际信息判断。",
+            "new": "末变鼎，巽木生离有帮助，不能因为冬木相就直接写成强大接应；诸金对木的削制仍应顾及。可以先把需要协作的条件说明白，已经能够完成的部分则独立做实，使有限支持有承接之处。具体配合宜查清所需资源与职责范围，已有安排据实衔接，尚未明确的条件也留出确认步骤。"
+          },
+          {
+            "article": "14/3/午",
+            "field": "payCorrection",
+            "old": {
+              "old": "",
+              "new": "本轮升任未定，其所附工资增加也未落实；年度调薪、奖金或其他独立待遇须按各自决定核实。",
+              "reason": "原五气稿薪资栏空白，补明仅此次晋升所附调整未落实，不外推原工资或其他独立调薪。",
+              "impact": {
+                "outcomeChanged": false,
+                "timingSignatureChanged": false
+              }
+            },
+            "new": {
+              "old": "",
+              "new": "本轮升任未成，其所附工资增加也未落实；年度调薪、奖金或其他独立待遇须按各自决定核实。",
+              "reason": "原五气稿薪资栏空白，补明仅此次晋升所附调整未落实，不外推原工资或其他独立调薪。",
+              "impact": {
+                "outcomeChanged": false,
+                "timingSignatureChanged": false
+              }
+            }
+          },
+          {
+            "article": "14/3/午",
+            "field": "payExplanation",
+            "old": "本轮升任未定，其所附工资增加也未落实；年度调薪、奖金或其他独立待遇须按各自决定核实。",
+            "new": "本轮升任未成，其所附工资增加也未落实；年度调薪、奖金或其他独立待遇须按各自决定核实。"
+          }
+        ],
+        "deltaReadMethod": "前五爻实际读过快照 bd808ebac3162aa4866c2e8430f5d7b581bd0d0717de4d512e8661d03d3355c6；初九最初读稿相同，最后新增两段及九三午两个完整变化字段另以全文旧新复读。上九直接逐篇全文读最终 208343...，不把早期版本当成最终读回。",
+        "finalLineCanonicalSha256": {
+          "1": "d580accb251a65e34260f854551dc0c36b1e00dd316970f21a094d6e7c733811",
+          "2": "605a8c2e638070b4dc97aeaac46aa3c2f9b810485b01bc6cc55e1deecfd8a5a2",
+          "3": "709867f50b8020086f59543d588cae63884d4da7c4d6f75f3362b0b2e252e26d",
+          "4": "51b687383c91d44c37ec3b523c49e23c3b0434d9d7c6e3c4a6d9ecc1ed01f052",
+          "5": "be236703cab35f4f2e82925c58896335fe770a0d6ae875c41c2bd7d8766290cb",
+          "6": "7a0d4da0f9cdea1660c90368eda12183e1ef82d25b9529bf4a809ae7f521c7f9"
+        },
+        "openBlockingFindings": [],
+        "resolvedFindings": [
+          {
+            "article": "14/3/午",
+            "fields": [
+              "payExplanation",
+              "payCorrection"
+            ],
+            "issue": "未定弱化既定未升，已改未成，完整字段已独立实际读回。"
+          },
+          {
+            "article": "14/1/申",
+            "fields": [
+              "paragraphs[3]"
+            ],
+            "issue": "补明巽木受旺金制，正文与专业栏依据接清；完整段落已实际读回。"
+          },
+          {
+            "article": "14/1/亥",
+            "fields": [
+              "paragraphs[3]"
+            ],
+            "issue": "去掉回应旧稿的添柴/人员来援否定句，改为自然职责建议；完整段落已实际读回。"
+          }
+        ],
+        "scopeLimits": [
+          "本回执只证明本代理实际进行的独立 AI 全文审读，不代称用户或人类验收。",
+          "未把机检、作者自述、哈希一致代替正文阅读。",
+          "本代理未改大有源稿、作者阅读范围、共享索引或脚本，作者自检和整卦 gate 由作者与根节点另记。"
+        ],
+        "wholeArticlesRead": 72,
+        "userAcceptedThisVersion": false,
+        "lineHashSerialization": "Python json.dumps(lineArticles, ensure_ascii=False, sort_keys=True, indent=2) + newline, UTF-8",
+        "originalReviewerStatus": "independent-read-complete-passed",
+        "sourceSha256": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+        "scope": "另一位 AI 完整读取72篇全部字段；前五爻在原冻结版阅读后另读最终4个完整变化字段，上九直接读最终版；原典吉义与现行规则取舍仍开放，非真人或用户验收。",
+        "supersededReason": "此前实际阅读72篇并通过属真实历史，但漏查初九/九二用党多体势后果；新版补正后167个完整新值已另由同一独立审阅者实际复读，旧通过不直接覆盖新版。"
+      }
+    },
+    "reasonForReopenedReview": "前次作者与独立审读均漏查初九、九二三金用党多使整体体势衰；后由同人独审发现同类问题，作者逐篇补正，本次重新逐个完整核读最终变化字段。旧回执中关于初九春夏主体有力的肯定只属历史判断，已由本次结论取代。",
+    "currentReadback": {
+      "completeChangedLeafValuesActuallyRead": 167,
+      "newWholeArticlesClaimedThisRound": 0,
+      "method": "实际逐个阅读167个变化叶字段的完整最终值；judgment、judgmentCorrection.new/reason分别阅读，不去重。旧值已在前轮全文读过，本轮不冒称将全部旧值再次阅读。",
+      "sourceDiffPath": "d14_work/useparty-complete-deltas.json",
+      "sourceDiffSha256": "f8c7a8132143d2d8f4f136315614a5a3dfa0db67423bfe4745af68a3f46aa3f3",
+      "rangesActuallyRead": [
+        [
+          1,
+          15
+        ],
+        [
+          16,
+          45
+        ],
+        [
+          46,
+          75
+        ],
+        [
+          76,
+          105
+        ],
+        [
+          106,
+          135
+        ],
+        [
+          136,
+          167
+        ]
+      ],
+      "finalValueHashSerialization": "UTF-8 json.dumps(finalString, ensure_ascii=False), including JSON string quotes and escapes, without trailing newline."
+    },
+    "versionVerification": {
+      "allActualLeafChangesExactlyEqualProvided167": true,
+      "unchangedValuesComparedButNotCountedAsNewReading": true,
+      "unchangedScope": "顶层元数据及其余全部字段逐值一致，包括所有成否、应期字段、薪资、judgmentCorrection.old/sourceEvidence/impact。",
+      "finalLineCanonicalSha256": {
+        "1": "26e7a8a2e691a423d55e7ce0da72626b91fd4c90532fd643f66750648f480eac",
+        "2": "81f5aa6e1c25109e34417f09d08786fd9bee1ef9d9ff0da0ec9a0aba733a4b25",
+        "3": "79ad77b03631f852e50be05d83e983b851e4f7a266a90f52d75548ddccf4b0c6",
+        "4": "bb8f999dfa741a2ef65756a310652f59bf6618ca33f6984337efe76e9867d2b8",
+        "5": "8793151983194eeb6b7806cbc6d7fd7b97f4e7ce50fe0f5f2635e59cfcd8d600",
+        "6": "e9a4b26c38fd5ce781ddce82eb50780591d1e9693f29a642432a0f9b6d44e466"
+      },
+      "canonicalMethod": "按movingLine取12篇原顺序；JSON ensure_ascii=False,sort_keys=True,indent=2，末尾换行，UTF-8 SHA256。"
+    },
+    "currentSourceEvidenceActuallyRead": [
+      {
+        "path": "docs/READING_POLICY_V2.md",
+        "actualReadScope": "本次因用党漏项实际完整复读第十三节、第十四节，核用党定义、按处数不论五态计数、整体体势衰及R1b条件。"
+      },
+      {
+        "path": "sources/revised/meihua-volumes-1-3.txt",
+        "actualReadScope": "本次实际完整读取484至502行，含494行《体用总诀》及其上下文；未称本轮重读全书。"
+      }
+    ],
+    "resolvedFindings": [
+      {
+        "scope": "14/1 全12月",
+        "finding": "本乾、体互兑、用互乾三金成用党，整体体势衰；原离火旺相休囚死不改，巽木受金制而薄助仍在，有生无克既定能升不变。",
+        "status": "resolved-after-complete-final-field-reading"
+      },
+      {
+        "scope": "14/2 全12月",
+        "finding": "三金用党使整体体势衰，春夏末用离火旺相比和的节点有力与主体整体有力明确分开；其余月份原态及末节点薄弱分清，原成否不变。",
+        "status": "resolved-after-complete-final-field-reading"
+      },
+      {
+        "scope": "14/3 春夏与其余变化字段",
+        "finding": "四金用党始终按处数成立，原旺相火不得取消整体势衰；无生扶与比和条件仍完整，九三德位相称未误作人格指控。",
+        "status": "resolved-after-complete-final-field-reading"
+      },
+      {
+        "scope": "其余公开简断变化",
+        "finding": "已将写手审稿口吻自然化，九四明辨所从、六五信威、上九履信思顺尚贤的正面古义仍有完整正文支撑；未弱化成仅避免损失。",
+        "status": "resolved-after-complete-final-field-reading"
+      }
+    ],
+    "openBlockingFindings": [],
+    "retainedScopeLimits": [
+      "本回执为独立AI审读，不代表用户或人类验收。",
+      "按仓库既定判序核对，王孔积极古义与在任分支直接克体即不升的解释张力仍在项目审计中保留，不以本回执宣称现实预测已验证。",
+      "机器差异与哈希核对用于绑定版本，不能替代实际阅读；作者自己的全文读回、门禁和发布状态由作者与根节点另行登记。"
+    ],
+    "finalFieldsActuallyRead": [
+      {
+        "key": "14/1/寅",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "672c5bcd755f6a335e0cb4c5fcfa028dd0c66a98ac26659d167cfa2583aa0304"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "672c5bcd755f6a335e0cb4c5fcfa028dd0c66a98ac26659d167cfa2583aa0304"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "679bf41f20b9a845081629610cf7f66c7582ead5dfbcb7cd99c36510523bbb06"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "222652f9881726c47c12cca9f34e09e17f60ef38a8c733a2128a19fecf2f3cbd"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "paragraphs[1]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "c4f60c335890c0e93aaf03426d7b4485b12f06492f7cc0cf767ce502c987bbf8"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "7b5b42e57d40591b6937c8aaeefbbf428bf15fce4a1e5889b0b0a3cc7566fa73"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "672c5bcd755f6a335e0cb4c5fcfa028dd0c66a98ac26659d167cfa2583aa0304"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "672c5bcd755f6a335e0cb4c5fcfa028dd0c66a98ac26659d167cfa2583aa0304"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "679bf41f20b9a845081629610cf7f66c7582ead5dfbcb7cd99c36510523bbb06"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "277b037262cb766f828e5bcfc75f3c616230e59230f7b5ced11a81548c239ba6"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b676226fa2bf4676a13d4164c0a10687f2076b8018d8977247f4b1c4433eac84"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "3010fc758df6c53dc9701c5a6b4f2a1ff86b61d607864c568b3c3a3b5836b5f5"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f29c4f2658825b58d82b09d126169fecc9764050afe1514733a7363a3f85d87a"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "paragraphs[1]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "841f30b58926d91c9e1b90097583b4e92dffd84954a04947c2c5db9260f9ce06"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6b2b9dd7374dd4cdec25f918efa2be42cd425431cbcd626ae3b35ae7fba529cf"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6b2b9dd7374dd4cdec25f918efa2be42cd425431cbcd626ae3b35ae7fba529cf"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4a031bd4c32d173523a35311d19ffa61244c536da2a2b8e0a7c14221b13d157a"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "8d56b3799bbea47b5a160cbb05cb08cf8b1bb241940f5bfbd378d63669dba2ab"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[1]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "d0cc4a79c0f11c2791e53260f04392f32f141202ba4906079859c7963871248a"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "eb0a23492d5dba447b8c2cc6fb66f7c00f543b6ffef3c219f987cf62dcadbe38"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[4]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "c3bc2138b2f942e132f95e0e86e076fbdb1ec1f6198063f4ce0ac8f7a6f20e67"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "47851582e4f7d81802bd011d91c21f115a96fd44e7bd84874a7037f81c7d8947"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "23839fc83c49d225dd13bf4f083fac87597cd394eb2e97735d84eaf68bece4a7"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6b2b9dd7374dd4cdec25f918efa2be42cd425431cbcd626ae3b35ae7fba529cf"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6b2b9dd7374dd4cdec25f918efa2be42cd425431cbcd626ae3b35ae7fba529cf"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4a031bd4c32d173523a35311d19ffa61244c536da2a2b8e0a7c14221b13d157a"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "7b42823084b65dd65db56081b69282aad95e1befb299461d86644dc63fd975eb"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "3e10fddf82f76545ad016070662924cda7edb58618ddb5683a970eaf750db811"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[4]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "caf8668e90157b1572db1cce1dc58d8bbe8c2ed6516b5abdaef4d5ed06df4d62"
+      },
+      {
+        "key": "14/1/午",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "8e9f5694a56c242cd6bc46201b84b623b0bb568a7a34246d07a9b7aa5a8d43e0"
+      },
+      {
+        "key": "14/1/午",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "c2730dae2aea8ba2e8169a92d0d94a93c31fdc44ed25be3b501c897195040327"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f29c4f2658825b58d82b09d126169fecc9764050afe1514733a7363a3f85d87a"
+      },
+      {
+        "key": "14/1/未",
+        "field": "paragraphs[1]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "45b6667c6d6e04313df06a8f7b36da1808001f6ed2021bf4b024a14884ced753"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5d97b7e5087ba5e7696bf154a673854d1b19c02682e5a25b5e03884b3fdecbb5"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5d97b7e5087ba5e7696bf154a673854d1b19c02682e5a25b5e03884b3fdecbb5"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "93b6ea6d4faf57ffe749a3e40ae8a8ed9dfa019372a931f2172c9ea9a611e4f5"
+      },
+      {
+        "key": "14/1/申",
+        "field": "paragraphs[1]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e6b8748961c81644ce747dea8c1657cee205edf19c55992069901f2b4f0a6616"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5d97b7e5087ba5e7696bf154a673854d1b19c02682e5a25b5e03884b3fdecbb5"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5d97b7e5087ba5e7696bf154a673854d1b19c02682e5a25b5e03884b3fdecbb5"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "93b6ea6d4faf57ffe749a3e40ae8a8ed9dfa019372a931f2172c9ea9a611e4f5"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "c34912c2e3bc9d417d6c998dfd29f8914e1bfbf3b13ae8f11cd652302a1dd2ba"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f29c4f2658825b58d82b09d126169fecc9764050afe1514733a7363a3f85d87a"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "d622f5b5c8d3b45c62f8fedbcf3f3fa479d2a3dd7494c411312454b74ad87cba"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4255d42982ec7152227e4d81d7513c0cffe82c6dd938111053b41170a6300d22"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4255d42982ec7152227e4d81d7513c0cffe82c6dd938111053b41170a6300d22"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f16679bd7967df3f421632eec8611101f2e7eb1807e150851706b046f60c8cf"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "8f6aed1d762ae08766cf4381dda1fc65716ca686a415e8761183e28da25eae76"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4255d42982ec7152227e4d81d7513c0cffe82c6dd938111053b41170a6300d22"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4255d42982ec7152227e4d81d7513c0cffe82c6dd938111053b41170a6300d22"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f16679bd7967df3f421632eec8611101f2e7eb1807e150851706b046f60c8cf"
+      },
+      {
+        "key": "14/1/子",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e0a1a9ec7b4d015319ddebb9d938297614e33d5f9c9abc540283f45b7f96fb57"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b6634003bc361977e2c9603854685856081d3bf784d1e3f03b6e0fc043466c67"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f29c4f2658825b58d82b09d126169fecc9764050afe1514733a7363a3f85d87a"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "eb9d33c73b34d46b3aadc08b85912d673ee06ba166493f1ac490fdbb41eb24b4"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "68074afd7a4364157205ec224990242faa8e002f974789f4a406c113c9c67727"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "68074afd7a4364157205ec224990242faa8e002f974789f4a406c113c9c67727"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1cf6bc72393a866646ae081eae549f8d14026e74559dde0666b05e319a58cdd9"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "d2628dfcbe5b644bc758c93d45faa4cf58746f54cd54e73d7582afdb6b314678"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "a643614223d96c2508c72dbe8bd9fd36c0a911aeb7334e5acb80cdfd493b44e2"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "a3ab5616ddc13d7e8543484ca15718cb0444b1b7894f95221f3fbf0a7a6ea713"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "68074afd7a4364157205ec224990242faa8e002f974789f4a406c113c9c67727"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "68074afd7a4364157205ec224990242faa8e002f974789f4a406c113c9c67727"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1cf6bc72393a866646ae081eae549f8d14026e74559dde0666b05e319a58cdd9"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "22a4dbcde3554fef364c6466d4be23ea635547180accf46b62a8a44cf134c475"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "20a759117f373e54332f0b5b8190c362dcd2ec41d7769d7423cf8c4e7acd60d5"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "89d711f123a3460c10fa05a30265a475cd13f29db016474e965a78c1925c2ea0"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f9310f0c43e49f28ab2f4c42b5ca36d71312e82554e542882223ddd3aefddc61"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "305880c0ace40e7a5026f0d3d903ce37085f0142b4f7f9cd4ceb2d008b48e179"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "9db4c43f162f134823105607f52f92ccd05d9c99218a248dcbb12eb8486f39c1"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1e3df27c887c6c2d67978a0eb474bdfb5f29e05de7bb9c4071a23cb9306d886b"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f23e47b156c1d6c51db2c79c96a3af6356e1e6458bc3d8164bfa2cfbf4a7a1d"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f23e47b156c1d6c51db2c79c96a3af6356e1e6458bc3d8164bfa2cfbf4a7a1d"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "973d67c4b63d4b5cd1da8366ab05cb774bdd65dc5bccf6d8fa49b2d523d6e295"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f35a7ce702bd766510a92bd8b7690912ae9e1a41f1ca43ed76ce8ee127bc8717"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "18760926c381f2c83208fd7711364b9b9e481f88ce3787921069e33a0e4a12b3"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "a268c7b75f3102f4cb09ebf25a2c6b9aa0d1d4d5291e3d42f6f32b91a337e3da"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "86794a1081f3aac928f518d2d9179cefc7ac2438c1d835661d42daa1be72b6ba"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f23e47b156c1d6c51db2c79c96a3af6356e1e6458bc3d8164bfa2cfbf4a7a1d"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5f23e47b156c1d6c51db2c79c96a3af6356e1e6458bc3d8164bfa2cfbf4a7a1d"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "973d67c4b63d4b5cd1da8366ab05cb774bdd65dc5bccf6d8fa49b2d523d6e295"
+      },
+      {
+        "key": "14/2/午",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6ef9d4cdf814acff56cd195c6ba582e01a3a099b2165922d9095540cf4fe9d4b"
+      },
+      {
+        "key": "14/2/午",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "58c1df2d11936bbbac5f2511e061882ae456198f1639f7dcf78e220737af5d4d"
+      },
+      {
+        "key": "14/2/午",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "548f294de5170f8b2deee77459baf64b4d15820f5d18201d63971be7cb1e91b8"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f9310f0c43e49f28ab2f4c42b5ca36d71312e82554e542882223ddd3aefddc61"
+      },
+      {
+        "key": "14/2/未",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1e8a8453d7788d833331cb4e41b6a96453b8cf9c2d2da92295fa417a1c7cd304"
+      },
+      {
+        "key": "14/2/未",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "9936e610d711be2dbbf59f132fdbcaea1eecdec503951493f02d4c8061e4255a"
+      },
+      {
+        "key": "14/2/未",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "0a0da5fff6d09be7aebb527b20682dbf72a41c58dc3863cc548ccdeb80cd9464"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "66fbf19fcbd5f595e1facfd954ea2caeb1b2ed982c5b9f31671e965936c04a49"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "66fbf19fcbd5f595e1facfd954ea2caeb1b2ed982c5b9f31671e965936c04a49"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "469425fe44f1cf970744904ccc9366c3ad02d3409308521d2d75ec4399163c29"
+      },
+      {
+        "key": "14/2/申",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f982f816b80f4ee3f3d58642b220d06d9b98d7eb2705a7b7ef88fd3ba9683642"
+      },
+      {
+        "key": "14/2/申",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "d991987b4f6b450c9061d415cd05a3226b4c1942cd1e5b75ea57c24f335832f7"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "66fbf19fcbd5f595e1facfd954ea2caeb1b2ed982c5b9f31671e965936c04a49"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "66fbf19fcbd5f595e1facfd954ea2caeb1b2ed982c5b9f31671e965936c04a49"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "469425fe44f1cf970744904ccc9366c3ad02d3409308521d2d75ec4399163c29"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "66ab906e446bbec22342bf61735a62d243d184cdb1c3ddce7a3a8ec1db84a713"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f9310f0c43e49f28ab2f4c42b5ca36d71312e82554e542882223ddd3aefddc61"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f88e9df37d55d2a779e7e90ee83478ca8384ddf574bc5be4e70dabf0e98aa807"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "08315bdac8f11eda76c210e6a163eb45d4075a0145078c2bc67c9ed8b6a2684e"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "08315bdac8f11eda76c210e6a163eb45d4075a0145078c2bc67c9ed8b6a2684e"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "70db645440e7b5827bda75892df87163fa8658f699c3954249fdc1c0792c357b"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "42cbb571d5434f30788f5e823ec1310163b90ac425a98ed9d033ccb50afc688a"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "eb3fba642a5c8b4b341232372bd6403f06d310333d0c6ba39a9582876b406336"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5cce2474e6ee8c9644091e6f90238e042bae41eaa6e846557ee923c6735bdd68"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "08315bdac8f11eda76c210e6a163eb45d4075a0145078c2bc67c9ed8b6a2684e"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "08315bdac8f11eda76c210e6a163eb45d4075a0145078c2bc67c9ed8b6a2684e"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "70db645440e7b5827bda75892df87163fa8658f699c3954249fdc1c0792c357b"
+      },
+      {
+        "key": "14/2/子",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1698d0bbb9a555f42a1e017043af9bf640a9d3e27bdeb88388f730a8dd8e68fd"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "e860c96f25f14d0503ba282e7c34f956c60bdfbf0b50bd8b0594f902d3d95c6f"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f9310f0c43e49f28ab2f4c42b5ca36d71312e82554e542882223ddd3aefddc61"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5621b3dbf413071d62f021364ed86a731e67b01a9ba3edcb57c1580b39011106"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "2aeef9d21071bbce374be1930427c561995d60613198476aa4d2009ebc900cf4"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "title",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "1647513c1947fe136565f64a028aaf65958967f472d1e010e3eccdeaa4406992"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5a6452b93d87de8691613f50c092724fe84dd24066804fa68d2f8ae1894e8f00"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5a6452b93d87de8691613f50c092724fe84dd24066804fa68d2f8ae1894e8f00"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "16cdf5e4faadc37fe897922412af378e8f450d6f70ef863ec1b1f6012ff4b652"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "269f4ca1c9d091b3b5f1df99b2788717c6e136694db532e38b9b0319caea6693"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "0cd7da89ce27ad241e612ae0baa2834d61d70d97abbd41961ce6957b51475376"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5a6452b93d87de8691613f50c092724fe84dd24066804fa68d2f8ae1894e8f00"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5a6452b93d87de8691613f50c092724fe84dd24066804fa68d2f8ae1894e8f00"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "16cdf5e4faadc37fe897922412af378e8f450d6f70ef863ec1b1f6012ff4b652"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4a29e62009f83d0b88d79620adcea3b19252cbbde54b12a5524cb72d6424e3bf"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5054360febd2d6e488174b90209f3220d89948f3fe0bf8f1ac2499ace25b38f0"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "cdc4f3636a0c8a9e46a2fbf61b88bf358c1a32f724366255b0620caab98db2f1"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "cdc4f3636a0c8a9e46a2fbf61b88bf358c1a32f724366255b0620caab98db2f1"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "16cdf5e4faadc37fe897922412af378e8f450d6f70ef863ec1b1f6012ff4b652"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f85ca5338a5ea162a4afe0b6856aa39ae3c941fc507b26bd76284b496b2dbdfe"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "paragraphs[4]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "7ee101aa5a3a0fd7a4f3c987b6201ff4ce5e0b28a4b0552d8abfc193e9def88d"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgment",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "cdc4f3636a0c8a9e46a2fbf61b88bf358c1a32f724366255b0620caab98db2f1"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgmentCorrection.new",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "cdc4f3636a0c8a9e46a2fbf61b88bf358c1a32f724366255b0620caab98db2f1"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgmentCorrection.reason",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "16cdf5e4faadc37fe897922412af378e8f450d6f70ef863ec1b1f6012ff4b652"
+      },
+      {
+        "key": "14/3/午",
+        "field": "paragraphs[0]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6765675294873e3f52e0458792a092d4941d5d2a4eb44fa362ebd0103a4126f8"
+      },
+      {
+        "key": "14/3/午",
+        "field": "paragraphs[4]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "859f107feed05858c27bd8dcdc6dbb7453bebd20aae516d3d18a7cd6917975ff"
+      },
+      {
+        "key": "14/3/午",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "7a0537310a3e7be39041f341bc66ba797b3021a85b2c7dc7b3e3af3bd0bcc8e0"
+      },
+      {
+        "key": "14/3/申",
+        "field": "paragraphs[2]",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "36987fee4dcad78e8fba21595db34530844e28ecd3e3d961eae23af4df2fca42"
+      },
+      {
+        "key": "14/3/申",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "36816cccd240e997872c264724e4c775d3c9eea55468c393362553ef75e01f7f"
+      },
+      {
+        "key": "14/3/酉",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "722169a0c8078e4a6957be61ebaeecb57312b67cec2cb4b89012704502d3b097"
+      },
+      {
+        "key": "14/3/丑",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "5d19ea8e81a5dcd12cb60844c6d3cc2e38856fe9a4a7e2098cc1939b4621a804"
+      },
+      {
+        "key": "14/4/卯",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "6ab5bc8af574c3c6aee30a0a9119fc2f2fae0395fb18d42a47cbc0950db03545"
+      },
+      {
+        "key": "14/4/辰",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "22d4ac6c9ef55742ab2a5a6bb7a685f876c425717118208b584c49d69692d66e"
+      },
+      {
+        "key": "14/4/午",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "c75d46a1a8f3d6b3337ea8707e1d73629228b3984dbffd78990415151a2ecfd5"
+      },
+      {
+        "key": "14/4/未",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b893aa000ca4929fa88eca9214b005c5c96fcab184111b47c535b13e96be564a"
+      },
+      {
+        "key": "14/4/申",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "82e6f5d35974ea214e572f401d1d2c51c2c1e8bf56b3fd41c5890de17fa7d820"
+      },
+      {
+        "key": "14/4/亥",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b71e2d9a19cdace6c9e6f4aa5603cc48bde1efb9acc16a893db2975b11904812"
+      },
+      {
+        "key": "14/4/子",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "b8db9e6b5b6b0991684eb826b22844ee825142bd04e9eb7c75b909b5d94c0b98"
+      },
+      {
+        "key": "14/5/寅",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "f99c612c78a9afc5d1fe851a1f2c29f4659bf26ecec7d387ca58b959d9f10471"
+      },
+      {
+        "key": "14/6/卯",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "65c1efee60e5e27f7cbb0e80d592e3c0c161a11dfa482110a666c3b1f5bca203"
+      },
+      {
+        "key": "14/6/巳",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "ff2900f68838235b91c548b1c795eb6bf5b55e4638f44fa10314081d849ff57b"
+      },
+      {
+        "key": "14/6/未",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "47dfe0691e67c986d11102c7e4bdf8ee45544f184a49a41036429eab8848e72b"
+      },
+      {
+        "key": "14/6/酉",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "4809204db3cf48fb4380416a7ff7aeda2a999be72d2c0835a58148a6466f15fb"
+      },
+      {
+        "key": "14/6/亥",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "62df629fc8afca5f14a16d54bffbaa8c8f26dec1c4682e852321bbdd57a606a2"
+      },
+      {
+        "key": "14/6/子",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "bcb8ddfcdb5aa7a359a1bd060a3c26ee70d2a98d1db8e0241a503dd898be5e6e"
+      },
+      {
+        "key": "14/6/丑",
+        "field": "short",
+        "completeFinalValueRead": true,
+        "finalValueSha256": "ca5d3bd9137598943593e0eb86abe705b7f73fdcdeb64fe4010b53589b77b6ed"
+      }
+    ],
+    "originalReviewerStatus": "independent-final-delta-read-complete-passed",
+    "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+    "wholeArticlesRead": 72,
+    "wholeArticlesActuallyRead": 72,
+    "scope": "历史208343…版72篇全字段实际阅读＋本轮167个完整变化叶字段最终新值实际独立复读；旧值已在前轮全字段阅读，本轮未重复计阅读旧值。所有未变化字段逐值核对，最终绑定4024be64…；不宣称本轮重新整卦通读72篇。",
+    "userAcceptedThisVersion": false
+  },
+  "ruleAuditPath": "docs/review/PROMOTION_DAYOU_RULE_AUDIT_20261120.md",
+  "checks": {
+    "fullGate": "passed: bash scripts/review/monthly-gate.sh promotion-pay 14；4024be64…冻结源全部既有门禁通过，未新增豁免。",
+    "draft": "72篇；正文514–578；简断84–112；薪资34–44；1944盘比较0差异；144日期例。",
+    "style": "passed:正文中位537，平均句长33.6，月份起句0，同前缀最多2，简断平均95，宜187‰。",
+    "intraRepeat8": "passed:articlesWithRepeat=0",
+    "crossHexSimilarity": "passed:over=0,maxShare=1%,threshold=8%。",
+    "highFrequencyPhrases": "本卦无18篇以上命中。",
+    "classicalQuoteAudit": "passed:本卦未核实0。",
+    "consolation": "passed:0，无新增豁免。",
+    "outcome": "16能升、56升不了，72条均保留原定结果。",
+    "readback": "作者原72完整对象、初轮21变化字段及本轮167完整变化叶字段旧新均实际读毕；独立审阅原72完整对象及本轮167完整最终新值均实际读毕，原全读覆盖旧值，不冒称本轮再次全读72篇。"
+  },
+  "lineHashSerialization": "Python json.dumps(lineArticles, ensure_ascii=False, separators=(comma,colon)), insertion key order, UTF-8",
+  "priorLineReviewsBeforeUsePartyCorrection": {
+    "records": [
+      {
+        "movingLine": 1,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "055c0fb6d36282e750e84b7ff69d0b19b3965b9ab01dcd18ed6f8ea183f174ea",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 518,
+          "median": 528.5,
+          "max": 540
+        },
+        "observations": [
+          "初九尚无交害而须自艰其志，保留丰有初起知艰防盈的完整意义。全月末巽生体，春旺冬相亦受三金所克，助薄而非全无；金死也不取消制木关系。无克体且有生体，十二月原结论能升；前中用党不偷换具体工作份数。"
+        ]
+      },
+      {
+        "movingLine": 2,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "6838dac40d7f67993f4dbf6a57782884420ad7683b55d8f96429931e272d838c",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 522,
+          "median": 539.5,
+          "max": 568
+        },
+        "observations": [
+          "九二大车积中不败，保留任重不危、致远不泥的正面原义；秋冬四土虽判未升，不再写为车坏、半程、只载一段。春夏末离旺相比和且主体旺相，沿既定能升；余月缺有力体党按现行用党多规则未成，解释张力列审计。"
+        ]
+      },
+      {
+        "movingLine": 3,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "bdc5c8fc6dadb6aaf27ed045cb8e637cf00e55974704d844d5c136ce2c6f24a1",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 521,
+          "median": 546.5,
+          "max": 558
+        },
+        "observations": [
+          "九三公用亨于天子含尊位重任及德量相称，小人弗克是不能胜任其位的条件性警戒，不给求测人贴人格标签。四处金受离体所克，未见直接生体及比和，依现行用党多全月未成；保留春相夏旺，未把原体改成囚死。第494行篇名订正为《体用总诀》。"
+        ]
+      },
+      {
+        "movingLine": 4,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "c5b519348de3d1f27a9afc419245ec2559727adbe0ad9498f19ea54c0affba05",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 514,
+          "median": 530.5,
+          "max": 540
+        },
+        "observations": [
+          "九四匪其彭按本项目王孔底本以彭为旁，说明不附九三而专心承五及明辨所从，区别程氏盛貌等异说。直接离克乾触在任条，末艮生金仍完整保留：夏相土及四土旺土补益较实，春死秋休冬囚较薄，不以未成削平善处。"
+        ]
+      },
+      {
+        "movingLine": 5,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "23b5eed45cbe6123bffdac40d27486a99b929c39541569024d81e23708feccdc",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 518,
+          "median": 525.0,
+          "max": 539
+        },
+        "observations": [
+          "六五孚交威如以信发志，易而无备按王孔简易无所疑防，不解释成准备不充分或刻意摆威。两互及末乾比和照气保留力量，无直接生体、本离克体，十二月未成；不虚构上级或同事已有态度。"
+        ]
+      },
+      {
+        "movingLine": 6,
+        "status": "author-whole-readback-complete",
+        "wholeArticlesActuallyRead": 12,
+        "canonicalArticleArraySha256": "575f40d5ea26e7cf9472270c3ada10b793b33e866c19133c8128fded0ed9160b",
+        "method": "按每批四篇完整JSON对象逐篇实际阅读，六爻共18批；每篇均展开标题、简断、五段正文、判断、应期、薪资、订正old/new/reason/sourceEvidence/impact。同气共用字段也全部逐篇读回。读后变动的完整字段单独读回，不把机械校验或哈希核对冒充阅读。",
+        "bodyHan": {
+          "min": 520,
+          "median": 530.0,
+          "max": 543
+        },
+        "observations": [
+          "上九履信、思顺、尚贤三德而尽相助之道，完整保留自天佑之吉无不利，不把吉仅限中间步骤或少犯错。震木直接生离，四处一层得生无水制，秋囚冬死四土休的离火按有力克体；不递归用互金克震取消其生火，也不改掉原月令。"
+        ]
+      }
+    ],
+    "note": "保留最初真实阅读记录；其中初九、九二春夏强弱的说明已在本轮发现遗漏后订正，不作为当前规则结论。这些逐爻哈希记录原完整阅读快照，原源到208343…的21字段差异另在postReadbackDeltaRead中覆盖；不把原逐爻哈希冒称208343…的重算哈希。",
+    "receiptSourceSha256BeforeCorrection": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+    "originalWholeReadSnapshotSha256": "0e4d21e09da0914193b9528544835d972bccab5e3a24fee538955f03b7c12c7a"
+  },
+  "postUsePartyCorrectionRead": {
+    "reason": "初九、九二用党多导致整体体势衰的后果未落实，春夏若干主体有力措辞与现行第十四节冲突；九三同步收准，公开编审口吻一并自然改写。",
+    "baseSourceSha256": "208343331d6c90211b330aea1191afa0751153b73b5b1b1920f6c10df67f17b0",
+    "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+    "completeChangedLeafFieldsActuallyRead": 167,
+    "batchesActuallyRead": 34,
+    "method": "每批五个完整变化叶字段，最后一批两个；每项均全文输出旧值和新值并实际阅读，不以差异摘要或去重替代。judgment及judgmentCorrection.new分别全读；未变correction.old/sourceEvidence/impact、成否、应期、薪资及顶层元数据逐字验证未动。",
+    "fields": [
+      {
+        "key": "14/1/寅",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/1/寅",
+        "field": "short"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/卯",
+        "field": "short"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/辰",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "paragraphs[4]"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "short"
+      },
+      {
+        "key": "14/1/巳",
+        "field": "title"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/午",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/午",
+        "field": "paragraphs[4]"
+      },
+      {
+        "key": "14/1/午",
+        "field": "short"
+      },
+      {
+        "key": "14/1/午",
+        "field": "title"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/未",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/未",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/申",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/申",
+        "field": "paragraphs[1]"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/酉",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/戌",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/亥",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/子",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/子",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgment"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/1/丑",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/寅",
+        "field": "short"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/卯",
+        "field": "short"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "short"
+      },
+      {
+        "key": "14/2/辰",
+        "field": "title"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "short"
+      },
+      {
+        "key": "14/2/巳",
+        "field": "title"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/午",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/午",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/2/午",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/午",
+        "field": "short"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/未",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/未",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/未",
+        "field": "short"
+      },
+      {
+        "key": "14/2/未",
+        "field": "title"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/申",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/申",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/申",
+        "field": "short"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/酉",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/戌",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "short"
+      },
+      {
+        "key": "14/2/亥",
+        "field": "title"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/子",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/子",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgment"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "short"
+      },
+      {
+        "key": "14/2/丑",
+        "field": "title"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgment"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/3/寅",
+        "field": "short"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgment"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/3/卯",
+        "field": "short"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgment"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/3/巳",
+        "field": "paragraphs[4]"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgment"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgmentCorrection.new"
+      },
+      {
+        "key": "14/3/午",
+        "field": "judgmentCorrection.reason"
+      },
+      {
+        "key": "14/3/午",
+        "field": "paragraphs[0]"
+      },
+      {
+        "key": "14/3/午",
+        "field": "paragraphs[4]"
+      },
+      {
+        "key": "14/3/午",
+        "field": "short"
+      },
+      {
+        "key": "14/3/申",
+        "field": "paragraphs[2]"
+      },
+      {
+        "key": "14/3/申",
+        "field": "short"
+      },
+      {
+        "key": "14/3/酉",
+        "field": "short"
+      },
+      {
+        "key": "14/3/丑",
+        "field": "short"
+      },
+      {
+        "key": "14/4/卯",
+        "field": "short"
+      },
+      {
+        "key": "14/4/辰",
+        "field": "short"
+      },
+      {
+        "key": "14/4/午",
+        "field": "short"
+      },
+      {
+        "key": "14/4/未",
+        "field": "short"
+      },
+      {
+        "key": "14/4/申",
+        "field": "short"
+      },
+      {
+        "key": "14/4/亥",
+        "field": "short"
+      },
+      {
+        "key": "14/4/子",
+        "field": "short"
+      },
+      {
+        "key": "14/5/寅",
+        "field": "short"
+      },
+      {
+        "key": "14/6/卯",
+        "field": "short"
+      },
+      {
+        "key": "14/6/巳",
+        "field": "short"
+      },
+      {
+        "key": "14/6/未",
+        "field": "short"
+      },
+      {
+        "key": "14/6/酉",
+        "field": "short"
+      },
+      {
+        "key": "14/6/亥",
+        "field": "short"
+      },
+      {
+        "key": "14/6/子",
+        "field": "short"
+      },
+      {
+        "key": "14/6/丑",
+        "field": "short"
+      }
+    ],
+    "deltaFileSha256": "f8c7a8132143d2d8f4f136315614a5a3dfa0db67423bfe4745af68a3f46aa3f3",
+    "authorFindings": [],
+    "completedAt": "2026-11-21T01:36:22.187221+00:00",
+    "independentCompletion": {
+      "reviewer": "/root/write_tongren13",
+      "completeChangedFinalLeafValuesActuallyRead": 167,
+      "newWholeArticlesClaimedThisRound": 0,
+      "sourceSha256": "4024be64d006503f39ca36a475e7ec26e65db52668e27d9035a68f7fcf6a1083",
+      "reportSha256": "450619db0be7bdd2533447d8a3b225b9b178a2ae162128568e62d5ffea732e28",
+      "openBlockingFindings": []
+    }
+  }
+}

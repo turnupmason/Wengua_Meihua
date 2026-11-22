@@ -1,0 +1,974 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 21,
+  "baselineCommit": "dd766c3b92a22e567352fb6bbdf1e07bb028d021",
+  "sourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+  "editor": "/root/source_audit",
+  "reviewedAt": "2026-11-21T06:38:42.181345+00:00",
+  "status": "author-read-with-open-findings",
+  "wholeArticlesRead": 72,
+  "reviewerIsHuman": false,
+  "userIndividuallyAccepted": false,
+  "authorshipScope": "六爻各十二月72篇标题、简断、全部正文与薪资独立写定，逐爻从实际输出全文读回。专业judgment/timing/具体订正理由每爻五气完整阅读，同气重复实例逐值验等；共同证据、旧新绑定和影响栏另核。读回后的作者及独审窄改实际完整复读变化字段，并与已读版本精确绑定。静态装载、结构门禁和哈希核验不替代全文阅读。",
+  "sourceEvidence": [
+    {
+      "path": "CLAUDE.md",
+      "scope": "本轮所涉正文、规则与协作要求；不声称重读所有无关仓库内容。"
+    },
+    {
+      "path": "docs/review/MONTHLY_REWRITE_BRIEF.md",
+      "scope": "同轮已完整读取，逐月独立写定、真实读回与不拼接句库。"
+    },
+    {
+      "path": "docs/review/MONTHLY_VOICE_GUIDE.md",
+      "scope": "同轮已完整读取，自然起句、厚度及无据细节边界。"
+    },
+    {
+      "path": "docs/review/MONTHLY_AUDIT_METHOD.md",
+      "scope": "同轮已完整读取，分爻十二月检查与如实回执。"
+    },
+    {
+      "path": "docs/review/PROMOTION_MONTHLY_REWRITE_20261120.md",
+      "scope": "实际读取前八节及本批所涉晋升、薪资、订正要求。"
+    },
+    {
+      "path": "docs/review/PROMOTION_REJUDGE_20261118.md",
+      "scope": "同轮全文核读；现代在任见克映射作为项目应用，不冒称唯一古法。"
+    },
+    {
+      "path": "docs/READING_POLICY_V2.md",
+      "scope": "重点完整核读第八、十、十三、十四节：一层间接作用、原体休中立、二分与用党多。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/hex-021.json",
+      "scope": "六爻五气30条原作者全字段实际核读，结论、旧判断、第12栏与取期作精确基线。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/review-v2/hex-021.json",
+      "scope": "全30组历史规则、证据、爻义、取期及最终记录实际完整核读。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/polish-v5/hex-021.json",
+      "scope": "全30组历史原文、润色文、计算说明与读回标记实际完整核读，不把历史标记当成本次阅读。"
+    },
+    {
+      "path": "data/authored-readings/promotion-pay/hex-021.json",
+      "scope": "数据首条全对象及30条盘面facts、节点、关系、阶段、间接效应实际核读；不声称被截断的重复decision全文已读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03噬嗑.txt",
+      "scope": "卦辞、彖象、六爻经文和王孔注疏全部实际阅读；六五、上九再核全文。"
+    },
+    {
+      "path": "sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",
+      "scope": "噬嗑卦与六爻相关完整段实际核读，尤其六二、九四、六五异说与上九审听早图；不称通读全卷。"
+    },
+    {
+      "path": "sources/revised/meihua-volumes-1-3.txt",
+      "scope": "求名、求财、体用、衰旺、占卦诀、体用互变及体用衰旺相关段落同轮实际核读，不称通读三卷。"
+    },
+    {
+      "path": "sources/editorial/promotion-pay/reviews-monthly/hex-015.json",
+      "scope": "已发布批完整回执及其首篇正文作厚度、透明覆盖对照。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04晉.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04睽.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03離.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03頤.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/03無妄.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/05震.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "path": "sources/reference/zhouyi-zhengyi-hans/04蹇.txt",
+      "scope": "本卦卦辞、彖、大象与注疏实际完整读至初爻前，仅作辅义；晋首次截断后已另行完整补读。"
+    },
+    {
+      "gitRef": "origin/editorial/interview-preview-216-20261118",
+      "scope": "001、003、017、052各索引0、14、28、42、56、70六篇全文实际对照，共24篇；不继承固定开头。"
+    }
+  ],
+  "lineReviews": [
+    {
+      "movingLine": 1,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "c0eb11dc0595b340835908718e8457e7bc2fbcdf4e0935be2c38cf02ba3883d6",
+      "finalSnapshotFileSha256": "44b47f9d1d7f99eb40fc3095fdd630b2e90a7a66e18a81b9353be727152c9960",
+      "bodyHan": {
+        "min": 509,
+        "median": 516.5,
+        "max": 537
+      },
+      "observations": [
+        "初爻受刑非治刑，小惩大诫、改过得福与过止完整保留；坎受两土制轻克，末坤仍泄。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 2,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "7ea75fd290fc55fc9aec8d7c815d63ef1e698ff24fb1affe758196c5c42bf5db",
+      "finalSnapshotFileSha256": "0a8361682ed2fdb2e8cf3501ce960f06983c130f7fbc73533ed82c5d7240eb54",
+      "bodyHan": {
+        "min": 515,
+        "median": 523.5,
+        "max": 538
+      },
+      "observations": [
+        "王孔所刑中当、乘刚过深与理当无咎，以及朱熹柔中易治而有伤，分属注解；坎、震均生克并见按原气。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 3,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "769378694cae3ad8d1eda27605d14031bd12e346537a3baee65ce5d7ef0d3849",
+      "finalSnapshotFileSha256": "f8226a53356d5c9ca8516834518586ce1f5067e3809fa06697d1a99892cfda2a",
+      "bodyHan": {
+        "min": 488,
+        "median": 499.5,
+        "max": 520
+      },
+      "observations": [
+        "腊坚难服、毒为怨生、位不当、小吝及不侵顺而无大咎并讲；末离比和之利保留，中坎受制轻克。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 4,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "b716a55f1f0cc2646412e7c644fad1d655351cf9944adb3a05e5c8481ae8b55a",
+      "finalSnapshotFileSha256": "f85ccf348881cfccc41ecea3da4833aa90a9486081b4553cb023f259de51c41d",
+      "bodyHan": {
+        "min": 488,
+        "median": 506.0,
+        "max": 531
+      },
+      "observations": [
+        "金刚矢直、艰贞吉与未尽通理按王孔完整展开；本义带骨之肉、听讼入金矢另列；无直接克体，本泄末不生优先。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 5,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "4f44cf52e8d071153694a95a13ecdfb59f4e77ba1c4dbbfbd17a72d6cf7dbf1f",
+      "finalSnapshotFileSha256": "750c0d2e7999ce641cbd2a8988189737fd875cd6bdd11f6a10f4a82f5bec9bef",
+      "bodyHan": {
+        "min": 504,
+        "median": 514.0,
+        "max": 521
+      },
+      "observations": [
+        "王孔物仍不服而中刚胜、黄中金刚、贞正自危得当无咎，与本义人无不服及钧金分别说明；乾、坎各生克并见按原气。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    },
+    {
+      "movingLine": 6,
+      "status": "author-read-with-open-findings",
+      "wholeArticlesActuallyRead": 12,
+      "professionalQiGroupsActuallyRead": 5,
+      "finalCanonicalArticleArraySha256": "ce2bad444b2f15885377e6bb7676fde1deadbc09aab397bbb5353d9a7dbc030f",
+      "finalSnapshotFileSha256": "05616c1ace94d574af2e029e14e9479db81cd697aff3f7d74c785137c949524c",
+      "bodyHan": {
+        "min": 502,
+        "median": 518.0,
+        "max": 527
+      },
+      "observations": [
+        "恶积不改、处罚之极及聪不明的严峻古义完整保留，本义审听早图须在能预防时；不指控现实旧错。无克，本泄末和非生；坎受艮制薄助。"
+      ],
+      "openFindingIds": [
+        "SHIKE21-INCUMBENT-PRIORITY",
+        "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+        "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+        "SHIKE21-REAL-WORLD-VALIDATION"
+      ]
+    }
+  ],
+  "authorReadbackVersions": {
+    "canonicalHashSerialization": "Python json.dumps(array, ensure_ascii=False, sort_keys=True, separators=(',',':')); UTF-8, no newline",
+    "finalSourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+    "publicFieldsActuallyRead": [
+      "title",
+      "short",
+      "paragraphs",
+      "payExplanation"
+    ],
+    "professionalDistinctGroupsActuallyRead": 30,
+    "professionalFieldsActuallyRead": [
+      "judgment",
+      "timing",
+      "judgmentCorrection.reason"
+    ],
+    "sameQiProfessionalFieldsEqualityVerified": true,
+    "allCorrectionOldFieldsExactlyBound": 72,
+    "allCorrectionNewFieldsExactlyBound": 72,
+    "allPayCorrectionOldFieldsExactlyBound": 72,
+    "allPayNewValuesExactlyBound": 72,
+    "allTimingSignaturesUnchanged": 72,
+    "perLineWholeReadAndDeltaVersions": {
+      "1": {
+        "sourceSha256": "902952286f3183e61ed5b94e8acf2e570f6e40b3406cf563360d9a3b730772e9",
+        "wholePublicArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "changedFieldsReadAfterWholeRead": [
+          "卯 payExplanation",
+          "卯 payCorrection",
+          "未 paragraphs[5]"
+        ],
+        "rootDeltaRead": {
+          "path": "line1-root-delta.json",
+          "completeChangedParagraphsActuallyRead": 3,
+          "coveredSourceSha256": "3d2fccfe2429b99f30716fe39b094046ee73a75e66ed73b4eb1a568a760a119a"
+        },
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line1-review.json",
+          "finalArraySha256": "3947b9931061dda63045f49476bed8c7886738e9451e42a9fd97aa89637794de",
+          "status": "passed-after-three-paragraph-delta"
+        }
+      },
+      "2": {
+        "sourceSha256": "bda246ce446388444ca9b86bcd11b9280c8571590bcb8d0785990f748bbb046e",
+        "wholePublicArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "changedFieldsReadAfterWholeRead": [
+          "亥 paragraphs[4]",
+          "子 paragraphs[4]",
+          "all 5 timing arrays"
+        ],
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line2-review.json",
+          "status": "passed"
+        }
+      },
+      "3": {
+        "wholePublicArticlesRead": 12,
+        "wholeReadSourceSha256": "25ee27f2274649eea893f392a6c78b06c03bc2c908c6f9cedd0d415e5adf8939",
+        "finalSourceSha256": "3a8ddfbd30f2cf8f2d4e2ff69b552d39de242cf03cc5988f866f8c8a44a86b5b",
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "changedFieldsReadAfterWholeRead": [
+          "21/3/寅 paragraphs[3]",
+          "21/3/卯 paragraphs[3]",
+          "21/3/巳 paragraphs[1]",
+          "21/3/戌 paragraphs[1]",
+          "21/3/戌 paragraphs[3]",
+          "21/3/子 title"
+        ],
+        "rootNarrowDeltaRead": {
+          "path": "line3-root-delta.json",
+          "completeParagraphsActuallyRead": 1,
+          "finalSourceSha256": "5d2553a747725ee0041ccb4bd063d6406732bb3eae687c283cd7dcf131e53cef"
+        },
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line3-review.json",
+          "status": "passed-after-one-paragraph-delta"
+        }
+      },
+      "4": {
+        "sourceSha256": "2f60643facac32bcf1bc47e497bc728e204a991d32a3a2cecf56638cc7a5fbec",
+        "wholePublicArticlesRead": 12,
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "authorReadDeltaNeeded": false,
+        "rootNarrowDeltaRead": {
+          "path": "line4-root-delta.json",
+          "completeParagraphsActuallyRead": 3,
+          "finalSourceSha256": "28c928bb368ae034d8e23e9a0e0de1ced7b41283ad45be29a2c50088a6386644"
+        },
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line4-review.json",
+          "status": "passed-after-three-paragraph-delta"
+        }
+      },
+      "5": {
+        "wholePublicArticlesRead": 12,
+        "wholeReadSourceSha256": "e827da4ce7da75de7ed431ea8559b0627e0e581e35a801bb7fd307b99c84e3ec",
+        "finalSourceSha256": "ac4f3e053c4e5413d0d1f282c6bc99584ec7bee937ff14002558b1b9a8d0d3ef",
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "changedFieldsReadAfterWholeRead": [
+          "21/5/寅 short",
+          "21/5/卯 short",
+          "21/5/巳 title"
+        ],
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line5-review.json",
+          "status": "passed"
+        }
+      },
+      "6": {
+        "wholePublicArticlesRead": 12,
+        "wholeReadSourceSha256": "3c9fa47c62bcc06d167d6d5f6a6716f1642390f204256fae7ae870070f3aa30b",
+        "finalSourceSha256": "c74cb04cd6b765183e5e250f237ad528284f7d6a3f7fbbff5d606312e03face1",
+        "professionalGroupsRead": 5,
+        "sameQiEqualityVerified": true,
+        "changedFieldsReadAfterWholeRead": [
+          "21/6/寅 paragraphs[0]",
+          "21/6/申 paragraphs[3]",
+          "21/6/亥 paragraphs[0]",
+          "21/6/戌 title"
+        ],
+        "independentReview": {
+          "reviewer": "/root",
+          "report": "root-review/21-line6-review.json",
+          "status": "passed"
+        }
+      }
+    },
+    "scopeNote": "各爻首次全文与完整变化字段分别记录，不声称在最终总源哈希下又重新从头读72篇。",
+    "formalGateNarrowDeltaRead": {
+      "path": "formal-gate-delta.json",
+      "baselineSourceSha256": "c74cb04cd6b765183e5e250f237ad528284f7d6a3f7fbbff5d606312e03face1",
+      "finalSourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+      "completeParagraphsActuallyRead": 4,
+      "exactReplayMatchesFinal": true,
+      "independentReview": "passed-complete-four-paragraph-read"
+    }
+  },
+  "independentReview": {
+    "schemaVersion": "1.0.0",
+    "primaryId": 21,
+    "reviewer": "/root",
+    "reviewerType": "independent-ai",
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "status": "ai-cross-reviewed-with-open-findings",
+    "wholeArticlesRead": 72,
+    "wholeArticlesActuallyRead": 72,
+    "distinctQiTechnicalGroupsActuallyRead": 30,
+    "currentRevisionFullTextReadCount": 61,
+    "currentRevisionChangedArticleReadCount": 11,
+    "sourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+    "finalSourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+    "completedAt": "2026-11-21T06:40:52.679866+00:00",
+    "scope": "六爻逐批独立完整阅读72篇标题、简断、全部正文和各月薪资；逐爻五气共30组不同专业判断、应期、订正旧值与理由/impact及共同来源实际阅读。订正新值与已读判断/薪资严格绑定，同气重复技术实例逐字段验等。后续窄修仅复读全部改动字段，并保留整段旧新与回放验证，不将差异阅读说成终版72篇再次重读。",
+    "readerFieldsActuallyRead": [
+      "title",
+      "short",
+      "paragraphs",
+      "payExplanation"
+    ],
+    "all72BaselineOutcomeJudgmentOldPayOldAndTimingSignaturesVerified": true,
+    "allSixCurrentLineArraysEqualReadSnapshots": true,
+    "lineReviews": [
+      {
+        "primaryId": 21,
+        "movingLine": 1,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.impact",
+          "common sourceEvidence",
+          "payCorrection.old",
+          "common payCorrection.reason",
+          "common payCorrection.impact"
+        ],
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "4ba87f32b25d1e09bf3180e5e70dc3af7b07a8f60c7881bbd299e06da415d53b",
+        "snapshotPath": "root-review/21-line1-base.json",
+        "completedAtUtc": "2026-11-21T06:07:13.696871+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": false,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "受刑非治刑、小惩大戒而改过得福完整；未把无咎降成无意义中性或已发生小错。",
+          "坎受两土制无金生作轻克，本震生体按原木气；离体休不混囚死；有利助与减阻不删，原判未升及过程取期保持。"
+        ],
+        "finalSnapshotSha256": "703dfca17d9b632c4af8648e315bafbf232c2077228da3ca3ac86d0a9a9105e4",
+        "finalSnapshotPath": "root-review/21-line1-gate-final.json",
+        "deltaFieldsActuallyRead": 3,
+        "deltaWholeOldAndNewParagraphsActuallyRead": true,
+        "deltaReplayMatchesCurrent": true,
+        "delta": {
+          "oldSourceSha256": "902952286f3183e61ed5b94e8acf2e570f6e40b3406cf563360d9a3b730772e9",
+          "newSourceSha256": "3d2fccfe2429b99f30716fe39b094046ee73a75e66ed73b4eb1a568a760a119a",
+          "changes": [
+            {
+              "key": "21/1/申",
+              "field": "paragraphs[3]",
+              "old": "体互坎水在申月相，本有较实的克火倾向，但另受艮坤两土制而无金相生，按一层关系减轻其克力。减阻已经计入，坎仍然是约束之处；两土对水有制，对火却为泄，不能把这种缓和全部算成对自身的生扶。",
+              "new": "体互坎水在申月相，本有较实的克火倾向，但另受艮坤两土制而无金相生，按一层关系减轻其克力。水的克力虽缓，坎仍然带有约束；两土对水有制，对火却为泄，不能把这种缓和全部算成对自身的生扶。"
+            },
+            {
+              "key": "21/1/亥",
+              "field": "paragraphs[3]",
+              "old": "坎水虽在亥月旺，作为体互克火，却同时受艮坤土制而无金相生，按轻克处理。这份减阻必须计入，仍不等于原体已旺；艮与坤均囚，耗泄虽轻，对死火仍是额外承担，末段没有新的相生把这些付出接住。",
+              "new": "坎水虽在亥月旺，作为体互克火，却同时受艮坤土制而无金相生，按轻克处理。中间约束由此缓和，原体却仍在死气；艮与坤均囚，耗泄虽轻，对死火仍是额外承担，末段没有新的相生把这些付出接住。"
+            },
+            {
+              "key": "21/1/子",
+              "field": "paragraphs[0]",
+              "old": "警醒有助于止过，仍不能把子月这次晋升推成，结论是升不了。离火原体死，本用震木相，获得生扶可以稍解承受的不足；然而中途还有坎水克火，最后又以火生坤土收束，尚未形成任用落实的结果。",
+              "new": "前助未能消除中阻，子月这次升不了。离火原体死，本用震木相，获得生扶可以稍解承受的不足；然而中途还有坎水克火，最后又以火生坤土收束，尚未形成任用落实的结果。"
+            }
+          ]
+        },
+        "baseEqualedCurrentLineAtInitialRead": true,
+        "deltaActuallyRead": [
+          {
+            "key": "21/1/申",
+            "field": "paragraphs[3]",
+            "old": "体互坎水在申月相，本有较实的克火倾向，但另受艮坤两土制而无金相生，按一层关系减轻其克力。减阻已经计入，坎仍然是约束之处；两土对水有制，对火却为泄，不能把这种缓和全部算成对自身的生扶。",
+            "new": "体互坎水在申月相，本有较实的克火倾向，但另受艮坤两土制而无金相生，按一层关系减轻其克力。水的克力虽缓，坎仍然带有约束；两土对水有制，对火却为泄，不能把这种缓和全部算成对自身的生扶。"
+          },
+          {
+            "key": "21/1/亥",
+            "field": "paragraphs[3]",
+            "old": "坎水虽在亥月旺，作为体互克火，却同时受艮坤土制而无金相生，按轻克处理。这份减阻必须计入，仍不等于原体已旺；艮与坤均囚，耗泄虽轻，对死火仍是额外承担，末段没有新的相生把这些付出接住。",
+            "new": "坎水虽在亥月旺，作为体互克火，却同时受艮坤土制而无金相生，按轻克处理。中间约束由此缓和，原体却仍在死气；艮与坤均囚，耗泄虽轻，对死火仍是额外承担，末段没有新的相生把这些付出接住。"
+          },
+          {
+            "key": "21/1/子",
+            "field": "paragraphs[0]",
+            "old": "警醒有助于止过，仍不能把子月这次晋升推成，结论是升不了。离火原体死，本用震木相，获得生扶可以稍解承受的不足；然而中途还有坎水克火，最后又以火生坤土收束，尚未形成任用落实的结果。",
+            "new": "前助未能消除中阻，子月这次升不了。离火原体死，本用震木相，获得生扶可以稍解承受的不足；然而中途还有坎水克火，最后又以火生坤土收束，尚未形成任用落实的结果。"
+          },
+          {
+            "key": "21/1/卯",
+            "field": "paragraphs[1]",
+            "old": "噬嗑讲啮去间隔而求相合，初九「屦校灭趾，无咎」则从过失尚小的地方设戒。足械没趾使人不能继续前行，原义是受警惩者能够由此止过；明白微处也有界限，及时改变所行，小的警戒便可免除日后更大的咎害。初位尚无所掌，所要回应的是自身应受的约束，由此养成知过能改的做法。",
+            "new": "噬嗑讲啮去间隔而求相合，初九「屦校灭趾，无咎」则从过失尚小的地方设戒。足械没趾使人不能继续前行，原义是受警惩者能够由此止过；明白微处也有界限，改变所行，使微过及时止息，积恶所致的大咎也得以免除。初位尚无所掌，所要回应的是自身应受的约束，由此养成知过能改的做法。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          },
+          {
+            "key": "21/1/戌",
+            "field": "paragraphs[1]",
+            "old": "初九「屦校灭趾，无咎」以脚受械而止其行，说明过失从小处就应受到警戒。王孔从过微、惩薄推到能够改过，强调微失若停不下来便会渐积，及早知止则能免去日后的咎害；无咎所包含的益处，正在后来不再任其发展。初爻并非掌刑的主体，宜从自己如何接受约束入手，把知戒转成可靠的行事习惯。",
+            "new": "初九「屦校灭趾，无咎」以脚受械而止其行，说明过失从小处就应受到警戒。王孔从过微、惩薄推到能够改过，强调微失若停不下来便会渐积，及早知止而改过，积累所成的咎害也得以避免；无咎所包含的益处，正在后来不再任其发展。初爻并非掌刑的主体，宜从自己如何接受约束入手，把知戒转成可靠的行事习惯。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "reviewedRevisionHistory": [
+          {
+            "snapshotPath": "root-review/21-line1-final.json",
+            "snapshotSha256": "3947b9931061dda63045f49476bed8c7886738e9451e42a9fd97aa89637794de",
+            "scope": "本轮四字段终门禁窄改之前已读版本"
+          }
+        ],
+        "deltaReplayEqualsCurrentLine": true,
+        "formalGateDeltaWholeFieldsActuallyRead": [
+          {
+            "key": "21/1/卯",
+            "field": "paragraphs[1]",
+            "old": "噬嗑讲啮去间隔而求相合，初九「屦校灭趾，无咎」则从过失尚小的地方设戒。足械没趾使人不能继续前行，原义是受警惩者能够由此止过；明白微处也有界限，及时改变所行，小的警戒便可免除日后更大的咎害。初位尚无所掌，所要回应的是自身应受的约束，由此养成知过能改的做法。",
+            "new": "噬嗑讲啮去间隔而求相合，初九「屦校灭趾，无咎」则从过失尚小的地方设戒。足械没趾使人不能继续前行，原义是受警惩者能够由此止过；明白微处也有界限，改变所行，使微过及时止息，积恶所致的大咎也得以免除。初位尚无所掌，所要回应的是自身应受的约束，由此养成知过能改的做法。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          },
+          {
+            "key": "21/1/戌",
+            "field": "paragraphs[1]",
+            "old": "初九「屦校灭趾，无咎」以脚受械而止其行，说明过失从小处就应受到警戒。王孔从过微、惩薄推到能够改过，强调微失若停不下来便会渐积，及早知止则能免去日后的咎害；无咎所包含的益处，正在后来不再任其发展。初爻并非掌刑的主体，宜从自己如何接受约束入手，把知戒转成可靠的行事习惯。",
+            "new": "初九「屦校灭趾，无咎」以脚受械而止其行，说明过失从小处就应受到警戒。王孔从过微、惩薄推到能够改过，强调微失若停不下来便会渐积，及早知止而改过，积累所成的咎害也得以避免；无咎所包含的益处，正在后来不再任其发展。初爻并非掌刑的主体，宜从自己如何接受约束入手，把知戒转成可靠的行事习惯。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "lastDeltaReadAtUtc": "2026-11-21T06:38:18.033475+00:00"
+      },
+      {
+        "primaryId": 21,
+        "movingLine": 2,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.new",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.sourceEvidence",
+          "judgmentCorrection.impact",
+          "payCorrection.old",
+          "payCorrection.reason",
+          "payCorrection.impact"
+        ],
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "0a8361682ed2fdb2e8cf3501ce960f06983c130f7fbc73533ed82c5d7240eb54",
+        "snapshotPath": "root-review/21-line2-base.json",
+        "completedAtUtc": "2026-11-21T06:13:27.186489+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": true,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "噬肤所治中当、乘刚刑深与理当无咎完整；朱柔乘刚虽易亦有伤另述，不把无咎缩为没有额外麻烦。",
+          "坎得兑生受艮制、震得坎生受兑克，生克并见各依原气；冬相木扶死火稍解弱与旺水实克并存。",
+          "冬兑休是受体克而非比和；原体休不混囚死；旺艮耗泄与坎中阻保留，十二月原定未升及取期签名不改。"
+        ]
+      },
+      {
+        "primaryId": 21,
+        "movingLine": 3,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.impact",
+          "common sourceEvidence",
+          "payCorrection.old",
+          "payCorrection.reason",
+          "payCorrection.impact"
+        ],
+        "newCorrectionFieldsExactlyBoundToActuallyReadJudgmentAndPay": true,
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "59f5371b0258d7b6438f40f4c7ef7ab855b43321a82123852967dcc8c52dff3c",
+        "snapshotPath": "root-review/21-line3-base.json",
+        "completedAtUtc": "2026-11-21T06:18:42.040694+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": false,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "腊肉难服、毒味生怨、位不当小吝与承四不乘刚不侵顺而无大咎的完整条件均保留。",
+          "坎受艮制无金生全季轻克，震得坎生仍依原木气；前生与末离比和各按气，春夏强和与冬相木之助不删。",
+          "原体休不混囚死，四土月末离休为轻和、旺艮实泄；原定未升及control/drain/equal各季窗口保持。"
+        ],
+        "deltaActuallyRead": [
+          {
+            "key": "21/3/寅",
+            "field": "paragraphs[3]",
+            "old": "寅月坎水休，受艮土制且无金来生，克力较轻；艮土死，耗泄亦薄。中间之阻已缓，仍有约束的方向，前段旺木与末段相火能够带来帮助，也不能代替对其中难处的审察，此时仍应查明实际难处，依具体条件安排推进。",
+            "new": "寅月坎水休，受艮土制且无金来生，克力较轻。艮土死，耗泄也薄，前段旺木与末段相火都能带来帮助。中途约束仍在，宜依实际条件审察职责和做法是否相称。既看外部要求，也辨自己能够调整的部分，弄清后再安排推进。"
+          }
+        ],
+        "finalSnapshotPath": "root-review/21-line3-final.json",
+        "finalSnapshotSha256": "f8226a53356d5c9ca8516834518586ce1f5067e3809fa06697d1a99892cfda2a",
+        "deltaReplayEqualsCurrentLine": true,
+        "baseEqualedCurrentLineAtInitialRead": true
+      },
+      {
+        "primaryId": 21,
+        "movingLine": 4,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.impact",
+          "common sourceEvidence",
+          "payCorrection.old",
+          "payCorrection.reason",
+          "payCorrection.impact"
+        ],
+        "newCorrectionFieldsExactlyBoundToActuallyReadJudgmentAndPay": true,
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "f819502ca2f87308bf1620332850dcc49532d513f70e2de1c66bab47fff899a9",
+        "snapshotPath": "root-review/21-line4-base.json",
+        "completedAtUtc": "2026-11-21T06:21:30.828527+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": false,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "王孔刚直艰贞、未尽通理与本义带骨难啮及听讼入金矢分列，完整吉义保留，未编实际奖赏或局部任务已成。",
+          "四作用节点无直接克体，坎受两艮制无金生全季薄助；原震休不混囚死，原旺相自身有力仍保留。",
+          "全月未升按原本泄末不生优先，未冒用在任见克；drain/use与秋support/use_mutual原取期方法保持。"
+        ],
+        "deltaActuallyRead": [
+          {
+            "key": "21/4/辰",
+            "field": "paragraphs[0]",
+            "old": "弱木需要主动处理旺土，辰月晋升升不了。震木囚，承受偏弱，本用离火休，起步仍有轻泄。体互与末用艮土皆旺，木制土费力，用互坎水的帮助又薄，后续尚无足够支持把任用落实。",
+            "new": "弱木需要主动处理旺土，辰月这轮升不了。震木囚，承受偏弱，本用离火休，起步仍有轻泄。体互与末用艮土皆旺，木制土费力，用互坎水的帮助又薄，后续尚无足够支持把任用落实。",
+            "reason": "删除晋升升不了的词语重叠，其余全段内容保持。"
+          },
+          {
+            "key": "21/4/午",
+            "field": "paragraphs[0]",
+            "old": "前段付出较重，后段又未转为生扶，午月晋升升不了。震木原体休，本用离火旺，木生火的耗泄较实。中末两艮处相，需由原体去克，坎水帮助较薄，当前仍以自身承担为主。",
+            "new": "前段付出较重，后段又未转为生扶，午月这次升不了。震木原体休，本用离火旺，木生火的耗泄较实。中末两艮处相，需由原体去克，坎水帮助较薄，当前仍以自身承担为主。",
+            "reason": "删除晋升升不了的词语重叠，其余全段内容保持。"
+          },
+          {
+            "key": "21/4/子",
+            "field": "paragraphs[0]",
+            "old": "能够主动处理，仍未接成外在补益，子月晋升升不了。原体震木相，本用离火死，前段耗泄轻。中末两艮土囚，木克土较有力，用互坎水之助却受约束，后续仍须靠自身承担。",
+            "new": "能够主动处理，仍未接成外在补益，子月此番升不了。原体震木相，本用离火死，前段耗泄轻。中末两艮土囚，木克土较有力，用互坎水之助却受约束，后续仍须靠自身承担。",
+            "reason": "删除晋升升不了的词语重叠，其余全段内容保持。"
+          }
+        ],
+        "finalSnapshotPath": "root-review/21-line4-final.json",
+        "finalSnapshotSha256": "d5978715970ea2d65b07028e5c0ce51ffec624342546e39fe43ab52e829728e0",
+        "deltaReplayEqualsCurrentLine": true,
+        "baseEqualedCurrentLineAtInitialRead": true
+      },
+      {
+        "primaryId": 21,
+        "movingLine": 5,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.impact",
+          "common sourceEvidence",
+          "payCorrection.old",
+          "payCorrection.reason",
+          "payCorrection.impact"
+        ],
+        "newCorrectionFieldsExactlyBoundToActuallyReadJudgmentAndPay": true,
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "dbdd4b0e88a6b5209c61b11556a868a09a26c846cc1ca49ca911001709c69e77",
+        "snapshotPath": "root-review/21-line5-base.json",
+        "completedAtUtc": "2026-11-21T06:27:41.199567+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": false,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "王孔柔乘刚所治仍不服、得中行刚胜之，与朱熹柔顺居中人无不服分别署明；黄中金刚/钧金、贞厉得当无咎完整，未推现实奖赏刑罚。",
+          "乾艮生离制、坎乾生艮制各自生克并见依原气；秋相坎实助与旺乾实克、冬旺坎实助与休乾轻克完整保留，原震夏休不混囚死。",
+          "原全月未升及各季control/changed_use、drain/use、support/use_mutual取期签名保持，过程助力不改为结果日。"
+        ],
+        "deltaActuallyRead": [
+          {
+            "key": "21/5/申",
+            "field": "paragraphs[4]",
+            "old": "居中行刚，可用于检视自己是否因压力而失去公允。先把事实、判断与期待分开，再说明选择某种办法的根据。对重要原则保持明确，对新的证据也认真听取，才能使果断不滑向偏执。",
+            "new": "居中行刚，可用于检视自己是否因压力而失去公允。先把事实、判断与愿望分开，再说明选择某种办法的根据。对重要原则保持明确，对新的证据也认真听取，才能使果断不滑向偏执。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "reviewedRevisionHistory": [
+          {
+            "snapshotPath": "root-review/21-line5-base.json",
+            "snapshotSha256": "dbdd4b0e88a6b5209c61b11556a868a09a26c846cc1ca49ca911001709c69e77",
+            "scope": "本轮四字段终门禁窄改之前已读版本"
+          }
+        ],
+        "finalSnapshotPath": "root-review/21-line5-gate-final.json",
+        "finalSnapshotSha256": "bc4c1eca27adeb6c917aef105eb699c7463b17e56999717cba9c97df4cbee7e6",
+        "baseEqualedCurrentLineAtInitialRead": true,
+        "deltaReplayEqualsCurrentLine": true,
+        "formalGateDeltaWholeFieldsActuallyRead": [
+          {
+            "key": "21/5/申",
+            "field": "paragraphs[4]",
+            "old": "居中行刚，可用于检视自己是否因压力而失去公允。先把事实、判断与期待分开，再说明选择某种办法的根据。对重要原则保持明确，对新的证据也认真听取，才能使果断不滑向偏执。",
+            "new": "居中行刚，可用于检视自己是否因压力而失去公允。先把事实、判断与愿望分开，再说明选择某种办法的根据。对重要原则保持明确，对新的证据也认真听取，才能使果断不滑向偏执。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "lastDeltaReadAtUtc": "2026-11-21T06:38:18.036310+00:00"
+      },
+      {
+        "primaryId": 21,
+        "movingLine": 6,
+        "reviewer": "/root",
+        "reviewerType": "independent-ai",
+        "reviewerIsHuman": false,
+        "userIndividuallyAccepted": false,
+        "wholeReaderArticlesActuallyRead": 12,
+        "distinctQiTechnicalGroupsActuallyRead": 5,
+        "readerFieldsActuallyRead": [
+          "title",
+          "short",
+          "paragraphs",
+          "payExplanation"
+        ],
+        "technicalFieldsActuallyRead": [
+          "outcome",
+          "judgment",
+          "timing",
+          "judgmentCorrection.old",
+          "judgmentCorrection.reason",
+          "judgmentCorrection.impact",
+          "common sourceEvidence",
+          "payCorrection.old",
+          "payCorrection.reason",
+          "payCorrection.impact"
+        ],
+        "newCorrectionFieldsExactlyBoundToActuallyReadJudgmentAndPay": true,
+        "repeatedMetadataInstancesExactlyBound": true,
+        "all12BaselineOutcomeJudgmentOldPayOldTimingSignaturesIndependentlyVerified": true,
+        "snapshotSha256": "ddfd29347f62b32fb21c83992bb561f5be1405e6671772c8c2b0be3ab75c2457",
+        "snapshotPath": "root-review/21-line6-base.json",
+        "completedAtUtc": "2026-11-21T06:35:14.274171+00:00",
+        "realWorldPredictionAccuracy": "not-validated",
+        "baseStillEqualsCurrentLine": false,
+        "status": "independent-line-full-read-with-open-interpretive-boundaries",
+        "openBlockingFindings": [],
+        "observations": [
+          "上九恶积不改、处罚至极、刑及首及聪不明之严重凶义完整；本义审听早图的预防教戒据实际反馈应用，未编现实违法、处分、身体伤害或既有多项旧错。",
+          "坎受艮制而无金生，原秋相冬旺仍有薄助；原体夏休不归囚死。无直接克体，未套在任见克；原旺相及旺相末震比和之利保留，仍依既定本泄末不生优先未升。",
+          "十二篇均沿原difficult；秋support/use_mutual、其余drain/use的种类角色方法数量保持；末变震修省不许改后必升，也不从两个震推出实际任务数量。"
+        ],
+        "deltaActuallyRead": [
+          {
+            "key": "21/6/巳",
+            "field": "paragraphs[2]",
+            "old": "《本义》同样讲恶极罪大，又以审听而早图提出预防之戒。在尚可查察时认真听明，不把重要意见留待以后才理会。应按真实反馈辨清事实与影响，判断哪些要求合理，再安排应有行动。",
+            "new": "《本义》同样讲恶极罪大，又以审听而早图提出预防之戒。在尚可查察时认真听明，对重要意见即察其根据和需要采取的行动。应按真实反馈辨清事实与影响，判断哪些要求合理，再安排应有行动。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "reviewedRevisionHistory": [
+          {
+            "snapshotPath": "root-review/21-line6-base.json",
+            "snapshotSha256": "ddfd29347f62b32fb21c83992bb561f5be1405e6671772c8c2b0be3ab75c2457",
+            "scope": "本轮四字段终门禁窄改之前已读版本"
+          }
+        ],
+        "finalSnapshotPath": "root-review/21-line6-gate-final.json",
+        "finalSnapshotSha256": "8b4f1a725b1eb7480630209ccd27db31b22d7624a1027fb2a65950a05fb0ea46",
+        "baseEqualedCurrentLineAtInitialRead": true,
+        "deltaReplayEqualsCurrentLine": true,
+        "formalGateDeltaWholeFieldsActuallyRead": [
+          {
+            "key": "21/6/巳",
+            "field": "paragraphs[2]",
+            "old": "《本义》同样讲恶极罪大，又以审听而早图提出预防之戒。在尚可查察时认真听明，不把重要意见留待以后才理会。应按真实反馈辨清事实与影响，判断哪些要求合理，再安排应有行动。",
+            "new": "《本义》同样讲恶极罪大，又以审听而早图提出预防之戒。在尚可查察时认真听明，对重要意见即察其根据和需要采取的行动。应按真实反馈辨清事实与影响，判断哪些要求合理，再安排应有行动。",
+            "reason": "安慰扫描词语误命中；完整古义或行动建议保持，不含换季好转、下次升任或现实结果许诺。"
+          }
+        ],
+        "lastDeltaReadAtUtc": "2026-11-21T06:38:18.038594+00:00"
+      }
+    ],
+    "currentRevisionDeltaArticleKeys": [
+      "21/1/亥",
+      "21/1/卯",
+      "21/1/子",
+      "21/1/戌",
+      "21/1/申",
+      "21/3/寅",
+      "21/4/午",
+      "21/4/子",
+      "21/4/辰",
+      "21/5/申",
+      "21/6/巳"
+    ],
+    "openBlockingFindings": [],
+    "retainedOpenFindingIds": [
+      "SHIKE21-INCUMBENT-PRIORITY",
+      "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+      "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+      "SHIKE21-REAL-WORLD-VALIDATION"
+    ],
+    "scopeLimits": [
+      "作者读回、独立AI全文审读、程序核查、真人审核与用户逐篇验收分开登记。",
+      "保留原定结论与取期，不将古义分歧或项目规则优先伪称已无争议。",
+      "技术与文本一致性核查不证明现实预测有效。"
+    ],
+    "realWorldPredictionAccuracy": "not-validated"
+  },
+  "openFindings": [
+    {
+      "id": "SHIKE21-INCUMBENT-PRIORITY",
+      "status": "open-interpretation-boundary",
+      "detail": "古代在任见克条应用于现代公司晋升，属于项目解释优先，适用范围并未由本批取得现实验证。"
+    },
+    {
+      "id": "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+      "status": "open-interpretation-boundary",
+      "detail": "九四、上九无直接克体，尤其上九末和的有利原文与本泄末不生优先仍有解释边界。"
+    },
+    {
+      "id": "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+      "status": "open-interpretation-boundary",
+      "detail": "改过得福、得当无咎、小吝无咎、艰贞吉、中刚取胜等古义完整保留，未升二分不穷尽古籍意义。"
+    },
+    {
+      "id": "SHIKE21-REAL-WORLD-VALIDATION",
+      "status": "open-interpretation-boundary",
+      "detail": "本次文本及结构审计不验证现实预测准确率，也不等于真人或用户逐篇验收。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SHIKE21-INCUMBENT-PRIORITY",
+      "status": "open",
+      "originalStatus": "open-interpretation-boundary",
+      "finding": "古代在任见克条应用于现代公司晋升，属于项目解释优先，适用范围并未由本批取得现实验证。",
+      "resolution": "规则审计公开保留解释与验证边界，不以文字、结构或独立AI审读宣称已消除。"
+    },
+    {
+      "id": "SHIKE21-PRIMARY-DRAIN-PRIORITY",
+      "status": "open",
+      "originalStatus": "open-interpretation-boundary",
+      "finding": "九四、上九无直接克体，尤其上九末和的有利原文与本泄末不生优先仍有解释边界。",
+      "resolution": "规则审计公开保留解释与验证边界，不以文字、结构或独立AI审读宣称已消除。"
+    },
+    {
+      "id": "SHIKE21-AUSPICIOUS-LINE-PRIORITY",
+      "status": "open",
+      "originalStatus": "open-interpretation-boundary",
+      "finding": "改过得福、得当无咎、小吝无咎、艰贞吉、中刚取胜等古义完整保留，未升二分不穷尽古籍意义。",
+      "resolution": "规则审计公开保留解释与验证边界，不以文字、结构或独立AI审读宣称已消除。"
+    },
+    {
+      "id": "SHIKE21-REAL-WORLD-VALIDATION",
+      "status": "open",
+      "originalStatus": "open-interpretation-boundary",
+      "finding": "本次文本及结构审计不验证现实预测准确率，也不等于真人或用户逐篇验收。",
+      "resolution": "规则审计公开保留解释与验证边界，不以文字、结构或独立AI审读宣称已消除。"
+    }
+  ],
+  "realWorldPredictionAccuracy": "not-validated",
+  "validation": {
+    "status": "passed",
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 21",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      488,
+      538
+    ],
+    "bodyHanMedian": 514.5,
+    "shortHanRange": [
+      84,
+      96
+    ],
+    "payHanRange": [
+      36,
+      45
+    ],
+    "style": "passed",
+    "averageSentenceHan": 30,
+    "maxSameOpeningHead": 1,
+    "intraArticleRepeatedEightCharacterFragments": 0,
+    "independentReadingNotPerformedByGate": true,
+    "validatedSourceSha256": "d653418df140be1630d745275a12c567504974fd14f782454fe23565317804df",
+    "consolationHits": 0,
+    "consolationAllowlistUsed": false,
+    "crossHexOverEightPercent": 0,
+    "maxCrossHexSharePercent": 0.9,
+    "highFrequencyPhraseFindingsForThisHex": 0,
+    "unverifiedClassicalQuotes": 0,
+    "initialConsolationFalsePositiveParagraphsRevisedAndRead": 4
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaign": "lost-object-followup-typo-20261121",
+  "firstPublishedBatch": "8bf6519884255a31692f7074a1cdbb09dbef0f1e",
+  "sourcePath": "sources/editorial/lost-object-recovery/hex-002.json",
+  "primaryId": 2,
+  "rowIndex": 9,
+  "movingLine": 2,
+  "monthOrder": "seasonal-earth",
+  "changedFields": [
+    9
+  ],
+  "before": "旺坤三比，坎土死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+  "after": "旺坤三比，坎水死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+  "previousPeerProposal": {
+    "schemaVersion": "1.0.0",
+    "reviewerAgent": "/root/classical_source_audit",
+    "reviewerIsHuman": false,
+    "reviewedAt": "2026-11-21T05:38:15.386899+00:00",
+    "status": "read-only-audit-complete;proposed-not-applied",
+    "sourcePath": "sources/editorial/lost-object-recovery/hex-002.json",
+    "rowIndex": 9,
+    "movingLine": 2,
+    "monthOrder": "seasonal-earth",
+    "monthBranches": [
+      "辰",
+      "未",
+      "戌",
+      "丑"
+    ],
+    "fieldIndex": 9,
+    "fieldName": "judgment",
+    "sourceLine": 169,
+    "currentSourceSha256": "81cd794838ddb44dc712852489186e85a371fa3cc85908360641e77ccd3890dc",
+    "readScope": [
+      "full row fields 3 through 10",
+      "matching direction supplement",
+      "matching image supplement",
+      "V5.0 polish receipt rowIndex 9",
+      "exported facts, decision, review and timingSlots rowIndex 9"
+    ],
+    "peerFullRead": true,
+    "before": "旺坤三比，坎土死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+    "proposedAfter": "旺坤三比，坎水死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+    "minimalMutation": "Replace only the single character 土 with 水 in 坎土死; do not change outcome, prose, timing or location/image supplements.",
+    "finding": "This is a wrong element-name character in judgment prose, not a chart, result, seasonal-state or timing computation error.",
+    "chartReasoning": "坤为地六爻均阴；第二爻由阴变阳，下经卦阴阳阴为坎，上坤不动，变为地水师。动侧下卦为用，原体仍为上坤土，两互皆坤。本用及两互均与体比和；变用坎水受坤土所克。土令土旺、水死，因此应写坎水死。",
+    "fullTextFinding": "标题与简断均为找回倾向较好；正文已有末死坎受旺坤克制，并保留体克用迟得和认物、交还条件。方向附文明确变坎北方，物象附文以本用坤识原物、变坎参环境，均与坎水一致。改一个五行名词即可恢复审计文字与现有正文的一致性。",
+    "independentFactsCheck": "Read-only call to existing independentFacts(2,2,branch) for 辰、未、戌、丑 returned identical [2,2,7] stages and changed_use={trigram:坎,element:水,qi:死}, body_controls_use. This supports chart identity, not a new validation of prediction accuracy.",
+    "currentOutcome": "favourable",
+    "proposedOutcome": "favourable",
+    "outcomeUnchanged": true,
+    "timingUnchanged": true,
+    "userCopyUnchanged": true,
+    "currentTimingSpec": [
+      [
+        "equal",
+        "use_mutual",
+        "从原来的收放经过查到一条新线索",
+        "若已经确认最后一次使用的地方，中间有望听到可以继续实查的信息，属吉应。",
+        "土旺用互比和，走正常核实手续时可见局部进展。"
+      ]
+    ],
+    "currentTimingBasis": {
+      "role": "use_mutual",
+      "trigram": "坤",
+      "element": "土",
+      "directRelation": "equal",
+      "method": "pre-heaven-element-qi",
+      "scale": "day",
+      "ruleIds": [
+        "daily-qi-equal",
+        "method-order",
+        "horizon"
+      ],
+      "sourceIds": [
+        "mh-143",
+        "mh-058",
+        "mh-117",
+        "mh-122"
+      ],
+      "reason": "土旺用互比和，走正常核实手续时可见局部进展。",
+      "stage": "process",
+      "selectionOrder": [
+        "casting-month-remaining-days",
+        "next-month-if-no-match"
+      ],
+      "interpretationReview": "author-source-checked",
+      "independentInterpretationReview": "pending"
+    },
+    "timingImpactFinding": "The only date event is equal/use_mutual, process-stage 坤土比和. It does not depend on the mistyped changed-use element name in field9. The correction neither adds a date nor changes a recovery deadline; 迟得 remains qualitative.",
+    "currentPolishReceipt": {
+      "rowIndex": 9,
+      "id": "search.lost-object.recovery/2/2/seasonal-earth/favourable",
+      "outcome": "favourable",
+      "beforeCopySha256": "c3b2130c9bdb87fea36c412c1ef490a565c9b4617093da26cec6ae9675ac00ac",
+      "afterCopySha256": "47ef8fc46f5a9a4722bf16ffb99313a7c3de91445873f03473dfb94303976d0a",
+      "changedSections": [
+        "opening",
+        "process",
+        "ending"
+      ],
+      "reason": "删除领出线索和主按办法办成等不通顺措辞，完整保留迟得与先查后认的条件。",
+      "status": "POLISH_COMPLETED",
+      "editedAt": "2026-11-17T20:16:20.662Z",
+      "reviewedAt": "2026-11-17T20:16:48.414Z"
+    },
+    "currentPolishStandard": "V5.0",
+    "currentPolishActor": "single-ai-literary-editor",
+    "currentCopySha256": "47ef8fc46f5a9a4722bf16ffb99313a7c3de91445873f03473dfb94303976d0a",
+    "existingCopyReceiptMatches": true,
+    "copyReceiptCoverageBoundary": "The V5.0 receipt hashes fields3–8 (title/short/opening/process/ending/summary), not field9 judgment. Matching that old copy hash cannot demonstrate that the mistaken judgment was checked.",
+    "currentExportReviewIndependentStatus": {
+      "status": "pending",
+      "timingInterpretation": "pending",
+      "userAcceptedThisVersion": false
+    },
+    "existingQuestionsRemainPending": true,
+    "beforeRowSha256": "181285098ae010e5596440640f7eeb0eba9f3ae39471df2fd4d9070409f44754",
+    "proposedRowSha256": "4f7d3270c41aeed6ab706101822819f8b5d818bb792f17dcfdc328d197619db1",
+    "beforeFields3Through10Sha256": "f03482f2cc644407d18a7ffab5f473724788d57316a096676bd9a9508f3cd5df",
+    "proposedFields3Through10Sha256": "21e50b6c96f1502a1914f828b76d0f783486b06463f9711c3f398535ef83f482",
+    "currentContentSha256": "dc5dbff750533b748de85d56403bf24f5fd28a214da611305d9ccf4f5718f7cc",
+    "proposedContentSha256": "4ea96cb7e4fed5b4472f238dc9d46c4618a57e20c4269e17d7bc8fd844f9c78e",
+    "unchangedDirectionSha256": "a01e992c96ebbef854cba7701df8deeffe2336cac81326c47fce555fce9bbcf6",
+    "unchangedImageSha256": "9349aeec6f2f711600f9da17cddb07404866d13670da9c545711440168b9b4a0",
+    "downstreamOccurrences": [
+      "docs/lost-object-recovery/hex-002.md line1275 audit explanation",
+      "data/authored-readings/lost-object-recovery/hex-002.json rows[9].decision.lineApplication.conditions[0]",
+      "data/authored-readings/lost-object-recovery/hex-002.json rows[9].decision.counterevidence[0].resolution",
+      "data/authored-readings/lost-object-recovery/hex-002.json rows[9].review.checks[conclusion-and-counterevidence].evidence[0].reason"
+    ],
+    "followupRecommendation": "After the separate 60–64 delivery, apply the one-character source fix and regenerate its exported audit/doc representation through the repository workflow. Do not relabel this old V5.0 article as fully expanded or human-approved merely for correcting the typo.",
+    "humanProfessionalReview": "pending",
+    "realWorldPredictionAccuracy": "not-validated",
+    "repoFilesModified": false
+  },
+  "authorPostFixRead": {
+    "authorAgent": "/root",
+    "reviewerIsHuman": false,
+    "reviewedAt": "2026-11-21T05:51:34.957242+00:00",
+    "authorFullRead": true,
+    "scope": "实际完整读回修正前后该篇fields3–10及对应方向、形色两段附文；不是只看差异行。",
+    "finding": "原体和本用、两互均坤土，土令旺而比和；六二下卦变坎水，末用被体克且水死。原正文已正确写末死坎受旺坤克制，审计字段改一字即与之相合。北方及近水环境只作真实行程的条件提示，本用坤的材质形色仍与变坎环境分开。用互旺坤比和的中段线索进展与此错字无关，未新增取回日期。",
+    "sourceSha256": "3532f1a562cb0508420337a723f88fc073e3647272b9900a3de39f8e56c68072",
+    "reviewedRowSha256": "4f7d3270c41aeed6ab706101822819f8b5d818bb792f17dcfdc328d197619db1",
+    "fields3Through10Sha256": "21e50b6c96f1502a1914f828b76d0f783486b06463f9711c3f398535ef83f482",
+    "outcomeUnchanged": true,
+    "timingUnchanged": true,
+    "copyFieldsUnchanged": true
+  },
+  "independentPostFixRead": {
+    "schemaVersion": "1.0.0",
+    "reviewerAgent": "/root/classical_source_audit",
+    "reviewerIsHuman": false,
+    "reviewedAt": "2026-11-21T05:50:25.352472+00:00",
+    "status": "post-fix-full-read-complete",
+    "sourcePath": "sources/editorial/lost-object-recovery/hex-002.json",
+    "primaryId": 2,
+    "rowIndex": 9,
+    "movingLine": 2,
+    "monthOrder": "seasonal-earth",
+    "outcome": "favourable",
+    "peerFullRead": true,
+    "postFeedbackFullReread": true,
+    "readScope": [
+      "actual final source fields 3 through 10",
+      "matching direction text",
+      "matching image text"
+    ],
+    "changedFields": [
+      9
+    ],
+    "changedFieldNames": [
+      "judgment"
+    ],
+    "before": "旺坤三比，坎土死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+    "after": "旺坤三比，坎水死末受体制，六二依原动作核实，守迟得而不承诺立即领回。",
+    "peerFinding": "最终字段9已读作坎水死，与正文末死坎受旺坤克制、六二动变地水师的盘面及土月水死状态一致。标题和简断继续给出较有希望找回，四段正文保留旺坤比和、末体克用迟得、先核实再认领的条件，未改变favourable。应期仍仅为用互坤土比和的中段线索进展，未新增末段归还日。北方水边附文与变坎水相合，但只在真实去过的场所内查；物象附文仍区分本用坤的原物特征与变坎的周边环境，没有把物品本身材质改为水或土。单字纠正后未见本条残留五行名词冲突。",
+    "sourceSha256": "3532f1a562cb0508420337a723f88fc073e3647272b9900a3de39f8e56c68072",
+    "reviewedRowSha256": "4f7d3270c41aeed6ab706101822819f8b5d818bb792f17dcfdc328d197619db1",
+    "contentSha256": "4ea96cb7e4fed5b4472f238dc9d46c4618a57e20c4269e17d7bc8fd844f9c78e",
+    "peerFieldsSha256": "21e50b6c96f1502a1914f828b76d0f783486b06463f9711c3f398535ef83f482",
+    "copySha256": "47ef8fc46f5a9a4722bf16ffb99313a7c3de91445873f03473dfb94303976d0a",
+    "assembledCopySha256": "a7e266d2cadc42f75e9f6959bbb3623ce0e7677c0f32a7ec860704b81df74e6c",
+    "directionSha256": "a01e992c96ebbef854cba7701df8deeffe2336cac81326c47fce555fce9bbcf6",
+    "imageSha256": "9349aeec6f2f711600f9da17cddb07404866d13670da9c545711440168b9b4a0",
+    "hashConvention": "UTF-8 SHA256. Structured digests use compact JSON equivalent to JSON.stringify, retaining insertion order and unescaped Chinese. contentSha256 hashes {rowFields3Through10: row.slice(3,11), direction, image}.",
+    "previousProposalPath": "/workspace/scratch/c9b8021b552f/peer-hex002-typo-audit.json",
+    "previousProposalSha256": "41a62cafd77119862dcbb89ac10e9365cb6767f632ae73afe2714c2695f1506b",
+    "matchesPreviouslyReviewedMinimalProposal": true,
+    "outcomeUnchanged": true,
+    "timingUnchanged": true,
+    "copyFields3Through8Unchanged": true,
+    "supplementsUnchanged": true,
+    "unresolvedTextIssues": [],
+    "reviewBoundary": "One article and one field-name typo only. This does not certify all hex-002 articles as expanded, convert the legacy V5.0 receipt into a human review, close existing interpretation questions, or validate real-world predictions.",
+    "humanProfessionalReview": "pending",
+    "timingInterpretation": "pending",
+    "userAcceptedThisVersion": false,
+    "realWorldPredictionAccuracy": "not-validated",
+    "repositoryFilesModifiedByReviewer": false
+  },
+  "rebuiltAndChecked": {
+    "buildCommand": "node scripts/build-promotion-pay.mjs lost-object-recovery",
+    "checkCommand": "node scripts/review/check-lost-object-polish.mjs --json docs/lost-object-recovery/POLISH_CHECKS_20261120.json --questions-md docs/lost-object-recovery/RULE_QUESTIONS_20261120.md",
+    "status": "passed",
+    "comparisons": 27735,
+    "chartComparisons": 13824,
+    "dateCases": 1620,
+    "errors": 0,
+    "warnings": 0,
+    "integrationTest": "First batch passed; no code or behavioral change in this one-character follow-up, so not repeated."
+  },
+  "legacyReceiptBoundary": "旧V5.0正文摘要不含field9；旧签收及其时间均保持，不借此纠错把前37卦重新标为本次扩写或真人审核。",
+  "humanProfessionalReview": "pending",
+  "userAcceptedThisVersion": false,
+  "realWorldPredictionAccuracy": "not-validated"
+}
