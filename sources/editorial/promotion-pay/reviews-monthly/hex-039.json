@@ -5267,7 +5267,8 @@
         6
       ],
       "issue": "作者AI全文读回和结构门禁不等于真人专业审校、用户逐篇验收或现实预测准确率验证。",
-      "handling": "作者72、独立AI已确认12、其余独立60待审分开记录；用户验收为false，现实效度not-validated。"
+      "handling": "旧handling所记12篇独审、60篇待审是前期阶段。最终independentReview及releaseVerification已记录72篇、30组独立AI覆盖，40篇原全文版不变、32篇由原全文与完整变化字段覆盖；本次只核对记录一致性，不另称全文阅读。真人专业审校、用户逐篇验收及现实效度验证仍未完成。",
+      "earlierStageHandling": "作者72、独立AI已确认12、其余独立60待审分开记录；用户验收为false，现实效度not-validated。"
     }
   ],
   "quantitativeSummary": {
@@ -6015,5 +6016,20 @@
     "chartMismatches": 0,
     "dateCases": 144,
     "scannerOrThresholdChanged": false
+  },
+  "supplementalSourceReview": {
+    "reviewer": "/root (workspace c0e55f4033b3)",
+    "reviewerIsHuman": false,
+    "workDate": "2026-11-21",
+    "workTimezone": "America/New_York",
+    "scope": "实际阅读四库本卷七蹇卦经疏相关完整上下文，对校西南順位、平易之方；本次补核为古籍录文字，不是main版72篇再次全文阅读。",
+    "sourceUrl": "https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷07",
+    "originalReading": "西南险位，平易之方",
+    "verifiedReading": "西南顺位，平易之方",
+    "status": "resolved-transcription-with-cited-edition",
+    "rawSourceSnapshotChanged": false,
+    "monthlyManuscriptChanged": false,
+    "separateReviewedAlternativeCommit": "eeb1e666498da294ba3797ff3e4acb92d4c742e1",
+    "versionBoundary": "该另稿的独立全文审读记录只适用于另稿，未移植到main版文章。"
   }
 }
