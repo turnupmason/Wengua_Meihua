@@ -2,19 +2,19 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-3960-20261122",
+  "batch": "promotion-pay-monthly-preview-4104-20261122",
   "publicationDate": "2026-11-22",
   "publicationTimeZone": "America/Denver",
   "scope": "copy-preview-only",
-  "uploadedArticles": 3960,
+  "uploadedArticles": 4104,
   "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    54,
-    55
+    56,
+    57
   ],
   "fullTarget": 4608,
-  "remainingArticles": 648,
-  "authorWholeArticleReadback": 3960,
+  "remainingArticles": 504,
+  "authorWholeArticleReadback": 4104,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -785,6 +785,34 @@
         "favourable": 24,
         "difficult": 48
       }
+    },
+    {
+      "primaryId": 56,
+      "name": "火山旅",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-056.json",
+      "sourceSha256": "6ac3e168e45f04b20ba59b834e8003e7989677fe4b8abeef465e4256852fb000",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-056.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-056.md",
+      "outcomes": {
+        "favourable": 12,
+        "difficult": 60
+      }
+    },
+    {
+      "primaryId": 57,
+      "name": "巽为风",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-057.json",
+      "sourceSha256": "4275c199639f80e560643de2d9e751a3fc2af9124891525cb4e56def0e0554d5",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-057.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-057.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -799,22 +827,22 @@
       76,
       112
     ],
-    "independentChartComparisons": 106920,
+    "independentChartComparisons": 110808,
     "independentChartMismatches": 0,
-    "dateCases": 7920,
-    "judgmentCorrectionArticles": 3530,
+    "dateCases": 8208,
+    "judgmentCorrectionArticles": 3674,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 3960
+    "payCorrectionArticles": 4104
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 25,
-    "open-priority": 74,
+    "open-priority": 77,
     "corrected-unsupported-scenes": 9,
-    "corrected-classical-application": 18,
+    "corrected-classical-application": 19,
     "fixed-documentation-conflict": 3,
     "corrected-unsupported-pay-assumptions": 1,
     "corrected-reader-language": 1,
@@ -908,7 +936,10 @@
     "open-source-boundary": 1,
     "resolved-in-exact-changes": 1,
     "resolved-independent-reviewed": 4,
-    "open-commentary-divergence": 1
+    "open-commentary-divergence": 1,
+    "corrected-classical-interpretation": 1,
+    "documented-rule-boundary": 1,
+    "author-revised-independent-diff-read": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -1355,6 +1386,22 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "每爻独立阅读范围及精确版本绑定嵌入lineReviews.independentReview；初九、九四、六五为原完整全文加后续完整差异，六二、九三及上六直接阅读全文，均已通过。不把程序比较计作额外全读。"
+    },
+    {
+      "primaryId": 56,
+      "sourceSha256": "6ac3e168e45f04b20ba59b834e8003e7989677fe4b8abeef465e4256852fb000",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "前五爻原全文与全部返改有历史独审链；上九本轮12篇原全文与5气技术实读，随后12末段由该读者补写并交另一AI完整旧新差异审读。各自身份与范围分开，不由补写者自签新句独审。 最后午月第二段由协调者改写，classical_sources 独立读完完整旧新并接受。"
+    },
+    {
+      "primaryId": 57,
+      "sourceSha256": "4275c199639f80e560643de2d9e751a3fc2af9124891525cb4e56def0e0554d5",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "历史前五爻各12篇与五气完整实读，第一、二、五爻返改均有完整差异复审。上九另一AI实际全文读12篇和五气，再逐项读补小象十二末段；最后十一字段去重复另作差异复审，不虚称再次全篇阅读。"
     }
   ],
   "independentHumanReview": "pending"
