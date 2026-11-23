@@ -2,6 +2,8 @@
 
 已发布 **4,164 / 4,608 篇**。前五十七卦已齐。兑为泽已写到九五，下一组为上六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
+判断的对象是现职能否持续。现实中可观察自己是否进入长期安排、能否及时获得相关信息和资源，贡献是否被明确承认，主管是否持续沟通，职责与绩效、奖金或发展机会是否实际兑现。涉及组织决定，以已有沟通、正式安排及可核实的记录为依据。
+
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
 | [乾为天 · 初九](hex-001.md#初九动--寅月) | 12 | 481–525 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
@@ -346,7 +348,7 @@
 | [巽为风 · 六四](hex-057.md#六四动--寅月) | 12 | 486–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-057.json) |
 | [巽为风 · 九五](hex-057.md#九五动--寅月) | 12 | 491–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-057.json) |
 | [巽为风 · 上九](hex-057.md#上九动--寅月) | 12 | 492–520 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-057.json) |
-| [兑为泽 · 初九](hex-058.md#初九动--寅月) | 12 | 504–557 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
+| [兑为泽 · 初九](hex-058.md#初九动--寅月) | 12 | 495–521 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 | [兑为泽 · 九二](hex-058.md#九二动--寅月) | 12 | 514–561 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 | [兑为泽 · 六三](hex-058.md#六三动--寅月) | 12 | 484–524 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 | [兑为泽 · 九四](hex-058.md#九四动--寅月) | 12 | 499–545 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
