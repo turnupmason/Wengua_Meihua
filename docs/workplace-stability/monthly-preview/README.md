@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,196 / 4,608 篇**。前三十卦已齐。泽山咸初六至九三已发布，下一组为九四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,208 / 4,608 篇**。前三十卦已齐。泽山咸初六至九四已发布，下一组为九五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -187,6 +187,7 @@
 | [泽山咸 · 初六](hex-031.md#初六动--寅月) | 12 | 487–542 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-031.json) |
 | [泽山咸 · 六二](hex-031.md#六二动--寅月) | 12 | 476–530 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-031.json) |
 | [泽山咸 · 九三](hex-031.md#九三动--寅月) | 12 | 492–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-031.json) |
+| [泽山咸 · 九四](hex-031.md#九四动--寅月) | 12 | 495–521 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-031.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
