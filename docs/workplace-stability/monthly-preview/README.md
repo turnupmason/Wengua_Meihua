@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **3,000 / 4,608 篇**。前四十一卦已齐。风雷益已写到六四，下一组为九五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **3,012 / 4,608 篇**。前四十一卦已齐。风雷益已写到九五，下一组为上九。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -254,6 +254,7 @@
 | [风雷益 · 六二](hex-042.md#六二动--寅月) | 12 | 508–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-042.json) |
 | [风雷益 · 六三](hex-042.md#六三动--寅月) | 12 | 497–546 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-042.json) |
 | [风雷益 · 六四](hex-042.md#六四动--寅月) | 12 | 497–528 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-042.json) |
+| [风雷益 · 九五](hex-042.md#九五动--寅月) | 12 | 490–540 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-042.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
