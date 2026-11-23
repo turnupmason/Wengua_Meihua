@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,664 / 4,608 篇**。前三十七卦已齐。下一组为火泽睽初九。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,676 / 4,608 篇**。前三十七卦已齐。火泽睽初九已发布，下一组为九二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -226,6 +226,7 @@
 | [风火家人 · 六四](hex-037.md#六四动--寅月) | 12 | 505–549 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-037.json) |
 | [风火家人 · 九五](hex-037.md#九五动--寅月) | 12 | 513–527 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-037.json) |
 | [风火家人 · 上九](hex-037.md#上九动--寅月) | 12 | 507–535 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-037.json) |
+| [火泽睽 · 初九](hex-038.md#初九动--寅月) | 12 | 503–542 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-038.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
