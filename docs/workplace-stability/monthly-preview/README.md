@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **3,708 / 4,608 篇**。前五十一卦已齐。艮为山已写到九三，下一组为六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **3,720 / 4,608 篇**。前五十一卦已齐。艮为山已写到六四，下一组为六五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -313,6 +313,7 @@
 | [艮为山 · 初六](hex-052.md#初六动--寅月) | 12 | 515–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 六二](hex-052.md#六二动--寅月) | 12 | 523–545 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 九三](hex-052.md#九三动--寅月) | 12 | 521–553 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
+| [艮为山 · 六四](hex-052.md#六四动--寅月) | 12 | 516–542 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
