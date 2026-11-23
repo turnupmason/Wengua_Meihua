@@ -2,7 +2,7 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 2520 / 4,608 篇，35 / 64 卦；尚余 2088 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 2592 / 4,608 篇，36 / 64 卦；尚余 2016 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
@@ -29,6 +29,7 @@
 | [017 泽雷随](hex-017.md) | 72 | 500–538 | 489–534 | 507.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-017.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-017.json) |
 | [018 山风蛊](hex-018.md) | 72 | 500–524 | 493–520 | 505 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-018.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-018.json) |
 | [019 地泽临](hex-019.md) | 72 | 501–560 | 496–556 | 535 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-019.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-019.json) |
+| [022 山火贲](hex-022.md) | 72 | 500–538 | 488–534 | 514 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-022.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-022.json) |
 | [027 山雷颐](hex-027.md) | 72 | 502–559 | 493–551 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-027.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-027.json) |
 | [028 泽风大过](hex-028.md) | 72 | 517–570 | 511–563 | 545 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-028.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-028.json) |
 | [029 坎为水](hex-029.md) | 72 | 561–626 | 554–614 | 593 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-029.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-029.json) |
@@ -50,7 +51,7 @@
 
 正文采用完整自然段，不套同一种开头。表中“正文汉字范围”统计正文段落，包含段内用于论证的短引；另列去除中文引号内全部文字后的字数，使引用所占篇幅可核对。正文总字数按既定 500–650 汉字目标检查，解释是否充实仍须实际阅读。方位、安危、原因、应期、独立列示的原文和审计均另计。正反证都保留：有生扶便说明其作用，有克制便解释轻重，不靠一个“吉”“凶”字代替全盘。相同五态的月份保持判断依据一致，文字仍逐月成篇。
 
-本用代表失联者，体代表寻找与核实一方。得到转述、收到本人回复、确认所在地、实际寻获与归家分别处理。方位是传统类象，安危与原因是传统推断，均不能充当已经核实的现实消息。
+本用代表失联者，体代表寻找与核实一方。可靠核实本人身份与当前所在地，或实际见到本人，即可认定寻获；返家、持续回复与解释缘由不增加为条件。安危在查找时同步核实，方位、处境与原因的传统推断均不能充当已经核实的现实消息。
 
 应期以 **2026-11-21** 演示具体候选日期；月份是显式月令输入，并非声称十二个月都发生在该日。实际起卦须重新换算。不足以取日的篇目说明原因，不补造“确定联系日”。遇真实异常失联或即时危险迹象，及时寻求当地警方或紧急服务协助，不等待候选日。
 

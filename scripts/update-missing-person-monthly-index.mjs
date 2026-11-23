@@ -13,6 +13,7 @@ for(const id of await listIds()){
 if(rows.length){
  const checked=await auditMissingMonthly({ids:rows.map(r=>r.primaryId),docs:true,requireSecond:true});
  if(checked.errors.length)throw new Error('Index cannot credit unverified articles: '+JSON.stringify(checked.errors.slice(0,10)));
+ await writeFile(`${DOC_DIR}/CHECKS.json`,JSON.stringify(checked,null,2)+'\n');
 }
 const completed=rows.reduce((n,r)=>n+r.articles,0),missing=Array.from({length:64},(_,i)=>i+1).filter(id=>!rows.some(r=>r.primaryId===id));
 const progress={schemaVersion:'1.0.0',scopeVersion:SCOPE,questionId:QUESTION_ID,plannedArticles:4608,completedArticles:completed,remainingArticles:4608-completed,completeHexagrams:rows.map(r=>r.primaryId),remainingHexagrams:missing,independentlyWrittenMonthlyArticles:completed,legacyFiveQiArticles:1920,legacyContactLongFormArticlesCountedInThisPreview:0,legacyCountsUsedAsNewProgress:false,rows,runtimeIntegrated:false,independentHumanReview:'pending',userIndividuallyAccepted:false,realWorldPredictionAccuracy:'not-validated'};
@@ -27,7 +28,7 @@ const out=['# 失联寻人：逐月长稿预览',
  ...rows.map(r=>`| [${String(r.primaryId).padStart(3,'0')} ${r.name}](${stem(r.primaryId)}.md) | ${r.articles} | ${r.bodyHanRange.join('–')} | ${r.bodyHanExcludingQuotesRange.join('–')} | ${r.medianBodyHan} | [首轮编辑](../../../${REVIEW_DIR}/${stem(r.primaryId)}.json) · [第二读者](../../../${SECOND_REVIEW_DIR}/${stem(r.primaryId)}.json) |`),
  '## 本轮的写作与判读',
  '正文采用完整自然段，不套同一种开头。表中“正文汉字范围”统计正文段落，包含段内用于论证的短引；另列去除中文引号内全部文字后的字数，使引用所占篇幅可核对。正文总字数按既定 500–650 汉字目标检查，解释是否充实仍须实际阅读。方位、安危、原因、应期、独立列示的原文和审计均另计。正反证都保留：有生扶便说明其作用，有克制便解释轻重，不靠一个“吉”“凶”字代替全盘。相同五态的月份保持判断依据一致，文字仍逐月成篇。',
- '本用代表失联者，体代表寻找与核实一方。得到转述、收到本人回复、确认所在地、实际寻获与归家分别处理。方位是传统类象，安危与原因是传统推断，均不能充当已经核实的现实消息。',
+ '本用代表失联者，体代表寻找与核实一方。可靠核实本人身份与当前所在地，或实际见到本人，即可认定寻获；返家、持续回复与解释缘由不增加为条件。安危在查找时同步核实，方位、处境与原因的传统推断均不能充当已经核实的现实消息。',
  `应期以 **${DEMO_DATE}** 演示具体候选日期；月份是显式月令输入，并非声称十二个月都发生在该日。实际起卦须重新换算。不足以取日的篇目说明原因，不补造“确定联系日”。遇真实异常失联或即时危险迹象，及时寻求当地警方或紧急服务协助，不等待候选日。`,
  '## 来源与状态',
  '- 文风参考：[指定面试分支](https://github.com/turnupmason/Wengua_Meihua/tree/editorial/interview-preview-216-20261118/docs/interview-pass/monthly-preview)、[确定关系篇](../../relationship-establishment/monthly-preview/README.md)。',

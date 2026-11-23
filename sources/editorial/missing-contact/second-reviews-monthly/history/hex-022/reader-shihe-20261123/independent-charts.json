@@ -1,0 +1,1449 @@
+{
+  "method": "独立二读前手排101001及互010100、六变；独立使用八卦位码和五行关系复算并封存，不调用仓库排盘或关系函数。",
+  "primaryBits": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+  ],
+  "mutualBits": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+  ],
+  "charts": [
+    {
+      "movingLine": 1,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "stageIds": [
+        22,
+        40,
+        52
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "艮",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "艮",
+          "toTrigram": "艮",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    },
+    {
+      "movingLine": 2,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "stageIds": [
+        22,
+        40,
+        26
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "乾",
+          "element": "金"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "乾",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "乾",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "乾",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "乾",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "乾",
+          "toTrigram": "艮",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "乾",
+          "toTrigram": "离",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "乾",
+          "toTrigram": "震",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "乾",
+          "toTrigram": "坎",
+          "relation": "生"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    },
+    {
+      "movingLine": 3,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "stageIds": [
+        22,
+        40,
+        27
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "震",
+          "element": "木"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "震",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "震",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    },
+    {
+      "movingLine": 4,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "stageIds": [
+        22,
+        40,
+        30
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "use",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "离",
+          "element": "火"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "离",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "离",
+          "toTrigram": "离",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    },
+    {
+      "movingLine": 5,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "stageIds": [
+        22,
+        40,
+        37
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "use",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "巽",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "巽",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "巽",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "巽",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "巽",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "巽",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "巽",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "巽",
+          "toTrigram": "震",
+          "relation": "比和"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    },
+    {
+      "movingLine": 6,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mutualBits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "changedBits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "stageIds": [
+        22,
+        40,
+        36
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火"
+        },
+        {
+          "role": "use",
+          "trigram": "艮",
+          "element": "土"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "震",
+          "element": "木"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土"
+        }
+      ],
+      "allDirectedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "fromTrigram": "离",
+          "toTrigram": "艮",
+          "relation": "生"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "坎",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "fromTrigram": "离",
+          "toTrigram": "震",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "fromTrigram": "离",
+          "toTrigram": "坤",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "fromTrigram": "艮",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "fromTrigram": "艮",
+          "toTrigram": "震",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "fromTrigram": "艮",
+          "toTrigram": "坤",
+          "relation": "比和"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "fromTrigram": "坎",
+          "toTrigram": "离",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "fromTrigram": "坎",
+          "toTrigram": "艮",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "fromTrigram": "坎",
+          "toTrigram": "震",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "fromTrigram": "坎",
+          "toTrigram": "坤",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "fromTrigram": "震",
+          "toTrigram": "离",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "fromTrigram": "震",
+          "toTrigram": "艮",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "fromTrigram": "震",
+          "toTrigram": "坎",
+          "relation": "受生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "fromTrigram": "震",
+          "toTrigram": "坤",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "fromTrigram": "坤",
+          "toTrigram": "离",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "fromTrigram": "坤",
+          "toTrigram": "艮",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "fromTrigram": "坤",
+          "toTrigram": "坎",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "fromTrigram": "坤",
+          "toTrigram": "震",
+          "relation": "受克"
+        }
+      ],
+      "states": {
+        "spring": {
+          "木": "旺",
+          "火": "相",
+          "土": "死",
+          "金": "囚",
+          "水": "休"
+        },
+        "summer": {
+          "木": "休",
+          "火": "旺",
+          "土": "相",
+          "金": "死",
+          "水": "囚"
+        },
+        "earth": {
+          "木": "囚",
+          "火": "休",
+          "土": "旺",
+          "金": "相",
+          "水": "死"
+        },
+        "autumn": {
+          "木": "死",
+          "火": "囚",
+          "土": "休",
+          "金": "旺",
+          "水": "相"
+        },
+        "winter": {
+          "木": "相",
+          "火": "死",
+          "土": "囚",
+          "金": "休",
+          "水": "旺"
+        }
+      }
+    }
+  ]
+}
