@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **1,224 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否、同人、大有、谦、豫、随十七卦已齐。下一组为山风蛊初六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **1,236 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否、同人、大有、谦、豫、随十七卦已齐。山风蛊初六已发布，下一组为九二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -106,6 +106,8 @@
 | [泽雷随 · 九四](hex-017.md#九四动--寅月) | 12 | 481–515 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-017.json) |
 | [泽雷随 · 九五](hex-017.md#九五动--寅月) | 12 | 484–523 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-017.json) |
 | [泽雷随 · 上六](hex-017.md#上六动--寅月) | 12 | 475–501 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-017.json) |
+
+| [山风蛊 · 初六](hex-018.md#初六动--寅月) | 12 | 498–531 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
