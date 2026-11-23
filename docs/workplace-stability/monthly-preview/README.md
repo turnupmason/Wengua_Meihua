@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,148 / 4,608 篇**。前二十九卦已齐。离为火初九至六五已发布，下一组为上九。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,160 / 4,608 篇**。前三十卦逐月稿已齐，下一组为泽山咸初六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -183,6 +183,7 @@
 | [离为火 · 九三](hex-030.md#九三动--寅月) | 12 | 497–523 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-030.json) |
 | [离为火 · 九四](hex-030.md#九四动--寅月) | 12 | 502–541 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-030.json) |
 | [离为火 · 六五](hex-030.md#六五动--寅月) | 12 | 478–524 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-030.json) |
+| [离为火 · 上九](hex-030.md#上九动--寅月) | 12 | 492–519 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-030.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
