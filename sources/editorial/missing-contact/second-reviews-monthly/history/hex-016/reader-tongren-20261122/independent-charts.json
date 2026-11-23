@@ -1,0 +1,836 @@
+{
+  "primaryId": 16,
+  "editor": "/root/write_tongren_013",
+  "method": "先按阴阳位串手排本卦及六个变卦，再独立手列体用角色与五行；关系由此处独立五行生克表枚举，未调用项目取卦/体用/关系函数。此文件只记复盘，不预签正文阅读。",
+  "bitsBottomUp": "000100",
+  "mutualBitsBottomUp": "001010",
+  "mutualId": 39,
+  "mutualName": "水山蹇",
+  "charts": [
+    {
+      "movingLine": 1,
+      "changedBitsBottomUp": "100100",
+      "changedId": 51,
+      "changedName": "震为雷",
+      "roles": {
+        "body": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "use": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "body_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "use_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "changed_use": {
+          "trigram": "震",
+          "element": "木"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "克"
+        }
+      ]
+    },
+    {
+      "movingLine": 2,
+      "changedBitsBottomUp": "010100",
+      "changedId": 40,
+      "changedName": "雷水解",
+      "roles": {
+        "body": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "use": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "body_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "use_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "changed_use": {
+          "trigram": "坎",
+          "element": "水"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "受克"
+        }
+      ]
+    },
+    {
+      "movingLine": 3,
+      "changedBitsBottomUp": "001100",
+      "changedId": 62,
+      "changedName": "雷山小过",
+      "roles": {
+        "body": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "use": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "body_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "use_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "changed_use": {
+          "trigram": "艮",
+          "element": "土"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "比和"
+        }
+      ]
+    },
+    {
+      "movingLine": 4,
+      "changedBitsBottomUp": "000000",
+      "changedId": 2,
+      "changedName": "坤为地",
+      "roles": {
+        "body": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "use": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "body_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "use_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "changed_use": {
+          "trigram": "坤",
+          "element": "土"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "比和"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "比和"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "克"
+        }
+      ]
+    },
+    {
+      "movingLine": 5,
+      "changedBitsBottomUp": "000110",
+      "changedId": 45,
+      "changedName": "泽地萃",
+      "roles": {
+        "body": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "use": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "body_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "use_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "changed_use": {
+          "trigram": "兑",
+          "element": "金"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "比和"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "生"
+        }
+      ]
+    },
+    {
+      "movingLine": 6,
+      "changedBitsBottomUp": "000101",
+      "changedId": 35,
+      "changedName": "火地晋",
+      "roles": {
+        "body": {
+          "trigram": "坤",
+          "element": "土"
+        },
+        "use": {
+          "trigram": "震",
+          "element": "木"
+        },
+        "body_mutual": {
+          "trigram": "艮",
+          "element": "土"
+        },
+        "use_mutual": {
+          "trigram": "坎",
+          "element": "水"
+        },
+        "changed_use": {
+          "trigram": "离",
+          "element": "火"
+        }
+      },
+      "directedRelations": [
+        {
+          "from": "body",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body",
+          "to": "body_mutual",
+          "relation": "比和"
+        },
+        {
+          "from": "body",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body",
+          "to": "changed_use",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "body",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "body_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "use",
+          "to": "use_mutual",
+          "relation": "受生"
+        },
+        {
+          "from": "use",
+          "to": "changed_use",
+          "relation": "生"
+        },
+        {
+          "from": "body_mutual",
+          "to": "body",
+          "relation": "比和"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use",
+          "relation": "受克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "use_mutual",
+          "relation": "克"
+        },
+        {
+          "from": "body_mutual",
+          "to": "changed_use",
+          "relation": "受生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "use",
+          "relation": "生"
+        },
+        {
+          "from": "use_mutual",
+          "to": "body_mutual",
+          "relation": "受克"
+        },
+        {
+          "from": "use_mutual",
+          "to": "changed_use",
+          "relation": "克"
+        },
+        {
+          "from": "changed_use",
+          "to": "body",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use",
+          "relation": "受生"
+        },
+        {
+          "from": "changed_use",
+          "to": "body_mutual",
+          "relation": "生"
+        },
+        {
+          "from": "changed_use",
+          "to": "use_mutual",
+          "relation": "受克"
+        }
+      ]
+    }
+  ],
+  "seasonalElements": {
+    "寅卯": {
+      "木": "旺",
+      "火": "相",
+      "土": "死",
+      "金": "囚",
+      "水": "休"
+    },
+    "巳午": {
+      "木": "休",
+      "火": "旺",
+      "土": "相",
+      "金": "死",
+      "水": "囚"
+    },
+    "辰未戌丑": {
+      "木": "囚",
+      "火": "休",
+      "土": "旺",
+      "金": "相",
+      "水": "死"
+    },
+    "申酉": {
+      "木": "死",
+      "火": "囚",
+      "土": "休",
+      "金": "旺",
+      "水": "相"
+    },
+    "亥子": {
+      "木": "相",
+      "火": "死",
+      "土": "囚",
+      "金": "休",
+      "水": "旺"
+    }
+  },
+  "sourceEvidence": {
+    "path": "sources/reference/zhouyi-zhengyi-hans/02豫.txt",
+    "localFileSha256": "fc093089bb12043fd96791547ac168e8771f8b5ebb6b118440fafe7484cf212c",
+    "revision": "7904495",
+    "variant": "zh-hans",
+    "readScope": "本轮开始豫第二读时完整输出并实际阅读卦辞彖象、六爻经文、王弼注与孔颖达疏，未声称读原刻影印。"
+  },
+  "derivedAt": "2026-11-22T21:15:08.009602+00:00"
+}
