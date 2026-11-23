@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **3,636 / 4,608 篇**。前五十卦已齐。震为雷已写到六三，下一组为九四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **3,648 / 4,608 篇**。前五十卦已齐。震为雷已写到九四，下一组为六五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -307,6 +307,7 @@
 | [震为雷 · 初九](hex-051.md#初九动--寅月) | 12 | 522–548 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-051.json) |
 | [震为雷 · 六二](hex-051.md#六二动--寅月) | 12 | 527–553 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-051.json) |
 | [震为雷 · 六三](hex-051.md#六三动--寅月) | 12 | 507–540 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-051.json) |
+| [震为雷 · 九四](hex-051.md#九四动--寅月) | 12 | 512–544 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-051.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
