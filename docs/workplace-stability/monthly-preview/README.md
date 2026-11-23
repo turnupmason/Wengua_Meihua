@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **3,768 / 4,608 篇**。前五十二卦已齐。风山渐已写到六二，下一组为九三。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **3,780 / 4,608 篇**。前五十二卦已齐。风山渐已写到九三，下一组为六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -318,6 +318,7 @@
 | [艮为山 · 上九](hex-052.md#上九动--寅月) | 12 | 511–560 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [风山渐 · 初六](hex-053.md#初六动--寅月) | 12 | 522–544 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-053.json) |
 | [风山渐 · 六二](hex-053.md#六二动--寅月) | 12 | 513–536 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-053.json) |
+| [风山渐 · 九三](hex-053.md#九三动--寅月) | 12 | 526–563 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-053.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
