@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **1,800 / 4,608 篇**。前二十五卦已齐，下一组为山天大畜初九。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **1,812 / 4,608 篇**。前二十五卦已齐。山天大畜初九已发布，下一组为九二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -154,6 +154,7 @@
 | [天雷无妄 · 九四](hex-025.md#九四动--寅月) | 12 | 485–527 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-025.json) |
 | [天雷无妄 · 九五](hex-025.md#九五动--寅月) | 12 | 480–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-025.json) |
 | [天雷无妄 · 上九](hex-025.md#上九动--寅月) | 12 | 493–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-025.json) |
+| [山天大畜 · 初九](hex-026.md#初九动--寅月) | 12 | 493–528 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-026.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
