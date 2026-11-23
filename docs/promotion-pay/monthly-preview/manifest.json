@@ -2,18 +2,19 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-3816-20261122",
+  "batch": "promotion-pay-monthly-preview-3960-20261122",
   "publicationDate": "2026-11-22",
-  "publicationTimeZone": "America/New_York",
+  "publicationTimeZone": "America/Denver",
   "scope": "copy-preview-only",
-  "uploadedArticles": 3816,
-  "newArticlesSincePrevious": 72,
+  "uploadedArticles": 3960,
+  "newArticlesSincePrevious": 144,
   "newHexagrams": [
-    53
+    54,
+    55
   ],
   "fullTarget": 4608,
-  "remainingArticles": 792,
-  "authorWholeArticleReadback": 3816,
+  "remainingArticles": 648,
+  "authorWholeArticleReadback": 3960,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -756,6 +757,34 @@
         "favourable": 12,
         "difficult": 60
       }
+    },
+    {
+      "primaryId": 54,
+      "name": "雷泽归妹",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-054.json",
+      "sourceSha256": "4c026d557aba1c62a46767538bdaedfe4e11840f42d0b1c69468e71af3451c77",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-054.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-054.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
+    },
+    {
+      "primaryId": 55,
+      "name": "雷火丰",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-055.json",
+      "sourceSha256": "47816b6f63624e983e56b907f52672691fc015962cc3d4889b373aa0dbc529c1",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-055.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-055.md",
+      "outcomes": {
+        "favourable": 24,
+        "difficult": 48
+      }
     }
   ],
   "checks": {
@@ -770,16 +799,16 @@
       76,
       112
     ],
-    "independentChartComparisons": 103032,
+    "independentChartComparisons": 106920,
     "independentChartMismatches": 0,
-    "dateCases": 7632,
-    "judgmentCorrectionArticles": 3386,
+    "dateCases": 7920,
+    "judgmentCorrectionArticles": 3530,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 3816
+    "payCorrectionArticles": 3960
   },
   "ruleFindingStatuses": {
     "interpreted-with-limits": 25,
@@ -1310,6 +1339,22 @@
       "currentRevisionFullTextReadCount": 69,
       "currentRevisionChangedArticleReadCount": 3,
       "scope": "各爻原独审回执保留实际全文、五气技术及后续完整变化阅读范围；全文阅读与变化阅读分别登记，机械回放不计新读。六四后续仅审计理由变化，公开全文仍与独审初读同版。"
+    },
+    {
+      "primaryId": 54,
+      "sourceSha256": "4c026d557aba1c62a46767538bdaedfe4e11840f42d0b1c69468e71af3451c77",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": 52,
+      "currentRevisionChangedArticleReadCount": 20,
+      "scope": "每爻冻结稿与技术组由不同AI实际完整阅读；初九18个完整旧新段、九四1个完整旧新段及门禁返修8个完整旧新段另实读，其余字段逐值核对未变。最终范围以逐爻原回执为准，不把装配和校验算作新的阅读。 独审首次全文冻结版与当前整篇对象逐值比较：52篇全文同版，20篇由首次全文加完整旧新段落复读覆盖；这两个数字仅说明当前版本覆盖方式，不新增阅读计数。"
+    },
+    {
+      "primaryId": 55,
+      "sourceSha256": "47816b6f63624e983e56b907f52672691fc015962cc3d4889b373aa0dbc529c1",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "每爻独立阅读范围及精确版本绑定嵌入lineReviews.independentReview；初九、九四、六五为原完整全文加后续完整差异，六二、九三及上六直接阅读全文，均已通过。不把程序比较计作额外全读。"
     }
   ],
   "independentHumanReview": "pending"
