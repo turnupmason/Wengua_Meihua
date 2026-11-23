@@ -2,19 +2,18 @@
   "schemaVersion": "1.0.0",
   "item": "promotion-pay",
   "questionId": "career.promotion-pay.promotion",
-  "batch": "promotion-pay-monthly-preview-4104-20261122",
+  "batch": "promotion-pay-monthly-preview-4176-20261122",
   "publicationDate": "2026-11-22",
   "publicationTimeZone": "America/Denver",
   "scope": "copy-preview-only",
-  "uploadedArticles": 4104,
-  "newArticlesSincePrevious": 144,
+  "uploadedArticles": 4176,
+  "newArticlesSincePrevious": 72,
   "newHexagrams": [
-    56,
-    57
+    58
   ],
   "fullTarget": 4608,
-  "remainingArticles": 504,
-  "authorWholeArticleReadback": 4104,
+  "remainingArticles": 432,
+  "authorWholeArticleReadback": 4176,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -813,6 +812,20 @@
         "favourable": 0,
         "difficult": 72
       }
+    },
+    {
+      "primaryId": 58,
+      "name": "兑为泽",
+      "articles": 72,
+      "fullArticleReadback": 72,
+      "sourcePath": "sources/editorial/promotion-pay/monthly/hex-058.json",
+      "sourceSha256": "a6b1dcf0a95e7e887814a2a9fee12a61681ae8956aec84b1bccaf87af782ae70",
+      "receiptPath": "sources/editorial/promotion-pay/reviews-monthly/hex-058.json",
+      "readingPath": "docs/promotion-pay/monthly-preview/hex-058.md",
+      "outcomes": {
+        "favourable": 0,
+        "difficult": 72
+      }
     }
   ],
   "checks": {
@@ -827,23 +840,23 @@
       76,
       112
     ],
-    "independentChartComparisons": 110808,
+    "independentChartComparisons": 112752,
     "independentChartMismatches": 0,
-    "dateCases": 8208,
-    "judgmentCorrectionArticles": 3674,
+    "dateCases": 8352,
+    "judgmentCorrectionArticles": 3746,
     "machineReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json",
     "payHanRange": [
       29,
       67
     ],
-    "payCorrectionArticles": 4104
+    "payCorrectionArticles": 4176
   },
   "ruleFindingStatuses": {
-    "interpreted-with-limits": 25,
-    "open-priority": 77,
-    "corrected-unsupported-scenes": 9,
-    "corrected-classical-application": 19,
-    "fixed-documentation-conflict": 3,
+    "interpreted-with-limits": 27,
+    "open-priority": 79,
+    "corrected-unsupported-scenes": 10,
+    "corrected-classical-application": 23,
+    "fixed-documentation-conflict": 4,
     "corrected-unsupported-pay-assumptions": 1,
     "corrected-reader-language": 1,
     "author-fixed-delta-read": 4,
@@ -939,7 +952,8 @@
     "open-commentary-divergence": 1,
     "corrected-classical-interpretation": 1,
     "documented-rule-boundary": 1,
-    "author-revised-independent-diff-read": 1
+    "author-revised-independent-diff-read": 1,
+    "corrected-quotation-completeness": 1
   },
   "styleReference": "origin/editorial/interview-preview-216-20261118 docs/interview-pass/monthly-preview（用户批准的写作手法，2026-11-19）",
   "independentFullCopyReview": "ai-cross-reviewed-with-open-findings",
@@ -1402,6 +1416,14 @@
       "currentRevisionFullTextReadCount": null,
       "currentRevisionChangedArticleReadCount": null,
       "scope": "历史前五爻各12篇与五气完整实读，第一、二、五爻返改均有完整差异复审。上九另一AI实际全文读12篇和五气，再逐项读补小象十二末段；最后十一字段去重复另作差异复审，不虚称再次全篇阅读。"
+    },
+    {
+      "primaryId": 58,
+      "sourceSha256": "a6b1dcf0a95e7e887814a2a9fee12a61681ae8956aec84b1bccaf87af782ae70",
+      "wholeArticleCoverage": 72,
+      "currentRevisionFullTextReadCount": null,
+      "currentRevisionChangedArticleReadCount": null,
+      "scope": "逐爻十二篇全文与五气旧全包、新技术由独立代理实际读完；前四爻再补48完整小象段差异，九二/六三另有完整差异读回。各原hash与新hash及范围嵌入lineReviews，不重复增加全文计数。"
     }
   ],
   "independentHumanReview": "pending"
