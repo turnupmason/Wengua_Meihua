@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,748 / 4,608 篇**。前三十八卦已齐。水山蹇初六已发布，下一组为六二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,760 / 4,608 篇**。前三十八卦已齐。水山蹇初六、六二已发布，下一组为九三。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -233,6 +233,7 @@
 | [火泽睽 · 六五](hex-038.md#六五动--寅月) | 12 | 501–537 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-038.json) |
 | [火泽睽 · 上九](hex-038.md#上九动--寅月) | 12 | 499–541 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-038.json) |
 | [水山蹇 · 初六](hex-039.md#初六动--寅月) | 12 | 502–543 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-039.json) |
+| [水山蹇 · 六二](hex-039.md#六二动--寅月) | 12 | 510–536 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-039.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
