@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **3,984 / 4,608 篇**。前五十五卦已齐。火山旅已写到六二，下一组为九三。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **3,996 / 4,608 篇**。前五十五卦已齐。火山旅已写到九三，下一组为九四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -336,6 +336,7 @@
 | [雷火丰 · 上六](hex-055.md#上六动--寅月) | 12 | 474–513 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-055.json) |
 | [火山旅 · 初六](hex-056.md#初六动--寅月) | 12 | 522–570 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
 | [火山旅 · 六二](hex-056.md#六二动--寅月) | 12 | 494–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
+| [火山旅 · 九三](hex-056.md#九三动--寅月) | 12 | 482–520 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
