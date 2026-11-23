@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **1,692 / 4,608 篇**。乾、坤、屯、蒙、需、讼、师、比、小畜、履、泰、否、同人、大有、谦、豫、随、蛊、临、观、噬嗑、贲、剥二十三卦已齐。地雷复初九至六三已发布，下一组为六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **1,704 / 4,608 篇**。地雷复初九至六四已发布，下一组为六五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -145,6 +145,7 @@
 | [地雷复 · 初九](hex-024.md#初九动--寅月) | 12 | 492–529 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-024.json) |
 | [地雷复 · 六二](hex-024.md#六二动--寅月) | 12 | 473–530 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-024.json) |
 | [地雷复 · 六三](hex-024.md#六三动--寅月) | 12 | 491–527 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-024.json) |
+| [地雷复 · 六四](hex-024.md#六四动--寅月) | 12 | 494–550 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-024.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
