@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **4,032 / 4,608 篇**。前五十六卦已齐。下一卦为巽为风，从初六继续。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **4,044 / 4,608 篇**。前五十六卦已齐。巽为风已写到初六，下一组为九二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -340,6 +340,7 @@
 | [火山旅 · 九四](hex-056.md#九四动--寅月) | 12 | 501–521 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
 | [火山旅 · 六五](hex-056.md#六五动--寅月) | 12 | 487–519 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
 | [火山旅 · 上九](hex-056.md#上九动--寅月) | 12 | 504–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-056.json) |
+| [巽为风 · 初六](hex-057.md#初六动--寅月) | 12 | 520–562 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-057.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
