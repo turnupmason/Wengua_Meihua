@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,808 / 4,608 篇**。前三十九卦已齐。下一组为雷水解初六。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,820 / 4,608 篇**。前三十九卦已齐。雷水解初六已发布，下一组为九二。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -238,6 +238,7 @@
 | [水山蹇 · 六四](hex-039.md#六四动--寅月) | 12 | 509–547 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-039.json) |
 | [水山蹇 · 九五](hex-039.md#九五动--寅月) | 12 | 516–537 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-039.json) |
 | [水山蹇 · 上六](hex-039.md#上六动--寅月) | 12 | 510–535 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-039.json) |
+| [雷水解 · 初六](hex-040.md#初六动--寅月) | 12 | 515–548 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-040.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
