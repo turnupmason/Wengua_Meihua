@@ -118,7 +118,7 @@
 | [地泽临 · 六四](hex-019.md#六四动--寅月) | 12 | 499–543 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-019.json) |
 | [地泽临 · 六五](hex-019.md#六五动--寅月) | 12 | 476–507 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-019.json) |
 | [地泽临 · 上六](hex-019.md#上六动--寅月) | 12 | 474–531 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-019.json) |
-| [风地观 · 初六](hex-020.md#初六动--寅月) | 12 | 501–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-020.json) |
+| [风地观 · 初六](hex-020.md#初六动--寅月) | 12 | 501–537 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-020.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
