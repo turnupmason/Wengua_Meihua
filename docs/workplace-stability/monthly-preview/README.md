@@ -4,6 +4,8 @@
 
 判断的对象是现职能否持续。看主管是否把你纳入长期安排并给到相应信息、权限和资源，是否知道你的核心贡献和岗位需要的能力，是否愿意直接听你汇报、就事讨论问题，以及绩效评价、奖金、调薪和发展机会是否实际兑现。用持续可见的行为判断，分工及人事决定以明确的沟通和正式安排为准。
 
+已按这一标准重审 **36 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
+
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
 | [乾为天 · 初九](hex-001.md#初九动--寅月) | 12 | 481–525 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
@@ -352,7 +354,7 @@
 | [兑为泽 · 九二](hex-058.md#九二动--寅月) | 12 | 514–561 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 | [兑为泽 · 六三](hex-058.md#六三动--寅月) | 12 | 484–524 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 | [兑为泽 · 九四](hex-058.md#九四动--寅月) | 12 | 499–545 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
-| [兑为泽 · 九五](hex-058.md#九五动--寅月) | 12 | 526–559 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
+| [兑为泽 · 九五](hex-058.md#九五动--寅月) | 12 | 489–519 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-058.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
