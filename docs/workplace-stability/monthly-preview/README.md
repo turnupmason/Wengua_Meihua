@@ -1,6 +1,6 @@
 # 当前工作稳定性逐月长稿
 
-已发布 **2,052 / 4,608 篇**。前二十八卦已齐。坎为水初六至六三已发布，下一组为六四。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
+已发布 **2,064 / 4,608 篇**。前二十八卦已齐。坎为水初六至六四已发布，下一组为九五。正文回答眼下这份工作能否维持，以及岗位中断风险的传统倾向。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -175,6 +175,7 @@
 | [坎为水 · 初六](hex-029.md#初六动--寅月) | 12 | 486–529 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-029.json) |
 | [坎为水 · 九二](hex-029.md#九二动--寅月) | 12 | 486–540 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-029.json) |
 | [坎为水 · 六三](hex-029.md#六三动--寅月) | 12 | 490–524 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-029.json) |
+| [坎为水 · 六四](hex-029.md#六四动--寅月) | 12 | 481–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-029.json) |
 
 [分批规则审计](AUDIT.md) · [机器核查](CHECKS.json) · [乾卦五气版](../hex-001.md)
 
