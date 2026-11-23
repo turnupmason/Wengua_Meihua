@@ -6,7 +6,7 @@
 | --- | ---: | ---: | --- |
 | [乾为天 · 初九](hex-001.md#初九动--寅月) | 12 | 481–525 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
 | [乾为天 · 九二](hex-001.md#九二动--寅月) | 12 | 485–519 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
-| [乾为天 · 九三](hex-001.md#九三动--寅月) | 12 | 459–496 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
+| [乾为天 · 九三](hex-001.md#九三动--寅月) | 12 | 477–509 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
 | [乾为天 · 九四](hex-001.md#九四动--寅月) | 12 | 456–490 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
 | [乾为天 · 九五](hex-001.md#九五动--寅月) | 12 | 454–481 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
 | [乾为天 · 上九](hex-001.md#上九动--寅月) | 12 | 451–472 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-001.json) |
