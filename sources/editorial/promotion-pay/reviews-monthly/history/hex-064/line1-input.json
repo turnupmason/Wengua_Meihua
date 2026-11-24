@@ -1,0 +1,889 @@
+[
+  {
+    "index": 0,
+    "baseline": [
+      1,
+      "spring-wood",
+      "difficult",
+      "没探清水深就下了河",
+      "你底子不差，可申报前没把任职条件摸透：一开局就碰上学历层次的要求，晋升没落定，合规培训的记录又在评议中段被追问，两处都硬。末段那点事你倒压得住。",
+      "学历层次那条要求排在第一条，你事先没细看。",
+      "评议追问合规培训记录，你那一项去年漏报了。",
+      "收尾那件事你压住了。初六「濡其尾，吝」，过河没探深浅，尾巴先湿；小象「亦不知极也」，不知道底在哪里。",
+      "职级没动，两处条件没摸透。申报前把任职条件逐条对一遍，缺的先补。",
+      "离火为体，寅卯月相；本用、体互坎水皆休而克体，得变用兑金所生，克力有根，前后两处限定都硬；用互离火比和；变用兑金囚，受体所克。无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，判升不了。初六「濡其尾，吝」，吝在不知极，作提醒。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "评议追问那项合规培训记录",
+          "申报前把任职条件逐条对一遍。",
+          "休坎直接克离，取子观中段硬条件。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/1/spring-wood",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体而全盘无生体，一律为难（裁定第 3 条）。体相只缓其势，不转方向。旧稿判难，结论不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "求名占「用克体，名不可成」（553 行）",
+        "本用、体互两处坎水克体，得兑金生，按有力论（V2.1）"
+      ],
+      "evidenceAgainst": [
+        "体离相，体有力（旺相）",
+        "变用囚兑受体克"
+      ],
+      "lineReading": "初六「濡其尾，吝」（yijing64 2547 行），小象「亦不知极也」（2549 行）。咎在不量己力，小象归于自身做法，作提醒（裁定第 6 条）；无生有克之盘不因爻辞升降。",
+      "timing": {
+        "changed": false,
+        "reason": "原取体互休坎克体为中段凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用兑金受体所克，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：寅卯月离火相；两处坎水本休，得兑金所生，克力有根，前后两处限定都硬；兑金囚，收尾体能制之。",
+      "爻辞：初六「濡其尾，吝」，小象「亦不知极也」。寅卯月体相，吝落在申报前没摸透任职条件，同向。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火泽睽；动在初爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 38,
+          "name": "火泽睽",
+          "baseGrade": "下下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "兑",
+          "element": "金",
+          "qi": "囚"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_controls_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "濡其尾，吝。",
+        "terms": [],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "初六",
+        "image": "“濡其尾”，亦不知极也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68152,
+          "endChar": 68270,
+          "startLine": 2547,
+          "endLine": 2551
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "baseline": [
+      1,
+      "summer-fire",
+      "difficult",
+      "底子硬，冲得太快",
+      "你劲头正旺，一路往前冲，没留心新岗位的考核办法刚改过：开局那条年度目标的完成标准提高了一截，中段又加了客户满意度一项，两处都没对上，升职差了一步。",
+      "新考核办法刚改过，年度目标的完成标准提高了一截。",
+      "随后又冒出客户满意度一项，你按旧办法准备的材料里没有。",
+      "收尾的事轻，你几下就做完了。初六「濡其尾，吝」，冲得太快，尾巴湿了；小象「亦不知极也」，不知道新办法的底线到了哪里。",
+      "这次没成，冲在了新办法前头。先把新考核办法读透，再动材料。",
+      "离火为体，巳午月旺；本用、体互坎水皆囚而克体，得兑金所生，两处限制仍有根；体旺只缓其势；变用兑金死，受体所克。无生体之卦，《求名占》「用克体，名不可成」，判升不了。初六吝作提醒。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "考核对到客户满意度那一项",
+          "先把新考核办法读透，再动材料。",
+          "囚坎仍直接克体，按子取局部核验窗口。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/1/summer-fire",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体而无生体，一律为难（裁定第 3 条）；体旺只减其势。克体之坎月令囚，得兑金生，按有力论（V2.1）。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "求名占「用克体，名不可成」（553 行）"
+      ],
+      "evidenceAgainst": [
+        "体离旺",
+        "衰旺之诀「体旺……虽有他卦克之，亦无大害」（804 行）"
+      ],
+      "lineReading": "初六「濡其尾，吝」（yijing64 2547 行），小象「亦不知极也」（2549 行）。咎在不量己力，小象归于自身做法，作提醒（裁定第 6 条）；无生有克之盘不因爻辞升降。",
+      "timing": {
+        "changed": false,
+        "reason": "原取体互囚坎克体为中段凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用兑金受体所克，无生体之卦。《求名占》「用克体，名不可成」，定为升不了。",
+      "旺衰：巳午月离火旺，体卦得令；坎水本囚，得兑金所生，两处限制仍有根。体旺只缓其势，无生体之卦，方向不变；兑金死，收尾轻。",
+      "爻辞：初六「濡其尾，吝」，小象「亦不知极也」。巳午火旺，体足而冲快，吝落在没留意新办法，同向。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火泽睽；动在初爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 38,
+          "name": "火泽睽",
+          "baseGrade": "下下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "兑",
+          "element": "金",
+          "qi": "死"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_controls_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "濡其尾，吝。",
+        "terms": [],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "初六",
+        "image": "“濡其尾”，亦不知极也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68152,
+          "endChar": 68270,
+          "startLine": 2547,
+          "endLine": 2551
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "baseline": [
+      1,
+      "autumn-metal",
+      "difficult",
+      "底气薄，偏偏往深水里走",
+      "气力本就不足的这一季，你却挑了一个要求最高的岗位去报，开局那条跨区域管理经验的门槛和中段的财务核查都压得很重，这次轮不到你，一摊大账还压在收尾，样样吃力。",
+      "你报的岗位，门槛是三年跨区域管理经验。",
+      "财务核查随后跟上，要你逐笔说明经手的大额支出。",
+      "收尾那摊大账量重，你制不住。初六「濡其尾，吝」，小象「亦不知极也」，没量好水深就下河，湿的不止是尾巴。",
+      "报的岗位比你眼下能撑的深，这回没成。先报一个门槛相当的岗位。",
+      "离火为体，申酉月囚；本用、体互坎水皆相而克体，《体用衰旺之诀》「但不要克体之卦气旺。而体卦气衰是不吉之占」；变用兑金旺，体囚制之吃力，收尾量重。无生体之卦，判升不了。初六吝作提醒。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "财务核查要你说明大额支出",
+          "先报一个门槛与你相当的岗位。",
+          "相坎直接克体，取子作中段压力参考。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/1/autumn-metal",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "无生有克，本用克体，取难。体囚而克体之坎相，阻力实。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "本用、体互相坎克囚离",
+        "衰旺之诀「但不要克体之卦气旺。而体卦气衰是不吉之占」（804 行）"
+      ],
+      "evidenceAgainst": [
+        "变用旺兑受体克，末段为体克用"
+      ],
+      "lineReading": "初六「濡其尾，吝」（yijing64 2547 行），小象「亦不知极也」（2549 行）。咎在不量己力，小象归于自身做法，作提醒（裁定第 6 条）；无生有克之盘不因爻辞升降。",
+      "timing": {
+        "changed": false,
+        "reason": "原取体互相坎克体为中段凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用兑金受体所克，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：申酉月离火囚、坎水相，《体用衰旺之诀》「但不要克体之卦气旺。而体卦气衰是不吉之占」；兑金旺，体囚制之吃力，收尾量重。",
+      "爻辞：初六「濡其尾，吝」，小象「亦不知极也」。申酉金旺，体囚，吝落在挑了门槛最高的岗位，同向。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火泽睽；动在初爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 38,
+          "name": "火泽睽",
+          "baseGrade": "下下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "兑",
+          "element": "金",
+          "qi": "旺"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_controls_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "濡其尾，吝。",
+        "terms": [],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "初六",
+        "image": "“濡其尾”，亦不知极也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68152,
+          "endChar": 68270,
+          "startLine": 2547,
+          "endLine": 2551
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "baseline": [
+      1,
+      "winter-water",
+      "difficult",
+      "水最深的时候下了河",
+      "眼下你最弱，开局那条硬条件和随后的专项检查都正当强势，两处一起压下，晋升这回没成，你几乎没有招架之力。尾段的事倒轻，只是前面已经压住了你。",
+      "硬条件最先摆出：新岗位须有一项高级职称，你还在申报中。",
+      "专项检查接着进场，你团队的几份台账被要求重做。",
+      "收尾的事轻，可前面已经把你压住了。初六「濡其尾，吝」，水最深时下河；小象「亦不知极也」，没看清这一季的水有多深。",
+      "硬条件和专项检查两处都正当强势，职级没动。职称批下来、台账重做完，再递。",
+      "离火为体，亥子月死；本用、体互坎水皆旺而克体，《衰旺论》「若体衰而逢克，则其凶甚矣」；用互离火同死，扶不起；变用兑金休，收尾轻。无生体之卦，判升不了。初六吝作提醒。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "专项检查要求重做几份台账",
+          "职称批下来、台账重做完再递。",
+          "旺坎直接克离，取子观察中段受制。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/1/winter-water",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "体死逢两处旺坎克体，无生体，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "衰旺论「若体衰而逢克，则其凶甚矣」（688 行）",
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "衰旺之诀「但不要克体之卦气旺。而体卦气衰是不吉之占」（804 行）"
+      ],
+      "evidenceAgainst": [
+        "变用休兑受体克"
+      ],
+      "lineReading": "初六「濡其尾，吝」（yijing64 2547 行），小象「亦不知极也」（2549 行）。咎在不量己力，小象归于自身做法，作提醒（裁定第 6 条）；无生有克之盘不因爻辞升降。",
+      "timing": {
+        "changed": false,
+        "reason": "原取体互旺坎克体为中段凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用兑金受体所克，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：亥子月离火死、坎水旺，《衰旺论》「若体衰而逢克，则其凶甚矣」；用互离火同死，扶不起；兑金休，收尾轻。",
+      "爻辞：初六「濡其尾，吝」，小象「亦不知极也」。亥子水旺克死体，吝落在水最深时下河，同向。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火泽睽；动在初爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 38,
+          "name": "火泽睽",
+          "baseGrade": "下下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "兑",
+          "element": "金",
+          "qi": "休"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_controls_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "濡其尾，吝。",
+        "terms": [],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "初六",
+        "image": "“濡其尾”，亦不知极也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68152,
+          "endChar": 68270,
+          "startLine": 2547,
+          "endLine": 2551
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "baseline": [
+      1,
+      "seasonal-earth",
+      "difficult",
+      "看着浅，其实水深",
+      "那两处限制看着都不重，你便轻轻带过：开局的岗位轮换要求你以为能豁免，中段的保密审查你以为走个过场，结果两处都实打实卡住，收尾又压着一摊费力的交接，晋升差了一步。",
+      "岗位轮换那条要求，你以为自己能豁免。",
+      "保密审查原以为走个过场，结果要你补交好几份材料。",
+      "收尾的交接费力，你制得慢。初六「濡其尾，吝」，小象「亦不知极也」，以为水浅，一脚下去才知道深。",
+      "小看了轮换和保密审查两处限制，这次没成。限制再轻也逐条核实，不凭以为。",
+      "离火为体，辰未戌丑月休；本用、体互坎水皆死，得变用兑金相生，克力有根，看似轻而实硬；变用兑金相，体休制之费力，收尾量重。无生体之卦，《求名占》「用克体，名不可成」，判升不了。初六吝作提醒。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "保密审查要你补交几份材料",
+          "限制再轻也逐条核实，不凭以为。",
+          "死坎得相兑生而有力，仍克原体，取子看中段硬约束。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/1/seasonal-earth",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体，无生体，一律为难（裁定第 3 条）；克体之坎月令死，得兑金相生，按有力论（V2.1），阻力不轻。旧稿判难，不变。",
+      "evidenceFor": [
+        "求名占「用克体，名不可成」（553 行）",
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "两处坎水得兑金相生，按有力论（V2.1）"
+      ],
+      "evidenceAgainst": [
+        "用互离火比和",
+        "体离休，非衰"
+      ],
+      "lineReading": "初六「濡其尾，吝」（yijing64 2547 行），小象「亦不知极也」（2549 行）。咎在不量己力，小象归于自身做法，作提醒（裁定第 6 条）；无生有克之盘不因爻辞升降。",
+      "timing": {
+        "changed": true,
+        "reason": "体互坎得兑生按有力论，原事件「容易忽略的条件」偏轻，只改措辞为硬条件；种类、位置不变。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用兑金受体所克，无生体之卦。《求名占》「用克体，名不可成」，定为升不了。",
+      "旺衰：辰戌丑未月离火休；坎水本死，得兑金相生，克力有根，看似轻而实硬；兑金相，体休制之费力，收尾量重。",
+      "爻辞：初六「濡其尾，吝」，小象「亦不知极也」。土月体休，吝落在小看两处限制，以为水浅，同向。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火泽睽；动在初爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 38,
+          "name": "火泽睽",
+          "baseGrade": "下下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "兑",
+          "element": "金",
+          "qi": "相"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_controls_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "濡其尾，吝。",
+        "terms": [],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "初六",
+        "image": "“濡其尾”，亦不知极也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68152,
+          "endChar": 68270,
+          "startLine": 2547,
+          "endLine": 2551
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  }
+]

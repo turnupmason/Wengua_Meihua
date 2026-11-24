@@ -1,0 +1,879 @@
+[
+  {
+    "index": 10,
+    "baseline": [
+      3,
+      "spring-wood",
+      "difficult",
+      "收尾托得住，前头一条规定拦着",
+      "你底子不差，收尾还有一份实打实的托：新岗位要用的那套系统正是你主导上线的；可开局资格里有一条，跨部门晋升须先有半年的挂职经历，晋升没落定，挂职你还没挂过。",
+      "资格条款里写着：跨部门晋升须先挂职半年。",
+      "评议对你的系统建设评价不低，挂职那一条却绕不过去。",
+      "收尾时新岗位正需要你上线的那套系统，这份托是实的。六三「未济，征凶」，事还没成就硬往前闯是凶；「利涉大川」，先挂职，过这条河才稳。小象「位不当也」。",
+      "这次没成，停在挂职那一条。先申请挂职半年，再报。",
+      "离火为体，寅卯月相；本用、体互坎水皆休而克体，前中两处小阻；用互离火比和；变用巽木旺而生体，有力。《求名占》「若在任占卜，最忌见克体之卦」，盘中本用、体互坎水克体，判升不了。六三「征凶」凶在冒进，「利涉大川」作提醒。",
+      [
+        [
+          "support",
+          "changed_use",
+          "你主导的系统被新岗位列为必用",
+          "先申请挂职半年，再递申报。",
+          "旺巽末用直接生原体，按巽时序取辰、巳日，属收尾之助，不作任命日。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/3/spring-wood",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "晋升定为不成：在任专条：use、body_mutual 克体。体用初判另见下文——R2↑：体相，克体之坎休不旺相，变用旺巽生体，不泄不克。旧稿判吉，不变。",
+      "evidenceFor": [
+        "衰旺之诀「凡体卦宜乘旺……虽有他卦克之，亦无大害」（804 行）",
+        "变用旺巽生体",
+        "互变之诀「变生体及比和，则事事临终有吉利」（798 行）"
+      ],
+      "evidenceAgainst": [
+        "本用、体互休坎克体",
+        "六三征凶"
+      ],
+      "lineReading": "六三「未济，征凶，利涉大川」（yijing64 2557 行），小象「位不当也」（2559 行）。征凶，小象归于处位不当，未言所为之事落空（裁定第 6、12 条），作提醒不降；利涉大川是行动之辞，非成名得用之辞（裁定第 13 条），不升。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用旺巽生体为结果日 name-support，与吉相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "favourable",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R2↑ 体旺相、克体之卦无气、变用生体为吉",
+          "§13 吉即成",
+          "晋升：在任专条：use、body_mutual 克体"
+        ],
+        "note": "晋升定为不成：在任专条：use、body_mutual 克体。",
+        "promotionRule": "在任专条：use、body_mutual 克体"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用巽木生体。有生有克，《求名占》「若在任占卜，最忌见克体之卦」，盘中有克体之卦，定为升不了。",
+      "旺衰：寅卯月离火相、巽木旺，生体有力；坎水休，前中两处小阻，然在任见克，不升。",
+      "爻辞：六三「未济，征凶，利涉大川」，小象「位不当也」。寅卯木旺生体，凶落在未挂职就想跨部门，作提醒。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火风鼎；动在三爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "在任专条：use、body_mutual 克体",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 50,
+          "name": "火风鼎",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木",
+          "qi": "旺"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_generates_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "未济，征凶，利涉大川。",
+        "terms": [
+          {
+            "term": "征凶",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "利",
+            "start": 6,
+            "end": 7,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "六三",
+        "image": "“未济，征凶”，位不当也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68381,
+          "endChar": 68496,
+          "startLine": 2557,
+          "endLine": 2561
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": []
+  },
+  {
+    "index": 11,
+    "baseline": [
+      3,
+      "summer-fire",
+      "difficult",
+      "底子最旺，一条回避规定不能闯",
+      "你底子最旺，前中两处的阻力都轻；可新岗位是审计岗，回避规定写明三年内经手过被审单位的人不得担任，晋升没落定，你去年刚经手过其中一家。末段递上的那份说明，只补了一处。",
+      "回避规定一摆出来，你去年经手的那家单位正在名单上。",
+      "阻力本身不重，评议对你的能力也认可，卡的只是回避那一条。",
+      "末了你递上一份经手情况说明，只补上一处。六三「未济，征凶」，事未成就冒进，凶；小象「位不当也」，这个位置这一轮你站不上去。",
+      "职级没动，卡在回避规定。等回避期满，或换报一个不涉回避的岗位。",
+      "离火为体，巳午月旺，用互离火亦旺；本用、体互坎水皆囚而克体，阻轻；变用巽木休而生体，生体薄。《求名占》「若在任占卜，最忌见克体之卦」，盘中本用、体互坎水克体，判升不了。六三征凶作提醒。",
+      [
+        [
+          "support",
+          "changed_use",
+          "补交的经手情况说明被收下",
+          "回避期满前，换报一个不涉回避的岗位。",
+          "休巽末用直接生旺离，按巽时序取辰、巳日，属收尾一点补益，不作任命日。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/3/summer-fire",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "晋升定为不成：在任专条：use、body_mutual 克体。体用初判另见下文——R2↑：体旺，克体之坎囚，变用休巽生体。旧稿判吉，不变。",
+      "evidenceFor": [
+        "衰旺之诀「凡体卦宜乘旺……虽有他卦克之，亦无大害」（804 行）",
+        "变用巽生体（798 行）"
+      ],
+      "evidenceAgainst": [
+        "本用、体互囚坎克体",
+        "生体之巽休，帮助不厚"
+      ],
+      "lineReading": "六三「未济，征凶，利涉大川」（yijing64 2557 行），小象「位不当也」（2559 行）。征凶，小象归于处位不当，未言所为之事落空（裁定第 6、12 条），作提醒不降；利涉大川是行动之辞，非成名得用之辞（裁定第 13 条），不升。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用巽生体为结果日 name-support，与吉相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "favourable",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R2↑ 体旺相、克体之卦无气、变用生体为吉",
+          "§13 吉即成",
+          "晋升：在任专条：use、body_mutual 克体"
+        ],
+        "note": "晋升定为不成：在任专条：use、body_mutual 克体。",
+        "promotionRule": "在任专条：use、body_mutual 克体"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用巽木生体。有生有克，《求名占》「若在任占卜，最忌见克体之卦」，盘中有克体之卦，定为升不了。",
+      "旺衰：巳午月离火旺，《体用衰旺之诀》「乘旺之气，虽有他卦克之，亦无大害」；坎水囚，阻轻；巽木休，生体薄，然在任见克，不升。",
+      "爻辞：六三「未济，征凶，利涉大川」，小象「位不当也」。巳午火旺，体足，位不当落在回避规定，作提醒。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火风鼎；动在三爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "在任专条：use、body_mutual 克体",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 50,
+          "name": "火风鼎",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木",
+          "qi": "休"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_generates_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "未济，征凶，利涉大川。",
+        "terms": [
+          {
+            "term": "征凶",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "利",
+            "start": 6,
+            "end": 7,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "六三",
+        "image": "“未济，征凶”，位不当也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68381,
+          "endChar": 68496,
+          "startLine": 2557,
+          "endLine": 2561
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": []
+  },
+  {
+    "index": 12,
+    "baseline": [
+      3,
+      "autumn-metal",
+      "difficult",
+      "阻力实，硬冲不得",
+      "这一季你能使上的力不多，开局那条资历要求和随后一次述职答辩都压得实，你想一鼓作气冲过去，答辩时把没把握的数字也报了出来，被当场问住，这次没成。临了补救的东西很薄。",
+      "资历要求排在第一，你刚好压线。",
+      "述职答辩时你想一口气说完，把没核实的数字也报了。",
+      "收尾补交的材料很薄。六三「未济，征凶」，事没成就硬冲，凶；「利涉大川」，河要过，但得先看准水势。小象「位不当也」，这一步站得不是时候。",
+      "冲得太急，答辩报了没核实的数，没能晋升，那组数一核就站不住。答辩只报核实过的数字。",
+      "离火为体，申酉月囚，用互离火亦囚；本用、体互坎水皆相而克体，阻力实；变用巽木死而生体，生体薄。《求名占》「若在任占卜，最忌见克体之卦」，盘中本用、体互坎水克体，判升不了。六三征凶作提醒。",
+      [
+        [
+          "support",
+          "changed_use",
+          "补交的材料被收了下来",
+          "答辩只报核实过的数字。",
+          "死巽仍直接生离，取巽时序给末段局部补益，不作成绩日。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/3/autumn-metal",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "difficult→favourable",
+      "reason": "晋升定为不成：在任专条：use、body_mutual 克体。体用初判另见下文——有生有克，克在本用与体互，变用巽生体，三判为未定。定稿按结局拆为成（READING_POLICY_V2 第十三节；798 行「变生体及比和，则事事临终有吉利」）。体囚而克体之坎相，只主成得慢、过得辛苦。六三征凶未言落空，不翻。",
+      "evidenceFor": [
+        "mh-116「有生体之卦，又有克体之卦，则事有阻节，好中不足」（792 行）",
+        "变用巽生体，互变之诀「变生体及比和，则事事临终有吉利」（798 行），未定按结局拆为成"
+      ],
+      "evidenceAgainst": [
+        "本用、体互相坎克囚离",
+        "生体之巽死，帮助薄",
+        "求名占「用克体，名不可成」（553 行）"
+      ],
+      "lineReading": "六三「未济，征凶，利涉大川」（yijing64 2557 行），小象「位不当也」（2559 行）。征凶，小象归于处位不当，未言所为之事落空（裁定第 6、12 条），作提醒不降；利涉大川是行动之辞，非成名得用之辞（裁定第 13 条），不升。",
+      "timing": {
+        "changed": true,
+        "reason": "原取体互相坎克体之中段凶应；现取变用巽生体之末段局部帮助，判成亦可用，不作成绩日。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "conditional",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R2 有生有克为未定",
+          "§13 第 2 步：R2 变用生体，拆为成（798 行「变生体及比和，则事事临终有吉利」）",
+          "§13 第 3 步：六三征凶未言落空（边界第 32 条），不翻",
+          "晋升：在任专条：use、body_mutual 克体"
+        ],
+        "note": "晋升定为不成：在任专条：use、body_mutual 克体。",
+        "promotionRule": "在任专条：use、body_mutual 克体"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用巽木生体。有生有克，《求名占》「若在任占卜，最忌见克体之卦」，盘中有克体之卦，定为升不了。",
+      "旺衰：申酉月离火囚、坎水相，阻力实；巽木死，生体薄，在任见克，不升。",
+      "爻辞：六三「未济，征凶，利涉大川」，小象「位不当也」。申酉月体囚，凶落在答辩时硬冲报未核数字，作提醒。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火风鼎；动在三爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "在任专条：use、body_mutual 克体",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 50,
+          "name": "火风鼎",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木",
+          "qi": "死"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_generates_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "未济，征凶，利涉大川。",
+        "terms": [
+          {
+            "term": "征凶",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "利",
+            "start": 6,
+            "end": 7,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "六三",
+        "image": "“未济，征凶”，位不当也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68381,
+          "endChar": 68496,
+          "startLine": 2557,
+          "endLine": 2561
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": []
+  },
+  {
+    "index": 13,
+    "baseline": [
+      3,
+      "winter-water",
+      "difficult",
+      "前面最重，后面有托",
+      "眼下是你最虚的时候，开局那条编制限制和中段的岗位测评都压得极重，升职这回没成，你主持的项目刚获批立项，也只在收尾帮了一把。帮衬实在，只是落在了前面两处之后。",
+      "这个岗位今年只保留不新增，编制限制最先压下来。",
+      "岗位测评接着进行，你在压力测试那一项上偏低。",
+      "收尾时你主持的项目获批立项，帮衬实在。六三「未济，征凶，利涉大川」，水势正急时别硬渡；小象「位不当也」，这一轮的位置还不对。",
+      "这次没成，编制和测评两处压着。项目立项后先做出阶段成果，再报。",
+      "离火为体，亥子月死；本用、体互坎水皆旺而克体，前半受制最重；变用巽木相而生体，《衰旺论》「体衰而有生体之卦，则衰稍解」，后段之生实在。《求名占》「若在任占卜，最忌见克体之卦」，盘中本用、体互坎水克体，判升不了。六三作提醒。",
+      [
+        [
+          "support",
+          "changed_use",
+          "你主持的项目获批立项",
+          "立项后先做出阶段成果，再报。",
+          "相巽直接生离，取巽时序给后段补益，不作成绩日。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/3/winter-water",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "difficult→favourable",
+      "reason": "晋升定为不成：在任专条：use、body_mutual 克体。体用初判另见下文——有生有克。体死而两处旺坎克体，但生体之巽相，不合 R2↓「生体之卦都不旺相」，三判为未定。定稿按结局拆为成（798 行「变生体及比和，则事事临终有吉利」）。六三「未济」是尚未渡过的时势，征凶与利涉大川并见，未言所为落空（边界第 32 条），虽体死而克体之坎有力，爻辞不落在结果上，不翻。",
+      "evidenceFor": [
+        "mh-116「有生体之卦，又有克体之卦，则事有阻节，好中不足」（792 行）",
+        "衰旺论「体衰而有生体之卦，则衰稍解」（688 行）",
+        "变用相巽生体，未定按结局拆为成（798 行）"
+      ],
+      "evidenceAgainst": [
+        "体离死",
+        "本用、体互旺坎克体，衰旺论「体衰而逢克，则其凶甚矣」（688 行）"
+      ],
+      "lineReading": "六三「未济，征凶，利涉大川」（yijing64 2557 行），小象「位不当也」（2559 行）。征凶，小象归于处位不当，未言所为之事落空（裁定第 6、12 条），作提醒不降；利涉大川是行动之辞，非成名得用之辞（裁定第 13 条），不升。",
+      "timing": {
+        "changed": true,
+        "reason": "原取体互旺坎克体之中段凶应；现取变用相巽生体之后段帮助，判成亦可用，不作成绩日。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "conditional",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R2 有生有克为未定",
+          "§13 第 2 步：R2 变用生体，拆为成（798 行「变生体及比和，则事事临终有吉利」）",
+          "§13 第 3 步：六三征凶未言落空（边界第 32 条），不翻",
+          "晋升：在任专条：use、body_mutual 克体"
+        ],
+        "note": "晋升定为不成：在任专条：use、body_mutual 克体。",
+        "promotionRule": "在任专条：use、body_mutual 克体"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用巽木生体。有生有克，《求名占》「若在任占卜，最忌见克体之卦」，盘中有克体之卦，定为升不了。",
+      "旺衰：亥子月离火死、坎水旺，前半受制最重；巽木相，《衰旺论》「体衰而有生体之卦，则衰稍解」，后段之生实在，在任见克，不升。",
+      "爻辞：六三「未济，征凶，利涉大川」，小象「位不当也」。亥子水旺克死体，水急时不可硬渡，作提醒。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火风鼎；动在三爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "在任专条：use、body_mutual 克体",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 50,
+          "name": "火风鼎",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木",
+          "qi": "相"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_generates_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "未济，征凶，利涉大川。",
+        "terms": [
+          {
+            "term": "征凶",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "利",
+            "start": 6,
+            "end": 7,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "六三",
+        "image": "“未济，征凶”，位不当也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68381,
+          "endChar": 68496,
+          "startLine": 2557,
+          "endLine": 2561
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": []
+  },
+  {
+    "index": 14,
+    "baseline": [
+      3,
+      "seasonal-earth",
+      "difficult",
+      "阻力轻，可公示那一步要走完",
+      "前中两处阻力都轻，你也不必硬冲；可新岗位要求先过上一级的任前公示，公示期有人对你牵头的一个项目进度提出疑问，晋升没落定，需核实后再定。收尾帮衬薄，补得慢。",
+      "资格那一关阻力轻，你压得住。",
+      "任前公示期，有人对你牵头项目的进度提出疑问，要核实。",
+      "收尾时项目延期的原因说明交了上去，补得慢。六三「征凶」，此时冒进就凶，这一盘本不必冒进；小象「位不当也」，公示没走完，位置就不算定。",
+      "这回没成，停在公示核实上。延期原因写清，配合核实到底。",
+      "离火为体，辰未戌丑月休；本用、体互坎水皆死，《复明时令之应》「如克体卦气，则宜乘衰」，阻轻；变用巽木囚而生体，生体薄。《求名占》「若在任占卜，最忌见克体之卦」，盘中本用、体互坎水克体，判升不了。六三作提醒。",
+      [
+        [
+          "support",
+          "changed_use",
+          "延期原因说明交了上去",
+          "延期原因写清，配合核实到底。",
+          "囚巽直接生离，取巽支给有限回补。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/3/seasonal-earth",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "difficult→favourable",
+      "reason": "晋升定为不成：在任专条：use、body_mutual 克体。体用初判另见下文——有生有克取阻节；克体之坎死，体休，不合 R2↑，三判为未定。定稿按结局拆为成（798 行「变生体及比和，则事事临终有吉利」）。生助薄只主慢。",
+      "evidenceFor": [
+        "mh-116「有生体之卦，又有克体之卦，则事有阻节，好中不足」（792 行）",
+        "克体之坎死，复明时令之应「克体卦气，则宜乘衰」（655 行）",
+        "变用巽生体，未定按结局拆为成（798 行）"
+      ],
+      "evidenceAgainst": [
+        "生体之巽囚，帮助薄",
+        "本用克体（553 行）"
+      ],
+      "lineReading": "六三「未济，征凶，利涉大川」（yijing64 2557 行），小象「位不当也」（2559 行）。征凶，小象归于处位不当，未言所为之事落空（裁定第 6、12 条），作提醒不降；利涉大川是行动之辞，非成名得用之辞（裁定第 13 条），不升。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用囚巽生体为末段局部线索，不作成绩日，与成相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "conditional",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R2 有生有克为未定",
+          "§13 第 2 步：R2 变用生体，拆为成（798 行「变生体及比和，则事事临终有吉利」）",
+          "§13 第 3 步：六三征凶未言落空（边界第 32 条），不翻",
+          "晋升：在任专条：use、body_mutual 克体"
+        ],
+        "note": "晋升定为不成：在任专条：use、body_mutual 克体。",
+        "promotionRule": "在任专条：use、body_mutual 克体"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用巽木生体。有生有克，《求名占》「若在任占卜，最忌见克体之卦」，盘中有克体之卦，定为升不了。",
+      "旺衰：辰戌丑未月离火休；坎水死，《复明时令之应》「如克体卦气，则宜乘衰」，阻轻；巽木囚，生体薄，在任见克，不升。",
+      "爻辞：六三「未济，征凶，利涉大川」，小象「位不当也」。土月体休，凶在冒进，公示未完位置未定，作提醒。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火风鼎；动在三爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "在任专条：use、body_mutual 克体",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 50,
+          "name": "火风鼎",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "巽",
+          "element": "木",
+          "qi": "囚"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_generates_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "未济，征凶，利涉大川。",
+        "terms": [
+          {
+            "term": "征凶",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "利",
+            "start": 6,
+            "end": 7,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "六三",
+        "image": "“未济，征凶”，位不当也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68381,
+          "endChar": 68496,
+          "startLine": 2557,
+          "endLine": 2561
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": []
+  }
+]

@@ -1,0 +1,914 @@
+[
+  {
+    "index": 15,
+    "baseline": [
+      4,
+      "spring-wood",
+      "difficult",
+      "苦战有功，赏在后头",
+      "你这几年一直在啃一块硬业务，前面几道关一点点压下去，耗了大量工夫；临近收尾，上一级把这一轮的晋升限定在几个重点项目内，升职这回没成，你的业务不在其中。",
+      "啃了几年的那块硬业务，前面几道关都要费工去压。",
+      "同组跟着你的节奏，评议对你的坚持也认。",
+      "收尾时晋升范围限定在重点项目，你的业务被划在外面。九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」，守正则吉，悔能消，苦战多年才有赏；小象「志行也」，志在走，赏不在这一轮。",
+      "限定范围把你的业务划在外面，职级没动。把业务按重点项目的标准申请列入。",
+      "坎水为体，寅卯月休；本用、体互离火皆相，受体所克，前面费工；用互坎水比和；变用艮土死，得离火所生，克力有根，收尾那一关硬，《体用互变之诀》「变卦克体，事于末后，必有不吉」。无生体之卦，判升不了。九四「贞吉」，赏在久功之后，不翻。",
+      [
+        [
+          "control",
+          "changed_use",
+          "晋升范围限定在几个重点项目",
+          "把业务按重点项目的标准申请列入。",
+          "死艮仍克坎，按艮时序给尾段核验，三年不作历期。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/4/spring-wood",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "无生有克，克在变用。克体之艮月令死，得本用、体互离火相生，按有力论（V2.1）；体休、比和之坎休，不合 R3↑′。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "互变之诀「变卦克体，事于末后，必有不吉」（798 行）",
+        "艮得离火生，按有力论（V2.1）"
+      ],
+      "evidenceAgainst": [
+        "本用、体互皆体克用",
+        "体坎休，非衰"
+      ],
+      "lineReading": "九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」（yijing64 2562 行），小象「志行也」（2564 行）。贞吉属守正方吉之辞；有赏在三年久功之后，不正对本次，且盘中无生体，不因吉辞升判。不改判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用死艮克体为卷尾核验之凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互离火受体所克，用互坎水比和，变用艮土克体，无生体之卦。《体用互变之诀》「变卦克体，事于末后，必有不吉」，定为升不了。",
+      "旺衰：寅卯月坎水休，离火相，前面要费工去制；艮土本死，得离火所生，克力有根，收尾那一关硬。",
+      "爻辞：九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」，小象「志行也」。寅卯月体休，久战有功，赏不在这一轮，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦山水蒙；动在四爻，下坎为体，上离为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 4,
+          "name": "山水蒙",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土",
+          "qi": "死"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "body_mutual",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_controls_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 0,
+            "end": 2,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "悔亡",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九四",
+        "image": "“贞吉悔亡”，志行也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68496,
+          "endChar": 68643,
+          "startLine": 2562,
+          "endLine": 2566
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "changed_use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "baseline": [
+      4,
+      "summer-fire",
+      "difficult",
+      "前面最吃力，末端又被卡",
+      "前面那几件事都烧得正旺，你此时最乏，压得十分吃力；到了收尾，新岗位又多了一条任职前须完成管理培训的要求，这次轮不到你，培训你还没修完。前面压下的那几件，一件没出错。",
+      "那几件事一件比一件急，你压得十分吃力。",
+      "你守着正道一件件做，评议也认你没走捷径。",
+      "收尾时培训要求一摆，你还差最后两门。九四「贞吉，悔亡」，守正则悔消；「三年有赏于大国」，赏要久战之后才到，这一程还没到头。",
+      "管理培训还差最后两门，任命前补不齐，这次没成。把剩下的两门修完，证书留好。",
+      "坎水为体，巳午月囚；本用、体互离火皆旺，受体所克，制之吃力；变用艮土相而克体，《体用衰旺之诀》「但不要克体之卦气旺。而体卦气衰是不吉之占」。无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，判升不了。九四不翻。",
+      [
+        [
+          "control",
+          "changed_use",
+          "收尾又多了一条培训要求",
+          "把剩下的两门修完，证书留好。",
+          "相艮直接克坎，取艮丑寅作为末端压力参考。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/4/summer-fire",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "无生有克，克在变用且艮相，体囚，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "互变之诀「变卦克体，事于末后，必有不吉」（798 行）",
+        "衰旺之诀「但不要克体之卦气旺。而体卦气衰是不吉之占」（804 行）"
+      ],
+      "evidenceAgainst": [
+        "本用、体互皆体克用"
+      ],
+      "lineReading": "九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」（yijing64 2562 行），小象「志行也」（2564 行）。贞吉属守正方吉之辞；有赏在三年久功之后，不正对本次，且盘中无生体，不因吉辞升判。不改判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用相艮克体为卷尾核查之凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互离火受体所克，用互坎水比和，变用艮土克体，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：巳午月坎水囚，离火旺，制之吃力；艮土相，《体用衰旺之诀》「但不要克体之卦气旺。而体卦气衰是不吉之占」。",
+      "爻辞：九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」，小象「志行也」。巳午火旺，体囚，守正悔亡，赏在久战之后，末端培训一条未完，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦山水蒙；动在四爻，下坎为体，上离为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 4,
+          "name": "山水蒙",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土",
+          "qi": "相"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "body_mutual",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_controls_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 0,
+            "end": 2,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "悔亡",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九四",
+        "image": "“贞吉悔亡”，志行也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68496,
+          "endChar": 68643,
+          "startLine": 2562,
+          "endLine": 2566
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "changed_use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "baseline": [
+      4,
+      "autumn-metal",
+      "difficult",
+      "前中顺，收尾那道门槛实",
+      "你底子稳，前中段同组合拍，走得顺；到了收尾，任职条件中写着近三年须无客户投诉，你那里有一条两年前的投诉没销案，晋升这回没成，这一道门槛实打实。",
+      "同组和你合拍，事情推得顺。",
+      "评议认你这几年守得正，没有抄近路。",
+      "收尾核到投诉记录，那条两年前的投诉还挂着。九四「贞吉，悔亡」，守正则吉，悔可消；小象「志行也」，志在走，那条旧账这一轮没清。",
+      "那条没销的投诉挡着，这回没成。补齐处理结果，申请销案。",
+      "坎水为体，申酉月相，用互坎水相，比和，前中顺；本用、体互离火皆囚，受体所克；变用艮土休，得离火所生，克力有根，收尾那道门槛实。无生体之卦，判升不了。九四不翻。",
+      [
+        [
+          "control",
+          "changed_use",
+          "核到一条两年前未销的投诉",
+          "补齐投诉的处理结果，申请销案。",
+          "休艮直克原体，按丑寅取末段核查。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/4/autumn-metal",
+      "oldOutcome": "favourable",
+      "newOutcome": "difficult",
+      "changed": true,
+      "changeType": "none",
+      "reason": "无生有克，克只在变用；体相、比和之坎相，但克体之艮休而得离火生，按有力论（V2.1），不合 R3↑′。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "互变之诀「变卦克体，事于末后，必有不吉」（798 行）"
+      ],
+      "evidenceAgainst": [
+        "体坎相，比和之坎相",
+        "本用、体互皆体克用"
+      ],
+      "lineReading": "九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」（yijing64 2562 行），小象「志行也」（2564 行）。贞吉属守正方吉之辞；有赏在三年久功之后，不正对本次，且盘中无生体，不因吉辞升判。不改判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用休艮克体为卷尾核查之凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互离火受体所克，用互坎水比和，变用艮土克体，无生体之卦。《体用互变之诀》「变卦克体，事于末后，必有不吉」，定为升不了。",
+      "旺衰：申酉月坎水相，比和之坎同相，前中顺；艮土休，得离火所生，克力有根，收尾那道门槛实。",
+      "爻辞：九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」，小象「志行也」。申酉月体相，守正前中顺，末后旧投诉未清，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦山水蒙；动在四爻，下坎为体，上离为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 4,
+          "name": "山水蒙",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土",
+          "qi": "休"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "body_mutual",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_controls_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 0,
+            "end": 2,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "悔亡",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九四",
+        "image": "“贞吉悔亡”，志行也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68496,
+          "endChar": 68643,
+          "startLine": 2562,
+          "endLine": 2566
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "changed_use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "baseline": [
+      4,
+      "winter-water",
+      "difficult",
+      "底子最足，末后一关仍在",
+      "你此刻气足，一路都有余力，同组的几件事也替你分担了；可末后一关是上一级的任前谈话，要你给出新岗位第一年的量化目标，晋升没落定，你给的仍是原岗位那一套。",
+      "手头的事你做得有余，不积压。",
+      "同组的几件事接得上，你还帮着理顺了两处。",
+      "任前谈话只问一件事：新岗位第一年要做到什么。你答的是原岗位那一套。九四「贞吉」，守正得吉；「三年有赏」，赏在久功之后，吉照不到末后这一关。",
+      "新岗位的目标没想透，职级这次没动，任前谈话卡在第一年的量化目标上。先写下第一年要做到的三件事，每件配一个数字。",
+      "坎水为体，亥子月旺，用互坎水亦旺，比和，前中有余；本用、体互离火皆死，受体所克；变用艮土囚，得离火所生，克力有根，体旺只减其势。无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，判升不了。九四不翻。",
+      [
+        [
+          "equal",
+          "use_mutual",
+          "同组的几件事替你分担了",
+          "写下第一年要做到的三件事，各配数字。",
+          "用互旺坎与体比和，取坎时序给中段顺手的局部窗口，不作成绩日。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/4/winter-water",
+      "oldOutcome": "favourable",
+      "newOutcome": "difficult",
+      "changed": true,
+      "changeType": "none",
+      "reason": "无生体，克只在变用；艮月令囚，但得本用、体互离火生，按有力论（V2.1），不合 R3↑′（克体之卦须无气），R3 无生有克为难。定稿二分即不成。九四吉辞不正对本场，盘中无生体，不升。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "互变之诀「变卦克体，事于末后，必有不吉」（798 行）",
+        "克体之艮得离火生，按有力论（V2.1）"
+      ],
+      "evidenceAgainst": [
+        "体坎旺，比和之用互坎旺",
+        "体用总诀「体党多而体势盛」（494 行）"
+      ],
+      "lineReading": "九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」（yijing64 2562 行），小象「志行也」（2564 行）。贞吉属守正方吉之辞；有赏在三年久功之后，不正对本次，且盘中无生体，不因吉辞升判。不改判。",
+      "timing": {
+        "changed": true,
+        "reason": "原取变用囚艮克体为收尾凶应；现取用互旺坎比和之中段局部事件，判不成仍可用，事件文字不写结果，不作成绩日。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "conditional",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难（§8：变用艮得离火生，按有力论，不合 R3↑′）",
+          "§13 难即不成"
+        ],
+        "note": "定稿只判成与不成：未定改为不成。变用艮得离火生按有力论，不合 R3↑′，无生有克为不成；正文按不成重写。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互离火受体所克，用互坎水比和，变用艮土克体，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：亥子月坎水旺，比和之坎亦旺，前中有余；艮土本囚，得离火所生，克力有根，体旺只减其势。",
+      "爻辞：九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」，小象「志行也」。亥子水旺，体足，赏在长功之后，照不到任前谈话一关，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦山水蒙；动在四爻，下坎为体，上离为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 4,
+          "name": "山水蒙",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土",
+          "qi": "囚"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "body_mutual",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_controls_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 0,
+            "end": 2,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "悔亡",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九四",
+        "image": "“贞吉悔亡”，志行也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68496,
+          "endChar": 68643,
+          "startLine": 2562,
+          "endLine": 2566
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "changed_use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "baseline": [
+      4,
+      "seasonal-earth",
+      "difficult",
+      "底子最弱，末后最重",
+      "这一季你最乏，前面的事慢慢推，倒没什么阻拦；可末后那一关最重：上一级在定级前调高了岗位的绩效门槛，你去年的绩效刚好落在新门槛之下，职级没动。",
+      "前面的事推得慢，好在没有什么阻拦。",
+      "评议认你守得正，几件事都是一步一步做实的。",
+      "定级前绩效门槛被调高，你去年的绩效恰在门槛下面。九四「震用伐鬼方」，伐鬼方是苦战；「三年有赏」，赏在后头，这一季正是苦战中最难的一段。",
+      "还差一截，差在新调高的绩效门槛。今年的绩效目标按新门槛定。",
+      "坎水为体，辰未戌丑月死；本用、体互离火皆休，受体所克，前面慢而不阻；变用艮土旺而克体，《衰旺论》「若体衰而逢克，则其凶甚矣」。无生体之卦，判升不了。九四不翻。",
+      [
+        [
+          "control",
+          "changed_use",
+          "定级前绩效门槛被调高",
+          "今年的绩效目标按新门槛定。",
+          "旺艮直接克坎，取艮丑寅给尾段压力窗口。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/4/seasonal-earth",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "无生有克，变用旺艮克死坎，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "衰旺之诀「但不要克体之卦气旺。而体卦气衰是不吉之占」（804 行）",
+        "互变之诀「变卦克体，事于末后，必有不吉」（798 行）",
+        "衰旺论「若体衰而逢克，则其凶甚矣」（688 行）"
+      ],
+      "evidenceAgainst": [
+        "本用、体互皆体克用"
+      ],
+      "lineReading": "九四「贞吉，悔亡；震用伐鬼方，三年有赏于大国」（yijing64 2562 行），小象「志行也」（2564 行）。贞吉属守正方吉之辞；有赏在三年久功之后，不正对本次，且盘中无生体，不因吉辞升判。不改判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用旺艮克体为尾段凶应，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互离火受体所克，用互坎水比和，变用艮土克体，无生体之卦。《体用互变之诀》「变卦克体，事于末后，必有不吉」，定为升不了。",
+      "旺衰：辰戌丑未月坎水死、艮土旺，《衰旺论》「若体衰而逢克，则其凶甚矣」；离火休，前面慢而不阻。",
+      "爻辞：九四「震用伐鬼方，三年有赏于大国」，小象「志行也」。土月体死，末后旺艮最重，苦战未及有赏，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦山水蒙；动在四爻，下坎为体，上离为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 4,
+          "name": "山水蒙",
+          "baseGrade": "中下卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "body",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "use",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "艮",
+          "element": "土",
+          "qi": "旺"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "body_mutual",
+          "type": "body_controls_use"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "changed_use",
+          "type": "use_controls_body"
+        }
+      ],
+      "movingLine": {
+        "fullText": "贞吉，悔亡；震用伐鬼方，三年有赏于大国。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 0,
+            "end": 2,
+            "requiresContextualInterpretation": true
+          },
+          {
+            "term": "悔亡",
+            "start": 3,
+            "end": 5,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九四",
+        "image": "“贞吉悔亡”，志行也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68496,
+          "endChar": 68643,
+          "startLine": 2562,
+          "endLine": 2566
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "changed_use",
+        "effect": "control-strengthened",
+        "label": "克体得生而盛",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  }
+]

@@ -1,0 +1,923 @@
+[
+  {
+    "index": 5,
+    "baseline": [
+      2,
+      "spring-wood",
+      "difficult",
+      "走得正，却没有一处托起来",
+      "你拉住车轮慢慢走，不冒进，两处限制都只是轻轻碰了一下，收尾也耗得不多；可一路下来没有哪一处托你往上，这次没升成，评议看到的是稳，看不到突破。",
+      "那条资格限制轻，你一碰就过。",
+      "评议也只是轻轻问了几句，你答得稳。",
+      "收尾补交一页说明，花不了多少力气。九二「曳其轮，贞吉」，拉住车轮，守正得吉；小象「中以行正也」，你走得正，吉在少出错，没落到职级上。",
+      "稳有余而突破不足，这回没成。往后选一件事，做出一个看得见的突破。",
+      "离火为体，寅卯月相；本用、体互坎水皆休而克体，又受变用坤土所制，克力轻；用互离火比和；变用坤土死，体生之，泄得不多。全盘无生体之卦，《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，《求名占》「体生用，名不可就」，判升不了。九二「贞吉」吉在少错，不翻。",
+      [
+        [
+          "drain",
+          "changed_use",
+          "又补写了一份情况说明",
+          "挑一件事做出看得见的突破。",
+          "死坤仍受体生，以坤未申给尾段补写窗口。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/2/spring-wood",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体，无生体，末又泄，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "求名占「用克体，名不可成」「体生用，名不可就」（553 行）"
+      ],
+      "evidenceAgainst": [
+        "体离相",
+        "九二贞吉（守正之辞）",
+        "克体之坎受坤制，按无气论（V2.1），阻力轻"
+      ],
+      "lineReading": "九二「曳其轮，贞吉」（yijing64 2552 行），小象「中以行正也」（2554 行）。贞吉为守正方吉之辞（裁定第 8、19 条），不改判；无生有克亦不因吉辞升判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用坤受体生为尾段耗费之事，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用坤土泄体，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，《求名占》「体生用，名不可就」，定为升不了。",
+      "旺衰：寅卯月离火相；坎水休，又受坤土所制，克力轻；坤土死，泄得不多。阻与耗都轻，只是全盘无一处生体，一点点亏下去。",
+      "爻辞：九二「曳其轮，贞吉」，小象「中以行正也」。寅卯月体相，拉轮守正而少错，盘中无生体之卦，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火地晋；动在二爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 35,
+          "name": "火地晋",
+          "baseGrade": "中上卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "休"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土",
+          "qi": "死"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "相"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_generates_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "曳其轮，贞吉。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 4,
+            "end": 6,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九二",
+        "image": "九二贞吉，中以行正也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68270,
+          "endChar": 68381,
+          "startLine": 2552,
+          "endLine": 2556
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "baseline": [
+      2,
+      "summer-fire",
+      "difficult",
+      "前半稳当，收尾那一块最耗",
+      "你底子正旺，前半程拉住节奏走得稳，两处限制都没伤到你；偏偏收尾时部门派你牵头一次大规模客户回访，你几乎把全部力气都押了上去，职级这次没动，匆匆收尾的是你自己的申报。",
+      "摆在前面的两处限制，对你都不算重。",
+      "你拉住节奏一步步走，评议挑不出错。",
+      "收尾那次客户回访耗得最多，申报材料写得仓促。九二「曳其轮，贞吉」，前半拉住车轮是对的；小象「中以行正也」，正是走正了，力气却在最后流了出去。",
+      "这回没成，力气押在了回访上。回访和申报排开，申报先写完。",
+      "离火为体，巳午月旺；本用、体互坎水皆囚而克体，前中阻力轻；用互离火比和；变用坤土相，体生之，泄体有力，收尾那一块最耗。《求名占》「用克体，名不可成」「体生用，名不可就」，判升不了。九二吉在前半稳，不翻。",
+      [
+        [
+          "drain",
+          "changed_use",
+          "客户回访又排了一整周",
+          "回访和申报排开，申报先写完。",
+          "相坤直接受旺离生，取坤时序观尾段投入。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/2/summer-fire",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体，无生体，一律为难；体旺、坎囚只减阻力。旧稿判难，不变。",
+      "evidenceFor": [
+        "求名占「用克体，名不可成」（553 行）",
+        "变用相坤泄体，「体生用，名不可就」（553 行）"
+      ],
+      "evidenceAgainst": [
+        "体离旺，克体之坎囚"
+      ],
+      "lineReading": "九二「曳其轮，贞吉」（yijing64 2552 行），小象「中以行正也」（2554 行）。贞吉为守正方吉之辞（裁定第 8、19 条），不改判；无生有克亦不因吉辞升判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用相坤受体生为尾段投入之事，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用坤土泄体，无生体之卦。《求名占》「用克体，名不可成」「体生用，名不可就」，定为升不了。",
+      "旺衰：巳午月离火旺；坎水囚，前中阻力轻；坤土相，泄体有力，收尾那一块最耗。",
+      "爻辞：九二「曳其轮，贞吉」，小象「中以行正也」。巳午火旺，体足，前半拉轮守正，泄在收尾回访，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火地晋；动在二爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 35,
+          "name": "火地晋",
+          "baseGrade": "中上卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "囚"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土",
+          "qi": "相"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "旺"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_generates_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "曳其轮，贞吉。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 4,
+            "end": 6,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九二",
+        "image": "九二贞吉，中以行正也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68270,
+          "endChar": 68381,
+          "startLine": 2552,
+          "endLine": 2556
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "baseline": [
+      2,
+      "autumn-metal",
+      "difficult",
+      "少出错，撑不起场面",
+      "你自身气力不足，好在一路拉住节奏，两处限制都被一项新规减轻了，交上去的每一份材料都没出错；新岗位要的却是能撑场面的人，你眼下撑不起，这回没成。",
+      "你步子放得慢，材料一份份核过才交。",
+      "新规减轻了两处限制，评议走得不算难。",
+      "收尾还有一些要付出的工夫，你一点点做完。九二「曳其轮，贞吉」，小象「中以行正也」，行得正，少出错，吉就在这里；撑场面的那份力，这一季还没有。",
+      "职级没动，差在撑场面的那份力。先在本岗牵头一件大事，把场面撑起来。",
+      "离火为体，申酉月囚，用互离火亦囚；本用、体互坎水皆相，受变用坤土所制，克力减；变用坤土休，体生之，收尾仍要付出；难在体囚而无一处生体。判升不了。九二吉在少错，不翻。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "评议提出新岗位要能撑场面",
+          "在本岗牵头一件大事，把场面撑起来。",
+          "相坎受坤制而无气，仍直接克原体，取子观中段核验。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/2/autumn-metal",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "无生有克，本用克体，末泄，取难。克体之坎受坤制按无气论（V2.1），难处在体囚无助。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "本用、体互坎水克囚离，全盘无助",
+        "变用泄体（553 行）"
+      ],
+      "evidenceAgainst": [
+        "九二贞吉（守正之辞）",
+        "克体之坎受坤制，按无气论（V2.1）"
+      ],
+      "lineReading": "九二「曳其轮，贞吉」（yijing64 2552 行），小象「中以行正也」（2554 行）。贞吉为守正方吉之辞（裁定第 8、19 条），不改判；无生有克亦不因吉辞升判。",
+      "timing": {
+        "changed": true,
+        "reason": "体互坎受坤制按无气论，原事件「较难承接」偏重，只改措辞；种类、位置不变。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用坤土泄体，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：申酉月离火囚；坎水相，受坤土所制，克力减；难在体囚而无一处生体；坤土休，收尾仍要付出。",
+      "爻辞：九二「曳其轮，贞吉」，小象「中以行正也」。申酉月体囚，行正少错，撑不起场面，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火地晋；动在二爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 35,
+          "name": "火地晋",
+          "baseGrade": "中上卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "相"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土",
+          "qi": "休"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "囚"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_generates_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "曳其轮，贞吉。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 4,
+            "end": 6,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九二",
+        "image": "九二贞吉，中以行正也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68270,
+          "endChar": 68381,
+          "startLine": 2552,
+          "endLine": 2556
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "baseline": [
+      2,
+      "winter-water",
+      "difficult",
+      "险中守住了，人却撑不起",
+      "这一季是你最没底的时候，两处限制虽被新规挡去一部分，仍压着；你在险处拉住了车轮，没出差错，这次没升成，那份担当你一时还拿不出来，新岗位偏偏要它。",
+      "你一上来就放慢了步子，先求不出错。",
+      "新规挡去了限制的一部分，剩下的仍压在你身上。",
+      "收尾耗得不多，可你也没余力了。九二居下卦坎中，「曳其轮，贞吉」，是险中自持；小象「中以行正也」，守住了正，吉只护住少错。",
+      "担当这一项还欠着，升职还差一步，不出差错撑不起新岗位。手上那件险事，稳稳收尾。",
+      "离火为体，亥子月死，用互离火同死；本用、体互坎水当令而受变用坤土所制，克力减；变用坤土囚，泄轻。难不在阻，在体无气又无生体之卦，判升不了。九二吉只护少错，不翻。",
+      [
+        [
+          "control",
+          "body_mutual",
+          "剩下的限制仍压在你身上",
+          "把手上那件险事稳稳收尾。",
+          "坎当令而受坤制，仍直克离，取子为中段核验参考。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/2/winter-water",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "体死而无生体，本用、体互坎克体（当令而受坤制，按无气论，V2.1），末泄，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "mh-116「无生体之卦，有克体之卦，则事不谐矣」（792 行）",
+        "求名占「用克体，名不可成」（553 行）",
+        "体离死，比和之离亦死，全盘无助"
+      ],
+      "evidenceAgainst": [
+        "九二贞吉（守正之辞）",
+        "克体之坎受坤制，按无气论（V2.1）"
+      ],
+      "lineReading": "九二「曳其轮，贞吉」（yijing64 2552 行），小象「中以行正也」（2554 行）。贞吉为守正方吉之辞（裁定第 8、19 条），不改判；无生有克亦不因吉辞升判。",
+      "timing": {
+        "changed": true,
+        "reason": "体互坎受坤制按无气论，原事件「较难处理严格核验」偏重，只改措辞；种类、位置不变。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用坤土泄体，无生体之卦。《占卦诀》「无生体之卦，有克体之卦，则事不谐矣」，定为升不了。",
+      "旺衰：亥子月离火死，比和之离同死；坎水当令而受坤土所制，克力减；坤土囚，泄轻。难不在阻，在体无气又无生体之卦。",
+      "爻辞：九二「曳其轮，贞吉」，小象「中以行正也」。九二居下坎之中，亥子水旺，体死，险中自持而少错，撑不起担当，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火地晋；动在二爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 35,
+          "name": "火地晋",
+          "baseGrade": "中上卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "旺"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土",
+          "qi": "囚"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "死"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_generates_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "曳其轮，贞吉。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 4,
+            "end": 6,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九二",
+        "image": "九二贞吉，中以行正也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68270,
+          "endChar": 68381,
+          "startLine": 2552,
+          "endLine": 2556
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "baseline": [
+      2,
+      "seasonal-earth",
+      "difficult",
+      "前中都稳，收尾那座山太大",
+      "两处限制都轻，你一步一步挨过来，没出岔子；只是新岗位要求上任前先交一份全流程梳理报告，量大到你一个人扛不下，到评定截止只写出一半，那份梳理报告够不上。",
+      "那两处限制都轻，你一步步挨过去。",
+      "评议没提什么，你也没急着往前抢。",
+      "梳理报告量最大，截止时只写到一半。九二「曳其轮，贞吉」，拉住车轮不抢，前面因此稳；小象「中以行正也」，难处全落在最后那一大块上。",
+      "差在那份全流程梳理报告，升职还差一步，只写出了一半。报告分成几段，按段交付。",
+      "离火为体，辰未戌丑月休；本用、体互坎水皆死，《复明时令之应》「如克体卦气，则宜乘衰」，前中轻；变用坤土旺，体生之，泄体最重，难处全在收尾，《求名占》「用克体，名不可成」「体生用，名不可就」，判升不了。九二吉在前稳，不翻。",
+      [
+        [
+          "drain",
+          "changed_use",
+          "梳理报告截止时只写到一半",
+          "梳理分成几段，按段交付。",
+          "旺坤直接受离生，取未申观察尾段投入。",
+          "trigram-periods"
+        ]
+      ],
+      ""
+    ],
+    "existingReview": {
+      "key": "career.promotion-pay.promotion/64/2/seasonal-earth",
+      "oldOutcome": "difficult",
+      "newOutcome": "difficult",
+      "changed": false,
+      "changeType": "none",
+      "reason": "本用克体，无生体，末旺坤泄体，取难。旧稿判难，不变。",
+      "evidenceFor": [
+        "求名占「用克体，名不可成」「体生用，名不可就」（553 行）",
+        "变用旺坤泄体"
+      ],
+      "evidenceAgainst": [
+        "克体之坎死，阻力轻（655 行）"
+      ],
+      "lineReading": "九二「曳其轮，贞吉」（yijing64 2552 行），小象「中以行正也」（2554 行）。贞吉为守正方吉之辞（裁定第 8、19 条），不改判；无生有克亦不因吉辞升判。",
+      "timing": {
+        "changed": false,
+        "reason": "原取变用旺坤受体生为尾段投入之事，与难相符，未改。"
+      },
+      "status": "passed",
+      "reviewer": "claude-opus-5-5",
+      "date": "2026-11-18",
+      "final": {
+        "from": "difficult",
+        "to": "difficult",
+        "rules": [
+          "READING_POLICY_V2 §2 R3 无生有克为难",
+          "§13 难即不成"
+        ],
+        "note": "定稿复核，结论不变。正文、第十栏或计算说明按定稿轻重与引文规矩修订。",
+        "promotionRule": "考试同盘定稿"
+      },
+      "derivedFrom": "exam review-v2（同盘同爻）+ 晋升在任专条与晋升专属爻辞，见 docs/review/PROMOTION_REJUDGE_20261118.md"
+    },
+    "calculationNotes": [
+      "判断：本用、体互两处坎水克体，用互离火比和，变用坤土泄体，无生体之卦。《求名占》「用克体，名不可成」「体生用，名不可就」，定为升不了。",
+      "旺衰：辰戌丑未月离火休；坎水死，《复明时令之应》「如克体卦气，则宜乘衰」，前中轻；坤土旺，泄体最重，难处全在收尾。",
+      "爻辞：九二「曳其轮，贞吉」，小象「中以行正也」。土月体休，前稳而收尾旺坤泄重，不改结论。",
+      "盘面：本卦火水未济，互卦水火既济，变卦火地晋；动在二爻，上离为体，下坎为用。"
+    ],
+    "promotionRule": "考试同盘定稿",
+    "facts": {
+      "stages": [
+        {
+          "id": 64,
+          "name": "火水未济",
+          "baseGrade": "中下卦"
+        },
+        {
+          "id": 63,
+          "name": "水火既济",
+          "baseGrade": "中上卦"
+        },
+        {
+          "id": 35,
+          "name": "火地晋",
+          "baseGrade": "中上卦"
+        }
+      ],
+      "nodes": [
+        {
+          "role": "use",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "body",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "use_mutual",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        },
+        {
+          "role": "body_mutual",
+          "trigram": "坎",
+          "element": "水",
+          "qi": "死"
+        },
+        {
+          "role": "changed_use",
+          "trigram": "坤",
+          "element": "土",
+          "qi": "旺"
+        },
+        {
+          "role": "body_inherited",
+          "trigram": "离",
+          "element": "火",
+          "qi": "休"
+        }
+      ],
+      "directRelations": [
+        {
+          "role": "use",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "use_mutual",
+          "type": "equal"
+        },
+        {
+          "role": "body_mutual",
+          "type": "use_controls_body"
+        },
+        {
+          "role": "changed_use",
+          "type": "body_generates_use"
+        }
+      ],
+      "movingLine": {
+        "fullText": "曳其轮，贞吉。",
+        "terms": [
+          {
+            "term": "贞吉",
+            "start": 4,
+            "end": 6,
+            "requiresContextualInterpretation": true
+          }
+        ],
+        "automaticPolarityScore": null,
+        "applicationMustBeCurated": true,
+        "label": "九二",
+        "image": "九二贞吉，中以行正也。",
+        "sourceRef": {
+          "sourceId": "user-yijing64",
+          "startChar": 68270,
+          "endChar": 68381,
+          "startLine": 2552,
+          "endLine": 2556
+        },
+        "referenceUrl": "https://zh.wikisource.org/w/index.php?title=%E5%91%A8%E6%98%93%2F%E6%9C%AA%E6%BF%9F&oldid=10647450&variant=zh-hans"
+      }
+    },
+    "indirectEffectsApplied": [
+      {
+        "role": "use",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      },
+      {
+        "role": "body_mutual",
+        "effect": "control-weakened",
+        "label": "克体受制而衰",
+        "rule": "reading-policy-v2.1-indirect-one-layer",
+        "sourceId": "mh-099",
+        "quote": "此卦生体，诸卦有克此卦者，彼灭其吉。此卦克体，诸卦又有克此卦者，稍解其穷。"
+      }
+    ]
+  }
+]

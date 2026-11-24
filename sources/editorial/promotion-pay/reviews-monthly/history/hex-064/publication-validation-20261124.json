@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "primaryId": 64,
+  "validatedAtUtc": "2026-11-24T21:17:18.712793+00:00",
+  "sourceSha256": "e46fd4a7e4c365b8880cb46b9f80641cf7287ca5823b194101229ac767c35cc9",
+  "validatedBy": "/root",
+  "wholeArticlesNewlyReadByThisValidation": 0,
+  "wholeCopyReviewScope": "Author and independent scopes remain in original line records; program validation adds no semantic reading.",
+  "monthlyGate": {
+    "command": "bash scripts/review/monthly-gate.sh promotion-pay 64",
+    "status": "passed",
+    "articles": 72,
+    "chartComparisons": 1944,
+    "chartMismatches": 0,
+    "dateCases": 144,
+    "bodyHanRange": [
+      479,
+      557
+    ],
+    "intraEightCharacterRepeats": 0,
+    "crossScopeBothOverThreshold": 0,
+    "crossScopeLineOverThreshold": 0,
+    "maxSharedPercentageBoth": 3,
+    "maxSharedPercentageLine": 3,
+    "unverifiedQuotations": 0
+  },
+  "sourceDocumentEquality": {
+    "command": "node scripts/update-monthly-index.mjs promotion-pay --hex 1,...,60,64 --added 64 --publication-date 2026-11-24",
+    "status": "passed",
+    "publishedArticleCount": 4392,
+    "chartComparisons": 118584,
+    "chartMismatches": 0,
+    "dateCases": 8784,
+    "duplicateWholeArticles": 0,
+    "duplicateParagraphs": 0,
+    "duplicateLongSentences": 0,
+    "checksReport": "docs/review/PROMOTION_PAY_MONTHLY_CHECKS.json"
+  },
+  "focusedTests": {
+    "command": "node --test tests/promotion-pay.test.mjs tests/promotion-monthly.test.mjs",
+    "passed": 10,
+    "failed": 0,
+    "environmentCorrection": "Initial runs found omitted sparse checkout fixtures for exam and relationship-establishment; restored existing tracked source directories, then reran unchanged tests successfully."
+  },
+  "renderedPageHumanLanguageReview": "Coordinator actually read the first generated full article and the page tail; complete source/render equality is machine-verified, not claimed as rereading all generated articles.",
+  "publicationStatus": "ready-for-git-push; remote verification follows the commit"
+}
