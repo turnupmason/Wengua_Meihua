@@ -30,7 +30,7 @@
 | [山水蒙 · 九二](hex-004.md#九二动--寅月) | 12 | 491–553 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [山水蒙 · 六三](hex-004.md#六三动--寅月) | 12 | 500–527 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [山水蒙 · 六四](hex-004.md#六四动--寅月) | 12 | 493–511 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
-| [山水蒙 · 六五](hex-004.md#六五动--寅月) | 12 | 488–522 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
+| [山水蒙 · 六五](hex-004.md#六五动--寅月) | 12 | 488–527 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [山水蒙 · 上九](hex-004.md#上九动--寅月) | 12 | 487–531 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-004.json) |
 | [水天需 · 初九](hex-005.md#初九动--寅月) | 12 | 505–538 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
 | [水天需 · 九二](hex-005.md#九二动--寅月) | 12 | 482–519 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-005.json) |
