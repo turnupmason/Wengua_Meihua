@@ -4,7 +4,7 @@
 
 判断的对象是现职能否持续。看主管是否把你纳入长期安排并给到相应信息、权限和资源，是否知道你的核心贡献和岗位需要的能力，是否愿意直接听你汇报、就事讨论问题，以及绩效评价、奖金、调薪和发展机会是否实际兑现。用持续可见的行为判断，分工及人事决定以明确的沟通和正式安排为准。
 
-已按这一标准重审 **924 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
+已按这一标准重审 **936 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -300,7 +300,7 @@
 | [泽火革 · 六二](hex-049.md#六二动--寅月) | 12 | 513–538 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
 | [泽火革 · 九三](hex-049.md#九三动--寅月) | 12 | 511–531 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
 | [泽火革 · 九四](hex-049.md#九四动--寅月) | 12 | 505–528 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
-| [泽火革 · 九五](hex-049.md#九五动--寅月) | 12 | 504–545 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
+| [泽火革 · 九五](hex-049.md#九五动--寅月) | 12 | 480–506 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
 | [泽火革 · 上六](hex-049.md#上六动--寅月) | 12 | 514–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-049.json) |
 | [火风鼎 · 初六](hex-050.md#初六动--寅月) | 12 | 521–550 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-050.json) |
 | [火风鼎 · 九二](hex-050.md#九二动--寅月) | 12 | 524–548 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-050.json) |
