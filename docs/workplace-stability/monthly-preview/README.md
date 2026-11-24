@@ -4,7 +4,7 @@
 
 判断的对象是现职能否持续。看主管是否把你纳入长期安排并给到相应信息、权限和资源，是否知道你的核心贡献和岗位需要的能力，是否愿意直接听你汇报、就事讨论问题，以及绩效评价、奖金、调薪和发展机会是否实际兑现。用持续可见的行为判断，分工及人事决定以明确的沟通和正式安排为准。
 
-已按这一标准重审 **1,080 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
+已按这一标准重审 **1,092 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -316,7 +316,7 @@
 | [震为雷 · 上六](hex-051.md#上六动--寅月) | 12 | 524–541 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-051.json) |
 | [艮为山 · 初六](hex-052.md#初六动--寅月) | 12 | 515–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 六二](hex-052.md#六二动--寅月) | 12 | 494–510 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
-| [艮为山 · 九三](hex-052.md#九三动--寅月) | 12 | 521–553 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
+| [艮为山 · 九三](hex-052.md#九三动--寅月) | 12 | 506–534 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 六四](hex-052.md#六四动--寅月) | 12 | 516–542 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 六五](hex-052.md#六五动--寅月) | 12 | 520–543 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
 | [艮为山 · 上九](hex-052.md#上九动--寅月) | 12 | 511–560 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-052.json) |
