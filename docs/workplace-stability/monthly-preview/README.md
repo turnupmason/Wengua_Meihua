@@ -4,7 +4,7 @@
 
 判断的对象是现职能否持续。看主管是否把你纳入长期安排并给到相应信息、权限和资源，是否知道你的核心贡献和岗位需要的能力，是否愿意直接听你汇报、就事讨论问题，以及绩效评价、奖金、调薪和发展机会是否实际兑现。用持续可见的行为判断，分工及人事决定以明确的沟通和正式安排为准。
 
-已按这一标准重审 **1,800 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
+已按这一标准重审 **1,812 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -79,7 +79,7 @@
 | [天地否 · 六三](hex-012.md#六三动--寅月) | 12 | 488–524 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 九四](hex-012.md#九四动--寅月) | 12 | 504–540 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 九五](hex-012.md#九五动--寅月) | 12 | 485–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
-| [天地否 · 上九](hex-012.md#上九动--寅月) | 12 | 484–515 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
+| [天地否 · 上九](hex-012.md#上九动--寅月) | 12 | 480–534 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天火同人 · 初九](hex-013.md#初九动--寅月) | 12 | 509–540 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 | [天火同人 · 六二](hex-013.md#六二动--寅月) | 12 | 473–515 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 | [天火同人 · 九三](hex-013.md#九三动--寅月) | 12 | 504–542 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
