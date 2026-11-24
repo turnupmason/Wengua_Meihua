@@ -4,7 +4,7 @@
 
 判断的对象是现职能否持续。看主管是否把你纳入长期安排并给到相应信息、权限和资源，是否知道你的核心贡献和岗位需要的能力，是否愿意直接听你汇报、就事讨论问题，以及绩效评价、奖金、调薪和发展机会是否实际兑现。用持续可见的行为判断，分工及人事决定以明确的沟通和正式安排为准。
 
-已按这一标准重审 **2,616 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
+已按这一标准重审 **2,628 篇**。批次及逐篇依据见[规则审计](AUDIT.md)。
 
 | 已覆盖 | 篇数 | 正文篇幅 | 核读 |
 | --- | ---: | ---: | --- |
@@ -113,7 +113,7 @@
 | [山风蛊 · 初六](hex-018.md#初六动--寅月) | 12 | 492–533 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 | [山风蛊 · 九二](hex-018.md#九二动--寅月) | 12 | 491–535 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 | [山风蛊 · 九三](hex-018.md#九三动--寅月) | 12 | 506–544 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
-| [山风蛊 · 六四](hex-018.md#六四动--寅月) | 12 | 474–528 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
+| [山风蛊 · 六四](hex-018.md#六四动--寅月) | 12 | 494–525 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 | [山风蛊 · 六五](hex-018.md#六五动--寅月) | 12 | 472–509 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 | [山风蛊 · 上九](hex-018.md#上九动--寅月) | 12 | 470–492 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-018.json) |
 | [地泽临 · 初九](hex-019.md#初九动--寅月) | 12 | 496–528 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-019.json) |
