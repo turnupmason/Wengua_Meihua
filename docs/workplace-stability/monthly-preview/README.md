@@ -50,7 +50,7 @@
 | [地水师 · 六四](hex-007.md#六四动--寅月) | 12 | 475–529 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-007.json) |
 | [地水师 · 六五](hex-007.md#六五动--寅月) | 12 | 489–529 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-007.json) |
 | [地水师 · 上六](hex-007.md#上六动--寅月) | 12 | 493–544 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-007.json) |
-| [水地比 · 初六](hex-008.md#初六动--寅月) | 12 | 503–525 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
+| [水地比 · 初六](hex-008.md#初六动--寅月) | 12 | 496–525 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 | [水地比 · 六二](hex-008.md#六二动--寅月) | 12 | 479–532 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 | [水地比 · 六三](hex-008.md#六三动--寅月) | 12 | 483–538 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
 | [水地比 · 六四](hex-008.md#六四动--寅月) | 12 | 483–521 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-008.json) |
@@ -80,7 +80,7 @@
 | [天地否 · 九四](hex-012.md#九四动--寅月) | 12 | 489–514 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 九五](hex-012.md#九五动--寅月) | 12 | 485–517 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
 | [天地否 · 上九](hex-012.md#上九动--寅月) | 12 | 484–515 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-012.json) |
-| [天火同人 · 初九](hex-013.md#初九动--寅月) | 12 | 511–540 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
+| [天火同人 · 初九](hex-013.md#初九动--寅月) | 12 | 509–540 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 | [天火同人 · 六二](hex-013.md#六二动--寅月) | 12 | 473–515 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 | [天火同人 · 九三](hex-013.md#九三动--寅月) | 12 | 504–542 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
 | [天火同人 · 九四](hex-013.md#九四动--寅月) | 12 | 486–507 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-013.json) |
@@ -272,7 +272,7 @@
 | [天风姤 · 九四](hex-044.md#九四动--寅月) | 12 | 505–543 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-044.json) |
 | [天风姤 · 九五](hex-044.md#九五动--寅月) | 12 | 501–545 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-044.json) |
 | [天风姤 · 上九](hex-044.md#上九动--寅月) | 12 | 499–533 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-044.json) |
-| [泽地萃 · 初六](hex-045.md#初六动--寅月) | 12 | 516–530 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-045.json) |
+| [泽地萃 · 初六](hex-045.md#初六动--寅月) | 12 | 506–529 汉字 | [本轮已重审](../../../sources/editorial/workplace-stability/reviews-monthly/hex-045.json) |
 | [泽地萃 · 六二](hex-045.md#六二动--寅月) | 12 | 502–529 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-045.json) |
 | [泽地萃 · 六三](hex-045.md#六三动--寅月) | 12 | 498–534 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-045.json) |
 | [泽地萃 · 九四](hex-045.md#九四动--寅月) | 12 | 498–537 汉字 | [逐篇作者核读](../../../sources/editorial/workplace-stability/reviews-monthly/hex-045.json) |
