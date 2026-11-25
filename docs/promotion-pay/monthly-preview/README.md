@@ -1,6 +1,6 @@
-# 晋升加薪逐月断语 · 4,464 篇
+# 晋升加薪逐月断语 · 4,608 篇
 
-已发布 **4,464 篇**。还余 144 篇。 每篇单列随岗薪资与应期。
+六十四卦、每卦六个动爻、每爻十二个月，逐月正文共 **4,608 篇**。 每篇单列随岗薪资与应期。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -65,6 +65,8 @@
 | 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-059.json) |
 | 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-060.json) |
 | 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-061.json) |
+| 雷山小过 | 72 | [打开全文](hex-062.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-062.json) |
+| 水火既济 | 72 | [打开全文](hex-063.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-063.json) |
 | 火水未济 | 72 | [打开全文](hex-064.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-064.json) |
 
 
@@ -75,19 +77,15 @@
 
 [本批写作与晋升规则审计](../../review/PROMOTION_MONTHLY_REWRITE_20261120.md)。独立交叉全文审读状态见逐卦回执。
 
-## 本轮逐爻审计
+## 本轮阅读与审计
 
-[中孚逐爻审计](../../review/PROMOTION_61_MONTHLY_RULE_AUDIT.md)
-
-## 本批阅读入口
-
-- [风泽中孚：六爻十二月全文](hex-061.md)
-
-
+- [中孚 · 72 篇](hex-061.md) · [逐爻审计](../../review/PROMOTION_61_MONTHLY_RULE_AUDIT.md)
+- [小过 · 72 篇](hex-062.md) · [逐爻审计](../../review/PROMOTION_62_MONTHLY_RULE_AUDIT.md)
+- [既济 · 72 篇](hex-063.md) · [逐爻审计](../../review/PROMOTION_63_MONTHLY_RULE_AUDIT.md)
 
 ## 检查与阅读状态
 
-4464 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 120,528 项，差异 0；日期用例 8,928 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+本轮 216 篇由 AI 编辑，按篇核对生成页、正文源、原断及取期。历批作者审读与独立复审覆盖见各卦回执。已发布全量的盘面比较 124,416 项，差异 0；日期用例 9,216 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 471–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

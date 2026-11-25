@@ -1,9 +1,19 @@
 // 注疏与一切「」引文核对（只读）：考试、面试作者源的正文、判断依据、应期、计算说明、复核记录。
 // 经传与《梅花易数》对 sources/original（含订正），王注孔疏对 sources/reference/zhouyi-zhengyi-hans（维基文库《周易正义》简体），
-// 程传、本义另列待核。用法：node scripts/review/commentary-audit.mjs <问项目录...> [--out file]
+// 程传、本义另列待核。用法：node scripts/review/commentary-audit.mjs <问项目录...> [--monthly] [--hex N] [--out file]
 import {readFileSync, readdirSync, writeFileSync, existsSync} from 'node:fs';
-const args = process.argv.slice(2); const oi = args.indexOf('--out'); const out = oi >= 0 ? args[oi + 1] : null;
-const items = args.filter((a, i) => a !== '--out' && i !== oi + 1);
+const args = process.argv.slice(2);
+const take = flag => {
+  const index = args.indexOf(flag);
+  if (index < 0) return null;
+  if (!args[index + 1] || args[index + 1].startsWith('--')) throw new Error('Missing value for ' + flag);
+  return args.splice(index, 2)[1];
+};
+const hex = take('--hex');
+if (hex !== null && (!/^\d{1,3}$/.test(hex) || Number(hex) < 1 || Number(hex) > 64)) throw new Error('Invalid hexagram');
+const selected = hex === null ? null : 'hex-' + hex.padStart(3, '0') + '.json';
+const out = take('--out');
+const items = args;
 const T2S = {陽:'阳',陰:'阴',於:'于',無:'无',龍:'龙',戰:'战',
   // 异体与底本录入字（逐条对过原文）：巳已、絜潔洁、鄣障、㧑撝、陗峭、馀余、耽眈、闚窥、壊壞坏、徳德、夫夬（本义履九五）
   巳:'已',絜:'洁',潔:'洁',潔:'洁',鄣:'障',㧑:'撝',峭:'陗',馀:'余',耽:'眈',窺:'窥',闚:'窥',壊:'坏',壞:'坏',徳:'德',己:'已',扞:'捍',脩:'修',給:'给',覲:'觐',為:'为',進:'进',仕:'仕',養:'养',朝:'朝',
@@ -40,18 +50,19 @@ for (const item of items.filter(a => a !== '--monthly')) {
   const dir = `sources/editorial/${item}/`;
   if (monthly) {
     const md = dir + 'monthly/';
-    for (const f of readdirSync(md).filter(f => /^hex-\d{3}\.json$/.test(f))) {
+    if (selected && !existsSync(md + selected)) throw new Error('Missing source: ' + md + selected);
+    for (const f of readdirSync(md).filter(f => (!selected || f === selected) && /^hex-\d{3}\.json$/.test(f))) {
       const id = f.slice(4, 7);
       for (const a of JSON.parse(readFileSync(md + f, 'utf8')).articles) {
         const k = `${id}/${a.movingLine}/${a.monthBranch}`;
         scan(item, k + '/title', a.title); scan(item, k + '/short', a.short);
         a.paragraphs.forEach((p, i) => scan(item, `${k}/p${i + 1}`, p));
-        scan(item, k + '/judgment', a.judgment); scan(item, k + '/timing', JSON.stringify(a.timing));
+        scan(item, k + '/pay', a.payExplanation); scan(item, k + '/judgment', a.judgment); scan(item, k + '/timing', JSON.stringify(a.timing));
       }
     }
     continue;
   }
-  for (const f of readdirSync(dir).filter(f => /^hex-\d{3}\.json$/.test(f))) {
+  for (const f of readdirSync(dir).filter(f => (!selected || f === selected) && /^hex-\d{3}\.json$/.test(f))) {
     const id = f.slice(4, 7);
     const src = JSON.parse(readFileSync(dir + f, 'utf8'));
     src.forEach((d, i) => { for (let c = 3; c <= 9; c++) scan(item, `${id}#${i}/c${c}`, d[c]); scan(item, `${id}#${i}/t`, JSON.stringify(d[10])); });
