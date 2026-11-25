@@ -10,6 +10,8 @@
 
 另有 [风地观 72 篇](hex-020.md)已发布并通过首轮全文核读，等候独立第二读者。其余 1872 篇尚未进入整卦首读清单。[逐批核读记录](AUDIT.md)
 
+分批开放的月稿有[火雷噬嗑 12 篇](hex-021-first-read.md)。全库尚有 1860 篇待撰。
+
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
 | [001 乾为天](hex-001.md) | 72 | 526–588 | 520–580 | 546 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-001.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-001.json) |

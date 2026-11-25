@@ -1,4 +1,4 @@
-import {readFile,writeFile} from 'node:fs/promises';
+import {readdir,readFile,writeFile} from 'node:fs/promises';
 import {SOURCE_DIR,REVIEW_DIR,SECOND_REVIEW_DIR,DOC_DIR,SCOPE,QUESTION_ID,DEMO_DATE,stem,sha256,han,stripQuotes,listIds,context,renderHex} from './review/missing-person-monthly-lib.mjs';
 import {auditMissingMonthly} from './review/check-missing-person-monthly.mjs';
 const ctx=await context(),rows=[],awaitingSecond=[];
@@ -27,6 +27,20 @@ const completed=rows.reduce((n,r)=>n+r.articles,0),missing=Array.from({length:64
 const progress={schemaVersion:'1.0.0',scopeVersion:SCOPE,questionId:QUESTION_ID,plannedArticles:4608,completedArticles:completed,remainingArticles:4608-completed,completeHexagrams:rows.map(r=>r.primaryId),remainingHexagrams:missing,independentlyWrittenMonthlyArticles:completed,legacyFiveQiArticles:1920,legacyContactLongFormArticlesCountedInThisPreview:0,legacyCountsUsedAsNewProgress:false,rows,runtimeIntegrated:false,independentHumanReview:'pending',userIndividuallyAccepted:false,realWorldPredictionAccuracy:'not-validated'};
 progress.awaitingIndependentSecondRead=awaitingSecond;
 progress.articlesOutsideReviewedManuscripts=4608-completed-awaitingSecond.reduce((total,row)=>total+row.articles,0);
+const partialDir=SOURCE_DIR.replace('/monthly','/partial-monthly'), partial=[];
+const partialFiles=await readdir(partialDir).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
+for(const file of partialFiles.sort()){
+ if(!/^hex-\d{3}\.json$/.test(file))continue;
+ const src=JSON.parse(await readFile(`${partialDir}/${file}`,'utf8')),id=src.primaryId,s=stem(id),hex=ctx.library.getHexagram(id);
+ if(file!==s+'.json'||!missing.includes(id)||awaitingSecond.some(row=>row.primaryId===id)||src.scopeVersion!==SCOPE||!src.articles.length)continue;
+ const lines=[...new Set(src.articles.map(a=>a.movingLine))].map(l=>hex.lines[l-1].label).join('、');
+ const expected=renderHex(ctx,src).replaceAll('/missing-contact/monthly/','/missing-contact/partial-monthly/').replace('六动爻与十二月令',lines+' · 月稿预览');
+ const page=s+'-first-read.md';
+ if(await readFile(`${DOC_DIR}/${page}`,'utf8')!==expected)throw new Error('月稿与当前分批作者源不一致 '+file);
+ partial.push({primaryId:id,name:hex.name,articles:src.articles.length,page});
+}
+progress.partialMonthlyPreviews=partial;
+progress.articlesStillToWrite=progress.articlesOutsideReviewedManuscripts-partial.reduce((total,row)=>total+row.articles,0);
 await writeFile(`${DOC_DIR}/progress.json`,JSON.stringify(progress,null,2)+'\n');
 const out=['# 失联寻人：逐月长稿预览',
  '本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。',
@@ -34,6 +48,7 @@ const out=['# 失联寻人：逐月长稿预览',
  '[规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)',
  '## 阅读目录',
  ...(awaitingSecond.length?[`另有 ${awaitingSecond.map(r=>`[${r.name} ${r.articles} 篇](${stem(r.primaryId)}.md)`).join('、')}已发布并通过首轮全文核读，等候独立第二读者。其余 ${progress.articlesOutsideReviewedManuscripts} 篇尚未进入整卦首读清单。[逐批核读记录](AUDIT.md)`]:[]),
+ ...(partial.length?[`分批开放的月稿有${partial.map(r=>`[${r.name} ${r.articles} 篇](${r.page})`).join('、')}。全库尚有 ${progress.articlesStillToWrite} 篇待撰。`]:[]),
  '| 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |',
  '| --- | ---: | ---: | ---: | ---: | --- |',
  ...rows.map(r=>`| [${String(r.primaryId).padStart(3,'0')} ${r.name}](${stem(r.primaryId)}.md) | ${r.articles} | ${r.bodyHanRange.join('–')} | ${r.bodyHanExcludingQuotesRange.join('–')} | ${r.medianBodyHan} | [首轮编辑](../../../${REVIEW_DIR}/${stem(r.primaryId)}.json) · [第二读者](../../../${SECOND_REVIEW_DIR}/${stem(r.primaryId)}.json) |`),
