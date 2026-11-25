@@ -2,13 +2,11 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 2736 / 4,608 篇，38 / 64 卦；尚余 1872 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 2808 / 4,608 篇，39 / 64 卦；尚余 1800 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
 ## 阅读目录
-
-分批开放的月稿有[火雷噬嗑 60 篇](hex-021-first-read.md)。全库尚有 1812 篇待撰。
 
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -32,6 +30,7 @@
 | [018 山风蛊](hex-018.md) | 72 | 500–524 | 493–520 | 505 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-018.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-018.json) |
 | [019 地泽临](hex-019.md) | 72 | 501–560 | 496–556 | 535 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-019.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-019.json) |
 | [020 风地观](hex-020.md) | 72 | 507–554 | 496–549 | 528 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-020.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json) |
+| [021 火雷噬嗑](hex-021.md) | 72 | 500–551 | 491–543 | 525 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-021.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-021.json) |
 | [022 山火贲](hex-022.md) | 72 | 500–538 | 488–534 | 514 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-022.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-022.json) |
 | [023 山地剥](hex-023.md) | 72 | 512–556 | 505–549 | 527 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-023.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-023.json) |
 | [027 山雷颐](hex-027.md) | 72 | 502–559 | 493–551 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-027.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-027.json) |
@@ -67,4 +66,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：21 · 火雷噬嗑。
+下一待完成卦：24 · 地雷复。
