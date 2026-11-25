@@ -8,6 +8,8 @@
 
 ## 阅读目录
 
+正在续写风地观。首批可读 [初六寅、卯、辰月三篇](hex-020-first-read.md)，[逐篇规则核对](RULE_AUDIT_GUAN_20261125.md)随文开放。这三篇未计入上方已完成双读的整卦数量。
+
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
 | [001 乾为天](hex-001.md) | 72 | 526–588 | 520–580 | 546 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-001.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-001.json) |
