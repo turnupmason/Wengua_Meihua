@@ -113,7 +113,10 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
    // 现职长稿可用一句爻义或当事人的问题起笔，紧接着交代判断。简断仍查首句。
    const verdictLead=(paragraph,bodyOpening=false)=>{
-    const sentences=paragraph.split(/[。！？]/u),verdict=c.verdict[a.outcome];
+    const text=name==='workplace-stability'&&bodyOpening
+     ?paragraph.replace(/[「『“][^」』”]*[」』”]/gu,quote=>quote.replace(/[。！？]/gu,''))
+     :paragraph;
+    const sentences=text.split(/[。！？]/u),verdict=c.verdict[a.outcome];
     if(name==='workplace-stability'&&bodyOpening&&!verdict.test(sentences[0]))return sentences.slice(0,2).join('。');
     if(name!=='exam'||verdict.test(sentences[0]))return sentences[0];
     const opening=sentences.slice(0,2).join('。');
