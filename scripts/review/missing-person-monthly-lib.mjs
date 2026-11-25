@@ -49,7 +49,9 @@ export function referencesFor(ctx,id,a){
   const h=ctx.library.getHexagram(id),line=h.lines[a.movingLine-1];
   const canonicalName=new URL(h.referenceUrl).searchParams.get('title')?.split('/').at(-1);
   const volume=id<=4?1:id<=16?2:id<=30?3:id<=42?4:id<=54?5:6;
-  const commentaryTitle=`周易正義/0${volume}${canonicalName}`;
+  // The base text uses 无妄 in its URL; the verified commentary index uses 無妄.
+  const commentaryName=canonicalName==='无妄'?'無妄':canonicalName;
+  const commentaryTitle=`周易正義/0${volume}${commentaryName}`;
   if(!ctx.zhengyiTitles.includes(commentaryTitle))throw new Error('Missing verified commentary title '+commentaryTitle);
   return [{key,title:`《周易》${h.shortName}·${line.label}`,url:line.referenceUrl,scope:'本卦真实动爻、完整爻辞及小象。'},
    {key:key+'-ZHENGYI',title:`《周易正义》${h.shortName}卦注疏`,url:'https://zh.wikisource.org/wiki/'+commentaryTitle,scope:'王弼注与孔颖达疏分别标明，不将现代寻找解释冒作原注。'}];
