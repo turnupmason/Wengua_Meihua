@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 36,
   "baselineCommit": "534d3e3a513a1b2158a897e31228fbcf7d7301c0",
-  "sourceSha256": "0676167b12c6d6454161899d5e323f51c4f475dca2ac1a9ae1765300266ee2b4",
+  "sourceSha256": "4641daf3dd495d5b715c0af7762216a283fdf70089da0529e5129da26cb6d811",
   "editor": "/root/source_review",
   "reviewedAt": "2026-11-22T03:36:00.894837+00:00",
   "status": "author-read-with-open-findings",
@@ -237,7 +237,7 @@
     "scope": "每爻十二篇落盘后实际全文读回；局部修订后读回完整变化字段。全文通读与变化字段复读合计覆盖现版，不冒称最终72篇又进行额外一次全文重读。",
     "hashesAreSemanticReading": false
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "primaryId": 36,
     "reviewer": "/root",
     "reviewerType": "independent-ai",
@@ -1465,5 +1465,58 @@
     "note": "生成页验等不另计72篇全文阅读；六爻独立实际阅读与完整变化字段复读见independentReview。",
     "independentHumanReview": "pending",
     "userPerArticleAcceptance": false
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "4641daf3dd495d5b715c0af7762216a283fdf70089da0529e5129da26cb6d811",
+    "wholeArticlesRead": 68,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 68 篇逐字段未变，沿用原有审读记录。本次调整的 4 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "0676167b12c6d6454161899d5e323f51c4f475dca2ac1a9ae1765300266ee2b4",
+    "priorReceiptSha256": "234e1dc01c13905e6d5594e7463759e15148b27446636cd947950b0f0d005607",
+    "sourceSha256": "4641daf3dd495d5b715c0af7762216a283fdf70089da0529e5129da26cb6d811",
+    "editor": "Codex",
+    "changedArticles": 4,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "36/1/寅",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "7bad7cf39387484ab98b9cda1e502b5b7fed89493a2eb6e108441d9e091947e4",
+        "after": "33790fad873d88fafd9001fec039f8ce5fbbce99dd4a48a658a5f4776042ed33"
+      },
+      {
+        "key": "36/1/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "79c1c27779330942f1d1a66787dccaab2701da0aeacf1ec36aa212bc649db909",
+        "after": "4de88165a263fb9ed3baa5611a3cc7c67f787ab1c859c642d8afdd7fbe2899e4"
+      },
+      {
+        "key": "36/4/午",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c9c379246d3ddafa268b3fa142f8f7a9e91624e9fe4f0d19f10aa90742e25c26",
+        "after": "59e3b7c9c787331a7ea44b1ab68bf1f8491b3341f25791168124403e6eb8d765"
+      },
+      {
+        "key": "36/5/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "7fa32d73a8b13e9f65ac84318c1e939e5f2fac842a3fb36042af1e73e7b21102",
+        "after": "1e6f9100c72c6ef895443d8c230e9a57d187d32b7b0efc93a79cb0fd11f2ba3c"
+      }
+    ]
   }
 }

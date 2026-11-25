@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 22,
   "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
-  "sourceSha256": "dbde6840cc4f44d4e0abae51eb5861ee14a4e457a7ee6df3b7ae5ad1db0aab55",
+  "sourceSha256": "89fc55a812856ead904f1a52469833e1451c80f652ac90802909e695d4ffb620",
   "editor": "/root/write_bi22",
   "reviewedAt": "2026-11-21T15:00:43.621187+00:00",
   "status": "author-read-with-open-findings",
@@ -290,7 +290,7 @@
       }
     ]
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "reviewer": "/root/style_audit",
     "reviewerType": "independent-ai",
     "reviewerIsHuman": false,
@@ -639,5 +639,34 @@
     "highFrequencyPhraseFindingsForThisHex": 0,
     "unverifiedClassicalQuotes": 0,
     "initialConsolationFalsePositiveParagraphsRevisedAndRead": 3
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "89fc55a812856ead904f1a52469833e1451c80f652ac90802909e695d4ffb620",
+    "wholeArticlesRead": 71,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 71 篇逐字段未变，沿用原有审读记录。本次调整的 1 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "dbde6840cc4f44d4e0abae51eb5861ee14a4e457a7ee6df3b7ae5ad1db0aab55",
+    "priorReceiptSha256": "b6241d8f006e5e468fd234e36aa4469cd54674f0e824806cc172586450fbb2cb",
+    "sourceSha256": "89fc55a812856ead904f1a52469833e1451c80f652ac90802909e695d4ffb620",
+    "editor": "Codex",
+    "changedArticles": 1,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "22/6/巳",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c7bf89a3cbf474b4a35250e10109eec96070a871b4c83ac63802ab3297726af5",
+        "after": "de064beee7d2602e6b62aa446640601cf61635fc51cb49cc947362051073dc07"
+      }
+    ]
   }
 }

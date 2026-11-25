@@ -110,7 +110,7 @@
 | 寅 | [后段能得助，越高仍有险](../promotion-pay/monthly-preview/hex-062.md#上六动--寅月) | 升不了 | 514 |
 | 卯 | [飞过了头，宜看是谁没有遇到谁](../promotion-pay/monthly-preview/hex-062.md#上六动--卯月) | 升不了 | 542 |
 | 辰 | [有扶持的实处，何以名位未动](../promotion-pay/monthly-preview/hex-062.md#上六动--辰月) | 升不了 | 511 |
-| 巳 | [末用火旺，能帮到哪一步](../promotion-pay/monthly-preview/hex-062.md#上六动--巳月) | 升不了 | 533 |
+| 巳 | [末用火旺，能帮到哪一步](../promotion-pay/monthly-preview/hex-062.md#上六动--巳月) | 升不了 | 532 |
 | 午 | [得人援手，并非已经越过了限制](../promotion-pay/monthly-preview/hex-062.md#上六动--午月) | 升不了 | 518 |
 | 未 | [虽有末助，向上仍须知止](../promotion-pay/monthly-preview/hex-062.md#上六动--未月) | 升不了 | 532 |
 | 申 | [能接住帮助，也要认清前路](../promotion-pay/monthly-preview/hex-062.md#上六动--申月) | 升不了 | 514 |

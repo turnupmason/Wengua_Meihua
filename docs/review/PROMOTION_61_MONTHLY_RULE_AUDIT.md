@@ -70,7 +70,7 @@
 | 月令 | 本篇着眼点 | 晋升原断 | 正文汉字 |
 | --- | --- | --- | ---: |
 | 寅 | [肯舍旁顾，才好担这一份任](../promotion-pay/monthly-preview/hex-061.md#六四动--寅月) | 能升 | 513 |
-| 卯 | [有些慢，是因为责任拿得真](../promotion-pay/monthly-preview/hex-061.md#六四动--卯月) | 能升 | 539 |
+| 卯 | [有些慢，是因为责任拿得真](../promotion-pay/monthly-preview/hex-061.md#六四动--卯月) | 能升 | 538 |
 | 辰 | [专心向上，何须另有凭借](../promotion-pay/monthly-preview/hex-061.md#六四动--辰月) | 能升 | 519 |
 | 巳 | [月近于望，位置也要知分寸](../promotion-pay/monthly-preview/hex-061.md#六四动--巳月) | 能升 | 541 |
 | 午 | [不靠旁人的声势，也能向上走](../promotion-pay/monthly-preview/hex-061.md#六四动--午月) | 能升 | 507 |
@@ -88,7 +88,7 @@
 
 | 月令 | 本篇着眼点 | 晋升原断 | 正文汉字 |
 | --- | --- | --- | ---: |
-| 寅 | [承诺有着落，这份信才有分量](../promotion-pay/monthly-preview/hex-061.md#九五动--寅月) | 能升 | 518 |
+| 寅 | [承诺有着落，这份信才有分量](../promotion-pay/monthly-preview/hex-061.md#九五动--寅月) | 能升 | 516 |
 | 卯 | [有信用的人，也要量所求之职](../promotion-pay/monthly-preview/hex-061.md#九五动--卯月) | 能升 | 530 |
 | 辰 | [为什么两次见生仍须说慢](../promotion-pay/monthly-preview/hex-061.md#九五动--辰月) | 能升 | 522 |
 | 巳 | [让人信的是你担得起什么](../promotion-pay/monthly-preview/hex-061.md#九五动--巳月) | 能升 | 520 |

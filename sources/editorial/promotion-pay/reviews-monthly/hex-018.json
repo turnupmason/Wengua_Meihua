@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 18,
   "baselineCommit": "dd766c3b92a22e567352fb6bbdf1e07bb028d021",
-  "sourceSha256": "4520560801e459c0bde989484b949f70a3e262f9f9ea9ce00abd25ac99026bc1",
+  "sourceSha256": "656bc78c596ff7d040881888ec56d44865e53d3fdc8278a317cdb7fde7bde772",
   "editor": "/root/source_audit",
   "reviewedAt": "2026-11-21T05:54:54.760927+00:00",
   "status": "author-read-with-open-findings",
@@ -270,7 +270,7 @@
       "otherArticleFieldsUnchanged": true
     }
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root + /root/write_sui",
     "reviewerType": "independent-ai",
@@ -1396,5 +1396,107 @@
     "testsPassed": 7,
     "independentReviewer": "/root/write_sui",
     "independentReview": "实际完整阅读排版器与测试差异，并重读《正义》初六经、王注、孔疏、小象；核准有子堪任而考乃无咎及窄范围展示，未发现阻断项。"
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "656bc78c596ff7d040881888ec56d44865e53d3fdc8278a317cdb7fde7bde772",
+    "wholeArticlesRead": 62,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 62 篇逐字段未变，沿用原有审读记录。本次调整的 10 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "4520560801e459c0bde989484b949f70a3e262f9f9ea9ce00abd25ac99026bc1",
+    "priorReceiptSha256": "2c8043d10ec8eae284b21850b89fa45df84ee668baf970cca544d253b740b860",
+    "sourceSha256": "656bc78c596ff7d040881888ec56d44865e53d3fdc8278a317cdb7fde7bde772",
+    "editor": "Codex",
+    "changedArticles": 10,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "18/1/申",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "d86bbce043f5096af3d3b855017c8b16e6892aef7bf478b233e397b3afe6357f",
+        "after": "bf33df1b45d8dbdcf0d011ab8cfadf06867fc66c9cef27ec445a59b09f1027ce"
+      },
+      {
+        "key": "18/1/酉",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "3d6855eb097ba1155cf5c9a0af3710db1ec70db7959958bf402dfd6c96037463",
+        "after": "9e2e0814c8691df786f581049cc7174dd850bb4c01446f9795e5b582c774d634"
+      },
+      {
+        "key": "18/1/戌",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "6dbf29b1a2049edc136e6e9dcc840449dc21c1f259df5c03c1f6d10430efa763",
+        "after": "49a008ce5615f190a9e8909abede2716ead5adb71e6c807d8842e976b8fc0507"
+      },
+      {
+        "key": "18/4/寅",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "4f6014d497a543297c723ffe0fed104862388770c72859e1c3b42f06aef7e3ac",
+        "after": "889c98d102613e8b1f53f7c01507cf4770c77e22785f2c044b0644861374808a"
+      },
+      {
+        "key": "18/4/辰",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "9e25f74deca48f325a93939b41dd87df53dc39bd2e5bb77eff7ed234d0709ed4",
+        "after": "9756b2a28d79e3f8c936e79c462eedf65021c5e3dd5819eeeaa8cc1f3988eb0f"
+      },
+      {
+        "key": "18/4/未",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "170a7c9d43c9f147524d331a4a0509457f30fde907ab9861ee004d3cadf4e33d",
+        "after": "b499f3795be2bdf7412ed873379725a59b217f4d9a709a1f8d61683e6f607355"
+      },
+      {
+        "key": "18/4/戌",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "3ebe25b6cd0c8f3f5ec3f96ede79995e84d9aeb36828edadf0672dcaf10e9153",
+        "after": "d6b65bae84aa9eeb20fc28143d5454dbb3c2574db53dfe319199fde1216ad1a2"
+      },
+      {
+        "key": "18/4/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "46b524d7ae42886681ec5ed7ada2e0dfcb07c18827bfaf4978ada2c49bee4d24",
+        "after": "99885921367e872f7a317ba51cb04631fd06d39b17356555664d328c875401a7"
+      },
+      {
+        "key": "18/4/丑",
+        "fields": [
+          "paragraphs",
+          "judgmentCorrection.reason"
+        ],
+        "before": "e200757169d7e7932d7572f8370784ac16f648f83e6a4df8f6f78e292c8a5347",
+        "after": "4207e0193e0d28a02872fc2ace097bcd2726ed13c8fa15173fc36f2fc134011b"
+      },
+      {
+        "key": "18/5/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "a723665dc8ab542497579a23e847fbd0034815a9e61763a33047be49bdbd1522",
+        "after": "c608e4865117ad499acd5b0f7fb6b4989c2a7e4ec6a7149dc91193649e17eab4"
+      }
+    ]
   }
 }

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 17,
   "baselineCommit": "dd766c3b92a22e567352fb6bbdf1e07bb028d021",
-  "sourceSha256": "48f1566fd0174105112810b65e61aeb2c6cd81b74452681f33d60072163ecff4",
+  "sourceSha256": "9bfc16f6f53319b540f52e51c295399409dc8a4ed54dc1e9d12eb1af81de6757",
   "editor": "/root/write_sui",
   "reviewedAt": "2026-11-21T05:49:04.532212+00:00",
   "status": "author-read-with-open-findings",
@@ -347,7 +347,7 @@
       "resolution": "111个字段集中窄改后全文读回72篇，最后3个完整字段再读回；自然起句与读者解释已闭环。"
     }
   ],
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "schemaVersion": "1.0.0",
     "primaryId": 17,
     "reviewer": "/root",
@@ -1258,5 +1258,142 @@
     "notes": "短句名单为初九、六三经文内原有句号分断，比例2%符合标准；未为指标改变原引文断句。机检不替代作者或独立编辑的实际全文阅读。"
   },
   "auditDocument": "docs/review/PROMOTION_SUI_RULE_AUDIT_20261121.md",
-  "canonicalAuthorLineHashSerialization": "Python json.dumps(array, ensure_ascii=False, sort_keys=True, separators=(',', ':')); no newline; UTF-8"
+  "canonicalAuthorLineHashSerialization": "Python json.dumps(array, ensure_ascii=False, sort_keys=True, separators=(',', ':')); no newline; UTF-8",
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "9bfc16f6f53319b540f52e51c295399409dc8a4ed54dc1e9d12eb1af81de6757",
+    "wholeArticlesRead": 58,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 58 篇逐字段未变，沿用原有审读记录。本次调整的 14 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "48f1566fd0174105112810b65e61aeb2c6cd81b74452681f33d60072163ecff4",
+    "priorReceiptSha256": "93909867130debebc746edb616ed62f27f9053bf415f781c6b49db0ab377cd14",
+    "sourceSha256": "9bfc16f6f53319b540f52e51c295399409dc8a4ed54dc1e9d12eb1af81de6757",
+    "editor": "Codex",
+    "changedArticles": 14,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "17/3/子",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c7132d0e8255a9f25d12e2772985058f8b741c79df1445b6e46f78e41223c334",
+        "after": "82066461129abab86ba1c294101d7a91c45bb06f2240c191bc7d899efbd890e0"
+      },
+      {
+        "key": "17/4/酉",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "fe3d1d83643bb040c82009e1a730ca133b142ab03489853a527fae7ba654803e",
+        "after": "d5f5d6b738aa0ea518a52071a9409e7a7ee84cb5f2dba17dbbe1282854d3d074"
+      },
+      {
+        "key": "17/5/寅",
+        "fields": [
+          "paragraphs",
+          "judgmentCorrection.reason"
+        ],
+        "before": "841829a71126ffa35459d050203e751863b00757f31644fef37b942d3aa26f8e",
+        "after": "d4a9d19227963cb99146dd9779014bb83703a2bcb4034f57ac910b725f72e2d1"
+      },
+      {
+        "key": "17/5/卯",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "4fac32cc1929c2775bf88c1fef4987a0d8bf1b0afa8f5276d1152f1ae89e8ccb",
+        "after": "66e92f28c872c61d0854f5f6e3bc50edff8debddeeba5f546f32bcf4fc3eaafc"
+      },
+      {
+        "key": "17/5/辰",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "f43b984482962d0b282d0ad621480f4e860fd8b2eb824f70fe8997358d199e7f",
+        "after": "45bb08566d5b9a7582df10ab7825ffb5694ca19be73be120fa18de315238e895"
+      },
+      {
+        "key": "17/5/巳",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "66912c4390c10f3f6af1f1658c9c5eb7839cf51dc8a48d50a8b8757429a75869",
+        "after": "2433837322bb94cea96869f44d06518acf59d1956475a20d7da1c86c811efce5"
+      },
+      {
+        "key": "17/5/午",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "286fa97068b10cafb786ae91ee01c580f63616a4c96b88f0e87613890c94d41e",
+        "after": "02ebc5f25404fc4190a5f3ddf956080ad8faca8bba270fbfe53b59676b0fc7f6"
+      },
+      {
+        "key": "17/5/未",
+        "fields": [
+          "paragraphs",
+          "judgmentCorrection.reason"
+        ],
+        "before": "c29c4b126ea5ec45e9d06f693fccbbe188abc20a5d66a675e0d392eba43cce07",
+        "after": "c16b0dee4b8c77e16eada8d5e1ab145d14cca5e4cc429e4f25216f3f3b40aabe"
+      },
+      {
+        "key": "17/5/申",
+        "fields": [
+          "judgment",
+          "judgmentCorrection.reason"
+        ],
+        "before": "eec9d8562df4afffdab62b5fe26ea9d5260af15331cc03c0715ad804a6d56233",
+        "after": "e7fea84134c73004c98fdd679dfa2c5df45b409bdf782f9f10f426b4a03369f2"
+      },
+      {
+        "key": "17/5/酉",
+        "fields": [
+          "judgment",
+          "judgmentCorrection.reason"
+        ],
+        "before": "7027143459685e94430b904b6f126d8beb72b14296f8142ec0895d60933babde",
+        "after": "76d617e96030e0db3e82ebe7d8ab71d4a0051da7f681026e614a51d0c09f36cc"
+      },
+      {
+        "key": "17/5/戌",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "a62149c5875f2b3975f7c765cb45ef114d5a5e7eef37080fe317c88189fcfeb2",
+        "after": "31f946942ab93aeddc8f0d4d6d28a1f59411d5ac0a061e7037cd4487d10b7830"
+      },
+      {
+        "key": "17/5/亥",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "1734ae191274edca0f6c5eb69fc77cd7ac4667af196ccd79be09e9caf4d3b319",
+        "after": "911c7f6d424034ed05f2115c03dac77a64c669e1c38c1d950d2f656ddadb4e8f"
+      },
+      {
+        "key": "17/5/子",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "b3b6c6aa0d62a61b4dae70e5af954710dce28aca829ea5b052621b7ad24ae243",
+        "after": "82fe8d8743198b27856cdf8cb5b16fa5b7c4ca33fb60d29c7959deab8929a096"
+      },
+      {
+        "key": "17/5/丑",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "1900d41f3b14c66c17eabc31904a97ba36825049c781a770bc9587b3d4321f3b",
+        "after": "3d086df96fcaec2ed22d4068116c5497b2053735c2d1426e10337b9d55d11f8c"
+      }
+    ]
+  }
 }

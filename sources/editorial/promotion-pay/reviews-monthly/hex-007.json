@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 7,
   "baselineCommit": "6d22003c57a2eb715b6e99838ae5377a6a47806a",
-  "sourceSha256": "18565a9a1ab067305572ef493f76983c385e233796171ce3524e262e8addcd01",
+  "sourceSha256": "308f8580e937428b2f4493607f69c3e5c5d6631bbc5e0459e5c4d53ba70a76fc",
   "editor": "/root/write_meng",
   "reviewedAt": "2026-11-20T19:20:39.001207+00:00",
   "status": "partially-reviewed",
@@ -1359,7 +1359,7 @@
       "bodyHanMedian": 541.0
     }
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root/standards_audit",
     "reviewerIsHuman": false,
@@ -2278,6 +2278,99 @@
         "field": "bodyHan",
         "old": 535,
         "new": 541
+      }
+    ]
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "308f8580e937428b2f4493607f69c3e5c5d6631bbc5e0459e5c4d53ba70a76fc",
+    "wholeArticlesRead": 63,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 63 篇逐字段未变，沿用原有审读记录。本次调整的 9 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "18565a9a1ab067305572ef493f76983c385e233796171ce3524e262e8addcd01",
+    "priorReceiptSha256": "0845ed88001498e7cd5f2ed23d30080f19c2355929c89a6919ebc2b10f69acf3",
+    "sourceSha256": "308f8580e937428b2f4493607f69c3e5c5d6631bbc5e0459e5c4d53ba70a76fc",
+    "editor": "Codex",
+    "changedArticles": 9,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "7/1/申",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "2c862e5ec49ac8a72fdae963c5e7685c63c7e65633519f9b22bf94c81ea19d31",
+        "after": "5032489a0433aa5f308966e19e96ee2c5800d98df406c1049651dc71d0e6f861"
+      },
+      {
+        "key": "7/1/酉",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "372fcbf514a0b67d28930a7693bc242816976125ca0e79d6e38e55f0c0a203ae",
+        "after": "d65b3bb909da0f41501b8e4dddeb2bb733d551cf91b83cf0d47277064aa52545"
+      },
+      {
+        "key": "7/1/戌",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "e68f4c70931430087206dd15e9d7ac46b9d48e159cb356bf664e8397d35a5cca",
+        "after": "a06b6a644bd5c850d111b67d4247b988c9527e09c72f4eafd9e4a6054f058998"
+      },
+      {
+        "key": "7/3/未",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c138707a414087c220df24b7b10c080528df4e4814d644ec95fea911d126899f",
+        "after": "c911d4d920caaa7f04554aabd7ad1df62debfc0a35a86b482dc7d3dab342e430"
+      },
+      {
+        "key": "7/3/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c0110db78e3d0b1d776544e8521686f50592fb8674250ca7c62618fc7e464e2a",
+        "after": "b7151b5de32fb2ff22042f2a9a06e1feaeaaa8748617d4da63508ae3e752b7ee"
+      },
+      {
+        "key": "7/4/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "1a293da69e3bf602d84f919a0679f4ec1d77d47abc53671a593ecd23ce072311",
+        "after": "632291fe64c519716fecc5adb602a2cd31b751ee1102e0d1bbdd861f4d6a4b5a"
+      },
+      {
+        "key": "7/4/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "138711f437ed3f7281f3dc9e894566d94947bb27a6ab716907212677c24e8a72",
+        "after": "4eabf49e739473686328bc340e2202416944d6cab8bd7e25cc28d93c4456b680"
+      },
+      {
+        "key": "7/5/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "7102f4610806cc25aa9cdf5c8bc8ff35655cd9b35573026dc4255cfda13e741d",
+        "after": "2f240246aa4c1a36ea6500c4fe6d1351d12fc36f12e3a3f930664f2e618c706c"
+      },
+      {
+        "key": "7/6/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "dc938c2666aa3803629c407fac636055a7d3f543a6271e61b2c36864ede42aaa",
+        "after": "61c66c964fd5104f0092403371e5e503a7029e56f9c5f5f9f2ff4a336d332746"
       }
     ]
   }

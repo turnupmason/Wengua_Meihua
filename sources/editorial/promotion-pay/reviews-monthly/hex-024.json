@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 24,
   "baselineCommit": "073f24339943c5ef1db9669675b5e5fe6bc52343",
-  "sourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+  "sourceSha256": "e9e0547b614a5775929629c78ffe8f8c610099310f915108b369ec74f01a8b6d",
   "editor": "/root/classical_audit",
   "reviewedAt": "2026-11-21T15:10:36.631563+00:00",
   "status": "author-read-with-open-findings",
@@ -1300,7 +1300,7 @@
       "independentReview": "passed-after-complete-fourteen-field-readback"
     }
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "hexagram": 24,
     "sourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
     "wholeArticlesRead": 72,
@@ -2600,5 +2600,58 @@
     "highFrequencyPhraseFindingsForThisHex": 0,
     "unverifiedClassicalQuotes": 0,
     "initialConsolationFalsePositiveCompleteFieldsRevisedAndRead": 14
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "e9e0547b614a5775929629c78ffe8f8c610099310f915108b369ec74f01a8b6d",
+    "wholeArticlesRead": 68,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 68 篇逐字段未变，沿用原有审读记录。本次调整的 4 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "ab9296311b6bcd9b56cfb065112d9ef84b7b8dbf976394eb98c8f5aa742ae741",
+    "priorReceiptSha256": "8998b4dcb79a340915ad7c4dc0b87e255c269049be291dfff660c901dc0e05b8",
+    "sourceSha256": "e9e0547b614a5775929629c78ffe8f8c610099310f915108b369ec74f01a8b6d",
+    "editor": "Codex",
+    "changedArticles": 4,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "24/1/寅",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "095b12d87d026f87dd40ac8e2d55ebd1454e6def9b52cd1cf9956b01f63ea990",
+        "after": "556a5718f17d68844e26be0455b85d8351267d58fc6a0ef8a844c772a427d768"
+      },
+      {
+        "key": "24/1/卯",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "013508114c966fd776b007040cf4860542807aceb6be927b08ee0092a7c9656f",
+        "after": "7ad72b6025f68725b6a85f8a41d1400ca39be58245b4c539f5e5073e965f9eec"
+      },
+      {
+        "key": "24/3/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "25e6ac7251c6dbf09f7ad396adad512061fdb793da1d160e18993f5f5581b888",
+        "after": "97dd96b3950f4cf18a90dd8fa028cdc9e9c191829c066d8cfc6d194891ffffa1"
+      },
+      {
+        "key": "24/4/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c60cf277d671abdb4c5da80d501d7d47f320ec2c344346741b2d4e7b202adcf9",
+        "after": "b5b250e395966ef466749fecd6a607513e21aaba2d44380c121e00721af15488"
+      }
+    ]
   }
 }

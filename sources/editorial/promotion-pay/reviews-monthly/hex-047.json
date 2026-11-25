@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 47,
   "baselineCommit": "0fcc352bfb1cee1a034302188668f3b7dc9bc2f9",
-  "sourceSha256": "fd9bbe1d326eacf9e52f51a409474c111a18465a17e84b9f7cfd7a84636f2788",
+  "sourceSha256": "0aca4318efebc23fc0403e49878e61cc0e80086fa8e61fdaaec75987f2333a17",
   "editor": "/root/classical_audit",
   "authors": [
     "/root",
@@ -721,7 +721,7 @@
     "logPath": "/workspace/scratch/85f7e67ce15d/audit047/gate-final.log",
     "note": "本轮72篇独审及26组不同完整变化字段实读后按原阈值全关口通过，协调者已另读26组完整旧新字段。程序结果只核结构及规则约束，不计作全文阅读，也不验证现实预测效果。"
   },
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root/audit_pending",
     "reviewerType": "independent-ai",
@@ -1876,5 +1876,210 @@
       "monthBranch": "寅",
       "scope": "root实读生成页首篇标题、全部正文、薪资、应期、展开专业与简断；其余71篇只在此步骤逐值核对，不新增语义阅读计数。"
     }
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "0aca4318efebc23fc0403e49878e61cc0e80086fa8e61fdaaec75987f2333a17",
+    "wholeArticlesRead": 49,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 49 篇逐字段未变，沿用原有审读记录。本次调整的 23 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "fd9bbe1d326eacf9e52f51a409474c111a18465a17e84b9f7cfd7a84636f2788",
+    "priorReceiptSha256": "59a8368e94add265008dbde88b6da784af7dc93435d547ac56337d695b1d24c8",
+    "sourceSha256": "0aca4318efebc23fc0403e49878e61cc0e80086fa8e61fdaaec75987f2333a17",
+    "editor": "Codex",
+    "changedArticles": 23,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "47/1/巳",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "d2050a66b5fb447c35a3c9d15c0a72a45179d22e9fea8c87ced1360b28f7320b",
+        "after": "3ff53a5cbb564b808fe32f0fa306df0aee1395bdff2d3ed70b8be11b96c41ce3"
+      },
+      {
+        "key": "47/1/申",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "aeabcc91e8f59fe0a0edc5d51de9ae0ff309fec03a2cbb5fbfb7b336fe0484fd",
+        "after": "42222511382af78b96c2a7989f1106ae8dd02b23340a38ca873e6a2ec9990586"
+      },
+      {
+        "key": "47/1/酉",
+        "fields": [
+          "judgmentCorrection.reason"
+        ],
+        "before": "b9c861ad86e2faf6788ffb6808bb1b8e4611b6e5073d85806ab0ca0daf8df737",
+        "after": "8200e860e35fb3495cf6a9f1bd84ad5c09ea0546b87c36345a2c483cc4180e2e"
+      },
+      {
+        "key": "47/1/戌",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "37d6556093a4cc6b72a2785d0348f1079923174681e64b238751a96435f77543",
+        "after": "6b50b193622d5989622093947b03b68272d430658d5fa31ac2ffa06ac9dc52e1"
+      },
+      {
+        "key": "47/2/寅",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "38ed9a6cfbeda74fc74753828237962ffa57acdb4a5578693aaf60609ceb70e1",
+        "after": "cd84ac05387311171c951066ae75efa6722ac0ef445d1b9092149aefa1687882"
+      },
+      {
+        "key": "47/2/巳",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c46367346fb6a061f2bad325f7589f9134c3718131c19ff4941826cacf682151",
+        "after": "3ebf030ea19b940146bda96d33bbceb88c25f594a51a300582c9ced0c011dad3"
+      },
+      {
+        "key": "47/2/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "cb77af196f490814c955ee9bf2befcfeccdec6724497b6cdcab96012e62b73ef",
+        "after": "8e685f35ef58bbe2bf9bb782be45c775f0718c4f23cbcfb8a320ce2a79ce9fdd"
+      },
+      {
+        "key": "47/2/酉",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "4d538f33672e5d9c1359e48dbb32e4afe0789eb79a6775cb71eead31ef7ec09e",
+        "after": "f927fa45bb34afa80ac6e71227ac3c7deb609efb03e715387ee67676e6445855"
+      },
+      {
+        "key": "47/2/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "14e05f361f3f14d61ad1df13e0488a9c13815dd5e020dffc2ddacfb136a19902",
+        "after": "d97b3508b5345153e42b1fff7f099278d6ad11dd03b6973bbe61a7d54df8e29b"
+      },
+      {
+        "key": "47/2/丑",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "f550db4825739a18942144771d3b848ad0eea5fdf0cb0dfb879b363506dd78d3",
+        "after": "1092d8c8c314a1522311d6b42114773d6b76094d8a01c39072778ebb60e62ab0"
+      },
+      {
+        "key": "47/3/寅",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "fb78b3b7d1bbe08be3b82fa933de29c6ae5d15f91b9aacc3560d04ddd3f50964",
+        "after": "01cd28f84da49c0184baa6116f78cef9bd9c024e60fe0a45fc8baf2687f08f41"
+      },
+      {
+        "key": "47/3/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "6f4c31484e5026e69679b0e0f42f7e67bf5ea44ddfdf895f3a66711040ca87b6",
+        "after": "f64a815a0c589323fc91ebcfaf84d9c84cc8101ae17187d316d56c400e9f7a53"
+      },
+      {
+        "key": "47/3/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "7a06db21269a8d5befd7c9c1977dec6871bfc00866bd925106eaf1e9cc5d777b",
+        "after": "624dfc43f813d566df908dd9cd75cf1d261e069a424768ef775b67fc77672f93"
+      },
+      {
+        "key": "47/4/未",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "08e6fbeac8d222c60fb10e0c60f634eddd840bd3ee63f1ee24df6f7c8e82f50b",
+        "after": "10cba2b7b58ab5a9a5157b41ea05422dbb96b2f5279e672fe5f64914f7ec74cd"
+      },
+      {
+        "key": "47/5/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "a0cc17a86bbd029bf46be9f1bb1d1418651a839680ade5c77a75f266d9ef679d",
+        "after": "426ac19cad529de9b63c56dd189bae1cca49e73835fb6ab41c750e1a515680e2"
+      },
+      {
+        "key": "47/5/未",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "2b3525ca596793a383c14bd3b64c95c7c7988a270370fd63b7e13547f44d122f",
+        "after": "1187a33faf553fcaf8e729da4a4366258eeb6d85b68a4dc1c7e92ca2a1862272"
+      },
+      {
+        "key": "47/5/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "e3bb6129168159d25145e971c72d3755065c5d3c557181f1dbc45b45e57af5ab",
+        "after": "425f4965a4603f420cf24349ad43b736e7f7e60418ab429b2f43667785c712f0"
+      },
+      {
+        "key": "47/5/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "303ea099ffdae43d6fdd877db48fba6afcf0ef8f212d7b675fd9633a3b902909",
+        "after": "b94ce276606384ee96b9321b1684f2cf68a38db21cf6a3804fee1847735c28a7"
+      },
+      {
+        "key": "47/5/丑",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "25c756ba7f41034938ca4ff0edcba3ce6fd1933a06c88f903da7ee6ccd107c7d",
+        "after": "e253b13aab499e2c6d8c3a677c5a5330afe0346cc12921baec1189b6e62fa01e"
+      },
+      {
+        "key": "47/6/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "30ce43d70f9fa5933b2b6dfbad3ff966a403e9966aecdd11cd136ff0dca55fb6",
+        "after": "56759c04b70ed02d079a114508bd0b506cf67913ec0ad823b6d38594ab60ccef"
+      },
+      {
+        "key": "47/6/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "03aadb38675de8e6d6c9eec59821920c03070e5d79c83068cde103cedd518bfb",
+        "after": "b82b61f5dd2edacab6bea43ecdbeb3c58049ef19c4525e62e3bf09e0b3bc8401"
+      },
+      {
+        "key": "47/6/亥",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "79373af704d38ab623532e919732f04842f1668bd3bff31f428e2aa50764f909",
+        "after": "d0634eeacb0c0cd75a3d2d09ac785566679337afbfd9430931b7a805c0a7b5f2"
+      },
+      {
+        "key": "47/6/丑",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "c24bc301eb972b71a64ad0697f41f56f6075d3660f4d0bbd59369c44538535b2",
+        "after": "ccea7915a0143992db4f77de7cf7090fd17ee749ba09754f820af3642ccf0e0f"
+      }
+    ]
   }
 }

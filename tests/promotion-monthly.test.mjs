@@ -4,6 +4,29 @@ import {readFile} from 'node:fs/promises';
 import {context,item,readingFor,renderHex,loadHex} from '../scripts/review/monthly-lib.mjs';
 import {promotionArticleIssues} from '../scripts/review/check-monthly.mjs';
 
+test('published promotion articles have distinct opening clauses and omit the previously identified workplace scenarios',async()=>{
+ const openings=new Map();
+ const calendarOpening=/^[寅卯辰巳午未申酉戌亥子丑]月/u;
+ for(let id=1;id<=64;id++){
+  const stem='hex-'+String(id).padStart(3,'0');
+  const source=JSON.parse(await readFile(`sources/editorial/promotion-pay/monthly/${stem}.json`,'utf8'));
+  const page=await readFile(`docs/promotion-pay/monthly-preview/${stem}.md`,'utf8');
+  // Historical correction evidence stays in the source. Check what a reader sees on the page.
+  assert.doesNotMatch(page,/客户评分|客户年审|清理积压|积压问题|合同与库存/u,stem);
+  for(const a of source.articles){
+   const key=`${id}/${a.movingLine}/${a.monthBranch}`;
+   const lead=a.paragraphs[0];
+   assert.doesNotMatch(lead,calendarOpening,key+' 正文');
+   assert.doesNotMatch(a.short,calendarOpening,key+' 简断');
+   const clause=lead.split(/[，。；！？：]/u,1)[0].replace(/[^\p{Script=Han}]/gu,'');
+   assert.ok(clause,key+' 缺少开场');
+   assert.ok(!openings.has(clause),`${key} 与 ${openings.get(clause)} 起笔相同「${clause}」`);
+   openings.set(clause,key);
+  }
+ }
+ assert.equal(openings.size,4608);
+});
+
 const ctx=await context(),promotion=item('promotion-pay');
 const baseline=JSON.parse(await readFile(new URL('../sources/editorial/promotion-pay/hex-001.json',import.meta.url),'utf8'));
 const original=baseline.find(row=>row[0]===3&&row[1]==='autumn-metal');

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 10,
   "editor": "/root",
-  "sourceSha256": "cd9d04dcacd5c57a21814a5a5d5ec10aff4acffa1ee6f2e5b9b9e692b6124aaf",
+  "sourceSha256": "ebb78331fe3004a4a192123e110f8731cd738b0771bb4f718f20ba0318e292a7",
   "reviewedAt": "2026-11-20T18:59:52.405924-05:00",
   "status": "ai-cross-reviewed-with-open-findings",
   "wholeArticlesRead": 72,
@@ -855,7 +855,7 @@
       "finding": "门检虽通过，仍人工处理主动处理较、的责任认真、四节点没有三个高频片段；保持具体生克轻重和职责范围，逐段收顺后完整读21字段，再读两字段末次收顺。18篇阈值扫描不再列出本卦高频短语。"
     }
   ],
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root/classical_audit",
     "reviewerIsHuman": false,
@@ -5045,5 +5045,50 @@
     "payCorrectionArticles": 72,
     "status": "passed",
     "scope": "author-final-source-only; independent editorial review pending"
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "ebb78331fe3004a4a192123e110f8731cd738b0771bb4f718f20ba0318e292a7",
+    "wholeArticlesRead": 69,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 69 篇逐字段未变，沿用原有审读记录。本次调整的 3 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "cd9d04dcacd5c57a21814a5a5d5ec10aff4acffa1ee6f2e5b9b9e692b6124aaf",
+    "priorReceiptSha256": "7981ea13aa733ab713b0cfdcd07a6b51a7e97eba7d7632c776d438c1002ad6f8",
+    "sourceSha256": "ebb78331fe3004a4a192123e110f8731cd738b0771bb4f718f20ba0318e292a7",
+    "editor": "Codex",
+    "changedArticles": 3,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "10/2/未",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "f6b9fa4f9801c5946fd4b9c6c7e5e5e0f46181950c13f12506bcb5691d2d53db",
+        "after": "b46538db34f3ac8e8f6a92dcff5ff7d169b62022e105ee18a0fb8c08b61dffbc"
+      },
+      {
+        "key": "10/4/卯",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "8f8adb08d6290efbe6ec0a122bdba71f73356dcb52e77e1cab9272b3d435ebcf",
+        "after": "4e68061dcae25c9af9621a8b46ba6a22eedba478921ef955aea04a745c399121"
+      },
+      {
+        "key": "10/5/卯",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "05dcc236757656543bab5b89cf08f755a4f179c86906c8bd621037ff361be0e7",
+        "after": "3089b8436ceb8046479a73ef9403fb069d716ec48fdddf3ed59960829cfdeea4"
+      }
+    ]
   }
 }

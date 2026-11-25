@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 38,
   "baselineCommit": "7b7bd2d44f7cbfd5460dd5919e7ed2630c27ba77",
-  "sourceSha256": "4b6beaa817837a0e1a12657e7af04d39470d09b13d7f07c486e675ca5ce808a3",
+  "sourceSha256": "be8ba9cd6564abe8aff5c630ae3629869d86f8b5d35ffc36cde4f46b6144bda1",
   "editor": "/root/author_38",
   "reviewerType": "author-ai",
   "reviewerIsHuman": false,
@@ -657,7 +657,7 @@
       "detail": "作者AI逐篇读回、独立AI审读、规则计算与文风门禁分别登记，均不构成现实预测准确率回验；用户尚未逐篇确认，不标真人或用户验收。"
     }
   ],
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "primaryId": 38,
     "reviewer": "/root",
     "reviewerType": "independent-ai",
@@ -2046,5 +2046,58 @@
     "note": "生成页验等不额外计作72篇全文阅读，六爻实际全文与完整变化字段复读见independentReview。",
     "independentHumanReview": "pending",
     "userPerArticleAcceptance": false
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "be8ba9cd6564abe8aff5c630ae3629869d86f8b5d35ffc36cde4f46b6144bda1",
+    "wholeArticlesRead": 68,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 68 篇逐字段未变，沿用原有审读记录。本次调整的 4 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "4b6beaa817837a0e1a12657e7af04d39470d09b13d7f07c486e675ca5ce808a3",
+    "priorReceiptSha256": "8c06777f305e8c5828b77b03031162170b60ed20d0eefe970d1e4f0098319590",
+    "sourceSha256": "be8ba9cd6564abe8aff5c630ae3629869d86f8b5d35ffc36cde4f46b6144bda1",
+    "editor": "Codex",
+    "changedArticles": 4,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "38/3/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "56a0fc8cc7865667401c1943035080813a6c089a05ef1b39d95b4515e8dd154c",
+        "after": "aede8b78b8163fae218bbf40406782641711acae9e67768fae3cbde9b3590e90"
+      },
+      {
+        "key": "38/4/寅",
+        "fields": [
+          "timing"
+        ],
+        "before": "2095411263a74ce1adf4e19a4070ebe6f3a522eb8fd23970d6969adf30548da2",
+        "after": "58f4932e3c82fbe1ad27f95917207b03548c34365f4c399889809dc6b701af90"
+      },
+      {
+        "key": "38/4/卯",
+        "fields": [
+          "timing"
+        ],
+        "before": "9f1bee520b01f6552cac9dc87036567cc0c73acf4d47e2d9f2c23b052472b7e0",
+        "after": "763c9c519f5b3321b6a2b79ca8e49ae169caea2a233b9ce85f248cc3c4d99f06"
+      },
+      {
+        "key": "38/6/卯",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "5720ca8c15b5e23b7a577e306d9a6ab21d7137d49f65446f9e52627c45173e7a",
+        "after": "45d46a279874680291184f4e07f383d8a81c399a601f1afebcdd8b881ca989b5"
+      }
+    ]
   }
 }

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 1,
   "baselineCommit": "a50a692ce43f13f0f061d6a2a3143cf94acbdcc8",
-  "sourceSha256": "9acb63e778e3ac4f4b071a19de2749c797bde6878f3bdabdf7f51ccdfe84933f",
+  "sourceSha256": "0cd1c3c5122b9e215c5d47028b41c815444952e4fbc24d5c6aff265155f364ae",
   "editor": "/root current short-and-opening revision",
   "reviewedAt": "2026-11-20",
   "status": "partially-reviewed",
@@ -2003,7 +2003,7 @@
       }
     }
   ],
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root/write_meng",
     "reviewerIsHuman": false,
@@ -11156,5 +11156,42 @@
       556
     ],
     "bodyHanMedian": 528
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "0cd1c3c5122b9e215c5d47028b41c815444952e4fbc24d5c6aff265155f364ae",
+    "wholeArticlesRead": 70,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 70 篇逐字段未变，沿用原有审读记录。本次调整的 2 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "9acb63e778e3ac4f4b071a19de2749c797bde6878f3bdabdf7f51ccdfe84933f",
+    "priorReceiptSha256": "e2367b072a08da936e19fefd3e8d5bccf24fc4affc8dc72b3116d95993811e53",
+    "sourceSha256": "0cd1c3c5122b9e215c5d47028b41c815444952e4fbc24d5c6aff265155f364ae",
+    "editor": "Codex",
+    "changedArticles": 2,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "1/5/申",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "114bf9cfb36b1108e3773e6c0b8dcd656558b89a97c5db77e6cd455e76b24e12",
+        "after": "d721e453f13384e328efe8fd88748495f020ce1a75aa5550c77e1c5f9b75be4a"
+      },
+      {
+        "key": "1/6/亥",
+        "fields": [
+          "short"
+        ],
+        "before": "1799f6da0d0d0c81b0b305314cb9fdccdc9fe513f44e56e791318e5d092445b3",
+        "after": "6449c320be348bc7f0fad2000b6dce328caa138e66e29bbe0f4696f4f68b850d"
+      }
+    ]
   }
 }

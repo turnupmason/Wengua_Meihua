@@ -40,8 +40,8 @@
 | 申 | [自己能任事，末后也有接应](../promotion-pay/monthly-preview/hex-063.md#六二动--申月) | 能升 | 551 |
 | 酉 | [守中不是不管自己的贡献](../promotion-pay/monthly-preview/hex-063.md#六二动--酉月) | 能升 | 536 |
 | 戌 | [名位的依据，落在最后一重金](../promotion-pay/monthly-preview/hex-063.md#六二动--戌月) | 能升 | 493 |
-| 亥 | [能得回的是什么，先问所占哪件事](../promotion-pay/monthly-preview/hex-063.md#六二动--亥月) | 能升 | 510 |
-| 子 | [不争一时先后，自有可据之处](../promotion-pay/monthly-preview/hex-063.md#六二动--子月) | 能升 | 502 |
+| 亥 | [能得回的是什么，先问所占哪件事](../promotion-pay/monthly-preview/hex-063.md#六二动--亥月) | 能升 | 509 |
+| 子 | [不争一时先后，自有可据之处](../promotion-pay/monthly-preview/hex-063.md#六二动--子月) | 能升 | 506 |
 | 丑 | [应当归属给谁，宜由实绩说明](../promotion-pay/monthly-preview/hex-063.md#六二动--丑月) | 能升 | 500 |
 
 ## 九三动
@@ -79,7 +79,7 @@
 | 酉 | [准备越充分，是否就能升](../promotion-pay/monthly-preview/hex-063.md#六四动--酉月) | 升不了 | 503 |
 | 戌 | [卦说所疑，不能替人认定有错](../promotion-pay/monthly-preview/hex-063.md#六四动--戌月) | 升不了 | 500 |
 | 亥 | [冬水有势，谨慎能改变哪一层](../promotion-pay/monthly-preview/hex-063.md#六四动--亥月) | 升不了 | 474 |
-| 子 | [看得出隐忧，更要懂得何时防备](../promotion-pay/monthly-preview/hex-063.md#六四动--子月) | 升不了 | 504 |
+| 子 | [看得出隐忧，更要懂得何时防备](../promotion-pay/monthly-preview/hex-063.md#六四动--子月) | 升不了 | 501 |
 | 丑 | [尾段可以经理，升迁为何难成](../promotion-pay/monthly-preview/hex-063.md#六四动--丑月) | 升不了 | 490 |
 
 ## 九五动

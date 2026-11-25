@@ -4,6 +4,8 @@
 
 ## 新版逐月长稿
 
+全库 1,068 篇已修订，原次复查列出的 18 篇均已改写。64 卦逐卦检查全部通过。[修订结果与逐卦明细](../review/PROMOTION_PAY_4392_RECHECK_20261125.md)
+
 六十四卦、每卦六个动爻、每爻十二个月，逐月正文共 **4,608 篇**。 [打开逐月阅读目录](monthly-preview/README.md)
 
 中孚、小过、既济各补齐 72 篇。随岗加薪依此次晋升成否而断，应期逐篇与五气原稿核对。[中孚规则审计](../review/PROMOTION_61_MONTHLY_RULE_AUDIT.md) · [小过规则审计](../review/PROMOTION_62_MONTHLY_RULE_AUDIT.md) · [既济规则审计](../review/PROMOTION_63_MONTHLY_RULE_AUDIT.md)

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "primaryId": 11,
   "baselineCommit": "4d0fc0427a57e919feac79a93f40d7abfe69b526",
-  "sourceSha256": "7943c7aba7f918d23699010e858936d0c3e8f3f3da1ba75cc3adccd1ac626656",
+  "sourceSha256": "67d7d706c5fd4716191e76ad5592145f1e9e5657e98570b0a8582f66c3548c5d",
   "editor": "/root/finish_tai",
   "reviewedAt": "2026-11-21T00:20:11.517099+00:00",
   "status": "ai-cross-reviewed-with-open-findings",
@@ -1874,7 +1874,7 @@
       "scope": "原冻结全文逐篇实际读完，最终有变字段整段旧新实际复读；其余字段逐值相等。不声称最终哈希另从头重读整篇。"
     }
   ],
-  "independentReview": {
+  "independentReviewBeforeOpeningRevision20261125": {
     "status": "ai-cross-reviewed-with-open-findings",
     "reviewer": "/root/classical_audit",
     "reviewerIsHuman": false,
@@ -8638,5 +8638,50 @@
     "renderedDocsCheck": "passed; 72 articles, 1944 chart comparisons zero mismatches, 144 date cases",
     "renderedPublicFieldCount": 600,
     "renderedFirstArticleActuallyRead": "11/1/寅：实际读完生成页首篇公开内容、判断及取期等折叠说明，不作额外全卦覆盖。"
+  },
+  "independentReview": {
+    "status": "unchanged-articles-covered-by-prior-review",
+    "sourceSha256": "67d7d706c5fd4716191e76ad5592145f1e9e5657e98570b0a8582f66c3548c5d",
+    "wholeArticlesRead": 69,
+    "currentRevisionFullTextReadCount": 0,
+    "currentRevisionChangedArticleReadCount": 0,
+    "reviewerIsHuman": false,
+    "userIndividuallyAccepted": false,
+    "scope": "前版独审记录下列于 independentReviewBeforeOpeningRevision20261125。当前稿有 69 篇逐字段未变，沿用原有审读记录。本次调整的 3 篇经编辑和程序核对，未另作独立全文复审。"
+  },
+  "openingAndScopeRevision20261125": {
+    "baseCommit": "946cde81cefa219ad0e84923ff36257e7b8de08d",
+    "priorSourceSha256": "7943c7aba7f918d23699010e858936d0c3e8f3f3da1ba75cc3adccd1ac626656",
+    "priorReceiptSha256": "06295ea3d0dd4e720dea39d042a96614bfaee5479b445485939f05d245244332",
+    "sourceSha256": "67d7d706c5fd4716191e76ad5592145f1e9e5657e98570b0a8582f66c3548c5d",
+    "editor": "Codex",
+    "changedArticles": 3,
+    "scope": "此前逐爻审读、专业说明、统计和签核对应其所记版本。下列变更逐篇比较公开字段和原断，应期重算；此次程序复核不增加独立审读数。",
+    "articleChanges": [
+      {
+        "key": "11/2/辰",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "d7220b8bdc4f6d846bf2e8e694b87c146dc561a30a631b38bdf675a884d3ad23",
+        "after": "9d8b750036b06ee2317e4be37033c278fd734b6ccfd2d997fea8fb5a5c673a5f"
+      },
+      {
+        "key": "11/4/酉",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "1cafd0643b16689b191796189939da98ce62f8a7abbdfa79fea8c010feca0585",
+        "after": "e44c319fa72654fd7e68a162a1d1050dd2b2bda36e172ac1a0e901d4ab1b63e5"
+      },
+      {
+        "key": "11/5/戌",
+        "fields": [
+          "paragraphs"
+        ],
+        "before": "91a2602fb744b660457413409df50afecb339c6c09d3fa7277494aad6fab9be2",
+        "after": "8e32715d3640fade3ce31649dd577765704c74cd19862b18391035928eebcd9a"
+      }
+    ]
   }
 }
