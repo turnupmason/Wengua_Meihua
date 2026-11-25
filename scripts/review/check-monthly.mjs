@@ -111,16 +111,22 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    else if(bLen<450||bLen>650)warn(key,'flexible-body-length',bLen);
    if(sLen<60||sLen>120)err(key,'short-length',sLen);
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
-   // 考试首段须让读者知道成否，容许先把本篇缘由讲出来。其他问项仍查首句。
-   const verdictLead=paragraph=>{
+   // 现职长稿可用一句爻义或当事人的问题起笔，紧接着交代判断。简断仍查首句。
+   const verdictLead=(paragraph,bodyOpening=false)=>{
     const sentences=paragraph.split(/[。！？]/u),verdict=c.verdict[a.outcome];
+    if(name==='workplace-stability'&&bodyOpening&&!verdict.test(sentences[0]))return sentences.slice(0,2).join('。');
     if(name!=='exam'||verdict.test(sentences[0]))return sentences[0];
     const opening=sentences.slice(0,2).join('。');
     return verdict.test(opening)?opening:sentences.slice(2).find(sentence=>verdict.test(sentence))??opening;
    };
-   const first=verdictLead(a.paragraphs[0]),shortFirst=verdictLead(a.short);
+   const first=verdictLead(a.paragraphs[0],true),shortFirst=verdictLead(a.short);
    if(name==='exam' && calendarLead.test(a.paragraphs[0]))
     err(key,'exam-opening', '正文首句重复了标题中的爻位和月令');
+   if(name==='workplace-stability'){
+    const monthFirst=/^(?:[寅卯辰巳午未申酉戌亥子丑本当此该]月|这(?:一|个)?月|月令)/u;
+    for(const [field,lead] of [['正文',a.paragraphs[0]],['简断',a.short]])
+     if(monthFirst.test(lead)||calendarLead.test(lead))err(key,'workplace-calendar-opening',field+'起笔重复了篇题的月份');
+   }
    for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
     if(!c.verdict[a.outcome].test(sent))err(key,label,sent);
     if(c.contra){if(c.contra[a.outcome].test(sent))err(key,label,'含相反说法：'+sent);}
