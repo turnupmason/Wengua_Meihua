@@ -11,6 +11,10 @@ import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,l
 const INTERNAL = /口径|定档|有条件|R\d|盲断|复核|改判|原稿|待核|存疑|降档|升档|调档|翻档|专属爻辞|按结局拆|只推迟时机|升辞|降辞|列为降|列为升|定为(?:留|先准备|可走|能成|不成|能过|过不了|稳|有隐患|风险大|能升|升不了|能转正|转不了)/u;
 const HEDGE = /有望|偏难|多半|大概率|成败两可|或许|未必|恐怕|把握不大|把握较大|胜算|可能性|说不准|难说|看运气/u;
 
+function workplaceSentences(paragraph) {
+ return paragraph.replace(/[「『“][^」』”]*[」』”]/gu,quote=>quote.replace(/[。！？]/gu,'')).split(/[。！？]/u);
+}
+
 // 晋升月稿单独说明随岗薪资。薪资文字不计入正文厚度，也不改变既定晋升判据。
 // 此处只核可确定的字段绑定与盘面规则；具体类推是否恰当仍须作者全文审读。
 export function promotionArticleIssues(article, baseline, reading) {
@@ -44,6 +48,9 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  const report={schemaVersion:'1.0.0',item:name,scope:'monthly-source-and-render-validation',articleCount:0,hexagrams:[],errors:[],warnings:[],judgmentCorrections:[],duplicateArticles:[],duplicateParagraphs:[],duplicateLongSentences:[],chartComparisons:0,chartMismatches:[],dateCases:0,bodyHanRange:[Infinity,0],shortHanRange:[Infinity,0],independentFullCopyReview:'not-performed-by-this-script',realWorldPredictionAccuracy:'not-validated'};
  if(name==='promotion-pay'){report.payHanRange=[Infinity,0];report.payCorrections=[];}
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
+ const workplace=name==='workplace-stability';
+ const bodyOpenings=new Map(),shortOpenings=new Map();
+ if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
  const compare=(key,field,a,b)=>{report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b)){const m={key,field,independent:a,engine:b};report.chartMismatches.push(m);err(key,'independent-chart',m);}};
@@ -58,11 +65,14 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
   const bundle=await loadHex(c,id),{source,receipt}=bundle;
   const keyRoot=String(id);let doc=null;
   if(docs)try {doc=await readFile(`${c.DOC_DIR}/${stem(id)}.md`,'utf8');}catch(e){err(keyRoot,'reading-document',e.message);}
+  const sections=workplace&&doc?doc.replace(/\r\n/gu,'\n').split(/^## /mu).slice(1):null;
   if(source.schemaVersion!=='1.0.0'||source.primaryId!==id)err(keyRoot,'identity','schemaVersion or primaryId mismatch');
   if(!Array.isArray(source.articles)){err(keyRoot,'articles','Expected array');continue;}
+  if(sections&&sections.length!==source.articles.length)err(keyRoot,'workplace-rendered-section','预览篇数与逐月源文不符');
   if(!draft&&source.articles.length!==72)err(keyRoot,'coverage',`Expected 72, got ${source.articles.length}`);
   const keys=new Set(),sameQi=new Map();const counts=Object.fromEntries(outcomes.map(o=>[o,0]));
   const detail={primaryId:id,name:ctx.library.getHexagram(id).name,articles:source.articles.length,sourceSha256:sha256(bundle.raw),authorWholeArticlesRead:receipt?.wholeArticlesRead??0,bodyHanRange:[Infinity,0],outcomes:counts};
+  if(workplace)detail.movingLineBatches=[];
   const hex = ctx.library.getHexagram(id);
   const calendarLead = new RegExp(`^(?:(?:${hex.name}|${hex.shortName})卦?)?(?:初[六九]|[六九][二三四五]|上[六九])(?:动)?(?:行至|行到|进到|逢|临|值|遇|至|到|在|入)?[寅卯辰巳午未申酉戌亥子丑]月?[，。]`, 'u');
   if(!draft) {
@@ -76,6 +86,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
   }
   for(const [i,a] of source.articles.entries()) {
    report.articleCount++;const key=`${id}/${a.movingLine}/${a.monthBranch}`,monthKey=`${a.movingLine}/${a.monthBranch}`;
+   const startChart=report.chartComparisons,startDates=report.dateCases;
    if(keys.has(monthKey))err(key,'month-key','Duplicate');keys.add(monthKey);
    if(a.movingLine!==Math.floor(i/12)+1||a.monthBranch!==MONTHS[i%12])err(key,'order','Expected moving line then 寅卯辰巳午未申酉戌亥子丑');
    if(!QI[a.monthBranch]||!Number.isInteger(a.movingLine)||a.movingLine<1||a.movingLine>6){err(key,'identity','Invalid month/line');continue;}
@@ -113,10 +124,8 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
    // 现职长稿可用一句爻义或当事人的问题起笔，紧接着交代判断。简断仍查首句。
    const verdictLead=(paragraph,bodyOpening=false)=>{
-    const text=name==='workplace-stability'&&bodyOpening
-     ?paragraph.replace(/[「『“][^」』”]*[」』”]/gu,quote=>quote.replace(/[。！？]/gu,''))
-     :paragraph;
-    const sentences=text.split(/[。！？]/u),verdict=c.verdict[a.outcome];
+    const sentences=workplace&&bodyOpening?workplaceSentences(paragraph):paragraph.split(/[。！？]/u);
+    const verdict=c.verdict[a.outcome];
     if(name==='workplace-stability'&&bodyOpening&&!verdict.test(sentences[0]))return sentences.slice(0,2).join('。');
     if(name!=='exam'||verdict.test(sentences[0]))return sentences[0];
     const opening=sentences.slice(0,2).join('。');
@@ -125,10 +134,16 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    const first=verdictLead(a.paragraphs[0],true),shortFirst=verdictLead(a.short);
    if(name==='exam' && calendarLead.test(a.paragraphs[0]))
     err(key,'exam-opening', '正文首句重复了标题中的爻位和月令');
-   if(name==='workplace-stability'){
+   if(workplace){
     const monthFirst=/^(?:[寅卯辰巳午未申酉戌亥子丑本当此该]月|这(?:一|个)?月|月令)/u;
-    for(const [field,lead] of [['正文',a.paragraphs[0]],['简断',a.short]])
+    for(const [field,lead,seen] of [['正文',a.paragraphs[0],bodyOpenings],['简断',a.short,shortOpenings]]){
      if(monthFirst.test(lead)||calendarLead.test(lead))err(key,'workplace-calendar-opening',field+'起笔重复了篇题的月份');
+     const firstSentence=normalize(workplaceSentences(lead)[0]);
+     if(seen.has(firstSentence))err(key,'workplace-repeated-opening',{field,first:seen.get(firstSentence)});
+     else seen.set(firstSentence,key);
+    }
+    report.workplaceCopy.bodyOpeningsChecked++;
+    report.workplaceCopy.shortOpeningsChecked++;
    }
    for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
     if(!c.verdict[a.outcome].test(sent))err(key,label,sent);
@@ -175,7 +190,24 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
      if(JSON.stringify(timing.dateMatches.map(m=>m.displayedDates))!==JSON.stringify(later.dateMatches.map(m=>m.displayedDates)))err(key,'history-date','Viewing date rolled saved candidate dates');
     }
    }catch(e){err(key,'timing',e.message);}
-   if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p]),...(name==='promotion-pay'?[['payExplanation',a.payExplanation]]:[])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
+   if(workplace){
+    let batch=detail.movingLineBatches.find(entry=>entry.line===a.movingLine);
+    if(!batch){
+     batch={line:a.movingLine,articles:0,chartComparisons:0,dateCases:0,bodyHanRange:[bLen,bLen]};
+     detail.movingLineBatches.push(batch);
+     report.workplaceCopy.movingLineBatches++;
+    }
+    batch.articles++;batch.chartComparisons+=report.chartComparisons-startChart;batch.dateCases+=report.dateCases-startDates;
+    batch.bodyHanRange=[Math.min(batch.bodyHanRange[0],bLen),Math.max(batch.bodyHanRange[1],bLen)];
+   }
+   if(sections){
+    const section=sections[i]??'',heading=`${r.selectedMovingLine.label}动 · ${a.monthBranch}月`;
+    if(!section.startsWith(heading+'\n\n'+a.title+'\n\n')||
+       !section.includes('\n\n'+body+'\n\n### 应期参考')||
+       !section.includes('<summary>简断摘要</summary>\n\n'+a.short+'\n\n</details>'))
+     err(key,'workplace-rendered-section','月份标题、篇题、完整正文或简断与逐月源文不符');
+    report.workplaceCopy.renderedSectionsChecked++;
+   }else if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p]),...(name==='promotion-pay'?[['payExplanation',a.payExplanation]]:[])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
   }
   if(!draft)for(let line=1;line<=6;line++)for(const month of MONTHS)if(!keys.has(`${line}/${month}`))err(`${id}/${line}/${month}`,'month-key','Missing');
   report.hexagrams.push(detail);
