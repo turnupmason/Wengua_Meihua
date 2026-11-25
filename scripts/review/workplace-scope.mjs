@@ -14,7 +14,8 @@ export function workplaceScopeIssues(article, baseline) {
  const timing = typeof article.timing === 'string' ? [article.timing] : article.timing.flatMap(slot=>slot.slice(2,5));
  const fields = [...editorial, ['judgment',article.judgment], ...timing.map((t,i)=>['timing '+(i+1),t])];
  for (const [field,text] of fields) {
-  const hit = text.match(industryDetails) ?? unquote(text).match(inventedEvent);
+  // 孔疏释小畜九五的「志意合同」说的是心意相合。
+  const hit = text.replaceAll('志意合同','志意相合').match(industryDetails) ?? unquote(text).match(inventedEvent);
   if (hit) issues.push({check:'workplace-situation',detail:field+' · '+hit[0]});
  }
  if (typeof article.timing === 'string' && article.timing.trim().length < 6)

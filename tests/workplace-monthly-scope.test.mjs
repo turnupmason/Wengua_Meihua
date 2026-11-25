@@ -18,7 +18,9 @@ test('checks industrial details even in conditional clauses and timing',()=>{
 });
 test('detects carried-over narrative even without a known industry term',()=>{
  assert.ok(workplaceScopeIssues({...draft,short:'如果'+example+'，就看上司的态度。'},baseline).some(x=>x.check==='workplace-five-season-prose'));
- assert.deepEqual(workplaceScopeIssues(draft,[...baseline.slice(0,3),'初六「濡其尾，吝」',...baseline.slice(4)]),[]);
+ const witness='孔疏说「志意合同，不有专固相逼」。';
+ assert.deepEqual(workplaceScopeIssues({...draft,paragraphs:[witness]},[...baseline.slice(0,3),witness,...baseline.slice(4)]),[]);
+ assert.ok(workplaceScopeIssues({...draft,paragraphs:[witness+'另须整理合同。']},baseline).length);
 });
 test('flags an assumed event and a truncated timing note',()=>{
  assert.ok(workplaceScopeIssues({...draft,timing:'本'},baseline).some(x=>x.check==='workplace-timing-fragment'));

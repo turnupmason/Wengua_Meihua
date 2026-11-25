@@ -187,7 +187,12 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(row) {compare(key,'storedStageIds',independent.stageIds,row.facts.stages.map(s=>s.id));compare(key,'storedLineText',r.selectedMovingLine.text,row.facts.movingLine.fullText);}
    try {
     for(const date of ['2026-11-11','2026-12-31']) {
-     const timing=resolveTiming(c,readingFor(ctx,c,id,a,date),a,date);report.dateCases++;
+     const datedReading=readingFor(ctx,c,id,a,date),timing=resolveTiming(c,datedReading,a,date);report.dateCases++;
+     if(workplace){
+      const inherited=resolveTiming(c,datedReading,{...a,timing:old[10]},date);
+      const calendars=t=>t.dateMatches.map(m=>[m.slotId,m.displayedDates]);
+      if(JSON.stringify(calendars(timing))!==JSON.stringify(calendars(inherited)))err(key,'workplace-inherited-dates',{date});
+     }
      for(const w of timing.dateMatches)if(w.displayedDates.some(d=>d<date))err(key,'past-date',{date,dates:w.displayedDates});
      if(timing.slots.some(s=>/^(name-support|name-body)$/.test(s.kind)&&a.outcome!=='favourable'))err(key,'timing-verdict','Favourable-result window on non-favourable verdict');
      const later=resolveTiming(c,readingFor(ctx,c,id,a,date),a,date,'2027-02-01');
