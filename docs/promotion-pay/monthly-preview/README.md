@@ -1,6 +1,6 @@
-# 晋升加薪逐月长稿：4392 篇预览
+# 晋升加薪逐月断语 · 4,464 篇
 
-更新日期：2026-11-24（America/Denver）。本批新增火水未济，共 72 篇；累计 4392 篇。完整目标为 4,608 篇，尚余 216 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+已发布 **4,464 篇**。还余 144 篇。 每篇单列随岗薪资与应期。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -64,6 +64,7 @@
 | 兑为泽 | 72 | [打开全文](hex-058.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-058.json) |
 | 风水涣 | 72 | [打开全文](hex-059.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-059.json) |
 | 水泽节 | 72 | [打开全文](hex-060.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72 | [打开全文](hex-061.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-061.json) |
 | 火水未济 | 72 | [打开全文](hex-064.md) | [查看记录](../../../sources/editorial/promotion-pay/reviews-monthly/hex-064.json) |
 
 
@@ -72,17 +73,21 @@
 
 每篇另列随岗薪资，说明本次晋升与其所附调整的范围。金额、薪档、计薪及到账日期不由卦象代定；未晋升也不扩大为所有独立调薪或奖金均无。薪资说明不计入正文字数。
 
-[本批写作与晋升规则审计](../../review/PROMOTION_MONTHLY_REWRITE_20261120.md)。已发布各篇均有独立 AI 全文审读记录；修订稿另读全部改动，原全文记录与后续差异审读分别绑定各版源文件。具体阅读范围及解释分歧见逐卦回执，未冒称真人专业审核或用户逐篇验收。
+[本批写作与晋升规则审计](../../review/PROMOTION_MONTHLY_REWRITE_20261120.md)。独立交叉全文审读状态见逐卦回执。
+
+## 本轮逐爻审计
+
+[中孚逐爻审计](../../review/PROMOTION_61_MONTHLY_RULE_AUDIT.md)
 
 ## 本批阅读入口
 
-- [火水未济：六爻十二月全文](hex-064.md)
+- [风泽中孚：六爻十二月全文](hex-061.md)
 
 
 
 ## 检查与阅读状态
 
-4392 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 118,584 项，差异 0；日期用例 8,784 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
+4464 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 120,528 项，差异 0；日期用例 8,928 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 472–636 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/PROMOTION_PAY_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
