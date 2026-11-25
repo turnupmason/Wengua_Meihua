@@ -1,10 +1,11 @@
 // 逐月长稿检查（各问项通用，照面试 check-interview-monthly.mjs）。
 // 用法：node scripts/review/check-monthly.mjs <问项目录> [--hex 3,4] [--draft] [--docs] [--json path]
 // 本检查不签署作者全文读回，也不代替独立解释审核。
+import {workplaceScopeIssues} from './workplace-scope.mjs';
 import {writeFile,access} from 'node:fs/promises';
 import {readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
-import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,timingSignature,item} from './monthly-lib.mjs';
+import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,workplaceTimingParagraphs,timingSignature,item} from './monthly-lib.mjs';
 
 // 全卦通用的正文禁区（照面试月稿规范：不编人物心理、原话与具体经过；内部审稿用语不进正文）。
 // 2026-11-20 加：规则名目（降档、升档、按结局拆、专属爻辞、只推迟时机）与专业说明的「定为……」是写给审稿看的，不进正文、简断、标题。
@@ -50,7 +51,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const workplace=name==='workplace-stability';
  const bodyOpenings=new Map(),shortOpenings=new Map();
- if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
+ if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,scopeArticlesChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
  const compare=(key,field,a,b)=>{report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b)){const m={key,field,independent:a,engine:b};report.chartMismatches.push(m);err(key,'independent-chart',m);}};
@@ -142,6 +143,9 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
      if(seen.has(firstSentence))err(key,'workplace-repeated-opening',{field,first:seen.get(firstSentence)});
      else seen.set(firstSentence,key);
     }
+    for(const issue of workplaceScopeIssues(a,old))err(key,issue.check,issue.detail);
+    if(!draft && receipt?.articleReviews?.[i]?.articleSha256!==sha256(JSON.stringify(a)))err(key,'workplace-article-receipt','逐篇指纹与现稿不符');
+    report.workplaceCopy.scopeArticlesChecked++;
     report.workplaceCopy.bodyOpeningsChecked++;
     report.workplaceCopy.shortOpeningsChecked++;
    }
@@ -206,6 +210,11 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
        !section.includes('\n\n'+body+'\n\n### 应期参考')||
        !section.includes('<summary>简断摘要</summary>\n\n'+a.short+'\n\n</details>'))
      err(key,'workplace-rendered-section','月份标题、篇题、完整正文或简断与逐月源文不符');
+    const dates=section.split('### 应期参考\n\n')[1]?.split('<details>')[0]??'';
+    const expectedTiming=workplaceTimingParagraphs(a,resolveTiming(c,r,a)).join('\n\n');
+    const timingReason=typeof a.timing==='string'?a.timing:a.timing.map(s=>s[4]).join(' ');
+    if(!dates.trimEnd().endsWith(expectedTiming)||!section.includes('\n专业说明：'+a.judgment+'\n')||!section.includes('\n取期依据：'+timingReason+'\n'))
+     err(key,'workplace-rendered-evidence','应期、专业说明或取期依据与本篇源文不符');
     report.workplaceCopy.renderedSectionsChecked++;
    }else if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p]),...(name==='promotion-pay'?[['payExplanation',a.payExplanation]]:[])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
   }

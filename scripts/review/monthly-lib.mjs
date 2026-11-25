@@ -157,6 +157,18 @@ export function resolveTiming(c,reading,article,date=DEMO_DATE,viewDate=date) {
  const slots=promotionTimingSlots(reading,article.timing,article.outcome,c.profile);
  return {slots,...resolveManuscriptDates({paragraphs:slots.map(s=>s.token),dateSlots:slots,reading,castingDate:date,viewDate,timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}})};
 }
+// State the condition before showing its dates. Each displayed day comes from the resolved slot.
+export function workplaceTimingParagraphs(article,timing) {
+ if(typeof article.timing==='string')return [article.timing];
+ return timing.slots.map((slot,i)=>{
+  const days=timing.dateMatches[i].displayedDates.map(iso=>{
+   const [,month,day]=iso.split('-').map(Number);
+   return month+'月'+day+'日';
+  });
+  return days.length ? slot.event+'，可旁参'+days.join('、')+'前后。'+slot.text : slot.text;
+ });
+}
+
 export async function loadHex(c,id) {
  const sourcePath=`${c.SOURCE_DIR}/${stem(id)}.json`;
  const raw=await readFile(sourcePath,'utf8');
@@ -190,7 +202,7 @@ export function renderHex(ctx,c,bundle) {
   const displayedLine=guFirst?collatedGuLine:r.selectedMovingLine.text;
   const timingNotes=['### 应期参考',...(timing.slots.length?[
    foldTiming ? `以下以 ${DEMO_DATE} 演示传统推算的参考窗口，实际使用按起卦日换算。` : '以下为传统推算的参考窗口。',
-  ]:[]),...timing.paragraphs];
+  ]:[]),...(c.name==='workplace-stability'?workplaceTimingParagraphs(a,timing):timing.paragraphs)];
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(x=>x.name).join(' → '),...a.paragraphs,
    ...(c.name==='promotion-pay'?['### 随岗薪资',a.payExplanation]:[]),
    ...(!foldTiming?timingNotes:[]),
