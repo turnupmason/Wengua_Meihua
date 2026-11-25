@@ -2,6 +2,10 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 天雷无妄六二十二月
+
+六二六篇取寻获支持较足。四土令的支持来自旺艮生相乾、相兑在末比和，申酉则重旺乾制弱木、末兑与体同旺，互艮虽休仍生。另六篇保留条件：春令弱金制旺震、旺巽，中助及末和皆薄；夏令中得相艮生，末兑却与乾同失时；冬令休金制相木，中得囚土、末金同休。正文把王孔对承办已有之事的解释移用于已有可靠见闻，不将未明的部分也当作前人已经确认。申篇核是否同一次相见，酉篇核本人来话有无现处，两篇不同起问。两爻共 24 篇，通过 600 项盘面对照和 72 个日期用例。[六二十二月](hex-025-first-read.md#六二动--寅月) · [独立逐篇核读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-025/guan_second/line-2-accepted-readback.json)
+
 ## 天雷无妄六二首批
 
 六二承接初九的乾体、震用与渐互，收尾却从坤土生体改成兑金比和。寅卯金囚，制旺震、旺巽费力，互艮弱生而末金同弱，保留有条件寻获；辰月相乾制囚木，中得旺艮、末与相兑比和，寻获支持较足。取期也换了所指的事，这三篇均取用互艮生体，11 月 23、26 日参中途核实可获何种实助，不再对应初九的收尾。所核的是当下身份和现处，承接一份确实的旧见闻不自动证到今天。经文“不耕获，不菑畬”，本批取王注代终不造、孔疏承事之解；原注涉及臣分，借到寻人是编辑类推，没有以耕获断真人身在农田。前 15 篇通过 375 项盘面对照、45 个日期用例。[六二首三月](hex-025-first-read.md#六二动--寅月) · [本批独立读回](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-025/guan_second/line-2-first-three-accepted-readback.json) · [无妄经注疏](../../../sources/reference/zhouyi-zhengyi-hans/03無妄.txt)
