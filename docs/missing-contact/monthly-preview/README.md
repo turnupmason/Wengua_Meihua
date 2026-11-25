@@ -2,13 +2,11 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 2952 / 4,608 篇，41 / 64 卦；尚余 1656 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 3024 / 4,608 篇，42 / 64 卦；尚余 1584 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
 ## 阅读目录
-
-分批开放的月稿有[山天大畜 60 篇](hex-026-first-read.md)。全库尚有 1596 篇待撰。
 
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -37,6 +35,7 @@
 | [023 山地剥](hex-023.md) | 72 | 512–556 | 505–549 | 527 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-023.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-023.json) |
 | [024 地雷复](hex-024.md) | 72 | 508–572 | 499–566 | 541 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-024.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-024.json) |
 | [025 天雷无妄](hex-025.md) | 72 | 500–561 | 480–553 | 531.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-025.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-025.json) |
+| [026 山天大畜](hex-026.md) | 72 | 507–574 | 469–567 | 528 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-026.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-026.json) |
 | [027 山雷颐](hex-027.md) | 72 | 502–559 | 493–551 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-027.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-027.json) |
 | [028 泽风大过](hex-028.md) | 72 | 517–570 | 511–563 | 545 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-028.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-028.json) |
 | [029 坎为水](hex-029.md) | 72 | 561–626 | 554–614 | 593 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-029.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-029.json) |
@@ -70,4 +69,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：26 · 山天大畜。
+下一待完成卦：42 · 风雷益。
