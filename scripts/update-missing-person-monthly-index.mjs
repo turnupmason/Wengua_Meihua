@@ -1,10 +1,18 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {SOURCE_DIR,REVIEW_DIR,SECOND_REVIEW_DIR,DOC_DIR,SCOPE,QUESTION_ID,DEMO_DATE,stem,sha256,han,stripQuotes,listIds,context,renderHex} from './review/missing-person-monthly-lib.mjs';
 import {auditMissingMonthly} from './review/check-missing-person-monthly.mjs';
-const ctx=await context(),rows=[];
+const ctx=await context(),rows=[],awaitingSecond=[];
 for(const id of await listIds()){
  const s=stem(id),raw=await readFile(`${SOURCE_DIR}/${s}.json`,'utf8'),source=JSON.parse(raw),digest=sha256(raw);
- let author,reader,doc;try{author=JSON.parse(await readFile(`${REVIEW_DIR}/${s}.json`,'utf8'));reader=JSON.parse(await readFile(`${SECOND_REVIEW_DIR}/${s}.json`,'utf8'));doc=await readFile(`${DOC_DIR}/${s}.md`,'utf8');}catch(e){if(e.code==='ENOENT')continue;throw e;}
+ let author,reader,doc;try{author=JSON.parse(await readFile(`${REVIEW_DIR}/${s}.json`,'utf8'));doc=await readFile(`${DOC_DIR}/${s}.md`,'utf8');}catch(e){if(e.code==='ENOENT')continue;throw e;}
+ try{reader=JSON.parse(await readFile(`${SECOND_REVIEW_DIR}/${s}.json`,'utf8'));}catch(e){
+  if(e.code!=='ENOENT')throw e;
+  if(source.articles.length===72&&source.scopeVersion===SCOPE&&author.sourceSha256===digest){
+   const first=await auditMissingMonthly({ids:[id],docs:true});
+   if(!first.errors.length&&first.authorReadbackArticles===72)awaitingSecond.push({primaryId:id,name:ctx.library.getHexagram(id).name,articles:72});
+  }
+  continue;
+ }
  if(source.articles.length!==72||source.scopeVersion!==SCOPE||author.sourceSha256!==digest||reader.sourceSha256!==digest||author.wholeArticlesRead!==72||reader.wholeArticlesRead!==72||reader.status!=='second-read-complete'||doc!==renderHex(ctx,source))continue;
  const sizes=source.articles.map(a=>han(a.paragraphs.join(''))).sort((a,b)=>a-b);
  const withoutQuotes=source.articles.map(a=>han(stripQuotes(a.paragraphs.join('')))).sort((a,b)=>a-b);
@@ -17,12 +25,15 @@ if(rows.length){
 }
 const completed=rows.reduce((n,r)=>n+r.articles,0),missing=Array.from({length:64},(_,i)=>i+1).filter(id=>!rows.some(r=>r.primaryId===id));
 const progress={schemaVersion:'1.0.0',scopeVersion:SCOPE,questionId:QUESTION_ID,plannedArticles:4608,completedArticles:completed,remainingArticles:4608-completed,completeHexagrams:rows.map(r=>r.primaryId),remainingHexagrams:missing,independentlyWrittenMonthlyArticles:completed,legacyFiveQiArticles:1920,legacyContactLongFormArticlesCountedInThisPreview:0,legacyCountsUsedAsNewProgress:false,rows,runtimeIntegrated:false,independentHumanReview:'pending',userIndividuallyAccepted:false,realWorldPredictionAccuracy:'not-validated'};
+progress.awaitingIndependentSecondRead=awaitingSecond;
+progress.articlesOutsideReviewedManuscripts=4608-completed-awaitingSecond.reduce((total,row)=>total+row.articles,0);
 await writeFile(`${DOC_DIR}/progress.json`,JSON.stringify(progress,null,2)+'\n');
 const out=['# 失联寻人：逐月长稿预览',
  '本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。',
  `**本轮已完成 ${completed} / 4,608 篇，${rows.length} / 64 卦；尚余 ${4608-completed} 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。`,
  '[规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)',
  '## 阅读目录',
+ ...(awaitingSecond.length?[`另有 ${awaitingSecond.map(r=>`[${r.name} ${r.articles} 篇](${stem(r.primaryId)}.md)`).join('、')}已发布并通过首轮全文核读，等候独立第二读者。其余 ${progress.articlesOutsideReviewedManuscripts} 篇尚未进入整卦首读清单。[逐批核读记录](AUDIT.md)`]:[]),
  '| 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |',
  '| --- | ---: | ---: | ---: | ---: | --- |',
  ...rows.map(r=>`| [${String(r.primaryId).padStart(3,'0')} ${r.name}](${stem(r.primaryId)}.md) | ${r.articles} | ${r.bodyHanRange.join('–')} | ${r.bodyHanExcludingQuotesRange.join('–')} | ${r.medianBodyHan} | [首轮编辑](../../../${REVIEW_DIR}/${stem(r.primaryId)}.json) · [第二读者](../../../${SECOND_REVIEW_DIR}/${stem(r.primaryId)}.json) |`),
