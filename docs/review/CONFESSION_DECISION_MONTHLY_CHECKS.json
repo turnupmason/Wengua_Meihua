@@ -2,113 +2,118 @@
   "schemaVersion": "1.0.0",
   "item": "confession-decision",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 288,
+  "articleCount": 360,
   "hexagrams": [
     {
       "primaryId": 1,
       "name": "乾为天",
-      "articles": 48,
-      "sourceSha256": "57e05c80ec3b702c308e99983f1c96345107b3b60acd1bd6c0abdd4296fa9619",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "ecce6bbd6e6fe79bb1c745474d9fdb6261e3414c65fa86e0a32a62e2eedf4682",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         510,
         582
       ],
       "outcomes": {
         "favourable": 12,
-        "conditional": 22,
-        "difficult": 14
+        "conditional": 30,
+        "difficult": 18
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     },
     {
       "primaryId": 2,
       "name": "坤为地",
-      "articles": 48,
-      "sourceSha256": "d495f2448af7fc4ef435558a8421d6bb38f3afb71170e92781fd53efd6854121",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "40fbcfaaee7b5b7dc35980d29e54a09fdf2142eb023b63e8c9f93b6d0bf31b4b",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         559,
         631
       ],
       "outcomes": {
-        "favourable": 10,
-        "conditional": 22,
+        "favourable": 16,
+        "conditional": 28,
         "difficult": 16
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     },
     {
       "primaryId": 3,
       "name": "水雷屯",
-      "articles": 48,
-      "sourceSha256": "db6e0563beababe8ec0d68c51b8cf231e5b3144f6f35ee2e953452e198e3d57a",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "df70d56f909c28507374cf9d1d88c46f1a84bdf965910498d7bff66e724d3be7",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         534,
         610
       ],
       "outcomes": {
-        "favourable": 2,
-        "conditional": 12,
-        "difficult": 34
+        "favourable": 4,
+        "conditional": 18,
+        "difficult": 38
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     },
     {
       "primaryId": 4,
       "name": "山水蒙",
-      "articles": 48,
-      "sourceSha256": "629c79262e81c6cef3c663371b1b123708613fb7cf62212dec74c1ca0ebf7de5",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "3d2a505667573c54dca0dea411bff890c1635a001c352224fa10a5614a0dad3f",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         557,
         620
       ],
       "outcomes": {
         "favourable": 6,
-        "conditional": 12,
-        "difficult": 30
+        "conditional": 18,
+        "difficult": 36
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     },
     {
       "primaryId": 5,
       "name": "水天需",
-      "articles": 48,
-      "sourceSha256": "bf9c7d0870dc6a523202207e399dc089af97dd2f727df7aa21003da52f66caf5",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "eff53baa1b36d5a912ad85f654a723e20d9fe05159d683e8d6e6861b525026d7",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         524,
         573
       ],
       "outcomes": {
-        "favourable": 4,
-        "conditional": 36,
+        "favourable": 10,
+        "conditional": 42,
         "difficult": 8
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     },
     {
       "primaryId": 6,
       "name": "天水讼",
-      "articles": 48,
-      "sourceSha256": "3d9b967c80823a3d345d5364828dbd3dd3affd98a0c3a989e0f09c2154872b38",
-      "authorWholeArticlesRead": 48,
+      "articles": 60,
+      "sourceSha256": "d1907cffd1850d8dfa3b4653faed5b8f442ca225a708deb063bae1003ec45e53",
+      "authorWholeArticlesRead": 60,
       "bodyHanRange": [
         570,
         635
       ],
       "outcomes": {
-        "favourable": 0,
-        "conditional": 28,
-        "difficult": 20
+        "favourable": 4,
+        "conditional": 34,
+        "difficult": 22
       },
-      "independentWholeArticlesRead": 48
+      "independentWholeArticlesRead": 60
     }
   ],
   "errors": [],
   "warnings": [
+    {
+      "key": "1/5/辰",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示confession，请独立读审"
+    },
     {
       "key": "2/4/丑",
       "check": "confession-definite-consent",
@@ -135,6 +140,21 @@
       "detail": "人妨碍，也不把往吉改写成对方一定接受表白。\n如果前面已有互留的可"
     },
     {
+      "key": "3/5/卯",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示heart，请独立读审"
+    },
+    {
+      "key": "4/5/未",
+      "check": "confession-definite-heart",
+      "detail": "总想从一回话或一次见面里找出对方已经喜欢你的证据，不妨回到本人实"
+    },
+    {
+      "key": "4/5/申",
+      "check": "confession-definite-heart",
+      "detail": "顿相处的余地，未给你一份关于对方已经喜欢的证明。若你知道的只是某"
+    },
+    {
       "key": "5/1/卯",
       "check": "confession-definite-heart",
       "detail": "一件平常小事；然而这种可能与对方已经喜欢你、愿意确认关系，还有一"
@@ -143,15 +163,20 @@
       "key": "5/3/辰",
       "check": "confession-short-scope",
       "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "5/5/酉",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示heart，请独立读审"
     }
   ],
   "judgmentCorrections": [],
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 7776,
+  "chartComparisons": 9720,
   "chartMismatches": [],
-  "dateCases": 576,
+  "dateCases": 720,
   "bodyHanRange": [
     510,
     635
@@ -163,34 +188,34 @@
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "confession": {
-    "scopeArticlesChecked": 288,
-    "authorReadback": 288,
-    "secondRead": 288,
+    "scopeArticlesChecked": 360,
+    "authorReadback": 360,
+    "secondRead": 360,
     "timingCorrections": [],
     "sourceBindings": [
       {
         "primaryId": 1,
-        "sourceSha256": "57e05c80ec3b702c308e99983f1c96345107b3b60acd1bd6c0abdd4296fa9619"
+        "sourceSha256": "ecce6bbd6e6fe79bb1c745474d9fdb6261e3414c65fa86e0a32a62e2eedf4682"
       },
       {
         "primaryId": 2,
-        "sourceSha256": "d495f2448af7fc4ef435558a8421d6bb38f3afb71170e92781fd53efd6854121"
+        "sourceSha256": "40fbcfaaee7b5b7dc35980d29e54a09fdf2142eb023b63e8c9f93b6d0bf31b4b"
       },
       {
         "primaryId": 3,
-        "sourceSha256": "db6e0563beababe8ec0d68c51b8cf231e5b3144f6f35ee2e953452e198e3d57a"
+        "sourceSha256": "df70d56f909c28507374cf9d1d88c46f1a84bdf965910498d7bff66e724d3be7"
       },
       {
         "primaryId": 4,
-        "sourceSha256": "629c79262e81c6cef3c663371b1b123708613fb7cf62212dec74c1ca0ebf7de5"
+        "sourceSha256": "3d2a505667573c54dca0dea411bff890c1635a001c352224fa10a5614a0dad3f"
       },
       {
         "primaryId": 5,
-        "sourceSha256": "bf9c7d0870dc6a523202207e399dc089af97dd2f727df7aa21003da52f66caf5"
+        "sourceSha256": "eff53baa1b36d5a912ad85f654a723e20d9fe05159d683e8d6e6861b525026d7"
       },
       {
         "primaryId": 6,
-        "sourceSha256": "3d9b967c80823a3d345d5364828dbd3dd3affd98a0c3a989e0f09c2154872b38"
+        "sourceSha256": "d1907cffd1850d8dfa3b4653faed5b8f442ca225a708deb063bae1003ec45e53"
       }
     ]
   },
