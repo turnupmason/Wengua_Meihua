@@ -145,6 +145,7 @@ export const SOURCE_REFS={
  'ZY-JIJIE54-L4':{title:"《周易集解》卷十一·归妹九四",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻愆训为过，见日月及四时之象。与本占实际未令及末上坤土候分别核。"},
  'ZY-LIN19-JING':{title:"《周易正义》临卦卦辞与疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/03臨.txt",scope:"临卦至于八月孔疏以建丑至建申、阴长阳退释。变卦辞不作实际月令或联系日期。"},
  'YC-GUIMEI54-L4':{title:"《伊川易传》卷四·归妹九四",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"释九四愆期之志由己不由彼，与王注所待对照。古注不代真人说明迟延原因。"},
+ 'YC-GUIMEI54-L5':{title:"《伊川易传》卷四·归妹六五",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程传以尚礼不尚饰释衣袂，近望而未盈释六五不亢；不代现实身份、衣着和日期。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
