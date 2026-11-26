@@ -1,15 +1,15 @@
-# 暧昧表白逐月长稿：360 篇预览
+# 暧昧表白逐月长稿：432 篇预览
 
-更新日期：2026-11-26（America/New_York）。本批新增乾为天、坤为地、水雷屯、山水蒙、水天需、天水讼，共 72 篇；累计 360 篇。完整目标为 4,608 篇，尚余 4248 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-26（America/New_York）。本批新增乾为天、坤为地、水雷屯、山水蒙、水天需、天水讼，共 72 篇；累计 432 篇。完整目标为 4,608 篇，尚余 4176 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
-| 乾为天 | 60/72 | [打开全文](hex-001.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-001.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-001.json) |
-| 坤为地 | 60/72 | [打开全文](hex-002.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-002.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-002.json) |
-| 水雷屯 | 60/72 | [打开全文](hex-003.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-003.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-003.json) |
-| 山水蒙 | 60/72 | [打开全文](hex-004.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-004.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-004.json) |
-| 水天需 | 60/72 | [打开全文](hex-005.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-005.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-005.json) |
-| 天水讼 | 60/72 | [打开全文](hex-006.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-006.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-006.json) |
+| 乾为天 | 72/72 | [打开全文](hex-001.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-001.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-001.json) |
+| 坤为地 | 72/72 | [打开全文](hex-002.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-002.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-002.json) |
+| 水雷屯 | 72/72 | [打开全文](hex-003.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-003.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-003.json) |
+| 山水蒙 | 72/72 | [打开全文](hex-004.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-004.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-004.json) |
+| 水天需 | 72/72 | [打开全文](hex-005.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-005.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-005.json) |
+| 天水讼 | 72/72 | [打开全文](hex-006.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-006.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-006.json) |
 
 
 
@@ -21,23 +21,23 @@
 
 ## 本批阅读入口
 
-- [乾为天：已完成 60 篇（5 爻）](hex-001.md)
+- [乾为天：已完成 72 篇（6 爻）](hex-001.md)
 
-- [坤为地：已完成 60 篇（5 爻）](hex-002.md)
+- [坤为地：已完成 72 篇（6 爻）](hex-002.md)
 
-- [水雷屯：已完成 60 篇（5 爻）](hex-003.md)
+- [水雷屯：已完成 72 篇（6 爻）](hex-003.md)
 
-- [山水蒙：已完成 60 篇（5 爻）](hex-004.md)
+- [山水蒙：已完成 72 篇（6 爻）](hex-004.md)
 
-- [水天需：已完成 60 篇（5 爻）](hex-005.md)
+- [水天需：已完成 72 篇（6 爻）](hex-005.md)
 
-- [天水讼：已完成 60 篇（5 爻）](hex-006.md)
+- [天水讼：已完成 72 篇（6 爻）](hex-006.md)
 
 
 
 ## 检查与阅读状态
 
-360 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 9,720 项，差异 0；日期用例 720 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 510–635 汉字。
+432 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 11,664 项，差异 0；日期用例 864 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 510–641 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/CONFESSION_DECISION_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

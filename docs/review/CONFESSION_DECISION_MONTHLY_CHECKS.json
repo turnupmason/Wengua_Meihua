@@ -2,65 +2,65 @@
   "schemaVersion": "1.0.0",
   "item": "confession-decision",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 360,
+  "articleCount": 432,
   "hexagrams": [
     {
       "primaryId": 1,
       "name": "乾为天",
-      "articles": 60,
-      "sourceSha256": "ecce6bbd6e6fe79bb1c745474d9fdb6261e3414c65fa86e0a32a62e2eedf4682",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "aee244b94670247317c9c42c98725a10fad49e2aba6213c3ece0465e74a2cc7a",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         510,
         582
       ],
       "outcomes": {
         "favourable": 12,
-        "conditional": 30,
-        "difficult": 18
+        "conditional": 36,
+        "difficult": 24
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     },
     {
       "primaryId": 2,
       "name": "坤为地",
-      "articles": 60,
-      "sourceSha256": "40fbcfaaee7b5b7dc35980d29e54a09fdf2142eb023b63e8c9f93b6d0bf31b4b",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "57754e08336e2aeae260ff3c4ab82975bf2f3b71f098afa80170027b84d8fa41",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         559,
-        631
+        641
       ],
       "outcomes": {
         "favourable": 16,
-        "conditional": 28,
-        "difficult": 16
+        "conditional": 32,
+        "difficult": 24
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     },
     {
       "primaryId": 3,
       "name": "水雷屯",
-      "articles": 60,
-      "sourceSha256": "df70d56f909c28507374cf9d1d88c46f1a84bdf965910498d7bff66e724d3be7",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "a774221e57b4a966746867b661bbf8752d08df208c4ec7b25d5896b5c8210e79",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         534,
         610
       ],
       "outcomes": {
         "favourable": 4,
-        "conditional": 18,
-        "difficult": 38
+        "conditional": 20,
+        "difficult": 48
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     },
     {
       "primaryId": 4,
       "name": "山水蒙",
-      "articles": 60,
-      "sourceSha256": "3d2a505667573c54dca0dea411bff890c1635a001c352224fa10a5614a0dad3f",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "6b543b59cfcf0ac061b9b4367654c19b1ce5e07e6554517235b470f2581a3846",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         557,
         620
@@ -68,49 +68,54 @@
       "outcomes": {
         "favourable": 6,
         "conditional": 18,
-        "difficult": 36
+        "difficult": 48
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     },
     {
       "primaryId": 5,
       "name": "水天需",
-      "articles": 60,
-      "sourceSha256": "eff53baa1b36d5a912ad85f654a723e20d9fe05159d683e8d6e6861b525026d7",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "feaa0e7ddea97e27de1abf5a31ee7295a3ad365c205ac684e236360d9ef9e3fa",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         524,
         573
       ],
       "outcomes": {
         "favourable": 10,
-        "conditional": 42,
-        "difficult": 8
+        "conditional": 50,
+        "difficult": 12
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     },
     {
       "primaryId": 6,
       "name": "天水讼",
-      "articles": 60,
-      "sourceSha256": "d1907cffd1850d8dfa3b4653faed5b8f442ca225a708deb063bae1003ec45e53",
-      "authorWholeArticlesRead": 60,
+      "articles": 72,
+      "sourceSha256": "6bd5fdf9ddf0fd09880a3e602c5a0d8d7bb183f752a476424f7170f65abd70ce",
+      "authorWholeArticlesRead": 72,
       "bodyHanRange": [
         570,
         635
       ],
       "outcomes": {
         "favourable": 4,
-        "conditional": 34,
-        "difficult": 22
+        "conditional": 44,
+        "difficult": 24
       },
-      "independentWholeArticlesRead": 60
+      "independentWholeArticlesRead": 72
     }
   ],
   "errors": [],
   "warnings": [
     {
       "key": "1/5/辰",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示confession，请独立读审"
+    },
+    {
+      "key": "1/6/戌",
       "check": "confession-short-scope",
       "detail": "简断可能未明示confession，请独立读审"
     },
@@ -163,23 +168,18 @@
       "key": "5/3/辰",
       "check": "confession-short-scope",
       "detail": "简断可能未明示outreach，请独立读审"
-    },
-    {
-      "key": "5/5/酉",
-      "check": "confession-short-scope",
-      "detail": "简断可能未明示heart，请独立读审"
     }
   ],
   "judgmentCorrections": [],
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 9720,
+  "chartComparisons": 11664,
   "chartMismatches": [],
-  "dateCases": 720,
+  "dateCases": 864,
   "bodyHanRange": [
     510,
-    635
+    641
   ],
   "shortHanRange": [
     73,
@@ -188,34 +188,34 @@
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "confession": {
-    "scopeArticlesChecked": 360,
-    "authorReadback": 360,
-    "secondRead": 360,
+    "scopeArticlesChecked": 432,
+    "authorReadback": 432,
+    "secondRead": 432,
     "timingCorrections": [],
     "sourceBindings": [
       {
         "primaryId": 1,
-        "sourceSha256": "ecce6bbd6e6fe79bb1c745474d9fdb6261e3414c65fa86e0a32a62e2eedf4682"
+        "sourceSha256": "aee244b94670247317c9c42c98725a10fad49e2aba6213c3ece0465e74a2cc7a"
       },
       {
         "primaryId": 2,
-        "sourceSha256": "40fbcfaaee7b5b7dc35980d29e54a09fdf2142eb023b63e8c9f93b6d0bf31b4b"
+        "sourceSha256": "57754e08336e2aeae260ff3c4ab82975bf2f3b71f098afa80170027b84d8fa41"
       },
       {
         "primaryId": 3,
-        "sourceSha256": "df70d56f909c28507374cf9d1d88c46f1a84bdf965910498d7bff66e724d3be7"
+        "sourceSha256": "a774221e57b4a966746867b661bbf8752d08df208c4ec7b25d5896b5c8210e79"
       },
       {
         "primaryId": 4,
-        "sourceSha256": "3d2a505667573c54dca0dea411bff890c1635a001c352224fa10a5614a0dad3f"
+        "sourceSha256": "6b543b59cfcf0ac061b9b4367654c19b1ce5e07e6554517235b470f2581a3846"
       },
       {
         "primaryId": 5,
-        "sourceSha256": "eff53baa1b36d5a912ad85f654a723e20d9fe05159d683e8d6e6861b525026d7"
+        "sourceSha256": "feaa0e7ddea97e27de1abf5a31ee7295a3ad365c205ac684e236360d9ef9e3fa"
       },
       {
         "primaryId": 6,
-        "sourceSha256": "d1907cffd1850d8dfa3b4653faed5b8f442ca225a708deb063bae1003ec45e53"
+        "sourceSha256": "6bd5fdf9ddf0fd09880a3e602c5a0d8d7bb183f752a476424f7170f65abd70ce"
       }
     ]
   },

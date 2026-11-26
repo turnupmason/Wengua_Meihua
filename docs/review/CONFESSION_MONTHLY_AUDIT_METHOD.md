@@ -18,3 +18,5 @@
 5. 对已完成全部/部分月稿运行 `python3 scripts/review/check-missing-person-style.py --repo-root . --item confession-decision --output /tmp/confession-style.json`。它记录全部源 SHA，去明示引文、标点后统计首句、首段跨标点首12字及月支归一化、整爻十二月全部月令直起、连续开头、精确长句/分句重合及三字组 Jaccard 全对查。报告候选组供人逐篇改写；正常月令、术语与简短经典引介不自动当成错误。改稿再读、重新绑定 SHA 后复扫。
 
 古籍出处与原有三问及动态取期政策见 [暧昧表白：断法与古籍出处](../CONFESSION_DECISION_POLICY.md)；通用逐月方法见 [MONTHLY_AUDIT_METHOD](MONTHLY_AUDIT_METHOD.md)。
+
+完整卦的实际古籍、六爻应用及逐卦规则审计，陆续收入[逐卦古籍与规则审计目录](confession-decision/README.md)。每条以当批正式月稿源指纹及逐篇双读回执绑定，工作稿早期指纹保留为过程留痕；未完整的卦不提前写入该目录。
