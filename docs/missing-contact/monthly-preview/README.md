@@ -8,6 +8,8 @@
 
 ## 阅读目录
 
+分批开放的月稿有[艮为山 3 篇](hex-052-first-read.md)。全库尚有 861 篇待撰。
+
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
 | [001 乾为天](hex-001.md) | 72 | 526–588 | 520–580 | 546 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-001.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-001.json) |
