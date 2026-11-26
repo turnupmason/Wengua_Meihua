@@ -168,6 +168,8 @@ export const SOURCE_REFS={
  'YC-FENG55-L3':{title:"《伊川易传》卷四·丰九三",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"沛与斾旧本及幡幔之义，论暗甚于蔀及无所凭不归咎，各依九三原文。"},
  'ZYZS-FENG55-L3':{title:"四库本《周易注疏》卷九·丰九三音义",url:"https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09",scope:"音义录姚氏滂沛、肱作股，郑氏韦为蔽膝，王注孔疏依幡幔与右肱分读，均不用于判真人所在地或安危。"},
  'ZY-XUGUA-GUIMEI-FENG':{title:"《周易正义》序卦·归妹受之以丰",url:"../../../sources/reference/zhouyi-zhengyi-hans/10.txt",scope:"序卦从得其所归释丰卦居次及卦名之大，和丰九三不任大事分读。"},
+ 'ZY-JIJIE55-L4':{title:"《周易集解》卷十一·丰九四",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以明夷三体震释夷主，卷内按语另以伤及指五，此爻坎为幽分读。"},
+ 'ZY-MINGYI36-TUAN':{title:"《周易正义》明夷卦辞与彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/04明夷.txt",scope:"明入地中取离坤二体，内文明外柔顺及艰贞按文王箕子旧例释，不给真人添大难。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
