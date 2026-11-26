@@ -140,6 +140,8 @@ export const SOURCE_REFS={
  'ZY-KUIYU54-L3':{title:"《周易窥余》卷十三·归妹六三",url:"https://zh.wikisource.org/wiki/周易窺餘_(四庫全書本)/卷13",scope:"释六三娣于九二；录胡安定以兄弟姊妹婚礼的旧例谈待年，也指出与该爻义不合。各守古注适用范围。"},
  'ZY-YAOYI54-L3':{title:"《周易要义》归妹六三条",url:"https://zh.wikisource.org/wiki/周易要義_(四庫全書本)/全覽",scope:"六三须如字待，郑氏才智之称，荀陆作嬬且陆云妾也；释文及经句各照其原。"},
  'ZY-GUIMEI54-TUAN':{title:"《周易正义》归妹彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt",scope:"彖说以动由本卦下兑上震读；六三动后下乾的克向无从借用原兑的卦德。"},
+ 'ZYZS-GUIMEI54-L4':{title:"四库本《周易注疏》卷九·归妹九四",url:"https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09",scope:"四库本九四孔疏作居不得位，与单篇网页录文有异。王注九四不正无应，对读九二与六五相应。"},
+ 'LJ-HUNYI-QINGQI':{title:"《礼记》昏义·请期",url:"https://zh.wikisource.org/wiki/禮記/昏義",scope:"请期为古昏礼之节。说明谁有待、谁所约是哪件事均依实情，不以古礼给所寻者定联系日。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
