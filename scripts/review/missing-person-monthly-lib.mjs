@@ -21,6 +21,7 @@ export const SOURCE_REFS={
  'ZY-YU16-6-COMPARISON':{title:'《周易正义》豫卦上六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02豫.txt',scope:'对读冥豫与冥升的不同爻义，不能据同字确定夜间行踪。'},
  'LIJI-QU-LI-STAIRS':{title:'《礼记·曲礼上》宾主登阶（对读）',url:'https://zh.wikisource.org/wiki/禮記/曲禮上',scope:'核宾主就东西阶的礼位，与孔疏践阼释语分别阅读，不据此推现实中失联者位置。'},
  'ZY-JIN35-COMPARISON':{title:'《周易正义》晋卦·卦辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/04晉.txt',scope:'晋卦康侯昼日三接与升六五所说的升进各有所指，晋卦经文不移作升卦的见面次数。'},
+ 'ZY-DAGUO28-GUACI':{title:'《周易正义》大过卦辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/03大過.txt',scope:'孔疏以拯患难释利有攸往亨，变卦卦辞不独立于本动爻许寻人成果。'},
  'ZY-KUN47-1-COMPARISON':{title:'《周易正义》困卦初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05困.txt',scope:'对读初六的三岁不觌与六三的入宫不见其妻，两爻不可合成现实失联时长。'},
  'ZY-XICI-KUN-JU':{title:'《周易正义》系辞下·困于石据于蒺藜（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt',scope:'系辞与孔疏以三上求四、下据二释名辱身危，不能当作关于失联者的现实险情通报。'},
  'ZY-XICI-KUN-GUAYUAN':{title:'《周易正义》系辞下·困以寡怨（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/08.6.txt',scope:'核寡怨所指为处困者自守，不以此判定亲友、失联者的现实情绪。'},
