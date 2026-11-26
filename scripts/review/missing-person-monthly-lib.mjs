@@ -113,6 +113,7 @@ export const SOURCE_REFS={
  'ZY-JIAREN-L2-XIANG':{title:"《周易正义》家人卦六二",url:"../../../sources/reference/zhouyi-zhengyi-hans/04家人.txt",scope:"对读家人六二小象顺以巽。家人六二居内中馈与渐六四遇桷，各从本爻。"},
  'ZY-DUN33-TUAN':{title:"《周易正义》遯卦卦辞与彖",url:"../../../sources/reference/zhouyi-zhengyi-hans/04遯.txt",scope:"变遯时读遯亨、小利贞及阴渐长，不因此改原体，也不据遯名替真实失联者定行迹或动机。"},
  'MH-REN2':{title:"《梅花易数》卷二·人事占第二",url:"https://zh.wikisource.org/wiki/梅花易數/卷二#人事占第二",scope:"用克体不宜、体生用有耗失，同时详看互变，复究盛衰。用于查访所费，不断所寻者现实安危或原因。"},
+ 'ZY-KUN47-L1':{title:"《周易正义》困卦初六",url:"../../../sources/reference/zhouyi-zhengyi-hans/05困.txt",scope:"困初六三岁不觌，是处困有应而二隔、困解乃出。与渐九五正应受隔终合对读，不把任何一爻的时数用作实际寻人日期。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
