@@ -56,6 +56,7 @@ export const SOURCE_REFS={
  'LIJI-XUEJI-SHANWEN':{title:"《礼记纂言》卷三十五·学记",url:"https://zh.wikisource.org/wiki/禮記纂言_(四庫全書本)/卷35",scope:"善问如攻坚木，先易后难。换成倒叙不能独验见闻真假，仍应核准见者易于说明的事实。"},
  'HANFEIZI-ZHENG-LV':{title:"《韩非子》外储说左上·郑人置履",url:"https://zh.wikisource.org/zh-hans/韓非子/11",scope:"量足置履一事分辨尺码和实际能否辨认人，不能据一双鞋号数确认物主与现处。"},
  'ZY-XIAN31-GANYING':{title:"《周易正义》咸卦彖传（对读）",url:"../../../sources/reference/zhouyi-zhengyi-hans/04咸.txt",scope:"咸彖以二气感应相与讲咸，变卦相与不证实送行者同行，不指所寻本人已乘车。"},
+ 'ZY-GUAI43-L2':{title:"《周易正义》夬九二及象疏（变卦对读）",url:"../../../sources/reference/zhouyi-zhengyi-hans/05夬.txt",scope:"对读夬九二居中审度及勿恤，不由变爻另起夜间险断，不得以经句延误现实求助。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
