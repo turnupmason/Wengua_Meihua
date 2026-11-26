@@ -61,6 +61,8 @@ export const SOURCE_REFS={
  'ZY-SUI17-SHISHI':{title:"《周易正义》随卦彖传及疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/03隨.txt",scope:"对读随彖“天下随时”及王孔释义，因时调整查问不等于断定本人跟随了某人，不另立寻人应期。"},
  'SHIJING-BAIJU-YONG':{title:"《诗经·小雅·白驹》首章及《诗集传》",url:"https://ctext.org/wiki.pl?chapter=332478&if=gb&remap=gb",scope:"诗借系驹表达惜别愿留之情。愿望的表达不能作本人已经在场、同意留下或后来去向的依据。"},
  'MOE-SHAN-XING':{title:"《重编国语辞典修订本》“單”字姓氏读音",url:"https://dict.revised.moe.edu.tw/dictView.jsp?ID=8971&la=0&powerMode=0",scope:"核“單”的姓氏读音可为 shàn，供口头认姓时对照；字典例义不能作为现实辨认本人身份的证据。"},
+ 'ZY-FENG55-RIZHONG':{title:"《周易正义》丰卦“宜日中”及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/06豐.txt",scope:"丰卦以日中遍照说宜照天下；与革九五对读其理，不把变卦的日中另取为当天联系时刻。"},
+ 'LVSHI-CHACHUAN-DING':{title:"《吕氏春秋·慎行论·察传》宋之丁氏",url:"https://ctext.org/text.pl?if=gb&node=24003&remap=gb&show=parallel",scope:"丁氏说明所省是一人外出汲水之劳，未在井中发现人；用于辨清转述中的得人对象，不取古事为实际寻人地点。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
