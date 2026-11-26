@@ -14,6 +14,31 @@ const OUTCOME_WORDS={
 const maybeJSON=async path=>{try{return JSON.parse(await readFile(path,'utf8'));}catch(e){if(e.code==='ENOENT')return null;throw e;}};
 const grams=text=>{const s=normalize(stripQuotes(text)),set=new Set();for(let i=0;i<s.length-2;i++)set.add(s.slice(i,i+3));return set;};
 function jaccard(a,b){let intersection=0;for(const x of a)if(b.has(x))intersection++;return intersection/(a.size+b.size-intersection||1);}
+// Exact prefix filter for the existing >=0.64 Jaccard check, not a heuristic.
+// With J(A,B)>=16/25, |A∩B|>=ceil(16|A|/25) and >=ceil(16|B|/25).
+// In a shared token order, the two prefixes of length n-ceil(16n/25)+1
+// therefore intersect. Length and prefix checks only remove impossible pairs;
+// the original exact Jaccard score and threshold still decide all reported pairs.
+export function createJaccardPrefixIndex(frequency=new Map()){
+ const records=[],inverted=new Map();
+ return {add(grams,selected=true){
+  const n=grams.size,prefix=[...grams].sort((a,b)=>(frequency.get(a)||0)-(frequency.get(b)||0)||(a<b?-1:a>b?1:0)).slice(0,Math.max(0,n-Math.ceil(16*n/25)+1));
+  const candidates=new Set();
+  for(const token of prefix)for(const i of inverted.get(token)||[]){
+   const p=records[i];if((selected||p.selected)&&25*Math.min(n,p.grams.size)>=16*Math.max(n,p.grams.size))candidates.add(i);
+  }
+  const matches=[];
+  for(const i of [...candidates].sort((a,b)=>a-b)){
+   const score=jaccard(grams,records[i].grams);
+   if(score>=0.64)matches.push({index:i,score});
+  }
+  const i=records.length;records.push({grams,selected});for(const token of prefix){
+   if(!inverted.has(token))inverted.set(token,[]);inverted.get(token).push(i);
+  }
+  return matches;
+ }};
+}
+
 
 // Independent Gregorian Julian day arithmetic; no call to the repository day-calendar helper.
 export function independentDayBranch(date){
@@ -38,7 +63,16 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
  const warn=(key,check,detail)=>report.warnings.push({key,check,detail});
  const compare=(key,check,a,b)=>{report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b))error(key,check,{independent:a,engine:b});};
  const seen={body:new Map(),paragraph:new Map(),sentence:new Map(),title:new Map(),opening:new Map()};
- const gramBodies=[],starterGroups=new Map();
+ // Use a common rare-first token order for efficiency; the prefix proof also
+ // holds for lexicographic order or any other fixed total order.
+ const corpus=new Map(),frequency=new Map();
+ for(const id of [...new Set([...all,...ids])]){
+  const raw=await readFile(`${SOURCE_DIR}/${stem(id)}.json`,'utf8'),source=JSON.parse(raw);
+  corpus.set(id,{raw,source});
+  for(const a of source.articles||[])if(Array.isArray(a.paragraphs)&&a.paragraphs.length)
+   for(const g of grams(a.paragraphs.join('\n\n')))frequency.set(g,(frequency.get(g)||0)+1);
+ }
+ const gramBodies=[],gramIndex=createJaccardPrefixIndex(frequency),starterGroups=new Map();
  function checkCopy(key,a,selected){
   const body=a.paragraphs.join('\n\n'),n=normalize(body),first=a.paragraphs[0].split(/[。！？]/u)[0];
   const add=(kind,text,owner)=>{if(!text)return;const prev=seen[kind].get(text);if(prev&&(selected||ids.includes(Number(prev.split('/')[0])))){report.duplicates.push({kind,first:prev,second:owner,text:kind==='sentence'?text:undefined});}else seen[kind].set(text,owner);};
@@ -48,15 +82,15 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
    for(const sentence of stripQuotes(p).split(/[。！？]/u))if(han(sentence)>=24)add('sentence',normalize(sentence),key+'/p'+(i+1));
   }
   const start=normalize(first).slice(0,12);if(start.length>=10){if(!starterGroups.has(start))starterGroups.set(start,[]);starterGroups.get(start).push(key);}
-  const g=grams(body);for(const prev of gramBodies){if(!selected&&!prev.selected)continue;const score=jaccard(g,prev.grams);if(score>=0.64)report.nearDuplicates.push({first:prev.key,second:key,similarity:Number(score.toFixed(3))});}
-  gramBodies.push({key,grams:g,selected});
+  const g=grams(body);for(const match of gramIndex.add(g,selected)){const prev=gramBodies[match.index];report.nearDuplicates.push({first:prev,second:key,similarity:Number(match.score.toFixed(3))});}
+  gramBodies.push(key);
  }
  for(const id of all.filter(id=>!ids.includes(id))){
-  const source=await maybeJSON(`${SOURCE_DIR}/${stem(id)}.json`);
+  const source=corpus.get(id)?.source;
   for(const a of source?.articles||[])if(Array.isArray(a.paragraphs)&&a.paragraphs.length)checkCopy(`${id}/${a.movingLine}/${a.monthBranch}`,a,false);
  }
  for(const id of ids){
-  const path=`${SOURCE_DIR}/${stem(id)}.json`,raw=await readFile(path,'utf8'),source=JSON.parse(raw),digest=sha256(raw);
+  const path=`${SOURCE_DIR}/${stem(id)}.json`,{raw,source}=corpus.get(id),digest=sha256(raw);
   const old=await maybeJSON(`sources/editorial/missing-contact/${stem(id)}.json`);
   const receipt=await maybeJSON(`${REVIEW_DIR}/${stem(id)}.json`),second=await maybeJSON(`${SECOND_REVIEW_DIR}/${stem(id)}.json`);
   if(source.schemaVersion!=='1.0.0'||source.scopeVersion!==SCOPE||source.questionId!==QUESTION_ID||source.primaryId!==id)error(String(id),'scope-identity','New search preview requires its own explicit scope and identity');

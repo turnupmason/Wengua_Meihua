@@ -2,13 +2,11 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 4032 / 4,608 篇，56 / 64 卦；尚余 576 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 4536 / 4,608 篇，63 / 64 卦；尚余 72 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
 ## 阅读目录
-
-分批开放的月稿有[火山旅 72 篇](hex-056-first-read.md)（六爻已齐，整卦正式核读回执尚待汇总）、[巽为风 60 篇](hex-057-first-read.md)（初六、九二、九三、六四、九五）。全库尚有 444 篇待撰。
 
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -67,6 +65,13 @@
 | [053 风山渐](hex-053.md) | 72 | 500–560 | 491–550 | 519 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-053.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-053.json) |
 | [054 雷泽归妹](hex-054.md) | 72 | 502–572 | 477–550 | 515 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-054.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-054.json) |
 | [055 雷火丰](hex-055.md) | 72 | 501–557 | 481–547 | 524 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-055.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-055.json) |
+| [056 火山旅](hex-056.md) | 72 | 500–549 | 479–531 | 515 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-056.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-056.json) |
+| [057 巽为风](hex-057.md) | 72 | 500–563 | 490–553 | 510 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-057.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-057.json) |
+| [058 兑为泽](hex-058.md) | 72 | 500–540 | 488–538 | 512.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-058.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-058.json) |
+| [059 风水涣](hex-059.md) | 72 | 505–562 | 486–554 | 524.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-059.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-059.json) |
+| [060 水泽节](hex-060.md) | 72 | 536–646 | 526–640 | 597.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-060.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-060.json) |
+| [061 风泽中孚](hex-061.md) | 72 | 500–563 | 489–556 | 516 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-061.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-061.json) |
+| [062 雷山小过](hex-062.md) | 72 | 503–574 | 497–561 | 542 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-062.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-062.json) |
 | [064 火水未济](hex-064.md) | 72 | 536–636 | 529–632 | 575 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-064.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-064.json) |
 
 ## 本轮的写作与判读
@@ -85,4 +90,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：56 · 火山旅。
+下一待完成卦：63 · 水火既济。
