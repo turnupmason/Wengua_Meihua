@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "item": "confession-decision",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 1440,
+  "articleCount": 1512,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -313,104 +313,104 @@
     {
       "primaryId": 19,
       "name": "地泽临",
-      "articles": 24,
-      "sourceSha256": "f105d1db056625cdcf6b54841c16645ea557aa7d2811067380379f4ed8e9f902",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "04148b31261920c4167b938f5458cacbeeb5793a510bc6d885772c0b2c9a48ab",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
-        502,
-        522
+        501,
+        537
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 16,
-        "difficult": 8
+        "conditional": 22,
+        "difficult": 14
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 20,
       "name": "风地观",
-      "articles": 24,
-      "sourceSha256": "0c269dfe2d855cda8456475bf042dece95768eb3e8bcdde17698b11eaedc030d",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "6539f72ef30dcb93ea44600757348ac443cc245d975c0d1c6754f8ee39f26357",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         558,
-        589
+        596
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 14,
-        "difficult": 10
+        "conditional": 20,
+        "difficult": 16
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 21,
       "name": "火雷噬嗑",
-      "articles": 24,
-      "sourceSha256": "9def9a847229befd1b4b64c2cf3a48667e2909a0248ab56e577e7559cbc0540f",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "72bb2d6f29cd6dd43af1de239f01fdd57fd4f84c351a6b2f8dda836c7098958e",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         537
       ],
       "outcomes": {
-        "favourable": 0,
-        "conditional": 18,
-        "difficult": 6
+        "favourable": 2,
+        "conditional": 24,
+        "difficult": 10
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 22,
       "name": "山火贲",
-      "articles": 24,
-      "sourceSha256": "a7fa9ce244d651b63ed39828fa623cf7da42d65e49099d25b481fb69b3f7b624",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "349a1cb7fad86696d71ee3841e27942ac014460319c378384e0a2132ed332cae",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         512,
         539
       ],
       "outcomes": {
         "favourable": 6,
-        "conditional": 12,
-        "difficult": 6
+        "conditional": 22,
+        "difficult": 8
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 23,
       "name": "山地剥",
-      "articles": 24,
-      "sourceSha256": "a24258d53b8adbc9312529cbc0591451612de60a0b8e95868f00da042a3d27b1",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "bdad276ea599474a8188ba82ea85310c37d23f8f735f0a8645cc70fe4830bf0c",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         502,
         540
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 0,
+        "conditional": 12,
         "difficult": 24
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 24,
       "name": "地雷复",
-      "articles": 24,
-      "sourceSha256": "47a5d38b12143de6c497836a45d453e9af90dea616e338badc14dfb68ded9b78",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "3ce8ef551d8fcb5f2b1485f9b23fa5d51cdee5fb9bb7154e156609077d321f12",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         501,
-        529
+        536
       ],
       "outcomes": {
         "favourable": 4,
-        "conditional": 18,
-        "difficult": 2
+        "conditional": 28,
+        "difficult": 4
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     }
   ],
   "errors": [],
@@ -646,6 +646,11 @@
       "detail": "简断可能未明示confession，请独立读审"
     },
     {
+      "key": "20/3/丑",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
       "key": "22/1/酉",
       "check": "confession-short-scope",
       "detail": "简断可能未明示outreach，请独立读审"
@@ -654,29 +659,44 @@
       "key": "22/2/未",
       "check": "confession-short-scope",
       "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "22/3/酉",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "22/3/子",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "23/3/酉",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
     }
   ],
   "judgmentCorrections": [],
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 38880,
+  "chartComparisons": 40824,
   "chartMismatches": [],
-  "dateCases": 2880,
+  "dateCases": 3024,
   "bodyHanRange": [
     500,
     641
   ],
   "shortHanRange": [
-    73,
+    71,
     113
   ],
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "confession": {
-    "scopeArticlesChecked": 1440,
-    "authorReadback": 1440,
-    "secondRead": 1440,
+    "scopeArticlesChecked": 1512,
+    "authorReadback": 1512,
+    "secondRead": 1512,
     "timingCorrections": [],
     "sourceBindings": [
       {
@@ -753,27 +773,27 @@
       },
       {
         "primaryId": 19,
-        "sourceSha256": "f105d1db056625cdcf6b54841c16645ea557aa7d2811067380379f4ed8e9f902"
+        "sourceSha256": "04148b31261920c4167b938f5458cacbeeb5793a510bc6d885772c0b2c9a48ab"
       },
       {
         "primaryId": 20,
-        "sourceSha256": "0c269dfe2d855cda8456475bf042dece95768eb3e8bcdde17698b11eaedc030d"
+        "sourceSha256": "6539f72ef30dcb93ea44600757348ac443cc245d975c0d1c6754f8ee39f26357"
       },
       {
         "primaryId": 21,
-        "sourceSha256": "9def9a847229befd1b4b64c2cf3a48667e2909a0248ab56e577e7559cbc0540f"
+        "sourceSha256": "72bb2d6f29cd6dd43af1de239f01fdd57fd4f84c351a6b2f8dda836c7098958e"
       },
       {
         "primaryId": 22,
-        "sourceSha256": "a7fa9ce244d651b63ed39828fa623cf7da42d65e49099d25b481fb69b3f7b624"
+        "sourceSha256": "349a1cb7fad86696d71ee3841e27942ac014460319c378384e0a2132ed332cae"
       },
       {
         "primaryId": 23,
-        "sourceSha256": "a24258d53b8adbc9312529cbc0591451612de60a0b8e95868f00da042a3d27b1"
+        "sourceSha256": "bdad276ea599474a8188ba82ea85310c37d23f8f735f0a8645cc70fe4830bf0c"
       },
       {
         "primaryId": 24,
-        "sourceSha256": "47a5d38b12143de6c497836a45d453e9af90dea616e338badc14dfb68ded9b78"
+        "sourceSha256": "3ce8ef551d8fcb5f2b1485f9b23fa5d51cdee5fb9bb7154e156609077d321f12"
       }
     ]
   },
