@@ -71,6 +71,7 @@ export const SOURCE_REFS={
  'ZY-XICI-DING4':{title:"《周易正义》系辞下·力小而任重",url:"../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt",scope:"系辞引鼎九四释不能胜其任，依各人所能说明的范围核实寻人线索，不用德薄指责失联者或亲属。"},
  'ZY-ZHEN51-L3-CROSS':{title:'《周易正义》震卦·六三对读',url:'../../../sources/reference/zhouyi-zhengyi-hans/05震.txt',scope:'参照六三无乘刚之逆、能因惧而行的条件，对照上六动极复征之戒。'},
  'YC-ZHEN51':{title:"《伊川易传》卷四·震卦",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程传释震六二亿为揣度，九陵取高且重，勿逐守中正而复其常，不定失联者去处或见人日期。"},
+ 'YC-GEN52':{title:"《伊川易传》卷四·艮卦",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程传以止于动之初释初六未失正，并以阴柔难常说明永贞之戒；不据爻中趾字预设现实受伤或暂停求助。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
