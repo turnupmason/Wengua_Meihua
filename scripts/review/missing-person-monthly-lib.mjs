@@ -100,6 +100,8 @@ export const SOURCE_REFS={
  'ZY-JIJIE52-L6':{title:"李鼎祚《周易集解》卷十·艮上九",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十",scope:"虞翻坤为厚、阳上据坤供对读王孔敦厚自终，不改本盘秋令的强弱。"},
  'ZY-BENYI-QIAN-YOUZHONG':{title:"《周易本义》卷一·谦卦有终",url:"../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt",scope:"谦卦辞君子有终在朱注为先屈后伸，仅与艮上九厚终对读，不增加一处卦内生扶。"},
  'ZY-QIAN15-L6':{title:"《周易正义》谦卦上六",url:"../../../sources/reference/zhouyi-zhengyi-hans/02謙.txt",scope:"变卦上六原辞仅对读，不另起新占、不移为现实时地或查访办法。"},
+ 'ZY-JIJIE53-L1':{title:"李鼎祚《周易集解》卷十一·渐初六",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以初失位、动而得正释厉与无咎，对读王孔有言而义无咎。不据古辞替真人断年龄、地点或失联事由。"},
+ 'MH-HU-ORIGIN':{title:"《梅花易数》卷一·互卦起例",url:"https://zh.wikisource.org/wiki/梅花易數/卷一#互卦起例",scope:"说明取原卦中间四爻分两互。正文如用所列乾坤另法须明言；渐初六不涉及乾坤无互。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
