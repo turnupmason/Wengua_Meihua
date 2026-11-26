@@ -2,13 +2,11 @@
 
 本目录按“人找不到了，怎样寻人”写作。每一篇先讲能否寻得及其依据，再列方位与寻找线索、处境与安危倾向、可能的失联原因和应期。正文参考用户指定的面试篇、确定关系篇自然长稿，六爻与十二月逐篇独立写定。
 
-**本轮已完成 3672 / 4,608 篇，51 / 64 卦；尚余 936 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
+**本轮已完成 3744 / 4,608 篇，52 / 64 卦；尚余 864 篇。** 每卦是 72 篇独立月稿，首轮编辑与第二位 AI 读者的全文意见均绑定当前文件。旧库的 1,920 篇五气稿及其精修进度，不计入这次的新范围完成数。
 
 [规则、古籍与范围](POLICY.md) · [逐批审计](AUDIT.md) · [机器检查](CHECKS.json) · [完成进度](progress.json) · [在写分工](IN_PROGRESS.md) · [旧复联稿对照](../README.md)
 
 ## 阅读目录
-
-分批开放的月稿有[震为雷 63 篇](hex-051-first-read.md)。全库尚有 873 篇待撰。
 
 | 卦 | 独立月稿 | 正文汉字范围 | 去除引号内文字后 | 正文中位数 | 首轮编辑与第二读者 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -62,6 +60,7 @@
 | [048 水风井](hex-048.md) | 72 | 506–585 | 498–573 | 541.5 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-048.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-048.json) |
 | [049 泽火革](hex-049.md) | 72 | 503–587 | 486–581 | 547 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-049.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-049.json) |
 | [050 火风鼎](hex-050.md) | 72 | 501–591 | 469–566 | 529 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-050.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-050.json) |
+| [051 震为雷](hex-051.md) | 72 | 500–568 | 469–565 | 523 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-051.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-051.json) |
 | [064 火水未济](hex-064.md) | 72 | 536–636 | 529–632 | 575 | [首轮编辑](../../../sources/editorial/missing-contact/reviews-monthly/hex-064.json) · [第二读者](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-064.json) |
 
 ## 本轮的写作与判读
@@ -80,4 +79,4 @@
 
 - 这是 GitHub 阅读预览，尚未切换正式应用的旧复联数据。两位 AI 的全文检查与机器复算均有实际记录；独立真人专业审核、现实预测效度及用户逐篇认可仍分别待完成。
 
-下一待完成卦：51 · 震为雷。
+下一待完成卦：52 · 艮为山。

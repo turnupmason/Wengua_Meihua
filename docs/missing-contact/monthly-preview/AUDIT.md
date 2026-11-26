@@ -2,71 +2,79 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 震为雷全卦及上六定稿
+
+七十二篇，寻获较有望四篇、有机会二十八篇、较难四十篇。前三爻以上震为体，初九、六三据体互坎生上震取水日，六二据末下兑克上震取金日。后三爻以下震为体，九四、上六据用互坎生下震取水日，六五据末上兑克下震取金日。分别核前、中、末所主之事，寻获、安危与失联原因依实证核明。
+
+上六以王孔释震极复征、畏邻知戒、婚媾相疑之意。寅分看见转头与究竟看向谁，卯分邻处险情和本人安危，辰核亲密关系中的言语与真正见闻。巳对读六三能惧而行与上六戒复征，午核原定可来和实际到场，未辨叮嘱对象及有无照做。申辨语音中止与转来的片段，酉分不能确认和实据排除，戌分起卦、收信和目击日期。亥从实地核几步之遥，子分一家报信与真见人的地点，丑辨原先查的是哪位。亥子断寻获有机会，其余十月断寻获较难。[上六十二篇](hex-051.md#上六动--寅月) · [上六逐篇回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-6-accepted-readback.json)
+
+正文不计附栏各 500–568 个汉字。一千八百项盘面对照、二百一十六个日期用例、七十二份逐篇双读记录及正式阅读页一致。[完整六爻月稿](hex-051.md) · [作者回执](../../../sources/editorial/missing-contact/reviews-monthly/hex-051.json) · [逐篇独立终读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-051.json)
+
 ## 震为雷上六首三篇
 
 上六动上卦，原体仍为下震，本用上震。两震初比和，体克体互艮，中得用互坎水来生，末变上离受体所生。寅卯旺震能承休坎实生与制死艮，末生相离仍耗。辰囚震比和薄、死坎薄生、制旺艮劳，末生休离仍耗。三篇均保留畏邻自戒的免咎之义，结合复征之戒及盘中限制断寻获较难。水日候用互坎生下震的中段助力，十一月二十一、二十二日为演示候选。三篇共核七十五项盘面与九个日期用例。
 
-寅辨矍矍的古义和真人当时转头所能说明，卯辨邻家先遇的情况与所寻之人实际安危，辰辨婚媾有言与亲友的实际知情。[上六寅卯辰](hex-051-first-read.md#上六动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-6-first-three-accepted-readback.json)
+寅辨矍矍的古义和真人当时转头所能说明，卯辨邻家先遇的情况与所寻之人实际安危，辰辨婚媾有言与亲友的实际知情。[上六寅卯辰](hex-051.md#上六动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-6-first-three-accepted-readback.json)
 
 ## 震为雷六五十二月定稿
 
 六五下震为体、上震为本用，初段木比和，中体互艮由体克，用互坎水生下震，末变上兑金克体。春两震旺、休坎生、末囚兑克缓，冬两震相、旺坎扶、末休兑仍克，四篇取寻获有机会。夏与季土前段比和及生扶弱，秋虽有相坎实助而末旺兑重克，八篇取较难。王孔说明有事之机与惧而失事，程朱重不失中。金日据末变上兑克下震参收尾核实受阻，十一月三十日为演示候选。十二篇共核三百项盘面、三十六个日期用例。
 
-寅核无丧有事及报安的时点，卯辨来往是不是亲见，辰校又名及实际识人。巳分受潮前和受潮后补写，午辨进城当地叫法和真实见闻，未辨所称都找过的范围。申分生产、限用及开封标注所能限定的时间，酉辨估龄与真实年龄，戌辨条件请托与已有结果。亥分绷带及实际安危，子分门前经过和上门，丑辨原话只知某日以后。[六五十二篇](hex-051-first-read.md#六五动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-5-accepted-readback.json)
+寅核无丧有事及报安的时点，卯辨来往是不是亲见，辰校又名及实际识人。巳分受潮前和受潮后补写，午辨进城当地叫法和真实见闻，未辨所称都找过的范围。申分生产、限用及开封标注所能限定的时间，酉辨估龄与真实年龄，戌辨条件请托与已有结果。亥分绷带及实际安危，子分门前经过和上门，丑辨原话只知某日以后。[六五十二篇](hex-051.md#六五动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-5-accepted-readback.json)
 
 ## 震为雷六五首三篇
 
 六五动上卦，体为下震木、本用上震木，初比和，中体互艮受体克、用互坎水生下震，末变上兑金克原体。寅卯两震旺，用互休坎尚能生体、死艮较可制、末囚兑克缓，寻获有机会。辰两震囚，用互死坎薄生、旺艮难制、末相兑克力实，寻获较难。六五无丧有事保留王孔任事之机与程朱守中之义。金日取末变上兑克下震，十一月三十日为演示候选。三篇核七十五项盘面、九个日期用例。
 
-寅核无丧有事及安好所指的时段，卯辨来往是仍通消息还是当面相见，辰核又名所属及其是否有另认人、定地的实据。[六五寅卯辰](hex-051-first-read.md#六五动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-5-first-three-accepted-readback.json)
+寅核无丧有事及安好所指的时段，卯辨来往是仍通消息还是当面相见，辰核又名所属及其是否有另认人、定地的实据。[六五寅卯辰](hex-051.md#六五动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 震为雷九四十二月定稿
 
 九四动上卦，原体取下震木、上震为本用，先比和，体互艮由原震所制，中用互坎水直接来生，末变上坤土仍受原体所制。春两震旺、休水来扶，冬两震相、旺坎生木，四篇留寻获机会。夏木休、季土木囚，扶薄而两土难制；秋木死虽有相坎来生，仍苦弱木承力和原有遂泥之滞，八篇寻获较难。水日取用互坎生下震的中段扶助，十一月二十一、二十二日为演示候选。全爻共核三百项盘面与三十六个日期用例。
 
-寅核鞋泥是否实际有来路，卯辨查访滞与真人有碍，辰辨重登旧见与新现况。巳分按键与实际楼层，午分班车实际到站时间和本人受见，未分印字、冲印与拍摄。申辨未否认与自认，酉分后戴眼镜认准与早先一眼，戌分存下地址与真去过。亥辨七号所指时地，子分伞数与同行人，丑辨路巷是地址还是独立见闻。[九四十二篇](hex-051-first-read.md#九四动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-4-accepted-readback.json)
+寅核鞋泥是否实际有来路，卯辨查访滞与真人有碍，辰辨重登旧见与新现况。巳分按键与实际楼层，午分班车实际到站时间和本人受见，未分印字、冲印与拍摄。申辨未否认与自认，酉分后戴眼镜认准与早先一眼，戌分存下地址与真去过。亥辨七号所指时地，子分伞数与同行人，丑辨路巷是地址还是独立见闻。[九四十二篇](hex-051.md#九四动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-4-accepted-readback.json)
 
 ## 震为雷九四首三篇
 
 九四动上卦，原体改取下震，上震为本用。初段两震木比和，体互艮土及末变上坤土受体所克，用互坎水生原体。寅卯旺震能承中间休坎生扶，制死艮、死坤较可办，仍以解所滞为条件，寻获有机会。辰月两震木囚、死坎薄生、两旺土办理较劳，寻获较难。水日取用互坎生下震参中段扶助，十一月二十一、二十二日为演示候选。核三篇七十五项盘面与九个日期用例。
 
-寅校王孔与朱子“遂泥”所指，核鞋泥与所走实路；卯辨查访半途未能接上和本人实况；辰辨重新登记与新得见闻。[九四寅卯辰](hex-051-first-read.md#九四动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-4-first-three-accepted-readback.json)
+寅校王孔与朱子“遂泥”所指，核鞋泥与所走实路；卯辨查访半途未能接上和本人实况；辰辨重新登记与新得见闻。[九四寅卯辰](hex-051.md#九四动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-4-first-three-accepted-readback.json)
 
 ## 震为雷六三十二月定稿
 
 上震为体，下震为本用，初比和，中体互坎水生上震，原体克用互艮土，末变下离火受上震所生。寅卯两木旺、亥子两木相，能承初中且末耗可理；申酉木死，得相坎实助。六篇断寻获有机会。夏月木休、火旺，末耗重；季土两木囚，中援薄，制旺艮和生休离仍耗力。巳午与四季土月共六篇断寻获较难。无眚重因惧而行得宜，水日候中段体互坎生上震所得帮助，十一月二十一、二十二日为演示候选。十二篇合核三百项盘面与三十六个日期用例。
 
-寅分苏苏与醒来，卯分提包和实际进出，辰辨照旧指查访哪一步。巳核隔墙两处所见，午分同姓和实际来往，未辨着装相同的班次与是否同行。申辨换头像的时点、图所拍与本人近况，酉分语音提示和真人应答，戌分丰卦日中与实际相见时辰。亥辨听见和听懂所指地名，子辨让座与真实身体情形，丑辨看不清所指当时所见还是形势不明。[六三十二篇](hex-051-first-read.md#六三动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《周易正义》丰](../../../sources/reference/zhouyi-zhengyi-hans/06豐.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-3-accepted-readback.json)
+寅分苏苏与醒来，卯分提包和实际进出，辰辨照旧指查访哪一步。巳核隔墙两处所见，午分同姓和实际来往，未辨着装相同的班次与是否同行。申辨换头像的时点、图所拍与本人近况，酉分语音提示和真人应答，戌分丰卦日中与实际相见时辰。亥辨听见和听懂所指地名，子辨让座与真实身体情形，丑辨看不清所指当时所见还是形势不明。[六三十二篇](hex-051.md#六三动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《周易正义》丰](../../../sources/reference/zhouyi-zhengyi-hans/06豐.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-3-accepted-readback.json)
 
 ## 震为雷六三首三篇
 
 上震为体，下震为用。前段震木比和，体互坎水直接生原体，原体克用互艮土，六三动下变离火受震所生，收尾有耗。寅卯本体皆旺，休坎可生，制死艮较可办，末生相离，寻获有机会。辰两震囚，死坎薄生、制旺艮较劳，末生休离仍耗，寻获较难。六三无眚可取因惧能行而就正，水日候体互坎生震的中段帮助，十一月二十一、二十二日为演示候选。三篇共核七十五项盘面及九个日期用例。
 
-寅读孔疏苏苏为畏惧，程朱重缓散自失，须辨现实中“醒了”所指；卯辨提包所见能否并证出入；辰辨照旧所指定的查访步骤及本人的实际所在。[六三寅卯辰](hex-051-first-read.md#六三动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-3-first-three-accepted-readback.json)
+寅读孔疏苏苏为畏惧，程朱重缓散自失，须辨现实中“醒了”所指；卯辨提包所见能否并证出入；辰辨照旧所指定的查访步骤及本人的实际所在。[六三寅卯辰](hex-051.md#六三动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 震为雷六二十二月定稿
 
 上震为体，本用下震初比和，中有体互坎水生体，体克用互艮土，末变下兑金来克上震。春旺木能承囚兑较缓之克，冬相震得旺坎实生而末休兑仍克，四篇断寻获有机会。夏前比中生薄，末死兑仍克；季土囚木承相兑克，秋死木虽得相坎仍遇末旺兑重克，八篇寻获较难。七日得在王孔与程朱之间有不同释法，取末兑克震的金日只参收尾核查阻力，十一月三十日为演示候选。全爻三百项盘面对照，三十六个日期用例。
 
-寅对读七日得，卯辨地名与路程，辰查估计遗落和查实遗落。巳核停用某张照片实际所指，午辨七天以内与第七日，未辨谁在上坡。申比对原报、记下及实拨的号码，酉区分同院两道门及各自所见，戌核钥匙可用范围与实际见到的门。亥分发、收、读信与答复，子辨推车与先前是否骑车，丑辨回话所引旧句与新近实情。[六二十二篇](hex-051-first-read.md#六二动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-2-accepted-readback.json)
+寅对读七日得，卯辨地名与路程，辰查估计遗落和查实遗落。巳核停用某张照片实际所指，午辨七天以内与第七日，未辨谁在上坡。申比对原报、记下及实拨的号码，酉区分同院两道门及各自所见，戌核钥匙可用范围与实际见到的门。亥分发、收、读信与答复，子辨推车与先前是否骑车，丑辨回话所引旧句与新近实情。[六二十二篇](hex-051.md#六二动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-2-accepted-readback.json)
 
 ## 震为雷六二首三篇
 
 上震为体，下震为本用，初段比和，体互坎水生原体，用互艮土受体所制。六二动下震变兑，末下兑金克原体。寅卯同旺、得休坎生、囚兑克缓，寻获有机会；辰两震囚、死坎生薄、制旺艮费力、末相兑克实，寻获较难。金日从末变兑直接克震取，十一月三十日为示例。三篇合核七十五项盘面与九个日期用例。
 
-寅对读孔疏六二为有司所获、程传自守复常与《本义》不求自获并存九陵七日未详。卯分名中数字与实际走的里程，辰从亿字异释分怕是遗落与确曾遗落。[六二寅卯辰](hex-051-first-read.md#六二动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-2-first-three-accepted-readback.json)
+寅对读孔疏六二为有司所获、程传自守复常与《本义》不求自获并存九陵七日未详。卯分名中数字与实际走的里程，辰从亿字异释分怕是遗落与确曾遗落。[六二寅卯辰](hex-051.md#六二动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [《伊川易传》](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-2-first-three-accepted-readback.json)
 
 ## 震为雷初九十二月定稿
 
 初九上震为体，下震为本用，初比和，体互坎水直接生震，用互艮、末变下坤土均受体制。寅卯两震旺，亥子两震相，中坎各有力生木，木制两弱土较可办，四篇断寻获较有望。夏与季土前比中生薄，制两土费力；秋有相坎真助而木本体承力弱，八篇断寻获有机会。初九由惊而知自修，后吉有据。水日候中段体互坎生震的接应，十一月二十一、二十二日为演示候选。十二篇共核三百项盘面、三十六个日期用例。
 
-寅核何人何事之喜，卯辨“刚过去”，辰辨自动亮灯及本人是否在场。巳区别提议报告和实际所报，午核告示联系人与所寻者的位置，未分下站播报、抵站和下车。申分代捎密封信和实知内文，酉区别听见脚步与当面认人，戌辨挥手及其所向。亥核衣着究为何时所见，子核两岸见者所说“对岸”的地理参照，丑分雪后所见足迹与之前的真实路线。[初九十二篇](hex-051-first-read.md#初九动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-1-accepted-readback.json)
+寅核何人何事之喜，卯辨“刚过去”，辰辨自动亮灯及本人是否在场。巳区别提议报告和实际所报，午核告示联系人与所寻者的位置，未分下站播报、抵站和下车。申分代捎密封信和实知内文，酉区别听见脚步与当面认人，戌辨挥手及其所向。亥核衣着究为何时所见，子核两岸见者所说“对岸”的地理参照，丑分雪后所见足迹与之前的真实路线。[初九十二篇](hex-051.md#初九动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-1-accepted-readback.json)
 
 ## 震为雷初九首三篇
 
 上震为体，下震为用。初段震木比和，体互坎水生上震，原体克用互艮和末变下坤。寅卯两震旺、中休坎生、两死土较可制，寻获较有望；辰囚震承接薄、中死坎仍生、制旺艮和旺坤费力，寻获有机会。初九后吉依遇震修省、有则。取体互坎生震的水日参中段援助，示例十一月二十一、二十二日。三篇共核七十五项盘面和九个日期用例。
 
-寅读孔疏哑哑为笑语，区别何人何事之喜。卯核“我刚过去”是经过还是已经到了原所指处。辰辨窗灯是否自动点亮、谁亲自开灯及本人实际是否在场。[初九寅卯辰](hex-051-first-read.md#初九动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-1-first-three-accepted-readback.json)
+寅读孔疏哑哑为笑语，区别何人何事之喜。卯核“我刚过去”是经过还是已经到了原所指处。辰辨窗灯是否自动点亮、谁亲自开灯及本人实际是否在场。[初九寅卯辰](hex-051.md#初九动--寅月) · [《周易正义》震](../../../sources/reference/zhouyi-zhengyi-hans/05震.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-051/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 火风鼎全卦及上九定稿
 
