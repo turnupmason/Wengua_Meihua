@@ -9,6 +9,13 @@
 - [水天需](hex-005.md)
 - [天水讼](hex-006.md)
 
+- [地水师](hex-007.md)
+- [水地比](hex-008.md)
+- [风天小畜](hex-009.md)
+- [天泽履](hex-010.md)
+- [地天泰](hex-011.md)
+- [天地否](hex-012.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
