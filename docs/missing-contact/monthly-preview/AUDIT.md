@@ -2,41 +2,47 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 地风升全卦及上六定稿
+
+七十二篇中寻获有机会二十八篇，较难四十四篇。前三爻上坤体，后三爻下巽体。初六、九三取本巽克坤的初段木日，九二取体互震克坤的中段木日；六四取中段互兑克巽的金日，六五取末坎生巽的水日。上六变山风蛊，原体巽木克初坤、末艮，中段有体互兑克与用互震和。虽有季令可供查访，无明确得信的日级事件；十二月均断较难，不排固定日。古注关于施于正、劳不可久的分寸不能改作停止现实求助的理由。[升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [《本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《伊川易传》卷三](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt)
+
+上六寅问旺体可制而为何仍难寻，卯分冥升与冥豫，辰读小象“消不富”。巳核示意图虚线、午核相同时段的重复观察、未核窗上反光与实地；申分号码局部相同与整体相同，酉分已办理与实际所得答复，戌辨距同一次已知联系的日历日和整日。亥核“已编辑”不能倒推出改动内容，子对读同月六五与上六取期，丑分艮止与不息之贞。每篇正文 505–585 汉字；全数核过一千八百项盘面对照、二百一十六个日期用例及渲染、查重、两轮分篇回执。[升卦七十二篇](hex-046.md) · [作者核读](../../../sources/editorial/missing-contact/reviews-monthly/hex-046.json) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-046.json)
+
 ## 地风升六五十二月定稿
 
 原体巽木制本坤土，中段体互兑克巽、用互震和巽，末坎生原体，从此取水日。春冬体旺相，夏虽初访费力，中克缓而末囚坎仍可接应，此三季留有机会；季土弱木克旺土又受相兑克，秋旺兑克死巽，末虽可生亦不足以翻转整体，实际寻获较难。六五居中居尊、得九二之应，朱子以正固为吉的条件，王孔从任而不专说保其尊贵，程传以所任刚中之贤释阶。示例十一月二十一、二十二日参末段帮助，阅读旧稿不会挪动起卦时所取候日。
 
-首批巳午未分别与益的引见、复及无妄的亲见推测、泰与睽的行迹次序近题，整篇改写并重读。新巳比较晋卦昼日三接与升六五；午核回邮信封的收寄方向；未核数级起点。申不把后配声音当作引起回头的现场声音，酉区别新近听懂与原已知情，戌核旧稿示例候日，亥换掉近萃六二辰的“同上”题，改释地中生木和末坎生巽。子辨旧问候录音与本人当时应答，丑核《曲礼上》宾主就阶、降等与固辞的原文。全爻三百项盘面、三十六个日期用例通过。[六五十二篇](hex-046-first-read.md#六五动--寅月) · [《周易正义》晋](../../../sources/reference/zhouyi-zhengyi-hans/04晉.txt) · [《礼记·曲礼上》](https://zh.wikisource.org/wiki/禮記/曲禮上) · [六五二读回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-5-accepted-readback.json)
+首批巳午未分别与益的引见、复及无妄的亲见推测、泰与睽的行迹次序近题，整篇改写并重读。新巳比较晋卦昼日三接与升六五；午核回邮信封的收寄方向；未核数级起点。申不把后配声音当作引起回头的现场声音，酉区别新近听懂与原已知情，戌核旧稿示例候日，亥换掉近萃六二辰的“同上”题，改释地中生木和末坎生巽。子辨旧问候录音与本人当时应答，丑核《曲礼上》宾主就阶、降等与固辞的原文。全爻三百项盘面、三十六个日期用例通过。[六五十二篇](hex-046.md#六五动--寅月) · [《周易正义》晋](../../../sources/reference/zhouyi-zhengyi-hans/04晉.txt) · [《礼记·曲礼上》](https://zh.wikisource.org/wiki/禮記/曲禮上) · [六五二读回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-5-accepted-readback.json)
 
 ## 地风升六五首三篇
 
 上卦六五动，升之水风井，互雷泽归妹。下巽为体，上坤为用，体克用；中段体互兑金克巽，用互震木与巽比和，末坎水直接生体。春旺巽能克死坤，中有囚兑较缓之克、旺震相和，末休坎有生体机会，寻获有望。辰囚巽克旺坤费力，互兑相克、互震囚和力薄，死坎虽生体不足以翻转整体，寻获较难。末坎生巽取水日，示例十一月二十一、二十二日，参查到末段实信能否接应。
 
-寅核朱子“以阴居阳”与“必能正固”所指，六五中位不保证个人安危。卯并读王孔升二与五，察受任者及任人者所处不同，不能因相应把两爻取方并作实际去处。辰核上坤变坎构成井卦的同一次变化，不能用变卦名和变用为某一水井相互作证。三篇七十五项盘面对照、九个日期用例核过。[六五首三篇](hex-046-first-read.md#六五动--寅月) · [王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [《本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-5-first-three-accepted-readback.json)
+寅核朱子“以阴居阳”与“必能正固”所指，六五中位不保证个人安危。卯并读王孔升二与五，察受任者及任人者所处不同，不能因相应把两爻取方并作实际去处。辰核上坤变坎构成井卦的同一次变化，不能用变卦名和变用为某一水井相互作证。三篇七十五项盘面对照、九个日期用例核过。[六五首三篇](hex-046.md#六五动--寅月) · [王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [《本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 地风升六四十二月定稿
 
 六四动，坤变震，巽为一贯之体；初段是体克用，体互兑克巽取中段金日，用互与末变震木均比和。春冬巽旺相，初能制坤，互末有力，寻获有机会。夏体休制相土费力，秋金旺克死木，季土囚木制旺土又受相金克，这三季互末之和薄，寻获较难。取期示例十一月二十一日起算，本月只列三十日；对照日历查找函数，当月有候日便返回，不自动拼上次月金日。
 
-巳把王弼“攘来自专”限在主动排拒，午辨泛称“大家”与本人有无收悉回复，未查月末示例的取法。申不把兑金克体误作失联者本人受克；酉区别本人原声和转述乡音，戌区别平面简图与地势平坦。亥分清同找两人究竟哪一位已有实据，子核持续报进展与有没有新的实信，丑依程传分止德升，退回同姤九三卯自责题相近的一稿，改问当时能知和后来才知各有哪些依据。全爻三百项盘面对照、三十六个日期用例通过，古注、地点、安危及理由的归属经独立回读。[六四十二篇](hex-046-first-read.md#六四动--寅月) · [王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [程传卷三](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt) · [六四十二篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-4-accepted-readback.json)
+巳把王弼“攘来自专”限在主动排拒，午辨泛称“大家”与本人有无收悉回复，未查月末示例的取法。申不把兑金克体误作失联者本人受克；酉区别本人原声和转述乡音，戌区别平面简图与地势平坦。亥分清同找两人究竟哪一位已有实据，子核持续报进展与有没有新的实信，丑依程传分止德升，退回同姤九三卯自责题相近的一稿，改问当时能知和后来才知各有哪些依据。全爻三百项盘面对照、三十六个日期用例通过，古注、地点、安危及理由的归属经独立回读。[六四十二篇](hex-046.md#六四动--寅月) · [王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [程传卷三](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt) · [六四十二篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-4-accepted-readback.json)
 
 ## 地风升六四首三篇
 
 动在上坤，本用坤土、原体下巽木，互雷泽归妹，变雷风恒。初巽克坤，中体互兑金克巽、用互震木比和，末震与巽亦比和。寅卯旺巽制死坤，能承中途囚兑之克，互末旺木能接，寻获有机会。辰巽木囚，克旺坤费力，互兑相金克体而互末两和俱弱，寻获较难。三篇应期从中段体互兑金克巽取金日；以十一月二十一日演示，本月三十日前后参核实所遇限制。方位依本坤取西南、田野、乡里、平地。
 
-寅以王孔岐山之会对照朱子登祭说，并附随上六《本义》西山、祭享原文。卯查孔疏“下体三爻皆来上升”所指，辨听取各方与核明本人下落。辰依程颐卷三解止其所，说明所守为六四处位，不许据此判断失联者原地未动。首三篇七十五项盘面对照、九个日期用例核过。[六四首三篇](hex-046-first-read.md#六四动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [程传卷三](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-4-first-three-accepted-readback.json)
+寅以王孔岐山之会对照朱子登祭说，并附随上六《本义》西山、祭享原文。卯查孔疏“下体三爻皆来上升”所指，辨听取各方与核明本人下落。辰依程颐卷三解止其所，说明所守为六四处位，不许据此判断失联者原地未动。首三篇七十五项盘面对照、九个日期用例核过。[六四首三篇](hex-046.md#六四动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [程传卷三](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-4-first-three-accepted-readback.json)
 
 ## 地风升九三十二月定稿
 
 九三在下巽之上，以阳升阴而前无违距。孔疏升于上六，朱熹说进临于坤，一个指应爻，一个以外卦坤为国邑取象。升之师，互归妹；初巽、互震克原体坤土，互兑泄体，末坎受原体所克。春冬木旺相，秋坤休生旺兑，三季体薄而制水费力；夏土相、季土旺，能承较缓木克并制末水，寻获留有机会。木日示例十一月二十四、二十五，参的是本用巽木克坤所应的初查阻节，与九二同五行而不同阶段。
 
-巳不将刚爻写成问者或失联者本人的性格。午退回与益六四未重复的通路稿，改核拨号一方听见一声不能说明对方亲手挂断。未核《行人占》的衰与受克落在哪个用卦，防止跨段拼成遇害结论。申对照王孔、朱子，酉核见者以自身高矮作尺，戌分戌土月令和盘内坤体。亥分失联者实际身份与巽长女之象；子不把两篇相同候日计算为两次印证。丑加列师六三对读链接，辨师的用兵凶辞与升九三实际动爻，逐段检查未推断具体伤亡。全爻三百项盘面、三十六个日期用例核过，独立读者逐篇退修回读。[九三十二篇](hex-046-first-read.md#九三动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [师卦第三爻](../../../sources/reference/zhouyi-zhengyi-hans/02師.txt) · [九三十二篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-3-accepted-readback.json)
+巳不将刚爻写成问者或失联者本人的性格。午退回与益六四未重复的通路稿，改核拨号一方听见一声不能说明对方亲手挂断。未核《行人占》的衰与受克落在哪个用卦，防止跨段拼成遇害结论。申对照王孔、朱子，酉核见者以自身高矮作尺，戌分戌土月令和盘内坤体。亥分失联者实际身份与巽长女之象；子不把两篇相同候日计算为两次印证。丑加列师六三对读链接，辨师的用兵凶辞与升九三实际动爻，逐段检查未推断具体伤亡。全爻三百项盘面、三十六个日期用例核过，独立读者逐篇退修回读。[九三十二篇](hex-046.md#九三动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [师卦第三爻](../../../sources/reference/zhouyi-zhengyi-hans/02師.txt) · [九三十二篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-3-accepted-readback.json)
 
 ## 地风升九三首三篇
 
 升九三以阳居阳，向上临坤。王孔以无人违距释升虚邑，朱熹据阳实阴虚、坤有国邑之象说其取象。实际盘为升之师，互归妹；本巽木克上体坤土，互震木亦克，互兑金泄体，末坎水由体去克。寅卯弱坤受两旺木所克，末克用不能补益弱体，寻获较难。辰旺坤承两囚木之克、能制末死水，留有条件的寻获机会。木日参初段本用巽木克坤，与九二取中段互震有别。示例十一月二十四、二十五日，均非现实约定的联系日期。
 
-寅辨进临无阻的取象和现实居住状况，卯分得以往访与所访之人能够提供确实下落，辰辨从一侧进城与在城区哪处落脚。首三篇共核七十五项盘面对照、九个日期用例。[九三首三篇](hex-046-first-read.md#九三动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [九三首三篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-3-first-three-accepted-readback.json)
+寅辨进临无阻的取象和现实居住状况，卯分得以往访与所访之人能够提供确实下落，辰辨从一侧进城与在城区哪处落脚。首三篇共核七十五项盘面对照、九个日期用例。[九三首三篇](hex-046.md#九三动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [九三首三篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 地风升九二十二月定稿
 
@@ -44,19 +50,19 @@
 
 寅分经文参读与实际起卦，卯限转话人代言的范围，辰辨“有喜”的主体，巳问旧消息“至今”的截止点。午不以说话习惯补出隐忧，未分拟改地址、登记结果、实际居住。申分播放进度与现实钟点，酉依不同照明核衣色而不虚断换装。戌退回归家、节录两稿，改辨“没说自己在那里”与“说自己不在那里”。亥换掉同夬九五亥相近的辨认题，改问见者的把握落在人、时还是地。子核纳约原义，丑不依互卦之名指认知情亲属。
 
-全爻十二篇共核三百项盘面、三十六个日期用例；独立审稿退修后再读，逐篇记录见回执。[九二十二篇](hex-046-first-read.md#九二动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [九二独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-2-accepted-readback.json)
+全爻十二篇共核三百项盘面、三十六个日期用例；独立审稿退修后再读，逐篇记录见回执。[九二十二篇](hex-046.md#九二动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [九二独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-2-accepted-readback.json)
 
 ## 地风升初六十二月定稿
 
 初六当升之时，与九二、九三合志，虽与六四无正应仍有允升之义；盘中只动初爻。上坤作体，下巽及互震皆克土，互兑及末乾皆受体所生，无直接生体。春冬木旺相克体，秋休坤生互末两旺金而耗重，此三季寻获较难。季土旺体与夏相体能承较缓的木克，留寻获机会。木日只参初巽克坤时消息的核实限制，爻位无应不等于无日可参，也不能据此说本人不会回应。
 
-巳核实先办哪件与哪件已有充分根据，午分卦方、风向与行向，未问名字旁问号是谁所加。申辨同向与结伴，酉退回与夬初九酉相近的视野题，改核年龄差一岁的记载；戌分一路平安是祝词还是实报。亥不将两份东、南口述合字成东南，子不以纸正背两面代证失联者现处，丑辨初六与六四无应和用卦所取应期。全爻独立核读十二篇，300 项盘面对照、36 个日期用例通过。[初六十二篇](hex-046-first-read.md#初六动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [初六独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-1-accepted-readback.json)
+巳核实先办哪件与哪件已有充分根据，午分卦方、风向与行向，未问名字旁问号是谁所加。申辨同向与结伴，酉退回与夬初九酉相近的视野题，改核年龄差一岁的记载；戌分一路平安是祝词还是实报。亥不将两份东、南口述合字成东南，子不以纸正背两面代证失联者现处，丑辨初六与六四无应和用卦所取应期。全爻独立核读十二篇，300 项盘面对照、36 个日期用例通过。[初六十二篇](hex-046.md#初六动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [初六独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-1-accepted-readback.json)
 
 ## 地风升初六首三篇
 
 初动下巽为用、上坤为体，木克土；互雷泽归妹，震木克坤、兑金受坤所生。变地天泰，下乾金仍泄原体。寅卯坤死、两木旺，克重而无直接生扶，寻获较难。辰令坤旺，巽震木囚而克缓，互兑末乾金相受生，仍留有条件的寻获机会。本爻取初段本巽克坤参木日，示例 11 月 24、25 日，只看初查能否核准人地。巽地理取卷一的东南、草木茂秀之所及花果菜园。
 
-寅分王孔训允为当、朱熹从初柔顺于二阳说信能升，不将许可转述当作已转达或本人已答复。卯辨注家所说三爻合志俱升与本盘只有初六动。辰依孔疏辨小象的上指二与三，现实中说「上去」须按当时环境及习惯辨所指，再分清说要去与实际到过。三篇共 75 项盘面对照、9 个日期用例，收到独立读者逐篇终审。[升初六寅卯辰](hex-046-first-read.md#初六动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-1-first-three-accepted-readback.json)
+寅分王孔训允为当、朱熹从初柔顺于二阳说信能升，不将许可转述当作已转达或本人已答复。卯辨注家所说三爻合志俱升与本盘只有初六动。辰依孔疏辨小象的上指二与三，现实中说「上去」须按当时环境及习惯辨所指，再分清说要去与实际到过。三篇共 75 项盘面对照、9 个日期用例，收到独立读者逐篇终审。[升初六寅卯辰](hex-046.md#初六动--寅月) · [升卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05升.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-046/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 泽地萃全卦及上六定稿
 
