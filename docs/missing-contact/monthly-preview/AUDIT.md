@@ -2,59 +2,65 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 泽水困全卦及上六定稿
+
+七十二篇中寻获较有希望八篇，有机会三十四篇，较难三十篇。前三爻以兑金为体，本坎水受生而泄，互离克金、互巽受金克；初六末兑比和、六三末巽受制，均无特定日级应事，九二末坤生体取土日。后三爻改下坎为体，本兑来生，中克互离、生互巽；九四末坎比和、九五末震受坎生，均以开头本兑生坎取金日。上六变讼，末乾直接生坎，金日改看收尾核实的帮助，不能将首末两金算成两次报信。困极有悔才可言征吉。[《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《诗经·王风·葛藟》](https://zh.wikisource.org/w/index.php?title=詩經/葛藟&oldid=8738243)
+
+上六寅卯辰核省文、解释“曰”的主体及六三与上六同为上位却处困有别；巳读诗中葛藟而不取其河岸作线索，午分农历与公历生日，未分两金与一项候事。申对读讼终凶与困征吉，酉辨若能有悔的条件，戌辨列表首位与事件新旧；亥辨记录保留范围，子辨抄件相符与原有见闻，丑对读失物占变乾寻物与寻人本兑取方。正文 504–573 汉字。全卦一千八百项盘面对照与二百一十六个日期用例通过，源、阅读页、查重及两轮七十二则回执一并核定。[七十二篇](hex-047.md) · [作者核读](../../../sources/editorial/missing-contact/reviews-monthly/hex-047.json) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-047.json)
+
 ## 泽水困九五十二月定稿
 
 上兑金生原体下坎水，中克互离火、生互巽木，变用震木仍受坎生，末为雷水解。各季初皆有生，木旺时连生两处尤其耗力，秋金得时、冬水有力亦未改末段仍由体付出的关系。九五乃徐有说在王孔有能改任壮、守中直的条件，十二月均为寻获有机会。金日只参初段所得实助，不取末震或爻辞刑名、祭礼排日。三百项盘面对照、三十六个日期用例均已核准。
 
-寅卯辰分读王朱释刑、说音悦与程传二五相求而后合；巳核朱子“劓音见睽”的引注范围，午辨往年惯例与本年约定，未对读解卦有攸往、夙吉与利西南。申辨单一查阅入口，酉辨问询回复率，戌辨报告截至日。亥分说体与梅花原体，子分谢意与实际答复，丑分量距起点、历史范围与本人现处。巳、午、酉、戌、丑重审时依已刊近题改写。[九五正文](hex-047-first-read.md#九五动--寅月) · [《解》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/04解.txt) · [《本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-5-accepted-readback.json)
+寅卯辰分读王朱释刑、说音悦与程传二五相求而后合；巳核朱子“劓音见睽”的引注范围，午辨往年惯例与本年约定，未对读解卦有攸往、夙吉与利西南。申辨单一查阅入口，酉辨问询回复率，戌辨报告截至日。亥分说体与梅花原体，子分谢意与实际答复，丑分量距起点、历史范围与本人现处。巳、午、酉、戌、丑重审时依已刊近题改写。[九五正文](hex-047.md#九五动--寅月) · [《解》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/04解.txt) · [《本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-5-accepted-readback.json)
 
 ## 泽水困九五首三篇
 
 下坎水体得本兑金生；互巽受坎生、互离受坎克，末变雷水解，原体再生变用震木。寅卯休水受囚金薄生，中末旺木皆需休水去生，辰月相金有助而受生的坎水死，虽生囚木亦有耗力。三篇均断寻获有机会，取金日仅看初段能否得到核实下落的帮助，未借解卦名许问题已解决。
 
-寅分别对读王注、朱子释劓刖的入手处，不得据经文预报现实伤害。卯核朱子标音与孔疏喜悦之释，“说”不预告某日亲口回话。辰核程传如何区分阴阳自然相应与二五同德相求而后合，不误认二五为阴阳正应。三篇七十五项盘面对照、九个日期用例通过。[九五首三篇](hex-047-first-read.md#九五动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-5-first-three-accepted-readback.json)
+寅分别对读王注、朱子释劓刖的入手处，不得据经文预报现实伤害。卯核朱子标音与孔疏喜悦之释，“说”不预告某日亲口回话。辰核程传如何区分阴阳自然相应与二五同德相求而后合，不误认二五为阴阳正应。三篇七十五项盘面对照、九个日期用例通过。[九五首三篇](hex-047.md#九五动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 泽水困九四十二月定稿
 
 初兑金生原体坎水，中段互离受体克而互巽受体生，末坎与原体比和。春夏及季土各有初助偏薄、中间费力或体弱等条件，虽吝有终，寻获有机会；秋相坎得旺金，冬旺坎得休金，能任中段，末又有力比和，寻获较有希望。金日只取本用初助；按二〇二六年十一月二十一日的演示起点，本月显示十一月三十日，不作现实寻获约期。十二篇三百项盘面对照、三十六个日期用例通过。
 
-前三篇读朱子金车象未详、王注徐徐与小象志在下。巳对读大有九二与困九四，午辨照片看不清与事后人为遮盖，未辨记录缺号与遗漏消息。申核程传九四之疑，酉分金车、金日，戌分告示与目击。亥对读坎卦彖辞，子核程传二四阳居阴而得中有别，丑区分《序卦》困井相承与实盘困之坎。[九四十二篇](hex-047-first-read.md#九四动--寅月) · [《大有》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/02大有.txt) · [坎卦](../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt) · [序卦](../../../sources/reference/zhouyi-zhengyi-hans/10.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-4-accepted-readback.json)
+前三篇读朱子金车象未详、王注徐徐与小象志在下。巳对读大有九二与困九四，午辨照片看不清与事后人为遮盖，未辨记录缺号与遗漏消息。申核程传九四之疑，酉分金车、金日，戌分告示与目击。亥对读坎卦彖辞，子核程传二四阳居阴而得中有别，丑区分《序卦》困井相承与实盘困之坎。[九四十二篇](hex-047.md#九四动--寅月) · [《大有》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/02大有.txt) · [坎卦](../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt) · [序卦](../../../sources/reference/zhouyi-zhengyi-hans/10.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-4-accepted-readback.json)
 
 ## 泽水困九四首三篇
 
 动爻入上卦，原体改取下坎水，本用上兑金生坎，初有直接帮助。互巽受坎生，互离受坎克，变用坎与原体比和，成坎为水。寅卯休坎得囚兑薄助，辰死坎得相兑生而承接偏弱；均读“吝，有终”，寻获有机会。参金日只看初段核查实情所获帮助，徐徐不折算成天数。
 
-朱子已说明金车为九二象，未详而又疑坎轮的是取象缘由，不据此认车辆。王弼说九四有应而隔二，疑惧不敢疾，慢放画面不能据播放速度实断本人的步速或心情；小象志在下，王注明言下指初六，不推本人想回家。三篇七十五项盘面对照、九个日期用例通过。[九四首三篇](hex-047-first-read.md#九四动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-4-first-three-accepted-readback.json)
+朱子已说明金车为九二象，未详而又疑坎轮的是取象缘由，不据此认车辆。王弼说九四有应而隔二，疑惧不敢疾，慢放画面不能据播放速度实断本人的步速或心情；小象志在下，王注明言下指初六，不推本人想回家。三篇七十五项盘面对照、九个日期用例通过。[九四首三篇](hex-047.md#九四动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-4-first-three-accepted-readback.json)
 
 ## 泽水困六三十二月定稿
 
 上兑体金生本坎，互离火克兑，互巽与变用巽木均受兑克；末变泽风大过。秋令旺兑虽能制死巽，季土相兑亦可制囚巽，所费皆由体出，结合六三上下失据，各月总断寻获较难。中离克体与凶辞不单列某日险情，也无可落实在某日的得信事件。全爻十二篇三百项盘面对照、三十六个日期用例通过。
 
-前三篇分别对读《系辞下》上下所困所据、孔疏入宫之譬与初六三岁不觌。巳午未分别读王程取石不同、程传失其所安、家人互名及离巽两互；申对读《谒见占》，酉辨笔记的保管者与所记见闻，戌辨小象“不祥”与记录“不详”。亥读朱子“宫谓三”，子厘清《行人占》的取用迁移，丑对读大过“利有攸往，亨”。[六三正文](hex-047-first-read.md#六三动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《大过》卦辞](../../../sources/reference/zhouyi-zhengyi-hans/03大過.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-3-accepted-readback.json)
+前三篇分别对读《系辞下》上下所困所据、孔疏入宫之譬与初六三岁不觌。巳午未分别读王程取石不同、程传失其所安、家人互名及离巽两互；申对读《谒见占》，酉辨笔记的保管者与所记见闻，戌辨小象“不祥”与记录“不详”。亥读朱子“宫谓三”，子厘清《行人占》的取用迁移，丑对读大过“利有攸往，亨”。[六三正文](hex-047.md#六三动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《大过》卦辞](../../../sources/reference/zhouyi-zhengyi-hans/03大過.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-3-accepted-readback.json)
 
 ## 泽水困六三首三篇
 
 六三动，泽水困互风火家人，变泽风大过。上兑金体生本坎水，中受离火克，又须制互巽、末巽。寅卯木旺金囚，辰月木囚金相，虽强弱有别，三篇均见寻找一方耗力而无直接生扶，寻获较难。卦内没有足以落实到日的特定事件，三个演示起日均不列候日。
 
-寅篇核《系辞下》所引六三与孔疏，上求四而不纳对应名辱，下据二而失宜对应身危，不拿经文冒作险情通报。卯篇核孔疏“譬于”二字，爻辞里的妻不改变实际所问之人，关于同户亲属的消息也须核到本人。辰篇把困初六“三岁不觌”同六三分读，对应的生活用语也须分清离家多久与何时失联。这三篇已逐项核对七十五项盘面、九个日期用例。[六三首三篇](hex-047-first-read.md#六三动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《系辞下》](../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-3-first-three-accepted-readback.json)
+寅篇核《系辞下》所引六三与孔疏，上求四而不纳对应名辱，下据二而失宜对应身危，不拿经文冒作险情通报。卯篇核孔疏“譬于”二字，爻辞里的妻不改变实际所问之人，关于同户亲属的消息也须核到本人。辰篇把困初六“三岁不觌”同六三分读，对应的生活用语也须分清离家多久与何时失联。这三篇已逐项核对七十五项盘面、九个日期用例。[六三首三篇](hex-047.md#六三动--寅月) · [《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《系辞下》](../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 泽水困九二十二月定稿
 
 上兑体金生下坎水，初段泄体。中段用互离克兑、体互巽受兑克，末坎变坤，成泽地萃，坤土直接生原体兑金。季土月末旺坤助相兑，秋旺兑承本泄、中克而有末助，寻获有机会；春夏冬各有弱体兼强克、泄重或末助不厚，寻获较难。土日只参后段核实有何接应。演示从十一月二十一日起算，本月实际候选为二十三、二十六、二十九日，按照显示上限只列前两项；未列不等于现实中没有消息。
 
-王孔以谦中而物来释酒食，朱子取所得过多之困，程颐取欲施惠未遂。寅卯辰分读各家的丰衍、异方与上应；巳对读需九五，午问付款与人在场的根据，未核程传二、五朱赤之服。申不将征凶无咎分派给两个家人，酉不以证件期限充使用记录，戌区别路线平面相交与真实相遇。亥核施惠主体，子读《系辞》困以寡怨的主体，丑以实际运行结果核候选和显示项。十二篇三百项盘面对照、三十六个日期用例均已核准。[九二十二篇](hex-047-first-read.md#九二动--寅月) · [需卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/02需.txt) · [《系辞下》](../../../sources/reference/zhouyi-zhengyi-hans/08.6.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-2-accepted-readback.json)
+王孔以谦中而物来释酒食，朱子取所得过多之困，程颐取欲施惠未遂。寅卯辰分读各家的丰衍、异方与上应；巳对读需九五，午问付款与人在场的根据，未核程传二、五朱赤之服。申不将征凶无咎分派给两个家人，酉不以证件期限充使用记录，戌区别路线平面相交与真实相遇。亥核施惠主体，子读《系辞》困以寡怨的主体，丑以实际运行结果核候选和显示项。十二篇三百项盘面对照、三十六个日期用例均已核准。[九二十二篇](hex-047.md#九二动--寅月) · [需卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/02需.txt) · [《系辞下》](../../../sources/reference/zhouyi-zhengyi-hans/08.6.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-2-accepted-readback.json)
 
 ## 泽水困初六十二月定稿
 
 初六变兑，下坎水本用受上兑金所生，前段泄体。互离克兑，互巽受兑所克，末兑同气，全盘没有直接生体之卦。秋兑虽旺，季土月兑相能办事，仍不凭末和许必获；其余各季另按五气核之，十二篇均断较难。王孔释初六居不安、欲往应而有隔；程颐特别以九四不能庇物释株木。三岁不觌不许到时即见，互离虽克亦不构成当月确定应事。全爻三百项盘面与三十六个日期用例通过。
 
-巳分文件命名与材料原文，午分互离明象与火克兑，未辨树荫之喻所指。申读泽无水不抹去本用坎，酉辨期日属于所摄报纸而非必为摄影日。戌旧稿近萃九五亥，改为程传初六与王注六三不同爻位的树、石取譬。亥分对坐作画和据人描述，子不从重复声响断人数，丑不移谒见占的求见之益作寻人标准。[初六十二篇](hex-047-first-read.md#初六动--寅月) · [困卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [程传卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-1-accepted-readback.json)
+巳分文件命名与材料原文，午分互离明象与火克兑，未辨树荫之喻所指。申读泽无水不抹去本用坎，酉辨期日属于所摄报纸而非必为摄影日。戌旧稿近萃九五亥，改为程传初六与王注六三不同爻位的树、石取譬。亥分对坐作画和据人描述，子不从重复声响断人数，丑不移谒见占的求见之益作寻人标准。[初六十二篇](hex-047.md#初六动--寅月) · [困卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [程传卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-1-accepted-readback.json)
 
 ## 泽水困初六首三篇
 
 初六动，泽水困互风火家人，变兑为泽。原体上兑金，生下坎本用而泄。用互离火克兑，体互巽木受兑所克，末变兑金与体比和。寅卯体囚，离相火克、旺巽难制、末和薄，寻获较难；辰兑相、离休、巽囚，虽能办理，仍无直接生体，末和不能许已经得见。三岁不觌不作现代联系日期，也不否定紧迫情形下及时求助。原用坎地理参北方、江湖、溪涧、泉井及卑湿地。
 
-寅依王弼、朱熹辨株木之困与现实伤情。卯按初应九四、九二隔路的爻位解释，不能推现实第二个人拦阻。辰对读王注“困解乃出”和程颐卷四的“不遇其所亨”，不许第三年准时出现。三篇七十五项盘面、九个日期用例及独立逐篇回执已核。[初六首三篇](hex-047-first-read.md#初六动--寅月) · [困卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [程传卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-1-first-three-accepted-readback.json)
+寅依王弼、朱熹辨株木之困与现实伤情。卯按初应九四、九二隔路的爻位解释，不能推现实第二个人拦阻。辰对读王注“困解乃出”和程颐卷四的“不遇其所亨”，不许第三年准时出现。三篇七十五项盘面、九个日期用例及独立逐篇回执已核。[初六首三篇](hex-047.md#初六动--寅月) · [困卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [程传卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-047/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 地风升全卦及上六定稿
 
