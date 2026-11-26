@@ -2,6 +2,12 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 水风井初六首三篇
+
+原体上坎水生本用下巽木，开端泄体。互为火泽睽，体克互离、互兑生体，末变水天需，变用乾金生体。寅卯休坎泄给旺巽且克相离、前后可用的两处金均囚，结合井泥不食，寻获较难。辰月相兑、相乾均能生死坎，弱体承接仍劳，寻获有机会。金日参末乾生水，不能移作本人饮水、归家或会面的日期。
+
+寅篇读王注井底无应及久无渫治，区分不能用于认人与无人曾尝试；卯篇核朱子上出为功，所知来处与已得到可用材料不同；辰篇据程颐井鼎就物取义对读鼎初六，不把器皿纳新移作记录只容一人的限制，知情人数以实际见闻为准。三篇七十五项盘面对照、九个日期用例已核。[初六首三篇](hex-048-first-read.md#初六动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《鼎》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-1-first-three-accepted-readback.json)
+
 ## 泽水困全卦及上六定稿
 
 七十二篇中寻获较有希望八篇，有机会三十四篇，较难三十篇。前三爻以兑金为体，本坎水受生而泄，互离克金、互巽受金克；初六末兑比和、六三末巽受制，均无特定日级应事，九二末坤生体取土日。后三爻改下坎为体，本兑来生，中克互离、生互巽；九四末坎比和、九五末震受坎生，均以开头本兑生坎取金日。上六变讼，末乾直接生坎，金日改看收尾核实的帮助，不能将首末两金算成两次报信。困极有悔才可言征吉。[《困》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [《诗经·王风·葛藟》](https://zh.wikisource.org/w/index.php?title=詩經/葛藟&oldid=8738243)
