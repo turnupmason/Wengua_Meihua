@@ -155,6 +155,7 @@ export const SOURCE_REFS={
  'YC-GUIMEI54-L6':{title:"《伊川易传》卷四·归妹上六",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"筐篚所供和夫妇共承宗庙同在古礼语境，两项各依实物，不能由旧礼归罪于实际人物。"},
  'ZY-KUI38-TUAN-XIANG':{title:"《周易正义》睽彖传、大象",url:"../../../sources/reference/zhouyi-zhengyi-hans/04睽.txt",scope:"孔疏以火炎上、泽润下释睽义，以各司其事释君子同而异；两说均不落作现实人地。"},
  'ZYLV-MINGYAO':{title:"王弼《周易略例·明爻通变》",url:"https://zh.wikisource.org/wiki/周易略例/明爻通變",scope:"以近不必比、远不必乖辨爻情；亲疏不能替本人定位、推定失联缘故或证明见闻。"},
+ 'ZY-JIJIE55-L1':{title:"《周易集解》卷十一·丰初九",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻从四变坤应初、坤数十和离为日释旬，与王注训均分读；古辞不决定实际联系日期。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
