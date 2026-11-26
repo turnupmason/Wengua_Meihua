@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
   "scope": "machine-style-scan; not independent full read or prediction validation",
-  "baseCommit": "a52a02a0ba318ab79648bd146552915143431185",
-  "articleCount": 432,
-  "sourceCount": 6,
+  "baseCommit": "9854372dbdbb1a467caa59064e690a825ad24d0e",
+  "articleCount": 504,
+  "sourceCount": 12,
   "sources": [
     {
       "path": "sources/editorial/confession-decision/monthly/hex-001.json",
@@ -34,6 +34,36 @@
       "path": "sources/editorial/confession-decision/monthly/hex-006.json",
       "sha256": "6bd5fdf9ddf0fd09880a3e602c5a0d8d7bb183f752a476424f7170f65abd70ce",
       "count": 72
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-007.json",
+      "sha256": "5b0545e0dcfee1c50d5e12235ea88ab068080da1b913e231788643e8370c5538",
+      "count": 12
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-008.json",
+      "sha256": "e060809b5c8251a4e92e88ec9cd5dba681f299bbdb7b48f42dbeb60a11b8f65d",
+      "count": 12
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-009.json",
+      "sha256": "575266e71f0c8281d88fbf9fa6e20727822ae8c3ea35180bfda59a267dec9698",
+      "count": 12
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-010.json",
+      "sha256": "2098212944e49ebc8381f0e9a3184ac38cc814045621cbd3909a33fb4e6d0424",
+      "count": 12
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-011.json",
+      "sha256": "7b1e8d0fdf94312708dc68581b9e43081ce00d0d7e9455827d011151eef590e6",
+      "count": 12
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-012.json",
+      "sha256": "2dbf4d4e3fa036071f754378ee9c3b9389fe5175b97f3f2a24bdfabcc1516e48",
+      "count": 12
     }
   ],
   "method": {
@@ -48,15 +78,15 @@
   "metrics": {
     "body": {
       "lengthRange": [
-        504,
+        500,
         630
       ],
-      "median": 567.0,
-      "monthStartCount": 4,
-      "monthStartPct": 0.93,
-      "semanticMonthStartCount": 4,
-      "semanticMonthStartPct": 0.93,
-      "explicitMonthStartCount": 4,
+      "median": 563.0,
+      "monthStartCount": 5,
+      "monthStartPct": 0.99,
+      "semanticMonthStartCount": 5,
+      "semanticMonthStartPct": 0.99,
+      "explicitMonthStartCount": 5,
       "seasonStartCount": 0,
       "quoteStartCount": 0,
       "groupMetrics": {
@@ -128,12 +158,12 @@
         }
       },
       "styleMarkerCounts": {
-        "如果": 293,
-        "不能不宜": 425,
-        "现实实证": 416,
-        "证据边界": 359,
+        "如果": 340,
+        "不能不宜": 494,
+        "现实实证": 485,
+        "证据边界": 413,
         "先说判断": 6,
-        "安危警示": 2
+        "安危警示": 3
       },
       "byHex": [
         {
@@ -189,6 +219,60 @@
           "explicitMonthStart": 0,
           "seasonStart": 0,
           "quotedStart": 0
+        },
+        {
+          "hex": 7,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 8,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 9,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 10,
+          "count": 12,
+          "monthStart": 1,
+          "semanticMonthStart": 1,
+          "explicitMonthStart": 1,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 11,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 12,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
         }
       ],
       "completeMonthStartLineCount": 0,
@@ -205,13 +289,13 @@
     "short": {
       "lengthRange": [
         73,
-        108
+        112
       ],
       "median": 89.0,
       "monthStartCount": 25,
-      "monthStartPct": 5.79,
+      "monthStartPct": 4.96,
       "semanticMonthStartCount": 25,
-      "semanticMonthStartPct": 5.79,
+      "semanticMonthStartPct": 4.96,
       "explicitMonthStartCount": 25,
       "seasonStartCount": 0,
       "quoteStartCount": 0,
@@ -284,11 +368,11 @@
         }
       },
       "styleMarkerCounts": {
-        "不能不宜": 198,
-        "现实实证": 172,
-        "证据边界": 95,
+        "不能不宜": 226,
+        "现实实证": 204,
+        "证据边界": 114,
         "先说判断": 4,
-        "如果": 21
+        "如果": 25
       },
       "byHex": [
         {
@@ -339,6 +423,60 @@
         {
           "hex": 6,
           "count": 72,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 7,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 8,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 9,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 10,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 11,
+          "count": 12,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 12,
+          "count": 12,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -423,15 +561,15 @@
     "body": {
       "threshold": 0.64,
       "gramSize": 3,
-      "documents": 432,
-      "candidatePairs": 414,
+      "documents": 504,
+      "candidatePairs": 1027,
       "pairs": []
     },
     "short": {
       "threshold": 0.72,
       "gramSize": 3,
-      "documents": 432,
-      "candidatePairs": 22,
+      "documents": 504,
+      "candidatePairs": 29,
       "pairs": []
     }
   },
