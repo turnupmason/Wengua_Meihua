@@ -103,6 +103,8 @@ export const SOURCE_REFS={
  'ZY-JIJIE53-L1':{title:"李鼎祚《周易集解》卷十一·渐初六",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以初失位、动而得正释厉与无咎，对读王孔有言而义无咎。不据古辞替真人断年龄、地点或失联事由。"},
  'MH-HU-ORIGIN':{title:"《梅花易数》卷一·互卦起例",url:"https://zh.wikisource.org/wiki/梅花易數/卷一#互卦起例",scope:"说明取原卦中间四爻分两互。正文如用所列乾坤另法须明言；渐初六不涉及乾坤无互。"},
  'YC-JIAN53-L2':{title:"《伊川易传》卷四·渐六二",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"渐六二由中正与九五应释进之安，素为空，观得志行道。与王孔素故、朱子征素餐对读。"},
+ 'ZY-XUN57-TUAN':{title:"《周易正义》巽卦彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/06巽.txt",scope:"重巽以申命释上下相巽而申明命令；借辨反复问讯与得到实际答复，仍以本动爻和互变原盘论。"},
+ 'ZY-JIJIE53-L2':{title:"李鼎祚《周易集解》卷十一·渐六二",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以艮山石、坎为聚释磐，供对读王孔山石之安，不以名物合现实地证。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
