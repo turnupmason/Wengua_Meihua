@@ -72,6 +72,8 @@ export const SOURCE_REFS={
  'ZY-ZHEN51-L3-CROSS':{title:'《周易正义》震卦·六三对读',url:'../../../sources/reference/zhouyi-zhengyi-hans/05震.txt',scope:'参照六三无乘刚之逆、能因惧而行的条件，对照上六动极复征之戒。'},
  'YC-ZHEN51':{title:"《伊川易传》卷四·震卦",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程传释震六二亿为揣度，九陵取高且重，勿逐守中正而复其常，不定失联者去处或见人日期。"},
  'YC-GEN52':{title:"《伊川易传》卷四·艮卦",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程传以止于动之初释初六未失正，并以阴柔难常说明永贞之戒；不据爻中趾字预设现实受伤或暂停求助。"},
+ 'YC-GEN52-L2':{title:"《伊川易传》卷四·艮六二",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程颐由股动腓随释六二受制，取九三在上为所随；当代查访只借其所主所随之别，不从本爻推真人去向、心境或失联缘故。"},
+ 'ZY-GU18-DECISION':{title:"《周易正义》蛊卦卦辞及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/03蠱.txt",scope:"蛊卦先甲后甲取创制、申令与终始，供变卦对读，不以变卦古辞另造寻获日期。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
