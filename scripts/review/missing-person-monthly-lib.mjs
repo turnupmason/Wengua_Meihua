@@ -83,6 +83,7 @@ export const SOURCE_REFS={
  'ZY-BO23-DECISION':{title:"《周易正义》剥卦卦辞及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/03剝.txt",scope:"对读剥不利有攸往，保留剥消进退的原义，至于寻获仍以本体和互变五行条件合断。"},
  'YC-GEN52-L3-WU':{title:"《伊川易传》卷四·艮九三之止",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"九三以刚居刚而不中，止于两体之际，坚止而失其宜；不因一爻确定失联现实原因。"},
  'ZY-JIAN53-TUAN':{title:"《周易正义》渐卦彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt",scope:"渐彖进以正供对读，借其序与正辨查证次序和实际行踪；不以渐释取代本卦木日及阶段。"},
+ 'YC-GEN52-L4':{title:"《伊川易传》卷四·艮六四",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"以阴柔不遇刚阳解释仅能自止其躬而无咎，不能据此令别人停止寻找，也不据断实际身体。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
