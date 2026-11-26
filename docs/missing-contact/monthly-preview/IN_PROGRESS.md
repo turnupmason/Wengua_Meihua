@@ -188,7 +188,7 @@
 
 | 卦 | 逐篇作者与首轮实际阅读 | 独立第二读者 | 目标 |
 | --- | --- | --- | ---: |
-| 043 夬 | `/root/write_jian_039` | 本续写组根编辑 | 72篇 |
+| [043 夬](hex-043.md) | 本轮根编辑实际执笔并首读 | `/root/guan_second` | 72 篇已完成双读 |
 | 044 姤 | `/root/write_xie_040` | `/root/classical_audit` | 72篇 |
 | 045 萃 | `/root/classical_audit` | `/root/write_xie_040` | 72篇 |
 | 046 升 | 根编辑：初六至九三；`/root/write_jian_039`：六四六五；`/root/write_xie_040`：上六 | `/root/classical_audit` | 72篇 |
