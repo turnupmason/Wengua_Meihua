@@ -17,6 +17,7 @@ export const REL_LABELS={equal:'与体比和',body_controls_use:'受体所克',u
 export const DIRECTIONS={乾:'西北',坤:'西南',震:'东方',巽:'东南',坎:'北方',离:'南方',艮:'东北',兑:'西方'};
 export const VERDICTS={favourable:'寻获的传统支持较充分',conditional:'尚有寻获机会，须满足正文中的条件',difficult:'此次寻获困难'};
 export const SOURCE_REFS={
+ 'ZY-BENYI-2':{title:'朱熹《周易本义》卷二',url:'../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt',scope:'下经动爻的朱熹本义，与王弼注、孔颖达疏分别使用。'},
  'YC-2':{title:'程颐《伊川易传》卷二',url:'https://zh.wikisource.org/w/index.php?oldid=11131282&variant=zh-hans',scope:'程颐逐爻解释，与王弼注及孔颖达疏对读。'},
  'MH-XINGREN':{title:'《梅花易数》卷二·行人占第十三',url:'https://zh.wikisource.org/wiki/梅花易數/卷二#行人占第十三',scope:'体为主，用为行人；归来与在外处境分开论。向现代失联寻获迁移的部分见本目录政策。'},
  'MH-YEJIAN':{title:'《梅花易数》卷二·谒见占第十四',url:'https://zh.wikisource.org/wiki/梅花易數/卷二#謁見占第十四',scope:'是否得见与体用生克；不把求见原句直接当作失踪调查的已证实结果。'},
@@ -41,8 +42,9 @@ export function resolveTiming(reading,article,date=DEMO_DATE,viewDate=date){
  const slots=promotionTimingSlots(reading,article.timing,article.outcome,PROFILE).map(s=>({...s,suffix:`前后，${s.event}，属${s.valence}应。${s.text}`,calculationBasis:{...s.calculationBasis,interpretationReview:'editorial-preview',independentInterpretationReview:'pending',scopeVersion:SCOPE}}));
  return {slots,...resolveManuscriptDates({paragraphs:slots.map(s=>s.token),dateSlots:slots,reading,castingDate:date,viewDate,timingScale:'day',timingContext:{castingMethod:'pre-heaven',periodMethod:'element-qi'}})};
 }
-export function referencesFor(ctx,id,a){
- return [...new Set(a.sourceRefs)].flatMap(key=>{
+export function referencesFor(ctx,id,a,supplements={}){
+ const extra=supplements[`${a.movingLine}/${a.monthBranch}`]??[];
+ return [...new Set([...a.sourceRefs,...extra])].flatMap(key=>{
   if(SOURCE_REFS[key])return {key,...SOURCE_REFS[key]};
   const match=/^ZY-(\d+)-(\d+)$/.exec(key);
   if(!match||Number(match[1])!==id||Number(match[2])!==a.movingLine)throw new Error('Invalid source reference '+key);
@@ -74,7 +76,7 @@ export function renderHex(ctx,source){
    `爻辞：${line.label}「${line.text.replace(/。$/u,'')}」；象曰「${line.image.replace(/。$/u,'')}」。`,
    '专业说明：'+a.judgment.replace(/\b(favourable|conditional|difficult)\b/g,code=>'「'+VERDICTS[code]+'」'),
    '取期依据：'+(typeof a.timing==='string'?a.timing:a.timing.map(t=>t[4]).join(' ')),
-   '出处：'+referencesFor(ctx,id,a).map(ref=>`[${ref.title}](${ref.url})`).join('；')+'。各出处的适用范围与现代迁移说明见[规则页](POLICY.md)。',
+   '出处：'+referencesFor(ctx,id,a,source.supplementalSourceRefs).map(ref=>`[${ref.title}](${ref.url})`).join('；')+'。各出处的适用范围与现代迁移说明见[规则页](POLICY.md)。',
    `稿件键：\`${QUESTION_ID}/${id}/${a.movingLine}/${a.monthBranch}/${a.outcome}\`。作者源：[${s}.json](../../../${SOURCE_DIR}/${s}.json)。`,
    '首轮编辑全文核读与第二读者的实际范围见目录及审计。机器复算不代表现实预测验证，也不等于用户逐篇验收。',
    '</details>','<details>\n<summary>简断摘要</summary>',a.short,'</details>');

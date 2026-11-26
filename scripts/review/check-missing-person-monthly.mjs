@@ -117,7 +117,7 @@ export async function auditMissingMonthly({ids,draft=false,docs=false,requireSec
    const qiKey=`${a.movingLine}/${QI[a.monthBranch]}`,sig=JSON.stringify([a.outcome,a.judgment,a.timing]);
    if(sameQi.has(qiKey)&&sameQi.get(qiKey)!==sig)error(key,'same-qi','Equivalent qi months must keep the same judgment and timing');sameQi.set(qiKey,sig);
    if(!Array.isArray(a.sourceRefs)||!a.sourceRefs.includes('MH-XINGREN')||!a.sourceRefs.includes('MH-XIANG')||!a.sourceRefs.includes(`ZY-${id}-${a.movingLine}`))error(key,'source-refs','Missing person, position, or actual moving-line source');
-   else try{referencesFor(ctx,id,a);}catch(e){error(key,'source-refs',e.message);}
+   else try{referencesFor(ctx,id,a,source.supplementalSourceRefs);}catch(e){error(key,'source-refs',e.message);}
    checkCopy(key,a,true);
    const independent=independentFacts(id,a.movingLine,a.monthBranch),r=readingFor(ctx,id,a);
    compare(key,'primary-bits',independent.bits,r.stages.primary.bitsBottomUp);
