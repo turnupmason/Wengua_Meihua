@@ -16,6 +16,13 @@
 - [地天泰](hex-011.md)
 - [天地否](hex-012.md)
 
+- [天火同人](hex-013.md)
+- [火天大有](hex-014.md)
+- [地山谦](hex-015.md)
+- [雷地豫](hex-016.md)
+- [泽雷随](hex-017.md)
+- [山风蛊](hex-018.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
