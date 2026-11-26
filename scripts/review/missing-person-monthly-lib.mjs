@@ -24,6 +24,7 @@ export const SOURCE_REFS={
  'ZY-DAYOU14-2-COMPARISON':{title:'《周易正义》大有九二（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02大有.txt',scope:'大有九二堪受重任与困九四所言金车取九二，分别依两卦的主体、动位对读。'},
  'ZY-KAN29-TUAN-COMPARISON':{title:'《周易正义》坎卦彖辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt',scope:'核行险而不失其信的王注，不依据重坎向家人报告现实险情。'},
  'ZY-XUGUA-KUN-JING':{title:'《周易正义》序卦·困井相承（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/10.txt',scope:'困后受之以井只解释卦序，不替代困九四实际爻变所得坎卦。'},
+ 'ZY-JIE40-GUACI':{title:'《周易正义》解卦卦辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/04解.txt',scope:'孔疏以有难可往释夙吉，与困九五戒速暴的徐分属两事，不由此定寻人应期。'},
  'ZY-DAGUO28-GUACI':{title:'《周易正义》大过卦辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/03大過.txt',scope:'孔疏以拯患难释利有攸往亨，变卦卦辞不独立于本动爻许寻人成果。'},
  'ZY-KUN47-1-COMPARISON':{title:'《周易正义》困卦初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05困.txt',scope:'对读初六的三岁不觌与六三的入宫不见其妻，两爻不可合成现实失联时长。'},
  'ZY-XICI-KUN-JU':{title:'《周易正义》系辞下·困于石据于蒺藜（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt',scope:'系辞与孔疏以三上求四、下据二释名辱身危，不能当作关于失联者的现实险情通报。'},
