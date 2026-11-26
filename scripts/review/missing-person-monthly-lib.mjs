@@ -21,6 +21,8 @@ export const SOURCE_REFS={
  'ZY-YU16-6-COMPARISON':{title:'《周易正义》豫卦上六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02豫.txt',scope:'对读冥豫与冥升的不同爻义，不能据同字确定夜间行踪。'},
  'LIJI-QU-LI-STAIRS':{title:'《礼记·曲礼上》宾主登阶（对读）',url:'https://zh.wikisource.org/wiki/禮記/曲禮上',scope:'核宾主就东西阶的礼位，与孔疏践阼释语分别阅读，不据此推现实中失联者位置。'},
  'ZY-JIN35-COMPARISON':{title:'《周易正义》晋卦·卦辞（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/04晉.txt',scope:'晋卦康侯昼日三接与升六五所说的升进各有所指，晋卦经文不移作升卦的见面次数。'},
+ 'ZY-XICI-KUN-GUAYUAN':{title:'《周易正义》系辞下·困以寡怨（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/08.6.txt',scope:'核寡怨所指为处困者自守，不以此判定亲友、失联者的现实情绪。'},
+ 'ZY-XU5-5-COMPARISON':{title:'《周易正义》需九五（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02需.txt',scope:'对读需九五与困九二的酒食，爻位与所问各依本卦，不从酒食二字许已得贞吉。'},
  'YC-KUN47':{title:'程颐《伊川易传》卷四·困卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'困初六取株木不能荫庇、三岁不觌为不遇其所亨等，依程传困卦逐爻核读。'},
  'YC-SHENG46':{title:'程颐《伊川易传》卷三·升卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt',scope:'升卦逐爻对读，依程颐对六四守分、六五任贤而升及上六冥升的本释。'},
  'ZY-SHI7-3-COMPARISON':{title:'《周易正义》师卦六三（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02師.txt',scope:'升九三变师，辨别本卦实动爻与师卦同位之辞，师六三不作本盘的第二条动爻。'},
