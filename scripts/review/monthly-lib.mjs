@@ -5,7 +5,7 @@ import {readFile, readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {loadLibrary} from '../../src/index.js';
 import {createContextualReading, promotionTimingSlots, EXAM_PROFILE, PROMOTION_V3_PROFILE, PROBATION_V3_PROFILE, STABILITY_V3_PROFILE,
- JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, RECONCILIATION_V3_PROFILE, NEW_PARTNER_V3_PROFILE} from '../../src/interview-manuscripts.js';
+ JOB_CHANGE_V3_PROFILE, ESTABLISHMENT_V3_PROFILE, RECONCILIATION_V3_PROFILE, NEW_PARTNER_V3_PROFILE, CONFESSION_DECISION_PROFILE} from '../../src/interview-manuscripts.js';
 import {resolveManuscriptDates} from '../../src/prewritten-manuscripts.js';
 import {CHOICE_WORDS, CHOICE_CONTRA} from './state-vocab.mjs';
 
@@ -15,6 +15,15 @@ export const DEMO_DATE = '2026-11-11';
 // 各问项：问法、档案、结论码与首句判词。judgmentBaseline：strict = 专业说明须与五气作者源第 9 栏一致（改须带 judgmentCorrection）；
 // sync = 五气作者源第 9 栏尚未写定（新补判问项），专业说明由月稿写定后回写五气源，检查同气一致与结论用语。
 export const ITEMS = {
+ 'confession-decision':{
+  title:'暧昧表白', questionId:'relationships.confession.decision', profile:CONFESSION_DECISION_PROFILE, judgmentBaseline:'strict',
+  question:{mode:'narrative',question_type:'romantic_confession_decision',question:'对方的心意如何，近期会主动联系吗，现在适合表白吗？',sourceDomainIds:['domain-05']},
+  scopeNote:'本页仅适用于已有喜欢对象、尚未确立关系的暧昧阶段。同篇看传统心意取象、近期对方自行发起联系的倾向和眼下表达的分寸；实际心意、回复、同意及关系须由双方真实表达确认。',
+  verdictLabel:{favourable:'已有实际双向往来时，可适度表达好感',conditional:'有可接近的条件，表达仍须看现实分寸',difficult:'眼下宜暂缓表白，先看实际往来'},
+  // This item's three outcomes are inherited from the five-qi source; do not force a fixed first-sentence verdict.
+  verdict:{favourable:/表达|表白|告白|心意|好感/u,conditional:/表达|表白|告白|心意|好感/u,difficult:/表达|表白|告白|心意|好感/u},
+  forbid:/考试|考场|考生|卷面|试卷|阅卷|合格线|及格|分数|面试|晋升|升职|职级|转正|试用期|辞职|跳槽|裁员/u,
+ },
  'relationship-establishment':{
   title:'确定关系', questionId:'relationships.developing.relationship', profile:ESTABLISHMENT_V3_PROFILE, judgmentBaseline:'strict',
   question:{mode:'narrative', question_type:'relationship_establishment', question:'我们能确定恋爱关系吗？', sourceDomainIds:['domain-05']},
@@ -101,7 +110,7 @@ export const ITEMS = {
  },
 };
 export const item = name => { const c = ITEMS[name]; if (!c) throw new Error('Unknown monthly item ' + name); return {...c, name,
- SOURCE_DIR:`sources/editorial/${name}/monthly`, RECEIPT_DIR:`sources/editorial/${name}/reviews-monthly`, DOC_DIR:`docs/${name}/monthly-preview`}; };
+ SOURCE_DIR:`sources/editorial/${name}/monthly`, RECEIPT_DIR:`sources/editorial/${name}/reviews-monthly`, SECOND_RECEIPT_DIR:`sources/editorial/${name}/second-reviews-monthly`, DOC_DIR:`docs/${name}/monthly-preview`}; };
 const LABELS = {body:'体卦',use:'本用',body_mutual:'体互',use_mutual:'用互',changed_use:'变用',body_inherited:'变卦原体'};
 const REL_LABELS = {equal:'与体比和',body_controls_use:'受体所克',use_controls_body:'克体',use_generates_body:'生体',body_generates_use:'受体所生'};
 
@@ -176,7 +185,9 @@ export async function loadHex(c,id) {
  const base=await readJSON(`sources/editorial/${c.name}/${stem(id)}.json`);
  let data=null;try {data=await readJSON(`data/authored-readings/${c.name}/${stem(id)}.json`);}catch(e){if(e.code!=='ENOENT')throw e;}
  let receipt=null;try {receipt=await readJSON(`${c.RECEIPT_DIR}/${stem(id)}.json`);}catch(e){if(e.code!=='ENOENT')throw e;}
- return {sourcePath,raw,source,base,data,receipt};
+ let secondReceipt=null;
+ if(c.name==='confession-decision')try {secondReceipt=await readJSON(`${c.SECOND_RECEIPT_DIR}/${stem(id)}.json`);}catch(e){if(e.code!=='ENOENT')throw e;}
+ return {sourcePath,raw,source,base,data,receipt,secondReceipt};
 }
 export function oldFor(bundle,a) {return bundle.base.find(d=>d[0]===a.movingLine&&d[1]===QI[a.monthBranch]);}
 export function rowFor(bundle,a) {return bundle.data?.rows.find(r=>r.movingLine===a.movingLine&&r.monthOrder===QI[a.monthBranch]&&r.baseProse!==false)??null;}
@@ -186,8 +197,8 @@ export function renderHex(ctx,c,bundle) {
  const id=bundle.source.primaryId,name=ctx.library.getHexagram(id).name,s=stem(id);
  const foldTiming = c.name === 'exam' && id >= 7;
  const out=[`# ${id} · ${name}：六动爻与十二月令`,
- `本页为「${c.title}」逐月长稿预览中的${name}，共 ${bundle.source.articles.length} 篇：六个动爻各写十二个月。作者全文读回及古籍解释分歧见[核读记录](../../../${c.RECEIPT_DIR}/${s}.json)。`,
- `[返回预览目录](README.md) · [查看五气版作对照](../${s}.md)`,
+ `本页为「${c.title}」逐月长稿预览中的${name}，共 ${bundle.source.articles.length} 篇：${c.name==='confession-decision'?'已完成 '+bundle.source.articles.length/12+' 个动爻，每爻十二个月；全卦目标 72 篇。':'六个动爻各写十二个月。'}作者全文读回及古籍解释分歧见[核读记录](../../../${c.RECEIPT_DIR}/${s}.json)。`,
+ `[返回预览目录](README.md) · [查看五气版作对照](../${s}.md)`+(c.name==='confession-decision'?` · [独立全文二读](../../../${c.SECOND_RECEIPT_DIR}/${s}.json)` : ''),
  foldTiming ? c.scopeNote : `应期日期以 ${DEMO_DATE} 为演示基准，实际使用按起卦日换算。${c.scopeNote}`];
  for(const a of bundle.source.articles) {
   const r=readingFor(ctx,c,id,a),row=rowFor(bundle,a),timing=resolveTiming(c,r,a);
@@ -202,7 +213,7 @@ export function renderHex(ctx,c,bundle) {
   const displayedLine=guFirst?collatedGuLine:r.selectedMovingLine.text;
   const timingNotes=['### 应期参考',...(timing.slots.length?[
    foldTiming ? `以下以 ${DEMO_DATE} 演示传统推算的参考窗口，实际使用按起卦日换算。` : '以下为传统推算的参考窗口。',
-  ]:[]),...(c.name==='workplace-stability'?workplaceTimingParagraphs(a,timing):timing.paragraphs)];
+  ]:[]),...(['workplace-stability','confession-decision'].includes(c.name)?workplaceTimingParagraphs(a,timing):timing.paragraphs)];
   out.push(`## ${r.selectedMovingLine.label}动 · ${a.monthBranch}月`,a.title,Object.values(r.stages).map(x=>x.name).join(' → '),...a.paragraphs,
    ...(c.name==='promotion-pay'?['### 随岗薪资',a.payExplanation]:[]),
    ...(!foldTiming?timingNotes:[]),
@@ -214,6 +225,7 @@ export function renderHex(ctx,c,bundle) {
    ...(guFirst?['句读依据：本页依[《周易正义·蛊》](https://zh.wikisource.org/wiki/周易正義/03蠱)断作“有子，考无咎”。王孔释为有子堪任父事，父乃无咎；知危而能承事，故终吉。']:[]),
    '专业说明：'+a.judgment,
    ...(a.judgmentCorrection?['说明订正：'+a.judgmentCorrection.reason+' 原文、新文及来源保存在作者源的 judgmentCorrection 中；本次未改变结论或取期结构。']:[]),
+   ...(c.name==='confession-decision'&&a.timingCorrection?['取期订正：'+a.timingCorrection.reason+' 原文、新文及来源保存在作者源的 timingCorrection 中；本次未改变结论或取期结构。']:[]),
    ...(c.name==='promotion-pay'&&a.payCorrection?['薪资说明订正：'+a.payCorrection.reason+' 原文与新文保存在作者源的 payCorrection 中；本次未改变晋升结论或取期结构。']:[]),
    ...(foldTiming?timingNotes:[]), '取期依据：'+timingReason,
    ...(row?.decision?.sourceEvidence?.length?['条文对照：以下保留相关判读原文，供核对条件；并非每条都适用于本盘。具体采用、反证与尚待复核的权重，见上方专业说明及本卦核读记录。',

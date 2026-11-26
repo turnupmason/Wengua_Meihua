@@ -2,10 +2,11 @@
 // 用法：node scripts/review/check-monthly.mjs <问项目录> [--hex 3,4] [--draft] [--docs] [--json path]
 // 本检查不签署作者全文读回，也不代替独立解释审核。
 import {workplaceScopeIssues} from './workplace-scope.mjs';
+import {confessionScopeIssues} from './confession-scope.mjs';
 import {writeFile,access} from 'node:fs/promises';
 import {readFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
-import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,workplaceTimingParagraphs,timingSignature,item} from './monthly-lib.mjs';
+import {MONTHS,QI,stem,sha256,han,normalize,stripQuotes,listMonthlyIds,context,loadHex,oldFor,rowFor,independentFacts,readingFor,resolveTiming,workplaceTimingParagraphs,timingSignature,item,renderHex} from './monthly-lib.mjs';
 
 // 全卦通用的正文禁区（照面试月稿规范：不编人物心理、原话与具体经过；内部审稿用语不进正文）。
 // 2026-11-20 加：规则名目（降档、升档、按结局拆、专属爻辞、只推迟时机）与专业说明的「定为……」是写给审稿看的，不进正文、简断、标题。
@@ -50,6 +51,8 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  if(name==='promotion-pay'){report.payHanRange=[Infinity,0];report.payCorrections=[];}
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const workplace=name==='workplace-stability';
+ const confession=name==='confession-decision';
+ if(confession)report.confession={scopeArticlesChecked:0,authorReadback:0,secondRead:0,timingCorrections:[],sourceBindings:[]};
  const bodyOpenings=new Map(),shortOpenings=new Map();
  if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,scopeArticlesChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
@@ -63,17 +66,23 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    for(const [pidx,p] of a.paragraphs.entries()){seenParagraph.set(normalize(p),key+'/p'+(pidx+1));for(const s of stripQuotes(p).split(/[。！？]/u))if(han(s)>=24)seenSentence.set(normalize(s),key+'/p'+(pidx+1));}}}catch{}
  }
  for(const id of ids) {
-  const bundle=await loadHex(c,id),{source,receipt}=bundle;
+  const bundle=await loadHex(c,id),{source,receipt,secondReceipt}=bundle;
   const keyRoot=String(id);let doc=null;
   if(docs)try {doc=await readFile(`${c.DOC_DIR}/${stem(id)}.md`,'utf8');}catch(e){err(keyRoot,'reading-document',e.message);}
   const sections=workplace&&doc?doc.replace(/\r\n/gu,'\n').split(/^## /mu).slice(1):null;
   if(source.schemaVersion!=='1.0.0'||source.primaryId!==id)err(keyRoot,'identity','schemaVersion or primaryId mismatch');
   if(!Array.isArray(source.articles)){err(keyRoot,'articles','Expected array');continue;}
   if(sections&&sections.length!==source.articles.length)err(keyRoot,'workplace-rendered-section','预览篇数与逐月源文不符');
-  if(!draft&&source.articles.length!==72)err(keyRoot,'coverage',`Expected 72, got ${source.articles.length}`);
+  if(!draft&&(confession?source.articles.length<12||source.articles.length>72||source.articles.length%12!==0:source.articles.length!==72))err(keyRoot,'coverage',confession?`Expected complete moving-line batches (12 to 72), got ${source.articles.length}`:`Expected 72, got ${source.articles.length}`);
+  const requiredCount=confession?source.articles.length:72, requiredLines=requiredCount/12;
   const keys=new Set(),sameQi=new Map();const counts=Object.fromEntries(outcomes.map(o=>[o,0]));
   const detail={primaryId:id,name:ctx.library.getHexagram(id).name,articles:source.articles.length,sourceSha256:sha256(bundle.raw),authorWholeArticlesRead:receipt?.wholeArticlesRead??0,bodyHanRange:[Infinity,0],outcomes:counts};
   if(workplace)detail.movingLineBatches=[];
+  if(confession){
+   detail.independentWholeArticlesRead=secondReceipt?.wholeArticlesRead??0;
+   report.confession.sourceBindings.push({primaryId:id,sourceSha256:detail.sourceSha256});
+   if(doc&&doc!==renderHex(ctx,c,bundle))err(keyRoot,'confession-render-mismatch','Markdown must exactly match the current article source render');
+  }
   const hex = ctx.library.getHexagram(id);
   const calendarLead = new RegExp(`^(?:(?:${hex.name}|${hex.shortName})卦?)?(?:初[六九]|[六九][二三四五]|上[六九])(?:动)?(?:行至|行到|进到|逢|临|值|遇|至|到|在|入)?[寅卯辰巳午未申酉戌亥子丑]月?[，。]`, 'u');
   if(!draft) {
@@ -81,9 +90,20 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    else {
     if(receipt.primaryId!==id)err(keyRoot,'author-receipt','primaryId mismatch');
     if(receipt.sourceSha256!==detail.sourceSha256)err(keyRoot,'author-receipt','Source hash is stale');
-    if(receipt.wholeArticlesRead!==72)err(keyRoot,'author-receipt','Whole-article readback count must be 72');
-    if(!Array.isArray(receipt.lineReviews)||receipt.lineReviews.length!==6)err(keyRoot,'author-receipt','lineReviews must cover six moving lines');
+    if(receipt.wholeArticlesRead!==requiredCount)err(keyRoot,'author-receipt','Whole-article readback count must equal '+requiredCount);
+    if(!Array.isArray(receipt.lineReviews)||receipt.lineReviews.length!==requiredLines)err(keyRoot,'author-receipt','lineReviews must cover '+requiredLines+' moving lines');
    }
+  }
+  if(confession&&!draft){
+   for(const [label,record,status] of [['author',receipt,'author-readback-complete'],['second',secondReceipt,'second-read-complete']]){
+    if(!record){err(keyRoot,label+'-receipt','Missing receipt');continue;}
+    if(record.primaryId!==id||record.questionId!==c.questionId||record.status!==status||record.sourceSha256!==detail.sourceSha256||record.wholeArticlesRead!==requiredCount||typeof record.editor!=='string'||!record.editor.trim())err(keyRoot,label+'-receipt','Identity, source hash, editor, status or complete count mismatch');
+    const actual=(record.lineReviews||[]).map(x=>x.movingLine);
+    if(new Set(actual).size!==requiredLines||actual.some(x=>!Number.isInteger(x)||x<1||x>requiredLines))err(keyRoot,label+'-receipt',requiredLines+' distinct moving-line reviews required');
+    const reviews=record.articleReviews||[];
+    if(reviews.length!==requiredCount||new Set(reviews.map(x=>x.key)).size!==requiredCount)err(keyRoot,label+'-receipt',requiredCount+' distinct article hashes required');
+   }
+   if(receipt?.editor&&receipt.editor===secondReceipt?.editor)err(keyRoot,'independent-receipt','Author and second reader must be different');
   }
   for(const [i,a] of source.articles.entries()) {
    report.articleCount++;const key=`${id}/${a.movingLine}/${a.monthBranch}`,monthKey=`${a.movingLine}/${a.monthBranch}`;
@@ -96,7 +116,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(!outcomes.includes(a.outcome))err(key,'outcome','Unexpected code');
    if(a.outcome!==old[2])err(key,'baseline-decision','Outcome changed without a separately implemented decision correction review');
    if(typeof a.judgment!=='string'||han(a.judgment)<20)err(key,'judgment','Missing professional judgment');
-   else {
+   else if(!confession) {
     if(!c.note[a.outcome]?.test(a.judgment))err(key,'judgment-verdict','专业说明须写明本篇结论（'+c.note[a.outcome]+'）');
     for(const [o,re] of Object.entries(c.note))if(o!==a.outcome&&re.test(a.judgment))err(key,'judgment-verdict','专业说明写成了另一档：'+a.judgment.match(re)[0]);
    }
@@ -114,12 +134,27 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
     }
    } else if(c.judgmentBaseline==='strict'&&a.judgmentCorrection)err(key,'judgment-correction','Correction record present but judgment is unchanged');
    if(timingSignature(a.timing)!==timingSignature(old[10]))err(key,'baseline-timing','Changed timing kind, role, method, count or presence');
+   if(confession){
+    if(typeof a.timing!=='string'&&(!Array.isArray(a.timing)||a.timing.length!==1||a.timing.some(x=>!['equal','control','support'].includes(x[0]))))err(key,'confession-timing-scope','One inherited named-event slot of type equal/control/support, or a substantive omission, required');
+    if(typeof a.timing==='string'&&han(a.timing)<12)err(key,'confession-timing-scope','Omission reason too short');
+    if(JSON.stringify(a.timing)!==JSON.stringify(old[10])){
+     const cr=a.timingCorrection;
+     if(!cr||JSON.stringify(cr.old)!==JSON.stringify(old[10])||JSON.stringify(cr.new)!==JSON.stringify(a.timing)||typeof cr.reason!=='string'||han(cr.reason)<12||cr.impact?.outcomeChanged!==false||cr.impact?.timingSignatureChanged!==false)err(key,'timing-correction','Bind exact old and new timing, explain the change, and preserve the outcome and timing signature');
+     else{
+      const local=(cr.sourceEvidence||[]).filter(e=>typeof e?.path==='string'&&typeof e?.scope==='string'&&e.scope.trim());
+      if(!local.length)err(key,'timing-correction','At least one concrete local evidence path and scope required');
+      for(const e of local)if(!/^(sources|data|docs)\//u.test(e.path)||e.path.split('/').includes('..'))err(key,'timing-correction','Source must be a repository-relative evidence path');else try{await access(e.path);}catch{err(key,'timing-correction','Evidence path not found: '+e.path);}
+      report.confession.timingCorrections.push({key,old:cr.old,new:cr.new,reason:cr.reason,sourceEvidence:cr.sourceEvidence});
+     }
+    }else if(a.timingCorrection)err(key,'timing-correction','Correction present but timing has not changed');
+   }
    if(typeof a.title!=='string'||!a.title.trim()||typeof a.short!=='string'||!Array.isArray(a.paragraphs)||a.paragraphs.some(p=>typeof p!=='string'||!p.trim())){err(key,'copy-shape','Missing title, short or nonempty paragraphs');continue;}
    const body=a.paragraphs.join('\n\n'),bLen=han(body),sLen=han(a.short);
    detail.bodyHanRange=[Math.min(detail.bodyHanRange[0],bLen),Math.max(detail.bodyHanRange[1],bLen)];
    report.bodyHanRange=[Math.min(report.bodyHanRange[0],bLen),Math.max(report.bodyHanRange[1],bLen)];
    report.shortHanRange=[Math.min(report.shortHanRange[0],sLen),Math.max(report.shortHanRange[1],sLen)];
-   if(bLen<400||bLen>700)err(key,'body-length',`${bLen} Han; expected full long-form copy around 450–650`);
+   if(confession){if(bLen<500||bLen>650)err(key,'body-length',`${bLen} Han; expected 500–650`);}
+   else if(bLen<400||bLen>700)err(key,'body-length',`${bLen} Han; expected full long-form copy around 450–650`);
    else if(bLen<450||bLen>650)warn(key,'flexible-body-length',bLen);
    if(sLen<60||sLen>120)err(key,'short-length',sLen);
    if(a.paragraphs.length<3)err(key,'body-paragraphs','Too few independent paragraphs');
@@ -149,20 +184,29 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
     report.workplaceCopy.bodyOpeningsChecked++;
     report.workplaceCopy.shortOpeningsChecked++;
    }
-   for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
+   if(confession){
+    const scope=confessionScopeIssues(a);for(const issue of scope.errors)err(key,issue.check,issue.detail);for(const issue of scope.warnings)warn(key,issue.check,issue.detail);
+    report.confession.scopeArticlesChecked++;
+    if(!draft)for(const [label,record,field] of [['author',receipt,'authorReadback'],['second',secondReceipt,'secondRead']]){
+     const found=record?.articleReviews?.find(x=>x.key===key);
+     if(!found||found.articleSha256!==sha256(JSON.stringify(a))||typeof found.finding!=='string'||han(found.finding)<8)err(key,label+'-article-receipt','Exact article hash and substantive reading finding required');else report.confession[field]++;
+    }
+   }
+   if(!confession)for(const [label,sent] of [['opening-verdict',first],['short-verdict',shortFirst]]) {
     if(!c.verdict[a.outcome].test(sent))err(key,label,sent);
     if(c.contra){if(c.contra[a.outcome].test(sent))err(key,label,'含相反说法：'+sent);}
     else for(const o of outcomes)if(o!==a.outcome&&c.verdict[o].test(sent.replace(c.verdict[a.outcome],'')))err(key,label,'含另一档判词：'+sent);
    }
    if(/\{\{|\bTODO\b|\[待(?:补|写)\]/u.test(body+a.short))err(key,'placeholder','Unfinished prose');
-   if(INTERNAL.test(body+a.short+a.title))err(key,'internal-terms',(body+a.short+a.title).match(INTERNAL)[0]);
+   const visibleInternal=confession?(body+a.short+a.title).replaceAll('有条件',''):body+a.short+a.title;
+   if(INTERNAL.test(visibleInternal))err(key,'internal-terms',visibleInternal.match(INTERNAL)[0]);
    // 他项用语（各问项 forbid，2026-11-20 加）：标题、简断、正文、专业说明、取期文字都查。
    if(c.forbid){const all=[a.title,a.short,body,a.judgment,JSON.stringify(a.timing)].join('\n');if(c.forbid.test(all))err(key,'other-item-terms',all.match(c.forbid)[0]);}
-   if(HEDGE.test(a.short+first))err(key,'hedge',(a.short+first).match(HEDGE)[0]);
+   if(!confession&&HEDGE.test(a.short+first))err(key,'hedge',(a.short+first).match(HEDGE)[0]);
    const lineText=readingFor(ctx,c,id,a).selectedMovingLine.text.replace(/[^\p{Script=Han}]/gu,'');
    const quoted=[...body.matchAll(/「([^」]+)」/gu)].map(m=>m[1].replace(/[^\p{Script=Han}]/gu,'')).filter(q=>q.length>=2);
    if(!quoted.some(q=>lineText.includes(q)))err(key,'line-quote','正文须引动爻爻辞原句');
-   const qiKey=`${a.movingLine}/${QI[a.monthBranch]}`,sig=JSON.stringify([a.outcome,a.judgment,timingSignature(a.timing)]);
+   const qiKey=`${a.movingLine}/${QI[a.monthBranch]}`,sig=JSON.stringify([a.outcome,a.judgment,confession?a.timing:timingSignature(a.timing)]);
    if(sameQi.has(qiKey)&&sameQi.get(qiKey)!==sig)err(key,'same-qi','Judgment or timing structure differs within same seasonal qi');sameQi.set(qiKey,sig);
    const nb=normalize(body);if(seenBody.has(nb))report.duplicateArticles.push([seenBody.get(nb),key]);else seenBody.set(nb,key);
    for(const [pidx,p] of a.paragraphs.entries()) {
@@ -188,10 +232,10 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    try {
     for(const date of ['2026-11-11','2026-12-31']) {
      const datedReading=readingFor(ctx,c,id,a,date),timing=resolveTiming(c,datedReading,a,date);report.dateCases++;
-     if(workplace){
+     if(workplace||confession){
       const inherited=resolveTiming(c,datedReading,{...a,timing:old[10]},date);
       const calendars=t=>t.dateMatches.map(m=>[m.slotId,m.displayedDates]);
-      if(JSON.stringify(calendars(timing))!==JSON.stringify(calendars(inherited)))err(key,'workplace-inherited-dates',{date});
+      if(JSON.stringify(calendars(timing))!==JSON.stringify(calendars(inherited)))err(key,confession?'confession-inherited-dates':'workplace-inherited-dates',{date});
      }
      for(const w of timing.dateMatches)if(w.displayedDates.some(d=>d<date))err(key,'past-date',{date,dates:w.displayedDates});
      if(timing.slots.some(s=>/^(name-support|name-body)$/.test(s.kind)&&a.outcome!=='favourable'))err(key,'timing-verdict','Favourable-result window on non-favourable verdict');
@@ -223,7 +267,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
     report.workplaceCopy.renderedSectionsChecked++;
    }else if(doc)for(const [label,value] of [['title',a.title],['short',a.short],...a.paragraphs.map((p,i)=>['paragraph '+(i+1),p]),...(name==='promotion-pay'?[['payExplanation',a.payExplanation]]:[])])if(!doc.includes(value))err(key,'reading-document',`${label} missing from Markdown`);
   }
-  if(!draft)for(let line=1;line<=6;line++)for(const month of MONTHS)if(!keys.has(`${line}/${month}`))err(`${id}/${line}/${month}`,'month-key','Missing');
+  if(!draft)for(let line=1;line<=requiredLines;line++)for(const month of MONTHS)if(!keys.has(`${line}/${month}`))err(`${id}/${line}/${month}`,'month-key','Missing');
   report.hexagrams.push(detail);
  }
  for(const field of ['duplicateArticles','duplicateParagraphs','duplicateLongSentences'])if(report[field].length)err('all',field,report[field].length);

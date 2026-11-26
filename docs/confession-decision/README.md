@@ -6,7 +6,7 @@
 已写入应期规则 1002 篇，待取期 918 篇。阅读文档使用 2026-11-11 演示日期，软件按各次实际起卦日换算。独立专业审核待完成。
 下一键 已写满
 
-[断法与古籍出处](../CONFESSION_DECISION_POLICY.md)
+[十二月独立长稿（分批预览）](monthly-preview/README.md) · [断法与古籍出处](../CONFESSION_DECISION_POLICY.md)
 
 - [乾为天](hex-001.md) · 30 篇
 - [坤为地](hex-002.md) · 30 篇

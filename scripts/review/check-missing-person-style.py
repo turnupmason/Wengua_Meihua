@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible style/duplicate scan of monthly missing-contact JSON articles.
+"""Reproducible style/duplicate scan of monthly authored JSON articles.
 
 This is a corpus-level machine scan, not a semantic review or evidence of prediction accuracy.
 Usage: python3 final-style-check.py --repo-root . --output /tmp/missing-contact-style.json
@@ -79,9 +79,11 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo-root',type=Path,default=Path.cwd(),help='repository root (default: current directory)')
     parser.add_argument('--output',type=Path,required=True,help='JSON report path')
+    parser.add_argument('--item',default='missing-contact',help='monthly question directory (default: missing-contact)')
     args=parser.parse_args()
     repo=args.repo_root.resolve()
-    roots=[repo/'sources/editorial/missing-contact/monthly',repo/'sources/editorial/missing-contact/partial-monthly']
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.item): parser.error('invalid --item directory name')
+    roots=[repo/'sources/editorial'/args.item/'monthly',repo/'sources/editorial'/args.item/'partial-monthly']
     rows=[];source_receipts=[]
     for folder in roots:
         for p in sorted(folder.glob('hex-*.json')):
@@ -150,6 +152,7 @@ def main():
     for f in near:
         pp=near[f]['pairs'];metrics[f]['nearDuplicateSummary']={'threshold':near[f]['threshold'],'pairCount':len(pp),'sameHex':sum(x['sameHex'] for x in pp),'sameLine':sum(x['sameLine'] for x in pp),'sameQi':sum(x['sameQi'] for x in pp),'maxSimilarity':max((x['similarity'] for x in pp),default=0)}
     result.update(metrics=metrics,groups=group_metrics,openerRuns=opener_runs,nearDuplicates=near)
+    if args.item!='missing-contact': result['item']=args.item
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({f:{k:v for k,v in metrics[f].items() if k!='byHex'} for f in metrics},ensure_ascii=False,indent=2))
