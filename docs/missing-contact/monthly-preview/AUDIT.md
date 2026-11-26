@@ -2,71 +2,79 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 火风鼎全卦及上九定稿
+
+七十二篇，寻获较有望二篇、有机会三十篇、较难四十篇。前三爻以上离为体，初六和九二据本巽生离取木日，九三据末坎克离取水日。后三爻以下巽为体，九四据中体互乾克巽取金日，六五据末变乾克巽取金日，上九据末变震木与巽比和取木日。寻获、现实安危、失联原因和联系日期各从实证核明。
+
+上九保留“玉铉在上，刚柔节也”。寅辨认人和逐字记话，卯辨答话所应之问，辰辨原受托者与实际查到近况的人。巳核石阶在不同水位下的样子，午核竖栏改横抄所指，未核星期、日数和年份。申核空格的实际填写，酉核花盆是否挪动，戌核人所处和队伍的实际动向。亥分相片上的间隔与实处，子查辨认照片的实际经手，丑分告示传发和真实见闻。寅卯较有望，巳午亥子有机会，辰未申酉戌丑较难。[上九十二篇](hex-050.md#上九动--寅月) · [上九逐篇回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-6-accepted-readback.json)
+
+正文不计附栏各 501–591 个汉字。一千八百项盘面对照、二百一十六个日期用例、七十二份逐篇双读记录及正式阅读页一致。[完整六爻月稿](hex-050.md) · [作者回执](../../../sources/editorial/missing-contact/reviews-monthly/hex-050.json) · [逐篇独立终读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-050.json)
+
 ## 火风鼎上九首三篇
 
 上九以巽木为体，初生本用离火，中途为互乾、互兑金所克，末变上震木与巽比和。寅卯体木旺、中囚金克缓、末旺震承接较实，寻获较有望。辰囚巽承力弱，中相金克与初耗俱在，末囚震只得薄比，寻获较难。上九大吉以刚柔得节为所取，木日候末震与巽同类，示例十一月二十四、二十五日。三篇七十五项盘面对照、九个日期用例。
 
-寅核玉刚而润与问话分寸，卯核看见本人说话与查明其所答的话，辰从王注应不在一核有实见的来处。[上九寅卯辰](hex-050-first-read.md#上九动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-6-first-three-accepted-readback.json)
+寅核玉刚而润与问话分寸，卯核看见本人说话与查明其所答的话，辰从王注应不在一核有实见的来处。[上九寅卯辰](hex-050.md#上九动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-6-first-three-accepted-readback.json)
 
 ## 火风鼎六五十二月定稿
 
 六五以下巽木为体，上离火受生。两互乾、兑克巽，末变上乾亦来克。春旺巽、冬相巽较能承耗，春夏中末金气较弱，季土金相、秋金旺时中末克力较重。夏休巽去生旺火，开头已耗较多。六五利贞、柔中纳刚之义在十二篇均有保留，初耗、中末受制而无直接生扶，均断寻获较难。金日取末变乾直接克体，示例十一月三十日，参核定本人及现处的阻碍。十二篇合核三百项盘面、三十六个日期用例。
 
-寅对读金铉指九二与上九两说，卯分色泽与材质，辰核手语实义。巳分签收手续与是否查实，午分听见钟声、认准声源和听者所在，未核同一门名是否已挪到新门。申从实地核手绘图方向，酉核旧钟当天误差及中间是否校过，戌辨两处“现在”各在什么时候写。亥校姓与名的顺序，子查入口与楼层的叫法，丑辨通行告示与实际走法。[六五十二篇](hex-050-first-read.md#六五动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-5-accepted-readback.json)
+寅对读金铉指九二与上九两说，卯分色泽与材质，辰核手语实义。巳分签收手续与是否查实，午分听见钟声、认准声源和听者所在，未核同一门名是否已挪到新门。申从实地核手绘图方向，酉核旧钟当天误差及中间是否校过，戌辨两处“现在”各在什么时候写。亥校姓与名的顺序，子查入口与楼层的叫法，丑辨通行告示与实际走法。[六五十二篇](hex-050.md#六五动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-5-accepted-readback.json)
 
 ## 火风鼎六五首三篇
 
 下巽木为体，生本用上离火，中途互乾、互兑皆以金克巽，六五动上离变乾，收尾又见金克木。寅卯旺巽尚能承初耗，囚金之克较缓。辰囚巽受相金所克更费力。三篇都保留六五利贞之利，依初耗、中末克及无直接生扶断寻获较难。金日取末变乾克巽，十一月三十日为演示候选。三篇合核七十五项盘面与九个日期用例。
 
-寅对读孔疏和《本义》，分清五应二及后者所存金指上九之说。卯分所见色泽与饰物材质。辰核手语表达与只见动作的区别。[六五寅卯辰](hex-050-first-read.md#六五动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-5-first-three-accepted-readback.json)
+寅对读孔疏和《本义》，分清五应二及后者所存金指上九之说。卯分所见色泽与饰物材质。辰核手语表达与只见动作的区别。[六五寅卯辰](hex-050.md#六五动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 火风鼎九四十二月定稿
 
 九四以巽木为体，生上离火；中遇互乾与互兑金克巽，末体克上艮土。春旺巽初耗可承，中囚金克缓而末制死艮较可办；夏休巽生旺火耗较重，虽中死金克轻，末制相艮仍劳。秋死巽受旺金重克，季土囚巽受相金克而末制旺艮尤劳。冬相巽初耗轻、中有休金来克、末制囚艮较可办。五时均无直接生体之助，九四所任难胜，十二篇均断寻获较难。候中途体互乾克巽的金日，例为十一月三十日。十二篇合核三百项盘面与三十六个日期用例。
 
-寅校形渥、刑剭异读，卯辨点数点人，辰分假别与假期、审批和亲见。巳以《系辞下》不胜所任释视野可及与不能看清的面部特征，午区分南段、朝南走和门牌编号，未将疏散图与当天实际集合地点分说。申校变蛊末艮与原用离的职责，酉核预付路费和按本人实程结付的分量，戌区分证件挂失及实际亲临。亥辨报对名字与本人身份，子辨全程均速与半时所在，丑分仍沿用的字号与实际见到本人。[九四十二篇](hex-050-first-read.md#九四动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《系辞下》论鼎折足](../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-4-accepted-readback.json)
+寅校形渥、刑剭异读，卯辨点数点人，辰分假别与假期、审批和亲见。巳以《系辞下》不胜所任释视野可及与不能看清的面部特征，午区分南段、朝南走和门牌编号，未将疏散图与当天实际集合地点分说。申校变蛊末艮与原用离的职责，酉核预付路费和按本人实程结付的分量，戌区分证件挂失及实际亲临。亥辨报对名字与本人身份，子辨全程均速与半时所在，丑分仍沿用的字号与实际见到本人。[九四十二篇](hex-050.md#九四动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《系辞下》论鼎折足](../../../sources/reference/zhouyi-zhengyi-hans/08.4.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-4-accepted-readback.json)
 
 ## 火风鼎九四首三篇
 
 九四动，体改取下巽木，本用上离火受体所生，中逢体互乾金、用互兑金克巽，末由体克变用艮土。寅卯巽旺，初耗可承，中囚金克缓，末制死艮尚能办；辰巽囚，初生休离有耗，中相金克木，末制旺艮较劳。三篇盘中均无直接生体之助，九四所任难胜，结论均为寻获较难。金日据体互乾克巽参中段核实之阻，十一月三十日为演示候选。三篇合核七十五项盘面、九个日期用例。
 
-寅对读王注以渥为沾濡与《本义》引晁氏异文刑剭，区别爻书和现实险情的消息来源。卯据《象》与朱子言失信，核承接的事究竟是点总人数还是逐个认人；辰据程传考九四所任与用人，事假类别、起止、审批、当面见闻分别查证。[九四寅卯辰](hex-050-first-read.md#九四动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-4-first-three-accepted-readback.json)
+寅对读王注以渥为沾濡与《本义》引晁氏异文刑剭，区别爻书和现实险情的消息来源。卯据《象》与朱子言失信，核承接的事究竟是点总人数还是逐个认人；辰据程传考九四所任与用人，事假类别、起止、审批、当面见闻分别查证。[九四寅卯辰](hex-050.md#九四动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-4-first-three-accepted-readback.json)
 
 ## 火风鼎九三十二月定稿
 
 本用下巽木生上离火，体制互兑、互乾金，九三动下变坎水克原体。寅卯初得旺木生，巳午原体火旺，季土月末坎死而克缓，均保留和通终吉的条件，八篇断寻获有机会。申酉初扶弱而中制旺金费力，末逢相坎克；亥子虽得相巽实生，末逢旺坎克弱体，四篇断寻获较难。水日只参末段核准本人和所在的阻碍，不能由方雨定相见的天气。十二篇三百项盘面对照、三十六个日期用例。
 
-寅核鼎耳与铉及程传三、五之义；卯核雉膏在程传所指，并区分工钱的结付与见人；辰核来信是否能答后来才寄的问题。巳分跨夜班名与相见日期；午核儿时高矮比较的参照；未分寻找者来回路程与本人去处。申核赠书上下款和当面相见；酉辨两县界边的称呼和实地；戌辨戏中角色与当晚登台者。亥辨出入限制各管哪个方向；子辨见到才报的约定与来电实情；丑辨一刻也没走、一刻钟及能见到本人的范围。[九三十二篇](hex-050-first-read.md#九三动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-3-accepted-readback.json)
+寅核鼎耳与铉及程传三、五之义；卯核雉膏在程传所指，并区分工钱的结付与见人；辰核来信是否能答后来才寄的问题。巳分跨夜班名与相见日期；午核儿时高矮比较的参照；未分寻找者来回路程与本人去处。申核赠书上下款和当面相见；酉辨两县界边的称呼和实地；戌辨戏中角色与当晚登台者。亥辨出入限制各管哪个方向；子辨见到才报的约定与来电实情；丑辨一刻也没走、一刻钟及能见到本人的范围。[九三十二篇](hex-050.md#九三动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-3-accepted-readback.json)
 
 ## 火风鼎九三首三篇
 
 寅卯相离受旺巽木生，中制囚兑乾，末逢休坎来克；辰休离得囚巽薄生，中制相兑乾较劳，末变死坎仍克但力弱。九三有行塞之难，也有和通而终吉之义，三篇均断寻获有机会，须以实际消息核准本人及所在。末变下坎直接克上离，水日参收末的阻碍，十一月二十一、二十二日为示例。三篇合核七十五项盘面、九个日期用例。
 
-寅读王孔鼎耳受铉之义与程传九三不得其任，区分消息传不过来和所问的人没有亲见；卯读程传雉膏象禄位，将工钱归属、发放及当面见领款人的日期分别核过；辰依王注阴阳交和释雨，两封信在途中相错，未答新问并不减去本人主动说明近况的分量。[九三寅卯辰](hex-050-first-read.md#九三动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-3-first-three-accepted-readback.json)
+寅读王孔鼎耳受铉之义与程传九三不得其任，区分消息传不过来和所问的人没有亲见；卯读程传雉膏象禄位，将工钱归属、发放及当面见领款人的日期分别核过；辰依王注阴阳交和释雨，两封信在途中相错，未答新问并不减去本人主动说明近况的分量。[九三寅卯辰](hex-050.md#九三动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 火风鼎九二十二月定稿
 
 上离为体，初受本用巽木所生，中制互兑、互乾金，末变下艮土受离所生。寅卯旺巽生相离，巳午旺体可任中末之劳，亥子相巽扶死离，六篇断寻获有机会。辰未戌丑初扶薄、中制相金而末生旺艮耗实，申酉囚离制旺金费力，六篇断寻获较难。以本巽生离取木日，只参开头能否得可靠帮助。核十二篇三百项盘面与三十六个日期用例。
 
-寅对读王孔、程朱所释仇匹，卯核地名缺字，辰辨原消息所指哪一家。巳辨“不我能即”中谁近谁，午辨师傅一称的用处，未辨寄递退回与本人拒收。申据《旅》孔疏读客寄，核人在途中亦可能已有可信现处；酉保存“没事了”原来答的是何问，戌分报安的示例与当事人自己报信。亥核姓名简写的原有范围，子查两人各自所说的时刻，丑分营业时段和门内外亲见。[九二十二篇](hex-050-first-read.md#九二动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《周易正义》旅](../../../sources/reference/zhouyi-zhengyi-hans/06旅.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-2-accepted-readback.json)
+寅对读王孔、程朱所释仇匹，卯核地名缺字，辰辨原消息所指哪一家。巳辨“不我能即”中谁近谁，午辨师傅一称的用处，未辨寄递退回与本人拒收。申据《旅》孔疏读客寄，核人在途中亦可能已有可信现处；酉保存“没事了”原来答的是何问，戌分报安的示例与当事人自己报信。亥核姓名简写的原有范围，子查两人各自所说的时刻，丑分营业时段和门内外亲见。[九二十二篇](hex-050.md#九二动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《周易正义》旅](../../../sources/reference/zhouyi-zhengyi-hans/06旅.txt) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-2-accepted-readback.json)
 
 ## 火风鼎九二首三篇
 
 本用下巽木生上离火，互兑、互乾皆受离制，九二变火山旅，下艮土受离所生，收尾为体生用之耗。寅卯相离受旺巽生，中制囚金可办，末生死艮耗轻，寻获有机会。辰休离受囚巽薄生，中制相金较劳，收尾还生旺艮，初助未必能接到现实下落，寻获较难。木日据本巽生体参初查，并非以“我仇有疾”占真人疾病或联系期限。示例十一月二十四、二十五日，三篇合核七十五项盘面、九个日期用例。
 
-寅分别核王、孔以仇为六五及程、朱以仇为初六；卯依王注辨有实不宜滥加，听清部分地名与核准全称分说；辰据《象》慎所之辨一份亲见原指哪一家的寻人问话。[九二寅卯辰](hex-050-first-read.md#九二动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-2-first-three-accepted-readback.json)
+寅分别核王、孔以仇为六五及程、朱以仇为初六；卯依王注辨有实不宜滥加，听清部分地名与核准全称分说；辰据《象》慎所之辨一份亲见原指哪一家的寻人问话。[九二寅卯辰](hex-050.md#九二动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首三篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-2-first-three-accepted-readback.json)
 
 ## 火风鼎初六十二月定稿
 
 上离为体，本用巽木生体，体制互兑、互乾及末变下乾金。春木旺火相、金囚，秋木死火囚、金旺；夏体旺受休木生，冬体死受相木生，季土休火得囚木薄生，分别核清初段扶助及中末办理难易。初六利出否，无咎在所改有当；十二月均断寻获有机会，能去误不等于已经找到。候本巽生离的木日，示例十一月二十四、二十五日，参开头取得的帮助。十二篇共三百项盘面对照、三十六个日期用例。
 
-寅据王孔及《本义》解否字，卯辨鼎足与人足，辰辨古注家内名位与真实亲属所知。巳据鼎的烹饪象讨论熟悉气味与辨认本人，午分惯用手和一次动作，未辨删重后的旧号与现行顺序。申借鼎取新分今日新得与今日亲见，酉以从贵不证身份可代亲见，戌辨听到的两个同音与叠字称呼。亥分本人签名时所确认的内容与经手人后来补入的地点，子以《说命下》盐梅之喻分翻译之助与亲历，丑分本人请托与他人自愿代问。[初六十二篇](hex-050-first-read.md#初六动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《尚书·说命下》](https://ctext.org/text.pl?if=gb&node=37559&remap=gb) · [逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-1-accepted-readback.json)
+寅据王孔及《本义》解否字，卯辨鼎足与人足，辰辨古注家内名位与真实亲属所知。巳据鼎的烹饪象讨论熟悉气味与辨认本人，午分惯用手和一次动作，未辨删重后的旧号与现行顺序。申借鼎取新分今日新得与今日亲见，酉以从贵不证身份可代亲见，戌辨听到的两个同音与叠字称呼。亥分本人签名时所确认的内容与经手人后来补入的地点，子以《说命下》盐梅之喻分翻译之助与亲历，丑分本人请托与他人自愿代问。[初六十二篇](hex-050.md#初六动--寅月) · [《周易正义》鼎](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [《尚书·说命下》](https://ctext.org/text.pl?if=gb&node=37559&remap=gb) · [逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-1-accepted-readback.json)
 
 ## 火风鼎初六首三篇
 
 上离火为体，下巽木为本用，开头木生火；中间离制互兑金与互乾金，末变火天大有，下乾金仍受离制。寅卯相离受旺巽实生，后续制囚金较能办；辰月休离受囚巽薄生，制相金费力。原爻许利出否而无咎，能纠正误处不等于已寻获，三篇均断寻获有机会。取木日候本用巽生体的初段助力，示例十一月二十四、二十五日，不据鼎足或古代家庭名位定应期。三篇共七十五项盘面对照、九个日期用例。
 
-寅查王孔以不善之物解否、朱子本义音鄙，卯分鼎足倒转与真人是否遇险，辰说明得妾以其子属古注譬喻，不虚增现实亲缘关系。[初六寅卯辰](hex-050-first-read.md#初六动--寅月) · [《周易正义》鼎卦](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-1-first-three-accepted-readback.json)
+寅查王孔以不善之物解否、朱子本义音鄙，卯分鼎足倒转与真人是否遇险，辰说明得妾以其子属古注譬喻，不虚增现实亲缘关系。[初六寅卯辰](hex-050.md#初六动--寅月) · [《周易正义》鼎卦](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-050/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 泽火革全卦及上六定稿
 

@@ -4,9 +4,9 @@
   "questionId": "search.missing-contact.locate-preview",
   "demoDate": "2026-11-21",
   "plannedArticles": 4608,
-  "articleCount": 3600,
-  "authorReadbackArticles": 3600,
-  "secondReadArticles": 3600,
+  "articleCount": 3672,
+  "authorReadbackArticles": 3672,
+  "secondReadArticles": 3672,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -1033,6 +1033,27 @@
         "favourable": 4,
         "conditional": 42,
         "difficult": 26
+      },
+      "authorReadback": 72,
+      "secondReadback": 72
+    },
+    {
+      "primaryId": 50,
+      "name": "火风鼎",
+      "articles": 72,
+      "sourceSha256": "9b8cdc591c4e1892531759b1489731fe91a84a4333227a7c31f69f7189cd9bec",
+      "bodyHanRange": [
+        501,
+        591
+      ],
+      "bodyHanExcludingQuotesRange": [
+        469,
+        566
+      ],
+      "outcomes": {
+        "favourable": 2,
+        "conditional": 30,
+        "difficult": 40
       },
       "authorReadback": 72,
       "secondReadback": 72
@@ -325091,6 +325112,7038 @@
       ]
     },
     {
+      "key": "50/1/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2cc9fb75619c76b0b6369e8a9e9c0a1a0d23a0480a886a3c57534691b8264ead",
+      "bodyHan": 539,
+      "bodyHanExcludingQuotes": 506,
+      "shortHan": 71,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c451392dabba0f99d281905a27d99a8964f4e2b32cf9ee63a4e72b19da549b41",
+      "bodyHan": 537,
+      "bodyHanExcludingQuotes": 527,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/辰",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "d93d35bab3b978cbc5dedc0ef62181e850cd4bd818d19bde9d2401a8cd19a956",
+      "bodyHan": 540,
+      "bodyHanExcludingQuotes": 529,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e9c4dd50d56e84c9be027594d9bb66005febe57f118a5e70cc5262b4e29e22f1",
+      "bodyHan": 564,
+      "bodyHanExcludingQuotes": 549,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "1465799792dac1095fa3da34e380b17b39d4dea4f74dba73c65b55ae2f9d4b46",
+      "bodyHan": 547,
+      "bodyHanExcludingQuotes": 535,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/未",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6d593dd656382b46fb8cf0f30cec502d1eb8119100a105a7418cb1f570f047ab",
+      "bodyHan": 559,
+      "bodyHanExcludingQuotes": 544,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/申",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "4793d0ca79ae36e54e9d58d6fb03780f63d99e8555e32e8903898fa0f9a4c68c",
+      "bodyHan": 549,
+      "bodyHanExcludingQuotes": 539,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/酉",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "907b62ba49f6cb1a23c1a2be2c3d84dbe400982f62e41bc4280cdaa45783d9c0",
+      "bodyHan": 535,
+      "bodyHanExcludingQuotes": 506,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/戌",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "04ebdf9f229b4ea2440b9f6d9b2874f14956034f3a19d46706b7a0b033ba4926",
+      "bodyHan": 531,
+      "bodyHanExcludingQuotes": 500,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/亥",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "d15bc1185a341029bfdbed6f3ed308c8ac0da19ef691b52ed4f9e3ce22ec7e27",
+      "bodyHan": 565,
+      "bodyHanExcludingQuotes": 554,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/子",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "eb54b608ef3c402fdc2631bf352b0249b3c2724f07635f65ffdd33248a2cfa9f",
+      "bodyHan": 566,
+      "bodyHanExcludingQuotes": 563,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/1/丑",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c158ab5e6ddb75d3d52ac1dd72174b7948eda5c490d0d7b4c0d599e9231c3021",
+      "bodyHan": 552,
+      "bodyHanExcludingQuotes": 522,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          14
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "初六"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核对既有的消息时，参看可信来源能否提供帮助、原先误认的人或地点能否澄清",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a26f51a48f4effac3f1610868b10068bfa34ff1fc3c742ae331ec0eae6979c75",
+      "bodyHan": 567,
+      "bodyHanExcludingQuotes": 543,
+      "shortHan": 64,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "b361174869cc64deda32cb434c3c2835886538bd9adb2c61ce94b96c52a4dafc",
+      "bodyHan": 538,
+      "bodyHanExcludingQuotes": 535,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "dd7a69d9c297ad9cf04950c8de2bb7895ba9f69783f3ff8e1b247b4149d4ce32",
+      "bodyHan": 565,
+      "bodyHanExcludingQuotes": 552,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "de823817fce9b0de5cc4eaccf93de1b3ac5fe0ec1102d5825dd4270098ff7543",
+      "bodyHan": 539,
+      "bodyHanExcludingQuotes": 512,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f3e267fcfee73b6ac18469fb139fd296b97fe5e241a291d41fa6402b600ec5e5",
+      "bodyHan": 545,
+      "bodyHanExcludingQuotes": 538,
+      "shortHan": 67,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "cfdf905fc14b2601878c74dc576210cbbcd34a9ac7b45264677c739c7e5645cc",
+      "bodyHan": 531,
+      "bodyHanExcludingQuotes": 516,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "939d9404ca8cec92c7f392861d0256d82c211ed48bf62594472b0aa228ba49fb",
+      "bodyHan": 550,
+      "bodyHanExcludingQuotes": 543,
+      "shortHan": 64,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "4a9f9657bb3045778f165d65d1a0afe3d1e9cd575a05092d8a627293fdb84106",
+      "bodyHan": 530,
+      "bodyHanExcludingQuotes": 500,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "50118b3fc2e585be892707fe8518b02f2e78e73d6cc46f94ddd348fc78aa45b1",
+      "bodyHan": 550,
+      "bodyHanExcludingQuotes": 529,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/亥",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "feb4dfaedad9126babe60867f592c7d7ab218265b91d811dc621508437157f52",
+      "bodyHan": 543,
+      "bodyHanExcludingQuotes": 537,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/子",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "123739b3dad684b981970bd1603f150258bad900a38b515999c33f685eca400b",
+      "bodyHan": 523,
+      "bodyHanExcludingQuotes": 514,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/2/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c667b89779fe46a4e602f36f077525843f242d41740c5ab5114475f7080dc252",
+      "bodyHan": 531,
+      "bodyHanExcludingQuotes": 522,
+      "shortHan": 64,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          56
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_generates_use"
+          }
+        ],
+        "lineLabel": "九二"
+      },
+      "referenceDates": [
+        {
+          "event": "起初核查现有消息时，参看原话或可靠的近况能否得到接应",
+          "valence": "吉",
+          "role": "use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "opening-support"
+        }
+      ]
+    },
+    {
+      "key": "50/3/寅",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a7b887bda1e90accddb74d479a1867f987d56d1d7fc9cfa884d3234e65b25b2b",
+      "bodyHan": 535,
+      "bodyHanExcludingQuotes": 529,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/卯",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "469a6402c6dd9bd60483a35d60ee53950b5183b36d9c21cea8f5aac7b7d2d60b",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 504,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/辰",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e65d61c4a7dde74d804e719c90274f6c31b60a8af733df98ec92aeb0d73de9a3",
+      "bodyHan": 528,
+      "bodyHanExcludingQuotes": 518,
+      "shortHan": 64,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a5835ab1fc36e9df77578d069c4e77d7d2961b0c73345cf1158426cf64481eb4",
+      "bodyHan": 527,
+      "bodyHanExcludingQuotes": 515,
+      "shortHan": 68,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e68501bd9f367282f1c8cace5611d7e60b5a78f37e2d14b4e8abb8d67bd3169f",
+      "bodyHan": 515,
+      "bodyHanExcludingQuotes": 495,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/未",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "8e0f9989d625c8272949924624e0e12e0e2010390037736adaf4e01857f8c95f",
+      "bodyHan": 505,
+      "bodyHanExcludingQuotes": 472,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "01334ac99d3aecc013e05fd9e77d40bb0e3a6a0f9d75e891cfb4739ba78f636b",
+      "bodyHan": 533,
+      "bodyHanExcludingQuotes": 529,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "ed55aeade1b73c48fde9625dc176adc3251ed78df9e52c7db8a3de01a4971940",
+      "bodyHan": 542,
+      "bodyHanExcludingQuotes": 536,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/戌",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "313e2933f994b8d74b230627ec60e265da50cd1d81c57b9366a211a23fbc5aed",
+      "bodyHan": 506,
+      "bodyHanExcludingQuotes": 491,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "6d306512cc78d4b0e344f149804d128e077ff8c016bf0b5e5bbc3bf96bffba8e",
+      "bodyHan": 526,
+      "bodyHanExcludingQuotes": 508,
+      "shortHan": 68,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "e8451d09d0d3242e622022b8316321550c74d27e6b46f294873851c255eeed5f",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 502,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/3/丑",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9cc9b236d0321962d5b1c26a409a9aacccfdeada7a712a84c854d8867dadfcc6",
+      "bodyHan": 507,
+      "bodyHanExcludingQuotes": 481,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          64
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "坎",
+            "element": "水",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "use_generates_body"
+          },
+          {
+            "role": "use_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "body_mutual",
+            "type": "body_controls_use"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "九三"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和眼下所在时，参看仍有什么阻力需要查清",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "亥",
+            "子"
+          ],
+          "displayedDates": [
+            "2026-11-21",
+            "2026-11-22"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/寅",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0464ac12a837047d6404c991a846171253f244f6dae588746989e961448548bb",
+      "bodyHan": 515,
+      "bodyHanExcludingQuotes": 498,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/卯",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "896d3236c8a733eb0f324605813995d1d5479a380d32761fd02d791be2abc253",
+      "bodyHan": 516,
+      "bodyHanExcludingQuotes": 489,
+      "shortHan": 68,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "50edf61aa5d7f469813037931896bd1dde1f0eb68c0d95f3ed8debf96319d483",
+      "bodyHan": 552,
+      "bodyHanExcludingQuotes": 533,
+      "shortHan": 71,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/巳",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0c6c976a0cd80a1d4db5415a19e9bb680f5afe0358bc7d5d818c2a769f7ebf95",
+      "bodyHan": 528,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/午",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "69eb043e8f8c3dd93045ad99c21148db2e6950708fe02228cb703ace5ecae09b",
+      "bodyHan": 531,
+      "bodyHanExcludingQuotes": 515,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f38ff8ca88452d5ef877cc64d0c50b15990e07f3eb28f875c9456a5aceee3bf7",
+      "bodyHan": 534,
+      "bodyHanExcludingQuotes": 514,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "55a98f2f58456e3417cfa510d9d2a2cf9c8cf9e97b26779040405c7cbe68e75e",
+      "bodyHan": 527,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0785bd62923f214a1a07cdca083a35d8e79990553cc73987bf40d20bc3ff907b",
+      "bodyHan": 537,
+      "bodyHanExcludingQuotes": 519,
+      "shortHan": 63,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "58b10d2955fd850e2ec9bfb61869c888b83b49dc0d2c43e8f8b0d3170d1cf70f",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 515,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "de6c1093b3e8f22f621c044f3dab333e9f0773457ac6e77aa650b1d29716115e",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 509,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a9e7183e1490bb9743a3777615c9cc3c6ec0b8b36b6d0865c6751742c91e5104",
+      "bodyHan": 512,
+      "bodyHanExcludingQuotes": 509,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/4/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "000f62ea30ac69d1dce803d2e8efa3e60120c9041e7d55a98407709eee882669",
+      "bodyHan": 516,
+      "bodyHanExcludingQuotes": 510,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          18
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "艮",
+            "element": "土",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "body_controls_use"
+          }
+        ],
+        "lineLabel": "九四"
+      },
+      "referenceDates": [
+        {
+          "event": "过程中核准已有见闻的来源和所指时，参看核查可能受阻之处",
+          "valence": "凶",
+          "role": "body_mutual",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "process-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/寅",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "bbb38a5d7ce7ca8e44e81dd6fa54d0f39a6e7be4453e3ad806780dccd913724e",
+      "bodyHan": 526,
+      "bodyHanExcludingQuotes": 518,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/卯",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9f87fe62e16403a7a06deb74e8ef0bcde524285b097293d5e8f532a4d2606a90",
+      "bodyHan": 529,
+      "bodyHanExcludingQuotes": 511,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "b3c909c79fb528e0bf69ec4817aaa5643bf1bed0172ee2389a161d446adb131e",
+      "bodyHan": 515,
+      "bodyHanExcludingQuotes": 494,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/巳",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f58f11512a987d522981725e6190870043f4e15995ae3a4acf9389e279f244ca",
+      "bodyHan": 514,
+      "bodyHanExcludingQuotes": 493,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/午",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2a77171a5f988e3864fcf263ff4bc32378cf9ac6bcec5ecc3b534ea87107b4d6",
+      "bodyHan": 517,
+      "bodyHanExcludingQuotes": 506,
+      "shortHan": 74,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "7f38b3d4ccab50ef9fed634c7da4ba6d5711a8e1103243101cf8eb69204cbc61",
+      "bodyHan": 511,
+      "bodyHanExcludingQuotes": 506,
+      "shortHan": 63,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f5d3ceab900bdc8169fb179abcd5c11d6b1a24c3c0e9e4655e60cdc812b483f2",
+      "bodyHan": 537,
+      "bodyHanExcludingQuotes": 528,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "60a9eb78f894447e339855ccaa8bdd0d631c86dbda0ed2039dac8135e5545de2",
+      "bodyHan": 519,
+      "bodyHanExcludingQuotes": 509,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "1376dccfd198761bef1bad41e7a2c7ee49c6fc8ee86779cc8d98c658ef457b14",
+      "bodyHan": 522,
+      "bodyHanExcludingQuotes": 492,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/亥",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "2fd12c94475540c421c695aebe04750d8aabe91512b00d8df2bbeb2d1533d444",
+      "bodyHan": 516,
+      "bodyHanExcludingQuotes": 511,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/子",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "962e3c8842fe64ea285f3a357f8e1ff52352672388c59307f7c3505d1e00454d",
+      "bodyHan": 529,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/5/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "580d855c1e07f653cfaa2883999e7570b16a3bc50f7e8c571e83135c4a14a683",
+      "bodyHan": 517,
+      "bodyHanExcludingQuotes": 512,
+      "shortHan": 66,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          44
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "use_controls_body"
+          }
+        ],
+        "lineLabel": "六五"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾认准消息涉及的是本人、所说是眼下所在时，参看还须核明的阻处",
+          "valence": "凶",
+          "role": "changed_use",
+          "branches": [
+            "申",
+            "酉"
+          ],
+          "displayedDates": [
+            "2026-11-30"
+          ],
+          "scope": "closing-control"
+        }
+      ]
+    },
+    {
+      "key": "50/6/寅",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c7c85ec0c691d99cfa04ddf3c48ef8b15836dfbb58054289f4a6e21fd9e9ba1f",
+      "bodyHan": 501,
+      "bodyHanExcludingQuotes": 469,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/卯",
+      "outcome": "favourable",
+      "legacyContactOutcome": "favourable",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "9dd01df921cb045fa940344a98b2ea93578f6491884bd72d5f36b88e68bae7ba",
+      "bodyHan": 507,
+      "bodyHanExcludingQuotes": 485,
+      "shortHan": 63,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "相"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "囚"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "旺"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "旺"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/辰",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "06337eaa7eb2604f631f9e91eeaaef2ed4c6a2e39f3e469192c8a35ba1a7521c",
+      "bodyHan": 503,
+      "bodyHanExcludingQuotes": 496,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/巳",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "8f355a5fd70cf62641b269fc6b6d73ecf8d8c12a7c3aa0d0664cae8de811182f",
+      "bodyHan": 513,
+      "bodyHanExcludingQuotes": 503,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/午",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "c0d9b99f4b3333ed1eef7f442727d680233e843607274f7bee745814de7157dd",
+      "bodyHan": 517,
+      "bodyHanExcludingQuotes": 512,
+      "shortHan": 68,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "旺"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "死"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "休"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "休"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/未",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "a26e4e90d54c606d31a217df39c99d8d0f4864f4697f8ac301e7602320e914a2",
+      "bodyHan": 510,
+      "bodyHanExcludingQuotes": 507,
+      "shortHan": 63,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/申",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "8d5949a39fba3f7060f6a191eb9cf8fcb9001c39e562b6c44987f1675c547244",
+      "bodyHan": 547,
+      "bodyHanExcludingQuotes": 534,
+      "shortHan": 62,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/酉",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "f7731ea24d66f2dd5c694860515e7a62b3a659ebe7e9e24f539d170cedbbe4a2",
+      "bodyHan": 523,
+      "bodyHanExcludingQuotes": 520,
+      "shortHan": 64,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "囚"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "旺"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "死"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "死"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/戌",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "0242913c6cddc488edc7ed9f7adac85f61f06aa2693c57a3c3a4918d712a8356",
+      "bodyHan": 533,
+      "bodyHanExcludingQuotes": 530,
+      "shortHan": 65,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/亥",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "61d487658e353e063d4e5b6dac1086dcb5cc97f447338f9a28d09123a31c56f0",
+      "bodyHan": 534,
+      "bodyHanExcludingQuotes": 531,
+      "shortHan": 63,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/子",
+      "outcome": "conditional",
+      "legacyContactOutcome": "conditional",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "952b846c478149f04d6d94a8a7bcbf4b70e44c902afbbbdba1c1bb35eb4c6830",
+      "bodyHan": 591,
+      "bodyHanExcludingQuotes": 566,
+      "shortHan": 61,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "死"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "休"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "相"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "相"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
+      "key": "50/6/丑",
+      "outcome": "difficult",
+      "legacyContactOutcome": "difficult",
+      "legacyOutcomeIsNotSearchEvidence": true,
+      "articleSha256": "d517a88fff0cb17d02c6032ddbf54cc6300f8a45cfb21a2066b26d62e4077fad",
+      "bodyHan": 525,
+      "bodyHanExcludingQuotes": 497,
+      "shortHan": 60,
+      "facts": {
+        "bits": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "stageIds": [
+          50,
+          43,
+          32
+        ],
+        "nodes": [
+          {
+            "role": "use",
+            "trigram": "离",
+            "element": "火",
+            "qi": "休"
+          },
+          {
+            "role": "body",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "use_mutual",
+            "trigram": "兑",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "body_mutual",
+            "trigram": "乾",
+            "element": "金",
+            "qi": "相"
+          },
+          {
+            "role": "changed_use",
+            "trigram": "震",
+            "element": "木",
+            "qi": "囚"
+          },
+          {
+            "role": "body_inherited",
+            "trigram": "巽",
+            "element": "木",
+            "qi": "囚"
+          }
+        ],
+        "relations": [
+          {
+            "role": "use",
+            "type": "body_generates_use"
+          },
+          {
+            "role": "use_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "body_mutual",
+            "type": "use_controls_body"
+          },
+          {
+            "role": "changed_use",
+            "type": "equal"
+          }
+        ],
+        "lineLabel": "上九"
+      },
+      "referenceDates": [
+        {
+          "event": "收尾核准本人和现处时，参看既有线索能否得到后续衔接",
+          "valence": "吉",
+          "role": "changed_use",
+          "branches": [
+            "寅",
+            "卯"
+          ],
+          "displayedDates": [
+            "2026-11-24",
+            "2026-11-25"
+          ],
+          "scope": "closing-equal"
+        }
+      ]
+    },
+    {
       "key": "64/1/寅",
       "outcome": "difficult",
       "legacyContactOutcome": "conditional",
@@ -331675,8 +338728,8 @@
   "warnings": [],
   "duplicates": [],
   "nearDuplicates": [],
-  "chartComparisons": 90000,
-  "dateCases": 10800,
+  "chartComparisons": 91800,
+  "dateCases": 11016,
   "bodyHanRange": [
     500,
     640
