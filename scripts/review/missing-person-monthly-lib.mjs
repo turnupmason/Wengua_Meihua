@@ -65,6 +65,7 @@ export const SOURCE_REFS={
  'LVSHI-CHACHUAN-DING':{title:"《吕氏春秋·慎行论·察传》宋之丁氏",url:"https://ctext.org/text.pl?if=gb&node=24003&remap=gb&show=parallel",scope:"丁氏说明所省是一人外出汲水之劳，未在井中发现人；用于辨清转述中的得人对象，不取古事为实际寻人地点。"},
  'ZZ-TIANDAO-LUNBIAN':{title:"《庄子·天道》轮扁斲轮章",url:"https://ctext.org/text.pl?if=gb&node=42076&show=parallel",scope:"轮扁论亲手所得难以全由言语授人，对照熟人能辨却未必善于向陌生人描摹，不把言不尽意当作保真的保证。"},
  'ZY-TONGREN13-YE':{title:"《周易正义》同人卦首及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/02同人.txt",scope:"同人于野，孔疏以和同于人、所及广远解释。对读不添现实同行者，不把野字坐实为郊外或荒地。"},
+ 'SHU-SHUOMING-YANMEI':{title:"《尚书·说命下》盐梅和羹之喻",url:"https://ctext.org/text.pl?if=gb&node=37559&remap=gb",scope:"王对傅说以盐梅调羹比喻辅导与匡正。用于区分提供语言帮助及亲历辨认，不以食物猜人所在。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
