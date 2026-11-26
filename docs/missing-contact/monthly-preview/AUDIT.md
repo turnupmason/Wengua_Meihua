@@ -2,53 +2,59 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 泽地萃全卦及上六定稿
+
+本卦七十二篇，寻获较有希望六篇、有机会四十二篇、较难二十四篇。前三爻以兑金为体，后三爻以坤土为体。初、二取本坤生兑，三取末艮生兑，土日所参依次为初查、初查及收尾。四取互巽克坤的过程限制，五取末震克坤的收尾限制，虽同为木日而应事各异。上六首兑末乾皆由坤体所生，中有巽克、艮和，无直接生体，上居萃极未得应援，各月较难。中段受制并没有在上六另对应到具体日级事件，故十二篇均不排应期。[萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
+
+上六据孔疏分涕、洟，不凭古字断伤病，五非所乘是王注而非爻辞。寅卯辰辨流泪、无应援与忧心属于谁；巳午未辨里程起点、所观察的环境与雨天回忆。申酉不以乘字或问路推出现实行程，戌退回近似既刊物主辨认的旧稿，改写约还日、签收日能证明何事。亥核代读与原话、子核亲属称谓，丑分无应期与现实约定。正式稿全文 505–574 汉字，各篇均有作者核读与独立读者的最终摘要，1,800 项盘面对照、216 个日期用例、重复与正式渲染检查通过。[萃卦七十二篇](hex-045.md) · [作者核读](../../../sources/editorial/missing-contact/reviews-monthly/hex-045.json) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-045.json)
+
 ## 泽地萃九五十二月定稿
 
 以坤为体，初生本兑，中有巽克与艮和，末震木再克坤。春冬木得时而体弱，秋初泄于旺兑、中末尚有克，三季寻获较难。夏体相、季土体旺，艮和较有助而两处木克较缓，留有机会。取木日参收尾震克体，虽与九四同见 11 月 24、25 日，不能将震克移成中段巽克，也不能以匪孚、永贞、悔亡排本人答话日。
 
-巳区分小象志未光与画面明暗；午核月日与年份，删去未顾闰日的说法；未不以一刻空座倒推本人从未到过。申对照两地钟表，酉认清被核身份的是哪一方，戌把同日发生同先后顺序分开。亥从上游实指核河段，子分署名者与被提及的人，丑确认「一度失联」之后实有何种消息。十二篇均独立核读，300 项盘面对照、36 个日期用例通过。[九五十二篇](hex-045-first-read.md#九五动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [九五独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-5-accepted-readback.json)
+巳区分小象志未光与画面明暗；午核月日与年份，删去未顾闰日的说法；未不以一刻空座倒推本人从未到过。申对照两地钟表，酉认清被核身份的是哪一方，戌把同日发生同先后顺序分开。亥从上游实指核河段，子分署名者与被提及的人，丑确认「一度失联」之后实有何种消息。十二篇均独立核读，300 项盘面对照、36 个日期用例通过。[九五十二篇](hex-045.md#九五动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [九五独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-5-accepted-readback.json)
 
 ## 泽地萃九五首三篇
 
 本兑金受下坤体土所生，互艮比和，互巽和末变震木均克坤。寅卯坤土死、木旺，中末两克重而艮和力薄，较难；辰令土旺木囚，艮比有力，若有可信人地所据仍有寻获机会。九五本有盛位，《正义》以四专而据、己德未行解匪孚；元永贞、悔亡以久行其正、其悔可消解释。示例木日仍是 11 月 24、25 日，本爻取的是末震克体，参收尾核实，不能照搬九四用互巽的过程限制。
 
-寅换去近似旧稿的「是否撒谎」问题，改辨两位亲友所说失联以后的起点。卯区分转话集中于一人和见闻本来出于同一人；两人各自目击同一件事，仍保留各自的证言。辰读明「亡」所指是悔可消，不能断真人生死、悔悟或回返。三篇通过 75 项盘面对照、9 个日期用例及独立复核。[九五寅卯辰](hex-045-first-read.md#九五动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [首批独立回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-5-first-three-accepted-readback.json)
+寅换去近似旧稿的「是否撒谎」问题，改辨两位亲友所说失联以后的起点。卯区分转话集中于一人和见闻本来出于同一人；两人各自目击同一件事，仍保留各自的证言。辰读明「亡」所指是悔可消，不能断真人生死、悔悟或回返。三篇通过 75 项盘面对照、9 个日期用例及独立复核。[九五寅卯辰](hex-045.md#九五动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [首批独立回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 泽地萃九四十二月定稿
 
 九四动在上卦，下坤土转作体，上兑金为本用，卦变水地比。初坤生兑而泄，互巽木克坤，互艮土与体比和，末体土克变坎水。春冬木旺相而坤弱，秋旺兑耗休坤，三季寻获较难；季土与夏令尚可承互艮之助，末制弱水，寻获有机会。本爻据用互巽克体取中段木日。2026-11-21 演示，11 月 24、25 日只参核验所受限制；「凶应」不指真人遇险，「大吉」亦有阳居阴位、须任事立功的条件。地理从本兑取西方，泽、水际等从卷一原类。[萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [梅花原文](../../../sources/original/meihua-volumes-1-3.txt)
 
-寅卯分大吉条件及三阴爻数，辰两次退回与旧篇近题的草稿，终稿辨过生日的那一次相见与生日本日。巳分同一启事不同版本的展示状态，午辨约定用语，未分别西门之名与门西一侧；申、酉、戌各查否定问答、号码地域与接话地点、重录归并。亥因旧题近似退修，改写两份见闻同报名却可能指向不同停靠点，子不据查无一名就断本人不在，丑不以木日凶应报告安危。十二篇均已独立回读，300 项盘面对照、36 个日期用例通过。[九四十二篇](hex-045-first-read.md#九四动--寅月) · [九四独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-4-accepted-readback.json)
+寅卯分大吉条件及三阴爻数，辰两次退回与旧篇近题的草稿，终稿辨过生日的那一次相见与生日本日。巳分同一启事不同版本的展示状态，午辨约定用语，未分别西门之名与门西一侧；申、酉、戌各查否定问答、号码地域与接话地点、重录归并。亥因旧题近似退修，改写两份见闻同报名却可能指向不同停靠点，子不据查无一名就断本人不在，丑不以木日凶应报告安危。十二篇均已独立回读，300 项盘面对照、36 个日期用例通过。[九四十二篇](hex-045.md#九四动--寅月) · [九四独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-4-accepted-readback.json)
 
 ## 泽地萃六三十二月定稿
 
 六三以本坤、互艮、末艮三土生兑，互巽木受体金所制。春冬生力薄，夏有相土生弱金，季土和秋月亦有生扶可承。爻位上三近四失其所聚，往上有所合而犹小吝；各月皆取有条件的寻获机会。朱熹戒占者去强援、结穷交，与三、上同阴并非阴阳正应分别读。土日参末艮生兑的收尾帮助，不能以往上改取上兑金日，不能以小吝定危险。例日起算见 11 月 23、26 日。
 
-巳辨报信人就说错方向致歉与新消息是否可信，午不从穷交推经济情况；未按实据分清远近两位所能证明的事。申不强迫在有限照片中择一，酉辨同一原话重听后新辨「曾」字及其时点，戌分钟快十分钟与提早赴约。亥核嗟叹者与转述内容，子不用熟称估龄，丑分注家所言往上与实际变在下卦。十二篇已完成独立终读、300 项盘面对照和 36 个日期用例。[六三十二篇](hex-045-first-read.md#六三动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [六三独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-3-accepted-readback.json)
+巳辨报信人就说错方向致歉与新消息是否可信，午不从穷交推经济情况；未按实据分清远近两位所能证明的事。申不强迫在有限照片中择一，酉辨同一原话重听后新辨「曾」字及其时点，戌分钟快十分钟与提早赴约。亥核嗟叹者与转述内容，子不用熟称估龄，丑分注家所言往上与实际变在下卦。十二篇已完成独立终读、300 项盘面对照和 36 个日期用例。[六三十二篇](hex-045.md#六三动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [六三独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-3-accepted-readback.json)
 
 ## 泽地萃六三首三篇
 
 六三动而成泽山咸，体兑金受本坤、互艮与末艮三处土生，互中巽木由体所制。春土死、兑囚、巽旺，生助薄而制木费力；辰令三土旺，兑相能制囚巽，助力较厚。六三近四与往上有别，遇到的材料确实能对到本人，才可凭以寻获，不能以三处土生机械升级成无条件可得。本爻以末艮生兑取土日，与六二的本坤得助分居收尾与起初。示例 11 月 23、26 日所参亦依此区分。
 
-寅据孔疏区分上六柔巽待物与互卦的巽木，均不能给出第二份东南见闻。卯以误认一人说明前一消息无用不能作废其余可靠线索，对应近四无攸利、往上无咎小吝。辰辨王注「同志」本指三与上六可相求，不拿两爻关系证明真人共事、同行或共同在场。三篇 75 项盘面对照和 9 个日期用例通过，独立读者已复核终稿。[六三寅卯辰](hex-045-first-read.md#六三动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-3-first-three-accepted-readback.json)
+寅据孔疏区分上六柔巽待物与互卦的巽木，均不能给出第二份东南见闻。卯以误认一人说明前一消息无用不能作废其余可靠线索，对应近四无攸利、往上无咎小吝。辰辨王注「同志」本指三与上六可相求，不拿两爻关系证明真人共事、同行或共同在场。三篇 75 项盘面对照和 9 个日期用例通过，独立读者已复核终稿。[六三寅卯辰](hex-045.md#六三动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [首批二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 泽地萃六二十二月定稿
 
 六二仍以上兑金为体，本坤与互艮土生兑，互巽木受兑制；由萃之困，末变用坎水受体金所生。季土旺土生相金，夏相土生弱金，秋休土生旺金；春冬生力薄，冬末旺水泄体尤重。各月循实信留寻获机会，所取土日皆参本坤生兑的初查助力，不能将殷春祭之时移作寻获日期。寅分清王弼所说殷时祭名与孔疏明说的殷春祭，丑把独正者危还给六二在萃时所处的义理，不作真人处境。[萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
 
-辰退回近似旧住址稿，改辨「同前」承接哪一栏；巳由资料长短重写为酬谢不定消息真假；午核推荐为人与亲自识人，未分省略点及缺文，申辨译作「家」所指的是谁或何处。酉补困九二对读直链，困九二虽有享祀，不能将两处祭辞当两份寻人消息。戌以旧地名问见人时点，亥辨邮戳、子核时间下限。全爻 300 项盘面对照、36 个日期用例及十二篇独立终读通过。[六二十二篇](hex-045-first-read.md#六二动--寅月) · [困卦对读](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [六二独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-2-accepted-readback.json)
+辰退回近似旧住址稿，改辨「同前」承接哪一栏；巳由资料长短重写为酬谢不定消息真假；午核推荐为人与亲自识人，未分省略点及缺文，申辨译作「家」所指的是谁或何处。酉补困九二对读直链，困九二虽有享祀，不能将两处祭辞当两份寻人消息。戌以旧地名问见人时点，亥辨邮戳、子核时间下限。全爻 300 项盘面对照、36 个日期用例及十二篇独立终读通过。[六二十二篇](hex-045.md#六二动--寅月) · [困卦对读](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt) · [六二独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-2-accepted-readback.json)
 
 ## 泽地萃初六十二月定稿
 
 下坤、互艮两土生上兑金，互巽与末震木为体所制。春冬两土生力薄，体制旺相之木费力；夏两土相而体金死，仍须有实际助力相接。此三季留寻获机会。季土旺土生相金、秋令旺金能制弱木，寻获较有希望。示例 2026-11-21 起卦，11 月 23、26 日因本坤土生体而参初查能否得助，不能分派给本坤、互艮各应一个日期，亦不由若号、往无咎预告本人回话。
 
-巳分安慰之语与说话者实知的近况；午原稿与姤九二巳撞题，重写为两边是否各有办法联系对方；未分「见着能认」与「已认出来」。申辨有孚不终所指；酉由泛说署名，退修为各人所辨的人、地能否接到同一份见闻；戌分消息里的来向与爻辞里的往。亥分答谢中的客气与明确表示认不准，子核「我们这里」所指的实际范围，丑问候选日期与实际已知事实。十二篇独立二读，300 项盘面对照、36 个日期用例通过。[初六逐月稿](hex-045-first-read.md#初六动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [初六独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-1-accepted-readback.json)
+巳分安慰之语与说话者实知的近况；午原稿与姤九二巳撞题，重写为两边是否各有办法联系对方；未分「见着能认」与「已认出来」。申辨有孚不终所指；酉由泛说署名，退修为各人所辨的人、地能否接到同一份见闻；戌分消息里的来向与爻辞里的往。亥分答谢中的客气与明确表示认不准，子核「我们这里」所指的实际范围，丑问候选日期与实际已知事实。十二篇独立二读，300 项盘面对照、36 个日期用例通过。[初六逐月稿](hex-045.md#初六动--寅月) · [萃卦注疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [初六独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-1-accepted-readback.json)
 
 ## 泽地萃初六首三篇
 
 萃初六以上兑金为体，下坤土生兑。互卦风山渐，艮土生体，巽木受体所制；末变泽雷随，兑体制震木。寅卯土死、金囚、木旺，两处相生力薄，制木亦费力，仍留循可靠消息寻获的机会。辰令土旺金相木囚，初中生助与后段制用均较有力，寻获较有希望。三篇均取本坤生兑，土日只参起头核实本人消息能否得助。地理据《梅花易数》卷一坤类的田野、乡里、平地、西南方。
 
-寅据孔疏讲明初应四、因见三承四而疑，辨家人起疑与失联者负约。卯核对王孔解一握为小、朱熹以众笑释之，均无现实中的身体接触之说。辰区分澄清原疑与新得到的当前下落。三篇对照盘面 75 项，日期用例 9 个。[萃初六寅卯辰](hex-045-first-read.md#初六动--寅月) · [萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-1-first-three-accepted-readback.json)
+寅据孔疏讲明初应四、因见三承四而疑，辨家人起疑与失联者负约。卯核对王孔解一握为小、朱熹以众笑释之，均无现实中的身体接触之说。辰区分澄清原疑与新得到的当前下落。三篇对照盘面 75 项，日期用例 9 个。[萃初六寅卯辰](hex-045.md#初六动--寅月) · [萃卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05萃.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-045/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 天风姤全卦及上九定稿
 
