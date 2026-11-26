@@ -60,6 +60,7 @@ export const SOURCE_REFS={
  'MZ-JINXIN-XIA-WUCHENG':{title:"《孟子·尽心下》读《武成》章",url:"https://ctext.org/wiki.pl?chapter=497377&if=gb",scope:"孟子有取于《武成》而质疑过辞。这是读书辨言的对照，不增加革九三的应期、证人数或险情判词。"},
  'ZY-SUI17-SHISHI':{title:"《周易正义》随卦彖传及疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/03隨.txt",scope:"对读随彖“天下随时”及王孔释义，因时调整查问不等于断定本人跟随了某人，不另立寻人应期。"},
  'SHIJING-BAIJU-YONG':{title:"《诗经·小雅·白驹》首章及《诗集传》",url:"https://ctext.org/wiki.pl?chapter=332478&if=gb&remap=gb",scope:"诗借系驹表达惜别愿留之情。愿望的表达不能作本人已经在场、同意留下或后来去向的依据。"},
+ 'MOE-SHAN-XING':{title:"《重编国语辞典修订本》“單”字姓氏读音",url:"https://dict.revised.moe.edu.tw/dictView.jsp?ID=8971&la=0&powerMode=0",scope:"核“單”的姓氏读音可为 shàn，供口头认姓时对照；字典例义不能作为现实辨认本人身份的证据。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
