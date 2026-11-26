@@ -17,6 +17,8 @@ export const REL_LABELS={equal:'与体比和',body_controls_use:'受体所克',u
 export const DIRECTIONS={乾:'西北',坤:'西南',震:'东方',巽:'东南',坎:'北方',离:'南方',艮:'东北',兑:'西方'};
 export const VERDICTS={favourable:'寻获的传统支持较充分',conditional:'尚有寻获机会，须满足正文中的条件',difficult:'此次寻获困难'};
 export const SOURCE_REFS={
+ 'ZY-SUI17-BENYI-COMPARISON':{title:'朱熹《周易本义》卷一·随上六（对读）',url:'../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷1.txt',scope:'升六四本义指义见随卦，于此核随上六的西山、祭享之解释。'},
+ 'YC-SHENG46':{title:'程颐《伊川易传》卷三·升卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷3.txt',scope:'升六四止其所、顺上而进贤与王业之亨，依程传本释。'},
  'ZY-SHI7-3-COMPARISON':{title:'《周易正义》师卦六三（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/02師.txt',scope:'升九三变师，辨别本卦实动爻与师卦同位之辞，师六三不作本盘的第二条动爻。'},
  'ZY-CUI45-2-COMPARISON':{title:'《周易正义》萃卦六二（对读）',url:'https://zh.wikisource.org/wiki/周易正義/05萃',scope:'升九二与萃六二共有孚乃利用禴之辞，两爻各依本卦动爻、体用和月令判断。'},
  'ZY-KUN47-2-COMPARISON':{title:'《周易正义》困卦九二（对读）',url:'https://zh.wikisource.org/wiki/周易正義/05困',scope:'萃六二变困时，仅对读两卦各自的祭礼文字，动爻仍为萃六二。'},
