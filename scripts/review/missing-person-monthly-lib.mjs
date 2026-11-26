@@ -206,6 +206,7 @@ export const SOURCE_REFS={
  'ZY-SHUOGUA-GEN-CHENG':{title:"《周易正义·说卦》艮成终成始",url:"../../../sources/reference/zhouyi-zhengyi-hans/09.05.txt",scope:"孔疏以丑寅交界说明成终成始的古义，实占用所给月令。"},
  'ZY-YY-LV56-L4-ZHAI':{title:"魏了翁《周易要义》卷六上·旅九四",url:"https://zh.wikisource.org/wiki/周易要義_(四庫全書本)/卷06上",scope:"所录音义写明虞喜《志林》齐当作斋、斋戒入庙而受斧，亦载应劭训齐为利。"},
  'ZY-JIJIE56-L5':{title:"李鼎祚《周易集解》卷十一·旅六五",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻据坎弓、离矢和五变乾解射雉，誉谓二、巽为命。干宝以禄父旧事释经，古注事例不当真人经历。"},
+ 'YC-XUN57-L1':{title:"程颐《伊川易传》卷四·巽初六",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"阴柔居卑过于巽，进退志疑，以武人刚贞修立其志；不作真人动机或强制寻人的依据。"},
  'YC-LV56-L6':{title:"程颐《伊川易传》卷四·旅上九",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"以牛为顺物，丧牛于易解释为忽易以失其顺德；阳刚不中、处极与离火炎上解释爻戒，不认定真人动机、财物或安危。"},
  'YC-LV56-L5':{title:"程颐《伊川易传》卷四·旅六五",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程颐以得中文明、发无不中释射雉，又训誉为令闻，命为福禄。"},
  'MH-SHIYING-MONTHLY':{title:"《梅花易数》卷三·占卜十应诀",url:"../../../sources/revised/meihua-volumes-1-3.txt",scope:"今日与明日虽可同卦，仍照正互变及占时诸应，不按旧断替新情况定结果。"},
