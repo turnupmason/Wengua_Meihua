@@ -4,7 +4,7 @@
   "questionId": "search.missing-contact.locate-preview",
   "primaryId": 3,
   "status": "second-read-complete",
-  "editor": "/root/source_audit",
+  "editor": "历史独立读及定向复读：/root/source_audit；/root/write_dui58",
   "reviewerIsHuman": false,
   "userIndividuallyAccepted": false,
   "realWorldPredictionAccuracy": "not-validated",
@@ -18,7 +18,7 @@
     6
   ],
   "sourcePath": "sources/editorial/missing-contact/monthly/hex-003.json",
-  "sourceSha256": "379b8c4b7b0311e9184d3216508bcd7afd6236ca04b0149f121d72f94a2db5b5",
+  "sourceSha256": "b81d0510a607cc4bbcb4979da0ee893cc90e49a3f466be6c306ba67f371249ce",
   "reviewedAt": "2026-11-22T03:36:55.033Z",
   "independence": "本读者没有参与屯72篇写作或首轮编辑。源冻结后，按每批6篇完整阅读72篇全部字段，独立记录逐篇意见，提出五篇局部措辞整理；原作者修改后，本读者完整重读这5篇全部字段。未复制作者逐篇意见，不把本次AI第二读称为真人专家审稿、用户逐篇接受或现实预测效度验证。",
   "fieldsRead": [
@@ -897,14 +897,17 @@
     },
     {
       "key": "3/2/亥",
-      "articleSha256": "b7f96fba9da8d8b745c95c0b3002da2258d5493f1073eff99faa818c484b0097",
+      "articleSha256": "25d3003e83ba450d5053123776d26dfba8655cb005c375bb5b79b1987691155a",
       "articleSha256AtRead": "b7f96fba9da8d8b745c95c0b3002da2258d5493f1073eff99faa818c484b0097",
       "initialArticleSha256": "b7f96fba9da8d8b745c95c0b3002da2258d5493f1073eff99faa818c484b0097",
       "wholeArticleRead": true,
       "changedAfterInitialRead": false,
       "wholeFinalArticleReread": false,
-      "finding": "旺水承泄、囚土弱克、休兑仍生体三段相接支持积极判断，未把普通休态当失效。守事实而随新实据修订旧路线解释有用；处境得相得生只作传统参照，时间栏未沿用旧复联应期。",
-      "initialFinding": "旺水承泄、囚土弱克、休兑仍生体三段相接支持积极判断，未把普通休态当失效。守事实而随新实据修订旧路线解释有用；处境得相得生只作传统参照，时间栏未沿用旧复联应期。"
+      "finding": "新首句先迟回再后援，保持旺坎可承、囚土轻克、休兑生扶，十年婚媾与安危应期各守原义；其他字段不变。末版整篇全字段复读通过。",
+      "initialFinding": "旺水承泄、囚土弱克、休兑仍生体三段相接支持积极判断，未把普通休态当失效。守事实而随新实据修订旧路线解释有用；处境得相得生只作传统参照，时间栏未沿用旧复联应期。",
+      "styleReader": "/root/write_dui58",
+      "previousArticleSha256": "b7f96fba9da8d8b745c95c0b3002da2258d5493f1073eff99faa818c484b0097",
+      "previousFinding": "旺水承泄、囚土弱克、休兑仍生体三段相接支持积极判断，未把普通休态当失效。守事实而随新实据修订旧路线解释有用；处境得相得生只作传统参照，时间栏未沿用旧复联应期。"
     },
     {
       "key": "3/2/子",
@@ -1459,5 +1462,15 @@
   ],
   "blockingFindingsRemaining": 0,
   "reviewGeneratedByScript": false,
-  "recordingMethod": "逐批实际完整阅读后由独立读者写72条具体意见与6爻总结，作者改后全读受影响5篇。此脚本只保存已写阅读意见、已核版本与差异及哈希，不用批量生成意见冒充审读。"
+  "recordingMethod": "逐批实际完整阅读后由独立读者写72条具体意见与6爻总结，作者改后全读受影响5篇。此脚本只保存已写阅读意见、已核版本与差异及哈希，不用批量生成意见冒充审读。",
+  "styleRepair": {
+    "previousSourceSha256": "379b8c4b7b0311e9184d3216508bcd7afd6236ca04b0149f121d72f94a2db5b5",
+    "previousEditor": "/root/source_audit",
+    "independentEditors": [
+      "/root/write_dui58"
+    ],
+    "articlesRevised": 1,
+    "unchangedHistoricalArticles": 71,
+    "note": "本轮仅修改标出的起首段或简断；其余对象与历史全文核读回执逐项SHA一致。新对象全部字段由相应首编及不同独立阅读人实读，历史未改对象不声称本轮重读。原判、五态、出处、应期及三栏不变。"
+  }
 }
