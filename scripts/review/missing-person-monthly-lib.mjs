@@ -165,6 +165,7 @@ export const SOURCE_REFS={
  'YC-FENG55-L2':{title:"《伊川易传》卷四·丰六二",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"程颐以己之孚信感发上之心志，和孔疏六二自发、九家信著于五分别读。"},
  'ZY-JIJIE55-L3':{title:"《周易集解》卷十一·丰九三",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以沬为小星，又借兑取折与右、噬嗑艮取肱；不改本盘实际动爻。"},
  'ZY-DAZHUANG34-XIANG':{title:"《周易正义》大壮大象",url:"../../../sources/reference/zhouyi-zhengyi-hans/04大壯.txt",scope:"转入大壮可对读非礼弗履的经戒，不独立改变末下乾克上震的关系。"},
+ 'YC-FENG55-L3':{title:"《伊川易传》卷四·丰九三",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"沛与斾旧本及幡幔之义，论暗甚于蔀及无所凭不归咎，各依九三原文。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
