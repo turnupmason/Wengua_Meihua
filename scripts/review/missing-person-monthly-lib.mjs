@@ -67,6 +67,7 @@ export const SOURCE_REFS={
  'ZY-TONGREN13-YE':{title:"《周易正义》同人卦首及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/02同人.txt",scope:"同人于野，孔疏以和同于人、所及广远解释。对读不添现实同行者，不把野字坐实为郊外或荒地。"},
  'SHU-SHUOMING-YANMEI':{title:"《尚书·说命下》盐梅和羹之喻",url:"https://ctext.org/text.pl?if=gb&node=37559&remap=gb",scope:"王对傅说以盐梅调羹比喻辅导与匡正。用于区分提供语言帮助及亲历辨认，不以食物猜人所在。"},
  'YC-DING50':{title:"程颐《伊川易传》卷四·鼎卦",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"据鼎卦各爻程传原文核义。九二以仇为初、慎所趋而守正，不将旧注的关系譬喻推作现实人物恩怨。"},
+ 'ZY-LV56-JITA':{title:"《周易正义》旅卦卦首及疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/06旅.txt",scope:"孔疏从客寄他方释旅。对读不要求失联者必在旅途，也不以固定住址为确认当前所在的唯一方式。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
