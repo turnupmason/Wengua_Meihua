@@ -42,6 +42,7 @@ export const SOURCE_REFS={
  'ZY-KAN29-3-COMPARISON':{title:'《周易正义》坎六三（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt',scope:'另卦六三失位处险而勿用，不覆盖原动井九三可用汲。'},
  'LUNYU-YONGYE-JING':{title:'《论语注疏》卷六·宰我问仁者',url:'https://zh.wikisource.org/wiki/論語註疏/卷06',scope:'宰我设井中有人问仁者，孔子答可逝不可陷。与井九三对读，不作实际遇险证据。'},
  'ZY-SIKU48-4':{title:'《周易注疏》四库全书本卷八·井六四',url:'https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷08',scope:'王注作自守而不能给上，与孔疏下文自守互证，据以校正旧录误字。'},
+ 'KONGYI-JING48-4':{title:"《周易孔义集说》卷十三·井六四",url:"https://zh.wikisource.org/wiki/周易孔義集說_(四庫全書本)/卷13",scope:"项平甫说护泉御泥，苏子瞻分别泉与井所寄，各以修养、容受论井甃。"},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
  'YC-KUN47':{title:'程颐《伊川易传》卷四·困卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'困初六取株木不能荫庇、三岁不觌为不遇其所亨等，依程传困卦逐爻核读。'},
