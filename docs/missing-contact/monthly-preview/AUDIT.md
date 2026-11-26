@@ -2,13 +2,33 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 雷泽归妹全卦及上六定稿
+
+全卦七十二篇，寻获较有望 2 篇、有机会 28 篇、较难 42 篇。前三爻皆以上震为原体，本用下兑；后三爻皆以下兑为原体，本用上震。初九取末下坎生体的水日，九二巳午申酉取中上坎水、其余取末下震比和的木；六三取末下乾克体的金。九四取末上坤土日，六五夏取中下离火、余取末上兑金，上六取末上离火。候日只参查访各阶段，实际所在、安危、失联原因和联系日期各依可核事实。
+
+上六动上震成上离成睽，下兑原体不移。寅卯属春，囚兑起手制旺震费力、休坎有耗、中末相离皆克。巳午死兑制休震更费，中末旺离都来克，囚坎受体生。辰未戌丑相兑制囚震较能办，死坎薄耗，休离中末皆克。申酉旺兑制死震较能办，相坎有实耗，囚离中末来克皆轻。亥子休兑制相震劳，旺坎有实耗，死离中末虽弱仍克。十二月末段无直接生扶或比和，均寻获较难；取上离火日，示例十一月二十七、二十八，参收尾实阻，冬秋须按实际力度理解。
+
+寅核孔疏筐与实、卯校四库本刲羊及乾而无血、辰用王弼近不必比辨人情远近和见闻。巳分同火日的两种取法，午核虞翻以坎象不见释无血，未据程传辨两种祭礼所供，再分六五上六末段的同金和火克。申按梅花互中变末辨旺体起手与末克，酉读睽象同于通理异于职事，戌分卦辞、上六两种无攸利。亥读睽彖天地乖而事同与盘中末克，子分王注羊谓三及虞氏兑为羊，丑依朱传分九四无正应而待、上六无应而不终，照各盘辨末段。
+
+正文 502–572 汉字，去引文 477–550 汉字。一千八百项盘面对照、二百一十六个日期用例通过，七十二篇作者读回与独立二读均绑定定稿。
+
+[完整六爻月稿](hex-054.md) · [作者回执](../../../sources/editorial/missing-contact/reviews-monthly/hex-054.json) · [独立全文回执](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-054.json) · [上六逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-6-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一)
+
+## 雷泽归妹上六寅卯辰
+
+上六动上震为上离，成火泽睽。原体下兑克本用上震，中体互下离克兑、用互上坎受原体生而耗，末上离亦克兑，全盘无直接生扶或比和。寅卯囚兑制旺震劳、中末相离均克、休坎受生而耗；辰令相兑制囚震可办、中末休离均克、死坎受生薄耗。这三月均断寻获较难，取末上离克体之火日，十一月二十七、二十八仅参收尾核查时的阻碍。
+
+寅由孔疏筐本盛币辨材料名目与收到的内容，卯校四库本王注刲羊、孔疏无血，并从承应读古礼，辰并读王注仰无所承和《略例》近不必比，实情按见闻而不按亲疏。三篇正文 515–572 汉字，七十五项盘面对照、九个日期用例通过，作者与独立读者逐篇核读定稿。
+
+[上六寅卯辰](hex-054.md#上六动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-6-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09)
+
 ## 雷泽归妹六五十二月
 
 六五动，上震化上兑，成兑为泽。原体下兑金克本用上震木，体互下离克体，用互上坎受体生而耗，末上兑与原体同金比和。寅卯囚兑制旺震劳、相离克实、休坎有耗、末囚兑比薄；巳午死兑制休震劳、旺离直接克体、囚坎有耗、末死兑比薄。以上四月寻获较难。辰未戌丑相兑制囚震可办、休离仍克、死坎耗薄、末相兑比；申酉旺兑制死震可办、囚离克轻、相坎有实耗、末旺兑比。亥子休兑制相震劳、死离克轻、旺坎有耗、末休兑可比，机会有限。巳午取中下离来克之火日，示例十一月二十七、二十八；其余取末上兑比和之金日，示例十一月三十。
 
 十二篇正文 505–524 汉字，去引文 486–512 汉字。寅由一处衣袖问见闻能认到哪一步，卯据程传辨衣着与身份，辰据几望未盈核农历日约。巳按朱子中德释贵，午分九二中生和六五中克，未写初克中阻及末比。申并读归妹、小畜、中孚的几望及各爻后辞，酉辨虞注释袂的兑口乾衣与本占互变，戌辨王孔尊位与虞翻震帝坤乙。亥读合志与能谦，子按虞翻训其和程氏未盈分读，丑以《玉藻》袖制辨可容之动作与实际见闻。作者和独立读者逐篇核读定稿，三百项盘面对照、三十六个日期用例通过。
 
-[六五十二篇](hex-054-first-read.md#六五动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-5-accepted-readback.json) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《礼记·玉藻》](https://zh.wikisource.org/wiki/禮記/玉藻)
+[六五十二篇](hex-054.md#六五动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-5-accepted-readback.json) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《礼记·玉藻》](https://zh.wikisource.org/wiki/禮記/玉藻)
 
 ## 雷泽归妹六五寅卯辰
 
@@ -16,7 +36,7 @@
 
 寅辨袂为衣袖及见袖口不能补全衣，卯分孔疏其君即六五及程传尚礼不尚饰，辰释程传几望未盈的婚礼语境而分别核约期和事实。三篇正文 516–524 汉字，七十五项盘面对照和九个日期用例通过，作者、独立第二读者逐篇核定。
 
-[六五寅卯辰](hex-054-first-read.md#六五动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-5-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
+[六五寅卯辰](hex-054.md#六五动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-5-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
 
 ## 雷泽归妹九四十二月
 
@@ -24,7 +44,7 @@
 
 十二篇正文 502–533 汉字，去引文 492–525 汉字。寅校四库所见九四失位，较九二与五相应；卯读《本义》三、四虽迟其由不同；辰并读《昏义》请期与第三方约查及本人约联系。巳辨末有生不能抹中克，午辨体互下离仍克体，未按虞翻日月四时解愆期。申不以本用死气报告实际安危，酉核《临》八月建丑数至建申之旧说与当盘酉令，戌比较六三九四的初克、末扶分别。亥核旺上坎在用互受体生而耗，子辨王注所适条件和程传所待之志，丑辨《占卦诀》末生稍迟与爻辞愆期。作者和独立读者实际逐篇核读定稿，三百项盘面对照、三十六个日期用例通过。
 
-[九四十二篇](hex-054-first-read.md#九四动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-4-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易正义》临](../../../sources/reference/zhouyi-zhengyi-hans/03臨.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
+[九四十二篇](hex-054.md#九四动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-4-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易正义》临](../../../sources/reference/zhouyi-zhengyi-hans/03臨.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
 
 ## 雷泽归妹九四寅卯辰
 
@@ -32,7 +52,7 @@
 
 寅校九四得位异文，对读九二有应、九四不正无应；卯读《本义》九四不轻从与六三未得所适各自为何迟；辰分有待而行、《昏义》请期与实际约打听、约联系。三篇正文 504–522 汉字，七十五项盘面对照和九个日期用例通过，作者及独立第二读者已逐篇核定。
 
-[九四寅卯辰](hex-054-first-read.md#九四动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-4-first-three-accepted-readback.json) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《礼记》昏义](https://zh.wikisource.org/wiki/禮記/昏義)
+[九四寅卯辰](hex-054.md#九四动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-4-first-three-accepted-readback.json) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《礼记》昏义](https://zh.wikisource.org/wiki/禮記/昏義)
 
 ## 雷泽归妹六三十二月
 
@@ -40,7 +60,7 @@
 
 十二篇正文 503–539 汉字，去引文 493–520 汉字。寅辨王孔程须待及朱子或曰，卯对读未当、位未当异文，辰分大壮彖阳长与原体旺衰。巳据虞翻初至五取需象，午释反归而缩小查问范围，未比同令初九薄末生、六三实末克为何都难。申辨虞翻与《窥余》娣所指，酉比困上六末乾生坎助与本卦末乾克震阻，戌把说以动还到本卦。亥核《窥余》引待年例再辨其不合本爻，子核《要义》须、嬬各本训，丑辨撤转述与原见者更正。作者、独立第二读者各阅定稿，三百项盘面对照、三十六个日期用例通过。
 
-[六三十二篇](hex-054-first-read.md#六三动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-3-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易窥余》卷十三](https://zh.wikisource.org/wiki/周易窺餘_(四庫全書本)/卷13) · [《周易要义》](https://zh.wikisource.org/wiki/周易要義_(四庫全書本)/全覽)
+[六三十二篇](hex-054.md#六三动--寅月) · [逐篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-3-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易窥余》卷十三](https://zh.wikisource.org/wiki/周易窺餘_(四庫全書本)/卷13) · [《周易要义》](https://zh.wikisource.org/wiki/周易要義_(四庫全書本)/全覽)
 
 ## 雷泽归妹六三寅卯辰
 
@@ -48,7 +68,7 @@
 
 寅对读王孔、程传须为待以及朱子所存另说，辨存说、转述与能作证；卯按王孔本和《集解》对读未当、位未当；辰分大壮彖的阳长、刚动与实际季土上下卦气。正文 505–539 汉字，七十五项盘面对照、九个日期用例通过，两位编辑逐篇复核。
 
-[六三寅卯辰](hex-054-first-read.md#六三动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-3-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [李鼎祚《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易正义》大壮](../../../sources/reference/zhouyi-zhengyi-hans/04大壯.txt)
+[六三寅卯辰](hex-054.md#六三动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-3-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [李鼎祚《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易正义》大壮](../../../sources/reference/zhouyi-zhengyi-hans/04大壯.txt)
 
 ## 雷泽归妹九二十二月
 
@@ -56,7 +76,7 @@
 
 十二篇正文 502–547 汉字，引文之外 477–539 汉字。寅校九二小象疏二、三异文，卯辨九二省辞与见闻原委，辰对读履与归妹的幽人。巳辨末有同气而取中扶，午分虞翻初动取象和本占九二动，未核程氏释未变常；申比同秋初九末坎生与九二末震比，酉据说卦辨离为目及体用所耗，戌据震大象洊雷辨相续不等于实得续讯。亥读《本义》眇与跛譬相承，子核程传利非不足之戒，丑分震的卦德与动静定体用。作者和独立第二读者逐篇读过当前最终稿，三百项盘面对照、三十六个日期用例通过。
 
-[九二十二篇](hex-054-first-read.md#九二动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-2-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一)
+[九二十二篇](hex-054.md#九二动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-2-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一)
 
 ## 雷泽归妹九二寅卯辰
 
@@ -64,7 +84,7 @@
 
 寅依四库电子本、单篇《周易正义》对读小象疏异文，分九二居中与失位。卯辨辞未复写归妹与原语上下文实际所指；辰对读履和归妹九二的幽贞及条件。正文 506–547 汉字，三篇七十五项盘面对照、九个日期用例通过，作者与独立第二读者逐篇核完。
 
-[九二寅卯辰](hex-054-first-read.md#九二动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-2-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易正义》履](../../../sources/reference/zhouyi-zhengyi-hans/02履.txt)
+[九二寅卯辰](hex-054.md#九二动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-2-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易正义》履](../../../sources/reference/zhouyi-zhengyi-hans/02履.txt)
 
 ## 雷泽归妹初九十二月
 
@@ -72,7 +92,7 @@
 
 十二篇正文 503–569 汉字，去引文 488–550 汉字。寅分卦辞征凶与初九征吉之宜，卯对读履六三与归妹的跛能履，辰辨二卦婚辞。巳核各本经注的能、而异文，午辨王孔与虞翻释恒，未分下兑先克、末坎后来生及中扶；申核体衰见生不可除初克，酉对读昏义和彖，戌照大象永终知敝核末段；亥比春冬体气与两段来生，子比初九六三以娣所处，丑辨王注承嗣为类例。作者和独立读者逐篇检读定稿，三百项盘面对照、三十六个日期用例通过。
 
-[初九十二篇](hex-054-first-read.md#初九动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-1-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [四库本《集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(四庫全書本)/卷11)
+[初九十二篇](hex-054.md#初九动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-1-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [四库本《集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(四庫全書本)/卷11)
 
 ## 雷泽归妹初九寅卯辰
 
@@ -80,7 +100,7 @@
 
 寅审卦辞征凶、初九征吉各有所宜；卯对读归妹初九与履六三的跛能履、小象分判，并辨行动能力与已证实行程；辰依孔疏区分泰六五兄嫁妹及归妹以娣随姊，各不代证真人亲属或所在。三篇正文 506–518 汉字，七十五项盘面对照、九个日期用例通过，作者与独立第二读者逐篇复核。
 
-[初九寅卯辰](hex-054-first-read.md#初九动--寅月) · [三篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-1-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易正义》履](../../../sources/reference/zhouyi-zhengyi-hans/02履.txt) · [《周易正义》泰](../../../sources/reference/zhouyi-zhengyi-hans/02泰.txt)
+[初九寅卯辰](hex-054.md#初九动--寅月) · [三篇独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-054/guan_second/line-1-first-three-accepted-readback.json) · [《周易正义》归妹](../../../sources/reference/zhouyi-zhengyi-hans/05歸妹.txt) · [《周易正义》履](../../../sources/reference/zhouyi-zhengyi-hans/02履.txt) · [《周易正义》泰](../../../sources/reference/zhouyi-zhengyi-hans/02泰.txt)
 
 ## 风山渐全卦及上九定稿
 
