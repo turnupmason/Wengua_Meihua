@@ -160,6 +160,7 @@ export const SOURCE_REFS={
  'ZY-DAGUO28-TUAN':{title:"《周易正义》大过彖传",url:"../../../sources/reference/zhouyi-zhengyi-hans/03大過.txt",scope:"彖本末弱按王注指初上；大过为互卦时两互分别比对原体，不代替本卦与末变。"},
  'ZY-XIAOGUO62-TUAN':{title:"《周易正义》小过卦辞及彖疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/06小過.txt",scope:"孔疏对读大过音相过之过，说明小过名称用义；卦辞大小事另按彖疏，不改实际所见。"},
  'ZY-XICI-TONGXIN':{title:"《周易正义》系辞上·其利断金",url:"../../../sources/reference/zhouyi-zhengyi-hans/07.06.txt",scope:"孔疏以金之坚刚盛言同心之利，导出的是经文譬义；不重算本盘体互上兑克原体。"},
+ 'ZY-JIJIE55-L2':{title:"《周易集解》卷十一·丰六二",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"虞翻以云蔽日释蔀，另取坎孚；《九家易》说明信见于五再发志，皆为古注解释。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
