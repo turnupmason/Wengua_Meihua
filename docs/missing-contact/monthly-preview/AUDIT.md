@@ -2,65 +2,73 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 水风井全卦及上六定稿
+
+全卦七十二篇，寻获较有希望四篇，有机会三十二篇，较难三十六篇。下三爻以上坎为体，坎生本巽、克互离、受互兑生；初六末乾生体取金日，九二末艮克体取土日，九三中段兑生体取金日。上三爻以下巽为体，本坎生巽，互兑克巽，巽生互离；六四末兑克巽、上六末巽比和，两爻皆以初段坎水生体取水日，九五中途兑金克木取金日，末体克坤。上六井收、勿幕、有孚元吉，王孔论水出井而不专其利，程朱说汲取，朱子兼载晁氏收绳之解，又以有其孚为应占之条件。[《周易正义》井](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
+
+上六寅卯辰辨备有汲器、勿字所戒与两份寻人消息究竟指谁。巳据《大东》辨北斗、朝向与人地，午辨开门和受理，未辨每日有人与本人每日到场。申据《离娄下》辨集中来信和各次实际见闻，酉核通讯录的备注者与应答者，戌核院号门号在地址中所指。亥据《系辞》辨物品产地和人的所至，子辨新通知是否撤销旧安排，丑对读坤六五与井上六，合照已成不虚设场外另有摄影者。[《诗经·小雅·大东》](https://zh.wikisource.org/wiki/詩經/大東) · [《孟子注疏》卷八](https://zh.wikisource.org/zh-hans/孟子註疏/卷08)
+
+正文 506–585 汉字。七十二篇的一千八百项盘面对照、二百一十六个日期用例、源稿与阅读页一致性、查重、作者和独立读者的逐篇摘要均已检验。[七十二篇](hex-048.md) · [作者回执](../../../sources/editorial/missing-contact/reviews-monthly/hex-048.json) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-048.json)
+
 ## 水风井九五十二月定稿
 
 下巽为体，上坎为用而生体，体互兑克木，用互离受木生，末变升，巽木克上坤。中段兑虽在春囚夏死、冬休仍有克，末坤在夏相、春死、冬囚，春夏冬寻获有机会。秋旺兑克死木、季土相兑克囚木且末须克旺土，寻获较难。三家释义分别核对，孔疏以择贤说择清泉，朱子说阳刚中正功及于物，仍要有其德方契其象；程传以未至上、大成未就释爻辞不言吉。金日只参中段体互兑金克体的核实限制。十二篇各核二十五项盘面对照与三个日期用例，共三百项、三十六例。
 
-寅卯辰辨未书吉、说话流利、泉寒所表。巳不借《凯风》诗中之浚定位，午不从水温倒推人在不在、离去多久，未辨饭点是谁在吃饭。申核裁切合照与画面中央，酉据《说文》洌、湜两训分辨黑白照片明暗与物件原色，戌据《史记》区分未领一物与拒绝全部。亥辨相隔一站与实地路程，子辨来者多为本地人与某个具体人的身份、住处，丑对读《泂酌》取水的用途，辨目击身份与是否理解用途。[九五十二篇](hex-048-first-read.md#九五动--寅月) · [《说文解字》水部](https://zh.wikisource.org/wiki/說文解字/11) · [《史记·伯夷列传》](https://zh.wikisource.org/zh-hans/史記/卷061) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-5-accepted-readback.json)
+寅卯辰辨未书吉、说话流利、泉寒所表。巳不借《凯风》诗中之浚定位，午不从水温倒推人在不在、离去多久，未辨饭点是谁在吃饭。申核裁切合照与画面中央，酉据《说文》洌、湜两训分辨黑白照片明暗与物件原色，戌据《史记》区分未领一物与拒绝全部。亥辨相隔一站与实地路程，子辨来者多为本地人与某个具体人的身份、住处，丑对读《泂酌》取水的用途，辨目击身份与是否理解用途。[九五十二篇](hex-048.md#九五动--寅月) · [《说文解字》水部](https://zh.wikisource.org/wiki/說文解字/11) · [《史记·伯夷列传》](https://zh.wikisource.org/zh-hans/史記/卷061) · [整爻二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-5-accepted-readback.json)
 
 ## 水风井九五首三篇
 
 本用坎水生下巽木，体互兑金克木，用互离火受巽所生；末上坎变坤，为体克变用。春旺巽得休坎生、末能制死坤，中途仍有囚兑之克，占寻获有机会。辰季土囚巽受死坎薄生，相兑克之，末克旺坤更费力，寻获较难。三篇皆取中段体互兑金直接克巽，样例金日为十一月三十日，只参核准当前下落时的限制。七十五项盘面对照、九个日期用例均已核过。
 
-寅对读程传九五尚未至上与朱子功及于物，卯分语气流利与实能辨人，辰据孔疏言寒泉以表洁，辨泉质、天气感受与相遇年月。[九五首三篇](hex-048-first-read.md#九五动--寅月) · [井卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-5-first-three-accepted-readback.json)
+寅对读程传九五尚未至上与朱子功及于物，卯分语气流利与实能辨人，辰据孔疏言寒泉以表洁，辨泉质、天气感受与相遇年月。[九五首三篇](hex-048.md#九五动--寅月) · [井卦王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-5-first-three-accepted-readback.json)
 
 ## 水风井六四十二月定稿
 
 本用上坎水生体巽木，体互兑金克巽，用互离火受巽所生；末变泽风大过，上兑金再克原体。夏死兑仍克而泄旺离较重，秋旺兑两克死巽，季土相兑两克囚巽。春旺巽、冬相巽能承初助，仍不能越过中末的克与六四未及给上的爻义。十二篇寻获均较难；开头本用直接生体故参水日，样例十一月二十一、二十二日不表示本人必有回音。十二月共核三百项盘面对照、三十六个日期用例。
 
-寅卯辰各辨拟查范围、抄件订误、修井与致坏。巳核共用门铃响与认准应声者，午辨承诺守候和已有见闻，未不从订正错处反证早改必能早找。申借项平甫御泥护泉辨眼见与排除后的推断，酉借苏轼井泉之别辨同袋送交与同处拾得，戌辨不同编号与亲见先后。亥分别月旺与日级所候，子辨改邑不改井与新旧村址，丑辨整通电话的时长、实际交谈与有无讲及本人所在。[六四十二篇](hex-048-first-read.md#六四动--寅月) · [《周易孔义集说》卷十三](https://zh.wikisource.org/wiki/周易孔義集說_(四庫全書本)/卷13) · [《周易正义》井](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-4-accepted-readback.json)
+寅卯辰各辨拟查范围、抄件订误、修井与致坏。巳核共用门铃响与认准应声者，午辨承诺守候和已有见闻，未不从订正错处反证早改必能早找。申借项平甫御泥护泉辨眼见与排除后的推断，酉借苏轼井泉之别辨同袋送交与同处拾得，戌辨不同编号与亲见先后。亥分别月旺与日级所候，子辨改邑不改井与新旧村址，丑辨整通电话的时长、实际交谈与有无讲及本人所在。[六四十二篇](hex-048.md#六四动--寅月) · [《周易孔义集说》卷十三](https://zh.wikisource.org/wiki/周易孔義集說_(四庫全書本)/卷13) · [《周易正义》井](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-4-accepted-readback.json)
 
 ## 水风井六四首三篇
 
 六四改以上坎为本用，下巽为原体。开头本坎水生巽，中受互兑克而巽又生互离，末上坎变兑，再克原体。寅卯虽原体当旺、初得休坎生，辰则死坎薄生囚巽而相兑克之更切。六四能修无应，三篇寻获均较难。水日取本用坎水直接生体的开头，样例展示十一月二十一、二十二日，两日只参初段核实材料能否得助。七十五项盘面对照、九个日期用例已核准。
 
-寅据井甃辨井壁实界和图上拟查范围，不将走过等同排除。卯据四库本卷八王注、孔疏所见自守纠旧录误字，不把纠正姓名写法变作本人改名。辰辨修井者与致坏者，不因提供更正锁定谁先传错。[六四首三篇](hex-048-first-read.md#六四动--寅月) · [《周易注疏》四库本卷八](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷08) · [井六四校注](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-4-first-three-accepted-readback.json)
+寅据井甃辨井壁实界和图上拟查范围，不将走过等同排除。卯据四库本卷八王注、孔疏所见自守纠旧录误字，不把纠正姓名写法变作本人改名。辰辨修井者与致坏者，不因提供更正锁定谁先传错。[六四首三篇](hex-048.md#六四动--寅月) · [《周易注疏》四库本卷八](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷08) · [井六四校注](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-4-first-three-accepted-readback.json)
 
 ## 水风井九三十二月定稿
 
 原坎体生巽木，互离受克、用互兑金回生，末变坎与体比和。九三渫而未食，得位应上，可用汲。春、夏得薄助，季土得相兑生但原体力弱，寻获皆有机会。秋得旺兑之生，冬水旺而末和能承，两者均较有希望。取金日的依据是中途互兑生体，示例起点二〇二六年十一月二十一日，本月有三十日可参。十二篇分别核对二十五项盘面和三个日期用例，共三百项盘面对照、三十六个日期用例。
 
-寅卯辰分辨材料可用条件、心恻的主体、王明的文义。巳核放大相片只助辨认已有细节，午辨寻获与归家，未对读孟子未及泉与井已清可汲，两井所缺各异。申读并受其福而分各方所得，酉不从正应定证人性别人数，戌分汲水与汲汲于上进。亥对读宰我以井设问，辨及时求助与陈述已证险情；子辨读准名字与当面认人，丑核坎六三的勿用不得覆盖井九三的可用汲。[九三十二篇](hex-048-first-read.md#九三动--寅月) · [《孟子·尽心上》第二十九章](https://zh.wikisource.org/wiki/孟子/盡心上) · [《周易正义》坎六三](../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-3-accepted-readback.json)
+寅卯辰分辨材料可用条件、心恻的主体、王明的文义。巳核放大相片只助辨认已有细节，午辨寻获与归家，未对读孟子未及泉与井已清可汲，两井所缺各异。申读并受其福而分各方所得，酉不从正应定证人性别人数，戌分汲水与汲汲于上进。亥对读宰我以井设问，辨及时求助与陈述已证险情；子辨读准名字与当面认人，丑核坎六三的勿用不得覆盖井九三的可用汲。[九三十二篇](hex-048.md#九三动--寅月) · [《孟子·尽心上》第二十九章](https://zh.wikisource.org/wiki/孟子/盡心上) · [《周易正义》坎六三](../../../sources/reference/zhouyi-zhengyi-hans/03坎.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-3-accepted-readback.json)
 
 ## 水风井九三首三篇
 
 初坎水生巽木，互离受坎克，互兑生原体，末下巽变坎，与上坎比和。寅卯休水耗于旺木而中得囚兑薄助；辰死水承相兑之助而末和较弱。三篇均取井渫可汲又尚未见用，寻获有机会。金日所候是中段用互兑金生坎时的核实助力，不能从末坎比和另立日级事件。七十五项盘面对照、九个日期用例通过。
 
-寅分初六泥而不食与九三渫而不食，相同的未使用说法之下可用条件可能已经改变。卯核王注训“为”为使及朱子释行恻的旁观主体，不推本人因忧失联。辰核程传“王明”讲在上者知人善用，不从经文连字推实际联系人。[九三首三篇](hex-048-first-read.md#九三动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-3-first-three-accepted-readback.json)
+寅分初六泥而不食与九三渫而不食，相同的未使用说法之下可用条件可能已经改变。卯核王注训“为”为使及朱子释行恻的旁观主体，不推本人因忧失联。辰核程传“王明”讲在上者知人善用，不从经文连字推实际联系人。[九三首三篇](hex-048.md#九三动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-3-first-three-accepted-readback.json)
 
 ## 水风井九二十二月定稿
 
 原体上坎生下巽木，中间克互离、受互兑金生。末变水山蹇，下艮土克体，日级参考全取土日的末段核实阻碍。春水休而初泄旺巽，夏水囚而中克旺离尤劳，季土死坎受末旺艮所克，三类月令寻获较难；秋相坎与冬旺坎能承接中段之助，休艮或囚艮之克较缓，寻获有机会。样例起点为二〇二六年十一月二十一日，本月展示前两个土日二十三日与二十六日，不据以断见面、受伤或复联日期。十二篇三百项盘面对照、三十六个日期用例均已核对。
 
-寅卯辰分别辨广播覆盖与听众、词义与真实返程、零散两句与同一问答。巳辨漏记与走漏，午依程传辨无功与有过，未读《庄子·外物》及井九二，区分寓言中求水与九二水下注。申核容量与实际人数，酉核中段得助与末段克体，戌核约时报时精度。亥分两家解释与两次亲见，子辨冬水当旺与实际水势变化，丑读卦辞近成覆瓶及九二不上济。[九二十二篇](hex-048-first-read.md#九二动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《庄子·外物》](https://zh.wikisource.org/w/index.php?title=莊子/外物&oldid=11117714) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-2-accepted-readback.json)
+寅卯辰分别辨广播覆盖与听众、词义与真实返程、零散两句与同一问答。巳辨漏记与走漏，午依程传辨无功与有过，未读《庄子·外物》及井九二，区分寓言中求水与九二水下注。申核容量与实际人数，酉核中段得助与末段克体，戌核约时报时精度。亥分两家解释与两次亲见，子辨冬水当旺与实际水势变化，丑读卦辞近成覆瓶及九二不上济。[九二十二篇](hex-048.md#九二动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《庄子·外物》](https://zh.wikisource.org/w/index.php?title=莊子/外物&oldid=11117714) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-2-accepted-readback.json)
 
 ## 水风井九二首三篇
 
 原体上坎水生本巽，中克互离，受互兑金所生；变为水山蹇，末下艮土克水。寅卯休坎泄旺巽、中途扶薄，末艮虽死仍克体；辰死坎虽有相兑生，收尾却受旺艮重克。三篇均断寻获较难。取土日参末段核实下落的阻碍，示例日期只是日历换算，不报人身或回话之期。
 
-寅读井本下给上、九二反下注，辨播送到某地与实有听众。卯读射鲋，照王注识水流之义，不从单字把亲友的回头再问讲成实有返程。辰从无上应、下比初六，辨两段话字面可接与实为同次问答。三篇七十五项盘面对照、九个日期用例通过。[九二首三篇](hex-048-first-read.md#九二动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-2-first-three-accepted-readback.json)
+寅读井本下给上、九二反下注，辨播送到某地与实有听众。卯读射鲋，照王注识水流之义，不从单字把亲友的回头再问讲成实有返程。辰从无上应、下比初六，辨两段话字面可接与实为同次问答。三篇七十五项盘面对照、九个日期用例通过。[九二首三篇](hex-048.md#九二动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-2-first-three-accepted-readback.json)
 
 ## 水风井初六十二月定稿
 
 上坎水体生下巽木，体克互离，互兑生体；末下巽变乾，乾金再生坎。春休水泄旺木、夏囚水克旺火，中末金助薄，寻获较难。季土体弱而有相金生扶，秋冬坎可承中末金助，初六未能济用仍是一层限制，寻获有机会。十二篇皆以末乾生体取金日，按二〇二六年十一月二十一日作演示起点，当月只列三十日；不由井泥安排险期。三百项盘面对照、三十六个日期用例均已核实。
 
-寅卯辰读井泥不食、上出为功、井鼎就物取义。巳核孔疏所引《系辞下》德之地，午核一时共弃，未分初六泥井与九五寒泉。申释无丧无得，酉对读比九五失前禽，戌辨照片时节与年份。亥核表上日期的实际来处，子分劝助与已经亲见，丑辨需初九之郊与井初本巽的方位。[初六十二篇](hex-048-first-read.md#初六动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《比》九五](../../../sources/reference/zhouyi-zhengyi-hans/02比.txt) · [《需》初九](../../../sources/reference/zhouyi-zhengyi-hans/02需.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-1-accepted-readback.json)
+寅卯辰读井泥不食、上出为功、井鼎就物取义。巳核孔疏所引《系辞下》德之地，午核一时共弃，未分初六泥井与九五寒泉。申释无丧无得，酉对读比九五失前禽，戌辨照片时节与年份。亥核表上日期的实际来处，子分劝助与已经亲见，丑辨需初九之郊与井初本巽的方位。[初六十二篇](hex-048.md#初六动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《比》九五](../../../sources/reference/zhouyi-zhengyi-hans/02比.txt) · [《需》初九](../../../sources/reference/zhouyi-zhengyi-hans/02需.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-1-accepted-readback.json)
 
 ## 水风井初六首三篇
 
 原体上坎水生本用下巽木，开端泄体。互为火泽睽，体克互离、互兑生体，末变水天需，变用乾金生体。寅卯休坎泄给旺巽且克相离、前后可用的两处金均囚，结合井泥不食，寻获较难。辰月相兑、相乾均能生死坎，弱体承接仍劳，寻获有机会。金日参末乾生水，不能移作本人饮水、归家或会面的日期。
 
-寅篇读王注井底无应及久无渫治，区分不能用于认人与无人曾尝试；卯篇核朱子上出为功，所知来处与已得到可用材料不同；辰篇据程颐井鼎就物取义对读鼎初六，不把器皿纳新移作记录只容一人的限制，知情人数以实际见闻为准。三篇七十五项盘面对照、九个日期用例已核。[初六首三篇](hex-048-first-read.md#初六动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《鼎》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-1-first-three-accepted-readback.json)
+寅篇读王注井底无应及久无渫治，区分不能用于认人与无人曾尝试；卯篇核朱子上出为功，所知来处与已得到可用材料不同；辰篇据程颐井鼎就物取义对读鼎初六，不把器皿纳新移作记录只容一人的限制，知情人数以实际见闻为准。三篇七十五项盘面对照、九个日期用例已核。[初六首三篇](hex-048.md#初六动--寅月) · [《井》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05井.txt) · [《鼎》王注孔疏](../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-048/guan_second/line-1-first-three-accepted-readback.json)
 
 ## 泽水困全卦及上六定稿
 
