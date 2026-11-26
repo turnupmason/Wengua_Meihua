@@ -78,6 +78,7 @@ export const SOURCE_REFS={
  'YC-GEN52-L2-SUI':{title:"《伊川易传》卷四·艮六二释随",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"艮六二之随系乎所主，以股动而腓随为象；无从借此给实际失联原因添上旁人参与。"},
  'YC-GEN52-L2-YING':{title:"《伊川易传》卷四·艮六二无应援",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"分同阴相对而无应援与下卦九三为止主之所随。古爻关系只供理解行止，并不能确认失联的现实因由。"},
  'ZY-SHUOGUA-XUN-GEN':{title:"《周易口义》说卦·八卦之德",url:"https://zh.wikisource.org/wiki/周易口義_(四庫全書本)/説卦",scope:"说卦艮止、巽入为八卦取义，不是某个现实出入口的见证，变巽所克应依原体五行判断。"},
+ 'YC-GEN52-L3':{title:"《伊川易传》卷四·艮九三",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"以分隔释限，以坚强失行止之宜释九三危厉；不从限夤推断实际身情、事故或失联动机。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
