@@ -119,6 +119,8 @@ export const SOURCE_REFS={
  'ZY-GEN52-TUAN':{title:"《周易正义》艮卦大象及疏",url:"../../../sources/reference/zhouyi-zhengyi-hans/05艮.txt",scope:"艮大象兼山，孔疏两山重叠而止义愈明。并读渐九五末上下艮同土，不因卦象重叠改月令旺衰。"},
  'MH-NEIWAI':{title:"《梅花易数》卷三·体用生克之诀",url:"https://zh.wikisource.org/wiki/梅花易數/卷三#體用生克之訣",scope:"区分内卦体用互变与外卦所见真火、火形火色及力度。外部取象不重定本盘互离五行旺衰。"},
  'YC-JIAN53-L6':{title:"《伊川易传》卷四·渐上九",url:"../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt",scope:"引安定胡公陆为逵、云路；进而不失其序，解释上九仪吉、小象不可乱，不据以定现实行迹。"},
+ 'ZY-JIJIE53-L6':{title:"《周易集解》卷十一·渐上九",url:"https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一",scope:"干宝德可受、仪可象，从女归及母教语境释本卦上爻；虞翻陆谓三、上之三得正为其取象。均不改变本占的动爻或实地。"},
+ 'ZY-JIAN39-TUAN':{title:"《周易正义》蹇卦卦辞与彖",url:"../../../sources/reference/zhouyi-zhengyi-hans/04蹇.txt",scope:"蹇彖见险而能止，孔疏以外坎、内艮释险止。不据古义为本人补入真实察险或折返缘由。"},
  'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},

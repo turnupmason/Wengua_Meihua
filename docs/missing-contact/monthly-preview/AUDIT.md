@@ -2,13 +2,25 @@
 
 风地观六爻七十二篇已通过作者和独立第二读者逐篇复核。各批的卦理、候选日期与二读退修见[风地观逐批核对](RULE_AUDIT_GUAN_20261125.md)及[独立读者逐篇意见](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-020.json)。
 
+## 风山渐全卦及上九定稿
+
+全卦七十二篇，寻获较有望 4 篇、有机会 40 篇、较难 28 篇。前三爻皆取上巽为原体、本用下艮；后三爻下艮为原体、本用上巽。初六、九三始终以用互下坎生原体取水日。六二申酉仍取中坎，余取末巽同气的木日。六四取中离生体的火日；九五春中离取火，冬起手上巽克艮取木，其余末艮比和取土；上九冬木日起阻，其余火日参中扶。取期和卦象仅参各段查访，所寻之人及实际所在、安危、缘故、联系日期仍各依可核事实。
+
+上九动上巽为坎成蹇，原体下艮不移。寅卯旺巽克死艮，中末两休坎须艮制，相离扶而原体仍劳；申酉死巽克休艮较轻、囚离扶薄、制两相坎甚劳，均较难。亥子相巽木制囚艮，艮制中末两旺坎，死离助薄，亦较难。巳午相艮承休巽克、制两囚坎可办、旺离实生；辰未戌丑旺艮承囚巽克、制两死坎、休离补扶，六个月留机会。木日示例十一月二十四、二十五，参起手受阻；火日示例十一月二十七、二十八，参中段核实得助。末上坎受艮克，和古卦名之蹇各有所说。
+
+寅对读王孔的陆与胡、程、朱的逵，卯核可法和旄旌羽饰，辰区分「羽可用」的用途和梅花用卦。巳据程传分别见闻先后、具体时刻，午校干宝妇德母教及「有德而可受，有仪而可象」，未分中下坎、末上坎各受原体克。申审末坎虽居上、仍被下艮制；酉对读蹇彖见险而能止与实际折返，戌区分虞翻陆谓三和本占上九之动。亥比较同令九五末比、上九末制，子分若再次失联的独立时地与安危实证，丑对读大象求贤居位和上九不以位自累。初读和独立复读曾找出同题、史据与证据范围问题，分别退修后再核对。
+
+正文 500–560 汉字，去引文 491–550 汉字。一千八百项盘面对照、二百一十六个日期用例通过，七十二篇正文的作者及独立二读回执绑定同份发布稿和阅读页。
+
+[完整六爻月稿](hex-053.md) · [作者回执](../../../sources/editorial/missing-contact/reviews-monthly/hex-053.json) · [独立全文回执](../../../sources/editorial/missing-contact/second-reviews-monthly/hex-053.json) · [上九逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-6-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
+
 ## 风山渐上九寅卯辰
 
 上九动上巽为坎，变水山蹇，原体下艮。起受本用上巽克，中体克下坎、用互上离生体，末上坎仍受原体克。寅卯旺巽克死艮，两休坎皆待弱艮去制，虽有相离实生仍较难；辰旺艮承囚巽克，能制中末两死坎，休离补扶，留机会。均取中段用互上离生艮的火日，参查证助益。
 
 寅对读王孔陆与胡、程、朱逵；卯辨王孔可法与朱熹羽作旌饰；辰分古辞羽可用与梅花本用、变用。三篇正文 500–527 汉字，七十五项盘面对照和九个日期用例通过，两位编辑逐篇复核定稿。
 
-[上九寅卯辰](hex-053-first-read.md#上九动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-6-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
+[上九寅卯辰](hex-053.md#上九动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-6-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
 
 ## 风山渐九五十二月
 
@@ -16,7 +28,7 @@
 
 十二篇正文 501–540 汉字，去引文 497–524 汉字。寅对读困初六不觌和渐九五受隔终通，卯辨王孔终不久塞所指，辰对读四末生乾与五末艮比。巳对读王孔与程氏得所愿，午比较两家的陵义，未辨虞翻妇谓四与王孔由二五相应释整句。申依虞翻区分陵丘与陵胜，酉从孔疏校彖中得位之所指，戌与《体用互变之诀》对读先克后比。亥核木候只参起阻，子辨盘内离气与外卦火之形，丑辨艮兼山卦象与用、体各有月气。作者及独立第二读者实际逐篇核最终源文与页面，近题有退修，三百项盘面对照、三十六个日期用例通过。
 
-[九五十二篇](hex-053-first-read.md#九五动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-5-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易正义》艮](../../../sources/reference/zhouyi-zhengyi-hans/05艮.txt) · [《梅花易数》卷三](https://zh.wikisource.org/wiki/梅花易數/卷三)
+[九五十二篇](hex-053.md#九五动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-5-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《周易正义》艮](../../../sources/reference/zhouyi-zhengyi-hans/05艮.txt) · [《梅花易数》卷三](https://zh.wikisource.org/wiki/梅花易數/卷三)
 
 ## 风山渐九五寅卯辰
 
@@ -24,7 +36,7 @@
 
 寅对读困初六不觌与渐九五所应受隔，分见闻时点、消息时点；卯核王孔终莫之胜以二五相应而三四不能久塞；辰对读六四末生乾与九五末艮比和。三篇正文 517–540 汉字，七十五项盘面对照、九个日期用例通过，作者和独立第二读者逐篇核定。
 
-[九五寅卯辰](hex-053-first-read.md#九五动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-5-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易正义》困](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt)
+[九五寅卯辰](hex-053.md#九五动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-5-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易正义》困](../../../sources/reference/zhouyi-zhengyi-hans/05困.txt)
 
 ## 风山渐六四十二月
 
@@ -32,7 +44,7 @@
 
 十二篇正文 501–533 汉字，引文之外 491–518 汉字。寅辨王注、孔疏与朱说；卯按四库电子本校六四与三相比，审相应不叠用；辰释榱与堪为椽之枝。巳对读蒙、家人、渐三处「顺以巽」；午辨末乾死而仍受生之耗；未校虞翻椽象由多个卦象合成；申审轻初克和重末耗；酉比九三、六四同互而因换体各用水日、火日；戌分可得安处、实未用上；亥分中间一扶一制；子辨遯卦辞所示与查问确证；丑据《人事占》辨克耗与旺衰。作者和独立第二读者逐篇读过定稿，退修查到的近题、异文及证据条件，三百项盘面对照、三十六个日期用例通过。
 
-[六四十二篇](hex-053-first-read.md#六四动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-4-accepted-readback.json) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
+[六四十二篇](hex-053.md#六四动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-4-accepted-readback.json) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
 
 ## 风山渐六四寅卯辰
 
@@ -40,7 +52,7 @@
 
 寅分王注鸟之木得宜、孔疏进而得位与朱子鸿不木栖；卯核四库本作六四与三相得，辨相比非正应；辰以孔疏堪为椽的直枝释桷。三篇正文 509–522 汉字，七十五项盘面对照、九个日期用例通过，作者与独立第二读者逐篇核实。
 
-[六四寅卯辰](hex-053-first-read.md#六四动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-4-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
+[六四寅卯辰](hex-053.md#六四动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-4-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [四库本《周易注疏》卷九](https://zh.wikisource.org/wiki/周易注疏_(四庫全書本)/卷09) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt)
 
 ## 风山渐九三十二月
 
@@ -48,7 +60,7 @@
 
 十二篇正文 507–560 汉字，去中文引号内文字 491–550 汉字。寅读征不复与实信；卯分古辞凶戒与实际安危；辰核御寇是爻义相保。巳辨初末体克及中坎取期；午对读孔疏丑为类与程氏离群为可丑；未以《占卦诀》对读未令无直接克体而前后仍费力；申区分坡路与落脚地势、解释高和平可以同在；酉核阳位得正与朱氏过刚不中无应并存；戌辨变卦之观与现实看见；亥并看同一路克向于冬令和未令的分量；子核程传守正、所比之人各有着眼；丑分中途两互的生扶与外泄。独立复读找出了与旧稿同题的段落，逐篇换题重写，作者及独立第二读者核过定稿；三百项盘面对照、三十六个日期用例通过。
 
-[九三十二篇](hex-053-first-read.md#九三动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-3-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《梅花易数》卷一至卷三](../../../sources/original/meihua-volumes-1-3.txt)
+[九三十二篇](hex-053.md#九三动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-3-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《梅花易数》卷一至卷三](../../../sources/original/meihua-volumes-1-3.txt)
 
 ## 风山渐九三寅卯辰
 
@@ -56,7 +68,7 @@
 
 寅对读夫征不复与实际返没返回；卯释妇孕等古辞而核身体消息的现实来源；辰以王孔解利御寇为异体相和、顺相保，不由此判现实有谁阻拦。正文 525–560 汉字，七十五项盘面对照、九组日期用例通过，两位编辑读过当前定稿。
 
-[九三寅卯辰](hex-053-first-read.md#九三动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-3-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《梅花易数》卷二](https://zh.wikisource.org/wiki/梅花易數/卷二)
+[九三寅卯辰](hex-053.md#九三动--寅月) · [独立逐篇二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-3-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《梅花易数》卷二](https://zh.wikisource.org/wiki/梅花易數/卷二)
 
 ## 风山渐六二十二月
 
@@ -64,7 +76,7 @@
 
 十二篇正文 507–549 汉字，去中文引号内文字 495–540 汉字。寅读鸿进高与鸟类、原照拍摄处；卯分饮食衎衎及当时、眼下安危；辰校素故、素空与素餐。巳比较本卦初六和六二收尾；午分爻位相应和实际寄出、送达、回复；未读巽彖申命，核重新托问还是原报重复。申核秋令中坎实助与末比薄；酉校安石、聚石与各次时地；戌辨同气非直接所生；亥区分可核的出处和把见者姓名公开；子辨传统等级不折算概率；丑辨本用旺不改体卦。与旧稿相近的停留、中坎末比反向比较等曾退修，作者和独立第二读者实际核过最终各篇，三百项盘面对照和三十六个日期用例通过。
 
-[六二十二篇](hex-053-first-read.md#六二动--寅月) · [整爻独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-2-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易正义》巽](../../../sources/reference/zhouyi-zhengyi-hans/06巽.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一)
+[六二十二篇](hex-053.md#六二动--寅月) · [整爻独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-2-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易正义》巽](../../../sources/reference/zhouyi-zhengyi-hans/06巽.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt) · [《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一)
 
 ## 风山渐六二寅卯辰
 
@@ -72,7 +84,7 @@
 
 寅以孔疏解释鸿非通常集于山石而经意取渐高，分照片鸟类与拍处、所寻者；卯取“衎衎”说乐，真实一餐与当前安危分时核；辰校王孔素故、程传素空及朱子以素餐释有所得而不空饱，分别真实原来出处和现在确定处所。三篇正文 507–511 汉字，七十五项盘面对照和九组日期用例通过，作者和独立第二读者按当前稿逐篇复读。
 
-[六二寅卯辰](hex-053-first-read.md#六二动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-2-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
+[六二寅卯辰](hex-053.md#六二动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-2-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [《周易本义》卷二](../../../sources/reference/zhouyi-benyi/周易本義__四庫全書本__卷2.txt) · [《伊川易传》卷四](../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt)
 
 ## 风山渐初六十二月
 
@@ -80,7 +92,7 @@
 
 十二篇正文 508–531 汉字，扣引号内文字 492–518 汉字。寅读水涯及实地方位，卯分小子古义与真人身份，辰核薄扶与两段耗。巳据止而巽辨查访近路和本人行迹，午校求谋之克与实际寻获，未合互未济却分算下坎薄生上离耗。申另核原艮受克所生的人员处境，酉分尽快、实际截止和晚来证据，戌读虞翻动得正对王孔不伤义。亥分归嫁与寻获，子查“早说过”所指的旧话，丑按原盘中四爻取互。曾与旧稿相近的排序、迟限、发现失联时点已退回重写。三百项盘面对照、三十六个日期用例通过，作者和独立第二读者已照实际成稿逐篇复核。
 
-[初六十二篇](hex-053-first-read.md#初六动--寅月) · [独立逐篇回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-1-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [李鼎祚《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《梅花易数》卷一](https://zh.wikisource.org/wiki/梅花易數/卷一#互卦起例)
+[初六十二篇](hex-053.md#初六动--寅月) · [独立逐篇回执](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-1-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt) · [李鼎祚《周易集解》卷十一](https://zh.wikisource.org/wiki/周易集解_(李鼎祚)/卷十一) · [《梅花易数》卷一](https://zh.wikisource.org/wiki/梅花易數/卷一#互卦起例)
 
 ## 风山渐初六寅卯辰
 
@@ -88,7 +100,7 @@
 
 寅读孔疏干为水涯与原本用艮东北的不同；卯读“小子厉，有言”取初进无应与非议，不能由此认本人年龄；辰比较死坎薄生、囚木制旺土和两处生离所耗，可靠核准下落不须另约见面。正文 509–515 汉字，七十五项盘面对照和九组日期用例通过，作者与独立第二读者逐篇核准定稿。
 
-[初六寅卯辰](hex-053-first-read.md#初六动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-1-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt)
+[初六寅卯辰](hex-053.md#初六动--寅月) · [独立二读](../../../sources/editorial/missing-contact/second-reviews-monthly/history/hex-053/guan_second/line-1-first-three-accepted-readback.json) · [《周易正义》渐](../../../sources/reference/zhouyi-zhengyi-hans/05漸.txt)
 
 ## 艮为山全卦及上九定稿
 
