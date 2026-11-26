@@ -52,6 +52,7 @@ export const SOURCE_REFS={
  'ZY-XICI-JING-QIAN':{title:"《周易正义》系辞下·井居其所而迁",url:"../../../sources/reference/zhouyi-zhengyi-hans/08.6.txt",scope:"井居处不移而其施可迁，对读上六出井济物，分物件流转与个人行踪。"},
  'ZY-XUN57-SHENMING':{title:"《周易正义》巽卦彖、象（对读）",url:"../../../sources/reference/zhouyi-zhengyi-hans/06巽.txt",scope:"重巽以申命与君子申命行事，重申所言不自定新日期。"},
  'ZY-KUN2-5-YUANJI':{title:"《周易正义》坤六五（对读）",url:"../../../sources/reference/zhouyi-zhengyi-hans/01坤.txt",scope:"坤六五以文在中说黄裳元吉，井上六以井功大成说元吉，同辞各有主语和来处。"},
+ 'YC-GE49':{title:'程颐《伊川易传》卷四·革卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'革初须有其时、位、才而审虑慎动；逐爻据程传对应所释，不能据以预设真人经历。'},
  'YC-JING48':{title:'程颐《伊川易传》卷四·井卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'初六取井与鼎皆就物以为义、上无应援不得上水，逐爻依井卦原注读。'},
  'ZY-DING50-1-COMPARISON':{title:'《周易正义》鼎初六（对读）',url:'../../../sources/reference/zhouyi-zhengyi-hans/05鼎.txt',scope:'鼎初以颠趾出秽纳新，不能与井初泥而不食共用一个断辞。'},
  'YC-KUN47':{title:'程颐《伊川易传》卷四·困卦',url:'../../../sources/reference/yichuan-yizhuan/伊川易傳__四庫全書本__卷4.txt',scope:'困初六取株木不能荫庇、三岁不觌为不遇其所亨等，依程传困卦逐爻核读。'},
