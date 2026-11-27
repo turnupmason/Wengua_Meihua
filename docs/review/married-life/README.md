@@ -100,3 +100,5 @@
 累计1800篇，Guan隔离实际内容提交 `6fc18df01eae9d5124cf4e9bc69dcc49b06caf10`：双读各1800，48600项盘面零差，正文500–640，简断64–112，24份完整规则审计源匹配，正文简断风格、词筛、连续开头及近复制均0。1555篇明确古籍定位全部匹配（245其他格式）。[独立核验指纹](independent-bindings-1800.json) · [古籍行号定位核验](independent-classical-locators-1800.json)。
 
 累计1872篇，Guan隔离实际内容提交 `eed9cf9036d5169f84f1e7a0ba79ea9901cb976f`：双读各1872，50544项盘面零差，正文500–640，简断64–113，24规则审计源SHA匹配；正文简断的重复组、连续开头、近复制及词筛均0。1627明确古籍定位全匹配（245其他格式）。[独立核验指纹](independent-bindings-1872.json) · [古籍行号定位核验](independent-classical-locators-1872.json)。
+
+累计1944篇，Guan隔离实际内容提交 `73ddad4642020259febfa3425eebaf1264a375c2`：双读各1944，52488项盘面零差，正文500–640，简断64–118，已完成24规则审计源SHA匹配；全部正文简断重复组、连续开头、近复制及词筛均0。1699明确古籍定位全配（245其他格式）。[独立核验指纹](independent-bindings-1944.json) · [古籍行号定位核验](independent-classical-locators-1944.json)。
