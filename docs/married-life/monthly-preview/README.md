@@ -1,6 +1,6 @@
-# 夫妻婚姻逐月原创断语：2880 篇预览
+# 夫妻婚姻逐月原创断语：2952 篇预览
 
-累计 2880/4,608 篇，剩余 1728 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。已认可的[七篇样稿](samples.md)及[写作与规则证据](../RULE_AUDIT.md)保持可对照。
+累计 2952/4,608 篇，剩余 1656 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。已认可的[七篇样稿](samples.md)及[写作与规则证据](../RULE_AUDIT.md)保持可对照。
 
 | 卦 | 已发布篇数 | 正文 | 核读回执 |
 |---|---:|---|---|
@@ -40,15 +40,15 @@
 | 雷天大壮 | 72/72 | [读全文](hex-034.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-034.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-034.json) |
 | 火地晋 | 72/72 | [读全文](hex-035.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-035.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-035.json) |
 | 地火明夷 | 72/72 | [读全文](hex-036.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-036.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-036.json) |
-| 风火家人 | 48/72 | [读全文](hex-037.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-037.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-037.json) |
-| 火泽睽 | 48/72 | [读全文](hex-038.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-038.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-038.json) |
-| 水山蹇 | 48/72 | [读全文](hex-039.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-039.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-039.json) |
-| 雷水解 | 48/72 | [读全文](hex-040.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-040.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-040.json) |
-| 山泽损 | 48/72 | [读全文](hex-041.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-041.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-041.json) |
-| 风雷益 | 48/72 | [读全文](hex-042.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-042.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-042.json) |
+| 风火家人 | 60/72 | [读全文](hex-037.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-037.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-037.json) |
+| 火泽睽 | 60/72 | [读全文](hex-038.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-038.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-038.json) |
+| 水山蹇 | 60/72 | [读全文](hex-039.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-039.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-039.json) |
+| 雷水解 | 60/72 | [读全文](hex-040.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-040.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-040.json) |
+| 山泽损 | 60/72 | [读全文](hex-041.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-041.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-041.json) |
+| 风雷益 | 60/72 | [读全文](hex-042.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-042.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-042.json) |
 
 
 
-正文 500–640 汉字，简断 60–118 汉字。盘面比较 77760 项，差异 0。本库不编人物经历或事实、不凭孤象指认外遇，育儿判断只用于婚姻能否承担新增责任的经营方向。
+正文 500–640 汉字，简断 60–118 汉字。盘面比较 79704 项，差异 0。本库不编人物经历或事实、不凭孤象指认外遇，育儿判断只用于婚姻能否承担新增责任的经营方向。
 
 [机器核验](../../review/MARRIED_LIFE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/MARRIED_LIFE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/married-life/README.md) · [交付清单](manifest.json)
