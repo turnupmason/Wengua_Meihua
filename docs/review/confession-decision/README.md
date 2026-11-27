@@ -37,6 +37,13 @@
 - [坎为水](hex-029.md)
 - [离为火](hex-030.md)
 
+- [泽山咸](hex-031.md)
+- [雷风恒](hex-032.md)
+- [天山遁](hex-033.md)
+- [雷天大壮](hex-034.md)
+- [火地晋](hex-035.md)
+- [地火明夷](hex-036.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
