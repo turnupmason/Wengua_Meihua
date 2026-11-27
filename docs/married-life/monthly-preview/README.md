@@ -1,6 +1,6 @@
-# 夫妻婚姻逐月原创断语：4320 篇预览
+# 夫妻婚姻逐月原创断语：4608 篇预览
 
-累计 4320/4,608 篇，剩余 288 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。已认可的[七篇样稿](samples.md)及[写作与规则证据](../RULE_AUDIT.md)保持可对照。
+累计 4608/4,608 篇，剩余 0 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。已认可的[七篇样稿](samples.md)及[写作与规则证据](../RULE_AUDIT.md)保持可对照。
 
 | 卦 | 已发布篇数 | 正文 | 核读回执 |
 |---|---:|---|---|
@@ -64,9 +64,13 @@
 | 兑为泽 | 72/72 | [读全文](hex-058.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-058.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-058.json) |
 | 风水涣 | 72/72 | [读全文](hex-059.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-059.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-059.json) |
 | 水泽节 | 72/72 | [读全文](hex-060.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-060.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72/72 | [读全文](hex-061.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-061.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-061.json) |
+| 雷山小过 | 72/72 | [读全文](hex-062.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-062.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-062.json) |
+| 水火既济 | 72/72 | [读全文](hex-063.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-063.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-063.json) |
+| 火水未济 | 72/72 | [读全文](hex-064.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-064.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-064.json) |
 
 
 
-正文 500–640 汉字，简断 60–120 汉字。盘面比较 116640 项，差异 0。本库不编人物经历或事实、不凭孤象指认外遇，育儿判断只用于婚姻能否承担新增责任的经营方向。
+正文 500–640 汉字，简断 60–120 汉字。盘面比较 124416 项，差异 0。本库不编人物经历或事实、不凭孤象指认外遇，育儿判断只用于婚姻能否承担新增责任的经营方向。
 
 [机器核验](../../review/MARRIED_LIFE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/MARRIED_LIFE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/married-life/README.md) · [交付清单](manifest.json)
