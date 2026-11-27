@@ -52,7 +52,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const workplace=name==='workplace-stability';
  const confession=name==='confession-decision';
- if(confession)report.confession={scopeArticlesChecked:0,authorReadback:0,secondRead:0,timingCorrections:[],inheritedShortJudgments:[],sourceBindings:[]};
+ if(confession)report.confession={scopeArticlesChecked:0,authorReadback:0,secondRead:0,timingCorrections:[],inheritedShortJudgments:[],inheritedShortTimingOmissions:[],sourceBindings:[]};
  const bodyOpenings=new Map(),shortOpenings=new Map();
  if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,scopeArticlesChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
@@ -142,7 +142,11 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    if(timingSignature(a.timing)!==timingSignature(old[10]))err(key,'baseline-timing','Changed timing kind, role, method, count or presence');
    if(confession){
     if(typeof a.timing!=='string'&&(!Array.isArray(a.timing)||a.timing.length!==1||a.timing.some(x=>!['equal','control','support'].includes(x[0]))))err(key,'confession-timing-scope','One inherited named-event slot of type equal/control/support, or a substantive omission, required');
-    if(typeof a.timing==='string'&&han(a.timing)<12)err(key,'confession-timing-scope','Omission reason too short');
+    if(typeof a.timing==='string'&&han(a.timing)<12) {
+     // Preserve a nonempty, exact inherited omission reason rather than padding it.
+     if(han(a.timing)>0&&a.timing===old[10])report.confession.inheritedShortTimingOmissions.push({key,hanLength:han(a.timing),reason:a.timing});
+     else err(key,'confession-timing-scope','Omission reason too short or empty');
+    }
     if(JSON.stringify(a.timing)!==JSON.stringify(old[10])){
      const cr=a.timingCorrection;
      if(!cr||JSON.stringify(cr.old)!==JSON.stringify(old[10])||JSON.stringify(cr.new)!==JSON.stringify(a.timing)||typeof cr.reason!=='string'||han(cr.reason)<12||cr.impact?.outcomeChanged!==false||cr.impact?.timingSignatureChanged!==false)err(key,'timing-correction','Bind exact old and new timing, explain the change, and preserve the outcome and timing signature');

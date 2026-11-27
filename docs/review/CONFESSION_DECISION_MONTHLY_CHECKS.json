@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "item": "confession-decision",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 2304,
+  "articleCount": 2376,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -517,60 +517,60 @@
     {
       "primaryId": 31,
       "name": "泽山咸",
-      "articles": 24,
-      "sourceSha256": "b8ff766cfa32c618e1fb675648e52852972ef95a53fa7d98c0d84cb8ee4e90fa",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "af721e96d4c9a84bd5cee7342e3d29a35fc662240e6c1d3e5209be550ab6dc61",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
-        521
+        526
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 20,
-        "difficult": 4
+        "conditional": 30,
+        "difficult": 6
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 32,
       "name": "雷风恒",
-      "articles": 24,
-      "sourceSha256": "2a7ffabbaa738a2d41a1384f6bf56d95a7fbdab845c7d1b2d00b19723a4d3f36",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "40aa5d3ef7b49d950f794e3d7bd41c5307b308ddc9ac88e046e73db5ad9dcab6",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
-        510
+        514
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 6,
-        "difficult": 18
+        "conditional": 14,
+        "difficult": 22
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 33,
       "name": "天山遁",
-      "articles": 24,
-      "sourceSha256": "4f633bb9d3cc0dfe9faa3c6ba995be47d4372ac2a766172986c5780a5341dce9",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "b4fb56fe73ff173f609938c802f6db3f437f7eb213fe1cae4e83d3180e1d8c3d",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
-        521
+        522
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 12,
+        "conditional": 24,
         "difficult": 12
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 34,
       "name": "雷天大壮",
-      "articles": 24,
-      "sourceSha256": "9c316157ba0aa5c69abbf86ea156bf93d0f250adee8dfd61c2f73100859b6d0e",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "1d8cf8f3b310ba43bf75ce207a9e295d28561c1daa36918b3f87c63884eb3000",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         521
@@ -578,43 +578,43 @@
       "outcomes": {
         "favourable": 0,
         "conditional": 8,
-        "difficult": 16
+        "difficult": 28
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 35,
       "name": "火地晋",
-      "articles": 24,
-      "sourceSha256": "f332251705f2a1c561b691cf5f2cc6376c797640ebe01f14d5b3305b9959e9b7",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "173af1103cb75a50c79f243b0ea4e3137842afef9eb95f5528a5f344c4f4994f",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         542
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 18,
-        "difficult": 6
+        "conditional": 22,
+        "difficult": 14
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 36,
       "name": "地火明夷",
-      "articles": 24,
-      "sourceSha256": "8cbc3c3bae4d318d5054e06b4f9e8ac9b409f73d0d07c2ab514017df0dcf1ca8",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "3c874d29217abf00e5d62fd2d60a29f1f579bbc13b7ae61e900e8e78aba7ae3b",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         518
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 16,
-        "difficult": 8
+        "conditional": 24,
+        "difficult": 12
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     }
   ],
   "errors": [],
@@ -985,7 +985,17 @@
       "detail": "简断可能未明示outreach，请独立读审"
     },
     {
+      "key": "31/3/酉",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示confession，请独立读审"
+    },
+    {
       "key": "32/1/未",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "34/3/午",
       "check": "confession-short-scope",
       "detail": "简断可能未明示outreach，请独立读审"
     },
@@ -995,13 +1005,218 @@
       "detail": "简断可能未明示outreach，请独立读审"
     }
   ],
-  "judgmentCorrections": [],
+  "judgmentCorrections": [
+    {
+      "key": "31/3/寅",
+      "old": "春死艮坤两生弱、囚乾比薄、旺巽难理，六三戒执随，止于自主条件。",
+      "new": "春死艮坤两生弱、囚乾比薄、旺巽难理，九三戒执随，止于自主条件。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/卯",
+      "old": "春死艮坤两生弱、囚乾比薄、旺巽难理，六三戒执随，止于自主条件。",
+      "new": "春死艮坤两生弱、囚乾比薄、旺巽难理，九三戒执随，止于自主条件。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/辰",
+      "old": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；六三执随限制先从对等行为验。",
+      "new": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；九三执随限制先从对等行为验。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/巳",
+      "old": "相艮及相坤直生，死体尚弱、死乾比弱及休巽难理；六三不可执随。",
+      "new": "相艮及相坤直生，死体尚弱、死乾比弱及休巽难理；九三不可执随。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/午",
+      "old": "相艮及相坤直生，死体尚弱、死乾比弱及休巽难理；六三不可执随。",
+      "new": "相艮及相坤直生，死体尚弱、死乾比弱及休巽难理；九三不可执随。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/未",
+      "old": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；六三执随限制先从对等行为验。",
+      "new": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；九三执随限制先从对等行为验。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/申",
+      "old": "秋旺兑得首末休土生、旺乾比、死巽可理；六三执随之戒须自主相处修正。",
+      "new": "秋旺兑得首末休土生、旺乾比、死巽可理；九三执随之戒须自主相处修正。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/酉",
+      "old": "秋旺兑得首末休土生、旺乾比、死巽可理；六三执随之戒须自主相处修正。",
+      "new": "秋旺兑得首末休土生、旺乾比、死巽可理；九三执随之戒须自主相处修正。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/戌",
+      "old": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；六三执随限制先从对等行为验。",
+      "new": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；九三执随限制先从对等行为验。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/亥",
+      "old": "冬休兑，双囚土助薄、休乾平比、相巽难理，六三戒盲从。",
+      "new": "冬休兑，双囚土助薄、休乾平比、相巽难理，九三戒盲从。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/子",
+      "old": "冬休兑，双囚土助薄、休乾平比、相巽难理，六三戒盲从。",
+      "new": "冬休兑，双囚土助薄、休乾平比、相巽难理，九三戒盲从。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    },
+    {
+      "key": "31/3/丑",
+      "old": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；六三执随限制先从对等行为验。",
+      "new": "土相兑受艮坤双旺土直生、相乾比，囚巽可理；九三执随限制先从对等行为验。",
+      "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+      "sourceEvidence": [
+        {
+          "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+          "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+        },
+        {
+          "path": "docs/confession-decision/hex-031.md",
+          "scope": "原问项第三爻动及实际目录爻辞九三"
+        }
+      ],
+      "interpretationApproval": "not-implied-by-structural-check"
+    }
+  ],
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 62208,
+  "chartComparisons": 64152,
   "chartMismatches": [],
-  "dateCases": 4608,
+  "dateCases": 4752,
   "bodyHanRange": [
     500,
     641
@@ -1013,10 +1228,203 @@
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "confession": {
-    "scopeArticlesChecked": 2304,
-    "authorReadback": 2304,
-    "secondRead": 2304,
-    "timingCorrections": [],
+    "scopeArticlesChecked": 2376,
+    "authorReadback": 2376,
+    "secondRead": 2376,
+    "timingCorrections": [
+      {
+        "key": "31/3/辰",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，六三不作即时告白。"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，九三不作即时告白。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      },
+      {
+        "key": "31/3/未",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，六三不作即时告白。"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，九三不作即时告白。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      },
+      {
+        "key": "31/3/申",
+        "old": [
+          [
+            "equal",
+            "body_mutual",
+            "有机会看到对方也主动参与一回相处",
+            "若对方先提见面，可以各自讲一个真正想选的做法。",
+            "体互旺乾同原体，申酉金日用于过程参与，末生与六三互相限定，先观察再说好感。"
+          ]
+        ],
+        "new": [
+          [
+            "equal",
+            "body_mutual",
+            "有机会看到对方也主动参与一回相处",
+            "若对方先提见面，可以各自讲一个真正想选的做法。",
+            "体互旺乾同原体，申酉金日用于过程参与，末生与九三互相限定，先观察再说好感。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      },
+      {
+        "key": "31/3/酉",
+        "old": [
+          [
+            "equal",
+            "body_mutual",
+            "有机会看到对方也主动参与一回相处",
+            "若对方先提见面，可以各自讲一个真正想选的做法。",
+            "体互旺乾同原体，申酉金日用于过程参与，末生与六三互相限定，先观察再说好感。"
+          ]
+        ],
+        "new": [
+          [
+            "equal",
+            "body_mutual",
+            "有机会看到对方也主动参与一回相处",
+            "若对方先提见面，可以各自讲一个真正想选的做法。",
+            "体互旺乾同原体，申酉金日用于过程参与，末生与九三互相限定，先观察再说好感。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      },
+      {
+        "key": "31/3/戌",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，六三不作即时告白。"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，九三不作即时告白。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      },
+      {
+        "key": "31/3/丑",
+        "old": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，六三不作即时告白。"
+          ]
+        ],
+        "new": [
+          [
+            "support",
+            "changed_use",
+            "有机会收到对方真实的照应或见面办法",
+            "见面可以两人各讲一个想法，先看做法能不能照顾到双方。",
+            "末旺坤直生原兑，取辰戌丑未土日作照应近候，九三不作即时告白。"
+          ]
+        ],
+        "reason": "原五气说明误植六三，咸第三爻阳爻为九三，仅订正爻名，原判和应期结构不动。",
+        "sourceEvidence": [
+          {
+            "path": "sources/reference/zhouyi-zhengyi/04咸.wiki",
+            "scope": "第59行九三咸其股执其随往吝及王弼孔颖达注疏"
+          },
+          {
+            "path": "docs/confession-decision/hex-031.md",
+            "scope": "原问项第三爻动及实际目录爻辞九三"
+          }
+        ]
+      }
+    ],
     "inheritedShortJudgments": [
       {
         "key": "26/1/亥",
@@ -1077,6 +1485,38 @@
         "key": "34/2/酉",
         "hanLength": 19,
         "judgment": "秋死木受三旺金，末囚火继续泄，爻贞吉限守中。"
+      },
+      {
+        "key": "34/3/辰",
+        "hanLength": 17,
+        "judgment": "土囚震承四相金克，九三壮进而自缚，主缓。"
+      },
+      {
+        "key": "34/3/未",
+        "hanLength": 17,
+        "judgment": "土囚震承四相金克，九三壮进而自缚，主缓。"
+      },
+      {
+        "key": "34/3/戌",
+        "hanLength": 17,
+        "judgment": "土囚震承四相金克，九三壮进而自缚，主缓。"
+      },
+      {
+        "key": "34/3/丑",
+        "hanLength": 17,
+        "judgment": "土囚震承四相金克，九三壮进而自缚，主缓。"
+      }
+    ],
+    "inheritedShortTimingOmissions": [
+      {
+        "key": "36/3/亥",
+        "hanLength": 11,
+        "reason": "无得令生体比和，不取日期。"
+      },
+      {
+        "key": "36/3/子",
+        "hanLength": 11,
+        "reason": "无得令生体比和，不取日期。"
       }
     ],
     "sourceBindings": [
@@ -1202,27 +1642,27 @@
       },
       {
         "primaryId": 31,
-        "sourceSha256": "b8ff766cfa32c618e1fb675648e52852972ef95a53fa7d98c0d84cb8ee4e90fa"
+        "sourceSha256": "af721e96d4c9a84bd5cee7342e3d29a35fc662240e6c1d3e5209be550ab6dc61"
       },
       {
         "primaryId": 32,
-        "sourceSha256": "2a7ffabbaa738a2d41a1384f6bf56d95a7fbdab845c7d1b2d00b19723a4d3f36"
+        "sourceSha256": "40aa5d3ef7b49d950f794e3d7bd41c5307b308ddc9ac88e046e73db5ad9dcab6"
       },
       {
         "primaryId": 33,
-        "sourceSha256": "4f633bb9d3cc0dfe9faa3c6ba995be47d4372ac2a766172986c5780a5341dce9"
+        "sourceSha256": "b4fb56fe73ff173f609938c802f6db3f437f7eb213fe1cae4e83d3180e1d8c3d"
       },
       {
         "primaryId": 34,
-        "sourceSha256": "9c316157ba0aa5c69abbf86ea156bf93d0f250adee8dfd61c2f73100859b6d0e"
+        "sourceSha256": "1d8cf8f3b310ba43bf75ce207a9e295d28561c1daa36918b3f87c63884eb3000"
       },
       {
         "primaryId": 35,
-        "sourceSha256": "f332251705f2a1c561b691cf5f2cc6376c797640ebe01f14d5b3305b9959e9b7"
+        "sourceSha256": "173af1103cb75a50c79f243b0ea4e3137842afef9eb95f5528a5f344c4f4994f"
       },
       {
         "primaryId": 36,
-        "sourceSha256": "8cbc3c3bae4d318d5054e06b4f9e8ac9b409f73d0d07c2ab514017df0dcf1ca8"
+        "sourceSha256": "3c874d29217abf00e5d62fd2d60a29f1f579bbc13b7ae61e900e8e78aba7ae3b"
       }
     ]
   },
