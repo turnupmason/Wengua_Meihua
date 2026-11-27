@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
   "scope": "machine-style-scan; not independent full read or prediction validation",
-  "baseCommit": "449c5c850278904527455ddcc5057511c027f685",
-  "articleCount": 4176,
-  "sourceCount": 58,
+  "baseCommit": "96aa50273877a47b17696311ef4ff033386357d6",
+  "articleCount": 4320,
+  "sourceCount": 60,
   "sources": [
     {
       "path": "sources/editorial/confession-decision/monthly/hex-001.json",
@@ -294,6 +294,16 @@
       "path": "sources/editorial/confession-decision/monthly/hex-058.json",
       "sha256": "d55dd39eab65571b79e8bb9e66a8d3f4c83c7f8c1a8acec2291cc557cd3e368f",
       "count": 72
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-063.json",
+      "sha256": "cf2a58b417ce2efa1ffe370a3999e970e12fa7f6607fe7a6e6e36c86e717aa5e",
+      "count": 72
+    },
+    {
+      "path": "sources/editorial/confession-decision/monthly/hex-064.json",
+      "sha256": "55d5d00bc962b54c9ef5d2ad6ed676f7bb59f188f6e133e3b5bd0a2e4d305ef6",
+      "count": 72
     }
   ],
   "method": {
@@ -313,9 +323,9 @@
       ],
       "median": 505.0,
       "monthStartCount": 7,
-      "monthStartPct": 0.17,
+      "monthStartPct": 0.16,
       "semanticMonthStartCount": 7,
-      "semanticMonthStartPct": 0.17,
+      "semanticMonthStartPct": 0.16,
       "explicitMonthStartCount": 7,
       "seasonStartCount": 0,
       "quoteStartCount": 0,
@@ -388,12 +398,12 @@
         }
       },
       "styleMarkerCounts": {
-        "如果": 3125,
-        "不能不宜": 3551,
-        "现实实证": 4141,
-        "证据边界": 2168,
+        "如果": 3239,
+        "不能不宜": 3640,
+        "现实实证": 4285,
+        "证据边界": 2217,
         "先说判断": 62,
-        "安危警示": 182
+        "安危警示": 239
       },
       "byHex": [
         {
@@ -917,6 +927,24 @@
           "explicitMonthStart": 0,
           "seasonStart": 0,
           "quotedStart": 0
+        },
+        {
+          "hex": 63,
+          "count": 72,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 64,
+          "count": 72,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
         }
       ],
       "completeMonthStartLineCount": 0,
@@ -933,14 +961,14 @@
     "short": {
       "lengthRange": [
         69,
-        119
+        120
       ],
-      "median": 91.0,
-      "monthStartCount": 121,
-      "monthStartPct": 2.9,
-      "semanticMonthStartCount": 120,
-      "semanticMonthStartPct": 2.87,
-      "explicitMonthStartCount": 120,
+      "median": 92.0,
+      "monthStartCount": 126,
+      "monthStartPct": 2.92,
+      "semanticMonthStartCount": 125,
+      "semanticMonthStartPct": 2.89,
+      "explicitMonthStartCount": 125,
       "seasonStartCount": 0,
       "quoteStartCount": 0,
       "groupMetrics": {
@@ -1012,11 +1040,11 @@
         }
       },
       "styleMarkerCounts": {
-        "不能不宜": 1705,
-        "现实实证": 1642,
+        "不能不宜": 1743,
+        "现实实证": 1733,
         "证据边界": 244,
         "先说判断": 13,
-        "如果": 122
+        "如果": 124
       },
       "byHex": [
         {
@@ -1540,6 +1568,24 @@
           "explicitMonthStart": 0,
           "seasonStart": 0,
           "quotedStart": 0
+        },
+        {
+          "hex": 63,
+          "count": 72,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 64,
+          "count": 72,
+          "monthStart": 5,
+          "semanticMonthStart": 5,
+          "explicitMonthStart": 5,
+          "seasonStart": 0,
+          "quotedStart": 0
         }
       ],
       "completeMonthStartLineCount": 0,
@@ -1602,15 +1648,15 @@
     "body": {
       "threshold": 0.64,
       "gramSize": 3,
-      "documents": 4176,
-      "candidatePairs": 482910,
+      "documents": 4320,
+      "candidatePairs": 521693,
       "pairs": []
     },
     "short": {
       "threshold": 0.72,
       "gramSize": 3,
-      "documents": 4176,
-      "candidatePairs": 46057,
+      "documents": 4320,
+      "candidatePairs": 49560,
       "pairs": []
     }
   },

@@ -1,6 +1,6 @@
-# 暧昧表白逐月长稿：4176 篇预览
+# 暧昧表白逐月长稿：4320 篇预览
 
-更新日期：2026-11-27（America/New_York）。本批新增雷火丰、火山旅、巽为风、兑为泽，共 288 篇；累计 4176 篇。完整目标为 4,608 篇，尚余 432 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-27（America/New_York）。本批新增水火既济、火水未济，共 144 篇；累计 4320 篇。完整目标为 4,608 篇，尚余 288 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -62,6 +62,8 @@
 | 火山旅 | 72/72 | [打开全文](hex-056.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-056.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-056.json) |
 | 巽为风 | 72/72 | [打开全文](hex-057.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-057.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-057.json) |
 | 兑为泽 | 72/72 | [打开全文](hex-058.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-058.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-058.json) |
+| 水火既济 | 72/72 | [打开全文](hex-063.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-063.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-063.json) |
+| 火水未济 | 72/72 | [打开全文](hex-064.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-064.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-064.json) |
 
 
 
@@ -73,19 +75,15 @@
 
 ## 本批阅读入口
 
-- [雷火丰：已完成 72 篇（6 爻）](hex-055.md)
+- [水火既济：已完成 72 篇（6 爻）](hex-063.md)
 
-- [火山旅：已完成 72 篇（6 爻）](hex-056.md)
-
-- [巽为风：已完成 72 篇（6 爻）](hex-057.md)
-
-- [兑为泽：已完成 72 篇（6 爻）](hex-058.md)
+- [火水未济：已完成 72 篇（6 爻）](hex-064.md)
 
 
 
 ## 检查与阅读状态
 
-4176 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 112,752 项，差异 0；日期用例 8,352 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
+4320 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 116,640 项，差异 0；日期用例 8,640 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/CONFESSION_DECISION_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
