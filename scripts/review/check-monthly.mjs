@@ -52,7 +52,7 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
  const seenBody=new Map(),seenParagraph=new Map(),seenSentence=new Map();
  const workplace=name==='workplace-stability';
  const confession=name==='confession-decision';
- if(confession)report.confession={scopeArticlesChecked:0,authorReadback:0,secondRead:0,timingCorrections:[],sourceBindings:[]};
+ if(confession)report.confession={scopeArticlesChecked:0,authorReadback:0,secondRead:0,timingCorrections:[],inheritedShortJudgments:[],sourceBindings:[]};
  const bodyOpenings=new Map(),shortOpenings=new Map();
  if(workplace)report.workplaceCopy={bodyOpeningsChecked:0,shortOpeningsChecked:0,scopeArticlesChecked:0,renderedSectionsChecked:0,movingLineBatches:0};
  const err=(key,check,detail)=>report.errors.push({key,check,detail});
@@ -115,7 +115,13 @@ export async function auditMonthly(name,{ids,draft=false,docs=false}={}) {
    counts[a.outcome]=(counts[a.outcome]||0)+1;
    if(!outcomes.includes(a.outcome))err(key,'outcome','Unexpected code');
    if(a.outcome!==old[2])err(key,'baseline-decision','Outcome changed without a separately implemented decision correction review');
-   if(typeof a.judgment!=='string'||han(a.judgment)<20)err(key,'judgment','Missing professional judgment');
+   if(typeof a.judgment!=='string'||han(a.judgment)===0)err(key,'judgment','Missing professional judgment');
+   else if(han(a.judgment)<20) {
+    // Confession previews inherit the existing professional judgment verbatim.
+    // A nonempty exact baseline is not missing merely because its own note is short.
+    if(confession&&a.judgment===old[9])report.confession.inheritedShortJudgments.push({key,hanLength:han(a.judgment),judgment:a.judgment});
+    else err(key,'judgment','Professional judgment shorter than 20 Han characters');
+   }
    else if(!confession) {
     if(!c.note[a.outcome]?.test(a.judgment))err(key,'judgment-verdict','专业说明须写明本篇结论（'+c.note[a.outcome]+'）');
     for(const [o,re] of Object.entries(c.note))if(o!==a.outcome&&re.test(a.judgment))err(key,'judgment-verdict','专业说明写成了另一档：'+a.judgment.match(re)[0]);
