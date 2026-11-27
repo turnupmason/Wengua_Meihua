@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0.0",
   "scope": "machine-style-scan; not independent full read or prediction validation",
-  "baseCommit": "8cd777330aa0865317d79939190ccdfaf703f6ae",
-  "articleCount": 504,
+  "baseCommit": "40af99ec51db1c468b89d61f4d6fb7d2ee8cb82b",
+  "articleCount": 576,
   "sourceCount": 12,
   "sources": [
     {
@@ -37,33 +37,33 @@
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-007.json",
-      "sha256": "31d8b1cf0eeefcc8fedb9716551d1bcfde54d9db32f41a27a77f01cb4b850a92",
-      "count": 12
+      "sha256": "1231b37cad0e55976524a1440fd6312e83f8284367cf54b937c834f3ef8ba90c",
+      "count": 24
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-008.json",
-      "sha256": "12f22ef8964b295f10f03160393e721aab73b32df8e7f31fde4a38fa74acbe17",
-      "count": 12
+      "sha256": "9d3bc393f2b1e5c29b73d8b656a00f5171162ce11152c376ead17c53a412a803",
+      "count": 24
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-009.json",
-      "sha256": "712fe374ee5170d5429e4eb74b85bf2dd1cc84571399970ebc091945269815e9",
-      "count": 12
+      "sha256": "a23c526fc02ef59abe443cab83f5fdf8e281cce8392ed2422b692459f8a96c4d",
+      "count": 24
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-010.json",
-      "sha256": "b65250485b1364cdc3022924e493f3a000d26ba62129d1ce506899f5e53ab072",
-      "count": 12
+      "sha256": "a1a9213d34b77462891fcaba6f3dd42e5cc39c9af65aabd5c918883b255862ac",
+      "count": 24
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-011.json",
-      "sha256": "f1cc72fc906c159d6c200122f7d131893f06b34a74deb4e9a2019ae271c2081f",
-      "count": 12
+      "sha256": "a353e20b3a9178aa061da95bf6caab6662c7ead6b26e069a13ea5ec48f08698e",
+      "count": 24
     },
     {
       "path": "sources/editorial/married-life/monthly/hex-012.json",
-      "sha256": "1dcf18b57cd5b8c621958e4262ed282063517ceeb77f093d746d50caf6cad9ff",
-      "count": 12
+      "sha256": "46a2063f7372012c0afa263f28918a2ad3607529a9b2ec96c798bc1626ea65c8",
+      "count": 24
     }
   ],
   "method": {
@@ -83,9 +83,9 @@
       ],
       "median": 514.0,
       "monthStartCount": 3,
-      "monthStartPct": 0.6,
+      "monthStartPct": 0.52,
       "semanticMonthStartCount": 3,
-      "semanticMonthStartPct": 0.6,
+      "semanticMonthStartPct": 0.52,
       "explicitMonthStartCount": 3,
       "seasonStartCount": 0,
       "quoteStartCount": 0,
@@ -158,11 +158,11 @@
         }
       },
       "styleMarkerCounts": {
-        "现实实证": 504,
-        "证据边界": 230,
-        "不能不宜": 352,
-        "先说判断": 7,
-        "如果": 145,
+        "现实实证": 576,
+        "证据边界": 257,
+        "不能不宜": 392,
+        "先说判断": 8,
+        "如果": 163,
         "安危警示": 1
       },
       "byHex": [
@@ -222,7 +222,7 @@
         },
         {
           "hex": 7,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -231,7 +231,7 @@
         },
         {
           "hex": 8,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -240,7 +240,7 @@
         },
         {
           "hex": 9,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -249,7 +249,7 @@
         },
         {
           "hex": 10,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -258,7 +258,7 @@
         },
         {
           "hex": 11,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -267,7 +267,7 @@
         },
         {
           "hex": 12,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -288,16 +288,16 @@
     },
     "short": {
       "lengthRange": [
-        67,
+        66,
         107
       ],
       "median": 84.0,
-      "monthStartCount": 57,
-      "monthStartPct": 11.31,
-      "semanticMonthStartCount": 57,
-      "semanticMonthStartPct": 11.31,
-      "explicitMonthStartCount": 57,
-      "seasonStartCount": 0,
+      "monthStartCount": 61,
+      "monthStartPct": 10.59,
+      "semanticMonthStartCount": 61,
+      "semanticMonthStartPct": 10.59,
+      "explicitMonthStartCount": 61,
+      "seasonStartCount": 1,
       "quoteStartCount": 0,
       "groupMetrics": {
         "exactText": {
@@ -368,8 +368,8 @@
         }
       },
       "styleMarkerCounts": {
-        "现实实证": 273,
-        "不能不宜": 68,
+        "现实实证": 313,
+        "不能不宜": 77,
         "安危警示": 2,
         "证据边界": 2,
         "如果": 1
@@ -431,16 +431,16 @@
         },
         {
           "hex": 7,
-          "count": 12,
-          "monthStart": 3,
-          "semanticMonthStart": 3,
-          "explicitMonthStart": 3,
+          "count": 24,
+          "monthStart": 5,
+          "semanticMonthStart": 5,
+          "explicitMonthStart": 5,
           "seasonStart": 0,
           "quotedStart": 0
         },
         {
           "hex": 8,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -449,16 +449,16 @@
         },
         {
           "hex": 9,
-          "count": 12,
-          "monthStart": 1,
-          "semanticMonthStart": 1,
-          "explicitMonthStart": 1,
-          "seasonStart": 0,
+          "count": 24,
+          "monthStart": 3,
+          "semanticMonthStart": 3,
+          "explicitMonthStart": 3,
+          "seasonStart": 1,
           "quotedStart": 0
         },
         {
           "hex": 10,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -467,7 +467,7 @@
         },
         {
           "hex": 11,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -476,7 +476,7 @@
         },
         {
           "hex": 12,
-          "count": 12,
+          "count": 24,
           "monthStart": 0,
           "semanticMonthStart": 0,
           "explicitMonthStart": 0,
@@ -544,15 +544,15 @@
     "body": {
       "threshold": 0.64,
       "gramSize": 3,
-      "documents": 504,
-      "candidatePairs": 6572,
+      "documents": 576,
+      "candidatePairs": 9525,
       "pairs": []
     },
     "short": {
       "threshold": 0.72,
       "gramSize": 3,
-      "documents": 504,
-      "candidatePairs": 521,
+      "documents": 576,
+      "candidatePairs": 758,
       "pairs": []
     }
   },
