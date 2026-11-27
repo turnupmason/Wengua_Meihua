@@ -51,6 +51,13 @@
 - [山泽损](hex-041.md)
 - [风雷益](hex-042.md)
 
+- [泽天夬](hex-043.md)
+- [天风姤](hex-044.md)
+- [泽地萃](hex-045.md)
+- [地风升](hex-046.md)
+- [泽水困](hex-047.md)
+- [水风井](hex-048.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
