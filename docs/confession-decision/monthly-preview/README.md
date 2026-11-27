@@ -97,6 +97,8 @@
 
 [正文及简断风格全量核查](../../review/CONFESSION_DECISION_MONTHLY_STYLE.json) · 以实际篇数和源文件指纹登记。
 
+64卦、4,608篇全部完成。作者与独立AI读者的逐篇全文回执均与末版绑定，Guan隔离实际内容提交复验通过。[64卦逐卦古籍规则审计](../../review/confession-decision/README.md) · [最终独立机器核验](../../review/confession-decision/independent-checks-4608.json) · [最终独立风格核验](../../review/confession-decision/independent-style-4608.json) · [全量词筛处置](../../review/confession-decision/scope-dispositions-4608.json)。正文500–641汉字，简断69–120汉字；全部规定重复检查为零，119项词筛提示均实核误报，无未处置项。
+
 作者读回、独立排盘、古籍解释审计、独立全文复核和用户逐篇验收分别登记。机器通过不等于解释争议已经解决；用户对文风的认可，也不写成尚未查看稿件的逐篇验收。
 
 “卦理与出处”“简断摘要”可按需展开。应期是传统推算的参考窗口，阅读页日期采用演示基准；实际使用按起卦日换算。过程受阻的窗口不指称结果日期。
