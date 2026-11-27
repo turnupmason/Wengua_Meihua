@@ -30,6 +30,13 @@
 - [山地剥](hex-023.md)
 - [地雷复](hex-024.md)
 
+- [天雷无妄](hex-025.md)
+- [山天大畜](hex-026.md)
+- [山雷颐](hex-027.md)
+- [泽风大过](hex-028.md)
+- [坎为水](hex-029.md)
+- [离为火](hex-030.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
