@@ -1,17 +1,18 @@
-# 夫妻婚姻逐月断语 · 第二版原创样稿
+# 夫妻婚姻逐月原创断语：72 篇预览
 
-根据用户对首批稿的反馈重写六篇，并补一篇乾受体克的对照稿：从实际卦、动爻、五行生克旺衰和古籍象类出发，直接说明婚姻的相处倾向、矛盾在哪方面、怎样有针对性地改善。不虚设家庭故事，不用泛泛的生活建议代替卦象。子女只看现阶段婚姻是否适合考虑要孩子，不写怀孕日期。
+累计 72/4,608 篇，剩余 4536 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。已认可的[七篇样稿](samples.md)及[写作与规则证据](../RULE_AUDIT.md)保持可对照。
 
-[阅读七篇完整断语](samples.md) · [逐项卦象证据与古籍规则审计](../RULE_AUDIT.md)
+| 卦 | 已发布篇数 | 正文 | 核读回执 |
+|---|---:|---|---|
+| 乾为天 | 12/72 | [读全文](hex-001.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-001.json) |
+| 坤为地 | 12/72 | [读全文](hex-002.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-002.json) |
+| 水雷屯 | 12/72 | [读全文](hex-003.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-003.json) |
+| 山水蒙 | 12/72 | [读全文](hex-004.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-004.json) |
+| 水天需 | 12/72 | [读全文](hex-005.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-005.json) |
+| 天水讼 | 12/72 | [读全文](hex-006.md) | [作者](../../../sources/editorial/married-life/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/married-life/second-reviews-monthly/hex-006.json) |
 
-| 卦爻月令 | 主要卦象判断 | 育儿适宜度 |
-|---|---|---|
-| 泽山咸 六二 申 | 旺兑得艮生、中旺乾比，沟通和男长辈关系较有利 | 较适宜共同考虑 |
-| 雷风恒 九四 申 | 旺乾、旺兑双克死巽，尊长与口舌压力；末休坤难制 | 宜缓 |
-| 风火家人 六二 亥 | 双离受生耗，旺坎生体，末乾克，家事责任与男长辈边界 | 先落实分工 |
-| 火泽睽 九二 寅 | 囚兑受体克、中休坎来克、末旺震生，言语与顾虑可逐步化解 | 先解决矛盾 |
-| 风山渐 九五 午 | 休巽来克、中旺离生、末相艮比，决定迟缓但趋稳 | 较适宜共同考虑 |
-| 雷泽归妹 六三 辰 | 本相兑克、末相乾克，中生薄耗，口舌、尊长与关系边界 | 目前不宜急要 |
-| 火天大有 初九 申 | 囚离克旺乾兑难制，男长辈与口舌关系难料理（非乾来克） | 当前宜缓 |
 
-首批七篇供用户查看效果，完整计划64卦×6爻×12月令共4,608篇。古籍象类与判断方向可逐项核查；现代婚姻经营建议为有依据的类推，不把卦象等同于对真实人物行为的证实。
+
+正文 501–636 汉字，简断 74–107 汉字。盘面比较 1944 项，差异 0。本库不编人物经历或事实、不凭孤象指认外遇，育儿判断只用于婚姻能否承担新增责任的经营方向。
+
+[机器核验](../../review/MARRIED_LIFE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/MARRIED_LIFE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/married-life/README.md) · [交付清单](manifest.json)
