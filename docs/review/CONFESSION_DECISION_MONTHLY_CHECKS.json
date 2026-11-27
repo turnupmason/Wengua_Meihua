@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "item": "confession-decision",
   "scope": "monthly-source-and-render-validation",
-  "articleCount": 1872,
+  "articleCount": 1944,
   "hexagrams": [
     {
       "primaryId": 1,
@@ -415,43 +415,43 @@
     {
       "primaryId": 25,
       "name": "天雷无妄",
-      "articles": 24,
-      "sourceSha256": "e5d4830c564345b7985a4cc72c3bb0237e04ba1454b5d7ecf7f4ded31c6cc8c5",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "ec684d6dae74ce260529a81137b3b6fe4a3ac4fb16af3464f14b37fcea6c3076",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         519
       ],
       "outcomes": {
         "favourable": 12,
-        "conditional": 12,
-        "difficult": 0
+        "conditional": 20,
+        "difficult": 4
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 26,
       "name": "山天大畜",
-      "articles": 24,
-      "sourceSha256": "1bb2f5150e64e62738ae2d0bfc4dd5c1b72a805176bfefc7fa930c8b28325775",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "dacebcc457fa08be252084df6ef99d82b6a70e6280cbf414b6f6e0a0b92c1776",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         502,
         529
       ],
       "outcomes": {
         "favourable": 0,
-        "conditional": 6,
-        "difficult": 18
+        "conditional": 12,
+        "difficult": 24
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 27,
       "name": "山雷颐",
-      "articles": 24,
-      "sourceSha256": "6368644d22e2ea16f2934caf28a9411ea661d0c7f08ef55c71cc9756b55e06e9",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "144d253ae137739a1cbba8ad1c79f5bd8a03041083ab912f6df9d7c518576ae9",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
         516
@@ -459,60 +459,60 @@
       "outcomes": {
         "favourable": 0,
         "conditional": 0,
-        "difficult": 24
+        "difficult": 36
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 28,
       "name": "泽风大过",
-      "articles": 24,
-      "sourceSha256": "87ed43c4c692d59121fc2cc96bb3234ed6e770b007c669a0c059ecebd2826188",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "390adce1130ba93836c2f23a4d20b2fc7ccfb2bf2808ffcbfb6db144484772ec",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         500,
-        517
+        521
       ],
       "outcomes": {
         "favourable": 12,
         "conditional": 12,
-        "difficult": 0
+        "difficult": 12
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 29,
       "name": "坎为水",
-      "articles": 24,
-      "sourceSha256": "5d129e2a72fa775810e130b6ea1472c5f01d79f52862157a5cd4ab32d235cabd",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "4ce958ebc3d51a0196e36120ba39b6f7683ed51a767b6d140ce66ae512771998",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         501,
-        521
+        533
       ],
       "outcomes": {
         "favourable": 0,
         "conditional": 6,
-        "difficult": 18
+        "difficult": 30
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     },
     {
       "primaryId": 30,
       "name": "离为火",
-      "articles": 24,
-      "sourceSha256": "609abbe5d2b07444bc53dc4b068a5fffc264a857eaa5a423b2755ce63290748d",
-      "authorWholeArticlesRead": 24,
+      "articles": 36,
+      "sourceSha256": "5649d4c0f225b53c3b6df22a236201a02c6b52e4f2d70b3c34c1415c6cda8c2e",
+      "authorWholeArticlesRead": 36,
       "bodyHanRange": [
         503,
         542
       ],
       "outcomes": {
         "favourable": 4,
-        "conditional": 18,
-        "difficult": 2
+        "conditional": 28,
+        "difficult": 4
       },
-      "independentWholeArticlesRead": 24
+      "independentWholeArticlesRead": 36
     }
   ],
   "errors": [],
@@ -823,9 +823,29 @@
       "detail": "同接续实际往来。不因同气便定对方一定会同意恋爱，最终还要在真正谈话"
     },
     {
+      "key": "25/3/申",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
+      "key": "25/3/酉",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
+    },
+    {
       "key": "26/2/酉",
       "check": "confession-definite-consent",
       "detail": "再考虑表白。自己表达喜欢不等对方已经同意恋爱，后者须双方共同明确"
+    },
+    {
+      "key": "26/3/辰",
+      "check": "confession-definite-heart",
+      "detail": "的快慢，也不把古代合志解释成对方已经喜欢。\n末变山泽损，下兑金辰"
+    },
+    {
+      "key": "28/3/亥",
+      "check": "confession-short-scope",
+      "detail": "简断可能未明示outreach，请独立读审"
     },
     {
       "key": "29/2/寅",
@@ -852,9 +872,9 @@
   "duplicateArticles": [],
   "duplicateParagraphs": [],
   "duplicateLongSentences": [],
-  "chartComparisons": 50544,
+  "chartComparisons": 52488,
   "chartMismatches": [],
-  "dateCases": 3744,
+  "dateCases": 3888,
   "bodyHanRange": [
     500,
     641
@@ -866,9 +886,9 @@
   "independentFullCopyReview": "not-performed-by-this-script",
   "realWorldPredictionAccuracy": "not-validated",
   "confession": {
-    "scopeArticlesChecked": 1872,
-    "authorReadback": 1872,
-    "secondRead": 1872,
+    "scopeArticlesChecked": 1944,
+    "authorReadback": 1944,
+    "secondRead": 1944,
     "timingCorrections": [],
     "inheritedShortJudgments": [
       {
@@ -981,27 +1001,27 @@
       },
       {
         "primaryId": 25,
-        "sourceSha256": "e5d4830c564345b7985a4cc72c3bb0237e04ba1454b5d7ecf7f4ded31c6cc8c5"
+        "sourceSha256": "ec684d6dae74ce260529a81137b3b6fe4a3ac4fb16af3464f14b37fcea6c3076"
       },
       {
         "primaryId": 26,
-        "sourceSha256": "1bb2f5150e64e62738ae2d0bfc4dd5c1b72a805176bfefc7fa930c8b28325775"
+        "sourceSha256": "dacebcc457fa08be252084df6ef99d82b6a70e6280cbf414b6f6e0a0b92c1776"
       },
       {
         "primaryId": 27,
-        "sourceSha256": "6368644d22e2ea16f2934caf28a9411ea661d0c7f08ef55c71cc9756b55e06e9"
+        "sourceSha256": "144d253ae137739a1cbba8ad1c79f5bd8a03041083ab912f6df9d7c518576ae9"
       },
       {
         "primaryId": 28,
-        "sourceSha256": "87ed43c4c692d59121fc2cc96bb3234ed6e770b007c669a0c059ecebd2826188"
+        "sourceSha256": "390adce1130ba93836c2f23a4d20b2fc7ccfb2bf2808ffcbfb6db144484772ec"
       },
       {
         "primaryId": 29,
-        "sourceSha256": "5d129e2a72fa775810e130b6ea1472c5f01d79f52862157a5cd4ab32d235cabd"
+        "sourceSha256": "4ce958ebc3d51a0196e36120ba39b6f7683ed51a767b6d140ce66ae512771998"
       },
       {
         "primaryId": 30,
-        "sourceSha256": "609abbe5d2b07444bc53dc4b068a5fffc264a857eaa5a423b2755ce63290748d"
+        "sourceSha256": "5649d4c0f225b53c3b6df22a236201a02c6b52e4f2d70b3c34c1415c6cda8c2e"
       }
     ]
   },
