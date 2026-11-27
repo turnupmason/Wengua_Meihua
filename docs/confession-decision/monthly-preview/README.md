@@ -1,6 +1,6 @@
-# 暧昧表白逐月长稿：2736 篇预览
+# 暧昧表白逐月长稿：2808 篇预览
 
-更新日期：2026-11-27（America/New_York）。本批新增风火家人、火泽睽、水山蹇、雷水解、山泽损、风雷益，共 72 篇；累计 2736 篇。完整目标为 4,608 篇，尚余 1872 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-27（America/New_York）。本批新增风火家人、火泽睽、水山蹇、雷水解、山泽损、风雷益，共 72 篇；累计 2808 篇。完整目标为 4,608 篇，尚余 1800 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -40,12 +40,12 @@
 | 雷天大壮 | 72/72 | [打开全文](hex-034.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-034.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-034.json) |
 | 火地晋 | 72/72 | [打开全文](hex-035.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-035.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-035.json) |
 | 地火明夷 | 72/72 | [打开全文](hex-036.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-036.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-036.json) |
-| 风火家人 | 24/72 | [打开全文](hex-037.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-037.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-037.json) |
-| 火泽睽 | 24/72 | [打开全文](hex-038.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-038.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-038.json) |
-| 水山蹇 | 24/72 | [打开全文](hex-039.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-039.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-039.json) |
-| 雷水解 | 24/72 | [打开全文](hex-040.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-040.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-040.json) |
-| 山泽损 | 24/72 | [打开全文](hex-041.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-041.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-041.json) |
-| 风雷益 | 24/72 | [打开全文](hex-042.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-042.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-042.json) |
+| 风火家人 | 36/72 | [打开全文](hex-037.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-037.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-037.json) |
+| 火泽睽 | 36/72 | [打开全文](hex-038.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-038.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-038.json) |
+| 水山蹇 | 36/72 | [打开全文](hex-039.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-039.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-039.json) |
+| 雷水解 | 36/72 | [打开全文](hex-040.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-040.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-040.json) |
+| 山泽损 | 36/72 | [打开全文](hex-041.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-041.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-041.json) |
+| 风雷益 | 36/72 | [打开全文](hex-042.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-042.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-042.json) |
 
 
 
@@ -57,23 +57,23 @@
 
 ## 本批阅读入口
 
-- [风火家人：已完成 24 篇（2 爻）](hex-037.md)
+- [风火家人：已完成 36 篇（3 爻）](hex-037.md)
 
-- [火泽睽：已完成 24 篇（2 爻）](hex-038.md)
+- [火泽睽：已完成 36 篇（3 爻）](hex-038.md)
 
-- [水山蹇：已完成 24 篇（2 爻）](hex-039.md)
+- [水山蹇：已完成 36 篇（3 爻）](hex-039.md)
 
-- [雷水解：已完成 24 篇（2 爻）](hex-040.md)
+- [雷水解：已完成 36 篇（3 爻）](hex-040.md)
 
-- [山泽损：已完成 24 篇（2 爻）](hex-041.md)
+- [山泽损：已完成 36 篇（3 爻）](hex-041.md)
 
-- [风雷益：已完成 24 篇（2 爻）](hex-042.md)
+- [风雷益：已完成 36 篇（3 爻）](hex-042.md)
 
 
 
 ## 检查与阅读状态
 
-2736 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 73,872 项，差异 0；日期用例 5,472 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
+2808 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 75,816 项，差异 0；日期用例 5,616 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/CONFESSION_DECISION_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
