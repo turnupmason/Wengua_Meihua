@@ -1,6 +1,6 @@
-# 暧昧表白逐月长稿：4320 篇预览
+# 暧昧表白逐月长稿：4608 篇预览
 
-更新日期：2026-11-27（America/New_York）。本批新增水火既济、火水未济，共 144 篇；累计 4320 篇。完整目标为 4,608 篇，尚余 288 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-27（America/New_York）。本批新增风水涣、水泽节、风泽中孚、雷山小过，共 288 篇；累计 4608 篇。完整目标为 4,608 篇，尚余 0 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -62,6 +62,10 @@
 | 火山旅 | 72/72 | [打开全文](hex-056.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-056.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-056.json) |
 | 巽为风 | 72/72 | [打开全文](hex-057.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-057.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-057.json) |
 | 兑为泽 | 72/72 | [打开全文](hex-058.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-058.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-058.json) |
+| 风水涣 | 72/72 | [打开全文](hex-059.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-059.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-059.json) |
+| 水泽节 | 72/72 | [打开全文](hex-060.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-060.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-060.json) |
+| 风泽中孚 | 72/72 | [打开全文](hex-061.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-061.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-061.json) |
+| 雷山小过 | 72/72 | [打开全文](hex-062.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-062.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-062.json) |
 | 水火既济 | 72/72 | [打开全文](hex-063.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-063.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-063.json) |
 | 火水未济 | 72/72 | [打开全文](hex-064.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-064.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-064.json) |
 
@@ -75,15 +79,19 @@
 
 ## 本批阅读入口
 
-- [水火既济：已完成 72 篇（6 爻）](hex-063.md)
+- [风水涣：已完成 72 篇（6 爻）](hex-059.md)
 
-- [火水未济：已完成 72 篇（6 爻）](hex-064.md)
+- [水泽节：已完成 72 篇（6 爻）](hex-060.md)
+
+- [风泽中孚：已完成 72 篇（6 爻）](hex-061.md)
+
+- [雷山小过：已完成 72 篇（6 爻）](hex-062.md)
 
 
 
 ## 检查与阅读状态
 
-4320 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 116,640 项，差异 0；日期用例 8,640 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
+4608 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 124,416 项，差异 0；日期用例 9,216 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/CONFESSION_DECISION_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 
