@@ -1,6 +1,6 @@
-# 暧昧表白逐月长稿：3456 篇预览
+# 暧昧表白逐月长稿：3852 篇预览
 
-更新日期：2026-11-27（America/New_York）。本批新增泽天夬、天风姤、泽地萃、地风升、泽水困、水风井，共 72 篇；累计 3456 篇。完整目标为 4,608 篇，尚余 1152 篇未计入交付。写作手法照用户批准的面试逐月长稿。
+更新日期：2026-11-27（America/New_York）。本批新增泽火革、火风鼎、震为雷、艮为山、风山渐、雷泽归妹，共 396 篇；累计 3852 篇。完整目标为 4,608 篇，尚余 756 篇未计入交付。写作手法照用户批准的面试逐月长稿。
 
 | 卦 | 已上传篇数 | 正文 | 核读与规则审计 |
 |---|---:|---|---|
@@ -52,6 +52,12 @@
 | 地风升 | 72/72 | [打开全文](hex-046.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-046.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-046.json) |
 | 泽水困 | 72/72 | [打开全文](hex-047.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-047.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-047.json) |
 | 水风井 | 72/72 | [打开全文](hex-048.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-048.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-048.json) |
+| 泽火革 | 36/72 | [打开全文](hex-049.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-049.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-049.json) |
+| 火风鼎 | 72/72 | [打开全文](hex-050.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-050.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-050.json) |
+| 震为雷 | 72/72 | [打开全文](hex-051.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-051.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-051.json) |
+| 艮为山 | 72/72 | [打开全文](hex-052.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-052.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-052.json) |
+| 风山渐 | 72/72 | [打开全文](hex-053.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-053.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-053.json) |
+| 雷泽归妹 | 72/72 | [打开全文](hex-054.md) | [首读](../../../sources/editorial/confession-decision/reviews-monthly/hex-054.json) · [二读](../../../sources/editorial/confession-decision/second-reviews-monthly/hex-054.json) |
 
 
 
@@ -63,23 +69,23 @@
 
 ## 本批阅读入口
 
-- [泽天夬：已完成 72 篇（6 爻）](hex-043.md)
+- [泽火革：已完成 36 篇（3 爻）](hex-049.md)
 
-- [天风姤：已完成 72 篇（6 爻）](hex-044.md)
+- [火风鼎：已完成 72 篇（6 爻）](hex-050.md)
 
-- [泽地萃：已完成 72 篇（6 爻）](hex-045.md)
+- [震为雷：已完成 72 篇（6 爻）](hex-051.md)
 
-- [地风升：已完成 72 篇（6 爻）](hex-046.md)
+- [艮为山：已完成 72 篇（6 爻）](hex-052.md)
 
-- [泽水困：已完成 72 篇（6 爻）](hex-047.md)
+- [风山渐：已完成 72 篇（6 爻）](hex-053.md)
 
-- [水风井：已完成 72 篇（6 爻）](hex-048.md)
+- [雷泽归妹：已完成 72 篇（6 爻）](hex-054.md)
 
 
 
 ## 检查与阅读状态
 
-3456 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 93,312 项，差异 0；日期用例 6,912 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
+3852 篇均有作者逐篇全文读回记录。已发布全量的盘面比较 104,004 项，差异 0；日期用例 7,704 组。全文、整段及剔除引文后的 24 汉字以上长句重复均为零。正文实际 500–641 汉字。
 
 [逐月核查方法](../../review/MONTHLY_AUDIT_METHOD.md) · [机器核查记录](../../review/CONFESSION_DECISION_MONTHLY_CHECKS.json) · [交付清单](manifest.json)
 

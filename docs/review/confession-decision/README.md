@@ -58,6 +58,12 @@
 - [泽水困](hex-047.md)
 - [水风井](hex-048.md)
 
+- [火风鼎](hex-050.md)
+- [震为雷](hex-051.md)
+- [艮为山](hex-052.md)
+- [风山渐](hex-053.md)
+- [雷泽归妹](hex-054.md)
+
 [写作与规则审计方法](../CONFESSION_MONTHLY_AUDIT_METHOD.md) · [原断法政策](../../CONFESSION_DECISION_POLICY.md)
 
 首组六卦 432 篇完成后的[词汇筛查逐项处置](scope-dispositions-432.json)：14 项初始提示已分别实读，12 项为语境中的否定或自然表述，另两篇补明简断心意并经独立复读；无未闭合提示。该记录绑定当时的源与规则审计文件指纹。
