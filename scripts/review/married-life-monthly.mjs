@@ -62,7 +62,7 @@ for(const id of ids){
   if(!(a.outcome in outcomes)||!(a.parentingSuitability in parenting))err(k,'outcome','invalid codes');else{stats[a.outcome]++;kids[a.parentingSuitability]++}
   const qk=a.movingLine+'/'+QI[a.monthBranch],qv=JSON.stringify([a.outcome,a.parentingSuitability]);if(q.has(qk)&&q.get(qk)!==qv)err(k,'same-qi','outcome or parenting differs');q.set(qk,qv);
   if(!textOk(a.title,6)||!Array.isArray(a.paragraphs)||a.paragraphs.length<4||a.paragraphs.length>5||a.paragraphs.some(p=>!textOk(p,30))||!textOk(a.judgment,18)||!textOk(a.timing,12))err(k,'content','missing substantial fields');
-  if(!Array.isArray(a.evidence)||a.evidence.length<2||a.evidence.length>6||a.evidence.some(v=>!textOk(v,6)&&!(textOk(v,3)&&/\d{2,3}(?:[–—-]|行|[:：]|\.)/u.test(v)))||!a.evidence.some(v=>/\d{2,3}(?:[–—-]|行|[:：]|\.)/u.test(v)))err(k,'evidence','2–6 concrete source observations and locator required');
+  if(!Array.isArray(a.evidence)||a.evidence.length<2||a.evidence.length>6||a.evidence.some(v=>!textOk(v,6)&&!(textOk(v,3)&&/\d{2,3}/u.test(v)))||!a.evidence.some(v=>/\d{2,3}(?:[–—-]|行|[:：]|\.)/u.test(v)))err(k,'evidence','2–6 concrete source observations and locator required');
   else report.separateEvidenceCount+=a.evidence.length;
   const body=a.paragraphs.join('\n'),b=han(body),s=han(a.short);
   if(b<500||b>650)err(k,'body-length',b);if(s<60||s>120)err(k,'short-length',s);
