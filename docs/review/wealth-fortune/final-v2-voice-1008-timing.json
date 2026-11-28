@@ -1,0 +1,50 @@
+{
+  "scope": "Independent Gregorian integer JDN arithmetic, all civil dates plus authored wealth timing mappings; calendar candidates only, not prediction validation.",
+  "calendarDays": 73049,
+  "calendarAnchors": 2,
+  "upcomingWindows": 3710,
+  "timingObjects": 1008,
+  "timingSlots": 2343,
+  "realChartResolutions": 20160,
+  "historyCases": 1008,
+  "strengthFlags": [],
+  "guardrailTests": [
+    {
+      "name": "new-date with stale previous chart",
+      "passed": true
+    },
+    {
+      "name": "new-date with chart lacking date",
+      "passed": true
+    },
+    {
+      "name": "history view before cast",
+      "passed": true
+    },
+    {
+      "name": "unreal calendar date",
+      "passed": true
+    },
+    {
+      "name": "empty author slots",
+      "passed": true
+    },
+    {
+      "name": "non-chart role",
+      "passed": true
+    },
+    {
+      "name": "body mistaken for gain",
+      "passed": true
+    },
+    {
+      "name": "event element manually overridden",
+      "passed": true
+    },
+    {
+      "name": "weak body element mistaken for preparation environment",
+      "passed": true
+    }
+  ],
+  "status": "passed"
+}

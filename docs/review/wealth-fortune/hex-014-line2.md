@@ -18,4 +18,4 @@
 - 655、968月日五行、658、965方应。春夏原体能制三个乾兑金节点，gain 合并 roles[use,use_mutual,body_mutual]，申酉金日本问期内参现实已有可控收入，进入申酉月须按离囚金旺另判；无生体候与实克耗候。全12以巳午火旺、寅卯木旺火相 prepare/body，经管工作和账目，不立独比财候。28 slots实际正文逐项核验。
 - 所得真到账后扣必要费用及保生活、业务周转，其余才积。无直接克耗但照实核真实成本，不拿未到款承担新开支。全12正文、简断、专业、动态、古据作者实读，累计948篇机器查重正文/简断句首、分句、前缀及全文近重零。
 
-正式归整源 SHA-256：`8440fc77d8bf80da90ed2e2494f6cfb0fa129c4dadd0c4b80d4c07543d9c6952`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
+正式归整源 SHA-256：`6a182693a1a464724c64b5a2c317c90fd4e933ecba9d586a1cf2148d5308583f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。

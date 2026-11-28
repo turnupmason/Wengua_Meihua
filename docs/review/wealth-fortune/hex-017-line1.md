@@ -24,4 +24,4 @@
 
 十二篇逐月原创、逐篇实际全文读回，原典、作者和动态旁证精确指纹锁定，初九正式新增十二篇。
 
-正式归整源 SHA-256：`8ac80a80f62f4309283940dfffc57792e8b57d1c858cfccc8c18f9c5f6f4f50c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-017.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-017.json)。此爻5组审计。
+正式归整源 SHA-256：`a84c100fc45693aea26825bba38d49177ab09a25010225348b8c152721ed2cb3`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-017.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-017.json)。此爻5组审计。

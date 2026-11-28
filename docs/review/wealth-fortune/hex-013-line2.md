@@ -14,4 +14,4 @@
 | 亥子水 | 原乾休，本死离微克，上体互及尾下双休乾比平，下相巽难制 | conditional / conditional | 西北原单位、贵货客户及同行一般合作，南文书轻核，东南现财量己力。土金准备无专财损期，实际收支留存。 |
 正文、简断逐篇原创实读，四直接关系和旺衰、古义、具体六维保留，动态绑定实际文章SHA；仅现实已有财事方参，不保证收益。
 
-正式归整源 SHA-256：`aa35b0a6f62d75652fbc348947e4ae52e7491a32a3255dc7b1723b5b94834013`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-013.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-013.json)。此爻5组审计。
+正式归整源 SHA-256：`dfd5eb18a5980fc0b2772ec7ea2d7aeb6058880f8bd02da4e5eb8a8d82b8c05f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-013.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-013.json)。此爻5组审计。
