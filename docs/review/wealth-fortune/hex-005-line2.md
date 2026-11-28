@@ -26,4 +26,4 @@
 
 新版逐篇全文核对财运基调、主财源方式、行业与方位、人际客户、对应现实风险、聚财及具体支月日。十二篇原判码保留，新增 editorialVersion wealth-fortune-v2；初、三爻其他24对象保留原版指纹。
 
-正式归整源 SHA-256：`8ea0a2792368f379c2608cdbbbf5c48ecf69e077cc29124754829019c3f3f29e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`1c24d3d8de41d663a5edea43f44e9c73ded9a84148ac51e6261dba07bf1ead33`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

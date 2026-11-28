@@ -20,4 +20,4 @@
 - 春夏冬D/W，稳本职与既有收入、利润薄、聚财偏弱；土秋C/P，主动取财较有进账、相旺体可承费，收支核算及留周转，秋相水实泄尤其注意。全程无具体收益与投资指令。
 - 655、658、965、968之环境方应，配555–557财候：土秋囚/死巽可制参寅卯支日或适用木月，跨月重核；春秋冬已知耗项参亥子月日，春夏强离克参巳午；申酉金旺为蓄力准备，非独立得财。土秋弱离仅火旺环境复核，不另强定破财日。无已知公历起卦日，不编公历日。
 
-正式归整源 SHA-256：`e2f1b59d0a195a2be99c6fb1328c850feeb2b6b0cc917d52537ad127e3a442a6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`5276a835260e93529e6c03db6f095925755dcd3a90f3f7f6eca74395e59c9461`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

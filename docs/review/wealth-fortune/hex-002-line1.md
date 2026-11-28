@@ -18,4 +18,4 @@
 - 期候按555–557行仅生体、体克用为见财候，克体及体生用为损候，三比不能另设专财日。依655行、968行确定寅卯木、巳午火、辰未戌丑土的月日旺气；965行以体为主比和方应，658行坤西南震东。强尾震木参寅卯月或所问期内寅卯日为既有事项受制压力；所有十二稿均明确土旺辰未戌丑月/日（夏令亦可巳午火旺土相）作核账准备及相合有利环境，非特定兑现日期，无问期/起卦公历不编日期。
 - v2十二篇已逐个补齐财势与进账、财源类型与收益相对状况、行业方向、协作客源、排雷、净留财和月/日支。题材为求财传统象意；不判断任何投资产品买卖，不假定现实已收、已损或已有人送财。
 
-正式归整源 SHA-256：`afaa8ba8c171d4837bef0aa53d6b824084b4c3e50fa59b9bc11623b4e316d8a4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`5a0ce1ca4e2cb0e0a6ed60632df9a1ebaa614f69ef83cde32dacc3988553a663`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
