@@ -18,4 +18,4 @@
 
 取期均须实际已有相类事项，未有起卦公历日期、问期长度，不将卦气说成确定收款、损失的时间。原先1–2爻24篇源对象未变。六三12篇逐月原创及作者全文读回完成，尚待独立读审。
 
-正式归整源 SHA-256：`e7ab272f98ea2f7d4192135cae67520a385ca63c3e0ce499e9d9b805b753f29c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`5004167ab46b20a7142dd408a13c726bc1ad3bd508864b7f257cc251206b25f0`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

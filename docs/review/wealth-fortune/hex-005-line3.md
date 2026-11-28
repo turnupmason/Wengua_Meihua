@@ -19,4 +19,4 @@
 
 十二篇正文、简断独立成文，五气组同判。均交代总财务与收入机会、现实费用、爻义及财源类象，审核所有原典位点。既往初九和九二24篇对象保留不变。
 
-正式归整源 SHA-256：`6654d72b27b69849d8d095c2ed8c7dd24fba3edf50023bd4ba6a2a85b008e97c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`40bf3d64825d671bf076034c42df820ec94c919f8fe08e9690c68ca5e06df715`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

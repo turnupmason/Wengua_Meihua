@@ -12,4 +12,4 @@
 
 专条只取有实际依据的候，不写确定日期，不猜金额；离文书仅直接来克，坤资源仅直接生体且现实已知。九二古义不推为现实官司。
 
-正式归整源 SHA-256：`5946c2dbe807a0765942a05b40a40050eb0cbef6249ca364793b57a700275c81`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`c14cc1e851118da9bbeda2ae030cb67c82717c5f62d4ce01c9f13c53816ed485`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
