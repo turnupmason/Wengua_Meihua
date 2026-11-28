@@ -21,4 +21,4 @@
 ## 顾问白话版复核
 十二篇 v2 进一步逐篇实改为咨询式白话，先给收入机会、稳定原财与新增净利、当前该怎么做，再简明解释坤原体与本、双互同气和尾震克制及气力。保留古籍财源、方位、实际客源、协作条件、后段费用排查、净留财及支月日。正文508–541汉字，简断83–91汉字。首段长句拆短，所有简断重新独立写为现实表述，作者逐篇全读、侧车重新绑定末版对象，原判码及应期角色未改。
 
-正式归整源 SHA-256：`0018836c3fe30c65ae0966cdfbf8b01faa1d433bff65b901229a3a7681ee9f32`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`26bf4c92b9a69a56d8dcba33c9c4da5ab51ad49bb53221f6d9c2155bd6d7cf0c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

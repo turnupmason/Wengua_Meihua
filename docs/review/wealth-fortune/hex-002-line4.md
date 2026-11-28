@@ -18,4 +18,4 @@
 - 655、968明确寅卯木、巳午火、辰未戌丑土月日，658、965坤西南、震东及比和、克体方应。强尾来克兼现实对应事件取寅卯月/日风险候。弱尾克不硬立损候，三比无555–557独立见财期。原体土旺月/日及夏火旺土相月日作承事、准备和核账环境，而非保证到账。每篇侧车已作者实核，在原体 body 角色设prepare土（夏另火），春季与冬季现实强尾来克事件角色仅changed_use、木元素由节点推导。
 - 十二篇正文和简断以咨询白话先说现实财势、稳定/额外收入及净余，继说原卦、两互与尾震实际关系及气力，再落实具体行业方向、客群协作、尾费用的排雷、六四慎而不害与动态月日候。净财和进账分开核，留基本生活与周转，非投资指令、预测具体金额或确知任何人会送钱。
 
-正式归整源 SHA-256：`0018836c3fe30c65ae0966cdfbf8b01faa1d433bff65b901229a3a7681ee9f32`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`26bf4c92b9a69a56d8dcba33c9c4da5ab51ad49bb53221f6d9c2155bd6d7cf0c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

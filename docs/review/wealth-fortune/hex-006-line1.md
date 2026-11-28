@@ -24,4 +24,4 @@
 
 十二篇按用户示范重新组织正文与简断，现实财运结论先于盘理，费用、合伙能力、文书及取财条件分段解释。原五气双码、全部证据与应期槽不变；正文与独立回执及结构化应期旁证重新绑定最新文章指纹。
 
-正式归整源 SHA-256：`ba0643b2869e2b78fbe1622304f9a405343b133a3b4efda0428560d4505bfdbb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`3b7e9213c40f2becf3ce8c161d0ddb308a9ea660690c6a3fa65be2aa4726ad45`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

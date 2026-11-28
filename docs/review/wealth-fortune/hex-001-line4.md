@@ -18,4 +18,4 @@
 
 每篇均为顾问白话原创，开头说明近期实际财势、已有稳定收入及机会财相对条件、净利，随后用真实卦理展开财源方向、客户与合作、风险处置、聚财、月日气。voiceVersion=consultative-plain-v1；动态侧车逐篇按真实时段决定事件和角色，精确文章SHA，不生成固定公历或认定实际财产、人、职业及收益。
 
-正式归整源 SHA-256：`9157318a33138ac91b6e02076fab465e8ab0396ff9828fb334e4380cc89089e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`e4c7a447b98e426d41d7a9645d8b6a8ea3768e597ed9184e80337985cdac746a`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

@@ -1,20 +1,20 @@
-# 财富财运逐月原创断语：288 篇预览
+# 财富财运逐月原创断语：360 篇预览
 
-累计 288/4,608 篇，剩余 4320 篇；已按第二版完整求财口径更新且双读锁定 288 篇，第二版剩余 4320 篇；顾问白话文风实质润色并完整双读 288 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
+累计 360/4,608 篇，剩余 4248 篇；已按第二版完整求财口径更新且双读锁定 360 篇，第二版剩余 4248 篇；顾问白话文风实质润色并完整双读 360 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
 
-动态应期已绑定作者及独立读回 288 篇、567 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
+动态应期已绑定作者及独立读回 360 篇、721 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
 
 | 卦 | 已发布篇数 | 第二版篇数 | 顾问白话篇数 | 正文 | 核读回执 |
 |---|---:|---:|---:|---|---|
-| 乾为天 | 48/72 | 48/72 | 48/72 | [读全文](hex-001.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json) |
-| 坤为地 | 48/72 | 48/72 | 48/72 | [读全文](hex-002.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json) |
-| 水雷屯 | 48/72 | 48/72 | 48/72 | [读全文](hex-003.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json) |
-| 山水蒙 | 48/72 | 48/72 | 48/72 | [读全文](hex-004.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json) |
-| 水天需 | 48/72 | 48/72 | 48/72 | [读全文](hex-005.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json) |
-| 天水讼 | 48/72 | 48/72 | 48/72 | [读全文](hex-006.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json) |
+| 乾为天 | 60/72 | 60/72 | 60/72 | [读全文](hex-001.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json) |
+| 坤为地 | 60/72 | 60/72 | 60/72 | [读全文](hex-002.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json) |
+| 水雷屯 | 60/72 | 60/72 | 60/72 | [读全文](hex-003.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json) |
+| 山水蒙 | 60/72 | 60/72 | 60/72 | [读全文](hex-004.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json) |
+| 水天需 | 60/72 | 60/72 | 60/72 | [读全文](hex-005.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json) |
+| 天水讼 | 60/72 | 60/72 | 60/72 | [读全文](hex-006.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json) |
 
 
 
-正文 501–626 汉字，简断 66–96 汉字。盘面比较 7776 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
+正文 500–626 汉字，简断 64–96 汉字。盘面比较 9720 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
 
 [机器核验](../../review/WEALTH_FORTUNE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/WEALTH_FORTUNE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/wealth-fortune/README.md) · [交付清单](manifest.json)

@@ -21,4 +21,4 @@
 ## 白话顾问版复核
 十二篇 v2 已再逐篇改为咨询式口语：先给现实财务取向、稳定所得和净利空间，再明示季节、原体、本用和两个互位、尾变艮土同气关系；继而讲真实客源协作、末项收结及无直接克耗时的实际排雷、留存，最后交代旺土/相土月日为准备环境。原判码和各应期事件未变，全文作者读回与应期 sidecar 均绑定新版对象；标题、简断也实际重新撰写，正文537–564汉字，简断83–91汉字。不是简单换版标。
 
-正式归整源 SHA-256：`0018836c3fe30c65ae0966cdfbf8b01faa1d433bff65b901229a3a7681ee9f32`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`26bf4c92b9a69a56d8dcba33c9c4da5ab51ad49bb53221f6d9c2155bd6d7cf0c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

@@ -14,4 +14,4 @@
 
 坎134、346、357–358、367；艮407–408、418–420、428、510；坤253、259、265–266、275、505；震284–290、294、306、557仅受生耗；离376–379、388–390、398、556受体克取财；655、968支月日及658、965方应。行业方向、人际合作、财势、明确风险、储财及应期六维逐篇实读。四段正文及简断从现实财务结论开始，白话展开盘理。结构化动态旁证对应每篇time，合并两土同类克，独立中震耗及尾离财角色，无有力财候之月只用body准备，跨月重核，支月日不编码固定公历。
 
-正式归整源 SHA-256：`51702524bd53933eadeed4f2c5b8783efdad61b768ee9808aa4e5bd5bd3813ba`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`b9da7635935e1777ac78b399a5071c245d949af10eb20326be30e903f6c56764`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
