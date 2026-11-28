@@ -14,4 +14,4 @@
 
 作者逐篇核正文、简断、判断、原典及38槽（春6、土12、夏6、秋6、冬8）；四负不等于已有损失，正常报酬和实际费用净余分别。
 
-正式归整源 SHA-256：`4ceb1403b08f02e11973c37d2206cab967f325b512dd262d35a92b8a8b163e4f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。
+正式归整源 SHA-256：`a9b0796c386df831e28fdae4b6c2c8784601b60332026369b538a249d7f79453`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。

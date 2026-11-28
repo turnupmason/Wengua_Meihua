@@ -9,4 +9,4 @@
 |亥子|休乾受本囚艮援薄，克中相巽难制，中休乾同气普通，尾死离克微；C/W|西北熟业守、中协作普通，东北前资源薄、东南木茶工巧财难取，南方尾手续正常核，真实余额守|辰未戌丑土旺及申酉金旺月日准备原有工作及合作，无独立财或强阻日|
 土、夏及秋同元素艮资源候不重复土旺准备；秋普通资源条件援，冬C/W同26/5–6。全部12含六维实际逐篇全文读回，作者/动态旁证精确锁；独立双审后发布。
 
-正式归整源 SHA-256：`74c07321fc57d38481f8be15b89cb33206457f21ef848c4c2cf5599800e7ba56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。
+正式归整源 SHA-256：`7823b134dc2c49572a77253b0f5c5b245a42525e64fba5329965743a32722c07`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。

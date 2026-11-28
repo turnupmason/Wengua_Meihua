@@ -12,4 +12,4 @@
 
 离375–377、387–390、398南方文字文书技术炉冶为自身；坤252–253、257、259、265–266、275西南乡里田土实物仓储为本人前费；震283–285、294–299、302、306、498东方动中经营、木货山林来生原离；体互及尾坎345–347、350、358–361、367、370、508北方运输流通、水货相关实际责任分别来克原离，同一实际事项不重复算。没有比和或自取财，不虚断合作、偏财；实际工作报酬、成本与中后段责任分开，真实客户、价格及资源为前提。655、968动态环境跨月重核。
 
-正式归整源 SHA-256：`966ce0c5906eb5a1294cff7e9e41d328796a5f50048286c3bea356ac7b29067c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-036.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-036.json)。此爻5组审计。
+正式归整源 SHA-256：`00f58755277afd697ae987c0949fec6eac36c38a251f49b0f6489153e9a7302d`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-036.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-036.json)。此爻5组审计。
