@@ -18,4 +18,4 @@
 
 十二篇全文、简断、双判、六维及古籍证据可追；不硬编收入类型、人名事故、实际收入金额日期。不把王三锡命推出外援、授职位。作者逐篇全文读回后精确绑定JSON.stringify SHA，动态时段另存并实核角色、事件及五行。
 
-正式归整源 SHA-256：`3abd3b94864e1dfc233f64e9216cf359436763c97cbb5ba1c8cd43c0e367f9aa`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
+正式归整源 SHA-256：`c7fb9097bc5d956faa842d9b4fea5d2b0c8be78390bc40c5fee95e6a7a464284`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。

@@ -17,4 +17,4 @@
 - 梅花655、968月日五行、658、965方应。末下震旺相实耗设 changed_use 木drain寅卯月/日；本、体互、用互三土旺相直克较实设 use/body_mutual/use_mutual 土obstruction辰未戌丑月/日。所有时段只参所问范围内已有真实事件、非实际损失日；若参考月份变化，按新月重算具体气力和旁证，不静默沿用。弱土/木不强立损候，盘无强财候。每篇原体body prepare金、水（申酉金旺水相、亥子水旺），核已有工作报酬与实际支付，只准备不是见财期。
 - 12篇独立草稿真正原创，逐篇作者正文、简断、证据与动态完整读回。正文510–540汉字，简断77–99汉字。累计432篇正文简断开头、整文、长句和近重复机器审计零；待独立审读后正式合入，现未改正式数据。
 
-正式归整源 SHA-256：`cfb722c450800ea48cd7d954ca7e83062ecc4d586db8fd0ac5fbd61723c78fce`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
+正式归整源 SHA-256：`5eb840c28379e80d4ba1bc767ecaf9fbe00837ec10ac99c80de2431b120627fd`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
