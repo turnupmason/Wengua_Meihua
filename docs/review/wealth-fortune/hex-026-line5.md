@@ -20,4 +20,4 @@
 - 梅花655、968月日及658、965方应。夏conditional-gain[use]本相艮生弱死乾、土gain[use]本旺艮生相乾参辰未戌丑土月和问期内土日，夏弱体承接有限，跨月重核；秋conditional-gain[use]同土候仅真实已存在东北资源条件。土秋gain[use_mutual,changed_use]原相旺乾能制囚死震巽双木，东与东南已有木茶工艺任务报酬参问期内寅卯木日，木旺月重核制财力，合槽同一收入不双计。春夏冬难制主动财无独候。兑同比不定独财日，无直接来克/己耗，不立阻耗期。全prepare[body]申酉金旺，春冬另辰未戌丑土旺金相准备；夏土秋土候已经是资源助不重复土准备。动态30slots。
 - 全12篇作者实际正文、简断、专业、古据及动态读回，累计1728句首、分句、前缀及全文近重复零。
 
-正式归整源 SHA-256：`e18ffc99ed3462beca161cfbfd6a1743a25de9bc17ec4b753f77e6a395c75c42`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。
+正式归整源 SHA-256：`c6f7f5e253bc064ec73092d5c9b22163c8b51116359ebd3831c6ec4598687b46`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。

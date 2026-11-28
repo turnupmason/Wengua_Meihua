@@ -12,4 +12,4 @@
 
 离375–377、387–390、398南方文字文书、技术、炉冶为自身、本同比方向；体互巽315–319、327–328、337、499东南工艺、木竹茶货及材料资源来生原离；用互兑437–438、441、445、449–451、459西方沟通口悦、饮食货品与交易受原离克财；尾艮405–408、418–420、428东北山林田土、场地及稳定事务受原离生为实际费用。四关系分别对原体，古爻不推翻旺衰，有收入不抵销后耗。真实客户、价格、工作量及成本为前提，655、968环境动态准备、跨月重核。
 
-正式归整源 SHA-256：`fb55066e91d87327cbe302d7730c1f90d2b8aa109a4dbb31ec462820702b8341`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-030.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-030.json)。此爻5组审计。
+正式归整源 SHA-256：`aece9aa4a5875c6d164d8956143d5c8e85e5b2034120eefb9b3c18b2be877486`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-030.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-030.json)。此爻5组审计。

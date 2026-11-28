@@ -9,4 +9,4 @@
 |亥子|相震克本囚艮及中两囚坤有力制财，尾死离己耗浅；F/P|东方本职木货原业有力，东北本艮与西南中双坤材料场地实物仓储农产可自取，同笔真实款按一次，南离末耗浅，实余积|辰未戌丑问期内本中同土财合槽，跨土旺月重核；亥子及寅卯准备，浅尾离不立强损|
 实际12篇正文、简断、六维、四关系、古据已作者逐篇全读及动态旁证绑定；独立逐篇双读通过才发布。
 
-正式归整源 SHA-256：`3f82601ea97a22abaf684060dc3e388f1cb139580e4bb8e96c795fc44e79a007`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。
+正式归整源 SHA-256：`a71c86eb9fb868da250e1d4f211bd5dcc6866f47a7f14e2d59ddfb365e0625b3`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。

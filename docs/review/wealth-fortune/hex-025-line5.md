@@ -14,4 +14,4 @@
 
 正文、简断、判断、古据与44槽（春8、土16、夏6、秋6、冬8）逐篇实际核对，依据真实已知业务收入、费用和剩余；不虚构财事。
 
-正式归整源 SHA-256：`9a3bf4e9395ee89c814f3ff4e728c84da5b95347b03380a5aa657ac592129ece`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
+正式归整源 SHA-256：`58b12aca6b9ff358f8996dfe71c27a3594b8a499e5e4ad90067a9f9d658de298`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。

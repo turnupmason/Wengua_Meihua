@@ -11,4 +11,4 @@
 
 春寅卯尾相离真实援手，原死艮尚弱、实际承接能力有限；初段旺震重克仍须单独核，gain为实际已有资源，不承诺进账。
 
-正式归整源 SHA-256：`3f82601ea97a22abaf684060dc3e388f1cb139580e4bb8e96c795fc44e79a007`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。
+正式归整源 SHA-256：`a71c86eb9fb868da250e1d4f211bd5dcc6866f47a7f14e2d59ddfb365e0625b3`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。

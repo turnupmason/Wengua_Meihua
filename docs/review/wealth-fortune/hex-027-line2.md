@@ -9,4 +9,4 @@
 |亥子|囚艮受相震有力克，两囚坤同比弱，尾休兑受原艮生普通实耗；D/W|东北原业守，东方初实际任务阻重，西南中仓储实物配合弱，西方后沟通器材饮食普通实费，自己弱仍须核实际费用责任，余款守|寅卯实际初震阻，申酉末兑普通实耗，辰未戌丑土旺及巳午火扶土准备，两坤比和无专财|
 十二篇作者实际逐篇全文、简断、盘位及古据读回、六维审计与动态旁证精确哈希锁定，独立逐篇审读后始发布。
 
-正式归整源 SHA-256：`3f82601ea97a22abaf684060dc3e388f1cb139580e4bb8e96c795fc44e79a007`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。
+正式归整源 SHA-256：`a71c86eb9fb868da250e1d4f211bd5dcc6866f47a7f14e2d59ddfb365e0625b3`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json)。此爻5组审计。
