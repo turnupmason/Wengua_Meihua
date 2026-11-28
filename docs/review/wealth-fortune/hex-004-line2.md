@@ -20,4 +20,7 @@
 
 v2十二篇均实质重写六维：总财基调、财源及行业方位、人际合作客源、排雷、聚财、具体月日支参考。无起卦公历和问期不许定绝对日；有力节点要现实已知财事前提，体旺相蓄力仅环境非见财。原判码保留同气一致，前初六新稿及后六三旧稿对象不动。仅对应九二十二月。
 
-正式归整源 SHA-256：`d3463b1e32daa21fe473c249a1b1fb2bdbfe783f742b1e74c0cc74927013a7a4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+## 白话顾问版复审
+12月正文与简断逐篇重写并完整读回；财务结论先行、卦理随现实意义解释，去简断压缩术语。原盘4直接作用、5组判码、财源行业方位、实际合作客源、风险及聚财、支月日应期决策和证据与v2版一致。逐篇作者与结构化时段重新绑定精确文章SHA。
+
+正式归整源 SHA-256：`9ed474e13dbaf08c49372efa60b29af2da4e723539f71d2bb1bf65a77bcc86d2`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。

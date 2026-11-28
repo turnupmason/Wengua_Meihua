@@ -20,4 +20,6 @@
 
 六二12篇分别独立实质改写并加 editorialVersion:wealth-fortune-v2。首爻v2、三爻v1旧对象及回执原样。本稿只在实际问期内参有据月日，不造公历或现实事件；不直接推荐买卖、投资、行业或出行。
 
-正式归整源 SHA-256：`8856aa83ff3e9bbfb8473c2e90e7988a83c2ab8a891fcea9fae3aee82de40f56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+本批在六维基础上按白话咨询式节奏真实全文润色并复读，重新写简断的财势、实际支出、来财条件及留存建议，保留全部阶段直接生克及旺衰原证。新增 voiceVersion:consultative-plain-v1；动态时段事件和角色选择未变，按实际新版文章精确重绑作者与应期。
+
+正式归整源 SHA-256：`68922d321bdd6ae47f7df56b9a23aa62eba7e82a2bfe56d7234514bce91b1bbb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

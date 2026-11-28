@@ -25,4 +25,4 @@
 
 本爻12稿在六维基础上整体采用咨询式白话重写。先说近期财运、本职旧财或机会财、成本后结余与现实行动，再用卦理解释；简断亦以清楚日常表达列主要原因、财路、风险和地支月日。全字段作者重读，标 voiceVersion:consultative-plain-v1；时段侧车事件不变，按末版文章精确SHA重绑，等待独立正文与应期读审。
 
-正式归整源 SHA-256：`8856aa83ff3e9bbfb8473c2e90e7988a83c2ab8a891fcea9fae3aee82de40f56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`68922d321bdd6ae47f7df56b9a23aa62eba7e82a2bfe56d7234514bce91b1bbb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

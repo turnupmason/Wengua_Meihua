@@ -1,0 +1,173 @@
+{
+  "scope": "Independent Gregorian integer JDN arithmetic, all civil dates plus authored wealth timing mappings; calendar candidates only, not prediction validation.",
+  "calendarDays": 73049,
+  "calendarAnchors": 2,
+  "upcomingWindows": 3710,
+  "timingObjects": 216,
+  "timingSlots": 429,
+  "realChartResolutions": 4320,
+  "historyCases": 216,
+  "strengthFlags": [],
+  "guardrailTests": [
+    {
+      "name": "new-date with stale previous chart",
+      "passed": true
+    },
+    {
+      "name": "new-date with chart lacking date",
+      "passed": true
+    },
+    {
+      "name": "history view before cast",
+      "passed": true
+    },
+    {
+      "name": "unreal calendar date",
+      "passed": true
+    },
+    {
+      "name": "empty author slots",
+      "passed": true
+    },
+    {
+      "name": "non-chart role",
+      "passed": true
+    },
+    {
+      "name": "body mistaken for gain",
+      "passed": true
+    },
+    {
+      "name": "event element manually overridden",
+      "passed": true
+    },
+    {
+      "name": "weak body element mistaken for preparation environment",
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "sourceVersion": "77ba242afb771a8821fac18358846544c0bd38a2",
+  "actualTimingSourceBindings": [
+    {
+      "primaryId": 1,
+      "objects": 36,
+      "slots": 49,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-001.json",
+      "timingSourceSha256": "11766255c2b130c7486fb0583b692aae94ba7b1d14dbefbd9b83be4dacf0200b",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-001.json",
+      "timingReceiptSha256": "ca5dd7caeaf579a75a349d543eff042522e8d7ff1aa14f55ea939e074901290e",
+      "author": "wealth_qian",
+      "reader": "guan_wealth"
+    },
+    {
+      "primaryId": 2,
+      "objects": 36,
+      "slots": 52,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-002.json",
+      "timingSourceSha256": "b2fb69b8e42d2aba43b20b3457bf884263f409d7e9cb4b9fc9ee5b7e3bb2afd8",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-002.json",
+      "timingReceiptSha256": "33fc41fd85efba5ddb368d01cf81e9813208e07c2a127c4658f76014eb16b6f8",
+      "author": "wealth_kun",
+      "reader": "wealth_qian"
+    },
+    {
+      "primaryId": 3,
+      "objects": 36,
+      "slots": 90,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-003.json",
+      "timingSourceSha256": "c428bf37da877cc85cceccc2e3f8ab9054946c3677efb6d604209735d7ecce3c",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-003.json",
+      "timingReceiptSha256": "cb7ec1f438049c65a3018d2d0784f548f9a4d03feb35d9e37d6f0ff9c1b66137",
+      "author": "wealth_tun",
+      "reader": "wealth_kun"
+    },
+    {
+      "primaryId": 4,
+      "objects": 36,
+      "slots": 74,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-004.json",
+      "timingSourceSha256": "8408409ce2e59a8d154bceafe6dfb1159af6f0210e545c1e085445053e5f4d7f",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-004.json",
+      "timingReceiptSha256": "eabe5ef7bdc3dd322214157fd941ee901b826a9a0135111b100f557e7e2ebce4",
+      "author": "wealth_meng",
+      "reader": "wealth_tun"
+    },
+    {
+      "primaryId": 5,
+      "objects": 36,
+      "slots": 64,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-005.json",
+      "timingSourceSha256": "4c38e4a1b8325dcaa733f3fd1ef757427b135a1332d500320267292cdb23e9bf",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-005.json",
+      "timingReceiptSha256": "322cbe128784916b6f1b0d148606294cc951b264cd4ddcce629bfc55e3fc2424",
+      "author": "wealth_xu",
+      "reader": "wealth_meng"
+    },
+    {
+      "primaryId": 6,
+      "objects": 36,
+      "slots": 100,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-006.json",
+      "timingSourceSha256": "0548fa57c7a843ec5f1b9688a7bacbf6f0663eb3c86cdddb5ffe37beaf6e536c",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-006.json",
+      "timingReceiptSha256": "cf60d28464a865a88c79fd4e13cb1134cb6f05434cc9b65157b46b8a07b81bc1",
+      "author": "root",
+      "reader": "wealth_xu"
+    }
+  ],
+  "resolverPath": "src/wealth-fortune-timing.js",
+  "resolverSha256": "22f38ef4cf1be9c16cfcfb0ec092df7c2fa6889edb041eb3367c0fe48ec18742",
+  "previewPath": "src/wealth-fortune-preview.js",
+  "previewSha256": "7efe74d834936ffa14a1d2ac6be136082b2dc37ced92d1d77d7a80cb4c7bf54b",
+  "addedTimingSlots": [
+    {
+      "key": "5/1/申",
+      "added": {
+        "kind": "gain",
+        "roles": [
+          "body_mutual"
+        ],
+        "event": "办理确有凭据和能力的文书收入",
+        "reason": "体互囚离火受原相坎水直接克可制，555–557体克用见财参巳午日；现实已有对应事项才取，跨月重核制财力。"
+      },
+      "basedOn": "Actual published timing text and article final paragraph independently read; original body相/旺坎 has direct control over囚/死离, real existing document work only; no date guarantee."
+    },
+    {
+      "key": "5/1/酉",
+      "added": {
+        "kind": "gain",
+        "roles": [
+          "body_mutual"
+        ],
+        "event": "核实并落实能经文书技艺完成的收入",
+        "reason": "体互囚离火受原相坎水直接克可制，555–557体克用见财参巳午日；现实已有对应事项才取，跨月重核制财力。"
+      },
+      "basedOn": "Actual published timing text and article final paragraph independently read; original body相/旺坎 has direct control over囚/死离, real existing document work only; no date guarantee."
+    },
+    {
+      "key": "5/1/亥",
+      "added": {
+        "kind": "gain",
+        "roles": [
+          "body_mutual"
+        ],
+        "event": "推进已有能力办妥的文书财款",
+        "reason": "体互死离火受原旺坎直接克可制，555–557体克用见财参巳午日；有现实文书财才参考，跨月重核。"
+      },
+      "basedOn": "Actual published timing text and article final paragraph independently read; original body相/旺坎 has direct control over囚/死离, real existing document work only; no date guarantee."
+    },
+    {
+      "key": "5/1/子",
+      "added": {
+        "kind": "gain",
+        "roles": [
+          "body_mutual"
+        ],
+        "event": "办理凭本人真实工作可取的文书收入",
+        "reason": "体互死离火受原旺坎直接克可制，555–557体克用见财参巳午日；有现实文书财才参考，跨月重核。"
+      },
+      "basedOn": "Actual published timing text and article final paragraph independently read; original body相/旺坎 has direct control over囚/死离, real existing document work only; no date guarantee."
+    }
+  ]
+}

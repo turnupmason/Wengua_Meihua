@@ -20,4 +20,8 @@
 
 463、655、658、965、968方应月日强弱，结合555–557：春水耗、火克；夏火克、尾土见财；秋水耗、中木财、尾休土只已有资源事项条件候；冬水耗；土中木与尾土见财；金旺申酉月日为体旺准备环境，非附加财候；浅弱离仅火旺环境复核合同，转月须重审当前财力。实际问期可用支月/日，无起卦时日不定公历、金额或买卖。
 
-正式归整源 SHA-256：`7135bb948c75d0a64911286ebb05df969f6f051615ef220f0858044b8dafc4e3`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+## 顾问白话复读
+
+原有十二篇实质重写正文和简断，先现实财务走势，再自然交代始耗、中间巽财及离文书、末坤资源助力。拆长句，保留全部五气双码、动态旁证决策和古籍证据；末稿与作者及独立AI真实重新读回绑定。
+
+正式归整源 SHA-256：`8b757bfca085e757390dd89942d1f6b08faef6af07b3d4b74954b44117f3a66e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

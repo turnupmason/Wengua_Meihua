@@ -18,4 +18,6 @@
 
 新版十二篇保留既定专业判断与三比尾直克；正文均自然明确实际收入倾向与净余、是否主要取现有工作或经营、财源行业及方向、人群合作、尾克费用和守财、具体月日气。所得减实际必要费用才知净余；并无真实预测条件可断人、职业、收入数额或确定日期。
 
-正式归整源 SHA-256：`3fd0ae5bd11b2da8d8eeaeffc96f59d7948dec46fe190dedfbb8d209e2cec49b`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+顾问白话版本：十二篇正文及简断真实重写，开头先示现实财势、原财收入与净余，随后以简短卦理说明合作财源及风险；四作用、方位行业客群、原典与实际月日保留，动态候的事件选择不变，仅精确绑定新版文章指纹。voiceVersion=consultative-plain-v1。
+
+正式归整源 SHA-256：`21bf44163c5aeb6cff283a5fb06012248a75f68419b384326d180e103b822e87`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

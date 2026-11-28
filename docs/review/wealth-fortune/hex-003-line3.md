@@ -24,4 +24,4 @@
 
 六三本批在六维基础上再次按白话咨询式节奏全文润色：先用日常语说明财势、本职或机会财、实际结余及可采取的行动，再补盘面、行业人群、具体风险和月日。每篇保留完整四关系及旺衰证据，标 voiceVersion:consultative-plain-v1 并作者全字段重读，侧车事件决策未变，按新篇对象精确指纹重新绑定。
 
-正式归整源 SHA-256：`8856aa83ff3e9bbfb8473c2e90e7988a83c2ab8a891fcea9fae3aee82de40f56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`68922d321bdd6ae47f7df56b9a23aa62eba7e82a2bfe56d7234514bce91b1bbb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
