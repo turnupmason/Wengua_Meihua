@@ -12,4 +12,4 @@
 
 坤252–253、257、259、265–266、275西南乡里、田土、实物及仓储、谷帛为原有能力和三处同气伙伴，按已有客户实际服务、实物交收、保管或场所计价；无外生体或主动克财，不臆造偏财。震283–285、294–299、302、306、506东方活动及木货材料实际责任，春冬克实、夏土秋克浅。正常所费须核，无体生用不另设耗项。655、968木火土环境及旺衰，据真实事情判财与风险、比和不立独财日；动态查询跨月重看。
 
-正式归整源 SHA-256：`118efcd1c40c7a25eb38880b2864054d63af6a1f6da3f535847e3d6ba690b15c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-024.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-024.json)。此爻5组审计。
+正式归整源 SHA-256：`d2966ea4c80a44a6f3f91443c27b1b8c2eea22f46ab30781cc6f450649483217`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-024.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-024.json)。此爻5组审计。
