@@ -19,4 +19,4 @@
 - 655、968月日五行，658、965方应。春夏三金皆受原离有效克制，同属金气 gain 合并 roles[use,use_mutual,body_mutual]，本问期内申酉日参已有实际自主财；进入申酉月须按离囚金旺重判。春旺巽直生 gain/changed_use、冬相巽直生且原体死弱承接 conditional-gain/changed_use，寅卯木月日看真实可兑现的东南资源及报酬，跨月重核。全12原体巳午火旺、寅卯木旺火相 prepare/body，非独财候。32 slots与正文核实，不作收益保证。
 - 12篇作者逐篇正文、简断、专业、古据和动态实际读回。累计876篇风格扫描正文/简断句首、分句、前缀及全文近重零。
 
-正式归整源 SHA-256：`5a539457536846702486b98a64fa7f3eb1ef30667314ed5799f565b9c396f6eb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
+正式归整源 SHA-256：`821c843147148839c8b4cb48a2692e7c7ea401aec4485c7c9e92729e8aa327a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。

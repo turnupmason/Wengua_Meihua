@@ -9,4 +9,4 @@
 | 辰未戌丑 | 旺艮、旺坤比强、死坎可制、囚震克浅、死坎可制；F/P | 东北原业与西南实物客户合作，北中尾两自取财节点，东交付正常核；真实费用报酬及结余，双坎不计双收入 | 亥子日双水合一个gain槽、跨月重核，土火准备；弱震无独损、比和不独财 |
 十二篇正文简断与六维全部逐篇实读，作者精确锁及动态应期旁证绑定，独立双读通过才发布。
 
-正式归整源 SHA-256：`8c5271804863d6cb516d3ed188ed23bc6de2cdcf1af36d426f7867cce2274d86`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-015.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-015.json)。此爻5组审计。
+正式归整源 SHA-256：`26d955cf6537968ffe68dd30a8cbc9b74869fb45e9c3b0799c09dbad99b5604c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-015.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-015.json)。此爻5组审计。

@@ -19,4 +19,4 @@
 - 梅花655、968月日五行及658、965方应。春与夏本相/旺离有力直接克原囚/死乾，obstruction[use]为巳午火月及问期内火日，核已存在南边文书合同及领取报酬限制，不作确定损日。中后同比无独财候，其他月克力弱不独立损候。每篇两准备prepare[body]申酉金旺、辰未戌丑土旺金相，整理真实工作、收支、协作；动态跨月按新令解读。全12共28 slots逐项对照正文。
 - 全12篇作者逐篇正文、简断、专业、古据及动态实读；累计1152篇正文/简断风格检查句首、分句、前缀与全文近重复零。
 
-正式归整源 SHA-256：`5a539457536846702486b98a64fa7f3eb1ef30667314ed5799f565b9c396f6eb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
+正式归整源 SHA-256：`821c843147148839c8b4cb48a2692e7c7ea401aec4485c7c9e92729e8aa327a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。

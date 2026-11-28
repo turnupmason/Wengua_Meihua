@@ -14,4 +14,4 @@
 | 亥子水 | 原离死，两休乾难制，两相巽各直生原离实但原体承财不足 | conditional / conditional | 南已有本职守，西北财量力，东南真实茶木工艺中尾有条件帮助，核实际资源并按能力，寅卯木月日参条件助、木火准备，净余依实。 |
 正文、简断逐篇原创实读，实际现有业务和客户前提，收入净余分开，原典可追溯，动态旁证绑定精确文章SHA。
 
-正式归整源 SHA-256：`e15dbb292939c732b9ceb21ea4919797afc157c7b9ea69b66c4a7484c929d584`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-013.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-013.json)。此爻5组审计。
+正式归整源 SHA-256：`ef69cfeb1afc9122e1b4355ed3a6775a9f48b7ad2c56bb98e685fe36709b3791`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-013.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-013.json)。此爻5组审计。

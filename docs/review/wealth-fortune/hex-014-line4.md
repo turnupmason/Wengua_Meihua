@@ -20,4 +20,4 @@
 - 梅花655、968月日五行、658、965方应；春夏本相/旺离直接克原囚/死乾，obstruction[use]仅实际南方文书合同领款限制参巳午火月日。季土末旺艮有力生原相乾，gain[changed_use]实际东北土资源及款参辰未戌丑月日；夏末相艮实际生原死乾，conditional-gain[changed_use]同土月日仅现实有后助且能承接时观察。进入他月须按新令重核；双比不单立财候，秋尾普通助不设专财，弱克不另定损候。全12篇prepare[body]为申酉金旺及辰未戌丑土旺金相月日，准备原有工作、收支及合作。不掐虚假确定日。34 slots逐项对应文章。
 - 全12篇作者逐篇正文、简断、专业、古据及动态实读；累计1092篇风格检查正文/简断句首、分句、前缀及全文近重复零。
 
-正式归整源 SHA-256：`5a539457536846702486b98a64fa7f3eb1ef30667314ed5799f565b9c396f6eb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
+正式归整源 SHA-256：`821c843147148839c8b4cb48a2692e7c7ea401aec4485c7c9e92729e8aa327a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。

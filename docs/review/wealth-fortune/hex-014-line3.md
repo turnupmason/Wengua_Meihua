@@ -19,4 +19,4 @@
 - 梅花655、968月日五行、658、965方应。春夏四乾兑金节点都受原火有力克制，gain合并同金气 roles[use,use_mutual,body_mutual,changed_use]，问期内申酉日参已有真实可控财；若进入申酉月火囚金旺，须新令重判，不沿用强取财。其余月无独财候；无直接克体、己耗、生体、比和，均无损财或外援/同气专财时段。每篇巳午火旺、寅卯木旺火相为原体 prepare/body，仅作工作、账目和收款条件整理。28 slots实际逐项正文对应。
 - 全12篇作者逐篇正文、简断、专业、古据及动态实读，累计1020篇风格检查正文/简断句首、分句、前缀及全文近重零。
 
-正式归整源 SHA-256：`5a539457536846702486b98a64fa7f3eb1ef30667314ed5799f565b9c396f6eb`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
+正式归整源 SHA-256：`821c843147148839c8b4cb48a2692e7c7ea401aec4485c7c9e92729e8aa327a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-014.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-014.json)。此爻5组审计。
