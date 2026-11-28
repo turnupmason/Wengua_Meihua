@@ -1,0 +1,421 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": "machine-style-scan; not independent full read or prediction validation",
+  "baseCommit": "83401ec194fd765172459791d96c374948967aa8",
+  "articleCount": 216,
+  "sourceCount": 6,
+  "sources": [
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-001.json",
+      "sha256": "46f7c7de14a0d3401701a2b37c276ba3f4eaf37a0e2852ffeef3a4d4ed08e512",
+      "count": 36
+    },
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-002.json",
+      "sha256": "6f6e1651c45b8c3869baa37d42f8e2620a111cc549aa0ee67d524d478aea3808",
+      "count": 36
+    },
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-003.json",
+      "sha256": "e7ab272f98ea2f7d4192135cae67520a385ca63c3e0ce499e9d9b805b753f29c",
+      "count": 36
+    },
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-004.json",
+      "sha256": "41cdb0414b0a9ffcc23d4b3c34ecf6af67dd4b2b0369c04f2c6cbfc282318c78",
+      "count": 36
+    },
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-005.json",
+      "sha256": "6654d72b27b69849d8d095c2ed8c7dd24fba3edf50023bd4ba6a2a85b008e97c",
+      "count": 36
+    },
+    {
+      "path": "sources/editorial/wealth-fortune/monthly/hex-006.json",
+      "sha256": "5946c2dbe807a0765942a05b40a40050eb0cbef6249ca364793b57a700275c81",
+      "count": 36
+    }
+  ],
+  "method": {
+    "quoteExclusion": "remove explicit 「」 『』 “” 《》 〈〉 contents before literal text, sentence, clause and ngram matching",
+    "monthStart": "first Han character of displayed text equals row month branch; completeMonthStartLines require all 12 articles in one line to meet this condition; lexical false positives are also reported separately with a conservative semantic filter; does not imply wrong rule",
+    "firstPrefix": "first normalized Han sentence, 12/16/24 Han; month-normalized variant substitutes the actual branch only if initial; crossPunctuation variants use all first paragraph (body) or short without sentence boundary, excluding quoted text and punctuation",
+    "longSentence": "exact normalized unquoted sequences of at least 24 Han between 。！？ newline",
+    "longClause": "exact normalized unquoted sequences of at least 16 Han between sentence, comma/colon/semicolon markers",
+    "nearDuplicate": "exact Jaccard of unique normalized unquoted Han 3-grams, length/rare-prefix pruning; all pairs meeting threshold retrieved",
+    "humanMeaning": "same qi judgments and source-based necessary terminology may repeat legitimately; groups are review candidates, not automatic faults"
+  },
+  "metrics": {
+    "body": {
+      "lengthRange": [
+        500,
+        634
+      ],
+      "median": 564.0,
+      "monthStartCount": 1,
+      "monthStartPct": 0.46,
+      "semanticMonthStartCount": 1,
+      "semanticMonthStartPct": 0.46,
+      "explicitMonthStartCount": 1,
+      "seasonStartCount": 0,
+      "quoteStartCount": 0,
+      "groupMetrics": {
+        "exactText": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "exactFirstSentence": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "exactFirstClause": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first16Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first24Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "monthNormalizedFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "crossPunctuationFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "crossPunctuationMonthNormalizedFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "longSentence24Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "longClause16Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        }
+      },
+      "styleMarkerCounts": {
+        "不能不宜": 153,
+        "现实实证": 216,
+        "证据边界": 136,
+        "如果": 74,
+        "先说判断": 15,
+        "安危警示": 3
+      },
+      "byHex": [
+        {
+          "hex": 1,
+          "count": 36,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 2,
+          "count": 36,
+          "monthStart": 1,
+          "semanticMonthStart": 1,
+          "explicitMonthStart": 1,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 3,
+          "count": 36,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 4,
+          "count": 36,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 5,
+          "count": 36,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 6,
+          "count": 36,
+          "monthStart": 0,
+          "semanticMonthStart": 0,
+          "explicitMonthStart": 0,
+          "seasonStart": 0,
+          "quotedStart": 0
+        }
+      ],
+      "completeMonthStartLineCount": 0,
+      "completeSemanticMonthStartLineCount": 0,
+      "nearDuplicateSummary": {
+        "threshold": 0.64,
+        "pairCount": 0,
+        "sameHex": 0,
+        "sameLine": 0,
+        "sameQi": 0,
+        "maxSimilarity": 0
+      }
+    },
+    "short": {
+      "lengthRange": [
+        64,
+        94
+      ],
+      "median": 78.0,
+      "monthStartCount": 28,
+      "monthStartPct": 12.96,
+      "semanticMonthStartCount": 28,
+      "semanticMonthStartPct": 12.96,
+      "explicitMonthStartCount": 25,
+      "seasonStartCount": 4,
+      "quoteStartCount": 0,
+      "groupMetrics": {
+        "exactText": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "exactFirstSentence": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "exactFirstClause": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first16Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "first24Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "monthNormalizedFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "crossPunctuationFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "crossPunctuationMonthNormalizedFirst12Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "longSentence24Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        },
+        "longClause16Han": {
+          "groups": 0,
+          "articles": 0,
+          "maxGroup": 0,
+          "pairs": 0
+        }
+      },
+      "styleMarkerCounts": {
+        "不能不宜": 15,
+        "现实实证": 114,
+        "证据边界": 11,
+        "先说判断": 1
+      },
+      "byHex": [
+        {
+          "hex": 1,
+          "count": 36,
+          "monthStart": 3,
+          "semanticMonthStart": 3,
+          "explicitMonthStart": 3,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 2,
+          "count": 36,
+          "monthStart": 6,
+          "semanticMonthStart": 6,
+          "explicitMonthStart": 6,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 3,
+          "count": 36,
+          "monthStart": 3,
+          "semanticMonthStart": 3,
+          "explicitMonthStart": 3,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 4,
+          "count": 36,
+          "monthStart": 4,
+          "semanticMonthStart": 4,
+          "explicitMonthStart": 3,
+          "seasonStart": 0,
+          "quotedStart": 0
+        },
+        {
+          "hex": 5,
+          "count": 36,
+          "monthStart": 5,
+          "semanticMonthStart": 5,
+          "explicitMonthStart": 5,
+          "seasonStart": 1,
+          "quotedStart": 0
+        },
+        {
+          "hex": 6,
+          "count": 36,
+          "monthStart": 7,
+          "semanticMonthStart": 7,
+          "explicitMonthStart": 5,
+          "seasonStart": 3,
+          "quotedStart": 0
+        }
+      ],
+      "completeMonthStartLineCount": 0,
+      "completeSemanticMonthStartLineCount": 0,
+      "nearDuplicateSummary": {
+        "threshold": 0.72,
+        "pairCount": 0,
+        "sameHex": 0,
+        "sameLine": 0,
+        "sameQi": 0,
+        "maxSimilarity": 0
+      }
+    }
+  },
+  "groups": {
+    "body": {
+      "exactText": [],
+      "exactFirstSentence": [],
+      "exactFirstClause": [],
+      "first12Han": [],
+      "first16Han": [],
+      "first24Han": [],
+      "monthNormalizedFirst12Han": [],
+      "crossPunctuationFirst12Han": [],
+      "crossPunctuationMonthNormalizedFirst12Han": [],
+      "longSentence24Han": [],
+      "longClause16Han": []
+    },
+    "short": {
+      "exactText": [],
+      "exactFirstSentence": [],
+      "exactFirstClause": [],
+      "first12Han": [],
+      "first16Han": [],
+      "first24Han": [],
+      "monthNormalizedFirst12Han": [],
+      "crossPunctuationFirst12Han": [],
+      "crossPunctuationMonthNormalizedFirst12Han": [],
+      "longSentence24Han": [],
+      "longClause16Han": []
+    }
+  },
+  "openerRuns": {
+    "body": {
+      "consecutiveMonthRuns": [],
+      "consecutiveSemanticMonthRuns": [],
+      "identicalMonthNormalizedPrefixRuns": [],
+      "completeMonthStartLines": [],
+      "completeSemanticMonthStartLines": []
+    },
+    "short": {
+      "consecutiveMonthRuns": [],
+      "consecutiveSemanticMonthRuns": [],
+      "identicalMonthNormalizedPrefixRuns": [],
+      "completeMonthStartLines": [],
+      "completeSemanticMonthStartLines": []
+    }
+  },
+  "nearDuplicates": {
+    "body": {
+      "threshold": 0.64,
+      "gramSize": 3,
+      "documents": 216,
+      "candidatePairs": 0,
+      "pairs": []
+    },
+    "short": {
+      "threshold": 0.72,
+      "gramSize": 3,
+      "documents": 216,
+      "candidatePairs": 0,
+      "pairs": []
+    }
+  },
+  "item": "wealth-fortune"
+}

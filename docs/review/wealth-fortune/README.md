@@ -34,3 +34,5 @@ Guan 隔离核验实际 main 内容提交 `3133f6252cfb35788f72ed712e1ba97b41c16
 - [山水蒙第三爻](hex-004-line3.md)
 - [水天需第三爻](hex-005-line3.md)
 - [天水讼第三爻](hex-006-line3.md)
+
+Guan 隔离核验实际 main 内容提交 `83401ec194fd765172459791d96c374948967aa8`：216唯一键、双读各216，5,832盘面比较零差，正文505–635、简断64–94汉字，0错误及警告，全部重复、开头串及近重复均0；18份逐爻审计90组指纹绑定；216篇明确古籍范围定位全解析。累计216/4,608，余4392。[独立绑定](independent-bindings-216.json) · [盘面](independent-checks-216.json) · [风格](independent-style-216.json) · [古籍定位](independent-classical-locators-216.json)。
