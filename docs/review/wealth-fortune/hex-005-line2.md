@@ -30,4 +30,4 @@
 
 已实际逐篇润色九二12篇正文及简断，先直给财运、财源及留存结论，再用自然语言简明解释卦象，分段交代行业方位、客户合作、风险、实际费用和日期条件。专业说明及七条原典定位不变，原判码和20个应期slots决策保持，按新文章末版SHA逐项重绑。voiceVersion 为 consultative-plain-v1。
 
-正式归整源 SHA-256：`09a0abf037f73e2cf89a34f922c41afd6506015fe948a38756b6e5b78c83c450`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`1be77867242eef2bfd28cc19910c5321d50d5fc5e8f647203f171902216497e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

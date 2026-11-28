@@ -34,4 +34,4 @@
 
 已实际逐篇改写初九12篇正文与简断为咨询式顾问口吻；财务结论、原有收入及余财判断先行，随后用白话解释卦象与五态，行业方向、合作客户、支出边界和动态应期均保留。专业说明与八条证据未改，原判码保留；独立二读建议与九二、九三一致，秋冬四支的体互离可制，在确有现实文书财的前提下补巳午日见财条件候，跨月重新判断旺衰。四个实际时机旁证新增后共24项，按新文章指纹重绑。voiceVersion 为 consultative-plain-v1。
 
-正式归整源 SHA-256：`09a0abf037f73e2cf89a34f922c41afd6506015fe948a38756b6e5b78c83c450`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`1be77867242eef2bfd28cc19910c5321d50d5fc5e8f647203f171902216497e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

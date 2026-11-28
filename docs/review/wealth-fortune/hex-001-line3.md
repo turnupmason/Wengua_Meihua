@@ -20,4 +20,4 @@
 
 顾问白话版本：十二篇全文确已重写，开头先明确近期财势、原有收入或额外机会的适宜程度、相对净利，后再以卦理说明；正文保留全部直接关系、五态、方位行业客群、合作、留财、月日证据。长句尽量拆短、技术详证留在专业栏；动态旁证事件与时间选择均未改，仅绑定真实末版文章对象。voiceVersion=consultative-plain-v1。
 
-正式归整源 SHA-256：`21bf44163c5aeb6cff283a5fb06012248a75f68419b384326d180e103b822e87`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`9157318a33138ac91b6e02076fab465e8ab0396ff9828fb334e4380cc89089e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

@@ -22,4 +22,4 @@
 ## 顾问白话终稿追加审计
 十二篇逐篇实质润色与全文实际重读后更新 voiceVersion。正文明说实际财源、收入和净余再带盘理，前中三比及末坎受克取财，以及各月旺相休囚死仍各自明确。正文511–548汉字，简断82–92汉字，简断不堆盘面代号，逗号长链拆分；六二「直方大」古义不习无不利、中正地道的引申仍在。12条应期事件、阶段角色及元素2026-11-28实际逐篇复核无变化，重新绑定文章SHA。旧稿在前次发布历史可回溯，本次仅改第二爻。
 
-正式归整源 SHA-256：`2fa4af7504417cd9ae96ac0c06cd12c1627a1988cae36b7137383592114a5464`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`0018836c3fe30c65ae0966cdfbf8b01faa1d433bff65b901229a3a7681ee9f32`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

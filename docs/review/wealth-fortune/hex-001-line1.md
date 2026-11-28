@@ -20,4 +20,4 @@
 
 顾问白话版本：十二篇正文及简断真实重写，开头先示现实财势、原财收入与净余，随后以简短卦理说明合作财源及风险；四作用、方位行业客群、原典与实际月日保留，动态候的事件选择不变，仅精确绑定新版文章指纹。voiceVersion=consultative-plain-v1。
 
-正式归整源 SHA-256：`21bf44163c5aeb6cff283a5fb06012248a75f68419b384326d180e103b822e87`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`9157318a33138ac91b6e02076fab465e8ab0396ff9828fb334e4380cc89089e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

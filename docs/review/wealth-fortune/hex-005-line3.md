@@ -26,4 +26,4 @@
 
 逐月正文与简断以大白话咨询结论先行、卦理后解释，保留四直接关系和各当月五态、六维方向及责任。十二篇经实际重写才标 editorialVersion wealth-fortune-v2、voiceVersion consultative-plain-v1。另附结构化旁证，分生体见财、条件来益、体克取财与原体准备环境，绑定各末版对象指纹。前两爻24对象保持已发布版本，后续另作白话润色与双读更新。
 
-正式归整源 SHA-256：`09a0abf037f73e2cf89a34f922c41afd6506015fe948a38756b6e5b78c83c450`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`1be77867242eef2bfd28cc19910c5321d50d5fc5e8f647203f171902216497e8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

@@ -20,4 +20,4 @@
 
 v2十二稿按六方面完整独立成文、同气码一致。月支日支仅用于有真实对应事项的传统参考，不以之决定金融交易或保证兑现日期。出自具体类象节点及真实作用；不虚构具体财事，古籍原句和现代类推分明。
 
-正式归整源 SHA-256：`9ed474e13dbaf08c49372efa60b29af2da4e723539f71d2bb1bf65a77bcc86d2`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`51702524bd53933eadeed4f2c5b8783efdad61b768ee9808aa4e5bd5bd3813ba`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
