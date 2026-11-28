@@ -18,4 +18,6 @@
 
 聚财仅指近期实际净留的条件：相旺金融可承合理支出，囚休/死金财力薄宜储备与核实支出，任何进账均不等于全部余额或确定利润；财未到手不可算作可用资金，真实损耗依已有支付义务核算。上述表仅传统取象推理及已有事实处置，不保证行业、地域、客户身份、特定收入或既发事实。新版12篇均实际作者全文读回，旧稿历史保留。
 
-正式归整源 SHA-256：`93ed4cc379945791d3d1717faf81f5dfc8f8a0786f645748040f73879c8bf163`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+顾问白话版本：十二篇正文及简断真实重写，开头先示现实财势、原财收入与净余，随后以简短卦理说明合作财源及风险；四作用、方位行业客群、原典与实际月日保留，动态候的事件选择不变，仅精确绑定新版文章指纹。voiceVersion=consultative-plain-v1。
+
+正式归整源 SHA-256：`3fd0ae5bd11b2da8d8eeaeffc96f59d7948dec46fe190dedfbb8d209e2cec49b`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

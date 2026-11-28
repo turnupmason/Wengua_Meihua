@@ -22,4 +22,7 @@
 
 期候为对应卦气的传统参考，不把卦气直接换为未来公历日期或某项钱款确定兑现日。十二稿按v2实际补足财源行业方位、人际协作、风险、聚财、具体月支日支候，分别原写而非按五气替换月名，原版保留git历史，判码同气一致。本表仍仅对应初六12稿。
 
-正式归整源 SHA-256：`d6e06ad3acaf80148442bbb3da486f1fbac3555a5c82866d0078bb431b98040e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+## 白话顾问版复审
+12月正文与简断逐篇重写并完整读回；财务结论先行、卦理随现实意义解释，去简断压缩术语。原盘4直接作用、5组判码、财源行业方位、实际合作客源、风险及聚财、支月日应期决策和证据与v2版一致。逐篇作者与结构化时段重新绑定精确文章SHA。
+
+正式归整源 SHA-256：`d3463b1e32daa21fe473c249a1b1fb2bdbfe783f742b1e74c0cc74927013a7a4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。

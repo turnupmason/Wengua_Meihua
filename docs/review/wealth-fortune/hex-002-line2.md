@@ -19,4 +19,4 @@
 - 655、968行明确月日五行旺气，658、965方应明确坤西南、坎北及以体为主比和方应；方向结合实际节点角色，坎虽为财用并非外助。555–557原章比和财利不独立设财日；旺/相土有力制尾坎时，参亥子水气见财候，仍须实际财源与当时收取条件，不保证到账；弱土难制尾水不取候，只参土旺辰未戌丑月/日或巳午火土相环境准备。无来克或己泄，不附会破财日。
 - v2十二篇作者逐篇全文读回，补齐财势及净收益、财源行业方位、协作客源、现实排雷、聚财与月/日支；原判码不改。
 
-正式归整源 SHA-256：`5a0ce1ca4e2cb0e0a6ed60632df9a1ebaa614f69ef83cde32dacc3988553a663`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`d0eafc694691c5c88132054f7172e7f7b5f184b1b96558c2531d1d09a74db877`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
