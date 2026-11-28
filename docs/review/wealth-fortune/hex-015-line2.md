@@ -22,4 +22,4 @@
 
 十二篇标题、简断、正文、专业判断、时段及八项古据逐篇实际读回及润色，附作者及动态精确绑定，独立双审后发布。
 
-正式归整源 SHA-256：`26d955cf6537968ffe68dd30a8cbc9b74869fb45e9c3b0799c09dbad99b5604c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-015.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-015.json)。此爻5组审计。
+正式归整源 SHA-256：`447a5edfc88dc559766b0f4573d73a5cf6d43c958e3084a096d6ae2cfd13feb6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-015.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-015.json)。此爻5组审计。
