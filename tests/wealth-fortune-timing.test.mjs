@@ -50,3 +50,12 @@ test('wealth timing guards reject wrong chart roles, body environments and stale
  assert.throws(()=>resolveWealthFortuneTiming({reading,specs:[gain],referenceDate:'2026-12-01'}),/matching chart/);
  assert.throws(()=>resolveWealthFortuneTiming({reading,specs:[gain],referenceDate:'2026-11-28',endDate:'2026-11-27'}),/horizon/);
 });
+test('unpublished wealth hexagrams yield a review-required status, not a missing-file exception',async()=>{
+ const query={primaryId:64,movingLine:1,monthBranch:'亥',referenceDate:'2026-11-28'};
+ for(const missing of [Object.assign(new Error('not yet written'),{code:'ENOENT'}),Object.assign(new Error('not found'),{status:404})]){
+  const pending=createWealthFortunePreviewRepository({library:lib,readJSON:async()=>{throw missing}});
+  assert.deepEqual(await pending.getReading(query),{status:'requires-reviewed-preview',key:'64/1/亥'});
+ }
+ const corrupt=createWealthFortunePreviewRepository({library:lib,readJSON:async p=>{if(p.includes('/timing-monthly/'))throw new SyntaxError('malformed source');throw Object.assign(new Error('missing'),{code:'ENOENT'});}});
+ await assert.rejects(corrupt.getReading(query),/malformed source/);
+});

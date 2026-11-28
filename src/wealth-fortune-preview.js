@@ -14,9 +14,14 @@ export function createWealthFortunePreviewRepository({library,readJSON}){
   if(!Number.isInteger(primaryId)||primaryId<1||primaryId>64||!Number.isInteger(movingLine)||movingLine<1||movingLine>6||!MONTH_SLOTS.some(s=>s.branch===monthBranch))throw new RangeError('Explicit valid hexagram, moving line and current (or historical casting) month branch required');
   const n='hex-'+String(primaryId).padStart(3,'0')+'.json';
   const base='sources/editorial/wealth-fortune';
-  const [src,ts]=await Promise.all([readJSON(base+'/monthly/'+n),readJSON(base+'/timing-monthly/'+n)]);
-  const article=src.articles.find(a=>a.movingLine===movingLine&&a.monthBranch===monthBranch&&a.editorialVersion==='wealth-fortune-v2');
   const key=primaryId+'/'+movingLine+'/'+monthBranch;
+  const files=await Promise.allSettled(['monthly','timing-monthly'].map(folder=>Promise.resolve().then(()=>readJSON(base+'/'+folder+'/'+n))));
+  const rejected=files.filter(x=>x.status==='rejected');
+  const unexpected=rejected.find(x=>x.reason?.code!=='ENOENT'&&x.reason?.status!==404&&x.reason?.statusCode!==404);
+  if(unexpected)throw unexpected.reason;
+  if(rejected.length)return {status:'requires-reviewed-preview',key};
+  const [src,ts]=files.map(x=>x.value);
+  const article=src.articles.find(a=>a.movingLine===movingLine&&a.monthBranch===monthBranch&&a.editorialVersion==='wealth-fortune-v2');
   const stored=ts.articles.find(x=>x.key===key);
   if(!article||!stored)return {status:'requires-reviewed-preview',key};
   const anchor=mode==='history'?castingDate:referenceDate;
