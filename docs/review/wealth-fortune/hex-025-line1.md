@@ -14,4 +14,4 @@
 
 作者逐篇完整读检正文简断、专业说明、原典定位及36槽，收入与实际扣费后净余、风险与资源条件清楚。
 
-正式归整源 SHA-256：`24952a82495c49c70193dd099676a68724dd8416875ac7c077a0c7b4cbd00ac7`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
+正式归整源 SHA-256：`1bd68fd7d42c81218e4caced42dd44db5fb6579571a74a9dfbb8fd6fecb3c7e1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
