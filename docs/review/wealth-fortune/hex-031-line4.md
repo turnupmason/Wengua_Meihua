@@ -14,4 +14,4 @@
 
 作者逐篇实读正文、简断、判断、古据及44槽（春6、土16、夏8、秋6、冬8）。真实收入、开销及净余、原有客户与合作责任分清；同一开销不作两份。
 
-正式归整源 SHA-256：`bb47cb04ef06f8c32d0c2da22dab5ea2f2d8a78a850ac8b0bb228bde3a8754a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。
+正式归整源 SHA-256：`4ceb1403b08f02e11973c37d2206cab967f325b512dd262d35a92b8a8b163e4f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。

@@ -20,4 +20,4 @@
 - 作者逐篇全文、简断、专业、古据及动态实际读回。
 - 2028篇隔离累计查重正文与简断各类句首、分句、前缀、全文及近重复全零。
 
-正式归整源 SHA-256：`fd0c03baa43d9831c35e5b748cd08fc2afce7b59f02e9aa56984d448e8a07227`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-032.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-032.json)。此爻5组审计。
+正式归整源 SHA-256：`f9b73a7b536fc4149a2b0f213aa8347c7990c1e95018ed0a3fc996ce333ab689`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-032.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-032.json)。此爻5组审计。

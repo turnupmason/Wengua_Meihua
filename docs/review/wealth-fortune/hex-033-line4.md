@@ -9,4 +9,4 @@
 |亥子|囚艮生本及中上两休乾普通实耗，受中下和末两相巽直接重克；D/W|东北原业守，西北前中实际器材管理费用普通、身弱仍核，东南中尾工巧木茶交付重阻，两类分别核且同项一次，实余守|申酉月日核普通真实两乾支出同金合槽，寅卯月日核中尾巽东南任务重阻同木合槽，巳午及土旺环境准备|
 实际12正文简断六维及全部四关系、五气、动态旁证作者逐篇真实读回，作者/应期精确锁；独立双审后发布。
 
-正式归整源 SHA-256：`507e05aaee86ca5ebee1b9250c137b0ba71d83413a34f26d5aef099a2ee3f7ec`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。
+正式归整源 SHA-256：`74c07321fc57d38481f8be15b89cb33206457f21ef848c4c2cf5599800e7ba56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。

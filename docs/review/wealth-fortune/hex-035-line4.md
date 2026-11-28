@@ -21,4 +21,4 @@
 
 十二篇逐篇原创实际全文读回，六维、古据、各月旺衰与时段角色事件一致。九四正式新增十二篇，初至三爻三十六对象不动。
 
-正式归整源 SHA-256：`6c7934405cf7684c1e0842a7d804f43e98c377830742ac559002d42792bc782f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-035.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-035.json)。此爻5组审计。
+正式归整源 SHA-256：`494f791e2c7e8718ab1cebf49f5e9356ca53594412ef57ac3171c52d7e276468`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-035.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-035.json)。此爻5组审计。

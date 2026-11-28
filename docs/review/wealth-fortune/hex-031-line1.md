@@ -14,4 +14,4 @@
 
 作者逐篇核全文简断、判断及古据、44槽（春6、土20、夏8、秋6、冬4），收入与实收扣费留存明确，现实已有资源与已到账分清。
 
-正式归整源 SHA-256：`bb47cb04ef06f8c32d0c2da22dab5ea2f2d8a78a850ac8b0bb228bde3a8754a5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。
+正式归整源 SHA-256：`4ceb1403b08f02e11973c37d2206cab967f325b512dd262d35a92b8a8b163e4f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-031.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-031.json)。此爻5组审计。

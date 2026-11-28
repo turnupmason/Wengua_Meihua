@@ -11,4 +11,4 @@
 
 双相土夏承接薄、双休土秋普通援采用conditional-gain；有同土真实援候不重复土prepare。
 
-正式归整源 SHA-256：`507e05aaee86ca5ebee1b9250c137b0ba71d83413a34f26d5aef099a2ee3f7ec`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。
+正式归整源 SHA-256：`74c07321fc57d38481f8be15b89cb33206457f21ef848c4c2cf5599800e7ba56`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-033.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-033.json)。此爻5组审计。

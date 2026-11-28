@@ -20,4 +20,4 @@
 - 作者实际逐篇全文、简断、专业、古据与动态读回。
 - 1944篇隔离累计查重，本文12篇及本卦与先前已完成源无正文、简断句首、分句或近重复；外卦29/2有一组短长分句已报根处理，不涉及本文。
 
-正式归整源 SHA-256：`fd0c03baa43d9831c35e5b748cd08fc2afce7b59f02e9aa56984d448e8a07227`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-032.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-032.json)。此爻5组审计。
+正式归整源 SHA-256：`f9b73a7b536fc4149a2b0f213aa8347c7990c1e95018ed0a3fc996ce333ab689`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-032.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-032.json)。此爻5组审计。

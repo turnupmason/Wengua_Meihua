@@ -21,4 +21,4 @@
 
 十二篇逐月原创并作者实际全文读回，五态盘理及动态角色、六维古据逐一对应。初六独立草稿待正式合入。
 
-正式归整源 SHA-256：`6c7934405cf7684c1e0842a7d804f43e98c377830742ac559002d42792bc782f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-035.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-035.json)。此爻5组审计。
+正式归整源 SHA-256：`494f791e2c7e8718ab1cebf49f5e9356ca53594412ef57ac3171c52d7e276468`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-035.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-035.json)。此爻5组审计。
