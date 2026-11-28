@@ -1,8 +1,8 @@
-# 财富财运逐月原创断语：3024 篇预览
+# 财富财运逐月原创断语：3240 篇预览
 
-累计 3024/4,608 篇，剩余 1584 篇；已按第二版完整求财口径更新且双读锁定 3024 篇，第二版剩余 1584 篇；顾问白话文风实质润色并完整双读 3024 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
+累计 3240/4,608 篇，剩余 1368 篇；已按第二版完整求财口径更新且双读锁定 3240 篇，第二版剩余 1368 篇；顾问白话文风实质润色并完整双读 3240 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
 
-动态应期已绑定作者及独立读回 3024 篇、8165 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
+动态应期已绑定作者及独立读回 3240 篇、8801 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
 
 | 卦 | 已发布篇数 | 第二版篇数 | 顾问白话篇数 | 正文 | 核读回执 |
 |---|---:|---:|---:|---|---|
@@ -48,9 +48,15 @@
 | 雷水解 | 72/72 | 72/72 | 72/72 | [读全文](hex-040.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-040.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-040.json) |
 | 山泽损 | 72/72 | 72/72 | 72/72 | [读全文](hex-041.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-041.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-041.json) |
 | 风雷益 | 72/72 | 72/72 | 72/72 | [读全文](hex-042.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-042.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-042.json) |
+| 泽天夬 | 36/72 | 36/72 | 36/72 | [读全文](hex-043.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-043.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-043.json) |
+| 天风姤 | 36/72 | 36/72 | 36/72 | [读全文](hex-044.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-044.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-044.json) |
+| 泽地萃 | 36/72 | 36/72 | 36/72 | [读全文](hex-045.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-045.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-045.json) |
+| 地风升 | 36/72 | 36/72 | 36/72 | [读全文](hex-046.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-046.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-046.json) |
+| 泽水困 | 36/72 | 36/72 | 36/72 | [读全文](hex-047.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-047.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-047.json) |
+| 水风井 | 36/72 | 36/72 | 36/72 | [读全文](hex-048.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-048.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-048.json) |
 
 
 
-正文 500–626 汉字，简断 62–120 汉字。盘面比较 81648 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
+正文 500–626 汉字，简断 62–120 汉字。盘面比较 87480 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
 
 [机器核验](../../review/WEALTH_FORTUNE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/WEALTH_FORTUNE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/wealth-fortune/README.md) · [交付清单](manifest.json)
