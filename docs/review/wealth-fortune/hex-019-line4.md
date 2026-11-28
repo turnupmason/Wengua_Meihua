@@ -14,4 +14,4 @@
 
 作者须实际逐篇读回正文、简断、古籍判断与36槽（春4土16夏6秋6冬4），逐组旺衰与每个场景均有定位，收入和净余分、现实责任和留存明确。
 
-正式归整源 SHA-256：`0e0e1f8dc492e6d008785e4af32daa02a24cefb2e3181445e9690e176d9b1281`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。
+正式归整源 SHA-256：`ec607327749608b13ed8f15f7770be8ed8f8636f3288baf1fe6709e31dcbaf81`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。

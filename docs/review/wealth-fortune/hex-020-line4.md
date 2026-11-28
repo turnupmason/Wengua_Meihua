@@ -20,4 +20,4 @@
 - 梅花655、968月日五行及658、965方应。春冬本旺相巽直接克原死囚坤，obstruction[use]寅卯木月日核已有东南木茶工艺业务交付限制；季土相乾、秋旺乾及冬休乾受原坤直接生普通实耗，drain[changed_use]申酉金月及问期内金日核已存在的西北管理器材贵货费用，冬同时阻/耗两种不同现实事件。春浅耗、夏微耗及其余浅微克不独定损耗候。无直接生体与体克财，双比不定独财日。每篇prepare[body]辰未戌丑土旺及巳午火旺土相月日准备已有收入、工作与合作，非确定财期。36slots逐项对照正文。
 - 全12篇作者逐篇正文、简断、专业、古据及动态实读；累计1464篇正文与简断句首、分句、前缀、全文近重复零。
 
-正式归整源 SHA-256：`74ff6185696e9c2b5736e1b72a8be653551707f74e10797ad6d83695c7ea51de`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。
+正式归整源 SHA-256：`cc658ee27b9ecbf90102f35d060b863d188caee9b332aaafff562ed57dd5123c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。
