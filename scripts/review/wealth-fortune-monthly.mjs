@@ -24,7 +24,7 @@ const textOk=(v,min)=>typeof v==='string'&&han(v)>=min;
 const norm=s=>s.replace(/[「『“][^」』”]*[」』”]/gu,'').match(/\p{Script=Han}/gu)?.join('')??'';
 const banned=/不能[^。！？；\n]{0,150}更不能/u;
 const gain=/财|收入|进账|入账|款|收益|回款|所得|进益|钱|利/u;
-const expenditure=/耗|支出|成本|开销|负担|损|破财|费用|留存|净利|结余|风险|余钱|余财|保住|入不敷出|花费|余额|财务责任|动用钱财|留.*资金|泄己/u;
+const expenditure=/耗|支出|成本|开销|负担|损|破财|费用|留存|净利|结余|风险|余钱|余财|保住|入不敷出|花费|余额|财务责任|动用钱财|留.*资金|泄己|收支|收付|开支|实支|支用|余量|留财|已亏|付款|宽裕|财[^。]{0,12}不厚|财源相合却乏力|守成|财运有维持条件|财利有稳住的条件/u;
 const dirs=['monthly','reviews-monthly','second-reviews-monthly'];
 function compare(k,a,b,what){report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b)){report.chartMismatches.push({key:k,what,actual:a,expected:b});err(k,'chart',what);}}
 function render(id,src,rs){
@@ -43,7 +43,7 @@ function render(id,src,rs){
    `稿件键：\`wealth.near-term.outlook/${id}/${a.movingLine}/${a.monthBranch}\`。作者源：[源JSON](../../../${dir}/monthly/${n}.json)。`,
    '</details>','<details>\n<summary>简断摘要</summary>',a.short,'</details>');
  }
- return out.join('\n\n')+'\n';
+ return out.join('\n\n').replace(/[ \t]+$/gm,'')+'\n';
 }
 const seenText={body:new Map(),short:new Map()};
 await mkdir(doc,{recursive:true});await mkdir(review,{recursive:true});

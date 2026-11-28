@@ -20,4 +20,4 @@
 
 应期依据为原书556–557的财应及破财候，未有问期、起卦日，不输出确定公历兑现/亏损时间。本项完全依直接作用；未引入现实投资标的、风险概率、金额、财产损失事实或新的收款情节。正文与简断各12篇作者末版逐篇核读，另待独立读审绑定。
 
-正式归整源 SHA-256：`5120306e7bcf2d9ea6a31f2e71cd178f6b1a9b053fe131e7a4f7a728c51baf24`。本次12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此为初爻5组审计，尚非整卦30组。
+正式归整源 SHA-256：`e1da5e10bde0167c2766db2c29f8190ac5d962393b152e3c5bdc8431677ee9d1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

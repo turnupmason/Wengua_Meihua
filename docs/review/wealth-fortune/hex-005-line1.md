@@ -20,4 +20,4 @@
 
 正文统一遵循原盘、分阶段而非以节点吉凶数目计票；同一季气结论一致，文字独立。文章从财务真实可落实条件切入，按古籍取象为已知财源和支出核实提出具体经营分寸。十二篇均兼答财务趋势与收入机会。
 
-正式归整源 SHA-256：`08ee523b7ed6ee859a8d7e906d7164855179d4866cb190cb3479411d521252a3`。本次12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此为初爻5组审计，尚非整卦30组。
+正式归整源 SHA-256：`bfb54bbcf459aaa33e88407b6a1da5787e28e9a30d36a8731fc9292d24f296b5`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
