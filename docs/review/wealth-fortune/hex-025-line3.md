@@ -14,4 +14,4 @@
 
 逐篇正文简断及44槽（春6、土20、夏8、秋6、冬4）核实，区分收入和净余、具体既有客户合作及风险，不凭方位或来克编造坏事。
 
-正式归整源 SHA-256：`75b01ab899ce4def503737749f1d7591cfec240d36f14ba7a3590abdb26e48ec`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
+正式归整源 SHA-256：`9a3bf4e9395ee89c814f3ff4e728c84da5b95347b03380a5aa657ac592129ece`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。

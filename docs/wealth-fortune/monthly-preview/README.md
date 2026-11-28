@@ -1,8 +1,8 @@
-# 财富财运逐月原创断语：2016 篇预览
+# 财富财运逐月原创断语：2088 篇预览
 
-累计 2016/4,608 篇，剩余 2592 篇；已按第二版完整求财口径更新且双读锁定 2016 篇，第二版剩余 2592 篇；顾问白话文风实质润色并完整双读 2016 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
+累计 2088/4,608 篇，剩余 2520 篇；已按第二版完整求财口径更新且双读锁定 2088 篇，第二版剩余 2520 篇；顾问白话文风实质润色并完整双读 2088 篇。已发布稿均由作者及不同独立AI逐篇全文读回，古籍及具体象类证据见每篇详情。[写作与规则证据](../RULE_AUDIT.md)及逐卦审计可对照。
 
-动态应期已绑定作者及独立读回 2016 篇、5193 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
+动态应期已绑定作者及独立读回 2088 篇、5393 项，预览参考日 2026-11-28。实际使用按新查询的当前月令及参考日重新选择稿并计算具体公历几号，本月余日优先，无候取次月。旧历史保留原日并标已过。
 
 | 卦 | 已发布篇数 | 第二版篇数 | 顾问白话篇数 | 正文 | 核读回执 |
 |---|---:|---:|---:|---|---|
@@ -30,15 +30,15 @@
 | 山火贲 | 72/72 | 72/72 | 72/72 | [读全文](hex-022.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-022.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-022.json) |
 | 山地剥 | 72/72 | 72/72 | 72/72 | [读全文](hex-023.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-023.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-023.json) |
 | 地雷复 | 72/72 | 72/72 | 72/72 | [读全文](hex-024.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-024.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-024.json) |
-| 天雷无妄 | 48/72 | 48/72 | 48/72 | [读全文](hex-025.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json) |
-| 山天大畜 | 48/72 | 48/72 | 48/72 | [读全文](hex-026.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json) |
-| 山雷颐 | 48/72 | 48/72 | 48/72 | [读全文](hex-027.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json) |
-| 泽风大过 | 48/72 | 48/72 | 48/72 | [读全文](hex-028.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-028.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-028.json) |
-| 坎为水 | 48/72 | 48/72 | 48/72 | [读全文](hex-029.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-029.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-029.json) |
-| 离为火 | 48/72 | 48/72 | 48/72 | [读全文](hex-030.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-030.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-030.json) |
+| 天雷无妄 | 60/72 | 60/72 | 60/72 | [读全文](hex-025.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json) |
+| 山天大畜 | 60/72 | 60/72 | 60/72 | [读全文](hex-026.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json) |
+| 山雷颐 | 60/72 | 60/72 | 60/72 | [读全文](hex-027.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-027.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-027.json) |
+| 泽风大过 | 60/72 | 60/72 | 60/72 | [读全文](hex-028.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-028.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-028.json) |
+| 坎为水 | 60/72 | 60/72 | 60/72 | [读全文](hex-029.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-029.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-029.json) |
+| 离为火 | 60/72 | 60/72 | 60/72 | [读全文](hex-030.md) | [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-030.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-030.json) |
 
 
 
-正文 500–626 汉字，简断 62–117 汉字。盘面比较 54432 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
+正文 500–626 汉字，简断 62–117 汉字。盘面比较 56376 项，差异 0。本库依据求财专条区分进益、无财、耗失与比和，不将进账直接当作净利润，不保证现实收益或给投资指令。
 
 [机器核验](../../review/WEALTH_FORTUNE_MONTHLY_CHECKS.json) · [全量风格核验](../../review/WEALTH_FORTUNE_MONTHLY_STYLE.json) · [逐卦规则审计](../../review/wealth-fortune/README.md) · [交付清单](manifest.json)

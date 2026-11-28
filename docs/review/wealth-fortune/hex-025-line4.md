@@ -14,4 +14,4 @@
 
 作者实际逐篇读回12正文简断、专业说明、古典及36槽（春6、土12、夏4、秋6、冬8），收支净余分清，实际费用依约。
 
-正式归整源 SHA-256：`75b01ab899ce4def503737749f1d7591cfec240d36f14ba7a3590abdb26e48ec`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
+正式归整源 SHA-256：`9a3bf4e9395ee89c814f3ff4e728c84da5b95347b03380a5aa657ac592129ece`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。

@@ -21,4 +21,4 @@
 - 梅花655、968月日，658、965方应。土gain[use]本旺艮真实生体；夏conditional-gain[use]本相艮实助而死乾承接薄、尾旺离重阻，仅条件资源助；均参辰未戌丑土月及问期内土日，换月重核，不保证进款；秋conditional-gain[use]同土候仅已有东北资源普通助，非强财。土秋gain[use_mutual]强乾可制囚死震，已有东方市场竹木业务报酬参问期内寅卯木日，若涵木旺月重核；春夏冬难制不定独财日。春夏obstruction[changed_use]尾相旺离来克弱乾参巳午火月及问期内火日核实际南方文书技术要求；土risk-review同火候普通风险核；秋冬浅微照实无独阻候。兑同比不独立财期。全prepare[body]申酉金旺，春冬另辰未戌丑土旺金相准备；夏土秋土资源助候已单列，不重复土准备。不立己耗候。共38slots。
 - 全12篇作者实际全文、简断、专业、古据及动态读回，累计1716句首、分句、前缀及全文近重复零。
 
-正式归整源 SHA-256：`2d6dad0075721b18dbc1ab56b455e1adc6dd3e63853050d0ddc60cb9ff5298b4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。
+正式归整源 SHA-256：`e18ffc99ed3462beca161cfbfd6a1743a25de9bc17ec4b753f77e6a395c75c42`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。
