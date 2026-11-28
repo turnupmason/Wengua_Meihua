@@ -17,4 +17,4 @@
 - 655、968月日五行、658、965方应；中前旺/相土直克较实时按现实受制事项参辰未戌丑土月/日，动态 obstruction真实合并use/body_mutual/use_mutual三土角色。弱土不硬立损，尾同坎不单立专财期；每篇金水原体准备（申酉金旺水相、亥子水旺），非固定到账。有力同比可以表示已知收入机会，不要求无根据的gain槽。所有应期随实际问期，跨新月应重新加载对应月文章，非静态沿用。
 - 12篇实质原创顾问白话，逐篇作者全文与简断、时段和古据读回。正文511–544汉字，简断81–93，累计516篇机器检查无正文、简断开头重复、整文重复、长句重复或近重复。本爻独立草稿暂未切正式数据。
 
-正式归整源 SHA-256：`a449e63d36856d9a67284414ccf4647618f05e9f9949894f3ce427296464f881`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
+正式归整源 SHA-256：`0b36b3f48a4760df9438942d0845c6e27a2b00251df435474ce7c9197ba8ef96`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。

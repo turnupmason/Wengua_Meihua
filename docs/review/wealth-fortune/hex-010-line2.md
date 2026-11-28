@@ -14,4 +14,4 @@
 
 《梅花易数》222–223、235–236、242（原乾）；437–438、441、449–451、459（本兑普通类象含金属器物，不误用生体503）；315–319、327–328、337（体互巽类象，体克用才有自财）；376–379、388–390、398、509（离克、文书之忧）；284–290、294、306（震类象，自取不能套生体财条）；655、968、658、965（支月日及方应）。12篇正文、简断、专业说明及时段全篇逐月读回，五组判码一致，已完成六面内容；自然开头和实际财务建议优先，日期仅卦气参考不保证收益。两个同木财节点的同类事项合并，应期结构明确真实已有收入，跨月重核。待正式合入独立全读。
 
-正式归整源 SHA-256：`01069bc184a06f57b531e5e65783370b868e3030449a5a510a4f5cf63e987c1f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。
+正式归整源 SHA-256：`c47ff55b498f43a9c85eef469c8e2857994be5e8f3b78aeea684b5638a68fdc6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。

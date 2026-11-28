@@ -14,4 +14,4 @@
 
 《梅花易数》437–438、441、449–451、459（原兑金类客源），222–223、235–236、242（本乾普通类象及比和合作不套496外援），315–319、327–328、337、556（两巽财对象，受兑克可制），376–379、388–390、398、509（离南文书克体忧），655、968、658、965（支气与方应）。十二篇逐篇完整读回正文、简断、专业说明、原典及动态旁证；六维完整，按实际财务结论先说，接现实建议再解释四直接关系。日期只作传统依据，不保证收款；同一事项不重复计钱，跨月重核。待正式合入独立双审。
 
-正式归整源 SHA-256：`01069bc184a06f57b531e5e65783370b868e3030449a5a510a4f5cf63e987c1f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。
+正式归整源 SHA-256：`c47ff55b498f43a9c85eef469c8e2857994be5e8f3b78aeea684b5638a68fdc6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。

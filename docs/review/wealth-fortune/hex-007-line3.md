@@ -14,4 +14,4 @@
 | 亥子水 | 原囚坤难制本旺坎；体互上囚坤同比力薄；相震用互及相巽末各直接克体有力 | difficult / weak | 坤西南实物熟客原财有限协作，北坎现实水货物流量能力，东震中动务与东南巽尾工木茶、收取条件实项压力大；寅卯木两角色阻候、季土准备，实余偏薄守钱。 |
 六三十二月独立白话原创及全文简断读回，体用旺衰、判码、证据、六维与动态结构均逐篇核实，禁止硬编事实或收益、具体投资指令。作者及动态准确绑定到文章 SHA。
 
-正式归整源 SHA-256：`d2c8ca3e5b323230b68316b24f40f519987b0dc2c3c7e4ab8f25e56c0360a7ba`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
+正式归整源 SHA-256：`59d4b35161acbd5626bb1c7ce80b5cbb0ba8df07ae7e9d03040b112d20f61948`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
