@@ -17,4 +17,4 @@
 
 五组都无专财/损卦气候，时段栏明确无硬取见财日期或破财日期。每篇正文及简断均回答预计财务方向与现实进账机会，实际收益仍以收入扣支出为准。查重所见辰简断一处起笔相同已实际修改并读回，前三爻源对象除新增不改变。
 
-正式归整源 SHA-256：`39c62c26cf4e4f415c2e7a38fedc5c1a40e54142bdbe859b2443442425db30ba`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`a4a993e9d163fcab238cbe74fe7a98732fb4074a96fbef3c61494332b93df28f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

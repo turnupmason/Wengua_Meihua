@@ -12,4 +12,4 @@
 
 同木气两处按中/末阶段区分，不累加为两个日期或两笔财。仅在现实已有事项和所问期适用时参候。古爻食旧德不等于必得旧禄或确有职业。
 
-正式归整源 SHA-256：`c14cc1e851118da9bbeda2ae030cb67c82717c5f62d4ce01c9f13c53816ed485`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`e2f1b59d0a195a2be99c6fb1328c850feeb2b6b0cc917d52537ad127e3a442a6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

@@ -17,4 +17,4 @@
 - 《梅花易数》555–557行分得财、破财候。四处只是比和，无生体、体克用、克体或己耗的专候依据，十二篇不额外择日；旺相土只能提升财利相合的力度，不能单独作为实际到账日。
 - 正文与简断都判财务相合及实际进账之力度，辨析已有财物、估计收入、到账、费用与结余，不把同气推成确知外来的钱，也不把低进项说成已发生损失。
 
-正式归整源 SHA-256：`ba6638a2cb37b936c5880a1332c2edacb9bebd1011d2d6298100ee0e2733f877`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`afaa8ba8c171d4837bef0aa53d6b824084b4c3e50fa59b9bc11623b4e316d8a4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

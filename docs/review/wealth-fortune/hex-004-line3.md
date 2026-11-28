@@ -18,4 +18,4 @@
 
 五气判断一致、十二月稿分别独立成文。该审计仅对应六三动，不可移用于别爻。
 
-正式归整源 SHA-256：`0cb945e9f824181ae83c5b2458f56c83d5b42b80f2f07dd53e7a542ce8fa6c97`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`482cc56f1c53fcd6e0886e66e3a232114bc805efc9cb4f618a54aa4a61690141`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。

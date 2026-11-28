@@ -30,4 +30,4 @@
 
 十二篇均重新实质原创化补齐总财势及进账、既有或自取财源、方向行业、协作与客源、依据明确的排雷、聚财、支月/日。方向只是有利经卦在实际已有业务中的传统条件，不推定职业、客源身份、地理路线或投资品种。财务和收款时机不保证，缺实际问期与起卦公历日不编日期。已有财事和当下实收与成本是判断聚财的现实尺度，不用单个月令预言终身财富。初九十二篇加 editorialVersion wealth-fortune-v2；九二及九三旧二十四对象未动，后续逐爻分别更新及双读。
 
-正式归整源 SHA-256：`40bf3d64825d671bf076034c42df820ec94c919f8fe08e9690c68ca5e06df715`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`8ea0a2792368f379c2608cdbbbf5c48ecf69e077cc29124754829019c3f3f29e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

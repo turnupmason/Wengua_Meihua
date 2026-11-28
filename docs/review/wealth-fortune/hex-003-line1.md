@@ -23,4 +23,4 @@
 
 12篇v2分别实质重写并带版本字段；旧稿可在Git历史回溯。2–3爻旧对象及回执保持原样，待另行升级。本文古籍提供传统取象，现实额度、客户行为、付款和收益须实际核证。
 
-正式归整源 SHA-256：`5004167ab46b20a7142dd408a13c726bc1ad3bd508864b7f257cc251206b25f0`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`ab68e2e15b3b7225edf9cf27e0a6ed5867449383819a8734f5bc2550db3f1510`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
