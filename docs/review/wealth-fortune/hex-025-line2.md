@@ -14,4 +14,4 @@
 
 实际逐篇读核正文、简断、专业说明和36槽，收入与必要费用后净余清晰，无模板月令开头、不劳而获误读或虚构贵人。
 
-正式归整源 SHA-256：`1798004b3780d2143a9e7f1809532304872750179ce5a59e1f8b810fde73b3bd`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。
+正式归整源 SHA-256：`75b01ab899ce4def503737749f1d7591cfec240d36f14ba7a3590abdb26e48ec`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-025.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-025.json)。此爻5组审计。

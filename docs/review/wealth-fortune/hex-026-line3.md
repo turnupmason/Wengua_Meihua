@@ -20,4 +20,4 @@
 - 梅花655、968月日；658、965方应。春冬obstruction[body_mutual]寅卯木月及问期内木日核真实东方市场竹木任务限制；夏risk-review同木月日作为弱克普通核对。土秋冬drain[use,use_mutual,changed_use]申酉金月及问期内金日核实际西北器材与西方中后金类饮食业务费用，冬休金普通耗因身弱仍核，非重损；合槽同项不重计。春夏浅微耗不另设耗日，无直接比生取财不定独财候。全prepare[body]辰未戌丑土旺及巳午火旺土相月日整理真实原业及财务。共38slots。
 - 全12篇作者实际全文、简断、专业、古据及动态读回；累计1644篇句首、分句、前缀及全文近重复零。
 
-正式归整源 SHA-256：`8f41d19c5813ea7a5079cf7aa4287fda374ba5edcf4263a6036a2fc30f3b9737`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。
+正式归整源 SHA-256：`2d6dad0075721b18dbc1ab56b455e1adc6dd3e63853050d0ddc60cb9ff5298b4`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-026.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-026.json)。此爻5组审计。
