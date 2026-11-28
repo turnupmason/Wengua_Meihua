@@ -14,4 +14,4 @@
 
 作者逐篇核正文、简断、判断、证据及36槽（春8、土12、夏6、秋4、冬6），实际收入、费用及可存净余分别；无确定进款或损失。
 
-正式归整源 SHA-256：`63e2efa9094e6afa0f417ee3d2ccdffa8bc329452dffd6dc3cf19d8a5cad720f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-037.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-037.json)。此爻5组审计。
+正式归整源 SHA-256：`d5af87717eff1dc7bd921125a6b082f81835c83d161a651e5fb387c8eef81439`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-037.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-037.json)。此爻5组审计。

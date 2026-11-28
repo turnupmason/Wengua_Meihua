@@ -12,4 +12,4 @@
 
 《梅花易数》493–495、555–557、795–804求财四直接关系及旺衰；283–285、288、294、299、306震东方起动竹木材料经营原财；345–352、357–358、367、500本坎及体互坎北方水边鱼盐酒货运输、直接来生；375–379、387–390、398、557用互离南方文书文字技艺、己耗；251–254、259、265–266、275、556末坤西南乡里田土实物仓储、受原体克自财；655、968、658、965支月日方应。王孔《正义》04解:40–43。12篇全文及36槽实际逐篇读回；正文520–536汉、简断94–114汉，累计2196风格本爻修后无碰撞，Guan预检零警。待正式末审。
 
-正式归整源 SHA-256：`0d68657c18b3f09e84ede202e7f48fea5f492707f3a64bdc4ea61fbe9a65222d`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-040.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-040.json)。此爻5组审计。
+正式归整源 SHA-256：`bf4986f2db1c6df174951a7981c6da729e70cb13370ff49bb0ebdf2aa5088531`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-040.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-040.json)。此爻5组审计。

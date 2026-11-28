@@ -9,4 +9,4 @@
 |亥子|旺坎受本囚艮与尾囚坤浅克，中旺坎同比有力，克中死离可制；F/P|北方原业同业合作有力，东北前西南尾浅限例行核，南中离财可取，自取财非赠财，实收扣成本有余可积|问期内巳午日核现实南方文书技艺财，跨火旺月重核；前尾囚土无强阻；申酉亥子准备|
 12篇作者全文含简断、专业、古据逐篇读回，36槽动态绑定，独立双锁后发布。
 
-正式归整源 SHA-256：`55f63a52ee36997c05a31c5a91361ae5badfa2d5223acb2de66f40e342e608c2`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-039.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-039.json)。此爻5组审计。
+正式归整源 SHA-256：`facc90115a2463aa97f37a22fef5c711a3c531660684c08458d9440955abc691`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-039.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-039.json)。此爻5组审计。

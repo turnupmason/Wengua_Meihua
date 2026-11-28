@@ -22,4 +22,4 @@
 
 十二篇逐篇原创并实际全文读回，38槽各事件、角色、五态及月日逐项核明。六三独立草稿待主代理安排正式合入。
 
-正式归整源 SHA-256：`ed76e68e3f2c5987a8e3ea04340725edc8f4cbf0c2494f55f7ed1dc405301642`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-041.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-041.json)。此爻5组审计。
+正式归整源 SHA-256：`13ef4a653060d009f61489c8f31b67b7f950e85cb3ca997f3c3986eebd0c3f3e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-041.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-041.json)。此爻5组审计。
