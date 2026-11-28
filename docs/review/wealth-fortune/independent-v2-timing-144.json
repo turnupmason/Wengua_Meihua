@@ -1,0 +1,123 @@
+{
+  "scope": "Independent Gregorian integer JDN arithmetic, all civil dates plus authored wealth timing mappings; calendar candidates only, not prediction validation.",
+  "calendarDays": 73049,
+  "calendarAnchors": 2,
+  "upcomingWindows": 3710,
+  "timingObjects": 144,
+  "timingSlots": 291,
+  "realChartResolutions": 2880,
+  "historyCases": 144,
+  "strengthFlags": [],
+  "guardrailTests": [
+    {
+      "name": "new-date with stale previous chart",
+      "passed": true
+    },
+    {
+      "name": "new-date with chart lacking date",
+      "passed": true
+    },
+    {
+      "name": "history view before cast",
+      "passed": true
+    },
+    {
+      "name": "unreal calendar date",
+      "passed": true
+    },
+    {
+      "name": "empty author slots",
+      "passed": true
+    },
+    {
+      "name": "non-chart role",
+      "passed": true
+    },
+    {
+      "name": "body mistaken for gain",
+      "passed": true
+    },
+    {
+      "name": "event element manually overridden",
+      "passed": true
+    },
+    {
+      "name": "weak body element mistaken for preparation environment",
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "sourceVersion": "80069df0e08796955824083addd69a67834c293a",
+  "actualTimingSourceBindings": [
+    {
+      "primaryId": 1,
+      "objects": 24,
+      "slots": 33,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-001.json",
+      "timingSourceSha256": "547c997078128108da5cd657c1aa91b94b430842f78737defdf74f70e0a281b4",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-001.json",
+      "timingReceiptSha256": "4cb7498c16867d0e93ee07c52e784e35230e0e052ee5240b05c3782aac1ea1e2",
+      "author": "wealth_qian",
+      "reader": "guan_wealth"
+    },
+    {
+      "primaryId": 2,
+      "objects": 24,
+      "slots": 38,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-002.json",
+      "timingSourceSha256": "f8bfd6420b435cd0f2eecf711e48439d8ab8d08cf3a9b24755c1016efcc2a156",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-002.json",
+      "timingReceiptSha256": "3669f1d23a79576973b2660f0cde88474108c2b6473806cfd62b81b0564f226e",
+      "author": "wealth_kun",
+      "reader": "wealth_qian"
+    },
+    {
+      "primaryId": 3,
+      "objects": 24,
+      "slots": 60,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-003.json",
+      "timingSourceSha256": "8ec67c6df6f7d2f3c0cf5ea0566bfb2f044e6f5c83d3d8299e5a968668bbfd1d",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-003.json",
+      "timingReceiptSha256": "2efb4add9c2dcf68af9e6920ba3d29b01bd93cac967121ec4725482efe303a53",
+      "author": "wealth_tun",
+      "reader": "wealth_kun"
+    },
+    {
+      "primaryId": 4,
+      "objects": 24,
+      "slots": 52,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-004.json",
+      "timingSourceSha256": "b605271488931195c012307264d10b380be8669515d374c575c9060114918e13",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-004.json",
+      "timingReceiptSha256": "e43288bf8640545601a9b6543065ad2943a21c8eb8b3bbc62ce79cfaf8ec22dc",
+      "author": "wealth_meng",
+      "reader": "wealth_tun"
+    },
+    {
+      "primaryId": 5,
+      "objects": 24,
+      "slots": 40,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-005.json",
+      "timingSourceSha256": "6778142c0ac0b236fa8c059d4fed0fd7c80a3dfc2899bf9745d96ba59dcac2a1",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-005.json",
+      "timingReceiptSha256": "5a29405438f11622157977513a2266eb8f47c967583c2257b0aaea60b20b4163",
+      "author": "wealth_xu",
+      "reader": "wealth_meng"
+    },
+    {
+      "primaryId": 6,
+      "objects": 24,
+      "slots": 68,
+      "timingSourcePath": "sources/editorial/wealth-fortune/timing-monthly/hex-006.json",
+      "timingSourceSha256": "2f07aa64fd51c83ef9f95090e87ee12b29a70681ab699f212b855c4677d5918c",
+      "timingReceiptPath": "sources/editorial/wealth-fortune/timing-second-reviews-monthly/hex-006.json",
+      "timingReceiptSha256": "8694cbe3308037b2eaf2eab672a721b0c9cb455837daaaf74508b4a9314ae323",
+      "author": "root",
+      "reader": "wealth_xu"
+    }
+  ],
+  "resolverPath": "src/wealth-fortune-timing.js",
+  "resolverSha256": "22f38ef4cf1be9c16cfcfb0ec092df7c2fa6889edb041eb3367c0fe48ec18742",
+  "previewPath": "src/wealth-fortune-preview.js",
+  "previewSha256": "7efe74d834936ffa14a1d2ac6be136082b2dc37ced92d1d77d7a80cb4c7bf54b"
+}
