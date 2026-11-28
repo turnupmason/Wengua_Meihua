@@ -22,4 +22,4 @@
 
 本批12篇全文、简断及专业/期候证据均逐篇自然语言原创、作者完整复读，添加 editorialVersion:wealth-fortune-v2、voiceVersion:consultative-plain-v1；另存精确文章指纹作者及动态旁证。具体日由统一历法解析器按实际问期刷新；复核按独立读回流程完成后方可发布。
 
-正式归整源 SHA-256：`f86455a6f539724592318fcb76e7e3870f76fcf3831f6f35912cbef660433e3d`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`7cb145cc03f137a894d75e24488e5b19930fc86c6f454849ca3243e5e4378417`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

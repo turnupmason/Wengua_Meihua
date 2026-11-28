@@ -22,4 +22,4 @@
 
 本批在六维基础上按白话咨询式节奏真实全文润色并复读，重新写简断的财势、实际支出、来财条件及留存建议，保留全部阶段直接生克及旺衰原证。新增 voiceVersion:consultative-plain-v1；动态时段事件和角色选择未变，按实际新版文章精确重绑作者与应期。
 
-正式归整源 SHA-256：`f86455a6f539724592318fcb76e7e3870f76fcf3831f6f35912cbef660433e3d`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`7cb145cc03f137a894d75e24488e5b19930fc86c6f454849ca3243e5e4378417`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

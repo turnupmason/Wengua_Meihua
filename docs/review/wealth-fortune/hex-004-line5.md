@@ -14,4 +14,4 @@
 
 《梅花易数》134、346、357–358、367（坎），407–408、418–420、428、510（艮），253、259、265–266、275、505（坤），284–290、294、306（震），315–319、327–328、337（巽），655、968、658、965（月日与方应）。木卦属于体生消耗，只取已有工作成本类象，不误用震巽生体财条；土为实际克体风险方向，不能认定个人侵财。十二篇正文、简断、专业说明及动态旁证完整逐篇读回，六维保留，现实财务结论先行，去简断术语压缩和固定开头，时段不写公历日期，独立客观复读仍待。
 
-正式归整源 SHA-256：`b9da7635935e1777ac78b399a5071c245d949af10eb20326be30e903f6c56764`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`ab575f0319383efd0b1baf2fccb1b3892d3ae8b1195b5fbcb6c9df31cfb31253`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。

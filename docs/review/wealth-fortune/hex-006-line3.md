@@ -16,4 +16,4 @@
 
 乾222–223、235–236、242管理规范、器物技能及西北自身之象；中体互和尾巽315–319、327–328、337工巧、木货茶货供应、秀士及东南，体克用有财且有力（土秋）才可说凭专业客户的真实交付取财，弱体春夏冬仅潜在线索；965非体克方应自动吉。四处无生体或比和，贵人外助和天然合伙相合不强，独立可办收入优先、有合作按实际任务和成本。离509直接来克文书忧春相夏旺有力，其余较浅，坎陷受体生的实际垫款费用与资金占用为损耗提示。六三40–43食旧德保已有，其余判码及取期同前五组；土F/P相体可承浅耗、秋C/P实耗、春夏冬D/W守财。655、968、555–557明确候，体旺属准备，双巽同木只合并一财候、分两段，弱离火环境复核非强破财日。逐篇先白话基调，接实用财源和证据，技术说明后置；正文与短断真实重写，原判和时间关系不变，逐篇结构化旁证锁末版。
 
-正式归整源 SHA-256：`3b7e9213c40f2becf3ce8c161d0ddb308a9ea660690c6a3fa65be2aa4726ad45`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`431822d6d81c5ad350a03e41e51c3b29e4ebecd8fddba33a2fbb643c2601f4a1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

@@ -12,4 +12,4 @@
 
 坎自身北方水边、流通运输及鱼盐酒货345–358、367，非外来生。乾496生体公门、尊长、金宝、222–223、235–236、242正式资源和西北，有真实给付才参；春夏薄，土秋较有力，冬普通。中末离375–377、387–390、398（南方文书、文才、炉冶类财），秋冬可制才说自主财，其余月份为潜在方向、弱体受限；同火合并一个候而不判两笔必得。中巽315–319、327–328、337为东南木竹茶货、工巧供应费用，春旺/冬相较重、夏土秋浅，无直接来克不编故事。合作无比和，真资源、职责、付款核实；实际费和储备按现实。965财对象方向非自动方应吉；655、968环境及555–557实际财候。用户白话顾问口径，全文与简断先说现实结论、以卦象佐证，动态日期独立旁证与文章末版绑定。
 
-正式归整源 SHA-256：`3b7e9213c40f2becf3ce8c161d0ddb308a9ea660690c6a3fa65be2aa4726ad45`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`431822d6d81c5ad350a03e41e51c3b29e4ebecd8fddba33a2fbb643c2601f4a1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

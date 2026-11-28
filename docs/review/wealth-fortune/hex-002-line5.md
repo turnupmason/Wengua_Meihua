@@ -20,4 +20,4 @@
 
 独立审读末修：六个有力取财月的当前时段为所问期内亥子日，以实际可控尾坎财参候；若参考时段跨入亥、子月，应按囚土旺水重新加载对应月文章及应期旁证，不能静默沿用原旺/相坤制弱坎的财力。六篇正文、简断、专业时段和对应 gain reason 已一致更新并逐篇读回；余月互卦口语化，申短明“金当旺使水得气”的月令性质而非盘中金卦直接生坎，正文510–565汉字，简断80–93内。
 
-正式归整源 SHA-256：`26bf4c92b9a69a56d8dcba33c9c4da5ab51ad49bb53221f6d9c2155bd6d7cf0c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`4c234f6c15cf82678f9883e89ff784fc624d03ea0878a2f4f8c6232914f6a070`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

@@ -26,4 +26,4 @@
 
 前后两个兑同气，只说明既有财事协调方向在中末有无承接，不推出两笔收入。十二篇按咨询白话语气先给财务结论，后带盘理与具体取象，实际收支及风险以事实为准，动态旁证与末版对象指纹相绑。第四爻新增十二篇，保留前三爻对象不变。
 
-正式归整源 SHA-256：`065e39b32c55658d5b11fcc21b037b92d14e3f50c1ef22f1354fa41a29dbfc20`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。
+正式归整源 SHA-256：`568eaa8f16d9432b3bc7f34c209ea08ab73904983e14876b6f4d747310f9259b`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-005.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-005.json)。此爻5组审计。

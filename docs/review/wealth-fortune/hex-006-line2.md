@@ -24,4 +24,4 @@
 
 原有十二篇实质重写正文和简断，先现实财务走势，再自然交代始耗、中间巽财及离文书、末坤资源助力。拆长句，保留全部五气双码、动态旁证决策和古籍证据；末稿与作者及独立AI真实重新读回绑定。
 
-正式归整源 SHA-256：`3b7e9213c40f2becf3ce8c161d0ddb308a9ea660690c6a3fa65be2aa4726ad45`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`431822d6d81c5ad350a03e41e51c3b29e4ebecd8fddba33a2fbb643c2601f4a1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

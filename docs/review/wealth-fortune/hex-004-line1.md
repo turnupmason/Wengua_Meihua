@@ -25,4 +25,4 @@
 ## 白话顾问版复审
 12月正文与简断逐篇重写并完整读回；财务结论先行、卦理随现实意义解释，去简断压缩术语。原盘4直接作用、5组判码、财源行业方位、实际合作客源、风险及聚财、支月日应期决策和证据与v2版一致。逐篇作者与结构化时段重新绑定精确文章SHA。
 
-正式归整源 SHA-256：`b9da7635935e1777ac78b399a5071c245d949af10eb20326be30e903f6c56764`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`ab575f0319383efd0b1baf2fccb1b3892d3ae8b1195b5fbcb6c9df31cfb31253`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。

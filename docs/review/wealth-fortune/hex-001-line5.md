@@ -18,4 +18,4 @@
 
 十二篇采用咨询式白话原创，开头说明整体求财趋势、已有和额外收入、相对实际利润，再结合盘理、现实财路与客源、人际合作、尾部压力和守财、具体支气月日。voiceVersion=consultative-plain-v1；动态旁证按实际正文分事件、角色及时令元素，逐篇精确文章指纹绑定，不编公历日期，不保证收款或实际损财。
 
-正式归整源 SHA-256：`e4c7a447b98e426d41d7a9645d8b6a8ea3768e597ed9184e80337985cdac746a`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`f3a64fe642aa3698fbc054ce454f0d6ac1877f8f827b6dff4187ece7cabe44a1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
