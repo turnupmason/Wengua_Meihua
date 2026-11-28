@@ -14,4 +14,4 @@
 
 逐篇正文、简断、判断和古籍实读、五组规则及动态36槽校验（春6土12夏6秋6冬6），明确进账及净余、实际客户资源、方向行业、成本责任及留财。
 
-正式归整源 SHA-256：`43fd2f3306435c93428d2381395426a3337cd7188622df5050af46b940ddb573`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。
+正式归整源 SHA-256：`0e0e1f8dc492e6d008785e4af32daa02a24cefb2e3181445e9690e176d9b1281`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。

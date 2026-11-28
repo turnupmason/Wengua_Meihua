@@ -9,4 +9,4 @@
 | 辰未戌丑 | 休离、本囚震生薄、中死坎克微、中旺艮重耗、尾休离同比平；D/W | 南方熟业及尾普通合作、东方资源弱守，北交付轻核，中东北材料场地实费重，费用责任早核、有余才存 | 辰未戌丑中艮耗、寅卯及巳午火旺相准备，弱震及普通离比无独财候，坎克微无强损 |
 十二篇正文简断与六维全部逐篇实读、累计风格及咨询式白话预检无碰撞、作者精确锁及动态应期旁证绑定，独立双读通过才发布。
 
-正式归整源 SHA-256：`568c2970991eb307035ce3a8c5817eb9b4dcbceb536203afab6503ba967cdc96`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。
+正式归整源 SHA-256：`3c4597820ed991f720424b4275651e91ef2f633b01dcd4c2f858c1c155b768bc`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。

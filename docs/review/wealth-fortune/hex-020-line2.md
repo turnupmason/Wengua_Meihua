@@ -20,4 +20,4 @@
 - 梅花655、968月日五行及658、965方应。春冬三死囚土被原旺相巽克可制，gain合槽roles[use,use_mutual,body_mutual]现实已有西南实物仓储、东北材料财参问期内辰未戌丑日，跨土月木囚土旺重核。秋末相坎实生但原死巽承接弱，conditional-gain[changed_use]已有北边水货资源且能实际承接才参亥子月及问期内亥子日；冬末旺坎强生原相巽，gain[changed_use]实际北边水货资源援助及报酬参亥子水月日；均跨月重新按月令核。春休坎普通生及夏囚、土死弱生不单列财候。无直接克耗无损候。全12每篇prepare[body]为寅卯木旺、亥子水旺木相月日整理现有工作财源及合作，非独财日；32slots逐项对应正文。
 - 全12篇作者逐篇正文、简断、专业、古据及动态实读；累计1320篇正文及简断句首、分句、前缀、全文近重复零。
 
-正式归整源 SHA-256：`4f46dde9e46444c766feea29dd9c399b2cdae639335c1ed35a298c4d6dacb22b`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。
+正式归整源 SHA-256：`74ff6185696e9c2b5736e1b72a8be653551707f74e10797ad6d83695c7ea51de`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。

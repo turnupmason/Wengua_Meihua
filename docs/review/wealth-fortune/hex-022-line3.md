@@ -12,4 +12,4 @@
 
 证据：《梅花易数》493–495、555–557、795–804（四直接关系、阶段旺衰）；406–408、411、418–420、428（艮东北山田土石材料）；501、375–379、387–390、398（本离南文书技艺炉冶生助）；345–346、350、352、357–358、367、556（用互坎北流水边鱼盐酒货自财）；283–285、288、294、299、306、506（中末两震东方动中竹木及克体虚惊）；655、968、658、965（支月日方应）；王孔03賁:42–44。全文及34槽逐篇实际读回，正文504–529汉，简断70–84汉，六面齐；累计1272篇风格检查无本爻碰撞及Guan白话提示。待正式合入独立末审。
 
-正式归整源 SHA-256：`86a57439f516f97d79310c3077412c51785fc53db9c5d7a56d1ccd84e173c475`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-022.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-022.json)。此爻5组审计。
+正式归整源 SHA-256：`f72d50e0f0b7cdd2fc8ce3d324e1a2b7a3c7bfdc70fb322a6517a89064c17b98`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-022.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-022.json)。此爻5组审计。
