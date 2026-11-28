@@ -19,4 +19,4 @@
 
 每篇均有逐月原创结论、六维展开、简断、精确原典定位；实际四直接关系和五态均核。动态槽按实际角色与事件填写，不将弱取财或弱泄硬定为独立专候。所有作者、时机回执须绑定 JSON.stringify 的精确文章SHA。
 
-正式归整源 SHA-256：`2e97246876910d35cce3c8200868a84e79df3766c27a6a3572d0501344cff502`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
+正式归整源 SHA-256：`3abd3b94864e1dfc233f64e9216cf359436763c97cbb5ba1c8cd43c0e367f9aa`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。

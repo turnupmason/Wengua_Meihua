@@ -26,4 +26,4 @@
 
 十二篇正文、简断、古典证据、四关系、五态、时机及聚财方向逐篇核读；动态旁证与对象指纹绑定，正式源首爻新增十二篇。
 
-正式归整源 SHA-256：`d009409ae39156e42cf214524aaa91d8a954250d4abedc9b9bec89b479146d58`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-011.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-011.json)。此爻5组审计。
+正式归整源 SHA-256：`2da04a407ea3af8a7443b73eaa00882bd40d6dbea6b9b2b8651b86c43fd2130b`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-011.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-011.json)。此爻5组审计。
