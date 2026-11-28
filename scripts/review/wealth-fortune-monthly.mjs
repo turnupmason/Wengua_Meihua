@@ -24,7 +24,7 @@ const textOk=(v,min)=>typeof v==='string'&&han(v)>=min;
 const norm=s=>s.replace(/[「『“][^」』”]*[」』”]/gu,'').match(/\p{Script=Han}/gu)?.join('')??'';
 const banned=/不能[^。！？；\n]{0,150}更不能/u;
 const gain=/财|收入|进账|入账|款|收益|回款|所得|进益|钱|利/u;
-const expenditure=/耗|支出|成本|开销|负担|损|破财|费用|留存|净利|结余|风险|余钱|余财|保住|入不敷出|花费|余额|财务责任|动用钱财|留.*资金|泄己|收支|收付|开支|实支|支用|余量|留财|已亏|付款|宽裕|财[^。]{0,12}不厚|财源相合却乏力|守成|财运有维持条件|财利有稳住的条件/u;
+const expenditure=/耗|支出|成本|开销|负担|损|破财|费用|留存|净利|结余|风险|余钱|余财|保住|入不敷出|花费|余额|财务责任|动用钱财|留.*资金|泄己|收支|收付|开支|实支|支用|余量|留财|已亏|付款|宽裕|财[^。]{0,12}不厚|财源相合却乏力|守成|财运有维持条件|财利有稳住的条件|赔钱|净留|财势平常|相冲|财务方向平顺|充裕/u;
 const dirs=['monthly','reviews-monthly','second-reviews-monthly'];
 function compare(k,a,b,what){report.chartComparisons++;if(JSON.stringify(a)!==JSON.stringify(b)){report.chartMismatches.push({key:k,what,actual:a,expected:b});err(k,'chart',what);}}
 function render(id,src,rs){
@@ -80,6 +80,13 @@ for(const id of ids){
    if(!found||found.articleSha256!==sha256(JSON.stringify(a))||!textOk(found.finding,8))err(k,j?'second-article-receipt':'author-article-receipt','current object fingerprint or finding mismatch');else if(j)report.secondReadback++;else report.authorReadback++;
   }
   const f=independentFacts(id,a.movingLine,a.monthBranch);
+  // The all-equal geometry has one strength across all direct roles. The
+  // editorial rule keeps weak co-direction distinct from loss or control.
+  if(f.relations.every(x=>x.type==='equal')){
+   const state=f.nodes.find(n=>n.role==='body').qi;
+   const expected={'旺':['favourable','promising'],'相':['favourable','promising'],'休':['conditional','conditional'],'囚':['conditional','weak'],'死':['difficult','weak']}[state];
+   if(expected&&JSON.stringify([a.outcome,a.inflow])!==JSON.stringify(expected))err(k,'all-equal-strength','all-equal rule: '+state+' expected '+expected.join('/'));
+  }
   const r=createContextualReading({library,question:c,primaryId:id,movingLine:a.movingLine,monthBranch:a.monthBranch,castingDate:'2026-11-28',applyVoid:false});rs.push(r);
   compare(k,r.stages.primary.bitsBottomUp,f.bits,'base bits');
   for(const [j,v] of Object.values(r.stages).entries())compare(k,v.id,f.stageIds[j],'stage '+j);

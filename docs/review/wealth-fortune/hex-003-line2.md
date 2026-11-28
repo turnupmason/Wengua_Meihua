@@ -20,4 +20,4 @@
 
 作者逐月独立撰稿；首爻原12个对象不变，六二本组12篇末版全文复读已完成。明确问期与起卦日缺失，所有候均是实际已有事项的传统卦气取向，不作公历或具体结算日。
 
-正式归整源 SHA-256：`e1da5e10bde0167c2766db2c29f8190ac5d962393b152e3c5bdc8431677ee9d1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。
+正式归整源 SHA-256：`e7ab272f98ea2f7d4192135cae67520a385ca63c3e0ce499e9d9b805b753f29c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-003.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-003.json)。此爻5组审计。

@@ -19,4 +19,4 @@
 - 同书132、506行震类木、震克体「或于山林有所失」。在末段实际关系为震木直接克坤土，以已有动项、调整及相关财物损耗风险取象；另《说卦》09.07:21–22的震动支持动象。不给确定事件、不声称已有损失。
 - 12篇均区分预计、实收、支出及净财务结余。不借古条推投资命令、数额、到账公历日期。简断与正文各含进益耗失及进账方向。固定模板起笔/禁句式均不采用。
 
-正式归整源 SHA-256：`88141185d9c6b6ee0618a567ab07429aae3c1fc0bc38b5e5a0dd489a36a60204`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`6f6e1651c45b8c3869baa37d42f8e2620a111cc549aa0ee67d524d478aea3808`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

@@ -25,3 +25,12 @@ Guan 隔离核验实际 main 首批内容提交 `18452426537d7c6ecf9d16cd5c794fe
 - [天水讼第二爻](hex-006-line2.md)
 
 Guan 隔离核验实际 main 内容提交 `3133f6252cfb35788f72ed712e1ba97b41c16b76`：144唯一键与双读各144，3,888项盘面零差，正文505–626、简断64–94汉字，0错误及警告；重复、起笔及近重复全部零。12份逐爻5气审计共60组绑定末版源。144篇明确古籍范围全部解析。累计144/4,608，余4464。[独立绑定](independent-bindings-144.json) · [盘面](independent-checks-144.json) · [风格](independent-style-144.json) · [古籍定位](independent-classical-locators-144.json)。
+
+## 第三批：第1–6卦第三爻（累计216篇、90组五气审计）
+
+- [乾为天第三爻](hex-001-line3.md)
+- [坤为地第三爻](hex-002-line3.md)
+- [水雷屯第三爻](hex-003-line3.md)
+- [山水蒙第三爻](hex-004-line3.md)
+- [水天需第三爻](hex-005-line3.md)
+- [天水讼第三爻](hex-006-line3.md)

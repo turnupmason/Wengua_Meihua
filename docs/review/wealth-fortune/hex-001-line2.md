@@ -17,4 +17,4 @@
 
 短断和长稿均答近期整体财务方向及进账象，有所得并不直接算净利，不以未来事件和常见生活情境补盘面不足。
 
-正式归整源 SHA-256：`dc3735e53d10b0b69528d454199bee0fd57b46db9b70ce647b616b51432b350e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`46f7c7de14a0d3401701a2b37c276ba3f4eaf37a0e2852ffeef3a4d4ed08e512`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

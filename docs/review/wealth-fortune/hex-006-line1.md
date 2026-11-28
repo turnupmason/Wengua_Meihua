@@ -12,4 +12,4 @@
 
 候依据555–557仅取本中有力且所问实际事项存在者；比和虽财利快意而无专条独立候，未给起卦日及问期不写公历。各月均原创、同五气双码一致。初六古义止争仅为财务处置分寸，非用终吉替代盘理。
 
-正式归整源 SHA-256：`043a5b8ffa7cc4816b14af04806e4ca134d2b85d2cf8c26c7d71e3f5f54bcf5c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。
+正式归整源 SHA-256：`5946c2dbe807a0765942a05b40a40050eb0cbef6249ca364793b57a700275c81`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-006.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-006.json)。此爻5组审计。

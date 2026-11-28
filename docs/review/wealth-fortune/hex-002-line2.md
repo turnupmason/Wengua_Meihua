@@ -17,4 +17,4 @@
 - 《周易正义》简校本01坤40–45：六二「直方大，不习无不利」；注居中得正、任其自然而成，疏释正直、方安、厚载以及质与兴动相符。借其已有实际正当财源与能力相副之理，不直接由爻辞承诺任何收益。
 - 全文与简断均分别判断财务倾向及进账，前后仍明确实际收款条件、真实支出、净得益的差别，不假设财源和确定事件。
 
-正式归整源 SHA-256：`88141185d9c6b6ee0618a567ab07429aae3c1fc0bc38b5e5a0dd489a36a60204`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。
+正式归整源 SHA-256：`6f6e1651c45b8c3869baa37d42f8e2620a111cc549aa0ee67d524d478aea3808`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-002.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-002.json)。此爻5组审计。

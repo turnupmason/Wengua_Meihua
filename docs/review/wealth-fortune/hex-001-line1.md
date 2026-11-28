@@ -20,4 +20,4 @@
 
 各组无直接用克体及体生用的作用，得财未能落实不等于实际破财，支出还须从真实成本核算——不能以月令本身另添财物耗损节点。该项仅传统取象；不猜收入数额、行业、特定交易或现实行为，也不输出投资买卖指令。
 
-正式归整源 SHA-256：`dc3735e53d10b0b69528d454199bee0fd57b46db9b70ce647b616b51432b350e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。
+正式归整源 SHA-256：`46f7c7de14a0d3401701a2b37c276ba3f4eaf37a0e2852ffeef3a4d4ed08e512`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-001.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-001.json)。此爻5组审计。

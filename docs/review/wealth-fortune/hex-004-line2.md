@@ -17,4 +17,4 @@
 
 本审计只对应九二动十二月文章；其余动爻不可直接套用。十二稿分别原创，保持同气判码一致；时段参考不列没有起卦日期和问期依据的公历兑现日。
 
-正式归整源 SHA-256：`3dd2019d35815d6c247d7bee7d1ed7aaca188abfc63a27fb3296132677fc01a1`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
+正式归整源 SHA-256：`41cdb0414b0a9ffcc23d4b3c34ecf6af67dd4b2b0369c04f2c6cbfc282318c78`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-004.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-004.json)。此爻5组审计。
