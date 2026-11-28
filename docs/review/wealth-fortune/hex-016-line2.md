@@ -12,4 +12,4 @@
 
 证据：《梅花易数》493–495、555–557、795–804（始中末四关系旺衰）；283–285、288、294、299、306（震东方动中经营、竹木材料）；251–254、259、265–266、275、556（本坤西南田土农产实物仓储、自取财）；406–408、411、418–420、428、556（用互艮东北山田土石、一般求利阻隔、原体可制为财）；500、345–346、350、352、357–358、367（体互及变坎北、水边人鱼盐酒货文书交易真实助益）；655、968、658、965（支月日方应）；王孔02豫:34–37六二。十二篇正文简断、专业说明及24槽逐篇实际读回，修撞头和真实财务语句，保持正文500余汉之厚度、六面齐，不作保证收入。待正式合入和独立二读。
 
-正式归整源 SHA-256：`87ea0ff4cefba457dba1b1d99af64af91bf94c7a86ec473c0e4b4387c98ca72e`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-016.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-016.json)。此爻5组审计。
+正式归整源 SHA-256：`75f713f34ce101b6a676493cf66bc0e890b2c3d74bb72085db695b84eaecd185`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-016.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-016.json)。此爻5组审计。

@@ -12,4 +12,4 @@
 
 艮405–408、418–420、428东北山林、田土、场地、静中事务自身及末比同象，春冬弱、秋平、土夏有力；已有客户及合作按实物、场地、工作需求与收费，非直接外援。巽315–319、327–328、337、507东南工艺、竹木茶货材料供应，震283–285、294–299、302、306、506东方活动山林木货；两木直克，春冬重、夏土秋浅。兑437–438、441、445、449–451、459西方口悦、服务饮食货品为受生中耗，不套生体条，秋旺/土相/冬弱体承休兑仍核费用。前中同木合槽，夏木旺环境复核非强损；实收扣费留周转，无新财节点不硬设日期。965方应、655/968环境与555–557候。正文简断采用顾问白话、独立逐篇实读及旁证末版绑定。
 
-正式归整源 SHA-256：`d7b2cedc240b3d339713d169cca49334adbed94c2963b69dc2c89afa4098fd49`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-018.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-018.json)。此爻5组审计。
+正式归整源 SHA-256：`8c1cda7d6998c4bb76130e1d26363af321dd58f42706ebd8d0aad51a603a5843`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-018.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-018.json)。此爻5组审计。
