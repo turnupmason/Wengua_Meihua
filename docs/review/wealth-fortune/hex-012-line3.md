@@ -12,4 +12,4 @@
 
 乾222–223、235–236、242西北、规范管理、器物技能及正式职责为自身，坤497及253、259、265–266、275西南乡人、田土、实物谷帛仓储，艮502、405–408、418–420、428东北山田、山林场地安稳资源；中末艮为同一象类不同阶段，两艮及坤均独立生体，土气同槽，不推固定多笔收入。中巽315–319、327–328、337东南工艺、木竹茶货、材料供应是受体克财，秋土可控，其余难取。真实资源、计费、职责及交付客户；无比和不可据人际直接判断相合。无直接克耗仍须照实际支出核净余；爻义重现实责任与事实。965财对象非自动方应吉，655、968环境及555–557见财候按实事，跨月复核。正文简断原创顾问白话，末版双读与具体日期旁证精确绑定。
 
-正式归整源 SHA-256：`0f7aaaf4a8a8122501112a638add2ecad8a2d3fe2f80287962186b8c1015659f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-012.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-012.json)。此爻5组审计。
+正式归整源 SHA-256：`8372ccdba18f1f5e1c1aa1aa8133928f5b9fa889f1fee80b28777e1d8969396c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-012.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-012.json)。此爻5组审计。
