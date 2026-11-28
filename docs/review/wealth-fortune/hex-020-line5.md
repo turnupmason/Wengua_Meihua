@@ -19,4 +19,4 @@
 - 梅花655、968月日五行与658、965方应：春冬obstruction[use]寅卯木月、问期内木日核已有东南工艺木茶任务履约；夏risk-review[use]寅卯木月日作弱克普通核对，不是重损。其余浅微克不另立损候。三比和不做独财日期；无体克财、生体、己耗相关独候。全篇prepare[body]辰未戌丑土旺及巳午火旺土相准备现有财源、收支和协作，不作确定进财日期。动态共30slots逐一核对正文。
 - 全12篇作者逐篇正文、简断、专业判断、证据及应期实读；累计1476篇正文与简断句首、分句、前缀及全文近重复零。
 
-正式归整源 SHA-256：`cc658ee27b9ecbf90102f35d060b863d188caee9b332aaafff562ed57dd5123c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。
+正式归整源 SHA-256：`eaaf570781fd22e556236f134e263ec824ac85d1f97e3df1bc8182a61bab6073`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-020.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-020.json)。此爻5组审计。

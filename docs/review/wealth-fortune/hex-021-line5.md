@@ -9,4 +9,4 @@
 |亥子|相震生死离浅耗、旺坎生实、囚艮可制、尾休乾克浅；F/P|东方熟业有力、南前费轻、北运输实际资源助，东北材料场地可凭本事取，西北手续浅核，实际净余积|亥子中坎实助、辰未戌丑日中艮自财、跨月重核；申酉后乾克浅仅环境复核不作强损日，寅卯准备|
 十二篇正文、简断、古证、六维实际作者逐篇全文复读，精确哈希动态旁证同步；独立逐篇双审后发布。
 
-正式归整源 SHA-256：`3b28ea7c01b19e2d0689355df49722bb9a434c5c565a8ba477b2f559d028a2f8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。
+正式归整源 SHA-256：`dad07e62e2a514d41456beae3f6ada0bcf9f79678b32e122d56e14a729ea6319`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。

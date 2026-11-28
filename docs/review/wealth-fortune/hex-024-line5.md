@@ -12,4 +12,4 @@
 
 震283–285、294–299、302、306东方动中经营、山林木货活动，原体能力。坤252–253、257、259、265–266、275西南乡里田土场地实物及仓储为可取财方向，春冬有力可制、其他月难制，同笔不重复计收入。尾坎345–347、350、358–361、370、500北方运输流通及水货资源直接来生原震，冬有力、春普通、秋有力但自身承接薄，其余月薄；依真实资源决定合作，不凭身份断贵人。无比和、无克耗，仍需核算正常费用；655、968木旺水相体环境，财候跨月重判。
 
-正式归整源 SHA-256：`6710a863e00f9c1c0357e88a078e284dc3f716811114dce6b54dd88f72a148e0`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-024.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-024.json)。此爻5组审计。
+正式归整源 SHA-256：`7884dbfc8e3bdfd60c5fa34f322df1c23666462eb30b9651e811d49c3ff5990c`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-024.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-024.json)。此爻5组审计。

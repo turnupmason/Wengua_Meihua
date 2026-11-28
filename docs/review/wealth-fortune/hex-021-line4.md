@@ -9,4 +9,4 @@
 | 辰未戌丑 | 囚震、本休离实耗、中旺艮难制、中死坎生薄、尾旺艮难制；D/W | 东方熟业守，南文字文书技艺前段实费，北流通资源弱，中尾东北材料场地自主财难，费用责任核、有余才存 | 巳午实际前离耗、亥子及寅卯木旺相准备，无强财候 |
 十二篇正文简断与六维全部逐篇实读、累计风格及咨询式白话预检无碰撞、作者精确锁及动态应期旁证绑定，独立双读通过才发布。
 
-正式归整源 SHA-256：`3b28ea7c01b19e2d0689355df49722bb9a434c5c565a8ba477b2f559d028a2f8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。
+正式归整源 SHA-256：`dad07e62e2a514d41456beae3f6ada0bcf9f79678b32e122d56e14a729ea6319`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-021.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-021.json)。此爻5组审计。

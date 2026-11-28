@@ -14,4 +14,4 @@
 
 逐篇作者全文及简断、判断、古据读回及五组规则、40槽（春4土16夏6秋8冬6）核清，财源、客群、合作、风险成本、实际利益及留存俱有依据。
 
-正式归整源 SHA-256：`ec607327749608b13ed8f15f7770be8ed8f8636f3288baf1fe6709e31dcbaf81`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。
+正式归整源 SHA-256：`fe09cdb58f259220600265f5cdc7ebf41ace91d6203513177cae8b05a8e3ab1f`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-019.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-019.json)。此爻5组审计。
