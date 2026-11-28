@@ -12,4 +12,4 @@
 
 坤252–253、257、259、265–266、275西南乡里田土实物仓储为原有能力；尾艮405–408、418–420、428东北山林田土场地合作同比非生体。离375–377、387–390、398、501南方文字文书、技术和炉冶来生；坎345–347、350、358–361、367、370北方水货及运输流通受坤克财；震283–285、294–299、302、306、506东方活动和材料责任直接克原坤。中途强阻不因初助抵销，无体生用也仍扣正常费用；有现实客户、价格、交付条件及真实资源才应用，655、968环境动态，跨月重核。
 
-正式归整源 SHA-256：`d46693c6218a71e6d332111f63fca956bd0e7ac48884d247c22261bcb9ab57c9`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-036.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-036.json)。此爻5组审计。
+正式归整源 SHA-256：`b825183c9b3c91a3ae78f598ba4afd5ba8c7c2d4959908de772bbf3751d17f36`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-036.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-036.json)。此爻5组审计。
