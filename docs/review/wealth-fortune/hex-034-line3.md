@@ -12,4 +12,4 @@
 
 《梅花易数》493–495、555–557、795–804求财四直接关系及旺衰；283–285、288、294、299、306原震东方、起动、竹木经营；221–223、227–228、233–236、242、504本乾及用互乾西北公门管理器物、克体公事；437–438、441、445、449–451、459、511体互与末兑西口才沟通口译饮食器物、克体口舌；655、968、658、965支月日及方应。王孔《正义》04大壯:41–44。12篇正文简断及32槽真实逐篇读回；正文501–520汉、简断79–91汉；累计2016风格检查本爻无碰撞，Guan预检子正文重复词已实改复查无警。待正式末版独审。
 
-正式归整源 SHA-256：`89728da8ff8749906e432d2be6128ccf9ebe3e2c3a53bf26e3e6126561582c99`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-034.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-034.json)。此爻5组审计。
+正式归整源 SHA-256：`88f1f4ce9e427c613667fbf3549f45ddaabc664cc7d7c4fcd00d0fe89a159b8a`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-034.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-034.json)。此爻5组审计。
