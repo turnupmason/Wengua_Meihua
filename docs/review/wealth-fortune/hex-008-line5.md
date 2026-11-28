@@ -19,4 +19,4 @@
 - 原有真实所得扣成本与生活、周转备留，净余再存，不把报酬意向视为已到账。
 - 12篇作者逐篇完整正文、简断、专业、动态、古据实读，累计756篇机器查重正文/简断句首、分句、前缀近重及全文近重均为零。
 
-正式归整源 SHA-256：`0b36b3f48a4760df9438942d0845c6e27a2b00251df435474ce7c9197ba8ef96`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
+正式归整源 SHA-256：`53dfa7564ad7d3af74c65eb23cde589fa8963286acb87f7589966eabf3b4b4d8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。

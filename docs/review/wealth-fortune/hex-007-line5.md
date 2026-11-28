@@ -14,4 +14,4 @@
 | 亥子水 | 原坎旺；两囚坤各克浅；下相震己耗实；尾旺坎同比有力 | conditional / promising | 北方已存物流客户伙伴后段有效协作，收入可争取不等净余，东方中途支出实核寅卯耗候，西南仓地弱克；金水准备无专财日，按实收扣费留生活与周转。 |
 逐篇正文简断实读，明确真实既有财事条件，收入和净余分开、月日具体但不保证事件。作者审读及动态旁证依末稿文章指纹绑定。
 
-正式归整源 SHA-256：`59d4b35161acbd5626bb1c7ce80b5cbb0ba8df07ae7e9d03040b112d20f61948`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
+正式归整源 SHA-256：`e50340ddc70253517a30d043e310aff9215d432afd936d10f9a437d9347d1d06`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。

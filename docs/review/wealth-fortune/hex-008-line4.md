@@ -20,4 +20,4 @@
 
 末次古据校勘：兑金类在441，饮食在445，12篇均复核现有证据与末段己耗关系，不套503兑生体金玉得财。
 
-正式归整源 SHA-256：`0b36b3f48a4760df9438942d0845c6e27a2b00251df435474ce7c9197ba8ef96`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
+正式归整源 SHA-256：`53dfa7564ad7d3af74c65eb23cde589fa8963286acb87f7589966eabf3b4b4d8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。

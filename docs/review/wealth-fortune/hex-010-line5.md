@@ -12,4 +12,4 @@
 
 古据《梅花易数》493–495、555–557、795–804（求财阶段及四关系旺衰）；437–438、441、449–451、459（原兑类象与西方沟通、饮食、金属器物及客源）；222–223、235–236、242（本乾西北、公门、管理、器物，同气非外来贵人）；315–319、327–328、337、556（用互巽工巧、木茶东南，体可制财）；376–379、388–390、398、509（中末离南文书文字技艺直接克体忧）；655、968、658、965（支月日气方应）。九五王孔正义48–51。十二篇实际全文、短断、技术与动态读回，已修中互上下（下离体互、上巽用互）及累计短断重复，全部六维声调完整，500余汉厚度，时段真实事项条件、非公历及保证收入。等正式换入与独立双审。
 
-正式归整源 SHA-256：`c47ff55b498f43a9c85eef469c8e2857994be5e8f3b78aeea684b5638a68fdc6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。
+正式归整源 SHA-256：`8c37fc64b792b6138c37f2712c153ac8e79caf5925cfd0733a07e9916cb0da83`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。

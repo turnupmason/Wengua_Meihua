@@ -17,4 +17,4 @@
 - 梅花655、968时支月日、658、965方应；土相旺有力来克时，以已有受制现实事项参辰未戌丑月/问期内对应日，动态obstruction合并use/body_mutual/use_mutual/changed_use四真实同类角色；弱土不硬定风险期，无独立财候。原体申酉金旺水相、亥子水旺的月日只准备，dynamic body prepare明确金、水，不保证进款。实际时段随问期、跨月重算新月卦气及对应文章，不沿用旧势。
 - 12篇正文与简断原创实读，正文510–539汉字、简断81–88汉字。累计588篇正文简断机器查重零；正式源前24未变，本爻独立草稿待审。
 
-正式归整源 SHA-256：`0b36b3f48a4760df9438942d0845c6e27a2b00251df435474ce7c9197ba8ef96`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。
+正式归整源 SHA-256：`53dfa7564ad7d3af74c65eb23cde589fa8963286acb87f7589966eabf3b4b4d8`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-008.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-008.json)。此爻5组审计。

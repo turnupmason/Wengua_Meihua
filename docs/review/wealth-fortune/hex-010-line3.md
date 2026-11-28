@@ -14,4 +14,4 @@
 
 《梅花易数》222–223、235–236、242（原乾及末乾普通类象与比和）；437–438、441、449–451、459（本兑西口饮食金类，比和非503生体吉）；315–319、327–328、337、556（巽东南材料工巧，受原乾克可制才算自财）；376–379、388–390、398、509（离南文书克体忧）；655、968、658、965（月日与方应）。十二篇正文、简断、专业判码、时段和引据实际逐篇读回；财务结论先行，四直接关系和六维完整，原典爻辞只作量力的处置，不代替盘理。结构化时段随真实有力事件给角色，跨月复核，不保证兑现；比和不设专财期；无直接己耗不硬造破财。待合入独立双读。
 
-正式归整源 SHA-256：`c47ff55b498f43a9c85eef469c8e2857994be5e8f3b78aeea684b5638a68fdc6`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。
+正式归整源 SHA-256：`8c37fc64b792b6138c37f2712c153ac8e79caf5925cfd0733a07e9916cb0da83`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-010.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-010.json)。此爻5组审计。

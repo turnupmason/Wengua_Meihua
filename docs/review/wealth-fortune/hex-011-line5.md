@@ -27,4 +27,4 @@
 
 十二篇逐月原创、逐篇全文读回，作者及动态对象指纹相绑。第五爻正式新增十二篇，原四爻48对象不动。
 
-正式归整源 SHA-256：`9a329b35a2009e2365481233dee80d85693e2152e181e3ddfbe311afa8294324`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-011.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-011.json)。此爻5组审计。
+正式归整源 SHA-256：`6e98e37b74d421c86d7813f0e1cf9e2acfd412f499466f78039da7ee99d20107`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-011.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-011.json)。此爻5组审计。

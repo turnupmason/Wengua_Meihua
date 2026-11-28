@@ -14,4 +14,4 @@
 | 亥子水 | 原下坎旺，本上坤和用互上坤两囚土直接弱克；下体互相震与末上相震受体生泄显 | difficult / weak | 坎北原有物流水货客维护，西南坤现实仓地费用浅压，东方震木中尾实际动项支出重点查；寅卯耗候、金水准备，净余不厚。 |
 十二篇全文、简断逐月原创实质六维，明确现实已存在的事方适用，不猜金额、实际损失、个人品行或具体交易决定；文章精确指纹绑定作者及动态旁证，逐篇全文实读审计。
 
-正式归整源 SHA-256：`59d4b35161acbd5626bb1c7ce80b5cbb0ba8df07ae7e9d03040b112d20f61948`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
+正式归整源 SHA-256：`e50340ddc70253517a30d043e310aff9215d432afd936d10f9a437d9347d1d06`。该爻12篇作者及独立AI末版逐篇全读回执见 [作者](../../../sources/editorial/wealth-fortune/reviews-monthly/hex-007.json) · [独立](../../../sources/editorial/wealth-fortune/second-reviews-monthly/hex-007.json)。此爻5组审计。
